@@ -32,6 +32,8 @@ from experiments.scored_multipliers import search as scored_multiplier_search
 from experiments.rational_squares import search as rational_square_search
 from experiments.fraction_chains import search as fraction_chain_search
 from experiments.pair_class_search import search as same_source_pair_search
+from experiments.guided_pairs import cover as guided_pair_cover
+from experiments.seed_gap_sieve import search as seed_gap_search
 from experiments.salie_blocks import search as salie_block_search
 from experiments.folded_square import direct as fixed_phase_search
 from experiments.four_square_lines import search as four_square_line_search
@@ -149,6 +151,20 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(max_steps=case['max_steps'], multiplier=case['multiplier'])
         result = certify_split(case, proof, factor, elapsed, 'pell_relations', work)
+    elif method == 'seed-gap-sieve':
+        work = seed_gap_search(int(case['n']), case['max_norm'], case['last_prime'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(max_norm=case['max_norm'], last_prime=case['last_prime'])
+        result = certify_split(case, proof, factor, elapsed, 'seed_gap_sieve', work)
+    elif method == 'guided-pairs':
+        work = guided_pair_cover(int(case['n']), case['max_norm'], case['max_multipliers'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(max_norm=case['max_norm'], max_multipliers=case['max_multipliers'])
+        result = certify_split(case, proof, factor, elapsed, 'guided_pairs', work)
     elif method == 'same-source-pairs':
         work = same_source_pair_search(int(case['n']), case['mode'], case['max_draws'])
         elapsed = time.perf_counter() - start
@@ -377,6 +393,8 @@ def main():
                              ('rational-squares.json', 'rational-squares'),
                              ('fraction-chains.json', 'fraction-chains'),
                              ('same-source-pairs.json', 'same-source-pairs'),
+                             ('guided-pairs.json', 'guided-pairs'),
+                             ('seed-gap-sieve.json', 'seed-gap-sieve'),
                              ('crt-square-norms.json', 'crt-square-norms'),
                              ('four-square-lines.json', 'four-square-lines'),
                              ('line-powers.json', 'line-powers'),

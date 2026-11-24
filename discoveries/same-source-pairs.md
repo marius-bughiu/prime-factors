@@ -1,5 +1,7 @@
 # How often can two fractions from one draw reveal a factor?
 
+Subsequent work studies what happens when the source can be chosen from every digit of the product. It gives an input-population bound and exhibits two 2,048-bit products whose smallest working fractions differ by more than 2,000 bits in height. [Choosing a short fraction](choosing-a-short-fraction.md)
+
 Let $N=pq$ be a 2,048-bit integer with distinct 1,024-bit primes $p<q$. For one unit residue $r$ modulo $N$, consider **all** reduced fractions $a/b$ with $b>0$, $a\equiv br\pmod N$, and $0<2|a|b<N$. The event is that two distinct fractions have signed norms $ab,cd$ whose product is an integer square. Such a pair always splits $N$. The bounds allow prime factors of any size in all four entries.
 
 | How $r$ is drawn | One draw | At least one pair in $2^{48}$ draws |

@@ -67,6 +67,16 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'seed-gap-sieve':
+        w = result['seed_gap_sieve']
+        count = (f'Fraction norm at most {w["max_norm"]:,} · wheel modulus {w["modulus"]:,} · '
+                 f'{w["entries"]:,} square classes · {w["gaps"]:,} gaps visited · '
+                 f'{w["square_tests"]:,} candidate square roots computed')
+    elif result['method'] == 'guided-pairs':
+        w = result['guided_pairs']
+        count = (f'Fraction norm at most {w["max_norm"]:,} · '
+                 f'{w["multipliers"]:,} of {w["max_multipliers"]:,} multiplier roots computed · '
+                 f'{w["square_tests"]:,} eligible gaps tested for a square')
     elif result['method'] == 'same-source-pairs':
         w = result['same_source_pairs']
         source = {'unit': 'unit residues', 'square': 'squares of units'}[w['mode']]

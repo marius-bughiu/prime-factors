@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+For two fractions that give a factor from the same residue, Dirichlet GRH bounds how much larger the fractions can have to become when their common residue is required to be a square. Given the mixed ratio already, a Jacobi nonresidue multiplier below $2^{21}$ suffices on every target-size product. [Formula, height bound and its assumptions](../discoveries/mixed-ratio-heights.md)
+
 The factor-sum investigation treats balanced semiprimes and studies which local constraints survive globally. It gives a separate application of the Dirichlet result to incorrect candidate sums. [Factor-sum research](../discoveries/factor-sum-residues.md)
 
 When the product chooses the first primes at which it is a square, the choice itself affects how small a remainder we can expect. Averaging Dirichlet character sums over both hidden primes bounds the chance that the selection takes unusually long and sharpens the asymptotic estimate. The finite 2,048-bit estimate uses integer counts alone. [Adaptive prime selection](../discoveries/crt-screen-population.md)

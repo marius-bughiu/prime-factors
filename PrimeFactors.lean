@@ -24,6 +24,8 @@ import PrimeFactors.DivisorTensor
 import PrimeFactors.DyadicMass
 import PrimeFactors.DyadicReadout
 import PrimeFactors.DyadicSeries
+import PrimeFactors.EuclideanHeight
+import PrimeFactors.EuclideanHeightExample
 import PrimeFactors.ExceptionalWeights
 import PrimeFactors.ExponentialReadout
 import PrimeFactors.FactorCircuit
@@ -53,11 +55,13 @@ import PrimeFactors.MaskedRelations
 import PrimeFactors.MidpointBlocks
 import PrimeFactors.MidpointClasses
 import PrimeFactors.MixedHeights
+import PrimeFactors.MixedRatioHeight
 import PrimeFactors.ModularHyperbola
 import PrimeFactors.MultipleShift
 import PrimeFactors.Multiplier
 import PrimeFactors.MultiplierImages
 import PrimeFactors.MultiplierScore
+import PrimeFactors.PairDeterminant
 import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder
 import PrimeFactors.PartitionRecurrence
@@ -72,6 +76,7 @@ import PrimeFactors.PhasePrecision
 import PrimeFactors.PhaseResidues
 import PrimeFactors.PhaseSchedules
 import PrimeFactors.PhaseSeparation
+import PrimeFactors.PlantedHeightExample
 import PrimeFactors.PooledRelations
 import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
@@ -97,6 +102,7 @@ import PrimeFactors.RootIntervalSlope
 import PrimeFactors.SalieCounts
 import PrimeFactors.SalieOrbit
 import PrimeFactors.SameSourcePair
+import PrimeFactors.SeedGapSieve
 import PrimeFactors.SampledSieve
 import PrimeFactors.ScatteredFactor
 import PrimeFactors.SeparatedPairs
