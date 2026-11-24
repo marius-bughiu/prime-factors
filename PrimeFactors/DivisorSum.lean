@@ -30,6 +30,7 @@ theorem recoverFromSigma_correct {p q : ℕ} (hp : p.Prime) (hq : q.Prime) (hlt 
   obtain ⟨k, hk⟩ := Nat.exists_eq_add_of_le (Nat.le_of_lt hlt)
   subst q
   have hd : (p + (p + k)) ^ 2 = k ^ 2 + 4 * (p * (p + k)) := by ring
+  dsimp only
   rw [hd, Nat.add_sub_cancel, Nat.sqrt_eq']
   congr 1 <;> omega
 

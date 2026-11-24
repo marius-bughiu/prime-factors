@@ -1,0 +1,59 @@
+[
+  {
+    "id": "repeated-factors",
+    "description": "Repeated prime factors and an even input",
+    "n": "81608",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": [
+      "2",
+      "2",
+      "2",
+      "101",
+      "101"
+    ],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
+    "id": "near-square-100",
+    "description": "Constructed 100-digit semiprime with close 50-digit factors",
+    "n": "2500000000000000000000002828427129198665669804032100000002311766726231161188458433341755932316532737",
+    "max_steps": 9,
+    "status": "complete",
+    "factors": [
+      "50000000000000000000000000000000040866648181178369",
+      "50000000000000000000000056568542543106665214902273"
+    ],
+    "remaining": [],
+    "fermat_steps": 9
+  },
+  {
+    "id": "near-square-cutoff",
+    "description": "Same semiprime with the last midpoint outside the budget",
+    "n": "2500000000000000000000002828427129198665669804032100000002311766726231161188458433341755932316532737",
+    "max_steps": 8,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "2500000000000000000000002828427129198665669804032100000002311766726231161188458433341755932316532737"
+    ],
+    "fermat_steps": 8,
+    "exclusion": {
+      "theorem": "eightMidpoint_exclusion",
+      "half_gap_limit": "26457513110645905905016165"
+    }
+  },
+  {
+    "id": "wide-gap",
+    "description": "Unequal factors outside a 100-midpoint search",
+    "n": "101000303",
+    "max_steps": 100,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "101000303"
+    ],
+    "fermat_steps": 100
+  }
+]

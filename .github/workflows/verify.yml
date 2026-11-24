@@ -20,11 +20,36 @@ jobs:
           use-mathlib-cache: false
           use-github-cache: false
       - name: Fetch the pinned dependencies and relevant compiled Mathlib modules
-        env:
-          MATHLIB_NO_CACHE_ON_UPDATE: '1'
-        run: |
-          lake exe cache get Mathlib.Data.Nat.Factors Mathlib.Data.Nat.Sqrt Mathlib.Tactic.Linarith Mathlib.Tactic.Ring Mathlib.NumberTheory.ArithmeticFunction Mathlib.NumberTheory.LucasPrimality Mathlib.Tactic.ReduceModChar Mathlib.Tactic.NormNum.Prime
+        run: sh scripts/fetch-cache.sh
       - name: Check library and audit project axioms
         run: |
           lake build
           lake env lean scripts/Audit.lean
+      - name: Run search tests
+        run: python3 -m unittest discover -s tests
+      - name: Discover factors and kernel-check certificates
+        run: python3 scripts/benchmark.py
+      - name: Generate progress report
+        run: python3 scripts/render_site.py
+      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          path: build/site
+
+  publish:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy verified progress report
+        id: deploy
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

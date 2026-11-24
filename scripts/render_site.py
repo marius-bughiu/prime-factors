@@ -1,0 +1,72 @@
+"""Render the GitHub Pages report from one benchmark run."""
+
+import argparse
+import json
+import shutil
+from html import escape
+from pathlib import Path
+from string import Template
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def duration(seconds):
+    if seconds < 0.01:
+        return f'{seconds * 1000:.2f} ms'
+    return f'{seconds:.2f} s'
+
+
+def case_row(result):
+    checked = result['verified']
+    name = escape(result['id'])
+    size = result['bits']
+    status = 'Lean checked' if checked else 'Partial'
+    cls = 'status' if checked else 'status partial'
+    factors = ' × '.join(escape(x) for x in result['factors']) or 'None'
+    evidence = (f'<a href="{escape(result["certificate"])}">Download Lean certificate</a>' if checked
+                else '<span>Remaining cofactor(s)</span> <code>' + ' × '.join(map(escape, result['remaining'])) + '</code>')
+    verification = duration(result['verification_seconds']) if checked else 'not run'
+    if 'exclusion' in result:
+        x = result['exclusion']
+        evidence += (f'<p>Lean excludes every even factor gap through {int(x["max_gap"]):,}. '
+                     f'<a href="{escape(x["proof"])}">Download exclusion proof</a></p>')
+        verification = duration(x['verification_seconds']) + ' (replay of the prebuilt gap-exclusion theorem)'
+    if result['method'] == 'subgroup':
+        w = result['subgroup']
+        unit = 'base' if w['bases_tested'] == 1 else 'bases'
+        count = f'Subgroup search · {w["bases_tested"]} {unit} tested · inclusive limit {w["max_base"]}'
+        if w['status'] == 'split':
+            count += f' · witness {w["witness_base"]}'
+    else:
+        unit = 'midpoint' if result['fermat_steps'] == 1 else 'midpoints'
+        count = f'Fermat pipeline · {result["fermat_steps"]} {unit} tested · budget {result["max_steps"]}'
+    return f'''<details id="{name}"><summary><span class="case-title">{escape(result['description'])}</span>
+<span class="numeric size">{size} bits</span><span class="{cls}">{status}</span>
+<span class="numeric time">{duration(result['wall_seconds'])}</span></summary><div class="payload">
+<p>{count}</p><p class="label">Input</p><code>{escape(result['n'])}</code>
+<p class="label">{'Prime factors' if checked else 'Resolved portion'}</p><code>{factors}</code>
+<p>Lean verification {verification}</p><div>{evidence}</div></div></details>'''
+
+
+def render(out):
+    data = json.loads((out / 'results.json').read_text())
+    results = sorted(data['results'], key=lambda row: -row['bits'])
+    biggest = max((row for row in results if row['verified']), key=lambda row: row['bits'])
+    repo = 'https://github.com/' + escape(data['repository'])
+    sha = escape(data['commit'])
+    complete = sum(row['verified'] for row in results)
+    run_link = f' · <a href="{repo}/actions/runs/{escape(data["run_id"])}">Workflow run</a>' if data['run_id'] else ''
+    html = Template((ROOT / 'site/index.html').read_text()).substitute(
+        repo=repo, tree=f'{repo}/blob/{sha}', commit_url=f'{repo}/commit/{sha}', sha=sha[:7],
+        bits=f"{biggest['bits']:,}", largest_desc=escape(biggest['description']), largest_id=escape(biggest['id']),
+        count=len(results), complete=complete, partial=len(results) - complete,
+        rows='\n'.join(map(case_row, results)), cpu=escape(data['cpu']), python=escape(data['python']),
+        lean=escape(data['lean']), date=escape(data['measured_at']), run_link=run_link)
+    (out / 'index.html').write_text(html)
+    shutil.copyfile(ROOT / 'site/style.css', out / 'style.css')
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--out', type=Path, default=ROOT / 'build' / 'site')
+    render(parser.parse_args().out)
