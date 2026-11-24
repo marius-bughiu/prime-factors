@@ -65,7 +65,8 @@ class NormBandProductTests(unittest.TestCase):
         path = Path(__file__).resolve().parents[1] / 'benchmarks' / 'norm-band-product.json'
         for case in json.loads(path.read_text()):
             with self.subTest(case=case['id']):
-                result = search(int(case['n']), case['max_side'], balanced=case['balanced'])
+                result = search(int(case['n']), case['max_side'], balanced=case['balanced'],
+                                canonical=case.get('canonical', False))
                 factor = result.pop('factor')
                 self.assertEqual(result, {k: case[k] for k in result})
                 if case['status'] == 'complete':
