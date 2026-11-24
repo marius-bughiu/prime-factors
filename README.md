@@ -1,6 +1,12 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/factor-sum-residues.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/searching-the-balanced-interval.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+
+## What reduces the work?
+
+- **One square test can exclude a whole divisor interval.** On the product 34,387, Lean certifies that one test excludes all fourteen integers from 145 through 158. Changing the weights isolates the divisor 137 in another interval. A theorem for every balanced pair bounds the total number of weighted square tests by $2K(K+1)$ when $K$ is chosen near $N^{1/6}$. [Weighted intervals and the global bound](discoveries/searching-the-balanced-interval.md#one-square-test-for-a-divisor-interval)
+- **The sum can be found by matching powers.** Every unit $u$ modulo a product of distinct primes satisfies $u^{p+q}=u^{N+1}$. This lets a classical table search combine two indices and check a window of $W$ sums with roughly $\sqrt W$ entries per table. The note gives the cost of selecting the bases, verifying matches and storing the table. The resulting bound is still exponential in the bit length. [Power tables and their assumptions](discoveries/searching-the-balanced-interval.md#matching-powers-to-recover-the-sum)
+- **A stronger modulus can settle a small instance.** For 34,387 the moduli 3, 5 and 7 leave three possible even sums. Replacing 3 with 9 leaves only 388. Lean also identifies exactly which residue classes can benefit from this lift. [Prime-power proofs](PrimeFactors/PrimePower.lean)
 
 ## From the product to the sum
 

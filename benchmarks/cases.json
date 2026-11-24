@@ -55,5 +55,18 @@
       "101000303"
     ],
     "fermat_steps": 100
+  },
+  {
+    "id": "balanced-34387",
+    "description": "Fermat baseline for the weighted-interval and prime-power example",
+    "n": "34387",
+    "max_steps": 9,
+    "status": "complete",
+    "factors": [
+      "137",
+      "251"
+    ],
+    "remaining": [],
+    "fermat_steps": 9
   }
 ]

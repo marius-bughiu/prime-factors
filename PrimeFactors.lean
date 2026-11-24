@@ -1,10 +1,16 @@
+import PrimeFactors.AdditiveCover
 import PrimeFactors.Certificate
 import PrimeFactors.DivisorSum
 import PrimeFactors.FactorSum
 import PrimeFactors.FactorSumCRT
 import PrimeFactors.Fermat
+import PrimeFactors.IntervalGap
 import PrimeFactors.Isolation
+import PrimeFactors.JointPeriod
+import PrimeFactors.Multiplier
+import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
+import PrimeFactors.PrimePower
 import PrimeFactors.ResidueCount
 import PrimeFactors.SieveInterval
 import PrimeFactors.Subgroup
