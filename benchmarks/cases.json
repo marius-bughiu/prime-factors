@@ -68,5 +68,18 @@
     ],
     "remaining": [],
     "fermat_steps": 9
+  },
+  {
+    "id": "block-43657",
+    "description": "Fermat baseline for the three-sum obstruction",
+    "n": "43657",
+    "max_steps": 13,
+    "status": "complete",
+    "factors": [
+      "149",
+      "293"
+    ],
+    "remaining": [],
+    "fermat_steps": 13
   }
 ]

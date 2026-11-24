@@ -8,6 +8,8 @@ On November 20, 2026, Levent Alpöge released a Lean proof developed with Claude
 
 The original Lean release uses mathlib v4.33.1. The community mirror identifies `40e56bab` as the original source and says the submission was published without a license. This project cites the theorems and independently implements the arithmetic below. The Apache-2.0 notices on certain comparator declarations apply only to those files. [Original release tree](https://github.com/leanprover-community/riemann-hypothesis/tree/40e56bab) · [Mirror license notice](https://github.com/leanprover-community/riemann-hypothesis#license)
 
+The zero-free Euler-factor lemma in the release uses a strict positive real part. Examining equality at the boundary led to a checked factor-comparison theorem. Separately, the released Dirichlet GRH statements supply the analytic hypothesis for a prime-character sum estimate used to sample modular square tests. [Derivations and proof scope](../discoveries/character-conjectures.md)
+
 ## A bounded witness search for structured semiprimes
 
 Suppose the input is $N=pq$ for distinct primes $p<q$, with $p-1$ dividing $q-1$. The factors can be far apart. If $p<q$ are primes with the same bit length of at least three, $p-1<q-1<2(p-1)$, so this hypothesis fails throughout that family. [Equal-width obstruction](../PrimeFactors/Subgroup.lean) The search takes only $N$. For each integer base $a$ starting at 2, it first takes $\gcd(a,N)$. If that is 1, it computes $r=a^{N-1}\bmod N$ by modular exponentiation and takes $\gcd(r-1,N)$. Any gcd strictly between 1 and $N$ certifies a split.
