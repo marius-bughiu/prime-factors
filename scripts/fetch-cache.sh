@@ -13,5 +13,6 @@ exec lake env lean --run .lake/packages/mathlib/Cache/Main.lean get \
   Mathlib.FieldTheory.Finite.Basic Mathlib.NumberTheory.ArithmeticFunction \
   Mathlib.NumberTheory.LucasPrimality Mathlib.Tactic.Linarith \
   Mathlib.Tactic.NormNum.NatSqrt Mathlib.Tactic.NormNum.Prime \
+  Mathlib.Data.Matrix.Rank Mathlib.Algebra.Polynomial.Derivative Mathlib.Data.Nat.Digits \
   Mathlib.Logic.Equiv.Prod Mathlib.SetTheory.Cardinal.Finite Mathlib.Tactic.FieldSimp \
   Mathlib.Tactic.LinearCombination Mathlib.Tactic.ReduceModChar Mathlib.Tactic.Ring

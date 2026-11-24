@@ -1,0 +1,16 @@
+[
+  {"id": "full-width-unbalanced", "n": "51", "full_width": true, "factors": ["3", "17"], "count_mod3": 2},
+  {"id": "two-bit", "n": "6", "width": 2, "factors": ["2", "3"], "count_mod3": 2},
+  {"id": "three-bit", "n": "35", "width": 3, "factors": ["5", "7"], "count_mod3": 2},
+  {"id": "four-bit", "n": "143", "width": 4, "factors": ["11", "13"], "count_mod3": 2},
+  {"id": "five-bit", "n": "667", "width": 5, "factors": ["23", "29"], "count_mod3": 2},
+  {"id": "six-bit", "n": "2537", "width": 6, "factors": ["43", "59"], "count_mod3": 2},
+  {"id": "seven-bit", "n": "9047", "width": 7, "factors": ["83", "109"], "count_mod3": 2},
+  {"id": "eight-bit", "n": "26827", "width": 8, "factors": ["139", "193"], "count_mod3": 2},
+  {"id": "nine-bit", "n": "130813", "width": 9, "factors": ["257", "509"], "count_mod3": 2},
+  {"id": "ten-bit", "n": "595489", "width": 10, "factors": ["641", "929"], "count_mod3": 2},
+  {"id": "zero-intermediate-control", "n": "6", "width": 3, "factors": [], "count_mod3": 1},
+  {"id": "square-control", "n": "49", "width": 3, "factors": [], "count_mod3": 1},
+  {"id": "four-orders-control", "n": "45", "width": 4, "factors": [], "count_mod3": 1},
+  {"id": "five-orders-alias-two", "n": "36", "width": 4, "factors": [], "count_mod3": 2}
+]

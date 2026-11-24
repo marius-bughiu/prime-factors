@@ -12,6 +12,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from experiments.cyclotomic_periods import expand_cases, reduced_table_search, search as cyclotomic_search
 
 
 def cli(args, expected_code=0):
@@ -28,19 +32,24 @@ def agree(case, result, keys):
             raise ValueError(f"{case['id']}.{key}: expected {case[key]!r}, got {result[key]!r}")
 
 
-def reduced_case(case, proof):
-    command = ['lake', 'env', 'lean', '--run', 'experiments/ReducedOrders.lean',
-               'search', case['n'], str(case['base']), str(case['stride'])]
-    proc = subprocess.run(command, cwd=ROOT, text=True, capture_output=True, timeout=900)
-    if proc.returncode != 0:
-        raise RuntimeError(f"Reduced-order search failed: {proc.stderr}\n{proc.stdout}")
-    work = json.loads(proc.stdout)
+def period_case(case, method, proof):
+    n, base, stride = int(case['n']), case['base'], case['stride']
+    work_keys = ['outcome', 'entries_per_table', 'giants_probed', 'batch_gcds']
+    if method == 'cyclotomic':
+        work = cyclotomic_search(n, base, case['degree'], stride)
+        work['degree'] = case['degree']
+        work_keys.append('halving_gcds')
+        key = 'cyclotomic'
+    else:
+        work = reduced_table_search(n, base, stride)
+        key = 'reduced_order'
     factor = work.pop('factor')
     search_seconds = work.pop('search_nanoseconds') / 1_000_000_000
-    agree(case, work, ['outcome', 'entries_per_table', 'giants_probed', 'batch_gcds'])
-    result = dict(n=case['n'], bits=int(case['n']).bit_length(), factors=[], remaining=[case['n']],
+    agree(case, work, work_keys)
+    result = dict(n=case['n'], bits=n.bit_length(), factors=[], remaining=[case['n']],
                   status='partial', verified=False, verification_seconds=None, certificate_seconds=None,
-                  discovery_seconds=search_seconds, reduced_order=dict(work, base=case['base'], stride=case['stride']))
+                  discovery_seconds=search_seconds)
+    result[key] = dict(work, base=base, stride=stride)
     if factor is not None:
         certificate_start = time.perf_counter()
         checked = cli(['scripts/factor.py', case['n'], '--factor-hint', factor, '--max-steps', 0,
@@ -58,8 +67,8 @@ def run_case(case, method, proofs):
     proof = proofs / f'{name}.lean'
     start = time.perf_counter()
     complete = case['status'] == 'complete'
-    if method == 'reduced-order':
-        result = reduced_case(case, proof)
+    if method in ('reduced-order', 'cyclotomic'):
+        result = period_case(case, method, proof)
     else:
         factor_args = ['scripts/factor.py', case['n'], '--max-steps', case.get('max_steps', 0),
                        '--verify', '--lean', proof, '--method', method]
@@ -121,8 +130,11 @@ def main():
     proofs.mkdir(parents=True, exist_ok=True)
     results = []
     for filename, method in [('cases.json', 'fermat'), ('subgroup.json', 'subgroup'),
-                             ('shifted.json', 'shifted'), ('reduced-orders.json', 'reduced-order')]:
+                             ('shifted.json', 'shifted'), ('reduced-orders.json', 'reduced-order'),
+                             ('cyclotomic-periods.json', 'cyclotomic')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
+        if method == 'cyclotomic':
+            cases = expand_cases(cases)
         for case in cases:
             result = run_case(case, method, proofs)
             results.append(result)

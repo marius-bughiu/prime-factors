@@ -1,11 +1,15 @@
 import PrimeFactors.AdditiveCover
 import PrimeFactors.AnalyticAccess
+import PrimeFactors.BitMarginals
 import PrimeFactors.BlockCharacters
 import PrimeFactors.Certificate
 import PrimeFactors.ClassNumberWindow
+import PrimeFactors.CountingReadout
+import PrimeFactors.CyclotomicPeriods
 import PrimeFactors.DiscriminantPencil
 import PrimeFactors.DivisorSignal
 import PrimeFactors.DivisorSum
+import PrimeFactors.FactorCircuit
 import PrimeFactors.FactorSum
 import PrimeFactors.FactorSumCRT
 import PrimeFactors.FejerProjection
@@ -15,6 +19,7 @@ import PrimeFactors.IntervalGap
 import PrimeFactors.Isolation
 import PrimeFactors.JointPeriod
 import PrimeFactors.LongPeriod
+import PrimeFactors.LowProductRank
 import PrimeFactors.ManyDiscriminants
 import PrimeFactors.MixedHeights
 import PrimeFactors.MultipleShift
@@ -26,6 +31,7 @@ import PrimeFactors.Pratt
 import PrimeFactors.PrimePower
 import PrimeFactors.ReducedSlopes
 import PrimeFactors.ResidueCount
+import PrimeFactors.ReverseSweep
 import PrimeFactors.SampledSieve
 import PrimeFactors.SeparatedPairs
 import PrimeFactors.ShiftCubic

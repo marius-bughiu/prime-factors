@@ -2,6 +2,10 @@
 
 What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/character-conjectures.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
+## One circuit can read every bit of the factor sum
+
+Tag each bit on one input of a multiplication circuit, then count the assignments whose product is $N$. One forward and one reverse pass over the tagged arithmetic circuit give the number of factors with each bit set. Every count fits in the field of three elements. The resulting integer sum determines both factors of **any product of two distinct primes**. Lean checks the readout. The cost of constructing the circuit remains the limiting step. On $595489=641\cdot929$, the example used 157,515 compatible row joins to build a circuit with seven reachable arithmetic gates. [Derivation, upstream factoring proof and limits](discoveries/counting-the-factor-sum.md) · [Reproducible experiments](experiments/bit_marginals.py)
+
 ## Two square roots factor a structured 2048-bit input
 
 Suppose $N=pq$ with $p\le q\le2p$ and $(2p+1)(2q+1)$ square. Set $a=\lceil\sqrt N\rceil$ and $h=a(a+1)-N$. Then $h=(p+q)/2$ and the two factors are $h\pm\sqrt{h^2-N}$. The search receives just the product and checks its answer. On a constructed 2048-bit input it recovers two 1024-bit primes with zero Fermat iterations. Lean checks the general formula and both primes in the example. A balanced control misses the formula and remains unresolved at the same budget. [Derivation and limits](discoveries/square-collision-density.md) · [Input and control](benchmarks/shifted.json)
@@ -13,6 +17,8 @@ A paper argument using prime distribution proves the formula succeeds on infinit
 If the prime predecessors share a large divisor $g=\gcd(p-1,q-1)$, raising a unit to $N-1$ produces coprime periods at the two primes. A search given only $N$, a base and a table budget recovered a different 2048-bit product with 86 entries per table. The bound depends on the smaller residual period. [Proofs, costs and prior work](discoveries/common-predecessors.md) · [Product-only fixtures](benchmarks/reduced-orders.json)
 
 How often does this structure occur? For primes chosen in $[X,2X]$ and fixed $0<\alpha<1$, the proportion with $g\ge X^\alpha$ has order $X^{-\alpha}$. For $\alpha\le1/2$ the paper proof also gives the leading constant $\zeta(2)\zeta(3)/\zeta(6)$. The result is asymptotic. [Counting argument and its hypotheses](discoveries/common-divisor-frequency.md)
+
+A third 2048-bit example uses $N^3-1$. All four $\gcd(p\pm1,q\pm1)$ are at most 12, yet a factor of $p-1$ divides $q^2+q+1$ and leaves a local period of 53. Eight entries in each table suffice. The first two exponent choices exhaust that same budget. The constructed input also has a short weighted Fermat route. [Theorem, counting argument and comparison](discoveries/cyclotomic-periods.md) · [Certified examples and controls](benchmarks/cyclotomic-periods.json)
 
 ## Conjectures from the Dirichlet L-function proof
 

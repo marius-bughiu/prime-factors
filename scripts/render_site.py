@@ -37,12 +37,19 @@ def case_row(result):
         count = f'Subgroup search · {w["bases_tested"]} {unit} tested · inclusive limit {w["max_base"]}'
         if w['status'] == 'split':
             count += f' · witness {w["witness_base"]}'
-    elif result['method'] == 'reduced-order':
-        w = result['reduced_order']
-        count = (f'Reduced-order search · base {w["base"]} · {escape(w["outcome"])} · '
+    elif result['method'] in ('reduced-order', 'cyclotomic'):
+        if result['method'] == 'cyclotomic':
+            w = result['cyclotomic']
+            label = f'Cyclotomic period search · exponent N^{w["degree"]} − 1'
+        else:
+            w = result['reduced_order']
+            label = 'Reduced-order search'
+        count = (f'{label} · base {w["base"]} · {escape(w["outcome"])} · '
                  f'{w["entries_per_table"]} of {w["stride"]} entries built per table · '
-                 f'{w["giants_probed"]} giant probes · {w["batch_gcds"]} batch gcds · '
-                 f'search {duration(result["discovery_seconds"])}')
+                 f'{w["giants_probed"]} giant probes · {w["batch_gcds"]} batch gcds')
+        if result['method'] == 'cyclotomic':
+            count += f' · {w["halving_gcds"]} halving gcds'
+        count += f' · search {duration(result["discovery_seconds"])}'
         if checked:
             verification += f' (certificate generation and replay {duration(result["certificate_seconds"])})'
     elif result['method'] == 'shifted':

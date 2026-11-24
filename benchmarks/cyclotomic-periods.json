@@ -1,0 +1,116 @@
+[
+  {
+    "n": "5516692220419344918319",
+    "base": 2,
+    "stride": 6,
+    "trials": [
+      {
+        "degree": 1,
+        "factors": [],
+        "id": "cubic-period-73bit-degree-1",
+        "description": "73-bit cubic period experiment, degree 1",
+        "status": "partial",
+        "outcome": "table exhausted",
+        "entries_per_table": 6,
+        "giants_probed": 6,
+        "batch_gcds": 6,
+        "halving_gcds": 0
+      },
+      {
+        "degree": 2,
+        "factors": [],
+        "id": "cubic-period-73bit-degree-2",
+        "description": "73-bit cubic period experiment, degree 2",
+        "status": "partial",
+        "outcome": "table exhausted",
+        "entries_per_table": 6,
+        "giants_probed": 6,
+        "batch_gcds": 6,
+        "halving_gcds": 0
+      },
+      {
+        "degree": 3,
+        "factors": [
+          "58000000523",
+          "95115382253"
+        ],
+        "id": "cubic-period-73bit",
+        "description": "73-bit cubic period experiment, degree 3",
+        "status": "complete",
+        "outcome": "batched evaluation at baby 1",
+        "entries_per_table": 6,
+        "giants_probed": 6,
+        "batch_gcds": 2,
+        "halving_gcds": 0
+      }
+    ]
+  },
+  {
+    "n": "22281169184528828708152611529580391409923161950257547236858060731151016185687654381943707769548961385043748239932645290106356969869920382645147795716811749186704525298352021283732736920858212234419235834596879904687879614921625104061704223228236525210273666229971090381476660452574213682868913387123666956677431378285337573008866865675650574790868495603873748962781457030934936779511252000383209646193904743834879106291901744585435779363926512771937102881326034615431560779979097029167641088005228790827586246959110402625696759312658417705221206908835935469818877403759612355231736146754553758950654876207902246305899",
+    "base": 2,
+    "stride": 8,
+    "trials": [
+      {
+        "degree": 1,
+        "factors": [],
+        "id": "cubic-period-2048bit-degree-1",
+        "description": "2048-bit cubic period experiment, degree 1",
+        "status": "partial",
+        "outcome": "table exhausted",
+        "entries_per_table": 8,
+        "giants_probed": 8,
+        "batch_gcds": 8,
+        "halving_gcds": 0
+      },
+      {
+        "degree": 2,
+        "factors": [],
+        "id": "cubic-period-2048bit-degree-2",
+        "description": "2048-bit cubic period experiment, degree 2",
+        "status": "partial",
+        "outcome": "table exhausted",
+        "entries_per_table": 8,
+        "giants_probed": 8,
+        "batch_gcds": 8,
+        "halving_gcds": 0
+      },
+      {
+        "degree": 3,
+        "factors": [
+          "146425306376243575323611154453185803519641669055868041752053512887893397092249006660188683279930324796553721510732096833071147766616007993125443224022876978517217894017913626982690178968629808951895099505265871819196608602219244587865553715040163654582184812102051592917095500941345600288015159412502179086337",
+          "152167475253743323375517474235663678167470754116882474761937964373693138154690144176274513996790337533673475295466688865740604541777420071287225311239460264299544362267582151769270449976182127740342831822768461481321874775729427297130269154701903763670471004117897892233402524694406048173554476115166568120427"
+        ],
+        "id": "cubic-period-2048bit",
+        "description": "2048-bit cubic period experiment, degree 3",
+        "status": "complete",
+        "outcome": "batched evaluation at baby 3",
+        "entries_per_table": 8,
+        "giants_probed": 8,
+        "batch_gcds": 4,
+        "halving_gcds": 0
+      }
+    ]
+  },
+  {
+    "n": "15",
+    "base": 2,
+    "stride": 1,
+    "trials": [
+      {
+        "degree": 2,
+        "factors": [
+          "3",
+          "5"
+        ],
+        "id": "identity-halving-15",
+        "description": "Identity base split by halving",
+        "status": "complete",
+        "outcome": "identity split by halving",
+        "entries_per_table": 0,
+        "giants_probed": 0,
+        "batch_gcds": 0,
+        "halving_gcds": 2
+      }
+    ]
+  }
+]

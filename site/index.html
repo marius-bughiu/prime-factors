@@ -17,7 +17,7 @@
   </section>
   <section class="methods" id="theory"><h2>What the proofs establish</h2>
     <div class="columns"><article><h3>Two square roots on a 2048-bit input</h3><p>When (2p + 1)(2q + 1) is a square and the primes are balanced, two integer square roots determine both factors. The benchmark receives only the product.</p><a href="$tree/discoveries/square-collision-density.md#a-family-with-a-product-only-formula">Read the proof and its assumptions</a></article>
-    <article><h3>Recover the sum by matching powers</h3><p>For every unit modulo <i>N</i>, raising it to <i>p + q</i> gives the same value as raising it to <i>N + 1</i>. Two short lists of powers can test many possible sums at once.</p><a href="$tree/discoveries/searching-the-balanced-interval.md#matching-powers-to-recover-the-sum">Read the work bound</a></article>
+    <article><h3>Read every bit from one circuit</h3><p>A tagged multiplication circuit gives the factor sum in one forward and one reverse pass. At ten bits per factor, building the circuit took 157,515 row joins. The reverse pass used seven arithmetic gates.</p><a href="$tree/discoveries/counting-the-factor-sum.md">See the proof and measured cost</a></article>
     <article><h3>One L-value determines the sum</h3><p>A single boundary reading at height 1 determines the sum of two balanced primes to the nearest integer. Obtaining the reading efficiently remains open.</p><a href="$tree/discoveries/reading-the-boundary.md">See the required accuracy</a></article></div>
   </section>
   <section id="runs"><div class="section-title"><h2>Worked computational examples</h2><a href="results.json">Download run data</a></div>
