@@ -4,6 +4,16 @@ Suppose the only input is a 2,048-bit product $N=pq$ of two distinct odd primes.
 
 For $667$, the first four measurements recovered $23\cdot29$ with 2,464 terms, down from 12,936 in the earlier experiment. The direct evaluation still examines the units modulo $N$. Just building their table encounters the factors. The 2,048-bit figures describe the measurements needed by the decoder. No practical method of producing those readings on a general input is known here. [Product-only examples and capped control](../benchmarks/salie-residues.json) · [An independent asymptotic evaluator](counting-salie-phases.md)
 
+## What the full-size test shows
+
+We reused a certified fixture with two known 1,024-bit primes. One program used those primes to generate all 89 rounded sums. A separate process received only the 2,048-bit product and the 89 signed integers. It recovered one prime after 178 Chinese remainder updates and two square tests. Exact division gives the other prime. The decoder checked all 89 rounding decisions using bounds valid for every value in each rounding interval. The test exercises recovery from supplied readings. An efficient way to generate those readings from the product alone would be needed for a general factoring method. [Reference implementation](../experiments/salie_reference.py) · [Replay test](../tests/test_salie_reference.py) · [Fixture with certified primes](../benchmarks/continued-square.json)
+
+```sh
+python3 experiments/salie_reference.py --emit | python3 experiments/salie_reference.py --decode
+```
+
+A paper variant uses up to 43 adaptively chosen measurements and a lattice calculation. Another result asks how much one would have to predict from the product. For a fixed input, a predictor that can be queried at chosen frequencies and guesses a particular sign correctly on 51% of uniformly random frequencies would suffice for a randomized reduction. We have no efficient predictor with that guarantee for arbitrary inputs. [Adaptive measurements](scaling-a-salie-anchor.md) · [Weak sign prediction](predicting-random-salie-signs.md)
+
 ## Why one reading per small prime suffices
 
 Pick a nontrivial square root $h$ of one modulo $N$. There are exactly two, differing by sign. Completing either one gives a factor through $\gcd(h-1,N)$. At frequency $t$ the normalized sum satisfies

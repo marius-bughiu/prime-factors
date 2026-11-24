@@ -13,6 +13,7 @@ exec lake env lean --run .lake/packages/mathlib/Cache/Main.lean get \
   Mathlib.NumberTheory.LegendreSymbol.QuadraticReciprocity Mathlib.NumberTheory.PrimesCongruentOne \
   Mathlib.NumberTheory.JacobiSum.Basic Mathlib.NumberTheory.LegendreSymbol.QuadraticChar.Basic \
   Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds \
+  Mathlib.Data.Finset.Max Mathlib.Data.Int.Interval Mathlib.Data.Int.ModEq Mathlib.Data.Real.Archimedean \
   Mathlib.NumberTheory.LSeries.Nonvanishing Mathlib.Data.Nat.Squarefree Mathlib.Data.Fintype.BigOperators \
   Mathlib.FieldTheory.Finite.Basic Mathlib.NumberTheory.ArithmeticFunction Mathlib.NumberTheory.Harmonic.EulerMascheroni \
   Mathlib.Data.List.Prime Mathlib.Data.Nat.Factorization.Basic Mathlib.Data.Nat.Choose.Lucas Mathlib.NumberTheory.LucasPrimality Mathlib.Tactic.Linarith \

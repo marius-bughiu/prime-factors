@@ -1,6 +1,7 @@
 import PrimeFactors.ActualSigns
 import PrimeFactors.AdditiveCover
 import PrimeFactors.AnalyticAccess
+import PrimeFactors.AnchorScale
 import PrimeFactors.ApproximateTotient
 import PrimeFactors.BatchIntervals
 import PrimeFactors.BitMarginals
@@ -54,6 +55,7 @@ import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder
 import PrimeFactors.PascalProjection
 import PrimeFactors.PascalReadout
+import PrimeFactors.PhaseBlocks
 import PrimeFactors.PhaseResidues
 import PrimeFactors.PhaseSchedules
 import PrimeFactors.PhaseSeparation
@@ -89,6 +91,7 @@ import PrimeFactors.SumGaps
 import PrimeFactors.TotientTensor
 import PrimeFactors.TruncatedProduct
 import PrimeFactors.TruncatedWindow
+import PrimeFactors.WeakPhase
 import PrimeFactors.WeightedBands
 import PrimeFactors.WeightedCollision
 import PrimeFactors.WideModulus

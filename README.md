@@ -10,7 +10,9 @@ Imagine drawing all whole-number pairs whose product is at least the input. For 
 
 ## Coarse measurements that reveal both primes
 
-For a 2,048-bit product of two distinct odd primes, **89 predetermined measurements** suffice to recover both primes by ordinary integer arithmetic. Each measurement is a sum computed from the product and rounded to 53 fractional bits. Lean also checks a 233-measurement schedule needing at most 29 fractional bits per sum. On 667, the smaller-prime schedule took four measurements and 2,464 terms and gave the primes 23 and 29. An earlier method took 21 measurements and 12,936 terms on the same input. Computing the individual measurements cheaply at 2,048 bits remains open. [Why these measurements suffice](discoveries/recovering-residues-from-sums.md) · [Checked examples and capped run](benchmarks/salie-residues.json) · [Earlier measurement method](discoveries/divisor-samples.md)
+In a test on a 2,048-bit product, one program used the **known primes** to generate 89 rounded values. A second program received only the product and those values and recovered both primes. We know a formula for each value that uses only the product. Finding a cheap way to compute the values from that formula is the missing step. [Full-size test and proof](discoveries/recovering-residues-from-sums.md#what-the-full-size-test-shows)
+
+The same 89 measurements suffice for any 2,048-bit product of two distinct odd primes when rounded to 53 fractional bits. Lean also checks a 233-measurement schedule needing at most 29 fractional bits per sum. On the small input 667, we could compute the sums directly from the product. Four sums took 2,464 terms and gave 23 and 29. [Checked examples and capped run](benchmarks/salie-residues.json) · [Earlier measurement method](discoveries/divisor-samples.md)
 
 ## What the Riemann proof contributes
 
