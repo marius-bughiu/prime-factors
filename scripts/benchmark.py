@@ -77,6 +77,11 @@ def cpu_name():
         for line in proc.read_text().splitlines():
             if line.startswith('model name'):
                 return line.split(':', 1)[-1].strip()
+    if platform.system() == 'Darwin':
+        info = subprocess.run(['/usr/sbin/sysctl', '-n', 'machdep.cpu.brand_string'],
+                              capture_output=True, text=True)
+        if info.returncode == 0 and info.stdout.strip():
+            return info.stdout.strip()
     return platform.processor() or platform.machine()
 
 
