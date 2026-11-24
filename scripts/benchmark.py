@@ -17,6 +17,7 @@ if str(ROOT) not in sys.path:
 
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.divisor_samples import search as divisor_sample_search
+from experiments.salie_residues import search as salie_residue_search
 from experiments.midpoint_readings import search as midpoint_readings_search
 from experiments.short_basis_sieve import search as short_basis_search
 from experiments.wide_modulus import search as wide_modulus_search
@@ -107,14 +108,20 @@ def run_case(case, method, proofs):
         agree(case, work, ['low_classes', 'modular_hits'])
         factor = pairs[0][0] if pairs else None
         result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
-    elif method == 'divisor-samples':
-        work = divisor_sample_search(int(case['n']), case['max_terms'])
+    elif method in ('divisor-samples', 'salie-residues'):
+        search, key = ((salie_residue_search, 'salie_residues') if method == 'salie-residues'
+                       else (divisor_sample_search, 'divisor_samples'))
+        work = search(int(case['n']), case['max_terms'])
         elapsed = time.perf_counter() - start
         factor = work.pop('factor')
-        agree(case, work, ['outcome', 'root', 'anchor', 'terms', 'sums', 'unit_gcds',
-                           'inverses', 'jacobi_evaluations', 'frequency_gcds'])
+        common = ['outcome', 'root', 'terms', 'sums', 'unit_gcds', 'inverses',
+                  'jacobi_evaluations', 'frequency_gcds']
+        counters = (['multiplier', 'coefficient', 'prime_gcds', 'frequency_inverses',
+                     'crt_updates', 'square_tests', 'prime_count', 'last_prime', 'max_precision_bits']
+                    if method == 'salie-residues' else ['anchor'])
+        agree(case, work, common + counters)
         work['max_terms'] = case['max_terms']
-        result = certify_split(case, proof, factor, elapsed, 'divisor_samples', work)
+        result = certify_split(case, proof, factor, elapsed, key, work)
     elif method == 'wide-modulus':
         work = wide_modulus_search(int(case['n']), **case['parameters'])
         elapsed = time.perf_counter() - start
@@ -244,6 +251,7 @@ def main():
                              ('short-basis.json', 'short-basis'), ('wide-modulus.json', 'wide-modulus'),
                              ('pascal.json', 'pascal'), ('midpoint-readings.json', 'midpoint-readings'),
                              ('divisor-samples.json', 'divisor-samples'),
+                             ('salie-residues.json', 'salie-residues'),
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())

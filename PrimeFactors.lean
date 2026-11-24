@@ -54,6 +54,9 @@ import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder
 import PrimeFactors.PascalProjection
 import PrimeFactors.PascalReadout
+import PrimeFactors.PhaseResidues
+import PrimeFactors.PhaseSchedules
+import PrimeFactors.PhaseSeparation
 import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
 import PrimeFactors.PredecessorCount

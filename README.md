@@ -10,7 +10,7 @@ Imagine drawing all whole-number pairs whose product is at least the input. For 
 
 ## Coarse measurements that reveal both primes
 
-For any product of two distinct odd primes, a sequence of measurements called Salié sums determines a number whose square leaves remainder one. Its two neighbors reveal the primes by ordinary greatest common divisors. The measurements can be quite rough. At 667, rounding each to the nearest 1/256 still gave 436, with $\gcd(435,667)=29$ and $\gcd(437,667)=23$. Directly computing the 21 measurements used 12,936 terms. Computing them cheaply for large products is the open step. [Derivation and sampling costs](discoveries/divisor-samples.md) · [Checked examples and capped run](benchmarks/divisor-samples.json)
+For a 2,048-bit product of two distinct odd primes, **89 predetermined measurements** suffice to recover both primes by ordinary integer arithmetic. Each measurement is a sum computed from the product and rounded to 53 fractional bits. Lean also checks a 233-measurement schedule needing at most 29 fractional bits per sum. On 667, the smaller-prime schedule took four measurements and 2,464 terms and gave the primes 23 and 29. An earlier method took 21 measurements and 12,936 terms on the same input. Computing the individual measurements cheaply at 2,048 bits remains open. [Why these measurements suffice](discoveries/recovering-residues-from-sums.md) · [Checked examples and capped run](benchmarks/salie-residues.json) · [Earlier measurement method](discoveries/divisor-samples.md)
 
 ## What the Riemann proof contributes
 
