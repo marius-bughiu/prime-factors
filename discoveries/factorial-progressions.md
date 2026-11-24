@@ -14,7 +14,7 @@ Let $R$ be the invertible residues between 1 and $W-1$, let $b$ be a multiple of
 $$
 F_h(j)=\prod_{s=0}^{h-1}\prod_{r\in R}\bigl(b+W(hj+s)+r\bigr).
 $$
-Its degree is $d=h|R|$. Pairing neighboring blocks gives $F_{2h}(j)=F_h(2j)F_h(2j+1)$. Lean proves this identity for any commutative monoid and verifies that complete blocks and the remaining cycles cover the interval exactly. [Block and coverage proofs](../PrimeFactors/FactorialProgressions.lean)
+Its degree is $d=h|R|$. Pairing neighboring blocks gives $F_{2h}(j)=F_h(2j)F_h(2j+1)$. Lean proves this identity for any commutative monoid and verifies that the blocks and their tail cover all complete wheel cycles. The implementation handles partial cycles at the original interval edges directly. The tests compare its full result with literal multiplication. [Block and coverage proofs](../PrimeFactors/FactorialProgressions.lean) · [Edge and interval tests](../tests/test_factorial_progressions.py)
 
 Once $F_h(0),\ldots,F_h(d)$ are known, the next doubling needs more values at consecutive integer indices.
 

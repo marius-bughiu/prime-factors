@@ -22,6 +22,8 @@ $$
 
 This identifies a specific computation required of any routine that could supply that trace bit for arbitrary Jacobi-positive $a$ on this prime class. The equivalence gives neither an evaluator nor a factoring lower bound. Goldwasser and Micali formulated the composite quadratic residuosity problem for a unit of Jacobi symbol $+1$. [Original paper, §4](https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Encryption/Probabilistic_Encryption.pdf)
 
+Hittmeir gives another expression for exactly this decision. In this class $N\equiv5\pmod8$, so the power of two dividing $N-1$ is exactly four. His Theorem 6.2 gives $T_{2a}(N)\equiv8\pmod{16}$ precisely when the **rational eighth-power residue symbol** of $a^4$ at $N$ is $+1$. At $q\equiv5\pmod8$ every fourth power is already an eighth power. At $p\equiv1\pmod8$, $a^4$ is an eighth power exactly when $a$ is a square. This identifies a second route to the same bit. Computing that rational symbol efficiently from an unfactored $N$ is itself the missing step. [Hittmeir, Theorem 6.2 and definition of the symbol](https://arxiv.org/pdf/1604.07791#page=15)
+
 ## Which congruences can predict the bit?
 
 Directly summing the Jacobi symbol at every $x\bmod N$, using the first $d\ge2$ of Jacobi symbol $-1$, gives the following values. The first pair shares $N\equiv761\pmod{1536}$ and gives opposite slope bits modulo 4. The second pair shares $N\equiv853\pmod{4096}$ on the $d=2$ branch and gives different slopes modulo 8. [Jacobi routine](../experiments/mixed_ratio_heights.py)
