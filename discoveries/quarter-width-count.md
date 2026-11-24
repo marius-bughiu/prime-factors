@@ -40,10 +40,26 @@ The deliberately undersized four-bit box for 51 returns zero because 17 lies out
 
 ~~~sh
 python3 experiments/quarter_residue.py --fixtures
-python3 experiments/quarter_residue.py 143 --compare-bits
+python3 experiments/quarter_residue.py 143 --compare-bits --unit-tags
 ~~~
 
-As a control, pin each of the $k$ low bits of $y$ to one in a separate copy of the same ordered network and count modulo two. There is exactly one ordered solution, so those $k$ readings return the same residue. At 143 the two independent bit queries used 122,482 total compatible row joins, compared with 61,315 for the joint count. Both peaked at 32,896 rows. At 667 the three independent queries used 17,015 joins, compared with 5,555 for the joint count. Each bit query here performs its own elimination. The control does not price an implementation that shares intermediate tables across queries.
+Another way of obtaining the residue removes the auxiliary $t$ register from the graph. Retain the ordering and give each bit of $y$ an independent weight, whose product is
+$$
+W(y)=(-1)^{\lfloor y/2\rfloor\bmod2}5^{\lfloor y/4\rfloor}\pmod{2^k}.
+$$
+For an odd prime $q$ and $k\ge2$, the single surviving pair returns $W(q)$. Its value modulo four gives the sign. After removing the sign, repeated squaring lifts the exponent one bit at a time, recovering $q\bmod2^k$ in $k-2$ squarings and at most $k-2$ additional modular multiplications. The weights attach to existing inputs and add no Boolean comparison gates. For $12827=101\cdot127$, one contraction returns $3$ modulo 16. The decoder returns $15=127\bmod16$. [Lean encoding and decoder](../PrimeFactors/DyadicReadout.lean)
+
+To compare actual work, pin each low bit of $y$ to one in a separate copy of the ordered graph and add up the row joins across independent eliminations. Since $q$ is odd, a competitive control can skip its lowest bit. The counts below include that version. All four methods have the same peak table size within each row. These independent queries do not share intermediate tables.
+
+| Input and box | Slack count | Signed weights | All $k$ bit queries | $k-1$ queries using oddness |
+| --- | ---: | ---: | ---: | ---: |
+| 51, full | 4,783 | 4,743 | 9,516 | 4,743 |
+| 77, full | 24,009 | 23,995 | 47,997 | 23,998 |
+| 143, full | 61,315 | 61,177 | 122,482 | 61,177 |
+| 667, balanced | 5,555 | 5,660 | 17,015 | 11,325 |
+| 12827, balanced | 66,488 | 66,312 | 265,394 | 198,954 |
+
+Removing the slack comparator saves 176 joins on 12827 and adds 105 on 667. The changed elimination order matters even when the output equals the same residue. A separate experiment measures what happens when leading product bits are removed from this network. [Exact guards and measurements](truncated-products.md)
 
 There is a second comparison at identical input widths. The ternary reverse-sweep experiment finds the **whole factor sum** without the ordering and slack comparators. On 143 its full-width network used 24,025 joins and peaked at 4,096 rows. On 667 the balanced network used 4,438 joins and peaked at 1,176 rows. At these sizes the smaller output of the quarter-width method costs more construction work than the ternary readout. [Ternary construction and measurements](counting-the-factor-sum.md)
 

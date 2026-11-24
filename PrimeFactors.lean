@@ -10,6 +10,7 @@ import PrimeFactors.DiscriminantPencil
 import PrimeFactors.DivisorSignal
 import PrimeFactors.DivisorSum
 import PrimeFactors.DivisorTensor
+import PrimeFactors.DyadicReadout
 import PrimeFactors.ExponentialReadout
 import PrimeFactors.FactorCircuit
 import PrimeFactors.FactorSum
@@ -32,6 +33,7 @@ import PrimeFactors.PartialOrder
 import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
 import PrimeFactors.PrimePower
+import PrimeFactors.ProductPrefix
 import PrimeFactors.ReducedSlopes
 import PrimeFactors.ResidueCount
 import PrimeFactors.ReverseSweep
@@ -45,4 +47,6 @@ import PrimeFactors.SieveInterval
 import PrimeFactors.SignatureCount
 import PrimeFactors.Subgroup
 import PrimeFactors.TotientTensor
+import PrimeFactors.TruncatedProduct
+import PrimeFactors.TruncatedWindow
 import PrimeFactors.WeightedCollision

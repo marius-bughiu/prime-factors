@@ -121,13 +121,18 @@ class Multiplier:
         return low, high
 
 
-def multiplier_tables(n, width, tape=None):
+def multiplier_tables(n, width, tape=None, *, output_bits=None):
+    """Pin the low output bits. Retaining at least width keeps every input wire live."""
+    if output_bits is None:
+        output_bits = 2 * width
+    if not 1 <= width <= output_bits <= 2 * width:
+        raise ValueError("retain between width and 2*width output bits")
     net = Multiplier(width)
-    columns = [[] for _ in range(2 * width)]
+    columns = [[] for _ in range(output_bits)]
     for i, x in enumerate(net.xs):
         if tape is not None:
             net.tables.append(Table(x, {0: 1, x: tape.tags[i]}))
-        for j, y in enumerate(net.ys):
+        for j, y in enumerate(net.ys[:output_bits - i]):
             out = net.wire()
             net.relation([x, y, out], lambda a, b, c: (a & b) == c)
             columns[i + j].append(out)
@@ -139,9 +144,14 @@ def multiplier_tables(n, width, tape=None):
             arity = min(3, len(column))
             inputs = column[:arity]
             del column[:arity]
-            low, high = net.adder(inputs)
+            if i + 1 < output_bits:
+                low, high = net.adder(inputs)
+                columns[i + 1].append(high)
+            else:
+                # Carries leaving the retained word contribute zero modulo its radix.
+                low = net.wire()
+                net.relation([*inputs, low], lambda *bits: sum(bits[:-1]) % 2 == bits[-1])
             column.append(low)
-            columns[i + 1].append(high)
         bit = (n >> i) & 1
         if column:
             net.tables.append(Table(column[0], {column[0] * bit: 1}))

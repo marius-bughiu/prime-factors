@@ -38,6 +38,8 @@ A second investigation bounds how many modular square tests suffice for every di
 
 ## What reduces the work?
 
+- **The highest product bits can be replaced by exact tests on the candidate factors.** For a balanced product, one interval on $17x+12y$ replaces the five highest product bits. At 2048 bits, 1,025 public intervals can replace 24 bits. A second construction works for any bounded factors and tests their leading bits directly. In small networks it both saved and added work, depending on the inputs and the number of bits removed. [Proofs, counterexample and measured costs](discoveries/truncated-products.md)
+
 - **Choosing a shift has a provable cost.** At factor width $b$, even a list of $2^{b/2}/b^4$ rational functions of the product misses almost all balanced prime pairs as $b$ grows, under polynomial degree and coefficient-size bounds. This unconditional counting result explains why extending the successful two-square-root formula requires more structure. [Paper bound and Lean components](discoveries/large-sieve-for-shifts.md)
 - **Several false midpoints can reveal a factor.** Lean gives sufficient conditions for a square-product triple to split the input and checks a split of 723889. Short triples of this kind are absent for most balanced inputs. [Witness, counterexamples and counting argument](discoveries/multiple-discriminants.md)
 

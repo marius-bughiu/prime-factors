@@ -5,6 +5,11 @@ The --balanced option uses the public bound q <= isqrt(2*n) for q <= 2p.
 For distinct prime factors p < q in the box, the count is q modulo 2**k.
 The output is a residue. For a general product it sums the larger member
 of every nontrivial ordered pair, modulo the same modulus.
+
+For an odd semiprime, --unit-tags uses unary weights on the second input
+bits. Combine it with --compare-bits to measure all three constructions.
+Decoding a unit assumes a unique selected pair. An odd number of pairs
+can produce a unit too.
 """
 
 import argparse
@@ -77,10 +82,13 @@ def ordered_network(n, balanced):
 
 def read_residue(n, *, balanced=False):
     net, width, k = ordered_network(n, balanced)
-    modulus = 1 << k
     free_bits = [net.wire() for _ in range(k)]
     require_comparison(net, free_bits, net.ys[:k], strict=True)
+    return count_network(n, width, k, balanced, net)
 
+
+def count_network(n, width, k, balanced, net):
+    modulus = 1 << k
     counter = ModularCounter(modulus)
     residue, stats = contract(net, counter)
     return dict(n=str(n), width=width, balanced=balanced, k=k, modulus=str(modulus),
@@ -90,12 +98,61 @@ def read_residue(n, *, balanced=False):
                 additions=counter.additions, multiplications=counter.multiplications)
 
 
-def compare_bit_queries(n, *, balanced=False):
+def decode_unit(scalar, k):
+    """Invert (-1)**bit1 * 5**(y//4) modulo 2**k on odd y residues."""
+    if scalar % 2 == 0:
+        return None
+    if k == 1:
+        return 1
+    modulus = 1 << k
+    sign = int(scalar % 4 == 3)
+    target = (-scalar if sign else scalar) % modulus
+    exponent = 0
+    value, power = 1, 5 % modulus
+    for j in range(k - 2):
+        # 5**(2**j) agrees with 1 up to bit j+1 and toggles bit j+2.
+        if (value ^ target) & (1 << (j + 2)):
+            exponent += 1 << j
+            value = value * power % modulus
+        power = power * power % modulus
+    return 1 + 2 * sign + 4 * exponent
+
+
+def read_unit_residue(n, *, balanced=False):
+    net, width, k = ordered_network(n, balanced)
+    modulus = 1 << k
+    power = 5 % modulus
+    tagged_entries = 0
+    for i, wire in enumerate(net.ys[1:k], start=1):
+        unit = modulus - 1 if i == 1 else power
+        # The first table incident to this bit is a three-wire AND.
+        # Fuse the unary weight into that local predicate, preserving all scopes.
+        table = next(t for t in net.tables if t.scope & wire)
+        for bits, value in table.rows.items():
+            if bits & wire:
+                table.rows[bits] = value * unit % modulus
+                tagged_entries += 1
+        if i >= 2:
+            power = power * power % modulus
+    result = count_network(n, width, k, balanced, net)
+    scalar = int(result["residue"])
+    decoded = decode_unit(scalar, k) if n % 2 else None
+    result.update(scalar=str(scalar), residue=None if decoded is None else str(decoded),
+                  tagged_entries=tagged_entries,
+                  status="unresolved" if decoded is None else "conditional",
+                  assumption="product of two distinct odd primes inside the selected box")
+    if decoded is None:
+        result["reason"] = "product is even" if n % 2 == 0 else "scalar is even"
+    return result
+
+
+def compare_bit_queries(n, *, balanced=False, include_units=False):
     """Measure the same semiprime residue using k one-bit counts on the same multiplier."""
     one = read_residue(n, balanced=balanced)
     net, _, k = ordered_network(n, balanced)
     residue = 0
     joins = peak = 0
+    parity_query_joins = 0
     counter = ModularCounter(2)
     for i, wire in enumerate(net.ys[:k]):
         net.tables.append(Table(wire, {wire: 1}))
@@ -104,22 +161,45 @@ def compare_bit_queries(n, *, balanced=False):
         residue += value << i
         joins += stats.matched_rows
         peak = max(peak, stats.peak_rows)
-    return dict(single=one, bit_queries=dict(residue=str(residue), calls=k,
-                matched_rows=joins, peak_rows=peak, additions=counter.additions,
-                multiplications=counter.multiplications))
+        if i == 0:
+            parity_query_joins = stats.matched_rows
+    comparison = dict(single=one, bit_queries=dict(residue=str(residue), calls=k,
+                      matched_rows=joins, peak_rows=peak, additions=counter.additions,
+                      multiplications=counter.multiplications))
+    if include_units:
+        comparison["unit_tags"] = read_unit_residue(n, balanced=balanced)
+        if n % 2:
+            comparison["bit_queries"]["assuming_odd_pair"] = dict(
+                calls=k - 1, matched_rows=joins - parity_query_joins)
+    return comparison
 
 
-def run_fixtures():
+def run_fixtures(*, unit_tags=False, compare_bits=False):
     for case in json.loads(FIXTURES.read_text()):
-        result = read_residue(int(case["n"]), balanced=case.get("balanced", False))
+        n = int(case["n"])
+        balanced = case.get("balanced", False)
+        if compare_bits:
+            output = compare_bit_queries(n, balanced=balanced, include_units=unit_tags)
+            result = output["single"]
+        else:
+            reader = read_unit_residue if unit_tags else read_residue
+            output = result = reader(n, balanced=balanced)
         # Read the reference factors only after the contraction is complete.
         p, q = map(int, case["factors"])
         if not 1 < p < q or p * q != int(result["n"]):
             raise AssertionError(f"invalid fixture reference pair for {case['id']}")
-        expected = q % int(result["modulus"]) if q < 1 << result["width"] else 0
-        if int(result["residue"]) != expected:
+        fits = q < 1 << result["width"]
+        expected = str(q % int(result["modulus"])) if fits else "0"
+        if unit_tags:
+            weighted = output["unit_tags"] if compare_bits else output
+            expected_unit = expected if fits and n % 2 else None
+            if weighted["residue"] != expected_unit:
+                raise AssertionError(f"{case['id']} expected unit readout {expected_unit}, got {weighted}")
+        if (not unit_tags or compare_bits) and result["residue"] != expected:
             raise AssertionError(f"{case['id']} expected residue {expected}, got {result}")
-        yield result
+        if compare_bits and output["bit_queries"]["residue"] != expected:
+            raise AssertionError(f"{case['id']} expected bit queries {expected}, got {output}")
+        yield output
 
 
 if __name__ == "__main__":
@@ -129,12 +209,18 @@ if __name__ == "__main__":
     parser.add_argument("--fixtures", action="store_true")
     parser.add_argument("--compare-bits", action="store_true",
                         help="compare one count with separate binary queries on a semiprime")
+    parser.add_argument("--unit-tags", action="store_true",
+                        help="read an odd semiprime residue using unary signed weights")
     args = parser.parse_args()
-    if args.fixtures and args.n is None and not args.balanced and not args.compare_bits:
-        for result in run_fixtures():
+    if args.fixtures and args.n is None and not args.balanced:
+        for result in run_fixtures(unit_tags=args.unit_tags, compare_bits=args.compare_bits):
             print(json.dumps(result))
     elif args.n is not None and not args.fixtures:
-        run = compare_bit_queries if args.compare_bits else read_residue
-        print(json.dumps(run(args.n, balanced=args.balanced)))
+        if args.compare_bits:
+            result = compare_bit_queries(args.n, balanced=args.balanced, include_units=args.unit_tags)
+        else:
+            run = read_unit_residue if args.unit_tags else read_residue
+            result = run(args.n, balanced=args.balanced)
+        print(json.dumps(result))
     else:
         parser.error("supply a product with optional --balanced, or --fixtures")
