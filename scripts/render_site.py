@@ -67,6 +67,12 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'scored-multipliers':
+        w = result['scored_multipliers']
+        count = (f'Continued fraction · multiplier {w["multiplier"]} · {w["candidates"]} choices considered · '
+                 f'{w["residue_checks"]} small-prime residue checks · {w["sign_comparisons"]} sign comparisons · '
+                 f'{w["steps"]:,} of {w["max_steps"]:,} steps · '
+                 f'{w["tested"]:,} relations tested')
     elif result['method'] == 'crt-square-norms':
         w = result['crt_square_norms']
         count = (f'Square-root classes · {w["windows"]:,} of {w["total_windows"]:,} moduli opened · '

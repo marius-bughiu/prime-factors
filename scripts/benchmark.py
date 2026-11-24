@@ -28,6 +28,7 @@ from experiments.pell_relations import search as pell_relation_search
 from experiments.pooled_relations import search as pooled_relation_search
 from experiments.crt_square_norms import search as crt_square_search
 from experiments.partition_recurrence import search as partition_recurrence_search
+from experiments.scored_multipliers import search as scored_multiplier_search
 from experiments.salie_blocks import search as salie_block_search
 from experiments.folded_square import direct as fixed_phase_search
 from experiments.four_square_lines import search as four_square_line_search
@@ -145,6 +146,13 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(max_steps=case['max_steps'], multiplier=case['multiplier'])
         result = certify_split(case, proof, factor, elapsed, 'pell_relations', work)
+    elif method == 'scored-multipliers':
+        work = scored_multiplier_search(int(case['n']), case['mode'], case['max_steps'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(mode=case['mode'], max_steps=case['max_steps'])
+        result = certify_split(case, proof, factor, elapsed, 'scored_multipliers', work)
     elif method == 'crt-square-norms':
         work = crt_square_search(int(case['n']), case['prime_count'], case['threshold_bits'],
                                  case['hit_cap'], subset_size=case.get('subset_size'))
@@ -347,6 +355,7 @@ def main():
                              ('pell-pairs.json', 'pell-pairs'),
                              ('pell-relations.json', 'pell-relations'),
                              ('pooled-relations.json', 'pooled-relations'),
+                             ('scored-multipliers.json', 'scored-multipliers'),
                              ('crt-square-norms.json', 'crt-square-norms'),
                              ('four-square-lines.json', 'four-square-lines'),
                              ('line-powers.json', 'line-powers'),

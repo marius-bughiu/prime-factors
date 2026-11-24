@@ -1,0 +1,136 @@
+{
+  "seed": "crt-cf-score-v1",
+  "count": 64,
+  "python": "3.9.6",
+  "machine": "arm64",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "prefixes": [
+    {
+      "max_steps": 2048,
+      "methods": {
+        "one": {
+          "splits": 0,
+          "steps": 131072,
+          "relations_tested": 94,
+          "solved_indices": [],
+          "cpu_nanoseconds": 1350965000
+        },
+        "scored": {
+          "splits": 0,
+          "steps": 131072,
+          "relations_tested": 106,
+          "solved_indices": [],
+          "cpu_nanoseconds": 1388761000
+        }
+      }
+    },
+    {
+      "max_steps": 3072,
+      "methods": {
+        "one": {
+          "splits": 0,
+          "steps": 196608,
+          "relations_tested": 223,
+          "solved_indices": [],
+          "cpu_nanoseconds": 2861052000
+        },
+        "scored": {
+          "splits": 0,
+          "steps": 196608,
+          "relations_tested": 232,
+          "solved_indices": [],
+          "cpu_nanoseconds": 2995344000
+        }
+      }
+    },
+    {
+      "max_steps": 4096,
+      "methods": {
+        "one": {
+          "splits": 3,
+          "steps": 262144,
+          "relations_tested": 413,
+          "solved_indices": [
+            34,
+            36,
+            46
+          ],
+          "cpu_nanoseconds": 5318534000
+        },
+        "scored": {
+          "splits": 4,
+          "steps": 262144,
+          "relations_tested": 438,
+          "solved_indices": [
+            34,
+            36,
+            46,
+            62
+          ],
+          "cpu_nanoseconds": 5916307000
+        }
+      }
+    },
+    {
+      "max_steps": 5138,
+      "methods": {
+        "one": {
+          "splits": 14,
+          "steps": 328832,
+          "relations_tested": 661,
+          "solved_indices": [
+            7,
+            10,
+            13,
+            19,
+            20,
+            21,
+            27,
+            28,
+            34,
+            36,
+            39,
+            46,
+            48,
+            53
+          ],
+          "cpu_nanoseconds": 10571059000
+        },
+        "scored": {
+          "splits": 26,
+          "steps": 328832,
+          "relations_tested": 711,
+          "solved_indices": [
+            1,
+            6,
+            7,
+            10,
+            13,
+            15,
+            19,
+            20,
+            21,
+            23,
+            25,
+            27,
+            28,
+            30,
+            33,
+            34,
+            36,
+            39,
+            46,
+            48,
+            52,
+            53,
+            57,
+            59,
+            62,
+            63
+          ],
+          "cpu_nanoseconds": 13078626000
+        }
+      }
+    }
+  ]
+}

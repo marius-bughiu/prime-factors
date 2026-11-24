@@ -56,6 +56,7 @@ import PrimeFactors.ModularHyperbola
 import PrimeFactors.MultipleShift
 import PrimeFactors.Multiplier
 import PrimeFactors.MultiplierImages
+import PrimeFactors.MultiplierScore
 import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder
 import PrimeFactors.PartitionRecurrence
@@ -73,6 +74,7 @@ import PrimeFactors.PhaseSeparation
 import PrimeFactors.PooledRelations
 import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
+import PrimeFactors.PrimitiveNorm
 import PrimeFactors.PredecessorCount
 import PrimeFactors.PrimePower
 import PrimeFactors.PrimePowerCount
@@ -98,6 +100,7 @@ import PrimeFactors.ShiftParameter
 import PrimeFactors.ShiftPortfolio
 import PrimeFactors.ShiftedResidues
 import PrimeFactors.ShortBasisSieve
+import PrimeFactors.SquareNeighborPeriod
 import PrimeFactors.SieveBudget
 import PrimeFactors.SieveInterval
 import PrimeFactors.SignatureCount
