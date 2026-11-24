@@ -8,6 +8,10 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did we find from the product alone?
 
+A square search found both primes of a 79-bit product on its 1,001st candidate. We froze its settings and tested it on 64 fresh products of the same size. The short search succeeded on none. A longer search that combined remainders succeeded on 13, while ordinary continued fractions succeeded on 15. Twelve successes overlapped. [All 64 products and outcomes](discoveries/crt-holdout.md)
+
+On a 2,048-bit test we searched more than four billion possible classes using two lists of 65,536 entries. The search found 58 promising remainders. Checking every combination ruled out a factor from those 58. [How the search works](discoveries/crt-square-norms.md) · [How often it can produce a small remainder](discoveries/crt-screen-population.md)
+
 We built a 2,048-bit test where one prime plus one divides the other prime squared minus one. A search given only the product recovered both primes on its thirteenth try. We then kept one prime, replaced the other, and ran the same thirteen tries. The new product was still 2,048 bits, and the search found nothing. [Construction, checked factors and comparison](discoveries/line-powers.md)
 
 On a different, previously solved 2,048-bit example, a continued fraction found both primes in four steps because multiplying the hidden primes by 169 and 225 brings them unusually close together. [Four-step example](discoveries/pooled-relations.md)

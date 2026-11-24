@@ -26,6 +26,8 @@ from experiments.pascal_readout import search as pascal_search
 from experiments.pell_pairs import search as pell_pair_search
 from experiments.pell_relations import search as pell_relation_search
 from experiments.pooled_relations import search as pooled_relation_search
+from experiments.crt_square_norms import search as crt_square_search
+from experiments.partition_recurrence import search as partition_recurrence_search
 from experiments.salie_blocks import search as salie_block_search
 from experiments.folded_square import direct as fixed_phase_search
 from experiments.four_square_lines import search as four_square_line_search
@@ -143,6 +145,15 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(max_steps=case['max_steps'], multiplier=case['multiplier'])
         result = certify_split(case, proof, factor, elapsed, 'pell_relations', work)
+    elif method == 'crt-square-norms':
+        work = crt_square_search(int(case['n']), case['prime_count'], case['threshold_bits'],
+                                 case['hit_cap'], subset_size=case.get('subset_size'))
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(prime_count=case['prime_count'], threshold_bits=case['threshold_bits'],
+                    hit_cap=case['hit_cap'], subset_size=case.get('subset_size'))
+        result = certify_split(case, proof, factor, elapsed, 'crt_square_norms', work)
     elif method == 'pooled-relations':
         work = pooled_relation_search(int(case['n']), case['multipliers'], case['max_steps'])
         elapsed = time.perf_counter() - start
@@ -164,13 +175,14 @@ def run_case(case, method, proofs):
         agree(case, work, ['outcome', 'seed', 'work'])
         work.update(exponent=case['exponent'], start=case['start'], max_seeds=case['max_seeds'])
         result = certify_split(case, proof, factor, elapsed, 'line_powers', work)
-    elif method == 'theta-residues':
-        work = theta_residue_search(int(case['n']), case['max_index'])
+    elif method in ('theta-residues', 'partition-recurrence'):
+        search = theta_residue_search if method == 'theta-residues' else partition_recurrence_search
+        work = search(int(case['n']), case['max_index'])
         elapsed = time.perf_counter() - start
         factor = work.pop('factor')
         agree(case, work, list(work))
         work['max_index'] = case['max_index']
-        result = certify_split(case, proof, factor, elapsed, 'theta_residues', work)
+        result = certify_split(case, proof, factor, elapsed, method.replace('-', '_'), work)
     elif method == 'salie-blocks':
         work = salie_block_search(int(case['n']), case['max_orbits'], case['fractional_bits'])
         elapsed = time.perf_counter() - start
@@ -335,9 +347,11 @@ def main():
                              ('pell-pairs.json', 'pell-pairs'),
                              ('pell-relations.json', 'pell-relations'),
                              ('pooled-relations.json', 'pooled-relations'),
+                             ('crt-square-norms.json', 'crt-square-norms'),
                              ('four-square-lines.json', 'four-square-lines'),
                              ('line-powers.json', 'line-powers'),
                              ('theta-residues.json', 'theta-residues'),
+                             ('partition-recurrence.json', 'partition-recurrence'),
                              ('quotient-search.json', 'quotient-search'),
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:

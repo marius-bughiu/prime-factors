@@ -1,0 +1,795 @@
+[
+  {
+    "id": "crt-square-negative-pair",
+    "description": "Both negative square-modulus norms are needed to split the existing eight-bit prime pair.",
+    "n": "26827",
+    "prime_count": 2,
+    "threshold_bits": 0,
+    "hit_cap": 2,
+    "outcome": "relation",
+    "primes_tested": 4,
+    "primes": [
+      3,
+      11
+    ],
+    "modulus_bits": 11,
+    "left_size": 2,
+    "right_size": 2,
+    "min_abs_norm": "2",
+    "nearest_t": "157",
+    "interval_hits": 2,
+    "visited_hits": 2,
+    "hit_cap_reached": false,
+    "rows": 2,
+    "private_pruned": 0,
+    "pruning_rounds": 0,
+    "min_private_bits": null,
+    "dependencies": 1,
+    "tested": 1,
+    "selected_steps": [
+      "85",
+      "157"
+    ],
+    "status": "complete",
+    "factors": [
+      "139",
+      "193"
+    ],
+    "remaining": [],
+    "nearest_d": "33",
+    "windows": 1,
+    "total_windows": 1,
+    "materialized_hits": 2,
+    "square_tests": 0
+  },
+  {
+    "id": "crt-square-negative-cap",
+    "description": "One retained norm leaves the two-row dependency incomplete.",
+    "n": "26827",
+    "prime_count": 2,
+    "threshold_bits": 0,
+    "hit_cap": 1,
+    "outcome": "no_split",
+    "primes_tested": 4,
+    "primes": [
+      3,
+      11
+    ],
+    "modulus_bits": 11,
+    "left_size": 2,
+    "right_size": 2,
+    "min_abs_norm": "2",
+    "nearest_t": "157",
+    "interval_hits": 2,
+    "visited_hits": 1,
+    "hit_cap_reached": true,
+    "rows": 1,
+    "private_pruned": 1,
+    "pruning_rounds": 1,
+    "min_private_bits": 5,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [],
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "26827"
+    ],
+    "nearest_d": "33",
+    "windows": 1,
+    "total_windows": 1,
+    "materialized_hits": 1,
+    "square_tests": 0
+  },
+  {
+    "id": "crt-square-seeded-six",
+    "description": "A root has a proper gcd with the existing independently sampled six-bit prime pair.",
+    "n": "1763",
+    "prime_count": 1,
+    "threshold_bits": 0,
+    "hit_cap": 2,
+    "outcome": "root_gcd",
+    "primes_tested": 4,
+    "primes": [
+      11
+    ],
+    "modulus_bits": 7,
+    "left_size": 1,
+    "right_size": 2,
+    "min_abs_norm": "2",
+    "nearest_t": "39",
+    "interval_hits": 2,
+    "visited_hits": 2,
+    "hit_cap_reached": false,
+    "rows": 1,
+    "private_pruned": 0,
+    "pruning_rounds": 0,
+    "min_private_bits": null,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [
+      "82"
+    ],
+    "status": "complete",
+    "factors": [
+      "41",
+      "43"
+    ],
+    "remaining": [],
+    "nearest_d": "11",
+    "windows": 1,
+    "total_windows": 1,
+    "materialized_hits": 2,
+    "square_tests": 0
+  },
+  {
+    "id": "crt-square-seeded-63",
+    "description": "Five eligible primes on the independently sampled 63-bit product.",
+    "n": "8745712257892974589",
+    "prime_count": 5,
+    "threshold_bits": 0,
+    "hit_cap": 64,
+    "outcome": "no_split",
+    "primes_tested": 5,
+    "primes": [
+      3,
+      5,
+      7,
+      11,
+      13
+    ],
+    "modulus_bits": 28,
+    "left_size": 4,
+    "right_size": 8,
+    "min_abs_norm": "96798743",
+    "nearest_t": "2961002458",
+    "interval_hits": 32,
+    "visited_hits": 32,
+    "hit_cap_reached": false,
+    "rows": 32,
+    "private_pruned": 32,
+    "pruning_rounds": 1,
+    "min_private_bits": 10,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [],
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "8745712257892974589"
+    ],
+    "nearest_d": "15015",
+    "windows": 1,
+    "total_windows": 1,
+    "materialized_hits": 32,
+    "square_tests": 0
+  },
+  {
+    "id": "crt-square-too-wide",
+    "description": "After the third eligible prime is included, every root lies outside the requested norm window.",
+    "n": "21490481",
+    "prime_count": 3,
+    "threshold_bits": 0,
+    "hit_cap": 16,
+    "outcome": "no_split",
+    "primes_tested": 5,
+    "primes": [
+      5,
+      11,
+      13
+    ],
+    "modulus_bits": 19,
+    "left_size": 2,
+    "right_size": 4,
+    "min_abs_norm": "8992",
+    "nearest_t": "67959",
+    "interval_hits": 0,
+    "visited_hits": 0,
+    "hit_cap_reached": false,
+    "rows": 0,
+    "private_pruned": 0,
+    "pruning_rounds": 0,
+    "min_private_bits": null,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [],
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "21490481"
+    ],
+    "nearest_d": "715",
+    "windows": 1,
+    "total_windows": 1,
+    "materialized_hits": 0,
+    "square_tests": 0
+  },
+  {
+    "id": "crt-square-seeded-63-wide",
+    "description": "On the independently sampled product, the complete norm window up to 32 times the square root of the input contains a splitting square.",
+    "n": "8745712257892974589",
+    "prime_count": 4,
+    "threshold_bits": -5,
+    "hit_cap": 512,
+    "outcome": "relation",
+    "primes_tested": 4,
+    "primes": [
+      3,
+      5,
+      7,
+      11
+    ],
+    "modulus_bits": 21,
+    "left_size": 4,
+    "right_size": 4,
+    "min_abs_norm": "185880596",
+    "nearest_t": "2957273117",
+    "interval_hits": 512,
+    "visited_hits": 512,
+    "hit_cap_reached": false,
+    "rows": 512,
+    "private_pruned": 511,
+    "pruning_rounds": 2,
+    "min_private_bits": 5,
+    "dependencies": 1,
+    "tested": 1,
+    "selected_steps": [
+      "2976269633"
+    ],
+    "status": "complete",
+    "factors": [
+      "2640906143",
+      "3311633123"
+    ],
+    "remaining": [],
+    "nearest_d": "1155",
+    "windows": 1,
+    "total_windows": 1,
+    "materialized_hits": 512,
+    "square_tests": 0
+  },
+  {
+    "id": "crt-square-seeded-63-narrow",
+    "description": "At the same base the narrower norm window up to 16 times the square root of the input has no splitting relation.",
+    "n": "8745712257892974589",
+    "prime_count": 4,
+    "threshold_bits": -4,
+    "hit_cap": 256,
+    "outcome": "no_split",
+    "primes_tested": 4,
+    "primes": [
+      3,
+      5,
+      7,
+      11
+    ],
+    "modulus_bits": 21,
+    "left_size": 4,
+    "right_size": 4,
+    "min_abs_norm": "185880596",
+    "nearest_t": "2957273117",
+    "interval_hits": 256,
+    "visited_hits": 256,
+    "hit_cap_reached": false,
+    "rows": 256,
+    "private_pruned": 256,
+    "pruning_rounds": 2,
+    "min_private_bits": 9,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [],
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "8745712257892974589"
+    ],
+    "nearest_d": "1155",
+    "windows": 1,
+    "total_windows": 1,
+    "materialized_hits": 256,
+    "square_tests": 0
+  },
+  {
+    "id": "crt-square-seeded-79-subsets",
+    "description": "Rotating over all triples of twelve eligible primes finds a square on the eighth triple.",
+    "n": "367722817904017001243509",
+    "prime_count": 12,
+    "threshold_bits": -4,
+    "hit_cap": 5138,
+    "subset_size": 3,
+    "outcome": "square_norm",
+    "primes_tested": 19,
+    "primes": [
+      3,
+      5,
+      13,
+      23,
+      29,
+      37,
+      41,
+      43,
+      47,
+      53,
+      59,
+      71
+    ],
+    "modulus_bits": 20,
+    "left_size": 16,
+    "right_size": 32,
+    "min_abs_norm": "27199262940",
+    "nearest_t": "606401525003",
+    "nearest_d": "555",
+    "windows": 8,
+    "total_windows": 220,
+    "interval_hits": 1024,
+    "materialized_hits": 1024,
+    "visited_hits": 1001,
+    "hit_cap_reached": false,
+    "square_tests": 489,
+    "rows": 1001,
+    "private_pruned": 0,
+    "pruning_rounds": 0,
+    "min_private_bits": null,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [
+      [
+        "795",
+        "606403027147"
+      ]
+    ],
+    "status": "complete",
+    "factors": [
+      "605056390957",
+      "607749663337"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "crt-square-seeded-79-subsets-cap",
+    "description": "One thousand retained roots stop just before the splitting square.",
+    "n": "367722817904017001243509",
+    "prime_count": 12,
+    "threshold_bits": -4,
+    "hit_cap": 1000,
+    "subset_size": 3,
+    "outcome": "no_split",
+    "primes_tested": 19,
+    "primes": [
+      3,
+      5,
+      13,
+      23,
+      29,
+      37,
+      41,
+      43,
+      47,
+      53,
+      59,
+      71
+    ],
+    "modulus_bits": 20,
+    "left_size": 16,
+    "right_size": 32,
+    "min_abs_norm": "27199262940",
+    "nearest_t": "606401525003",
+    "nearest_d": "555",
+    "windows": 8,
+    "total_windows": 220,
+    "interval_hits": 1024,
+    "materialized_hits": 1000,
+    "visited_hits": 1000,
+    "hit_cap_reached": true,
+    "square_tests": 488,
+    "rows": 1000,
+    "private_pruned": 990,
+    "pruning_rounds": 2,
+    "min_private_bits": 10,
+    "dependencies": 5,
+    "tested": 5,
+    "selected_steps": [],
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "367722817904017001243509"
+    ]
+  },
+  {
+    "id": "crt-square-seeded-79-combined",
+    "description": "At the narrower window, full enumeration of all 220 triples needs a combined signed relation.",
+    "n": "367722817904017001243509",
+    "prime_count": 12,
+    "threshold_bits": -2,
+    "hit_cap": 10000,
+    "subset_size": 3,
+    "outcome": "relation",
+    "primes_tested": 19,
+    "primes": [
+      3,
+      5,
+      13,
+      23,
+      29,
+      37,
+      41,
+      43,
+      47,
+      53,
+      59,
+      71
+    ],
+    "modulus_bits": 36,
+    "left_size": 440,
+    "right_size": 880,
+    "min_abs_norm": "316004812",
+    "nearest_t": "606401518189",
+    "nearest_d": "7257",
+    "windows": 220,
+    "total_windows": 220,
+    "interval_hits": 7043,
+    "materialized_hits": 7043,
+    "visited_hits": 7043,
+    "hit_cap_reached": false,
+    "square_tests": 3505,
+    "rows": 7043,
+    "private_pruned": 6502,
+    "pruning_rounds": 7,
+    "min_private_bits": 9,
+    "dependencies": 202,
+    "tested": 202,
+    "selected_steps": [
+      [
+        "435",
+        "606401436272"
+      ],
+      [
+        "1065",
+        "606402988528"
+      ],
+      [
+        "1599",
+        "606400269206"
+      ],
+      [
+        "2067",
+        "606397857745"
+      ],
+      [
+        "2829",
+        "606407963143"
+      ],
+      [
+        "2967",
+        "606408948329"
+      ],
+      [
+        "3741",
+        "606401542777"
+      ],
+      [
+        "5781",
+        "606377043490"
+      ],
+      [
+        "7257",
+        "606357905305"
+      ],
+      [
+        "7611",
+        "606350650901"
+      ],
+      [
+        "7473",
+        "606418211759"
+      ],
+      [
+        "2795",
+        "606386760022"
+      ],
+      [
+        "4615",
+        "606383202603"
+      ],
+      [
+        "4615",
+        "606392252353"
+      ],
+      [
+        "4255",
+        "606435613103"
+      ],
+      [
+        "4715",
+        "606380946772"
+      ],
+      [
+        "4945",
+        "606406960347"
+      ],
+      [
+        "8165",
+        "606403846653"
+      ],
+      [
+        "7685",
+        "606366616047"
+      ],
+      [
+        "10295",
+        "606579423528"
+      ],
+      [
+        "10915",
+        "606223389022"
+      ],
+      [
+        "12095",
+        "606249377603"
+      ],
+      [
+        "12685",
+        "606203202703"
+      ],
+      [
+        "15265",
+        "606657534978"
+      ],
+      [
+        "20945",
+        "605793279578"
+      ],
+      [
+        "14053",
+        "606440524868"
+      ],
+      [
+        "17641",
+        "606095277779"
+      ],
+      [
+        "13949",
+        "606780023053"
+      ],
+      [
+        "26767",
+        "607603695391"
+      ],
+      [
+        "25493",
+        "605817830986"
+      ],
+      [
+        "34151",
+        "606320159857"
+      ],
+      [
+        "28249",
+        "606336751601"
+      ],
+      [
+        "32383",
+        "607121889573"
+      ],
+      [
+        "36049",
+        "605094009901"
+      ],
+      [
+        "43381",
+        "603052690673"
+      ],
+      [
+        "54457",
+        "606052332682"
+      ],
+      [
+        "24679",
+        "606476661199"
+      ],
+      [
+        "24679",
+        "606954471985"
+      ],
+      [
+        "28681",
+        "606742822259"
+      ],
+      [
+        "28681",
+        "604765673309"
+      ],
+      [
+        "35351",
+        "604803433670"
+      ],
+      [
+        "39353",
+        "606201719797"
+      ],
+      [
+        "39353",
+        "606913214746"
+      ],
+      [
+        "34891",
+        "606403516898"
+      ],
+      [
+        "34891",
+        "604417827243"
+      ],
+      [
+        "50209",
+        "610464674232"
+      ],
+      [
+        "49979",
+        "607748608372"
+      ],
+      [
+        "46483",
+        "606669128515"
+      ],
+      [
+        "57293",
+        "601336250420"
+      ],
+      [
+        "63779",
+        "608316065273"
+      ],
+      [
+        "96347",
+        "604971631865"
+      ],
+      [
+        "51127",
+        "610902471334"
+      ],
+      [
+        "72239",
+        "608136030428"
+      ],
+      [
+        "90683",
+        "614037934091"
+      ],
+      [
+        "109127",
+        "620395892107"
+      ],
+      [
+        "109127",
+        "583442893172"
+      ],
+      [
+        "71299",
+        "606537314412"
+      ],
+      [
+        "74777",
+        "600804357219"
+      ],
+      [
+        "74777",
+        "607955727430"
+      ],
+      [
+        "84323",
+        "620328403073"
+      ],
+      [
+        "123469",
+        "620424178313"
+      ],
+      [
+        "123469",
+        "581122601528"
+      ],
+      [
+        "139231",
+        "573823096266"
+      ],
+      [
+        "93439",
+        "617455031187"
+      ],
+      [
+        "171749",
+        "625898805133"
+      ],
+      [
+        "107113",
+        "608949884807"
+      ],
+      [
+        "161809",
+        "625805076665"
+      ],
+      [
+        "180127",
+        "571157173498"
+      ],
+      [
+        "176861",
+        "576159524151"
+      ]
+    ],
+    "status": "complete",
+    "factors": [
+      "605056390957",
+      "607749663337"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "crt-square-crossed-2048",
+    "description": "Two lists of 65,536 signed sums search every root class of the first 32 eligible prime squares on the crossed 2048-bit control.",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "prime_count": 32,
+    "threshold_bits": 26,
+    "hit_cap": 512,
+    "outcome": "no_split",
+    "primes_tested": 52,
+    "primes": [
+      3,
+      5,
+      7,
+      19,
+      31,
+      41,
+      43,
+      47,
+      59,
+      67,
+      71,
+      73,
+      83,
+      89,
+      101,
+      107,
+      109,
+      127,
+      131,
+      139,
+      149,
+      173,
+      179,
+      191,
+      193,
+      197,
+      199,
+      223,
+      227,
+      233,
+      239,
+      241
+    ],
+    "modulus_bits": 406,
+    "left_size": 65536,
+    "right_size": 65536,
+    "min_abs_norm": "38456892160201171798352738788867505231867199832563189059337077996982272295783664367643005740840955626586538467230965431188861813603027022141166546248401738113353505611230047410072343894925250793770449053381955101854221188490389892378275891712062963536667287574862691138728630726605497295699741501296",
+    "nearest_t": "135037911685235586269825030135549325391376915966798636179319977077209993450011760943044181307768476527897818717675959823440307553022185653953812606479930673789391793187765141283074720630433120513430234228528388105816703987942883797694796430314917295770684641301225841864958244749908958357667093161078753426137",
+    "interval_hits": 58,
+    "visited_hits": 58,
+    "hit_cap_reached": false,
+    "rows": 58,
+    "private_pruned": 58,
+    "pruning_rounds": 1,
+    "min_private_bits": 978,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [],
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ],
+    "nearest_d": "9570823751904540094103896581038574825265636997986801163496885",
+    "windows": 1,
+    "total_windows": 1,
+    "materialized_hits": 58,
+    "square_tests": 0
+  }
+]

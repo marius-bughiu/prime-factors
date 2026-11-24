@@ -11,6 +11,8 @@ import PrimeFactors.ClassNumberWindow
 import PrimeFactors.ConditionalStride
 import PrimeFactors.ContinuedSquare
 import PrimeFactors.CoupledImages
+import PrimeFactors.CRTScreenCount
+import PrimeFactors.CRTSquareNorm
 import PrimeFactors.CountingReadout
 import PrimeFactors.CyclotomicPeriods
 import PrimeFactors.DiscriminantPencil
@@ -56,6 +58,7 @@ import PrimeFactors.Multiplier
 import PrimeFactors.MultiplierImages
 import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder
+import PrimeFactors.PartitionRecurrence
 import PrimeFactors.PascalProjection
 import PrimeFactors.PascalReadout
 import PrimeFactors.PellCycles

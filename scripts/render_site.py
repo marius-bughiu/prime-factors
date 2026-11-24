@@ -67,6 +67,16 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'crt-square-norms':
+        w = result['crt_square_norms']
+        count = (f'Square-root classes · {w["windows"]:,} of {w["total_windows"]:,} moduli opened · '
+                 f'{w["left_size"]:,} left and {w["right_size"]:,} right partial sums in total · '
+                 f'{w["visited_hits"]:,} of {w["interval_hits"]:,} window hits checked · '
+                 f'{w["private_pruned"]:,} rows excluded · {w["tested"]:,} combined relations tested')
+    elif result['method'] == 'partition-recurrence':
+        w = result['partition_recurrence']
+        count = (f'Sparse partition series · index limit {w["max_index"]:,} · '
+                 f'{w["signed_updates"]:,} of {w["possible_updates"]:,} possible additions used')
     elif result['method'] == 'theta-residues':
         w = result['theta_residues']
         count = (f'Power-series coefficient · index limit {w["max_index"]:,} · '

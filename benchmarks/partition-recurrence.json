@@ -1,0 +1,118 @@
+[
+  {
+    "id": "theta-sparse-143",
+    "description": "The bounded sparse series identifies the smaller prime.",
+    "n": "143",
+    "max_index": 1537,
+    "outcome": "factor",
+    "modulus": 32,
+    "coefficient_mod": 12,
+    "signed_updates": 1252,
+    "possible_updates": 1302,
+    "status": "complete",
+    "factors": [
+      "11",
+      "13"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "theta-sparse-667",
+    "description": "The bounded sparse series identifies the larger prime.",
+    "n": "667",
+    "max_index": 1537,
+    "outcome": "factor",
+    "modulus": 64,
+    "coefficient_mod": 30,
+    "signed_updates": 13386,
+    "possible_updates": 13864,
+    "status": "complete",
+    "factors": [
+      "23",
+      "29"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "theta-sparse-1457",
+    "description": "First control among products congruent to 17 modulo 40.",
+    "n": "1457",
+    "max_index": 1537,
+    "outcome": "factor",
+    "modulus": 64,
+    "coefficient_mod": 32,
+    "signed_updates": 43613,
+    "possible_updates": 45455,
+    "status": "complete",
+    "factors": [
+      "31",
+      "47"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "theta-sparse-1537",
+    "description": "Second control in the same public residue class.",
+    "n": "1537",
+    "max_index": 1537,
+    "outcome": "factor",
+    "modulus": 64,
+    "coefficient_mod": 30,
+    "signed_updates": 47254,
+    "possible_updates": 49288,
+    "status": "complete",
+    "factors": [
+      "29",
+      "53"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "theta-sparse-character",
+    "description": "The product has two negative character factors, so the sign test stops.",
+    "n": "91",
+    "max_index": 1537,
+    "outcome": "character",
+    "modulus": 16,
+    "coefficient_mod": null,
+    "signed_updates": 0,
+    "possible_updates": 0,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "91"
+    ]
+  },
+  {
+    "id": "theta-sparse-unbalanced",
+    "description": "The selected prime exceeds the precision promised for balanced inputs.",
+    "n": "123",
+    "max_index": 1537,
+    "outcome": "residue",
+    "modulus": 32,
+    "coefficient_mod": 10,
+    "signed_updates": 997,
+    "possible_updates": 1032,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "123"
+    ]
+  },
+  {
+    "id": "theta-sparse-2048-cap",
+    "description": "The existing 2048-bit control exceeds the public series budget.",
+    "n": "18954765817673933663441130651941601608683909813351582632719836093301426060532014600515603812321196000528192786172571374325727071558274014040294557480325433091746308263542318398106970236237130852381318203192005777319686661286096311626674873713872595545462185161085980134326549333575068021954290948901231017212530419741720181988649767555678312790872173090094808635293013933619703528930786338971498102306117604351614484183724679146658565821527155586257103592507385666408411459518947006836096238849852932251935146279500972757064021728003528939915013095139334863430850463060659778821369608296254108318651313968707289506947",
+    "max_index": 1537,
+    "outcome": "budget",
+    "modulus": 359538626972463181545861038157804946723595395788461314546860162315465351611001926265416954644815072042240227759742786715317579537628833244985694861278948248755535786849730970552604439202492188238906165904170011537676301364684925762947826221081654474326701021369172596479894491876959432609670712659248448274432,
+    "coefficient_mod": null,
+    "signed_updates": 0,
+    "possible_updates": 0,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18954765817673933663441130651941601608683909813351582632719836093301426060532014600515603812321196000528192786172571374325727071558274014040294557480325433091746308263542318398106970236237130852381318203192005777319686661286096311626674873713872595545462185161085980134326549333575068021954290948901231017212530419741720181988649767555678312790872173090094808635293013933619703528930786338971498102306117604351614484183724679146658565821527155586257103592507385666408411459518947006836096238849852932251935146279500972757064021728003528939915013095139334863430850463060659778821369608296254108318651313968707289506947"
+    ]
+  }
+]
