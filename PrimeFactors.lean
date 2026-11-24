@@ -2,6 +2,7 @@ import PrimeFactors.AdditiveCover
 import PrimeFactors.AnalyticAccess
 import PrimeFactors.BlockCharacters
 import PrimeFactors.Certificate
+import PrimeFactors.ClassNumberWindow
 import PrimeFactors.DiscriminantPencil
 import PrimeFactors.DivisorSignal
 import PrimeFactors.DivisorSum

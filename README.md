@@ -12,9 +12,13 @@ A paper argument using prime distribution proves the formula succeeds on infinit
 
 If the prime predecessors share a large divisor $g=\gcd(p-1,q-1)$, raising a unit to $N-1$ produces coprime periods at the two primes. A search given only $N$, a base and a table budget recovered a different 2048-bit product with 86 entries per table. The bound depends on the smaller residual period. [Proofs, costs and prior work](discoveries/common-predecessors.md) · [Product-only fixtures](benchmarks/reduced-orders.json)
 
+How often does this structure occur? For primes chosen in $[X,2X]$ and fixed $0<\alpha<1$, the proportion with $g\ge X^\alpha$ has order $X^{-\alpha}$. For $\alpha\le1/2$ the paper proof also gives the leading constant $\zeta(2)\zeta(3)/\zeta(6)$. The result is asymptotic. [Counting argument and its hypotheses](discoveries/common-divisor-frequency.md)
+
 ## Conjectures from the Dirichlet L-function proof
 
 One boundary reading at height 1 determines the **exact integer sum** of two balanced primes if its absolute error is below $1/(8\sqrt N)$. For a 2048-bit product, $2^{-1027}$ suffices. A fast way to obtain that reading remains open. [Precision, derivation and alternatives](discoveries/reading-the-boundary.md)
+
+The quadratic character of the product can also be evaluated directly. An interval of $W$ possible quadratic class numbers gives a factor search using $O(\sqrt W)$ class-group operations per auxiliary prime, plus logarithmic initialization. We derive the auxiliary-prime bound under Dirichlet GRH and check two failures of simpler recovery rules. The analytic truncation estimate still costs about $N^{1/5}$ up to logarithmic factors. [Derivation and Lean proofs](discoveries/quadratic-class-number.md)
 
 For $N=pq$ with $p<q$, Lean proves that the first positive imaginary-axis zero of the principal Dirichlet L-function modulo $N$ has height $2\pi/\log q$. More usefully, a sign computed from one L-value tells whether $q$ lies above an integer threshold $x>\sqrt N$. For balanced primes the library proves an absolute error tolerance at each threshold. Efficiently computing that sign using only $N$ is open. [Derivation and work required](discoveries/character-conjectures.md#comparing-a-factor-with-a-threshold) · [Lean proofs](PrimeFactors/DivisorSignal.lean)
 
