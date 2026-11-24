@@ -1,5 +1,10 @@
 import PrimeFactors.Certificate
 import PrimeFactors.DivisorSum
+import PrimeFactors.FactorSum
+import PrimeFactors.FactorSumCRT
 import PrimeFactors.Fermat
+import PrimeFactors.Isolation
 import PrimeFactors.Pratt
+import PrimeFactors.ResidueCount
+import PrimeFactors.SieveInterval
 import PrimeFactors.Subgroup

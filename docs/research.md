@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+The factor-sum investigation treats balanced semiprimes and studies which local constraints survive globally. It gives a separate application of the Dirichlet result to incorrect candidate sums. [Factor-sum research](../discoveries/factor-sum-residues.md)
+
 ## The November 2026 release
 
 On November 20, 2026, Levent Alpöge released a Lean proof developed with Claude. On November 21 the Lean FRO and Mathlib Initiative certified that the proof establishes mathlib’s `RiemannHypothesis`. Andrew Sutherland’s November 24 verification record also covers the critical-strip and nonvanishing statements for Dirichlet L-functions. Those statements concern every modulus and every Dirichlet character. Clay’s Millennium Prize has a separate publication and acceptance process. [Author’s announcement](https://alpo.ge/remark.pdf) · [Lean community verification](https://leanprover-community.github.io/blog/posts/riemann-hypothesis/) · [Independent check logs](https://math.mit.edu/~drew/grh/) · [Prize rules](https://www.claymath.org/millennium-problems/rules/)
@@ -8,7 +10,7 @@ The original Lean release uses mathlib v4.33.1. The community mirror identifies 
 
 ## A bounded witness search for structured semiprimes
 
-Suppose the input is $N=pq$ for distinct primes $p<q$, with $p-1$ dividing $q-1$. The factors can be far apart. The search takes only $N$. For each integer base $a$ starting at 2, it first takes $\gcd(a,N)$. If that is 1, it computes $r=a^{N-1}\bmod N$ by modular exponentiation and takes $\gcd(r-1,N)$. Any gcd strictly between 1 and $N$ certifies a split.
+Suppose the input is $N=pq$ for distinct primes $p<q$, with $p-1$ dividing $q-1$. The factors can be far apart. If $p<q$ are primes with the same bit length of at least three, $p-1<q-1<2(p-1)$, so this hypothesis fails throughout that family. [Equal-width obstruction](../PrimeFactors/Subgroup.lean) The search takes only $N$. For each integer base $a$ starting at 2, it first takes $\gcd(a,N)$. If that is 1, it computes $r=a^{N-1}\bmod N$ by modular exponentiation and takes $\gcd(r-1,N)$. Any gcd strictly between 1 and $N$ certifies a split.
 
 For this family and $N\ge 3000$, it suffices to search through $(\ln N)^2$. Here is the argument.
 

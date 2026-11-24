@@ -3,27 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Reproducible integer factorization experiments with Lean-checked prime certificates.">
+  <meta name="description" content="Lean proofs of what a large integer reveals about its factors, with research notes and worked examples.">
   <title>Prime Factors · Research progress</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><nav class="wrap"><a class="brand" href="#top">Prime Factors</a><div><a href="#runs">Benchmarks</a><a href="$repo">GitHub</a></div></nav></header>
+<header><nav class="wrap"><a class="brand" href="#top">Prime Factors</a><div><a href="#theory">Theory</a><a href="#runs">Examples</a><a href="$repo">GitHub</a></div></nav></header>
 <main id="top" class="wrap">
   <section class="intro">
-    <div><p class="eyebrow">Computational number theory</p><h1>Finding factors.<br>Checking proofs.</h1>
-    <p class="summary">How much can the mathematics cut from a factor search? Each completed run below includes a Lean proof that its prime factors multiply to the input.</p></div>
-    <aside><p class="eyebrow">Largest certified fixture</p><p class="big">$bits <span>bits</span></p><p>$largest_desc</p><a href="#$largest_id">Inspect this run</a></aside>
+    <div><p class="eyebrow">Computational number theory</p><h1>What a product reveals about its factors</h1>
+    <p class="summary">Given a 2,048-bit integer <i>N = pq</i>, what can we deduce about its two unknown primes? We study which possibilities the product excludes and what work remains to recover the factors.</p></div>
+    <aside><p class="eyebrow">The factor sum</p><p class="equation"><i>S</i>² − 4<i>N</i> = (<i>q</i> − <i>p</i>)²</p><p>Knowing <i>S = p + q</i> determines both primes. The product restricts <i>S</i> differently modulo each small prime.</p><a href="$tree/discoveries/factor-sum-residues.md">Read the derivation</a></aside>
   </section>
-  <section id="runs"><div class="section-title"><h2>Benchmark ledger</h2><a href="results.json">Download run data</a></div>
-    <p class="note">$count fixtures · $complete certified · $partial partial. Timings include discovery, certificate generation, and Lean checking for completed runs. Toolchain setup is excluded.</p>
+  <section class="methods" id="theory"><h2>What the proofs establish</h2>
+    <div class="columns"><article><h3>One prime at a time</h3><p>Modulo an odd prime coprime to <i>N</i>, every nonzero residue can represent one factor. Only about half the residues can represent the sum. The exact count depends on whether <i>N</i> is a square modulo that prime.</p><a href="$tree/PrimeFactors/ResidueCount.lean">Read the counting theorem</a></article>
+    <article><h3>Combining constraints</h3><p>For coprime moduli, the numbers of allowed sum classes multiply. For <i>N</i> = 143, just six classes survive modulo 35. The theorem counts a full period; a short interval can contain several survivors.</p><a href="$tree/PrimeFactors/FactorSumCRT.lean">Read the CRT proof</a></article>
+    <article><h3>Isolating the true sum</h3><p>For two distinct 1,024-bit primes, a deduction from Dirichlet GRH shows that tests at odd primes below three million isolate the sum in its balanced interval. An efficient way to retrieve it remains open.</p><a href="$tree/discoveries/factor-sum-residues.md#a-uniform-set-of-primes-that-isolates-the-sum">Read the isolation argument</a></article></div>
+  </section>
+  <section id="runs"><div class="section-title"><h2>Worked computational examples</h2><a href="results.json">Download run data</a></div>
+    <p class="note">The largest certified example uses <a href="#$largest_id">$bits bits</a>. $count fixtures · $complete certified · $partial partial. Timings include discovery, certificate generation, and Lean checking for completed runs. Toolchain setup is excluded.</p>
     <div class="ledger">$rows</div>
     <p class="meta">Measured $date on $cpu · Python $python · $lean. <a href="$commit_url">Revision $sha</a>$run_link.</p>
-  </section>
-  <section class="methods"><h2>What the proofs establish</h2>
-    <div class="columns"><article><h3>Fermat search</h3><p>Write <i>n = a² − b²</i>. A square hit gives factors <i>a − b</i> and <i>a + b</i>. A gap bound proves which close factor pairs a tested interval can cover.</p><a href="$tree/PrimeFactors/Fermat.lean">Read the window theorem</a></article>
-    <article><h3>Dirichlet GRH</h3><p>A bound on small witnesses motivates a modular search when <i>p − 1</i> divides <i>q − 1</i>. A successful gcd produces a divisor. The analytic witness bound comes from the literature.</p><a href="$tree/docs/research.md">Trace the argument</a></article>
-    <article><h3>Exact divisor sums</h3><p>For distinct primes, knowing σ(<i>pq</i>) determines their sum and hence both roots. Robin’s inequality gives an upper bound on σ. The gap between the two limits its use here.</p><a href="$tree/PrimeFactors/DivisorSum.lean">Read the recovery formula</a></article></div>
   </section>
 </main><footer><div class="wrap"><span>Prime Factors</span><a href="$tree/CONTRIBUTING.md">Contribute an experiment</a></div></footer>
 </body></html>

@@ -82,4 +82,26 @@ theorem exists_subgroupWitnessFactor {p q bound : ℕ} (hp : p.Prime) (hq : q.Pr
   rw [Units.val_pow_eq_pow_val, ZMod.unitsMap_val, ZMod.coe_unitOfCoprime, ZMod.cast_natCast hqd]
   simpa using (ZMod.natCast_eq_natCast_iff _ _ _).2 heq
 
+/-- For a base-`2` interval of bit width at least three, two distinct ordered
+primes cannot have one predecessor dividing the other. Only primality of the
+smaller member is needed to exclude the lower endpoint. -/
+theorem equalWidth_no_predecessor_dvd {k p q : ℕ} (hk : 2 ≤ k)
+    (hp : Nat.Prime p) (lower : 2 ^ k ≤ p) (pq : p < q)
+    (upper : q < 2 ^ (k + 1)) : ¬ (p - 1) ∣ (q - 1) := by
+  have strict : 2 ^ k < p := lt_of_le_of_ne lower (by
+    rintro rfl
+    exact Nat.Prime.not_prime_pow hk hp)
+  rw [pow_succ] at upper
+  rintro ⟨m, hm⟩
+  cases m with
+  | zero => simp at hm; omega
+  | succ m =>
+    cases m with
+    | zero => simp at hm; omega
+    | succ m =>
+      have bound : (p - 1) * 2 ≤ q - 1 := by
+        rw [hm]
+        exact Nat.mul_le_mul_left (p - 1) (by omega)
+      omega
+
 end PrimeFactors
