@@ -9,6 +9,8 @@ import PrimeFactors.CyclotomicPeriods
 import PrimeFactors.DiscriminantPencil
 import PrimeFactors.DivisorSignal
 import PrimeFactors.DivisorSum
+import PrimeFactors.DivisorTensor
+import PrimeFactors.ExponentialReadout
 import PrimeFactors.FactorCircuit
 import PrimeFactors.FactorSum
 import PrimeFactors.FactorSumCRT
@@ -19,6 +21,7 @@ import PrimeFactors.IntervalGap
 import PrimeFactors.Isolation
 import PrimeFactors.JointPeriod
 import PrimeFactors.LongPeriod
+import PrimeFactors.LowFactorBits
 import PrimeFactors.LowProductRank
 import PrimeFactors.ManyDiscriminants
 import PrimeFactors.MixedHeights
@@ -41,4 +44,5 @@ import PrimeFactors.ShiftedResidues
 import PrimeFactors.SieveInterval
 import PrimeFactors.SignatureCount
 import PrimeFactors.Subgroup
+import PrimeFactors.TotientTensor
 import PrimeFactors.WeightedCollision

@@ -2,6 +2,8 @@
 
 The factor-sum investigation treats balanced semiprimes and studies which local constraints survive globally. It gives a separate application of the Dirichlet result to incorrect candidate sums. [Factor-sum research](../discoveries/factor-sum-residues.md)
 
+Two later counting results use the Dirichlet theorems in different ways. Miller's reduction uses small character witnesses to turn a totient count into deterministic factorization, including for products with repeated factors. A prime at which the product is a quadratic nonresidue makes the two unknown primes distinct modulo that auxiliary prime. This permits a smaller weighted readout on the original multiplication network. [Totient count](../discoveries/counting-modular-inverses.md) · [Choice of a separating prime](../discoveries/exponential-readout.md)
+
 ## The November 2026 release
 
 On November 20, 2026, Levent Alpöge released a Lean proof developed with Claude. On November 21 the Lean FRO and Mathlib Initiative certified that the proof establishes mathlib’s `RiemannHypothesis`. Andrew Sutherland’s November 24 verification record also covers the critical-strip and nonvanishing statements for Dirichlet L-functions. Those statements concern every modulus and every Dirichlet character. Clay’s Millennium Prize has a separate publication and acceptance process. [Author’s announcement](https://alpo.ge/remark.pdf) · [Lean community verification](https://leanprover-community.github.io/blog/posts/riemann-hypothesis/) · [Independent check logs](https://math.mit.edu/~drew/grh/) · [Prize rules](https://www.claymath.org/millennium-problems/rules/)

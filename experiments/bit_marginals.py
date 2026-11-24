@@ -96,9 +96,11 @@ class Table:
 
 
 class Multiplier:
-    def __init__(self):
+    def __init__(self, width=0):
         self.wires = 0
         self.tables = []
+        self.xs = [self.wire() for _ in range(width)]
+        self.ys = [self.wire() for _ in range(width)]
 
     def wire(self):
         wire = 1 << self.wires
@@ -119,14 +121,13 @@ class Multiplier:
         return low, high
 
 
-def multiplier_tables(n, width, tape):
-    net = Multiplier()
-    xs = [net.wire() for _ in range(width)]
-    ys = [net.wire() for _ in range(width)]
+def multiplier_tables(n, width, tape=None):
+    net = Multiplier(width)
     columns = [[] for _ in range(2 * width)]
-    for i, x in enumerate(xs):
-        net.tables.append(Table(x, {0: 1, x: tape.tags[i]}))
-        for j, y in enumerate(ys):
+    for i, x in enumerate(net.xs):
+        if tape is not None:
+            net.tables.append(Table(x, {0: 1, x: tape.tags[i]}))
+        for j, y in enumerate(net.ys):
             out = net.wire()
             net.relation([x, y, out], lambda a, b, c: (a & b) == c)
             columns[i + j].append(out)

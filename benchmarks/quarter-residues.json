@@ -1,0 +1,7 @@
+[
+  {"id": "full-balanced-143", "n": "143", "factors": ["11", "13"]},
+  {"id": "full-unbalanced-51", "n": "51", "factors": ["3", "17"]},
+  {"id": "full-balanced-77", "n": "77", "factors": ["7", "11"]},
+  {"id": "balanced-667", "n": "667", "balanced": true, "factors": ["23", "29"]},
+  {"id": "outside-balance-51", "n": "51", "balanced": true, "factors": ["3", "17"]}
+]
