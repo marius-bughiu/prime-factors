@@ -61,7 +61,9 @@ import PrimeFactors.MultipleShift
 import PrimeFactors.Multiplier
 import PrimeFactors.MultiplierImages
 import PrimeFactors.MultiplierScore
+import PrimeFactors.NormArc
 import PrimeFactors.NormDirections
+import PrimeFactors.NormSignList
 import PrimeFactors.PairDeterminant
 import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder

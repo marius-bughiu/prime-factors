@@ -67,6 +67,28 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'norm-directions':
+        w = result['norm_directions']
+        count = (f'{w["blocks"]:,} of {w["max_blocks"]:,} ellipse blocks'
+                 f' · {w["line_tests"]:,} candidate lines'
+                 f' · {w["discriminant_roots"]:,} square-root tests'
+                 f' · {w["representations"]:,} representations found')
+    elif result['method'] == 'polynomial-packets':
+        w = result['polynomial_packet']
+        coverage = 'complete height interval' if w['interval_complete'] else 'partial height interval'
+        count = (f'All square-root classes at a {int(w["coefficient"]).bit_length():,}-bit coefficient'
+                 f' · {w["euclidean_steps"]:,} Euclidean steps'
+                 f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
+                 f' · small values found {len(w["rows"]):,}'
+                 f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'polynomial-relations':
+        w = result['polynomial_relations']
+        modes = {'single': 'Single interval', 'square': 'Square coefficients', 'edges': 'Shared prime coefficients'}
+        count = (f'{modes[w["mode"]]} · {w["positions"]:,} positions · {w["sieve_marks"]:,} sieve marks · '
+                 f'{w["smooth_rows"]:,} smooth rows · {w.get("dependencies", 0):,} square relations · '
+                 f'{w.get("gcd_tests", 0):,} gcd tests')
+        if w['policy'] == 'coefficient':
+            count += ' · even row count at each coefficient'
     elif result['method'] == 'seed-gap-sieve':
         w = result['seed_gap_sieve']
         count = (f'Fraction norm at most {w["max_norm"]:,} · wheel modulus {w["modulus"]:,} · '

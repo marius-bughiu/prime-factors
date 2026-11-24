@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+The Dirichlet GRH result gives a guarantee for every balanced 2,048-bit product in a search using equations of the form $t^2+d a^2=kN$. A theorem of Lamzouri, Li and Soundararajan bounds the small primes needed to choose a suitable $d$ from the product alone. An elementary counting argument already covers all but a fraction $2^{-119}$ of the target population with primes through 739. Finding the two integer solutions that give a factor remains expensive in both cases. [Derivation and exact assumptions](../discoveries/searching-norm-directions.md) · [Theorem 1.1](https://arxiv.org/pdf/1309.3595#page=2)
+
 For two fractions that give a factor from the same residue, Dirichlet GRH bounds how much larger the fractions can have to become when their common residue is required to be a square. Given the mixed ratio already, a Jacobi nonresidue multiplier below $2^{21}$ suffices on every target-size product. [Formula, height bound and its assumptions](../discoveries/mixed-ratio-heights.md)
 
 The factor-sum investigation treats balanced semiprimes and studies which local constraints survive globally. It gives a separate application of the Dirichlet result to incorrect candidate sums. [Factor-sum research](../discoveries/factor-sum-residues.md)

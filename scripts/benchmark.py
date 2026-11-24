@@ -34,6 +34,9 @@ from experiments.fraction_chains import search as fraction_chain_search
 from experiments.pair_class_search import search as same_source_pair_search
 from experiments.guided_pairs import cover as guided_pair_cover
 from experiments.seed_gap_sieve import search as seed_gap_search
+from experiments.polynomial_relations import search as polynomial_relation_search
+from experiments.polynomial_packet import search as polynomial_packet_search
+from experiments.norm_directions import search as norm_direction_search
 from experiments.salie_blocks import search as salie_block_search
 from experiments.folded_square import direct as fixed_phase_search
 from experiments.four_square_lines import search as four_square_line_search
@@ -151,6 +154,36 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(max_steps=case['max_steps'], multiplier=case['multiplier'])
         result = certify_split(case, proof, factor, elapsed, 'pell_relations', work)
+    elif method == 'norm-directions':
+        work = norm_direction_search(int(case['n']), case['last_prime'], case['max_blocks'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(last_prime=case['last_prime'], max_blocks=case['max_blocks'],
+                    coordinate_positions=str(work['coordinate_positions']))
+        result = certify_split(case, proof, factor, elapsed, 'norm_directions', work)
+    elif method == 'polynomial-packets':
+        work = polynomial_packet_search(int(case['n']), int(case['coefficient']),
+                                        int(case['max_norm']), case['max_lifts'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(coefficient=case['coefficient'], max_norm=case['max_norm'],
+                    max_lifts=case['max_lifts'])
+        result = certify_split(case, proof, factor, elapsed, 'polynomial_packet', work)
+    elif method == 'polynomial-relations':
+        mode, policy = case['mode'], case['policy']
+        work = polynomial_relation_search(int(case['n']), mode, case['bound'], case['radius'],
+                                          case['max_blocks'], policy=policy)
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        stats = work.pop('policies').get(policy)
+        if stats is not None:
+            work.update({k: v for k, v in stats.items() if k != 'factor'})
+        agree(case, work, list(work))
+        work.update(mode=mode, policy=policy, bound=case['bound'], radius=case['radius'],
+                    max_blocks=case['max_blocks'])
+        result = certify_split(case, proof, factor, elapsed, 'polynomial_relations', work)
     elif method == 'seed-gap-sieve':
         work = seed_gap_search(int(case['n']), case['max_norm'], case['last_prime'])
         elapsed = time.perf_counter() - start
@@ -395,6 +428,9 @@ def main():
                              ('same-source-pairs.json', 'same-source-pairs'),
                              ('guided-pairs.json', 'guided-pairs'),
                              ('seed-gap-sieve.json', 'seed-gap-sieve'),
+                             ('polynomial-relations.json', 'polynomial-relations'),
+                             ('norm-directions.json', 'norm-directions'),
+                             ('polynomial-packets.json', 'polynomial-packets'),
                              ('crt-square-norms.json', 'crt-square-norms'),
                              ('four-square-lines.json', 'four-square-lines'),
                              ('line-powers.json', 'line-powers'),

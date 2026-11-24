@@ -1,0 +1,2612 @@
+{
+  "seed": "polynomial-relations-panel-v1",
+  "count": 16,
+  "bound": 2048,
+  "radius": 512,
+  "blocks": 64,
+  "cases": [
+    {
+      "attempt": 2,
+      "n": "516609223334128316097257",
+      "expected_factors": [
+        "550805334173",
+        "937916158909"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 150,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 19136,
+            "sieve_marks": 86987,
+            "prime_divisions": 186306,
+            "smooth_rows": 3,
+            "occupied_blocks": 3,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "516609223334128316097257"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 150,
+            "coefficient_prime_tests": 150,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 19136,
+            "sieve_marks": 86956,
+            "prime_divisions": 186294,
+            "smooth_rows": 57,
+            "occupied_blocks": 34,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "516609223334128316097257"
+          ]
+        },
+        "edges": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 150,
+            "coefficient_prime_tests": 19,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 19136,
+            "sieve_marks": 86935,
+            "prime_divisions": 186278,
+            "smooth_rows": 52,
+            "occupied_blocks": 33,
+            "policies": {
+              "edges": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "516609223334128316097257"
+          ]
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 150,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 19136,
+          "sieve_marks": 86974,
+          "prime_divisions": 186303,
+          "smooth_rows": 13,
+          "occupied_blocks": 11,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "516609223334128316097257"
+        ]
+      }
+    },
+    {
+      "attempt": 13,
+      "n": "510652246834284249171809",
+      "expected_factors": [
+        "614038594093",
+        "831628910213"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 148,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 18880,
+            "sieve_marks": 130890,
+            "prime_divisions": 237513,
+            "smooth_rows": 20,
+            "occupied_blocks": 16,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "510652246834284249171809"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "relation",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 148,
+            "coefficient_prime_tests": 124,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 18880,
+            "sieve_marks": 130895,
+            "prime_divisions": 237576,
+            "smooth_rows": 136,
+            "occupied_blocks": 58,
+            "policies": {
+              "base": {
+                "dependencies": 3,
+                "gcd_tests": 2,
+                "factor": "614038594093",
+                "first_position": 64028,
+                "first_block": 63,
+                "chosen_rows": 47,
+                "odd_coefficients": 0,
+                "odd_polynomials": 31
+              }
+            }
+          },
+          "factors": [
+            "614038594093",
+            "831628910213"
+          ],
+          "remaining": []
+        },
+        "edges": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 148,
+            "coefficient_prime_tests": 21,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 18880,
+            "sieve_marks": 130942,
+            "prime_divisions": 237613,
+            "smooth_rows": 141,
+            "occupied_blocks": 57,
+            "policies": {
+              "edges": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "510652246834284249171809"
+          ]
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 148,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 18880,
+          "sieve_marks": 130881,
+          "prime_divisions": 237517,
+          "smooth_rows": 26,
+          "occupied_blocks": 22,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "510652246834284249171809"
+        ]
+      }
+    },
+    {
+      "attempt": 17,
+      "n": "401251371660777234497743",
+      "expected_factors": [
+        "623474989127",
+        "643572522809"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 153,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 19520,
+            "sieve_marks": 135899,
+            "prime_divisions": 158532,
+            "smooth_rows": 14,
+            "occupied_blocks": 14,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "401251371660777234497743"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 153,
+            "coefficient_prime_tests": 116,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 19520,
+            "sieve_marks": 135851,
+            "prime_divisions": 158455,
+            "smooth_rows": 84,
+            "occupied_blocks": 44,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "401251371660777234497743"
+          ]
+        },
+        "edges": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 153,
+            "coefficient_prime_tests": 16,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 19520,
+            "sieve_marks": 135953,
+            "prime_divisions": 158624,
+            "smooth_rows": 102,
+            "occupied_blocks": 53,
+            "policies": {
+              "edges": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "401251371660777234497743"
+          ]
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 153,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 19520,
+          "sieve_marks": 135915,
+          "prime_divisions": 158554,
+          "smooth_rows": 18,
+          "occupied_blocks": 18,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "401251371660777234497743"
+        ]
+      }
+    },
+    {
+      "attempt": 18,
+      "n": "389319238586043625070873",
+      "expected_factors": [
+        "583677384739",
+        "667011004307"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 158,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 20160,
+            "sieve_marks": 137257,
+            "prime_divisions": 241423,
+            "smooth_rows": 37,
+            "occupied_blocks": 29,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "389319238586043625070873"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "relation",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 158,
+            "coefficient_prime_tests": 103,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 20160,
+            "sieve_marks": 137279,
+            "prime_divisions": 241462,
+            "smooth_rows": 230,
+            "occupied_blocks": 64,
+            "policies": {
+              "base": {
+                "dependencies": 77,
+                "gcd_tests": 2,
+                "factor": "667011004307",
+                "first_position": 41257,
+                "first_block": 41,
+                "chosen_rows": 47,
+                "odd_coefficients": 0,
+                "odd_polynomials": 15
+              }
+            }
+          },
+          "factors": [
+            "583677384739",
+            "667011004307"
+          ],
+          "remaining": []
+        },
+        "edges": {
+          "work": {
+            "outcome": "relation",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 158,
+            "coefficient_prime_tests": 14,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 20160,
+            "sieve_marks": 137261,
+            "prime_divisions": 241420,
+            "smooth_rows": 255,
+            "occupied_blocks": 63,
+            "policies": {
+              "edges": {
+                "dependencies": 90,
+                "gcd_tests": 3,
+                "factor": "667011004307",
+                "first_position": 42924,
+                "first_block": 42,
+                "chosen_rows": 78,
+                "odd_coefficients": 8,
+                "odd_polynomials": 24
+              },
+              "coefficient": {
+                "dependencies": 66,
+                "gcd_tests": 2,
+                "factor": "667011004307",
+                "first_position": 47276,
+                "first_block": 47,
+                "chosen_rows": 72,
+                "odd_coefficients": 0,
+                "odd_polynomials": 18
+              },
+              "polynomial": {
+                "dependencies": 35,
+                "gcd_tests": 5,
+                "factor": "583677384739",
+                "first_position": 55912,
+                "first_block": 55,
+                "chosen_rows": 90,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [
+            "583677384739",
+            "667011004307"
+          ],
+          "remaining": []
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 158,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 20160,
+          "sieve_marks": 137263,
+          "prime_divisions": 241421,
+          "smooth_rows": 41,
+          "occupied_blocks": 31,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "389319238586043625070873"
+        ]
+      }
+    },
+    {
+      "attempt": 20,
+      "n": "485198170249783951712069",
+      "expected_factors": [
+        "551647090493",
+        "879544510633"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 150,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 19136,
+            "sieve_marks": 125648,
+            "prime_divisions": 166011,
+            "smooth_rows": 8,
+            "occupied_blocks": 8,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "485198170249783951712069"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 150,
+            "coefficient_prime_tests": 133,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 19136,
+            "sieve_marks": 125638,
+            "prime_divisions": 165988,
+            "smooth_rows": 106,
+            "occupied_blocks": 54,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "485198170249783951712069"
+          ]
+        },
+        "edges": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 150,
+            "coefficient_prime_tests": 15,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 19136,
+            "sieve_marks": 125710,
+            "prime_divisions": 166090,
+            "smooth_rows": 117,
+            "occupied_blocks": 54,
+            "policies": {
+              "edges": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "485198170249783951712069"
+          ]
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 150,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 19136,
+          "sieve_marks": 125653,
+          "prime_divisions": 166005,
+          "smooth_rows": 15,
+          "occupied_blocks": 11,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "485198170249783951712069"
+        ]
+      }
+    },
+    {
+      "attempt": 21,
+      "n": "571835173872752309082847",
+      "expected_factors": [
+        "731082321721",
+        "782176174807"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 150,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 19136,
+            "sieve_marks": 161944,
+            "prime_divisions": 189122,
+            "smooth_rows": 9,
+            "occupied_blocks": 8,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "571835173872752309082847"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 150,
+            "coefficient_prime_tests": 140,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 19136,
+            "sieve_marks": 161907,
+            "prime_divisions": 189052,
+            "smooth_rows": 91,
+            "occupied_blocks": 49,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "571835173872752309082847"
+          ]
+        },
+        "edges": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 150,
+            "coefficient_prime_tests": 18,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 19136,
+            "sieve_marks": 162000,
+            "prime_divisions": 189210,
+            "smooth_rows": 99,
+            "occupied_blocks": 49,
+            "policies": {
+              "edges": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "571835173872752309082847"
+          ]
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 150,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 19136,
+          "sieve_marks": 161957,
+          "prime_divisions": 189130,
+          "smooth_rows": 11,
+          "occupied_blocks": 8,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "571835173872752309082847"
+        ]
+      }
+    },
+    {
+      "attempt": 22,
+      "n": "524070986417428416035579",
+      "expected_factors": [
+        "655188688663",
+        "799877951933"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 170,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 21696,
+            "sieve_marks": 149663,
+            "prime_divisions": 159723,
+            "smooth_rows": 31,
+            "occupied_blocks": 27,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "524070986417428416035579"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "relation",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 170,
+            "coefficient_prime_tests": 112,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 21696,
+            "sieve_marks": 149693,
+            "prime_divisions": 159719,
+            "smooth_rows": 184,
+            "occupied_blocks": 62,
+            "policies": {
+              "base": {
+                "dependencies": 32,
+                "gcd_tests": 1,
+                "factor": "655188688663",
+                "first_position": 54524,
+                "first_block": 54,
+                "chosen_rows": 53,
+                "odd_coefficients": 0,
+                "odd_polynomials": 23
+              }
+            }
+          },
+          "factors": [
+            "655188688663",
+            "799877951933"
+          ],
+          "remaining": []
+        },
+        "edges": {
+          "work": {
+            "outcome": "relation",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 170,
+            "coefficient_prime_tests": 16,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 21696,
+            "sieve_marks": 149604,
+            "prime_divisions": 159647,
+            "smooth_rows": 167,
+            "occupied_blocks": 59,
+            "policies": {
+              "edges": {
+                "dependencies": 1,
+                "gcd_tests": 1,
+                "factor": "799877951933",
+                "first_position": 64477,
+                "first_block": 63,
+                "chosen_rows": 72,
+                "odd_coefficients": 18,
+                "odd_polynomials": 26
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [
+            "655188688663",
+            "799877951933"
+          ],
+          "remaining": []
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 170,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 21696,
+          "sieve_marks": 149689,
+          "prime_divisions": 159750,
+          "smooth_rows": 34,
+          "occupied_blocks": 28,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "524070986417428416035579"
+        ]
+      }
+    },
+    {
+      "attempt": 29,
+      "n": "476037389343090554902423",
+      "expected_factors": [
+        "598281678853",
+        "795674355691"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 133,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 16960,
+            "sieve_marks": 139482,
+            "prime_divisions": 165015,
+            "smooth_rows": 6,
+            "occupied_blocks": 6,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "476037389343090554902423"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 133,
+            "coefficient_prime_tests": 143,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 16960,
+            "sieve_marks": 139660,
+            "prime_divisions": 165235,
+            "smooth_rows": 43,
+            "occupied_blocks": 29,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "476037389343090554902423"
+          ]
+        },
+        "edges": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 133,
+            "coefficient_prime_tests": 27,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 16960,
+            "sieve_marks": 139554,
+            "prime_divisions": 165108,
+            "smooth_rows": 36,
+            "occupied_blocks": 27,
+            "policies": {
+              "edges": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "476037389343090554902423"
+          ]
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 133,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 16960,
+          "sieve_marks": 139487,
+          "prime_divisions": 165010,
+          "smooth_rows": 9,
+          "occupied_blocks": 9,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "476037389343090554902423"
+        ]
+      }
+    },
+    {
+      "attempt": 30,
+      "n": "585079680166047411333617",
+      "expected_factors": [
+        "737331252667",
+        "793509942851"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 164,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 20928,
+            "sieve_marks": 99176,
+            "prime_divisions": 198780,
+            "smooth_rows": 9,
+            "occupied_blocks": 9,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "585079680166047411333617"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 164,
+            "coefficient_prime_tests": 113,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 20928,
+            "sieve_marks": 99261,
+            "prime_divisions": 198871,
+            "smooth_rows": 112,
+            "occupied_blocks": 57,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "585079680166047411333617"
+          ]
+        },
+        "edges": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 164,
+            "coefficient_prime_tests": 17,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 20928,
+            "sieve_marks": 99268,
+            "prime_divisions": 198904,
+            "smooth_rows": 131,
+            "occupied_blocks": 57,
+            "policies": {
+              "edges": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "585079680166047411333617"
+          ]
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 164,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 20928,
+          "sieve_marks": 99180,
+          "prime_divisions": 198786,
+          "smooth_rows": 22,
+          "occupied_blocks": 18,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "585079680166047411333617"
+        ]
+      }
+    },
+    {
+      "attempt": 31,
+      "n": "572244521161152405783991",
+      "expected_factors": [
+        "689403507077",
+        "830057455883"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 157,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 20032,
+            "sieve_marks": 187726,
+            "prime_divisions": 221047,
+            "smooth_rows": 23,
+            "occupied_blocks": 18,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "572244521161152405783991"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "relation",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 157,
+            "coefficient_prime_tests": 131,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 20032,
+            "sieve_marks": 187623,
+            "prime_divisions": 220928,
+            "smooth_rows": 180,
+            "occupied_blocks": 63,
+            "policies": {
+              "base": {
+                "dependencies": 34,
+                "gcd_tests": 1,
+                "factor": "830057455883",
+                "first_position": 52136,
+                "first_block": 51,
+                "chosen_rows": 65,
+                "odd_coefficients": 0,
+                "odd_polynomials": 19
+              }
+            }
+          },
+          "factors": [
+            "689403507077",
+            "830057455883"
+          ],
+          "remaining": []
+        },
+        "edges": {
+          "work": {
+            "outcome": "relation",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 157,
+            "coefficient_prime_tests": 16,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 20032,
+            "sieve_marks": 187666,
+            "prime_divisions": 220983,
+            "smooth_rows": 157,
+            "occupied_blocks": 56,
+            "policies": {
+              "edges": {
+                "dependencies": 11,
+                "gcd_tests": 1,
+                "factor": "830057455883",
+                "first_position": 60216,
+                "first_block": 59,
+                "chosen_rows": 61,
+                "odd_coefficients": 13,
+                "odd_polynomials": 29
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [
+            "689403507077",
+            "830057455883"
+          ],
+          "remaining": []
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 157,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 20032,
+          "sieve_marks": 187718,
+          "prime_divisions": 221034,
+          "smooth_rows": 34,
+          "occupied_blocks": 25,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "572244521161152405783991"
+        ]
+      }
+    },
+    {
+      "attempt": 37,
+      "n": "529812415732393227949447",
+      "expected_factors": [
+        "567127982647",
+        "934202564401"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 158,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 20160,
+            "sieve_marks": 185916,
+            "prime_divisions": 214119,
+            "smooth_rows": 35,
+            "occupied_blocks": 28,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "529812415732393227949447"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "relation",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 158,
+            "coefficient_prime_tests": 120,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 20160,
+            "sieve_marks": 185914,
+            "prime_divisions": 214135,
+            "smooth_rows": 223,
+            "occupied_blocks": 62,
+            "policies": {
+              "base": {
+                "dependencies": 74,
+                "gcd_tests": 1,
+                "factor": "934202564401",
+                "first_position": 35398,
+                "first_block": 35,
+                "chosen_rows": 48,
+                "odd_coefficients": 0,
+                "odd_polynomials": 16
+              }
+            }
+          },
+          "factors": [
+            "567127982647",
+            "934202564401"
+          ],
+          "remaining": []
+        },
+        "edges": {
+          "work": {
+            "outcome": "relation",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 158,
+            "coefficient_prime_tests": 17,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 20160,
+            "sieve_marks": 185964,
+            "prime_divisions": 214159,
+            "smooth_rows": 247,
+            "occupied_blocks": 61,
+            "policies": {
+              "edges": {
+                "dependencies": 88,
+                "gcd_tests": 2,
+                "factor": "567127982647",
+                "first_position": 40199,
+                "first_block": 40,
+                "chosen_rows": 66,
+                "odd_coefficients": 8,
+                "odd_polynomials": 20
+              },
+              "coefficient": {
+                "dependencies": 64,
+                "gcd_tests": 1,
+                "factor": "934202564401",
+                "first_position": 44331,
+                "first_block": 44,
+                "chosen_rows": 60,
+                "odd_coefficients": 0,
+                "odd_polynomials": 14
+              },
+              "polynomial": {
+                "dependencies": 36,
+                "gcd_tests": 1,
+                "factor": "934202564401",
+                "first_position": 51401,
+                "first_block": 51,
+                "chosen_rows": 96,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [
+            "567127982647",
+            "934202564401"
+          ],
+          "remaining": []
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 158,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 20160,
+          "sieve_marks": 185914,
+          "prime_divisions": 214138,
+          "smooth_rows": 46,
+          "occupied_blocks": 31,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "529812415732393227949447"
+        ]
+      }
+    },
+    {
+      "attempt": 38,
+      "n": "585844858309756184837869",
+      "expected_factors": [
+        "651284137871",
+        "899522687939"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 142,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 18112,
+            "sieve_marks": 158945,
+            "prime_divisions": 221212,
+            "smooth_rows": 10,
+            "occupied_blocks": 9,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "585844858309756184837869"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 142,
+            "coefficient_prime_tests": 123,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 18112,
+            "sieve_marks": 158917,
+            "prime_divisions": 221215,
+            "smooth_rows": 103,
+            "occupied_blocks": 51,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "585844858309756184837869"
+          ]
+        },
+        "edges": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 142,
+            "coefficient_prime_tests": 16,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 18112,
+            "sieve_marks": 158841,
+            "prime_divisions": 221104,
+            "smooth_rows": 88,
+            "occupied_blocks": 52,
+            "policies": {
+              "edges": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "585844858309756184837869"
+          ]
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 142,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 18112,
+          "sieve_marks": 158942,
+          "prime_divisions": 221206,
+          "smooth_rows": 15,
+          "occupied_blocks": 14,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "585844858309756184837869"
+        ]
+      }
+    },
+    {
+      "attempt": 44,
+      "n": "417419988222340948926083",
+      "expected_factors": [
+        "571214902877",
+        "730758224479"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 149,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 19008,
+            "sieve_marks": 116898,
+            "prime_divisions": 121245,
+            "smooth_rows": 10,
+            "occupied_blocks": 9,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "417419988222340948926083"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 149,
+            "coefficient_prime_tests": 133,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 19008,
+            "sieve_marks": 116939,
+            "prime_divisions": 121253,
+            "smooth_rows": 74,
+            "occupied_blocks": 42,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "417419988222340948926083"
+          ]
+        },
+        "edges": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 149,
+            "coefficient_prime_tests": 18,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 19008,
+            "sieve_marks": 116870,
+            "prime_divisions": 121203,
+            "smooth_rows": 77,
+            "occupied_blocks": 44,
+            "policies": {
+              "edges": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "417419988222340948926083"
+          ]
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 149,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 19008,
+          "sieve_marks": 116901,
+          "prime_divisions": 121252,
+          "smooth_rows": 17,
+          "occupied_blocks": 13,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "417419988222340948926083"
+        ]
+      }
+    },
+    {
+      "attempt": 47,
+      "n": "533030656963279420815323",
+      "expected_factors": [
+        "627198161251",
+        "849860044073"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 142,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 18112,
+            "sieve_marks": 101639,
+            "prime_divisions": 104487,
+            "smooth_rows": 6,
+            "occupied_blocks": 6,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "533030656963279420815323"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 142,
+            "coefficient_prime_tests": 135,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 18112,
+            "sieve_marks": 101612,
+            "prime_divisions": 104448,
+            "smooth_rows": 33,
+            "occupied_blocks": 25,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "533030656963279420815323"
+          ]
+        },
+        "edges": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 142,
+            "coefficient_prime_tests": 22,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 18112,
+            "sieve_marks": 101633,
+            "prime_divisions": 104454,
+            "smooth_rows": 36,
+            "occupied_blocks": 25,
+            "policies": {
+              "edges": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "533030656963279420815323"
+          ]
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 142,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 18112,
+          "sieve_marks": 101635,
+          "prime_divisions": 104481,
+          "smooth_rows": 5,
+          "occupied_blocks": 5,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "533030656963279420815323"
+        ]
+      }
+    },
+    {
+      "attempt": 49,
+      "n": "306803416746702736014481",
+      "expected_factors": [
+        "553815986387",
+        "553980788363"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 146,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 18624,
+            "sieve_marks": 150801,
+            "prime_divisions": 278400,
+            "smooth_rows": 11,
+            "occupied_blocks": 10,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "306803416746702736014481"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 146,
+            "coefficient_prime_tests": 129,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 18624,
+            "sieve_marks": 150785,
+            "prime_divisions": 278443,
+            "smooth_rows": 106,
+            "occupied_blocks": 54,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "306803416746702736014481"
+          ]
+        },
+        "edges": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 146,
+            "coefficient_prime_tests": 13,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 18624,
+            "sieve_marks": 150823,
+            "prime_divisions": 278391,
+            "smooth_rows": 113,
+            "occupied_blocks": 56,
+            "policies": {
+              "edges": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "306803416746702736014481"
+          ]
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 146,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 18624,
+          "sieve_marks": 150801,
+          "prime_divisions": 278408,
+          "smooth_rows": 14,
+          "occupied_blocks": 10,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "306803416746702736014481"
+        ]
+      }
+    },
+    {
+      "attempt": 54,
+      "n": "563377948785282057047021",
+      "expected_factors": [
+        "591389861983",
+        "952633761587"
+      ],
+      "methods": {
+        "single": {
+          "work": {
+            "outcome": "no_split",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 151,
+            "coefficient_prime_tests": 0,
+            "coefficient_primes": 0,
+            "square_scale_bits": 0,
+            "sieve_progressions": 19264,
+            "sieve_marks": 156492,
+            "prime_divisions": 201635,
+            "smooth_rows": 19,
+            "occupied_blocks": 17,
+            "policies": {
+              "base": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [],
+          "remaining": [
+            "563377948785282057047021"
+          ]
+        },
+        "square": {
+          "work": {
+            "outcome": "relation",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 151,
+            "coefficient_prime_tests": 121,
+            "coefficient_primes": 64,
+            "square_scale_bits": 1,
+            "sieve_progressions": 19264,
+            "sieve_marks": 156489,
+            "prime_divisions": 201619,
+            "smooth_rows": 139,
+            "occupied_blocks": 59,
+            "policies": {
+              "base": {
+                "dependencies": 4,
+                "gcd_tests": 1,
+                "factor": "952633761587",
+                "first_position": 61959,
+                "first_block": 61,
+                "chosen_rows": 43,
+                "odd_coefficients": 0,
+                "odd_polynomials": 27
+              }
+            }
+          },
+          "factors": [
+            "591389861983",
+            "952633761587"
+          ],
+          "remaining": []
+        },
+        "edges": {
+          "work": {
+            "outcome": "relation",
+            "blocks": 64,
+            "positions": 65600,
+            "base_prime_tests": 309,
+            "base_size": 151,
+            "coefficient_prime_tests": 18,
+            "coefficient_primes": 9,
+            "square_scale_bits": 1,
+            "sieve_progressions": 19264,
+            "sieve_marks": 156577,
+            "prime_divisions": 201680,
+            "smooth_rows": 166,
+            "occupied_blocks": 60,
+            "policies": {
+              "edges": {
+                "dependencies": 17,
+                "gcd_tests": 1,
+                "factor": "591389861983",
+                "first_position": 57115,
+                "first_block": 56,
+                "chosen_rows": 64,
+                "odd_coefficients": 18,
+                "odd_polynomials": 30
+              },
+              "coefficient": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              },
+              "polynomial": {
+                "dependencies": 0,
+                "gcd_tests": 0,
+                "factor": null,
+                "first_position": null,
+                "first_block": null,
+                "chosen_rows": 0,
+                "odd_coefficients": 0,
+                "odd_polynomials": 0
+              }
+            }
+          },
+          "factors": [
+            "591389861983",
+            "952633761587"
+          ],
+          "remaining": []
+        }
+      },
+      "centered_single_sensitivity": {
+        "work": {
+          "outcome": "no_split",
+          "blocks": 64,
+          "positions": 65600,
+          "base_prime_tests": 309,
+          "base_size": 151,
+          "coefficient_prime_tests": 0,
+          "coefficient_primes": 0,
+          "square_scale_bits": 0,
+          "sieve_progressions": 19264,
+          "sieve_marks": 156482,
+          "prime_divisions": 201619,
+          "smooth_rows": 23,
+          "occupied_blocks": 20,
+          "policies": {
+            "base": {
+              "dependencies": 0,
+              "gcd_tests": 0,
+              "factor": null,
+              "first_position": null,
+              "first_block": null,
+              "chosen_rows": 0,
+              "odd_coefficients": 0,
+              "odd_polynomials": 0
+            }
+          }
+        },
+        "factors": [],
+        "remaining": [
+          "563377948785282057047021"
+        ]
+      }
+    }
+  ]
+}

@@ -51,4 +51,10 @@ theorem single_lift_width {A R k b : ℤ} (pos : 0 < A) (r : 0 ≤ R)
   · have h := abs_nonneg b
     nlinarith
 
+/-- Cross-multiplied finite constants in the fixed-coefficient population count. -/
+theorem packet_population_constants :
+    6*710^2*10000*(2*2^308+1)*2^688 < 484*(2:ℕ)^1023 ∧
+    2*1511*710*10*2^154*2^853 < 484*(2:ℕ)^1023 := by
+  norm_num
+
 end PrimeFactors.PolynomialRootPacking
