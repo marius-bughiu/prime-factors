@@ -16,7 +16,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from experiments.modular_hyperbola import search as hyperbola_search
-from experiments.predecessor_square import search as predecessor_square_search
+from experiments.predecessor_square import search as predecessor_square_search, search_square_offset
 from experiments.gap_stride import search as gap_search
 from experiments.cyclotomic_periods import expand_cases, reduced_table_search, search as cyclotomic_search
 
@@ -82,6 +82,12 @@ def run_case(case, method, proofs):
         agree(case, work, ['low_classes', 'modular_hits'])
         factor = pairs[0][0] if pairs else None
         result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
+    elif method == 'square-offset':
+        work = search_square_offset(int(case['n']), case['max_gap'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, ['gaps_tested', 'discriminants'])
+        result = certify_split(case, proof, factor, elapsed, 'square_offset', work)
     elif method == 'predecessor-square':
         work = predecessor_square_search(int(case['n']), case['max_scale'])
         elapsed = time.perf_counter() - start
@@ -160,6 +166,7 @@ def main():
                              ('shifted.json', 'shifted'), ('reduced-orders.json', 'reduced-order'),
                              ('cyclotomic-periods.json', 'cyclotomic'), ('gap-stride.json', 'gap-stride'),
                              ('predecessor-square.json', 'predecessor-square'),
+                             ('square-offset.json', 'square-offset'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':

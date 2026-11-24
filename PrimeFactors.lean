@@ -1,5 +1,6 @@
 import PrimeFactors.AdditiveCover
 import PrimeFactors.AnalyticAccess
+import PrimeFactors.ApproximateTotient
 import PrimeFactors.BitMarginals
 import PrimeFactors.BlockCharacters
 import PrimeFactors.Certificate
@@ -39,6 +40,7 @@ import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder
 import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
+import PrimeFactors.PredecessorCount
 import PrimeFactors.PrimePower
 import PrimeFactors.PrimePowerCount
 import PrimeFactors.ProductAdvice

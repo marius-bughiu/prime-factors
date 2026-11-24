@@ -6,6 +6,10 @@ What information about two unknown primes can be recovered cheaply from their pr
 
 For balanced primes, if the totient $(p-1)(q-1)$ is $d$ times a square, the product and $d$ determine the factor sum by one integer square root. Trying $d=1$ through $6$ recovered two 1024-bit primes 38.76% apart from their product alone. Stopping at five leaves the input unresolved. A counting argument bounds how often a small squarefree part occurs, even before imposing primality. [Formula, proof and construction](discoveries/discriminant-strides.md) · [Benchmark and controls](benchmarks/predecessor-square.json)
 
+There are also infinitely many separated prime pairs whose totients lie one of 49 fixed square offsets below a square, even as their squarefree parts grow without bound. Testing the corrections from the product found both factors of a 92-bit input in two discriminant tests. The existence proof uses an unconditional theorem on prime values of linear forms. Lean checks the decoder. [Infinite family and weighted Fermat comparison](discoveries/near-square-families.md)
+
+For a general balanced pair, suppose the totient lies within $E$ of $d y^2$ for some $d\le L$. At a fixed relative gap, even errors up to a constant times $N^{1/4}$ still permit a paper reduction to $O(L)$ polynomial-time small-root computations. Lean bounds the square-root candidates and the interval for the larger prime. For polylogarithmic $L$, a counting argument bounds the fraction of balanced pairs meeting this promise. [Error bounds, cost and rarity](discoveries/approximate-totient-squares.md)
+
 ## A fourth structured 2048-bit factorization
 
 A Fermat search can advance by the square of a divisor of the half-gap. Trying successive powers of five split a 2048-bit product with primes 19.4% apart in **438 midpoint tests and 4,375 modular lifting tests**. The search received only the product and fixed budgets. Both prime predecessors are twice a prime. A control of the same size exhausts the budget. [Search bound, construction and certificate](discoveries/smooth-factor-gaps.md)

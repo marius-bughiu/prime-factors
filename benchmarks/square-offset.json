@@ -1,0 +1,29 @@
+[
+  {
+    "id": "square-offset-92",
+    "description": "Two discriminants for a 92-bit product with a large squarefree multiplier",
+    "n": "2723154578512940020180564043",
+    "max_gap": 49,
+    "gaps_tested": 43,
+    "discriminants": 2,
+    "status": "complete",
+    "factors": [
+      "42949673760401",
+      "63403382146843"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "square-offset-cutoff",
+    "description": "Stop before the second admissible square correction",
+    "n": "2723154578512940020180564043",
+    "max_gap": 42,
+    "gaps_tested": 42,
+    "discriminants": 1,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "2723154578512940020180564043"
+    ]
+  }
+]
