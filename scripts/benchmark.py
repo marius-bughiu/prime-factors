@@ -27,6 +27,7 @@ from experiments.pell_pairs import search as pell_pair_search
 from experiments.pell_relations import search as pell_relation_search
 from experiments.salie_blocks import search as salie_block_search
 from experiments.folded_square import direct as fixed_phase_search
+from experiments.four_square_lines import search as four_square_line_search
 from experiments.quotient_search import search as quotient_search
 from experiments.inverse_windows import search_product as inverse_windows_search
 from experiments.continued_square import search as continued_square_search
@@ -139,6 +140,13 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(max_steps=case['max_steps'], multiplier=case['multiplier'])
         result = certify_split(case, proof, factor, elapsed, 'pell_relations', work)
+    elif method == 'four-square-lines':
+        work = four_square_line_search(int(case['n']), case['max_triples'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work['max_triples'] = case['max_triples']
+        result = certify_split(case, proof, factor, elapsed, 'four_square_lines', work)
     elif method == 'salie-blocks':
         work = salie_block_search(int(case['n']), case['max_orbits'], case['fractional_bits'])
         elapsed = time.perf_counter() - start
@@ -302,6 +310,7 @@ def main():
                              ('salie-blocks.json', 'salie-blocks'),
                              ('pell-pairs.json', 'pell-pairs'),
                              ('pell-relations.json', 'pell-relations'),
+                             ('four-square-lines.json', 'four-square-lines'),
                              ('quotient-search.json', 'quotient-search'),
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:

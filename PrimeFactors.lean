@@ -31,6 +31,7 @@ import PrimeFactors.FejerProjection
 import PrimeFactors.Fermat
 import PrimeFactors.FoldedSquare
 import PrimeFactors.FourierAccess
+import PrimeFactors.FourSquareLines
 import PrimeFactors.GapStride
 import PrimeFactors.GroupedImages
 import PrimeFactors.HyperbolaBoxes

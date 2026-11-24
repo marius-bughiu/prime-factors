@@ -1,0 +1,83 @@
+[
+  {
+    "id": "four-square-lines-667",
+    "description": "Two scalar slopes agree at exactly one prime",
+    "n": "667",
+    "max_triples": 248,
+    "outcome": "collision",
+    "triples": 248,
+    "representations": 3,
+    "chart_gcds": 3,
+    "finite_labels": 2,
+    "pair_gcds": 1,
+    "labels": [
+      1,
+      117
+    ],
+    "status": "complete",
+    "factors": [
+      "23",
+      "29"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "four-square-lines-667-cap",
+    "description": "One fewer triple leaves only the first finite slope",
+    "n": "667",
+    "max_triples": 247,
+    "outcome": "budget",
+    "triples": 247,
+    "representations": 2,
+    "chart_gcds": 2,
+    "finite_labels": 1,
+    "pair_gcds": 0,
+    "labels": null,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "667"
+    ]
+  },
+  {
+    "id": "four-square-lines-chart-143",
+    "description": "A nonunit in the initial four-square chart splits the input",
+    "n": "143",
+    "max_triples": 188,
+    "outcome": "chart_factor",
+    "triples": 188,
+    "representations": 1,
+    "chart_gcds": 1,
+    "finite_labels": 0,
+    "pair_gcds": 0,
+    "labels": null,
+    "status": "complete",
+    "factors": [
+      "11",
+      "13"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "four-square-lines-60491",
+    "description": "The fourth scalar slope collides with an earlier label",
+    "n": "60491",
+    "max_triples": 2764,
+    "outcome": "collision",
+    "triples": 2764,
+    "representations": 5,
+    "chart_gcds": 5,
+    "finite_labels": 4,
+    "pair_gcds": 6,
+    "labels": [
+      742,
+      8695
+    ],
+    "status": "complete",
+    "factors": [
+      "241",
+      "251"
+    ],
+    "remaining": []
+  }
+]

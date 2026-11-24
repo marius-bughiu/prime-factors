@@ -72,6 +72,11 @@ def case_row(result):
         count = (f'Continued-fraction relations · {w["steps"]:,} of {w["max_steps"]:,} steps · '
                  f'{w["private_pruned"]:,} rows excluded · '
                  f'{w["tested"]:,} of {w["dependencies"]:,} independent combinations tested')
+    elif result['method'] == 'four-square-lines':
+        w = result['four_square_lines']
+        count = (f'Four-square representations · {w["triples"]:,} of {w["max_triples"]:,} triples tested · '
+                 f'{w["representations"]:,} representations · {w["finite_labels"]:,} slopes · '
+                 f'{w["pair_gcds"]:,} pair comparisons')
     elif result['method'] == 'salie-blocks':
         w = result['salie_blocks']
         outcome = ('sum decoded' if w['outcome'] == 'decoded' else
