@@ -2,6 +2,12 @@
 
 What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/character-conjectures.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
+## Three convergents recover a sixth structured 2048-bit product
+
+Compute $s=\lfloor\sqrt N\rfloor$ and expand the public fraction $s/(N-s^2)$. On a constructed product of primes 33.14% apart, its third convergent $195/4$ determines both factors. The decoder receives only $N$ and uses seven square tests after the initial square root. The correction to the totient square is itself 1,005 bits long. A second certified example has coprime hidden indices; on the earlier square-class input all 615 convergents leave the product unresolved.
+
+Lean proves when the required convergent occurs and how it gives the factor sum. Counting all products of the underlying form bounds its success probability below $2^{-988}$ for uniformly sampled 1024-bit prime pairs conditioned on a 2048-bit product. [Proof, construction and comparison with weighted Fermat](discoveries/near-square-families.md) · [Lean recovery theorem](PrimeFactors/ContinuedSquare.lean) · [Benchmark and controls](benchmarks/continued-square.json)
+
 ## A fifth structured 2048-bit factorization
 
 For balanced primes, if the totient $(p-1)(q-1)$ is $d$ times a square, the product and $d$ determine the factor sum by one integer square root. Trying $d=1$ through $6$ recovered two 1024-bit primes 38.76% apart from their product alone. Stopping at five leaves the input unresolved. A counting argument bounds how often a small squarefree part occurs, even before imposing primality. [Formula, proof and construction](discoveries/discriminant-strides.md) · [Benchmark and controls](benchmarks/predecessor-square.json)

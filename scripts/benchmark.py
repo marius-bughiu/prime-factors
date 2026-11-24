@@ -16,6 +16,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from experiments.modular_hyperbola import search as hyperbola_search
+from experiments.continued_square import search as continued_square_search
 from experiments.predecessor_square import search as predecessor_square_search, search_square_offset
 from experiments.gap_stride import search as gap_search
 from experiments.cyclotomic_periods import expand_cases, reduced_table_search, search as cyclotomic_search
@@ -82,6 +83,16 @@ def run_case(case, method, proofs):
         agree(case, work, ['low_classes', 'modular_hits'])
         factor = pairs[0][0] if pairs else None
         result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
+    elif method == 'continued-square':
+        work = continued_square_search(int(case['n']), case['max_convergents'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        work.pop('cofactor')
+        if factor is not None:
+            work['scale'] = str(work['scale'])
+            work['parameter'] = str(work['parameter'])
+        agree(case, work, ['convergents', 'square_tests', 'direction_tests'])
+        result = certify_split(case, proof, factor, elapsed, 'continued_square', work)
     elif method == 'square-offset':
         work = search_square_offset(int(case['n']), case['max_gap'])
         elapsed = time.perf_counter() - start
@@ -166,7 +177,7 @@ def main():
                              ('shifted.json', 'shifted'), ('reduced-orders.json', 'reduced-order'),
                              ('cyclotomic-periods.json', 'cyclotomic'), ('gap-stride.json', 'gap-stride'),
                              ('predecessor-square.json', 'predecessor-square'),
-                             ('square-offset.json', 'square-offset'),
+                             ('square-offset.json', 'square-offset'), ('continued-square.json', 'continued-square'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':

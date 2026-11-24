@@ -57,6 +57,12 @@ def case_row(result):
         count = (f'Balanced-interval modular search · {w["low_classes"]:,} low residue classes'
                  f' · {w["modular_hits"]:,} candidate products · {w["euclidean_steps"]:,} Euclidean steps'
                  f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'continued-square':
+        w = result['continued_square']
+        cap = f' · cap {w["max_convergents"]}' if w["max_convergents"] is not None else ''
+        count = (f'Continued fractions of the square-root residual · {w["convergents"]} convergents'
+                 f'{cap} · {w["square_tests"]} square tests after the initial integer square root'
+                 f' · search {duration(result["discovery_seconds"])}')
     elif result['method'] == 'square-offset':
         w = result['square_offset']
         count = (f'Corrected totient square · {w["gaps_tested"]} of {w["max_gap"]} index gaps tested'

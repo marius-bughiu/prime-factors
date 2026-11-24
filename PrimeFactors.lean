@@ -6,6 +6,7 @@ import PrimeFactors.BlockCharacters
 import PrimeFactors.Certificate
 import PrimeFactors.ClassNumberWindow
 import PrimeFactors.ConditionalStride
+import PrimeFactors.ContinuedSquare
 import PrimeFactors.CountingReadout
 import PrimeFactors.CyclotomicPeriods
 import PrimeFactors.DiscriminantPencil
