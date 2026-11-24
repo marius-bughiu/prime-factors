@@ -110,7 +110,8 @@ theorem phase_sixth_separated {α : Type*} (s : Finset α) (value : α → ℝ)
   have res : (s.card : ℝ) ≤ 6*((s.filter good).card : ℝ) := by linarith
   exact_mod_cast res
 
-private theorem phase_sine_floor {u d : ℝ} (hd : 0 ≤ d) (left : d ≤ u)
+/-- Jordan’s inequality away from either endpoint of a half-turn. -/
+theorem phase_sine_floor {u d : ℝ} (hd : 0 ≤ d) (left : d ≤ u)
     (right : d ≤ 1-u) : 2*d ≤ |Real.sin (Real.pi*u)| := by
   have half (v : ℝ) (hv : 0 ≤ v) (hv' : v ≤ 1/2) : 2*v ≤ Real.sin (Real.pi*v) := by
     have h := Real.le_sin_mul (x := 2*v) (by linarith) (by linarith)

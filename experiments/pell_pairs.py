@@ -12,8 +12,8 @@ else:
     from sieve_forecast import primes_through
 
 
-def center(n, multiplier, budget):
-    """Find a symmetry, retaining consecutive convergent numerators only modulo n."""
+def convergents(n, multiplier, budget):
+    """Yield complete denominators and preceding signed norm representatives."""
     d = n * multiplier
     base = isqrt(d)
     if base * base == d:
@@ -25,14 +25,20 @@ def center(n, multiplier, budget):
         offset = quotient * denominator - offset
         denominator = (d - offset * offset) // denominator
         quotient = (base + offset) // denominator
+        sign = -1 if step % 2 else 1
+        yield step, denominator, sign, numerator, quotient * denominator == 2 * offset
+        older, previous = previous, numerator
+
+
+def center(n, multiplier, budget):
+    """Find a symmetry, retaining consecutive convergent numerators only modulo n."""
+    for step, denominator, sign, numerator, symmetric in convergents(n, multiplier, budget):
         if denominator == 1:
             return step, None
-        if quotient * denominator == 2 * offset:
-            sign = -1 if step % 2 else 1
+        if symmetric:
             if (numerator * numerator - sign * denominator) % n:
                 raise ArithmeticError('center norm disagrees with the numerator')
             return step, (denominator, sign, numerator)
-        older, previous = previous, numerator
     return budget, None
 
 

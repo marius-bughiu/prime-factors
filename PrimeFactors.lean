@@ -56,10 +56,12 @@ import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder
 import PrimeFactors.PascalProjection
 import PrimeFactors.PascalReadout
+import PrimeFactors.PellCycles
 import PrimeFactors.PellMultiplier
 import PrimeFactors.PhaseBlocks
 import PrimeFactors.PhaseCharacters
 import PrimeFactors.PhaseEvaluation
+import PrimeFactors.PhasePrecision
 import PrimeFactors.PhaseResidues
 import PrimeFactors.PhaseSchedules
 import PrimeFactors.PhaseSeparation
@@ -78,7 +80,10 @@ import PrimeFactors.ReflectedImages
 import PrimeFactors.ResidueCount
 import PrimeFactors.ReverseSweep
 import PrimeFactors.RobinMultiplier
+import PrimeFactors.RootInterval
+import PrimeFactors.RootIntervalSlope
 import PrimeFactors.SalieCounts
+import PrimeFactors.SalieOrbit
 import PrimeFactors.SampledSieve
 import PrimeFactors.ScatteredFactor
 import PrimeFactors.SeparatedPairs

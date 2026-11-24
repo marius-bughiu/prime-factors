@@ -1,0 +1,93 @@
+[
+  {
+    "id": "salie-blocks-667",
+    "description": "Full fixed reading from signed inverse orbits",
+    "n": "667",
+    "outcome": "decoded",
+    "scan_factor": 23,
+    "word": 883,
+    "orbits": 155,
+    "unit_terms": 616,
+    "membership_checks": 180,
+    "inverses": 155,
+    "trig_calls": 4,
+    "complex_products": 49,
+    "max_orbits": 155,
+    "fractional_bits": 10,
+    "lift_tests": 0,
+    "status": "complete",
+    "factors": [
+      "23",
+      "29"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "salie-blocks-667-scan",
+    "description": "A divisor appears in the scan before the sum is complete",
+    "n": "667",
+    "outcome": "budget",
+    "scan_factor": 23,
+    "word": null,
+    "orbits": 154,
+    "unit_terms": 612,
+    "membership_checks": 178,
+    "inverses": 154,
+    "trig_calls": 2,
+    "complex_products": 24,
+    "max_orbits": 154,
+    "fractional_bits": 10,
+    "lift_tests": 0,
+    "status": "complete",
+    "factors": [
+      "23",
+      "29"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "salie-blocks-667-cap",
+    "description": "One orbit gives neither a reading nor a divisor",
+    "n": "667",
+    "outcome": "budget",
+    "scan_factor": null,
+    "word": null,
+    "orbits": 1,
+    "unit_terms": 2,
+    "membership_checks": 2,
+    "inverses": 1,
+    "trig_calls": 2,
+    "complex_products": 24,
+    "max_orbits": 1,
+    "fractional_bits": 10,
+    "lift_tests": 0,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "667"
+    ]
+  },
+  {
+    "id": "salie-blocks-60491",
+    "description": "A directly summed nine-bit reading and one quadratic lift",
+    "n": "60491",
+    "outcome": "decoded",
+    "scan_factor": 241,
+    "word": 1345,
+    "orbits": 15001,
+    "unit_terms": 60000,
+    "membership_checks": 15246,
+    "inverses": 15001,
+    "trig_calls": 4,
+    "complex_products": 489,
+    "max_orbits": 15001,
+    "fractional_bits": 9,
+    "lift_tests": 1,
+    "status": "complete",
+    "factors": [
+      "241",
+      "251"
+    ],
+    "remaining": []
+  }
+]

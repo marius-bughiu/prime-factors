@@ -24,6 +24,8 @@ from experiments.short_basis_sieve import search as short_basis_search
 from experiments.wide_modulus import search as wide_modulus_search
 from experiments.pascal_readout import search as pascal_search
 from experiments.pell_pairs import search as pell_pair_search
+from experiments.pell_relations import search as pell_relation_search
+from experiments.salie_blocks import search as salie_block_search
 from experiments.folded_square import direct as fixed_phase_search
 from experiments.quotient_search import search as quotient_search
 from experiments.inverse_windows import search_product as inverse_windows_search
@@ -130,6 +132,19 @@ def run_case(case, method, proofs):
         agree(case, work, ['outcome', 'steps', 'walks', 'centers', 'cycles', 'root'])
         work.update(max_steps=case['max_steps'], max_prime=case['max_prime'], triangles=case['triangles'])
         result = certify_split(case, proof, factor, elapsed, 'pell_pairs', work)
+    elif method == 'pell-relations':
+        work = pell_relation_search(int(case['n']), case['multiplier'], case['max_steps'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(max_steps=case['max_steps'], multiplier=case['multiplier'])
+        result = certify_split(case, proof, factor, elapsed, 'pell_relations', work)
+    elif method == 'salie-blocks':
+        work = salie_block_search(int(case['n']), case['max_orbits'], case['fractional_bits'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        result = certify_split(case, proof, factor, elapsed, 'salie_blocks', work)
     elif method in ('salie-seed', 'folded-square'):
         search = salie_seed_search if method == 'salie-seed' else fixed_phase_search
         work = search(int(case['n']), case['max_terms'])
@@ -284,7 +299,9 @@ def main():
                              ('salie-residues.json', 'salie-residues'),
                              ('salie-seed.json', 'salie-seed'),
                              ('folded-square.json', 'folded-square'),
+                             ('salie-blocks.json', 'salie-blocks'),
                              ('pell-pairs.json', 'pell-pairs'),
+                             ('pell-relations.json', 'pell-relations'),
                              ('quotient-search.json', 'quotient-search'),
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:

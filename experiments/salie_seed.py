@@ -56,6 +56,11 @@ def rounded_sum(n, frequency, bits, max_terms, work):
         low, high = -high, -low
     work["jacobi_evaluations"] += 1
     work["sums"] = 1
+    return normalize_word(n, bits, low, high)
+
+
+def normalize_word(n, bits, low, high):
+    """Divide a signed component enclosure by sqrt(n) and certify its rounding."""
     lower_sqrt = isqrt(n*SCALE*SCALE)
     denominators = (lower_sqrt, lower_sqrt + 1)
     low = min(low*SCALE // den for den in denominators)

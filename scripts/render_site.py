@@ -67,6 +67,17 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'pell-relations':
+        w = result['pell_relations']
+        count = (f'Continued-fraction relations · {w["steps"]:,} of {w["max_steps"]:,} steps · '
+                 f'{w["private_pruned"]:,} rows excluded · '
+                 f'{w["tested"]:,} of {w["dependencies"]:,} independent combinations tested')
+    elif result['method'] == 'salie-blocks':
+        w = result['salie_blocks']
+        outcome = ('sum decoded' if w['outcome'] == 'decoded' else
+                   'sum unfinished, factor found in scan' if w['scan_factor'] is not None else 'sum unfinished')
+        count = (f'Blocked sum · {outcome} · {w["orbits"]:,} of {w["max_orbits"]:,} orbits · '
+                 f'{w["trig_calls"]} trigonometric evaluations · {w["complex_products"]:,} complex products')
     elif result['method'] == 'folded-square':
         w = result['folded_square']
         count = (f'Fixed-frequency sum · {w["sums"]} complete sums · '

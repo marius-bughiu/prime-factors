@@ -29,15 +29,19 @@ def working_bits(n):
     return max(128, n.bit_length()+96)
 
 
-def produce(p, q):
+def produce(p, q, fractional_bits=None):
     """Generate the rounded full sum synthetically via its four CRT roots."""
     n = p*q
     bits = working_bits(n)
+    if fractional_bits is None:
+        fractional_bits = n.bit_length()
+    if type(fractional_bits) is not int or not 1 <= fractional_bits <= n.bit_length():
+        raise ValueError("invalid fractional precision")
     h = 1+p*((-2*pow(p, -1, q)) % q)
     public = cosine_bounds(1, n, bits)
     hidden = cosine_bounds(h, n, bits)
     low, high = [2*(public[i]+hidden[i]) for i in range(2)]
-    grid = 1 << (bits-n.bit_length())
+    grid = 1 << (bits-fractional_bits)
     word = (low+grid//2)//grid
     margin = min(low-(word*grid-grid//2), word*grid+grid//2-high)
     if margin <= 0:
