@@ -30,6 +30,7 @@ import PrimeFactors.EuclideanHeightExample
 import PrimeFactors.ExceptionalWeights
 import PrimeFactors.ExponentialReadout
 import PrimeFactors.FactorCircuit
+import PrimeFactors.FactorialProgressions
 import PrimeFactors.FactorSum
 import PrimeFactors.FactorSumCRT
 import PrimeFactors.FejerProjection
@@ -98,8 +99,11 @@ import PrimeFactors.PrimePower
 import PrimeFactors.PrimePowerCount
 import PrimeFactors.ProductAdvice
 import PrimeFactors.ProductPrefix
+import PrimeFactors.QuarticSlopeBit
+import PrimeFactors.QuarticTrace
 import PrimeFactors.QuotientBudget
 import PrimeFactors.QuotientSearch
+import PrimeFactors.ReciprocalWheel
 import PrimeFactors.ReducedSlopes
 import PrimeFactors.RandomRelationSigns
 import PrimeFactors.RationalSquare
@@ -138,6 +142,7 @@ import PrimeFactors.SupportingSlope
 import PrimeFactors.ThetaResidues
 import PrimeFactors.SumGaps
 import PrimeFactors.TotientTensor
+import PrimeFactors.TraceDirection
 import PrimeFactors.TruncatedProduct
 import PrimeFactors.TruncatedWindow
 import PrimeFactors.WeakPhase

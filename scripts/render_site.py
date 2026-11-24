@@ -67,6 +67,26 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'factorial-progressions':
+        w = result['factorial_progressions']
+        counts = w['work']
+        covered = counts.get('batched_candidates', 0) + counts.get('edge_candidates', 0)
+        count = (f'Block products · {int(w["span"]):,} integers in budgeted interval'
+                 f' · {covered:,} candidates covered · {counts.get("convolutions", 0)} convolutions'
+                 f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'reciprocal-wheel':
+        w = result['reciprocal_wheel']
+        count = (f'Paired factor intervals · {w["blocks"]:,} blocks tested'
+                 f' · {w["compatible_candidates"]:,} of {w["ordinary_candidates"]:,} candidates retained'
+                 f' · {w["evaluations"]:,} polynomial evaluations')
+    elif result['method'] == 'quartic-trace':
+        w = result['quartic_trace']
+        count = (f'Quartic character sums · {w["bits"]+2} bits per residue'
+                 f' · {w["positions"]:,} of {int(w["required_positions"]):,} paired positions'
+                 f' · {w["symbol_evaluations"]:,} symbol evaluations')
+        if w['vector'] is not None:
+            x, y = w['vector']
+            count += f' · recovered coordinates ({x}, {y})'
     elif result['method'] == 'norm-band-product':
         w = result['norm_band_product']
         count = (f'Side {int(w["side"]):,} of {int(w["target_side"]):,}'

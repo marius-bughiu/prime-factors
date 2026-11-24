@@ -8,6 +8,12 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did we find from the product alone?
 
+On a freshly sampled 79-bit product we found **622,358,546,533 × 872,942,361,971** in 2.25 seconds on one Mac. We grouped possible divisors so that one calculation covered many at once. On the same 63-bit input, the previous method took 3.46 seconds to cover the full interval and this one took 0.11 seconds. At 2,048 bits the groups themselves still grow far beyond available memory. [How the grouping works, timings and checked factors](discoveries/factorial-progressions.md)
+
+We also found an exact link for products whose two primes both leave remainder 1 when divided by 4. On **26,441**, two sums gave the coordinates 11 and 4. Their squares add to **137**, one of its prime factors. Lean proves when this works. Computing the sums took 26,440 symbol evaluations. Whether there is a cheap way to extract those coordinates from a large product is open. [Where the prime appears](discoveries/quartic-trace.md) · [How many digits we need](discoveries/quartic-direction.md)
+
+One proposed shortcut ruled out about 80% of the candidate divisors on a 41-bit example. Computing the exclusions cost enough that the whole search took eight times as long. We proved exactly how many candidates that filter can remove when it uses only the specified remainders and intervals. [Proof and comparison](discoveries/reciprocal-wheel.md)
+
 We now have an exact formula for the **smaller prime** of any product of two distinct odd primes. It uses three expressions: $u^2+v^2$, $u^2+2v^2$, and $2v^2-u^2$. One of them equals the smaller prime with both coordinates at most the fourth root of the product. We multiply a specified set of these values and take one greatest common divisor. On 713 the formula returns 23. For two 1,024-bit primes this approach still needs a search on the scale of $2^{512}$. Even the full box through $2^{510}$ is guaranteed to find nothing. [Formula, worked example and cost](discoveries/norm-band-product.md) · [Why three forms suffice](discoveries/norm-orbits.md) · [Why guessing the second coordinate is hard](discoveries/selecting-norm-rows.md)
 
 On a fresh 63-bit input, restricting which coordinates to test recovered **2,423,330,473 × 2,513,756,873**. An ordinary search that grouped the possible odd divisors was faster on the same input. [Checked factors](https://marius-bughiu.github.io/prime-factors/#short-boxes-ordinary-63) · [Side-by-side measurements](research/norms-ordinary-63.json)
