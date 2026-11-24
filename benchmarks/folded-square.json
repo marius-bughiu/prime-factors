@@ -1,0 +1,20 @@
+[
+  {
+    "id": "folded-fixed-667", "description": "One directly evaluated ten-fractional-bit sum at frequency one",
+    "n": "667", "max_terms": 616, "outcome": "split", "terms": 616, "sums": 1,
+    "unit_gcds": 666, "unit_inverses": 616, "jacobi_evaluations": 617,
+    "word": 883, "multiplier": 2, "status": "complete", "factors": ["23", "29"], "remaining": []
+  },
+  {
+    "id": "folded-fixed-667-capped", "description": "A budget one term short of the fixed reading",
+    "n": "667", "max_terms": 615, "outcome": "budget", "terms": 615, "sums": 0,
+    "unit_gcds": 666, "unit_inverses": 615, "jacobi_evaluations": 615,
+    "word": null, "multiplier": null, "status": "partial", "factors": [], "remaining": ["667"]
+  },
+  {
+    "id": "folded-fixed-1763", "description": "The other folded branch on the seeded six-bit prime product",
+    "n": "1763", "max_terms": 1680, "outcome": "split", "terms": 1680, "sums": 1,
+    "unit_gcds": 1762, "unit_inverses": 1680, "jacobi_evaluations": 1681,
+    "word": 8146, "multiplier": 1, "status": "complete", "factors": ["41", "43"], "remaining": []
+  }
+]

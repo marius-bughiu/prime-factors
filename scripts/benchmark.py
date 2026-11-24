@@ -24,6 +24,7 @@ from experiments.short_basis_sieve import search as short_basis_search
 from experiments.wide_modulus import search as wide_modulus_search
 from experiments.pascal_readout import search as pascal_search
 from experiments.pell_pairs import search as pell_pair_search
+from experiments.folded_square import direct as fixed_phase_search
 from experiments.quotient_search import search as quotient_search
 from experiments.inverse_windows import search_product as inverse_windows_search
 from experiments.continued_square import search as continued_square_search
@@ -129,13 +130,14 @@ def run_case(case, method, proofs):
         agree(case, work, ['outcome', 'steps', 'walks', 'centers', 'cycles', 'root'])
         work.update(max_steps=case['max_steps'], max_prime=case['max_prime'], triangles=case['triangles'])
         result = certify_split(case, proof, factor, elapsed, 'pell_pairs', work)
-    elif method == 'salie-seed':
-        work = salie_seed_search(int(case['n']), case['max_terms'])
+    elif method in ('salie-seed', 'folded-square'):
+        search = salie_seed_search if method == 'salie-seed' else fixed_phase_search
+        work = search(int(case['n']), case['max_terms'])
         elapsed = time.perf_counter() - start
         factor = work.pop('factor')
         agree(case, work, list(work))
         work['max_terms'] = case['max_terms']
-        result = certify_split(case, proof, factor, elapsed, 'salie_seed', work)
+        result = certify_split(case, proof, factor, elapsed, method.replace('-', '_'), work)
     elif method in ('divisor-samples', 'salie-residues'):
         search, key = ((salie_residue_search, 'salie_residues') if method == 'salie-residues'
                        else (divisor_sample_search, 'divisor_samples'))
@@ -281,6 +283,7 @@ def main():
                              ('divisor-samples.json', 'divisor-samples'),
                              ('salie-residues.json', 'salie-residues'),
                              ('salie-seed.json', 'salie-seed'),
+                             ('folded-square.json', 'folded-square'),
                              ('pell-pairs.json', 'pell-pairs'),
                              ('quotient-search.json', 'quotient-search'),
                              ('inverse-windows.json', 'inverse-windows'),

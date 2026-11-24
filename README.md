@@ -6,11 +6,15 @@ What information about two unknown primes can be recovered cheaply from their pr
 
 ## What did we find from the product alone?
 
-On 1,900,014,700,027, we searched the full range where a smaller factor could lie if the primes were within a factor of two of each other. Grouping factors by their remainders modulo 6 reduced the number of strips we needed to check from 5,111 to 1,708. The calculation recovered 1,000,003 and 1,900,009. A separate method recovered 277 and 281 from 77,837 by combining the remainders of three searches that individually missed both factors. On a 2,048-bit test, that method used 65,536 steps without finding a factor. [Searching whole intervals](discoveries/quotient-search.md) · [Combining unsuccessful searches](discoveries/pell-multiplier-pairs.md)
+On 1,900,014,700,027, we searched the full range where a smaller factor could lie if the primes were within a factor of two of each other. Grouping factors by their remainders modulo 6 reduced the number of strips we needed to check from 5,111 to 1,708. The calculation recovered 1,000,003 and 1,900,009. For a 2,048-bit product of two 1,024-bit primes, even the best choice of grouping for this full uniform-width search needs between $2^{677}$ and $2^{678}$ intervals. A separate method recovered 277 and 281 from 77,837 by combining the remainders of three searches that individually missed both factors. On a 2,048-bit test, that method used 65,536 steps without finding a factor. [Searching whole intervals](discoveries/quotient-search.md) · [Combining unsuccessful searches](discoveries/pell-multiplier-pairs.md)
 
 ## Can one guess cover many possible factors?
 
 Imagine drawing all whole-number pairs whose product is at least the input. For some choices of weights, the pair with the smallest weighted sum gives the exact factors. Even granting that minimum for free, a trillion preselected weights succeed on less than one in $2^{460}$ random 2,048-bit products of two 1,024-bit primes. The proof also covers weights chosen using many of the product’s digits. A separate result gives the exact number of short arithmetic progressions needed when particular digits of a factor are known. For a 1,024-bit prime, 511 unknown digits in one block can be handled by one lattice search. Leaving every other digit unknown instead takes $2^{255}$ progressions for complete coverage by that strategy. [Choosing weights](discoveries/supporting-slopes.md) · [Which factor digits help](discoveries/scattered-factor.md)
+
+## One value that would give both primes
+
+For any 2,048-bit product of two distinct odd primes, a single specified sum, rounded to 2,048 fractional bits, determines both primes. From the reading we calculate two candidate integers. Square tests and greatest common divisors then recover the primes. For 667, the sum rounded to 883/1024, which gave 23 and 29. We computed it by scanning the residues modulo 667. In the full-size test, we used the known primes to generate the value, then recovered them in a separate program given only that value and the product. Computing the value cheaply from a large product alone remains open. [Formula, Lean proof and example](discoveries/divisor-samples.md#rounding-a-square-from-the-fixed-sample)
 
 ## Coarse measurements that reveal both primes
 

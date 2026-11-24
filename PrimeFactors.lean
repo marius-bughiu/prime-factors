@@ -29,6 +29,7 @@ import PrimeFactors.FactorSum
 import PrimeFactors.FactorSumCRT
 import PrimeFactors.FejerProjection
 import PrimeFactors.Fermat
+import PrimeFactors.FoldedSquare
 import PrimeFactors.FourierAccess
 import PrimeFactors.GapStride
 import PrimeFactors.GroupedImages
@@ -69,6 +70,7 @@ import PrimeFactors.PrimePower
 import PrimeFactors.PrimePowerCount
 import PrimeFactors.ProductAdvice
 import PrimeFactors.ProductPrefix
+import PrimeFactors.QuotientBudget
 import PrimeFactors.QuotientSearch
 import PrimeFactors.ReducedSlopes
 import PrimeFactors.RareRows

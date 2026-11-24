@@ -67,6 +67,11 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'folded-square':
+        w = result['folded_square']
+        count = (f'Fixed-frequency sum · {w["sums"]} complete sums · '
+                 f'{w["terms"]:,} of {w["max_terms"]:,} unit terms · '
+                 f'{w["unit_gcds"]:,} gcd tests')
     elif result['method'] == 'salie-seed':
         w = result['salie_seed']
         count = (f'Shared Salié reading · {w["sums"]} complete sums · '

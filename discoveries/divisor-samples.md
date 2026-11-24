@@ -86,3 +86,34 @@ Uniform independent term averaging therefore requires $\Theta(N)$ samples for fi
 For $667$, direct sums at frequencies $1,2,4,8$ gave normalized values that rounded to $221,331,127,577$ in units of $1/256$. The full procedure chose anchor 8, used 21 distinct sums, and recovered root 436. It gives $\gcd(435,667)=29$ and $\gcd(437,667)=23$. The 616 unit terms per sum amount to 12,936 summands with one real trigonometric evaluation each, in addition to testing the 666 nonzero residues and computing their modular inverses once for the units. A gcd encountered during setup could already split this example. The counts describe the full calculation with that shortcut suppressed.
 
 The Python evaluator caps the number of summands and each complete sum uses the full unit table. It accepts at most $N=65{,}535$ for its floating-point demonstration and checks a recovered root and divisor with integer arithmetic. With a 6,776-term cap, the same input reaches the anchor and remains unresolved. An independent fixture uses the first two distinct primes among the draws from Python's `Random(20261124).randrange(33, 64, 2)`. Their product 1,763 yields root 1,721 in 38,640 summands. Run `python3 -m experiments.divisor_samples 667 --max-terms 12936` to reproduce the first split. [Bounded evaluator](../experiments/divisor_samples.py) · [Inputs and controls](../benchmarks/divisor-samples.json)
+
+## Rounding a square from the fixed sample
+
+One normalized reading $F(1)$ rounded to $n$ fractional bits suffices for every $n$-bit product $N=pq$ of distinct odd primes. Once the reading is supplied, the decoder uses at most two rounded integers, integer square roots and gcds. The earlier fixed-sample argument above decoded an interval of length $O(\sqrt N)$ and invoked May's small-root theorem. Here the integer determined by the observation is a quotient. The cost of producing $F(1)$ from a large product remains open. [Earlier lattice finish](#a-single-higher-precision-sample) · [May, Theorem 7](https://digital.ub.uni-paderborn.de/hsmig/download/pdf/3235#page=38)
+
+Let $H=\min(h,N-h)$ for the mixed root represented in $[0,N)$ and $c=\cos(2\pi H/N)$. From the reported value $W$ compute $d=W/2-\cos(2\pi/N)$. Rounding $F(1)$ introduces at most $2^{-n-1}<1/(2N)$ error. An additional absolute error of at most $1/(4N)$ in the public cosine still gives $|d-c|\le 1/(2N)$. No sign decision is needed. Try the following two signed estimates:
+
+| $b$ | Signed estimate | True phase $x$ in the correct branch | Integer $a=bNx$ |
+|---:|---:|---:|---:|
+| 1 | $d$ | $H/N$ if $H/N\le 1/4$ | $H$ |
+| 2 | $-d$ | $1/2-H/N$ if $H/N>1/4$ | $N-2H$ |
+
+For each signed estimate clip it to $[0,1]$ and set $y=\arccos(\mathrm{clipped})/(2\pi)$. For $0\le y\le x\le1/4$, the cosine difference is $2\sin(\pi(x+y))\sin(\pi(x-y))$. Both arguments are on the first quarter of a turn, where $\sin(\pi u)\ge 2u$ for $0\le u\le1/2$. Interchanging $x,y$ if necessary yields
+$$
+ |\cos(2\pi x)-\cos(2\pi y)|\ge 8|x^2-y^2|.
+$$
+In the correct branch $a^2\equiv b^2\pmod N$, so $k=(a^2-b^2)/N$ is an integer. Clipping cannot increase the error, and therefore
+$$
+ \left|b^2Ny^2-b^2/N-k\right|\le \frac{b^2N}{8}\cdot\frac1{2N}\le\frac14.
+$$
+Evaluate this score to additional error strictly less than $1/4$ and round. For example, an enclosure for $y$ of width at most $1/(16N)$ gives a score interval of width at most $1/8$. It takes polynomial bit work to invert the monotone cosine to this accuracy. Bisection can stop at a midpoint whose cosine is within $O(1/N^2)$ of the target, since $|x^2-y^2|\ge |x-y|^2$ on this interval. Test whether $Nk+b^2$ is a nonnegative square. For its integer square root $a'$, check $h'=a'b^{-1}\bmod N$, its square modulo $N$, and a proper gcd with $h'\pm1$. The correct branch returns $h'\equiv\pm h\pmod N$. [Lean clipping, conditioning, rounding and two-branch theorem](../PrimeFactors/FoldedSquare.lean)
+
+For $N=667$, the direct sum of 616 unit terms certifies the ten-bit reading $W=883/1024$. Subtracting the public cosine and using the second branch gives $629/4096<y<630/4096$ by interval evaluations of cosine at both endpoints. The resulting score lies between $62.91$ and $63.12$, so $k=63$. Then $667\cdot63+4=205^2$, $205\cdot2^{-1}\equiv436\pmod{667}$, and the two gcds are 29 and 23. The first branch gives $k=42$ and a nonsquare. The calculation uses one public sum and checks the factors by multiplication. The direct evaluator uses gcds for unit membership and would encounter the divisors during that scan. Running `python3 experiments/folded_square.py --direct 667 --max-terms 616` reproduces it. [Product-only benchmarks and capped run](../benchmarks/folded-square.json) [Directed-rounding sum evaluator](../experiments/salie_seed.py) · [Cosine enclosures](../experiments/salie_reference.py) · [Kernel-checked integer steps](../PrimeFactors/FoldedSquare.lean)
+
+### Full-width decoder test
+
+On the already certified 2,048-bit fixture, a generator used its two known primes to calculate the single rounded value. A fresh process received only the product and the signed integer encoding that value. It recovered both primes using the reflected branch. The decoder checked the rounding decisions over the entire range consistent with the transmitted integer. This was a test of recovery from one supplied value. The small direct runs on 77, 667 and 1,763 instead computed the value from each product alone. [Bounded reference implementation](../experiments/folded_square.py) · [Direct-sum and process-isolated tests](../tests/test_folded_square.py)
+
+```sh
+python3 experiments/folded_square.py --emit | python3 experiments/folded_square.py --decode
+```

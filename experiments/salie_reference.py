@@ -29,43 +29,57 @@ def ceil_div(x, denominator):
     return -(-x // denominator)
 
 
-@lru_cache(maxsize=1)
-def pi_bounds():
-    """Machin's identity, enclosing both arctangents by adjacent alternating sums."""
+@lru_cache(maxsize=8)
+def pi_bounds(bits=128):
+    """Enclose 2^bits times pi using adjacent alternating Machin sums."""
+    scale = 1 << bits
+
     def atan_bounds(q):
-        partial = sum(Fraction((-1)**i, (2*i+1)*q**(2*i+1)) for i in range(40))
-        return partial, partial + Fraction(1, 81*q**81)
+        terms = 40
+        while (2*terms+1)*q**(2*terms+1) <= 32*scale:
+            terms += 2
+        partial = sum(Fraction((-1)**i, (2*i+1)*q**(2*i+1)) for i in range(terms))
+        return partial, partial + Fraction(1, (2*terms+1)*q**(2*terms+1))
 
     a, b = atan_bounds(5)
     c, d = atan_bounds(239)
-    low, high = SCALE*(16*a-4*d), SCALE*(16*b-4*c)
+    low, high = scale*(16*a-4*d), scale*(16*b-4*c)
     return low.numerator//low.denominator, ceil_div(high.numerator, high.denominator)
 
 
-def cosine_bounds(turn, denominator):
-    """Enclose cos(2π turn/denominator) by integer multiples of 1/SCALE."""
+@lru_cache(maxsize=8)
+def cosine_terms(bits):
+    terms = 24
+    while (1 << (bits + 2*terms + 2)) >= factorial(2*terms+2):
+        terms += 1
+    return terms
+
+
+def cosine_bounds(turn, denominator, bits=128):
+    """Enclose cos(2π turn/denominator) by integer multiples of 2^-bits."""
+    scale = 1 << bits
     residue = turn % denominator
     radius = min(residue, denominator-residue)
     negative = 4*radius > denominator
     numerator = denominator-2*radius if negative else 2*radius
-    pi_low, pi_high = pi_bounds()
+    pi_low, pi_high = pi_bounds(bits)
     x_low = pi_low*numerator//denominator
     x_high = ceil_div(pi_high*numerator, denominator)
-    square_low = x_low*x_low//SCALE
-    square_high = ceil_div(x_high*x_high, SCALE)
-    term_low = term_high = low = high = SCALE
-    for j in range(1, 25):
-        divisor = SCALE*(2*j-1)*(2*j)
+    square_low = x_low*x_low//scale
+    square_high = ceil_div(x_high*x_high, scale)
+    term_low = term_high = low = high = scale
+    for j in range(1, cosine_terms(bits)+1):
+        divisor = scale*(2*j-1)*(2*j)
         term_low = term_low*square_low//divisor
         term_high = ceil_div(term_high*square_high, divisor)
         if j % 2:
             low, high = low-term_high, high-term_low
         else:
             low, high = low+term_low, high+term_high
-    # The degree-49 Taylor polynomial ends at degree 48. All omitted
-    # error is bounded by 2^50/50! because the reduced angle is < 2.
-    if not pi_high < 4*SCALE or not SCALE*2**50 < factorial(50):
-        raise ArithmeticError("Taylor remainder exceeds the one-unit allowance")
+    # For reduced angle < 2, the next even Taylor remainder is below one
+    # fixed-point unit by the defining inequality in cosine_terms.
+    if not pi_high < 4*scale:
+        raise ArithmeticError("reduced angle bound requires pi < 4")
     return (-high-1, -low+1) if negative else (low-1, high+1)
 
 

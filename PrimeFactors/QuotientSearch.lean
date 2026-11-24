@@ -172,4 +172,57 @@ theorem quotient_line_quadratic {a b c x y N : ℤ} (product : x*y=N) (line : c*
   rw [← product]
   linear_combination -x*line
 
+/-- A closed interval of span at least two steps contains two consecutive
+members of any shifted integer progression. -/
+theorem quotient_two_grid_levels {L U s : ℤ} (start : ℤ) (pos : 0 < s)
+    (span : 2*s ≤ U-L) :
+    ∃ j : ℤ, L ≤ start+s*j ∧ start+s*(j+1) ≤ U := by
+  let j := (U-start)/s
+  have decomp := Int.emod_add_ediv (U-start) s
+  have lo := Int.emod_nonneg (U-start) pos.ne'
+  have hi := Int.emod_lt_of_pos (U-start) pos
+  refine ⟨j-1, ?_, ?_⟩
+  · rw [mul_sub, mul_one]
+    dsimp [j]
+    omega
+  · simp only [sub_add_cancel]
+    dsimp [j]
+    omega
+
+/-- On a span of at least four column steps, every residue has two columns
+in the right half, including at the endpoint of the equality case. -/
+theorem quotient_two_right_columns {A B m : ℤ} (a : ℤ) (pos : 0 < m)
+    (span : 4*m ≤ B-A) :
+    ∃ u : ℤ, A+B ≤ 2*(a+m*u) ∧ a+m*(u+1) ≤ B := by
+  obtain ⟨u, lo, hi⟩ := quotient_two_grid_levels (L:=A+B) (U:=2*B) (2*a)
+    (show 0 < 2*m by omega) (by omega)
+  have rhs : 2*a+2*m*(u+1) = 2*(a+m*(u+1)) := by ring
+  rw [rhs] at hi
+  exact ⟨u, by linear_combination lo, by omega⟩
+
+/-- The fully integral width condition forces two consecutive admissible
+ordinates in each column on the right half of the tangent-to-chord strip.
+Both bounds are expressed with the common denominator A squared times B. -/
+theorem quotient_two_right_heights {A B N x m : ℤ} (c : ℤ) (a : 0 < A)
+    (ab : A ≤ B) (n : 0 ≤ N) (pos : 0 < m) (right : A+B ≤ 2*x)
+    (wide : 4*m^2*(A^2*B) ≤ N*(B-A)^2) :
+    ∃ v : ℤ, B*N*(2*A-x) ≤ A^2*B*(c+m^2*v) ∧
+      A^2*B*(c+m^2*(v+1)) ≤ A*N*(A+B-x) := by
+  have b := a.trans_le ab
+  have long : 2*(A^2*B*m^2) ≤ A*N*(A+B-x)-B*N*(2*A-x) := by
+    nlinarith only [wide, mul_nonneg (mul_nonneg n (sub_nonneg.mpr ab))
+      (show 0 ≤ 2*x-(A+B) by omega)]
+  obtain ⟨v, lo, hi⟩ := quotient_two_grid_levels (A^2*B*c)
+    (show 0 < A^2*B*m^2 by positivity) long
+  exact ⟨v, by linear_combination lo, by linear_combination hi⟩
+
+/-- Two consecutive heights in one wheel column and one point in the
+next form a triangle of determinant minus m cubed, regardless of that
+third ordinate. In particular these points cannot pass the line test. -/
+theorem quotient_adjacent_triangle {m : ℤ} (x y z : ℤ) (pos : 0 < m) :
+    (x-x)*(z-y)-((x+m)-x)*((y+m^2)-y) = -m^3 ∧ -m^3 ≠ 0 := by
+  constructor
+  · ring
+  · exact neg_ne_zero.mpr (pow_ne_zero _ pos.ne')
+
 end PrimeFactors
