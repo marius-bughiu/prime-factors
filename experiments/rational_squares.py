@@ -78,6 +78,21 @@ def prime_parity(norm, primes):
     return parity
 
 
+def test_new_row(n, rows, pivots, primes, work):
+    """Test the new basis dependency, if any, formed by the last signed row."""
+    _, norm, _ = rows[-1]
+    mask = insert_parity(pivots, prime_parity(norm, primes), 1 << (len(rows)-1))
+    if mask is None:
+        return False
+    work['dependencies'] += 1
+    work['tested'] += 1
+    divisor, chosen = dependency_gcd(n, rows, mask)
+    if 1 < divisor < n:
+        work.update(outcome='relation', factor=divisor, selected_steps=chosen)
+        return True
+    return False
+
+
 def search(n, mode, draws, bound, *, online=False):
     """Check dependencies at the end of the budget, or immediately in online mode."""
     if n <= 2 or n % 2 == 0 or mode not in MODES or draws < 0 or bound < 2:
@@ -116,14 +131,8 @@ def search(n, mode, draws, bound, *, online=False):
         if smooth(abs(norm), base):
             rows.append((i+1, norm, root))
             work['smooth_rows'] += 1
-            if online:
-                mask = insert_parity(pivots, prime_parity(norm, primes), 1 << (len(rows)-1))
-                if mask is not None:
-                    work['dependencies'] += 1
-                    work['tested'] += 1
-                    divisor, chosen = dependency_gcd(n, rows, mask)
-                    if 1 < divisor < n:
-                        return dict(work, outcome='relation', factor=divisor, selected_steps=chosen)
+            if online and test_new_row(n, rows, pivots, primes, work):
+                return work
     return work if online else check_rows(n, rows, work)
 
 

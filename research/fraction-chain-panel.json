@@ -1,0 +1,875 @@
+{
+  "seed": "rational-square-panel-v1",
+  "count": 16,
+  "draws": 8192,
+  "bound": 4096,
+  "online": false,
+  "python": "3.9.6",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "cases": [
+    {
+      "attempt": 5,
+      "n": "523966827459249076123019",
+      "expected_factors": [
+        "574883478241",
+        "911431354859"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "523966827459249076123019"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 9461,
+            "candidates": 274165,
+            "euclidean_states": 379933,
+            "accepted_draws": 58,
+            "smooth_rows": 58,
+            "private_pruned": 58,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.1322
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "523966827459249076123019"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 9461,
+            "candidates": 275151,
+            "euclidean_states": 381303,
+            "accepted_draws": 58,
+            "smooth_rows": 58,
+            "private_pruned": 58,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0443
+        }
+      }
+    },
+    {
+      "attempt": 6,
+      "n": "395586280621739531058193",
+      "expected_factors": [
+        "563587006877",
+        "701908091909"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "395586280621739531058193"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 12483,
+            "candidates": 272786,
+            "euclidean_states": 377646,
+            "accepted_draws": 64,
+            "smooth_rows": 64,
+            "private_pruned": 64,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0059
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "395586280621739531058193"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 12483,
+            "candidates": 273783,
+            "euclidean_states": 379036,
+            "accepted_draws": 64,
+            "smooth_rows": 64,
+            "private_pruned": 64,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0448
+        }
+      }
+    },
+    {
+      "attempt": 7,
+      "n": "329027088693152441102639",
+      "expected_factors": [
+        "568178380859",
+        "579091179421"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "329027088693152441102639"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 15175,
+            "candidates": 271720,
+            "euclidean_states": 376370,
+            "accepted_draws": 67,
+            "smooth_rows": 67,
+            "private_pruned": 67,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.035
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "329027088693152441102639"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 15175,
+            "candidates": 272762,
+            "euclidean_states": 377799,
+            "accepted_draws": 67,
+            "smooth_rows": 67,
+            "private_pruned": 67,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0524
+        }
+      }
+    },
+    {
+      "attempt": 8,
+      "n": "386721987721517381226809",
+      "expected_factors": [
+        "555104335183",
+        "696665407223"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "386721987721517381226809"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 12857,
+            "candidates": 272370,
+            "euclidean_states": 377463,
+            "accepted_draws": 79,
+            "smooth_rows": 79,
+            "private_pruned": 79,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0504
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "386721987721517381226809"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 12857,
+            "candidates": 273734,
+            "euclidean_states": 379362,
+            "accepted_draws": 79,
+            "smooth_rows": 79,
+            "private_pruned": 79,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0553
+        }
+      }
+    },
+    {
+      "attempt": 11,
+      "n": "431151876637593899761459",
+      "expected_factors": [
+        "569488567727",
+        "757086096317"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "431151876637593899761459"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 11614,
+            "candidates": 272738,
+            "euclidean_states": 377962,
+            "accepted_draws": 65,
+            "smooth_rows": 65,
+            "private_pruned": 65,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0638
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "431151876637593899761459"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 11614,
+            "candidates": 273766,
+            "euclidean_states": 379390,
+            "accepted_draws": 65,
+            "smooth_rows": 65,
+            "private_pruned": 65,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0592
+        }
+      }
+    },
+    {
+      "attempt": 13,
+      "n": "427025682979298230434833",
+      "expected_factors": [
+        "588094252327",
+        "726117763079"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "427025682979298230434833"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 11526,
+            "candidates": 273366,
+            "euclidean_states": 378882,
+            "accepted_draws": 54,
+            "smooth_rows": 54,
+            "private_pruned": 54,
+            "pruning_rounds": 2,
+            "min_private_bits": 10,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0823
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "427025682979298230434833"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 11526,
+            "candidates": 274190,
+            "euclidean_states": 380014,
+            "accepted_draws": 54,
+            "smooth_rows": 54,
+            "private_pruned": 54,
+            "pruning_rounds": 2,
+            "min_private_bits": 10,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0989
+        }
+      }
+    },
+    {
+      "attempt": 14,
+      "n": "536807549000626433870237",
+      "expected_factors": [
+        "715334425763",
+        "750428791999"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "536807549000626433870237"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 9193,
+            "candidates": 273873,
+            "euclidean_states": 379408,
+            "accepted_draws": 62,
+            "smooth_rows": 62,
+            "private_pruned": 62,
+            "pruning_rounds": 1,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.1398
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "536807549000626433870237"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 9193,
+            "candidates": 274902,
+            "euclidean_states": 380798,
+            "accepted_draws": 62,
+            "smooth_rows": 62,
+            "private_pruned": 62,
+            "pruning_rounds": 1,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.1286
+        }
+      }
+    },
+    {
+      "attempt": 17,
+      "n": "467710122297648416629753",
+      "expected_factors": [
+        "576214877981",
+        "811693936013"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "467710122297648416629753"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 10539,
+            "candidates": 273613,
+            "euclidean_states": 378966,
+            "accepted_draws": 57,
+            "smooth_rows": 57,
+            "private_pruned": 57,
+            "pruning_rounds": 2,
+            "min_private_bits": 8,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0811
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "467710122297648416629753"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 10539,
+            "candidates": 274536,
+            "euclidean_states": 380201,
+            "accepted_draws": 57,
+            "smooth_rows": 57,
+            "private_pruned": 57,
+            "pruning_rounds": 2,
+            "min_private_bits": 8,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0839
+        }
+      }
+    },
+    {
+      "attempt": 18,
+      "n": "573985728961585024138603",
+      "expected_factors": [
+        "743903282203",
+        "771586498801"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "573985728961585024138603"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8631,
+            "candidates": 273958,
+            "euclidean_states": 379619,
+            "accepted_draws": 69,
+            "smooth_rows": 69,
+            "private_pruned": 69,
+            "pruning_rounds": 2,
+            "min_private_bits": 8,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0668
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "573985728961585024138603"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8631,
+            "candidates": 275052,
+            "euclidean_states": 381127,
+            "accepted_draws": 69,
+            "smooth_rows": 69,
+            "private_pruned": 69,
+            "pruning_rounds": 2,
+            "min_private_bits": 8,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0726
+        }
+      }
+    },
+    {
+      "attempt": 26,
+      "n": "583481551901464089210937",
+      "expected_factors": [
+        "688623768451",
+        "847315440787"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "583481551901464089210937"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8497,
+            "candidates": 275054,
+            "euclidean_states": 380513,
+            "accepted_draws": 53,
+            "smooth_rows": 53,
+            "private_pruned": 53,
+            "pruning_rounds": 1,
+            "min_private_bits": 8,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0703
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "583481551901464089210937"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8497,
+            "candidates": 275938,
+            "euclidean_states": 381715,
+            "accepted_draws": 53,
+            "smooth_rows": 53,
+            "private_pruned": 53,
+            "pruning_rounds": 1,
+            "min_private_bits": 8,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0462
+        }
+      }
+    },
+    {
+      "attempt": 27,
+      "n": "572380950862688164706057",
+      "expected_factors": [
+        "673833667631",
+        "849439525447"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "572380950862688164706057"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8622,
+            "candidates": 274730,
+            "euclidean_states": 380865,
+            "accepted_draws": 48,
+            "smooth_rows": 48,
+            "private_pruned": 48,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.043
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "572380950862688164706057"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8622,
+            "candidates": 275514,
+            "euclidean_states": 381955,
+            "accepted_draws": 48,
+            "smooth_rows": 49,
+            "private_pruned": 49,
+            "pruning_rounds": 2,
+            "min_private_bits": 10,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0449
+        }
+      }
+    },
+    {
+      "attempt": 29,
+      "n": "587663730365259098518189",
+      "expected_factors": [
+        "644216008523",
+        "912215347943"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "587663730365259098518189"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8412,
+            "candidates": 274677,
+            "euclidean_states": 380579,
+            "accepted_draws": 60,
+            "smooth_rows": 60,
+            "private_pruned": 60,
+            "pruning_rounds": 2,
+            "min_private_bits": 10,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0391
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "587663730365259098518189"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8412,
+            "candidates": 275654,
+            "euclidean_states": 381928,
+            "accepted_draws": 60,
+            "smooth_rows": 60,
+            "private_pruned": 60,
+            "pruning_rounds": 2,
+            "min_private_bits": 10,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0508
+        }
+      }
+    },
+    {
+      "attempt": 31,
+      "n": "505791718931740915587743",
+      "expected_factors": [
+        "667550165519",
+        "757683459697"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "505791718931740915587743"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 9813,
+            "candidates": 274295,
+            "euclidean_states": 379748,
+            "accepted_draws": 59,
+            "smooth_rows": 59,
+            "private_pruned": 59,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0792
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "505791718931740915587743"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 9813,
+            "candidates": 275221,
+            "euclidean_states": 381036,
+            "accepted_draws": 59,
+            "smooth_rows": 59,
+            "private_pruned": 59,
+            "pruning_rounds": 2,
+            "min_private_bits": 9,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0879
+        }
+      }
+    },
+    {
+      "attempt": 33,
+      "n": "588622882738225524215659",
+      "expected_factors": [
+        "626992094867",
+        "938804312777"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "588622882738225524215659"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8427,
+            "candidates": 274863,
+            "euclidean_states": 380653,
+            "accepted_draws": 49,
+            "smooth_rows": 49,
+            "private_pruned": 49,
+            "pruning_rounds": 1,
+            "min_private_bits": 10,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0794
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "588622882738225524215659"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8427,
+            "candidates": 275705,
+            "euclidean_states": 381826,
+            "accepted_draws": 49,
+            "smooth_rows": 49,
+            "private_pruned": 49,
+            "pruning_rounds": 1,
+            "min_private_bits": 10,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0821
+        }
+      }
+    },
+    {
+      "attempt": 34,
+      "n": "461734987887353215187617",
+      "expected_factors": [
+        "568098144473",
+        "812773272329"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "461734987887353215187617"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 10707,
+            "candidates": 273510,
+            "euclidean_states": 378896,
+            "accepted_draws": 54,
+            "smooth_rows": 54,
+            "private_pruned": 54,
+            "pruning_rounds": 2,
+            "min_private_bits": 8,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0558
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "461734987887353215187617"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 10707,
+            "candidates": 274429,
+            "euclidean_states": 380155,
+            "accepted_draws": 54,
+            "smooth_rows": 54,
+            "private_pruned": 54,
+            "pruning_rounds": 2,
+            "min_private_bits": 8,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0647
+        }
+      }
+    },
+    {
+      "attempt": 35,
+      "n": "585904521742570975713061",
+      "expected_factors": [
+        "706818192497",
+        "828932429813"
+      ],
+      "methods": {
+        "first": {
+          "factors": [],
+          "remaining": [
+            "585904521742570975713061"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8435,
+            "candidates": 274118,
+            "euclidean_states": 379695,
+            "accepted_draws": 61,
+            "smooth_rows": 61,
+            "private_pruned": 61,
+            "pruning_rounds": 2,
+            "min_private_bits": 8,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0622
+        },
+        "all": {
+          "factors": [],
+          "remaining": [
+            "585904521742570975713061"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8435,
+            "candidates": 275112,
+            "euclidean_states": 381066,
+            "accepted_draws": 61,
+            "smooth_rows": 61,
+            "private_pruned": 61,
+            "pruning_rounds": 2,
+            "min_private_bits": 8,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          },
+          "cpu_seconds": 2.0719
+        }
+      }
+    }
+  ]
+}

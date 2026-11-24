@@ -6,6 +6,8 @@ On the first product in a fresh 79-bit sample, the fraction method found **574,8
 
 For **every** 2,048-bit product of two distinct 1,024-bit primes, we derived a finite lower bound on this improvement. With a prime cutoff of 65,536, the fraction search needs over $2^{46}$ times fewer random draws in expectation to **find a factor** than the direct search needs to **reach its first usable row or immediate gcd**. Draws are independent and uniform in this comparison. The fraction search does extra arithmetic per draw. Even with that gain, its probability of obtaining one smooth row in $2^{48}$ uniform unit draws is below $2^{-803}$ at this cutoff. This compares two particular ways of acquiring relations. The better-known sieves generate them differently.
 
+Searching every proportion extends the balanced box used here. On the first sampled product it cut the number of random draws by a further factor of seventeen and used more CPU time. A bound covering the whole range still rules out a practical chance of a smooth fraction under the tested random-draw strategy. [All balances and cost comparison](shared-root-signs.md) · [A bound for any prime list of size at most $2^{40}$](smooth-fraction-budget.md)
+
 ## How the product gives a relation
 
 Let $N=pq$ and sample $1\le x<N$ uniformly. First check $\gcd(x,N)$. A nonunit gives a factor immediately. Otherwise put $r=x^2\bmod N$ and $H=\lfloor\sqrt{(N-1)/2}\rfloor$. The direct method centers $r$ in $[-(N-1)/2,(N-1)/2]$. The fraction method uses Euclid's algorithm to look for

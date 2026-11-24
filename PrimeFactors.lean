@@ -105,6 +105,8 @@ import PrimeFactors.ShiftPortfolio
 import PrimeFactors.ShiftedResidues
 import PrimeFactors.ShortBasisSieve
 import PrimeFactors.SmoothSampleBound
+import PrimeFactors.SmoothFractionHyperbola
+import PrimeFactors.SharedRootSigns
 import PrimeFactors.SquareNeighborPeriod
 import PrimeFactors.SieveBudget
 import PrimeFactors.SieveInterval

@@ -22,7 +22,7 @@ exec lake env lean --run .lake/packages/mathlib/Cache/Main.lean get \
   Mathlib.Tactic.NormNum.NatSqrt Mathlib.Tactic.NormNum.Prime \
   Mathlib.Data.Matrix.Rank Mathlib.Algebra.Polynomial.Roots Mathlib.Algebra.Polynomial.Derivative Mathlib.Data.Nat.Digits \
   Mathlib.Algebra.Order.Ring.Abs Mathlib.Data.Finset.SymmDiff Mathlib.Data.Finset.Powerset Mathlib.Data.Finset.Prod \
-  Mathlib.Analysis.SpecificLimits.Basic Mathlib.Tactic.Abel \
+  Mathlib.Analysis.PSeries Mathlib.Analysis.SpecificLimits.Basic Mathlib.Tactic.Abel \
   Mathlib.LinearAlgebra.Dual.Lemmas Mathlib.NumberTheory.EulerProduct.Basic Mathlib.FieldTheory.Finiteness \
   Mathlib.NumberTheory.Multiplicity Mathlib.Analysis.SpecialFunctions.Pow.Real \
   Mathlib.Algebra.BigOperators.Group.Finset.Sigma Mathlib.Logic.Equiv.Prod Mathlib.SetTheory.Cardinal.Finite Mathlib.Tactic.FieldSimp \
