@@ -8,6 +8,8 @@ Stănică obtains $\log(4/3)/50$ for general inputs. Our earlier balanced argume
 
 This comparison concerns the arithmetic sieve. Separate preprints claim asymptotically smaller general deterministic bounds through Boolean computation, including $2^{O(n/\sqrt{\log n})}$ for an $n$-bit input. Neither comparison predicts a 2048-bit running time. [Rudich–Rousseau](https://hexagonmath.org/2610.00600v1) · [Shunia](https://hexagonmath.org/2610.00711v1)
 
+At 2048 bits the exact schedule has more than $2^{396}$ unit rows. Even retuning the modulus in the reference implementation leaves at least $2^{400}$ residue visits or table entries if the search reaches its main sieve. We also prove a matching asymptotic density barrier for the complete quadratic-image table on the actual rows. [Finite cost and parameter alternatives](finite-sieve-cost.md) · [Sign frequencies of actual short vectors](signs-of-short-weights.md)
+
 ## One interval and a short vector
 
 Write $s=\sqrt N$. All the unknown factors satisfy $s/\sqrt2\le p<s<q\le\sqrt2 s$. Choose a primorial $m$ as described below, split off any nonunit gcd and otherwise enumerate the units $\sigma$ modulo $m$. The correct row has $p\equiv\sigma\pmod m$. Compute a shortest nonzero vector in the ordinary Euclidean norm in the determinant-$m$ lattice

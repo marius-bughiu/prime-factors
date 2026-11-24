@@ -1,3 +1,4 @@
+import PrimeFactors.ActualSigns
 import PrimeFactors.AdditiveCover
 import PrimeFactors.AnalyticAccess
 import PrimeFactors.ApproximateTotient
@@ -70,6 +71,7 @@ import PrimeFactors.ShiftParameter
 import PrimeFactors.ShiftPortfolio
 import PrimeFactors.ShiftedResidues
 import PrimeFactors.ShortBasisSieve
+import PrimeFactors.SieveBudget
 import PrimeFactors.SieveInterval
 import PrimeFactors.SignatureCount
 import PrimeFactors.StrideWheel
@@ -81,3 +83,4 @@ import PrimeFactors.TruncatedWindow
 import PrimeFactors.WeightedBands
 import PrimeFactors.WeightedCollision
 import PrimeFactors.WideModulus
+import PrimeFactors.WideScale

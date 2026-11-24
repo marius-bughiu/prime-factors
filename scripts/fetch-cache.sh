@@ -8,7 +8,7 @@ exec lake env lean --run .lake/packages/mathlib/Cache/Main.lean get \
   Mathlib.Algebra.Group.Pi.Units Mathlib.GroupTheory.Index Mathlib.Data.ZMod.QuotientRing Mathlib.Data.Nat.Totient \
   Mathlib.Algebra.Order.BigOperators.Group.Finset Mathlib.Algebra.BigOperators.Ring.Finset \
   Mathlib.Data.Nat.Dist Mathlib.NumberTheory.DiophantineApproximation.Basic \
-  Mathlib.NumberTheory.Divisors Mathlib.NumberTheory.LegendreSymbol.JacobiSymbol \
+  Mathlib.NumberTheory.Divisors Mathlib.NumberTheory.Primorial Mathlib.NumberTheory.LegendreSymbol.JacobiSymbol \
   Mathlib.NumberTheory.LegendreSymbol.QuadraticReciprocity Mathlib.NumberTheory.PrimesCongruentOne \
   Mathlib.NumberTheory.JacobiSum.Basic Mathlib.NumberTheory.LegendreSymbol.QuadraticChar.Basic \
   Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds \
