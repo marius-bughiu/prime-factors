@@ -5,26 +5,32 @@ import Mathlib.Tactic.Ring
 
 namespace PrimeFactors
 
-/-- A bounded multiplier brings the doubled interval center near a multiple
+/-- A bounded multiplier brings an integral slope near a multiple
 of the modulus, with an integral signed remainder. -/
-theorem rootIntervalSlope_exists (N B : ℕ) (c : ℤ) (n : 0 < N) (bound : 0 < B) :
+theorem boundedSlope_exists (N B : ℕ) (c : ℤ) (n : 0 < N) (bound : 0 < B) :
     ∃ b : ℕ, 1 ≤ b ∧ b ≤ B ∧
-      ∃ j : ℤ, |2*(b:ℤ)*c-(N:ℤ)*j| *((B:ℤ)+1) ≤ (N:ℤ) := by
+      ∃ j : ℤ, |(b:ℤ)*c-(N:ℤ)*j| *((B:ℤ)+1) ≤ (N:ℤ) := by
   have nR : (0:ℝ) < N := by exact_mod_cast n
-  let α : ℝ := 2*(c:ℝ)/N
+  let α : ℝ := (c:ℝ)/N
   obtain ⟨b,hb,bb,approx⟩ := Real.exists_nat_abs_mul_sub_round_le α bound
   let j : ℤ := round ((b:ℝ)*α)
   refine ⟨b,hb,bb,j,?_⟩
   change |(b:ℝ)*α-(j:ℝ)| ≤ 1/((B:ℝ)+1) at approx
   have scaled := (le_div_iff₀ (by positivity : (0:ℝ)<(B:ℝ)+1)).mp approx
-  have eqn : 2*(b:ℝ)*c-(N:ℝ)*j=((b:ℝ)*α-j)*N := by
+  have eqn : (b:ℝ)*c-(N:ℝ)*j=((b:ℝ)*α-j)*N := by
     dsimp [α]
     field_simp
-    ring
-  have goal : |2*(b:ℝ)*c-(N:ℝ)*j| *((B:ℝ)+1) ≤ N := by
+  have goal : |(b:ℝ)*c-(N:ℝ)*j| *((B:ℝ)+1) ≤ N := by
     rw [eqn,abs_mul,abs_of_pos nR,mul_right_comm]
     simpa using mul_le_mul_of_nonneg_right scaled nR.le
   exact_mod_cast goal
+
+/-- A bounded multiplier brings the doubled interval center near a multiple
+of the modulus, with an integral signed remainder. -/
+theorem rootIntervalSlope_exists (N B : ℕ) (c : ℤ) (n : 0 < N) (bound : 0 < B) :
+    ∃ b : ℕ, 1 ≤ b ∧ b ≤ B ∧
+      ∃ j : ℤ, |2*(b:ℤ)*c-(N:ℤ)*j| *((B:ℤ)+1) ≤ (N:ℤ) := by
+  simpa only [mul_left_comm, mul_assoc] using boundedSlope_exists N B (2*c) n bound
 
 /-- The Euclidean remainder step preserves the cross sum of the remainders
 and the convergent denominators, even at the final zero remainder. -/

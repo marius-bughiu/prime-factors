@@ -61,6 +61,7 @@ import PrimeFactors.MultipleShift
 import PrimeFactors.Multiplier
 import PrimeFactors.MultiplierImages
 import PrimeFactors.MultiplierScore
+import PrimeFactors.NormDirections
 import PrimeFactors.PairDeterminant
 import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder
@@ -77,6 +78,9 @@ import PrimeFactors.PhaseResidues
 import PrimeFactors.PhaseSchedules
 import PrimeFactors.PhaseSeparation
 import PrimeFactors.PlantedHeightExample
+import PrimeFactors.PolynomialHeight
+import PrimeFactors.PolynomialRelations
+import PrimeFactors.PolynomialRootPacking
 import PrimeFactors.PooledRelations
 import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
