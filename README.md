@@ -4,6 +4,8 @@ What information about two unknown primes can be recovered cheaply from their pr
 
 ## Conjectures from the Dirichlet L-function proof
 
+One boundary reading at height 1 determines the **exact integer sum** of two balanced primes if its absolute error is below $1/(8\sqrt N)$. For a 2048-bit product, $2^{-1027}$ suffices. A fast way to obtain that reading remains open. [Precision, derivation and alternatives](discoveries/reading-the-boundary.md)
+
 For $N=pq$ with $p<q$, Lean proves that the first positive imaginary-axis zero of the principal Dirichlet L-function modulo $N$ has height $2\pi/\log q$. More usefully, a sign computed from one L-value tells whether $q$ lies above an integer threshold $x>\sqrt N$. For balanced primes the library proves an absolute error tolerance at each threshold. Efficiently computing that sign using only $N$ is open. [Derivation and work required](discoveries/character-conjectures.md#comparing-a-factor-with-a-threshold) · [Lean proofs](PrimeFactors/DivisorSignal.lean)
 
 A second investigation bounds how many modular square tests suffice for every discriminant of a given bit length. The universal count grows linearly in the bit length under Dirichlet GRH. The tighter conjecture restricting both the number and size of the primes survived exhaustive examples for widths 9 through 20. We also found small widths where it fails. [Proofs, counterexamples and experiment](discoveries/character-conjectures.md#how-many-primes-suffice-for-all-discriminants)

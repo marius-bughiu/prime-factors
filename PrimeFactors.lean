@@ -1,4 +1,5 @@
 import PrimeFactors.AdditiveCover
+import PrimeFactors.AnalyticAccess
 import PrimeFactors.BlockCharacters
 import PrimeFactors.Certificate
 import PrimeFactors.DivisorSignal
@@ -10,6 +11,7 @@ import PrimeFactors.IntervalGap
 import PrimeFactors.Isolation
 import PrimeFactors.JointPeriod
 import PrimeFactors.LongPeriod
+import PrimeFactors.MixedHeights
 import PrimeFactors.Multiplier
 import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
