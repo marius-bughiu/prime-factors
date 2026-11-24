@@ -7,7 +7,7 @@ import argparse
 from dataclasses import dataclass
 from functools import lru_cache
 import json
-from math import isqrt, prod
+from math import gcd, isqrt, prod
 from pathlib import Path
 import re
 import subprocess
@@ -39,14 +39,15 @@ SMALL_PRIMES = frozenset(p for p in TRIAL_PRIMES if p <= BASE_PRIME_LIMIT)
 class Witness:
     root: int
     powers: tuple[tuple[int, int], ...]
+    partial_order: bool = False
 
 
 @lru_cache(maxsize=4096)
 def prime_witness(n: int) -> Witness | None:
-    """Construct a Lucas certificate, with trial division for small leaves.
+    """Construct a full or partial order certificate, with trial division for small leaves.
 
-    One unstripped cofactor of n-1 can recursively be proved prime. Failure to
-    find a witness says nothing about primality.
+    A recursive certificate can cover the last cofactor of n-1. If it cannot,
+    a known order of at least sqrt(n) can still establish primality.
     """
     if n <= BASE_PRIME_LIMIT:
         return Witness(0, ()) if n in SMALL_PRIMES else None
@@ -64,15 +65,23 @@ def prime_witness(n: int) -> Witness | None:
             rest //= p
         if exponent:
             powers.append((p, exponent))
-    if rest > 1:
+    if rest > 1 and prime_witness(rest) is not None:
         powers.append((rest, 1))
+        rest = 1
     if any(prime_witness(p) is None for p, _ in powers):
         return None
+    order = (n - 1) // rest
+    if rest > 1 and order * order < n:
+        return None
     for g in range(2, min(n, ROOT_LIMIT + 1)):
-        if pow(g, n - 1, n) == 1 and all(
-            pow(g, (n - 1) // p, n) != 1 for p, _ in powers
-        ):
-            return Witness(g, tuple(powers))
+        root = pow(g, rest, n)
+        if pow(root, order, n) != 1:
+            continue
+        if rest == 1:
+            if all(pow(root, order // p, n) != 1 for p, _ in powers):
+                return Witness(root, tuple(powers))
+        elif all(gcd(pow(root, order // p, n) - 1, n) == 1 for p, _ in powers):
+            return Witness(root, tuple(powers), partial_order=True)
     return None
 
 
@@ -98,6 +107,19 @@ def remove_hints(n: int, hints: list[int]) -> int:
             raise ValueError(f"factor hint {divisor} must divide remaining cofactor {cofactor}")
         cofactor //= divisor
     return cofactor
+
+
+def adjacent_shift_split(n: int) -> int | None:
+    """Test the midpoint forced when (2p+1)(2q+1) is a square."""
+    a = isqrt(n - 1) + 1
+    h = a * (a + 1) - n
+    discriminant = h * h - n
+    if discriminant < 0:
+        return None
+    r = isqrt(discriminant)
+    if r * r == discriminant and h - r > 1:
+        return h - r
+    return None
 
 
 def discover(n: int, max_steps: int, hints: list[int]) -> tuple[list[int], list[int], int]:
@@ -137,7 +159,6 @@ def render_certificate(n: int, factors: list[int]) -> str:
         raise ValueError("factor product must equal the positive input")
     lines = [
         "import PrimeFactors.Certificate",
-        "import PrimeFactors.Pratt",
         "import Mathlib.Tactic.NormNum.Prime",
         "import Mathlib.Tactic.ReduceModChar",
         "",
@@ -148,45 +169,70 @@ def render_certificate(n: int, factors: list[int]) -> str:
         "",
     ]
     emitted = set()
+    order_module = "PrimeFactors.Pratt"
 
     def emit(p: int) -> None:
+        nonlocal order_module
         if p in emitted:
             return
         witness = prime_witness(p)
         if witness is None:
-            raise ValueError(f"no Lucas primality witness found for {p}")
+            raise ValueError(f"no primality witness found for {p}")
         for q, _ in witness.powers:
             emit(q)
         lines.append(f"private theorem prime_{p} : Nat.Prime {p} := by")
         if not witness.powers:
             lines.extend(["  norm_num", ""])
         else:
-            # Let Lean recompute and check p-1, its quotient by each q, and the modular powers.
+            # Lean checks the covered order and every modular power.
             primes = [q for q, _ in witness.powers]
             cover = "covers_one"
             for q, exponent in reversed(witness.powers):
                 cover = f"(Covers.cons {exponent} prime_{q} {cover})"
             g = witness.root
+            order = prod(q ** exponent for q, exponent in witness.powers)
+            if witness.partial_order:
+                order_module = "PrimeFactors.PartialOrder"
+                lines.extend([
+                    f"  apply prime_of_partial_order_cover ({g} : ZMod {p}) (F := {order}) (ps := {primes})",
+                    "  · decide",
+                    "  · decide",
+                    "  · decide",
+                ])
+            else:
+                lines.append(f"  apply prime_of_lucas_cover ({g} : ZMod {p}) (ps := {primes})")
+            lines.append(f"  · exact {cover}")
+            if witness.partial_order:
+                lines.append("  · reduce_mod_char")
+            else:
+                lines.extend([f"  · change ({g} : ZMod {p}) ^ {order} = 1", "    reduce_mod_char"])
             lines.extend([
-                f"  apply prime_of_lucas_cover ({g} : ZMod {p}) (ps := {primes})",
-                f"  · exact {cover}",
-                f"  · change ({g} : ZMod {p}) ^ {p - 1} = 1",
-                "    reduce_mod_char",
                 "  · intro q hq",
                 "    simp only [List.mem_cons, List.not_mem_nil, or_false] at hq",
                 "    rcases hq with " + " | ".join("rfl" for _ in primes),
             ])
             for q in primes:
-                lines.extend([
-                    f"    · change ({g} : ZMod {p}) ^ {(p - 1) // q} ≠ 1",
-                    "      reduce_mod_char",
-                    "      decide",
-                ])
+                exponent = order // q
+                if witness.partial_order:
+                    residue = pow(g, exponent, p)
+                    lines.extend([
+                        f"    · change Nat.Coprime ((({g} : ZMod {p}) ^ {exponent} - 1).val) {p}",
+                        f"      have h : ({g} : ZMod {p}) ^ {exponent} = {residue} := by reduce_mod_char",
+                        "      rw [h]",
+                        "      decide +kernel",
+                    ])
+                else:
+                    lines.extend([
+                        f"    · change ({g} : ZMod {p}) ^ {exponent} ≠ 1",
+                        "      reduce_mod_char",
+                        "      decide",
+                    ])
             lines.append("")
         emitted.add(p)
 
     for p in sorted(set(factors)):
         emit(p)
+    lines.insert(1, f"import {order_module}")
     ordered = sorted(factors)
     lines.extend([
         f"theorem factorization : ExactFactorization {n} {ordered} := by",
@@ -226,8 +272,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("n", type=int, help="positive integer in decimal")
     parser.add_argument("--max-steps", type=int, default=10000, help="total Fermat midpoint budget")
-    parser.add_argument("--method", choices=("fermat", "subgroup"), default="fermat",
-                        help="subgroup tries a small-base gcd split before the Fermat search")
+    parser.add_argument("--method", choices=("fermat", "subgroup", "shifted"), default="fermat",
+                        help="optionally try a subgroup or shifted-square split before Fermat")
     parser.add_argument("--max-base", type=int,
                         help="last subgroup base to try (default: bit length squared)")
     parser.add_argument("--factor-hint", type=int, action="append", default=[], metavar="D",
@@ -239,6 +285,7 @@ def main() -> int:
         start = perf_counter()
         hints = list(args.factor_hint)
         subgroup = None
+        shifted = None
         if args.max_base is not None and (args.method != "subgroup" or args.max_base < 1):
             raise ValueError("--max-base requires subgroup mode and a positive bound")
         if args.n < 1 or args.max_steps < 0:
@@ -254,6 +301,14 @@ def main() -> int:
                 subgroup = search(cofactor, args.max_base)
                 if subgroup["status"] == "split":
                     hints.append(int(subgroup["factor"]))
+        elif args.method == "shifted":
+            cofactor = remove_hints(args.n, hints)
+            if cofactor > 1:
+                split = adjacent_shift_split(cofactor)
+                shifted = {"n": str(cofactor), "status": "miss" if split is None else "split"}
+                if split is not None:
+                    hints.append(split)
+                    shifted["factor"] = str(split)
         factors, remaining, steps = discover(args.n, args.max_steps, hints)
         source = None
         if not remaining and (args.lean or args.verify):
@@ -281,6 +336,8 @@ def main() -> int:
         }
         if subgroup is not None:
             report["subgroup"] = subgroup
+        if shifted is not None:
+            report["shifted"] = shifted
         print(json.dumps(report))
         return 1 if remaining else 0
     except (ValueError, OSError) as error:

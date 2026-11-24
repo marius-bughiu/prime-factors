@@ -28,7 +28,7 @@ def agree(case, result, keys):
             raise ValueError(f"{case['id']}.{key}: expected {case[key]!r}, got {result[key]!r}")
 
 
-def run_case(case, subgroup, proofs):
+def run_case(case, method, proofs):
     name = case['id']
     if not re.fullmatch(r'[a-zA-Z0-9_-]+', name):
         raise ValueError(f'Invalid benchmark ID {name!r}')
@@ -36,17 +36,19 @@ def run_case(case, subgroup, proofs):
     start = time.perf_counter()
     factor_args = ['scripts/factor.py', case['n'], '--max-steps', case.get('max_steps', 0),
                    '--verify', '--lean', proof]
-    if subgroup:
-        factor_args += ['--method', 'subgroup']
-        if 'max_base' in case:
-            factor_args += ['--max-base', case['max_base']]
+    factor_args += ['--method', method]
+    if method == 'subgroup' and 'max_base' in case:
+        factor_args += ['--max-base', case['max_base']]
     complete = case['status'] == 'complete'
     result = cli(factor_args, 0 if complete else 1)
     agree(case, result, ['n', 'status', 'factors', 'remaining'])
-    if subgroup:
+    if method == 'subgroup':
         agree(case, result['subgroup'], ['bases_tested'])
     else:
         agree(case, result, ['fermat_steps'])
+    if method == 'shifted':
+        if result['shifted']['status'] != case['shifted']['status']:
+            raise ValueError(f"Unexpected shifted-square result for {name}")
     if result['verified'] != complete or (complete and not proof.is_file()):
         raise ValueError(f'Unexpected proof status for {name}')
     if 'exclusion' in case:
@@ -67,7 +69,7 @@ def run_case(case, subgroup, proofs):
                                    verification_seconds=time.perf_counter() - check_start)
     elapsed = time.perf_counter() - start
     return dict(result, id=name, description=case['description'],
-                method='subgroup' if subgroup else 'fermat', wall_seconds=elapsed,
+                method=method, wall_seconds=elapsed,
                 certificate=f'proofs/{proof.name}' if complete else None)
 
 
@@ -93,10 +95,11 @@ def main():
     proofs = out / 'proofs'
     proofs.mkdir(parents=True, exist_ok=True)
     results = []
-    for filename in ['cases.json', 'subgroup.json']:
+    for filename, method in [('cases.json', 'fermat'), ('subgroup.json', 'subgroup'),
+                             ('shifted.json', 'shifted')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         for case in cases:
-            result = run_case(case, filename == 'subgroup.json', proofs)
+            result = run_case(case, method, proofs)
             results.append(result)
             print(f"{result['id']}  {result['status']}  {result['wall_seconds']:.3f}s", flush=True)
     if len(results) != len({case['id'] for case in results}):

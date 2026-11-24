@@ -6,7 +6,7 @@ import sys
 import tempfile
 import unittest
 
-from scripts.factor import discover, fermat_split, prime_witness, render_certificate
+from scripts.factor import adjacent_shift_split, discover, fermat_split, prime_witness, render_certificate
 
 
 REPO = Path(__file__).resolve().parents[1]
@@ -35,6 +35,16 @@ class FactorTests(unittest.TestCase):
                 actual, steps = fermat_split(n, budget)
                 self.assertEqual(actual, max(candidates, default=None), (n, budget))
                 self.assertLessEqual(steps, budget)
+
+    def test_shifted_formula_and_misses(self):
+        self.assertEqual(adjacent_shift_split(2701), 37)
+        self.assertIsNone(adjacent_shift_split(34387))
+        for n in range(2, 500):
+            divisor = adjacent_shift_split(n)
+            if divisor is not None:
+                self.assertGreater(divisor, 1)
+                self.assertLess(divisor, n)
+                self.assertEqual(n % divisor, 0)
 
     def test_composite_hint_needs_further_splits(self):
         n = 101 * 103 * 10007

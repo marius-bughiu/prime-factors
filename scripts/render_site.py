@@ -37,6 +37,9 @@ def case_row(result):
         count = f'Subgroup search · {w["bases_tested"]} {unit} tested · inclusive limit {w["max_base"]}'
         if w['status'] == 'split':
             count += f' · witness {w["witness_base"]}'
+    elif result['method'] == 'shifted':
+        outcome = 'split' if result['shifted']['status'] == 'split' else 'no split'
+        count = f'Shifted-square formula · {outcome} · {result["fermat_steps"]} Fermat midpoints'
     else:
         unit = 'midpoint' if result['fermat_steps'] == 1 else 'midpoints'
         count = f'Fermat pipeline · {result["fermat_steps"]} {unit} tested · budget {result["max_steps"]}'

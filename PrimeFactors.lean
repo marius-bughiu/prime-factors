@@ -2,6 +2,7 @@ import PrimeFactors.AdditiveCover
 import PrimeFactors.AnalyticAccess
 import PrimeFactors.BlockCharacters
 import PrimeFactors.Certificate
+import PrimeFactors.DiscriminantPencil
 import PrimeFactors.DivisorSignal
 import PrimeFactors.DivisorSum
 import PrimeFactors.FactorSum
@@ -13,6 +14,7 @@ import PrimeFactors.JointPeriod
 import PrimeFactors.LongPeriod
 import PrimeFactors.MixedHeights
 import PrimeFactors.Multiplier
+import PrimeFactors.PartialOrder
 import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
 import PrimeFactors.PrimePower
