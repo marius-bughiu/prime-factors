@@ -8,6 +8,8 @@ $$
 
 using $O_S((\log X)^s)$ midpoint square tests. Giving consecutive Fermat search the same predetermined number of midpoint tests yields a proportion $\Theta_S((\log X)^{s/2}/\sqrt X)$. Both proportions tend to zero. The statements below are unconditional paper deductions; Lean verifies the underlying midpoint search and its completeness for a given stride. McKee applied this squared-modulus idea in a rational version of Fermat search. [Lean search theorem](../PrimeFactors/GapStride.lean) · [Stride construction and implemented base-five search](smooth-factor-gaps.md) · [McKee, *Speeding Fermat’s factoring method*](https://doi.org/10.1090/S0025-5718-99-01133-3)
 
+A matching optimization theorem bounds the coverage of *every* prescribed list under a nominal midpoint-test budget and constructs lists that attain the bound. [Optimality among prescribed searches](stride-budget.md)
+
 ## What one test per root covers
 
 Let $r=\lceil\sqrt N\rceil$, $H=(p+q)/2$, and $Y=\lfloor\sqrt X\rfloor$. For each root of $h^2=N\bmod m^2$, test the first $h\ge r$ in its class. A successful split must be proper. The genuine midpoint is tested exactly when $m\mid D$ and $H-r<m^2$. Indeed, $H^2-N=D^2$, so $m^2\mid H^2-N$ is equivalent to $m\mid D$. The identity
