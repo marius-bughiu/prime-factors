@@ -67,6 +67,19 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'norm-curves':
+        w = result['norm_curves']
+        if w['mode'] == 'residues':
+            count = (f'Degree {w["degree"]} · {w["blocks"]:,} of {w["max_blocks"]:,} residue classes'
+                     f' · {w["auxiliary_equations"]:,} auxiliary equations')
+        else:
+            count = (f'Degree 2 · {w["blocks"]:,} of {w["max_blocks"]:,} sectors'
+                     f' · {w["resultants"]:,} quartics solved')
+            if w['reuse_basis']:
+                count += f' · {w["reused_bases"]:,} bases reused'
+        count += (f' · {w["lll_calls"]:,} lattice reductions · {w["lll_swaps"]:,} swaps'
+                  f' · {w["integer_root_nodes"]:,} root-isolation intervals'
+                  f' · {w["representations"]:,} representations found')
     elif result['method'] == 'norm-directions':
         w = result['norm_directions']
         count = (f'{w["blocks"]:,} of {w["max_blocks"]:,} ellipse blocks'

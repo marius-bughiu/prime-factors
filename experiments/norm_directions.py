@@ -128,13 +128,14 @@ def admissible_multipliers(n, d):
             yield k
 
 
-def search(n, last_prime, max_blocks):
+def search(n, last_prime, max_blocks, *, scanner=scan, work_counts=()):
     if n <= 2 or n % 2 == 0 or last_prime < 2 or max_blocks < 0:
         raise ValueError('expected an odd input >2, prime bound ≥2 and nonnegative block budget')
     choices, factor = discriminants(n, primes_through(last_prime))
     work = dict(factor=factor, outcome='prime_gcd' if factor else 'no_split', forms=0,
                 multiples=0, excluded_multiples=0, blocks=0, coordinate_positions=0, line_tests=0,
                 discriminant_roots=0, euclidean_steps=0, representations=0, witnesses=[])
+    work.update(dict.fromkeys(work_counts, 0))
     if factor:
         return work
     for d in choices:
@@ -144,7 +145,7 @@ def search(n, last_prime, max_blocks):
         work['excluded_multiples'] += isqrt(4*d//3)-len(eligible)
         for k in eligible:
             work['multiples'] += 1
-            for t,v in scan(n, d, k, work, max_blocks):
+            for t,v in scanner(n, d, k, work, max_blocks):
                 work['representations'] += 1
                 divisor = gcd(v,n)
                 if 1 < divisor < n:

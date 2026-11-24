@@ -1,0 +1,179 @@
+[
+  {
+    "id": "curve-sectors-mixed-multipliers",
+    "description": "Two different multiples furnish a split with basis reuse across sectors",
+    "n": "3599",
+    "mode": "sectors",
+    "reuse_basis": true,
+    "last_prime": 13,
+    "max_blocks": 300,
+    "outcome": "norm_pair",
+    "forms": 2,
+    "multiples": 3,
+    "excluded_multiples": 3,
+    "blocks": 209,
+    "coordinate_positions": 171,
+    "line_tests": 0,
+    "discriminant_roots": 0,
+    "euclidean_steps": 0,
+    "representations": 2,
+    "witnesses": [
+      [
+        14,
+        1,
+        "57",
+        "5"
+      ],
+      [
+        14,
+        2,
+        "32",
+        "21"
+      ]
+    ],
+    "empty_coordinate_intervals": 46,
+    "lll_calls": 163,
+    "lll_reductions": 2782,
+    "lll_swaps": 1446,
+    "possible_levels": 7,
+    "empty_level_intervals": 156,
+    "single_zero_levels": 7,
+    "resultants": 7,
+    "integer_root_nodes": 7,
+    "point_checks": 2,
+    "reused_bases": 160,
+    "status": "complete",
+    "factors": [
+      "59",
+      "61"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "curve-residues-mixed-multipliers",
+    "description": "Two different multiples furnish a split through prime-power residue classes",
+    "n": "3599",
+    "mode": "residues",
+    "degree": 2,
+    "last_prime": 13,
+    "max_blocks": 100,
+    "outcome": "norm_pair",
+    "forms": 2,
+    "multiples": 3,
+    "excluded_multiples": 3,
+    "blocks": 17,
+    "coordinate_positions": 62,
+    "line_tests": 0,
+    "discriminant_roots": 3,
+    "euclidean_steps": 0,
+    "representations": 2,
+    "witnesses": [
+      [
+        14,
+        1,
+        "57",
+        "5"
+      ],
+      [
+        14,
+        2,
+        "32",
+        "21"
+      ]
+    ],
+    "auxiliary_equations": 16,
+    "empty_classes": 1,
+    "lll_calls": 15,
+    "lll_swaps": 363,
+    "lll_reductions": 554,
+    "integer_root_nodes": 66,
+    "hensel_steps": 64,
+    "kernel_constraints": 64,
+    "status": "complete",
+    "factors": [
+      "59",
+      "61"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "curve-residues-41",
+    "description": "Two solutions of a single ellipse recover both primes on the 41-bit input",
+    "n": "1900014700027",
+    "mode": "residues",
+    "degree": 2,
+    "last_prime": 13,
+    "max_blocks": 4000,
+    "outcome": "norm_pair",
+    "forms": 1,
+    "multiples": 1,
+    "excluded_multiples": 0,
+    "blocks": 3094,
+    "coordinate_positions": 306256,
+    "line_tests": 0,
+    "discriminant_roots": 2,
+    "euclidean_steps": 0,
+    "representations": 2,
+    "witnesses": [
+      [
+        2,
+        1,
+        "265493",
+        "956433"
+      ],
+      [
+        2,
+        1,
+        "657187",
+        "856773"
+      ]
+    ],
+    "auxiliary_equations": 3094,
+    "empty_classes": 0,
+    "lll_calls": 3094,
+    "lll_swaps": 179301,
+    "lll_reductions": 287738,
+    "integer_root_nodes": 53054,
+    "hensel_steps": 18564,
+    "kernel_constraints": 12376,
+    "status": "complete",
+    "factors": [
+      "1000003",
+      "1900009"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "curve-residues-crossed-2048",
+    "description": "Two residue classes on the published crossed 2048-bit product",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "mode": "residues",
+    "degree": 2,
+    "last_prime": 739,
+    "max_blocks": 2,
+    "outcome": "block_limit",
+    "forms": 1,
+    "multiples": 1,
+    "excluded_multiples": 0,
+    "blocks": 2,
+    "coordinate_positions": 1017205926661697234774067358727635573714880580507730754321246958082932000794159849183625392183582490581862584008901802509743,
+    "line_tests": 0,
+    "discriminant_roots": 0,
+    "euclidean_steps": 0,
+    "representations": 0,
+    "witnesses": [],
+    "auxiliary_equations": 2,
+    "empty_classes": 0,
+    "lll_calls": 2,
+    "lll_swaps": 2599,
+    "lll_reductions": 4427,
+    "integer_root_nodes": 1620,
+    "hensel_steps": 22,
+    "kernel_constraints": 8,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  }
+]

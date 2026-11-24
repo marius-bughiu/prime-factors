@@ -9,6 +9,7 @@ import subprocess
 import sys
 import time
 from datetime import datetime, timezone
+from functools import partial
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,6 +38,7 @@ from experiments.seed_gap_sieve import search as seed_gap_search
 from experiments.polynomial_relations import search as polynomial_relation_search
 from experiments.polynomial_packet import search as polynomial_packet_search
 from experiments.norm_directions import search as norm_direction_search
+from experiments import norm_auxiliary, norm_residue_curves
 from experiments.salie_blocks import search as salie_block_search
 from experiments.folded_square import direct as fixed_phase_search
 from experiments.four_square_lines import search as four_square_line_search
@@ -154,6 +156,24 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(max_steps=case['max_steps'], multiplier=case['multiplier'])
         result = certify_split(case, proof, factor, elapsed, 'pell_relations', work)
+    elif method == 'norm-curves':
+        n, last_prime, max_blocks = int(case['n']), case['last_prime'], case['max_blocks']
+        mode = case['mode']
+        if mode == 'residues':
+            settings = dict(degree=case['degree'])
+            work = norm_residue_curves.search(n, last_prime, max_blocks, **settings)
+        elif mode == 'sectors':
+            settings = dict(reuse_basis=case['reuse_basis'])
+            work = norm_direction_search(n, last_prime, max_blocks,
+                                         scanner=partial(norm_auxiliary.scan, **settings),
+                                         work_counts=norm_auxiliary.EXTRA_COUNTERS)
+        else:
+            raise ValueError(f"Unknown norm-curve search mode {mode!r}")
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(mode=mode, max_blocks=max_blocks, last_prime=last_prime, **settings)
+        result = certify_split(case, proof, factor, elapsed, 'norm_curves', work)
     elif method == 'norm-directions':
         work = norm_direction_search(int(case['n']), case['last_prime'], case['max_blocks'])
         elapsed = time.perf_counter() - start
@@ -430,6 +450,7 @@ def main():
                              ('seed-gap-sieve.json', 'seed-gap-sieve'),
                              ('polynomial-relations.json', 'polynomial-relations'),
                              ('norm-directions.json', 'norm-directions'),
+                             ('norm-curves.json', 'norm-curves'),
                              ('polynomial-packets.json', 'polynomial-packets'),
                              ('crt-square-norms.json', 'crt-square-norms'),
                              ('four-square-lines.json', 'four-square-lines'),

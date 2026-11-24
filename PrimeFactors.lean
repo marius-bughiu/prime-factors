@@ -62,7 +62,9 @@ import PrimeFactors.Multiplier
 import PrimeFactors.MultiplierImages
 import PrimeFactors.MultiplierScore
 import PrimeFactors.NormArc
+import PrimeFactors.NormAuxiliary
 import PrimeFactors.NormDirections
+import PrimeFactors.NormResidueCurve
 import PrimeFactors.NormSignList
 import PrimeFactors.PairDeterminant
 import PrimeFactors.PairwiseSieve
