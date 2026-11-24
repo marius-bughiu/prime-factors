@@ -39,7 +39,8 @@ from experiments.polynomial_relations import search as polynomial_relation_searc
 from experiments.polynomial_packet import search as polynomial_packet_search
 from experiments.norm_directions import search as norm_direction_search
 from experiments import norm_auxiliary, norm_band_product, norm_residue_curves
-from experiments import factorial_progressions, quartic_trace, reciprocal_wheel, short_norm_boxes, universal_norm_batch
+from experiments import extension_trace, factorial_progressions, quartic_trace, reciprocal_wheel
+from experiments import short_norm_boxes, universal_norm_batch
 from experiments.salie_blocks import search as salie_block_search
 from experiments.folded_square import direct as fixed_phase_search
 from experiments.four_square_lines import search as four_square_line_search
@@ -165,6 +166,18 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(settings)
         result = certify_split(case, proof, factor, elapsed, 'factorial_progressions', work)
+    elif method == 'extension-trace':
+        settings = {k: case[k] for k in ('max_positions', 'max_selector')}
+        if case.get('mode', 'smooth') == 'punctured':
+            work = extension_trace.punctured_search(int(case['n']), **settings)
+        else:
+            settings.update(a=case['a'], b=case['b'])
+            work = extension_trace.search(int(case['n']), **settings)
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(settings, mode=case.get('mode', 'smooth'))
+        result = certify_split(case, proof, factor, elapsed, 'extension_trace', work)
     elif method == 'quartic-trace':
         settings = {k: case[k] for k in ('max_positions', 'max_selector', 'bits')}
         work = quartic_trace.search(int(case['n']), **settings)
@@ -505,6 +518,7 @@ def main():
                              ('norm-band-product.json', 'norm-band-product'),
                              ('factorial-progressions.json', 'factorial-progressions'),
                              ('quartic-trace.json', 'quartic-trace'),
+                             ('extension-trace.json', 'extension-trace'),
                              ('reciprocal-wheel.json', 'reciprocal-wheel'),
                              ('polynomial-packets.json', 'polynomial-packets'),
                              ('crt-square-norms.json', 'crt-square-norms'),

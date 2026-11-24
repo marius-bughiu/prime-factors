@@ -16,6 +16,13 @@ def duration(seconds):
     return f'{seconds:.2f} s'
 
 
+def position_budget(done, required):
+    total = int(required)
+    if total.bit_length() > 64:
+        return f'{done:,} positions evaluated · full sum needs at least 2<sup>{total.bit_length()-1}</sup>'
+    return f'{done:,} of {total:,} positions'
+
+
 def case_row(result):
     checked = result['verified']
     name = escape(result['id'])
@@ -74,6 +81,10 @@ def case_row(result):
         count = (f'Block products · {int(w["span"]):,} integers in budgeted interval'
                  f' · {covered:,} candidates covered · {counts.get("convolutions", 0)} convolutions'
                  f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'extension-trace':
+        w = result['extension_trace']
+        count = (f'Quadratic-extension sum · {position_budget(w["positions"], w["required_positions"])}'
+                 f' · {w["selector_tests"]:,} selector checks · {escape(w["outcome"])}')
     elif result['method'] == 'reciprocal-wheel':
         w = result['reciprocal_wheel']
         count = (f'Paired factor intervals · {w["blocks"]:,} blocks tested'
@@ -82,7 +93,7 @@ def case_row(result):
     elif result['method'] == 'quartic-trace':
         w = result['quartic_trace']
         count = (f'Quartic character sums · {w["bits"]+2} bits per residue'
-                 f' · {w["positions"]:,} of {int(w["required_positions"]):,} paired positions'
+                 f' · {position_budget(w["positions"], w["required_positions"])}'
                  f' · {w["symbol_evaluations"]:,} symbol evaluations')
         if w['vector'] is not None:
             x, y = w['vector']

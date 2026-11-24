@@ -29,6 +29,7 @@ import PrimeFactors.EuclideanHeight
 import PrimeFactors.EuclideanHeightExample
 import PrimeFactors.ExceptionalWeights
 import PrimeFactors.ExponentialReadout
+import PrimeFactors.ExtensionTrace
 import PrimeFactors.FactorCircuit
 import PrimeFactors.FactorialProgressions
 import PrimeFactors.FactorSum
@@ -48,6 +49,7 @@ import PrimeFactors.Isolation
 import PrimeFactors.JacobiReadings
 import PrimeFactors.JacobiSeparation
 import PrimeFactors.JointPeriod
+import PrimeFactors.LegendreTraceSelection
 import PrimeFactors.LinePower
 import PrimeFactors.LongPeriod
 import PrimeFactors.LowFactorBits
@@ -99,6 +101,7 @@ import PrimeFactors.PrimePower
 import PrimeFactors.PrimePowerCount
 import PrimeFactors.ProductAdvice
 import PrimeFactors.ProductPrefix
+import PrimeFactors.PuncturedTrace
 import PrimeFactors.QuarticSlopeBit
 import PrimeFactors.QuarticTrace
 import PrimeFactors.QuotientBudget
