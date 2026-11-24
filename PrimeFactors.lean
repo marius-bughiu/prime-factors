@@ -20,3 +20,4 @@ import PrimeFactors.ShiftedResidues
 import PrimeFactors.SieveInterval
 import PrimeFactors.SignatureCount
 import PrimeFactors.Subgroup
+import PrimeFactors.WeightedCollision

@@ -42,6 +42,14 @@ Per attempt, keep one baby index per signature, try at most one candidate per gi
 
 ## How small could two additive tables be?
 
+### Collisions visible at one unknown prime
+
+In a weighted window the true exponent is $t=ap+bq$. Modulo $p-1$ this equals the computable $a+bN$. Write $t=c+mj+i$ with $c=\lceil\sqrt{4abN}\rceil$ and $0\le i<m$. The powers $u^i$ and $u^{a+bN}/(u^c (u^m)^j)$ therefore agree modulo $p$. One baby table serves every window. For example, at $N=34387$, base 2 and weights $(3,2)$, the representatives are 16 and 23443. Their difference has gcd 137 with $N$. Sorting by residue modulo $N$ alone would miss that pair. Harvey's polynomial multipoint evaluation batches the gcd tests, with separate handling of equal representatives and large-order base selection. The paper proves the resulting bit complexity. [Harvey, Algorithms 4.1–4.2](https://arxiv.org/pdf/2010.05450#page=9)
+
+Lean verifies coverage and the number $G$ of giant entries. For $m=(K+1)^2$ and $\lfloor\sqrt N\rfloor\le(K+1)^5$, it proves $G\le 2K(K+1)$. Taking $K=\lceil N^{1/10}\rceil$ gives $O(N^{1/5})$ entries. Conversely, for **every** positive $K,m$ this explicit complete table construction satisfies $N<128(G+m)^5$. Thus changing those two parameters cannot improve its exponent. A 2048-bit input needs more than $2^{408}$ records across the complete tables, even with the best choices. This lower bound applies to these table lengths only. The published faster logarithmic factors use other structure. [Finite proofs and example](../PrimeFactors/WeightedCollision.lean) · [Harvey and Hittmeir](https://arxiv.org/abs/2105.11105)
+
+### Tables covering all local survivors
+
 Suppose two finite integer tables $A,B$ cover every locally admissible offset in an interval of width $W$ by sums $a+b$. If the sieve has period $M$ and $H_M$ is its set of admissible classes, Lean proves
 
 $$4\lfloor W/M\rfloor\,|H_M|\ \le\ (|A|+|B|)^2.$$
