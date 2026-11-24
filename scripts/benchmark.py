@@ -18,6 +18,7 @@ if str(ROOT) not in sys.path:
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.midpoint_readings import search as midpoint_readings_search
 from experiments.short_basis_sieve import search as short_basis_search
+from experiments.wide_modulus import search as wide_modulus_search
 from experiments.pascal_readout import search as pascal_search
 from experiments.inverse_windows import search_product as inverse_windows_search
 from experiments.continued_square import search as continued_square_search
@@ -105,6 +106,13 @@ def run_case(case, method, proofs):
         agree(case, work, ['low_classes', 'modular_hits'])
         factor = pairs[0][0] if pairs else None
         result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
+    elif method == 'wide-modulus':
+        work = wide_modulus_search(int(case['n']), **case['parameters'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        work['order_method'] = work['order']['method']
+        agree(case, work, ['route', 'order_method'])
+        result = certify_split(case, proof, factor, elapsed, 'wide_modulus', work)
     elif method == 'short-basis':
         result = short_basis_case(case, proof)
     elif method == 'pascal':
@@ -224,7 +232,7 @@ def main():
                              ('cyclotomic-periods.json', 'cyclotomic'), ('gap-stride.json', 'gap-stride'),
                              ('predecessor-square.json', 'predecessor-square'),
                              ('square-offset.json', 'square-offset'), ('continued-square.json', 'continued-square'),
-                             ('short-basis.json', 'short-basis'),
+                             ('short-basis.json', 'short-basis'), ('wide-modulus.json', 'wide-modulus'),
                              ('pascal.json', 'pascal'), ('midpoint-readings.json', 'midpoint-readings'),
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:

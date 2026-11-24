@@ -57,6 +57,17 @@ def case_row(result):
         count = (f'Balanced-interval modular search · {w["low_classes"]:,} low residue classes'
                  f' · {w["modular_hits"]:,} candidate products · {w["euclidean_steps"]:,} Euclidean steps'
                  f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'wide-modulus':
+        w = result['wide_modulus']
+        order = w['order']
+        count = (f'One-interval sieve · modulus {w["m"]:,} · '
+                 f'{w["work"].get("baby_powers", 0):,} baby powers · '
+                 f'{w["work"].get("giant_powers", 0):,} giant powers · '
+                 f'{order["work"]["certificate_gcds"]:,} order checks · '
+                 f'{order["work"]["progression_gcds"]:,} progression gcds · '
+                 f'search {duration(result["discovery_seconds"])}')
+        if not checked:
+            count += ' · ' + escape(w['unresolved_stage'].replace('_', ' '))
     elif result['method'] == 'short-basis':
         w = result['short_basis']
         extra = 'on' if w['use_exceptional'] else 'off'

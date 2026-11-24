@@ -1,0 +1,182 @@
+[
+  {
+    "id": "wide-order-progression",
+    "description": "Short orders narrow the smaller prime to a progression",
+    "n": "10403",
+    "parameters": {
+      "m": 30,
+      "selected": [
+        3,
+        5
+      ],
+      "divisor_cut": 5,
+      "base_cap": 5,
+      "divisor_threshold": 5,
+      "fallback_cap": 2,
+      "run_exceptional": true
+    },
+    "route": "order_setup",
+    "order_method": "divisor_progression",
+    "status": "complete",
+    "factors": [
+      "101",
+      "103"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "wide-order-cutoff",
+    "description": "Same order obstruction with zero progression gcds permitted",
+    "n": "10403",
+    "parameters": {
+      "m": 30,
+      "selected": [
+        3,
+        5
+      ],
+      "divisor_cut": 5,
+      "base_cap": 5,
+      "divisor_threshold": 5,
+      "fallback_cap": 0,
+      "run_exceptional": true
+    },
+    "route": "unresolved",
+    "order_method": "fallback_budget",
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "10403"
+    ]
+  },
+  {
+    "id": "wide-order-merge",
+    "description": "Lifted base assembled from two shorter orders",
+    "n": "3363121",
+    "parameters": {
+      "m": 105,
+      "selected": [
+        3,
+        5,
+        7
+      ],
+      "divisor_cut": 5,
+      "base_cap": 5,
+      "divisor_threshold": 5,
+      "fallback_cap": 2,
+      "run_exceptional": true
+    },
+    "route": "ordinary_exact_trace",
+    "order_method": "lcm_merge",
+    "status": "complete",
+    "factors": [
+      "1297",
+      "2593"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "wide-exceptional-rows",
+    "description": "Chunked dense search over the exceptional rows",
+    "n": "150235091",
+    "parameters": {
+      "m": 105,
+      "selected": [
+        3,
+        5,
+        7
+      ],
+      "divisor_cut": 4,
+      "base_cap": 12,
+      "divisor_threshold": 8,
+      "fallback_cap": 50000,
+      "run_exceptional": true
+    },
+    "route": "exceptional_polynomial_collision",
+    "order_method": "single_base",
+    "status": "complete",
+    "factors": [
+      "10007",
+      "15013"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "wide-exceptional-control",
+    "description": "Same product with only the ordinary weights enabled",
+    "n": "150235091",
+    "parameters": {
+      "m": 105,
+      "selected": [
+        3,
+        5,
+        7
+      ],
+      "divisor_cut": 4,
+      "base_cap": 12,
+      "divisor_threshold": 8,
+      "fallback_cap": 50000,
+      "run_exceptional": false
+    },
+    "route": "unresolved",
+    "order_method": "single_base",
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "150235091"
+    ]
+  },
+  {
+    "id": "wide-seeded-63",
+    "description": "Two 32-bit primes sampled before running the sieve",
+    "n": "8745712257892974589",
+    "parameters": {
+      "m": 30030,
+      "selected": [
+        5,
+        7,
+        11,
+        13
+      ],
+      "divisor_cut": 37,
+      "base_cap": 20,
+      "divisor_threshold": 32,
+      "fallback_cap": 0,
+      "run_exceptional": true
+    },
+    "route": "ordinary_exact_trace",
+    "order_method": "single_base",
+    "status": "complete",
+    "factors": [
+      "2640906143",
+      "3311633123"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "wide-seeded-79",
+    "description": "Two 40-bit primes sampled before running the sieve",
+    "n": "367722817904017001243509",
+    "parameters": {
+      "m": 510510,
+      "selected": [
+        7,
+        11,
+        13,
+        17
+      ],
+      "divisor_cut": 65,
+      "base_cap": 31,
+      "divisor_threshold": 32,
+      "fallback_cap": 0,
+      "run_exceptional": true
+    },
+    "route": "ordinary_polynomial_collision",
+    "order_method": "single_base",
+    "status": "complete",
+    "factors": [
+      "605056390957",
+      "607749663337"
+    ],
+    "remaining": []
+  }
+]

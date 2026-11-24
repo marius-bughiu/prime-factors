@@ -1,0 +1,73 @@
+# A larger sieve for two balanced primes
+
+Given only the product of two distinct primes of similar size, the search below can apply about twice as many small-prime tests as our previous search. A failed attempt to set up those tests also gives information about a factor. The change reduces the worst-case work of a particular deterministic arithmetic algorithm. Finding two independent 1024-bit primes from their product on a PC remains open.
+
+More precisely, let $N=pq$, $p<q\le 2p$. Put $L=\log N$, $E=L/\log L$ and $c=2\log(4/3)/25$. Our derived deterministic classical bit bound is
+$$N^{1/5}\exp[-(c+o(1))E].$$
+Stănică obtains $\log(4/3)/50$ for general inputs. Our earlier balanced argument gives $\log(4/3)/25$. The coefficient of the secondary saving is four times the first and twice the second. The leading exponent remains $1/5$. Independent mathematical review of this derivation is outstanding. Lean verifies the finite order obstruction, progression implication, signed trace bound, and component counting lemmas. The asymptotic analysis is proved here on paper. [Stănică, §3, especially Remark 3.14](https://arxiv.org/html/2611.06580v1#S3) · [Earlier balanced bound](short-basis-sieve.md) · [Order and trace proofs](../PrimeFactors/WideModulus.lean) · [Exceptional-row proofs](../PrimeFactors/RareRows.lean)
+
+This comparison concerns the arithmetic sieve. Separate preprints claim asymptotically smaller general deterministic bounds through Boolean computation, including $2^{O(n/\sqrt{\log n})}$ for an $n$-bit input. Neither comparison predicts a 2048-bit running time. [Rudich–Rousseau](https://hexagonmath.org/2610.00600v1) · [Shunia](https://hexagonmath.org/2610.00711v1)
+
+## One interval and a short vector
+
+Write $s=\sqrt N$. All the unknown factors satisfy $s/\sqrt2\le p<s<q\le\sqrt2 s$. Choose a primorial $m$ as described below, split off any nonunit gcd and otherwise enumerate the units $\sigma$ modulo $m$. The correct row has $p\equiv\sigma\pmod m$. Compute a shortest nonzero vector in the ordinary Euclidean norm in the determinant-$m$ lattice
+$$ b\equiv aN\sigma^{-2}\pmod m.$$
+Two-dimensional Gauss reduction costs polynomial time in $\log N$ per row. Both coefficients have absolute value at most $2\sqrt m$ for sufficiently large $m$. For an elementary size bound, divide $[0,m)$ into $\lceil\sqrt m\rceil$ bins. Two of the first $\lceil\sqrt m\rceil+1$ multiples of $N\sigma^{-2}$ lie in the same bin. Their index and residue differences give a vector of norm at most $\sqrt2\lceil\sqrt m\rceil$. No partition of the factor interval into narrower cells is necessary. The underlying lattice and the option of one interval already occur in Harvey–Hittmeir. [Harvey–Hittmeir, Proposition 3.3](https://arxiv.org/abs/2105.11105)
+
+Consequently the signed trace $T=aq+bp$ has $|T|\le 6s\sqrt m$ on the correct row. It has a known residue $\tau=aN/\sigma+b\sigma\bmod m^2$, taking the inverse modulo $m^2$. To see this write $p=\sigma+mz$ and expand $aN/p+bp$. The coefficient of $mz$ vanishes modulo $m$ by the lattice congruence. Taking a common integer radius a little larger than $6s/m^{3/2}+1$, every true trace is therefore $T=j+m^2i$ with $j=\tau-m^2\cdot\mathrm{radius}$ and $0\le i\le 2\cdot\mathrm{radius}$. Write $W=2\cdot\mathrm{radius}+1=O(1+\lambda)$, $\lambda=s/m^{3/2}$. All boundaries can use integer square roots with outward rounding.
+
+Set $d=\gcd(|a|,|b|,m)$. At each selected odd prime $\ell\mid m$ outside $d$, the next digit of $i$ is a quadratic with nonzero leading coefficient $aN/\sigma^3\bmod\ell$. This follows by keeping one more power of $m$ in the same expansion. The constant depends on $j$; it is computable. The translated local image fits in Stănică’s fixed set of density $3/4+O(1/\ell)$. CRT supplies one shift per row with $0\le c_\sigma<M$, where $M$ is the product of the selected primes. [Stănică, Lemma 3.4 and Proposition 3.5](https://arxiv.org/html/2611.06580v1#S3)
+
+There are $t$ selected primes. Put $D_0=\exp(t\sqrt{\log L})$. For $d<D_0$ at most $h=o(t)$ selected coordinates fail because each has logarithm of order $\log L$. One shared table tolerates any $h$ failures. Allowing these exceptions inflates the density by at most $\sum_{j\le h}\binom tj 2^j=\exp(o(t))$. The full-period density is thus at most $\rho=\exp(-t\log(4/3)+o(t))$. Scan one period and lift passing residues by $M$ to list the exponents below $W+M$. Including the final partial period uses $O(\rho(W+M))$ entries. Setup, ordinary rows and these powers together cost $\widetilde O(m+M+\rho(W+M))$. [Finite union bound and the earlier derivation](short-basis-sieve.md#few-failed-tests)
+
+## Counting the rows that need all their candidates
+
+The costly rows have $d\ge D_0$. Count the rows themselves before paying for any dense search. Fix $d\mid m$ and put $r=m/d$. A row with this exact content has a signed pair $(u,v)=(a/d,b/d)$ with $|u|,|v|\le 2\sqrt m/d$. Since the vector is nonzero, $d\le2\sqrt m$ and the number of such pairs is $O(m/d^2)$, including rounding. The squarefree condition implies $u$ and $v$ are units modulo $r$. Indeed a prime of $r$ dividing either original coefficient divides both and would belong to $d$. Cancellation now gives
+$$v\sigma^2\equiv uN\pmod r.$$
+For each pair there are at most $2^{\omega(r)}$ solutions modulo $r$, also valid for $r=1$. Each has $d$ lifts to residues modulo $m$, of which only units are rows. Thus the number of exceptional rows satisfies
+$$G\ll m\sum_{\substack{d\mid m\\d\ge D_0}}\frac{2^{\omega(m/d)}}d
+     \le \frac{m}{D_0}3^{\omega(m)}.$$
+The last factor counts the three choices per prime in the squarefree divisor sum. The algorithm collects the actual rows while visiting all $\sigma$. It never enumerates the pairs or roots used in this count.
+
+Every exceptional row retains its original unshifted interval of $W$ indices. If $G>0$, set $B=\min(W,\lceil\sqrt{GW}\rceil)$. Store one shared table with exponents $0$ to $B-1$ and split each row into $\lceil W/B\rceil$ consecutive chunks. Each chunk contributes one giant, including the last partial one. Total records are $O(G+\sqrt{GW})$. The exponent span fits the same order certificate as the ordinary search. With the parameters below, $\log D_0/E\to\infty$, $\omega(m)=O(E)$ and $W=N^{1/5}\exp(O(E))$. This makes both exceptional terms $O(N^{1/5}\exp(-\omega(E)))$, where $\omega(E)$ here denotes growth faster than any constant times $E$.
+
+For either table first obtain a unit $\beta$ for which $\alpha=\beta^{m^2}$ has order exceeding $H=W+M$ at both primes, or split $N$ in setup. On the correct row $aq+bp\equiv aN+b\pmod{p-1}$. This gives a collision modulo $p$ between a stored power and the row’s shifted giant. In a dense chunk starting at $j+m^2k$ use giant $\beta^{aN+b-j-m^2k}$. For the translated table use $\beta^{aN+b-j}\alpha^{c_\sigma}$. Check all exact modulo-$N$ matches first, retaining the giant’s own offset, allowed range and weights. At the true giant its match is unique modulo $p$ in the certified span. The integer roots of $Z^2-TZ+abN$ recover the factors after checking assignments; a zero weight instead gives a linear equation. The remaining partial collisions are detectable in quasilinear bit cost up to logarithmic factors by monic multipoint evaluation and gcds. If a product yields gcd $N$, at most one scan through its individual terms is necessary before returning a proper factor. [Stănică, Lemmas 3.9–3.11 and exact recovery](https://arxiv.org/html/2611.06580v1#S3)
+
+## Obtaining the powered base or an actual factor
+
+Finding a base of order greater than $m^2H$ before powering it would be too expensive here. Instead work **after** the power map, retaining a preimage for every element. This adapts the small-base product count and arithmetic-progression fallback of Harvey–Hittmeir. [Unrestricted order-finding algorithm](https://arxiv.org/html/2601.11131v2#S1.SS2)
+
+Try units $b\le Y=\lfloor N^{1/16}\rfloor$, taking a gcd first. For each, compute the exact order of $b^{m^2}$ modulo $N$ up to $H$ by baby steps and giant steps. No equality in the search range certifies order greater than $H$. For smaller orders, factor the order by trial division, maintain the largest prime-power component found for each prime, and multiply elements with these coprime component orders. Exponentiation and multiplication can be performed on their lifts $b$ as well; powering the resulting $\beta$ by $m^2$ gives the merged element. Its order is the lcm of the orders processed. Whenever the global order exceeds $H$, Stănică’s certification costs $\widetilde O(\sqrt H)$ and either splits $N$ or proves both local orders exceed $H$. The probes and merging cost $\widetilde O(Y\sqrt H)=N^{13/80+o(1)}$.
+
+Suppose every order fits and the lcm $h\le H$. At the hidden smaller prime, all the products of seven distinct primes $\le Y$ are distinct positive integers below $p$ for large $N$. Their number is $\binom{\pi(Y)}7=N^{7/16-o(1)}$. Raising each of these units to $m^2h$ gives one modulo $p$. In the cyclic group of order $p-1$ at most $h\gcd(p-1,m^2)$ elements can do that. Hence
+$$\gcd(p-1,m^2)\ge N^{19/80-o(1)}>N^{1/6}.$$
+Only the proof counts the seven-prime products. The small bases and their orders are all that the algorithm computes. Lean checks the finite binomial count for arbitrary $k$, the kernel bound, and the implication that $p=1+dj$ for a sufficiently large divisor of the public $m^2$. [Lean theorem](../PrimeFactors/WideModulus.lean)
+
+Enumerate the $3^{\omega(m)}$ divisors of $m^2$ from its already known primes. For each $d\ge N^{1/6}$ search the progression $1\bmod d$ in the balanced interval for $p$. A batched interval gcd costs $\widetilde O(1+\sqrt{s/d})=N^{1/6+o(1)}$ per divisor. At the actual gcd divisor the progression contains $p$. This pays for unsuccessful progressions too. The finite base and gcd caps in the examples can be smaller than these theoretical schedules. [Batched progression search and cost](batch-intervals.md)
+
+There is also a smaller asymptotic setup budget. Take $\log Y=\sqrt L+O(1)$ and $k=\lfloor(L/2-2\log L)/\log Y\rfloor$. The products remain below $p$. From $\pi(Y)\gg Y/\log Y$ and $\binom Ak\ge(A/k)^k$, their number is at least $\exp(L/2-O(\sqrt L\log L))$. If all orders are short, a divisor $d\mid m^2$ with $p\equiv1\bmod d$ is then at least $N^{3/10-o(1)}$. A computable threshold is $\lceil\binom{\pi(Y)}k/H\rceil$, using the primes already enumerated. Both the order probes and the fallback now cost at most $N^{1/10+o(1)}$ including divisor enumeration. The fixed seven-prime argument already suffices for the main bound.
+
+Under Dirichlet GRH one can instead take prime bases through $O((\log N)^2)$. A proper subgroup of the units modulo $p$ misses one of those primes for sufficiently large $p$. They therefore generate the whole cyclic group. In the short-order case this gives the sharper finite inequality $p-1\le h\gcd(p-1,m^2)$. This variant is motivated by the Dirichlet statements in the pinned Riemann repository; the main bound above uses the unconditional counting argument. [Lamzouri–Li–Soundararajan, Theorem 1.1](https://arxiv.org/html/1309.3595v3#S1.SS1) · [Pinned Dirichlet statements and project assumptions](../docs/research.md)
+
+## Choosing the primorial
+
+Take the largest primorial $m\le N^{1/5}\exp(-cE)$. A fixed relative approximation to the cutoff suffices. The next prime in the product is $O(L)$ by the prime number theorem, so integer choice introduces only $O(\log L)$ in $\log m$. Select its odd primes above the square root of its largest prime. Then $\omega(m)=(1/5+o(1))E$ and $t=(1/5+o(1))E$. In particular
+$$\log m=L/5-cE+o(E),\quad \log W=L/5+3cE/2+o(E),\quad
+  \log\rho\le-\log(4/3)E/5+o(E).$$
+Putting $c=2\log(4/3)/25$ balances $m$ and $\rho W$ because $5c/2=\log(4/3)/5$. The period scan costs at most $m$, the exceptional search is below this budget, and the order setup has a smaller leading power of $N$. Fixed powers of $\log N$ contribute $o(E)$ to the logarithm. This yields the stated bound. Finitely many smaller inputs can use trial division.
+
+## What the program actually found
+
+The bounded search implements the public lattice, CRT translations, both collision tables, and polynomial product and remainder trees over the composite modulus. The polynomial products use packed Python integers. The separate local-order verification and progression fallback explicitly count direct gcds; their faster paper bounds use the cited batch algorithms. The finite sieve moduli, thresholds and budgets are recorded in the fixtures. Factor values are used only for checking results. [Search](../experiments/wide_modulus.py) · [Order setup](../experiments/powered_order.py) · [Fixtures and controls](../benchmarks/wide-modulus.json)
+
+| Input | Observed result |
+| --- | --- |
+| $10403$ | All tried powered orders divide 17. A progression of spacing 100 gives 101 in one gcd. With zero progression gcds permitted the input remains unresolved. |
+| $3363121$ | Orders 72 and 32 give a lifted element of order 288. After 129 local checks, an exact trace recovers $1297\cdot2593$. |
+| $150235091$ | The 24 ordinary rows exhaust their table. Chunking 24 exceptional rows at width 61 gives $10007\cdot15013$. Together the two searches use 271 baby powers and 96 giant powers. |
+| $8745712257892974589$ (63 bits) | An exact trace gives $2640906143\cdot3311633123$ with 11,276 baby and 4,896 giant powers. |
+| $367722817904017001243509$ (79 bits) | A partial polynomial collision gives $605056390957\cdot607749663337$. The ordinary search uses 26,908 baby powers, 81,024 giant powers and 69,856 distinct polynomial roots. One product gcd required 40,331 individual gcds to split. |
+
+For each of the last two inputs independently, initialize CPython’s `Random(20261125)`. For width $b=32$ or $40$, take successive uniform odd draws from `range(2**(b-1)+1, 2**b, 2)` until two primes occur, then pass only their product and the public search parameters to the algorithm. These are reproducible examples of ordinary prime selection. Two runs cannot establish a performance distribution, and neither size approaches 2048 bits.
+
+Two accompanying studies bound other ways of saving table space by exploiting the signs of the local quadratic images. A third shows what a coarse measurement of the exact binomial formula would reveal and proves why its raw low bits can carry no such information. [Grouping rows by sign](grouped-images.md) · [Scaling exponent indices](multiplier-images.md) · [Reading a binomial phase](pascal-projections.md)

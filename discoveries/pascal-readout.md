@@ -12,6 +12,8 @@ $$p+q=1+\left(\binom{N-1}{K}\bmod N\right).$$
 
 Given this sum $S$, the two factors are $(S\pm\sqrt{S^2-4N})/2$. The equal-width promise lets us infer $b=\lceil\operatorname{bitlength}(N)/2\rceil$. Both identities are elementary consequences of Lucas’s theorem and Pascal’s recurrence. Lean verifies them without an analytic hypothesis. [Mathlib’s Lucas theorem](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Choose/Lucas.html) · [Granville on binomial congruences](https://www.cecm.sfu.ca/organics/papers/granville/paper/binomial/html/node2.html)
 
+A follow-up shows that 511 binary digits of one scaled fraction give enough low bits of a 1024-bit prime to recover it. The same coefficient can have all its raw low bits equal to zero. Computing the scaled fraction cheaply is the open step. [Precision, decoding, and the zero-residue control](pascal-projections.md)
+
 ## Why two entries carry the information
 
 For $0<j<2p$, the coefficient $\binom Nj$ modulo $N$ is $q$ at $j=p$, is $p$ at $j=q$ if that position lies in range, and is zero everywhere else. Modulo $p$, Lucas’s theorem reads the low digit of $N$ as zero. A positive index below $2p$ must therefore equal $p$ to contribute, and that index gives $q\bmod p$. Working modulo $q$ and combining the residues gives the result. Equivalently, through degree $2p-1$, the only possible nonconstant terms of $(1+X)^N\bmod N$ are $qX^p$ and $pX^q$.

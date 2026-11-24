@@ -37,6 +37,11 @@ def first_vector(n, m, m0, sigma, anchor, work):
         a, b = pair
         return n*a, m0*(anchor*anchor*b-n*a)
 
+    return shortest_lattice_vector(m, eta, transform, work)
+
+
+def shortest_lattice_vector(m, eta, transform, work):
+    """Gauss reduction in the supplied norm for b = eta*a modulo m."""
     left, right = (1, eta), (0, m)
     while True:
         x, y = transform(left)
@@ -69,9 +74,14 @@ class Giant:
 def make_giant(n, m, m0, selected, squares, radius, sigma, anchor, upper, work):
     a, b = first_vector(n, m, m0, sigma, anchor, work)
     step = m*m
+    center = (a*n+b*anchor*anchor) // (step*anchor)
+    return shifted_giant(n, m, selected, squares, radius, sigma, anchor, upper, a, b, center, work)
+
+
+def shifted_giant(n, m, selected, squares, radius, sigma, anchor, upper, a, b, center, work):
+    step = m*m
     tau = (a*n*pow(sigma, -1, step)+b*sigma) % step
     work["trace_residue_inverses"] += 1
-    center = (a*n+b*anchor*anchor) // (step*anchor)
     offset = step*(center-radius)+tau
     const = (a*n+b*sigma*sigma-tau*sigma) // step
     linear = (b*sigma*sigma-a*n) // m

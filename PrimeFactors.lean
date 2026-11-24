@@ -28,6 +28,7 @@ import PrimeFactors.FejerProjection
 import PrimeFactors.Fermat
 import PrimeFactors.FourierAccess
 import PrimeFactors.GapStride
+import PrimeFactors.GroupedImages
 import PrimeFactors.HyperbolaBoxes
 import PrimeFactors.IntervalGap
 import PrimeFactors.InverseWindows
@@ -45,8 +46,10 @@ import PrimeFactors.MixedHeights
 import PrimeFactors.ModularHyperbola
 import PrimeFactors.MultipleShift
 import PrimeFactors.Multiplier
+import PrimeFactors.MultiplierImages
 import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder
+import PrimeFactors.PascalProjection
 import PrimeFactors.PascalReadout
 import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
@@ -56,6 +59,7 @@ import PrimeFactors.PrimePowerCount
 import PrimeFactors.ProductAdvice
 import PrimeFactors.ProductPrefix
 import PrimeFactors.ReducedSlopes
+import PrimeFactors.RareRows
 import PrimeFactors.ReflectedImages
 import PrimeFactors.ResidueCount
 import PrimeFactors.ReverseSweep
@@ -76,3 +80,4 @@ import PrimeFactors.TruncatedProduct
 import PrimeFactors.TruncatedWindow
 import PrimeFactors.WeightedBands
 import PrimeFactors.WeightedCollision
+import PrimeFactors.WideModulus
