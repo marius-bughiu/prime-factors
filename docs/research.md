@@ -49,6 +49,10 @@ For distinct primes $p,q$, multiplicativity gives $S=\sigma(N)-N-1=p+q$. With **
 
 Substituting Robin’s upper bound gives $S<e^\gamma N\log\log N-N-1$. Even at the lower endpoint $N=5041$, the right side exceeds $2N$. The elementary inequality $(p-2)(q-2)\ge 0$ already gives $S\le N/2+2$. The Robin consequence therefore yields no improvement to this search window throughout its applicable range. An input-specific upper bound for $\sigma(N)$ would have to beat the elementary estimate before it could prune additional midpoints.
 
+## Testing guesses for the factor sum
+
+The released Dirichlet result motivates looking for signs that distinguish a square from every incorrect factor discriminant. One route uses small prime denominators and a bound for the first prime with a prescribed sign. Another chooses larger random denominators and bounds incomplete character sums unconditionally. For two distinct 1024-bit primes, the latter route gives an explicit probability of isolating their average. The unresolved cost is finding the average that passes. [Small-prime route](../discoveries/character-conjectures.md) · [Random tests and what Lean verifies](../discoveries/random-midpoint-checks.md) · [Seed length](../discoveries/jacobi-seed-length.md)
+
 ## Reuse and contributions
 
 - **Mathlib.** Its Apache-2.0 library provides primality, prime-factor lists and uniqueness. Its contributor guide asks authors to describe AI use and understand the changes they submit. The local certificate interface uses its existing mathematical definitions. [Factor API](https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Factors.html) · [Contribution guide](https://leanprover-community.github.io/contribute/index.html#use-of-ai) · [License](https://github.com/leanprover-community/mathlib4/blob/master/LICENSE)

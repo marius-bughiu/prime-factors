@@ -27,13 +27,16 @@ import PrimeFactors.FourierAccess
 import PrimeFactors.GapStride
 import PrimeFactors.HyperbolaBoxes
 import PrimeFactors.IntervalGap
+import PrimeFactors.InverseWindows
 import PrimeFactors.Isolation
+import PrimeFactors.JacobiReadings
 import PrimeFactors.JacobiSeparation
 import PrimeFactors.JointPeriod
 import PrimeFactors.LongPeriod
 import PrimeFactors.LowFactorBits
 import PrimeFactors.LowProductRank
 import PrimeFactors.ManyDiscriminants
+import PrimeFactors.MidpointClasses
 import PrimeFactors.MixedHeights
 import PrimeFactors.ModularHyperbola
 import PrimeFactors.MultipleShift

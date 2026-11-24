@@ -1,0 +1,16 @@
+[
+  {
+    "id": "inverse-windows-62",
+    "description": "Table of modular inverses searches a 62-bit product",
+    "n": "3221225472647483647",
+    "side_bits": 10,
+    "word_bits": 20,
+    "entries": 65536,
+    "geometric_cells": 631090,
+    "modular_points": 315398,
+    "baseline_trial_odds": 147388638,
+    "status": "complete",
+    "factors": ["1500000001", "2147483647"],
+    "remaining": []
+  }
+]

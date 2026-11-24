@@ -1,0 +1,18 @@
+[
+  {
+    "id": "midpoint-readings-41",
+    "description": "Shared yes-or-no checks narrow 41,807 midpoints to one",
+    "n": "1900014700027",
+    "tests": 24,
+    "seed": 1,
+    "midpoints": 41807,
+    "evaluations": 83649,
+    "final_square_tests": 1,
+    "status": "complete",
+    "factors": [
+      "1000003",
+      "1900009"
+    ],
+    "remaining": []
+  }
+]

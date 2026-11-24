@@ -16,6 +16,8 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from experiments.modular_hyperbola import search as hyperbola_search
+from experiments.midpoint_readings import search as midpoint_readings_search
+from experiments.inverse_windows import search_product as inverse_windows_search
 from experiments.continued_square import search as continued_square_search
 from experiments.predecessor_square import search as predecessor_square_search, search_square_offset
 from experiments.gap_stride import search as gap_search
@@ -83,6 +85,22 @@ def run_case(case, method, proofs):
         agree(case, work, ['low_classes', 'modular_hits'])
         factor = pairs[0][0] if pairs else None
         result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
+    elif method == 'inverse-windows':
+        n = int(case['n'])
+        bits = (n.bit_length() + 1) // 2
+        work = inverse_windows_search(n, bits, case['side_bits'], case['word_bits'])
+        elapsed = time.perf_counter() - start
+        pairs = work.pop('factor_pairs')
+        agree(case, work, ['n', 'entries', 'geometric_cells', 'modular_points', 'baseline_trial_odds'])
+        factor = pairs[0][0] if pairs else None
+        result = certify_split(case, proof, factor, elapsed, 'inverse_windows', work)
+    elif method == 'midpoint-readings':
+        work = midpoint_readings_search(int(case['n']), case['tests'], case['seed'])
+        elapsed = time.perf_counter() - start
+        pairs = work.pop('pairs')
+        agree(case, work, ['midpoints', 'evaluations', 'final_square_tests'])
+        factor = pairs[0][0] if pairs else None
+        result = certify_split(case, proof, factor, elapsed, 'readings', work)
     elif method == 'continued-square':
         work = continued_square_search(int(case['n']), case['max_convergents'])
         elapsed = time.perf_counter() - start
@@ -178,6 +196,8 @@ def main():
                              ('cyclotomic-periods.json', 'cyclotomic'), ('gap-stride.json', 'gap-stride'),
                              ('predecessor-square.json', 'predecessor-square'),
                              ('square-offset.json', 'square-offset'), ('continued-square.json', 'continued-square'),
+                             ('midpoint-readings.json', 'midpoint-readings'),
+                             ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':

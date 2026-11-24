@@ -6,6 +6,10 @@ What information about two unknown primes can be recovered cheaply from their pr
 
 ## Ruling out whole groups of candidates
 
+If we knew the average of the two primes, we could recover both with one square root. For any 2048-bit product of two distinct 1024-bit primes, we give 1,040 randomly chosen checks that, with probability above 99.9999%, only the correct average passes. One square root already verifies any single guess. We are looking for a way to use the shared checks on large groups of guesses at once. On a 41-bit example we tried all 41,807 possible averages, and direct square testing was faster. [Derivation, assumptions and measurements](discoveries/random-midpoint-checks.md)
+
+A second method searches rectangles of possible factor pairs. On a 62-bit product it needed 65,536 table entries, 631,090 rectangle lookups and 315,398 product checks. Trial division over the same range took 147,388,638 divisions. The table method still needs exponentially growing resources as the number of bits increases. [Cost and comparison](discoveries/inverse-windows.md)
+
 A small example illustrates a technique that applies to every balanced pair. For $15049$, divide the possible smaller factors into six intervals of seven numbers each. Checking the possible products modulo 251, 257 and 263 leaves one interval, from 101 to 107. It contains the factor 101. We prove when one such test rules out most intervals and when nearly every interval survives. Finding the surviving intervals cheaply is a separate problem. [Proof and example](discoveries/hyperbola-boxes.md)
 
 There is a limit to doing the same thing with candidate factor sums. Even if a squarefree sieve modulus is nearly the square of the length of the search window, every sufficiently long window still contains many sums passing all its local tests. The proof gives a numerical bound for a specified modulus. [Bound for every window and the distinction from a random window](discoveries/sum-gaps.md)

@@ -57,6 +57,16 @@ def case_row(result):
         count = (f'Balanced-interval modular search · {w["low_classes"]:,} low residue classes'
                  f' · {w["modular_hits"]:,} candidate products · {w["euclidean_steps"]:,} Euclidean steps'
                  f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'inverse-windows':
+        w = result['inverse_windows']
+        count = (f'Modular inverses · {w["entries"]:,} table entries · {w["geometric_cells"]:,} rectangle lookups'
+                 f' · {w["modular_points"]:,} candidate products · {w["baseline_trial_odds"]:,} divisions in a full trial scan'
+                 f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'midpoint-readings':
+        w = result['readings']
+        count = (f'Jacobi sign checks · {w["midpoints"]:,} initial midpoints'
+                 f' · {w["evaluations"]:,} sign evaluations · {w["final_square_tests"]:,} final square tests'
+                 f' · search {duration(result["discovery_seconds"])}')
     elif result['method'] == 'continued-square':
         w = result['continued_square']
         cap = f' · cap {w["max_convergents"]}' if w["max_convergents"] is not None else ''
