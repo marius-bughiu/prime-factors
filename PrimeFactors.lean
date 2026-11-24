@@ -6,6 +6,7 @@ import PrimeFactors.ApproximateTotient
 import PrimeFactors.BatchIntervals
 import PrimeFactors.BitMarginals
 import PrimeFactors.BlockCharacters
+import PrimeFactors.CanonicalNorm
 import PrimeFactors.Certificate
 import PrimeFactors.ClassNumberWindow
 import PrimeFactors.ConditionalStride
@@ -67,6 +68,7 @@ import PrimeFactors.NormBatchGCD
 import PrimeFactors.NormDirections
 import PrimeFactors.NormOrbit
 import PrimeFactors.NormResidueCurve
+import PrimeFactors.NormRowAdvice
 import PrimeFactors.NormSignList
 import PrimeFactors.PairDeterminant
 import PrimeFactors.PairwiseSieve

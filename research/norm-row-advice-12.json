@@ -1,0 +1,94 @@
+{
+  "prime_bits": 12,
+  "products": 19546,
+  "results": [
+    {
+      "high_bits": 0,
+      "low_bits": 0,
+      "observed_buckets": 1,
+      "hits": {
+        "1": 778,
+        "2": 1539,
+        "4": 2964,
+        "8": 5450
+      }
+    },
+    {
+      "high_bits": 4,
+      "low_bits": 0,
+      "observed_buckets": 16,
+      "hits": {
+        "1": 1290,
+        "2": 2396,
+        "4": 4277,
+        "8": 7199
+      }
+    },
+    {
+      "high_bits": 0,
+      "low_bits": 4,
+      "observed_buckets": 16,
+      "hits": {
+        "1": 828,
+        "2": 1604,
+        "4": 3028,
+        "8": 5517
+      }
+    },
+    {
+      "high_bits": 4,
+      "low_bits": 4,
+      "observed_buckets": 256,
+      "hits": {
+        "1": 1537,
+        "2": 2800,
+        "4": 4916,
+        "8": 8225
+      }
+    },
+    {
+      "high_bits": 8,
+      "low_bits": 0,
+      "observed_buckets": 255,
+      "hits": {
+        "1": 1602,
+        "2": 2888,
+        "4": 5029,
+        "8": 8386
+      }
+    },
+    {
+      "high_bits": 0,
+      "low_bits": 8,
+      "observed_buckets": 256,
+      "hits": {
+        "1": 1242,
+        "2": 2286,
+        "4": 4083,
+        "8": 7084
+      }
+    },
+    {
+      "high_bits": 8,
+      "low_bits": 4,
+      "observed_buckets": 3602,
+      "hits": {
+        "1": 4485,
+        "2": 7816,
+        "4": 12874,
+        "8": 18226
+      }
+    },
+    {
+      "high_bits": 4,
+      "low_bits": 8,
+      "observed_buckets": 3630,
+      "hits": {
+        "1": 4520,
+        "2": 7857,
+        "4": 12888,
+        "8": 18125
+      }
+    }
+  ]
+}

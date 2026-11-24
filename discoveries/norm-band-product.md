@@ -16,6 +16,8 @@ The prime $p$ itself occurs. If $p$ is 1 or 5 modulo 8, it is a sum of an odd sq
 
 For example, $N=713$ gives $U=26$ and $H=5$. Even a cap of four in both coordinates works. The unrestricted row $2\cdot4^2-t^2$ contains both 31 at $t=1$ and 23 at $t=3$. The band drops 31 and keeps 23. With $L=3$, nine values survive across the three forms at that cap. Their gcd with 713, taken after multiplication, is 23. At full side five, ten values survive and give the same answer. [Search implementation](../experiments/norm_band_product.py) · [Comparison without the upper cutoff](../benchmarks/universal-norms.json)
 
+The optional canonical search also requires $t<a$ in the third form. Each odd prime then occurs in exactly one representation; on a balanced input, the retained product contains its smaller prime only once. [Uniqueness and limits on guessing the right row](selecting-norm-rows.md)
+
 ## Computing the product
 
 For fixed $a$ each form allows an interval of first coordinates. For the positive form $t^2+ca^2$ intersect $[L-ca^2,U-ca^2]$ with the possible squares. For the third form use $[2a^2-U,2a^2-L]$. Integer square roots and parity give an interval of array indices for the odd integers $t=2i+1$. Empty intervals cost no evaluations.

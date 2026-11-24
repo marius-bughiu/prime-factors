@@ -72,6 +72,8 @@ def case_row(result):
         count = (f'Side {int(w["side"]):,} of {int(w["target_side"]):,}'
                  f' · {w["allowed_pairs"]:,} pairs inside the factor interval'
                  f' · {w["evaluations"]:,} polynomial evaluations · one gcd')
+        if w.get('canonical'):
+            count += ' · unique normalized representation'
     elif result['method'] == 'short-norm-boxes':
         w = result['short_norm_boxes']
         count = (f'Odd-coordinate norm grid · side {int(w["side"]):,} of {int(w["target_side"]):,}'

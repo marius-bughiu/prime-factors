@@ -1,4 +1,4 @@
-import PrimeFactors.ShortNormBox
+import PrimeFactors.CanonicalNorm
 import Mathlib.Algebra.BigOperators.Associated
 
 namespace PrimeFactors.NormBatchGCD
@@ -95,18 +95,19 @@ noncomputable def bandCells (N L : ℕ) : Finset (ℤ × ℤ × ℤ) :=
 noncomputable def bandProduct (N L : ℕ) : ℕ :=
   ∏ w ∈ bandCells N L, (bandValue w).toNat
 
-/-- Every odd smaller prime occurs in the public annulus. The inputs to
-the product itself are just N and any lower bound L on its smaller prime. -/
-theorem smaller_prime_gcd {p q L : ℕ} [Fact p.Prime] [Fact q.Prime]
+/-- An indefinite norm from the short prime representation has t < a. -/
+noncomputable def canonicalBandCells (N L : ℕ) : Finset (ℤ × ℤ × ℤ) :=
+  (bandCells N L).filter fun w => w.1 = 2 → w.2.1 < w.2.2
+
+noncomputable def canonicalBandProduct (N L : ℕ) : ℕ :=
+  ∏ w ∈ canonicalBandCells N L, (bandValue w).toNat
+
+/-- Every odd smaller prime occurs even after tightening the indefinite form. -/
+theorem canonical_hit {p q L : ℕ} [Fact p.Prime]
     (odd : p ≠ 2) (lt : p < q) (lower : L ≤ p) :
-    Nat.gcd (bandProduct (p*q) L) (p*q) = p := by
-  have pp : p.Prime := Fact.out
-  have ppos := pp.pos
+    ∃ w ∈ canonicalBandCells (p*q) L, bandValue w = p := by
+  have ppos := (Fact.out : p.Prime).pos
   have pmax : p ≤ (p*q).sqrt := Nat.le_sqrt.mpr (Nat.mul_le_mul_left p lt.le)
-  apply threshold_gcd (bandCells (p*q) L) (fun w => (bandValue w).toNat) pp Fact.out lt
-  · intro w hw
-    obtain ⟨_,_,pos,_,high⟩ := (Finset.mem_filter.mp hw).2
-    omega
   obtain ⟨t,a,tp,ap,ts,asq,parity,cases⟩ := ShortNormBox.prime_representation odd
   have coord {u : ℤ} (pos : 0 < u) (small : u^2 < p) :
       u ∈ Finset.Icc (1 : ℤ) ((p*q).sqrt.sqrt : ℤ) := by
@@ -115,19 +116,44 @@ theorem smaller_prime_gcd {p q L : ℕ} [Fact p.Prime] [Fact q.Prime]
         rwa [Int.toNat_of_nonneg pos.le])
     have high := Nat.le_sqrt'.mpr (natSmall.le.trans pmax)
     exact Finset.mem_Icc.mpr ⟨by omega, by omega⟩
-  obtain ⟨d,fd,aden,repr⟩ : ∃ d : ℤ, d ∈ ({-1,-2,2} : Finset ℤ) ∧
-      a%2 = (if d = -2 then 1 else 0) ∧ bandValue (d,t,a) = p := by
+  obtain ⟨d,fd,aden,order,repr⟩ : ∃ d : ℤ, d ∈ ({-1,-2,2} : Finset ℤ) ∧
+      a%2 = (if d = -2 then 1 else 0) ∧ (d = 2 → t < a) ∧ bandValue (d,t,a) = p := by
     rcases cases with ⟨ae,rep⟩ | ⟨ao,rep⟩ | ⟨ae,rep⟩
-    · refine ⟨-1, by decide, by simpa using ae, ?_⟩
+    · refine ⟨-1, by decide, by simpa using ae, by norm_num, ?_⟩
       simpa [bandValue] using rep.symm
-    · refine ⟨-2, by decide, by simpa using ao, ?_⟩
+    · refine ⟨-2, by decide, by simpa using ao, by norm_num, ?_⟩
       simpa [bandValue] using rep.symm
-    · exact ⟨2, by decide, by simpa using ae, by simpa [bandValue] using rep.symm⟩
-  refine ⟨(d,t,a), Finset.mem_filter.mpr ⟨?_, ?_⟩, ?_⟩
+    · refine ⟨2, by decide, by simpa using ae, fun _ => ?_, by simpa [bandValue] using rep.symm⟩
+      apply lt_of_not_ge
+      intro bad
+      have hsq := pow_le_pow_left₀ ap.le bad 2
+      linarith
+  refine ⟨(d,t,a), Finset.mem_filter.mpr ⟨Finset.mem_filter.mpr ⟨?_, ?_⟩,order⟩, repr⟩
   · exact Finset.mem_product.mpr ⟨fd, Finset.mem_product.mpr ⟨coord tp ts, coord ap asq⟩⟩
   · exact ⟨parity, aden, by rw [repr]; exact_mod_cast ppos,
               by rw [repr]; exact_mod_cast lower, by rw [repr]; exact_mod_cast pmax⟩
-  · simp [repr]
+
+private theorem band_bounds {N L : ℕ} {w : ℤ × ℤ × ℤ} (hw : w ∈ bandCells N L) :
+    0 < (bandValue w).toNat ∧ (bandValue w).toNat ≤ N.sqrt := by
+  obtain ⟨_,_,pos,_,high⟩ := (Finset.mem_filter.mp hw).2
+  omega
+
+/-- Every odd smaller prime occurs in the public annulus. The inputs to
+the product itself are just N and any lower bound L on its smaller prime. -/
+theorem smaller_prime_gcd {p q L : ℕ} [Fact p.Prime] [Fact q.Prime]
+    (odd : p ≠ 2) (lt : p < q) (lower : L ≤ p) :
+    Nat.gcd (bandProduct (p*q) L) (p*q) = p := by
+  apply threshold_gcd (bandCells (p*q) L) _ Fact.out Fact.out lt (fun _ => band_bounds)
+  obtain ⟨w, hw, eq⟩ := canonical_hit odd lt lower
+  exact ⟨w, (Finset.mem_filter.mp hw).1, by simp [eq]⟩
+
+theorem canonical_gcd {p q L : ℕ} [Fact p.Prime] [Fact q.Prime]
+    (odd : p ≠ 2) (lt : p < q) (lower : L ≤ p) :
+    Nat.gcd (canonicalBandProduct (p*q) L) (p*q) = p := by
+  apply threshold_gcd (canonicalBandCells (p*q) L) _ Fact.out Fact.out lt
+    (fun _ hw => band_bounds (Finset.mem_filter.mp hw).1)
+  obtain ⟨w, hw, eq⟩ := canonical_hit odd lt lower
+  exact ⟨w, hw, by simp [eq]⟩
 
 /-- These are the signed leaf factors obtained by evaluating X−t² at d*a². -/
 noncomputable def polynomialProduct (N L : ℕ) : ℤ :=
@@ -185,5 +211,79 @@ theorem balanced_gcd {p q : ℕ} [Fact p.Prime] [Fact q.Prime]
     _ = p^2*2 := by ring
   have cut := Nat.sqrt_lt'.mpr ((Nat.div_lt_iff_lt_mul (by decide : 0 < 2)).mpr less)
   exact smaller_prime_gcd odd lt (max_le (by omega) (by omega))
+
+private theorem once_in_product {ι : Type*} (S : Finset ι) (V : ι → ℕ) {p : ℕ}
+    (pp : p.Prime) {w : ι} (mem : w ∈ S) (value : V w = p)
+    (unique : ∀ i ∈ S, p ∣ V i → i = w) :
+    p ∣ (∏ i ∈ S, V i) ∧ ¬ p^2 ∣ (∏ i ∈ S, V i) := by
+  classical
+  have tail : ¬p ∣ ∏ i ∈ S.erase w, V i := by
+    intro h
+    obtain ⟨i,inside,hit⟩ := (pp.prime.dvd_finset_prod_iff V).mp h
+    obtain ⟨ne,ins⟩ := Finset.mem_erase.mp inside
+    exact ne (unique i ins hit)
+  have decomp := (Finset.mul_prod_erase S V mem).symm
+  rw [value] at decomp
+  rw [decomp,pow_two]
+  exact ⟨dvd_mul_right p _, fun h => tail ((Nat.mul_dvd_mul_iff_left pp.pos).mp h)⟩
+
+private theorem divisible_value {p q L : ℕ} [Fact p.Prime] [Fact q.Prime]
+    (lt : p < q) (balanced : q ≤ 2*p) {w : ℤ × ℤ × ℤ}
+    (inside : w ∈ canonicalBandCells (p*q) L) (hit : p ∣ (bandValue w).toNat) :
+    bandValue w = p := by
+  have bounds := band_bounds (Finset.mem_filter.mp inside).1
+  have below := Nat.sqrt_lt.mpr (Nat.mul_lt_mul_of_pos_right lt (Fact.out : q.Prime).pos)
+  have small : (bandValue w).toNat < p*2 := by omega
+  obtain ⟨m,hm⟩ := hit
+  have pos := (Fact.out : p.Prime).pos
+  have double : m < 2 := (Nat.mul_lt_mul_left pos).mp (hm ▸ small)
+  have nz : m ≠ 0 := by intro zero; rw [zero,mul_zero] at hm; omega
+  have one : m = 1 := by omega
+  rw [one,mul_one] at hm
+  omega
+
+private theorem canonical_of_mem {N L : ℕ} {w : ℤ × ℤ × ℤ}
+    (member : w ∈ canonicalBandCells N L) :
+    CanonicalNorm.IsCanonical (bandValue w) w.1 w.2.1 w.2.2 := by
+  obtain ⟨d,t,a⟩ := w
+  obtain ⟨base,order⟩ := Finset.mem_filter.mp member
+  obtain ⟨box,par,den,_,_,_⟩ := Finset.mem_filter.mp base
+  obtain ⟨forms,coords⟩ := Finset.mem_product.mp box
+  obtain ⟨tm,am⟩ := Finset.mem_product.mp coords
+  have tp : 1 ≤ t := (Finset.mem_Icc.mp tm).1
+  have ap : 1 ≤ a := (Finset.mem_Icc.mp am).1
+  change a%2 = (if d = -2 then 1 else 0) at den
+  change d = 2 → t < a at order
+  have fd : d = -1 ∨ d = -2 ∨ d = 2 := by simpa using forms
+  refine ⟨(by omega : 0 < t), (by omega : 0 < a), par, ?_⟩
+  rcases fd with rfl | rfl | rfl
+  · exact Or.inl ⟨rfl, by simpa using den, by simp [bandValue]⟩
+  · exact Or.inr (Or.inl ⟨rfl, by simpa using den, by simp [bandValue]⟩)
+  · exact Or.inr (Or.inr ⟨rfl, by simpa using den, order rfl, by simp [bandValue]⟩)
+
+/-- In a balanced product, exactly one retained triple carries the smaller prime. -/
+theorem unique_divisible_cell {p q L : ℕ} [Fact p.Prime] [Fact q.Prime]
+    (odd : p ≠ 2) (lt : p < q) (balanced : q ≤ 2*p) (lower : L ≤ p) :
+    ∃! w, w ∈ canonicalBandCells (p*q) L ∧ p ∣ (bandValue w).toNat := by
+  obtain ⟨w, wm, eq⟩ := canonical_hit odd lt lower
+  refine ⟨w, ⟨wm, by simp [eq]⟩, ?_⟩
+  intro u hu
+  have urep := canonical_of_mem hu.1
+  have wrep := canonical_of_mem wm
+  rw [divisible_value lt balanced hu.1 hu.2] at urep
+  rw [eq] at wrep
+  obtain ⟨d,t,a⟩ := CanonicalNorm.unique odd urep wrep
+  exact Prod.ext d (Prod.ext t a)
+
+/-- For p < q ≤ 2p the exact power of the smaller prime in the public
+canonical product is one. Testing the square distinguishes this multiplicity. -/
+theorem canonical_multiplicity_one {p q L : ℕ} [Fact p.Prime] [Fact q.Prime]
+    (odd : p ≠ 2) (lt : p < q) (balanced : q ≤ 2*p) (lower : L ≤ p) :
+    p ∣ canonicalBandProduct (p*q) L ∧ ¬p^2 ∣ canonicalBandProduct (p*q) L := by
+  obtain ⟨w, ⟨wm, hit⟩, unique⟩ := unique_divisible_cell odd lt balanced lower
+  apply once_in_product (canonicalBandCells (p*q) L) (fun x => (bandValue x).toNat)
+    Fact.out wm
+  · simp [divisible_value lt balanced wm hit]
+  · exact fun i hi h => unique i ⟨hi,h⟩
 
 end PrimeFactors.NormBatchGCD

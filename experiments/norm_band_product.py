@@ -24,7 +24,7 @@ def cover(first, stop):
         level += 1
 
 
-def index_range(d, v, lower, upper, side):
+def index_range(d, v, lower, upper, side, *, canonical=False):
     """Half-open interval of indices i, where u=2i+1 gives a positive in-band norm."""
     offset = d*v*v
     if d < 0:
@@ -35,11 +35,13 @@ def index_range(d, v, lower, upper, side):
         return 0, 0
     low = max(1, ceil_sqrt(max(0,low_square)))
     high = min(side, isqrt(high_square))
+    if canonical and d == 2:
+        high = min(high, v-1)
     # First odd integer at least low is 2*(low//2)+1.
     return low//2, (high+1)//2
 
 
-def search(n, max_side, *, balanced=False):
+def search(n, max_side, *, balanced=False, canonical=False):
     if n < 3 or n % 2 == 0 or max_side < 0:
         raise ValueError('expected odd N >=3 and a nonnegative side cap')
     lower = max(3,ceil_sqrt((n+1)//2)) if balanced else 3
@@ -52,7 +54,7 @@ def search(n, max_side, *, balanced=False):
     pairs = 0
     for d,first,last,step in ranges:
         for v in range(first,last+1,step):
-            i, stop = index_range(d,v,lower,upper,side)
+            i, stop = index_range(d,v,lower,upper,side,canonical=canonical)
             if i >= stop:
                 continue
             denominators += 1
@@ -85,5 +87,6 @@ if __name__ == '__main__':
     parser.add_argument('n',type=int)
     parser.add_argument('--max-side',type=int,default=128)
     parser.add_argument('--balanced',action='store_true')
+    parser.add_argument('--canonical',action='store_true',help='retain the unique normalized prime representation')
     args=parser.parse_args()
-    print(json.dumps(search(args.n,args.max_side,balanced=args.balanced)))
+    print(json.dumps(search(args.n,args.max_side,balanced=args.balanced,canonical=args.canonical)))

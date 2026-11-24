@@ -159,11 +159,12 @@ def run_case(case, method, proofs):
         result = certify_split(case, proof, factor, elapsed, 'pell_relations', work)
     elif method in ('short-norm-boxes', 'norm-band-product'):
         scan = short_norm_boxes.search if method == 'short-norm-boxes' else norm_band_product.search
-        work = scan(int(case['n']), case['max_side'], balanced=case['balanced'])
+        settings = dict(canonical=case.get('canonical', False)) if method == 'norm-band-product' else {}
+        work = scan(int(case['n']), case['max_side'], balanced=case['balanced'], **settings)
         elapsed = time.perf_counter() - start
         factor = work.pop('factor')
         agree(case, work, list(work))
-        work.update(max_side=case['max_side'], balanced=case['balanced'])
+        work.update(max_side=case['max_side'], balanced=case['balanced'], **settings)
         result = certify_split(case, proof, factor, elapsed, method.replace('-', '_'), work)
     elif method == 'universal-norms':
         n, cap, mode = int(case['n']), case['max_side'], case['mode']
