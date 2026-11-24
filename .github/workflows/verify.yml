@@ -1,0 +1,30 @@
+name: Verify and publish
+on:
+  push:
+    branches: [main, 'codex/**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee # v1
+        with:
+          auto-config: false
+          use-mathlib-cache: false
+          use-github-cache: false
+      - name: Fetch the pinned dependencies and relevant compiled Mathlib modules
+        env:
+          MATHLIB_NO_CACHE_ON_UPDATE: '1'
+        run: |
+          lake exe cache get Mathlib.Data.Nat.Factors Mathlib.Data.Nat.Sqrt Mathlib.Tactic.Linarith Mathlib.Tactic.Ring Mathlib.NumberTheory.ArithmeticFunction Mathlib.NumberTheory.LucasPrimality Mathlib.Tactic.ReduceModChar Mathlib.Tactic.NormNum.Prime
+      - name: Check library and audit project axioms
+        run: |
+          lake build
+          lake env lean scripts/Audit.lean
