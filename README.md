@@ -1,6 +1,12 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/searching-the-balanced-interval.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/character-conjectures.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+
+## Conjectures from the Dirichlet L-function proof
+
+For $N=pq$ with $p<q$, Lean proves that the first positive imaginary-axis zero of the principal Dirichlet L-function modulo $N$ has height $2\pi/\log q$. More usefully, a sign computed from one L-value tells whether $q$ lies above an integer threshold $x>\sqrt N$. For balanced primes the library proves an absolute error tolerance at each threshold. Efficiently computing that sign using only $N$ is open. [Derivation and work required](discoveries/character-conjectures.md#comparing-a-factor-with-a-threshold) · [Lean proofs](PrimeFactors/DivisorSignal.lean)
+
+A second investigation bounds how many modular square tests suffice for every discriminant of a given bit length. The universal count grows linearly in the bit length under Dirichlet GRH. The tighter conjecture restricting both the number and size of the primes survived exhaustive examples for widths 9 through 20. We also found small widths where it fails. [Proofs, counterexamples and experiment](discoveries/character-conjectures.md#how-many-primes-suffice-for-all-discriminants)
 
 ## What reduces the work?
 

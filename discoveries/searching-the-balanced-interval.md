@@ -2,6 +2,8 @@
 
 Let $N=pq$ with distinct primes $p<q\le 2p$. The balanced interval $I=[L,U]$ contains the unknown sum $S=p+q$, with $L=\lceil 2\sqrt N\rceil$, $U=\lfloor 3\sqrt{N/2}\rfloor$ and $W=U-L+1$. Its width grows as $\sqrt N$. We studied three ways to do less work than examining its integers one by one. The local square tests and weighted covers below are unconditional. The power-table search has both an unconditional randomized argument and a deterministic route using Dirichlet GRH. [Earlier isolation theorem](factor-sum-residues.md)
 
+The subsequent investigation gives an analytic comparison at any integer factor threshold, matching order-of-growth bounds for universal square tests, and examples of arbitrarily sparse long periods accepting the whole sum interval. [Character conjectures](character-conjectures.md)
+
 ## One square test for a divisor interval
 
 Choose positive integers $a,b$ and compute $m=\lceil\sqrt{4abN}\rceil$. If a divisor $x$ lies in the band
