@@ -1,0 +1,110 @@
+{
+  "n": "6091663632054090929",
+  "max_side": 65536,
+  "max_selector": 739,
+  "python": "3.9.6",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "runs": {
+    "odd_interval": {
+      "factor": "2423330473",
+      "seconds": 3.6607,
+      "work": {
+        "degree": 19012,
+        "evaluations": 19011,
+        "direct_gcds": 0
+      }
+    },
+    "short_boxes": {
+      "factor": "2423330473",
+      "seconds": 5.3155,
+      "work": {
+        "outcome": "norm_divisor",
+        "factor_lower": "1745231165",
+        "factor_upper": "2468129581",
+        "target_side": "49680",
+        "side": "49680",
+        "discriminants": [
+          -1,
+          -2,
+          2
+        ],
+        "degree": 24840,
+        "planned_evaluations": 52474,
+        "evaluations": 24840,
+        "forms_tested": 1,
+        "pair_values_covered": 617025600,
+        "batch_gcds": 1,
+        "whole_modulus_batches": 1,
+        "row_gcds": 20006,
+        "leaf_gcds": 14339,
+        "witness": [
+          -1,
+          "28677",
+          "40012",
+          "2423330473"
+        ]
+      }
+    },
+    "band_product": {
+      "factor": "2423330473",
+      "seconds": 19.2253,
+      "work": {
+        "outcome": "smaller_prime_gcd",
+        "smaller_lower": "1745231165",
+        "smaller_upper": "2468129581",
+        "side": "49680",
+        "target_side": "49680",
+        "degree": 24840,
+        "denominators": 52474,
+        "allowed_pairs": 302411792,
+        "polynomial_nodes": 39889,
+        "evaluations": 584407,
+        "gcds": 1
+      }
+    },
+    "universal": {
+      "factor": "2513756873",
+      "seconds": 14.3736,
+      "work": {
+        "outcome": "norm_divisor",
+        "side": "49680",
+        "target_side": "49680",
+        "discriminants": [
+          -1,
+          -2,
+          2
+        ],
+        "forms_tested": 1,
+        "empty_forms": 0,
+        "evaluations": 49680,
+        "degree": 49680,
+        "pair_values_covered": 2468102400,
+        "batch_gcds": 1,
+        "whole_modulus_batches": 1,
+        "row_gcds": 21163,
+        "leaf_gcds": 45452,
+        "witness": [
+          -1,
+          "45452",
+          "21163",
+          "2513756873"
+        ]
+      }
+    },
+    "separating": {
+      "factor": "2423330473",
+      "seconds": 18.2985,
+      "work": {
+        "outcome": "separating_gcd",
+        "side": "59080",
+        "target_side": "59080",
+        "selector": 3,
+        "selector_tests": 2,
+        "evaluations": 59080,
+        "degree": 59080,
+        "pair_values_covered": 3490446400,
+        "batch_gcds": 1
+      }
+    }
+  }
+}

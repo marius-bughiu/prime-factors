@@ -1,0 +1,183 @@
+[
+  {
+    "id": "universal-indefinite-713",
+    "description": "The indefinite form needs a row and leaf check after the batch gcd equals the input",
+    "n": "713",
+    "mode": "universal",
+    "max_side": 4,
+    "balanced": false,
+    "outcome": "norm_divisor",
+    "side": "4",
+    "target_side": "5",
+    "discriminants": [
+      -1,
+      -2,
+      2
+    ],
+    "forms_tested": 3,
+    "empty_forms": 0,
+    "evaluations": 12,
+    "degree": 4,
+    "pair_values_covered": 48,
+    "batch_gcds": 3,
+    "whole_modulus_batches": 1,
+    "row_gcds": 4,
+    "leaf_gcds": 1,
+    "witness": [
+      2,
+      "1",
+      "4",
+      "-31"
+    ],
+    "status": "complete",
+    "factors": [
+      "23",
+      "31"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "universal-three-forms-41",
+    "description": "The quadratic polynomial grid splits the 41-bit product at its second discriminant",
+    "n": "1900014700027",
+    "mode": "universal",
+    "max_side": 1024,
+    "balanced": false,
+    "outcome": "norm_divisor",
+    "side": "1024",
+    "target_side": "1174",
+    "discriminants": [
+      -1,
+      -2,
+      2
+    ],
+    "forms_tested": 2,
+    "empty_forms": 0,
+    "evaluations": 2048,
+    "degree": 1024,
+    "pair_values_covered": 2097152,
+    "batch_gcds": 2,
+    "whole_modulus_batches": 0,
+    "row_gcds": 699,
+    "leaf_gcds": 151,
+    "witness": [
+      -2,
+      "151",
+      "699",
+      "1000003"
+    ],
+    "status": "complete",
+    "factors": [
+      "1000003",
+      "1900009"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "universal-grid-cap-79",
+    "description": "Three bounded grids on the first 79-bit product drawn by crt_holdout.draw_sample with seed norm-auxiliary-20261125-v1",
+    "n": "594976573900310730017789",
+    "mode": "universal",
+    "max_side": 512,
+    "balanced": false,
+    "outcome": "side_limit",
+    "side": "512",
+    "target_side": "878263",
+    "discriminants": [
+      -1,
+      -2,
+      2
+    ],
+    "forms_tested": 3,
+    "empty_forms": 0,
+    "evaluations": 1536,
+    "degree": 512,
+    "pair_values_covered": 786432,
+    "batch_gcds": 3,
+    "whole_modulus_batches": 0,
+    "row_gcds": 0,
+    "leaf_gcds": 0,
+    "witness": [],
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "594976573900310730017789"
+    ]
+  },
+  {
+    "id": "universal-balanced-crossed-2048",
+    "description": "The balanced-factor promise excludes all three grids at the specified cap on the crossed input",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "mode": "universal",
+    "max_side": 1024,
+    "balanced": true,
+    "outcome": "below_factor_range",
+    "side": "1024",
+    "target_side": "11620581383271474953481306877792968323557861615186413874341935191448832227000567855365583586571825030737413858708145463473223141577888868605281077495572686",
+    "discriminants": [
+      -1,
+      -2,
+      2
+    ],
+    "forms_tested": 0,
+    "empty_forms": 3,
+    "evaluations": 0,
+    "degree": 0,
+    "pair_values_covered": 0,
+    "batch_gcds": 0,
+    "whole_modulus_batches": 0,
+    "row_gcds": 0,
+    "leaf_gcds": 0,
+    "witness": [],
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  },
+  {
+    "id": "universal-separator-713",
+    "description": "A Jacobi-negative coefficient isolates one prime in a single batch gcd",
+    "n": "713",
+    "mode": "separating",
+    "max_side": 6,
+    "max_selector": 739,
+    "outcome": "separating_gcd",
+    "side": "6",
+    "target_side": "6",
+    "selector": 3,
+    "selector_tests": 2,
+    "evaluations": 6,
+    "degree": 6,
+    "pair_values_covered": 36,
+    "batch_gcds": 1,
+    "status": "complete",
+    "factors": [
+      "23",
+      "31"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "universal-separator-crossed-2048",
+    "description": "A signed coefficient separates the two prime characters on the 2048-bit control and the bounded grid has no hit",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "mode": "separating",
+    "max_side": 16,
+    "max_selector": 739,
+    "outcome": "side_limit",
+    "side": "16",
+    "target_side": "13819278061454600368464283938228500761129500489941777889079232258182515361594961830892280128851795011729603352140714825198039093471913915255988725232456749",
+    "selector": 11,
+    "selector_tests": 10,
+    "evaluations": 16,
+    "degree": 16,
+    "pair_values_covered": 256,
+    "batch_gcds": 1,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  }
+]

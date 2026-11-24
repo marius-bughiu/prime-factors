@@ -63,7 +63,9 @@ import PrimeFactors.MultiplierImages
 import PrimeFactors.MultiplierScore
 import PrimeFactors.NormArc
 import PrimeFactors.NormAuxiliary
+import PrimeFactors.NormBatchGCD
 import PrimeFactors.NormDirections
+import PrimeFactors.NormOrbit
 import PrimeFactors.NormResidueCurve
 import PrimeFactors.NormSignList
 import PrimeFactors.PairDeterminant
@@ -119,6 +121,7 @@ import PrimeFactors.ShiftParameter
 import PrimeFactors.ShiftPortfolio
 import PrimeFactors.ShiftedResidues
 import PrimeFactors.ShortBasisSieve
+import PrimeFactors.ShortNormBox
 import PrimeFactors.SmoothSampleBound
 import PrimeFactors.SmoothFractionHyperbola
 import PrimeFactors.SharedRootSigns

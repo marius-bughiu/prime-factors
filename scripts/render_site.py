@@ -67,6 +67,36 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'norm-band-product':
+        w = result['norm_band_product']
+        count = (f'Side {int(w["side"]):,} of {int(w["target_side"]):,}'
+                 f' · {w["allowed_pairs"]:,} pairs inside the factor interval'
+                 f' · {w["evaluations"]:,} polynomial evaluations · one gcd')
+    elif result['method'] == 'short-norm-boxes':
+        w = result['short_norm_boxes']
+        count = (f'Odd-coordinate norm grid · side {int(w["side"]):,} of {int(w["target_side"]):,}'
+                 f' · polynomial degree {w["degree"]:,}'
+                 f' · {w["evaluations"]:,} of {w["planned_evaluations"]:,} evaluations'
+                 f' · {w["pair_values_covered"]:,} coordinate pairs across forms'
+                 f' · {w["batch_gcds"]:,} batch gcds')
+        if w['row_gcds'] or w['leaf_gcds']:
+            count += f' · {w["row_gcds"]:,} row gcds · {w["leaf_gcds"]:,} individual gcds'
+    elif result['method'] == 'universal-norms':
+        w = result['universal_norms']
+        count = f'Norm grid · side {int(w["side"]):,} of {int(w["target_side"]):,}'
+        if w['mode'] == 'separating':
+            count += f' · {w["selector_tests"]:,} coefficient checks'
+            if w['selector'] is not None:
+                count += f' · coefficient {w["selector"]:,}'
+        else:
+            count += f' · {w["forms_tested"]} forms searched · {w["empty_forms"]} excluded by size'
+        count += (f' · {w["evaluations"]:,} polynomial evaluations'
+                  f' · {w["pair_values_covered"]:,} coordinate pairs across forms'
+                  f' · {w["batch_gcds"]:,} batch gcds')
+        if w.get('row_gcds') or w.get('leaf_gcds'):
+            count += f' · {w["row_gcds"]:,} row gcds · {w["leaf_gcds"]:,} individual gcds'
+        if w.get('whole_modulus_batches'):
+            count += f' · {w["whole_modulus_batches"]} whole-modulus batch gcds'
     elif result['method'] == 'norm-curves':
         w = result['norm_curves']
         if w['mode'] == 'residues':

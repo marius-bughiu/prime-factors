@@ -38,7 +38,8 @@ from experiments.seed_gap_sieve import search as seed_gap_search
 from experiments.polynomial_relations import search as polynomial_relation_search
 from experiments.polynomial_packet import search as polynomial_packet_search
 from experiments.norm_directions import search as norm_direction_search
-from experiments import norm_auxiliary, norm_residue_curves
+from experiments import norm_auxiliary, norm_band_product, norm_residue_curves
+from experiments import short_norm_boxes, universal_norm_batch
 from experiments.salie_blocks import search as salie_block_search
 from experiments.folded_square import direct as fixed_phase_search
 from experiments.four_square_lines import search as four_square_line_search
@@ -156,6 +157,29 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(max_steps=case['max_steps'], multiplier=case['multiplier'])
         result = certify_split(case, proof, factor, elapsed, 'pell_relations', work)
+    elif method in ('short-norm-boxes', 'norm-band-product'):
+        scan = short_norm_boxes.search if method == 'short-norm-boxes' else norm_band_product.search
+        work = scan(int(case['n']), case['max_side'], balanced=case['balanced'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(max_side=case['max_side'], balanced=case['balanced'])
+        result = certify_split(case, proof, factor, elapsed, method.replace('-', '_'), work)
+    elif method == 'universal-norms':
+        n, cap, mode = int(case['n']), case['max_side'], case['mode']
+        if mode == 'universal':
+            settings = dict(balanced=case['balanced'])
+            work = universal_norm_batch.search(n, cap, **settings)
+        elif mode == 'separating':
+            settings = dict(max_selector=case['max_selector'])
+            work = universal_norm_batch.separating_search(n, cap, **settings)
+        else:
+            raise ValueError(f"Unknown norm grid mode {mode!r}")
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(mode=mode, max_side=cap, **settings)
+        result = certify_split(case, proof, factor, elapsed, 'universal_norms', work)
     elif method == 'norm-curves':
         n, last_prime, max_blocks = int(case['n']), case['last_prime'], case['max_blocks']
         mode = case['mode']
@@ -451,6 +475,9 @@ def main():
                              ('polynomial-relations.json', 'polynomial-relations'),
                              ('norm-directions.json', 'norm-directions'),
                              ('norm-curves.json', 'norm-curves'),
+                             ('universal-norms.json', 'universal-norms'),
+                             ('short-norm-boxes.json', 'short-norm-boxes'),
+                             ('norm-band-product.json', 'norm-band-product'),
                              ('polynomial-packets.json', 'polynomial-packets'),
                              ('crt-square-norms.json', 'crt-square-norms'),
                              ('four-square-lines.json', 'four-square-lines'),
