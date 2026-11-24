@@ -52,6 +52,16 @@ def case_row(result):
         count += f' · search {duration(result["discovery_seconds"])}'
         if checked:
             verification += f' (certificate generation and replay {duration(result["certificate_seconds"])})'
+    elif result['method'] == 'modular-hyperbola':
+        w = result['hyperbola']
+        count = (f'Balanced-interval modular search · {w["low_classes"]:,} low residue classes'
+                 f' · {w["modular_hits"]:,} candidate products · {w["euclidean_steps"]:,} Euclidean steps'
+                 f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'gap-stride':
+        w = result['gap_stride']
+        count = (f'Powers of five in the half-gap · exponent {w["exponent"]} of {w["max_exponent"]}'
+                 f' · {w["per_root"]} midpoints per root · {w["square_tests"]} square tests'
+                 f' · {w["lift_tests"]} modular digit tests · search {duration(result["discovery_seconds"])}')
     elif result['method'] == 'shifted':
         outcome = 'split' if result['shifted']['status'] == 'split' else 'no split'
         count = f'Shifted-square formula · {outcome} · {result["fermat_steps"]} Fermat midpoints'

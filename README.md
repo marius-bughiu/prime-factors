@@ -2,6 +2,12 @@
 
 What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/character-conjectures.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
+## A fourth structured 2048-bit factorization
+
+A Fermat search can advance by the square of a divisor of the half-gap. Trying successive powers of five split a 2048-bit product with primes 19.4% apart in **438 midpoint tests and 4,375 modular lifting tests**. The search received only the product and fixed budgets. Both prime predecessors are twice a prime. A control of the same size exhausts the budget. [Search bound, construction and certificate](discoveries/smooth-factor-gaps.md)
+
+For primes sampled from $[X,2X]$, we also derive how often a test of this kind succeeds. Testing every auxiliary prime between $\sqrt X$ and $X^{3/4}$ recovers a proportion approaching $\log(3/2)$, about 40.55%. The cost grows as $N^{3/8+o(1)}$. The known deterministic one-fifth method is asymptotically faster and covers every input. Small experiments compare both square-test counts and elapsed time with Fermat. [Population theorem and measurements](discoveries/gap-search-frequency.md)
+
 ## One 512-bit count suffices for a 2048-bit semiprime
 
 Given only an $n$-bit product $N=pq$ of two distinct odd primes, set $k=\lceil n/4\rceil$. Count triples satisfying $1<x\le y$, $xy=N$, and $0\le t<y\bmod 2^k$. The count is exactly the low $k$ bits of the larger prime. A published small-root theorem suffices to recover the prime from that count in polynomial time, even when the factor sizes differ. The quantitative Boolean tensor-contraction theorem gives a paper bound of $2^{O(n/\sqrt{\log n})}$ time and polynomial space for producing the count. This replaces a sequence of prefix counts with one quarter-width count at the same known asymptotic exponent. Computing it on a general 2048-bit input remains open in practice. [Proof, cost and examples](discoveries/quarter-width-count.md)
@@ -37,6 +43,10 @@ For $N=pq$ with $p<q$, Lean proves that the first positive imaginary-axis zero o
 A second investigation bounds how many modular square tests suffice for every discriminant of a given bit length. The universal count grows linearly in the bit length under Dirichlet GRH. The tighter conjecture restricting both the number and size of the primes survived exhaustive examples for widths 9 through 20. We also found small widths where it fails. [Proofs, counterexamples and experiment](discoveries/character-conjectures.md#how-many-primes-suffice-for-all-discriminants)
 
 ## What reduces the work?
+
+- **A signed modular exponent covers four relations between the primes.** A public Jacobi symbol chooses an exponent that can exploit a large common divisor of any of $p\pm1$ and $q\pm1$. On 24257, the calculation finds 191 from a successor gcd of 64. Dirichlet GRH bounds how far one must search to encounter each sign pattern. [Lean results, success probabilities and RH connection](discoveries/jacobi-separation.md)
+- **A full balanced search can skip most odd trial divisors.** An affine congruence between the high digits gives a deterministic $N^{1/3+o(1)}$ method. On a 61-bit input it reported 20,565 modular candidates across 1,048,576 low classes. A 2048-bit input still requires $2^{683}$ low classes with this construction. [Derivation, cost comparison and limitations](discoveries/modular-hyperbola.md)
+- **Higher prime powers have a sharp limit as factor-sum filters.** Every power of one odd prime coprime to the product retains at least one twelfth of the possible sum residues. The limit occurs at powers of three. [Published formula, Lean proof and comparisons](discoveries/prime-power-counts.md)
 
 - **The highest product bits can be replaced by exact tests on the candidate factors.** For a balanced product, one interval on $17x+12y$ replaces the five highest product bits. At 2048 bits, 1,025 public intervals can replace 24 bits. A second construction works for any bounded factors and tests their leading bits directly. In small networks it both saved and added work, depending on the inputs and the number of bits removed. [Proofs, counterexample and measured costs](discoveries/truncated-products.md)
 

@@ -15,6 +15,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from experiments.modular_hyperbola import search as hyperbola_search
+from experiments.gap_stride import search as gap_search
 from experiments.cyclotomic_periods import expand_cases, reduced_table_search, search as cyclotomic_search
 
 
@@ -46,10 +48,15 @@ def period_case(case, method, proof):
     factor = work.pop('factor')
     search_seconds = work.pop('search_nanoseconds') / 1_000_000_000
     agree(case, work, work_keys)
+    return certify_split(case, proof, factor, search_seconds, key, dict(work, base=base, stride=stride))
+
+
+def certify_split(case, proof, factor, search_seconds, key, work):
+    n = int(case['n'])
     result = dict(n=case['n'], bits=n.bit_length(), factors=[], remaining=[case['n']],
                   status='partial', verified=False, verification_seconds=None, certificate_seconds=None,
                   discovery_seconds=search_seconds)
-    result[key] = dict(work, base=base, stride=stride)
+    result[key] = work
     if factor is not None:
         certificate_start = time.perf_counter()
         checked = cli(['scripts/factor.py', case['n'], '--factor-hint', factor, '--max-steps', 0,
@@ -67,7 +74,20 @@ def run_case(case, method, proofs):
     proof = proofs / f'{name}.lean'
     start = time.perf_counter()
     complete = case['status'] == 'complete'
-    if method in ('reduced-order', 'cyclotomic'):
+    if method == 'modular-hyperbola':
+        work = hyperbola_search(int(case['n']))
+        elapsed = time.perf_counter() - start
+        pairs = work.pop('pairs')
+        agree(case, work, ['low_classes', 'modular_hits'])
+        factor = pairs[0][0] if pairs else None
+        result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
+    elif method == 'gap-stride':
+        work = gap_search(int(case['n']), case['max_exponent'], case['per_root'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, ['exponent', 'square_tests', 'lift_tests'])
+        result = certify_split(case, proof, factor, elapsed, 'gap_stride', work)
+    elif method in ('reduced-order', 'cyclotomic'):
         result = period_case(case, method, proof)
     else:
         factor_args = ['scripts/factor.py', case['n'], '--max-steps', case.get('max_steps', 0),
@@ -131,7 +151,8 @@ def main():
     results = []
     for filename, method in [('cases.json', 'fermat'), ('subgroup.json', 'subgroup'),
                              ('shifted.json', 'shifted'), ('reduced-orders.json', 'reduced-order'),
-                             ('cyclotomic-periods.json', 'cyclotomic')]:
+                             ('cyclotomic-periods.json', 'cyclotomic'), ('gap-stride.json', 'gap-stride'),
+                             ('modular-hyperbola.json', 'modular-hyperbola')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':
             cases = expand_cases(cases)

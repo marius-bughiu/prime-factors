@@ -1,0 +1,40 @@
+[
+  {
+    "n": "1900014700027",
+    "factors": [
+      "1000003",
+      "1900009"
+    ],
+    "low_classes": 8192,
+    "modular_hits": 422,
+    "id": "modular-hyperbola-41",
+    "description": "Complete balanced search on a 41-bit product",
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "n": "1500000011500000007",
+    "factors": [
+      "1000000007",
+      "1500000001"
+    ],
+    "low_classes": 1048576,
+    "modular_hits": 20565,
+    "id": "modular-hyperbola-61",
+    "description": "Complete balanced search on a 61-bit product",
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "n": "51",
+    "factors": [],
+    "remaining": [
+      "51"
+    ],
+    "low_classes": 4,
+    "modular_hits": 0,
+    "id": "modular-hyperbola-control",
+    "description": "No balanced pair for 51",
+    "status": "partial"
+  }
+]

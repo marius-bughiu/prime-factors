@@ -18,14 +18,17 @@ import PrimeFactors.FactorSumCRT
 import PrimeFactors.FejerProjection
 import PrimeFactors.Fermat
 import PrimeFactors.FourierAccess
+import PrimeFactors.GapStride
 import PrimeFactors.IntervalGap
 import PrimeFactors.Isolation
+import PrimeFactors.JacobiSeparation
 import PrimeFactors.JointPeriod
 import PrimeFactors.LongPeriod
 import PrimeFactors.LowFactorBits
 import PrimeFactors.LowProductRank
 import PrimeFactors.ManyDiscriminants
 import PrimeFactors.MixedHeights
+import PrimeFactors.ModularHyperbola
 import PrimeFactors.MultipleShift
 import PrimeFactors.Multiplier
 import PrimeFactors.PairwiseSieve
@@ -33,6 +36,7 @@ import PrimeFactors.PartialOrder
 import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
 import PrimeFactors.PrimePower
+import PrimeFactors.PrimePowerCount
 import PrimeFactors.ProductPrefix
 import PrimeFactors.ReducedSlopes
 import PrimeFactors.ResidueCount

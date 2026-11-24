@@ -6,6 +6,7 @@ lake build Cache.Main
 exec lake env lean --run .lake/packages/mathlib/Cache/Main.lean get \
   Mathlib.Algebra.Field.ZMod Mathlib.Data.Nat.Factors Mathlib.Data.Nat.Sqrt Mathlib.Data.ZMod.Units \
   Mathlib.Data.Nat.Dist Mathlib.NumberTheory.DiophantineApproximation.Basic \
+  Mathlib.NumberTheory.Divisors Mathlib.NumberTheory.LegendreSymbol.JacobiSymbol \
   Mathlib.NumberTheory.LegendreSymbol.QuadraticReciprocity Mathlib.NumberTheory.PrimesCongruentOne \
   Mathlib.NumberTheory.JacobiSum.Basic Mathlib.NumberTheory.LegendreSymbol.QuadraticChar.Basic \
   Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds \
