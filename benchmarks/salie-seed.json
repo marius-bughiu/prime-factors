@@ -1,0 +1,117 @@
+[
+  {
+    "id": "salie-seed-667",
+    "description": "One certified sum propagated to four inverse-prime frequencies",
+    "n": "667",
+    "max_terms": 616,
+    "outcome": "crt_split",
+    "root": 231,
+    "multiplier": 1,
+    "coefficient": 80,
+    "terms": 616,
+    "sums": 1,
+    "unit_gcds": 666,
+    "unit_inverses": 616,
+    "jacobi_evaluations": 617,
+    "prime_gcds": 4,
+    "seed_frequency": 54,
+    "seed_bits": 31,
+    "seed_word": 2466344994,
+    "max_degree": 105,
+    "chebyshev_steps": 25,
+    "certified_cells": 4,
+    "rounded_numerators": [
+      1,
+      0,
+      2,
+      0
+    ],
+    "square_residues": [
+      1,
+      0,
+      1,
+      0
+    ],
+    "crt_updates": 8,
+    "square_tests": 2,
+    "status": "complete",
+    "factors": [
+      "23",
+      "29"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "salie-seed-667-capped",
+    "description": "A budget one term short of the complete sum",
+    "n": "667",
+    "max_terms": 615,
+    "outcome": "budget",
+    "root": null,
+    "multiplier": null,
+    "coefficient": null,
+    "terms": 615,
+    "sums": 0,
+    "unit_gcds": 666,
+    "unit_inverses": 615,
+    "jacobi_evaluations": 615,
+    "prime_gcds": 4,
+    "seed_frequency": 54,
+    "seed_bits": 31,
+    "seed_word": null,
+    "max_degree": 105,
+    "chebyshev_steps": 0,
+    "certified_cells": 0,
+    "rounded_numerators": [],
+    "square_residues": [],
+    "crt_updates": 0,
+    "square_tests": 0,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "667"
+    ]
+  },
+  {
+    "id": "salie-seed-1763",
+    "description": "One certified sum for the seeded six-bit prime pair",
+    "n": "1763",
+    "max_terms": 1680,
+    "outcome": "crt_split",
+    "root": 42,
+    "multiplier": 1,
+    "coefficient": 1,
+    "terms": 1680,
+    "sums": 1,
+    "unit_gcds": 1762,
+    "unit_inverses": 1680,
+    "jacobi_evaluations": 1681,
+    "prime_gcds": 4,
+    "seed_frequency": 361,
+    "seed_bits": 31,
+    "seed_word": -2268544715,
+    "max_degree": 105,
+    "chebyshev_steps": 25,
+    "certified_cells": 4,
+    "rounded_numerators": [
+      0,
+      0,
+      1,
+      0
+    ],
+    "square_residues": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "crt_updates": 8,
+    "square_tests": 2,
+    "status": "complete",
+    "factors": [
+      "41",
+      "43"
+    ],
+    "remaining": []
+  }
+]

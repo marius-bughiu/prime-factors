@@ -55,7 +55,10 @@ import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder
 import PrimeFactors.PascalProjection
 import PrimeFactors.PascalReadout
+import PrimeFactors.PellMultiplier
 import PrimeFactors.PhaseBlocks
+import PrimeFactors.PhaseCharacters
+import PrimeFactors.PhaseEvaluation
 import PrimeFactors.PhaseResidues
 import PrimeFactors.PhaseSchedules
 import PrimeFactors.PhaseSeparation
@@ -66,6 +69,7 @@ import PrimeFactors.PrimePower
 import PrimeFactors.PrimePowerCount
 import PrimeFactors.ProductAdvice
 import PrimeFactors.ProductPrefix
+import PrimeFactors.QuotientSearch
 import PrimeFactors.ReducedSlopes
 import PrimeFactors.RareRows
 import PrimeFactors.ReflectedImages

@@ -1,0 +1,45 @@
+[
+  {
+    "id": "quotient-wheel-41",
+    "description": "Complete balanced search in 48 affine lattices on a 41-bit semiprime",
+    "n": "1900014700027",
+    "wheel": 210,
+    "width": null,
+    "blocks": 1200,
+    "initial_strip_points": 399,
+    "quadratic_solves": 34,
+    "bisected": 0,
+    "factors": ["1000003", "1900009"],
+    "remaining": [],
+    "status": "complete"
+  },
+  {
+    "id": "quotient-adaptive-28",
+    "description": "Wide strips use the observed collinearity of integer points",
+    "n": "140188063",
+    "wheel": 1,
+    "width": 24,
+    "blocks": 145,
+    "initial_strip_points": 154,
+    "quadratic_solves": 35,
+    "collinear_beyond_area": 8,
+    "bisected": 1,
+    "factors": ["10007", "14009"],
+    "remaining": [],
+    "status": "complete"
+  },
+  {
+    "id": "quotient-unbalanced-control",
+    "description": "The complete balanced band for 51 contains no factor",
+    "n": "51",
+    "wheel": 2,
+    "width": null,
+    "blocks": 1,
+    "initial_strip_points": 0,
+    "quadratic_solves": 0,
+    "bisected": 0,
+    "factors": [],
+    "remaining": ["51"],
+    "status": "partial"
+  }
+]

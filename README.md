@@ -4,6 +4,10 @@ What information about two unknown primes can be recovered cheaply from their pr
 
 **Can I give you a 2048-bit number and get its prime factors easily?** No. We have factored six specially constructed 2048-bit numbers from their products alone. Their primes had relationships our methods could exploit. If you multiply two independently chosen 1024-bit primes and give us only their product, we have no practical way to recover them in general. Lean can check that proposed factors are prime and multiply back to the input.
 
+## What did we find from the product alone?
+
+On 1,900,014,700,027, we searched the full range where a smaller factor could lie if the primes were within a factor of two of each other. Grouping factors by their remainders modulo 6 reduced the number of strips we needed to check from 5,111 to 1,708. The calculation recovered 1,000,003 and 1,900,009. A separate method recovered 277 and 281 from 77,837 by combining the remainders of three searches that individually missed both factors. On a 2,048-bit test, that method used 65,536 steps without finding a factor. [Searching whole intervals](discoveries/quotient-search.md) · [Combining unsuccessful searches](discoveries/pell-multiplier-pairs.md)
+
 ## Can one guess cover many possible factors?
 
 Imagine drawing all whole-number pairs whose product is at least the input. For some choices of weights, the pair with the smallest weighted sum gives the exact factors. Even granting that minimum for free, a trillion preselected weights succeed on less than one in $2^{460}$ random 2,048-bit products of two 1,024-bit primes. The proof also covers weights chosen using many of the product’s digits. A separate result gives the exact number of short arithmetic progressions needed when particular digits of a factor are known. For a 1,024-bit prime, 511 unknown digits in one block can be handled by one lattice search. Leaving every other digit unknown instead takes $2^{255}$ progressions for complete coverage by that strategy. [Choosing weights](discoveries/supporting-slopes.md) · [Which factor digits help](discoveries/scattered-factor.md)
@@ -12,7 +16,7 @@ Imagine drawing all whole-number pairs whose product is at least the input. For 
 
 In a test on a 2,048-bit product, one program used the **known primes** to generate 89 rounded values. A second program received only the product and those values and recovered both primes. We know a formula for each value that uses only the product. Finding a cheap way to compute the values from that formula is the missing step. [Full-size test and proof](discoveries/recovering-residues-from-sums.md#what-the-full-size-test-shows)
 
-The same 89 measurements suffice for any 2,048-bit product of two distinct odd primes when rounded to 53 fractional bits. Lean also checks a 233-measurement schedule needing at most 29 fractional bits per sum. On the small input 667, we could compute the sums directly from the product. Four sums took 2,464 terms and gave 23 and 29. [Checked examples and capped run](benchmarks/salie-residues.json) · [Earlier measurement method](discoveries/divisor-samples.md)
+The same 89 measurements suffice for any 2,048-bit product of two distinct odd primes when rounded to 53 fractional bits. Lean also checks a 233-measurement schedule needing at most 29 fractional bits per sum. On the small input 667, we could compute the sums directly from the product. Previously four sums took 2,464 terms. One higher-precision sum now gives 23 and 29 in 616 terms. Its 666 unit-membership checks would also encounter the factors directly. [One-sum derivation](discoveries/evaluating-phase-blocks.md) · [Checked examples and capped run](benchmarks/salie-seed.json) · [Earlier measurement method](discoveries/divisor-samples.md)
 
 ## What the Riemann proof contributes
 

@@ -1,0 +1,99 @@
+[
+  {
+    "id": "pell-three-misses",
+    "description": "Three coprime center denominators combine to recover both primes",
+    "n": "77837",
+    "max_prime": 23,
+    "max_steps": 826,
+    "triangles": true,
+    "outcome": "cycle",
+    "steps": 826,
+    "walks": 3,
+    "centers": 3,
+    "cycles": 1,
+    "root": 39058,
+    "status": "complete",
+    "factors": [
+      "277",
+      "281"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "pell-three-misses-cap",
+    "description": "One update short of the third center",
+    "n": "77837",
+    "max_prime": 23,
+    "max_steps": 825,
+    "triangles": true,
+    "outcome": "budget",
+    "steps": 825,
+    "walks": 3,
+    "centers": 2,
+    "cycles": 0,
+    "root": null,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "77837"
+    ]
+  },
+  {
+    "id": "pell-anchor-only",
+    "description": "The two anchor pairs alone exhaust the bounded list",
+    "n": "77837",
+    "max_prime": 23,
+    "max_steps": 826,
+    "triangles": false,
+    "outcome": "exhausted",
+    "steps": 272,
+    "walks": 2,
+    "centers": 2,
+    "cycles": 0,
+    "root": null,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "77837"
+    ]
+  },
+  {
+    "id": "pell-direct-center",
+    "description": "The first center denominator immediately shares a prime factor",
+    "n": "21490481",
+    "max_prime": 11,
+    "max_steps": 1000,
+    "triangles": true,
+    "outcome": "center",
+    "steps": 331,
+    "walks": 1,
+    "centers": 1,
+    "cycles": 0,
+    "root": null,
+    "status": "complete",
+    "factors": [
+      "4421",
+      "4861"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "pell-2048-cap",
+    "description": "A bounded pair search on the previously certified continued-square input",
+    "n": "20522377789540983284542897109607686156484074887418906329265083156821724488902770973710759492521871527519417144466911068112464610300672051833515284816755617410505413895310840951820994323150577188381469499759519086876086295474831399186978994952904779085541573101966744605230225058491593318602586664039703653888897990520510566184346926407181841669130126970140003571189978412679196383874792968564026557397645784819405348866937487844654131267273501506706895766077758882899492435318942908138477316323657646882872807565324868751185929976436091827800410326832368837366076388827500084764895472502952606932099189930104180441089",
+    "max_prime": 43,
+    "max_steps": 65536,
+    "triangles": true,
+    "outcome": "budget",
+    "steps": 65536,
+    "walks": 1,
+    "centers": 0,
+    "cycles": 0,
+    "root": null,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "20522377789540983284542897109607686156484074887418906329265083156821724488902770973710759492521871527519417144466911068112464610300672051833515284816755617410505413895310840951820994323150577188381469499759519086876086295474831399186978994952904779085541573101966744605230225058491593318602586664039703653888897990520510566184346926407181841669130126970140003571189978412679196383874792968564026557397645784819405348866937487844654131267273501506706895766077758882899492435318942908138477316323657646882872807565324868751185929976436091827800410326832368837366076388827500084764895472502952606932099189930104180441089"
+    ]
+  }
+]

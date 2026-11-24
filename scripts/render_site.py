@@ -57,6 +57,21 @@ def case_row(result):
         count = (f'Balanced-interval modular search · {w["low_classes"]:,} low residue classes'
                  f' · {w["modular_hits"]:,} candidate products · {w["euclidean_steps"]:,} Euclidean steps'
                  f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'quotient-search':
+        w = result['quotient_search']
+        count = (f'Factor intervals · wheel {w["wheel"]} · {w["blocks"]:,} initial strips · '
+                 f'{w["bisected"]:,} bisections · {w["quadratic_solves"]:,} quadratics · '
+                 f'{w["euclidean_steps"]:,} Euclidean steps')
+    elif result['method'] == 'pell-pairs':
+        w = result['pell_pairs']
+        count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
+                 f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
+                 f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'salie-seed':
+        w = result['salie_seed']
+        count = (f'Shared Salié reading · {w["sums"]} complete sums · '
+                 f'{w["terms"]:,} of {w["max_terms"]:,} unit terms · '
+                 f'{w["unit_gcds"]:,} gcd tests · {w["certified_cells"]} certified rounding decisions')
     elif result['method'] in ('divisor-samples', 'salie-residues'):
         w = result[result['method'].replace('-', '_')]
         outcome = {'phase_split': 'recovered a root', 'frequency_gcd': 'frequency gcd split',

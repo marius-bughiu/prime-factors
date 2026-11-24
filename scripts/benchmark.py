@@ -18,10 +18,13 @@ if str(ROOT) not in sys.path:
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.divisor_samples import search as divisor_sample_search
 from experiments.salie_residues import search as salie_residue_search
+from experiments.salie_seed import search as salie_seed_search
 from experiments.midpoint_readings import search as midpoint_readings_search
 from experiments.short_basis_sieve import search as short_basis_search
 from experiments.wide_modulus import search as wide_modulus_search
 from experiments.pascal_readout import search as pascal_search
+from experiments.pell_pairs import search as pell_pair_search
+from experiments.quotient_search import search as quotient_search
 from experiments.inverse_windows import search_product as inverse_windows_search
 from experiments.continued_square import search as continued_square_search
 from experiments.predecessor_square import search as predecessor_square_search, search_square_offset
@@ -108,6 +111,31 @@ def run_case(case, method, proofs):
         agree(case, work, ['low_classes', 'modular_hits'])
         factor = pairs[0][0] if pairs else None
         result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
+    elif method == 'quotient-search':
+        work = quotient_search(int(case['n']), case['width'], wheel=case['wheel'])
+        elapsed = time.perf_counter() - start
+        pairs = work.pop('pairs')
+        checks = ['blocks', 'initial_strip_points', 'quadratic_solves', 'bisected']
+        if 'collinear_beyond_area' in case:
+            checks.append('collinear_beyond_area')
+        agree(case, work, checks)
+        found = work['setup_divisor'] or (pairs[0][0] if pairs else None)
+        factor = int(found) if found is not None else None
+        result = certify_split(case, proof, factor, elapsed, 'quotient_search', work)
+    elif method == 'pell-pairs':
+        work = pell_pair_search(int(case['n']), case['max_prime'], case['max_steps'], case['triangles'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, ['outcome', 'steps', 'walks', 'centers', 'cycles', 'root'])
+        work.update(max_steps=case['max_steps'], max_prime=case['max_prime'], triangles=case['triangles'])
+        result = certify_split(case, proof, factor, elapsed, 'pell_pairs', work)
+    elif method == 'salie-seed':
+        work = salie_seed_search(int(case['n']), case['max_terms'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work['max_terms'] = case['max_terms']
+        result = certify_split(case, proof, factor, elapsed, 'salie_seed', work)
     elif method in ('divisor-samples', 'salie-residues'):
         search, key = ((salie_residue_search, 'salie_residues') if method == 'salie-residues'
                        else (divisor_sample_search, 'divisor_samples'))
@@ -252,6 +280,9 @@ def main():
                              ('pascal.json', 'pascal'), ('midpoint-readings.json', 'midpoint-readings'),
                              ('divisor-samples.json', 'divisor-samples'),
                              ('salie-residues.json', 'salie-residues'),
+                             ('salie-seed.json', 'salie-seed'),
+                             ('pell-pairs.json', 'pell-pairs'),
+                             ('quotient-search.json', 'quotient-search'),
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())

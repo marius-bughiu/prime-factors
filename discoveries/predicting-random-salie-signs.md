@@ -12,6 +12,8 @@ The full reduction below is a paper argument. Lean checks the sign count, coeffi
 
 A predictor that reads at most 512 bits of the frequency, taking each next bit from either end, gains at most $2^{-510}$ in success probability for two 1,024-bit primes. This bound allows unrestricted knowledge of the product. [Proof for this class of predictors](short-phase-predictors.md)
 
+A second test lets the predictor combine up to 1,024 shifted Jacobi symbols of the frequency. For two 1,024-bit primes, even the best decision table on these symbols has advantage below $2^{-480}$. [Bounds for affine Jacobi tests](jacobi-phase-predictors.md)
+
 ## Why correlation survives at a small harmonic
 
 Write $B=B_1$ and use $\widehat f(j)=N^{-1}\sum_t f(t)e^{-2\pi ijt/N}$. The positive residues of $B$ form one cyclic interval of length $2\lfloor N/4\rfloor+1$. Its signed sum is $+1$ for $N\equiv1\pmod4$ and $-1$ for $N\equiv3\pmod4$. Thus $|\widehat B(0)|=1/N$. For $j\ne0$, let $d=\min(j,N-j)$ using the least nonnegative representative. The Fourier coefficient is twice the normalized exponential sum of that interval. The finite geometric series has magnitude at most $1/|\sin(\pi j/N)|$ before normalization. The bound $\sin(\pi d/N)\ge2d/N$ gives $|\widehat B(j)|\le1/d$. This is the interval case of the concentration estimate for multiplication codes in Akavia, Goldwasser and Safra. [FOCS 2003, §5.3, Claim 4.1](https://people.csail.mit.edu/akavia/2003-focsAGS.pdf) · [Lean coefficient and sign-count bounds](../PrimeFactors/WeakPhase.lean)
