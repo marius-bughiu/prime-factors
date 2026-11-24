@@ -8,6 +8,10 @@ Suppose $N=pq$ with $p\le q\le2p$ and $(2p+1)(2q+1)$ square. Set $a=\lceil\sqrt 
 
 A paper argument using prime distribution proves the formula succeeds on infinitely many balanced inputs whose prime gap is a fixed fraction of the smaller prime. A separate counting argument bounds how many such products occur when a gap of order $X/\log X$ suffices. [Infinitude and density](discoveries/shifted-square-infinitude.md)
 
+## A second 2048-bit example from short modular periods
+
+If the prime predecessors share a large divisor $g=\gcd(p-1,q-1)$, raising a unit to $N-1$ produces coprime periods at the two primes. A search given only $N$, a base and a table budget recovered a different 2048-bit product with 86 entries per table. The bound depends on the smaller residual period. [Proofs, costs and prior work](discoveries/common-predecessors.md) · [Product-only fixtures](benchmarks/reduced-orders.json)
+
 ## Conjectures from the Dirichlet L-function proof
 
 One boundary reading at height 1 determines the **exact integer sum** of two balanced primes if its absolute error is below $1/(8\sqrt N)$. For a 2048-bit product, $2^{-1027}$ suffices. A fast way to obtain that reading remains open. [Precision, derivation and alternatives](discoveries/reading-the-boundary.md)
@@ -17,6 +21,9 @@ For $N=pq$ with $p<q$, Lean proves that the first positive imaginary-axis zero o
 A second investigation bounds how many modular square tests suffice for every discriminant of a given bit length. The universal count grows linearly in the bit length under Dirichlet GRH. The tighter conjecture restricting both the number and size of the primes survived exhaustive examples for widths 9 through 20. We also found small widths where it fails. [Proofs, counterexamples and experiment](discoveries/character-conjectures.md#how-many-primes-suffice-for-all-discriminants)
 
 ## What reduces the work?
+
+- **Choosing a shift has a provable cost.** At factor width $b$, even a list of $2^{b/2}/b^4$ rational functions of the product misses almost all balanced prime pairs as $b$ grows, under polynomial degree and coefficient-size bounds. This unconditional counting result explains why extending the successful two-square-root formula requires more structure. [Paper bound and Lean components](discoveries/large-sieve-for-shifts.md)
+- **Several false midpoints can reveal a factor.** Lean gives sufficient conditions for a square-product triple to split the input and checks a split of 723889. Short triples of this kind are absent for most balanced inputs. [Witness, counterexamples and counting argument](discoveries/multiple-discriminants.md)
 
 - **Weighted collisions improve the table bound to $O(N^{1/5})$.** Two different residues modulo the product can agree modulo one unknown prime. Lean verifies this step of Harvey's method and a matching lower bound on the complete tables used here. On a 2048-bit product, those tables still require more than $2^{408}$ entries. [Derivation and example](discoveries/searching-the-balanced-interval.md#collisions-visible-at-one-unknown-prime)
 

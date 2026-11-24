@@ -37,6 +37,14 @@ def case_row(result):
         count = f'Subgroup search · {w["bases_tested"]} {unit} tested · inclusive limit {w["max_base"]}'
         if w['status'] == 'split':
             count += f' · witness {w["witness_base"]}'
+    elif result['method'] == 'reduced-order':
+        w = result['reduced_order']
+        count = (f'Reduced-order search · base {w["base"]} · {escape(w["outcome"])} · '
+                 f'{w["entries_per_table"]} of {w["stride"]} entries built per table · '
+                 f'{w["giants_probed"]} giant probes · {w["batch_gcds"]} batch gcds · '
+                 f'search {duration(result["discovery_seconds"])}')
+        if checked:
+            verification += f' (certificate generation and replay {duration(result["certificate_seconds"])})'
     elif result['method'] == 'shifted':
         outcome = 'split' if result['shifted']['status'] == 'split' else 'no split'
         count = f'Shifted-square formula · {outcome} · {result["fermat_steps"]} Fermat midpoints'

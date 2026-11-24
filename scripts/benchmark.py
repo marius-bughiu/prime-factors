@@ -28,24 +28,49 @@ def agree(case, result, keys):
             raise ValueError(f"{case['id']}.{key}: expected {case[key]!r}, got {result[key]!r}")
 
 
+def reduced_case(case, proof):
+    command = ['lake', 'env', 'lean', '--run', 'experiments/ReducedOrders.lean',
+               'search', case['n'], str(case['base']), str(case['stride'])]
+    proc = subprocess.run(command, cwd=ROOT, text=True, capture_output=True, timeout=900)
+    if proc.returncode != 0:
+        raise RuntimeError(f"Reduced-order search failed: {proc.stderr}\n{proc.stdout}")
+    work = json.loads(proc.stdout)
+    factor = work.pop('factor')
+    search_seconds = work.pop('search_nanoseconds') / 1_000_000_000
+    agree(case, work, ['outcome', 'entries_per_table', 'giants_probed', 'batch_gcds'])
+    result = dict(n=case['n'], bits=int(case['n']).bit_length(), factors=[], remaining=[case['n']],
+                  status='partial', verified=False, verification_seconds=None, certificate_seconds=None,
+                  discovery_seconds=search_seconds, reduced_order=dict(work, base=case['base'], stride=case['stride']))
+    if factor is not None:
+        certificate_start = time.perf_counter()
+        checked = cli(['scripts/factor.py', case['n'], '--factor-hint', factor, '--max-steps', 0,
+                       '--verify', '--lean', proof])
+        result.update({key: checked[key] for key in
+                       ['factors', 'remaining', 'status', 'verified', 'verification_seconds']})
+        result['certificate_seconds'] = time.perf_counter() - certificate_start
+    return result
+
+
 def run_case(case, method, proofs):
     name = case['id']
     if not re.fullmatch(r'[a-zA-Z0-9_-]+', name):
         raise ValueError(f'Invalid benchmark ID {name!r}')
     proof = proofs / f'{name}.lean'
     start = time.perf_counter()
-    factor_args = ['scripts/factor.py', case['n'], '--max-steps', case.get('max_steps', 0),
-                   '--verify', '--lean', proof]
-    factor_args += ['--method', method]
-    if method == 'subgroup' and 'max_base' in case:
-        factor_args += ['--max-base', case['max_base']]
     complete = case['status'] == 'complete'
-    result = cli(factor_args, 0 if complete else 1)
-    agree(case, result, ['n', 'status', 'factors', 'remaining'])
-    if method == 'subgroup':
-        agree(case, result['subgroup'], ['bases_tested'])
+    if method == 'reduced-order':
+        result = reduced_case(case, proof)
     else:
-        agree(case, result, ['fermat_steps'])
+        factor_args = ['scripts/factor.py', case['n'], '--max-steps', case.get('max_steps', 0),
+                       '--verify', '--lean', proof, '--method', method]
+        if method == 'subgroup' and 'max_base' in case:
+            factor_args += ['--max-base', case['max_base']]
+        result = cli(factor_args, 0 if complete else 1)
+        if method == 'subgroup':
+            agree(case, result['subgroup'], ['bases_tested'])
+        else:
+            agree(case, result, ['fermat_steps'])
+    agree(case, result, ['n', 'status', 'factors', 'remaining'])
     if method == 'shifted':
         if result['shifted']['status'] != case['shifted']['status']:
             raise ValueError(f"Unexpected shifted-square result for {name}")
@@ -96,7 +121,7 @@ def main():
     proofs.mkdir(parents=True, exist_ok=True)
     results = []
     for filename, method in [('cases.json', 'fermat'), ('subgroup.json', 'subgroup'),
-                             ('shifted.json', 'shifted')]:
+                             ('shifted.json', 'shifted'), ('reduced-orders.json', 'reduced-order')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         for case in cases:
             result = run_case(case, method, proofs)
