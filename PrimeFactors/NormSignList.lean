@@ -21,7 +21,7 @@ def adjust (p : Signs) (b : Bool) (g : Signs) : Signs :=
 /-- The branch decisions use only public parities. With a pivot, the first
 candidate is either the pivot or 1, followed by one candidate per remaining
 generator. Without a pivot every product has even parity. -/
-def candidates (gs : List Signs) (b : Bool) : List Signs :=
+noncomputable def candidates (gs : List Signs) (b : Bool) : List Signs :=
   match gs.find? parity with
   | none => if b then [] else zero :: gs
   | some p => anchor p b :: (gs.eraseP parity).map (adjust p b)
@@ -40,22 +40,27 @@ inductive Generated (gs : List Signs) : Signs → Prop where
   | step {x g} : Generated gs x → g ∈ gs → Generated gs (combine x g)
 
 /-- The three nonzero linear functionals on pairs of sign bits. -/
-inductive Character where
-  | left | right | joint
+abbrev Character := Option Bool
+
+def Character.left : Character := some false
+
+def Character.right : Character := some true
+
+def Character.joint : Character := none
 
 def Character.value : Character → Signs → Bool
-  | .left, x => x.1
-  | .right, x => x.2
-  | .joint, x => parity x
+  | some false, x => x.1
+  | some true, x => x.2
+  | none, x => parity x
 
 theorem Character.value_combine (c : Character) :
     ∀ x y : Signs, c.value (combine x y) = xor (c.value x) (c.value y) := by
-  cases c <;> decide
+  rcases c with _ | (_ | _) <;> decide
 
 theorem Generated.vanishes {gs : List Signs} {t : Signs} (ht : Generated gs t)
     (c : Character) (h : ∀ g ∈ gs, c.value g = false) : c.value t = false := by
   induction ht with
-  | unit => cases c <;> rfl
+  | unit => rcases c with _ | (_ | _) <;> rfl
   | step _ mem ih => rw [c.value_combine, ih, h _ mem]; rfl
 
 private def pivotCharacter (p : Signs) : Character := if p.1 then .right else .left
