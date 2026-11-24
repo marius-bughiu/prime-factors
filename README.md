@@ -2,6 +2,12 @@
 
 What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/character-conjectures.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
+## Two square roots factor a structured 2048-bit input
+
+Suppose $N=pq$ with $p\le q\le2p$ and $(2p+1)(2q+1)$ square. Set $a=\lceil\sqrt N\rceil$ and $h=a(a+1)-N$. Then $h=(p+q)/2$ and the two factors are $h\pm\sqrt{h^2-N}$. The search receives just the product and checks its answer. On a constructed 2048-bit input it recovers two 1024-bit primes with zero Fermat iterations. Lean checks the general formula and both primes in the example. A balanced control misses the formula and remains unresolved at the same budget. [Derivation and limits](discoveries/square-collision-density.md) · [Input and control](benchmarks/shifted.json)
+
+A paper argument using prime distribution proves the formula succeeds on infinitely many balanced inputs whose prime gap is a fixed fraction of the smaller prime. A separate counting argument bounds how many such products occur when a gap of order $X/\log X$ suffices. [Infinitude and density](discoveries/shifted-square-infinitude.md)
+
 ## Conjectures from the Dirichlet L-function proof
 
 One boundary reading at height 1 determines the **exact integer sum** of two balanced primes if its absolute error is below $1/(8\sqrt N)$. For a 2048-bit product, $2^{-1027}$ suffices. A fast way to obtain that reading remains open. [Precision, derivation and alternatives](discoveries/reading-the-boundary.md)

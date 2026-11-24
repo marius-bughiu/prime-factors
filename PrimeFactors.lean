@@ -8,6 +8,7 @@ import PrimeFactors.DivisorSum
 import PrimeFactors.FactorSum
 import PrimeFactors.FactorSumCRT
 import PrimeFactors.Fermat
+import PrimeFactors.FourierAccess
 import PrimeFactors.IntervalGap
 import PrimeFactors.Isolation
 import PrimeFactors.JointPeriod
@@ -20,6 +21,7 @@ import PrimeFactors.Pratt
 import PrimeFactors.PrimePower
 import PrimeFactors.ResidueCount
 import PrimeFactors.SampledSieve
+import PrimeFactors.SeparatedPairs
 import PrimeFactors.ShiftedResidues
 import PrimeFactors.SieveInterval
 import PrimeFactors.SignatureCount
