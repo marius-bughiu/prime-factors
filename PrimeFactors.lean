@@ -25,6 +25,7 @@ import PrimeFactors.FejerProjection
 import PrimeFactors.Fermat
 import PrimeFactors.FourierAccess
 import PrimeFactors.GapStride
+import PrimeFactors.HyperbolaBoxes
 import PrimeFactors.IntervalGap
 import PrimeFactors.Isolation
 import PrimeFactors.JacobiSeparation
@@ -59,6 +60,7 @@ import PrimeFactors.SieveInterval
 import PrimeFactors.SignatureCount
 import PrimeFactors.StrideWheel
 import PrimeFactors.Subgroup
+import PrimeFactors.SumGaps
 import PrimeFactors.TotientTensor
 import PrimeFactors.TruncatedProduct
 import PrimeFactors.TruncatedWindow
