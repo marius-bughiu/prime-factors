@@ -96,6 +96,7 @@ import PrimeFactors.RootInterval
 import PrimeFactors.RootIntervalSlope
 import PrimeFactors.SalieCounts
 import PrimeFactors.SalieOrbit
+import PrimeFactors.SameSourcePair
 import PrimeFactors.SampledSieve
 import PrimeFactors.ScatteredFactor
 import PrimeFactors.SeparatedPairs
@@ -107,6 +108,7 @@ import PrimeFactors.ShortBasisSieve
 import PrimeFactors.SmoothSampleBound
 import PrimeFactors.SmoothFractionHyperbola
 import PrimeFactors.SharedRootSigns
+import PrimeFactors.SquareClassFilter
 import PrimeFactors.SquareNeighborPeriod
 import PrimeFactors.SieveBudget
 import PrimeFactors.SieveInterval

@@ -56,3 +56,5 @@ On the first sampled input we tested each new dependency as it appeared, with th
 Scanning all proportions needed about seventeen times fewer draws here. Its extra fraction checks took more CPU time in this implementation. The full-size control gave 27,583 eligible fractions across 32 draws and no smooth row. A separate probability bound covers all these proportions even with a list of up to a trillion primes. [CPU measurements and witnesses](../research/fraction-chain-first.json) · [CI fixtures](../benchmarks/fraction-chains.json) · [Uniform 2,048-bit bound](smooth-fraction-budget.md)
 
 Reproduce the small panel with `python3 -m experiments.fraction_chains --panel` and the online comparison with `python3 -m experiments.fraction_chains --first-long`.
+
+We subsequently proved that every two-row exact square from one draw yields a proper factor, even if large primes occur in its rows. An explicit count bounds the chance of finding such a pair on any eligible 2,048-bit product. [Proof, frequency bound and exhaustive small census](same-source-pairs.md)

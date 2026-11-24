@@ -31,6 +31,7 @@ from experiments.partition_recurrence import search as partition_recurrence_sear
 from experiments.scored_multipliers import search as scored_multiplier_search
 from experiments.rational_squares import search as rational_square_search
 from experiments.fraction_chains import search as fraction_chain_search
+from experiments.pair_class_search import search as same_source_pair_search
 from experiments.salie_blocks import search as salie_block_search
 from experiments.folded_square import direct as fixed_phase_search
 from experiments.four_square_lines import search as four_square_line_search
@@ -148,6 +149,13 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(max_steps=case['max_steps'], multiplier=case['multiplier'])
         result = certify_split(case, proof, factor, elapsed, 'pell_relations', work)
+    elif method == 'same-source-pairs':
+        work = same_source_pair_search(int(case['n']), case['mode'], case['max_draws'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(mode=case['mode'], max_draws=case['max_draws'])
+        result = certify_split(case, proof, factor, elapsed, 'same_source_pairs', work)
     elif method in ('rational-squares', 'fraction-chains'):
         run = rational_square_search if method == 'rational-squares' else fraction_chain_search
         work = run(int(case['n']), case['mode'], case['max_draws'], case['bound'], online=case['online'])
@@ -368,6 +376,7 @@ def main():
                              ('scored-multipliers.json', 'scored-multipliers'),
                              ('rational-squares.json', 'rational-squares'),
                              ('fraction-chains.json', 'fraction-chains'),
+                             ('same-source-pairs.json', 'same-source-pairs'),
                              ('crt-square-norms.json', 'crt-square-norms'),
                              ('four-square-lines.json', 'four-square-lines'),
                              ('line-powers.json', 'line-powers'),
