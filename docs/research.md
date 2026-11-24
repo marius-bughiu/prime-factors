@@ -2,6 +2,8 @@
 
 The factor-sum investigation treats balanced semiprimes and studies which local constraints survive globally. It gives a separate application of the Dirichlet result to incorrect candidate sums. [Factor-sum research](../discoveries/factor-sum-residues.md)
 
+A character can also select one of the two unknown primes inside a divisor sum. For 667, a power-series calculation using only the product recovered the last three binary digits of 29. It took 222,111 convolution terms. This example uses the classical Rogers–Ramanujan identity and needs no Riemann hypothesis. Computing the corresponding coefficient cheaply at 2,048 bits remains open. [Derivation and examples](../discoveries/theta-residues.md)
+
 Two later counting results use the Dirichlet theorems in different ways. Miller's reduction uses small character witnesses to turn a totient count into deterministic factorization, including for products with repeated factors. A prime at which the product is a quadratic nonresidue makes the two unknown primes distinct modulo that auxiliary prime. This permits a smaller weighted readout on the original multiplication network. [Totient count](../discoveries/counting-modular-inverses.md) · [Choice of a separating prime](../discoveries/exponential-readout.md)
 
 In the signed short-period search, the public Jacobi symbol chooses between $N-1$ and $N+1$. Dirichlet GRH and a published coset bound guarantee a small prime discriminant realizing each pair of hidden signs. The quadratic-group arithmetic and a numerical example are checked in Lean. [Signed exponents and the character bound](../discoveries/jacobi-separation.md)

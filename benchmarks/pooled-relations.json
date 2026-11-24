@@ -1,0 +1,342 @@
+[
+  {
+    "id": "pooled-relations-small",
+    "description": "Two third-row signed norms coincide across different multipliers.",
+    "n": "21490481",
+    "multipliers": [
+      1,
+      7
+    ],
+    "max_steps": 6,
+    "outcome": "equal_norm",
+    "steps": 6,
+    "per_walk": [
+      3,
+      3
+    ],
+    "rows": 6,
+    "private_pruned": 0,
+    "pruning_rounds": 0,
+    "min_private_bits": null,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [
+      [
+        1,
+        3
+      ],
+      [
+        7,
+        3
+      ]
+    ],
+    "normalized": 0,
+    "repeated": 0,
+    "distinct_rows": 5,
+    "status": "complete",
+    "factors": [
+      "4421",
+      "4861"
+    ],
+    "remaining": [],
+    "square_tests": 2
+  },
+  {
+    "id": "pooled-relations-small-cap",
+    "description": "Five total updates end before the second matching norm.",
+    "n": "21490481",
+    "multipliers": [
+      1,
+      7
+    ],
+    "max_steps": 5,
+    "outcome": "no_split",
+    "steps": 5,
+    "per_walk": [
+      3,
+      2
+    ],
+    "rows": 5,
+    "private_pruned": 5,
+    "pruning_rounds": 1,
+    "min_private_bits": 10,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [],
+    "normalized": 0,
+    "repeated": 0,
+    "distinct_rows": 5,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "21490481"
+    ],
+    "square_tests": 2
+  },
+  {
+    "id": "pooled-relations-small-single",
+    "description": "The ordinary walk at the same six-update budget.",
+    "n": "21490481",
+    "multipliers": [
+      1
+    ],
+    "max_steps": 6,
+    "outcome": "no_split",
+    "steps": 6,
+    "per_walk": [
+      6
+    ],
+    "rows": 6,
+    "private_pruned": 6,
+    "pruning_rounds": 1,
+    "min_private_bits": 5,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [],
+    "normalized": 0,
+    "repeated": 0,
+    "distinct_rows": 6,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "21490481"
+    ],
+    "square_tests": 3
+  },
+  {
+    "id": "pooled-relations-small-seven",
+    "description": "The multiplier-seven walk at the same six-update budget.",
+    "n": "21490481",
+    "multipliers": [
+      7
+    ],
+    "max_steps": 6,
+    "outcome": "no_split",
+    "steps": 6,
+    "per_walk": [
+      6
+    ],
+    "rows": 6,
+    "private_pruned": 6,
+    "pruning_rounds": 1,
+    "min_private_bits": 11,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [],
+    "normalized": 0,
+    "repeated": 0,
+    "distinct_rows": 6,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "21490481"
+    ],
+    "square_tests": 3
+  },
+  {
+    "id": "pooled-relations-square-repeats",
+    "description": "Scaling square multipliers produces redundant relations on the seeded 79-bit example.",
+    "n": "367722817904017001243509",
+    "multipliers": [
+      1,
+      4,
+      9,
+      16,
+      25,
+      36,
+      49,
+      64
+    ],
+    "max_steps": 64,
+    "outcome": "no_split",
+    "steps": 64,
+    "per_walk": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "rows": 64,
+    "private_pruned": 30,
+    "pruning_rounds": 1,
+    "min_private_bits": 12,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [],
+    "normalized": 19,
+    "repeated": 34,
+    "distinct_rows": 30,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "367722817904017001243509"
+    ],
+    "square_tests": 13
+  },
+  {
+    "id": "pooled-relations-2048",
+    "description": "A square norm on the fourth ordinary convergent of the planted continued-square product.",
+    "n": "20522377789540983284542897109607686156484074887418906329265083156821724488902770973710759492521871527519417144466911068112464610300672051833515284816755617410505413895310840951820994323150577188381469499759519086876086295474831399186978994952904779085541573101966744605230225058491593318602586664039703653888897990520510566184346926407181841669130126970140003571189978412679196383874792968564026557397645784819405348866937487844654131267273501506706895766077758882899492435318942908138477316323657646882872807565324868751185929976436091827800410326832368837366076388827500084764895472502952606932099189930104180441089",
+    "multipliers": [
+      1
+    ],
+    "max_steps": 4,
+    "outcome": "square_norm",
+    "steps": 4,
+    "per_walk": [
+      4
+    ],
+    "rows": 4,
+    "private_pruned": 0,
+    "pruning_rounds": 0,
+    "min_private_bits": null,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [
+      [
+        1,
+        4
+      ]
+    ],
+    "normalized": 0,
+    "repeated": 0,
+    "distinct_rows": 4,
+    "status": "complete",
+    "factors": [
+      "124155491155824905518846244290615534105429974017914730073351929907248097156300018636504973482782120983051991747118472874623901519216389036243085539296819417507186247534711419282072888490416535064612109074411195028970500257117240892961898677691994761521677646298287687525552250776014992324510236239626112073729",
+      "165295772248879312081304171392831332388886060083022569624285113781839182604541444930258100790686255746666852917761280454380933975288091912157954120365587981848706513117861607019057053964772367619622444764309740478966181906227176797851382007394980433914853195619268389616952818479293528459668123733393764515841"
+    ],
+    "remaining": [],
+    "square_tests": 2
+  },
+  {
+    "id": "pooled-relations-2048-cap",
+    "description": "The first three ordinary convergents yield no square dependency.",
+    "n": "20522377789540983284542897109607686156484074887418906329265083156821724488902770973710759492521871527519417144466911068112464610300672051833515284816755617410505413895310840951820994323150577188381469499759519086876086295474831399186978994952904779085541573101966744605230225058491593318602586664039703653888897990520510566184346926407181841669130126970140003571189978412679196383874792968564026557397645784819405348866937487844654131267273501506706895766077758882899492435318942908138477316323657646882872807565324868751185929976436091827800410326832368837366076388827500084764895472502952606932099189930104180441089",
+    "multipliers": [
+      1
+    ],
+    "max_steps": 3,
+    "outcome": "no_split",
+    "steps": 3,
+    "per_walk": [
+      3
+    ],
+    "rows": 3,
+    "private_pruned": 3,
+    "pruning_rounds": 1,
+    "min_private_bits": 1012,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [],
+    "normalized": 0,
+    "repeated": 0,
+    "distinct_rows": 3,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "20522377789540983284542897109607686156484074887418906329265083156821724488902770973710759492521871527519417144466911068112464610300672051833515284816755617410505413895310840951820994323150577188381469499759519086876086295474831399186978994952904779085541573101966744605230225058491593318602586664039703653888897990520510566184346926407181841669130126970140003571189978412679196383874792968564026557397645784819405348866937487844654131267273501506706895766077758882899492435318942908138477316323657646882872807565324868751185929976436091827800410326832368837366076388827500084764895472502952606932099189930104180441089"
+    ],
+    "square_tests": 1
+  },
+  {
+    "id": "pooled-relations-small-consecutive",
+    "description": "All multipliers from one to seven are tried in order.",
+    "n": "21490481",
+    "multipliers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "max_steps": 21,
+    "outcome": "equal_norm",
+    "steps": 21,
+    "per_walk": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "rows": 21,
+    "private_pruned": 0,
+    "pruning_rounds": 0,
+    "min_private_bits": null,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [
+      [
+        1,
+        3
+      ],
+      [
+        7,
+        3
+      ]
+    ],
+    "normalized": 1,
+    "repeated": 2,
+    "distinct_rows": 18,
+    "square_tests": 6,
+    "status": "complete",
+    "factors": [
+      "4421",
+      "4861"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "pooled-relations-2048-prime-pool",
+    "description": "Sixteen updates each on the first eight prime multipliers.",
+    "n": "20522377789540983284542897109607686156484074887418906329265083156821724488902770973710759492521871527519417144466911068112464610300672051833515284816755617410505413895310840951820994323150577188381469499759519086876086295474831399186978994952904779085541573101966744605230225058491593318602586664039703653888897990520510566184346926407181841669130126970140003571189978412679196383874792968564026557397645784819405348866937487844654131267273501506706895766077758882899492435318942908138477316323657646882872807565324868751185929976436091827800410326832368837366076388827500084764895472502952606932099189930104180441089",
+    "multipliers": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19
+    ],
+    "max_steps": 128,
+    "outcome": "no_split",
+    "steps": 128,
+    "per_walk": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16
+    ],
+    "rows": 128,
+    "private_pruned": 128,
+    "pruning_rounds": 1,
+    "min_private_bits": 999,
+    "dependencies": 0,
+    "tested": 0,
+    "selected_steps": [],
+    "normalized": 0,
+    "repeated": 0,
+    "distinct_rows": 128,
+    "square_tests": 64,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "20522377789540983284542897109607686156484074887418906329265083156821724488902770973710759492521871527519417144466911068112464610300672051833515284816755617410505413895310840951820994323150577188381469499759519086876086295474831399186978994952904779085541573101966744605230225058491593318602586664039703653888897990520510566184346926407181841669130126970140003571189978412679196383874792968564026557397645784819405348866937487844654131267273501506706895766077758882899492435318942908138477316323657646882872807565324868751185929976436091827800410326832368837366076388827500084764895472502952606932099189930104180441089"
+    ]
+  }
+]

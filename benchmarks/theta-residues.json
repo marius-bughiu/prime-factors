@@ -1,0 +1,125 @@
+[
+  {
+    "id": "theta-level-five-143",
+    "description": "The positive character class selects the smaller prime.",
+    "n": "143",
+    "max_index": 1537,
+    "outcome": "factor",
+    "modulus": 4,
+    "coefficient_mod": 0,
+    "factor_mod": 3,
+    "convolution_terms": 10153,
+    "candidates_tested": 1,
+    "status": "complete",
+    "factors": [
+      "11",
+      "13"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "theta-level-five-667",
+    "description": "The positive character class selects the larger prime.",
+    "n": "667",
+    "max_index": 1537,
+    "outcome": "factor",
+    "modulus": 8,
+    "coefficient_mod": 6,
+    "factor_mod": 5,
+    "convolution_terms": 222111,
+    "candidates_tested": 2,
+    "status": "complete",
+    "factors": [
+      "23",
+      "29"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "theta-level-five-1457",
+    "description": "First balanced product in the same public class modulo 40.",
+    "n": "1457",
+    "max_index": 1537,
+    "outcome": "factor",
+    "modulus": 8,
+    "coefficient_mod": 0,
+    "factor_mod": 7,
+    "convolution_terms": 1060696,
+    "candidates_tested": 1,
+    "status": "complete",
+    "factors": [
+      "31",
+      "47"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "theta-level-five-1537",
+    "description": "Second balanced product in the same public class modulo 40.",
+    "n": "1537",
+    "max_index": 1537,
+    "outcome": "factor",
+    "modulus": 8,
+    "coefficient_mod": 6,
+    "factor_mod": 5,
+    "convolution_terms": 1180416,
+    "candidates_tested": 1,
+    "status": "complete",
+    "factors": [
+      "29",
+      "53"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "theta-level-five-character",
+    "description": "Both factors have negative character, so projection would include the product.",
+    "n": "91",
+    "max_index": 1537,
+    "outcome": "character",
+    "modulus": 4,
+    "coefficient_mod": null,
+    "factor_mod": null,
+    "convolution_terms": 0,
+    "candidates_tested": 0,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "91"
+    ]
+  },
+  {
+    "id": "theta-level-five-unbalanced",
+    "description": "The correct residue has no factor in the balanced completion interval.",
+    "n": "57",
+    "max_index": 1537,
+    "outcome": "exhausted",
+    "modulus": 4,
+    "coefficient_mod": 0,
+    "factor_mod": 3,
+    "convolution_terms": 1596,
+    "candidates_tested": 1,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "57"
+    ]
+  },
+  {
+    "id": "theta-level-five-2048-cap",
+    "description": "The public character splits this 2048-bit control, but the series index exceeds the budget.",
+    "n": "18954765817673933663441130651941601608683909813351582632719836093301426060532014600515603812321196000528192786172571374325727071558274014040294557480325433091746308263542318398106970236237130852381318203192005777319686661286096311626674873713872595545462185161085980134326549333575068021954290948901231017212530419741720181988649767555678312790872173090094808635293013933619703528930786338971498102306117604351614484183724679146658565821527155586257103592507385666408411459518947006836096238849852932251935146279500972757064021728003528939915013095139334863430850463060659778821369608296254108318651313968707289506947",
+    "max_index": 1537,
+    "outcome": "budget",
+    "modulus": 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084096,
+    "coefficient_mod": null,
+    "factor_mod": null,
+    "convolution_terms": 0,
+    "candidates_tested": 0,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18954765817673933663441130651941601608683909813351582632719836093301426060532014600515603812321196000528192786172571374325727071558274014040294557480325433091746308263542318398106970236237130852381318203192005777319686661286096311626674873713872595545462185161085980134326549333575068021954290948901231017212530419741720181988649767555678312790872173090094808635293013933619703528930786338971498102306117604351614484183724679146658565821527155586257103592507385666408411459518947006836096238849852932251935146279500972757064021728003528939915013095139334863430850463060659778821369608296254108318651313968707289506947"
+    ]
+  }
+]

@@ -25,9 +25,12 @@ from experiments.wide_modulus import search as wide_modulus_search
 from experiments.pascal_readout import search as pascal_search
 from experiments.pell_pairs import search as pell_pair_search
 from experiments.pell_relations import search as pell_relation_search
+from experiments.pooled_relations import search as pooled_relation_search
 from experiments.salie_blocks import search as salie_block_search
 from experiments.folded_square import direct as fixed_phase_search
 from experiments.four_square_lines import search as four_square_line_search
+from experiments.line_powers import search as line_power_search
+from experiments.theta_residues import search as theta_residue_search
 from experiments.quotient_search import search as quotient_search
 from experiments.inverse_windows import search_product as inverse_windows_search
 from experiments.continued_square import search as continued_square_search
@@ -140,6 +143,13 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(max_steps=case['max_steps'], multiplier=case['multiplier'])
         result = certify_split(case, proof, factor, elapsed, 'pell_relations', work)
+    elif method == 'pooled-relations':
+        work = pooled_relation_search(int(case['n']), case['multipliers'], case['max_steps'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(multipliers=case['multipliers'], max_steps=case['max_steps'])
+        result = certify_split(case, proof, factor, elapsed, 'pooled_relations', work)
     elif method == 'four-square-lines':
         work = four_square_line_search(int(case['n']), case['max_triples'])
         elapsed = time.perf_counter() - start
@@ -147,6 +157,20 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work['max_triples'] = case['max_triples']
         result = certify_split(case, proof, factor, elapsed, 'four_square_lines', work)
+    elif method == 'line-powers':
+        work = line_power_search(int(case['n']), case['exponent'], case['start'], case['max_seeds'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, ['outcome', 'seed', 'work'])
+        work.update(exponent=case['exponent'], start=case['start'], max_seeds=case['max_seeds'])
+        result = certify_split(case, proof, factor, elapsed, 'line_powers', work)
+    elif method == 'theta-residues':
+        work = theta_residue_search(int(case['n']), case['max_index'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work['max_index'] = case['max_index']
+        result = certify_split(case, proof, factor, elapsed, 'theta_residues', work)
     elif method == 'salie-blocks':
         work = salie_block_search(int(case['n']), case['max_orbits'], case['fractional_bits'])
         elapsed = time.perf_counter() - start
@@ -310,7 +334,10 @@ def main():
                              ('salie-blocks.json', 'salie-blocks'),
                              ('pell-pairs.json', 'pell-pairs'),
                              ('pell-relations.json', 'pell-relations'),
+                             ('pooled-relations.json', 'pooled-relations'),
                              ('four-square-lines.json', 'four-square-lines'),
+                             ('line-powers.json', 'line-powers'),
+                             ('theta-residues.json', 'theta-residues'),
                              ('quotient-search.json', 'quotient-search'),
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:

@@ -42,6 +42,7 @@ import PrimeFactors.Isolation
 import PrimeFactors.JacobiReadings
 import PrimeFactors.JacobiSeparation
 import PrimeFactors.JointPeriod
+import PrimeFactors.LinePower
 import PrimeFactors.LongPeriod
 import PrimeFactors.LowFactorBits
 import PrimeFactors.LowProductRank
@@ -66,6 +67,7 @@ import PrimeFactors.PhasePrecision
 import PrimeFactors.PhaseResidues
 import PrimeFactors.PhaseSchedules
 import PrimeFactors.PhaseSeparation
+import PrimeFactors.PooledRelations
 import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
 import PrimeFactors.PredecessorCount
@@ -99,6 +101,7 @@ import PrimeFactors.SignatureCount
 import PrimeFactors.StrideWheel
 import PrimeFactors.Subgroup
 import PrimeFactors.SupportingSlope
+import PrimeFactors.ThetaResidues
 import PrimeFactors.SumGaps
 import PrimeFactors.TotientTensor
 import PrimeFactors.TruncatedProduct

@@ -67,6 +67,24 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'theta-residues':
+        w = result['theta_residues']
+        count = (f'Power-series coefficient · index limit {w["max_index"]:,} · '
+                 f'{w["convolution_terms"]:,} convolution terms · {w["candidates_tested"]:,} candidate divisors')
+    elif result['method'] == 'line-powers':
+        w = result['line_powers']
+        tally = w['work']
+        names = {'square-1': 'Dickson polynomial at N² − 1', 'minus': 'Dickson polynomial at N − 1',
+                 'plus': 'Dickson polynomial at N + 1', 'monomial-square-1': 'Ordinary power at N² − 1'}
+        count = (f'{names[w["exponent"]]} · {tally["labels"]:,} of {w["max_seeds"]:,} labels · '
+                 f'{tally["gcds"]:,} gcds · {tally["ladder_steps"]:,} recurrence steps · '
+                 f'{tally["modular_powers"]:,} ordinary powers')
+    elif result['method'] == 'pooled-relations':
+        w = result['pooled_relations']
+        count = (f'Continued fractions with multipliers {", ".join(map(str, w["multipliers"]))} · '
+                 f'{w["steps"]:,} of {w["max_steps"]:,} steps · '
+                 f'{w["distinct_rows"]:,} distinct results · {w["square_tests"]:,} individual square tests · '
+                 f'{w["tested"]:,} combined relations tested')
     elif result['method'] == 'pell-relations':
         w = result['pell_relations']
         count = (f'Continued-fraction relations · {w["steps"]:,} of {w["max_steps"]:,} steps · '

@@ -2,9 +2,15 @@
 
 What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/wide-modulus-sieve.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
-**Can I give you a 2048-bit number and get its prime factors easily?** No. We have factored six specially constructed 2048-bit numbers from their products alone. Their primes had relationships our methods could exploit. If you multiply two independently chosen 1024-bit primes and give us only their product, we have no practical way to recover them in general. Lean can check that proposed factors are prime and multiply back to the input.
+**Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have succeeded on specially constructed products whose primes share a pattern that our search can recognize. Once someone supplies the two primes, Lean can check that each is prime and that their product is the number you started with.
+
+For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did we find from the product alone?
+
+We built a 2,048-bit test where one prime plus one divides the other prime squared minus one. A search given only the product recovered both primes on its thirteenth try. We then kept one prime, replaced the other, and ran the same thirteen tries. The new product was still 2,048 bits, and the search found nothing. [Construction, checked factors and comparison](discoveries/line-powers.md)
+
+On a different, previously solved 2,048-bit example, a continued fraction found both primes in four steps because multiplying the hidden primes by 169 and 225 brings them unusually close together. [Four-step example](discoveries/pooled-relations.md)
 
 On the 79-bit product 367,722,817,904,017,001,243,509, combining 53 early results from a continued fraction gave the primes 605,056,390,957 and 607,749,663,337. A smaller set collected one step earlier could produce only trivial square relations. On the existing 2,048-bit test, an exact check ruled out every combination of the first 65,536 results of that particular walk. [Method, assumptions and checked outcomes](discoveries/pell-cycles.md)
 

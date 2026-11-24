@@ -85,10 +85,6 @@ def search(n, multiplier, max_steps, *, use_gmp=False, external=1):
     """Generate a bounded prefix and try every independent square relation."""
     if n <= 1 or multiplier < 1 or max_steps < 0 or external < 1:
         raise ValueError('expected n > 1, positive multiplier and external support, nonnegative step budget')
-    if use_gmp:
-        from gmpy2 import mpz as tree_integer
-    else:
-        tree_integer = int
     work = dict(factor=None, outcome='no_split', steps=0, center=False, rows=0,
                 private_pruned=0, pruning_rounds=0, min_private_bits=None,
                 dependencies=0, tested=0, selected_steps=[])
@@ -107,6 +103,15 @@ def search(n, multiplier, max_steps, *, use_gmp=False, external=1):
         if denominator == 1 or work['center']:
             break
     work['rows'] = len(rows)
+    return check_rows(n, rows, work, use_gmp=use_gmp, external=external)
+
+
+def check_rows(n, rows, work, *, use_gmp=False, external=1):
+    """Check signed square dependencies; labels may identify several walks."""
+    if use_gmp:
+        from gmpy2 import mpz as tree_integer
+    else:
+        tree_integer = int
     # A nonsquare supported on primes private to one row forbids that row
     # in every dependency. Removing it can expose new private cofactors.
     while rows:
@@ -139,7 +144,7 @@ def search(n, multiplier, max_steps, *, use_gmp=False, external=1):
         work['tested'] += 1
         if 1 < divisor < n:
             return dict(work, outcome='relation', factor=divisor,
-                        selected_steps=[step for step, _, _ in chosen])
+                        selected_steps=[label for label, _, _ in chosen])
     return work
 
 
