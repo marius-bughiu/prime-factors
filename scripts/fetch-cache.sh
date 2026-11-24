@@ -5,6 +5,8 @@ export MATHLIB_NO_CACHE_ON_UPDATE=1
 lake build Cache.Main
 exec lake env lean --run .lake/packages/mathlib/Cache/Main.lean get \
   Mathlib.Data.Nat.Prime.Int Mathlib.Algebra.Field.ZMod Mathlib.Data.Nat.Factors Mathlib.Data.Nat.Sqrt Mathlib.Data.ZMod.Units \
+  Mathlib.Algebra.Group.Pi.Units Mathlib.GroupTheory.Index Mathlib.Data.ZMod.QuotientRing Mathlib.Data.Nat.Totient \
+  Mathlib.Algebra.Order.BigOperators.Group.Finset Mathlib.Algebra.BigOperators.Ring.Finset \
   Mathlib.Data.Nat.Dist Mathlib.NumberTheory.DiophantineApproximation.Basic \
   Mathlib.NumberTheory.Divisors Mathlib.NumberTheory.LegendreSymbol.JacobiSymbol \
   Mathlib.NumberTheory.LegendreSymbol.QuadraticReciprocity Mathlib.NumberTheory.PrimesCongruentOne \

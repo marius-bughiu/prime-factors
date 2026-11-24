@@ -8,6 +8,8 @@ In the signed short-period search, the public Jacobi symbol chooses between $N-1
 
 The same Dirichlet hypothesis bounds the work of finding a quadratic nonresidue at each auxiliary prime in a Fermat search. Testing all primes in a wide band doubles its limiting population coverage. A mean-value theorem also bounds the total work unconditionally. [Proof and explicit limiting fraction](../discoveries/gap-search-frequency.md#testing-every-auxiliary-prime)
 
+A product residue can also choose the entire list of moduli. The coverage bound averaged over products is unconditional. For a specified residue, Dirichlet character orthogonality and the released GRH statements give a uniform estimate for how many prime pairs produce it. That estimate yields a bound conditional on the actual observed residue. [Derivation and range of moduli](../discoveries/conditional-strides.md#conditioning-on-the-actual-observed-word)
+
 ## The November 2026 release
 
 On November 20, 2026, Levent Alpöge released a Lean proof developed with Claude. On November 21 the Lean FRO and Mathlib Initiative certified that the proof establishes mathlib’s `RiemannHypothesis`. Andrew Sutherland’s November 24 verification record also covers the critical-strip and nonvanishing statements for Dirichlet L-functions. Those statements concern every modulus and every Dirichlet character. Clay’s Millennium Prize has a separate publication and acceptance process. [Author’s announcement](https://alpo.ge/remark.pdf) · [Lean community verification](https://leanprover-community.github.io/blog/posts/riemann-hypothesis/) · [Independent check logs](https://math.mit.edu/~drew/grh/) · [Prize rules](https://www.claymath.org/millennium-problems/rules/)

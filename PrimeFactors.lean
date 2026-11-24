@@ -4,6 +4,7 @@ import PrimeFactors.BitMarginals
 import PrimeFactors.BlockCharacters
 import PrimeFactors.Certificate
 import PrimeFactors.ClassNumberWindow
+import PrimeFactors.ConditionalStride
 import PrimeFactors.CountingReadout
 import PrimeFactors.CyclotomicPeriods
 import PrimeFactors.DiscriminantPencil
@@ -11,7 +12,9 @@ import PrimeFactors.DiscriminantStride
 import PrimeFactors.DivisorSignal
 import PrimeFactors.DivisorSum
 import PrimeFactors.DivisorTensor
+import PrimeFactors.DyadicMass
 import PrimeFactors.DyadicReadout
+import PrimeFactors.DyadicSeries
 import PrimeFactors.ExponentialReadout
 import PrimeFactors.FactorCircuit
 import PrimeFactors.FactorSum
@@ -38,6 +41,7 @@ import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
 import PrimeFactors.PrimePower
 import PrimeFactors.PrimePowerCount
+import PrimeFactors.ProductAdvice
 import PrimeFactors.ProductPrefix
 import PrimeFactors.ReducedSlopes
 import PrimeFactors.ResidueCount
@@ -50,6 +54,7 @@ import PrimeFactors.ShiftPortfolio
 import PrimeFactors.ShiftedResidues
 import PrimeFactors.SieveInterval
 import PrimeFactors.SignatureCount
+import PrimeFactors.StrideWheel
 import PrimeFactors.Subgroup
 import PrimeFactors.TotientTensor
 import PrimeFactors.TruncatedProduct
