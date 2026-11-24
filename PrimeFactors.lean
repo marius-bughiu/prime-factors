@@ -7,6 +7,7 @@ import PrimeFactors.ClassNumberWindow
 import PrimeFactors.CountingReadout
 import PrimeFactors.CyclotomicPeriods
 import PrimeFactors.DiscriminantPencil
+import PrimeFactors.DiscriminantStride
 import PrimeFactors.DivisorSignal
 import PrimeFactors.DivisorSum
 import PrimeFactors.DivisorTensor

@@ -57,6 +57,10 @@ def case_row(result):
         count = (f'Balanced-interval modular search · {w["low_classes"]:,} low residue classes'
                  f' · {w["modular_hits"]:,} candidate products · {w["euclidean_steps"]:,} Euclidean steps'
                  f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'predecessor-square':
+        w = result['predecessor_square']
+        count = (f'Totient square classes · {w["scales_tested"]} scales tested'
+                 f' · inclusive limit {w["max_scale"]} · search {duration(result["discovery_seconds"])}')
     elif result['method'] == 'gap-stride':
         w = result['gap_stride']
         count = (f'Powers of five in the half-gap · exponent {w["exponent"]} of {w["max_exponent"]}'

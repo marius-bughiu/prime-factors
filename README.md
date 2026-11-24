@@ -2,6 +2,10 @@
 
 What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/character-conjectures.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
+## A fifth structured 2048-bit factorization
+
+For balanced primes, if the totient $(p-1)(q-1)$ is $d$ times a square, the product and $d$ determine the factor sum by one integer square root. Trying $d=1$ through $6$ recovered two 1024-bit primes 38.76% apart from their product alone. Stopping at five leaves the input unresolved. A counting argument bounds how often a small squarefree part occurs, even before imposing primality. [Formula, proof and construction](discoveries/discriminant-strides.md) · [Benchmark and controls](benchmarks/predecessor-square.json)
+
 ## A fourth structured 2048-bit factorization
 
 A Fermat search can advance by the square of a divisor of the half-gap. Trying successive powers of five split a 2048-bit product with primes 19.4% apart in **438 midpoint tests and 4,375 modular lifting tests**. The search received only the product and fixed budgets. Both prime predecessors are twice a prime. A control of the same size exhausts the budget. [Search bound, construction and certificate](discoveries/smooth-factor-gaps.md)
