@@ -8,6 +8,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did we find from the product alone?
 
+On a fresh 79-bit product, rewriting square remainders as fractions found **574,883,478,241 × 911,431,354,859**. Checking a single remainder at a time found neither prime on the same draws. At 2,048 bits we can prove the fraction method takes fewer random draws than that direct search on every product of two 1,024-bit primes. Both searches are still impractical at the cutoffs we studied. [Example, comparison and limits](discoveries/rational-square-search.md)
+
 On a separate sample of 64 fresh 79-bit products, we used their remainders at small primes to choose how to start a continued fraction. At the same 5,138 steps per input, the guided search found both primes in **26 cases**, up from **14** with the ordinary starting choice. It kept all 14 earlier successes. On a constructed 2,048-bit number its score was as high as possible, yet every combination of its results failed to split the number. A single Fermat check found both primes there. [Paired results](discoveries/scored-multipliers.md) · [Why a perfect score can fail](discoveries/square-neighbor-period.md)
 
 A square search found both primes of a 79-bit product on its 1,001st candidate. We froze its settings and tested it on 64 fresh products of the same size. The short search succeeded on none. A longer search that combined remainders succeeded on 13, while ordinary continued fractions succeeded on 15. Twelve successes overlapped. [All 64 products and outcomes](discoveries/crt-holdout.md)

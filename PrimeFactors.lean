@@ -49,6 +49,7 @@ import PrimeFactors.LongPeriod
 import PrimeFactors.LowFactorBits
 import PrimeFactors.LowProductRank
 import PrimeFactors.ManyDiscriminants
+import PrimeFactors.MaskedRelations
 import PrimeFactors.MidpointBlocks
 import PrimeFactors.MidpointClasses
 import PrimeFactors.MixedHeights
@@ -83,6 +84,9 @@ import PrimeFactors.ProductPrefix
 import PrimeFactors.QuotientBudget
 import PrimeFactors.QuotientSearch
 import PrimeFactors.ReducedSlopes
+import PrimeFactors.RandomRelationSigns
+import PrimeFactors.RationalSquare
+import PrimeFactors.RationalSquareCount
 import PrimeFactors.RareRows
 import PrimeFactors.ReflectedImages
 import PrimeFactors.ResidueCount
@@ -100,6 +104,7 @@ import PrimeFactors.ShiftParameter
 import PrimeFactors.ShiftPortfolio
 import PrimeFactors.ShiftedResidues
 import PrimeFactors.ShortBasisSieve
+import PrimeFactors.SmoothSampleBound
 import PrimeFactors.SquareNeighborPeriod
 import PrimeFactors.SieveBudget
 import PrimeFactors.SieveInterval

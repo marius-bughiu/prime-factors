@@ -6,6 +6,8 @@ The subsequent investigation gives an analytic comparison at any integer factor 
 
 The batch-gcd analysis gives the cost of searching scattered arithmetic progressions once they have been identified. The weighted-table result bounds the number of candidates that arbitrary labels and weights can cover. An exact binomial formula gives the larger prime on the whole balanced input class, with the cost concentrated in a single modular coefficient. [Scattered intervals](batch-intervals.md) · [Weighted coverage](batching-weighted-bands.md) · [Binomial formula](pascal-readout.md)
 
+A separate search draws random roots and represents their squares by fractions with both parts below the square root of half the product. A counting argument bounds the savings over directly testing the centered square remainder on every product of two 1,024-bit primes with a 2,048-bit product. It also gives explicit limits on the chance of collecting even one row at each tested cutoff. [Fraction search and costs](rational-square-search.md)
+
 ## One square test for a divisor interval
 
 Allowing any minimizing integer cost for a chosen real slope extends the first-level test below. A population bound covers even very large weights and choices guided by the ends of the product. [Supporting slopes](supporting-slopes.md)

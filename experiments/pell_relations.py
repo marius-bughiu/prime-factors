@@ -51,6 +51,19 @@ def _coprime_base(values):
             return ordered
 
 
+def insert_parity(pivots, parity, subset):
+    """Insert one parity column and return the new dependency mask, if any."""
+    while parity:
+        bit = parity.bit_length() - 1
+        if bit not in pivots:
+            pivots[bit] = (parity, subset)
+            return None
+        row, indices = pivots[bit]
+        parity ^= row
+        subset ^= indices
+    return subset
+
+
 def _dependencies(norms):
     """A basis for the subsets whose signed product is an integer square."""
     base = _coprime_base([abs(q) for q in norms])
@@ -67,16 +80,8 @@ def _dependencies(norms):
                 parity |= 1 << j
         if value != 1:
             raise ArithmeticError('gcd refinement lost a factor')
-        subset = 1 << i
-        while parity:
-            bit = parity.bit_length() - 1
-            if bit not in pivots:
-                pivots[bit] = (parity, subset)
-                break
-            row, indices = pivots[bit]
-            parity ^= row
-            subset ^= indices
-        else:
+        subset = insert_parity(pivots, parity, 1 << i)
+        if subset is not None:
             dependencies.append(subset)
     return dependencies
 
@@ -106,6 +111,18 @@ def search(n, multiplier, max_steps, *, use_gmp=False, external=1):
     return check_rows(n, rows, work, use_gmp=use_gmp, external=external)
 
 
+def dependency_gcd(n, rows, mask):
+    chosen = [row for i, row in enumerate(rows) if mask >> i & 1]
+    square = prod(q for _, q, _ in chosen)
+    root = isqrt(square)
+    if root * root != square:
+        raise ArithmeticError('parity dependency produced a nonsquare')
+    numerator = 1
+    for _, _, residue in chosen:
+        numerator = numerator * residue % n
+    return gcd(numerator - root, n), [label for label, _, _ in chosen]
+
+
 def check_rows(n, rows, work, *, use_gmp=False, external=1):
     """Check signed square dependencies; labels may identify several walks."""
     if use_gmp:
@@ -132,19 +149,11 @@ def check_rows(n, rows, work, *, use_gmp=False, external=1):
     basis = _dependencies([q for _, q, _ in rows])
     work['dependencies'] = len(basis)
     for mask in basis:
-        chosen = [row for i, row in enumerate(rows) if mask >> i & 1]
-        square = prod(q for _, q, _ in chosen)
-        root = isqrt(square)
-        if root * root != square:
-            raise ArithmeticError('parity dependency produced a nonsquare')
-        numerator = 1
-        for _, _, residue in chosen:
-            numerator = numerator * residue % n
-        divisor = gcd(numerator - root, n)
+        divisor, selected = dependency_gcd(n, rows, mask)
         work['tested'] += 1
         if 1 < divisor < n:
             return dict(work, outcome='relation', factor=divisor,
-                        selected_steps=[label for label, _, _ in chosen])
+                        selected_steps=selected)
     return work
 
 

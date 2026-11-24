@@ -67,6 +67,11 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'rational-squares':
+        w = result['rational_squares']
+        count = (f'{w["mode"].capitalize()} square search · {w["draws"]:,} of {w["max_draws"]:,} draws · '
+                 f'{w["euclidean_divisions"]:,} Euclidean divisions · {w["smooth_rows"]:,} smooth rows · '
+                 f'{w["tested"]:,} relations tested')
     elif result['method'] == 'scored-multipliers':
         w = result['scored_multipliers']
         count = (f'Continued fraction · multiplier {w["multiplier"]} · {w["candidates"]} choices considered · '

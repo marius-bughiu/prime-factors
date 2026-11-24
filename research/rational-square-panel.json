@@ -1,0 +1,808 @@
+{
+  "seed": "rational-square-panel-v1",
+  "count": 16,
+  "draws": 8192,
+  "bound": 4096,
+  "cases": [
+    {
+      "attempt": 5,
+      "n": "523966827459249076123019",
+      "expected_factors": [
+        "574883478241",
+        "911431354859"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "523966827459249076123019"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 9461,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "523966827459249076123019"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 9461,
+            "euclidean_divisions": 190405,
+            "in_box": 5018,
+            "smooth_rows": 6,
+            "private_pruned": 6,
+            "pruning_rounds": 1,
+            "min_private_bits": 47,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 6,
+      "n": "395586280621739531058193",
+      "expected_factors": [
+        "563587006877",
+        "701908091909"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "395586280621739531058193"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 12483,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "395586280621739531058193"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 12483,
+            "euclidean_divisions": 189248,
+            "in_box": 4967,
+            "smooth_rows": 6,
+            "private_pruned": 6,
+            "pruning_rounds": 1,
+            "min_private_bits": 32,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 7,
+      "n": "329027088693152441102639",
+      "expected_factors": [
+        "568178380859",
+        "579091179421"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "329027088693152441102639"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 15175,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "329027088693152441102639"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 15175,
+            "euclidean_divisions": 188450,
+            "in_box": 5001,
+            "smooth_rows": 1,
+            "private_pruned": 1,
+            "pruning_rounds": 1,
+            "min_private_bits": 76,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 8,
+      "n": "386721987721517381226809",
+      "expected_factors": [
+        "555104335183",
+        "696665407223"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "386721987721517381226809"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 12857,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "386721987721517381226809"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 12857,
+            "euclidean_divisions": 189694,
+            "in_box": 4972,
+            "smooth_rows": 4,
+            "private_pruned": 4,
+            "pruning_rounds": 1,
+            "min_private_bits": 60,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 11,
+      "n": "431151876637593899761459",
+      "expected_factors": [
+        "569488567727",
+        "757086096317"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "431151876637593899761459"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 11614,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "431151876637593899761459"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 11614,
+            "euclidean_divisions": 189469,
+            "in_box": 5038,
+            "smooth_rows": 4,
+            "private_pruned": 4,
+            "pruning_rounds": 1,
+            "min_private_bits": 48,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 13,
+      "n": "427025682979298230434833",
+      "expected_factors": [
+        "588094252327",
+        "726117763079"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "427025682979298230434833"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 11526,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "427025682979298230434833"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 11526,
+            "euclidean_divisions": 189823,
+            "in_box": 4922,
+            "smooth_rows": 11,
+            "private_pruned": 11,
+            "pruning_rounds": 1,
+            "min_private_bits": 37,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 14,
+      "n": "536807549000626433870237",
+      "expected_factors": [
+        "715334425763",
+        "750428791999"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "536807549000626433870237"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 9193,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "536807549000626433870237"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 9193,
+            "euclidean_divisions": 189846,
+            "in_box": 5035,
+            "smooth_rows": 2,
+            "private_pruned": 2,
+            "pruning_rounds": 1,
+            "min_private_bits": 53,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 17,
+      "n": "467710122297648416629753",
+      "expected_factors": [
+        "576214877981",
+        "811693936013"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "467710122297648416629753"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 10539,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "467710122297648416629753"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 10539,
+            "euclidean_divisions": 190107,
+            "in_box": 4994,
+            "smooth_rows": 4,
+            "private_pruned": 4,
+            "pruning_rounds": 1,
+            "min_private_bits": 40,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 18,
+      "n": "573985728961585024138603",
+      "expected_factors": [
+        "743903282203",
+        "771586498801"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "573985728961585024138603"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8631,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "573985728961585024138603"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8631,
+            "euclidean_divisions": 190305,
+            "in_box": 4953,
+            "smooth_rows": 5,
+            "private_pruned": 5,
+            "pruning_rounds": 1,
+            "min_private_bits": 45,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 26,
+      "n": "583481551901464089210937",
+      "expected_factors": [
+        "688623768451",
+        "847315440787"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "583481551901464089210937"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8497,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "583481551901464089210937"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8497,
+            "euclidean_divisions": 190644,
+            "in_box": 5030,
+            "smooth_rows": 4,
+            "private_pruned": 4,
+            "pruning_rounds": 1,
+            "min_private_bits": 52,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 27,
+      "n": "572380950862688164706057",
+      "expected_factors": [
+        "673833667631",
+        "849439525447"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "572380950862688164706057"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8622,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "572380950862688164706057"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8622,
+            "euclidean_divisions": 190684,
+            "in_box": 4983,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 29,
+      "n": "587663730365259098518189",
+      "expected_factors": [
+        "644216008523",
+        "912215347943"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "587663730365259098518189"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8412,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "587663730365259098518189"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8412,
+            "euclidean_divisions": 190963,
+            "in_box": 5004,
+            "smooth_rows": 4,
+            "private_pruned": 4,
+            "pruning_rounds": 1,
+            "min_private_bits": 58,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 31,
+      "n": "505791718931740915587743",
+      "expected_factors": [
+        "667550165519",
+        "757683459697"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "505791718931740915587743"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 9813,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "505791718931740915587743"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 9813,
+            "euclidean_divisions": 190432,
+            "in_box": 5012,
+            "smooth_rows": 2,
+            "private_pruned": 2,
+            "pruning_rounds": 1,
+            "min_private_bits": 66,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 33,
+      "n": "588622882738225524215659",
+      "expected_factors": [
+        "626992094867",
+        "938804312777"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "588622882738225524215659"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8427,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "588622882738225524215659"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8427,
+            "euclidean_divisions": 190667,
+            "in_box": 4985,
+            "smooth_rows": 2,
+            "private_pruned": 2,
+            "pruning_rounds": 1,
+            "min_private_bits": 68,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 34,
+      "n": "461734987887353215187617",
+      "expected_factors": [
+        "568098144473",
+        "812773272329"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "461734987887353215187617"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 10707,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "461734987887353215187617"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 10707,
+            "euclidean_divisions": 189564,
+            "in_box": 4957,
+            "smooth_rows": 3,
+            "private_pruned": 3,
+            "pruning_rounds": 1,
+            "min_private_bits": 58,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    },
+    {
+      "attempt": 35,
+      "n": "585904521742570975713061",
+      "expected_factors": [
+        "706818192497",
+        "828932429813"
+      ],
+      "methods": {
+        "centered": {
+          "factors": [],
+          "remaining": [
+            "585904521742570975713061"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8435,
+            "euclidean_divisions": 0,
+            "in_box": 8192,
+            "smooth_rows": 0,
+            "private_pruned": 0,
+            "pruning_rounds": 0,
+            "min_private_bits": null,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        },
+        "fraction": {
+          "factors": [],
+          "remaining": [
+            "585904521742570975713061"
+          ],
+          "work": {
+            "outcome": "no_split",
+            "draws": 8192,
+            "random_words": 8435,
+            "euclidean_divisions": 189875,
+            "in_box": 4995,
+            "smooth_rows": 3,
+            "private_pruned": 3,
+            "pruning_rounds": 1,
+            "min_private_bits": 53,
+            "dependencies": 0,
+            "tested": 0,
+            "selected_steps": []
+          }
+        }
+      }
+    }
+  ]
+}
