@@ -85,6 +85,23 @@ def prime_witness(n: int) -> Witness | None:
     return None
 
 
+def certificate_witness(n: int) -> Witness | None:
+    """Keep an accepted witness, shortening its proof when one power of two suffices."""
+    witness = prime_witness(n)
+    if witness is None or len(witness.powers) < 2:
+        return witness
+    exponent = (n.bit_length() + 1) // 2
+    order = 1 << exponent
+    covered = prod(p**e for p, e in witness.powers)
+    if covered % order:
+        return witness
+    root = pow(witness.root, covered // order, n)
+    half_power = pow(root, order // 2, n)
+    if half_power*half_power % n == 1 and gcd(half_power-1, n) == 1:
+        return Witness(root, ((2, exponent),), partial_order=True)
+    return witness
+
+
 def fermat_split(n: int, limit: int) -> tuple[int | None, int]:
     """Try at most limit consecutive midpoints starting at ceil(sqrt(n))."""
     midpoint = isqrt(n - 1) + 1
@@ -175,7 +192,7 @@ def render_certificate(n: int, factors: list[int]) -> str:
         nonlocal order_module
         if p in emitted:
             return
-        witness = prime_witness(p)
+        witness = certificate_witness(p)
         if witness is None:
             raise ValueError(f"no primality witness found for {p}")
         for q, _ in witness.powers:

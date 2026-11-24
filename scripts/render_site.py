@@ -70,7 +70,7 @@ def case_row(result):
     elif result['method'] == 'seed-gap-sieve':
         w = result['seed_gap_sieve']
         count = (f'Fraction norm at most {w["max_norm"]:,} · wheel modulus {w["modulus"]:,} · '
-                 f'{w["entries"]:,} square classes · {w["gaps"]:,} gaps visited · '
+                 f'{w["entries"]:,} square classes · gap count {w["gaps"]:,} · '
                  f'{w["square_tests"]:,} candidate square roots computed')
     elif result['method'] == 'guided-pairs':
         w = result['guided_pairs']

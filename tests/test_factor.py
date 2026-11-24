@@ -1,12 +1,14 @@
 import json
-from math import isqrt, prod
+from math import gcd, isqrt, prod
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
-from scripts.factor import adjacent_shift_split, discover, fermat_split, prime_witness, render_certificate
+from scripts.factor import Witness, adjacent_shift_split, certificate_witness, discover, fermat_split
+from scripts.factor import prime_witness, render_certificate
 
 
 REPO = Path(__file__).resolve().parents[1]
@@ -67,6 +69,33 @@ class FactorTests(unittest.TestCase):
     def test_pseudoprime_does_not_get_certificate(self):
         for n in (341, 2047, 561, 3215031751, 3825123056546413051):
             self.assertIsNone(prime_witness(n))
+
+    def test_single_power_covers_planted_primes(self):
+        cases = json.loads((REPO / 'benchmarks/guided-pairs.json').read_text())
+        case = next(row for row in cases if row['id'] == 'guided-pair-planted-2048')
+        factors = list(map(int, case['factors']))
+        for p in factors:
+            original = prime_witness(p)
+            witness = certificate_witness(p)
+            self.assertGreater(len(original.powers), 1)
+            self.assertTrue(witness.partial_order)
+            self.assertEqual(witness.powers, ((2, 512),))
+            order = 2**512
+            self.assertTrue((order//2)**2 < p <= order**2)
+            self.assertEqual(pow(witness.root, order, p), 1)
+            self.assertEqual(gcd(pow(witness.root, order//2, p)-1, p), 1)
+        proof = render_certificate(int(case['n']), factors)
+        self.assertEqual(proof.count('apply prime_of_partial_order_cover'), 2)
+        self.assertEqual(proof.count('reduce_mod_char'), 4)
+
+    def test_order_shortening_preserves_other_witnesses(self):
+        # Small leaf, insufficient 2-part, one-prime cover, and rejected composite.
+        for n in (257, 10007, 65537, 2047):
+            self.assertEqual(certificate_witness(n), prime_witness(n))
+        # A projected half power can square to one and still fail coprimality.
+        original = Witness(1, ((2, 7), (3, 2)))
+        with patch('scripts.factor.prime_witness', return_value=original):
+            self.assertIs(certificate_witness(1153), original)
 
     def test_subgroup_cli_discovers_then_certifies_its_split(self):
         p = 223 * 2**512 + 1

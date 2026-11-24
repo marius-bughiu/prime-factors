@@ -12,6 +12,8 @@ $$ U^2=24N+1,\qquad U-1=4q,\qquad U+1=6p. $$
 
 Since $7\mid U$, the integer $D=(U/7)^2$ satisfies $49D=24N+1$. Thus the two fractions $49/1$ and $1/D$ both represent 49 modulo $N$. Their signed norms multiply to $U^2$, and $2D<N$. The gcd of $U-1$ and $N$ is $q$. When the search starts at the specially chosen residue 49, both fractions appear within three Euclidean states. The exact square test succeeds on its first comparison. [Fraction-pair theorem](../PrimeFactors/SameSourcePair.lean) · [Euclidean search](../experiments/pair_class_search.py)
 
+Each original primality witness covered 25 distinct primes dividing the group order. The certificate generator can project that witness onto the subgroup of order $F=2^{512}$. For each candidate prime $r$ it checks $r\le F^2$, $z^F=1\pmod r$, and $\gcd(z^{F/2}-1,r)=1$. These conditions force each prime divisor of $r$ to exceed $F$, which proves $r$ prime. Across both primes and all supporting proofs, the generated certificate dropped from 57 modular power checks to four, and from 44,515 bytes to 10,718. The shorter certificate passed Lean's axiom audit in a 2.26-second local replay. [Partial-order theorem](../PrimeFactors/PartialOrder.lean) · [Certificate generator](../scripts/factor.py)
+
 ## What each search uses
 
 | Search | Information supplied | Work on this input |
