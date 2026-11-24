@@ -17,6 +17,7 @@ if str(ROOT) not in sys.path:
 
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.midpoint_readings import search as midpoint_readings_search
+from experiments.short_basis_sieve import search as short_basis_search
 from experiments.pascal_readout import search as pascal_search
 from experiments.inverse_windows import search_product as inverse_windows_search
 from experiments.continued_square import search as continued_square_search
@@ -72,6 +73,24 @@ def certify_split(case, proof, factor, search_seconds, key, work):
     return result
 
 
+def short_basis_case(case, proof):
+    start = time.perf_counter()
+    run = short_basis_search(int(case['n']), case['m'], case['m0'], case['primes'],
+                             case['max_bad'], exceptional=case['use_exceptional'])
+    elapsed = time.perf_counter() - start
+    ordinary = run['ordinary']
+    exceptional = run.get('exceptional', {})
+    fallback = run.get('fallback', {})
+    hits = [ordinary['first'], *(sweep['power'] for sweep in exceptional.values()), fallback.get('first')]
+    factor = next((hit['factor'] for hit in hits if hit is not None), None)
+    work = dict(run, ordinary_gcds=ordinary['work'].get('pair_gcds', 0),
+                exceptional_gcds=sum(sweep['work']['pair_gcds'] for sweep in exceptional.values()),
+                fallback_gcds=fallback.get('work', {}).get('pair_gcds', 0),
+                use_exceptional=case['use_exceptional'])
+    agree(case, work, ['sparse_entries', 'ordinary_gcds', 'exceptional_gcds', 'fallback_gcds'])
+    return certify_split(case, proof, factor, elapsed, 'short_basis', work)
+
+
 def run_case(case, method, proofs):
     name = case['id']
     if not re.fullmatch(r'[a-zA-Z0-9_-]+', name):
@@ -86,6 +105,8 @@ def run_case(case, method, proofs):
         agree(case, work, ['low_classes', 'modular_hits'])
         factor = pairs[0][0] if pairs else None
         result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
+    elif method == 'short-basis':
+        result = short_basis_case(case, proof)
     elif method == 'pascal':
         work = pascal_search(int(case['n']), case['cutoff'], case['max_index'])
         elapsed = time.perf_counter() - start
@@ -203,6 +224,7 @@ def main():
                              ('cyclotomic-periods.json', 'cyclotomic'), ('gap-stride.json', 'gap-stride'),
                              ('predecessor-square.json', 'predecessor-square'),
                              ('square-offset.json', 'square-offset'), ('continued-square.json', 'continued-square'),
+                             ('short-basis.json', 'short-basis'),
                              ('pascal.json', 'pascal'), ('midpoint-readings.json', 'midpoint-readings'),
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:

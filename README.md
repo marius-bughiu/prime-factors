@@ -1,8 +1,12 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/character-conjectures.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/short-basis-sieve.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
-**Can this factor an arbitrary 2048-bit input easily?** We can verify particular large factorizations. Efficiently finding the two primes of a product formed from independently chosen 1024-bit primes remains the open goal.
+**Can I give you a 2048-bit number and get its prime factors easily?** No. We have factored six specially constructed 2048-bit numbers from their products alone. Their primes had relationships our methods could exploit. If you multiply two independently chosen 1024-bit primes and give us only their product, we have no practical way to recover them in general. Lean can check that proposed factors are prime and multiply back to the input.
+
+## Less work in a deterministic search for balanced primes
+
+We derive a smaller worst-case bound for a search that applies to every pair of distinct odd primes $p<q\le2p$. The search keeps the shortest lattice weights. If too many local tests fail, it divides out the primes shared by the weights and searches the smaller pairs separately. The argument doubles the constant in the secondary saving of Stănică’s 2026 bound for this input class. The main exponent is still $1/5$. Lean checks parts of the derivation, and the full bound is a research result awaiting independent review. [Derivation and costs](discoveries/short-basis-sieve.md) · [Benchmarks and controls](benchmarks/short-basis.json)
 
 ## A formula for every pair of distinct 1024-bit primes
 

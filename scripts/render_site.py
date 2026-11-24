@@ -57,6 +57,13 @@ def case_row(result):
         count = (f'Balanced-interval modular search · {w["low_classes"]:,} low residue classes'
                  f' · {w["modular_hits"]:,} candidate products · {w["euclidean_steps"]:,} Euclidean steps'
                  f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'short-basis':
+        w = result['short_basis']
+        extra = 'on' if w['use_exceptional'] else 'off'
+        count = (f'Short lattice weights · {w["sparse_entries"]:,} baby table entries'
+                 f' · {w["kept"]:,} ordinary giant records · {w["ordinary_gcds"]:,} ordinary gcds'
+                 f' · exceptional search {extra} · {w["exceptional_gcds"]:,} exceptional gcds'
+                 f' · {w["fallback_gcds"]:,} fallback gcds · search {duration(result["discovery_seconds"])}')
     elif result['method'] == 'pascal':
         w = result['pascal']
         count = (f'Binomial formula · {escape(w["cutoff"])} cutoff · index {escape(w["index"])}'

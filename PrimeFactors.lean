@@ -8,6 +8,7 @@ import PrimeFactors.Certificate
 import PrimeFactors.ClassNumberWindow
 import PrimeFactors.ConditionalStride
 import PrimeFactors.ContinuedSquare
+import PrimeFactors.CoupledImages
 import PrimeFactors.CountingReadout
 import PrimeFactors.CyclotomicPeriods
 import PrimeFactors.DiscriminantPencil
@@ -18,6 +19,7 @@ import PrimeFactors.DivisorTensor
 import PrimeFactors.DyadicMass
 import PrimeFactors.DyadicReadout
 import PrimeFactors.DyadicSeries
+import PrimeFactors.ExceptionalWeights
 import PrimeFactors.ExponentialReadout
 import PrimeFactors.FactorCircuit
 import PrimeFactors.FactorSum
@@ -54,6 +56,7 @@ import PrimeFactors.PrimePowerCount
 import PrimeFactors.ProductAdvice
 import PrimeFactors.ProductPrefix
 import PrimeFactors.ReducedSlopes
+import PrimeFactors.ReflectedImages
 import PrimeFactors.ResidueCount
 import PrimeFactors.ReverseSweep
 import PrimeFactors.SampledSieve
@@ -62,6 +65,7 @@ import PrimeFactors.ShiftCubic
 import PrimeFactors.ShiftParameter
 import PrimeFactors.ShiftPortfolio
 import PrimeFactors.ShiftedResidues
+import PrimeFactors.ShortBasisSieve
 import PrimeFactors.SieveInterval
 import PrimeFactors.SignatureCount
 import PrimeFactors.StrideWheel

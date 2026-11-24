@@ -1,0 +1,94 @@
+[
+  {
+    "id": "short-basis-exception-control",
+    "description": "Ordinary search leaves the mixed-branch product unresolved",
+    "n": "5459",
+    "m": 15,
+    "m0": 3,
+    "primes": [
+      3,
+      5
+    ],
+    "max_bad": 0,
+    "use_exceptional": false,
+    "sparse_entries": 11,
+    "ordinary_gcds": 18,
+    "exceptional_gcds": 0,
+    "fallback_gcds": 0,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "5459"
+    ]
+  },
+  {
+    "id": "short-basis-exception",
+    "description": "Reduced weights recover the mixed-branch product",
+    "n": "5459",
+    "m": 15,
+    "m0": 3,
+    "primes": [
+      3,
+      5
+    ],
+    "max_bad": 0,
+    "use_exceptional": true,
+    "sparse_entries": 11,
+    "ordinary_gcds": 18,
+    "exceptional_gcds": 6,
+    "fallback_gcds": 0,
+    "status": "complete",
+    "factors": [
+      "53",
+      "103"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "short-basis-tolerated",
+    "description": "One failed local test preserves the actual factor",
+    "n": "22261",
+    "m": 105,
+    "m0": 4,
+    "primes": [
+      3,
+      5,
+      7
+    ],
+    "max_bad": 1,
+    "use_exceptional": false,
+    "sparse_entries": 89,
+    "ordinary_gcds": 363,
+    "exceptional_gcds": 0,
+    "fallback_gcds": 0,
+    "status": "complete",
+    "factors": [
+      "113",
+      "197"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "short-basis-28",
+    "description": "Both branches search a 28-bit balanced product",
+    "n": "150235091",
+    "m": 15,
+    "m0": 3,
+    "primes": [
+      3,
+      5
+    ],
+    "max_bad": 0,
+    "use_exceptional": true,
+    "sparse_entries": 97,
+    "ordinary_gcds": 1070,
+    "exceptional_gcds": 3,
+    "fallback_gcds": 0,
+    "status": "complete",
+    "factors": [
+      "10007",
+      "15013"
+    ],
+    "remaining": []
+  }
+]
