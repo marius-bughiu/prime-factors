@@ -4,11 +4,25 @@ What information about two unknown primes can be recovered cheaply from their pr
 
 **Can I give you a 2048-bit number and get its prime factors easily?** No. We have factored six specially constructed 2048-bit numbers from their products alone. Their primes had relationships our methods could exploit. If you multiply two independently chosen 1024-bit primes and give us only their product, we have no practical way to recover them in general. Lean can check that proposed factors are prime and multiply back to the input.
 
+## Can one guess cover many possible factors?
+
+Imagine drawing all whole-number pairs whose product is at least the input. For some choices of weights, the pair with the smallest weighted sum gives the exact factors. Even granting that minimum for free, a trillion preselected weights succeed on less than one in $2^{460}$ random 2,048-bit products of two 1,024-bit primes. The proof also covers weights chosen using many of the product’s digits. A separate result gives the exact number of short arithmetic progressions needed when particular digits of a factor are known. For a 1,024-bit prime, 511 unknown digits in one block can be handled by one lattice search. Leaving every other digit unknown instead takes $2^{255}$ progressions for complete coverage by that strategy. [Choosing weights](discoveries/supporting-slopes.md) · [Which factor digits help](discoveries/scattered-factor.md)
+
+## Coarse measurements that reveal both primes
+
+For any product of two distinct odd primes, a sequence of measurements called Salié sums determines a number whose square leaves remainder one. Its two neighbors reveal the primes by ordinary greatest common divisors. The measurements can be quite rough. At 667, rounding each to the nearest 1/256 still gave 436, with $\gcd(435,667)=29$ and $\gcd(437,667)=23$. Directly computing the 21 measurements used 12,936 terms. Computing them cheaply for large products is the open step. [Derivation and sampling costs](discoveries/divisor-samples.md) · [Checked examples and capped run](benchmarks/divisor-samples.json)
+
+## What the Riemann proof contributes
+
+We also tested an inequality that follows from the recent Riemann proof. It gives a limit that would reveal both primes if we could estimate it to within one. At 2,048 bits, writing out even a multiplier that improves the elementary bound would take more than $2^{1023}$ bits. [Robin’s inequality and the cost of using it](discoveries/robin-multipliers.md)
+
 ## Less work in a deterministic search for balanced primes
 
 For any product of two distinct odd primes within a factor of two, we derive a way to use more small-prime tests in a deterministic search. We count the few rows that miss too many tests and search them separately. If setting up the tests fails, that failure narrows a factor to an arithmetic progression. Together these changes multiply the constant in the secondary saving of Stănică’s 2026 arithmetic sieve by four. The leading exponent stays at $1/5$. Lean checks finite steps in the argument. The full asymptotic bound awaits independent review. The implementation recovered the factors of independently sampled 63-bit and 79-bit products. [Derivation and measured work](discoveries/wide-modulus-sieve.md) · [Earlier bound](discoveries/short-basis-sieve.md) · [Reproducible examples](benchmarks/wide-modulus.json)
 
 At 2048 bits, tuning the modulus in the current implementation still leaves at least $2^{400}$ residue visits or table entries if setup reaches the main sieve. This lower bound helps explain why the small examples do not scale to ordinary 2048-bit products. [Exact finite costs](discoveries/finite-sieve-cost.md) · [Which patterns real search rows require](discoveries/signs-of-short-weights.md)
+
+Combining overlapping blocks saved ten polynomial evaluations on $150235091=10007\cdot15013$. A bound on how often the actual search blocks overlap limits how much work this particular change can save at larger sizes. [Proof and reproducible calculation](discoveries/implicit-powers.md)
 
 ## A formula for every pair of distinct 1024-bit primes
 

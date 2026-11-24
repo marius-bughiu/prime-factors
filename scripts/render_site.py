@@ -57,6 +57,14 @@ def case_row(result):
         count = (f'Balanced-interval modular search · {w["low_classes"]:,} low residue classes'
                  f' · {w["modular_hits"]:,} candidate products · {w["euclidean_steps"]:,} Euclidean steps'
                  f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'divisor-samples':
+        w = result['divisor_samples']
+        outcome = {'phase_split': 'recovered a root', 'frequency_gcd': 'frequency gcd split',
+                   'budget': 'term budget exhausted', 'size_limit': 'size limit reached',
+                   'unresolved': 'unresolved'}[w['outcome']]
+        count = (f'Salié sums · {outcome} · {w["sums"]:,} distinct sums · '
+                 f'{w["terms"]:,} of {w["max_terms"]:,} terms · '
+                 f'{w["unit_gcds"]:,} unit tests during setup')
     elif result['method'] == 'wide-modulus':
         w = result['wide_modulus']
         order = w['order']

@@ -16,6 +16,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from experiments.modular_hyperbola import search as hyperbola_search
+from experiments.divisor_samples import search as divisor_sample_search
 from experiments.midpoint_readings import search as midpoint_readings_search
 from experiments.short_basis_sieve import search as short_basis_search
 from experiments.wide_modulus import search as wide_modulus_search
@@ -106,6 +107,14 @@ def run_case(case, method, proofs):
         agree(case, work, ['low_classes', 'modular_hits'])
         factor = pairs[0][0] if pairs else None
         result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
+    elif method == 'divisor-samples':
+        work = divisor_sample_search(int(case['n']), case['max_terms'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, ['outcome', 'root', 'anchor', 'terms', 'sums', 'unit_gcds',
+                           'inverses', 'jacobi_evaluations', 'frequency_gcds'])
+        work['max_terms'] = case['max_terms']
+        result = certify_split(case, proof, factor, elapsed, 'divisor_samples', work)
     elif method == 'wide-modulus':
         work = wide_modulus_search(int(case['n']), **case['parameters'])
         elapsed = time.perf_counter() - start
@@ -234,6 +243,7 @@ def main():
                              ('square-offset.json', 'square-offset'), ('continued-square.json', 'continued-square'),
                              ('short-basis.json', 'short-basis'), ('wide-modulus.json', 'wide-modulus'),
                              ('pascal.json', 'pascal'), ('midpoint-readings.json', 'midpoint-readings'),
+                             ('divisor-samples.json', 'divisor-samples'),
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())

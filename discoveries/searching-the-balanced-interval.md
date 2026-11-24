@@ -8,6 +8,8 @@ The batch-gcd analysis gives the cost of searching scattered arithmetic progress
 
 ## One square test for a divisor interval
 
+Allowing any minimizing integer cost for a chosen real slope extends the first-level test below. A population bound covers even very large weights and choices guided by the ends of the product. [Supporting slopes](supporting-slopes.md)
+
 Choose positive integers $a,b$ and compute $m=\lceil\sqrt{4abN}\rceil$. If a divisor $x$ lies in the band
 
 $$\bigl(2ax-(m+1)\bigr)^2\le 2m,$$

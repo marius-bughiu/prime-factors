@@ -14,6 +14,7 @@ import PrimeFactors.CountingReadout
 import PrimeFactors.CyclotomicPeriods
 import PrimeFactors.DiscriminantPencil
 import PrimeFactors.DiscriminantStride
+import PrimeFactors.DivisorSample
 import PrimeFactors.DivisorSignal
 import PrimeFactors.DivisorSum
 import PrimeFactors.DivisorTensor
@@ -31,6 +32,7 @@ import PrimeFactors.FourierAccess
 import PrimeFactors.GapStride
 import PrimeFactors.GroupedImages
 import PrimeFactors.HyperbolaBoxes
+import PrimeFactors.ImplicitPowers
 import PrimeFactors.IntervalGap
 import PrimeFactors.InverseWindows
 import PrimeFactors.Isolation
@@ -64,7 +66,10 @@ import PrimeFactors.RareRows
 import PrimeFactors.ReflectedImages
 import PrimeFactors.ResidueCount
 import PrimeFactors.ReverseSweep
+import PrimeFactors.RobinMultiplier
+import PrimeFactors.SalieCounts
 import PrimeFactors.SampledSieve
+import PrimeFactors.ScatteredFactor
 import PrimeFactors.SeparatedPairs
 import PrimeFactors.ShiftCubic
 import PrimeFactors.ShiftParameter
@@ -76,6 +81,7 @@ import PrimeFactors.SieveInterval
 import PrimeFactors.SignatureCount
 import PrimeFactors.StrideWheel
 import PrimeFactors.Subgroup
+import PrimeFactors.SupportingSlope
 import PrimeFactors.SumGaps
 import PrimeFactors.TotientTensor
 import PrimeFactors.TruncatedProduct
