@@ -17,7 +17,8 @@
   </section>
   <section class="methods" id="theory"><h2>What the proofs establish</h2>
     <div class="columns"><article><h3>Can we recognize the right guess?</h3><p>For two distinct 1,024-bit primes with a 2,048-bit product, 1,040 random checks can identify their average with over 99.9999% probability if we test every candidate. On a 41-bit example, we tested all 41,807 candidates to find the one that passed.</p><a href="$tree/discoveries/random-midpoint-checks.md">Read the argument</a> · <a href="#midpoint-readings-41">View the checked example</a></article>
-    <article><h3>One 512-bit count suffices</h3><p>A count built from a 2048-bit product of two distinct odd primes gives enough low bits of the larger prime for polynomial-time recovery. Computing that count efficiently at this size remains open.</p><a href="$tree/discoveries/quarter-width-count.md">See the construction and cost</a> · <a href="$tree/discoveries/truncated-products.md">How many product bits are needed?</a></article>
+    <article><h3>One remainder gives a prime</h3><p>A binomial coefficient computed from the product gives the larger prime exactly. On a 31-bit product the direct calculation produced a 761,262-bit intermediate. Computing the remainder efficiently at 2,048 bits is the open step.</p><a href="$tree/discoveries/pascal-readout.md">Read the formula</a> · <a href="#pascal-sqrt-31">View the checked example</a></article>
+
     <article><h3>One L-value determines the sum</h3><p>A single boundary reading at height 1 determines the sum of two balanced primes to the nearest integer. Obtaining the reading efficiently remains open.</p><a href="$tree/discoveries/reading-the-boundary.md">See the required accuracy</a></article></div>
   </section>
   <section id="runs"><div class="section-title"><h2>Worked computational examples</h2><a href="results.json">Download run data</a></div>

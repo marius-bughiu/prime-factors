@@ -17,6 +17,7 @@ if str(ROOT) not in sys.path:
 
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.midpoint_readings import search as midpoint_readings_search
+from experiments.pascal_readout import search as pascal_search
 from experiments.inverse_windows import search_product as inverse_windows_search
 from experiments.continued_square import search as continued_square_search
 from experiments.predecessor_square import search as predecessor_square_search, search_square_offset
@@ -85,6 +86,12 @@ def run_case(case, method, proofs):
         agree(case, work, ['low_classes', 'modular_hits'])
         factor = pairs[0][0] if pairs else None
         result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
+    elif method == 'pascal':
+        work = pascal_search(int(case['n']), case['cutoff'], case['max_index'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, ['index', 'coefficients_evaluated', 'coefficient_bits', 'residue'])
+        result = certify_split(case, proof, factor, elapsed, 'pascal', work)
     elif method == 'inverse-windows':
         n = int(case['n'])
         bits = (n.bit_length() + 1) // 2
@@ -196,7 +203,7 @@ def main():
                              ('cyclotomic-periods.json', 'cyclotomic'), ('gap-stride.json', 'gap-stride'),
                              ('predecessor-square.json', 'predecessor-square'),
                              ('square-offset.json', 'square-offset'), ('continued-square.json', 'continued-square'),
-                             ('midpoint-readings.json', 'midpoint-readings'),
+                             ('pascal.json', 'pascal'), ('midpoint-readings.json', 'midpoint-readings'),
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())

@@ -4,7 +4,13 @@ What information about two unknown primes can be recovered cheaply from their pr
 
 **Can this factor an arbitrary 2048-bit input easily?** We can verify particular large factorizations. Efficiently finding the two primes of a product formed from independently chosen 1024-bit primes remains the open goal.
 
+## A formula for every pair of distinct 1024-bit primes
+
+Pick the largest odd integer $k$ below the square root of the product $N$. Divide the binomial coefficient $\binom{N-1}{k}$ by $N$ and add one to its remainder. The result is the larger prime. For $143$, the remainder is $12$, giving the factors $13$ and $11$. Lean proves this for every pair of distinct odd primes with the larger less than four times the smaller. Computing the remainder cheaply at 2048 bits is open. [Formula, proof and evaluation costs](discoveries/pascal-readout.md) · [Checked small runs](benchmarks/pascal.json)
+
 ## Ruling out whole groups of candidates
+
+One of the random midpoint checks can now be applied to a whole block in roughly the square root of the block length, up to logarithmic factors. A positive result guarantees a candidate in the block passes that **one** check. Finding a candidate who passes all the checks remains unresolved. We also give a way to search many supplied intervals at once and a lower bound on how many weighted guesses a single shared power table can cover. [Block test and its limits](discoveries/batching-midpoint-signs.md) · [Searching many intervals](discoveries/batch-intervals.md) · [Weighted table bound](discoveries/batching-weighted-bands.md)
 
 If we knew the average of the two primes, we could recover both with one square root. For any 2048-bit product of two distinct 1024-bit primes, we give 1,040 randomly chosen checks that, with probability above 99.9999%, only the correct average passes. One square root already verifies any single guess. We are looking for a way to use the shared checks on large groups of guesses at once. On a 41-bit example we tried all 41,807 possible averages, and direct square testing was faster. [Derivation, assumptions and measurements](discoveries/random-midpoint-checks.md)
 

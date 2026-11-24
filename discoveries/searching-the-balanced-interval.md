@@ -4,6 +4,8 @@ Let $N=pq$ with distinct primes $p<q\le 2p$. The balanced interval $I=[L,U]$ con
 
 The subsequent investigation gives an analytic comparison at any integer factor threshold, matching order-of-growth bounds for universal square tests, and examples of arbitrarily sparse long periods accepting the whole sum interval. [Character conjectures](character-conjectures.md)
 
+The batch-gcd analysis gives the cost of searching scattered arithmetic progressions once they have been identified. The weighted-table result bounds the number of candidates that arbitrary labels and weights can cover. An exact binomial formula gives the larger prime on the whole balanced input class, with the cost concentrated in a single modular coefficient. [Scattered intervals](batch-intervals.md) · [Weighted coverage](batching-weighted-bands.md) · [Binomial formula](pascal-readout.md)
+
 ## One square test for a divisor interval
 
 Choose positive integers $a,b$ and compute $m=\lceil\sqrt{4abN}\rceil$. If a divisor $x$ lies in the band

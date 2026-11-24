@@ -57,6 +57,13 @@ def case_row(result):
         count = (f'Balanced-interval modular search · {w["low_classes"]:,} low residue classes'
                  f' · {w["modular_hits"]:,} candidate products · {w["euclidean_steps"]:,} Euclidean steps'
                  f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'pascal':
+        w = result['pascal']
+        count = (f'Binomial formula · {escape(w["cutoff"])} cutoff · index {escape(w["index"])}'
+                 f' · index budget {w["max_index"]:,} · coefficients evaluated {w["coefficients_evaluated"]}')
+        if w['coefficient_bits'] is not None:
+            count += f' · exact coefficient size {w["coefficient_bits"]:,} bits · residue {escape(w["residue"])}'
+        count += f' · search {duration(result["discovery_seconds"])}'
     elif result['method'] == 'inverse-windows':
         w = result['inverse_windows']
         count = (f'Modular inverses · {w["entries"]:,} table entries · {w["geometric_cells"]:,} rectangle lookups'

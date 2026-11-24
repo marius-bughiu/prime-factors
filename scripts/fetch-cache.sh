@@ -14,7 +14,7 @@ exec lake env lean --run .lake/packages/mathlib/Cache/Main.lean get \
   Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds \
   Mathlib.NumberTheory.LSeries.Nonvanishing Mathlib.Data.Nat.Squarefree Mathlib.Data.Fintype.BigOperators \
   Mathlib.FieldTheory.Finite.Basic Mathlib.NumberTheory.ArithmeticFunction \
-  Mathlib.NumberTheory.LucasPrimality Mathlib.Tactic.Linarith \
+  Mathlib.Data.List.Prime Mathlib.Data.Nat.Factorization.Basic Mathlib.Data.Nat.Choose.Lucas Mathlib.NumberTheory.LucasPrimality Mathlib.Tactic.Linarith \
   Mathlib.Tactic.NormNum.NatSqrt Mathlib.Tactic.NormNum.Prime \
   Mathlib.Data.Matrix.Rank Mathlib.Algebra.Polynomial.Roots Mathlib.Algebra.Polynomial.Derivative Mathlib.Data.Nat.Digits \
   Mathlib.NumberTheory.Multiplicity Mathlib.Analysis.SpecialFunctions.Pow.Real \

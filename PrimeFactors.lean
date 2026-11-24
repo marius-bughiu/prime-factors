@@ -1,6 +1,7 @@
 import PrimeFactors.AdditiveCover
 import PrimeFactors.AnalyticAccess
 import PrimeFactors.ApproximateTotient
+import PrimeFactors.BatchIntervals
 import PrimeFactors.BitMarginals
 import PrimeFactors.BlockCharacters
 import PrimeFactors.Certificate
@@ -36,6 +37,7 @@ import PrimeFactors.LongPeriod
 import PrimeFactors.LowFactorBits
 import PrimeFactors.LowProductRank
 import PrimeFactors.ManyDiscriminants
+import PrimeFactors.MidpointBlocks
 import PrimeFactors.MidpointClasses
 import PrimeFactors.MixedHeights
 import PrimeFactors.ModularHyperbola
@@ -43,6 +45,7 @@ import PrimeFactors.MultipleShift
 import PrimeFactors.Multiplier
 import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder
+import PrimeFactors.PascalReadout
 import PrimeFactors.PowerSignature
 import PrimeFactors.Pratt
 import PrimeFactors.PredecessorCount
@@ -67,4 +70,5 @@ import PrimeFactors.SumGaps
 import PrimeFactors.TotientTensor
 import PrimeFactors.TruncatedProduct
 import PrimeFactors.TruncatedWindow
+import PrimeFactors.WeightedBands
 import PrimeFactors.WeightedCollision
