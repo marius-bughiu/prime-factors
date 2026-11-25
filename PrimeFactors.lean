@@ -257,6 +257,8 @@ import PrimeFactors.AffineWindowOccupancy
 import PrimeFactors.CRTResidueAdvice
 import PrimeFactors.WeightedBaseOrder
 import PrimeFactors.WeightedBands
+import PrimeFactors.WeightedDivisorExclusion
+import PrimeFactors.ArbitraryDivisorWindow
 import PrimeFactors.WeightedCollision
 import PrimeFactors.WeightedSparseCoverage
 import PrimeFactors.WeightedStride

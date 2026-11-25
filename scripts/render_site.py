@@ -45,6 +45,9 @@ def case_row(result):
         if 'radix_exponent' in x:
             claim = (f'When both factors have at most {x["max_factor_bits"]:,} bits, Lean excludes '
                      f'remainder {escape(x["residue"])} modulo 2<sup>{x["radix_exponent"]}</sup>.')
+        elif 'lower' in x:
+            count = int(x['upper']) - int(x['lower']) + 1
+            claim = f'Lean proves that none of the {compact_count(count)} integers in the interval divides the input.'
         else:
             claim = f'Lean excludes every even factor gap through {int(x["max_gap"]):,}.'
         evidence += f'<p>{claim} <a href="{escape(x["proof"])}">Download exclusion proof</a></p>'
@@ -127,6 +130,17 @@ def case_row(result):
                  f" · {w['visited_arcs']:,} of {compact_count(w['planned_arcs'])} arcs visited"
                  f" · {w['singletons_tested']:,} single positions and {w['line_equations']:,} line equations"
                  f" · {w['epoch_roots']:,} square roots and {w['width_cube_roots']:,} cube roots to plan arcs")
+    elif result['method'] == 'weighted-divisor-exclusion':
+        w = result['weighted_divisor_exclusion']
+        count = (f'Weighted divisor interval · {w["tested_traces"]:,} of {w["total_traces"]:,} weighted sums checked'
+                 f' · {w["modular_rejections"]:,} rejected by residues · {w["square_tests"]:,} integer square tests'
+                 f' · {w["remaining_traces"]:,} weighted sums untested')
+    elif result['method'] == 'arbitrary-divisor-window':
+        w = result['arbitrary_divisor_window']
+        count = (f'Prescribed divisor interval · {compact_count(w["interval_size"])} integers'
+                 f' · {w["convergent_steps"]:,} continued-fraction steps to choose weights'
+                 f' · {w["endpoint_tests"]:,} endpoints checked · {w["square_tests"]:,} discriminant square tests'
+                 f' · {w["divisor_tests"]:,} direct divisibility checks')
     elif result['method'] == 'offset-factor-blocks':
         w = result['offset_factor_blocks']
         base = 'shifted' if w['shifted'] else 'floor-root'

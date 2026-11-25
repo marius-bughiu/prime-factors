@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from experiments.arbitrary_divisor_window import quartile_center, search as arbitrary_window_search
 from experiments.class_order_search import search as class_order_search
 from experiments.complete_offset_search import search as complete_offset_search
 from experiments.offset_arc_lines import search as offset_arc_line_search
@@ -30,6 +31,7 @@ from experiments.offset_row_geometry import search as offset_row_geometry_search
 from experiments.offset_tangent_cover import search as offset_tangent_cover_search
 from experiments.offset_trace_words import search as offset_trace_word_search
 from experiments.offset_winner_window import search as offset_winner_window_search
+from experiments.weighted_divisor_exclusion import search as weighted_divisor_search
 from experiments.grouped_offset_frame import choose_frame
 from experiments.grouped_offset_rows import bounded_rows
 from experiments.midpoint_slope_batches import search as slope_batch_search
@@ -128,6 +130,31 @@ def certify_split(case, proof, factor, search_seconds, key, work):
     return result
 
 
+def check_divisor_interval(n, work, first, count, modulus, proof):
+    """Check the measured interval and every allowed trace directly in Lean."""
+    if not work['excluded'] or n % 2 == 0 or modulus < 2:
+        raise ValueError('Expected an exhausted divisor-free interval on an odd input')
+    theorem = 'PrimeFactors.Generated.divisor_interval'
+    proof.write_text(f"""import PrimeFactors.WeightedDivisorExclusion
+
+set_option exponentiation.threshold 4096
+set_option maxRecDepth 10000
+
+theorem {theorem} (d : ℕ) (lo : {work['lower']} ≤ d) (hi : d ≤ {work['upper']}) :
+    ¬ d ∣ {n} := by
+  apply PrimeFactors.WeightedDivisorExclusion.excludes
+    (a := {work['a']}) (b := {work['b']}) (first := {first}) (count := {count})
+    (moduli := [{modulus}]) ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ d lo hi
+  all_goals first | (unfold PrimeFactors.WeightedDivisorExclusion.Lower; decide +kernel) | decide +kernel
+
+#print axioms {theorem}
+""")
+    start = time.perf_counter()
+    verify_file(proof, theorem)
+    return dict(lower=str(work['lower']), upper=str(work['upper']), proof=f'proofs/{proof.name}',
+                verification_seconds=time.perf_counter()-start)
+
+
 def short_basis_case(case, proof):
     start = time.perf_counter()
     run = short_basis_search(int(case['n']), case['m'], case['m0'], case['primes'],
@@ -224,6 +251,24 @@ def run_case(case, method, proofs):
         agree(case, work, work)
         factor = int(hits[0][2]) if hits else None
         result = certify_split(case, proof, factor, elapsed, 'offset_factor_blocks', work)
+    elif method in ('weighted-divisor-exclusion', 'arbitrary-divisor-window'):
+        n = int(case['n'])
+        if method == 'weighted-divisor-exclusion':
+            work = weighted_divisor_search(n, case['a'], case['b'], int(case['radius']),
+                                           max_trace_tests=case['max_trace_tests'], modulus=case.get('modulus'))
+            counters = ['total_traces', 'tested_traces', 'remaining_traces', 'modular_rejections']
+            first, count = work['first_trace'], work['total_traces']
+        else:
+            center = quartile_center(n) if case['use_quartile'] else int(case['center'])
+            work = arbitrary_window_search(n, center, int(case['radius']))
+            counters = ['convergent_steps', 'endpoint_tests', 'possible_traces', 'candidate_tests', 'divisor_tests']
+            first, count = work['trace'], 1
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['lower', 'upper', 'square_tests', 'excluded', *counters])
+        factor = next((d for d in work['divisors'] if 1 < d < n), None)
+        result = certify_split(case, proof, factor, elapsed, method.replace('-', '_'), work)
+        if 'interval_proof_modulus' in case:
+            result['exclusion'] = check_divisor_interval(n, work, first, count, case['interval_proof_modulus'], proof)
     elif method == 'offset-crt':
         work = offset_crt_search(int(case['n']), case['max_tuples'], exhaust=case['exhaust'],
                                  optimize_wheel=case.get('optimize_wheel', False))
@@ -837,6 +882,8 @@ def main():
                              ('offset-tangent-cover.json', 'offset-tangent-cover'),
                              ('offset-trace-words.json', 'offset-trace-words'),
                              ('offset-factor-blocks.json', 'offset-factor-blocks'),
+                             ('weighted-divisor-exclusion.json', 'weighted-divisor-exclusion'),
+                             ('arbitrary-divisor-window.json', 'arbitrary-divisor-window'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

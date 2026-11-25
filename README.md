@@ -1,12 +1,14 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/counting-all-factor-arcs.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/ruling-out-an-interior-interval.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have succeeded on constructed examples where a factor has a pattern we knew to look for. Once someone supplies the two primes, Lean can check that each is prime and that their product is the number you started with.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?
+
+**We can pick a location and check a whole interval.** For two 1,024-bit primes, we can choose any center in the possible smaller-factor range and check the $2^{341}+1$ integers around it with at most one square test after computing suitable weights. Covering the full range takes up to $2^{682}$ such checks, still far beyond a normal PC. At a specially chosen location on each of our two 2,048-bit examples, we proved an even larger interval of $2^{513}+1$ integers contained no divisor. [How the interval tests work and what they ruled out](discoveries/ruling-out-an-interior-interval.md)
 
 **We can now check many possible factor locations together.** On one 2,048-bit example, a single calculation covered the last $2^{257}$ blocks of possible values for the smaller prime. Any factor there would use the same row of our search. We tried three positions on that row and found no factor. On a 49-bit example the same rule cut 2,884 separate calculations to 914 and recovered both primes. The remaining question is how to locate the right block and position from the product. [Why blocks can be combined](discoveries/selecting-factor-coordinates.md) · [Full-size run](https://marius-bughiu.github.io/prime-factors/#offset-factor-blocks-coalesced-fresh-tail-2048)
 

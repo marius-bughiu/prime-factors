@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Any chosen center in the feasible interval of a 1,024-bit smaller factor admits a radius of $2^{340}$ with a single parity-compatible weighted trace. At most $2^{682}$ such centers cover the full range. On both 2,048-bit controls the specially placed interval centered at $\lfloor\sqrt{4N/5}\rfloor$ with the larger radius $2^{512}$ is also certified free of divisors. Three permitted sums on the fresh product and four on the crossed product all give nonsquare residues. [Coverage theorem, excluded intervals and downloadable proofs](ruling-out-an-interior-interval.md)
+
 One reduced basis gives at most three search directions for a whole interval of possible smaller factors. An integer inequality sometimes certifies one direction across much larger intervals. On a 2,048-bit example it combined $2^{257}$ consecutive blocks into one reduction. The factor location remains unknown. [Proof, selection cost, and checked examples](selecting-factor-coordinates.md)
 
 Using the integer just below the floor square root gives a complete search of fewer than $2^{692}$ equations or singleton tests for every product of two distinct 1,024-bit primes. On the two full-size controls the exhaustive coordinate loop visits at least $2^{503}$ groups. A fresh 59-bit product was fully recovered in 92,583 arcs. [All-coordinate proof, cost and example](counting-all-factor-arcs.md)
