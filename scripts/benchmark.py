@@ -37,6 +37,7 @@ from experiments.grouped_offset_rows import bounded_rows
 from experiments.midpoint_slope_batches import search as slope_batch_search
 from experiments.midpoint_weights import search as weight_orbit_search
 from experiments.gap_newton_lanes import search as gap_lane_search
+from experiments.quartic_divisor_window import odd_quartile_center, search as quartic_window_search
 from experiments.quartic_factor_lanes import search as quartic_lane_search
 from experiments.unit_factor_lane import search as unit_lane_search
 from experiments.unit_quartic_probe import probe as unit_quartic_probe
@@ -130,22 +131,19 @@ def certify_split(case, proof, factor, search_seconds, key, work):
     return result
 
 
-def check_divisor_interval(n, work, first, count, modulus, proof):
-    """Check the measured interval and every allowed trace directly in Lean."""
-    if not work['excluded'] or n % 2 == 0 or modulus < 2:
+def verify_interval(n, work, proof, module, application):
+    """Tie the downloaded statement to the measured input and inclusive endpoints."""
+    if not work['excluded'] or n % 2 != 1:
         raise ValueError('Expected an exhausted divisor-free interval on an odd input')
     theorem = 'PrimeFactors.Generated.divisor_interval'
-    proof.write_text(f"""import PrimeFactors.WeightedDivisorExclusion
+    proof.write_text(f"""import PrimeFactors.{module}
 
-set_option exponentiation.threshold 4096
+set_option exponentiation.threshold 16384
 set_option maxRecDepth 10000
 
 theorem {theorem} (d : ℕ) (lo : {work['lower']} ≤ d) (hi : d ≤ {work['upper']}) :
     ¬ d ∣ {n} := by
-  apply PrimeFactors.WeightedDivisorExclusion.excludes
-    (a := {work['a']}) (b := {work['b']}) (first := {first}) (count := {count})
-    (moduli := [{modulus}]) ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ d lo hi
-  all_goals first | (unfold PrimeFactors.WeightedDivisorExclusion.Lower; decide +kernel) | decide +kernel
+{application}
 
 #print axioms {theorem}
 """)
@@ -153,6 +151,35 @@ theorem {theorem} (d : ℕ) (lo : {work['lower']} ≤ d) (hi : d ≤ {work['uppe
     verify_file(proof, theorem)
     return dict(lower=str(work['lower']), upper=str(work['upper']), proof=f'proofs/{proof.name}',
                 verification_seconds=time.perf_counter()-start)
+
+
+def check_divisor_interval(n, work, first, count, modulus, proof):
+    """Check the measured interval and every allowed trace directly in Lean."""
+    if modulus < 2:
+        raise ValueError('Expected a modulus of at least two')
+    if work.get('trace_stride') == 24:
+        return verify_interval(n, work, proof, 'UniversalTraceWindow', f"""  apply PrimeFactors.UniversalTraceWindow.excludes_of_modulus
+    (c := {work['center']}) (w := {work['radius']}) (a := {work['a']}) (b := {work['b']})
+    (t := {first}) {modulus} ?_ ?_ ?_ ?_ ?_ ?_ ?_ d lo hi
+  all_goals first
+    | (unfold PrimeFactors.UniversalTraceWindow.Curvature; decide +kernel)
+    | (unfold PrimeFactors.UniversalTraceWindow.Weights; decide +kernel)
+    | decide +kernel""")
+    return verify_interval(n, work, proof, 'WeightedDivisorExclusion', f"""  apply PrimeFactors.WeightedDivisorExclusion.excludes
+    (a := {work['a']}) (b := {work['b']}) (first := {first}) (count := {count})
+    (moduli := [{modulus}]) ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ d lo hi
+  all_goals first | (unfold PrimeFactors.WeightedDivisorExclusion.Lower; decide +kernel) | decide +kernel""")
+
+
+def check_quartic_interval(n, work, proof):
+    if work['stride'] != 2 or work['rootless_modulus'] is None:
+        raise ValueError('Expected an odd progression and a modular exclusion witness')
+    coefficients = ', '.join(str(a) for a in work['coefficients'])
+    return verify_interval(n, work, proof, 'QuarticDivisorWindow', f"""  apply PrimeFactors.QuarticDivisorWindow.odd_interval_excludes
+    (v := ![{coefficients}]) (c := {work['center']}) (W := {work['radius']})
+    (t := ({work['anchor']})) (m := {work['rootless_modulus']})
+    ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ d lo hi
+  all_goals first | (unfold PrimeFactors.QuarticDivisorWindow.jets; decide +kernel) | decide +kernel""")
 
 
 def short_basis_case(case, proof):
@@ -251,6 +278,23 @@ def run_case(case, method, proofs):
         agree(case, work, work)
         factor = int(hits[0][2]) if hits else None
         result = certify_split(case, proof, factor, elapsed, 'offset_factor_blocks', work)
+    elif method == 'quartic-divisor-window':
+        n = int(case['n'])
+        center = odd_quartile_center(n) if case['use_odd_quartile'] else int(case['center'])
+        work = quartic_window_search(n, center, int(case['radius']), stride=case['stride'],
+                                    modulus_limit=case['modulus_limit'])
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['center', 'lower', 'upper', 'interval_size', 'progression_size', 'covers_interval',
+                           'height', 'relation_verified', 'anchor_inversions', 'basis_dimension', 'rows_compared',
+                           'jet_checks', 'lll_calls', 'lll_reductions', 'lll_swaps', 'integer_root_nodes',
+                           'divisor_tests', 'moduli_tested', 'modular_evaluations', 'rootless_modulus',
+                           'progression_excluded', 'excluded'])
+        factor = next((d for d in work['divisors'] if 1 < d < n), None)
+        result = certify_split(case, proof, factor, elapsed, 'quartic_divisor_window', work)
+        if 'interval_proof_modulus' in case:
+            if work['rootless_modulus'] != case['interval_proof_modulus']:
+                raise ValueError('The quartic modular witness did not match the fixture')
+            result['exclusion'] = check_quartic_interval(n, work, proof)
     elif method in ('weighted-divisor-exclusion', 'arbitrary-divisor-window'):
         n = int(case['n'])
         if method == 'weighted-divisor-exclusion':
@@ -260,8 +304,10 @@ def run_case(case, method, proofs):
             first, count = work['first_trace'], work['total_traces']
         else:
             center = quartile_center(n) if case['use_quartile'] else int(case['center'])
-            work = arbitrary_window_search(n, center, int(case['radius']))
+            work = arbitrary_window_search(n, center, int(case['radius']), mod24=case.get('mod24', False))
             counters = ['convergent_steps', 'endpoint_tests', 'possible_traces', 'candidate_tests', 'divisor_tests']
+            if case.get('mod24'):
+                counters.append('trace_stride')
             first, count = work['trace'], 1
         elapsed = time.perf_counter() - start
         agree(case, work, ['lower', 'upper', 'square_tests', 'excluded', *counters])
@@ -884,6 +930,7 @@ def main():
                              ('offset-factor-blocks.json', 'offset-factor-blocks'),
                              ('weighted-divisor-exclusion.json', 'weighted-divisor-exclusion'),
                              ('arbitrary-divisor-window.json', 'arbitrary-divisor-window'),
+                             ('quartic-divisor-window.json', 'quartic-divisor-window'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

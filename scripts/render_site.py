@@ -135,9 +135,15 @@ def case_row(result):
         count = (f'Weighted divisor interval · {w["tested_traces"]:,} of {w["total_traces"]:,} weighted sums checked'
                  f' · {w["modular_rejections"]:,} rejected by residues · {w["square_tests"]:,} integer square tests'
                  f' · {w["remaining_traces"]:,} weighted sums untested')
+    elif result['method'] == 'quartic-divisor-window':
+        w = result['quartic_divisor_window']
+        count = (f'Quartic divisor interval · {compact_count(w["progression_size"])} odd positions'
+                 f' · {w["lll_reductions"]:,} lattice reductions and {w["lll_swaps"]:,} row swaps'
+                 f' · {w["integer_root_nodes"]:,} root-isolation nodes · {w["divisor_tests"]:,} divisibility tests')
     elif result['method'] == 'arbitrary-divisor-window':
         w = result['arbitrary_divisor_window']
         count = (f'Prescribed divisor interval · {compact_count(w["interval_size"])} integers'
+                 f' · weighted sums spaced by {w.get("trace_stride", 2)}'
                  f' · {w["convergent_steps"]:,} continued-fraction steps to choose weights'
                  f' · {w["endpoint_tests"]:,} endpoints checked · {w["square_tests"]:,} discriminant square tests'
                  f' · {w["divisor_tests"]:,} direct divisibility checks')

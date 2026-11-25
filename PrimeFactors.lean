@@ -259,6 +259,10 @@ import PrimeFactors.WeightedBaseOrder
 import PrimeFactors.WeightedBands
 import PrimeFactors.WeightedDivisorExclusion
 import PrimeFactors.ArbitraryDivisorWindow
+import PrimeFactors.QuarticDivisorWindow
+import PrimeFactors.TraceStripPacking
+import PrimeFactors.TraceStripThresholds
+import PrimeFactors.UniversalTraceWindow
 import PrimeFactors.WeightedCollision
 import PrimeFactors.WeightedSparseCoverage
 import PrimeFactors.WeightedStride
