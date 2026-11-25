@@ -35,8 +35,10 @@ import PrimeFactors.FactorCircuit
 import PrimeFactors.FactorialProgressions
 import PrimeFactors.FactorSum
 import PrimeFactors.FactorSumCRT
+import PrimeFactors.FareyAllocation
 import PrimeFactors.FareyWindow
 import PrimeFactors.FareyWork
+import PrimeFactors.FareyWrap
 import PrimeFactors.FejerProjection
 import PrimeFactors.Fermat
 import PrimeFactors.FoldedSquare

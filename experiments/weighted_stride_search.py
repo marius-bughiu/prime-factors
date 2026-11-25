@@ -103,7 +103,7 @@ def _giants(n, k, m, max_giants, max_slopes, beta, stride, work):
 
 
 def search(n, k, baby_steps, max_giants, *, beta=2, max_babies=262144,
-           max_slopes=131072, stride=24):
+           max_slopes=131072, stride=24, record_builder=_giants):
     """Search an explicit prefix of windows for odd balanced primes p<q≤2p.
 
     stride=1 runs the same windows without modular stride compression.
@@ -133,7 +133,7 @@ def search(n, k, baby_steps, max_giants, *, beta=2, max_babies=262144,
         if common < n:
             return dict(result, factor=common, outcome='order_divisor')
         return dict(result, outcome='short_order')
-    records, limit = _giants(n, k, baby_steps, max_giants, max_slopes, beta, stride, work)
+    records, limit = record_builder(n, k, baby_steps, max_giants, max_slopes, beta, stride, work)
     result.update(schedule_complete=limit is None, limit=limit)
     work['giants'] = len(records)
     index = {v: i for i, v in enumerate(powers)}

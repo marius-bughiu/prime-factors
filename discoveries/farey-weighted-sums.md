@@ -53,3 +53,5 @@ The 89-bit sampler draws its two 45-bit primes independently by SHAKE256 and exa
 ## What still stands in the way at 2,048 bits?
 
 For any positive choices of the two table-size parameters, the full mediant-based schedule above requires **more than $2^{404}$ records** on every 2,048-bit product. The count includes one setup per primitive slope, the starting powers and the blocks. Early discoveries remain possible. This lower bound applies to the specific full schedule, and motivates asking which intervals we can omit altogether. [Finite work bound and Lean proof](farey-work.md)
+
+Moving the boundaries and omitting some fractions reduced the number of blocks by about a quarter on two 89-bit products. It sped up one search and slowed down the other. A separate finite argument bounds how often the original windows can succeed through an accidental match when the prime pair and base are sampled at random. [Allocated windows, certificates and timings](farey-allocation.md) · [Chance of an early coincidence, with sampling assumptions](farey-wraps.md)
