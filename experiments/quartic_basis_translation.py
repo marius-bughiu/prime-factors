@@ -35,6 +35,30 @@ def radius(n, lower):
     return lo
 
 
+def reduce_window(n, center, w, scale, previous, work, *, dual_coordinates=None):
+    """Reduce one public window and check both jet conditions before reporting short rows.
+
+    A translated basis preserves the coordinates of the constant polynomial N².
+    A fresh jet basis instead represents that polynomial by its first row.
+    """
+    t = -center*pow(2,-1,n) % n
+    if 2*t > n:
+        t -= n
+    if previous is None:
+        basis = jet_basis(n,t)
+        if dual_coordinates is not None:
+            dual_coordinates[:] = [1,0,0,0,0]
+    else:
+        basis = [translate(row,2*w+1) for row in previous]
+        work['translations'] += 1
+    scaled = [[entry*s for entry,s in zip(row,scale)] for row in basis]
+    _, rows = reduced_basis(scaled,work,initial_coefficients=basis,dual_coordinates=dual_coordinates)
+    heights = [checked_height(n,t,w,row) for row in rows]
+    short = [i for i,height in enumerate(heights) if height < (center-2*w)**2]
+    work[f'rank_{len(short)}'] += 1
+    return rows, heights, short
+
+
 def sweep(n, first_center, w, blocks, upper, warm, *, lower=1):
     if (n < 3 or n%2 == 0 or first_center%2 == 0 or first_center <= 2*w or
             w < 1 or blocks < 0 or not 1 <= lower <= upper):
@@ -50,20 +74,7 @@ def sweep(n, first_center, w, blocks, upper, warm, *, lower=1):
         start = process_time()
         c = first_center + 2*block*(2*w+1)
         before = work['lll_swaps']
-        t = -c*pow(2,-1,n) % n
-        if 2*t > n:
-            t -= n
-        if warm and previous is not None:
-            basis = [translate(row,2*w+1) for row in previous]
-            work['translations'] += 1
-        else:
-            basis = jet_basis(n,t)
-        scaled = [[entry*s for entry,s in zip(row,scale)] for row in basis]
-        _, previous = reduced_basis(scaled,work,initial_coefficients=basis)
-        # Certify the two congruences on all five output rows before using their heights.
-        heights = [checked_height(n,t,w,row) for row in previous]
-        short = [i for i,height in enumerate(heights) if height < (c-2*w)**2]
-        work[f'rank_{len(short)}'] += 1
+        previous, heights, short = reduce_window(n,c,w,scale,previous if warm else None,work)
         even_rejected = any(previous[i][0]%2 for i in short)
         odd_rejected = any(sum(previous[i])%2 for i in short)
         if even_rejected and odd_rejected:
@@ -93,8 +104,8 @@ def sweep(n, first_center, w, blocks, upper, warm, *, lower=1):
                 unresolved_odd_integers=unresolved_odd)
 
 
-def search(n, *, full, blocks=None):
-    """Run translated windows over the whole equal-width band or from its odd lower quartile.
+def window_layout(n, *, full, blocks=None):
+    """Compute the equal-width window budget from N or start at its odd lower quartile.
 
     A block holds 2W+1 consecutive odd candidates. An optional block cap applies
     from the chosen start. The quartile schedule uses five blocks by default.
@@ -122,19 +133,26 @@ def search(n, *, full, blocks=None):
     available = max(0,(last_odd-first_lower)//(2*size)+1)
     max_blocks = (available if full else 5) if blocks is None else blocks
     visited = min(max_blocks,available)
-    result = sweep(n,first,w,visited,upper,True,lower=lower)
     odd_count = (last_odd-first_odd)//2+1
     last_visited = min(last_odd,first_lower+2*size*visited-2)
     visited_odd = max(0,(last_visited-max(first_odd,first_lower))//2+1)
     prefix_blocks = (prefix_odd+size-1)//size
     suffix_blocks = available-visited
-    return dict(**result,full=full,range_lower=lower,range_upper=upper,first_odd=first_odd,
+    return dict(radius=w,full=full,range_lower=lower,range_upper=upper,first_odd=first_odd,
                 last_odd=last_odd,even_integers=upper-lower+1-odd_count,first_center=first,
                 total_blocks=prefix_blocks+available,available_blocks=available,max_blocks=max_blocks,
                 visited_blocks=visited,unvisited_prefix_blocks=prefix_blocks,
                 unvisited_suffix_blocks=suffix_blocks,unvisited_blocks=prefix_blocks+suffix_blocks,
-                visited_odd_integers=visited_odd,unvisited_odd_integers=odd_count-visited_odd,
-                exhausted=(visited_odd == odd_count and not result['unresolved_odd_integers']))
+                visited_odd_integers=visited_odd,unvisited_odd_integers=odd_count-visited_odd)
+
+
+def search(n, *, full, blocks=None):
+    """Run translated quartic root searches under the chosen window budget."""
+    layout = window_layout(n,full=full,blocks=blocks)
+    result = sweep(n,layout['first_center'],layout['radius'],layout['visited_blocks'],
+                   layout['range_upper'],True,lower=layout['range_lower'])
+    exhausted = not layout['unvisited_odd_integers'] and not result['unresolved_odd_integers']
+    return {**layout, **result, 'exhausted':exhausted}
 
 
 def compare(n, first, w, count, end, rounds):

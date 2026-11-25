@@ -15,8 +15,12 @@ from math import comb, factorial, gcd, isqrt
 from .norm_directions import scan as line_scan
 
 
-def reduced_basis(rows, work=None, *, initial_coefficients=None):
-    """Exact LLL with delta=3/4; return reduced rows and their input coefficients."""
+def reduced_basis(rows, work=None, *, initial_coefficients=None, dual_coordinates=None):
+    """Exact LLL with delta=3/4; return reduced rows and their input coefficients.
+
+    If supplied, update the mutable dual_coordinates in place so their linear
+    combination of the basis rows continues to represent the same vector.
+    """
     if work is None:
         work = Counter()
     work['lll_calls'] += 1
@@ -24,6 +28,8 @@ def reduced_basis(rows, work=None, *, initial_coefficients=None):
     n = len(basis)
     if not n or any(len(v) != len(basis[0]) for v in basis):
         raise ValueError('expected a nonempty rectangular row matrix')
+    if dual_coordinates is not None and len(dual_coordinates) != n:
+        raise ValueError('expected one dual coordinate per row')
     transform = ([list(row) for row in initial_coefficients] if initial_coefficients is not None
                  else [[int(i == j) for j in range(n)] for i in range(n)])
     # D[j] is the Gram determinant of the first j rows. Lambda[i,j]/D[j+1]
@@ -48,6 +54,8 @@ def reduced_basis(rows, work=None, *, initial_coefficients=None):
             q = (2*lam[k][j]+det[j+1])//(2*det[j+1])
             if q:
                 work['lll_reductions'] += 1
+                if dual_coordinates is not None:
+                    dual_coordinates[j] += q*dual_coordinates[k]
                 for array in (basis, transform):
                     array[k] = [v-q*w for v, w in zip(array[k], array[j])]
                 for h in range(j):
@@ -59,6 +67,8 @@ def reduced_basis(rows, work=None, *, initial_coefficients=None):
             k += 1
             continue
         work['lll_swaps'] += 1
+        if dual_coordinates is not None:
+            dual_coordinates[k-1], dual_coordinates[k] = dual_coordinates[k], dual_coordinates[k-1]
         for array in (basis, transform):
             array[k-1], array[k] = array[k], array[k-1]
         for j in range(k-1):

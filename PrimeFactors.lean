@@ -261,6 +261,11 @@ import PrimeFactors.WeightedDivisorExclusion
 import PrimeFactors.ArbitraryDivisorWindow
 import PrimeFactors.QuarticDivisorWindow
 import PrimeFactors.DivisorWindowRank
+import PrimeFactors.PowerJetContent
+import PrimeFactors.QuarticDeterminantFactor
+import PrimeFactors.QuarticMinorExample
+import PrimeFactors.QuarticMinorTracking
+import PrimeFactors.QuarticHomogeneousImage
 import PrimeFactors.QuarticRankCounterexample
 import PrimeFactors.QuarticBasisTranslation
 import PrimeFactors.QuarticIntervalExtension

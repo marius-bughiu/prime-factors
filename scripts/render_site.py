@@ -135,6 +135,11 @@ def case_row(result):
         count = (f'Weighted divisor interval · {w["tested_traces"]:,} of {w["total_traces"]:,} weighted sums checked'
                  f' · {w["modular_rejections"]:,} rejected by residues · {w["square_tests"]:,} integer square tests'
                  f' · {w["remaining_traces"]:,} weighted sums untested')
+    elif result['method'] == 'quartic-minor-gcd':
+        w = result['quartic_minor_gcd']
+        count = (f'Quartic determinant coefficients · {w["visited_blocks"]:,} windows visited'
+                 f' · {compact_count(w["unvisited_blocks"])} unvisited · {w["work"]["normalized_minor_gcds"]:,} gcds'
+                 f' · {w["work"]["proper_gcds"]:,} proper divisors returned')
     elif result['method'] == 'quartic-basis-translation':
         w = result['quartic_basis_translation']
         count = (f'Translated quartic bases · {w["visited_blocks"]:,} windows visited'

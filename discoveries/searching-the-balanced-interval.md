@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+If four basis equations vanish at the smaller factor’s offset, one determinant gives the product times the square of the cofactor. On the complete 49-bit control it gave the cofactor at one window. [Exact law, example and full-size budgets](a-determinant-that-gives-the-cofactor.md)
+
 A degree-four equation now covers $2^{408}+1$ odd positions around any prescribed odd center for a 1,024-bit divisor. Covering every possible position takes $2^{614}$ equations. Two public 2,048-bit examples have kernel-checked interval exclusions. A cheaper weighted sum offers at most two candidates in a smaller window. [Bounds and actual work](quartics-at-a-chosen-location.md)
 
 At adjacent windows the five polynomial rows can be translated and reduced again. In a complete 49-bit search this nearly halved CPU time. Knowing the exact dimension of the span of all short rows still leaves both occupied and empty windows possible. [Measurements, checked counterexample and limits](reusing-a-quartic-basis.md)
