@@ -1,5 +1,7 @@
 # One gcd that returns the smaller prime
 
+Every ordinary wheel-unit residue is represented inside the balanced norm interval once the fourth root is at least sixteen times the parity-adjusted wheel modulus and at least 256. A sieve using only the norm value modulo that wheel therefore retains all its unit classes. [Proof and size thresholds](norm-wheel-image.md)
+
 Start with the product $N=pq$ of two distinct odd primes, with $p<q$. Only $N$ is given. The following formula returns $p$. Its expensive step is building a product over many pairs of integers.
 
 Set $U=\lfloor\sqrt N\rfloor$ and $H=\lfloor\sqrt U\rfloor$. Use the lower bound $L=3$, or $L=\lceil\sqrt{N/2}\rceil$ when the input comes with the promise $q\le2p$. For each odd $t$ between 1 and $H$, take the following values with $1\le a\le H$, retaining just those between $L$ and $U$ inclusive.

@@ -16,10 +16,10 @@ exec lake env lean --run .lake/packages/mathlib/Cache/Main.lean get \
   Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse Mathlib.Data.Nat.Factorization.Induction \
   Mathlib.Data.Finset.Max Mathlib.Data.Int.Interval Mathlib.Data.Int.ModEq Mathlib.Data.Real.Archimedean \
   Mathlib.Algebra.Order.BigOperators.Ring.Finset Mathlib.Analysis.Complex.Basic Mathlib.Tactic.IntervalCases \
-  Mathlib.NumberTheory.LSeries.Nonvanishing Mathlib.Data.Nat.Squarefree Mathlib.Data.Fintype.BigOperators \
+  Mathlib.NumberTheory.LSeries.PrimesInAP Mathlib.NumberTheory.LSeries.Nonvanishing Mathlib.Data.Nat.Squarefree Mathlib.Data.Fintype.BigOperators \
   Mathlib.FieldTheory.Finite.Basic Mathlib.NumberTheory.ArithmeticFunction Mathlib.NumberTheory.Harmonic.EulerMascheroni \
   Mathlib.Data.List.Prime Mathlib.Data.Nat.Factorization.Basic Mathlib.Data.Nat.Choose.Lucas Mathlib.NumberTheory.LucasPrimality Mathlib.Tactic.Linarith \
-  Mathlib.Tactic.NormNum.NatSqrt Mathlib.Tactic.NormNum.Prime \
+  Mathlib.Tactic.NormNum.LegendreSymbol Mathlib.Tactic.NormNum.NatSqrt Mathlib.Tactic.NormNum.Prime \
   Mathlib.Data.Matrix.Rank Mathlib.LinearAlgebra.Vandermonde Mathlib.Algebra.Polynomial.Roots Mathlib.Algebra.Polynomial.Derivative Mathlib.Data.Nat.Digits \
   Mathlib.Algebra.Order.Ring.Abs Mathlib.Data.Finset.SymmDiff Mathlib.Data.Finset.Powerset Mathlib.Data.Finset.Prod \
   Mathlib.Analysis.PSeries Mathlib.Analysis.SpecificLimits.Basic Mathlib.Tactic.Abel \

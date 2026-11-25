@@ -55,6 +55,8 @@ import PrimeFactors.LongPeriod
 import PrimeFactors.LowFactorBits
 import PrimeFactors.LowProductRank
 import PrimeFactors.ManyDiscriminants
+import PrimeFactors.MarkedSupportBox
+import PrimeFactors.MarkedTraceBit
 import PrimeFactors.MaskedRelations
 import PrimeFactors.MidpointBlocks
 import PrimeFactors.MidpointClasses
@@ -73,6 +75,7 @@ import PrimeFactors.NormOrbit
 import PrimeFactors.NormResidueCurve
 import PrimeFactors.NormRowAdvice
 import PrimeFactors.NormSignList
+import PrimeFactors.NormWheelImage
 import PrimeFactors.PairDeterminant
 import PrimeFactors.PairwiseSieve
 import PrimeFactors.PartialOrder

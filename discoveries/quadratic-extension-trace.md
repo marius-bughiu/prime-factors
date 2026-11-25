@@ -1,5 +1,7 @@
 # Reading a prime from a quadratic-extension character sum
 
+For a fixed selector, a randomized row halves the mean number of individual norm tests. A second mark exposes one bit that decides whether a given unit is a square at a selected hidden prime. Directly reading that bit still requires the full grid. [How far the search must go](marked-support-boxes.md) · [What the fifth bit tells us](marked-trace-bit.md)
+
 On $N=77$, an ordinary elliptic trace vanishes at both hidden primes. A different sum, over pairs of residues modulo 77, equals **21**. Adding one and halving gives the prime **11**. With another public choice of parameter the same sum equals **13**, giving **7**. These are exact formulas, but direct evaluation takes $N^2$ terms. A simpler one-variable count below already gives a factor in $N$ terms. [Bounded smooth-curve reference](../experiments/extension_trace.py) · [Checked examples and capped 2,048-bit run](../benchmarks/extension-trace.json)
 
 ## The formula for two primes 3 modulo 4
