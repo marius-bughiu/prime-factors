@@ -73,6 +73,12 @@ def case_row(result):
         count += f' · search {duration(result["discovery_seconds"])}'
         if checked:
             verification += f' (certificate generation and replay {duration(result["certificate_seconds"])})'
+    elif result['method'] == 'monotone-divisor-sampling':
+        w = result['monotone_divisor_sampling']
+        count = f'{w["gcd_tests"]:,} gcd tests · {w["proper_hits"]:,} proper hits'
+        if w['best_end'] is not None:
+            count += (f' · first hit at {w["first_hit"]:,} · best prefix had '
+                      f'{w["best_hits"]:,} hits in {w["best_end"]:,} tests')
     elif result['method'] == 'midpoint-weights':
         w = result['midpoint_weights']
         count = (f'Weighted sums · {w["visited_orbits"]:,} of {w["total_orbits"]:,} remainder pairs'

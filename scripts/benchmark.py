@@ -41,6 +41,7 @@ from experiments.grouped_offset_frame import choose_frame
 from experiments.grouped_offset_rows import bounded_rows
 from experiments.midpoint_slope_batches import search as slope_batch_search
 from experiments.midpoint_weights import search as weight_orbit_search
+from experiments.monotone_divisor_sampling import scan as scan_divisor_prefixes
 from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
 from experiments.quartic_three_row import search as three_row_search
@@ -327,6 +328,12 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'monotone-divisor-sampling':
+        work = scan_divisor_prefixes(int(case['n']), case['limit'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, work.keys())
+        result = certify_split(case, proof, factor, elapsed, 'monotone_divisor_sampling', work)
     elif method == 'complete-offset-search':
         work = complete_offset_search(int(case['n']), case['max_pairs'],
                                       filter_prime_limit=case.get('filter_prime_limit'))
@@ -1186,6 +1193,7 @@ def main():
                              ('binomial-divisor-window.json', 'binomial-divisor-window'),
                              ('sifted-divisor-window.json', 'sifted-divisor-window'),
                              ('rounded-sifted-window.json', 'rounded-sifted-window'),
+                             ('monotone-divisor-sampling.json', 'monotone-divisor-sampling'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

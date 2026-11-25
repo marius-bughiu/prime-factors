@@ -1,0 +1,52 @@
+[
+  {
+    "id": "prefix-sampling-77",
+    "n": "77",
+    "description": "Count all proper gcd hits over two periods and find the densest prefix",
+    "limit": 154,
+    "gcd_tests": 154,
+    "proper_hits": 32,
+    "first_hit": 7,
+    "best_hits": 13,
+    "best_end": 56,
+    "status": "complete",
+    "factors": [
+      "7",
+      "11"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "prefix-sampling-221",
+    "n": "221",
+    "description": "A densest prefix ending at a multiple of the larger prime",
+    "limit": 442,
+    "gcd_tests": 442,
+    "proper_hits": 56,
+    "first_hit": 13,
+    "best_hits": 23,
+    "best_end": 170,
+    "status": "complete",
+    "factors": [
+      "13",
+      "17"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "prefix-sampling-77-short",
+    "n": "77",
+    "description": "Stop just before the first informative probe on the same product",
+    "limit": 6,
+    "gcd_tests": 6,
+    "proper_hits": 0,
+    "first_hit": null,
+    "best_hits": 0,
+    "best_end": null,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "77"
+    ]
+  }
+]
