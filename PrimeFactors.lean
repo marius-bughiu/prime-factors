@@ -63,6 +63,9 @@ import PrimeFactors.GroupedNormOffsets
 import PrimeFactors.GroupedOffsetRows
 import PrimeFactors.GroupedOffsetRowExamples
 import PrimeFactors.OffsetSweepFrequency
+import PrimeFactors.SignedOffsetFrequency
+import PrimeFactors.ReducedOffsetMinimum
+import PrimeFactors.CompleteOffsetSearch
 import PrimeFactors.DedekindLaneRanking
 import PrimeFactors.HyperbolaBoxes
 import PrimeFactors.ImplicitPowers

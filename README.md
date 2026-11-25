@@ -1,12 +1,14 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/grouped-norm-factors.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/complete-offset-search.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have succeeded on constructed examples where a factor has a pattern we knew to look for. Once someone supplies the two primes, Lean can check that each is prime and that their product is the number you started with.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?
+
+Every product of two distinct 1,024-bit primes has at least one square test in a range we can calculate from the product alone that will give us a prime factor. Lean checks this guarantee. The hard part is choosing the right test. Even if we tried every multiplier for the first trillion adjustments, fewer than one in $2^{422}$ random prime pairs at the target size could yield a square. [Why a successful test exists and how large the range is](discoveries/complete-offset-search.md)
 
 We found a pattern where **the product itself picks one calculation** that recovers both primes. For example, 50,629 tells us to test 56, which gives **197 × 257**. The same rule found both 1,024-bit primes on each of two numbers constructed to fit the pattern. It missed on both of our earlier 2,048-bit comparison numbers. Even trying every multiplier can work on fewer than one in $2^{481}$ randomly chosen balanced prime pairs at this size. [How one test gives the factors](discoveries/grouped-norm-factors.md) · [Full-size examples](discoveries/grouped-norm-frequency.md) · [Frequency proof](discoveries/grouped-norm-density.md)
 

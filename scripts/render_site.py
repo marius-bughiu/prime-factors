@@ -67,6 +67,12 @@ def case_row(result):
         w = result['midpoint_weights']
         count = (f'Weighted sums · {w["visited_orbits"]:,} of {w["total_orbits"]:,} remainder pairs'
                  f' · {w["candidate_traces"]:,} candidate sums · {w["square_tests"]:,} square tests')
+    elif result['method'] == 'complete-offset-search':
+        w = result['complete_offset']
+        total = w['raw_pairs']
+        schedule = f'at least 2<sup>{total.bit_length()-1}</sup>' if total.bit_length() > 64 else f'{total:,}'
+        count = (f"Complete offset range · {w['visited_pairs']:,} of {schedule} candidate pairs visited"
+                 f" · {w['integer_square_roots']:,} integer square roots")
     elif result['method'] == 'offset-rows':
         w = result['offset_rows']
         tested = w['search']['square_tests']

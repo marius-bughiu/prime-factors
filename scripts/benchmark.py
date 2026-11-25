@@ -18,6 +18,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from experiments.class_order_search import search as class_order_search
+from experiments.complete_offset_search import search as complete_offset_search
 from experiments.grouped_offset_frame import choose_frame
 from experiments.grouped_offset_rows import bounded_rows
 from experiments.midpoint_slope_batches import search as slope_batch_search
@@ -149,6 +150,13 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'complete-offset-search':
+        work = complete_offset_search(int(case['n']), case['max_pairs'])
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['max_offset', 'raw_pairs', 'loose_raw_pairs', 'visited_pairs',
+                           'coprime_pairs', 'negative_discriminants', 'integer_square_roots',
+                           'square_hits', 'proper_hits', 'unvisited_pairs'])
+        result = certify_split(case, proof, work.pop('factor'), elapsed, 'complete_offset', work)
     elif method == 'offset-rows':
         n = int(case['n'])
         T = isqrt(n)
@@ -701,7 +709,8 @@ def main():
                              ('quartic-factor-lanes.json', 'quartic-factor-lanes'), ('unit-quartic.json', 'unit-quartic'),
                              ('centered-quartic.json', 'centered-quartic'), ('projected-levels.json', 'projected-level-sieve'),
                              ('class-orders.json', 'class-orders'), ('grouped-norm.json', 'grouped-norm'),
-                             ('offset-rows.json', 'offset-rows')]:
+                             ('offset-rows.json', 'offset-rows'),
+                             ('complete-offset-search.json', 'complete-offset-search')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':
             cases = expand_cases(cases)
