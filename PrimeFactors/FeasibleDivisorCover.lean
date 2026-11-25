@@ -68,13 +68,13 @@ private lemma scaled_width {w e : ℕ} (bit : w^256≤2^e) :
   exact (Nat.mul_le_mul_right _ bit).trans_eq (Nat.mul_comm ..)
 
 private theorem uniform_height {n : ℕ} (big : 2^2047≤n) (b : Bool) :
-    2^C * (n^T * (radius b)^B) < (divisorFloor n b)^(A+T) := by
+    2^(C+(dimension-1)) * (n^T * (radius b)^B) < (divisorFloor n b)^(A+T) := by
   obtain ⟨xl,nl⟩ := floor_facts n big
   have Dle : lower n ≤ divisorFloor n b := by
     cases b
     · exact le_rfl
     · exact le_max_left ..
-  apply bit_room (n:=n) (D:=divisorFloor n b) (W:=radius b) (C:=C) (B:=B) (T:=T) (A:=A)
+  apply bit_room (n:=n) (D:=divisorFloor n b) (W:=radius b) (C:=C+(dimension-1)) (B:=B) (T:=T) (A:=A)
     (wb:=507*256+if b then 1001 else 948) (db:=if b then 1019*256+1087 else 1023*256)
     (lt_of_lt_of_le (by positivity : 0<X) (xl.trans Dle)) (nl.trans (Nat.mul_le_mul_left _ Dle))
   · cases b
@@ -106,6 +106,45 @@ private theorem lll_factor {r H : ℕ} (dim : r≤2^15) (bound : 30*r+(r-1)*r≤
     _ ≤ 2^(4*H) := Nat.pow_le_pow_right (by decide) bound
     _ = _ := by rw [Nat.mul_comm 4 H,pow_mul]
 
+private lemma factor_rooms {d r m n w t b h k : ℕ}
+    (box : r^r≤2^h) (lll : r^(2*r)*2^k≤(2^h)^4)
+    (room : 2^(h+(r-1))*(n^t*w^b)<(d^m)^r) :
+    n^t*(r^r*(2^(r-1)*w^b)) < (d^m)^r ∧
+    r^(2*r)*2^k*(n^t*(2^(r-1)*w^b))^4 < (d^m)^(4*r) := by
+  rw [pow_add] at room
+  constructor
+  · calc
+      _ = r^r*(2^(r-1)*(n^t*w^b)) := by ac_rfl
+      _ ≤ _ := Nat.mul_le_mul_right _ box
+      _ < _ := by simpa only [Nat.mul_assoc] using room
+  · calc
+      _ ≤ (2^h)^4*(n^t*(2^(r-1)*w^b))^4 := Nat.mul_le_mul_right _ lll
+      _ = (2^h*(n^t*(2^(r-1)*w^b)))^4 := (mul_pow ..).symm
+      _ < ((d^m)^r)^4 := by
+        apply Nat.pow_lt_pow_left _ (by decide)
+        convert room using 1
+        ac_rfl
+      _ = _ := by rw [←pow_mul,Nat.mul_comm r 4]
+
+/-- Both the finite-pigeonhole room and the numerical sufficient bound from classical LLL
+allow the extra factor of two on each positive-degree Chebyshev coordinate. -/
+theorem weighted_rooms {n : ℕ} (big : 2^2047≤n) (b : Bool) :
+    let m := multiplicity
+    let r := dimension
+    let W := radius b
+    let D := divisorFloor n b
+    n^(m+m.choose 2)*(r^r*(2^(r-1)*W^(r.choose 2))) < (D^m)^r ∧
+    r^(2*r)*2^((r-1)*r)*(n^(m+m.choose 2)*(2^(r-1)*W^(r.choose 2)))^4 < (D^m)^(4*r) := by
+  obtain ⟨ht,hb,ha,hc,h4⟩ := constants
+  apply factor_rooms (h:=C)
+  · calc
+      _ ≤ ((2:ℕ)^15)^dimension := Nat.pow_le_pow_left (by decide) _
+      _ = 2^(15*dimension) := (pow_mul ..).symm
+      _ ≤ _ := Nat.pow_le_pow_right (by decide) hc
+  · exact lll_factor (by decide) h4
+  · rw [ht,hb,← pow_mul,ha]
+    exact uniform_height big b
+
 /-- Both the finite-pigeonhole room and the numerical sufficient bound from classical LLL
 hold at these two radii, for the public lower divisor bound of the corresponding region. -/
 theorem rooms {n : ℕ} (big : 2^2047≤n) (b : Bool) :
@@ -115,27 +154,12 @@ theorem rooms {n : ℕ} (big : 2^2047≤n) (b : Bool) :
     let D := divisorFloor n b
     n^(m+m.choose 2)*(r^r*W^(r.choose 2)) < (D^m)^r ∧
     r^(2*r)*2^((r-1)*r)*(n^(m+m.choose 2)*W^(r.choose 2))^4 < (D^m)^(4*r) := by
-  obtain ⟨ht,hb,ha,hc,h4⟩ := constants
-  obtain hc' := uniform_height big b
   dsimp only
-  rw [ht,hb,←pow_mul,ha]
-  have hr : dimension≤2^15 := by decide
-  constructor
-  · have factor : dimension^dimension ≤ 2^C := by
-      calc _ ≤ ((2:ℕ)^15)^dimension := Nat.pow_le_pow_left hr _
-           _ = 2^(15*dimension) := (pow_mul ..).symm
-           _ ≤ _ := Nat.pow_le_pow_right (by decide) hc
-    calc
-      _ = dimension^dimension*(n^T*(radius b)^B) := Nat.mul_left_comm ..
-      _ ≤ _ := Nat.mul_le_mul_right _ factor
-      _ < _ := hc'
-  · have factor := lll_factor hr h4
-    calc
-      _ ≤ (2^C)^4*(n^T*(radius b)^B)^4 := Nat.mul_le_mul_right _ factor
-      _ = _ := (mul_pow ..).symm
-      _ < ((divisorFloor n b)^(A+T))^4 := Nat.pow_lt_pow_left hc' (by decide)
-      _ = _ := by rw [←ha]; simp only [←pow_mul]; congr 1
-
+  have h := weighted_rooms big b
+  have le : (radius b)^dimension.choose 2 ≤ 2^(dimension-1)*(radius b)^dimension.choose 2 :=
+    Nat.le_mul_of_pos_left _ (by positivity)
+  exact ⟨(Nat.mul_le_mul_left _ (Nat.mul_le_mul_left _ le)).trans_lt h.1,
+    (Nat.mul_le_mul_left _ (Nat.pow_le_pow_left (Nat.mul_le_mul_left _ le) _)).trans_lt h.2⟩
 
 private theorem tangent (u L Z : ℕ) (bound : u^2≤2*Z*L) :
     70*u ≤ 50*L+49*Z := by

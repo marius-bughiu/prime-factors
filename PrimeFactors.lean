@@ -273,6 +273,12 @@ import PrimeFactors.ReciprocalDivisorWindow
 import PrimeFactors.DivisorWindowDimension
 import PrimeFactors.FactorIntervalProduct
 import PrimeFactors.HigherDivisorWindow
+import PrimeFactors.ChebyshevDivisorWindow
+import PrimeFactors.ChebyshevDivisorCover
+import PrimeFactors.ChebyshevDivisorThreshold
+import PrimeFactors.DivisorProductDerivative
+import PrimeFactors.FactorCurveElimination
+import PrimeFactors.PairedDivisorWindows
 import PrimeFactors.HigherWindowCertificate
 import PrimeFactors.QuarticLevelExclusion
 import PrimeFactors.ThreeRowCofactor

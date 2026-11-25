@@ -1,0 +1,461 @@
+[
+  {
+    "id": "divisor-product-derivative-143",
+    "description": "Compare two translated products with whole-band and square-root-prefix gcds",
+    "n": "143",
+    "max_candidates": 4,
+    "outcome": "digit_sum",
+    "candidates": 4,
+    "full_candidates": "4",
+    "products": 2,
+    "product_gcd": "143",
+    "digit0": "135",
+    "digit1": "86",
+    "factor_sum": "24",
+    "work": {
+      "block_cycles": 2,
+      "block_degree": 2,
+      "blocks": 2,
+      "factorial_limit": 3,
+      "setup_gcds": 2,
+      "inversions": 2,
+      "seed_terms": 4,
+      "convolutions": 2,
+      "convolution_input_coefficients": 10,
+      "shifted_values": 4,
+      "paired_products": 4,
+      "block_accumulations": 4,
+      "tail_terms": 0
+    },
+    "unvisited": "0",
+    "whole_band": {
+      "candidates": 4,
+      "gcd": "143",
+      "work": {
+        "block_cycles": 2,
+        "block_degree": 2,
+        "blocks": 2,
+        "factorial_limit": 3,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "seed_terms": 2,
+        "convolutions": 1,
+        "convolution_input_coefficients": 5,
+        "shifted_values": 2,
+        "paired_products": 2,
+        "block_accumulations": 2,
+        "tail_terms": 0
+      }
+    },
+    "through_sqrt": {
+      "candidates": 2,
+      "gcd": "11",
+      "work": {
+        "block_cycles": 1,
+        "block_degree": 1,
+        "blocks": 2,
+        "seed_terms": 2,
+        "block_accumulations": 2,
+        "tail_terms": 0
+      }
+    },
+    "trial": {
+      "divisions": 2,
+      "factor": 11
+    },
+    "status": "complete",
+    "factors": [
+      "11",
+      "13"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "divisor-product-derivative-16bit",
+    "description": "Compare two translated products with whole-band and square-root-prefix gcds",
+    "n": "54253",
+    "max_candidates": 64,
+    "outcome": "digit_sum",
+    "candidates": 64,
+    "full_candidates": "64",
+    "products": 2,
+    "product_gcd": "54253",
+    "digit0": "16452",
+    "digit1": "33411",
+    "factor_sum": "466",
+    "work": {
+      "block_cycles": 8,
+      "block_degree": 8,
+      "blocks": 8,
+      "factorial_limit": 15,
+      "setup_gcds": 2,
+      "inversions": 2,
+      "seed_terms": 4,
+      "convolutions": 6,
+      "convolution_input_coefficients": 78,
+      "shifted_values": 44,
+      "paired_products": 32,
+      "block_accumulations": 16,
+      "tail_terms": 0
+    },
+    "unvisited": "0",
+    "whole_band": {
+      "candidates": 64,
+      "gcd": "54253",
+      "work": {
+        "block_cycles": 8,
+        "block_degree": 8,
+        "blocks": 8,
+        "factorial_limit": 15,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "seed_terms": 2,
+        "convolutions": 3,
+        "convolution_input_coefficients": 39,
+        "shifted_values": 22,
+        "paired_products": 16,
+        "block_accumulations": 8,
+        "tail_terms": 0
+      }
+    },
+    "through_sqrt": {
+      "candidates": 52,
+      "gcd": "227",
+      "work": {
+        "block_cycles": 8,
+        "block_degree": 8,
+        "blocks": 6,
+        "factorial_limit": 11,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "seed_terms": 2,
+        "convolutions": 3,
+        "convolution_input_coefficients": 35,
+        "shifted_values": 18,
+        "paired_products": 14,
+        "block_accumulations": 6,
+        "tail_terms": 4
+      }
+    },
+    "trial": {
+      "divisions": 50,
+      "factor": 227
+    },
+    "status": "complete",
+    "factors": [
+      "227",
+      "239"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "divisor-product-derivative-23bit",
+    "description": "Compare two translated products with whole-band and square-root-prefix gcds",
+    "n": "7371899",
+    "max_candidates": 1024,
+    "outcome": "digit_sum",
+    "candidates": 1024,
+    "full_candidates": "1024",
+    "products": 2,
+    "product_gcd": "7371899",
+    "digit0": "2665764",
+    "digit1": "605434",
+    "factor_sum": "5436",
+    "work": {
+      "block_cycles": 32,
+      "block_degree": 32,
+      "blocks": 32,
+      "factorial_limit": 63,
+      "setup_gcds": 2,
+      "inversions": 2,
+      "seed_terms": 4,
+      "convolutions": 10,
+      "convolution_input_coefficients": 326,
+      "shifted_values": 192,
+      "paired_products": 132,
+      "block_accumulations": 64,
+      "tail_terms": 0
+    },
+    "unvisited": "0",
+    "whole_band": {
+      "candidates": 1024,
+      "gcd": "7371899",
+      "work": {
+        "block_cycles": 32,
+        "block_degree": 32,
+        "blocks": 32,
+        "factorial_limit": 63,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "seed_terms": 2,
+        "convolutions": 5,
+        "convolution_input_coefficients": 163,
+        "shifted_values": 96,
+        "paired_products": 66,
+        "block_accumulations": 32,
+        "tail_terms": 0
+      }
+    },
+    "through_sqrt": {
+      "candidates": 334,
+      "gcd": "2593",
+      "work": {
+        "block_cycles": 16,
+        "block_degree": 16,
+        "blocks": 20,
+        "factorial_limit": 39,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "seed_terms": 2,
+        "convolutions": 4,
+        "convolution_input_coefficients": 89,
+        "shifted_values": 55,
+        "paired_products": 37,
+        "block_accumulations": 20,
+        "tail_terms": 14
+      }
+    },
+    "trial": {
+      "divisions": 273,
+      "factor": 2593
+    },
+    "status": "complete",
+    "factors": [
+      "2593",
+      "2843"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "divisor-product-derivative-32bit",
+    "description": "Compare two translated products with whole-band and square-root-prefix gcds",
+    "n": "2397917251",
+    "max_candidates": 16384,
+    "outcome": "digit_sum",
+    "candidates": 16384,
+    "full_candidates": "16384",
+    "products": 2,
+    "product_gcd": "2397917251",
+    "digit0": "337319027",
+    "digit1": "433738644",
+    "factor_sum": "98620",
+    "work": {
+      "block_cycles": 128,
+      "block_degree": 128,
+      "blocks": 128,
+      "factorial_limit": 255,
+      "setup_gcds": 2,
+      "inversions": 2,
+      "seed_terms": 4,
+      "convolutions": 14,
+      "convolution_input_coefficients": 1294,
+      "shifted_values": 772,
+      "paired_products": 520,
+      "block_accumulations": 256,
+      "tail_terms": 0
+    },
+    "unvisited": "0",
+    "whole_band": {
+      "candidates": 16384,
+      "gcd": "2397917251",
+      "work": {
+        "block_cycles": 128,
+        "block_degree": 128,
+        "blocks": 128,
+        "factorial_limit": 255,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "seed_terms": 2,
+        "convolutions": 7,
+        "convolution_input_coefficients": 647,
+        "shifted_values": 386,
+        "paired_products": 260,
+        "block_accumulations": 128,
+        "tail_terms": 0
+      }
+    },
+    "through_sqrt": {
+      "candidates": 8100,
+      "gcd": "43517",
+      "work": {
+        "block_cycles": 64,
+        "block_degree": 64,
+        "blocks": 126,
+        "factorial_limit": 251,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "seed_terms": 2,
+        "convolutions": 6,
+        "convolution_input_coefficients": 449,
+        "shifted_values": 317,
+        "paired_products": 193,
+        "block_accumulations": 126,
+        "tail_terms": 36
+      }
+    },
+    "trial": {
+      "divisions": 5375,
+      "factor": 43517
+    },
+    "status": "complete",
+    "factors": [
+      "43517",
+      "55103"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "divisor-product-derivative-fresh-2048",
+    "description": "Compare two translated products with whole-band and square-root-prefix gcds",
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "max_candidates": 64,
+    "outcome": "coprime_product",
+    "candidates": 64,
+    "full_candidates": "44942328371557897693232629769725618340449424473557664318357520289433168951375240783177119330601884005280028469967848339414697442203604155623211857659868531094441973356216371319075554900311523529863270738021251442209537670585615720368478277635206809290837627671146574559986811484619929076208839082406056034304",
+    "products": 1,
+    "product_gcd": "1",
+    "digit0": null,
+    "digit1": null,
+    "factor_sum": null,
+    "work": {
+      "block_cycles": 8,
+      "block_degree": 8,
+      "blocks": 8,
+      "factorial_limit": 15,
+      "setup_gcds": 1,
+      "inversions": 1,
+      "seed_terms": 2,
+      "convolutions": 3,
+      "convolution_input_coefficients": 39,
+      "shifted_values": 22,
+      "paired_products": 16,
+      "block_accumulations": 8,
+      "tail_terms": 0
+    },
+    "unvisited": "44942328371557897693232629769725618340449424473557664318357520289433168951375240783177119330601884005280028469967848339414697442203604155623211857659868531094441973356216371319075554900311523529863270738021251442209537670585615720368478277635206809290837627671146574559986811484619929076208839082406056034240",
+    "whole_band": {
+      "candidates": 64,
+      "gcd": "1",
+      "work": {
+        "block_cycles": 8,
+        "block_degree": 8,
+        "blocks": 8,
+        "factorial_limit": 15,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "seed_terms": 2,
+        "convolutions": 3,
+        "convolution_input_coefficients": 39,
+        "shifted_values": 22,
+        "paired_products": 16,
+        "block_accumulations": 8,
+        "tail_terms": 0
+      }
+    },
+    "through_sqrt": {
+      "candidates": 64,
+      "gcd": "1",
+      "work": {
+        "block_cycles": 8,
+        "block_degree": 8,
+        "blocks": 8,
+        "factorial_limit": 15,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "seed_terms": 2,
+        "convolutions": 3,
+        "convolution_input_coefficients": 39,
+        "shifted_values": 22,
+        "paired_products": 16,
+        "block_accumulations": 8,
+        "tail_terms": 0
+      }
+    },
+    "trial": {
+      "divisions": 64,
+      "factor": null
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    ]
+  },
+  {
+    "id": "divisor-product-derivative-crossed-2048",
+    "description": "Compare two translated products with whole-band and square-root-prefix gcds",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "max_candidates": 64,
+    "outcome": "coprime_product",
+    "candidates": 64,
+    "full_candidates": "44942328371557897693232629769725618340449424473557664318357520289433168951375240783177119330601884005280028469967848339414697442203604155623211857659868531094441973356216371319075554900311523529863270738021251442209537670585615720368478277635206809290837627671146574559986811484619929076208839082406056034304",
+    "products": 1,
+    "product_gcd": "1",
+    "digit0": null,
+    "digit1": null,
+    "factor_sum": null,
+    "work": {
+      "block_cycles": 8,
+      "block_degree": 8,
+      "blocks": 8,
+      "factorial_limit": 15,
+      "setup_gcds": 1,
+      "inversions": 1,
+      "seed_terms": 2,
+      "convolutions": 3,
+      "convolution_input_coefficients": 39,
+      "shifted_values": 22,
+      "paired_products": 16,
+      "block_accumulations": 8,
+      "tail_terms": 0
+    },
+    "unvisited": "44942328371557897693232629769725618340449424473557664318357520289433168951375240783177119330601884005280028469967848339414697442203604155623211857659868531094441973356216371319075554900311523529863270738021251442209537670585615720368478277635206809290837627671146574559986811484619929076208839082406056034240",
+    "whole_band": {
+      "candidates": 64,
+      "gcd": "1",
+      "work": {
+        "block_cycles": 8,
+        "block_degree": 8,
+        "blocks": 8,
+        "factorial_limit": 15,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "seed_terms": 2,
+        "convolutions": 3,
+        "convolution_input_coefficients": 39,
+        "shifted_values": 22,
+        "paired_products": 16,
+        "block_accumulations": 8,
+        "tail_terms": 0
+      }
+    },
+    "through_sqrt": {
+      "candidates": 64,
+      "gcd": "1",
+      "work": {
+        "block_cycles": 8,
+        "block_degree": 8,
+        "blocks": 8,
+        "factorial_limit": 15,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "seed_terms": 2,
+        "convolutions": 3,
+        "convolution_input_coefficients": 39,
+        "shifted_values": 22,
+        "paired_products": 16,
+        "block_accumulations": 8,
+        "tail_terms": 0
+      }
+    },
+    "trial": {
+      "divisions": 64,
+      "factor": null
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  }
+]

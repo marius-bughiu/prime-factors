@@ -19,6 +19,8 @@ if str(ROOT) not in sys.path:
 
 from experiments.adaptive_quartic_cover import search as adaptive_quartic_search
 from experiments.higher_divisor_window import search as higher_window_search
+from experiments.divisor_product_derivative import compare as compare_product_digits
+from experiments.paired_divisor_windows import compare as compare_paired_windows
 from experiments.arbitrary_divisor_window import quartile_center, search as arbitrary_window_search
 from experiments.class_order_search import search as class_order_search
 from experiments.complete_offset_search import search as complete_offset_search
@@ -42,7 +44,7 @@ from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
 from experiments.quartic_three_row import search as three_row_search
 from experiments.quartic_basis_translation import search as translated_window_search
-from experiments.quartic_interval_extension import extend as extend_quartic_window
+from experiments.quartic_interval_extension import _bernstein_positive, extend as extend_quartic_window
 from experiments.quartic_divisor_window import odd_quartile_center, search as quartic_window_search
 from experiments.quartic_factor_lanes import search as quartic_lane_search
 from experiments.unit_factor_lane import search as unit_lane_search
@@ -214,6 +216,40 @@ def check_quartic_interval(n, work, proof):
   all_goals first | (unfold PrimeFactors.QuarticDivisorWindow.jets; decide +kernel) | decide +kernel""")
 
 
+def chebyshev_quartic_cuts(work, limit=64):
+    """Cover a measured quartic by bounded Bernstein certificates for both strict margins."""
+    if (work['degree'], work['depth']) != (4, 2) or not work['short'] or not work['excluded']:
+        raise ValueError('Expected a short exclusion quartic of depth two')
+    c, radius = work['center'], work['radius']
+    square = [c*c, 4*c, 4, 0, 0]
+    margins = [[a+sign*b for a, b in zip(square, work['coefficients'])] for sign in (-1, 1)]
+    pending = [(-radius, radius)]
+    ends = []
+    tests = 0
+    while pending:
+        left, right = pending.pop()
+        tests += 1
+        if all(_bernstein_positive(poly, left, right) for poly in margins):
+            ends.append(right)
+        elif left < right and len(ends)+len(pending)+2 <= limit:
+            mid = (left+right)//2
+            pending.extend([(mid+1, right), (left, mid)])
+        else:
+            raise ValueError('Failed to certify both quartic margins within the subdivision budget')
+    return ends[:-1], tests
+
+
+def check_chebyshev_quartic(n, work, proof):
+    cuts, tests = chebyshev_quartic_cuts(work)
+    coefficients = ', '.join(map(str, work['coefficients']))
+    exclusion = verify_interval(n, work, proof, 'QuarticIntervalExtension', f"""  apply PrimeFactors.QuarticIntervalExtension.odd_interval_excludes
+    (v := ![{coefficients}]) (c := {work['center']}) (cuts := [{', '.join(map(str,cuts))}])
+    (l := (-{work['radius']})) (u := {work['radius']}) (t := ({work['anchor']}))
+    (m := {work['rootless_modulus']}) ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ d lo hi
+  all_goals first | (unfold PrimeFactors.QuarticDivisorWindow.jets; decide +kernel) | decide +kernel""")
+    return dict(exclusion, certified_blocks=len(cuts)+1, bernstein_tests=tests)
+
+
 def check_extended_interval(n, work, proof):
     """Verify both the interval exclusion and the first failing index on each side."""
     if not (work['excluded'] and work['left_neighbor_fails'] and work['right_neighbor_fails']):
@@ -362,6 +398,34 @@ def run_case(case, method, proofs):
         result = certify_split(case, proof, factor, elapsed, 'adaptive_quartic_cover', work)
         if not case['full']:
             result['exclusion'] = check_quartic_levels(n, sample, proof)
+    elif method == 'divisor-product-derivative':
+        work = compare_product_digits(int(case['n']), case['max_candidates'])
+        elapsed = time.perf_counter()-start
+        digit = work['digit']
+        agree(case, digit, ['outcome', 'candidates', 'full_candidates', 'products', 'product_gcd',
+                            'digit0', 'digit1', 'factor_sum', 'work'])
+        agree(case, dict(unvisited=digit['remaining'], **work), ['unvisited', 'whole_band', 'through_sqrt', 'trial'])
+        result = certify_split(case, proof, digit['factor'], elapsed, 'divisor_product_derivative', work)
+    elif method == 'paired-divisor-windows':
+        work = compare_paired_windows(int(case['n']), half_separation=case['half_separation'], radius=case['radius'])
+        elapsed = time.perf_counter()-start
+        agree(case, work, ['center', 'height', 'height_bound', 'relation_verified', 'divisors', 'roots', 'work', 'ordinary'])
+        factor = next((d for d in work['divisors'] if 1 < d < int(case['n'])), None)
+        result = certify_split(case, proof, factor, elapsed, 'paired_divisor_windows', work)
+    elif method == 'chebyshev-divisor-window':
+        n = int(case['n'])
+        center, radius = odd_quartile_center(n), int(case['radius'])
+        parameters = dict(degree=case['degree'], depth=case['depth'], modulus_limit=case['modulus_limit'])
+        work = higher_window_search(n, center, radius, chebyshev=True, **parameters)
+        ordinary = higher_window_search(n, center, radius, **parameters)
+        elapsed = time.perf_counter()-start
+        work['ordinary'] = {k: ordinary[k] for k in ('short', 'height', 'rootless_modulus', 'work')}
+        agree(case, work, ['center', 'progression_size', 'short', 'height', 'ordinary_height',
+                           'rootless_modulus', 'work', 'ordinary'])
+        factor = next((d for d in work['divisors'] if 1 < d < n), None)
+        result = certify_split(case, proof, factor, elapsed, 'chebyshev_divisor_window', work)
+        if work['rootless_modulus'] is not None:
+            result['exclusion'] = check_chebyshev_quartic(n, work, proof)
     elif method == 'higher-divisor-window':
         n = int(case['n'])
         work = higher_window_search(n, odd_quartile_center(n), int(case['radius']), degree=case['degree'],
@@ -1075,6 +1139,9 @@ def main():
                              ('quartic-three-row.json', 'quartic-three-row'),
                              ('adaptive-quartic-cover.json', 'adaptive-quartic-cover'),
                              ('higher-divisor-window.json', 'higher-divisor-window'),
+                             ('divisor-product-derivative.json', 'divisor-product-derivative'),
+                             ('paired-divisor-windows.json', 'paired-divisor-windows'),
+                             ('chebyshev-divisor-window.json', 'chebyshev-divisor-window'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

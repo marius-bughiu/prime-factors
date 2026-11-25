@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Monic Chebyshev coordinates let neighboring 24,576-row windows merge in pairs, giving fewer than $2^{508}$ locations. The two controls still need more than $2^{506}$ locations each. The five-row experiment split 132,079 where the ordinary height bound failed. A separate formula recovers the exact prime sum from two band products measured modulo $N^2$. [Coverage, disjoint windows and reciprocal equations](two-ranges-with-one-equation.md) · [Sum and evaluation cost](second-digit-of-a-product.md)
+
 Using the product-dependent lower bound and two window widths covers the whole feasible smaller-factor range in fewer than $(19/20)2^{509}$ locations at dimension 24,576. The determinant estimate at a fixed public floor succeeds on one comparison input and fails in all dimensions on the other. [Coupled bounds, reciprocal intervals and analytic clues](what-the-product-says-about-the-window.md)
 
 A degree-eight equation covers approximately $2^{46}$ times as many positions at a chosen location as the quartic. The public grid drops from $2^{614}$ to $2^{568}$ locations. Increasing the degree further gives a proved grid of $2^{511}$ locations with 1,044 rows per reduction. On two full-size products we ran the nine-row version and certified both selected intervals empty. [Grid, work and limits](wider-windows-and-the-missing-location.md)

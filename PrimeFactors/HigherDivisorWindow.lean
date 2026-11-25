@@ -26,7 +26,7 @@ noncomputable def height {r : ℕ} (v : Fin r → ℤ) (W : ℕ) : ℤ :=
 def Jets (m n : ℕ) (t : ℤ) (F : ℤ[X]) : Prop :=
   ∀ i : Fin m, (n:ℤ)^(m-i.val) ∣ (taylor t F).coeff i.val
 
-private theorem finite_collision {L : Type*} [Fintype L] {r M : ℕ} (hr : 0<r) (hm : 0<M)
+theorem finite_collision {L : Type*} [Fintype L] {r M : ℕ} (hr : 0<r) (hm : 0<M)
     (w : Fin r → ℕ) (hw : ∀ i, 0<w i)
     (room : Fintype.card L * (r^r * ∏ i, w i) < M^r) (label : (Fin r → ℤ) → L) :
     ∃ u v : Fin r → ℤ, u≠v ∧ label u=label v ∧
@@ -70,7 +70,7 @@ private theorem finite_collision {L : Type*} [Fintype L] {r M : ℕ} (hr : 0<r) 
     have bound := le_of_mul_le_mul_left summed (by exact_mod_cast hr : (0:ℤ)<r)
     omega
 
-private theorem tag_sum (m : ℕ) : (∑ i : Fin m, (m-i.val)) = m+m.choose 2 := by
+theorem tag_sum (m : ℕ) : (∑ i : Fin m, (m-i.val)) = m+m.choose 2 := by
   rw [Fin.sum_univ_eq_sum_range]
   calc
     _ = ∑ i ∈ range (m+1), (m-i) := by rw [sum_range_succ]; simp
@@ -78,7 +78,7 @@ private theorem tag_sum (m : ℕ) : (∑ i : Fin m, (m-i.val)) = m+m.choose 2 :=
     _ = (m+1).choose 2 := by rw [sum_range_id,Nat.choose_two_right]
     _ = _ := by rw [Nat.choose_succ_succ,Nat.choose_one_right]
 
-private theorem weight_sum (r : ℕ) : (∑ i : Fin r, i.val) = r.choose 2 := by
+theorem weight_sum (r : ℕ) : (∑ i : Fin r, i.val) = r.choose 2 := by
   rw [Fin.sum_univ_eq_sum_range (fun i => i),sum_range_id,Nat.choose_two_right]
 
 /-- The actual coefficient-scaled matrix, with one row per translated power and
@@ -133,22 +133,25 @@ theorem eval_coeff {r : ℕ} (v : Fin r → ℤ) (x : ℤ) :
   rw [ofFn_eq_sum_monomial,eval_finset_sum]
   simp [eval_monomial,mul_comm]
 
+/-- Jet divisibility works for any integer polynomial, independently of its basis. -/
+theorem dvd_eval_of_jets {m n : ℕ} {t x d : ℤ} {F : ℤ[X]}
+    (jets : Jets m n t F) (factor : d∣(n:ℤ)) (offset : d∣x-t) : d^m ∣ F.eval x := by
+  rw [← taylor_eval_sub t _ x,eval_eq_sum_range]
+  apply dvd_sum
+  intro i _
+  by_cases im : i<m
+  · have first := (pow_dvd_pow_of_dvd factor (m-i)).trans (jets ⟨i,im⟩)
+    have second := pow_dvd_pow_of_dvd offset i
+    simpa only [← pow_add,Nat.sub_add_cancel im.le] using mul_dvd_mul first second
+  · exact dvd_mul_of_dvd_right ((pow_dvd_pow d (by omega : m ≤ i)).trans
+      (pow_dvd_pow_of_dvd offset i)) _
+
 /-- A sufficiently small auxiliary polynomial vanishes at every divisor in its window. -/
 theorem root_of_divisor {m r n W : ℕ} {t x d : ℤ} {v : Fin r → ℤ}
     (jets : Jets m n t (ofFn r v)) (factor : d∣(n:ℤ)) (offset : d∣x-t)
     (near : |x|≤(W:ℤ)) (small : height v W<d^m) :
     (ofFn r v).eval x=0 := by
-  have divides : d^m ∣ (ofFn r v).eval x := by
-    rw [← taylor_eval_sub t _ x,eval_eq_sum_range]
-    apply dvd_sum
-    intro i _
-    by_cases im : i<m
-    · have first := (pow_dvd_pow_of_dvd factor (m-i)).trans (jets ⟨i,im⟩)
-      have second := pow_dvd_pow_of_dvd offset i
-      simpa only [← pow_add,Nat.sub_add_cancel im.le] using mul_dvd_mul first second
-    · exact dvd_mul_of_dvd_right ((pow_dvd_pow d (by omega : m ≤ i)).trans
-        (pow_dvd_pow_of_dvd offset i)) _
-  apply Int.eq_zero_of_abs_lt_dvd divides
+  apply Int.eq_zero_of_abs_lt_dvd (dvd_eval_of_jets jets factor offset)
   rw [eval_coeff]
   refine ((abs_sum_le_sum_abs ..).trans ?_).trans_lt small
   apply Finset.sum_le_sum

@@ -1,0 +1,75 @@
+[
+  {
+    "id": "paired-divisor-windows-9009",
+    "description": "Check one quartic on two disjoint windows of a number with several divisors",
+    "n": "9009",
+    "half_separation": 3,
+    "radius": 1,
+    "center": 83,
+    "height": 1248,
+    "height_bound": 5625,
+    "relation_verified": true,
+    "divisors": [
+      77,
+      91
+    ],
+    "roots": [
+      -3,
+      4
+    ],
+    "work": {
+      "lll_calls": 1,
+      "lll_swaps": 24,
+      "lll_reductions": 34,
+      "integer_root_nodes": 8
+    },
+    "ordinary": [
+      {
+        "center": 77,
+        "radius": 1,
+        "height": 81,
+        "height_bound": 5625,
+        "relation_verified": true,
+        "divisors": [
+          77
+        ],
+        "lll_calls": 1,
+        "lll_reductions": 38,
+        "lll_swaps": 31
+      },
+      {
+        "center": 89,
+        "radius": 1,
+        "height": 142,
+        "height_bound": 7569,
+        "relation_verified": true,
+        "divisors": [
+          91
+        ],
+        "lll_calls": 1,
+        "lll_reductions": 45,
+        "lll_swaps": 28
+      },
+      {
+        "center": 83,
+        "radius": 4,
+        "height": 6592,
+        "height_bound": 5625,
+        "relation_verified": false,
+        "divisors": [],
+        "lll_calls": 1,
+        "lll_reductions": 35,
+        "lll_swaps": 19
+      }
+    ],
+    "status": "complete",
+    "factors": [
+      "3",
+      "3",
+      "7",
+      "11",
+      "13"
+    ],
+    "remaining": []
+  }
+]

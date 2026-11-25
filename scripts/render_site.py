@@ -142,6 +142,32 @@ def case_row(result):
                  f' · {counts["root_polynomials"]:,} polynomials checked for integer roots'
                  f' · {compact_count(w["covered_odd_positions"])} odd positions checked'
                  f' · {compact_count(w["unvisited_odd_positions"])} unvisited')
+    elif result['method'] == 'divisor-product-derivative':
+        w = result['divisor_product_derivative']
+        digit = w['digit']
+        count = (f"{digit['products']} product{'s' if digit['products'] != 1 else ''} evaluated modulo a {digit['modulus_bits']:,}-bit integer"
+                 f" · {digit['candidates']:,} odd candidates per evaluation"
+                 f" · {compact_count(int(digit['remaining']))} unvisited"
+                 f" · {w['through_sqrt']['candidates']:,} slots in the capped square-root prefix"
+                 f" · {w['trial']['divisions']:,} trial divisions in the comparison")
+        if digit['factor_sum'] is not None:
+            count += f" · recovered factor sum {escape(digit['factor_sum'])}"
+    elif result['method'] == 'paired-divisor-windows':
+        w = result['paired_divisor_windows']
+        left, right, combined = w['ordinary']
+        count = (f"One reduction for both windows · divisors {', '.join(map(str, w['divisors'])) or 'none'}"
+                 f" · height {w['height']:,} against bound {w['height_bound']:,}"
+                 f" · separate ordinary heights {left['height']:,} and {right['height']:,}"
+                 f" · ordinary enclosing-window height {combined['height']:,}")
+    elif result['method'] == 'chebyshev-divisor-window':
+        w = result['chebyshev_divisor_window']
+        ordinary = w['ordinary']
+        count = (f"Two quartic bases on {compact_count(w['progression_size'])} odd positions"
+                 f" · Chebyshev height {compact_count(w['height'])} ({'passes' if w['short'] else 'fails'})"
+                 f" · ordinary height {compact_count(ordinary['height'])} ({'passes' if ordinary['short'] else 'fails'})"
+                 f" · {w['work']['lll_reductions']:,} and {ordinary['work']['lll_reductions']:,} size reductions")
+        if 'exclusion' in result:
+            count += f" · {result['exclusion']['certified_blocks']} certified polynomial pieces"
     elif result['method'] == 'higher-divisor-window':
         w = result['higher_divisor_window']
         count = (f'Degree {w["degree"]} at a prescribed location · {compact_count(w["progression_size"])} odd positions'
