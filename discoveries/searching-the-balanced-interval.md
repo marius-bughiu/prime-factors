@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+One reduced basis gives at most three search directions for a whole interval of possible smaller factors. An integer inequality sometimes certifies one direction across much larger intervals. On a 2,048-bit example it combined $2^{257}$ consecutive blocks into one reduction. The factor location remains unknown. [Proof, selection cost, and checked examples](selecting-factor-coordinates.md)
+
 Using the integer just below the floor square root gives a complete search of fewer than $2^{692}$ equations or singleton tests for every product of two distinct 1,024-bit primes. On the two full-size controls the exhaustive coordinate loop visits at least $2^{503}$ groups. A fresh 59-bit product was fully recovered in 92,583 arcs. [All-coordinate proof, cost and example](counting-all-factor-arcs.md)
 
 Four sampled coordinate pairs on each 2,048-bit input previously left more than $2^{492}$ candidate positions. Projecting them onto lines costs fewer than $2^{253}$ quadratic equations. Shorter pieces, with widths chosen from the curvature and the public congruence, reduce this to fewer than $2^{175}$ line or singleton tests. The counts cover those sampled coordinates. On the 49-bit control, a separate sieve using primes through 97 left one candidate and recovered both primes. [Lines across the original bands](lines-on-a-factor-arc.md) · [Proved widths for the shorter pieces](subdividing-a-factor-arc.md) · [The one surviving position](prime-trace-images.md)

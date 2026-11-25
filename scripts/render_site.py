@@ -127,6 +127,34 @@ def case_row(result):
                  f" · {w['visited_arcs']:,} of {compact_count(w['planned_arcs'])} arcs visited"
                  f" · {w['singletons_tested']:,} single positions and {w['line_equations']:,} line equations"
                  f" · {w['epoch_roots']:,} square roots and {w['width_cube_roots']:,} cube roots to plan arcs")
+    elif result['method'] == 'offset-factor-blocks':
+        w = result['offset_factor_blocks']
+        base = 'shifted' if w['shifted'] else 'floor-root'
+        count = (f"Smaller-factor intervals · {compact_count(w['visited_blocks'])} of {compact_count(w['total_blocks'])}"
+                 f" {base}-base blocks covered (budget {compact_count(w['max_blocks'])})"
+                 f" · {compact_count(w['unvisited_blocks'])} blocks unvisited"
+                 f" · {w['gauss_iterations']:,} basis reduction steps"
+                 f" · {w['scanned_charts']:,} of {w['unique_charts']:,} distinct coordinate pairs scanned"
+                 f" · {w['tested_positions']:,} positions tested (budget {w['max_tests']:,})")
+        if w.get('coalesce'):
+            count += (f" · {w['endpoint_reductions']:,} endpoint reductions"
+                      f" · {w['guide_tests']:,} guide tests and {w['guide_interval_roots']:,} guide square roots")
+            lower = w['untested_chart_positions_lower']
+            upper = w['untested_chart_positions_upper']
+            if lower == upper:
+                position_count = f"{compact_count(lower)} (exact count)"
+            else:
+                position_count = f"{compact_count(lower)} to {compact_count(upper)} (lower and upper bounds)"
+            count += (f" · {position_count} untested offset positions passing the residue and signed gap-band filters"
+                      " across the full scanned coordinate windows")
+            if w['max_reductions'] is not None:
+                count += f" · endpoint reduction budget {w['max_reductions']:,}"
+            if w.get('from_end'):
+                count += (" · counted from the end at the integer square root"
+                          f" · {compact_count(w['unvisited_prefix_blocks'])} earlier blocks and"
+                          f" {compact_count(w['unvisited_suffix_blocks'])} later blocks unvisited")
+        if w['untested_intervals']:
+            count += f" · {w['untested_intervals']:,} intervals in scanned pairs still have unchecked positions"
     elif result['method'] == 'offset-trace-words':
         w = result['offset_trace_words']
         if w['outcome'] == 'word_cap':

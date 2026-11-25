@@ -23,6 +23,7 @@ from experiments.offset_arc_lines import search as offset_arc_line_search
 from experiments.offset_coordinate_gaps import search as offset_coordinate_gap_search
 from experiments.offset_crt_reconstruction import search as offset_crt_search
 from experiments.offset_dyadic_search import search as offset_dyadic_search
+from experiments.offset_factor_blocks import search as offset_factor_block_search
 from experiments.offset_lattice_batches import search as offset_lattice_search
 from experiments.offset_prime_power_slopes import search as offset_prime_power_search
 from experiments.offset_row_geometry import search as offset_row_geometry_search
@@ -211,6 +212,18 @@ def run_case(case, method, proofs):
         factor = work.pop('factor')
         agree(case, work, work)
         result = certify_split(case, proof, factor, elapsed, 'offset_trace_words', work)
+    elif method == 'offset-factor-blocks':
+        from_end = case.get('from_end', False)
+        work = offset_factor_block_search(
+            int(case['n']), max_blocks=case['max_blocks'], start_block=0 if from_end else case['start_block'],
+            from_end=from_end, max_tests=case['max_tests'], shifted=case['shifted'], parity=case['parity'],
+            coalesce=case.get('coalesce', False), max_reductions=case.get('max_reductions'))
+        elapsed = time.perf_counter() - start
+        hits = work.pop('hits')
+        work.update(proper_hits=len(hits), first_hit=hits[0][:2] if hits else None)
+        agree(case, work, work)
+        factor = int(hits[0][2]) if hits else None
+        result = certify_split(case, proof, factor, elapsed, 'offset_factor_blocks', work)
     elif method == 'offset-crt':
         work = offset_crt_search(int(case['n']), case['max_tuples'], exhaust=case['exhaust'],
                                  optimize_wheel=case.get('optimize_wheel', False))
@@ -823,6 +836,7 @@ def main():
                              ('offset-arc-lines.json', 'offset-arc-lines'),
                              ('offset-tangent-cover.json', 'offset-tangent-cover'),
                              ('offset-trace-words.json', 'offset-trace-words'),
+                             ('offset-factor-blocks.json', 'offset-factor-blocks'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

@@ -91,6 +91,8 @@ import PrimeFactors.ShiftedOffsetBase
 import PrimeFactors.OffsetGlobalArcs
 import PrimeFactors.TargetArcSchedule
 import PrimeFactors.OffsetCoordinateFloor
+import PrimeFactors.OffsetCoordinateMultiplicity
+import PrimeFactors.OffsetMinimumThreshold
 import PrimeFactors.OffsetTraceImage
 import PrimeFactors.DivisorWindowSignal
 import PrimeFactors.OffsetUnitTrace
