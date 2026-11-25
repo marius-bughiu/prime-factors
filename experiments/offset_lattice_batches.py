@@ -14,6 +14,7 @@ from experiments.complete_offset_search import slot_count
 from experiments.offset_crt_reconstruction import search as full_wheel_search
 from experiments.offset_dyadic_search import chart_directions, select_charts
 from experiments.offset_prime_power_slopes import local_directions, normalized_line
+from experiments.offset_row_norm import rules as primitive_row_rules
 from experiments.grouped_offset_rows import local_failures
 from experiments.offset_crt_wheel import choose_wheel
 from experiments.short_basis_sieve import reduced_lattice_basis
@@ -69,7 +70,7 @@ def row_interval(x, y, u, j_limit, k_limit, t, h):
     return lower,upper
 
 
-def batch_events(x,y,j_limit,k_limit,t,h,*,row_sieve=False,work=None):
+def batch_events(x,y,j_limit,k_limit,t,h,*,row_sieve=False,work=None,primitive_rows=False):
     """Yield row starts and candidates separately so either kind of work is budgeted."""
     a,b = x
     c,d = y
@@ -78,13 +79,19 @@ def batch_events(x,y,j_limit,k_limit,t,h,*,row_sieve=False,work=None):
     first = ceil_div(min(0,a*k_limit)-max(0,b*j_limit),det)
     last = (max(0,a*k_limit)-min(0,b*j_limit))//det
     obstructions = ()
+    bound = max(abs(first),abs(last))
     if row_sieve:
         pivot = a*a+4*b*(t*a-h*b)
-        bound = max(abs(first),abs(last))
         base,powers = local_failures(pivot,ROW_PRIMES,bound)
         obstructions = base+powers
         if work is not None and pivot:
             work['pivot_prime_tests'] += sum(p<=bound for p in ROW_PRIMES)
+    multiples, shells = (), ()
+    if primitive_rows and bound:
+        multiples, shells = primitive_row_rules(t*t+h,t,h,x,det,ROW_PRIMES,bound,work)
+        # Rows eliminated by the old test never reach the additional checks.
+        multiples = [q for q in multiples if all(q%old for old in obstructions)]
+        shells = [(q,r) for q,r in shells if all(q%old for old in obstructions)]
     for u in range(first,last+1):
         rejected = False
         for q in obstructions:
@@ -93,6 +100,27 @@ def batch_events(x,y,j_limit,k_limit,t,h,*,row_sieve=False,work=None):
             if u%q==0:
                 rejected = True
                 break
+        if primitive_rows and u and not rejected:
+            for q in multiples:
+                if work is not None:
+                    work['normalized_mod_tests'] += 1
+                if u%q==0:
+                    rejected = True
+                    if work is not None:
+                        work['determinant_rejections'] += 1
+                    break
+            if not rejected:
+                for q,r in shells:
+                    if work is not None:
+                        work['normalized_mod_tests'] += 1
+                    if u%q==0:
+                        if work is not None:
+                            work['normalized_mod_tests'] += 1
+                        if u%r:
+                            rejected = True
+                            if work is not None:
+                                work['valuation_rejections'] += 1
+                            break
         yield 'row', rejected
         if rejected:
             continue
@@ -107,7 +135,7 @@ def batch_events(x,y,j_limit,k_limit,t,h,*,row_sieve=False,work=None):
 
 
 def search(n, max_batches, *, drop=1, max_events=1_000_000, exhaust=False, row_sieve=True,
-           dyadic_exponent=None):
+           dyadic_exponent=None, primitive_rows=False):
     """Drop the largest selected wheel primes; test them on the reconstructed points instead."""
     if not 4 <= n < 2**2048 or min(max_batches,drop,max_events)<0:
         raise ValueError('expected a target below 2^2048 and nonnegative budgets')
@@ -121,6 +149,9 @@ def search(n, max_batches, *, drop=1, max_events=1_000_000, exhaust=False, row_s
                   unfinished_batches=0,gauss_iterations=0,rows=0,rejected_rows=0,pivot_prime_tests=0,
                   row_divisibility_tests=0,point_visits=0,primitive_points=0,
                   deferred_checks=0,deferred_survivors=0,square_tests=0,proper_hits=0)
+    row_norm_fields = ('normalized_prime_tests','normalized_mod_tests','determinant_rejections','valuation_rejections')
+    if primitive_rows:
+        result.update(dict.fromkeys(row_norm_fields,0))
     if not h:
         result.update(status='square',factor=t,remaining=t)
         return result
@@ -184,8 +215,10 @@ def search(n, max_batches, *, drop=1, max_events=1_000_000, exhaust=False, row_s
         chart_stats[name]['started_batches'] += 1
         x,y = direction_basis(moduli,entries,j_limit,k_limit,work)
         result['gauss_iterations'] = work['gauss_iterations']
-        for kind, value in batch_events(x,y,j_limit,k_limit,t,h,row_sieve=row_sieve,work=work):
+        for kind, value in batch_events(x,y,j_limit,k_limit,t,h,row_sieve=row_sieve,work=work,primitive_rows=primitive_rows):
             if result['rows']+result['point_visits'] == max_events:
+                if primitive_rows:
+                    result.update({key:work[key] for key in row_norm_fields})
                 return result
             if kind == 'row':
                 result['rows'] += 1
@@ -216,10 +249,14 @@ def search(n, max_batches, *, drop=1, max_events=1_000_000, exhaust=False, row_s
                         if result['factor'] is None:
                             result.update(status='split',factor=f,remaining=n//f, first_hit=[j,k])
                         if not exhaust:
+                            if primitive_rows:
+                                result.update({key:work[key] for key in row_norm_fields})
                             return result
         chart_stats[name]['completed_batches'] += 1
         result['completed_batches'] += 1
         result['unfinished_batches'] -= 1
+    if primitive_rows:
+        result.update({key:work[key] for key in row_norm_fields})
     if not result['unfinished_batches'] and result['factor'] is None:
         result['status'] = 'exhausted'
     return result
@@ -280,6 +317,7 @@ if __name__ == '__main__':
     parser.add_argument('--drop',type=int,default=1)
     parser.add_argument('--dyadic-exponent',type=int,help='select parity charts up to this exponent before batching')
     parser.add_argument('--exhaust',action='store_true')
+    parser.add_argument('--primitive-rows',action='store_true',help='test the primitive axis at its full determinant with each row')
     parser.add_argument('--no-row-sieve',action='store_true',help='disable the within-batch quadratic row test')
     parser.add_argument('--verify',action='store_true',help='certify both recovered primes in Lean')
     args = parser.parse_args()
@@ -290,7 +328,7 @@ if __name__ == '__main__':
         raise SystemExit(0)
     if args.n is None:
         parser.error('supply N or use --holdout')
-    result=search(args.n,args.max_batches,drop=args.drop,max_events=args.max_events,exhaust=args.exhaust,row_sieve=not args.no_row_sieve,dyadic_exponent=args.dyadic_exponent)
+    result=search(args.n,args.max_batches,drop=args.drop,max_events=args.max_events,exhaust=args.exhaust,row_sieve=not args.no_row_sieve,dyadic_exponent=args.dyadic_exponent,primitive_rows=args.primitive_rows)
     if args.verify and result['factor']:
         certify(args.n,(result['factor'],result['remaining']))
         result['primes_kernel_checked']=True

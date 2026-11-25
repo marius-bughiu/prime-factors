@@ -83,6 +83,11 @@ import PrimeFactors.OffsetAdaptiveFloor
 import PrimeFactors.OffsetDyadicSlopes
 import PrimeFactors.OffsetLatticeBatches
 import PrimeFactors.OffsetPrimePowerSlopes
+import PrimeFactors.OffsetCoordinateGaps
+import PrimeFactors.OffsetFactorProjection
+import PrimeFactors.OffsetRowGeometry
+import PrimeFactors.OffsetRowNorm
+import PrimeFactors.OffsetWinnerWindow
 import PrimeFactors.DedekindLaneRanking
 import PrimeFactors.HyperbolaBoxes
 import PrimeFactors.ImplicitPowers

@@ -19,10 +19,13 @@ if str(ROOT) not in sys.path:
 
 from experiments.class_order_search import search as class_order_search
 from experiments.complete_offset_search import search as complete_offset_search
+from experiments.offset_coordinate_gaps import search as offset_coordinate_gap_search
 from experiments.offset_crt_reconstruction import search as offset_crt_search
 from experiments.offset_dyadic_search import search as offset_dyadic_search
 from experiments.offset_lattice_batches import search as offset_lattice_search
 from experiments.offset_prime_power_slopes import search as offset_prime_power_search
+from experiments.offset_row_geometry import search as offset_row_geometry_search
+from experiments.offset_winner_window import search as offset_winner_window_search
 from experiments.grouped_offset_frame import choose_frame
 from experiments.grouped_offset_rows import bounded_rows
 from experiments.midpoint_slope_batches import search as slope_batch_search
@@ -164,6 +167,23 @@ def run_case(case, method, proofs):
         if 'filter_prime_limit' in case:
             agree(case, work, ['covered_pairs', 'skipped_pairs', 'skipped_rows'])
         result = certify_split(case, proof, work.pop('factor'), elapsed, 'complete_offset', work)
+    elif method == 'offset-winner-window':
+        work = offset_winner_window_search(int(case['n']), case['max_visits'], equal_width=case['equal_width'])
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['raw_slots', 'coordinate_visits_upper', 'visited_pairs', 'coordinate_rows',
+                           'coprime_vectors', 'coprime_slots', 'square_tests', 'square_hits', 'proper_hits',
+                           'unvisited_upper', 'exhaustive', 'next_coordinate'])
+        result = certify_split(case, proof, work.pop('factor'), elapsed, 'offset_winner_window', work)
+    elif method == 'offset-coordinate-gaps':
+        work = offset_coordinate_gap_search(int(case['n']), case['parts'], max_vectors=case['max_vectors'],
+                                            max_tests=case['max_tests'], all_vectors=case['all_vectors'],
+                                            tilted=case['tilted'])
+        elapsed = time.perf_counter() - start
+        hits = work.pop('hits')
+        work['proper_hits'] = len(hits)
+        agree(case, work, work.keys())
+        factor = int(hits[0][2]) if hits else None
+        result = certify_split(case, proof, factor, elapsed, 'offset_coordinate_gaps', work)
     elif method == 'offset-crt':
         work = offset_crt_search(int(case['n']), case['max_tuples'], exhaust=case['exhaust'],
                                  optimize_wheel=case.get('optimize_wheel', False))
@@ -176,7 +196,8 @@ def run_case(case, method, proofs):
     elif method == 'offset-lattice-batches':
         work = offset_lattice_search(int(case['n']), case['max_batches'], drop=case['drop'],
                                      max_events=case['max_events'], exhaust=case['exhaust'],
-                                     dyadic_exponent=case.get('dyadic_exponent'))
+                                     dyadic_exponent=case.get('dyadic_exponent'),
+                                     primitive_rows=case.get('primitive_rows', False))
         elapsed = time.perf_counter() - start
         agree(case, work, ['raw_slots', 'full_tuples', 'total_batches', 'started_batches',
                            'completed_batches', 'unfinished_batches', 'gauss_iterations', 'rows',
@@ -185,7 +206,21 @@ def run_case(case, method, proofs):
                            'first_hit', 'deferred_primes', 'wheel_work'])
         if case.get('dyadic_exponent'):
             agree(case, work, ['charts', 'setup', 'odd_only_tuples'])
+        if case.get('primitive_rows'):
+            agree(case, work, ['normalized_prime_tests', 'normalized_mod_tests',
+                               'determinant_rejections', 'valuation_rejections'])
         result = certify_split(case, proof, work.pop('factor'), elapsed, 'offset_lattice', work)
+    elif method == 'offset-row-geometry':
+        work = offset_row_geometry_search(int(case['n']), case['max_batches'], drop=case['drop'],
+                                          reserve_size=case['reserve_size'], max_events=case['max_events'],
+                                          exhaust=case['exhaust'])
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['baseline_batches', 'total_batches', 'started_batches', 'completed_batches',
+                           'unfinished_batches', 'full_tuples', 'minimum_modulus', 'raw_slots', 'first_hit',
+                           'proper_hits', 'rows', 'rejected_rows', 'point_visits', 'primitive_points',
+                           'deferred_checks', 'second_digit_checks', 'square_tests', 'reserve_primes',
+                           'work', 'wheel_work'])
+        result = certify_split(case, proof, work.pop('factor'), elapsed, 'offset_row_geometry', work)
     elif method == 'offset-dyadic':
         work = offset_dyadic_search(int(case['n']), case['max_per_chart'], max_exponent=case['max_exponent'])
         elapsed = time.perf_counter() - start
@@ -755,8 +790,12 @@ def main():
                              ('class-orders.json', 'class-orders'), ('grouped-norm.json', 'grouped-norm'),
                              ('offset-rows.json', 'offset-rows'),
                              ('complete-offset-search.json', 'complete-offset-search'),
+                             ('offset-winner-window.json', 'offset-winner-window'),
+                             ('offset-coordinate-gaps.json', 'offset-coordinate-gaps'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
+                             ('offset-row-norm.json', 'offset-lattice-batches'),
+                             ('offset-row-geometry.json', 'offset-row-geometry'),
                              ('offset-dyadic.json', 'offset-dyadic'),
                              ('offset-prime-power.json', 'offset-prime-power')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())

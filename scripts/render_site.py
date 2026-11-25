@@ -4,6 +4,7 @@ import argparse
 import json
 import shutil
 from html import escape
+from math import log2
 from pathlib import Path
 from string import Template
 
@@ -21,6 +22,12 @@ def position_budget(done, required):
     if total.bit_length() > 64:
         return f'{done:,} positions evaluated · full sum needs at least 2<sup>{total.bit_length()-1}</sup>'
     return f'{done:,} of {total:,} positions'
+
+
+def compact_count(value):
+    if value.bit_length() <= 64:
+        return f'{value:,}'
+    return f'<abbr title="{value:,}">about 2<sup>{log2(value):.2f}</sup></abbr>'
 
 
 def case_row(result):
@@ -75,6 +82,27 @@ def case_row(result):
                  f" · {w['integer_square_roots']:,} integer square roots")
         if w.get('skipped_pairs'):
             count += f" · {w['skipped_pairs']:,} further pairs skipped by the offset filter"
+    elif result['method'] == 'offset-winner-window':
+        w = result['offset_winner_window']
+        count = (f"Multiplier coordinates · {w['visited_pairs']:,} visits · {w['coordinate_rows']:,} coordinate rows"
+                 f" · {w['square_tests']:,} square tests · {w['proper_hits']:,} successful positions")
+        if w['exhaustive']:
+            count += ' · full coordinate range exhausted'
+        else:
+            count += (f" · visit budget {w['max_visits']:,}"
+                      f" · upper bound on remaining visits {compact_count(w['unvisited_upper'])}")
+    elif result['method'] == 'offset-coordinate-gaps':
+        w = result['offset_coordinate_gaps']
+        band = 'Chord' if w['tilted'] else 'Horizontal'
+        scope = 'full coordinate range' if w['all_vectors'] and w['schedule_exhausted'] else 'sampled coordinates'
+        candidates = compact_count(w['candidate_lower'])
+        if w['candidate_lower'] != w['candidate_upper']:
+            candidates += '–' + compact_count(w['candidate_upper'])
+        count = (f"{band} intervals · {w['vectors']:,} coordinate pairs ({scope})"
+                 f" · {w['empty_intervals']:,} of {w['intervals']:,} intervals empty"
+                 f" · {candidates} candidate positions"
+                 f" · {w['tested_positions']:,} positions checked with a budget of {w['max_tests']:,}"
+                 f" · {w['untested_intervals']:,} intervals still have unchecked positions")
     elif result['method'] == 'offset-crt':
         w = result['offset_crt']
         total = w['total_tuples']
@@ -85,12 +113,21 @@ def case_row(result):
             selection = w['wheel_work']
             subsets = selection.get('left_subsets', 0) + selection.get('right_subsets', 0)
             count += f" · prime selection examined {subsets:,} subsets and tried {selection['trial_divisions']} divisors"
-    elif result['method'] == 'offset-lattice-batches':
-        w = result['offset_lattice']
-        total = w['total_batches']
-        available = f'at least 2<sup>{total.bit_length()-1}</sup>' if total.bit_length() > 64 else f'{total:,}'
-        count = (f"Lattice search · {w['completed_batches']:,} of {available} groups completed"
+    elif result['method'] in ('offset-lattice-batches', 'offset-row-geometry'):
+        geometry = result['method'] == 'offset-row-geometry'
+        w = result['offset_row_geometry'] if geometry else result['offset_lattice']
+        label = 'Lattice search with lifted residues' if geometry else 'Lattice search'
+        count = (f"{label} · {w['completed_batches']:,} groups completed"
+                 f" · {compact_count(w['unfinished_batches'])} groups unfinished"
                  f" · {w['rows']:,} rows · {w['point_visits']:,} candidate visits · {w['square_tests']:,} square tests")
+        if geometry:
+            count += (f" · {compact_count(w['total_batches'])} scheduled groups with lifted residues"
+                      f" · {compact_count(w['baseline_batches'])} in the original schedule"
+                      f" · {w['second_digit_checks']:,} second-digit checks during the scan")
+        if 'normalized_mod_tests' in w:
+            count += (f" · {w['normalized_mod_tests']:,} normalized-row divisibility checks"
+                      f" · {w['determinant_rejections']:,} determinant rejections"
+                      f" · {w['valuation_rejections']:,} valuation rejections")
     elif result['method'] in ('offset-dyadic', 'offset-prime-power'):
         dyadic = result['method'] == 'offset-dyadic'
         w = result['offset_dyadic'] if dyadic else result['offset_prime_power']

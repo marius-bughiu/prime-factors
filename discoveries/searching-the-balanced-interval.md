@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+At a successful offset, the product determines a remainder of the signed difference of the two weighted factors. Counting remainders close to the factor curve reduced 281,150 checks to 35,334 on a 49-bit product. Guessing a factor based solely on the existence of a short vector still leaves at least $2^{1021}$ possible integers on every nonsquare 2,048-bit input. Two further tests use the determinant of a primitive row and forced extra remainder digits to discard more lattice points. [Curve and counts](counting-signed-factor-gaps.md) · [Factor projection](short-factor-projections.md) · [Primitive rows](primitive-lattice-rows.md) · [Forced lifts](lifting-singular-batches.md)
+
 Stopping before the final prime tests lets one lattice cover multiple possibilities. On a 49-bit example this preserved the winning test while cutting the exhaustive run from 7.39 to 0.59 seconds. Even adaptive prime-power choices leave more than $2^{889}$ combinations at 2,048 bits if every branch continues to the single-position reconstruction threshold. [Grouping and adaptive bound](grouping-remainder-searches.md)
 
 Remainders modulo 130 small primes now let us jump directly to possible positions. On a 2,048-bit product of two distinct 1,024-bit primes we can reach every winner in fewer than $2^{901}$ reconstructions. Our two full-size examples still require about $2^{899}$ reconstructions for full coverage with the fixed prime list. [Proof and search costs](reconstructing-winning-positions.md)
