@@ -80,13 +80,16 @@ def case_row(result):
         count = (f'Base selection · {selection["bases_tested"]:,} of {w["max_primes"]:,} primes tested'
                  f' · combined order {escape(selection["combined_order"])}'
                  f' · {escape(w["outcome"].replace("_", " "))}')
-    elif result['method'] == 'weighted-stride':
+    elif result['method'] in ('weighted-stride', 'weighted-sparse'):
         w = result['weighted_stride']
         counts = w['work']
         scope = 'all windows generated' if w['schedule_complete'] else (w['limit'] or w['outcome']).replace('_',' ')
         count = (f'Weighted sums · {counts["babies"]:,} starting powers · {counts["giants"]:,} blocks'
                  f' · {counts["labels_covered"]:,} candidate sums · {escape(scope)}'
                  f' · search {duration(result["discovery_seconds"])}')
+        if result['method'] == 'weighted-sparse':
+            count += (f' · {counts["evaluations"]:,} positions evaluated'
+                      f' · {counts["retained_evaluations"]:,} retained in the gcd test')
     elif result['method'] == 'factorial-progressions':
         w = result['factorial_progressions']
         counts = w['work']

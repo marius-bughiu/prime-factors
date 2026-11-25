@@ -170,8 +170,10 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(settings)
         result = certify_split(case, proof, run['factor'], elapsed, 'weighted_base', work)
-    elif method == 'weighted-stride':
+    elif method in ('weighted-stride', 'weighted-sparse'):
         settings = {k: case[k] for k in ('k', 'baby_steps', 'max_giants', 'max_slopes', 'beta', 'stride')}
+        if method == 'weighted-sparse':
+            settings.update(wheel_primes=case['wheel_primes'], max_span=case['max_span'])
         work = weighted_stride_search.search(int(case['n']), **settings)
         elapsed = time.perf_counter() - start
         factor = work.pop('factor')
@@ -538,6 +540,7 @@ def main():
                              ('norm-band-product.json', 'norm-band-product'),
                              ('factorial-progressions.json', 'factorial-progressions'),
                              ('weighted-stride.json', 'weighted-stride'),
+                             ('weighted-sparse.json', 'weighted-sparse'),
                              ('weighted-base.json', 'weighted-base'),
                              ('quartic-trace.json', 'quartic-trace'),
                              ('extension-trace.json', 'extension-trace'),

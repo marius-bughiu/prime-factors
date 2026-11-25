@@ -1,0 +1,146 @@
+{
+  "python": "3.9.6",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "base": 2,
+  "max_giants": 262144,
+  "order": "rotated once per repetition",
+  "cases": [
+    {
+      "n": "6091663632054090929",
+      "k": 38,
+      "original_babies": 1406,
+      "span": 2030,
+      "primes": [
+        5,
+        7
+      ],
+      "methods": {
+        "dense_original": {
+          "times_seconds": [
+            0.029026,
+            0.027587,
+            0.024857
+          ],
+          "factor": "2423330473",
+          "giants": 1299,
+          "retained_babies": 1406,
+          "evaluated_positions": 1406
+        },
+        "dense_same_span": {
+          "times_seconds": [
+            0.025711,
+            0.022053,
+            0.022984
+          ],
+          "factor": "2423330473",
+          "giants": 987,
+          "retained_babies": 2030,
+          "evaluated_positions": 2030
+        },
+        "translated": {
+          "times_seconds": [
+            0.033283,
+            0.021422,
+            0.026941
+          ],
+          "factor": "2423330473",
+          "giants": 988,
+          "retained_babies": 1392,
+          "evaluated_positions": 2030
+        }
+      }
+    },
+    {
+      "n": "543283139603355533096543",
+      "k": 118,
+      "original_babies": 13924,
+      "span": 22330,
+      "primes": [
+        5,
+        7,
+        11
+      ],
+      "methods": {
+        "dense_original": {
+          "times_seconds": [
+            0.425544,
+            0.385646,
+            0.352178
+          ],
+          "factor": "622358546533",
+          "giants": 12439,
+          "retained_babies": 13924,
+          "evaluated_positions": 13924
+        },
+        "dense_same_span": {
+          "times_seconds": [
+            0.294915,
+            0.286867,
+            0.267829
+          ],
+          "factor": "622358546533",
+          "giants": 8703,
+          "retained_babies": 22330,
+          "evaluated_positions": 22330
+        },
+        "translated": {
+          "times_seconds": [
+            0.334107,
+            0.305111,
+            0.299584
+          ],
+          "factor": "622358546533",
+          "giants": 8723,
+          "retained_babies": 13920,
+          "evaluated_positions": 22330
+        }
+      }
+    },
+    {
+      "n": "439173623877940919234655961",
+      "k": 231,
+      "original_babies": 53130,
+      "span": 85085,
+      "primes": [
+        5,
+        7,
+        11
+      ],
+      "methods": {
+        "dense_original": {
+          "times_seconds": [
+            1.649694,
+            1.718868,
+            1.722475
+          ],
+          "factor": "20895494959567",
+          "giants": 47323,
+          "retained_babies": 53130,
+          "evaluated_positions": 53130
+        },
+        "dense_same_span": {
+          "times_seconds": [
+            1.318945,
+            1.381053,
+            1.252125
+          ],
+          "factor": "20895494959567",
+          "giants": 33159,
+          "retained_babies": 85085,
+          "evaluated_positions": 85085
+        },
+        "translated": {
+          "times_seconds": [
+            1.432488,
+            1.474608,
+            1.470395
+          ],
+          "factor": "20895494959567",
+          "giants": 33179,
+          "retained_babies": 53040,
+          "evaluated_positions": 85085
+        }
+      }
+    }
+  ]
+}

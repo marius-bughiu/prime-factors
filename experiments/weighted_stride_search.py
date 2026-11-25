@@ -10,6 +10,7 @@ from .factorial_progressions import decimal_convolution
 from .short_basis_sieve import recover_trace
 from .wide_modulus import multiply
 from .weighted_windows import weighted_window
+from .weighted_residue_tables import Wheel
 
 
 def root_polynomial(roots, n):
@@ -69,7 +70,7 @@ def _setup_babies(n, h, m, work):
     return powers, common
 
 
-def _giants(n, k, m, max_giants, max_slopes, beta, stride, work):
+def _giants(n, k, m, max_giants, max_slopes, beta, stride, work, *, wheel=None):
     records = []
     jump = pow(beta, -stride*m, n)
     for b in range(1, k+1):
@@ -83,41 +84,58 @@ def _giants(n, k, m, max_giants, max_slopes, beta, stride, work):
             low, high = weighted_window(n, k, a, b)
             public = a+b*n
             step = gcd(stride, 2*public)
-            start = low + (public-low) % step
-            if start > high:
+            first = low + (public-low) % step
+            if first > high:
                 continue
             work['nonempty_slopes'] += 1
-            length = (high-start)//step+1
-            count = (length+m-1)//m
-            take = min(count, max_giants-len(records))
-            if take:
-                power = pow(beta, (stride//step)*(public-start), n)
-                for j in range(take):
-                    valid = min(m, length-j*m)
-                    records.append((power, a, b, start+j*m*step, step, valid))
-                    work['labels_covered'] += valid
-                    power = power*jump % n
-            if take < count:
-                return records, 'giant_limit'
+            length = (high-first)//step+1
+            phases = (0,) if wheel is None else wheel.phases(a,b,n,step,first)
+            for phase in phases:
+                if wheel is not None:
+                    work['phase_schedules'] += 1
+                power = None
+                for offset in range(0, phase+length, m):
+                    begin, end = max(0,phase-offset), min(m,phase+length-offset)
+                    valid = end-begin if wheel is None else wheel.prefix(end)-wheel.prefix(begin)
+                    if valid:
+                        if len(records) >= max_giants:
+                            return records, 'giant_limit'
+                        start = first+(offset-phase)*step
+                        if power is None:
+                            power = pow(beta, (stride//step)*(public-start), n)
+                        records.append((power,a,b,start,step,begin,end))
+                        work['labels_covered'] += valid
+                    if power is not None:
+                        power = power*jump % n
     return records, None
 
 
 def search(n, k, baby_steps, max_giants, *, beta=2, max_babies=262144,
-           max_slopes=131072, stride=24, record_builder=_giants):
+           max_slopes=131072, stride=24, record_builder=_giants, wheel_primes=None,
+           max_span=262144):
     """Search an explicit prefix of windows for odd balanced primes p<q≤2p.
 
     stride=1 runs the same windows without modular stride compression.
-    The default caps guard huge k/m even if no slope yields a single giant.
+    With wheel_primes, baby_steps caps the retained table and max_span caps
+    the full span used by the order check and dense geometric convolution.
     """
-    if n < 3 or k < 1 or baby_steps < 1 or min(max_babies,max_giants,max_slopes) < 0:
+    if n < 3 or k < 1 or baby_steps < 1 or min(max_babies,max_giants,max_slopes,max_span) < 0:
         raise ValueError('expected N≥3, positive k and baby_steps, and nonnegative caps')
     if stride not in (1,24):
         raise ValueError('stride must be 1 or 24')
+    if wheel_primes is not None and record_builder is not _giants:
+        raise ValueError('the translated wheel uses the Farey window record builder')
     work = dict(base_gcds=0, slope_visits=0, primitive_slopes=0, nonempty_slopes=0, giants=0,
                 labels_covered=0, babies=0, order_gcds=0, equality_checks=0,
                 polynomial_degree=0, evaluations=0, collision_gcds=0)
     result = dict(factor=None, schedule_complete=False, limit=None, work=work)
-    for value in (2, 3, beta):
+    wheel = None if wheel_primes is None else Wheel(wheel_primes)
+    span = baby_steps
+    if wheel is not None:
+        span = wheel.period*(baby_steps//len(wheel.allowed))
+        work.update(wheel_period=wheel.period, hole_lengths=wheel.holes, baby_span=span,
+                    order_positions=0, phase_schedules=0, retained_evaluations=0)
+    for value in (2, 3, beta, *(wheel.primes if wheel is not None else ())):
         work['base_gcds'] += 1
         divisor = gcd(value, n)
         if divisor > 1:
@@ -126,23 +144,33 @@ def search(n, k, baby_steps, max_giants, *, beta=2, max_babies=262144,
             return dict(result, outcome='nonunit_base_or_modulus')
     if baby_steps > max_babies:
         return dict(result, limit='baby_limit', outcome='baby_limit')
+    if wheel is not None and (not span or span > max_span):
+        limit = 'wheel_capacity' if not span else 'span_limit'
+        return dict(result, limit=limit, outcome=limit)
     h = pow(beta, stride, n)
-    powers, common = _setup_babies(n, h, baby_steps, work)
-    work['babies'] = len(powers)
+    powers, common = _setup_babies(n, h, span, work)
+    indices = range(span)
+    if wheel is not None:
+        work['order_positions'] = span-1
+        indices = [offset+i for offset in range(0,span,wheel.period) for i in wheel.allowed]
+    work['babies'] = len(indices)
     if common != 1:
         if common < n:
             return dict(result, factor=common, outcome='order_divisor')
         return dict(result, outcome='short_order')
-    records, limit = record_builder(n, k, baby_steps, max_giants, max_slopes, beta, stride, work)
+    if wheel is None:
+        records, limit = record_builder(n, k, span, max_giants, max_slopes, beta, stride, work)
+    else:
+        records, limit = _giants(n, k, span, max_giants, max_slopes, beta, stride, work, wheel=wheel)
     result.update(schedule_complete=limit is None, limit=limit)
     work['giants'] = len(records)
-    index = {v: i for i, v in enumerate(powers)}
+    index = {powers[i]: i for i in indices}
     pending = []
-    for power, a, b, start, step, valid in records:
+    for power, a, b, start, step, begin, end in records:
         i = index.get(power)
         if i is None:
             pending.append(power)
-        elif i < valid:
+        elif begin <= i < end:
             work['equality_checks'] += 1
             factor = recover_trace(n, a, b, start+step*i)
             if factor:
@@ -151,18 +179,20 @@ def search(n, k, baby_steps, max_giants, *, beta=2, max_babies=262144,
         unique = list(dict.fromkeys(pending))
         work['polynomial_degree'] = len(unique)
         poly = root_polynomial(unique, n)
-        values = geometric_values(poly, h, baby_steps, n)
+        values = geometric_values(poly, h, span, n)
         work['evaluations'] = len(values)
+        if wheel is not None:
+            work['retained_evaluations'] = len(indices)
         batch = 1
-        for value in values:
-            batch = batch*value % n
+        for i in indices:
+            batch = batch*values[i] % n
         divisor = gcd(batch, n)
         work['collision_gcds'] += 1
         if 1 < divisor < n:
             return dict(result, factor=divisor, outcome='collision_divisor')
         if divisor == n:
-            for i, value in enumerate(values):
-                divisor = gcd(value, n)
+            for i in indices:
+                divisor = gcd(values[i], n)
                 work['collision_gcds'] += 1
                 if 1 < divisor < n:
                     return dict(result, factor=divisor, outcome='collision_divisor')

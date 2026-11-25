@@ -1,0 +1,149 @@
+[
+  {
+    "id": "weighted-sparse-79",
+    "description": "Complete weighted search with a shared sparse exponent table on the 79-bit comparison product",
+    "n": "543283139603355533096543",
+    "k": 118,
+    "baby_steps": 13924,
+    "max_giants": 262144,
+    "max_slopes": 131072,
+    "beta": 2,
+    "stride": 24,
+    "wheel_primes": [
+      5,
+      7,
+      11
+    ],
+    "max_span": 262144,
+    "schedule_complete": true,
+    "limit": null,
+    "work": {
+      "base_gcds": 6,
+      "slope_visits": 7139,
+      "primitive_slopes": 4259,
+      "nonempty_slopes": 4259,
+      "giants": 8723,
+      "labels_covered": 89222041,
+      "babies": 13920,
+      "order_gcds": 1,
+      "equality_checks": 0,
+      "polynomial_degree": 8723,
+      "evaluations": 22330,
+      "collision_gcds": 1,
+      "wheel_period": 385,
+      "hole_lengths": [
+        1,
+        1,
+        1
+      ],
+      "baby_span": 22330,
+      "order_positions": 22329,
+      "phase_schedules": 4259,
+      "retained_evaluations": 13920
+    },
+    "outcome": "collision_divisor",
+    "status": "complete",
+    "factors": [
+      "622358546533",
+      "872942361971"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "weighted-sparse-89",
+    "description": "Shared sparse exponent table on the first independently drawn 89-bit product",
+    "n": "439173623877940919234655961",
+    "k": 231,
+    "baby_steps": 53130,
+    "max_giants": 262144,
+    "max_slopes": 131072,
+    "beta": 2,
+    "stride": 24,
+    "wheel_primes": [
+      5,
+      7,
+      11
+    ],
+    "max_span": 262144,
+    "schedule_complete": true,
+    "limit": null,
+    "work": {
+      "base_gcds": 6,
+      "slope_visits": 27027,
+      "primitive_slopes": 16275,
+      "nonempty_slopes": 16275,
+      "giants": 33179,
+      "labels_covered": 1293274432,
+      "babies": 53040,
+      "order_gcds": 1,
+      "equality_checks": 0,
+      "polynomial_degree": 33179,
+      "evaluations": 85085,
+      "collision_gcds": 1,
+      "wheel_period": 385,
+      "hole_lengths": [
+        1,
+        1,
+        1
+      ],
+      "baby_span": 85085,
+      "order_positions": 85084,
+      "phase_schedules": 16275,
+      "retained_evaluations": 53040
+    },
+    "outcome": "collision_divisor",
+    "status": "complete",
+    "factors": [
+      "20895494959567",
+      "21017622445783"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "weighted-sparse-capped-2048",
+    "description": "Ninety-six translated giant records on the 2048-bit comparison input",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "k": 32,
+    "baby_steps": 64,
+    "max_giants": 96,
+    "max_slopes": 512,
+    "beta": 2,
+    "stride": 24,
+    "wheel_primes": [
+      5,
+      7
+    ],
+    "max_span": 262144,
+    "schedule_complete": false,
+    "limit": "giant_limit",
+    "work": {
+      "base_gcds": 5,
+      "slope_visits": 1,
+      "primitive_slopes": 1,
+      "nonempty_slopes": 1,
+      "giants": 96,
+      "labels_covered": 4586,
+      "babies": 48,
+      "order_gcds": 1,
+      "equality_checks": 0,
+      "polynomial_degree": 96,
+      "evaluations": 70,
+      "collision_gcds": 1,
+      "wheel_period": 35,
+      "hole_lengths": [
+        1,
+        1
+      ],
+      "baby_span": 70,
+      "order_positions": 69,
+      "phase_schedules": 1,
+      "retained_evaluations": 48
+    },
+    "outcome": "giant_limit",
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  }
+]

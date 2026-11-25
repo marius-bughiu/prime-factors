@@ -7,7 +7,7 @@ exec lake env lean --run .lake/packages/mathlib/Cache/Main.lean get \
   Mathlib.Data.Nat.Prime.Int Mathlib.Algebra.Field.ZMod Mathlib.Data.Nat.Factors Mathlib.Data.Nat.Sqrt Mathlib.Data.ZMod.Units \
   Mathlib.Algebra.Group.Pi.Units Mathlib.GroupTheory.Index Mathlib.Data.ZMod.QuotientRing Mathlib.Data.Nat.Totient \
   Mathlib.Algebra.Order.BigOperators.Group.Finset Mathlib.Algebra.BigOperators.Ring.Finset \
-  Mathlib.Data.Nat.Dist Mathlib.NumberTheory.DiophantineApproximation.Basic \
+  Mathlib.Data.Nat.Dist Mathlib.Data.Nat.ChineseRemainder Mathlib.NumberTheory.DiophantineApproximation.Basic \
   Mathlib.Algebra.GeomSum Mathlib.Data.Nat.GCD.BigOperators Mathlib.Data.Nat.Log \
   Mathlib.NumberTheory.Divisors Mathlib.NumberTheory.Primorial Mathlib.NumberTheory.LegendreSymbol.JacobiSymbol \
   Mathlib.NumberTheory.LegendreSymbol.QuadraticReciprocity Mathlib.NumberTheory.PrimesCongruentOne \
@@ -17,7 +17,7 @@ exec lake env lean --run .lake/packages/mathlib/Cache/Main.lean get \
   Mathlib.Data.Finset.Max Mathlib.Data.Int.Interval Mathlib.Data.Int.ModEq Mathlib.Data.Real.Archimedean \
   Mathlib.Algebra.Order.BigOperators.Ring.Finset Mathlib.Analysis.Complex.Basic Mathlib.Tactic.IntervalCases \
   Mathlib.NumberTheory.LSeries.PrimesInAP Mathlib.NumberTheory.LSeries.Nonvanishing Mathlib.Data.Nat.Squarefree Mathlib.Data.Fintype.BigOperators \
-  Mathlib.FieldTheory.Finite.Basic Mathlib.NumberTheory.ArithmeticFunction Mathlib.NumberTheory.Harmonic.EulerMascheroni \
+  Mathlib.FieldTheory.Finite.Basic Mathlib.FieldTheory.IsAlgClosed.AlgebraicClosure Mathlib.NumberTheory.ArithmeticFunction Mathlib.NumberTheory.Harmonic.EulerMascheroni \
   Mathlib.Data.List.Prime Mathlib.Data.Nat.Factorization.Basic Mathlib.Data.Nat.Choose.Lucas Mathlib.NumberTheory.LucasPrimality Mathlib.Tactic.Linarith \
   Mathlib.Tactic.NormNum.LegendreSymbol Mathlib.Tactic.NormNum.NatSqrt Mathlib.Tactic.NormNum.Prime \
   Mathlib.Data.Matrix.Rank Mathlib.LinearAlgebra.Vandermonde Mathlib.Algebra.Polynomial.Roots Mathlib.Algebra.Polynomial.Derivative Mathlib.Data.Nat.Digits \

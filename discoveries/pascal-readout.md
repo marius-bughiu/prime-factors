@@ -1,5 +1,7 @@
 # One entry of Pascal’s triangle gives a factor
 
+Folding the row into four coefficients gave a factor of 143 with logarithmically many polynomial multiplications. We also estimated how often raw coefficients of every cyclotomic projection of degree at most four can reveal a divisor of a product of two random 1,024-bit primes. [Working example, sampling assumptions and bound](cyclotomic-pascal.md)
+
 Suppose the only input is an odd integer $N=pq$, where $p<q$ are primes. Take the largest odd integer $k\le\lfloor\sqrt N\rfloor$. If $q<4p$, the following formula returns the larger prime exactly:
 
 $$q=1+\left(\binom{N-1}{k}\bmod N\right).$$

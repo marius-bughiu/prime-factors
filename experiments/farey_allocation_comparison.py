@@ -31,7 +31,7 @@ def allocated_records(n, k, m, max_giants, max_slopes, beta, stride, work):
             continue
         power = pow(beta, (stride//step)*(a+b*n-start), n)
         for offset in range(0, length, m):
-            records.append((power, a, b, start+step*offset, step, min(length-offset, m)))
+            records.append((power, a, b, start+step*offset, step, 0, min(length-offset, m)))
             power = power*jump%n
     return records, None
 
