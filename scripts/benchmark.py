@@ -17,6 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from experiments.adaptive_quartic_cover import search as adaptive_quartic_search
+from experiments.higher_divisor_window import search as higher_window_search
 from experiments.arbitrary_divisor_window import quartile_center, search as arbitrary_window_search
 from experiments.class_order_search import search as class_order_search
 from experiments.complete_offset_search import search as complete_offset_search
@@ -48,6 +50,7 @@ from experiments.unit_quartic_probe import probe as unit_quartic_probe
 from experiments.centered_sum_quartic import probe as centered_quartic_probe
 from experiments.projected_level_sieve import centered_search as projected_level_search
 from scripts.factor import verify_file
+from scripts.higher_window_certificate import check_higher_interval
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.local_midpoint_lanes import search as local_midpoint_search
 from experiments.divisor_samples import search as divisor_sample_search
@@ -177,6 +180,27 @@ def check_divisor_interval(n, work, first, count, modulus, proof):
     (a := {work['a']}) (b := {work['b']}) (first := {first}) (count := {count})
     (moduli := [{modulus}]) ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ d lo hi
   all_goals first | (unfold PrimeFactors.WeightedDivisorExclusion.Lower; decide +kernel) | decide +kernel""")
+
+
+def check_quartic_levels(n, sample, proof):
+    """Check one entire excluded chunk, including points outside the old height window."""
+    center, left, right = sample['center'], sample['left'], sample['right']
+    bounds = dict(lower=center+2*left, upper=center+2*right, excluded=True)
+    row_terms = []
+    for row in sample['rows']:
+        coeffs = ', '.join(str(a) for a in row['coefficients'])
+        row_terms.append(f"⟨![{coeffs}], ({row['low']}), ({row['high']})⟩")
+    cases = ' | '.join('rfl' for _ in row_terms)
+    return verify_interval(n, bounds, proof, 'QuarticLevelExclusion', f"""  let rows : List PrimeFactors.QuarticLevelExclusion.Row := [{', '.join(row_terms)}]
+  apply PrimeFactors.QuarticLevelExclusion.odd_interval_excludes
+    (rows := rows) (c := {center}) (l := ({left})) (u := ({right}))
+    (t := ({sample['anchor']})) (m := {sample['modulus']}) ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ d lo hi
+  all_goals first | decide +kernel | skip
+  intro r hr
+  simp only [rows,List.mem_cons,List.not_mem_nil,or_false] at hr
+  rcases hr with {cases}
+  all_goals constructor
+  all_goals first | (unfold PrimeFactors.QuarticDivisorWindow.jets; decide +kernel) | decide +kernel""")
 
 
 def check_quartic_interval(n, work, proof):
@@ -325,6 +349,29 @@ def run_case(case, method, proofs):
         agree(case, work, work)
         factor = int(hits[0][2]) if hits else None
         result = certify_split(case, proof, factor, elapsed, 'offset_factor_blocks', work)
+    elif method == 'adaptive-quartic-cover':
+        n = int(case['n'])
+        work = adaptive_quartic_search(n, full=case['full'], mode=case['mode'],
+                                      max_reductions=case['max_reductions'], level_cap=case['level_cap'],
+                                      chunks_per_basis=case['chunks_per_basis'], sample_certificate=not case['full'])
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['radius', 'fixed_window_count', 'covered_odd_positions', 'unvisited_prefix_odd',
+                           'unvisited_suffix_odd', 'unvisited_odd_positions', 'schedule_exhausted', 'stalled', 'work'])
+        sample = work.pop('sample_certificate')
+        factor = next((d for d in work['divisors'] if 1 < d < n), None)
+        result = certify_split(case, proof, factor, elapsed, 'adaptive_quartic_cover', work)
+        if not case['full']:
+            result['exclusion'] = check_quartic_levels(n, sample, proof)
+    elif method == 'higher-divisor-window':
+        n = int(case['n'])
+        work = higher_window_search(n, odd_quartile_center(n), int(case['radius']), degree=case['degree'],
+                                    depth=case['depth'], modulus_limit=case['modulus_limit'])
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['center', 'progression_size', 'short', 'rootless_modulus', 'work'])
+        factor = next((d for d in work['divisors'] if 1 < d < n), None)
+        result = certify_split(case, proof, factor, elapsed, 'higher_divisor_window', work)
+        if work['rootless_modulus'] is not None:
+            result['exclusion'] = check_higher_interval(n, work, proof, verify_interval)
     elif method == 'quartic-three-row':
         work = three_row_search(int(case['n']), schedule=case['schedule'], blocks=case['blocks'])
         elapsed = time.perf_counter() - start
@@ -1026,6 +1073,8 @@ def main():
                              ('quartic-basis-translation.json', 'quartic-basis-translation'),
                              ('quartic-minor-gcd.json', 'quartic-minor-gcd'),
                              ('quartic-three-row.json', 'quartic-three-row'),
+                             ('adaptive-quartic-cover.json', 'adaptive-quartic-cover'),
+                             ('higher-divisor-window.json', 'higher-divisor-window'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

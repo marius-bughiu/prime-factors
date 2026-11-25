@@ -1,12 +1,14 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/three-rows-reveal-a-cofactor.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/wider-windows-and-the-missing-location.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have succeeded on constructed examples where a factor has a pattern we knew to look for. Once someone supplies the two primes, Lean can check that each is prime and that their product is the number you started with.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?
+
+**A larger equation checks about 70 trillion times as many possible odd factors at a chosen location.** On each of two 2,048-bit examples, Lean verified that the larger interval we tried contained no factor. We also tested whether smaller equations can be reused as we move. That more than halved the number of lattice reductions on our 49-bit example, though the extra checks made the run slightly slower overall. [What was checked and what it costs](discoveries/wider-windows-and-the-missing-location.md)
 
 **Three equations can reveal a prime where the previous test misses.** Starting with 22,663, we used its possible factor range to build three equations. Nine of their coefficients gave the number 21,971. Its greatest common divisor with 22,663 is **173**, giving the other prime **131**. The previous test missed in that same interval. Lean proves a condition that explains the difference. Five intervals on each 2,048-bit example still gave no factor. [Worked example, proof and tests](discoveries/three-rows-reveal-a-cofactor.md)
 

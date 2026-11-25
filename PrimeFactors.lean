@@ -265,6 +265,11 @@ import PrimeFactors.PowerJetContent
 import PrimeFactors.QuarticDeterminantFactor
 import PrimeFactors.QuarticMinorExample
 import PrimeFactors.QuarticMinorTracking
+import PrimeFactors.DivisorWindowDimension
+import PrimeFactors.FactorIntervalProduct
+import PrimeFactors.HigherDivisorWindow
+import PrimeFactors.HigherWindowCertificate
+import PrimeFactors.QuarticLevelExclusion
 import PrimeFactors.ThreeRowCofactor
 import PrimeFactors.DivisorWindowQuotient
 import PrimeFactors.QuadraticJetMinor

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A degree-eight equation covers approximately $2^{46}$ times as many positions at a chosen location as the quartic. The public grid drops from $2^{614}$ to $2^{568}$ locations. Increasing the degree further gives a proved grid of $2^{511}$ locations with 1,044 rows per reduction. On two full-size products we ran the nine-row version and certified both selected intervals empty. [Grid, work and limits](wider-windows-and-the-missing-location.md)
+
 Three sufficiently short equations in the right window already have every three-column determinant divisible by the other prime. On 22,663 this split an interval that the previous four-row gcd test missed. [Three-row theorem and controlled comparison](three-rows-reveal-a-cofactor.md)
 
 If four basis equations vanish at the smaller factor’s offset, one determinant gives the product times the square of the cofactor. On the complete 49-bit control it gave the cofactor at one window. [Exact law, example and full-size budgets](a-determinant-that-gives-the-cofactor.md)

@@ -135,6 +135,17 @@ def case_row(result):
         count = (f'Weighted divisor interval · {w["tested_traces"]:,} of {w["total_traces"]:,} weighted sums checked'
                  f' · {w["modular_rejections"]:,} rejected by residues · {w["square_tests"]:,} integer square tests'
                  f' · {w["remaining_traces"]:,} weighted sums untested')
+    elif result['method'] == 'adaptive-quartic-cover':
+        w = result['adaptive_quartic_cover']
+        counts = w['work']
+        count = (f'{counts["lll_calls"]:,} lattice reductions covered {counts["covered_chunks"]:,} chunks'
+                 f' · {counts["root_polynomials"]:,} polynomials checked for integer roots'
+                 f' · {compact_count(w["covered_odd_positions"])} odd positions checked'
+                 f' · {compact_count(w["unvisited_odd_positions"])} unvisited')
+    elif result['method'] == 'higher-divisor-window':
+        w = result['higher_divisor_window']
+        count = (f'Degree {w["degree"]} at a prescribed location · {compact_count(w["progression_size"])} odd positions'
+                 f' · {w["work"]["lll_swaps"]:,} row swaps · {w["work"]["lll_reductions"]:,} size reductions')
     elif result['method'] == 'quartic-three-row':
         w = result['quartic_three_row']
         counts = w['work']
