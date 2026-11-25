@@ -27,3 +27,5 @@ Set $W=2^{1019}$ and $r=\lfloor\sqrt N\rfloor$. Every integer from $r+1$ through
 | All through 733 | 130 | 1,019 | More than $2^{874}$ |
 
 The larger cutoff fits one complete period in the stated subinterval. Including 739 would make this period 1,028 bits long. The same counting step would then give zero as its lower bound, leaving the actual number of survivors undetermined. [Earlier counts for individual prime powers](prime-power-counts.md)
+
+A Fourier estimate using Weil’s bound extends the conclusion to every prime through 1,109, even though the combined period exceeds the interval. More than $2^{819}$ wrong midpoints still survive. The analytic estimate is on paper, and Lean checks its finite constants. [Derivation and numerical checks](completing-midpoint-counts.md)

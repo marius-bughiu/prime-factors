@@ -95,6 +95,7 @@ import PrimeFactors.PascalProjection
 import PrimeFactors.PascalReadout
 import PrimeFactors.PellCycles
 import PrimeFactors.PellMultiplier
+import PrimeFactors.PersistentFourierBound
 import PrimeFactors.PersistentLocalSurvivors
 import PrimeFactors.PhaseBlocks
 import PrimeFactors.PhaseCharacters
