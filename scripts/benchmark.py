@@ -17,6 +17,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from experiments.modular_hyperbola import search as hyperbola_search
+from experiments.local_midpoint_lanes import search as local_midpoint_search
 from experiments.divisor_samples import search as divisor_sample_search
 from experiments.salie_residues import search as salie_residue_search
 from experiments.salie_seed import search as salie_seed_search
@@ -202,6 +203,15 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(settings, mode=case.get('mode', 'smooth'))
         result = certify_split(case, proof, factor, elapsed, 'extension_trace', work)
+    elif method == 'local-midpoints':
+        work = local_midpoint_search(int(case['n']), case['primes'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        for key in ('low', 'high', 'candidates', 'survivors'):
+            if key in work:
+                work[key] = str(work[key])
+        agree(case, work, [k for k in ('survivors', 'range_queries', 'square_tests', 'outcome') if k in work])
+        result = certify_split(case, proof, factor, elapsed, 'local_midpoints', work)
     elif method == 'quartic-trace':
         settings = {k: case[k] for k in ('max_positions', 'max_selector', 'bits')}
         work = quartic_trace.search(int(case['n']), **settings)
@@ -545,6 +555,7 @@ def main():
                              ('weighted-sparse.json', 'weighted-sparse'),
                              ('weighted-base.json', 'weighted-base'),
                              ('quartic-trace.json', 'quartic-trace'),
+                             ('local-midpoints.json', 'local-midpoints'),
                              ('extension-trace.json', 'extension-trace'),
                              ('reciprocal-wheel.json', 'reciprocal-wheel'),
                              ('polynomial-packets.json', 'polynomial-packets'),

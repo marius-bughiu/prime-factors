@@ -34,7 +34,7 @@ theorem normalize_sign (negative : χ T = -1) (g : G) : χ (normalize χ T g) = 
 
 /-- Every coset of the public order-two subgroup has one positive
 representative. In particular a class-number interval can be halved. -/
-def signEquiv (negative : χ T = -1) (square : T^2 = 1) :
+noncomputable def signEquiv (negative : χ T = -1) (square : T^2 = 1) :
     G ≃ {g : G // χ g = 1} × Bool where
   toFun g := (⟨normalize χ T g, normalize_sign χ T negative g⟩, decide (χ g ≠ 1))
   invFun z := if z.2 then z.1.1*T else z.1.1

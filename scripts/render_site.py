@@ -107,6 +107,12 @@ def case_row(result):
         count = (f'Paired factor intervals · {w["blocks"]:,} blocks tested'
                  f' · {w["compatible_candidates"]:,} of {w["ordinary_candidates"]:,} candidates retained'
                  f' · {w["evaluations"]:,} polynomial evaluations')
+    elif result['method'] == 'local-midpoints':
+        w = result['local_midpoints']
+        count = (f'Prime-power midpoint tests · {w["range_queries"]} interval counts · '
+                 f'{w["square_tests"]} integer square tests')
+        if 'survivors' in w:
+            count += f' · {int(w["survivors"]):,} possible midpoints remain'
     elif result['method'] == 'quartic-trace':
         w = result['quartic_trace']
         count = (f'Quartic character sums · {w["bits"]+2} bits per residue'

@@ -1,6 +1,8 @@
 import PrimeFactors.ActualSigns
 import PrimeFactors.AdditiveCover
+import PrimeFactors.AffineSlopeClasses
 import PrimeFactors.AmbiguousTwist
+import PrimeFactors.LocalMidpointLanes
 import PrimeFactors.AnalyticAccess
 import PrimeFactors.AnchorScale
 import PrimeFactors.ApproximateTotient
