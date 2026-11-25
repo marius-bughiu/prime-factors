@@ -31,6 +31,28 @@ def is_prime(p):
     return p >= 2 and all(p % d for d in range(2, isqrt(p)+1))
 
 
+def maximal_lanes(lanes, prime):
+    """Fold complete sibling classes into the unique largest contained progressions."""
+    levels = {}
+    for lane in lanes:
+        levels.setdefault(lane.modulus, set()).add(lane.residue)
+    result = []
+    modulus = max(levels, default=1)
+    while modulus > 1:
+        parent = modulus // prime
+        siblings = {}
+        for residue in levels.pop(modulus, ()):
+            siblings.setdefault(residue % parent, []).append(residue)
+        for residue, children in siblings.items():
+            if len(children) == prime:
+                levels.setdefault(parent, set()).add(residue)
+            else:
+                result.extend(Lane(child, modulus) for child in children)
+        modulus = parent
+    result.extend(Lane(r, 1) for r in levels.get(1, ()))
+    return result
+
+
 def midpoint_lanes(n, prime, exponent):
     """Disjoint congruence classes h for which h²−n is a square mod prime^exponent."""
     if not is_prime(prime):
@@ -50,7 +72,7 @@ def midpoint_lanes(n, prime, exponent):
         roots, modulus = lift_roots(roots, modulus, prime, jump, n)
         level += jump
     lanes.extend(Lane(root, modulus) for root in roots)
-    return lanes
+    return maximal_lanes(lanes, prime)
 
 
 def stable_exponent(prime, max_discriminant):

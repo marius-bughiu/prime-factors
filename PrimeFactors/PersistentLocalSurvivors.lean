@@ -127,15 +127,15 @@ theorem balanced_subinterval {N w : ℕ} (large : (18*w)^2 ≤ N) {i : ℕ} (off
   · have hsq := Nat.pow_le_pow_left hi 2
     nlinarith
 
-def smallPrimes (cutoff : ℕ) : Finset ℕ := (Finset.range (cutoff+1)).filter Nat.Prime
+noncomputable def smallPrimes (cutoff : ℕ) : Finset ℕ := (Finset.range (cutoff+1)).filter Nat.Prime
 
 def laneMod (p : ℕ) : ℕ := if p=2 then 128 else if p=3 then 27 else p
 
 def minLanes (p : ℕ) : ℕ := if p=2 then 4 else if p=3 then 2 else (p-3)/2
 
-def period (cutoff : ℕ) : ℕ := ∏ p ∈ smallPrimes cutoff, laneMod p
+noncomputable def period (cutoff : ℕ) : ℕ := ∏ p ∈ smallPrimes cutoff, laneMod p
 
-def minPerPeriod (cutoff : ℕ) : ℕ := ∏ p ∈ smallPrimes cutoff, minLanes p
+noncomputable def minPerPeriod (cutoff : ℕ) : ℕ := ∏ p ∈ smallPrimes cutoff, minLanes p
 
 /-- Removing one genuine midpoint still leaves both strict lower bounds. -/
 theorem numerical_bounds :

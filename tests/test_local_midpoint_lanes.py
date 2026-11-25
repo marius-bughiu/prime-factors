@@ -1,4 +1,5 @@
 import unittest
+from collections import Counter
 from math import gcd, isqrt
 
 from experiments.local_midpoint_lanes import count_intersection, midpoint_lanes, search
@@ -16,6 +17,9 @@ class LocalMidpointLanesTests(unittest.TestCase):
                             for x in range(period) if gcd(x, p) == 1}
                     expected = {h for h in range(period) if 2*h % period in sums}
                     lanes = midpoint_lanes(n, p, e)
+                    siblings = Counter((b.modulus, b.residue % (b.modulus//p))
+                                       for b in lanes if b.modulus > 1)
+                    self.assertTrue(all(count < p for count in siblings.values()))
                     actual = [h for lane in lanes for h in range(lane.residue, period, lane.modulus)]
                     self.assertEqual(sorted(actual), sorted(expected), (p, e, n))
 

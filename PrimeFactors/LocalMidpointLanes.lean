@@ -109,6 +109,24 @@ theorem midpoint_iff_integer (e : ℕ) (N h : ℤ) :
     push_cast at H
     exact ⟨(x : ZMod (2^e)),by simpa [pow_two] using sub_eq_zero.mp H⟩
 
+/-- A complete set of children is exactly one residue class at the previous
+precision. This permits merging before the CRT interval count. -/
+theorem fold_children {p M a : ℕ} (hp : 0<p) (ha : a<M) (x : ℕ) :
+    x % M = a ↔ ∃ k<p, x ≡ a+M*k [MOD M*p] := by
+  constructor
+  · intro h
+    refine ⟨x/M%p, Nat.mod_lt _ hp, ?_⟩
+    have split : x = a + M*(x/M%p) + (M*p)*(x/M/p) := by
+      calc
+        _ = x%M + M*(x/M) := (Nat.mod_add_div x M).symm
+        _ = a + M*((x/M)%p + p*(x/M/p)) := by rw [h, Nat.mod_add_div]
+        _ = _ := by ring
+    conv_lhs => rw [split]
+    exact Nat.modEq_iff_dvd.mpr ⟨-(↑(x/M/p) : ℤ),by push_cast; ring⟩
+  · rintro ⟨k,_,h⟩
+    have small := h.of_dvd (dvd_mul_right M p)
+    simpa [Nat.ModEq, Nat.mod_eq_of_lt ha] using small
+
 /-- The unique midpoint in the bounded worked example splits its input. -/
 theorem example_34387 : 194^2-34387 = (57:ℕ)^2 ∧
     ExactFactorization 34387 [194-57,194+57] := by

@@ -36,7 +36,7 @@ At the split prime, identify $z$ with $(x,y)$ and conjugation with the swap. Sin
 
 $$K=t^2,\qquad C=(2p-t)t,\qquad p=\frac{C/\sqrt K+\sqrt K}{2}.$$
 
-Lean proves the graph intersection and union, the finite-field fixed-point count, and the integer decoder. The CRT multiplication of the two local counts is a paper argument. On $N=77$ we enumerated all 5,929 pairs using repeated squaring for each power. For $D=3$ the measured counts were $K=9,C=57$, giving $(57/3+3)/2=11$. For $D=2$ the counts were $K=C=49$, giving 7. Switching the selector can switch which factor the formula returns. [Lean count and decoding lemmas](../PrimeFactors/FrobeniusFixedCounts.lean)
+Lean proves the graph intersection and union, the finite-field fixed-point count, multiplication of the two local counts, and the integer decoder. Identifying the quadratic algebra with its split and inert components is the paper step. On $N=77$ we enumerated all 5,929 pairs using repeated squaring for each power. For $D=3$ the Lean kernel also enumerates the full grid, giving $K=9,C=57$ and $(57/3+3)/2=11$. For $D=2$ the counts were $K=C=49$, giving 7. Switching the selector can switch which factor the formula returns. [Lean count and decoding lemmas](../PrimeFactors/FrobeniusFixedCounts.lean)
 
 If both coordinates of $z$ are sampled uniformly, the same counts give the exact chance of a proper gcd. Put $s=(2p-t)/p^2$ and $e=t/q^2$. The two local events are independent by CRT, so the probability that exactly one occurs is $s+e-2se$. For 1,024-bit primes this is less than $2^{-1021}$, since $t\le p<2q$ gives $s+e<2/p+2/q$. This bound is for uniform sampling over the full quadratic algebra. The earlier fixed-slice result covers the choice $z=a+w$.
 

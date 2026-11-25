@@ -141,4 +141,26 @@ theorem example_counts :
     h=2 ∧ K=9 ∧ C=57 ∧ (C/K.sqrt+K.sqrt)/2=11 ∧
       Nat.Prime 11 ∧ Nat.Prime 7 ∧ (11:ℕ)*7=77 := by decide
 
+set_option maxRecDepth 8000 in
+set_option maxHeartbeats 1500000 in
+/-- All 77² public coordinate pairs, using D=3. The addition chain is
+77=64+8+4+1. Both counts are evaluated by the kernel. -/
+theorem example_grid :
+    let mul := fun x y : ℕ × ℕ =>
+      ((x.1*y.1+3*x.2*y.2)%77,(x.1*y.2+x.2*y.1)%77)
+    let observe := fun a b : ℕ =>
+      let z := (a,b)
+      let z₂ := mul z z
+      let z₄ := mul z₂ z₂
+      let z₈ := mul z₄ z₄
+      let z₁₆ := mul z₈ z₈
+      let z₃₂ := mul z₁₆ z₁₆
+      let z₆₄ := mul z₃₂ z₃₂
+      let z₇₇ := mul (mul (mul z₆₄ z₈) z₄) z
+      ((z₇₇.1+77-a)%77, (z₇₇.2+b)%77)
+    let grid := (List.range 77).flatMap fun a => (List.range 77).map (observe a)
+    let K := grid.countP fun z => z.1==0 && z.2==0
+    let C := grid.countP fun z => z.1^2%77 == 3*z.2^2%77
+    K=9 ∧ C=57 ∧ (C/K.sqrt+K.sqrt)/2=11 := by decide +kernel
+
 end PrimeFactors.FrobeniusFixedCounts

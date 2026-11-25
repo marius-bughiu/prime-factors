@@ -210,7 +210,7 @@ def run_case(case, method, proofs):
         for key in ('low', 'high', 'candidates', 'survivors'):
             if key in work:
                 work[key] = str(work[key])
-        agree(case, work, [k for k in ('survivors', 'range_queries', 'square_tests', 'outcome') if k in work])
+        agree(case, work, [k for k in ('survivors', 'range_queries', 'square_tests', 'outcome', 'prime_exponent_classes') if k in work])
         result = certify_split(case, proof, factor, elapsed, 'local_midpoints', work)
     elif method == 'quartic-trace':
         settings = {k: case[k] for k in ('max_positions', 'max_selector', 'bits')}

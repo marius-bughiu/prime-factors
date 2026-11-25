@@ -37,7 +37,7 @@ theorem slope_count (c : G) :
 
 /-- Reflection of one coordinate multiplies a slope by `e = -1`, and
 exchanging the coordinates inverts a unit slope. Translations are free. -/
-def orientations (e a : G) : Finset G := {a, e*a, a⁻¹, e*a⁻¹}
+noncomputable def orientations (e a : G) : Finset G := {a, e*a, a⁻¹, e*a⁻¹}
 
 omit [Fintype G] in
 theorem orientation_count_le (e a : G) : (orientations e a).card ≤ 4 := by
