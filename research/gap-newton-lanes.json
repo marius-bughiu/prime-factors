@@ -1,0 +1,999 @@
+{
+  "power": 2,
+  "signed": true,
+  "repetitions": 3,
+  "rows": [
+    {
+      "sample": 0,
+      "n": "3376036549",
+      "certified_factors": [
+        "55667",
+        "60647"
+      ],
+      "methods": {
+        "ordinary": {
+          "n": "3376036549",
+          "power": 2,
+          "coordinate_bound": 82170,
+          "radix": 1080,
+          "total_orbits": 72,
+          "visited_orbits": 72,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 16,
+            "trial_divisions": 12,
+            "table_entries": 26,
+            "negation_root_tests": 1,
+            "ordinary_representatives_examined": 143,
+            "lll_calls": 72,
+            "lll_swaps": 3825,
+            "lll_reductions": 5805,
+            "integer_root_nodes": 470,
+            "candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "55667",
+              "60647"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 144,
+          "ordinary_covered_orbits": 144,
+          "basis": "newton",
+          "minimum_radix": 1067,
+          "median_seconds": 0.030117708999999993
+        },
+        "gap": {
+          "n": "3376036549",
+          "power": 2,
+          "coordinate_bound": 82170,
+          "radix": 810,
+          "total_orbits": 55,
+          "visited_orbits": 55,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 14,
+            "trial_divisions": 10,
+            "table_entries": 59,
+            "negation_root_tests": 2,
+            "ordinary_representatives_examined": 110,
+            "lll_calls": 55,
+            "lll_swaps": 2990,
+            "lll_reductions": 4578,
+            "integer_root_nodes": 776,
+            "candidate_roots": 1,
+            "negative_candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "55667",
+              "60647"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 110,
+          "ordinary_covered_orbits": 110,
+          "basis": "gap-newton",
+          "gap_bound": 41085,
+          "minimum_radix": 809,
+          "median_seconds": 0.027524291000000006
+        },
+        "dickson": {
+          "n": "3376036549",
+          "power": 2,
+          "coordinate_bound": 82170,
+          "radix": 780,
+          "total_orbits": 48,
+          "visited_orbits": 48,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 14,
+            "trial_divisions": 8,
+            "table_entries": 20,
+            "negation_root_tests": 1,
+            "ordinary_representatives_examined": 95,
+            "lll_calls": 48,
+            "lll_swaps": 2659,
+            "lll_reductions": 4042,
+            "integer_root_nodes": 932,
+            "candidate_roots": 1,
+            "negative_candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "55667",
+              "60647"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 96,
+          "ordinary_covered_orbits": 96,
+          "basis": "dickson-newton",
+          "gap_bound": 41085,
+          "minimum_radix": 755,
+          "median_seconds": 0.025921583000000012
+        }
+      }
+    },
+    {
+      "sample": 1,
+      "n": "2810005999",
+      "certified_factors": [
+        "51487",
+        "54577"
+      ],
+      "methods": {
+        "gap": {
+          "n": "2810005999",
+          "power": 2,
+          "coordinate_bound": 74966,
+          "radix": 780,
+          "total_orbits": 48,
+          "visited_orbits": 48,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 14,
+            "trial_divisions": 8,
+            "table_entries": 20,
+            "negation_root_tests": 2,
+            "ordinary_representatives_examined": 95,
+            "lll_calls": 48,
+            "lll_swaps": 2584,
+            "lll_reductions": 3970,
+            "integer_root_nodes": 692,
+            "candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "51487",
+              "54577"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 96,
+          "ordinary_covered_orbits": 96,
+          "basis": "gap-newton",
+          "gap_bound": 37483,
+          "minimum_radix": 766,
+          "median_seconds": 0.023109207999999937
+        },
+        "dickson": {
+          "n": "2810005999",
+          "power": 2,
+          "coordinate_bound": 74966,
+          "radix": 720,
+          "total_orbits": 48,
+          "visited_orbits": 48,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 16,
+            "trial_divisions": 12,
+            "table_entries": 18,
+            "negation_root_tests": 2,
+            "ordinary_representatives_examined": 94,
+            "lll_calls": 48,
+            "lll_swaps": 2596,
+            "lll_reductions": 3994,
+            "integer_root_nodes": 1000,
+            "candidate_roots": 1,
+            "negative_candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "51487",
+              "54577"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 96,
+          "ordinary_covered_orbits": 96,
+          "basis": "dickson-newton",
+          "gap_bound": 37483,
+          "minimum_radix": 715,
+          "median_seconds": 0.02524379100000007
+        },
+        "ordinary": {
+          "n": "2810005999",
+          "power": 2,
+          "coordinate_bound": 74966,
+          "radix": 1020,
+          "total_orbits": 64,
+          "visited_orbits": 64,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 14,
+            "trial_divisions": 8,
+            "table_entries": 24,
+            "negation_root_tests": 2,
+            "ordinary_representatives_examined": 127,
+            "lll_calls": 64,
+            "lll_swaps": 3497,
+            "lll_reductions": 5284,
+            "integer_root_nodes": 446,
+            "candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "51487",
+              "54577"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 128,
+          "ordinary_covered_orbits": 128,
+          "basis": "newton",
+          "minimum_radix": 1010,
+          "median_seconds": 0.02691804199999992
+        }
+      }
+    },
+    {
+      "sample": 2,
+      "n": "1362300473",
+      "certified_factors": [
+        "35081",
+        "38833"
+      ],
+      "methods": {
+        "dickson": {
+          "n": "1362300473",
+          "power": 2,
+          "coordinate_bound": 52197,
+          "radix": 600,
+          "total_orbits": 40,
+          "visited_orbits": 40,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 18,
+            "trial_divisions": 12,
+            "table_entries": 26,
+            "negation_root_tests": 1,
+            "ordinary_representatives_examined": 77,
+            "lll_calls": 40,
+            "lll_swaps": 2109,
+            "lll_reductions": 3236,
+            "integer_root_nodes": 678,
+            "candidate_roots": 1,
+            "negative_candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "35081",
+              "38833"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 80,
+          "ordinary_covered_orbits": 80,
+          "basis": "dickson-newton",
+          "gap_bound": 26098,
+          "minimum_radix": 575,
+          "median_seconds": 0.0193362920000002
+        },
+        "ordinary": {
+          "n": "1362300473",
+          "power": 2,
+          "coordinate_bound": 52197,
+          "radix": 840,
+          "total_orbits": 48,
+          "visited_orbits": 48,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 16,
+            "trial_divisions": 10,
+            "table_entries": 16,
+            "negation_root_tests": 1,
+            "ordinary_representatives_examined": 96,
+            "lll_calls": 48,
+            "lll_swaps": 2560,
+            "lll_reductions": 3914,
+            "integer_root_nodes": 328,
+            "candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "35081",
+              "38833"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 96,
+          "ordinary_covered_orbits": 96,
+          "basis": "newton",
+          "minimum_radix": 813,
+          "median_seconds": 0.019784124999999708
+        },
+        "gap": {
+          "n": "1362300473",
+          "power": 2,
+          "coordinate_bound": 52197,
+          "radix": 630,
+          "total_orbits": 36,
+          "visited_orbits": 36,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 14,
+            "trial_divisions": 8,
+            "table_entries": 17,
+            "negation_root_tests": 3,
+            "ordinary_representatives_examined": 68,
+            "lll_calls": 36,
+            "lll_swaps": 1954,
+            "lll_reductions": 2907,
+            "integer_root_nodes": 486,
+            "candidate_roots": 1,
+            "negative_candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "35081",
+              "38833"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 72,
+          "ordinary_covered_orbits": 72,
+          "basis": "gap-newton",
+          "gap_bound": 26098,
+          "minimum_radix": 616,
+          "median_seconds": 0.016790875000000316
+        }
+      }
+    },
+    {
+      "sample": 3,
+      "n": "2996722829",
+      "certified_factors": [
+        "51341",
+        "58369"
+      ],
+      "methods": {
+        "ordinary": {
+          "n": "2996722829",
+          "power": 2,
+          "coordinate_bound": 77417,
+          "radix": 1050,
+          "total_orbits": 60,
+          "visited_orbits": 60,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 14,
+            "trial_divisions": 8,
+            "table_entries": 29,
+            "negation_root_tests": 4,
+            "ordinary_representatives_examined": 117,
+            "lll_calls": 60,
+            "lll_swaps": 3249,
+            "lll_reductions": 4922,
+            "integer_root_nodes": 372,
+            "candidate_roots": 1,
+            "negative_candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "51341",
+              "58369"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 120,
+          "ordinary_covered_orbits": 120,
+          "basis": "newton",
+          "minimum_radix": 1030,
+          "median_seconds": 0.026250999999999358
+        },
+        "gap": {
+          "n": "2996722829",
+          "power": 2,
+          "coordinate_bound": 77417,
+          "radix": 810,
+          "total_orbits": 55,
+          "visited_orbits": 55,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 14,
+            "trial_divisions": 10,
+            "table_entries": 59,
+            "negation_root_tests": 3,
+            "ordinary_representatives_examined": 107,
+            "lll_calls": 55,
+            "lll_swaps": 2950,
+            "lll_reductions": 4579,
+            "integer_root_nodes": 744,
+            "candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "51341",
+              "58369"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 108,
+          "ordinary_covered_orbits": 108,
+          "basis": "gap-newton",
+          "gap_bound": 38708,
+          "minimum_radix": 781,
+          "median_seconds": 0.027421000000000362
+        },
+        "dickson": {
+          "n": "2996722829",
+          "power": 2,
+          "coordinate_bound": 77417,
+          "radix": 750,
+          "total_orbits": 51,
+          "visited_orbits": 51,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 16,
+            "trial_divisions": 10,
+            "table_entries": 103,
+            "negation_root_tests": 3,
+            "ordinary_representatives_examined": 99,
+            "lll_calls": 51,
+            "lll_swaps": 2732,
+            "lll_reductions": 4176,
+            "integer_root_nodes": 1016,
+            "candidate_roots": 1,
+            "negative_candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "51341",
+              "58369"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 100,
+          "ordinary_covered_orbits": 100,
+          "basis": "dickson-newton",
+          "gap_bound": 38708,
+          "minimum_radix": 728,
+          "median_seconds": 0.02719295899999974
+        }
+      }
+    },
+    {
+      "sample": 4,
+      "n": "3564883411",
+      "certified_factors": [
+        "59077",
+        "60343"
+      ],
+      "methods": {
+        "gap": {
+          "n": "3564883411",
+          "power": 2,
+          "coordinate_bound": 84437,
+          "radix": 840,
+          "total_orbits": 48,
+          "visited_orbits": 48,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 16,
+            "trial_divisions": 10,
+            "table_entries": 16,
+            "negation_root_tests": 1,
+            "ordinary_representatives_examined": 95,
+            "lll_calls": 48,
+            "lll_swaps": 2648,
+            "lll_reductions": 4018,
+            "integer_root_nodes": 634,
+            "candidate_roots": 1,
+            "negative_candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "59077",
+              "60343"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 96,
+          "ordinary_covered_orbits": 96,
+          "basis": "gap-newton",
+          "gap_bound": 42218,
+          "minimum_radix": 822,
+          "median_seconds": 0.02302674999999965
+        },
+        "dickson": {
+          "n": "3564883411",
+          "power": 2,
+          "coordinate_bound": 84437,
+          "radix": 780,
+          "total_orbits": 48,
+          "visited_orbits": 48,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 14,
+            "trial_divisions": 8,
+            "table_entries": 20,
+            "negation_root_tests": 2,
+            "ordinary_representatives_examined": 96,
+            "lll_calls": 48,
+            "lll_swaps": 2716,
+            "lll_reductions": 4080,
+            "integer_root_nodes": 748,
+            "candidate_roots": 1,
+            "negative_candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "59077",
+              "60343"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 96,
+          "ordinary_covered_orbits": 96,
+          "basis": "dickson-newton",
+          "gap_bound": 42218,
+          "minimum_radix": 767,
+          "median_seconds": 0.024111749999999432
+        },
+        "ordinary": {
+          "n": "3564883411",
+          "power": 2,
+          "coordinate_bound": 84437,
+          "radix": 1110,
+          "total_orbits": 74,
+          "visited_orbits": 74,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 12,
+            "trial_divisions": 6,
+            "table_entries": 43,
+            "negation_root_tests": 2,
+            "ordinary_representatives_examined": 148,
+            "lll_calls": 74,
+            "lll_swaps": 3929,
+            "lll_reductions": 5970,
+            "integer_root_nodes": 416,
+            "candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "59077",
+              "60343"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 148,
+          "ordinary_covered_orbits": 148,
+          "basis": "newton",
+          "minimum_radix": 1085,
+          "median_seconds": 0.030284124999999662
+        }
+      }
+    },
+    {
+      "sample": 5,
+      "n": "2787445163",
+      "certified_factors": [
+        "49939",
+        "55817"
+      ],
+      "methods": {
+        "dickson": {
+          "n": "2787445163",
+          "power": 2,
+          "coordinate_bound": 74665,
+          "radix": 720,
+          "total_orbits": 48,
+          "visited_orbits": 48,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 16,
+            "trial_divisions": 12,
+            "table_entries": 18,
+            "negation_root_tests": 1,
+            "ordinary_representatives_examined": 95,
+            "lll_calls": 48,
+            "lll_swaps": 2578,
+            "lll_reductions": 3937,
+            "integer_root_nodes": 798,
+            "candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "49939",
+              "55817"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 96,
+          "ordinary_covered_orbits": 96,
+          "basis": "dickson-newton",
+          "gap_bound": 37332,
+          "minimum_radix": 713,
+          "median_seconds": 0.02352866599999981
+        },
+        "ordinary": {
+          "n": "2787445163",
+          "power": 2,
+          "coordinate_bound": 74665,
+          "radix": 1020,
+          "total_orbits": 64,
+          "visited_orbits": 64,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 14,
+            "trial_divisions": 8,
+            "table_entries": 24,
+            "negation_root_tests": 3,
+            "ordinary_representatives_examined": 128,
+            "lll_calls": 64,
+            "lll_swaps": 3382,
+            "lll_reductions": 5133,
+            "integer_root_nodes": 394,
+            "candidate_roots": 1,
+            "negative_candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "49939",
+              "55817"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 128,
+          "ordinary_covered_orbits": 128,
+          "basis": "newton",
+          "minimum_radix": 1008,
+          "median_seconds": 0.02597670799999996
+        },
+        "gap": {
+          "n": "2787445163",
+          "power": 2,
+          "coordinate_bound": 74665,
+          "radix": 780,
+          "total_orbits": 48,
+          "visited_orbits": 48,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 14,
+            "trial_divisions": 8,
+            "table_entries": 20,
+            "negation_root_tests": 3,
+            "ordinary_representatives_examined": 95,
+            "lll_calls": 48,
+            "lll_swaps": 2545,
+            "lll_reductions": 3921,
+            "integer_root_nodes": 690,
+            "candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "49939",
+              "55817"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 96,
+          "ordinary_covered_orbits": 96,
+          "basis": "gap-newton",
+          "gap_bound": 37332,
+          "minimum_radix": 764,
+          "median_seconds": 0.022775417000000076
+        }
+      }
+    },
+    {
+      "sample": 6,
+      "n": "2459316121",
+      "certified_factors": [
+        "45613",
+        "53917"
+      ],
+      "methods": {
+        "ordinary": {
+          "n": "2459316121",
+          "power": 2,
+          "coordinate_bound": 70132,
+          "radix": 990,
+          "total_orbits": 62,
+          "visited_orbits": 62,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 14,
+            "trial_divisions": 8,
+            "table_entries": 21,
+            "negation_root_tests": 2,
+            "ordinary_representatives_examined": 124,
+            "lll_calls": 62,
+            "lll_swaps": 3245,
+            "lll_reductions": 4937,
+            "integer_root_nodes": 394,
+            "candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "45613",
+              "53917"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 124,
+          "ordinary_covered_orbits": 124,
+          "basis": "newton",
+          "minimum_radix": 971,
+          "median_seconds": 0.024757499999999766
+        },
+        "gap": {
+          "n": "2459316121",
+          "power": 2,
+          "coordinate_bound": 70132,
+          "radix": 750,
+          "total_orbits": 51,
+          "visited_orbits": 51,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 16,
+            "trial_divisions": 10,
+            "table_entries": 103,
+            "negation_root_tests": 2,
+            "ordinary_representatives_examined": 102,
+            "lll_calls": 51,
+            "lll_swaps": 2743,
+            "lll_reductions": 4188,
+            "integer_root_nodes": 674,
+            "candidate_roots": 1,
+            "negative_candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "45613",
+              "53917"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 102,
+          "ordinary_covered_orbits": 102,
+          "basis": "gap-newton",
+          "gap_bound": 35066,
+          "minimum_radix": 736,
+          "median_seconds": 0.023490625000000875
+        },
+        "dickson": {
+          "n": "2459316121",
+          "power": 2,
+          "coordinate_bound": 70132,
+          "radix": 690,
+          "total_orbits": 44,
+          "visited_orbits": 44,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 12,
+            "trial_divisions": 6,
+            "table_entries": 29,
+            "negation_root_tests": 2,
+            "ordinary_representatives_examined": 88,
+            "lll_calls": 44,
+            "lll_swaps": 2415,
+            "lll_reductions": 3696,
+            "integer_root_nodes": 818,
+            "candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "45613",
+              "53917"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 88,
+          "ordinary_covered_orbits": 88,
+          "basis": "dickson-newton",
+          "gap_bound": 35066,
+          "minimum_radix": 687,
+          "median_seconds": 0.022250542000000095
+        }
+      }
+    },
+    {
+      "sample": 7,
+      "n": "1776168403",
+      "certified_factors": [
+        "32917",
+        "53959"
+      ],
+      "methods": {
+        "gap": {
+          "n": "1776168403",
+          "power": 2,
+          "coordinate_bound": 59601,
+          "radix": 690,
+          "total_orbits": 44,
+          "visited_orbits": 44,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 12,
+            "trial_divisions": 6,
+            "table_entries": 29,
+            "negation_root_tests": 2,
+            "ordinary_representatives_examined": 88,
+            "lll_calls": 44,
+            "lll_swaps": 2394,
+            "lll_reductions": 3674,
+            "integer_root_nodes": 488,
+            "candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "32917",
+              "53959"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 88,
+          "ordinary_covered_orbits": 88,
+          "basis": "gap-newton",
+          "gap_bound": 29800,
+          "minimum_radix": 667,
+          "median_seconds": 0.020594749999998996
+        },
+        "dickson": {
+          "n": "1776168403",
+          "power": 2,
+          "coordinate_bound": 59601,
+          "radix": 630,
+          "total_orbits": 36,
+          "visited_orbits": 36,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 14,
+            "trial_divisions": 8,
+            "table_entries": 17,
+            "negation_root_tests": 2,
+            "ordinary_representatives_examined": 69,
+            "lll_calls": 36,
+            "lll_swaps": 1966,
+            "lll_reductions": 2978,
+            "integer_root_nodes": 754,
+            "candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "32917",
+              "53959"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 72,
+          "ordinary_covered_orbits": 72,
+          "basis": "dickson-newton",
+          "gap_bound": 29800,
+          "minimum_radix": 623,
+          "median_seconds": 0.018827207999999374
+        },
+        "ordinary": {
+          "n": "1776168403",
+          "power": 2,
+          "coordinate_bound": 59601,
+          "radix": 900,
+          "total_orbits": 60,
+          "visited_orbits": 60,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 18,
+            "trial_divisions": 12,
+            "table_entries": 28,
+            "negation_root_tests": 2,
+            "ordinary_representatives_examined": 120,
+            "lll_calls": 60,
+            "lll_swaps": 3213,
+            "lll_reductions": 4780,
+            "integer_root_nodes": 360,
+            "candidate_roots": 1,
+            "negative_candidate_roots": 1
+          },
+          "pairs": [
+            [
+              "32917",
+              "53959"
+            ]
+          ],
+          "signed": true,
+          "ordinary_total_orbits": 120,
+          "ordinary_covered_orbits": 120,
+          "basis": "newton",
+          "minimum_radix": 880,
+          "median_seconds": 0.024106583000000015
+        }
+      }
+    }
+  ],
+  "control_commit": "4699aab",
+  "capped_2048": {
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "remaining_cofactor": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "max_orbits": 2,
+    "repetitions": 1,
+    "methods": {
+      "ordinary": {
+        "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+        "power": 2,
+        "coordinate_bound": 223908246094442142980375511361039506422193179527592602359425549717548204480658658974232117010331136956665574794314958174612405423331068550356751047904404193818866454566667202016622621231736709209226909768698965215652342707819673339883558453162023577800105726386456083478852215328369640288060051549180408424874,
+        "radix": 122926051600820383652684514022048362414898338528383279117895099160944277497452795092470650639662086133879234550195056038036837696290636334934791313288072326493337761163832201799536719190,
+        "total_orbits": 2804473499678283235546288370991493327584770424008383173323921596910180646248359614943655797189973420618128906739886836165906080395152040114707188403241222144000000000000000000000000000,
+        "visited_orbits": 2,
+        "remaining_orbits": 2804473499678283235546288370991493327584770424008383173323921596910180646248359614943655797189973420618128906739886836165906080395152040114707188403241222143999999999999999999999999998,
+        "work": {
+          "trial_divisibility_tests": 616,
+          "trial_divisions": 172,
+          "table_entries": 18347,
+          "negation_root_tests": 2,
+          "ordinary_representatives_examined": 6,
+          "lll_calls": 2,
+          "lll_swaps": 3888,
+          "lll_reductions": 6175,
+          "integer_root_nodes": 816
+        },
+        "pairs": [],
+        "signed": true,
+        "ordinary_total_orbits": 5608946999356566471092576741982986655169540848016766346647843193820361292496719229887311594379946841236257813479773672331812160790304080229414376806482444288000000000000000000000000000,
+        "ordinary_covered_orbits": 4,
+        "basis": "newton",
+        "minimum_radix": 122845797198703959658214619776274281553862934651838412620681438285720092252635221482283555418501561591230172312372278525203051287481613291015192667764889380008639645870169038684703020533,
+        "median_seconds": 5.737634833999998
+      },
+      "gap": {
+        "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+        "power": 2,
+        "coordinate_bound": 223908246094442142980375511361039506422193179527592602359425549717548204480658658974232117010331136956665574794314958174612405423331068550356751047904404193818866454566667202016622621231736709209226909768698965215652342707819673339883558453162023577800105726386456083478852215328369640288060051549180408424874,
+        "radix": 93129033011221003080052907234775127737438185227411137611472221084572901805194472042254046357763109564502773699192084157400627689978657588239042593559686419376360145729679999973237201680,
+        "total_orbits": 2126522514538663462083794312612680157959930269335052284468225767396241324807451812374667700130136367633920353632331583597104436612671807808717102858805518008320000000000000000000000000,
+        "visited_orbits": 2,
+        "remaining_orbits": 2126522514538663462083794312612680157959930269335052284468225767396241324807451812374667700130136367633920353632331583597104436612671807808717102858805518008319999999999999999999999998,
+        "work": {
+          "trial_divisibility_tests": 618,
+          "trial_divisions": 178,
+          "table_entries": 28868,
+          "negation_root_tests": 2,
+          "ordinary_representatives_examined": 3,
+          "lll_calls": 2,
+          "lll_swaps": 3856,
+          "lll_reductions": 6160,
+          "integer_root_nodes": 3260
+        },
+        "pairs": [],
+        "signed": true,
+        "ordinary_total_orbits": 4253045029077326924167588625225360315919860538670104568936451534792482649614903624749335400260272735267840707264663167194208873225343615617434205717611036016640000000000000000000000000,
+        "ordinary_covered_orbits": 4,
+        "basis": "gap-newton",
+        "gap_bound": 111954123047221071490187755680519753211096589763796301179712774858774102240329329487116058505165568478332787397157479087306202711665534275178375523952202096909433227283333601008311310615868354604613454884349482607826171353909836669941779226581011788900052863193228041739426107664184820144030025774590204212437,
+        "minimum_radix": 93099704970126122349195239100101031960740479399748748241226252260181109408019174636888095099978280229884511816580495904916722807528679545051373667497766301620297589278233545584456600630,
+        "median_seconds": 5.831843166999999
+      },
+      "dickson": {
+        "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+        "power": 2,
+        "coordinate_bound": 223908246094442142980375511361039506422193179527592602359425549717548204480658658974232117010331136956665574794314958174612405423331068550356751047904404193818866454566667202016622621231736709209226909768698965215652342707819673339883558453162023577800105726386456083478852215328369640288060051549180408424874,
+        "radix": 86934670723777404251333791845306139883342526118248470201534848581241217969527867250452745109196297231084011228374262046013888692250719354158922788024753148362794906678852660525476011660,
+        "total_orbits": 1985079503250541351073633681727891798829567934906803393987541025986858300909708457881857233837076838594049504422841638816563086471003270133366653356729004195840000000000000000000000000,
+        "visited_orbits": 2,
+        "remaining_orbits": 1985079503250541351073633681727891798829567934906803393987541025986858300909708457881857233837076838594049504422841638816563086471003270133366653356729004195839999999999999999999999998,
+        "work": {
+          "trial_divisibility_tests": 616,
+          "trial_divisions": 176,
+          "table_entries": 18594,
+          "negation_root_tests": 2,
+          "ordinary_representatives_examined": 7,
+          "lll_calls": 2,
+          "lll_swaps": 3780,
+          "lll_reductions": 6038,
+          "integer_root_nodes": 4076
+        },
+        "pairs": [],
+        "signed": true,
+        "ordinary_total_orbits": 3970159006501082702147267363455783597659135869813606787975082051973716601819416915763714467674153677188099008845683277633126172942006540266733306713458008391680000000000000000000000000,
+        "ordinary_covered_orbits": 4,
+        "basis": "dickson-newton",
+        "gap_bound": 111954123047221071490187755680519753211096589763796301179712774858774102240329329487116058505165568478332787397157479087306202711665534275178375523952202096909433227283333601008311310615868354604613454884349482607826171353909836669941779226581011788900052863193228041739426107664184820144030025774590204212437,
+        "minimum_radix": 86865096239470953636340404895752210735039776380759596650955444149108814021117975206902921197011402574708989189535321520285332278845712788981092020606400046396548276108265195811140774442,
+        "median_seconds": 5.720576083000001
+      }
+    }
+  }
+}

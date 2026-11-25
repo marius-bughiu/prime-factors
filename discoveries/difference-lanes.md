@@ -2,6 +2,8 @@
 
 For an odd 2,048-bit product of two comparable primes, the quartic construction guarantees at most four candidates after guessing one factor's remainder modulo $2^{616}$. Keeping the factorials in the forward differences lowers the sufficient radix to **$2^{615}$**. This joins two former remainder classes in one quartic equation. With degree eight the guaranteed radix falls from $2^{571}$ to $2^{569}$, joining four former classes. These are worst-case existence bounds for each chosen remainder. Finding the correct remainder still requires a large search. [Taylor construction](polynomial-factor-lanes.md) · [Lean lemmas](../PrimeFactors/DifferenceLane.lean)
 
+Using the difference between the two factors as a coordinate gives a further saving. On our freshly generated 2,048-bit input this cut another 29.2% of the full group count. [Proof and three-way comparison](gap-polynomial-scale.md)
+
 ## Complete small searches and a bounded 2,048-bit comparison
 
 Both solvers used signed quartic equations, the exact same LLL inequality and the same rule for rounding up to a smooth radix. Eight frozen products of two 16-bit primes were passed to each solver using the product alone. We ran both searches three times on each input, alternating their order, then checked the returned prime factors and their products in Lean. Each timing below is the sum of the eight per-input medians. It excludes certificate checking. [Reproduction script](../experiments/newton_lane_holdout.py) · [Per-input results and timings](../research/newton-lane-holdout.json)

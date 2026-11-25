@@ -10,6 +10,8 @@ For example, starting with **34,387**, the solver chooses base 70 and checks twe
 
 We subsequently recovered both primes of that same full-size comparison input by trying a remainder chosen after inspecting its published factors. A separate improvement tests more residues with each equation. [One-remainder result and control panel](testing-one-factor-remainder.md) · [New bounds using finite differences](difference-lanes.md)
 
+The latest finite counting proof joins four of the original dyadic remainders in one degree-four equation. It applies to any balanced 2,048-bit prime pair. [Public theorem and explicit modulus](unit-newton-lanes.md)
+
 ## Why does a factor appear among the roots?
 
 Let $N=xy$ with positive factors within a factor of two, $X=\lfloor\sqrt{2N}\rfloor$ and $R$ coprime to $N$. Both $x$ and $y$ are at most $X$. On the proposed remainder $x\equiv u\pmod R$, seek integer coefficients, at least one nonzero, for

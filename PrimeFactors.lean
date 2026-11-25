@@ -52,6 +52,7 @@ import PrimeFactors.FourierAccess
 import PrimeFactors.FourSquareLines
 import PrimeFactors.FrobeniusFixedCounts
 import PrimeFactors.FrobeniusShiftCount
+import PrimeFactors.GapPolynomialScale
 import PrimeFactors.GapStride
 import PrimeFactors.GroupedImages
 import PrimeFactors.HyperbolaBoxes
@@ -192,6 +193,10 @@ import PrimeFactors.TranslatedImageRuns
 import PrimeFactors.TruncatedProduct
 import PrimeFactors.TruncatedWindow
 import PrimeFactors.WeakPhase
+import PrimeFactors.QuarticUnitLabels
+import PrimeFactors.UnitNewtonLanes
+import PrimeFactors.UnitQuarticBox
+import PrimeFactors.UnitQuarticRecovery
 import PrimeFactors.WeightedBaseOrder
 import PrimeFactors.WeightedBands
 import PrimeFactors.WeightedCollision

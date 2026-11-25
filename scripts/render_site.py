@@ -63,6 +63,12 @@ def case_row(result):
         w = result['midpoint_weights']
         count = (f'Weighted sums · {w["visited_orbits"]:,} of {w["total_orbits"]:,} remainder pairs'
                  f' · {w["candidate_traces"]:,} candidate sums · {w["square_tests"]:,} square tests')
+    elif result['method'] == 'unit-quartic':
+        w = result['unit_quartic']
+        exponent = int(w['radix']).bit_length()-1
+        count = (f'One signed remainder group modulo 2<sup>{exponent}</sup>'
+                 f' · {w["work"].get("integer_root_nodes", 0):,} root-isolation nodes'
+                 f' · search {duration(result["discovery_seconds"])}')
     elif result['method'] == 'quartic-factor-lanes':
         w = result['quartic_factor_lanes']
         total = w['total_orbits']
@@ -77,8 +83,10 @@ def case_row(result):
             count += f' · {w["ordinary_covered_orbits"]:,} ordinary remainder pairs covered'
         if w.get('unit_residue'):
             count += ' · tested factor remainder 1'
-        if w.get('basis') == 'newton':
-            count += ' · Newton polynomial'
+        basis_labels = {'newton': 'Newton polynomial', 'gap-newton': 'factor-gap coordinates',
+                        'dickson-newton': 'Dickson polynomials in the factor gap'}
+        if w.get('basis') in basis_labels:
+            count += ' · '+basis_labels[w['basis']]
     elif result['method'] == 'midpoint-slope-batches':
         w = result['midpoint_slope_batches']
         counts = w['work']

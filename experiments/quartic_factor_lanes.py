@@ -42,6 +42,12 @@ def lane_basis(n, u, radix, power=2, factorials=None):
                   for i, m in enumerate(bounds)]
     else:
         bounds, column = newton_lanes.congruences(factors, u, radix, factorials)
+    return triangular_basis(factors, bounds, column)
+
+
+def triangular_basis(factors, bounds, column):
+    """Solve for integer rows in the kernel of a triangular list of congruences."""
+    degree = len(bounds)
     inverse = [pow(factors[i], -1, m) for i,m in enumerate(bounds)]
     rows = []
     for j in range(degree+1):
@@ -68,14 +74,20 @@ def equation(n, u, radix, bound, work, power=2, factorials=None):
     best = min(coefficients, key=lambda r: sum(abs(c)*w for c,w in zip(r, scale)))
     if not any(best) or sum(abs(c)*w for c,w in zip(best, scale)) >= modulus:
         raise ArithmeticError('failed to certify a nonzero auxiliary relation')
-    full = [c*n**max(power-j, 0) for j,c in enumerate(best)]
+    return certified_eliminant(n, u, radix, power, best, modulus, factorials is not None)
+
+
+def certified_eliminant(n, u, radix, power, coefficients, modulus, check_values):
+    """Expand in k=(x-u)/R and verify divisibility before reducing the content."""
+    degree = 2*power
+    full = [c*n**max(power-j, 0) for j,c in enumerate(coefficients)]
     shifted = [radix**j * sum(comb(i,j)*full[i]*u**(i-j) for i in range(j,degree+1))
                for j in range(degree+1)]
-    if factorials is None:
-        if any(v % modulus for v in shifted):
-            raise ArithmeticError('a Taylor coefficient failed its divisibility check')
-    elif not newton_lanes.vanishes_on_grid(shifted, modulus):
-        raise ArithmeticError('the polynomial failed its consecutive-value check')
+    if check_values:
+        if not newton_lanes.vanishes_on_grid(shifted, modulus):
+            raise ArithmeticError('the polynomial failed its consecutive-value check')
+    elif any(v % modulus for v in shifted):
+        raise ArithmeticError('a Taylor coefficient failed its divisibility check')
     content = gcd(*shifted)
     return [v//content for v in shifted]
 
@@ -107,7 +119,7 @@ def signed_representatives(pairs, radix, work):
             yield u, w
 
 
-def pairs_in_windows(n, u, w, radix, bound, windows, work, power, factorials=None):
+def _pairs_from_equation(n, u, w, radix, windows, work, build_equation):
     """Solve all signed coordinate bands with one certified lane polynomial."""
     poly = None
     for low_x, high_x in windows:
@@ -115,7 +127,7 @@ def pairs_in_windows(n, u, w, radix, bound, windows, work, power, factorials=Non
         if lo > hi:
             continue
         if poly is None:
-            poly = equation(n, u, radix, bound, work, power, factorials)
+            poly = build_equation(u, work)
         for k in integer_roots(poly, lo, hi, work):
             work['candidate_roots'] += 1
             x = u+radix*k
@@ -125,6 +137,37 @@ def pairs_in_windows(n, u, w, radix, bound, windows, work, power, factorials=Non
             small, large = sorted((abs(x), abs(y)))
             if remainder == 0 and small > 1 and y % radix == w and large <= 2*small:
                 yield small, large
+
+
+def pairs_in_windows(n, u, w, radix, bound, windows, work, power, factorials=None):
+    def build_equation(remainder, counters):
+        return equation(n, remainder, radix, bound, counters, power, factorials)
+
+    yield from _pairs_from_equation(n, u, w, radix, windows, work, build_equation)
+
+
+def run_lanes(n, max_orbits, power, bound, radix, signed, build_equation):
+    """Stream a complete or capped set of groups, building one polynomial per nonempty group."""
+    lower = max(2, isqrt((n-1)//2)+1)
+    work, pairs = Counter(), set()
+    ordinary, representatives = residue_pairs(n, radix, work)
+    total = ordinary
+    if signed:
+        total = signed_orbit_count(n, radix, ordinary, work)
+        representatives = signed_representatives(representatives, radix, work)
+    visited, covered = 0, 0
+    for _, (u, w) in zip(range(total if max_orbits is None else min(total, max_orbits)), representatives):
+        visited += 1
+        both = signed and radix > 2 and u+w != radix
+        windows = ((lower, bound), (-bound, -lower)) if both else ((lower, bound),)
+        covered += len(windows)
+        pairs.update(_pairs_from_equation(n, u, w, radix, windows, work, build_equation))
+    result = dict(n=str(n), power=power, coordinate_bound=bound, radix=radix, total_orbits=total,
+                  visited_orbits=visited, remaining_orbits=total-visited,
+                  work=dict(work), pairs=[[str(x),str(y)] for x,y in sorted(pairs)])
+    if signed:
+        result.update(signed=True, ordinary_total_orbits=ordinary, ordinary_covered_orbits=covered)
+    return result
 
 
 def search(n, max_orbits=None, *, power=2, signed=False, basis="taylor"):
@@ -143,27 +186,13 @@ def search(n, max_orbits=None, *, power=2, signed=False, basis="taylor"):
             scale_factors = factorials
         target = newton_lanes.radix_threshold(bound, power, scale_factors)
         radix = smooth_radix(n, target)
-    lower = max(2, isqrt((n-1)//2)+1)
-    work, pairs = Counter(), set()
-    ordinary, representatives = residue_pairs(n, radix, work)
-    total = ordinary
-    if signed:
-        total = signed_orbit_count(n, radix, ordinary, work)
-        representatives = signed_representatives(representatives, radix, work)
-    visited, covered = 0, 0
-    for _, (u, w) in zip(range(total if max_orbits is None else min(total, max_orbits)), representatives):
-        visited += 1
-        both = signed and radix > 2 and u+w != radix
-        windows = ((lower, bound), (-bound, -lower)) if both else ((lower, bound),)
-        covered += len(windows)
-        pairs.update(pairs_in_windows(n, u, w, radix, bound, windows, work, power, factorials))
-    result = dict(n=str(n), power=power, coordinate_bound=bound, radix=radix, total_orbits=total,
-                  visited_orbits=visited, remaining_orbits=total-visited,
-                  work=dict(work), pairs=[[str(x),str(y)] for x,y in sorted(pairs)])
+
+    def build_equation(u, work):
+        return equation(n, u, radix, bound, work, power, factorials)
+
+    result = run_lanes(n, max_orbits, power, bound, radix, signed, build_equation)
     if basis != 'taylor':
         result.update(basis=basis, minimum_radix=target)
-    if signed:
-        result.update(signed=True, ordinary_total_orbits=ordinary, ordinary_covered_orbits=covered)
     return result
 
 

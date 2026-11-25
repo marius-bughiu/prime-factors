@@ -19,8 +19,10 @@ if str(ROOT) not in sys.path:
 from experiments.class_order_search import search as class_order_search
 from experiments.midpoint_slope_batches import search as slope_batch_search
 from experiments.midpoint_weights import search as weight_orbit_search
+from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_factor_lanes import search as quartic_lane_search
 from experiments.unit_factor_lane import search as unit_lane_search
+from experiments.unit_quartic_probe import probe as unit_quartic_probe
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.local_midpoint_lanes import search as local_midpoint_search
 from experiments.divisor_samples import search as divisor_sample_search
@@ -141,9 +143,19 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'unit-quartic':
+        run = unit_quartic_probe(int(case['n']), 1 << case['radix_exponent'], int(case['residue']))
+        elapsed = run.pop('search_seconds')
+        pairs = run.pop('pairs')
+        agree(case, {'expected_pairs': pairs}, ['expected_pairs'])
+        agree(case, run, ['work', 'local_remainders', 'total_signed_groups', 'unchecked_signed_groups'])
+        result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'unit_quartic', run)
     elif method == 'quartic-factor-lanes':
         if case.get('unit_residue'):
             work = unit_lane_search(int(case['n']))
+        elif case.get('basis') in ('gap-newton', 'dickson-newton'):
+            work = gap_lane_search(int(case['n']), case['max_orbits'], power=case['power'],
+                                   basis=case['basis'].split('-')[0])
         else:
             work = quartic_lane_search(int(case['n']), case['max_orbits'], power=case['power'],
                                        signed=case.get('signed', False), basis=case.get('basis', 'taylor'))
@@ -623,7 +635,7 @@ def main():
                              ('modular-hyperbola.json', 'modular-hyperbola'),
                              ('midpoint-weights.json', 'midpoint-weights'),
                              ('midpoint-slope-batches.json', 'midpoint-slope-batches'),
-                             ('quartic-factor-lanes.json', 'quartic-factor-lanes'),
+                             ('quartic-factor-lanes.json', 'quartic-factor-lanes'), ('unit-quartic.json', 'unit-quartic'),
                              ('class-orders.json', 'class-orders')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':

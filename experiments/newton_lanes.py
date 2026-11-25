@@ -16,11 +16,12 @@ def coprime_factorials(n, degree):
     return factorials
 
 
-def radix_threshold(bound, power, factorials):
+def minimum_radix(scale_product, factorials):
     """Smallest positive radix meeting the strict, squared LLL norm bound."""
-    dim = 2*power+1
+    dim = len(factorials)
+    power = dim//2
     exponent = 2*power*dim
-    rhs = dim**dim * 2**(power*dim) * bound**(2*power*(power+1))
+    rhs = dim**dim * 2**(power*dim) * scale_product**2
     limit = rhs // prod(factorials)**2
     low, high = 0, 1 << ((limit.bit_length()+exponent-1)//exponent)
     while low+1 < high:
@@ -30,6 +31,10 @@ def radix_threshold(bound, power, factorials):
         else:
             high = middle
     return high
+
+
+def radix_threshold(bound, power, factorials):
+    return minimum_radix(bound**(power*(power+1)), factorials)
 
 
 def congruences(factors, u, radix, factorials):
