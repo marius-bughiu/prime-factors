@@ -1,12 +1,14 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/farey-weighted-sums.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/one-trace-per-residue-pair.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have succeeded on specially constructed products whose primes share a pattern that our search can recognize. Once someone supplies the two primes, Lean can check that each is prime and that their product is the number you started with.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did we find from the product alone?
+
+We proved that one weighted sum can check a whole group of possible factor pairs. On 34,387 there are four groups. Three can be discarded immediately and the fourth gives **137 × 251**. On eight fresh 49–50-bit numbers the complete search took 0.058 seconds in total, compared with 1.003 seconds for ordinary trial division over the same intervals. Even with this shortcut, every 2,048-bit product would require more than $2^{676}$ groups for a complete search using this rule. [Worked example, proof and measurements](discoveries/one-trace-per-residue-pair.md)
 
 Changing the base used to write the two unknown primes cut the number of candidate pairs checked from **4,478 to 1,853** on eight fresh products of two 23-bit primes. Both methods found all eight pairs. In a three-way timing comparison, the earlier search took 0.155 seconds, the new one took 0.067, and ordinary trial division took 0.032 (medians). At 2,048 bits, the new method still visits more than $2^{680}$ groups. [Rule, measurements and Lean proofs](discoveries/affine-radices.md)
 

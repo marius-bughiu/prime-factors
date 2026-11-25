@@ -1,0 +1,1507 @@
+{
+  "seed": "shared-quadratic-class-orders-v1",
+  "prime_bits": 17,
+  "prime_limit": 43,
+  "max_compositions": 100000,
+  "cases": [
+    {
+      "n": "13928648933",
+      "factors": [
+        "114217",
+        "121949"
+      ],
+      "shared": {
+        "seeds": 2,
+        "windows": 1,
+        "giant_lookups": 55,
+        "divisor_updates": [
+          46802
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "11",
+          "2989840"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1858,
+        "found": true,
+        "median_seconds": 0.002803666999999996
+      },
+      "independent": {
+        "seeds": 2,
+        "windows": 2,
+        "giant_lookups": 32,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "11",
+          "2989840"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 3541,
+        "found": true,
+        "median_seconds": 0.005751209
+      },
+      "trial": {
+        "divisor_tests": 15383,
+        "found": true,
+        "median_seconds": 0.0006663329999999981
+      }
+    },
+    {
+      "n": "8196524729",
+      "factors": [
+        "66791",
+        "122719"
+      ],
+      "independent": {
+        "seeds": 7,
+        "windows": 7,
+        "giant_lookups": 169,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "15",
+          "2233196"
+        ],
+        "outcome": "seed limit",
+        "compositions": 10814,
+        "found": false,
+        "median_seconds": 0.018289540999999992
+      },
+      "trial": {
+        "divisor_tests": 1387,
+        "found": true,
+        "median_seconds": 6.254199999999877e-05
+      },
+      "shared": {
+        "seeds": 7,
+        "windows": 1,
+        "giant_lookups": 83,
+        "divisor_updates": [
+          61836
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "15",
+          "2233196"
+        ],
+        "outcome": "seed limit",
+        "compositions": 1870,
+        "found": false,
+        "median_seconds": 0.0031451670000000043
+      }
+    },
+    {
+      "n": "5312656319",
+      "factors": [
+        "72823",
+        "72953"
+      ],
+      "trial": {
+        "divisor_tests": 10642,
+        "found": true,
+        "median_seconds": 0.0004549999999999832
+      },
+      "shared": {
+        "seeds": 2,
+        "windows": 2,
+        "giant_lookups": 105,
+        "divisor_updates": [
+          48081
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "17",
+          "850360"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1107,
+        "found": true,
+        "median_seconds": 0.0017266660000000156
+      },
+      "independent": {
+        "seeds": 2,
+        "windows": 2,
+        "giant_lookups": 158,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "17",
+          "850360"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 2061,
+        "found": true,
+        "median_seconds": 0.0030868750000000167
+      }
+    },
+    {
+      "n": "10671913501",
+      "factors": [
+        "90407",
+        "118043"
+      ],
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 17,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "11",
+          "2617060"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1660,
+        "found": true,
+        "median_seconds": 0.0025350829999999935
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 17,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "11",
+          "2617060"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1660,
+        "found": true,
+        "median_seconds": 0.002579625000000002
+      },
+      "trial": {
+        "divisor_tests": 8680,
+        "found": true,
+        "median_seconds": 0.0003796660000000007
+      }
+    },
+    {
+      "n": "7282151741",
+      "factors": [
+        "68261",
+        "106681"
+      ],
+      "independent": {
+        "seeds": 4,
+        "windows": 4,
+        "giant_lookups": 86,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "17",
+          "2104954"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 5995,
+        "found": true,
+        "median_seconds": 0.009868375000000013
+      },
+      "trial": {
+        "divisor_tests": 3960,
+        "found": true,
+        "median_seconds": 0.00017379199999997819
+      },
+      "shared": {
+        "seeds": 4,
+        "windows": 1,
+        "giant_lookups": 68,
+        "divisor_updates": [
+          48834
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "17",
+          "2104954"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1683,
+        "found": true,
+        "median_seconds": 0.002674583000000008
+      }
+    },
+    {
+      "n": "9218247923",
+      "factors": [
+        "76493",
+        "120511"
+      ],
+      "trial": {
+        "divisor_tests": 4302,
+        "found": true,
+        "median_seconds": 0.0001885000000000081
+      },
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 30,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "17",
+          "1152144"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1132,
+        "found": true,
+        "median_seconds": 0.0018049589999999949
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 30,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "17",
+          "1152144"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1132,
+        "found": true,
+        "median_seconds": 0.001667332999999993
+      }
+    },
+    {
+      "n": "9599491789",
+      "factors": [
+        "75227",
+        "127607"
+      ],
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 28,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "17",
+          "2482084"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1630,
+        "found": true,
+        "median_seconds": 0.0025868749999999885
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 28,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "17",
+          "2482084"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1630,
+        "found": true,
+        "median_seconds": 0.002551625000000002
+      },
+      "trial": {
+        "divisor_tests": 2974,
+        "found": true,
+        "median_seconds": 0.00012104200000001564
+      }
+    },
+    {
+      "n": "10553254457",
+      "factors": [
+        "101173",
+        "104309"
+      ],
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 19,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "11",
+          "2602480"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1656,
+        "found": true,
+        "median_seconds": 0.002455917000000002
+      },
+      "trial": {
+        "divisor_tests": 14267,
+        "found": true,
+        "median_seconds": 0.0006294579999999994
+      },
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 19,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "11",
+          "2602480"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1656,
+        "found": true,
+        "median_seconds": 0.0024036249999999926
+      }
+    },
+    {
+      "n": "7207790039",
+      "factors": [
+        "84431",
+        "85369"
+      ],
+      "trial": {
+        "divisor_tests": 12200,
+        "found": true,
+        "median_seconds": 0.0005397910000000117
+      },
+      "shared": {
+        "seeds": 6,
+        "windows": 2,
+        "giant_lookups": 96,
+        "divisor_updates": [
+          47335
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "19",
+          "990488"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1364,
+        "found": true,
+        "median_seconds": 0.002172874999999963
+      },
+      "independent": {
+        "seeds": 6,
+        "windows": 6,
+        "giant_lookups": 222,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "19",
+          "990488"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 6364,
+        "found": true,
+        "median_seconds": 0.010173458999999996
+      }
+    },
+    {
+      "n": "8577057899",
+      "factors": [
+        "65713",
+        "130523"
+      ],
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 5,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "15",
+          "1080485"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1067,
+        "found": true,
+        "median_seconds": 0.0015700419999999937
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 5,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "15",
+          "1080485"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1067,
+        "found": true,
+        "median_seconds": 0.0015567499999999956
+      },
+      "trial": {
+        "divisor_tests": 114,
+        "found": true,
+        "median_seconds": 5.250000000012189e-06
+      }
+    },
+    {
+      "n": "11739111863",
+      "factors": [
+        "107927",
+        "108769"
+      ],
+      "independent": {
+        "seeds": 3,
+        "windows": 3,
+        "giant_lookups": 211,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "21",
+          "1300176"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 3722,
+        "found": true,
+        "median_seconds": 0.0057930419999999705
+      },
+      "trial": {
+        "divisor_tests": 15657,
+        "found": true,
+        "median_seconds": 0.0007177080000000391
+      },
+      "shared": {
+        "seeds": 3,
+        "windows": 2,
+        "giant_lookups": 105,
+        "divisor_updates": [
+          59875
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "21",
+          "1300176"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1374,
+        "found": true,
+        "median_seconds": 0.002138250000000008
+      }
+    },
+    {
+      "n": "7237264777",
+      "factors": [
+        "71593",
+        "101089"
+      ],
+      "trial": {
+        "divisor_tests": 5719,
+        "found": true,
+        "median_seconds": 0.00023062499999998431
+      },
+      "shared": {
+        "seeds": 7,
+        "windows": 2,
+        "giant_lookups": 4,
+        "divisor_updates": [
+          2528,
+          17696
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "15",
+          "2098455"
+        ],
+        "outcome": "combined involutions",
+        "compositions": 1702,
+        "found": true,
+        "median_seconds": 0.0030578749999999877
+      },
+      "independent": {
+        "seeds": 7,
+        "windows": 7,
+        "giant_lookups": 59,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "15",
+          "2098455"
+        ],
+        "outcome": "combined involutions",
+        "compositions": 10374,
+        "found": true,
+        "median_seconds": 0.018371250000000006
+      }
+    },
+    {
+      "n": "9866700359",
+      "factors": [
+        "96527",
+        "102217"
+      ],
+      "shared": {
+        "seeds": 2,
+        "windows": 2,
+        "giant_lookups": 74,
+        "divisor_updates": [
+          40305
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "21",
+          "1191984"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1243,
+        "found": true,
+        "median_seconds": 0.0017959579999999864
+      },
+      "independent": {
+        "seeds": 2,
+        "windows": 2,
+        "giant_lookups": 111,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "21",
+          "1191984"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 2352,
+        "found": true,
+        "median_seconds": 0.0035580000000000056
+      },
+      "trial": {
+        "divisor_tests": 13145,
+        "found": true,
+        "median_seconds": 0.0005450419999999956
+      }
+    },
+    {
+      "n": "13853767493",
+      "factors": [
+        "114493",
+        "121001"
+      ],
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 25,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "11",
+          "2981796"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1778,
+        "found": true,
+        "median_seconds": 0.002586083000000017
+      },
+      "trial": {
+        "divisor_tests": 15633,
+        "found": true,
+        "median_seconds": 0.0006928749999999817
+      },
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 25,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "11",
+          "2981796"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1778,
+        "found": true,
+        "median_seconds": 0.002580083000000011
+      }
+    },
+    {
+      "n": "8335658039",
+      "factors": [
+        "75767",
+        "110017"
+      ],
+      "trial": {
+        "divisor_tests": 5605,
+        "found": true,
+        "median_seconds": 0.0002538750000000145
+      },
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 20,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "13",
+          "1065166"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1076,
+        "found": true,
+        "median_seconds": 0.0015387499999999776
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 20,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "13",
+          "1065166"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1076,
+        "found": true,
+        "median_seconds": 0.0015284999999999882
+      }
+    },
+    {
+      "n": "8058125111",
+      "factors": [
+        "79399",
+        "101489"
+      ],
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 51,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "17",
+          "1047293"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1102,
+        "found": true,
+        "median_seconds": 0.0016142089999999776
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 51,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "17",
+          "1047293"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1102,
+        "found": true,
+        "median_seconds": 0.0016120410000000085
+      },
+      "trial": {
+        "divisor_tests": 7963,
+        "found": true,
+        "median_seconds": 0.0003730829999999963
+      }
+    },
+    {
+      "n": "10486635619",
+      "factors": [
+        "98299",
+        "106681"
+      ],
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 9,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "13",
+          "1228860"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1141,
+        "found": true,
+        "median_seconds": 0.0017686249999999681
+      },
+      "trial": {
+        "divisor_tests": 12945,
+        "found": true,
+        "median_seconds": 0.0005306250000000068
+      },
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 9,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "13",
+          "1228860"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1141,
+        "found": true,
+        "median_seconds": 0.0017133749999999615
+      }
+    },
+    {
+      "n": "11743227247",
+      "factors": [
+        "102139",
+        "114973"
+      ],
+      "trial": {
+        "divisor_tests": 12757,
+        "found": true,
+        "median_seconds": 0.0005459170000000069
+      },
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 42,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "13",
+          "1300404"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1209,
+        "found": true,
+        "median_seconds": 0.0016937919999999718
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 42,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "13",
+          "1300404"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1209,
+        "found": true,
+        "median_seconds": 0.001672916999999996
+      }
+    },
+    {
+      "n": "9603655133",
+      "factors": [
+        "86929",
+        "110477"
+      ],
+      "shared": {
+        "seeds": 2,
+        "windows": 1,
+        "giant_lookups": 41,
+        "divisor_updates": [
+          31862
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "13",
+          "2482628"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1690,
+        "found": true,
+        "median_seconds": 0.0025073330000000005
+      },
+      "independent": {
+        "seeds": 2,
+        "windows": 2,
+        "giant_lookups": 42,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "13",
+          "2482628"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 3248,
+        "found": true,
+        "median_seconds": 0.005144707999999998
+      },
+      "trial": {
+        "divisor_tests": 8817,
+        "found": true,
+        "median_seconds": 0.0003674589999999589
+      }
+    },
+    {
+      "n": "8607891847",
+      "factors": [
+        "72559",
+        "118633"
+      ],
+      "independent": {
+        "seeds": 2,
+        "windows": 2,
+        "giant_lookups": 44,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "11",
+          "1113348"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 2209,
+        "found": true,
+        "median_seconds": 0.0032850829999999664
+      },
+      "trial": {
+        "divisor_tests": 3478,
+        "found": true,
+        "median_seconds": 0.00014366700000001398
+      },
+      "shared": {
+        "seeds": 2,
+        "windows": 2,
+        "giant_lookups": 29,
+        "divisor_updates": [
+          15079
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "11",
+          "1113348"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1158,
+        "found": true,
+        "median_seconds": 0.001629458000000028
+      }
+    },
+    {
+      "n": "12409828969",
+      "factors": [
+        "109673",
+        "113153"
+      ],
+      "trial": {
+        "divisor_tests": 15451,
+        "found": true,
+        "median_seconds": 0.0006758749999999925
+      },
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 11,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "13",
+          "2822120"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1713,
+        "found": true,
+        "median_seconds": 0.002585999999999977
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 11,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "13",
+          "2822120"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1713,
+        "found": true,
+        "median_seconds": 0.002669334000000023
+      }
+    },
+    {
+      "n": "10251916879",
+      "factors": [
+        "101027",
+        "101477"
+      ],
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 67,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "21",
+          "1215024"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1200,
+        "found": true,
+        "median_seconds": 0.001796875000000031
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 67,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "21",
+          "1215024"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1200,
+        "found": true,
+        "median_seconds": 0.0017978750000000598
+      },
+      "trial": {
+        "divisor_tests": 14716,
+        "found": true,
+        "median_seconds": 0.0006497089999999428
+      }
+    },
+    {
+      "n": "7148497003",
+      "factors": [
+        "68389",
+        "104527"
+      ],
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 9,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "7",
+          "986405"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1022,
+        "found": true,
+        "median_seconds": 0.0017112910000000037
+      },
+      "trial": {
+        "divisor_tests": 4302,
+        "found": true,
+        "median_seconds": 0.00018958299999993766
+      },
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 9,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "7",
+          "986405"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1022,
+        "found": true,
+        "median_seconds": 0.0016584170000000231
+      }
+    },
+    {
+      "n": "11961807379",
+      "factors": [
+        "102533",
+        "116663"
+      ],
+      "trial": {
+        "divisor_tests": 12599,
+        "found": true,
+        "median_seconds": 0.0005225829999999654
+      },
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 13,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "9",
+          "1312452"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1179,
+        "found": true,
+        "median_seconds": 0.0017674159999999661
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 13,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "9",
+          "1312452"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1179,
+        "found": true,
+        "median_seconds": 0.0017692500000000555
+      }
+    },
+    {
+      "n": "11878165553",
+      "factors": [
+        "94649",
+        "125497"
+      ],
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 10,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "11",
+          "2761004"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1693,
+        "found": true,
+        "median_seconds": 0.0024119999999999697
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 10,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "11",
+          "2761004"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1693,
+        "found": true,
+        "median_seconds": 0.0023925000000000196
+      },
+      "trial": {
+        "divisor_tests": 8792,
+        "found": true,
+        "median_seconds": 0.0003562920000000913
+      }
+    },
+    {
+      "n": "8394717341",
+      "factors": [
+        "77573",
+        "108217"
+      ],
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 25,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "19",
+          "2260034"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1558,
+        "found": true,
+        "median_seconds": 0.0022846659999999908
+      },
+      "trial": {
+        "divisor_tests": 6393,
+        "found": true,
+        "median_seconds": 0.0002654589999999679
+      },
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 25,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "19",
+          "2260034"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1558,
+        "found": true,
+        "median_seconds": 0.002335417000000062
+      }
+    },
+    {
+      "n": "10616379271",
+      "factors": [
+        "102841",
+        "103231"
+      ],
+      "trial": {
+        "divisor_tests": 14992,
+        "found": true,
+        "median_seconds": 0.0006421659999999996
+      },
+      "shared": {
+        "seeds": 3,
+        "windows": 2,
+        "giant_lookups": 55,
+        "divisor_updates": [
+          30503
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "17",
+          "1236432"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1289,
+        "found": true,
+        "median_seconds": 0.0019409169999999865
+      },
+      "independent": {
+        "seeds": 3,
+        "windows": 3,
+        "giant_lookups": 111,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "17",
+          "1236432"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 3529,
+        "found": true,
+        "median_seconds": 0.005523207999999946
+      }
+    },
+    {
+      "n": "8348064743",
+      "factors": [
+        "74363",
+        "112261"
+      ],
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 2,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "15",
+          "1065960"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1056,
+        "found": true,
+        "median_seconds": 0.0014408340000000575
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 2,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "15",
+          "1065960"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1056,
+        "found": true,
+        "median_seconds": 0.001430667000000052
+      },
+      "trial": {
+        "divisor_tests": 4879,
+        "found": true,
+        "median_seconds": 0.00020458300000003593
+      }
+    },
+    {
+      "n": "9305009543",
+      "factors": [
+        "77983",
+        "119321"
+      ],
+      "independent": {
+        "seeds": 2,
+        "windows": 2,
+        "giant_lookups": 70,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "13",
+          "1157556"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 2270,
+        "found": true,
+        "median_seconds": 0.003254958999999946
+      },
+      "trial": {
+        "divisor_tests": 4887,
+        "found": true,
+        "median_seconds": 0.00021249999999994884
+      },
+      "shared": {
+        "seeds": 2,
+        "windows": 2,
+        "giant_lookups": 28,
+        "divisor_updates": [
+          14915
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "13",
+          "1157556"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1171,
+        "found": true,
+        "median_seconds": 0.0016345409999999339
+      }
+    },
+    {
+      "n": "5547508613",
+      "factors": [
+        "69737",
+        "79549"
+      ],
+      "trial": {
+        "divisor_tests": 8536,
+        "found": true,
+        "median_seconds": 0.0003510829999999743
+      },
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 4,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "19",
+          "1837222"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1379,
+        "found": true,
+        "median_seconds": 0.0019656659999999215
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 4,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "19",
+          "1837222"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1379,
+        "found": true,
+        "median_seconds": 0.0019135000000000124
+      }
+    },
+    {
+      "n": "8572125371",
+      "factors": [
+        "92381",
+        "92791"
+      ],
+      "shared": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 51,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "19",
+          "1080170"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1117,
+        "found": true,
+        "median_seconds": 0.0017117500000000119
+      },
+      "independent": {
+        "seeds": 1,
+        "windows": 1,
+        "giant_lookups": 51,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "19",
+          "1080170"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1117,
+        "found": true,
+        "median_seconds": 0.0016362920000000392
+      },
+      "trial": {
+        "divisor_tests": 13457,
+        "found": true,
+        "median_seconds": 0.000582207999999973
+      }
+    },
+    {
+      "n": "9452687159",
+      "factors": [
+        "87719",
+        "107761"
+      ],
+      "independent": {
+        "seeds": 4,
+        "windows": 4,
+        "giant_lookups": 133,
+        "divisor_updates": [],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "15",
+          "1166700"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 4561,
+        "found": true,
+        "median_seconds": 0.006960791000000022
+      },
+      "trial": {
+        "divisor_tests": 9486,
+        "found": true,
+        "median_seconds": 0.00039000000000000146
+      },
+      "shared": {
+        "seeds": 4,
+        "windows": 2,
+        "giant_lookups": 94,
+        "divisor_updates": [
+          50547
+        ],
+        "known_class_number": null,
+        "max_compositions": 100000,
+        "prime_limit": 43,
+        "class_window": [
+          "15",
+          "1166700"
+        ],
+        "outcome": "ambiguous form",
+        "compositions": 1344,
+        "found": true,
+        "median_seconds": 0.00201670899999995
+      }
+    }
+  ]
+}

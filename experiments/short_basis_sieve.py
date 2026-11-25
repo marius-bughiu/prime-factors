@@ -42,6 +42,12 @@ def first_vector(n, m, m0, sigma, anchor, work):
 
 def shortest_lattice_vector(m, eta, transform, work):
     """Gauss reduction in the supplied norm for b = eta*a modulo m."""
+    (a, b), _ = reduced_lattice_basis(m, eta, transform, work)
+    return (-a, -b) if a < 0 or (a == 0 and b < 0) else (a, b)
+
+
+def reduced_lattice_basis(m, eta, transform, work):
+    """Return both Gauss-reduced basis vectors, in the original coordinates."""
     left, right = (1, eta), (0, m)
     while True:
         x, y = transform(left)
@@ -53,8 +59,7 @@ def shortest_lattice_vector(m, eta, transform, work):
             continue
         nearest = (2*(x*z+y*w)+norm) // (2*norm)
         if nearest == 0:
-            a, b = left
-            return (-a, -b) if a < 0 or (a == 0 and b < 0) else (a, b)
+            return left, right
         right = (right[0]-nearest*left[0], right[1]-nearest*left[1])
 
 

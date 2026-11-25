@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from experiments.class_order_search import search as class_order_search
+from experiments.midpoint_weights import search as weight_orbit_search
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.local_midpoint_lanes import search as local_midpoint_search
 from experiments.divisor_samples import search as divisor_sample_search
@@ -26,6 +28,7 @@ from experiments.short_basis_sieve import search as short_basis_search
 from experiments.wide_modulus import search as wide_modulus_search
 from experiments.pascal_readout import search as pascal_search
 from experiments.pell_pairs import search as pell_pair_search
+from experiments.pell_local_windows import search as pell_window_search
 from experiments.pell_relations import search as pell_relation_search
 from experiments.pooled_relations import search as pooled_relation_search
 from experiments.crt_square_norms import search as crt_square_search
@@ -127,7 +130,20 @@ def run_case(case, method, proofs):
     proof = proofs / f'{name}.lean'
     start = time.perf_counter()
     complete = case['status'] == 'complete'
-    if method == 'modular-hyperbola':
+    if method == 'midpoint-weights':
+        work = weight_orbit_search(int(case['n']), case.get('max_orbits'),
+                                   reduce_discriminant=case.get('reduce_discriminant', False))
+        elapsed = time.perf_counter() - start
+        pairs = work.pop('pairs')
+        agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
+        result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'class-orders':
+        work = class_order_search(int(case['n']), case['prime_limit'], case['max_compositions'], case['shared'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, ['outcome', 'compositions', 'windows'])
+        result = certify_split(case, proof, factor, elapsed, 'class_orders', work)
+    elif method == 'modular-hyperbola':
         work = hyperbola_search(int(case['n']), radix_policy=case.get('radix_policy', 'binary'))
         elapsed = time.perf_counter() - start
         pairs = work.pop('pairs')
@@ -147,6 +163,15 @@ def run_case(case, method, proofs):
         found = work['setup_divisor'] or (pairs[0][0] if pairs else None)
         factor = int(found) if found is not None else None
         result = certify_split(case, proof, factor, elapsed, 'quotient_search', work)
+    elif method == 'pell-local-windows':
+        work = pell_window_search(int(case['n']), case['max_steps'], case['depth'])
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['steps', 'pairs', 'candidates', 'root_tests'])
+        hits = [hit for hit in (work['ordinary_pair'], work['shifted_pair']) if hit]
+        first = min(hits, key=lambda hit: hit['j'], default=None)
+        work.update(max_steps=case['max_steps'], depth=case['depth'])
+        result = certify_split(case, proof, first['factor'] if first else None, elapsed,
+                               'pell_windows', work)
     elif method == 'pell-pairs':
         work = pell_pair_search(int(case['n']), case['max_prime'], case['max_steps'], case['triangles'])
         elapsed = time.perf_counter() - start
@@ -185,6 +210,7 @@ def run_case(case, method, proofs):
         result = certify_split(case, proof, factor, elapsed, 'weighted_stride', work)
     elif method == 'factorial-progressions':
         settings = {k: case[k] for k in ('max_span', 'wheel', 'backend')}
+        settings['folded'] = case.get('folded', False)
         work = factorial_progressions.search(int(case['n']), **settings)
         elapsed = time.perf_counter() - start
         factor = work.pop('factor')
@@ -536,6 +562,7 @@ def main():
                              ('folded-square.json', 'folded-square'),
                              ('salie-blocks.json', 'salie-blocks'),
                              ('pell-pairs.json', 'pell-pairs'),
+                             ('pell-local-windows.json', 'pell-local-windows'),
                              ('pell-relations.json', 'pell-relations'),
                              ('pooled-relations.json', 'pooled-relations'),
                              ('scored-multipliers.json', 'scored-multipliers'),
@@ -566,7 +593,9 @@ def main():
                              ('partition-recurrence.json', 'partition-recurrence'),
                              ('quotient-search.json', 'quotient-search'),
                              ('inverse-windows.json', 'inverse-windows'),
-                             ('modular-hyperbola.json', 'modular-hyperbola')]:
+                             ('modular-hyperbola.json', 'modular-hyperbola'),
+                             ('midpoint-weights.json', 'midpoint-weights'),
+                             ('class-orders.json', 'class-orders')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':
             cases = expand_cases(cases)

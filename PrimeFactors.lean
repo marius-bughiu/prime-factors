@@ -45,6 +45,7 @@ import PrimeFactors.FareyWrap
 import PrimeFactors.FejerProjection
 import PrimeFactors.Fermat
 import PrimeFactors.FoldedSquare
+import PrimeFactors.FoldedFactorial
 import PrimeFactors.FourierAccess
 import PrimeFactors.FourSquareLines
 import PrimeFactors.FrobeniusFixedCounts
@@ -71,6 +72,10 @@ import PrimeFactors.MarkedTraceBit
 import PrimeFactors.MaskedRelations
 import PrimeFactors.MidpointBlocks
 import PrimeFactors.MidpointClasses
+import PrimeFactors.MidpointWeightBudget
+import PrimeFactors.MidpointWeightLattice
+import PrimeFactors.ReducedWeightDiscriminant
+import PrimeFactors.MidpointWeights
 import PrimeFactors.MixedHeights
 import PrimeFactors.MixedRatioHeight
 import PrimeFactors.ModularHyperbola
@@ -94,6 +99,7 @@ import PrimeFactors.PartitionRecurrence
 import PrimeFactors.PascalProjection
 import PrimeFactors.PascalReadout
 import PrimeFactors.PellCycles
+import PrimeFactors.RelativePellWindows
 import PrimeFactors.PellMultiplier
 import PrimeFactors.PersistentFourierBound
 import PrimeFactors.PersistentLocalSurvivors
@@ -150,6 +156,7 @@ import PrimeFactors.ShortNormBox
 import PrimeFactors.SmoothSampleBound
 import PrimeFactors.SmoothFractionHyperbola
 import PrimeFactors.SharedRootSigns
+import PrimeFactors.SharedClassOrders
 import PrimeFactors.SquareClassFilter
 import PrimeFactors.SquareNeighborPeriod
 import PrimeFactors.SieveBudget

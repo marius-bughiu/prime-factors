@@ -17,12 +17,12 @@ from experiments.modular_hyperbola import search
 from scripts.factor import render_certificate, verify_file
 
 
-def draw_prime(side, sample):
-    prefix = b'affine-radix-holdout-v1\0' + side + sample.to_bytes(8, 'big')
+def draw_prime(side, sample, *, bits=23, seed=b'affine-radix-holdout-v1'):
+    prefix = seed + b'\0' + side + sample.to_bytes(8, 'big')
     counter = 0
     while True:
-        digest = hashlib.shake_256(prefix + counter.to_bytes(8, 'big')).digest(3)
-        p = (int.from_bytes(digest, 'big') & ((1 << 23)-1)) | (1 << 22) | 1
+        digest = hashlib.shake_256(prefix + counter.to_bytes(8, 'big')).digest((bits+7)//8)
+        p = (int.from_bytes(digest, 'big') & ((1 << bits)-1)) | (1 << (bits-1)) | 1
         if all(p % d for d in range(3, isqrt(p)+1, 2)):
             return p
         counter += 1

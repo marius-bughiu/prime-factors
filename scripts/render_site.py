@@ -59,6 +59,14 @@ def case_row(result):
         count += f' · search {duration(result["discovery_seconds"])}'
         if checked:
             verification += f' (certificate generation and replay {duration(result["certificate_seconds"])})'
+    elif result['method'] == 'midpoint-weights':
+        w = result['midpoint_weights']
+        count = (f'Weighted sums · {w["visited_orbits"]:,} of {w["total_orbits"]:,} remainder pairs'
+                 f' · {w["candidate_traces"]:,} candidate sums · {w["square_tests"]:,} square tests')
+    elif result['method'] == 'class-orders':
+        w = result['class_orders']
+        count = (f'Class orders · {w["windows"]:,} interval searches · {w["compositions"]:,} form compositions'
+                 f' · {escape(w["outcome"])}')
     elif result['method'] == 'modular-hyperbola':
         w = result['hyperbola']
         radix = f' · radix {w["radix"]:,}' if 'radix' in w else ''
@@ -70,6 +78,11 @@ def case_row(result):
         count = (f'Factor intervals · wheel {w["wheel"]} · {w["blocks"]:,} initial strips · '
                  f'{w["bisected"]:,} bisections · {w["quadratic_solves"]:,} quadratics · '
                  f'{w["euclidean_steps"]:,} Euclidean steps')
+    elif result['method'] == 'pell-local-windows':
+        w = result['pell_windows']
+        count = (f'Continued fractions · {w["steps"]:,} of {w["max_steps"]:,} steps · '
+                 f'{w["pairs"]:,} pairs up to {w["depth"]} rows apart · '
+                 f'{w["candidates"]:,} candidates · {w["root_tests"]:,} square-root tests')
     elif result['method'] == 'pell-pairs':
         w = result['pell_pairs']
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '

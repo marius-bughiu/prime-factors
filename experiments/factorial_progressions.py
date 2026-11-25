@@ -118,7 +118,67 @@ def block_products(base, cycles, wheel, residues, n, convolution, work):
     return values, width, None
 
 
-def search(n, max_span, *, wheel=30, backend='decimal'):
+def folded_extend(values, last, factorial, inverse_factorial, reciprocals, n, convolution, work):
+    """Extend samples at i(i+1) to t(t+1) for t through last, using one convolution."""
+    degree = len(values)-1
+    if last <= degree:
+        return values[:last+1]
+    weights = [(value*inverse_factorial[degree-i]*inverse_factorial[degree+i+1]
+                *(-1 if (degree-i) % 2 else 1)) % n for i, value in enumerate(values)]
+    # Antisymmetry supplies the two poles 1/(t-i) and -1/(t+i+1).
+    kernel = [(-value) % n for value in reversed(weights)]+weights
+    denominators = reciprocals[:last+degree+1]
+    mixed = convolution(kernel, denominators, n)
+    work['convolutions'] += 1
+    work['convolution_input_coefficients'] += len(kernel)+len(denominators)
+    work['shifted_values'] += last-degree
+    return values+[factorial[t+degree+1]*inverse_factorial[t-degree-1]*mixed[t+degree] % n
+                   for t in range(degree+1, last+1)]
+
+
+def folded_blocks(base, cycles, wheel, residues, n, convolution, work):
+    """Pair equal-width blocks on opposite sides of a common wheel-aligned boundary."""
+    rho = len(residues)
+    width = block_size(cycles, rho)
+    if width == 1:
+        return block_products(base, cycles, wheel, residues, n, convolution, work)
+    half = width//2
+    count = cycles//width
+    center = base+count*half*wheel
+    work['block_cycles'] = width
+    work['block_degree'] = half*rho
+    work['blocks'] = count
+
+    def seed(j):
+        return (wheel_product(center+j*wheel, residues, n) *
+                wheel_product(center-(j+1)*wheel, residues, n)) % n
+
+    if half == 1 and count <= rho+1:
+        work['seed_terms'] += 2*rho*count
+        return [seed(j) for j in range(count)], width, None
+    # A degree-d shift through index t needs all units through t+d+1.
+    # The penultimate shift, when present, has t=4*d+1 at d=rho*half/4.
+    limit = (count+rho if half == 1 else
+             max(2*count+rho*(half//2), 5*rho*(half//4)+2))
+    fact, inv, divisor = factorial_tables(limit, n, work)
+    if divisor is not None:
+        return [], width, divisor
+    reciprocals = [fact[j-1]*inv[j] % n for j in range(1, limit+1)]
+    values = [seed(j) for j in range(rho+1)]
+    work['seed_terms'] += 2*rho*(rho+1)
+    if half == 1:
+        return folded_extend(values, count-1, fact, inv, reciprocals, n, convolution, work), width, None
+    size = 1
+    while size < half:
+        size *= 2
+        needed = count if size == half else size*rho+1
+        enlarged = folded_extend(values, 2*needed-1, fact, inv, reciprocals, n, convolution, work)
+        values = [enlarged[2*j]*enlarged[2*j+1] % n for j in range(needed)]
+        work['paired_products'] += needed
+    return values, width, None
+
+
+def search(n, max_span, *, wheel=30, backend='decimal', folded=False):
     """Assume N=pq for distinct odd p<q<=2p. max_span counts consecutive integers."""
     if n < 3 or n % 2 == 0 or wheel < 2 or (max_span is not None and max_span < 0):
         raise ValueError('expected odd N >= 3, a wheel >= 2, and a nonnegative span cap')
@@ -157,7 +217,10 @@ def search(n, max_span, *, wheel=30, backend='decimal'):
     full_end = base
     value = 1
     if cycles:
-        blocks, width, found = block_products(base, cycles, wheel, residues, n, convolution, work)
+        if folded:
+            blocks, width, found = folded_blocks(base, cycles, wheel, residues, n, convolution, work)
+        else:
+            blocks, width, found = block_products(base, cycles, wheel, residues, n, convolution, work)
         if found is not None and 1 < found < n:
             return result(found, 'interpolation_divisor')
         if found is None:
@@ -190,6 +253,7 @@ if __name__ == '__main__':
     parser.add_argument('n', type=int)
     parser.add_argument('--wheel', type=int, default=30)
     parser.add_argument('--backend', choices=('decimal','binary'), default='decimal')
+    parser.add_argument('--folded', action='store_true', help='use the reflected half-degree block polynomial')
     parser.add_argument('--max-span', type=int, required=True)
     args = parser.parse_args()
-    print(json.dumps(search(args.n, args.max_span, wheel=args.wheel, backend=args.backend), indent=2))
+    print(json.dumps(search(args.n, args.max_span, wheel=args.wheel, backend=args.backend, folded=args.folded), indent=2))

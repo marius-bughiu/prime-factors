@@ -1,0 +1,877 @@
+[
+  {
+    "sample": 0,
+    "n": "3361825995923",
+    "factors": [
+      "1810247",
+      "1857109"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32639,
+      "candidates": 124195,
+      "root_tests": 18230,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 386,
+      "factor": 1810247
+    },
+    "fermat": {
+      "j": 150,
+      "factor": 1810247
+    }
+  },
+  {
+    "sample": 1,
+    "n": "3232061971679",
+    "factors": [
+      "1784929",
+      "1810751"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32668,
+      "candidates": 124174,
+      "root_tests": 19401,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 588,
+      "factor": 1784929
+    },
+    "fermat": {
+      "j": 47,
+      "factor": 1784929
+    }
+  },
+  {
+    "sample": 2,
+    "n": "4150567999733",
+    "factors": [
+      "2010191",
+      "2064763"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32600,
+      "candidates": 124035,
+      "root_tests": 17719,
+      "ordinary_pair": null,
+      "shifted_pair": {
+        "i": 888,
+        "j": 891,
+        "v": 15,
+        "w": 30507583,
+        "z": 3665664,
+        "k": 4,
+        "signed_product": -3165179438036,
+        "factor": 2010191
+      }
+    },
+    "square_row": {
+      "j": 2354,
+      "factor": 2064763
+    },
+    "fermat": {
+      "j": 183,
+      "factor": 2010191
+    }
+  },
+  {
+    "sample": 3,
+    "n": "2338779928519",
+    "factors": [
+      "1244533",
+      "1879243"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32643,
+      "candidates": 124244,
+      "root_tests": 18464,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 550,
+      "factor": 1244533
+    },
+    "fermat": null
+  },
+  {
+    "sample": 4,
+    "n": "1873740369113",
+    "factors": [
+      "1300487",
+      "1440799"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32521,
+      "candidates": 123730,
+      "root_tests": 19752,
+      "ordinary_pair": {
+        "i": 1323,
+        "j": 1327,
+        "v": 14,
+        "w": 19189002,
+        "z": 982184,
+        "k": 0,
+        "signed_product": 964685409856,
+        "factor": 1440799
+      },
+      "shifted_pair": {
+        "i": 1323,
+        "j": 1326,
+        "v": 5,
+        "w": 6783059,
+        "z": 1019863,
+        "k": 1,
+        "signed_product": -833619830344,
+        "factor": 1300487
+      }
+    },
+    "square_row": {
+      "j": 2664,
+      "factor": 1300487
+    },
+    "fermat": {
+      "j": 1797,
+      "factor": 1300487
+    }
+  },
+  {
+    "sample": 5,
+    "n": "2989321178911",
+    "factors": [
+      "1433743",
+      "2084977"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32572,
+      "candidates": 123876,
+      "root_tests": 18602,
+      "ordinary_pair": null,
+      "shifted_pair": {
+        "i": 1693,
+        "j": 1699,
+        "v": 8773,
+        "w": 15168213053,
+        "z": 2079599,
+        "k": 1,
+        "signed_product": 1335410821890,
+        "factor": 2084977
+      }
+    },
+    "square_row": null,
+    "fermat": null
+  },
+  {
+    "sample": 6,
+    "n": "2123273566031",
+    "factors": [
+      "1225397",
+      "1732723"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32637,
+      "candidates": 124118,
+      "root_tests": 19415,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 948,
+      "factor": 1225397
+    },
+    "fermat": null
+  },
+  {
+    "sample": 7,
+    "n": "1596089389043",
+    "factors": [
+      "1131419",
+      "1410697"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32609,
+      "candidates": 123942,
+      "root_tests": 18120,
+      "ordinary_pair": {
+        "i": 321,
+        "j": 323,
+        "v": 2,
+        "w": 2542116,
+        "z": 279278,
+        "k": 0,
+        "signed_product": 77996201284,
+        "factor": 1410697
+      },
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 1706,
+      "factor": 1410697
+    },
+    "fermat": null
+  },
+  {
+    "sample": 8,
+    "n": "3070871463277",
+    "factors": [
+      "1609199",
+      "1908323"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32637,
+      "candidates": 124146,
+      "root_tests": 17177,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": null,
+    "fermat": null
+  },
+  {
+    "sample": 9,
+    "n": "2039888172541",
+    "factors": [
+      "1282909",
+      "1590049"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32534,
+      "candidates": 123751,
+      "root_tests": 18534,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 14,
+      "factor": 1590049
+    },
+    "fermat": null
+  },
+  {
+    "sample": 10,
+    "n": "2094208203427",
+    "factors": [
+      "1370617",
+      "1527931"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32588,
+      "candidates": 123961,
+      "root_tests": 16033,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 1372,
+      "factor": 1527931
+    },
+    "fermat": {
+      "j": 2137,
+      "factor": 1370617
+    }
+  },
+  {
+    "sample": 11,
+    "n": "1918385661683",
+    "factors": [
+      "1385017",
+      "1385099"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32534,
+      "candidates": 123668,
+      "root_tests": 18164,
+      "ordinary_pair": {
+        "i": 11,
+        "j": 17,
+        "v": 16183,
+        "w": 22414393614,
+        "z": 663503,
+        "k": 0,
+        "signed_product": 440236231009,
+        "factor": 1385099
+      },
+      "shifted_pair": {
+        "i": 11,
+        "j": 16,
+        "v": 1461,
+        "w": 2023569697,
+        "z": 1325157,
+        "k": 1,
+        "signed_product": -162344587034,
+        "factor": 1385017
+      }
+    },
+    "square_row": {
+      "j": 2,
+      "factor": 1385099
+    },
+    "fermat": {
+      "j": 1,
+      "factor": 1385017
+    }
+  },
+  {
+    "sample": 12,
+    "n": "2344999124731",
+    "factors": [
+      "1396487",
+      "1679213"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32611,
+      "candidates": 124079,
+      "root_tests": 17755,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": null,
+    "fermat": null
+  },
+  {
+    "sample": 13,
+    "n": "2122284550049",
+    "factors": [
+      "1325183",
+      "1601503"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32611,
+      "candidates": 124008,
+      "root_tests": 20791,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": null,
+    "fermat": null
+  },
+  {
+    "sample": 14,
+    "n": "3601878016909",
+    "factors": [
+      "1754659",
+      "2052751"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32575,
+      "candidates": 123874,
+      "root_tests": 18449,
+      "ordinary_pair": {
+        "i": 34,
+        "j": 42,
+        "v": 2597,
+        "w": 4928746141,
+        "z": 90990,
+        "k": 0,
+        "signed_product": 8279180100,
+        "factor": 1754659
+      },
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 34,
+      "factor": 1754659
+    },
+    "fermat": null
+  },
+  {
+    "sample": 15,
+    "n": "2065217397041",
+    "factors": [
+      "1394749",
+      "1480709"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32596,
+      "candidates": 123996,
+      "root_tests": 20672,
+      "ordinary_pair": null,
+      "shifted_pair": {
+        "i": 2261,
+        "j": 2264,
+        "v": 133,
+        "w": 191131997,
+        "z": 2840882,
+        "k": 4,
+        "signed_product": -190259050240,
+        "factor": 1480709
+      }
+    },
+    "square_row": {
+      "j": 768,
+      "factor": 1394749
+    },
+    "fermat": {
+      "j": 643,
+      "factor": 1394749
+    }
+  },
+  {
+    "sample": 16,
+    "n": "2072826916429",
+    "factors": [
+      "1166723",
+      "1776623"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32521,
+      "candidates": 123717,
+      "root_tests": 18677,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 2048,
+      "factor": 1776623
+    },
+    "fermat": null
+  },
+  {
+    "sample": 17,
+    "n": "1370110723297",
+    "factors": [
+      "1123973",
+      "1218989"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32588,
+      "candidates": 123915,
+      "root_tests": 19085,
+      "ordinary_pair": null,
+      "shifted_pair": {
+        "i": 994,
+        "j": 999,
+        "v": 15,
+        "w": 17524707,
+        "z": 458861,
+        "k": 1,
+        "signed_product": -1159557305976,
+        "factor": 1123973
+      }
+    },
+    "square_row": {
+      "j": 618,
+      "factor": 1123973
+    },
+    "fermat": {
+      "j": 964,
+      "factor": 1123973
+    }
+  },
+  {
+    "sample": 18,
+    "n": "1684077996017",
+    "factors": [
+      "1118441",
+      "1505737"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32599,
+      "candidates": 123989,
+      "root_tests": 19961,
+      "ordinary_pair": {
+        "i": 3066,
+        "j": 3068,
+        "v": 2,
+        "w": 2624178,
+        "z": 387296,
+        "k": 0,
+        "signed_product": 149998191616,
+        "factor": 1505737
+      },
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 94,
+      "factor": 1505737
+    },
+    "fermat": null
+  },
+  {
+    "sample": 19,
+    "n": "2912183156303",
+    "factors": [
+      "1676981",
+      "1736563"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32601,
+      "candidates": 123955,
+      "root_tests": 18887,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 3118,
+      "factor": 1736563
+    },
+    "fermat": {
+      "j": 261,
+      "factor": 1676981
+    }
+  },
+  {
+    "sample": 20,
+    "n": "2669371626143",
+    "factors": [
+      "1535153",
+      "1738831"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32588,
+      "candidates": 123988,
+      "root_tests": 18873,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 56,
+      "factor": 1535153
+    },
+    "fermat": {
+      "j": 3171,
+      "factor": 1535153
+    }
+  },
+  {
+    "sample": 21,
+    "n": "2593040721119",
+    "factors": [
+      "1274633",
+      "2034343"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32565,
+      "candidates": 123802,
+      "root_tests": 19454,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 1504,
+      "factor": 2034343
+    },
+    "fermat": null
+  },
+  {
+    "sample": 22,
+    "n": "2194483419017",
+    "factors": [
+      "1480811",
+      "1481947"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32590,
+      "candidates": 123980,
+      "root_tests": 19932,
+      "ordinary_pair": {
+        "i": 184,
+        "j": 190,
+        "v": 392,
+        "w": 580700568,
+        "z": 222656,
+        "k": 0,
+        "signed_product": 49575694336,
+        "factor": 1481947
+      },
+      "shifted_pair": {
+        "i": 100,
+        "j": 105,
+        "v": 3033,
+        "w": 4493021939,
+        "z": 241365,
+        "k": 1,
+        "signed_product": -2136226355792,
+        "factor": 1481947
+      }
+    },
+    "square_row": {
+      "j": 2,
+      "factor": 1481947
+    },
+    "fermat": {
+      "j": 1,
+      "factor": 1480811
+    }
+  },
+  {
+    "sample": 23,
+    "n": "2729255857919",
+    "factors": [
+      "1624471",
+      "1680089"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32529,
+      "candidates": 123735,
+      "root_tests": 19526,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 2060,
+      "factor": 1680089
+    },
+    "fermat": {
+      "j": 235,
+      "factor": 1624471
+    }
+  },
+  {
+    "sample": 24,
+    "n": "2686073380253",
+    "factors": [
+      "1536287",
+      "1748419"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32596,
+      "candidates": 123968,
+      "root_tests": 17593,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 756,
+      "factor": 1748419
+    },
+    "fermat": {
+      "j": 3429,
+      "factor": 1536287
+    }
+  },
+  {
+    "sample": 25,
+    "n": "3133088997757",
+    "factors": [
+      "1760557",
+      "1779601"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32568,
+      "candidates": 123823,
+      "root_tests": 16822,
+      "ordinary_pair": {
+        "i": 889,
+        "j": 895,
+        "v": 157,
+        "w": 277902403,
+        "z": 1494954,
+        "k": 0,
+        "signed_product": 2234887462116,
+        "factor": 1779601
+      },
+      "shifted_pair": {
+        "i": 2365,
+        "j": 2372,
+        "v": 283,
+        "w": 500922835,
+        "z": 924647,
+        "k": 1,
+        "signed_product": -2278116923148,
+        "factor": 1779601
+      }
+    },
+    "square_row": {
+      "j": 1498,
+      "factor": 1779601
+    },
+    "fermat": {
+      "j": 26,
+      "factor": 1760557
+    }
+  },
+  {
+    "sample": 26,
+    "n": "3618749364589",
+    "factors": [
+      "1739239",
+      "2080651"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32597,
+      "candidates": 123998,
+      "root_tests": 18408,
+      "ordinary_pair": null,
+      "shifted_pair": {
+        "i": 3811,
+        "j": 3816,
+        "v": 44,
+        "w": 83696168,
+        "z": 3691174,
+        "k": 4,
+        "signed_product": -850231960080,
+        "factor": 2080651
+      }
+    },
+    "square_row": null,
+    "fermat": null
+  },
+  {
+    "sample": 27,
+    "n": "2073399274613",
+    "factors": [
+      "1377977",
+      "1504669"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32571,
+      "candidates": 123865,
+      "root_tests": 17444,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 2228,
+      "factor": 1377977
+    },
+    "fermat": {
+      "j": 1393,
+      "factor": 1377977
+    }
+  },
+  {
+    "sample": 28,
+    "n": "2483007771581",
+    "factors": [
+      "1359857",
+      "1825933"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32627,
+      "candidates": 124069,
+      "root_tests": 18616,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 1538,
+      "factor": 1825933
+    },
+    "fermat": null
+  },
+  {
+    "sample": 29,
+    "n": "2599592291027",
+    "factors": [
+      "1243783",
+      "2090069"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32593,
+      "candidates": 124006,
+      "root_tests": 18101,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": null,
+    "fermat": null
+  },
+  {
+    "sample": 30,
+    "n": "2130549849143",
+    "factors": [
+      "1079453",
+      "1973731"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32578,
+      "candidates": 123823,
+      "root_tests": 18678,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": {
+      "j": 1846,
+      "factor": 1973731
+    },
+    "fermat": null
+  },
+  {
+    "sample": 31,
+    "n": "2454313386127",
+    "factors": [
+      "1548073",
+      "1585399"
+    ],
+    "windows": {
+      "steps": 4096,
+      "period_complete": false,
+      "pairs": 32580,
+      "candidates": 123866,
+      "root_tests": 17239,
+      "ordinary_pair": null,
+      "shifted_pair": null
+    },
+    "square_row": null,
+    "fermat": {
+      "j": 112,
+      "factor": 1548073
+    }
+  }
+]

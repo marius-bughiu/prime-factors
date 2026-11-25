@@ -1,0 +1,729 @@
+{
+  "seed": "midpoint-weight-holdout-v1",
+  "prime_bits": 25,
+  "repetitions": 5,
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.9.6",
+  "rows": [
+    {
+      "sample": 0,
+      "n": "502005281288939",
+      "factors": [
+        "17838631",
+        "28141469"
+      ],
+      "weights": {
+        "radix": 46200,
+        "total_orbits": 4800,
+        "visited_orbits": 4800,
+        "remaining_orbits": 0,
+        "weight_choices": 150,
+        "candidate_traces": 2810,
+        "square_tests": 2390,
+        "table_entries": 42,
+        "gauss_iterations": 1426,
+        "reduced_discriminant": false,
+        "discriminant_work": {},
+        "seconds": [
+          0.005522249999999999,
+          0.005917791999999977,
+          0.0063312500000000105,
+          0.006375165999999988,
+          0.006197499999999856
+        ],
+        "median_seconds": 0.006197499999999856
+      },
+      "reduced": {
+        "radix": 46200,
+        "total_orbits": 4800,
+        "visited_orbits": 4800,
+        "remaining_orbits": 0,
+        "weight_choices": 150,
+        "candidate_traces": 2810,
+        "square_tests": 43,
+        "table_entries": 42,
+        "gauss_iterations": 1426,
+        "reduced_discriminant": true,
+        "discriminant_work": {
+          "nonnegative_discriminants": 2390,
+          "max_full_radicand_bits": 67,
+          "max_reduced_radicand_bits": 36,
+          "full_radicand_bits": 151449,
+          "reduced_radicand_bits": 77373
+        },
+        "seconds": [
+          0.007426084000000006,
+          0.007186291000000011,
+          0.00836762499999999,
+          0.008129083000000037,
+          0.00825204200000007
+        ],
+        "median_seconds": 0.008129083000000037
+      },
+      "hyperbola": {
+        "n": "502005281288939",
+        "width": 25,
+        "radix_bits": 17,
+        "radix": 129360,
+        "radix_policy": "primorial",
+        "selection_tests": 10,
+        "radix_divisibility_tests": 12,
+        "digit_tests": 32824,
+        "odd_trial_candidates": 3281206,
+        "low_classes": 26880,
+        "range_counts": 31239,
+        "euclidean_steps": 239578,
+        "modular_hits": 759,
+        "seconds": [
+          0.128330625,
+          0.13040391700000004,
+          0.13285725000000004,
+          0.14378783400000006,
+          0.145390959
+        ],
+        "median_seconds": 0.13285725000000004
+      },
+      "trial": {
+        "divisor_tests": 3281206,
+        "seconds": [
+          0.110753083,
+          0.10385904100000004,
+          0.11410500000000001,
+          0.11386037500000001,
+          0.14846066699999994
+        ],
+        "median_seconds": 0.11386037500000001
+      }
+    },
+    {
+      "sample": 1,
+      "n": "728927474612287",
+      "factors": [
+        "25703177",
+        "28359431"
+      ],
+      "reduced": {
+        "radix": 50820,
+        "total_orbits": 5280,
+        "visited_orbits": 5280,
+        "remaining_orbits": 0,
+        "weight_choices": 330,
+        "candidate_traces": 3309,
+        "square_tests": 59,
+        "table_entries": 124,
+        "gauss_iterations": 3076,
+        "reduced_discriminant": true,
+        "discriminant_work": {
+          "nonnegative_discriminants": 2759,
+          "max_full_radicand_bits": 67,
+          "max_reduced_radicand_bits": 36,
+          "full_radicand_bits": 176215,
+          "reduced_radicand_bits": 89956
+        },
+        "seconds": [
+          0.009706374999999934,
+          0.009841875000000222,
+          0.009654165999999798,
+          0.01044450000000019,
+          0.00971695899999947
+        ],
+        "median_seconds": 0.00971695899999947
+      },
+      "hyperbola": {
+        "n": "728927474612287",
+        "width": 26,
+        "radix_bits": 18,
+        "radix": 261030,
+        "radix_policy": "primorial",
+        "selection_tests": 10,
+        "radix_divisibility_tests": 11,
+        "digit_tests": 54839,
+        "odd_trial_candidates": 3953861,
+        "low_classes": 53760,
+        "range_counts": 55140,
+        "euclidean_steps": 398886,
+        "modular_hits": 279,
+        "seconds": [
+          0.2297683749999999,
+          0.22734154099999992,
+          0.23049545800000049,
+          0.23076729199999946,
+          0.22854933400000021
+        ],
+        "median_seconds": 0.2297683749999999
+      },
+      "trial": {
+        "divisor_tests": 3953861,
+        "seconds": [
+          0.12319595799999972,
+          0.12476441699999974,
+          0.13356933300000007,
+          0.12572929199999994,
+          0.12565129200000058
+        ],
+        "median_seconds": 0.12565129200000058
+      },
+      "weights": {
+        "radix": 50820,
+        "total_orbits": 5280,
+        "visited_orbits": 5280,
+        "remaining_orbits": 0,
+        "weight_choices": 330,
+        "candidate_traces": 3309,
+        "square_tests": 2759,
+        "table_entries": 124,
+        "gauss_iterations": 3076,
+        "reduced_discriminant": false,
+        "discriminant_work": {},
+        "seconds": [
+          0.007496541000000079,
+          0.007650250000000192,
+          0.007233749999999706,
+          0.007930832999999637,
+          0.0077967079999998745
+        ],
+        "median_seconds": 0.007650250000000192
+      }
+    },
+    {
+      "sample": 2,
+      "n": "693050785559401",
+      "factors": [
+        "23975767",
+        "28906303"
+      ],
+      "hyperbola": {
+        "n": "693050785559401",
+        "width": 26,
+        "radix_bits": 18,
+        "radix": 261030,
+        "radix_policy": "primorial",
+        "selection_tests": 10,
+        "radix_divisibility_tests": 11,
+        "digit_tests": 54839,
+        "odd_trial_candidates": 3855333,
+        "low_classes": 53760,
+        "range_counts": 54970,
+        "euclidean_steps": 397222,
+        "modular_hits": 247,
+        "seconds": [
+          0.22413245899999978,
+          0.22791054099999997,
+          0.22882470799999943,
+          0.23080049999999996,
+          0.22864008300000016
+        ],
+        "median_seconds": 0.22864008300000016
+      },
+      "trial": {
+        "divisor_tests": 3855333,
+        "seconds": [
+          0.12144433399999954,
+          0.12400150000000032,
+          0.12475475000000014,
+          0.12258920900000003,
+          0.1340309159999995
+        ],
+        "median_seconds": 0.12400150000000032
+      },
+      "weights": {
+        "radix": 50820,
+        "total_orbits": 5280,
+        "visited_orbits": 5280,
+        "remaining_orbits": 0,
+        "weight_choices": 330,
+        "candidate_traces": 2977,
+        "square_tests": 2537,
+        "table_entries": 124,
+        "gauss_iterations": 3048,
+        "reduced_discriminant": false,
+        "discriminant_work": {},
+        "seconds": [
+          0.007396707999999919,
+          0.007388665999999766,
+          0.007250583999999449,
+          0.007302458000000733,
+          0.007738583000000077
+        ],
+        "median_seconds": 0.007388665999999766
+      },
+      "reduced": {
+        "radix": 50820,
+        "total_orbits": 5280,
+        "visited_orbits": 5280,
+        "remaining_orbits": 0,
+        "weight_choices": 330,
+        "candidate_traces": 2977,
+        "square_tests": 44,
+        "table_entries": 124,
+        "gauss_iterations": 3048,
+        "reduced_discriminant": true,
+        "discriminant_work": {
+          "nonnegative_discriminants": 2537,
+          "max_full_radicand_bits": 67,
+          "max_reduced_radicand_bits": 36,
+          "full_radicand_bits": 161403,
+          "reduced_radicand_bits": 82069
+        },
+        "seconds": [
+          0.009604792000000195,
+          0.009293458000000143,
+          0.009204082999999308,
+          0.009352458000000397,
+          0.009489957999999632
+        ],
+        "median_seconds": 0.009352458000000397
+      }
+    },
+    {
+      "sample": 3,
+      "n": "780188099549371",
+      "factors": [
+        "26866493",
+        "29039447"
+      ],
+      "trial": {
+        "divisor_tests": 4090525,
+        "seconds": [
+          0.12713412499999954,
+          0.12937300000000107,
+          0.13249354099999877,
+          0.1335481250000008,
+          0.13000937499999843
+        ],
+        "median_seconds": 0.13000937499999843
+      },
+      "weights": {
+        "radix": 53130,
+        "total_orbits": 5280,
+        "visited_orbits": 5280,
+        "remaining_orbits": 0,
+        "weight_choices": 330,
+        "candidate_traces": 2879,
+        "square_tests": 2456,
+        "table_entries": 45,
+        "gauss_iterations": 3045,
+        "reduced_discriminant": false,
+        "discriminant_work": {},
+        "seconds": [
+          0.007609374999999474,
+          0.0073764579999995306,
+          0.007562292000001136,
+          0.007784542000001338,
+          0.007812333000000393
+        ],
+        "median_seconds": 0.007609374999999474
+      },
+      "reduced": {
+        "radix": 53130,
+        "total_orbits": 5280,
+        "visited_orbits": 5280,
+        "remaining_orbits": 0,
+        "weight_choices": 330,
+        "candidate_traces": 2879,
+        "square_tests": 40,
+        "table_entries": 45,
+        "gauss_iterations": 3045,
+        "reduced_discriminant": true,
+        "discriminant_work": {
+          "nonnegative_discriminants": 2456,
+          "max_full_radicand_bits": 68,
+          "max_reduced_radicand_bits": 36,
+          "full_radicand_bits": 157356,
+          "reduced_radicand_bits": 80190
+        },
+        "seconds": [
+          0.009398708000000866,
+          0.009315415999999743,
+          0.009663417000000507,
+          0.009745917000000048,
+          0.009651249999999223
+        ],
+        "median_seconds": 0.009651249999999223
+      },
+      "hyperbola": {
+        "n": "780188099549371",
+        "width": 26,
+        "radix_bits": 18,
+        "radix": 261030,
+        "radix_policy": "primorial",
+        "selection_tests": 10,
+        "radix_divisibility_tests": 11,
+        "digit_tests": 54839,
+        "odd_trial_candidates": 4090525,
+        "low_classes": 53760,
+        "range_counts": 55077,
+        "euclidean_steps": 402133,
+        "modular_hits": 265,
+        "seconds": [
+          0.22678954200000057,
+          0.23060858399999873,
+          0.23369237499999862,
+          0.23760466699999938,
+          0.23555766700000014
+        ],
+        "median_seconds": 0.23369237499999862
+      }
+    },
+    {
+      "sample": 4,
+      "n": "679959698230159",
+      "factors": [
+        "25763873",
+        "26391983"
+      ],
+      "weights": {
+        "radix": 50820,
+        "total_orbits": 5280,
+        "visited_orbits": 5280,
+        "remaining_orbits": 0,
+        "weight_choices": 330,
+        "candidate_traces": 2884,
+        "square_tests": 2443,
+        "table_entries": 124,
+        "gauss_iterations": 3104,
+        "reduced_discriminant": false,
+        "discriminant_work": {},
+        "seconds": [
+          0.00739970799999945,
+          0.007603040999999422,
+          0.0071995830000002314,
+          0.007832875000000072,
+          0.007726041999999822
+        ],
+        "median_seconds": 0.007603040999999422
+      },
+      "reduced": {
+        "radix": 50820,
+        "total_orbits": 5280,
+        "visited_orbits": 5280,
+        "remaining_orbits": 0,
+        "weight_choices": 330,
+        "candidate_traces": 2884,
+        "square_tests": 28,
+        "table_entries": 124,
+        "gauss_iterations": 3104,
+        "reduced_discriminant": true,
+        "discriminant_work": {
+          "nonnegative_discriminants": 2443,
+          "max_full_radicand_bits": 67,
+          "max_reduced_radicand_bits": 36,
+          "full_radicand_bits": 155568,
+          "reduced_radicand_bits": 79142
+        },
+        "seconds": [
+          0.009470166999999918,
+          0.010010166999999015,
+          0.00941375000000022,
+          0.009719167000000084,
+          0.00947224999999996
+        ],
+        "median_seconds": 0.00947224999999996
+      },
+      "hyperbola": {
+        "n": "679959698230159",
+        "width": 26,
+        "radix_bits": 18,
+        "radix": 261030,
+        "radix_policy": "primorial",
+        "selection_tests": 10,
+        "radix_divisibility_tests": 11,
+        "digit_tests": 54839,
+        "odd_trial_candidates": 3818747,
+        "low_classes": 53760,
+        "range_counts": 55085,
+        "euclidean_steps": 394567,
+        "modular_hits": 268,
+        "seconds": [
+          0.23153124999999974,
+          0.24116045799999952,
+          0.22769525000000002,
+          0.23733091600000122,
+          0.22899274999999975
+        ],
+        "median_seconds": 0.23153124999999974
+      },
+      "trial": {
+        "divisor_tests": 3818747,
+        "seconds": [
+          0.12812820800000146,
+          0.12508187499999934,
+          0.13211137499999914,
+          0.13301645800000017,
+          0.13271320900000028
+        ],
+        "median_seconds": 0.13211137499999914
+      }
+    },
+    {
+      "sample": 5,
+      "n": "758692368050633",
+      "factors": [
+        "24365941",
+        "31137413"
+      ],
+      "reduced": {
+        "radix": 50820,
+        "total_orbits": 5280,
+        "visited_orbits": 5280,
+        "remaining_orbits": 0,
+        "weight_choices": 330,
+        "candidate_traces": 3131,
+        "square_tests": 43,
+        "table_entries": 124,
+        "gauss_iterations": 3069,
+        "reduced_discriminant": true,
+        "discriminant_work": {
+          "nonnegative_discriminants": 2648,
+          "max_full_radicand_bits": 67,
+          "max_reduced_radicand_bits": 36,
+          "full_radicand_bits": 168996,
+          "reduced_radicand_bits": 86223
+        },
+        "seconds": [
+          0.009549040999999647,
+          0.009621792000000795,
+          0.009417583000001173,
+          0.00934941699999925,
+          0.009545500000001539
+        ],
+        "median_seconds": 0.009545500000001539
+      },
+      "hyperbola": {
+        "n": "758692368050633",
+        "width": 26,
+        "radix_bits": 18,
+        "radix": 261030,
+        "radix_policy": "primorial",
+        "selection_tests": 10,
+        "radix_divisibility_tests": 11,
+        "digit_tests": 54839,
+        "odd_trial_candidates": 4033779,
+        "low_classes": 53760,
+        "range_counts": 55126,
+        "euclidean_steps": 401130,
+        "modular_hits": 275,
+        "seconds": [
+          0.23022925000000072,
+          0.22800670800000233,
+          0.22986208300000044,
+          0.23169187500000277,
+          0.23386033300000264
+        ],
+        "median_seconds": 0.23022925000000072
+      },
+      "trial": {
+        "divisor_tests": 4033779,
+        "seconds": [
+          0.1289285840000005,
+          0.12927200000000028,
+          0.12921779099999853,
+          0.12895658299999724,
+          0.13161141599999837
+        ],
+        "median_seconds": 0.12921779099999853
+      },
+      "weights": {
+        "radix": 50820,
+        "total_orbits": 5280,
+        "visited_orbits": 5280,
+        "remaining_orbits": 0,
+        "weight_choices": 330,
+        "candidate_traces": 3131,
+        "square_tests": 2648,
+        "table_entries": 124,
+        "gauss_iterations": 3069,
+        "reduced_discriminant": false,
+        "discriminant_work": {},
+        "seconds": [
+          0.007643500000000358,
+          0.007551125000002656,
+          0.007442209000000588,
+          0.0077116249999988895,
+          0.007897834000001325
+        ],
+        "median_seconds": 0.007643500000000358
+      }
+    },
+    {
+      "sample": 6,
+      "n": "821504195393939",
+      "factors": [
+        "25289567",
+        "32483917"
+      ],
+      "hyperbola": {
+        "n": "821504195393939",
+        "width": 26,
+        "radix_bits": 18,
+        "radix": 261030,
+        "radix_policy": "primorial",
+        "selection_tests": 10,
+        "radix_divisibility_tests": 11,
+        "digit_tests": 54839,
+        "odd_trial_candidates": 4197437,
+        "low_classes": 53760,
+        "range_counts": 55278,
+        "euclidean_steps": 405999,
+        "modular_hits": 303,
+        "seconds": [
+          0.2380204579999976,
+          0.23138579099999745,
+          0.24277437499999976,
+          0.23312150000000287,
+          0.23102987500000083
+        ],
+        "median_seconds": 0.23312150000000287
+      },
+      "trial": {
+        "divisor_tests": 4197437,
+        "seconds": [
+          0.14279287499999782,
+          0.13334716600000007,
+          0.1323085000000006,
+          0.13139754200000198,
+          0.1318175410000002
+        ],
+        "median_seconds": 0.1323085000000006
+      },
+      "weights": {
+        "radix": 53130,
+        "total_orbits": 5280,
+        "visited_orbits": 5280,
+        "remaining_orbits": 0,
+        "weight_choices": 330,
+        "candidate_traces": 3263,
+        "square_tests": 2800,
+        "table_entries": 45,
+        "gauss_iterations": 3123,
+        "reduced_discriminant": false,
+        "discriminant_work": {},
+        "seconds": [
+          0.007961374999997162,
+          0.007889249999998071,
+          0.008098624999998805,
+          0.007757707999999752,
+          0.007682124999998763
+        ],
+        "median_seconds": 0.007889249999998071
+      },
+      "reduced": {
+        "radix": 53130,
+        "total_orbits": 5280,
+        "visited_orbits": 5280,
+        "remaining_orbits": 0,
+        "weight_choices": 330,
+        "candidate_traces": 3263,
+        "square_tests": 37,
+        "table_entries": 45,
+        "gauss_iterations": 3123,
+        "reduced_discriminant": true,
+        "discriminant_work": {
+          "nonnegative_discriminants": 2800,
+          "max_full_radicand_bits": 68,
+          "max_reduced_radicand_bits": 37,
+          "full_radicand_bits": 179495,
+          "reduced_radicand_bits": 91596
+        },
+        "seconds": [
+          0.010406625000001668,
+          0.009575916999999379,
+          0.01039487499999936,
+          0.00975324999999927,
+          0.009798583999998556
+        ],
+        "median_seconds": 0.009798583999998556
+      }
+    },
+    {
+      "sample": 7,
+      "n": "542176358007751",
+      "factors": [
+        "23013373",
+        "23559187"
+      ],
+      "trial": {
+        "divisor_tests": 3409962,
+        "seconds": [
+          0.10674662499999954,
+          0.1157926670000009,
+          0.11074100000000087,
+          0.11784829099999783,
+          0.11894291699999826
+        ],
+        "median_seconds": 0.1157926670000009
+      },
+      "weights": {
+        "radix": 46200,
+        "total_orbits": 4800,
+        "visited_orbits": 4800,
+        "remaining_orbits": 0,
+        "weight_choices": 150,
+        "candidate_traces": 2703,
+        "square_tests": 2304,
+        "table_entries": 42,
+        "gauss_iterations": 1370,
+        "reduced_discriminant": false,
+        "discriminant_work": {},
+        "seconds": [
+          0.0054751670000001695,
+          0.00577083399999978,
+          0.005540375000002484,
+          0.005712749999997158,
+          0.0054974590000007595
+        ],
+        "median_seconds": 0.005540375000002484
+      },
+      "reduced": {
+        "radix": 46200,
+        "total_orbits": 4800,
+        "visited_orbits": 4800,
+        "remaining_orbits": 0,
+        "weight_choices": 150,
+        "candidate_traces": 2703,
+        "square_tests": 32,
+        "table_entries": 42,
+        "gauss_iterations": 1370,
+        "reduced_discriminant": true,
+        "discriminant_work": {
+          "nonnegative_discriminants": 2304,
+          "max_full_radicand_bits": 67,
+          "max_reduced_radicand_bits": 36,
+          "full_radicand_bits": 145855,
+          "reduced_radicand_bits": 74447
+        },
+        "seconds": [
+          0.007122875000000306,
+          0.007562082999999831,
+          0.007352832999998782,
+          0.007446041000001458,
+          0.007344458000002163
+        ],
+        "median_seconds": 0.007352832999998782
+      },
+      "hyperbola": {
+        "n": "542176358007751",
+        "width": 25,
+        "radix_bits": 17,
+        "radix": 129360,
+        "radix_policy": "primorial",
+        "selection_tests": 10,
+        "radix_divisibility_tests": 12,
+        "digit_tests": 32824,
+        "odd_trial_candidates": 3409962,
+        "low_classes": 26880,
+        "range_counts": 31416,
+        "euclidean_steps": 241021,
+        "modular_hits": 785,
+        "seconds": [
+          0.13164224999999874,
+          0.137503916,
+          0.1359481250000023,
+          0.13109783399999841,
+          0.14198066699999856
+        ],
+        "median_seconds": 0.1359481250000023
+      }
+    }
+  ]
+}
