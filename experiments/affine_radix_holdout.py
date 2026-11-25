@@ -1,4 +1,4 @@
-"""Run both modular-hyperbola radices on the same eight 23-bit prime pairs."""
+"""Compare both modular-hyperbola radices and odd trial division on eight prime pairs."""
 
 import argparse
 import hashlib
@@ -28,6 +28,13 @@ def draw_prime(side, sample):
         counter += 1
 
 
+def trial_search(n):
+    first = max(2, isqrt((n - 1) // 2) + 1) | 1
+    candidates = range(first, isqrt(n) + 1, 2)
+    pairs = [[str(x), str(n // x)] for x in candidates if n % x == 0]
+    return dict(pairs=pairs, divisor_tests=len(candidates))
+
+
 def run():
     rows = []
     sample = 0
@@ -38,20 +45,23 @@ def run():
             continue
         n = p*q
         row = dict(n=str(n), factors=[str(p), str(q)])
-        timings = {'binary': [], 'primorial': []}
+        methods = ('binary', 'primorial', 'trial')
+        timings = {method: [] for method in methods}
         for repetition in range(5):
-            policies = ('binary', 'primorial') if repetition % 2 == 0 else ('primorial', 'binary')
-            for policy in policies:
+            offset = (len(rows) + repetition) % len(methods)
+            for method in methods[offset:] + methods[:offset]:
                 start = perf_counter()
-                report = search(n, radix_policy=policy)
-                timings[policy].append(perf_counter()-start)
+                report = trial_search(n) if method == 'trial' else search(n, radix_policy=method)
+                timings[method].append(perf_counter()-start)
                 if report['pairs'] != [row['factors']]:
                     raise ValueError(f'incorrect factors at sample {sample-1}')
-                row[policy] = {k: report[k] for k in ('radix', 'low_classes', 'range_counts',
-                               'euclidean_steps', 'modular_hits', 'digit_tests', 'selection_tests',
-                               'radix_divisibility_tests')}
-        for policy in timings:
-            row[policy]['median_seconds'] = median(timings[policy])
+                keys = ('divisor_tests',) if method == 'trial' else (
+                    'radix', 'low_classes', 'range_counts', 'euclidean_steps', 'modular_hits',
+                    'digit_tests', 'selection_tests', 'radix_divisibility_tests')
+                row[method] = {k: report[k] for k in keys}
+        for method, samples in timings.items():
+            row[method]['seconds'] = samples
+            row[method]['median_seconds'] = median(samples)
         rows.append(row)
     return rows
 

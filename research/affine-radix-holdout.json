@@ -14,7 +14,14 @@
       "digit_tests": 0,
       "selection_tests": 0,
       "radix_divisibility_tests": 0,
-      "median_seconds": 0.13919837499999993
+      "seconds": [
+        0.158420041,
+        0.16486383400000004,
+        0.15946112499999998,
+        0.1803879169999999,
+        0.18822645800000015
+      ],
+      "median_seconds": 0.16486383400000004
     },
     "primorial": {
       "radix": 64680,
@@ -25,7 +32,25 @@
       "digit_tests": 16412,
       "selection_tests": 10,
       "radix_divisibility_tests": 11,
-      "median_seconds": 0.06420316699999995
+      "seconds": [
+        0.07328554099999998,
+        0.07570529199999998,
+        0.07809066600000003,
+        0.0824935,
+        0.071560458
+      ],
+      "median_seconds": 0.07570529199999998
+    },
+    "trial": {
+      "divisor_tests": 985115,
+      "seconds": [
+        0.034904957999999986,
+        0.03454379200000002,
+        0.03941608299999999,
+        0.04070895799999996,
+        0.04031725000000019
+      ],
+      "median_seconds": 0.03941608299999999
     }
   },
   {
@@ -34,17 +59,6 @@
       "4358807",
       "5169113"
     ],
-    "binary": {
-      "radix": 65536,
-      "low_classes": 32768,
-      "range_counts": 34183,
-      "euclidean_steps": 224994,
-      "modular_hits": 317,
-      "digit_tests": 0,
-      "selection_tests": 0,
-      "radix_divisibility_tests": 0,
-      "median_seconds": 0.13568195900000002
-    },
     "primorial": {
       "radix": 64680,
       "low_classes": 13440,
@@ -54,7 +68,43 @@
       "digit_tests": 16412,
       "selection_tests": 10,
       "radix_divisibility_tests": 11,
-      "median_seconds": 0.06018708400000006
+      "seconds": [
+        0.06913083400000009,
+        0.06332075000000015,
+        0.07559791599999999,
+        0.07724720899999982,
+        0.06779029100000011
+      ],
+      "median_seconds": 0.06913083400000009
+    },
+    "trial": {
+      "divisor_tests": 695138,
+      "seconds": [
+        0.030152458999999965,
+        0.034586542,
+        0.027593125000000107,
+        0.024095666000000016,
+        0.023846249999999625
+      ],
+      "median_seconds": 0.027593125000000107
+    },
+    "binary": {
+      "radix": 65536,
+      "low_classes": 32768,
+      "range_counts": 34183,
+      "euclidean_steps": 224994,
+      "modular_hits": 317,
+      "digit_tests": 0,
+      "selection_tests": 0,
+      "radix_divisibility_tests": 0,
+      "seconds": [
+        0.161217041,
+        0.1626659159999999,
+        0.17973045799999987,
+        0.1589416250000002,
+        0.141404541
+      ],
+      "median_seconds": 0.161217041
     }
   },
   {
@@ -63,6 +113,17 @@
       "7336613",
       "8069417"
     ],
+    "trial": {
+      "divisor_tests": 1126804,
+      "seconds": [
+        0.04331858300000002,
+        0.04053795800000026,
+        0.04660391600000002,
+        0.04593249999999971,
+        0.042917958999999506
+      ],
+      "median_seconds": 0.04331858300000002
+    },
     "binary": {
       "radix": 65536,
       "low_classes": 32768,
@@ -72,7 +133,14 @@
       "digit_tests": 0,
       "selection_tests": 0,
       "radix_divisibility_tests": 0,
-      "median_seconds": 0.14341050000000033
+      "seconds": [
+        0.1735190000000002,
+        0.17335454100000014,
+        0.1647949999999998,
+        0.15869108300000034,
+        0.16233974999999967
+      ],
+      "median_seconds": 0.1647949999999998
     },
     "primorial": {
       "radix": 64680,
@@ -83,7 +151,14 @@
       "digit_tests": 16412,
       "selection_tests": 10,
       "radix_divisibility_tests": 11,
-      "median_seconds": 0.06517224999999982
+      "seconds": [
+        0.07601612500000021,
+        0.07102625000000007,
+        0.07177745899999977,
+        0.07840900000000017,
+        0.08371962499999963
+      ],
+      "median_seconds": 0.07601612500000021
     }
   },
   {
@@ -101,7 +176,14 @@
       "digit_tests": 0,
       "selection_tests": 0,
       "radix_divisibility_tests": 0,
-      "median_seconds": 0.13113987500000013
+      "seconds": [
+        0.16329270900000026,
+        0.14605754099999935,
+        0.15573454200000025,
+        0.16545808299999987,
+        0.15182300000000026
+      ],
+      "median_seconds": 0.15573454200000025
     },
     "primorial": {
       "radix": 64680,
@@ -112,7 +194,25 @@
       "digit_tests": 16412,
       "selection_tests": 10,
       "radix_divisibility_tests": 11,
-      "median_seconds": 0.0583170420000001
+      "seconds": [
+        0.06521795799999985,
+        0.06467666600000044,
+        0.07131329100000006,
+        0.07312020799999974,
+        0.06215241700000007
+      ],
+      "median_seconds": 0.06521795799999985
+    },
+    "trial": {
+      "divisor_tests": 768666,
+      "seconds": [
+        0.02706479099999992,
+        0.03164833399999978,
+        0.02782199999999957,
+        0.0275807919999993,
+        0.03111008300000062
+      ],
+      "median_seconds": 0.02782199999999957
     }
   },
   {
@@ -121,17 +221,6 @@
       "5158801",
       "7410883"
     ],
-    "binary": {
-      "radix": 65536,
-      "low_classes": 32768,
-      "range_counts": 35362,
-      "euclidean_steps": 244626,
-      "modular_hits": 540,
-      "digit_tests": 0,
-      "selection_tests": 0,
-      "radix_divisibility_tests": 0,
-      "median_seconds": 0.13447866699999977
-    },
     "primorial": {
       "radix": 64680,
       "low_classes": 13440,
@@ -141,7 +230,43 @@
       "digit_tests": 16412,
       "selection_tests": 10,
       "radix_divisibility_tests": 11,
-      "median_seconds": 0.05963404100000069
+      "seconds": [
+        0.06942433299999973,
+        0.06799016700000049,
+        0.06861537500000026,
+        0.0711505420000007,
+        0.06334604200000005
+      ],
+      "median_seconds": 0.06861537500000026
+    },
+    "trial": {
+      "divisor_tests": 905500,
+      "seconds": [
+        0.03128820800000032,
+        0.03344595799999972,
+        0.03111266600000029,
+        0.0321239999999996,
+        0.036238166000000405
+      ],
+      "median_seconds": 0.0321239999999996
+    },
+    "binary": {
+      "radix": 65536,
+      "low_classes": 32768,
+      "range_counts": 35362,
+      "euclidean_steps": 244626,
+      "modular_hits": 540,
+      "digit_tests": 0,
+      "selection_tests": 0,
+      "radix_divisibility_tests": 0,
+      "seconds": [
+        0.1625175840000006,
+        0.15476137500000053,
+        0.16077991700000016,
+        0.15298237499999967,
+        0.1491251250000003
+      ],
+      "median_seconds": 0.15476137500000053
     }
   },
   {
@@ -150,6 +275,17 @@
       "6015353",
       "7106857"
     ],
+    "trial": {
+      "divisor_tests": 957522,
+      "seconds": [
+        0.04391904100000055,
+        0.032173250000000486,
+        0.033144416999999926,
+        0.032907207999999244,
+        0.03649983399999979
+      ],
+      "median_seconds": 0.033144416999999926
+    },
     "binary": {
       "radix": 65536,
       "low_classes": 32768,
@@ -159,7 +295,14 @@
       "digit_tests": 0,
       "selection_tests": 0,
       "radix_divisibility_tests": 0,
-      "median_seconds": 0.1468278749999996
+      "seconds": [
+        0.1629662500000002,
+        0.14573495900000033,
+        0.14829795899999976,
+        0.1500129999999995,
+        0.14686941699999956
+      ],
+      "median_seconds": 0.14829795899999976
     },
     "primorial": {
       "radix": 64680,
@@ -170,7 +313,14 @@
       "digit_tests": 16412,
       "selection_tests": 10,
       "radix_divisibility_tests": 11,
-      "median_seconds": 0.0633735419999999
+      "seconds": [
+        0.07118424999999995,
+        0.06338533399999946,
+        0.06519470799999993,
+        0.06602433299999966,
+        0.0716644999999998
+      ],
+      "median_seconds": 0.06602433299999966
     }
   },
   {
@@ -188,7 +338,14 @@
       "digit_tests": 0,
       "selection_tests": 0,
       "radix_divisibility_tests": 0,
-      "median_seconds": 0.140239083
+      "seconds": [
+        0.1488363330000002,
+        0.14161687500000042,
+        0.14026600000000045,
+        0.14049383300000073,
+        0.1443907090000014
+      ],
+      "median_seconds": 0.14161687500000042
     },
     "primorial": {
       "radix": 64680,
@@ -199,7 +356,25 @@
       "digit_tests": 16412,
       "selection_tests": 10,
       "radix_divisibility_tests": 11,
-      "median_seconds": 0.06183074999999949
+      "seconds": [
+        0.06299916599999911,
+        0.06151920799999999,
+        0.061520833999999525,
+        0.06436925000000038,
+        0.061569792000000234
+      ],
+      "median_seconds": 0.061569792000000234
+    },
+    "trial": {
+      "divisor_tests": 820574,
+      "seconds": [
+        0.029076790999999602,
+        0.02822049999999976,
+        0.027373833000000403,
+        0.02962374999999895,
+        0.02954891699999962
+      ],
+      "median_seconds": 0.029076790999999602
     }
   },
   {
@@ -208,17 +383,6 @@
       "6266837",
       "6734017"
     ],
-    "binary": {
-      "radix": 65536,
-      "low_classes": 32768,
-      "range_counts": 36108,
-      "euclidean_steps": 250871,
-      "modular_hits": 684,
-      "digit_tests": 0,
-      "selection_tests": 0,
-      "radix_divisibility_tests": 0,
-      "median_seconds": 0.14245758300000055
-    },
     "primorial": {
       "radix": 64680,
       "low_classes": 13440,
@@ -228,7 +392,43 @@
       "digit_tests": 16412,
       "selection_tests": 10,
       "radix_divisibility_tests": 11,
-      "median_seconds": 0.06265379199999987
+      "seconds": [
+        0.06658954099999903,
+        0.06578149999999994,
+        0.06492762499999927,
+        0.06485825000000034,
+        0.08677699999999966
+      ],
+      "median_seconds": 0.06578149999999994
+    },
+    "trial": {
+      "divisor_tests": 951350,
+      "seconds": [
+        0.037801415999998866,
+        0.03206641600000104,
+        0.03239858299999909,
+        0.0323708749999998,
+        0.03218683299999903
+      ],
+      "median_seconds": 0.0323708749999998
+    },
+    "binary": {
+      "radix": 65536,
+      "low_classes": 32768,
+      "range_counts": 36108,
+      "euclidean_steps": 250871,
+      "modular_hits": 684,
+      "digit_tests": 0,
+      "selection_tests": 0,
+      "radix_divisibility_tests": 0,
+      "seconds": [
+        0.14959825000000038,
+        0.14681845800000026,
+        0.14732466600000116,
+        0.14749654199999895,
+        0.1577125000000006
+      ],
+      "median_seconds": 0.14749654199999895
     }
   }
 ]
