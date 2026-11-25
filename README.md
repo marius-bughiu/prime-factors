@@ -1,12 +1,14 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/rounding-a-sifted-window.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/recursive-integer-valued-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have succeeded on constructed examples where a factor has a pattern we knew to look for. Once someone supplies the two primes, Lean can check that each is prime and that their product is the number you started with.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?
+
+**The complete search now needs less than one third as many ranges on both large examples.** Building each equation from the smaller ones gives a wider range for the same number of coefficients. The new lists still have about $4.3\times10^{148}$ and $7.6\times10^{148}$ ranges. Those are mathematical counts. We have not run a search that size. A separate formula would give the exact primes from 2,050 sufficiently accurate readings, but we have no cheap way to obtain them from a 2,048-bit product. [Why the ranges get wider](discoveries/recursive-integer-valued-windows.md) · [What the readings would tell us](discoveries/factor-recovery-from-boundary-readings.md)
 
 **We can now rule out ranges three times and twice as wide on our two large examples.** Keeping the divisibility information from 3, 5 and 7 while changing the equation gave the improvement over the original seven-row test. The same method recovered 269 × 491 on the small example. Both 2,048-bit products remain unfactored. [Checked intervals and comparisons](discoveries/rounding-a-sifted-window.md) · [What 145 rows can guarantee](discoveries/rounding-on-three-adic-units.md)
 

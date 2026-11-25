@@ -316,3 +316,9 @@ import PrimeFactors.ThreeUnitFactorialWindows
 import PrimeFactors.RoundedSiftedWindow
 import PrimeFactors.UnitWindowCover
 import PrimeFactors.SevenRowBoundaryWindow
+import PrimeFactors.ExactBoundaryFactors
+import PrimeFactors.IntegerLaneWindowWork
+import PrimeFactors.RecursiveUnitScale
+import PrimeFactors.RecursiveUnitWindows
+import PrimeFactors.RecursiveUnitComparison
+import PrimeFactors.RecursiveUnitCover

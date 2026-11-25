@@ -14,6 +14,18 @@ def positions (n : ℕ) := stop n-start n
 def locations (n H : ℕ) := (positions n + H)/(H+1)
 def first (n H i : ℕ) := 2*(start n+i*(H+1))+1
 
+/-- Every prime in the common denominator is at most max(k,3). -/
+theorem coprime_denominator {p k : ℕ} (prime : p.Prime) (above : k<p) (large : 3<p) :
+    p.Coprime (ThreeUnitFactorialWindows.denominator k) := by
+  have fact : p.Coprime k.factorial := prime.coprime_iff_not_dvd.mpr
+    (fun dv => (not_le_of_gt above) (prime.dvd_factorial.mp dv))
+  have three : p.Coprime 3 := prime.coprime_iff_not_dvd.mpr
+    (fun dv => (not_le_of_gt large) (Nat.le_of_dvd (by decide) dv))
+  apply Nat.Coprime.of_dvd_right (Nat.lcm_dvd_mul ..)
+  apply fact.mul_right
+  apply (three.pow_right _).mul_right
+  exact Nat.Coprime.of_dvd_right (Nat.factorial_dvd_factorial (Nat.div_le_self ..)) fact
+
 /-- The input itself bounds the length of its smaller-divisor interval. -/
 theorem positions_bound {n : ℕ} (big : 2^2047≤n) :
     14*positions n ≤ 3*2^1023+14 := by

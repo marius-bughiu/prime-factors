@@ -1,0 +1,13 @@
+# When enough readings determine the two primes exactly
+
+There is a precise sense in which the missing information would solve the original problem. Suppose $N=pq$ with distinct primes $p<q\le2p$ and $q\le2^b$. Given sufficiently accurate readings of a particular function of $N$, **two batches of at most $2(b+1)$ readings determine both primes by rounding and division**. For 1,024-bit primes this gives at most 2,050 readings. Their integer heights may reach $2^{1025}$. No efficient way to get these readings from a 2,048-bit product is known to this project. [Exact recovery theorem](../PrimeFactors/ExactBoundaryFactors.lean) · [Definition of the readings](two-batches-of-boundary-readings.md)
+
+Each reading approximates the dephased real part of the missing Euler factors, $B_N(t)$, with absolute error at most $1/8$. Public arithmetic turns it into an approximation to $\cos(t\delta)$, where $\delta=(\log q-\log p)/2$. The two-batch theorem brackets $\delta$ between $a$ and $a+\pi/(3\cdot2^b)$. Therefore $X=\exp(\log N/2+a)$ is a lower estimate of $q$ and $q-X\le\pi/3$. This uses $q\le2^b$. The larger prime is odd because it exceeds the smaller prime. [Interval resolution](../PrimeFactors/BoundaryWindowSelection.lean) · [Exponential estimate](../PrimeFactors/AnalyticDivisorWindow.lean)
+
+A numerical implementation may approximate $X$ by $A$ with absolute error at most $1/4$. Then $q-1<A+1/2<q+1$, so
+
+$$q=2\left\lfloor\frac{A+1/2}{2}\right\rfloor+1,\qquad p=N/q.$$
+
+The floor is safely inside its correct rounding interval. The theorem treats $A$ and the readings as error-bounded inputs. Its formal lower endpoint is the infimum of the compatible log ratios. Inverse cosine intervals provide a numerical way to localize the ratio, as in the worked example. Production of certified readings and numerical enclosures at full size remains unverified. [Rounding proof](../PrimeFactors/ExactBoundaryFactors.lean) · [Numerical decoder](two-batches-of-boundary-readings.md)
+
+For $N=77$, setting $b=4$ in the public-input calculation gave nine distinct readings through height 20. The lower endpoint in factor coordinates was approximately $10.9669713$. The formula returned $11$, and division gave $7$. Lean checks $7\times11=77$ and primality. The numerical evaluator used 77 gcd tests to form the coprimality mask and already encountered both primes. Its two truncation lengths used 421,632 summands across the nine heights. This demonstrates the decoding step and the cost of obtaining observations in this example. [Reproduction script, with its parameter changed from 8 to 4](two-batches-of-boundary-readings.md) · [Checked small factorization](../PrimeFactors/BoundaryWindowSelection.lean)

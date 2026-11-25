@@ -28,7 +28,7 @@ exec lake env lean --run .lake/packages/mathlib/Cache/Main.lean get \
   Mathlib.Algebra.BigOperators.Group.Finset.Sigma Mathlib.Logic.Equiv.Prod Mathlib.SetTheory.Cardinal.Finite Mathlib.Tactic.FieldSimp Mathlib.Tactic.ComputeDegree \
   Mathlib.Algebra.Quaternion Mathlib.RingTheory.Polynomial.Dickson Mathlib.Data.Finset.NatDivisors \
   Mathlib.RingTheory.PowerSeries.Derivative Mathlib.RingTheory.Binomial Mathlib.NumberTheory.Padics.PadicVal.Basic Mathlib.Algebra.BigOperators.NatAntidiagonal \
-  Mathlib.Data.Sym.Card Mathlib.Data.Real.Pi.Bounds Mathlib.Analysis.MeanInequalities Mathlib.Algebra.GCDMonoid.Finset \
+  Mathlib.Algebra.Group.ForwardDiff Mathlib.Data.Sym.Card Mathlib.Data.Real.Pi.Bounds Mathlib.Analysis.MeanInequalities Mathlib.Algebra.GCDMonoid.Finset \
   Mathlib.Algebra.BigOperators.Intervals Mathlib.Algebra.Polynomial.FieldDivision Mathlib.RingTheory.Coprime.Lemmas \
   Mathlib.LinearAlgebra.Lagrange Mathlib.Tactic.LinearCombination Mathlib.Tactic.ReduceModChar Mathlib.Tactic.Ring \
   Mathlib.RingTheory.Polynomial.Pochhammer Mathlib.Data.Nat.Prime.Factorial Mathlib.Algebra.Polynomial.Sequence \
