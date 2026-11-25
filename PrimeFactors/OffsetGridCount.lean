@@ -6,7 +6,7 @@ namespace PrimeFactors.OffsetGridCount
 open Finset
 
 /-- Count the public slots having j divisible by L and k divisible by d. -/
-def grid (T h J L d : ℕ) :=
+noncomputable def grid (T h J L d : ℕ) : ℕ :=
   ∑ i ∈ range (J/L), (T*(L*(i+1))/h+1)/d
 
 private theorem row_bracket {T h j d : ℕ} (hp : 0<h) (dp : 0<d) :
