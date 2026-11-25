@@ -32,7 +32,7 @@ The factor $d$ from interval completion cancels the local factors $p$ in the den
 
 ## The numerical margin
 
-For a uniform estimate replace each $\alpha_p$ in the denominator of $E$ by $(p-3)/(2p)$. Replace $\sqrt p+1$ by $(257+\lfloor\sqrt{65536p}\rfloor)/256$ and $1+\log M$ by 1,559, since $M<2^{1558}$. Exact integer comparisons give
+For a uniform estimate replace each $\alpha_p$ in the denominator of $E$ by $(p-3)/(2p)$. For each prime, the certificate supplies an integer $U_p=1+\lfloor256\sqrt p\rfloor$. Checking $U_p^2>65536p$ for every listed prime lets us replace $\sqrt p+1$ by $1+U_p/256$. Replace $1+\log M$ by 1,559 since $M<2^{1558}$. Exact integer comparisons give
 $$
 10E<L,\qquad
 8L\prod_{p\in P}\frac{p-3}{2p}>\frac54(2^{819}+1).
