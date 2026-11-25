@@ -40,7 +40,7 @@ from experiments.polynomial_packet import search as polynomial_packet_search
 from experiments.norm_directions import search as norm_direction_search
 from experiments import norm_auxiliary, norm_band_product, norm_residue_curves
 from experiments import extension_trace, factorial_progressions, quartic_trace, reciprocal_wheel
-from experiments import short_norm_boxes, universal_norm_batch
+from experiments import short_norm_boxes, universal_norm_batch, weighted_stride_search
 from experiments.salie_blocks import search as salie_block_search
 from experiments.folded_square import direct as fixed_phase_search
 from experiments.four_square_lines import search as four_square_line_search
@@ -158,6 +158,14 @@ def run_case(case, method, proofs):
         agree(case, work, list(work))
         work.update(max_steps=case['max_steps'], multiplier=case['multiplier'])
         result = certify_split(case, proof, factor, elapsed, 'pell_relations', work)
+    elif method == 'weighted-stride':
+        settings = {k: case[k] for k in ('k', 'baby_steps', 'max_giants', 'max_slopes', 'beta', 'stride')}
+        work = weighted_stride_search.search(int(case['n']), **settings)
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, list(work))
+        work.update(settings)
+        result = certify_split(case, proof, factor, elapsed, 'weighted_stride', work)
     elif method == 'factorial-progressions':
         settings = {k: case[k] for k in ('max_span', 'wheel', 'backend')}
         work = factorial_progressions.search(int(case['n']), **settings)
@@ -517,6 +525,7 @@ def main():
                              ('short-norm-boxes.json', 'short-norm-boxes'),
                              ('norm-band-product.json', 'norm-band-product'),
                              ('factorial-progressions.json', 'factorial-progressions'),
+                             ('weighted-stride.json', 'weighted-stride'),
                              ('quartic-trace.json', 'quartic-trace'),
                              ('extension-trace.json', 'extension-trace'),
                              ('reciprocal-wheel.json', 'reciprocal-wheel'),

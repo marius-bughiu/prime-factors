@@ -1,6 +1,6 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/wide-modulus-sieve.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/farey-weighted-sums.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have succeeded on specially constructed products whose primes share a pattern that our search can recognize. Once someone supplies the two primes, Lean can check that each is prime and that their product is the number you started with.
 
@@ -8,7 +8,7 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did we find from the product alone?
 
-On a freshly sampled 79-bit product we found **622,358,546,533 × 872,942,361,971** in 2.25 seconds on one Mac. We grouped possible divisors so that one calculation covered many at once. On the same 63-bit input, the previous method took 3.46 seconds to cover the full interval and this one took 0.11 seconds. At 2,048 bits the groups themselves still grow far beyond available memory. [How the grouping works, timings and checked factors](discoveries/factorial-progressions.md)
+We found both primes of a fresh **99-bit** number in **7.59 seconds** on an arm64 Mac. The product alone told us which weighted sums of its two factors were possible. We grouped those sums and tested many at once. On the same fresh 89-bit input, our previous full interval search took 14.18 seconds and this one took 1.34 seconds. Lean checked both factors in each case. A capped search on the 2,048-bit comparison number used 96 blocks and found neither factor. [How the search works and what was timed](discoveries/farey-weighted-sums.md) · [Checked 99-bit factors](https://marius-bughiu.github.io/prime-factors/#weighted-stride-99)
 
 We also found an exact link for products whose two primes both leave remainder 1 when divided by 4. On **26,441**, two sums gave the coordinates 11 and 4. Their squares add to **137**, one of its prime factors. Lean proves when this works. Computing the sums took 26,440 symbol evaluations. Whether there is a cheap way to extract those coordinates from a large product is open. [Where the prime appears](discoveries/quartic-trace.md) · [How many digits we need](discoveries/quartic-direction.md)
 

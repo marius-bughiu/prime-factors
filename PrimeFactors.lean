@@ -10,6 +10,7 @@ import PrimeFactors.CanonicalNorm
 import PrimeFactors.Certificate
 import PrimeFactors.ClassNumberWindow
 import PrimeFactors.ConditionalStride
+import PrimeFactors.ConstantWeightedResidue
 import PrimeFactors.ContinuedSquare
 import PrimeFactors.CoupledImages
 import PrimeFactors.CRTScreenCount
@@ -34,6 +35,7 @@ import PrimeFactors.FactorCircuit
 import PrimeFactors.FactorialProgressions
 import PrimeFactors.FactorSum
 import PrimeFactors.FactorSumCRT
+import PrimeFactors.FareyWindow
 import PrimeFactors.FejerProjection
 import PrimeFactors.Fermat
 import PrimeFactors.FoldedSquare
@@ -154,5 +156,6 @@ import PrimeFactors.TruncatedWindow
 import PrimeFactors.WeakPhase
 import PrimeFactors.WeightedBands
 import PrimeFactors.WeightedCollision
+import PrimeFactors.WeightedStride
 import PrimeFactors.WideModulus
 import PrimeFactors.WideScale

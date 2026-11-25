@@ -74,6 +74,13 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'weighted-stride':
+        w = result['weighted_stride']
+        counts = w['work']
+        scope = 'all windows generated' if w['schedule_complete'] else (w['limit'] or w['outcome']).replace('_',' ')
+        count = (f'Weighted sums · {counts["babies"]:,} starting powers · {counts["giants"]:,} blocks'
+                 f' · {counts["labels_covered"]:,} candidate sums · {escape(scope)}'
+                 f' · search {duration(result["discovery_seconds"])}')
     elif result['method'] == 'factorial-progressions':
         w = result['factorial_progressions']
         counts = w['work']

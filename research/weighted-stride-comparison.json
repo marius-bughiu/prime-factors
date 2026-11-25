@@ -1,0 +1,319 @@
+{
+  "seed": "weighted-stride-holdout-v1",
+  "repetitions": 3,
+  "max_giants": 262144,
+  "beta": 2,
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "python": "3.9.6 (default, Oct 19 2026, 19:18:13) \n[Clang 21.0.0 (clang-2100.4.1.1)]",
+  "cases": [
+    {
+      "id": "previous-63",
+      "n": "6091663632054090929",
+      "k": 38,
+      "baby_steps": 1406,
+      "sampling": null,
+      "measurements": {
+        "factorial_wheel210": {
+          "seconds": [
+            0.120164,
+            0.118873,
+            0.119289
+          ],
+          "factor": "2423330473",
+          "outcome": "interval_gcd",
+          "complete": true,
+          "work": {
+            "setup_gcds": 2,
+            "wheel_residues": 48,
+            "wheel_residue_gcds": 209,
+            "block_cycles": 256,
+            "block_degree": 12288,
+            "blocks": 13446,
+            "factorial_limit": 26891,
+            "inversions": 1,
+            "seed_terms": 2352,
+            "convolutions": 8,
+            "convolution_input_coefficients": 63530,
+            "shifted_values": 39042,
+            "paired_products": 25645,
+            "batched_candidates": 165224448,
+            "edge_candidates": 9477,
+            "final_gcds": 1
+          }
+        },
+        "weighted_stride1": {
+          "seconds": [
+            0.05491,
+            0.051148,
+            0.05101
+          ],
+          "factor": "2423330473",
+          "outcome": "collision_divisor",
+          "complete": true,
+          "work": {
+            "base_gcds": 3,
+            "slope_visits": 779,
+            "primitive_slopes": 451,
+            "nonempty_slopes": 451,
+            "giants": 3565,
+            "labels_covered": 4692876,
+            "babies": 1406,
+            "order_gcds": 1,
+            "equality_checks": 0,
+            "polynomial_degree": 3565,
+            "evaluations": 1406,
+            "collision_gcds": 1
+          }
+        },
+        "weighted_stride24": {
+          "seconds": [
+            0.021994,
+            0.022009,
+            0.021638
+          ],
+          "factor": "2423330473",
+          "outcome": "collision_divisor",
+          "complete": true,
+          "work": {
+            "base_gcds": 3,
+            "slope_visits": 779,
+            "primitive_slopes": 451,
+            "nonempty_slopes": 451,
+            "giants": 1299,
+            "labels_covered": 1503044,
+            "babies": 1406,
+            "order_gcds": 1,
+            "equality_checks": 0,
+            "polynomial_degree": 1299,
+            "evaluations": 1406,
+            "collision_gcds": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "previous-79",
+      "n": "543283139603355533096543",
+      "k": 118,
+      "baby_steps": 13924,
+      "sampling": null,
+      "measurements": {
+        "factorial_wheel210": {
+          "seconds": [
+            2.318474,
+            2.315513,
+            2.315596
+          ],
+          "factor": "622358546533",
+          "outcome": "interval_gcd",
+          "complete": true,
+          "work": {
+            "setup_gcds": 2,
+            "wheel_residues": 48,
+            "wheel_residue_gcds": 209,
+            "block_cycles": 4096,
+            "block_degree": 196608,
+            "blocks": 250982,
+            "factorial_limit": 501963,
+            "inversions": 1,
+            "seed_terms": 2352,
+            "convolutions": 12,
+            "convolution_input_coefficients": 1091570,
+            "shifted_values": 698438,
+            "paired_products": 447505,
+            "batched_candidates": 49345069056,
+            "edge_candidates": 69537,
+            "final_gcds": 1
+          }
+        },
+        "weighted_stride1": {
+          "seconds": [
+            0.721541,
+            0.719425,
+            0.722003
+          ],
+          "factor": "622358546533",
+          "outcome": "collision_divisor",
+          "complete": true,
+          "work": {
+            "base_gcds": 3,
+            "slope_visits": 7139,
+            "primitive_slopes": 4259,
+            "nonempty_slopes": 4259,
+            "giants": 33580,
+            "labels_covered": 437635774,
+            "babies": 13924,
+            "order_gcds": 1,
+            "equality_checks": 0,
+            "polynomial_degree": 33580,
+            "evaluations": 13924,
+            "collision_gcds": 1
+          }
+        },
+        "weighted_stride24": {
+          "seconds": [
+            0.35997,
+            0.312063,
+            0.310943
+          ],
+          "factor": "622358546533",
+          "outcome": "collision_divisor",
+          "complete": true,
+          "work": {
+            "base_gcds": 3,
+            "slope_visits": 7139,
+            "primitive_slopes": 4259,
+            "nonempty_slopes": 4259,
+            "giants": 12439,
+            "labels_covered": 143126963,
+            "babies": 13924,
+            "order_gcds": 1,
+            "equality_checks": 0,
+            "polynomial_degree": 12439,
+            "evaluations": 13924,
+            "collision_gcds": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "fresh-89-A",
+      "n": "439173623877940919234655961",
+      "k": 231,
+      "baby_steps": 53130,
+      "sampling": {
+        "side_suffix": "",
+        "prime_labels": [
+          "20895494959567",
+          "21017622445783"
+        ],
+        "counters": [
+          15,
+          0
+        ]
+      },
+      "measurements": {
+        "factorial_wheel210": {
+          "seconds": [
+            14.128952,
+            14.248611,
+            14.175131
+          ],
+          "factor": "20895494959567",
+          "outcome": "interval_gcd",
+          "complete": true,
+          "work": {
+            "setup_gcds": 2,
+            "wheel_residues": 48,
+            "wheel_residue_gcds": 209,
+            "block_cycles": 32768,
+            "block_degree": 1572864,
+            "blocks": 891986,
+            "factorial_limit": 1783971,
+            "inversions": 1,
+            "seed_terms": 2352,
+            "convolutions": 15,
+            "convolution_input_coefficients": 6502352,
+            "shifted_values": 3356705,
+            "paired_products": 2464768,
+            "batched_candidates": 1402972667904,
+            "edge_candidates": 561014,
+            "final_gcds": 1
+          }
+        },
+        "weighted_stride1": {
+          "seconds": [
+            3.172061,
+            3.098897,
+            3.077542
+          ],
+          "factor": "20895494959567",
+          "outcome": "collision_divisor",
+          "complete": true,
+          "work": {
+            "base_gcds": 3,
+            "slope_visits": 27027,
+            "primitive_slopes": 16275,
+            "nonempty_slopes": 16275,
+            "giants": 126857,
+            "labels_covered": 6309163820,
+            "babies": 53130,
+            "order_gcds": 1,
+            "equality_checks": 0,
+            "polynomial_degree": 126857,
+            "evaluations": 53130,
+            "collision_gcds": 1
+          }
+        },
+        "weighted_stride24": {
+          "seconds": [
+            1.340227,
+            1.338346,
+            1.329923
+          ],
+          "factor": "20895494959567",
+          "outcome": "collision_divisor",
+          "complete": true,
+          "work": {
+            "base_gcds": 3,
+            "slope_visits": 27027,
+            "primitive_slopes": 16275,
+            "nonempty_slopes": 16275,
+            "giants": 47323,
+            "labels_covered": 2074627750,
+            "babies": 53130,
+            "order_gcds": 1,
+            "equality_checks": 0,
+            "polynomial_degree": 47323,
+            "evaluations": 53130,
+            "collision_gcds": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "fresh-89-B",
+      "n": "428491600029853651747818763",
+      "k": 230,
+      "baby_steps": 52900,
+      "sampling": {
+        "side_suffix": "1",
+        "prime_labels": [
+          "20677129011361",
+          "20722973667883"
+        ],
+        "counters": [
+          13,
+          39
+        ]
+      },
+      "measurements": {
+        "weighted_stride24": {
+          "seconds": [
+            0.220044,
+            0.219698,
+            0.221451
+          ],
+          "factor": "20677129011361",
+          "outcome": "trace_divisor",
+          "complete": true,
+          "work": {
+            "base_gcds": 3,
+            "slope_visits": 26795,
+            "primitive_slopes": 16155,
+            "nonempty_slopes": 16155,
+            "giants": 46977,
+            "labels_covered": 2048856033,
+            "babies": 52900,
+            "order_gcds": 1,
+            "equality_checks": 1,
+            "polynomial_degree": 0,
+            "evaluations": 0,
+            "collision_gcds": 0
+          }
+        }
+      }
+    }
+  ]
+}
