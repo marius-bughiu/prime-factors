@@ -17,6 +17,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from experiments.class_order_search import search as class_order_search
+from experiments.midpoint_slope_batches import search as slope_batch_search
 from experiments.midpoint_weights import search as weight_orbit_search
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.local_midpoint_lanes import search as local_midpoint_search
@@ -137,6 +138,15 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'midpoint-slope-batches':
+        settings = {k: case[k] for k in ('multiplier', 'max_half_entries')}
+        work = slope_batch_search(int(case['n']), **settings)
+        elapsed = time.perf_counter() - start
+        pairs = work.pop('pairs')
+        agree(case, work, list(work))
+        work.update(settings)
+        result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed,
+                               'midpoint_slope_batches', work)
     elif method == 'class-orders':
         work = class_order_search(int(case['n']), case['prime_limit'], case['max_compositions'], case['shared'])
         elapsed = time.perf_counter() - start
@@ -595,6 +605,7 @@ def main():
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola'),
                              ('midpoint-weights.json', 'midpoint-weights'),
+                             ('midpoint-slope-batches.json', 'midpoint-slope-batches'),
                              ('class-orders.json', 'class-orders')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':

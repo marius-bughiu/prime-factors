@@ -72,6 +72,7 @@ import PrimeFactors.MarkedTraceBit
 import PrimeFactors.MaskedRelations
 import PrimeFactors.MidpointBlocks
 import PrimeFactors.MidpointClasses
+import PrimeFactors.CanonicalWeightSlopes
 import PrimeFactors.MidpointWeightBudget
 import PrimeFactors.MidpointWeightLattice
 import PrimeFactors.ReducedWeightDiscriminant
@@ -157,6 +158,7 @@ import PrimeFactors.SmoothSampleBound
 import PrimeFactors.SmoothFractionHyperbola
 import PrimeFactors.SharedRootSigns
 import PrimeFactors.SharedClassOrders
+import PrimeFactors.DyadicGenus
 import PrimeFactors.SquareClassFilter
 import PrimeFactors.SquareNeighborPeriod
 import PrimeFactors.SieveBudget

@@ -42,3 +42,5 @@ The SHAKE256 domain was fixed as `shared-quadratic-class-orders-v1`. For each in
 | Balanced odd trial division | 32 of 32 | — | 294,118 integer divisibility tests | 0.013 s |
 
 Nineteen products used the same number of compositions in both class searches. Sharing saved work on the other thirteen. On 7,237,264,777, combining involutions gave $71{,}593\times101{,}089$ in 1,702 compositions, down from 10,374. On 8,196,524,729 both searches exhausted their prime menu with no factor. A separate follow-up extending the limit to 59 split it into $66{,}791\times122{,}719$ in 1,949 compositions. The table retains the outcome at the original cutoff. [Paired results](../research/class-order-holdout.json)
+
+On the full-size comparison input, a public genus calculation reduces the length of the first table by about 3.2%, from 517 bits to 516 bits. [Known class-number divisors before the search](dyadic-genus.md)

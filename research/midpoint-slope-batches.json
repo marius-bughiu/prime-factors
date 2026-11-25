@@ -1,0 +1,1257 @@
+{
+  "seed": "midpoint-weight-holdout-v1",
+  "python": "3.9.6",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "repetitions": 5,
+  "rows": [
+    {
+      "n": "502005281288939",
+      "factors": [
+        "17838631",
+        "28141469"
+      ],
+      "sample": 0,
+      "methods": {
+        "ordinary": {
+          "result": {
+            "radix": 46200,
+            "total_orbits": 4800,
+            "visited_orbits": 4800,
+            "remaining_orbits": 0,
+            "weight_choices": 150,
+            "candidate_traces": 2810,
+            "square_tests": 2390,
+            "table_entries": 42,
+            "gauss_iterations": 1426,
+            "reduced_discriminant": false,
+            "discriminant_work": {}
+          },
+          "seconds": [
+            0.006074292000000002,
+            0.0059738750000000035,
+            0.0059705830000000015,
+            0.006023707999999989,
+            0.005996583
+          ],
+          "median_seconds": 0.005996583
+        },
+        "radix_x1": {
+          "result": {
+            "radix": 46200,
+            "outcome": "complete",
+            "total_slopes": 150,
+            "visited_slopes": 150,
+            "remaining_slopes": 0,
+            "total_orbits": 4800,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 7,
+              "table_entries": 42,
+              "gauss_iterations": 1426,
+              "distinct_trace_residues": 4096,
+              "half_entries": 1624,
+              "candidate_traces": 2470,
+              "square_tests": 2095
+            }
+          },
+          "seconds": [
+            0.0041765,
+            0.004246749999999994,
+            0.004171959000000003,
+            0.004178666999999997,
+            0.00432695800000002
+          ],
+          "median_seconds": 0.004178666999999997
+        },
+        "radix_x2": {
+          "result": {
+            "radix": 92400,
+            "outcome": "complete",
+            "total_slopes": 300,
+            "visited_slopes": 300,
+            "remaining_slopes": 0,
+            "total_orbits": 9600,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 12,
+              "trial_divisions": 8,
+              "table_entries": 46,
+              "gauss_iterations": 2977,
+              "distinct_trace_residues": 8976,
+              "half_entries": 3444,
+              "candidate_traces": 1906,
+              "square_tests": 1613
+            }
+          },
+          "seconds": [
+            0.006652083999999996,
+            0.006932624999999998,
+            0.006649208000000004,
+            0.00722150000000002,
+            0.006844792000000016
+          ],
+          "median_seconds": 0.006844792000000016
+        },
+        "radix_x3": {
+          "result": {
+            "radix": 138600,
+            "outcome": "complete",
+            "total_slopes": 450,
+            "visited_slopes": 450,
+            "remaining_slopes": 0,
+            "total_orbits": 14400,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 12,
+              "trial_divisions": 8,
+              "table_entries": 46,
+              "gauss_iterations": 4466,
+              "distinct_trace_residues": 12352,
+              "half_entries": 4888,
+              "candidate_traces": 1419,
+              "square_tests": 1216
+            }
+          },
+          "seconds": [
+            0.00912425,
+            0.009297957999999995,
+            0.009061290999999999,
+            0.008870334000000007,
+            0.009262667000000002
+          ],
+          "median_seconds": 0.00912425
+        },
+        "radix_x4": {
+          "result": {
+            "radix": 184800,
+            "outcome": "complete",
+            "total_slopes": 600,
+            "visited_slopes": 600,
+            "remaining_slopes": 0,
+            "total_orbits": 19200,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 13,
+              "trial_divisions": 9,
+              "table_entries": 54,
+              "gauss_iterations": 6024,
+              "distinct_trace_residues": 17184,
+              "half_entries": 6696,
+              "candidate_traces": 1270,
+              "square_tests": 1073
+            }
+          },
+          "seconds": [
+            0.012102834000000007,
+            0.011883707999999993,
+            0.011455166999999988,
+            0.011453583999999989,
+            0.011884417000000008
+          ],
+          "median_seconds": 0.011883707999999993
+        }
+      }
+    },
+    {
+      "n": "728927474612287",
+      "factors": [
+        "25703177",
+        "28359431"
+      ],
+      "sample": 1,
+      "methods": {
+        "ordinary": {
+          "result": {
+            "radix": 50820,
+            "total_orbits": 5280,
+            "visited_orbits": 5280,
+            "remaining_orbits": 0,
+            "weight_choices": 330,
+            "candidate_traces": 3309,
+            "square_tests": 2759,
+            "table_entries": 124,
+            "gauss_iterations": 3076,
+            "reduced_discriminant": false,
+            "discriminant_work": {}
+          },
+          "seconds": [
+            0.008272999999999975,
+            0.008237042000000028,
+            0.008309166000000034,
+            0.008236125000000039,
+            0.008377416999999998
+          ],
+          "median_seconds": 0.008272999999999975
+        },
+        "radix_x1": {
+          "result": {
+            "radix": 50820,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 13,
+              "trial_divisions": 7,
+              "table_entries": 124,
+              "gauss_iterations": 3076,
+              "distinct_trace_residues": 4904,
+              "half_entries": 2544,
+              "candidate_traces": 3068,
+              "square_tests": 2567
+            }
+          },
+          "seconds": [
+            0.007326208000000001,
+            0.00744879100000001,
+            0.007248957999999972,
+            0.0072164170000000305,
+            0.007300833999999978
+          ],
+          "median_seconds": 0.007300833999999978
+        },
+        "radix_x2": {
+          "result": {
+            "radix": 101640,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 10560,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 14,
+              "trial_divisions": 8,
+              "table_entries": 126,
+              "gauss_iterations": 3187,
+              "distinct_trace_residues": 9888,
+              "half_entries": 3792,
+              "candidate_traces": 2216,
+              "square_tests": 1909
+            }
+          },
+          "seconds": [
+            0.0075786250000000055,
+            0.007432958999999961,
+            0.007471749999999999,
+            0.00763212499999999,
+            0.007814374999999985
+          ],
+          "median_seconds": 0.0075786250000000055
+        },
+        "radix_x3": {
+          "result": {
+            "radix": 152460,
+            "outcome": "complete",
+            "total_slopes": 990,
+            "visited_slopes": 990,
+            "remaining_slopes": 0,
+            "total_orbits": 15840,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 14,
+              "trial_divisions": 8,
+              "table_entries": 128,
+              "gauss_iterations": 9888,
+              "distinct_trace_residues": 15264,
+              "half_entries": 7776,
+              "candidate_traces": 1826,
+              "square_tests": 1557
+            }
+          },
+          "seconds": [
+            0.01728887500000001,
+            0.01728875000000002,
+            0.017509125000000014,
+            0.01739400000000002,
+            0.018262292000000013
+          ],
+          "median_seconds": 0.01739400000000002
+        },
+        "radix_x4": {
+          "result": {
+            "radix": 203280,
+            "outcome": "complete",
+            "total_slopes": 660,
+            "visited_slopes": 660,
+            "remaining_slopes": 0,
+            "total_orbits": 21120,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 15,
+              "trial_divisions": 9,
+              "table_entries": 130,
+              "gauss_iterations": 6716,
+              "distinct_trace_residues": 19024,
+              "half_entries": 7396,
+              "candidate_traces": 1440,
+              "square_tests": 1219
+            }
+          },
+          "seconds": [
+            0.012966041999999955,
+            0.013054375000000007,
+            0.012981165999999988,
+            0.013086125000000004,
+            0.013642042000000021
+          ],
+          "median_seconds": 0.013054375000000007
+        }
+      }
+    },
+    {
+      "n": "693050785559401",
+      "factors": [
+        "23975767",
+        "28906303"
+      ],
+      "sample": 2,
+      "methods": {
+        "ordinary": {
+          "result": {
+            "radix": 50820,
+            "total_orbits": 5280,
+            "visited_orbits": 5280,
+            "remaining_orbits": 0,
+            "weight_choices": 330,
+            "candidate_traces": 2977,
+            "square_tests": 2537,
+            "table_entries": 124,
+            "gauss_iterations": 3048,
+            "reduced_discriminant": false,
+            "discriminant_work": {}
+          },
+          "seconds": [
+            0.008225707999999998,
+            0.008095041000000025,
+            0.008132000000000028,
+            0.008085542000000001,
+            0.008118500000000028
+          ],
+          "median_seconds": 0.008118500000000028
+        },
+        "radix_x1": {
+          "result": {
+            "radix": 50820,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 13,
+              "trial_divisions": 7,
+              "table_entries": 124,
+              "gauss_iterations": 3048,
+              "distinct_trace_residues": 4456,
+              "half_entries": 2430,
+              "candidate_traces": 2462,
+              "square_tests": 2108
+            }
+          },
+          "seconds": [
+            0.006795959000000074,
+            0.007016917000000067,
+            0.006975875000000076,
+            0.007493666999999982,
+            0.00682604100000006
+          ],
+          "median_seconds": 0.006975875000000076
+        },
+        "radix_x2": {
+          "result": {
+            "radix": 101640,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 10560,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 14,
+              "trial_divisions": 8,
+              "table_entries": 126,
+              "gauss_iterations": 3124,
+              "distinct_trace_residues": 9264,
+              "half_entries": 3636,
+              "candidate_traces": 1801,
+              "square_tests": 1677
+            }
+          },
+          "seconds": [
+            0.007439083999999929,
+            0.007451291999999943,
+            0.007372082999999918,
+            0.0073569580000000245,
+            0.007061667000000105
+          ],
+          "median_seconds": 0.007372082999999918
+        },
+        "radix_x3": {
+          "result": {
+            "radix": 152460,
+            "outcome": "complete",
+            "total_slopes": 990,
+            "visited_slopes": 990,
+            "remaining_slopes": 0,
+            "total_orbits": 15840,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 14,
+              "trial_divisions": 8,
+              "table_entries": 128,
+              "gauss_iterations": 9814,
+              "distinct_trace_residues": 14224,
+              "half_entries": 7506,
+              "candidate_traces": 1534,
+              "square_tests": 1324
+            }
+          },
+          "seconds": [
+            0.01737691699999999,
+            0.017882916999999998,
+            0.017153375000000026,
+            0.017294249999999955,
+            0.01692112499999998
+          ],
+          "median_seconds": 0.017294249999999955
+        },
+        "radix_x4": {
+          "result": {
+            "radix": 203280,
+            "outcome": "complete",
+            "total_slopes": 660,
+            "visited_slopes": 660,
+            "remaining_slopes": 0,
+            "total_orbits": 21120,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 15,
+              "trial_divisions": 9,
+              "table_entries": 130,
+              "gauss_iterations": 6623,
+              "distinct_trace_residues": 18968,
+              "half_entries": 7382,
+              "candidate_traces": 1255,
+              "square_tests": 1092
+            }
+          },
+          "seconds": [
+            0.012912750000000028,
+            0.01300954200000004,
+            0.012539124999999984,
+            0.012711665999999955,
+            0.0125399169999999
+          ],
+          "median_seconds": 0.012711665999999955
+        }
+      }
+    },
+    {
+      "n": "780188099549371",
+      "factors": [
+        "26866493",
+        "29039447"
+      ],
+      "sample": 3,
+      "methods": {
+        "ordinary": {
+          "result": {
+            "radix": 53130,
+            "total_orbits": 5280,
+            "visited_orbits": 5280,
+            "remaining_orbits": 0,
+            "weight_choices": 330,
+            "candidate_traces": 2879,
+            "square_tests": 2456,
+            "table_entries": 45,
+            "gauss_iterations": 3045,
+            "reduced_discriminant": false,
+            "discriminant_work": {}
+          },
+          "seconds": [
+            0.008295540999999962,
+            0.008159499999999986,
+            0.008411500000000016,
+            0.008230291000000056,
+            0.008150292000000059
+          ],
+          "median_seconds": 0.008230291000000056
+        },
+        "radix_x1": {
+          "result": {
+            "radix": 53130,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 45,
+              "gauss_iterations": 3045,
+              "distinct_trace_residues": 5004,
+              "half_entries": 2570,
+              "candidate_traces": 2725,
+              "square_tests": 2323
+            }
+          },
+          "seconds": [
+            0.007633084000000068,
+            0.007302917000000075,
+            0.007405500000000065,
+            0.007332333000000024,
+            0.007655041000000029
+          ],
+          "median_seconds": 0.007405500000000065
+        },
+        "radix_x2": {
+          "result": {
+            "radix": 106260,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 10560,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 12,
+              "trial_divisions": 6,
+              "table_entries": 46,
+              "gauss_iterations": 3254,
+              "distinct_trace_residues": 9776,
+              "half_entries": 3764,
+              "candidate_traces": 1942,
+              "square_tests": 1676
+            }
+          },
+          "seconds": [
+            0.007870750000000037,
+            0.00759912500000004,
+            0.007682583000000021,
+            0.0076707499999999484,
+            0.007587875000000022
+          ],
+          "median_seconds": 0.0076707499999999484
+        },
+        "radix_x3": {
+          "result": {
+            "radix": 159390,
+            "outcome": "complete",
+            "total_slopes": 990,
+            "visited_slopes": 990,
+            "remaining_slopes": 0,
+            "total_orbits": 15840,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 12,
+              "trial_divisions": 6,
+              "table_entries": 49,
+              "gauss_iterations": 9949,
+              "distinct_trace_residues": 15268,
+              "half_entries": 7774,
+              "candidate_traces": 1674,
+              "square_tests": 1445
+            }
+          },
+          "seconds": [
+            0.017856250000000018,
+            0.01802145799999999,
+            0.018566208999999945,
+            0.01851195800000005,
+            0.018358625000000073
+          ],
+          "median_seconds": 0.018358625000000073
+        },
+        "radix_x4": {
+          "result": {
+            "radix": 212520,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 21120,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 13,
+              "trial_divisions": 7,
+              "table_entries": 48,
+              "gauss_iterations": 3453,
+              "distinct_trace_residues": 18264,
+              "half_entries": 4902,
+              "candidate_traces": 1337,
+              "square_tests": 1168
+            }
+          },
+          "seconds": [
+            0.007658209000000027,
+            0.007863665999999991,
+            0.007777000000000034,
+            0.007684166999999964,
+            0.007626125000000039
+          ],
+          "median_seconds": 0.007684166999999964
+        }
+      }
+    },
+    {
+      "n": "679959698230159",
+      "factors": [
+        "25763873",
+        "26391983"
+      ],
+      "sample": 4,
+      "methods": {
+        "ordinary": {
+          "result": {
+            "radix": 50820,
+            "total_orbits": 5280,
+            "visited_orbits": 5280,
+            "remaining_orbits": 0,
+            "weight_choices": 330,
+            "candidate_traces": 2884,
+            "square_tests": 2443,
+            "table_entries": 124,
+            "gauss_iterations": 3104,
+            "reduced_discriminant": false,
+            "discriminant_work": {}
+          },
+          "seconds": [
+            0.00826845899999995,
+            0.007979457999999884,
+            0.008230958000000177,
+            0.00837137500000007,
+            0.008147542000000119
+          ],
+          "median_seconds": 0.008230958000000177
+        },
+        "radix_x1": {
+          "result": {
+            "radix": 50820,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 13,
+              "trial_divisions": 7,
+              "table_entries": 124,
+              "gauss_iterations": 3104,
+              "distinct_trace_residues": 5020,
+              "half_entries": 2574,
+              "candidate_traces": 2738,
+              "square_tests": 2324
+            }
+          },
+          "seconds": [
+            0.008017166999999992,
+            0.007218833000000036,
+            0.007022917000000017,
+            0.007430250000000083,
+            0.006980041999999909
+          ],
+          "median_seconds": 0.007218833000000036
+        },
+        "radix_x2": {
+          "result": {
+            "radix": 101640,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 10560,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 14,
+              "trial_divisions": 8,
+              "table_entries": 126,
+              "gauss_iterations": 3210,
+              "distinct_trace_residues": 9944,
+              "half_entries": 3806,
+              "candidate_traces": 1957,
+              "square_tests": 1681
+            }
+          },
+          "seconds": [
+            0.007305166999999946,
+            0.007637832999999983,
+            0.007472499999999993,
+            0.008117917000000086,
+            0.0077289579999999525
+          ],
+          "median_seconds": 0.007637832999999983
+        },
+        "radix_x3": {
+          "result": {
+            "radix": 152460,
+            "outcome": "complete",
+            "total_slopes": 990,
+            "visited_slopes": 990,
+            "remaining_slopes": 0,
+            "total_orbits": 15840,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 14,
+              "trial_divisions": 8,
+              "table_entries": 128,
+              "gauss_iterations": 9908,
+              "distinct_trace_residues": 15388,
+              "half_entries": 7806,
+              "candidate_traces": 1617,
+              "square_tests": 1361
+            }
+          },
+          "seconds": [
+            0.017143291000000005,
+            0.01817058299999985,
+            0.01739004200000016,
+            0.01973145899999995,
+            0.01712083299999989
+          ],
+          "median_seconds": 0.01739004200000016
+        },
+        "radix_x4": {
+          "result": {
+            "radix": 203280,
+            "outcome": "complete",
+            "total_slopes": 660,
+            "visited_slopes": 660,
+            "remaining_slopes": 0,
+            "total_orbits": 21120,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 15,
+              "trial_divisions": 9,
+              "table_entries": 130,
+              "gauss_iterations": 6728,
+              "distinct_trace_residues": 19324,
+              "half_entries": 7470,
+              "candidate_traces": 1402,
+              "square_tests": 1208
+            }
+          },
+          "seconds": [
+            0.01357304199999998,
+            0.013770499999999908,
+            0.014268791999999975,
+            0.01426412499999996,
+            0.013216708000000077
+          ],
+          "median_seconds": 0.013770499999999908
+        }
+      }
+    },
+    {
+      "n": "758692368050633",
+      "factors": [
+        "24365941",
+        "31137413"
+      ],
+      "sample": 5,
+      "methods": {
+        "ordinary": {
+          "result": {
+            "radix": 50820,
+            "total_orbits": 5280,
+            "visited_orbits": 5280,
+            "remaining_orbits": 0,
+            "weight_choices": 330,
+            "candidate_traces": 3131,
+            "square_tests": 2648,
+            "table_entries": 124,
+            "gauss_iterations": 3069,
+            "reduced_discriminant": false,
+            "discriminant_work": {}
+          },
+          "seconds": [
+            0.00820729099999995,
+            0.00817787499999989,
+            0.008145583000000123,
+            0.008297666999999898,
+            0.008164250000000095
+          ],
+          "median_seconds": 0.00817787499999989
+        },
+        "radix_x1": {
+          "result": {
+            "radix": 50820,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 13,
+              "trial_divisions": 7,
+              "table_entries": 124,
+              "gauss_iterations": 3069,
+              "distinct_trace_residues": 4608,
+              "half_entries": 2468,
+              "candidate_traces": 2684,
+              "square_tests": 2272
+            }
+          },
+          "seconds": [
+            0.006994374999999886,
+            0.007152916999999981,
+            0.007011249999999913,
+            0.007445499999999994,
+            0.007059374999999868
+          ],
+          "median_seconds": 0.007059374999999868
+        },
+        "radix_x2": {
+          "result": {
+            "radix": 101640,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 10560,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 14,
+              "trial_divisions": 8,
+              "table_entries": 126,
+              "gauss_iterations": 3210,
+              "distinct_trace_residues": 9056,
+              "half_entries": 3584,
+              "candidate_traces": 1946,
+              "square_tests": 1644
+            }
+          },
+          "seconds": [
+            0.007310792000000177,
+            0.007453582999999986,
+            0.007449707999999999,
+            0.007340208000000015,
+            0.00764991600000009
+          ],
+          "median_seconds": 0.007449707999999999
+        },
+        "radix_x3": {
+          "result": {
+            "radix": 152460,
+            "outcome": "complete",
+            "total_slopes": 990,
+            "visited_slopes": 990,
+            "remaining_slopes": 0,
+            "total_orbits": 15840,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 14,
+              "trial_divisions": 8,
+              "table_entries": 128,
+              "gauss_iterations": 9908,
+              "distinct_trace_residues": 14224,
+              "half_entries": 7504,
+              "candidate_traces": 1654,
+              "square_tests": 1413
+            }
+          },
+          "seconds": [
+            0.01794724999999997,
+            0.01810279200000009,
+            0.017163916999999973,
+            0.017151292000000096,
+            0.017863750000000067
+          ],
+          "median_seconds": 0.017863750000000067
+        },
+        "radix_x4": {
+          "result": {
+            "radix": 203280,
+            "outcome": "complete",
+            "total_slopes": 660,
+            "visited_slopes": 660,
+            "remaining_slopes": 0,
+            "total_orbits": 21120,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 15,
+              "trial_divisions": 9,
+              "table_entries": 130,
+              "gauss_iterations": 6704,
+              "distinct_trace_residues": 18976,
+              "half_entries": 7384,
+              "candidate_traces": 1419,
+              "square_tests": 1206
+            }
+          },
+          "seconds": [
+            0.013520500000000046,
+            0.013206790999999996,
+            0.012854499999999991,
+            0.013072415999999976,
+            0.013037541999999958
+          ],
+          "median_seconds": 0.013072415999999976
+        }
+      }
+    },
+    {
+      "n": "821504195393939",
+      "factors": [
+        "25289567",
+        "32483917"
+      ],
+      "sample": 6,
+      "methods": {
+        "ordinary": {
+          "result": {
+            "radix": 53130,
+            "total_orbits": 5280,
+            "visited_orbits": 5280,
+            "remaining_orbits": 0,
+            "weight_choices": 330,
+            "candidate_traces": 3263,
+            "square_tests": 2800,
+            "table_entries": 45,
+            "gauss_iterations": 3123,
+            "reduced_discriminant": false,
+            "discriminant_work": {}
+          },
+          "seconds": [
+            0.008466416999999948,
+            0.008381833999999921,
+            0.008357042000000092,
+            0.00838062500000003,
+            0.008376624999999915
+          ],
+          "median_seconds": 0.00838062500000003
+        },
+        "radix_x1": {
+          "result": {
+            "radix": 53130,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 45,
+              "gauss_iterations": 3123,
+              "distinct_trace_residues": 5116,
+              "half_entries": 2598,
+              "candidate_traces": 3153,
+              "square_tests": 2701
+            }
+          },
+          "seconds": [
+            0.007331750000000081,
+            0.007695542,
+            0.0076424999999999965,
+            0.007741165999999966,
+            0.007602667000000007
+          ],
+          "median_seconds": 0.0076424999999999965
+        },
+        "radix_x2": {
+          "result": {
+            "radix": 106260,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 10560,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 12,
+              "trial_divisions": 6,
+              "table_entries": 46,
+              "gauss_iterations": 3274,
+              "distinct_trace_residues": 10008,
+              "half_entries": 3822,
+              "candidate_traces": 2156,
+              "square_tests": 1860
+            }
+          },
+          "seconds": [
+            0.0076179169999999186,
+            0.007890082999999937,
+            0.007805083000000046,
+            0.007949250000000019,
+            0.007779583000000034
+          ],
+          "median_seconds": 0.007805083000000046
+        },
+        "radix_x3": {
+          "result": {
+            "radix": 159390,
+            "outcome": "complete",
+            "total_slopes": 990,
+            "visited_slopes": 990,
+            "remaining_slopes": 0,
+            "total_orbits": 15840,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 12,
+              "trial_divisions": 6,
+              "table_entries": 49,
+              "gauss_iterations": 9945,
+              "distinct_trace_residues": 15388,
+              "half_entries": 7806,
+              "candidate_traces": 1800,
+              "square_tests": 1528
+            }
+          },
+          "seconds": [
+            0.01861791700000004,
+            0.018282708000000092,
+            0.01838408299999994,
+            0.01879708400000002,
+            0.018043750000000136
+          ],
+          "median_seconds": 0.01838408299999994
+        },
+        "radix_x4": {
+          "result": {
+            "radix": 212520,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 21120,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 13,
+              "trial_divisions": 7,
+              "table_entries": 48,
+              "gauss_iterations": 3441,
+              "distinct_trace_residues": 18712,
+              "half_entries": 4966,
+              "candidate_traces": 1393,
+              "square_tests": 1191
+            }
+          },
+          "seconds": [
+            0.007776541999999997,
+            0.007835124999999943,
+            0.007794166000000047,
+            0.00776441700000019,
+            0.007789041000000108
+          ],
+          "median_seconds": 0.007789041000000108
+        }
+      }
+    },
+    {
+      "n": "542176358007751",
+      "factors": [
+        "23013373",
+        "23559187"
+      ],
+      "sample": 7,
+      "methods": {
+        "ordinary": {
+          "result": {
+            "radix": 46200,
+            "total_orbits": 4800,
+            "visited_orbits": 4800,
+            "remaining_orbits": 0,
+            "weight_choices": 150,
+            "candidate_traces": 2703,
+            "square_tests": 2304,
+            "table_entries": 42,
+            "gauss_iterations": 1370,
+            "reduced_discriminant": false,
+            "discriminant_work": {}
+          },
+          "seconds": [
+            0.006157292000000147,
+            0.006091124999999975,
+            0.005941584000000111,
+            0.006046500000000066,
+            0.006045249999999891
+          ],
+          "median_seconds": 0.006046500000000066
+        },
+        "radix_x1": {
+          "result": {
+            "radix": 46200,
+            "outcome": "complete",
+            "total_slopes": 150,
+            "visited_slopes": 150,
+            "remaining_slopes": 0,
+            "total_orbits": 4800,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 7,
+              "table_entries": 42,
+              "gauss_iterations": 1370,
+              "distinct_trace_residues": 4280,
+              "half_entries": 1670,
+              "candidate_traces": 2434,
+              "square_tests": 2066
+            }
+          },
+          "seconds": [
+            0.004310749999999919,
+            0.004130250000000002,
+            0.004111291999999933,
+            0.004186666000000061,
+            0.004055082999999904
+          ],
+          "median_seconds": 0.004130250000000002
+        },
+        "radix_x2": {
+          "result": {
+            "radix": 92400,
+            "outcome": "complete",
+            "total_slopes": 300,
+            "visited_slopes": 300,
+            "remaining_slopes": 0,
+            "total_orbits": 9600,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 12,
+              "trial_divisions": 8,
+              "table_entries": 46,
+              "gauss_iterations": 2947,
+              "distinct_trace_residues": 8444,
+              "half_entries": 3310,
+              "candidate_traces": 1695,
+              "square_tests": 1457
+            }
+          },
+          "seconds": [
+            0.006406582999999966,
+            0.006487209000000105,
+            0.0067860839999998035,
+            0.006429959000000096,
+            0.006356667000000149
+          ],
+          "median_seconds": 0.006429959000000096
+        },
+        "radix_x3": {
+          "result": {
+            "radix": 138600,
+            "outcome": "complete",
+            "total_slopes": 450,
+            "visited_slopes": 450,
+            "remaining_slopes": 0,
+            "total_orbits": 14400,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 12,
+              "trial_divisions": 8,
+              "table_entries": 46,
+              "gauss_iterations": 4438,
+              "distinct_trace_residues": 13592,
+              "half_entries": 5198,
+              "candidate_traces": 1557,
+              "square_tests": 1350
+            }
+          },
+          "seconds": [
+            0.009027416999999982,
+            0.009623500000000007,
+            0.009683249999999921,
+            0.009188500000000044,
+            0.009205999999999825
+          ],
+          "median_seconds": 0.009205999999999825
+        },
+        "radix_x4": {
+          "result": {
+            "radix": 184800,
+            "outcome": "complete",
+            "total_slopes": 600,
+            "visited_slopes": 600,
+            "remaining_slopes": 0,
+            "total_orbits": 19200,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 13,
+              "trial_divisions": 9,
+              "table_entries": 54,
+              "gauss_iterations": 6037,
+              "distinct_trace_residues": 16716,
+              "half_entries": 6578,
+              "candidate_traces": 1231,
+              "square_tests": 1061
+            }
+          },
+          "seconds": [
+            0.011598207999999888,
+            0.011837458000000023,
+            0.011364332999999949,
+            0.01137804099999995,
+            0.01151241599999997
+          ],
+          "median_seconds": 0.01151241599999997
+        }
+      }
+    }
+  ],
+  "large": {
+    "n": "3043806426885490749164321",
+    "factors": [
+      "1688035255729",
+      "1803165198449"
+    ],
+    "methods": {
+      "ordinary": {
+        "result": {
+          "radix": 80660580,
+          "total_orbits": 7188480,
+          "visited_orbits": 7188480,
+          "remaining_orbits": 0,
+          "weight_choices": 56160,
+          "candidate_traces": 4342642,
+          "square_tests": 3695517,
+          "table_entries": 130,
+          "gauss_iterations": 764701,
+          "reduced_discriminant": false,
+          "discriminant_work": {}
+        },
+        "seconds": [
+          8.634674375000001,
+          9.366816375000003,
+          8.352507875
+        ],
+        "median_seconds": 8.634674375000001
+      },
+      "radix_x1": {
+        "result": {
+          "radix": 80660580,
+          "outcome": "complete",
+          "total_slopes": 56160,
+          "visited_slopes": 56160,
+          "remaining_slopes": 0,
+          "total_orbits": 7188480,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 17,
+            "trial_divisions": 8,
+            "table_entries": 130,
+            "gauss_iterations": 764701,
+            "distinct_trace_residues": 6338752,
+            "half_entries": 1241556,
+            "candidate_traces": 3835797,
+            "square_tests": 3261252
+          }
+        },
+        "seconds": [
+          4.7356662499999995,
+          4.417061833,
+          3.857822749999997
+        ],
+        "median_seconds": 4.417061833
+      }
+    }
+  }
+}

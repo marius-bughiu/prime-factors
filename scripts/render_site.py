@@ -63,6 +63,15 @@ def case_row(result):
         w = result['midpoint_weights']
         count = (f'Weighted sums · {w["visited_orbits"]:,} of {w["total_orbits"]:,} remainder pairs'
                  f' · {w["candidate_traces"]:,} candidate sums · {w["square_tests"]:,} square tests')
+    elif result['method'] == 'midpoint-slope-batches':
+        w = result['midpoint_slope_batches']
+        counts = w['work']
+        count = (f'CRT half sums · {w["visited_slopes"]:,} slopes searched · '
+                 f'{counts.get("candidate_traces", 0):,} candidate sums · '
+                 f'{counts.get("square_tests", 0):,} square tests')
+        if w['outcome'] == 'half_list_limit':
+            count += (f' · next list requires {counts["next_half_size"]:,} entries'
+                      f' · limit {w["max_half_entries"]:,}')
     elif result['method'] == 'class-orders':
         w = result['class_orders']
         count = (f'Class orders · {w["windows"]:,} interval searches · {w["compositions"]:,} form compositions'
