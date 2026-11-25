@@ -1,6 +1,6 @@
 # Fewer ranges to check by rounding the smaller equations first
 
-On each of our two 2,048-bit products, a complete list of possible factor ranges is now **between three and four times shorter** than the previous list that used the same 24,576 coefficients per equation. The fresh example still has about $4.30\times10^{148}$ locations, and the crossed example about $7.65\times10^{148}$. This improvement comes from a proof about every range. We have not generated these enormous equations or found either product’s prime factors. [Coverage and checked comparisons](../PrimeFactors/RecursiveUnitCover.lean) · [Actual seven-row experiments](rounding-a-sifted-window.md)
+On each of our two 2,048-bit products, a complete list of possible factor ranges is now **between three and four times shorter** than the previous list that used the same 24,576 coefficients per equation. The fresh example still has about $4.30\times10^{148}$ locations, and the crossed example about $7.65\times10^{148}$. This improvement comes from a proof about every range. We did not generate these enormous equations. The much smaller measured searches recovered neither pair of primes from the products. Both prime pairs are known from the construction of the test numbers. [Coverage and checked comparisons](../PrimeFactors/RecursiveUnitCover.lean) · [Actual seven-row experiments](rounding-a-sifted-window.md)
 
 ## Where the extra width comes from
 
