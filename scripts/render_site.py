@@ -73,6 +73,8 @@ def case_row(result):
         schedule = f'at least 2<sup>{total.bit_length()-1}</sup>' if total.bit_length() > 64 else f'{total:,}'
         count = (f"Complete offset range · {w['visited_pairs']:,} of {schedule} candidate pairs visited"
                  f" · {w['integer_square_roots']:,} integer square roots")
+        if w.get('skipped_pairs'):
+            count += f" · {w['skipped_pairs']:,} further pairs skipped by the offset filter"
     elif result['method'] == 'offset-rows':
         w = result['offset_rows']
         tested = w['search']['square_tests']

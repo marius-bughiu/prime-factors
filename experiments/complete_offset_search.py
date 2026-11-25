@@ -6,6 +6,7 @@ import json
 from math import gcd, isqrt
 from pathlib import Path
 
+from experiments.grouped_offset_rows import local_failures
 from experiments.modular_hyperbola import Work, floor_sum
 from scripts.factor import primes_through
 
@@ -20,19 +21,23 @@ def slot_count(T, h, max_offset):
     return count, work.euclidean_steps
 
 
-def search(n, max_pairs, *, exhaust=False):
+def search(n, max_pairs, *, exhaust=False, filter_prime_limit=None):
     """Return a verified proper split or the unspent space and work completed.
 
-    One visit is one raw (j,k) slot, before the coprimality test. With exhaust
-    set, continue after the first split and count all hits up to the same cap.
+    The cap is on raw positions covered. A filtered block consumes its full
+    position count but uses no gcd tests. With exhaust set, continue after
+    the first split and count all hits up to the same cap.
     Neither completing a scan nor returning a split certifies primality.
     """
+    if filter_prime_limit is not None and filter_prime_limit < 0:
+        raise ValueError('filter prime limit must be nonnegative')
     if n < 4 or max_pairs < 0:
         raise ValueError('expected an integer >= 4 and a nonnegative raw-pair budget')
     T = isqrt(n)
     h = n-T*T
     max_offset = isqrt(4*h//3)
     work = dict(raw_pairs=0, loose_raw_pairs=0, count_euclidean_steps=0, visited_pairs=0,
+                covered_pairs=0, skipped_pairs=0, skipped_rows=0, row_filter_tests=0, row_modulus_tests=0,
                 coprime_pairs=0, negative_discriminants=0, integer_square_roots=0,
                 square_hits=0, proper_hits=0, last_slot_hits=0, interior_hits=0)
     result = dict(status='partial', factor=None, remaining=n, root=T, offset=h, max_offset=max_offset,
@@ -45,13 +50,42 @@ def search(n, max_pairs, *, exhaust=False):
     loose, loose_steps = slot_count(T, h, isqrt(4*h))
     result.update(raw_pairs=raw, loose_raw_pairs=loose, count_euclidean_steps=steps+loose_steps,
                   unvisited_pairs=raw)
+    powers = []
+    if filter_prime_limit is not None:
+        primes = primes_through(min(max_offset, filter_prime_limit))
+        ordinary, higher = local_failures(-h, primes, max_offset)
+        powers = ordinary+higher
+        result['obstruction_powers'] = powers
     for j in range(1, max_offset+1):
         last = T*j//h+1
+        remaining_budget = max_pairs-result['covered_pairs']
+        if not remaining_budget:
+            result['next_pair'] = [j, 1]
+            return result
+        if powers:
+            result['row_filter_tests'] += 1
+            forbidden = False
+            for power in powers:
+                result['row_modulus_tests'] += 1
+                if j % power == 0:
+                    forbidden = True
+                    break
+            if forbidden:
+                skipped = min(last, remaining_budget)
+                result['covered_pairs'] += skipped
+                result['unvisited_pairs'] -= skipped
+                result['skipped_pairs'] += skipped
+                result['skipped_rows'] += 1
+                if skipped < last:
+                    result['next_pair'] = [j, skipped+1]
+                    return result
+                continue
         for k in range(1, last+1):
-            if result['visited_pairs'] == max_pairs:
+            if result['covered_pairs'] == max_pairs:
                 result['next_pair'] = [j, k]
                 return result
             result['visited_pairs'] += 1
+            result['covered_pairs'] += 1
             result['unvisited_pairs'] -= 1
             if gcd(j, k) != 1:
                 continue
@@ -96,7 +130,7 @@ def census(bits, *, witnesses=None):
                 raise AssertionError(f'no verified complete census result for {n}')
             if witnesses is not None:
                 hit = run['first_hit']
-                witnesses.append((n, hit['j'], hit['k'], run['factor']))
+                witnesses.append((n, run['root'], hit['j'], hit['k'], hit['square_root'], run['factor']))
             totals['products'] += 1
             totals['only_last_slot'] += int(run['interior_hits'] == 0)
             for field in ('raw_pairs', 'loose_raw_pairs', 'integer_square_roots', 'square_hits', 'proper_hits'):
@@ -106,34 +140,64 @@ def census(bits, *, witnesses=None):
 
 def render_census_certificate(witnesses):
     """Emit bounded kernel checks on every recorded probe output, product and prime."""
-    lines = [
-        'import PrimeFactors.CompleteOffsetSearch',
-        'import Mathlib.Data.Nat.Prime.Basic',
-        '',
-        'namespace PrimeFactors.GeneratedCompleteOffsetCensus',
-        'open CompleteOffsetSearch',
-        '',
-        'set_option maxRecDepth 8192',
-        'set_option maxHeartbeats 2000000',
-        '',
-        'private structure Witness where',
-        '  n : ℕ',
-        '  j : ℕ',
-        '  k : ℕ',
-        '  d : ℕ',
-        '',
-        'private def checked (w : Witness) : Bool :=',
-        '  let t := w.n.sqrt',
-        '  let h := w.n-t^2',
-        '  decide (w.d.Prime ∧ (w.n/w.d).Prime ∧ w.d*(w.n/w.d)=w.n ∧',
-        '    0<w.j ∧ 3*w.j^2≤4*h ∧ 0<w.k ∧ w.k≤t*w.j/h+1 ∧ w.j.Coprime w.k ∧',
-        '    probe w.n t w.j w.k=some w.d)',
-        '',
-    ]
+    primes = sorted({prime for n, _, _, _, _, f in witnesses for prime in (f, n//f)})
+    lines = ["""import PrimeFactors.CompleteOffsetSearch
+import Mathlib.Tactic.NormNum.Prime
+
+namespace PrimeFactors.GeneratedCompleteOffsetCensus
+open CompleteOffsetSearch
+
+set_option maxRecDepth 8192
+set_option maxHeartbeats 2000000
+
+private def primePool : List ℕ := [@@PRIMES@@]
+
+private theorem poolPrimes (p : ℕ) (member : p ∈ primePool) : p.Prime := by
+  simp only [primePool,List.mem_cons,List.not_mem_nil,or_false] at member
+  rcases member with @@CASES@@ <;> norm_num
+
+private structure Witness where
+  n : ℕ
+  t : ℕ
+  j : ℕ
+  k : ℕ
+  d : ℕ
+  f : ℕ
+
+private def checked (w : Witness) : Bool :=
+  let S := w.j+2*w.t*w.k
+  let h := w.n-w.t^2
+  decide (w.t*w.t≤w.n ∧ w.n<(w.t+1)*(w.t+1) ∧
+    S^2=4*w.k^2*w.n+w.d^2 ∧ w.n.gcd ((S-w.d)/2)=w.f ∧ 1<w.f ∧ w.f<w.n ∧
+    w.f ∈ primePool ∧ w.n/w.f ∈ primePool ∧ w.f*(w.n/w.f)=w.n ∧
+    0<w.j ∧ 3*w.j^2≤4*h ∧ 0<w.k ∧ w.k≤w.t*w.j/h+1 ∧ w.j.Coprime w.k)
+
+private def correct (w : Witness) : Prop :=
+  probe w.n w.n.sqrt w.j w.k=some w.f ∧ w.f.Prime ∧ (w.n/w.f).Prime ∧ w.f*(w.n/w.f)=w.n ∧
+    0<w.j ∧ 3*w.j^2≤4*(w.n-w.n.sqrt^2) ∧ 0<w.k ∧ w.k≤w.n.sqrt*w.j/(w.n-w.n.sqrt^2)+1 ∧
+    w.j.Coprime w.k
+
+private theorem sound (w : Witness) (yes : checked w=true) : correct w := by
+  simp only [checked,decide_eq_true_eq] at yes
+  obtain ⟨lo,hi,square,g,proper,below,p,q,mul,rest⟩ := yes
+  have root := (Nat.eq_sqrt.mpr ⟨lo,hi⟩).symm
+  have gap : (w.j+2*w.t*w.k)^2-4*w.k^2*w.n=w.d*w.d := by rw [square,Nat.add_sub_cancel_left,pow_two]
+  unfold correct
+  rw [root]
+  refine ⟨?_,poolPrimes _ p,poolPrimes _ q,mul,rest⟩
+  unfold probe
+  dsimp only
+  rw [gap,Nat.sqrt_eq,g,if_pos]
+  exact ⟨by omega,pow_two _,proper,below⟩
+
+private theorem checkRows (rows : List Witness) (ok : rows.all checked=true) :
+    ∀ w ∈ rows, correct w := fun w hw => sound w (List.all_eq_true.mp ok w hw)
+""".replace('@@PRIMES@@', ','.join(map(str, primes))).replace('@@CASES@@', ' | '.join(['rfl']*len(primes)))]
     for offset in range(0, len(witnesses), 32):
         chunk = witnesses[offset:offset+32]
-        values = ',\n  '.join(f'⟨{n},{j},{k},{d}⟩' for n, j, k, d in chunk)
-        lines.extend([f'example : ([{values}] : List Witness).all checked = true := by decide +kernel', ''])
+        values = ',\n  '.join('⟨'+','.join(map(str, w))+'⟩' for w in chunk)
+        lines.extend([f'example : ∀ w ∈ ([{values}] : List Witness), correct w :=',
+                      '  checkRows _ (by decide +kernel)', ''])
     lines.append('end PrimeFactors.GeneratedCompleteOffsetCensus')
     return '\n'.join(lines)+'\n'
 

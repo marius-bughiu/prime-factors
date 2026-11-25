@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+For the complete square-test range, the density of surviving coprime pairs has an Euler product at $s=2$. Absolute convergence gives the counting formula unconditionally. The zero-location statements in the pinned RH release apply to a different region. [Complete pair count and error bounds](../discoveries/complete-offset-work.md) · [Statements in the release](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab/src/Statements.lean)
+
 In the grouped offset search, a proposed direction gives an integer whose square character can reject entire rows. For each nonsquare direction, the Dirichlet GRH small-prime theorem bounds how far one must search for a rejecting odd prime. The actual row counts on both full-size inputs check the local arithmetic directly. [Quadratic character and the row test](../discoveries/grouped-offset-rows.md#what-dirichlet-grh-can-guarantee)
 
 The latest quartic sieve used 51 primes to reject every candidate trace in one group on the fresh 2,048-bit example. Chebotarev and a finite counting argument explain why a short list can reject many quartics without rational roots. For one such quartic, Dedekind GRH also bounds the size of a detecting prime in terms of the splitting field and the excluded primes. The pinned Dirichlet statements give the applicable zeta hypothesis in the abelian case. [Quartic prime tests and scope of the RH connection](../discoveries/primes-that-reject-quartics.md)

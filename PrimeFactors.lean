@@ -66,6 +66,11 @@ import PrimeFactors.OffsetSweepFrequency
 import PrimeFactors.SignedOffsetFrequency
 import PrimeFactors.ReducedOffsetMinimum
 import PrimeFactors.CompleteOffsetSearch
+import PrimeFactors.CompleteOffsetWork
+import PrimeFactors.OffsetDivisorSieve
+import PrimeFactors.OffsetGridCount
+import PrimeFactors.OffsetAllDivisors
+import PrimeFactors.CompleteOffsetExample
 import PrimeFactors.DedekindLaneRanking
 import PrimeFactors.HyperbolaBoxes
 import PrimeFactors.ImplicitPowers

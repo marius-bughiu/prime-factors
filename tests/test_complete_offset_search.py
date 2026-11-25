@@ -4,6 +4,7 @@ from math import gcd, isqrt
 import unittest
 
 from experiments.complete_offset_search import census, search, slot_count
+from experiments.complete_offset_filter import comparison, panel
 
 
 class CompleteOffsetTests(unittest.TestCase):
@@ -43,6 +44,30 @@ class CompleteOffsetTests(unittest.TestCase):
         self.assertEqual(search(n, 116)['status'], 'split')
         square = search(49, 0)
         self.assertEqual((square['factor'], square['remaining'], square['visited_pairs']), (7, 7, 0))
+
+    def test_row_filter_handles_two_power_and_cap_midway_through_skipped_row(self):
+        n = 117449
+        T = isqrt(n)
+        h = n-T*T
+        cap = slot_count(T, h, 3)[0]+1
+        original, filtered = comparison(n, cap, exhaust=True)
+        self.assertIn(4, filtered['obstruction_powers'])
+        self.assertEqual(filtered['next_pair'], [4, 2])
+        self.assertGreater(filtered['skipped_pairs'], 0)
+        self.assertEqual(filtered['covered_pairs'], original['visited_pairs'])
+        self.assertLess(filtered['visited_pairs'], original['visited_pairs'])
+        self.assertEqual(filtered['integer_square_roots']+filtered['negative_discriminants'],
+                         filtered['coprime_pairs'])
+        both = comparison(n, 241, exhaust=True)
+        self.assertEqual([r['last_slot_hits'] for r in both], [1, 1])
+
+    def test_filtered_census_counts_square_roots_and_keeps_every_split(self):
+        expected = [(7, 78, 2915, 1069), (8, 253, 19367, 6890), (9, 903, 139136, 51342)]
+        for bits, splits, unfiltered, filtered in expected:
+            row = panel(bits)
+            self.assertEqual(row['splits'], splits)
+            self.assertEqual(row['all_slots']['original']['integer_square_roots'], unfiltered)
+            self.assertEqual(row['all_slots']['filtered']['integer_square_roots'], filtered)
 
     def test_signed_gap_agrees_with_weighted_sum_square(self):
         for n in (17, 91, 9017, 117449):

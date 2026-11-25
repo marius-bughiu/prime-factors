@@ -151,11 +151,14 @@ def run_case(case, method, proofs):
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
     elif method == 'complete-offset-search':
-        work = complete_offset_search(int(case['n']), case['max_pairs'])
+        work = complete_offset_search(int(case['n']), case['max_pairs'],
+                                      filter_prime_limit=case.get('filter_prime_limit'))
         elapsed = time.perf_counter() - start
         agree(case, work, ['max_offset', 'raw_pairs', 'loose_raw_pairs', 'visited_pairs',
                            'coprime_pairs', 'negative_discriminants', 'integer_square_roots',
                            'square_hits', 'proper_hits', 'unvisited_pairs'])
+        if 'filter_prime_limit' in case:
+            agree(case, work, ['covered_pairs', 'skipped_pairs', 'skipped_rows'])
         result = certify_split(case, proof, work.pop('factor'), elapsed, 'complete_offset', work)
     elif method == 'offset-rows':
         n = int(case['n'])

@@ -1,6 +1,6 @@
 # A square test is guaranteed to exist
 
-Suppose someone gives us only the product of two distinct 1,024-bit primes. Using its digits, we can now specify a list of tests and prove that at least one of them will return a prime factor. The proof applies to every such pair. The list is far too large to try in full. The open question is how to select a successful test cheaply. [Complete search theorem](../PrimeFactors/CompleteOffsetSearch.lean)
+Suppose someone gives us only the product of two distinct 1,024-bit primes. Using its digits, we can now specify a list of tests and prove that at least one of them will return a prime factor. The proof applies to every such pair. Even after the product rules out whole groups, the two large comparisons each retain more than $2^{1019}$ candidate pairs. The open question is how to select a successful test cheaply. [Complete search theorem](../PrimeFactors/CompleteOffsetSearch.lean) · [Work before and after the filters](complete-offset-work.md)
 
 For example, take 117,449. The preceding square is $342^2$, leaving a remainder of 485. Take adjustment 17 and multiplier 12. The weighted sum is $17+2\cdot342\cdot12=8{,}225$. Its square exceeds $4\cdot12^2\cdot117{,}449$ by exactly one. Halving $8{,}225-1$ gives 4,112. Its greatest common divisor with 117,449 is 257, and division gives the other prime, 457. All arithmetic in this test uses the product and the two search indices.
 
@@ -40,13 +40,14 @@ The sharper divisor-sum estimate in the earlier note improves the comparison on 
 
 ## What happened when we searched
 
-We tried every distinct pair of 7-bit primes, every distinct pair of 8-bit primes and every distinct pair of 9-bit primes. This covers 1,234 products. Every product gave a proper split. For eight 9-bit pairs the additional last multiplier was essential: omitting it removed every successful test. On 117,449 the only successful pair in all 241 raw positions was $(17,12)$. It was the 116th position visited and the 68th integer square root taken. [Full census and replay](../experiments/complete_offset_search.py) · [Fixtures with expected factors](../benchmarks/complete-offset-search.json)
+We tried every distinct pair of 7-bit primes, every distinct pair of 8-bit primes and every distinct pair of 9-bit primes. This covers 1,234 products. Every product gave a proper split. A generated Lean certificate checks the chosen indices, the prime returned by the probe, the other prime, and the product on all 1,234 inputs. For eight 9-bit pairs omitting the additional last multiplier removed every successful test. On 117,449 the only successful pair in all 241 raw positions was $(17,12)$. It was the 116th position visited and the 68th integer square root taken. [Only successful pair on 117,449](../PrimeFactors/CompleteOffsetExample.lean) · [Full census and replay](../experiments/complete_offset_search.py) · [Fixtures with expected factors](../benchmarks/complete-offset-search.json)
 
 On each of the two 2,048-bit comparisons, a Euclidean floor sum counted the exact number of raw positions before the gcd filter. The fresh range contained about $2^{1023.23}$ positions and the crossed range about $2^{1023.002}$. Trying the first 64 positions on each took 36 and 37 integer square roots respectively, yielding no factors. These counts concern the full list. A successful test could occur early, as it did on the small example. [Exact counts and outstanding work](../benchmarks/complete-offset-search.json)
 
 ```sh
 python3 -m experiments.complete_offset_search 117449 --max-pairs 241 --exhaust
-python3 -m experiments.complete_offset_search --census
+python3 -m experiments.complete_offset_search --census --census-certificate /tmp/CompleteOffsetCensus.lean
+lake env lean -DwarningAsError=true /tmp/CompleteOffsetCensus.lean
 python3 -m experiments.complete_offset_search --controls --max-pairs 64
 lake build
 lake env lean scripts/Audit.lean
