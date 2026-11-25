@@ -198,6 +198,10 @@ import PrimeFactors.UnitNewtonLanes
 import PrimeFactors.UnitQuarticBox
 import PrimeFactors.UnitQuarticRecovery
 import PrimeFactors.CenteredSumQuartic
+import PrimeFactors.ChebyshevQuarticScale
+import PrimeFactors.QuarticPrimeCover
+import PrimeFactors.LevelMaskCertificate
+import PrimeFactors.ProjectedLevelCertificate
 import PrimeFactors.ProjectedQuarticLevels
 import PrimeFactors.AffineWindowOccupancy
 import PrimeFactors.CRTResidueAdvice

@@ -269,7 +269,7 @@ def render_certificate(n: int, factors: list[int]) -> str:
     return "\n".join(lines)
 
 
-def verify_file(path: Path) -> None:
+def verify_file(path: Path, theorem_name: str = "PrimeFactors.Generated.factorization") -> None:
     checked = subprocess.run(
         ["lake", "env", "lean", "-DwarningAsError=true", str(path.resolve())],
         cwd=REPO, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
@@ -277,7 +277,7 @@ def verify_file(path: Path) -> None:
     if checked.returncode:
         raise ValueError(checked.stdout.strip() or "Lean returned an error")
     allowed = {"propext", "Classical.choice", "Quot.sound"}
-    theorem = "'PrimeFactors.Generated.factorization'"
+    theorem = f"'{theorem_name}'"
     if f"{theorem} does not depend on any axioms" in checked.stdout:
         return
     match = re.search(re.escape(theorem) + r" depends on axioms:\s*\[([^\]]+)\]", checked.stdout)

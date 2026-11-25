@@ -23,6 +23,12 @@ The earlier input-specific positive quartics used $2^{612}$ and $2^{611}$ on the
 
 At $2^{600}$ on the fresh input the sieve performed 9,240 mask intersections spanning 605,115,912 logical bit positions in total, taking 0.022 seconds. The periodic tables occupied 3,351,845 bits of integer payload, about 409 KiB before Python object overhead. Bit-parallel rejection still visits the level interval block by block. At the narrower comparison radix $2^{606}$, three-run medians for periodic versus individual tests were 0.712 versus 3.116 seconds across 5,897 levels on the crossed control, and 0.769 versus 1.439 seconds across 979 levels on the fresh control. On the small 15- and 48-level comparisons, individual tests were faster because the setup cost exceeded the savings. All paired runs gave the same factor results. [Matched comparisons and work counters](../research/projected-level-sieve.json)
 
+## Certifying an unsuccessful search from the product alone
+
+For the fresh input, two Lean certificates state that if $xy=N$ with $x,y<2^{1024}$, then $x$ cannot leave remainder 1 modulo $2^{604}$ or $2^{600}$, respectively. Neither certificate uses primality or the primes recorded when the input was generated. The smaller modulus covers the larger one as well. The two independently built traces provide separate checks at the original predeclared precisions.
+
+Each certificate contains the product and five integer coefficients. Lean checks their congruences, the factor and sum intervals, and the possible values of the trace. For each auxiliary modulus it checks that the published mask contains the modular image of every eligible nonzero coordinate. It then proves that the intersection of the masks has no set bit in the entire level interval. At exponent 604 this needs one block for 25,487 levels and 19 primes. At exponent 600, 42 primes suffice for 23,967,979 levels, checked in 23 blocks. The Python run used a different block size and all 51 predeclared primes. The remaining cofactor is still the whole input. [604-bit certificate](../benchmarks/controls/ProjectedLevelFresh604.lean) · [600-bit certificate](../benchmarks/controls/ProjectedLevelFresh600.lean) · [Trace argument](../PrimeFactors/ProjectedLevelCertificate.lean) · [Bitmask proof](../PrimeFactors/LevelMaskCertificate.lean)
+
 ## Removing the constant coordinate
 
 Take the signed Dickson traces $1,D,x,D^2-2s^2,xD$, where $D=x-y$, $s=\lfloor\sqrt{N/8}\rfloor$, $xy=N$ and the factors are within a factor of two. Guess $x\equiv u\pmod R$ with $R$ dyadic and $u$ odd. Assume $\gcd(N,30)=1$. The full trace lattice $L$ consists of coefficient vectors for which the quartic $F(X)=X^2T(X,N/X)$ is divisible by $M=360R^4$ everywhere on the lane with $\gcd(X,30)=1$. Its index is $I=M^5/(12960R^{10})$. [Coordinates and local congruences](unit-newton-lanes.md)
@@ -55,3 +61,5 @@ For each 2,048-bit control we tested the frozen remainder 1, once per radix. At 
 | $2^{610}$ | 16 | 146 / 3 | 304 / 1 |
 
 The $2^{610}$ parent took 0.68 seconds on the crossed control and 0.79 seconds on the fresh control. The former returned the same checked factors. The latter left $2^{607}$ other signed groups unchecked. All large timings are single runs on one selected group per product. The data record the integer trace, its lifted constant, the weighted spread, the level interval and the work performed. [Exact receipts](../research/projected-quartic-levels.json)
+
+For quartics without a nonzero rational root, a finite covering argument explains when one list of primes can discard every level. [Prime densities and the RH connection](primes-that-reject-quartics.md)

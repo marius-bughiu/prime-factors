@@ -34,3 +34,5 @@ This search tests positive remainders and identifies a remainder $u$ with its pa
 | Fresh comparison | 611 | $2^{609}$ | No factor, 2.23 s |
 
 These times measure discovery on one local run per input. The benchmark checks the prime certificates for recovered factors separately. We chose remainder 1 after seeing the earlier example's factors and kept it fixed for the fresh product. The experiment left $2^{609}-1$ groups untested on the fresh product. Higher-degree methods for divisors in a specified class already exist at the classical fourth-root scale. The comparison here concerns explicit degree-four equations and their cost. [Benchmark fixtures](../benchmarks/centered-quartic.json) · [Earlier signed search](unit-newton-lanes.md) · [Coppersmith, Howgrave-Graham and Nagaraj](https://dominoweb.draco.res.ibm.com/reports/rc23466.pdf)
+
+Using the shape of the factor curve gives a sharper existence calculation for the two comparison products. [Chebyshev coordinates and proof status](chebyshev-quartic-window.md)

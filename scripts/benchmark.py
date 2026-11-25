@@ -25,6 +25,7 @@ from experiments.unit_factor_lane import search as unit_lane_search
 from experiments.unit_quartic_probe import probe as unit_quartic_probe
 from experiments.centered_sum_quartic import probe as centered_quartic_probe
 from experiments.projected_level_sieve import centered_search as projected_level_search
+from scripts.factor import verify_file
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.local_midpoint_lanes import search as local_midpoint_search
 from experiments.divisor_samples import search as divisor_sample_search
@@ -576,6 +577,22 @@ def run_case(case, method, proofs):
                        check=True, timeout=900)
         result['exclusion'] = dict(max_gap=str(2 * half_gap), proof=f'proofs/{proof.name}',
                                    verification_seconds=time.perf_counter() - check_start)
+    if method == 'projected-level-sieve' and case.get('check_exclusion'):
+        exponent, residue = int(case['radix_exponent']), int(case['residue'])
+        source = ROOT / 'benchmarks' / 'controls' / f'ProjectedLevelFresh{exponent}.lean'
+        # Restate the result for the actual benchmark input, modulus and residue.
+        # Lean rejects a mismatch between the public experiment and its proof.
+        theorem = 'PrimeFactors.Generated.exclusion'
+        proof.write_text(source.read_text() + f"""
+theorem {theorem} (x y : ℕ) (pair : x*y={int(case['n'])})
+    (hx : x<2^1024) (hy : y<2^1024) (lane : (x:ℤ) ≡ {residue} [ZMOD (2:ℤ)^{exponent}]) :
+    False := PrimeFactors.Fresh{exponent}Exclusion.excludes_factor x y pair hx hy lane
+#print axioms {theorem}
+""")
+        check_start = time.perf_counter()
+        verify_file(proof, theorem)
+        result['exclusion'] = dict(residue=str(residue), radix_exponent=exponent, max_factor_bits=1024,
+                                   proof=f'proofs/{proof.name}', verification_seconds=time.perf_counter()-check_start)
     elapsed = time.perf_counter() - start
     return dict(result, id=name, description=case['description'],
                 method=method, wall_seconds=elapsed,

@@ -35,9 +35,13 @@ def case_row(result):
     verification = duration(result['verification_seconds']) if checked else 'not run'
     if 'exclusion' in result:
         x = result['exclusion']
-        evidence += (f'<p>Lean excludes every even factor gap through {int(x["max_gap"]):,}. '
-                     f'<a href="{escape(x["proof"])}">Download exclusion proof</a></p>')
-        verification = duration(x['verification_seconds']) + ' (replay of the prebuilt gap-exclusion theorem)'
+        if 'radix_exponent' in x:
+            claim = (f'When both factors have at most {x["max_factor_bits"]:,} bits, Lean excludes '
+                     f'remainder {escape(x["residue"])} modulo 2<sup>{x["radix_exponent"]}</sup>.')
+        else:
+            claim = f'Lean excludes every even factor gap through {int(x["max_gap"]):,}.'
+        evidence += f'<p>{claim} <a href="{escape(x["proof"])}">Download exclusion proof</a></p>'
+        verification = duration(x['verification_seconds']) + ' (exclusion proof)'
     if result['method'] == 'subgroup':
         w = result['subgroup']
         unit = 'base' if w['bases_tested'] == 1 else 'bases'
