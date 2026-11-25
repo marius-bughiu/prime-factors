@@ -67,6 +67,11 @@ def case_row(result):
         w = result['midpoint_weights']
         count = (f'Weighted sums · {w["visited_orbits"]:,} of {w["total_orbits"]:,} remainder pairs'
                  f' · {w["candidate_traces"]:,} candidate sums · {w["square_tests"]:,} square tests')
+    elif result['method'] == 'grouped-norm':
+        w = result['grouped_norm']
+        count = (f"Product-selected multiplier · {w['square_tests']} square tests"
+                 f" · {int(w['eligible_multipliers']):,} eligible multipliers"
+                 f" · discovery {duration(result['discovery_seconds'])}")
     elif result['method'] == 'projected-level-sieve':
         w = result['projected_levels']
         count = (f'One positive group modulo 2<sup>{int(w["radix"]).bit_length()-1}</sup>'

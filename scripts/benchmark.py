@@ -146,6 +146,17 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'grouped-norm':
+        run = subprocess.run(
+            ['lake', 'env', 'lean', '--run', 'experiments/GroupedNormProbe.lean', case['n']],
+            cwd=ROOT, text=True, capture_output=True, check=True, timeout=120)
+        work = json.loads(run.stdout)
+        pair = work.pop('pair')
+        elapsed = work.pop('search_ns') / 1_000_000_000
+        agree(case, work, ['eligible_multipliers', 'square_tests'])
+        if pair is not None and (len(pair) != 2 or int(pair[0]) * int(pair[1]) != int(case['n'])):
+            raise ValueError(f"{name}: incorrect product from the Lean probe")
+        result = certify_split(case, proof, pair[0] if pair else None, elapsed, 'grouped_norm', work)
     elif method == 'projected-level-sieve':
         run = projected_level_search(int(case['n']), 1 << case['radix_exponent'], int(case['residue']),
                                      max_levels=case['max_levels'])
@@ -670,7 +681,7 @@ def main():
                              ('midpoint-slope-batches.json', 'midpoint-slope-batches'),
                              ('quartic-factor-lanes.json', 'quartic-factor-lanes'), ('unit-quartic.json', 'unit-quartic'),
                              ('centered-quartic.json', 'centered-quartic'), ('projected-levels.json', 'projected-level-sieve'),
-                             ('class-orders.json', 'class-orders')]:
+                             ('class-orders.json', 'class-orders'), ('grouped-norm.json', 'grouped-norm')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':
             cases = expand_cases(cases)

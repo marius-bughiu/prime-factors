@@ -55,6 +55,10 @@ import PrimeFactors.FrobeniusShiftCount
 import PrimeFactors.GapPolynomialScale
 import PrimeFactors.GapStride
 import PrimeFactors.GroupedImages
+import PrimeFactors.GroupedNormFactors
+import PrimeFactors.GroupedNormExamples
+import PrimeFactors.GroupedNormFrequency
+import PrimeFactors.DedekindLaneRanking
 import PrimeFactors.HyperbolaBoxes
 import PrimeFactors.ImplicitPowers
 import PrimeFactors.IntervalGap
@@ -200,6 +204,7 @@ import PrimeFactors.UnitQuarticRecovery
 import PrimeFactors.CenteredSumQuartic
 import PrimeFactors.ChebyshevQuarticScale
 import PrimeFactors.QuarticPrimeCover
+import PrimeFactors.QuarticLaneReuse
 import PrimeFactors.LevelMaskCertificate
 import PrimeFactors.ProjectedLevelCertificate
 import PrimeFactors.ProjectedQuarticLevels
