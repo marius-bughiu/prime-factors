@@ -2,7 +2,7 @@
 
 Suppose someone multiplies two distinct 1,024-bit primes chosen uniformly from the pairs whose product has 2,048 bits. A searcher wants to guess the remainder of either prime modulo $R=2^{616}$. Each guess can also cover its negative. A correct guess lets the polynomial solver recover the factors. [Four-candidate theorem](polynomial-factor-lanes.md) · [An example where one guess worked](testing-one-factor-remainder.md)
 
-Give the searcher 1,024 yes/no questions. Each question can depend on all earlier answers and can compute **any function of either the upper or the lower 1,024 bits** of the product. Afterward the searcher chooses up to $2^{40}$ remainders. Even with unlimited preprocessing, the chance of picking a correct one is less than $2^{-38}$, about one in 275 billion. Reading one entire half, with no questions about the other, gives a probability below $2^{-550}$. A selector that computes with the entire product at once can use information beyond this model.
+Give the searcher 1,024 yes/no questions. Each question can depend on all earlier answers and can compute **any function of either the upper or the lower 1,024 bits** of the product. Afterward the searcher chooses up to $2^{40}$ remainders. Even with unlimited preprocessing, the chance of picking a correct one is less than $2^{-38}$, about one in 275 billion. Reading one entire half, with no questions about the other, gives a probability below $2^{-550}$. Even revealing an entire half for free and then allowing 512 yes/no questions about the other half gives the same $2^{-38}$ bound. A selector that computes with the entire product at once can use information beyond these models.
 
 ## Why each half leaves so many possibilities
 
@@ -22,6 +22,12 @@ $$
 Thus at most $2TX^2\sqrt J/R$ pairs succeed. A depth-$c$ protocol has $J\le2^c$. If queries concern only one half, summing over its partition gives $X$ directly in place of $X\sqrt J$. Fixing any random coins gives a deterministic protocol, so averaging preserves the bounds. [Finite cell bound, rectangle inequality and arithmetic constants](../PrimeFactors/FactorLaneAdvice.lean)
 
 There are more than $(0.22X/\log X)^2/2$ eligible unordered prime pairs, using just primes in $[\sqrt2X,2X)$. With $\log X<710$ the success probability is below $2^{26}T\sqrt J/R$. Inserting $T=2^{40}$ and $c=1024$ gives $2^{-38}$. With $T=1$ and no questions the same calculation gives $2^{-590}$. The finite combinatorial inequalities are checked in Lean. The decision-tree interpretation and the prime-density step use the argument here and the published prime estimates. [Prime-count constants for this exact population](stride-budget.md#an-explicit-bound-at-exactly-2048-bits) · [Rosser and Schoenfeld, Corollary 1](https://doi.org/10.1215/ijm/1255631807)
+
+## What can vary from guess to guess?
+
+The bound also allows a different modulus $D\ge 2^{616}$ for each guess, provided the selector chooses it from the permitted information. An interval of $X$ consecutive integers contains at most $\lceil X/D\rceil\le X/2^{616}$ representatives of any one class. More generally each guess can propose **any set of at most $2X/2^{616}$ first-factor values** before looking at the rest of the input. Use $R=X$ in the formal rectangle theorem and take the union of the proposed first-factor sets modulo $X$. On $[X,2X)$ those residues identify the first factors uniquely. Subsequent recovery may use the full product. [Progression bound and protocol theorem](../PrimeFactors/FactorLaneAdvice.lean)
+
+Suppose the searcher may instead see the entire high word, then ask $t$ yes/no questions about the low word. For each fixed high word there are at most $2^t$ answer sequences. Uniting all their guesses leaves at most $2^t(2TX/R)$ possible first factors. Each has at most one partner for that high word, so summing over its $X$ possible values bounds the number of successful pairs by $2^t(2TX^2/R)$. The same argument applies with the two halves reversed. Taking $t=512$ and $T=2^{40}$ gives the quoted bound for this stronger form of access. [Lean bound when a whole word is revealed](../PrimeFactors/FactorLaneAdvice.lean)
 
 ## What the best small lookup tables learn
 

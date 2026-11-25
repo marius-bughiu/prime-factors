@@ -135,6 +135,48 @@ theorem protocol_bound {ι : Type*} (leaves : Finset ι)
   exact (transcript_cell pos mp (domain i hi) (factors i hi) (words i hi)).trans
     (Nat.mul_le_mul_right _ (Nat.mul_le_mul_right B (ranges i hi).2.2))
 
+/-- Even when the modulus varies with the proposed guess, a progression
+of step R meets an interval of length at most B*R in at most B positions. -/
+theorem interval_residue_card {points : Finset ℕ} {start R B a : ℕ}
+    (pos : 0<R) (range : ∀ x ∈ points,
+      start ≤ x ∧ x < start+B*R ∧ x ≡ a [MOD R]) : points.card ≤ B := by
+  calc
+    _ ≤ (Finset.range B).card := by
+      apply card_le_card_of_injOn (fun x => (x-start)/R)
+      · intro x hx
+        exact mem_range.mpr ((Nat.div_lt_iff_lt_mul pos).mpr (by
+          obtain ⟨_,h,_⟩ := range x hx
+          omega))
+      · intro x hx y hy same
+        obtain ⟨xl,_,xc⟩ := range x hx
+        obtain ⟨yl,_,yc⟩ := range y hy
+        have h : (x-start)+start ≡ (y-start)+start [MOD R] := by
+          simpa [Nat.sub_add_cancel xl,Nat.sub_add_cancel yl] using xc.trans yc.symm
+        have rem : (x-start)%R=(y-start)%R := Nat.ModEq.add_right_cancel' start h
+        have same_mul := congrArg (fun z => R*z) same
+        have left := Nat.div_add_mod (x-start) R
+        have right := Nat.div_add_mod (y-start) R
+        change R*((x-start)/R) = R*((y-start)/R) at same_mul
+        omega
+    _ = B := card_range B
+
+/-- After revealing a whole word, all transcripts reachable for that word may be
+combined into one shortlist. Each proposed first factor determines at most one partner. -/
+theorem revealed_word_bound (codes : Finset ℕ) (hits : ℕ → Finset (ℕ × ℕ))
+    (shortlist : ℕ → Finset ℕ) {K : ℕ}
+    (cap : ∀ i ∈ codes, (shortlist i).card ≤ K)
+    (into : ∀ i ∈ codes, ∀ t ∈ hits i, t.1 ∈ shortlist i)
+    (injective : ∀ i ∈ codes, ∀ p q r, (p,q) ∈ hits i → (p,r) ∈ hits i → q=r) :
+    (codes.biUnion hits).card ≤ codes.card * K := by
+  apply card_biUnion_le_card_mul _ _ _
+  intro i hi
+  apply le_trans _ (cap i hi)
+  apply card_le_card_of_injOn Prod.fst (into i hi)
+  rintro ⟨p,q⟩ hp ⟨r,s⟩ hr eq
+  change p=r at eq
+  subst r
+  exact Prod.ext rfl (injective i hi p q s hp hr)
+
 /-- Integer constants in the finite probability estimate, after clearing the
 denominator 0.22². The density estimate for primes is applied separately. -/
 theorem probability_constants :
