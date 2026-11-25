@@ -1,4 +1,6 @@
 import PrimeFactors.BinomialWindowCertificate
+import PrimeFactors.FactorialCollision
+import PrimeFactors.CoupledDivisorWindow
 import Mathlib.Algebra.GCDMonoid.Finset
 
 /-! Divisor windows on the integer arguments for which the candidate is a unit
@@ -138,19 +140,20 @@ theorem eval_cleared (v : Fin 7 → ℤ) (s x : ℤ) :
     (cleared v s).eval x = ∑ i, v i * (scale i:ℤ) * raw i (x+s) := by
   simp only [cleared, eval_finset_sum, eval_mul, eval_C, eval_numerator]
 
+theorem numerator_degree (i : Fin 7) (s : ℤ) : (numerator i s).natDegree ≤ i.val := by
+  unfold numerator
+  refine (natDegree_prod_le ..).trans ?_
+  calc
+    _ ≤ ∑ _ : Fin i.val, 1 := by
+      apply sum_le_sum
+      intro j _
+      exact (natDegree_X_add_C _).le
+    _ = _ := by simp
+
 private theorem degree_bound (v : Fin 7 → ℤ) (s : ℤ) : (cleared v s).natDegree≤6 := by
   apply natDegree_sum_le_of_forall_le
   intro i _
-  have deg : (numerator i s).natDegree ≤ i.val := by
-    unfold numerator
-    refine (natDegree_prod_le ..).trans ?_
-    calc
-      _ ≤ ∑ _ : Fin i.val, 1 := by
-        apply sum_le_sum
-        intro j _
-        exact (natDegree_X_add_C _).le
-      _ = _ := by simp
-  exact (natDegree_C_mul_le _ _).trans (deg.trans (by omega))
+  exact (natDegree_C_mul_le _ _).trans ((numerator_degree i s).trans (by omega))
 
 noncomputable def sampleChecks (v w : Fin 7 → ℤ) (s : ℤ) : Prop :=
   ∀ x : Fin 7, (∑ i, v i*(scale i:ℤ)*raw i (x.val+s)) = ∑ i, w i*(x.val:ℤ)^i.val
@@ -169,11 +172,10 @@ theorem same_polynomial {v w : Fin 7 → ℤ} {s : ℤ} (samplesAgree : sampleCh
     rw [eval_cleared, HigherDivisorWindow.eval_coeff]
     exact samplesAgree i
 
-/-- At any actual divisor, the raw row is 45360 times a bounded integer. -/
-theorem eligible_value {n d c s x : ℤ} {r : ℕ} (v : Fin 7 → ℤ)
-    (cop : IsCoprime n 45360) (div : d∣n) (position : d=c+2*x)
-    (align : (105:ℤ)∣c-2*s) (near : |x|≤(r:ℤ)) :
-    ∃ a : ℤ, (cleared v s).eval x=45360*a ∧ |a|≤height v r s := by
+/-- The public shift transfers all three unit tests to each actual divisor. -/
+theorem eligible_divisibility {n d c s x : ℤ} (cop : IsCoprime n 45360) (div : d∣n)
+    (position : d=c+2*x) (align : (105:ℤ)∣c-2*s) (i : Fin 7) :
+    (denominator i:ℤ)∣raw i (x+s) := by
   obtain ⟨k,hk⟩ := align
   have unit : IsCoprime (x+s) (105:ℤ) := by
     obtain ⟨u,w,bez⟩ := (cop.of_isCoprime_of_dvd_left div).of_isCoprime_of_dvd_right
@@ -183,9 +185,15 @@ theorem eligible_value {n d c s x : ℤ} {r : ℕ} (v : Fin 7 → ℤ)
   have avoids (p : ℤ) (h : p∣105) (nonunit : ¬p∣1) : ¬p∣x+s := by
     intro both
     exact nonunit (unit.isUnit_of_dvd' both h).dvd
-  obtain ⟨q,hq⟩ := Classical.axiomOfChoice (fun i => denominator_dvd i
-    (avoids 3 (by decide) (by decide)) (avoids 5 (by decide) (by decide))
-    (avoids 7 (by decide) (by decide)))
+  exact denominator_dvd i (avoids 3 (by decide) (by decide)) (avoids 5 (by decide) (by decide))
+    (avoids 7 (by decide) (by decide))
+
+/-- At any actual divisor, the raw row is 45360 times a bounded integer. -/
+theorem eligible_value {n d c s x : ℤ} {r : ℕ} (v : Fin 7 → ℤ)
+    (cop : IsCoprime n 45360) (div : d∣n) (position : d=c+2*x)
+    (align : (105:ℤ)∣c-2*s) (near : |x|≤(r:ℤ)) :
+    ∃ a : ℤ, (cleared v s).eval x=45360*a ∧ |a|≤height v r s := by
+  obtain ⟨q,hq⟩ := Classical.axiomOfChoice (eligible_divisibility cop div position align)
   refine ⟨∑ i, v i*q i, ?_, ?_⟩
   · rw [eval_cleared, mul_sum]
     apply sum_congr rfl
@@ -255,18 +263,18 @@ private theorem cleared_nonzero {v : Fin 7 → ℤ} (nz : v≠0) (s : ℤ) : cle
     · simp
 
 /-- An equation for every chosen odd center using just seven coefficients. -/
-theorem relation_exists {n D r m : ℕ} (hn : 0<n) (hd : 0<D) (cop : n.Coprime 45360)
+theorem relation_exists_factorial {n D r m : ℕ} (hn : 0<n) (hd : 0<D) (cop : n.Coprime 45360)
     {s c t : ℤ} (align : (105:ℤ)∣c-2*s) (anchor : (n:ℤ)∣c+2*t) (unit : IsCoprime (2:ℤ) (n:ℤ))
-    (room : n^(m+m.choose 2)*(7^7*∏ i : Fin 7, weight i r s)<(D^m)^7) :
+    (room : n^(m+m.choose 2)*((7:ℕ).factorial*∏ i : Fin 7, weight i r s)<(D^m)^7) :
     ∃ F : ℤ[X], F≠0 ∧ F.roots.toFinset.card≤6 ∧ ∀ x d : ℤ,
       d∣(n:ℤ) → d=c+2*x → (D:ℤ)≤d → |x|≤(r:ℤ) → F.eval x=0 := by
   classical
   letI (i : Fin m) : NeZero (n^(m-i.val)) := ⟨(pow_pos hn _).ne'⟩
   let L := (i : Fin m) → ZMod (n^(m-i.val))
   let tag (v : Fin 7 → ℤ) : L := fun i => ((taylor t (cleared v s)).coeff i.val:ℤ)
-  have size : Fintype.card L * (7^7*∏ i : Fin 7, weight i r s)<(D^m)^7 := by
+  have size : Fintype.card L * ((7:ℕ).factorial*∏ i : Fin 7, weight i r s)<(D^m)^7 := by
     simpa only [L,Fintype.card_pi,ZMod.card,prod_pow_eq_pow_sum,HigherDivisorWindow.tag_sum] using room
-  obtain ⟨u,v,ne,eq,short⟩ := HigherDivisorWindow.finite_collision (by decide : 0<7) (pow_pos hd m)
+  obtain ⟨u,v,ne,eq,short⟩ := FactorialCollision.finite_collision (by decide : 0<7) (pow_pos hd m)
     (fun i : Fin 7 => weight i r s) (fun i => (by decide : 0<1).trans_le (le_max_left ..)) size tag
   let w := u-v
   have sub : cleared w s=cleared u s-cleared v s := by simp [w,cleared,sub_mul,sum_sub_distrib]
@@ -285,6 +293,15 @@ theorem relation_exists {n D r m : ℕ} (hn : 0<n) (hd : 0<D) (cop : n.Coprime 4
   have lim : height w r s<(D:ℤ)^m := by simpa only [height,w,Pi.sub_apply,Nat.cast_pow] using short
   rw [Int.eq_zero_of_abs_lt_dvd hit (bnd.trans_lt (lim.trans_le
     (pow_le_pow_left₀ (Int.natCast_nonneg _) floor m))),mul_zero]
+
+/-- The earlier box criterion is a sufficient special case. -/
+theorem relation_exists {n D r m : ℕ} (hn : 0<n) (hd : 0<D) (cop : n.Coprime 45360)
+    {s c t : ℤ} (align : (105:ℤ)∣c-2*s) (anchor : (n:ℤ)∣c+2*t) (unit : IsCoprime (2:ℤ) (n:ℤ))
+    (room : n^(m+m.choose 2)*(7^7*∏ i : Fin 7, weight i r s)<(D^m)^7) :
+    ∃ F : ℤ[X], F≠0 ∧ F.roots.toFinset.card≤6 ∧ ∀ x d : ℤ,
+      d∣(n:ℤ) → d=c+2*x → (D:ℤ)≤d → |x|≤(r:ℤ) → F.eval x=0 := by
+  apply relation_exists_factorial hn hd cop align anchor unit
+  exact (Nat.mul_le_mul_left _ (Nat.mul_le_mul_right _ (by decide : (7:ℕ).factorial≤7^7))).trans_lt room
 
 /-- Worst-case shift overhead is at most 74 units against a radius hundreds of bits wide. -/
 theorem weight_upper {s : ℤ} (small : |s|≤52) (r : ℕ) (i : Fin 7) :
@@ -316,25 +333,59 @@ theorem shift_spec (c : ℤ) : |shift c|≤52 ∧ (105:ℤ)∣c-2*shift c := by
 
 set_option exponentiation.threshold 26000
 
-/-- A universal 2048-bit size budget. The 13/8 multiplier is measured relative to
-2^438 in parity indices. The hypotheses use only the public input size. -/
-theorem uniform_window {n : ℕ} (hn : 0<n) (nb : n≤2^2048) (cop : n.Coprime 45360)
-    (odd : Odd n) (c : ℤ) (hc : Odd c) :
+private theorem window_of_budget {n D r : ℕ} (hn : 0<n) (hd : 0<D) (cop : n.Coprime 45360)
+    (odd : Odd n) (c : ℤ) (hc : Odd c)
+    (room : n^6*((7:ℕ).factorial*∏ i : Fin 7, max 1 ((r+74)^i.val/denominator i)) < D^21) :
     ∃ F : ℤ[X], F≠0 ∧ F.roots.toFinset.card≤6 ∧ ∀ x d : ℤ,
-      d∣(n:ℤ) → d=c+2*x → (2:ℤ)^1023≤d → |x|≤13*2^435 → F.eval x=0 := by
-  let r : ℕ := 13*2^435
+      d∣(n:ℤ) → d=c+2*x → (D:ℤ)≤d → |x|≤(r:ℤ) → F.eval x=0 := by
   let t := ((n:ℤ)-c)/2
   have anchor : (n:ℤ)∣c+2*t := by
     obtain ⟨b,hb⟩ := odd
     obtain ⟨a,ha⟩ := hc
     refine ⟨1,?_⟩
     dsimp only [t]; omega
-  have room : (2^2048:ℕ)^6*(7^7*∏ i : Fin 7, max 1 ((r+74)^i.val / denominator i)) <
-      ((2^1023:ℕ)^3)^7 := by decide +kernel
   have wh := Finset.prod_le_prod' (fun i (_ : i ∈ (univ : Finset (Fin 7))) => weight_upper (shift_spec c).1 r i)
-  have bound := (Nat.mul_le_mul (Nat.pow_le_pow_left nb 6) (Nat.mul_le_mul_left (7^7) wh)).trans_lt room
-  have h := relation_exists (m:=3) hn (by decide : 0<(2^1023:ℕ)) cop (shift_spec c).2 anchor
-    (Nat.coprime_two_left.mpr odd).isCoprime (by simpa using bound)
-  simpa only [r, Nat.cast_pow, Nat.cast_mul, Nat.cast_ofNat] using h
+  have bound := (Nat.mul_le_mul_left (n^6) (Nat.mul_le_mul_left (7:ℕ).factorial wh)).trans_lt room
+  apply relation_exists_factorial (m:=3) hn hd cop (shift_spec c).2 anchor (Nat.coprime_two_left.mpr odd).isCoprime
+  simpa only [←pow_mul] using bound
+
+/-- Public size bounds alone guarantee a radius just above 2^439 in parity indices. -/
+theorem uniform_factorial_window {n : ℕ} (hn : 0<n) (nb : n≤2^2048) (cop : n.Coprime 45360)
+    (odd : Odd n) (c : ℤ) (hc : Odd c) :
+    ∃ F : ℤ[X], F≠0 ∧ F.roots.toFinset.card≤6 ∧ ∀ x d : ℤ,
+      d∣(n:ℤ) → d=c+2*x → (2:ℤ)^1023≤d → |x|≤267*2^431 → F.eval x=0 := by
+  let r : ℕ := 267*2^431
+  have room : ((2:ℕ)^2048)^6*((7:ℕ).factorial*∏ i : Fin 7,
+      max 1 ((r+74)^i.val / denominator i)) < ((2:ℕ)^1023)^21 := by decide +kernel
+  have bound := (Nat.mul_le_mul_right _ (Nat.pow_le_pow_left nb 6)).trans_lt room
+  simpa only [r,Nat.cast_mul,Nat.cast_pow,Nat.cast_ofNat] using
+    window_of_budget hn (by decide : 0<(2:ℕ)^1023) cop odd c hc bound
+
+/-- Coupling N with the public divisor floor ceil(N/2^1024) proves a larger
+radius for inputs with an at-most-1,024-bit cofactor. -/
+theorem coupled_factorial_window {n : ℕ} (large : 2^2047≤n) (cop : n.Coprime 45360)
+    (odd : Odd n) (c : ℤ) (hc : Odd c) :
+    ∃ F : ℤ[X], F≠0 ∧ F.roots.toFinset.card≤6 ∧ ∀ x d : ℤ,
+      d∣(n:ℤ) → d=c+2*x → (CoupledDivisorWindow.lower n:ℤ)≤d →
+      |x|≤5*2^437 → F.eval x=0 := by
+  let r : ℕ := 5*2^437
+  have cheap : (7:ℕ).factorial*(∏ i : Fin 7, max 1 ((r+74)^i.val/denominator i)) < 2^9201 := by
+    decide +kernel
+  have bound := CoupledDivisorWindow.coupled_cost (t:=6) (c:=21) large cheap (by decide) (by decide)
+  have hd := (by decide : 0<(2:ℕ)^1023).trans_le (CoupledDivisorWindow.lower_size large)
+  have hn := (by decide : 0<(2:ℕ)^2047).trans_le large
+  rw [Nat.mul_comm _ (n^6)] at bound
+  simpa only [r,Nat.cast_mul,Nat.cast_pow,Nat.cast_ofNat] using window_of_budget hn hd cop odd c hc bound
+
+/-- A universal 2048-bit size budget. The 13/8 multiplier is measured relative to
+2^438 in parity indices. The hypotheses use only the public input size. -/
+theorem uniform_window {n : ℕ} (hn : 0<n) (nb : n≤2^2048) (cop : n.Coprime 45360)
+    (odd : Odd n) (c : ℤ) (hc : Odd c) :
+    ∃ F : ℤ[X], F≠0 ∧ F.roots.toFinset.card≤6 ∧ ∀ x d : ℤ,
+      d∣(n:ℤ) → d=c+2*x → (2:ℤ)^1023≤d → |x|≤13*2^435 → F.eval x=0 := by
+  obtain ⟨F,nz,roots,cover⟩ := uniform_factorial_window hn nb cop odd c hc
+  refine ⟨F,nz,roots,?_⟩
+  intro x d divides offset floor near
+  exact cover x d divides offset floor (near.trans (by decide +kernel))
 
 end PrimeFactors.SiftedDivisorWindow

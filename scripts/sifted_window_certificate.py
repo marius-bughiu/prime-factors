@@ -1,7 +1,8 @@
 """Render the measured degree-six divisor-window witness for the Lean kernel."""
 
 
-def check_sifted_interval(n, work, proof, verify_interval):
+def validate_sifted_interval(n, work):
+    """Check the shared seven-row window metadata before rendering either basis."""
     first, radius, shift = work['lower'], work['radius'], work['shift']
     origin, anchor = work['origin'], work['anchor']
     row, ordinary = work['coefficients'], work['cleared_coefficients']
@@ -15,6 +16,14 @@ def check_sifted_interval(n, work, proof, verify_interval):
             and anchor == (n - origin) // 2 and isinstance(modulus, int) and modulus >= 2
             and 0 <= height < work['height_bound'] == first ** depth):
         raise ValueError('Inconsistent sifted window, shift, modulus or height')
+
+
+def check_sifted_interval(n, work, proof, verify_interval):
+    validate_sifted_interval(n, work)
+    first, radius, shift = work['lower'], work['radius'], work['shift']
+    row, ordinary = work['coefficients'], work['cleared_coefficients']
+    anchor, height, depth = work['anchor'], work['height'], work['depth']
+    modulus = work['rootless_modulus']
     return verify_interval(n, work, proof, 'SiftedDivisorWindow', f"""  apply PrimeFactors.SiftedDivisorWindow.excludes
     (v := ![{', '.join(map(str, row))}]) (w := ![{', '.join(map(str, ordinary))}])
     (first := {first}) (r := {radius}) (t := ({anchor})) (s := ({shift})) (h := {height})

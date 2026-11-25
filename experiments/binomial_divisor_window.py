@@ -46,6 +46,43 @@ def sifted_basis(shift, radius):
     return rows, weights
 
 
+def rounded_basis(shift, radius):
+    """Return cleared ordinary rows, quotient bounds and signed coefficient corrections.
+
+    A tie between nearest residues uses the positive representative. For eligible
+    offsets each rounded polynomial has the same residue as the sifted numerator.
+    """
+    if radius < 2 or radius % 2:
+        raise ValueError('expected a positive even radius')
+    u = radius // 2
+    sifted, _ = sifted_basis(shift, radius)
+    chebyshev = [[2], [0, 1]]
+    for i in range(2, 7):
+        current = [0, *chebyshev[-1]]
+        for j, value in enumerate(chebyshev[-2]):
+            current[j] -= u * u * value
+        chebyshev.append(current)
+    chebyshev[0] = [1]
+
+    rows, weights, corrections = [], [], []
+    for i, divisor in enumerate(SIFTED_DENOMINATORS):
+        scale = SIFTED_DENOMINATORS[-1] // divisor
+        row = list(chebyshev[i])
+        bound = 1 if i == 0 else 2 * u ** i
+        errors = [0] * 7
+        for j in range(i):
+            correction = (sifted[i][j] // scale - row[j]) % divisor
+            if 2 * correction > divisor:
+                correction -= divisor
+            errors[j] = correction
+            row[j] += correction
+            bound += abs(correction) * radius ** j
+        rows.append([scale * value for value in row] + [0] * (6 - i))
+        weights.append(max(1, bound // divisor))
+        corrections.append(errors)
+    return rows, weights, corrections
+
+
 def jet_rows(n, anchor, degree, depth, basis):
     """Construct a triangular basis for all rows satisfying the public Taylor congruences."""
     moduli = [n ** (depth - j) for j in range(depth)]
@@ -72,18 +109,22 @@ def jet_rows(n, anchor, degree, depth, basis):
     return rows
 
 
-def search(n, first, span, *, degree, depth, modulus_limit=97, centered=False, sifted=False):
+def search(n, first, span, *, degree, depth, modulus_limit=97, centered=False, sifted=False, rounded=False):
     """Check every odd candidate from first through first + 2*span, inclusive.
 
     With centered=True and even span, the origin is first + span and the signed
     index x of candidate origin + 2*x satisfies |x| <= R = span/2. For i>0
     the exact maximum of |binom(x,i)| is binom(R+i-1,i), attained at x=-R.
     In sifted mode 2*shift = origin modulo 105, so a divisor coprime to 105
-    has x+shift coprime to 105. The weights round down on these integer values.
+    has x+shift coprime to 105. Rounded mode chooses monic Chebyshev numerators
+    with coefficient corrections modulo the same row denominators.
     """
     if (n < 3 or n % 2 == 0 or first < 1 or first % 2 == 0 or span < degree
             or not 1 <= depth <= degree or modulus_limit < 0):
         raise ValueError('expected odd input and first candidate, span >= degree >= depth >= 1')
+    sifted = sifted or rounded
+    if rounded and span % 4:
+        raise ValueError('rounded Chebyshev coordinates require an even centered radius')
     if sifted and (not centered or degree != 6):
         raise ValueError('the sifted basis requires centered=True and degree six')
     if centered and span % 2:
@@ -102,6 +143,8 @@ def search(n, first, span, *, degree, depth, modulus_limit=97, centered=False, s
     if sifted:
         shift = (158 * origin + 52) % 105 - 52
         result.update(sifted=True, shift=shift, height=None)
+    if rounded:
+        result.update(rounded=True, weights=[], corrections=[])
     if common != 1:
         # This divisor can lie outside the window.
         if common < n:
@@ -114,7 +157,10 @@ def search(n, first, span, *, degree, depth, modulus_limit=97, centered=False, s
                     break
         return result
 
-    if sifted:
+    if rounded:
+        polynomials, weights, corrections = rounded_basis(shift, radius)
+        result.update(weights=weights, corrections=corrections)
+    elif sifted:
         polynomials, weights = sifted_basis(shift, radius)
     else:
         polynomials = cleared_basis(degree)

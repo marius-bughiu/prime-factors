@@ -57,6 +57,7 @@ from scripts.higher_window_certificate import check_higher_interval
 from scripts.binomial_window_certificate import check_binomial_interval
 from scripts.centered_binomial_certificate import check_centered_binomial_interval
 from scripts.sifted_window_certificate import check_sifted_interval
+from scripts.rounded_sifted_certificate import check_rounded_interval
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.local_midpoint_lanes import search as local_midpoint_search
 from experiments.divisor_samples import search as divisor_sample_search
@@ -416,17 +417,18 @@ def run_case(case, method, proofs):
         agree(case, work, ['center', 'height', 'height_bound', 'relation_verified', 'divisors', 'roots', 'work', 'ordinary'])
         factor = next((d for d in work['divisors'] if 1 < d < int(case['n'])), None)
         result = certify_split(case, proof, factor, elapsed, 'paired_divisor_windows', work)
-    elif method in ('binomial-divisor-window', 'sifted-divisor-window'):
+    elif method in ('binomial-divisor-window', 'sifted-divisor-window', 'rounded-sifted-window'):
         n, radius = int(case['n']), int(case['radius'])
         center = odd_quartile_center(n)
         first, span = center - 2*radius, 2*radius
-        sifted = method == 'sifted-divisor-window'
+        rounded = method == 'rounded-sifted-window'
+        sifted = method in ('sifted-divisor-window', 'rounded-sifted-window')
         params = dict(degree=case['degree'], depth=case['depth'], modulus_limit=case['modulus_limit'])
-        work = binomial_window_search(n, first, span, centered=case['centered'], sifted=sifted, **params)
+        work = binomial_window_search(n, first, span, centered=case['centered'], sifted=sifted, rounded=rounded, **params)
         elapsed = time.perf_counter()-start
         reference_start = time.perf_counter()
         if sifted:
-            reference = binomial_window_search(n, first, span, centered=True, **params)
+            reference = binomial_window_search(n, first, span, centered=True, sifted=rounded, **params)
         else:
             reference = higher_window_search(n, center, radius, chebyshev=True, **params)
         reference_seconds = time.perf_counter()-reference_start
@@ -436,13 +438,17 @@ def run_case(case, method, proofs):
         if sifted:
             agree(case, work, ['origin', 'shift', 'progression_size', 'denominator', 'denominator_gcd'])
             reference_keys.append('rootless_modulus')
+        if rounded:
+            agree(case, work, ['corrections', 'weights'])
         work['reference'] = {k: reference.get(k) for k in reference_keys}
         agree(case, work, ['reference'])
         work['reference_seconds'] = reference_seconds
         factor = work['denominator_factor'] or next((d for d in work['divisors'] if 1 < d < n), None)
         result = certify_split(case, proof, factor, elapsed, method.replace('-', '_'), work)
         if work['rootless_modulus'] is not None:
-            if sifted:
+            if rounded:
+                checker = check_rounded_interval
+            elif sifted:
                 checker = check_sifted_interval
             else:
                 checker = check_centered_binomial_interval if case['centered'] else check_binomial_interval
@@ -1179,6 +1185,7 @@ def main():
                              ('chebyshev-divisor-window.json', 'chebyshev-divisor-window'),
                              ('binomial-divisor-window.json', 'binomial-divisor-window'),
                              ('sifted-divisor-window.json', 'sifted-divisor-window'),
+                             ('rounded-sifted-window.json', 'rounded-sifted-window'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

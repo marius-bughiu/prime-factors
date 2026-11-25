@@ -311,3 +311,8 @@ import PrimeFactors.SiftedDivisorWindow
 import PrimeFactors.BinomialWindowWork
 import PrimeFactors.IntervalReciprocalStencil
 import PrimeFactors.BoundaryWindowSelection
+import PrimeFactors.FactorialCollision
+import PrimeFactors.ThreeUnitFactorialWindows
+import PrimeFactors.RoundedSiftedWindow
+import PrimeFactors.UnitWindowCover
+import PrimeFactors.SevenRowBoundaryWindow
