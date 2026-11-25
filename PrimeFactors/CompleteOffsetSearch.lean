@@ -149,7 +149,7 @@ theorem witness_of_signed {p q T h : ℕ} {x y J : ℤ} (pp : p.Prime) (qp : q.P
 /-- At the product's floor square root the determinant is positive for
 distinct primes. For balanced primes above 16, the short vector has value
 less than either factor. -/
-private theorem balanced_parameters {p q : ℕ} (pp : p.Prime) (qp : q.Prime)
+theorem balanced_parameters {p q : ℕ} (pp : p.Prime) (qp : q.Prime)
     (ord : p<q) (balance : q≤2*p) (large : 17≤p) :
     let T := (p*q).sqrt
     let h := p*q-T^2

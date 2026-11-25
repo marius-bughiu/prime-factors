@@ -1,6 +1,6 @@
 # Searching the balanced interval
 
-For every pair of distinct 1,024-bit primes, the product specifies a bounded range of weighted square tests containing a proper split. A shortest-vector argument bounds the adjustment. A counting argument shows why testing only small adjustments rarely works. [Complete range and proof](complete-offset-search.md)
+For every pair of distinct 1,024-bit primes, the product specifies a bounded range of weighted square tests containing exactly one or two winning positions. A shortest-vector argument bounds the adjustment. A counting argument shows why testing only small adjustments rarely works. [Complete range and proof](complete-offset-search.md) · [Count of winners](one-or-two-winning-tests.md)
 
 For products with a determinant-one norm representation, the gap above the preceding square selects one multiplier. One square test recovered both primes on two constructed 2,048-bit inputs. The same test missed both earlier comparison inputs. An encoding bounds the fraction of target prime pairs this family can cover. [Selection rule](grouped-norm-factors.md) · [Examples](grouped-norm-frequency.md) · [Sharp population bound](grouped-norm-density.md) · [Extending the offset range](grouped-offset-rows.md)
 

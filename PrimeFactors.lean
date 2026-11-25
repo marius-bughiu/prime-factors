@@ -71,6 +71,11 @@ import PrimeFactors.OffsetDivisorSieve
 import PrimeFactors.OffsetGridCount
 import PrimeFactors.OffsetAllDivisors
 import PrimeFactors.CompleteOffsetExample
+import PrimeFactors.OffsetShortVectors
+import PrimeFactors.OffsetSquareSplit
+import PrimeFactors.OffsetSquareWitness
+import PrimeFactors.OffsetWinningCount
+import PrimeFactors.OffsetWinnerExamples
 import PrimeFactors.DedekindLaneRanking
 import PrimeFactors.HyperbolaBoxes
 import PrimeFactors.ImplicitPowers
