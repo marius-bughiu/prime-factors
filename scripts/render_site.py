@@ -67,6 +67,12 @@ def case_row(result):
         w = result['midpoint_weights']
         count = (f'Weighted sums · {w["visited_orbits"]:,} of {w["total_orbits"]:,} remainder pairs'
                  f' · {w["candidate_traces"]:,} candidate sums · {w["square_tests"]:,} square tests')
+    elif result['method'] == 'offset-rows':
+        w = result['offset_rows']
+        tested = w['search']['square_tests']
+        count = (f"Grouped offset search · {w['raw']:,} eligible offsets"
+                 f" · {w['both_axes']:,} candidates after local tests"
+                 f" · {tested:,} discriminants checked")
     elif result['method'] == 'grouped-norm':
         w = result['grouped_norm']
         count = (f"Product-selected multiplier · {w['square_tests']} square tests"

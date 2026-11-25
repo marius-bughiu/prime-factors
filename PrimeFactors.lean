@@ -58,6 +58,11 @@ import PrimeFactors.GroupedImages
 import PrimeFactors.GroupedNormFactors
 import PrimeFactors.GroupedNormExamples
 import PrimeFactors.GroupedNormFrequency
+import PrimeFactors.GroupedNormDensity
+import PrimeFactors.GroupedNormOffsets
+import PrimeFactors.GroupedOffsetRows
+import PrimeFactors.GroupedOffsetRowExamples
+import PrimeFactors.OffsetSweepFrequency
 import PrimeFactors.DedekindLaneRanking
 import PrimeFactors.HyperbolaBoxes
 import PrimeFactors.ImplicitPowers

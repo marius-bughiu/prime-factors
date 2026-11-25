@@ -1,6 +1,6 @@
 # Searching the balanced interval
 
-For products with a determinant-one norm representation, the gap above the preceding square selects one multiplier. One square test recovered both primes on two constructed 2,048-bit inputs. The same test missed both earlier comparison inputs. An encoding bounds the fraction of target prime pairs this family can cover. [Selection rule](grouped-norm-factors.md) · [Examples and population bound](grouped-norm-frequency.md)
+For products with a determinant-one norm representation, the gap above the preceding square selects one multiplier. One square test recovered both primes on two constructed 2,048-bit inputs. The same test missed both earlier comparison inputs. An encoding bounds the fraction of target prime pairs this family can cover. [Selection rule](grouped-norm-factors.md) · [Examples](grouped-norm-frequency.md) · [Sharp population bound](grouped-norm-density.md) · [Extending the offset range](grouped-offset-rows.md)
 
 Two other tests concern selecting a factor remainder. An exact Dedekind-sum score always ranks the relevant remainders in numerical order, and the four recorded large quartics each cover only their original dyadic class at full precision. [Dedekind ranking](dedekind-lane-ranking.md) · [Quartic reuse proof](quartic-lane-reuse.md)
 

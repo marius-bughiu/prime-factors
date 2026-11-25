@@ -10,6 +10,7 @@ import sys
 import time
 from datetime import datetime, timezone
 from functools import partial
+from math import isqrt
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,6 +18,8 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from experiments.class_order_search import search as class_order_search
+from experiments.grouped_offset_frame import choose_frame
+from experiments.grouped_offset_rows import bounded_rows
 from experiments.midpoint_slope_batches import search as slope_batch_search
 from experiments.midpoint_weights import search as weight_orbit_search
 from experiments.gap_newton_lanes import search as gap_lane_search
@@ -146,6 +149,22 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'offset-rows':
+        n = int(case['n'])
+        T = isqrt(n)
+        options = {}
+        if case.get('choose_frame'):
+            selected = choose_frame(T, n-T*T, case['max_offset'])
+            options['basis'] = selected['basis']
+            if selected['eligible']:
+                options['max_prefix'] = selected['cap']
+        work = bounded_rows(T, n-T*T, case['max_offset'], None,
+                            max_square_tests=case['max_square_tests'], **options)
+        elapsed = time.perf_counter()-start
+        agree(case, work, ['raw', 'primitive', 'both_axes', 'rows'])
+        search = work['search']
+        agree(case, search, ['square_tests'])
+        result = certify_split(case, proof, search['factor'], elapsed, 'offset_rows', work)
     elif method == 'grouped-norm':
         run = subprocess.run(
             ['lake', 'env', 'lean', '--run', 'experiments/GroupedNormProbe.lean', case['n']],
@@ -681,7 +700,8 @@ def main():
                              ('midpoint-slope-batches.json', 'midpoint-slope-batches'),
                              ('quartic-factor-lanes.json', 'quartic-factor-lanes'), ('unit-quartic.json', 'unit-quartic'),
                              ('centered-quartic.json', 'centered-quartic'), ('projected-levels.json', 'projected-level-sieve'),
-                             ('class-orders.json', 'class-orders'), ('grouped-norm.json', 'grouped-norm')]:
+                             ('class-orders.json', 'class-orders'), ('grouped-norm.json', 'grouped-norm'),
+                             ('offset-rows.json', 'offset-rows')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':
             cases = expand_cases(cases)

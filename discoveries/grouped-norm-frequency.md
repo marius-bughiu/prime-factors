@@ -2,6 +2,8 @@
 
 One square test recovered both primes of two constructed 2,048-bit products. In one case the product itself supplied a 484-bit multiplier. In the other, one prime is about 44% larger than the other. Both prime pairs were constructed to fit the rule. On the earlier fresh and crossed comparison products, even trying every eligible multiplier finds neither prime by this rule. For two uniformly chosen distinct 1,024-bit primes conditioned on a 2,048-bit product, fewer than one pair in $2^{465}$ can pass any of these tests. [Derivation of the test](grouped-norm-factors.md) · [Full-size Lean outputs](../PrimeFactors/GroupedNormExamples.lean) · [Counting proof](../PrimeFactors/GroupedNormFrequency.lean)
 
+A sharper count gives fewer than one in $2^{481}$ eligible prime pairs. It also constructs many odd inputs that do admit a balanced split, with the primality of the two resulting factors left open. [Sharp order of the count](grouped-norm-density.md)
+
 ## What the search receives
 
 Given only $N$, compute $T=\lfloor\sqrt N\rfloor$, the offset $h=N-T^2$, and the largest eligible multiplier $k=\lfloor(T-1)/h\rfloor$ when $h>0$. Test whether $1+4k(T-hk)$ is a square. If it is, its square root determines both factors. For example, 50,629 gives $T=225$, $h=4$, and $k=56$. The square test gives $225=15^2$ and the factor formula returns $257\times197$. For a square input or an empty multiplier interval the probe returns no result. The command below runs the Lean function directly. The benchmark separately checks the primality and product of the factors it returns. [Factor formula and proof](../PrimeFactors/GroupedNormFactors.lean) · [Public inputs and expected outcomes](../benchmarks/grouped-norm.json)

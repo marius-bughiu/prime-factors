@@ -1,0 +1,194 @@
+{
+  "odd_primes_through_251": [
+    {
+      "id": "grouped-norm-fresh-2048",
+      "limit": 1099511627776,
+      "seconds": 1.757086916,
+      "raw": 1099511627776,
+      "primitive": 668422917531,
+      "first_axis": 435032054220,
+      "both_axes": 200826035207,
+      "rows": 420117,
+      "rows_rejected": 153995,
+      "t_range": [
+        -307402,
+        112714
+      ],
+      "max_abs_r": 3651884,
+      "A": "380029",
+      "B": 307403,
+      "C": 75109,
+      "D": "92854",
+      "prime_limit": 251,
+      "rejecting_t": 28,
+      "rejecting_r": 25,
+      "rejecting_powers_t": [],
+      "rejecting_powers_r": [],
+      "search": {
+        "square_tests": 0,
+        "factor": null
+      }
+    },
+    {
+      "id": "grouped-norm-crossed-2048",
+      "limit": 1099511627776,
+      "seconds": 3.024260084,
+      "raw": 1099511627776,
+      "primitive": 668422918155,
+      "first_axis": 436218240591,
+      "both_axes": 185267915529,
+      "rows": 750667,
+      "rows_rejected": 265120,
+      "t_range": [
+        -750667,
+        -1
+      ],
+      "max_abs_r": 1586428,
+      "A": "1213310",
+      "B": 698413,
+      "C": -11284,
+      "D": "-19603",
+      "prime_limit": 251,
+      "rejecting_t": 29,
+      "rejecting_r": 28,
+      "rejecting_powers_t": [],
+      "rejecting_powers_r": [],
+      "search": {
+        "square_tests": 0,
+        "factor": null
+      }
+    }
+  ],
+  "all_coordinate_prime_powers": [
+    {
+      "id": "grouped-norm-fresh-2048",
+      "limit": 1099511627776,
+      "seconds": 2.254428625,
+      "raw": 1099511627776,
+      "primitive": 668422917531,
+      "first_axis": 197915098997,
+      "both_axes": 41878707496,
+      "rows": 420117,
+      "rows_rejected": 307016,
+      "t_range": [
+        -307402,
+        112714
+      ],
+      "max_abs_r": 3651884,
+      "A": "380029",
+      "B": 307403,
+      "C": 75109,
+      "D": "92854",
+      "prime_limit": null,
+      "rejecting_t": 13252,
+      "rejecting_r": 129790,
+      "rejecting_powers_t": [
+        8,
+        9
+      ],
+      "rejecting_powers_r": [
+        1681
+      ]
+    },
+    {
+      "id": "grouped-norm-crossed-2048",
+      "limit": 1099511627776,
+      "seconds": 3.7213619579999997,
+      "raw": 1099511627776,
+      "primitive": 668422918155,
+      "first_axis": 195316243469,
+      "both_axes": 35042535262,
+      "rows": 750667,
+      "rows_rejected": 535315,
+      "t_range": [
+        -750667,
+        -1
+      ],
+      "max_abs_r": 1586428,
+      "A": "1213310",
+      "B": 698413,
+      "C": -11284,
+      "D": "-19603",
+      "prime_limit": null,
+      "rejecting_t": 30057,
+      "rejecting_r": 59867,
+      "rejecting_powers_t": [
+        9
+      ],
+      "rejecting_powers_r": [
+        16,
+        25
+      ]
+    }
+  ],
+  "bounded_search": [
+    {
+      "id": "grouped-norm-fresh-2048",
+      "limit": 1099511627776,
+      "seconds": 2.342896583,
+      "raw": 1099511627776,
+      "primitive": 668422917531,
+      "first_axis": 197915098997,
+      "both_axes": 41878707496,
+      "rows": 420117,
+      "rows_rejected": 307016,
+      "t_range": [
+        -307402,
+        112714
+      ],
+      "max_abs_r": 3651884,
+      "A": "380029",
+      "B": 307403,
+      "C": 75109,
+      "D": "92854",
+      "prime_limit": null,
+      "rejecting_t": 13252,
+      "rejecting_r": 129790,
+      "rejecting_powers_t": [
+        8,
+        9
+      ],
+      "rejecting_powers_r": [
+        1681
+      ],
+      "search": {
+        "square_tests": 64,
+        "factor": null
+      }
+    },
+    {
+      "id": "grouped-norm-crossed-2048",
+      "limit": 1099511627776,
+      "seconds": 3.7769681250000002,
+      "raw": 1099511627776,
+      "primitive": 668422918155,
+      "first_axis": 195316243469,
+      "both_axes": 35042535262,
+      "rows": 750667,
+      "rows_rejected": 535315,
+      "t_range": [
+        -750667,
+        -1
+      ],
+      "max_abs_r": 1586428,
+      "A": "1213310",
+      "B": 698413,
+      "C": -11284,
+      "D": "-19603",
+      "prime_limit": null,
+      "rejecting_t": 30057,
+      "rejecting_r": 59867,
+      "rejecting_powers_t": [
+        9
+      ],
+      "rejecting_powers_r": [
+        16,
+        25
+      ],
+      "search": {
+        "square_tests": 64,
+        "factor": null
+      }
+    }
+  ]
+}
