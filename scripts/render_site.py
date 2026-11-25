@@ -135,6 +135,18 @@ def case_row(result):
         count = (f'Weighted divisor interval · {w["tested_traces"]:,} of {w["total_traces"]:,} weighted sums checked'
                  f' · {w["modular_rejections"]:,} rejected by residues · {w["square_tests"]:,} integer square tests'
                  f' · {w["remaining_traces"]:,} weighted sums untested')
+    elif result['method'] == 'quartic-basis-translation':
+        w = result['quartic_basis_translation']
+        count = (f'Translated quartic bases · {w["visited_blocks"]:,} windows visited'
+                 f' · {compact_count(w["unvisited_blocks"])} unvisited · {w["work"].get("lll_swaps", 0):,} row swaps'
+                 f' · {w["work"].get("joint_mod2_exclusions", 0):,} windows rejected by parity'
+                 f' · {w["work"].get("divisor_tests", 0):,} divisibility tests')
+    elif result['method'] == 'quartic-window-extension':
+        w = result['quartic_window_extension']
+        ratio = w['progression_size'] / w['previous_progression_size']
+        count = (f'Extended quartic interval · {ratio:.2f}× the original odd positions'
+                 f' · {w["initial_lll_calls"]} initial lattice reduction · {w["additional_lll_calls"]} additional'
+                 f' · {w["sign_evaluations"]:,} polynomial sign evaluations · {w["certified_blocks"]} certified pieces')
     elif result['method'] == 'quartic-divisor-window':
         w = result['quartic_divisor_window']
         count = (f'Quartic divisor interval · {compact_count(w["progression_size"])} odd positions'

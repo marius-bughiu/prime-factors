@@ -37,6 +37,8 @@ from experiments.grouped_offset_rows import bounded_rows
 from experiments.midpoint_slope_batches import search as slope_batch_search
 from experiments.midpoint_weights import search as weight_orbit_search
 from experiments.gap_newton_lanes import search as gap_lane_search
+from experiments.quartic_basis_translation import search as translated_window_search
+from experiments.quartic_interval_extension import extend as extend_quartic_window
 from experiments.quartic_divisor_window import odd_quartile_center, search as quartic_window_search
 from experiments.quartic_factor_lanes import search as quartic_lane_search
 from experiments.unit_factor_lane import search as unit_lane_search
@@ -147,6 +149,10 @@ theorem {theorem} (d : ℕ) (lo : {work['lower']} ≤ d) (hi : d ≤ {work['uppe
 
 #print axioms {theorem}
 """)
+    return verified_interval(work, proof, theorem)
+
+
+def verified_interval(work, proof, theorem):
     start = time.perf_counter()
     verify_file(proof, theorem)
     return dict(lower=str(work['lower']), upper=str(work['upper']), proof=f'proofs/{proof.name}',
@@ -180,6 +186,45 @@ def check_quartic_interval(n, work, proof):
     (t := ({work['anchor']})) (m := {work['rootless_modulus']})
     ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ ?_ d lo hi
   all_goals first | (unfold PrimeFactors.QuarticDivisorWindow.jets; decide +kernel) | decide +kernel""")
+
+
+def check_extended_interval(n, work, proof):
+    """Verify both the interval exclusion and the first failing index on each side."""
+    if not (work['excluded'] and work['left_neighbor_fails'] and work['right_neighbor_fails']):
+        raise ValueError('Expected an empty interval with two confirmed maximal boundaries')
+    coeffs = ', '.join(str(a) for a in work['coefficients'])
+    cuts = ', '.join(str(x) for x in work['cuts'])
+    theorem = 'PrimeFactors.Generated.extended_divisor_interval'
+    proof.write_text(f"""import PrimeFactors.QuarticIntervalExtension
+
+open PrimeFactors.QuarticFactorLane PrimeFactors.QuarticDivisorWindow PrimeFactors.QuarticIntervalExtension
+set_option maxRecDepth 16384
+set_option exponentiation.threshold 16384
+
+private def row : Fin 5 → ℤ := ![{coeffs}]
+private def center : ℕ := {work['center']}
+private def firstOffset : ℤ := {work['first_offset']}
+private def lastOffset : ℤ := {work['last_offset']}
+private def cuts : List ℤ := [{cuts}]
+private theorem passes : covered row center 2 firstOffset lastOffset cuts = true := by decide +kernel
+
+theorem {theorem} :
+    (∀ d : ℕ, {work['lower']} ≤ d → d ≤ {work['upper']} → ¬ d ∣ {n}) ∧
+    (∀ x : ℤ, firstOffset≤x → x≤lastOffset → |value (weights row) 1 x| < ((center:ℤ)+2*x)^2) ∧
+    (∀ a b : ℤ, a≤firstOffset → lastOffset≤b →
+      (∀ x : ℤ, a≤x → x≤b → |value (weights row) 1 x| < ((center:ℤ)+2*x)^2) →
+      a=firstOffset ∧ b=lastOffset) := by
+  constructor
+  · intro d lo hi
+    apply PrimeFactors.QuarticIntervalExtension.odd_interval_excludes (v:=row) (c:=center)
+      (l:=firstOffset) (u:=lastOffset) (cuts:=cuts) (t:=({work['anchor']})) (m:={work['rootless_modulus']})
+      ?_ ?_ ?_ ?_ passes ?_ ?_ ?_ ?_ d lo hi
+    all_goals first | (unfold jets; decide +kernel) | decide +kernel
+  · exact maximal_component (by decide +kernel) passes (by decide +kernel) (by decide +kernel)
+
+#print axioms {theorem}
+""")
+    return verified_interval(work, proof, theorem)
 
 
 def short_basis_case(case, proof):
@@ -278,6 +323,35 @@ def run_case(case, method, proofs):
         agree(case, work, work)
         factor = int(hits[0][2]) if hits else None
         result = certify_split(case, proof, factor, elapsed, 'offset_factor_blocks', work)
+    elif method == 'quartic-basis-translation':
+        n = int(case['n'])
+        work = translated_window_search(n, full=case['full'], blocks=case['blocks'])
+        elapsed = time.perf_counter()-start
+        agree(case, work, ['radius', 'range_lower', 'range_upper', 'first_odd', 'last_odd',
+                           'even_integers', 'first_center', 'available_blocks', 'total_blocks', 'max_blocks',
+                           'visited_blocks', 'unvisited_prefix_blocks', 'unvisited_suffix_blocks',
+                           'unvisited_blocks', 'visited_odd_integers', 'unvisited_odd_integers',
+                           'unresolved_odd_integers', 'exhausted', 'first_swaps', 'later_swaps',
+                           'max_later_swaps', 'work'])
+        factor = next((d for d in work['divisors'] if 1 < d < n), None)
+        result = certify_split(case, proof, factor, elapsed, 'quartic_basis_translation', work)
+    elif method == 'quartic-window-extension':
+        n = int(case['n'])
+        window = quartic_window_search(n, odd_quartile_center(n), int(case['radius']),
+                                      modulus_limit=case['modulus_limit'])
+        work = extend_quartic_window(window)
+        elapsed = time.perf_counter()-start
+        agree(case, work, ['lower', 'upper', 'progression_size', 'interval_size', 'previous_progression_size',
+                           'certified_blocks', 'bernstein_tests', 'sign_evaluations', 'additional_lll_calls',
+                           'integer_root_nodes', 'divisor_tests', 'left_neighbor_fails', 'right_neighbor_fails',
+                           'rootless_residue_checks', 'excluded', 'rootless_modulus'])
+        work['initial_lll_calls'] = window['lll_calls']
+        work['initial_lll_reductions'] = window['lll_reductions']
+        work['initial_lll_swaps'] = window['lll_swaps']
+        factor = next((d for d in work['divisors'] if 1 < d < n), None)
+        result = certify_split(case, proof, factor, elapsed, 'quartic_window_extension', work)
+        if work['excluded'] and work['rootless_modulus'] is not None:
+            result['exclusion'] = check_extended_interval(n, work, proof)
     elif method == 'quartic-divisor-window':
         n = int(case['n'])
         center = odd_quartile_center(n) if case['use_odd_quartile'] else int(case['center'])
@@ -931,6 +1005,8 @@ def main():
                              ('weighted-divisor-exclusion.json', 'weighted-divisor-exclusion'),
                              ('arbitrary-divisor-window.json', 'arbitrary-divisor-window'),
                              ('quartic-divisor-window.json', 'quartic-divisor-window'),
+                             ('quartic-window-extension.json', 'quartic-window-extension'),
+                             ('quartic-basis-translation.json', 'quartic-basis-translation'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

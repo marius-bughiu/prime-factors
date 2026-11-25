@@ -260,6 +260,10 @@ import PrimeFactors.WeightedBands
 import PrimeFactors.WeightedDivisorExclusion
 import PrimeFactors.ArbitraryDivisorWindow
 import PrimeFactors.QuarticDivisorWindow
+import PrimeFactors.DivisorWindowRank
+import PrimeFactors.QuarticRankCounterexample
+import PrimeFactors.QuarticBasisTranslation
+import PrimeFactors.QuarticIntervalExtension
 import PrimeFactors.TraceStripPacking
 import PrimeFactors.TraceStripThresholds
 import PrimeFactors.UniversalTraceWindow

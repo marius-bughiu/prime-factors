@@ -2,6 +2,8 @@
 
 A degree-four equation now covers $2^{408}+1$ odd positions around any prescribed odd center for a 1,024-bit divisor. Covering every possible position takes $2^{614}$ equations. Two public 2,048-bit examples have kernel-checked interval exclusions. A cheaper weighted sum offers at most two candidates in a smaller window. [Bounds and actual work](quartics-at-a-chosen-location.md)
 
+At adjacent windows the five polynomial rows can be translated and reduced again. In a complete 49-bit search this nearly halved CPU time. Knowing the exact dimension of the span of all short rows still leaves both occupied and empty windows possible. [Measurements, checked counterexample and limits](reusing-a-quartic-basis.md)
+
 Any chosen center in the feasible interval of a 1,024-bit smaller factor admits a radius of $2^{340}$ with a single parity-compatible weighted trace. At most $2^{682}$ such centers cover the full range. On both 2,048-bit controls the specially placed interval centered at $\lfloor\sqrt{4N/5}\rfloor$ with the larger radius $2^{512}$ is also certified free of divisors. Three permitted sums on the fresh product and four on the crossed product all give nonsquare residues. [Coverage theorem, excluded intervals and downloadable proofs](ruling-out-an-interior-interval.md)
 
 One reduced basis gives at most three search directions for a whole interval of possible smaller factors. An integer inequality sometimes certifies one direction across much larger intervals. On a 2,048-bit example it combined $2^{257}$ consecutive blocks into one reduction. The factor location remains unknown. [Proof, selection cost, and checked examples](selecting-factor-coordinates.md)
