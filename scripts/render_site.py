@@ -86,6 +86,19 @@ def case_row(result):
         count = (f'Inverse difference guess {w["inverse_gap"]} · primes through {w["prime_limit"]:,}'
                  f' · candidate sum {w["smooth_part"]}'
                  f' · {w["remainder_checks"]:,} remainder checks · {w["square_tests"]} square tests')
+    elif result['method'] == 'two-draw-sampling':
+        w = result['two_draw_sampling']
+        scope = 'full period' if w['full_period_scanned'] else 'bounded scan'
+        count = (f'Two positive draws · {scope} through length {w["scanned_side"]:,}'
+                 f' · {w["sum_gcd_tests"]:,} sum-table gcds · {w["rectangles_tested"]:,} rectangles')
+        if w['first_hit_sum'] is not None:
+            count += f' · first table factor {w["first_hit_gcd"]:,} at sum {w["first_hit_sum"]:,}'
+        if w['best_a'] is not None:
+            area = w['best_a'] * w['best_b']
+            count += (f' · best lengths {w["best_a"]:,} × {w["best_b"]:,} with {w["best_hits"]:,}/{area:,} hits'
+                      f' · cutoff gcd {w["cutoff_gcd"]:,}')
+        if w['factor_source'] == 'sum_table':
+            count += ' · factor recovered from the sum table'
     elif result['method'] == 'monotone-divisor-sampling':
         w = result['monotone_divisor_sampling']
         count = f'{w["gcd_tests"]:,} gcd tests · {w["proper_hits"]:,} proper hits'

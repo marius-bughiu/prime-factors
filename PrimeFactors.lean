@@ -149,6 +149,8 @@ import PrimeFactors.UniformDivisorCount
 import PrimeFactors.ReciprocalFloorPrefixes
 import PrimeFactors.WindowEliminant
 import PrimeFactors.MonotoneDivisorSampling
+import PrimeFactors.TwoDrawSampling
+import PrimeFactors.DifferenceSampling
 import PrimeFactors.MixedHeights
 import PrimeFactors.MixedRatioHeight
 import PrimeFactors.ModularHyperbola

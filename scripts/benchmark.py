@@ -41,7 +41,7 @@ from experiments.grouped_offset_frame import choose_frame
 from experiments.grouped_offset_rows import bounded_rows
 from experiments.midpoint_slope_batches import search as slope_batch_search
 from experiments.midpoint_weights import search as weight_orbit_search
-from experiments.monotone_divisor_sampling import scan as scan_divisor_prefixes
+from experiments.monotone_divisor_sampling import scan as scan_divisor_prefixes, scan_sum_rectangles
 from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
 from experiments.smooth_factor_sums import scan_two_three
 from experiments.gap_newton_lanes import search as gap_lane_search
@@ -362,6 +362,12 @@ end PrimeFactors.Generated
         factor = work.pop('factor')
         agree(case, work, work.keys())
         result = certify_split(case, proof, factor, elapsed, 'neighbor_smooth_sum', work)
+    elif method == 'two-draw-sampling':
+        work = scan_sum_rectangles(int(case['n']), case['limit'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, work.keys())
+        result = certify_split(case, proof, factor, elapsed, 'two_draw_sampling', work)
     elif method == 'monotone-divisor-sampling':
         work = scan_divisor_prefixes(int(case['n']), case['limit'])
         elapsed = time.perf_counter() - start
@@ -1228,6 +1234,7 @@ def main():
                              ('sifted-divisor-window.json', 'sifted-divisor-window'),
                              ('rounded-sifted-window.json', 'rounded-sifted-window'),
                              ('monotone-divisor-sampling.json', 'monotone-divisor-sampling'),
+                             ('two-draw-sampling.json', 'two-draw-sampling'),
                              ('neighbor-smooth-sum.json', 'neighbor-smooth-sum'),
                              ('two-three-sum.json', 'two-three-sum'),
                              ('offset-crt.json', 'offset-crt'),

@@ -1,0 +1,76 @@
+[
+  {
+    "id": "two-draw-prefix-77",
+    "n": "77",
+    "description": "Full period with unequal maximizing lengths and a cutoff gcd of 11",
+    "limit": 77,
+    "scanned_side": 77,
+    "full_period_scanned": true,
+    "sum_gcd_tests": 153,
+    "proper_sums": 32,
+    "first_hit_sum": 7,
+    "first_hit_gcd": 7,
+    "rectangles_tested": 3003,
+    "best_a": 6,
+    "best_b": 10,
+    "best_hits": 15,
+    "cutoff_gcd_tests": 1,
+    "cutoff_gcd": 11,
+    "factor_source": "cutoff",
+    "status": "complete",
+    "factors": [
+      "7",
+      "11"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "two-draw-prefix-143",
+    "n": "143",
+    "description": "Full period with a square maximizing rectangle and a cutoff gcd of 11",
+    "limit": 143,
+    "scanned_side": 143,
+    "full_period_scanned": true,
+    "sum_gcd_tests": 285,
+    "proper_sums": 44,
+    "first_hit_sum": 11,
+    "first_hit_gcd": 11,
+    "rectangles_tested": 10296,
+    "best_a": 10,
+    "best_b": 10,
+    "best_hits": 18,
+    "cutoff_gcd_tests": 1,
+    "cutoff_gcd": 11,
+    "factor_source": "cutoff",
+    "status": "complete",
+    "factors": [
+      "11",
+      "13"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "two-draw-prefix-77-short",
+    "n": "77",
+    "description": "Six rectangles through length three on the same product",
+    "limit": 3,
+    "scanned_side": 3,
+    "full_period_scanned": false,
+    "sum_gcd_tests": 5,
+    "proper_sums": 0,
+    "first_hit_sum": null,
+    "first_hit_gcd": null,
+    "rectangles_tested": 6,
+    "best_a": 1,
+    "best_b": 1,
+    "best_hits": 0,
+    "cutoff_gcd_tests": 1,
+    "cutoff_gcd": 1,
+    "factor_source": null,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "77"
+    ]
+  }
+]

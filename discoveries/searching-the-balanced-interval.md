@@ -10,7 +10,7 @@ The change in two weighted floor sums returns the smaller prime exactly. On the 
 
 Equations with polynomial coefficients in the range label can identify a short list of labels through their determinant. Translating the same equations leaves that determinant constant. On a near-square product, a quartic picked one of 37 ranges. [Equations, condition and example](eliminating-the-window-label.md)
 
-For decreasing random weights on positive integers, we now know the exact best possible chance of revealing a factor by a gcd. On the target class it is below $2^{-1022}$ per draw. [Optimal distribution and its cost](sampling-for-a-hidden-prime.md)
+For decreasing random weights on positive integers, we now know the exact best possible chance of revealing a factor by a gcd. On the target class it is below $2^{-1022}$ per draw. For two independent draws we also determined the best possible chance for their sum, and for their difference when their distributions agree. A maximizing pair of lengths for the sum reveals a factor. Computing those lengths cheaply from the product remains open. [Single draw](sampling-for-a-hidden-prime.md) · [Two draws](adding-and-subtracting-random-guesses.md)
 
 Rounding the coefficients of the sifted equation extended the verified seven-row range again on both controls. At 145 rows, the two allowed residues modulo 3 now give a single equation across $2^{515}+1$ consecutive odd positions. A separate finite counting proof improves the guaranteed width for seven rows. [Measured seven-row results](rounding-a-sifted-window.md) · [Arbitrary-degree construction](rounding-on-three-adic-units.md) · [Sharper count](counting-short-equations.md)
 
