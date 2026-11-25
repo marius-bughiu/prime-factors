@@ -42,7 +42,11 @@ def case_row(result):
     verification = duration(result['verification_seconds']) if checked else 'not run'
     if 'exclusion' in result:
         x = result['exclusion']
-        if 'radix_exponent' in x:
+        if 'sum_tolerance' in x:
+            claim = (f'For two 1,024-bit factors, Lean excludes every sum within '
+                     f'{compact_count(int(x["sum_tolerance"]))} of the 647 centers '
+                     f'using {x["bands"]} divisor intervals.')
+        elif 'radix_exponent' in x:
             claim = (f'When both factors have at most {x["max_factor_bits"]:,} bits, Lean excludes '
                      f'remainder {escape(x["residue"])} modulo 2<sup>{x["radix_exponent"]}</sup>.')
         elif 'lower' in x:
@@ -73,6 +77,24 @@ def case_row(result):
         count += f' · search {duration(result["discovery_seconds"])}'
         if checked:
             verification += f' (certificate generation and replay {duration(result["certificate_seconds"])})'
+    elif result['method'] == 'near-smooth-sum':
+        w = result['near_smooth_sum']
+        ops = w['work']
+        count = (f'Sum tolerance {compact_count(int(w["tolerance"]))} · {w["windows_checked"]} of '
+                 f'{w["viable_windows"]} candidate bands visited · {ops["geometry_sqrts"]} geometry square roots')
+        if ops['trace_windows']:
+            count += f' · {ops["trace_windows"]} weighted traces · {ops["square_tests"]} square tests'
+        if ops['lll_calls']:
+            count += (f' · {ops["lll_calls"]} lattice reductions · {ops["integer_root_nodes"]:,} root nodes'
+                      f' · {ops["divisor_tests"]} divisor tests')
+        if w['unresolved_windows']:
+            count += f' · {len(w["unresolved_windows"])} visited bands unresolved'
+        if w['sum_error'] is not None:
+            offset = int(w['sum_error'])
+            if abs(offset) < 1000:
+                count += f' · actual sum offset {offset:,}'
+            else:
+                count += f' · {abs(offset).bit_length()}-bit difference from the winning center'
     elif result['method'] == 'two-three-sum':
         w = result['two_three_sum']
         count = (f'Factor sums supported on 2 and 3 · {w["exponents_visited"]} exponents visited'

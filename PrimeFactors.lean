@@ -142,6 +142,13 @@ import PrimeFactors.ReducedWeightDiscriminant
 import PrimeFactors.MidpointWeights
 import PrimeFactors.AffineInverseGap
 import PrimeFactors.SmoothSumSelector
+import PrimeFactors.SmoothCenterSpacing
+import PrimeFactors.NearSmoothSumWindows
+import PrimeFactors.NearSmoothTypical
+import PrimeFactors.NearSmoothUniform
+import PrimeFactors.NearSmoothSumPopulation
+import PrimeFactors.NearSmoothExclusion
+import PrimeFactors.NearSmoothBoundary
 import PrimeFactors.SmallPrimeSumCoverage
 import PrimeFactors.InverseGapPopulation
 import PrimeFactors.ReciprocalInverseSums

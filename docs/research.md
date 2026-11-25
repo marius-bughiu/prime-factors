@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+The approximate-sum recovery uses integer root bounds and divisor equations. Its population estimates use the published prime-count inequality already stated by the project. The Dirichlet and zeta zero-location statements do not provide the input-specific approximation of the prime sum used here. [New result and its assumptions](../discoveries/near-a-smooth-prime-sum.md) · [Pinned analytic statements](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab/src/Statements.lean)
+
 A 2,048-bit constructed control split in 26 square tests because its factor sum had only two prime divisors, 2 and 3. Its recovery proof uses elementary integer arithmetic. The conditional population calculations take explicit published prime counts as their denominator and use an unconditional divisor bound for their numerators. [Full-size example and proof](../discoveries/recovering-a-smooth-prime-sum.md) · [Population model](../discoveries/which-inverse-guesses-can-work.md)
 
 Sampling the principal-character coefficients with probabilities proportional to $x^{-s}$ for real $s>1$ falls within a class of decreasing sampling distributions whose optimal proper-gcd probability we can calculate exactly. It is below $2^{-1022}$ per draw for two distinct 1,024-bit primes. This bound is unconditional and applies to that sampling strategy. [Proof and relation to the boundary evaluator](../discoveries/sampling-for-a-hidden-prime.md)

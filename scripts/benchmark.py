@@ -44,6 +44,8 @@ from experiments.midpoint_weights import search as weight_orbit_search
 from experiments.monotone_divisor_sampling import scan as scan_divisor_prefixes, scan_sum_rectangles
 from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
 from experiments.smooth_factor_sums import scan_two_three
+from experiments.near_smooth_sum import search as near_smooth_search
+from scripts import near_smooth_certificate
 from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
 from experiments.quartic_three_row import search as three_row_search
@@ -330,6 +332,36 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'near-smooth-sum':
+        n = int(case['n'])
+        tolerance = int(case['tolerance'])
+        witnesses = []
+        work = near_smooth_search(n, tolerance, max_windows=case.get('max_windows'),
+                                  exclusion_witnesses=witnesses)
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        exact = scan_two_three(n)
+        work.update(exact_smooth_hit=exact['factor'] is not None,
+                    exact_smooth_square_tests=exact['square_tests'],
+                    exact_smooth_exponents=exact['exponents_visited'])
+        for key in ('tolerance', 'largest_divisor_window', 'direct_mod24_tests', 'direct_even_tests',
+                    'winning_center', 'winning_sum', 'sum_error'):
+            if work[key] is not None:
+                work[key] = str(work[key])
+        agree(case, work, work.keys())
+        result = certify_split(case, proof, factor, elapsed, 'near_smooth_sum', work)
+        if n.bit_length() == 2048:
+            checked_at = time.perf_counter()
+            if (factor is not None and 0 < abs(int(work['sum_error'])) <= min(tolerance, 2**437)
+                    and 2**1024 <= int(work['winning_center']) < 2**1025):
+                near_smooth_certificate.check_recovery(proof, factor, n//factor, work)
+                result['verification_seconds'] += time.perf_counter() - checked_at
+            elif (factor is None and not work['unresolved_windows'] and not work['windows_remaining']
+                  and tolerance % 2 == 0 and near_smooth_certificate.covers_public_menu(n, tolerance, witnesses)):
+                near_smooth_certificate.check_absence(n, tolerance, witnesses, proof, chebyshev_quartic_cuts)
+                result['exclusion'] = dict(sum_tolerance=str(tolerance), bands=len(witnesses),
+                                           proof=f'proofs/{proof.name}',
+                                           verification_seconds=time.perf_counter() - checked_at)
     elif method == 'two-three-sum':
         work = scan_two_three(int(case['n']))
         elapsed = time.perf_counter() - start
@@ -1237,6 +1269,7 @@ def main():
                              ('two-draw-sampling.json', 'two-draw-sampling'),
                              ('neighbor-smooth-sum.json', 'neighbor-smooth-sum'),
                              ('two-three-sum.json', 'two-three-sum'),
+                             ('near-smooth-sum.json', 'near-smooth-sum'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),
