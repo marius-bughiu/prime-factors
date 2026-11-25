@@ -1,12 +1,16 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/recursive-integer-valued-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Latest checked factorization](discoveries/recovering-a-smooth-prime-sum.md) · [General search bounds](discoveries/recursive-integer-valued-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have succeeded on constructed examples where a factor has a pattern we knew to look for. Once someone supplies the two primes, Lean can check that each is prime and that their product is the number you started with.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?
+
+**We recovered both primes of a constructed 2,048-bit product in 26 square tests.** We chose the primes so their sum used only powers of 2 and 3. The search saw only the product. Lean proves it finds any such pair of 1,024-bit primes in at most 647 candidate sums. The two earlier controls both rule out this pattern. Fewer than one in $2^{998}$ of uniformly chosen prime pairs at the target size can have it. [Method, construction and limits](discoveries/recovering-a-smooth-prime-sum.md) · [Checked full-size result](https://marius-bughiu.github.io/prime-factors/#two-three-sum-constructed-2048)
+
+**One guess for the prime sum found both factors of a constructed 43-bit number.** The powers of 2, 3 and 5 dividing the product plus one multiplied to 5,760,000. One square test then gave **2,101,249 × 3,658,751**. The same strategy missed on both 2,048-bit controls. For the tested rule, even picking the guess after seeing the product still covers less than one in $2^{947}$ of the target products when only primes through 31 can enter the proposed sum. [What the search saw](discoveries/sums-dividing-the-neighbor.md) · [Which products the guesses can reach](discoveries/which-inverse-guesses-can-work.md)
 
 **On two 2,048-bit test numbers, our new equations cut the list of ranges to less than a third of its previous length.** The two lists still have about $4.3\times10^{148}$ and $7.6\times10^{148}$ ranges. Lean proved those counts. A complete search would still be impractical. [Proof and counts](discoveries/recursive-integer-valued-windows.md)
 

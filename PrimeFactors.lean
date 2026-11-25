@@ -140,6 +140,12 @@ import PrimeFactors.MidpointWeightBudget
 import PrimeFactors.MidpointWeightLattice
 import PrimeFactors.ReducedWeightDiscriminant
 import PrimeFactors.MidpointWeights
+import PrimeFactors.AffineInverseGap
+import PrimeFactors.SmoothSumSelector
+import PrimeFactors.SmallPrimeSumCoverage
+import PrimeFactors.InverseGapPopulation
+import PrimeFactors.ReciprocalInverseSums
+import PrimeFactors.UniformDivisorCount
 import PrimeFactors.ReciprocalFloorPrefixes
 import PrimeFactors.WindowEliminant
 import PrimeFactors.MonotoneDivisorSampling

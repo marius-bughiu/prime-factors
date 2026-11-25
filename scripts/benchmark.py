@@ -42,6 +42,8 @@ from experiments.grouped_offset_rows import bounded_rows
 from experiments.midpoint_slope_batches import search as slope_batch_search
 from experiments.midpoint_weights import search as weight_orbit_search
 from experiments.monotone_divisor_sampling import scan as scan_divisor_prefixes
+from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
+from experiments.smooth_factor_sums import scan_two_three
 from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
 from experiments.quartic_three_row import search as three_row_search
@@ -328,6 +330,38 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'two-three-sum':
+        work = scan_two_three(int(case['n']))
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, work.keys())
+        result = certify_split(case, proof, factor, elapsed, 'two_three_sum', work)
+        if factor is not None and work['factor_bits'] == 1024:
+            p, q = sorted((factor, int(case['n'])//factor))
+            b = work['winning_exponent']
+            a = 1025 - (3**b).bit_length()
+            theorem = 'PrimeFactors.Generated.smoothSumRecovery'
+            source = 'import PrimeFactors.SmoothSumSelector\n' + proof.read_text()
+            source += f"""
+namespace PrimeFactors.Generated
+theorem smoothSumRecovery :
+    SmoothSumSelector.recover {case['n']} = some ({p}, {q}) := by
+  exact SmoothSumSelector.recover_eq (p := {p}) (q := {q}) (a := {a}) (b := {b})
+    prime_{p} prime_{q} (by decide +kernel) (by decide +kernel)
+    (by decide +kernel) (by decide +kernel)
+#print axioms smoothSumRecovery
+end PrimeFactors.Generated
+"""
+            proof.write_text(source)
+            check_start = time.perf_counter()
+            verify_file(proof, theorem)
+            result['verification_seconds'] += time.perf_counter() - check_start
+    elif method == 'neighbor-smooth-sum':
+        work = neighbor_smooth_search(int(case['n']), case['prime_limit'], case['inverse_gap'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, work.keys())
+        result = certify_split(case, proof, factor, elapsed, 'neighbor_smooth_sum', work)
     elif method == 'monotone-divisor-sampling':
         work = scan_divisor_prefixes(int(case['n']), case['limit'])
         elapsed = time.perf_counter() - start
@@ -1194,6 +1228,8 @@ def main():
                              ('sifted-divisor-window.json', 'sifted-divisor-window'),
                              ('rounded-sifted-window.json', 'rounded-sifted-window'),
                              ('monotone-divisor-sampling.json', 'monotone-divisor-sampling'),
+                             ('neighbor-smooth-sum.json', 'neighbor-smooth-sum'),
+                             ('two-three-sum.json', 'two-three-sum'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

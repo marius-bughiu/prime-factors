@@ -73,6 +73,19 @@ def case_row(result):
         count += f' · search {duration(result["discovery_seconds"])}'
         if checked:
             verification += f' (certificate generation and replay {duration(result["certificate_seconds"])})'
+    elif result['method'] == 'two-three-sum':
+        w = result['two_three_sum']
+        count = (f'Factor sums supported on 2 and 3 · {w["exponents_visited"]} exponents visited'
+                 f' · {w["square_tests"]} square tests')
+        if w['excluded_by_remainder_and_size']:
+            count += ' · every such sum excluded by remainder and size'
+        elif w['winning_exponent'] is not None:
+            count += f' · exponent of 3 at the split {w["winning_exponent"]}'
+    elif result['method'] == 'neighbor-smooth-sum':
+        w = result['neighbor_smooth_sum']
+        count = (f'Inverse difference guess {w["inverse_gap"]} · primes through {w["prime_limit"]:,}'
+                 f' · candidate sum {w["smooth_part"]}'
+                 f' · {w["remainder_checks"]:,} remainder checks · {w["square_tests"]} square tests')
     elif result['method'] == 'monotone-divisor-sampling':
         w = result['monotone_divisor_sampling']
         count = f'{w["gcd_tests"]:,} gcd tests · {w["proper_hits"]:,} proper hits'

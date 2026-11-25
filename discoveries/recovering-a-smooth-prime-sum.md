@@ -1,0 +1,29 @@
+# A 2,048-bit product recovered in 26 square tests
+
+We constructed two 1,024-bit primes whose **sum has no prime divisor other than 2 or 3**. We gave a separate search only their 2,048-bit product. It tried 305 possible exponents, performed 26 square tests and recovered both primes. Lean checked their primality, their product, and a theorem that its own search returns that exact pair. Any two 1,024-bit primes satisfying the sum condition have the same recovery guarantee. On our two earlier 2,048-bit controls a single remainder test rules out this condition. [Benchmark, full decimal input and outputs](../benchmarks/two-three-sum.json) · [Checked recovery theorem](../PrimeFactors/SmoothSumSelector.lean)
+
+## How the product leads to the primes
+
+Let the product be $N=pq$, with odd primes $p\le q$ of the same bit length $h$. Then $h$ is half the bit length of $N$, rounded up. Their sum $S$ is even and lies strictly between $2^h$ and $2^{h+1}$. If it has only 2 and 3 as prime divisors, it must equal $2^a3^b$. Once we choose $b$, there is only one choice of $a$ that puts the sum in this interval. Start from $3^b$ and shift it left until it has $h+1$ bits. At $h=1024$, exactly 647 exponents, 0 through 646, suffice. Neither exponent is supplied to the search. [Candidate construction and coverage](../PrimeFactors/SmoothSumSelector.lean)
+
+For each candidate sum $S$, compute $D=S^2-4N$. At the correct sum it equals $(q-p)^2$. If $D$ is a square, test $(S-\sqrt D)/2$ and $(S+\sqrt D)/2$ by multiplying. The implementation skips candidates with $S^2<4N$ or $2S^2>9N$, since $p\le q\le2p$. It stops at the first exact split. The earlier inverse-based method also used smooth sums, but required the sum to divide a particular integer constructed from $N$. The present search covers the entire sum family. On the constructed input $S$ does not divide $N+1$. [Public-input implementation](../experiments/smooth_factor_sums.py) · [Earlier divisibility condition](sums-dividing-the-neighbor.md)
+
+| Input | Exponents visited | Square tests | What the search established |
+| --- | ---: | ---: | --- |
+| 551 | 2 | 1 | $19\times29$, with sum 48 |
+| Constructed 2,048-bit product | 305 | 26 | Both 1,024-bit primes recovered, with sum $2^{543}3^{304}$ |
+| Fresh and crossed 2,048-bit controls, each | 0 | 0 | Every sum of this form excluded by the product modulo 3 and the sum range |
+
+On the constructed input the larger prime is about 1.285 times the smaller. The search took a median **0.42 ms of CPU time** over 101 local repetitions. This timing is for discovering the factors after construction and excludes proving primality. The benchmark reports these stages separately. The ordinary Fermat search would reach their midpoint after more than $2^{1016}$ consecutive square tests, by subtracting its starting midpoint from the true one. We calculated this count from the known factors and did not run that search. [Benchmark row and downloadable certificate](https://marius-bughiu.github.io/prime-factors/#two-three-sum-constructed-2048)
+
+Both earlier controls have remainder 1 modulo 3. If 3 divided $p+q$, their product would instead be congruent to $-p^2$ modulo 3, which is either 0 or 2. A sum containing only powers of 2 would have to equal $2^{1024}$, too small to be the sum of two odd 1,024-bit primes. These arguments exclude every member of the family on both products from public information alone. Their known construction factors are not required for the exclusions. [Lean statements for both controls](../PrimeFactors/SmoothSumSelector.lean)
+
+## How the large success was constructed
+
+We selected the sum first. Starting with the exponent $b=300$, we shifted each $3^b$ into the target sum interval. We took the first $S$ satisfying $8\cdot 2^{1024}\le5S<9\cdot2^{1024}$ and $\gcd(S-1,5\cdot7\cdot11)=1$. This gave $b=304$ and $a=543$. We then chose candidate primes with easily verifiable divisors of $p-1$ and $q-1$. For each parameter triple we formed coprime smooth integers $F,G\ge2^{512}$ and solved $p\equiv1\pmod F$, $p\equiv S-1\pmod G$, taking $q=S-p$. We required two 1,024-bit primes, a 2,048-bit product and $q-p\ge2^{1020}$. The first pair for which the project could construct both primality witnesses occurred at parameters $(179,27,102)$. The initial selection examined 2,377,316 triples. This design makes the sum promise true by construction. [Selection, bounds and exact regeneration](../experiments/smooth_sum_control.py)
+
+Run `python3 -m experiments.smooth_sum_control` to reconstruct the published prime pair, or add `--replay-search` to repeat its selection. The factor search accepts just `n`. The benchmark compares the discovered primes to their decimal labels afterwards. Its Lean certificate also checks that the product-specific result follows from the general theorem with the exponents actually found. [Benchmark checks](../scripts/benchmark.py) · [Fixture and unresolved cofactors](../benchmarks/two-three-sum.json)
+
+## How often could this work on random inputs?
+
+Among unordered pairs of distinct 1,024-bit primes conditioned on a 2,048-bit product, **fewer than one pair in $2^{998}$** can have this sum pattern. For each choice of the smaller prime there are at most 647 sums, and each sum specifies at most one partner. The established ratio of the number of possible first primes to the number of eligible pairs is below $44331/2^{1023}$, and $647\cdot44331\cdot2^{998}<2^{1023}$. Lean checks the sum count and its conversion to a population fraction, taking the published prime-count estimate as an explicit hypothesis. This is an upper bound for the entire family, independent of how fast we test it. [Sum count and population theorem](../PrimeFactors/SmoothSumSelector.lean) · [Prime counts and conditioning](stride-budget.md#an-explicit-bound-at-exactly-2048-bits)

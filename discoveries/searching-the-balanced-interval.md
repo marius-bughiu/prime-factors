@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+For primes with a sum supported on 2 and 3, at most 647 candidates recover a full-size pair. A constructed 2,048-bit product split after 26 square tests, and one public remainder excludes both earlier comparison products. [Proof, construction and frequency](recovering-a-smooth-prime-sum.md) · [Population bounds when guesses read the whole product](affine-guesses-from-the-product.md)
+
+The sum of the primes divides an integer built from the product when a guess about their modular inverses is correct. An incorrect guess can also recover it. The practical test found both primes on a constructed 43-bit example. Even counting accidental divisibility, a fixed list of up to $2^{40}$ guesses can cover less than a $2^{-532}$ fraction at the target size. [Positive cases](sums-dividing-the-neighbor.md) · [Population bound and assumptions](which-inverse-guesses-can-work.md)
+
 At the same 24,576-row cost per location, recursively correcting the equations gives a full grid below $2^{495}$ locations. The earlier grid used between three and four times as many locations on each published product. The degree-512 version covers $2^{519}+1$ odd positions at one chosen location. The full-size seven-row certificate experiments remain the direct computational evidence. [Full grid, controls and work](recursive-integer-valued-windows.md) · [General limit for a sifted search](limits-of-sifted-window-covers.md) · [Conditional exact decoder](factor-recovery-from-boundary-readings.md)
 
 The change in two weighted floor sums returns the smaller prime exactly. On the large controls, fitting the reciprocal staircase point by point with one rounded affine term per block requires more than $2^{507}$ and $2^{508}$ blocks respectively. [Derivation and limits of this approach](floor-sums-at-the-factor.md)
