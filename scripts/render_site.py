@@ -74,6 +74,12 @@ def case_row(result):
         count = (f'Continued fractions · {w["prime_gcds"]} auxiliary prime checks · '
                  f'{w["walks"]} walks · {w["centers"]} centers · {w["cycles"]} triangles · '
                  f'{w["steps"]:,} of {w["max_steps"]:,} steps')
+    elif result['method'] == 'weighted-base':
+        w = result['weighted_base']
+        selection = w['selection_work']
+        count = (f'Base selection · {selection["bases_tested"]:,} of {w["max_primes"]:,} primes tested'
+                 f' · combined order {escape(selection["combined_order"])}'
+                 f' · {escape(w["outcome"].replace("_", " "))}')
     elif result['method'] == 'weighted-stride':
         w = result['weighted_stride']
         counts = w['work']

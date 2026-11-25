@@ -1,0 +1,114 @@
+[
+  {
+    "id": "weighted-base-combine",
+    "description": "The short orders of the first two prime bases combine into a sufficient order",
+    "n": "32817151",
+    "k": 4,
+    "baby_steps": 136,
+    "max_giants": 1000,
+    "prime_limit": 3,
+    "max_primes": 2,
+    "stride": 24,
+    "outcome": "trace_divisor",
+    "selection_outcome": "combined_base",
+    "selected_base": 486,
+    "selection_work": {
+      "bases_tested": 2,
+      "base_gcds": 2,
+      "exponent_gcds": 2,
+      "redundant_bases": 0,
+      "order_scans": 2,
+      "order_steps": 160,
+      "order_gcds": 2,
+      "short_orders": [
+        [
+          2,
+          25
+        ],
+        [
+          3,
+          135
+        ]
+      ],
+      "components": [
+        [
+          3,
+          27,
+          3,
+          5
+        ],
+        [
+          5,
+          25,
+          2,
+          1
+        ]
+      ],
+      "combined_order": "675"
+    },
+    "weighted_work": {
+      "base_gcds": 3,
+      "slope_visits": 14,
+      "primitive_slopes": 7,
+      "nonempty_slopes": 7,
+      "giants": 7,
+      "labels_covered": 32,
+      "babies": 136,
+      "order_gcds": 1,
+      "equality_checks": 1,
+      "polynomial_degree": 0,
+      "evaluations": 0,
+      "collision_gcds": 0
+    },
+    "status": "complete",
+    "factors": [
+      "4051",
+      "8101"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "weighted-base-limited",
+    "description": "One tested prime gives only order 25 on the same table",
+    "n": "32817151",
+    "k": 4,
+    "baby_steps": 136,
+    "max_giants": 1000,
+    "prime_limit": 3,
+    "max_primes": 1,
+    "stride": 24,
+    "outcome": "prime_count_limit",
+    "selection_outcome": "prime_count_limit",
+    "selected_base": null,
+    "selection_work": {
+      "bases_tested": 1,
+      "base_gcds": 1,
+      "exponent_gcds": 1,
+      "redundant_bases": 0,
+      "order_scans": 1,
+      "order_steps": 25,
+      "order_gcds": 1,
+      "short_orders": [
+        [
+          2,
+          25
+        ]
+      ],
+      "components": [
+        [
+          5,
+          25,
+          2,
+          1
+        ]
+      ],
+      "combined_order": "25"
+    },
+    "weighted_work": null,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "32817151"
+    ]
+  }
+]

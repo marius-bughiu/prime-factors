@@ -36,6 +36,7 @@ import PrimeFactors.FactorialProgressions
 import PrimeFactors.FactorSum
 import PrimeFactors.FactorSumCRT
 import PrimeFactors.FareyWindow
+import PrimeFactors.FareyWork
 import PrimeFactors.FejerProjection
 import PrimeFactors.Fermat
 import PrimeFactors.FoldedSquare
@@ -154,6 +155,7 @@ import PrimeFactors.TraceDirection
 import PrimeFactors.TruncatedProduct
 import PrimeFactors.TruncatedWindow
 import PrimeFactors.WeakPhase
+import PrimeFactors.WeightedBaseOrder
 import PrimeFactors.WeightedBands
 import PrimeFactors.WeightedCollision
 import PrimeFactors.WeightedStride

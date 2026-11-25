@@ -1,0 +1,19 @@
+# Two short-order bases can make one usable base
+
+The weighted search needs a public base $\beta$ for which $h=\beta^{24}$ has order at least the baby-table length $m$ modulo **both** hidden primes. At $N=32{,}817{,}151$ with $m=136$, the bases 2 and 3 each fail. Their 24th powers have orders 25 and 135 respectively at both primes. From these two failures the selector constructs $\beta=2\cdot3^5=486$. Its 24th power has order 675 at both primes. Using this base, seven giant entries and one discriminant test give $N=4{,}051\cdot8{,}101$. Selection used just $N$, $m$ and the primes through 3. [Selector](../experiments/weighted_base_selection.py) · [Independent local-order checks](../tests/test_weighted_base_selection.py)
+
+## What a failed order test proves
+
+Assume $N=pq$ with distinct primes. Each candidate $\beta$ first receives a gcd test. Maintain $L$, initially 1, equal to the least common multiple of the short local orders found so far. A proper divisor from $\gcd(h^L-1,N)$ ends the search. If the gcd equals $N$, both local orders already divide $L$ and this candidate can be skipped.
+
+When the gcd is one, test the powers $h^i$ for $1\le i<m$, stopping at the first equality to 1 modulo $N$. A gcd of the product of the preceding nonzero differences $h^j-1$ checks every earlier index at both primes. A whole-modulus product gcd can be refined to a proper factor because every included difference is nonzero modulo $N$. Otherwise, if the first equality occurs at $i=r$, then $r$ is the exact order at **both** primes. If there is no equality and the product gcd is one, this single base already suffices.
+
+For each prime power $\ell^e\Vert L$, retain a candidate $\beta_j$ whose exact order $r_j$ contains this entire power. Then $h_j^{r_j/\ell^e}$ has order $\ell^e$ at both primes. These components commute and their orders are pairwise coprime, so their product has order $L$. The program returns the public base $\prod\beta_j^{r_j/\ell^e}\bmod N$. Raising it to 24 gives that component product. Lean verifies the finite product identity in an arbitrary commutative group. [Lean proof](../PrimeFactors/WeightedBaseOrder.lean)
+
+Every newly certified short order increases $L$ by an integer factor of at least two. Thus at most $\lceil\log_2 m\rceil+1$ power scans are needed before success or exhaustion, including a possible final scan that returns a base or factor. Other tested primes require only gcds and exponentiation by the current $L<m$. Caps on tested primes, prime size, and $m$ keep a bounded failure visible. The selected base goes through the ordinary search's own order check.
+
+## A conditional prime cutoff
+
+Suppose $p<q\le2p$, $p\ge3000$, and assume the Dirichlet GRH used by Lamzouri, Li and Soundararajan. Their Theorem 1.1(2), applied at prime modulus $p$, implies that primes up to $(\log p)^2$ generate $\mathbb F_p^\times$. Otherwise the subgroup they generate would omit some prime in that same range. Since $p\le\sqrt N$, the public cutoff $\lceil(\log N)^2/4\rceil$ includes all of them. For every 2,048-bit product this cutoff is at most **503,792**. [Lamzouri, Li and Soundararajan, Theorem 1.1](https://arxiv.org/html/1309.3595v3#S1.SS1) · [Released Dirichlet statements](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab/src/Statements.lean)
+
+Their 24th powers generate the cyclic subgroup of order $(p-1)/\gcd(24,p-1)$. If this is at least $m$, the selector must return a factor or a usable base by that prime cutoff, provided its other caps permit the search. Indeed, if it exhausted the cutoff with $L<m$, the order of every tested 24th power modulo $p$ would divide $L$, contradicting the subgroup order. A sufficient public size check is $24m\le\lceil\sqrt{N/2}\rceil-1$. This conditional guarantee concerns base selection. Building the baby and giant tables remains the expensive part of factoring a general 2,048-bit product.
