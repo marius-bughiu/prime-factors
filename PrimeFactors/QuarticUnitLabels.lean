@@ -121,20 +121,26 @@ private theorem at_five {w v : Weights} {x N : ℤ}
 
 /-- A collision of the twelve public labels forces divisibility everywhere
 on the proposed factor lane, at every x coprime to 30. -/
-theorem divides_of_label_eq {w v : Weights} {x u N : ℤ}
-    (same : label (2^614) u N w = label (2^614) u N v)
-    (lane : x ≡ u [ZMOD (2:ℤ)^614]) (unit : IsCoprime x 30) :
-    (360*((2:ℤ)^614)^4) ∣ value w N x - value v N x := by
-  have atTwo := dyadic (congrArg Prod.fst same) (by exact_mod_cast lane)
+theorem divides_of_label_eq_at {R : ℕ} {w v : Weights} {x u N : ℤ}
+    (cop : IsCoprime (8*(R:ℤ)^4) 45)
+    (same : label R u N w = label R u N v)
+    (lane : x ≡ u [ZMOD (R:ℤ)]) (unit : IsCoprime x 30) :
+    (360*(R:ℤ)^4) ∣ value w N x - value v N x := by
+  have atTwo := dyadic (congrArg Prod.fst same) lane
   have atNine := at_three (congrArg (fun z => z.2.1) same) unit
   have atFive := at_five (congrArg (fun z => z.2.2) same) unit
   have copOdd : IsCoprime (9:ℤ) 5 := Int.isCoprime_iff_gcd_eq_one.mpr (by decide)
   have odd : (45:ℤ) ∣ value w N x - value v N x := copOdd.mul_dvd atNine atFive
-  have cop : IsCoprime (8*((2:ℤ)^614)^4) 45 :=
-    Int.isCoprime_iff_gcd_eq_one.mpr (by decide +kernel)
-  have full := cop.mul_dvd (by exact_mod_cast atTwo) odd
+  have full := cop.mul_dvd atTwo odd
   have reorder (T : ℤ) : 360*T = (8*T)*45 := by ring
   rw [reorder]
   exact full
+
+theorem divides_of_label_eq {w v : Weights} {x u N : ℤ}
+    (same : label (2^614) u N w = label (2^614) u N v)
+    (lane : x ≡ u [ZMOD (2:ℤ)^614]) (unit : IsCoprime x 30) :
+    (360*((2:ℤ)^614)^4) ∣ value w N x - value v N x := by
+  exact_mod_cast divides_of_label_eq_at (Int.isCoprime_iff_gcd_eq_one.mpr (by decide +kernel))
+    same (by exact_mod_cast lane) unit
 
 end PrimeFactors.QuarticUnitLabels

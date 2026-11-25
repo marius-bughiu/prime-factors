@@ -63,10 +63,18 @@ def case_row(result):
         w = result['midpoint_weights']
         count = (f'Weighted sums · {w["visited_orbits"]:,} of {w["total_orbits"]:,} remainder pairs'
                  f' · {w["candidate_traces"]:,} candidate sums · {w["square_tests"]:,} square tests')
-    elif result['method'] == 'unit-quartic':
-        w = result['unit_quartic']
-        exponent = int(w['radix']).bit_length()-1
-        count = (f'One signed remainder group modulo 2<sup>{exponent}</sup>'
+    elif result['method'] == 'projected-level-sieve':
+        w = result['projected_levels']
+        count = (f'One positive group modulo 2<sup>{int(w["radix"]).bit_length()-1}</sup>'
+                 f' · {w["work"]["level_positions_covered"]:,} of {w["total_levels"]:,} trace values checked'
+                 f' · {w["work"].get("levels_isolated", 0):,} equations sent to root isolation')
+    elif result['method'] in ('unit-quartic', 'centered-quartic'):
+        w = result[result['method'].replace('-', '_')]
+        if result['method'] == 'centered-quartic':
+            label, exponent = 'positive', w['radix_exponent']
+        else:
+            label, exponent = 'signed', int(w['radix']).bit_length()-1
+        count = (f'One {label} remainder group modulo 2<sup>{exponent}</sup>'
                  f' · {w["work"].get("integer_root_nodes", 0):,} root-isolation nodes'
                  f' · search {duration(result["discovery_seconds"])}')
     elif result['method'] == 'quartic-factor-lanes':

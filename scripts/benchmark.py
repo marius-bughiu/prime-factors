@@ -23,6 +23,8 @@ from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_factor_lanes import search as quartic_lane_search
 from experiments.unit_factor_lane import search as unit_lane_search
 from experiments.unit_quartic_probe import probe as unit_quartic_probe
+from experiments.centered_sum_quartic import probe as centered_quartic_probe
+from experiments.projected_level_sieve import centered_search as projected_level_search
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.local_midpoint_lanes import search as local_midpoint_search
 from experiments.divisor_samples import search as divisor_sample_search
@@ -143,13 +145,27 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
-    elif method == 'unit-quartic':
-        run = unit_quartic_probe(int(case['n']), 1 << case['radix_exponent'], int(case['residue']))
+    elif method == 'projected-level-sieve':
+        run = projected_level_search(int(case['n']), 1 << case['radix_exponent'], int(case['residue']),
+                                     max_levels=case['max_levels'])
+        pairs = run.pop('pairs')
+        elapsed = run.pop('search_seconds')
+        agree(case, {'expected_pairs': pairs}, ['expected_pairs'])
+        agree(case, run, ['work', 'total_levels', 'unexamined_levels', 'other_positive_groups'])
+        result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'projected_levels', run)
+    elif method in ('unit-quartic', 'centered-quartic'):
+        n, u = int(case['n']), int(case['residue'])
+        if method == 'centered-quartic':
+            run = centered_quartic_probe(n, u)
+            agree(case, run, ['radix_exponent', 'total_groups', 'unchecked_groups'])
+        else:
+            run = unit_quartic_probe(n, 1 << case['radix_exponent'], u)
+            agree(case, run, ['total_signed_groups', 'unchecked_signed_groups'])
         elapsed = run.pop('search_seconds')
         pairs = run.pop('pairs')
         agree(case, {'expected_pairs': pairs}, ['expected_pairs'])
-        agree(case, run, ['work', 'local_remainders', 'total_signed_groups', 'unchecked_signed_groups'])
-        result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'unit_quartic', run)
+        agree(case, run, ['work', 'local_remainders'])
+        result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, method.replace('-', '_'), run)
     elif method == 'quartic-factor-lanes':
         if case.get('unit_residue'):
             work = unit_lane_search(int(case['n']))
@@ -636,6 +652,7 @@ def main():
                              ('midpoint-weights.json', 'midpoint-weights'),
                              ('midpoint-slope-batches.json', 'midpoint-slope-batches'),
                              ('quartic-factor-lanes.json', 'quartic-factor-lanes'), ('unit-quartic.json', 'unit-quartic'),
+                             ('centered-quartic.json', 'centered-quartic'), ('projected-levels.json', 'projected-level-sieve'),
                              ('class-orders.json', 'class-orders')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':

@@ -17,7 +17,7 @@ noncomputable def inFactorCoordinates (N s : ℤ) (v : Fin 5 → ℤ) : Weights 
 
 private abbrev widths := UnitQuarticBox.weight
 
-private noncomputable def terms (x y s : ℤ) : Fin 5 → ℤ :=
+noncomputable def terms (x y s : ℤ) : Fin 5 → ℤ :=
   ![1, x-y, x, (x-y)^2-2*s^2, x*(x-y)]
 
 theorem gap_trace {x y N : ℤ} (pair : x*y=N) (s : ℤ) (v : Fin 5 → ℤ) :
@@ -58,15 +58,20 @@ private theorem bounds {x y : ℤ} {s B : ℕ} (hgap : |x-y|≤2*(s:ℤ)) (hx : 
   intro i
   fin_cases i <;> simp [terms,widths,UnitQuarticBox.weight] <;> assumption
 
-theorem trace_bound (v : Fin 5 → ℤ) {x y N : ℤ} {s B : ℕ}
-    (pair : x*y=N) (gap : |x-y| ≤ 2*(s:ℤ)) (hx : |x| ≤ B) :
-    |trace (inFactorCoordinates N s v) x y| ≤ ∑ i, |v i| *(widths s B i : ℤ) := by
-  rw [gap_trace pair]
+theorem terms_bound (v : Fin 5 → ℤ) {x y : ℤ} {s B : ℕ}
+    (gap : |x-y| ≤ 2*(s:ℤ)) (hx : |x| ≤ B) :
+    |∑ i, v i * terms x y s i| ≤ ∑ i, |v i| *(widths s B i : ℤ) := by
   apply (Finset.abs_sum_le_sum_abs _ _).trans
   apply Finset.sum_le_sum
   intro i _
   rw [abs_mul]
   exact mul_le_mul_of_nonneg_left (bounds gap hx i) (abs_nonneg _)
+
+theorem trace_bound (v : Fin 5 → ℤ) {x y N : ℤ} {s B : ℕ}
+    (pair : x*y=N) (gap : |x-y| ≤ 2*(s:ℤ)) (hx : |x| ≤ B) :
+    |trace (inFactorCoordinates N s v) x y| ≤ ∑ i, |v i| *(widths s B i : ℤ) := by
+  rw [gap_trace pair]
+  exact terms_bound v gap hx
 
 theorem factor_limits {x y N : ℕ} (mul : x*y=N) (hxy : x≤2*y) (hyx : y≤2*x)
     (hxOdd : Odd x) (hyOdd : Odd y) :

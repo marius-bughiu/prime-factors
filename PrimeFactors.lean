@@ -197,6 +197,10 @@ import PrimeFactors.QuarticUnitLabels
 import PrimeFactors.UnitNewtonLanes
 import PrimeFactors.UnitQuarticBox
 import PrimeFactors.UnitQuarticRecovery
+import PrimeFactors.CenteredSumQuartic
+import PrimeFactors.ProjectedQuarticLevels
+import PrimeFactors.AffineWindowOccupancy
+import PrimeFactors.CRTResidueAdvice
 import PrimeFactors.WeightedBaseOrder
 import PrimeFactors.WeightedBands
 import PrimeFactors.WeightedCollision

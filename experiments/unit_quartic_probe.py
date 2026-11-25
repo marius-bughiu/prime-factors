@@ -57,23 +57,23 @@ def local_values(full, u, radix):
                 units_mod_5=[evaluate(x, 5) for x in (1, 2, 3, 4)])
 
 
-def probe(n, radix, u=1):
-    if n < 3 or gcd(n, 30) != 1 or radix < 8 or radix & (radix-1) or not 0 < u < radix or u % 2 == 0:
-        raise ValueError('expected n >= 3 coprime to 30, dyadic radix >= 8 and an odd residue')
-    start = perf_counter()
-    work = Counter()
+def short_relation(n, u, radix, coordinates, scales, work):
+    """Reduce the unit lattice and independently check the weighted trace bound."""
     modulus = 360*radix**4
-    transform, scales = dickson_basis(n, 2)
     basis = unit_basis(n, u, radix)
-    rows = [[v*s for v,s in zip(gap_coordinates(row, transform), scales)] for row in basis]
+    rows = [[v*s for v,s in zip(coordinates(row), scales)] for row in basis]
     reduced, originals = reduced_basis(rows, work, initial_coefficients=basis)
     best = min(range(len(reduced)), key=lambda i: sum(map(abs, reduced[i])))
     trace = originals[best]
-    weighted = [a*b for a,b in zip(gap_coordinates(trace, transform), scales)]
+    weighted = [a*b for a,b in zip(coordinates(trace), scales)]
     size = sum(map(abs, weighted))
     if weighted != reduced[best] or not any(trace) or size >= modulus:
         raise ArithmeticError('quartic failed the strict weighted trace bound')
 
+    return trace, size
+
+
+def checked_polynomial(n, u, radix, trace):
     full = [c*n**max(2-j, 0) for j,c in enumerate(trace)]
     checks = local_values(full, u, radix)
     if any(any(values) for values in checks.values()):
@@ -82,9 +82,12 @@ def probe(n, radix, u=1):
     content = gcd(*shifted)
     polynomial = [a//content for a in shifted]
 
-    lower, upper = max(2, isqrt((n-1)//2)+1), isqrt(2*n)
+    return polynomial, checks
+
+
+def factor_roots(n, u, radix, polynomial, windows, work):
     pairs, hits = set(), []
-    for low, high in ((lower, upper), (-upper, -lower)):
+    for low, high in windows:
         for k in integer_roots(polynomial, -((u-low)//radix), (high-u)//radix, work):
             x = u+radix*k
             hits.append(str(x))
@@ -92,10 +95,24 @@ def probe(n, radix, u=1):
             p, q = sorted((abs(x), abs(y)))
             if rem == 0 and p > 1 and q <= 2*p:
                 pairs.add((p, q))
+    return pairs, hits
+
+
+def probe(n, radix, u=1):
+    if n < 3 or gcd(n, 30) != 1 or radix < 8 or radix & (radix-1) or not 0 < u < radix or u % 2 == 0:
+        raise ValueError('expected n >= 3 coprime to 30, dyadic radix >= 8 and an odd residue')
+    start = perf_counter()
+    work = Counter()
+    modulus = 360*radix**4
+    transform, scales = dickson_basis(n, 2)
+    trace, size = short_relation(n, u, radix, lambda row: gap_coordinates(row, transform), scales, work)
+    polynomial, checks = checked_polynomial(n, u, radix, trace)
+    lower, upper = max(2, isqrt((n-1)//2)+1), isqrt(2*n)
+    pairs, hits = factor_roots(n, u, radix, polynomial, ((lower, upper), (-upper, -lower)), work)
     total_signed = (radix//2 + 4*int(n%8 == 1) + 4*int((-n)%8 == 1))//4
     return dict(n=str(n), radix=str(radix), u=str(u), signed=True, modulus=str(modulus),
                 trace_coefficients=list(map(str, trace)), weighted_l1=str(size), local_remainders=checks,
-                polynomial_degree=max(i for i,c in enumerate(full) if c), tested_signed_groups=1,
+                polynomial_degree=max(i for i,c in enumerate(trace) if c), tested_signed_groups=1,
                 total_signed_groups=str(total_signed), unchecked_signed_groups=str(total_signed-1),
                 candidate_factors=hits, pairs=[[str(p),str(q)] for p,q in sorted(pairs)],
                 work=dict(work), search_seconds=perf_counter()-start)
