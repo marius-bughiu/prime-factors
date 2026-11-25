@@ -75,6 +75,10 @@ def case_row(result):
                  f' · search {duration(result["discovery_seconds"])}')
         if w.get('signed'):
             count += f' · {w["ordinary_covered_orbits"]:,} ordinary remainder pairs covered'
+        if w.get('unit_residue'):
+            count += ' · tested factor remainder 1'
+        if w.get('basis') == 'newton':
+            count += ' · Newton polynomial'
     elif result['method'] == 'midpoint-slope-batches':
         w = result['midpoint_slope_batches']
         counts = w['work']

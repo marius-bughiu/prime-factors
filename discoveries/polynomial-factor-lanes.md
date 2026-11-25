@@ -8,6 +8,8 @@ One further saving comes from testing positive and negative roots of the same eq
 
 For example, starting with **34,387**, the solver chooses base 70 and checks twelve remainder pairs. For the pair 41 and 67, write one candidate factor as $41+70k$. The polynomial returned for that group simplifies to $(2k^2+3k-27)^2=0$. Its only integer root is $k=3$, which gives $41+70\times3=251$. Dividing 34,387 by 251 gives **137**. The search needed only the product to generate all twelve groups and their equations. [Reproduce the example](../experiments/quartic_factor_lanes.py)
 
+We subsequently recovered both primes of that same full-size comparison input by trying a remainder chosen after inspecting its published factors. A separate improvement tests more residues with each equation. [One-remainder result and control panel](testing-one-factor-remainder.md) · [New bounds using finite differences](difference-lanes.md)
+
 ## Why does a factor appear among the roots?
 
 Let $N=xy$ with positive factors within a factor of two, $X=\lfloor\sqrt{2N}\rfloor$ and $R$ coprime to $N$. Both $x$ and $y$ are at most $X$. On the proposed remainder $x\equiv u\pmod R$, seek integer coefficients, at least one nonzero, for

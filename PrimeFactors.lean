@@ -20,6 +20,7 @@ import PrimeFactors.CRTSquareNorm
 import PrimeFactors.CountingReadout
 import PrimeFactors.CyclotomicPascal
 import PrimeFactors.CyclotomicPeriods
+import PrimeFactors.DifferenceLane
 import PrimeFactors.DiscriminantPencil
 import PrimeFactors.DiscriminantStride
 import PrimeFactors.DivisorSample
@@ -35,6 +36,7 @@ import PrimeFactors.ExceptionalWeights
 import PrimeFactors.ExponentialReadout
 import PrimeFactors.ExtensionTrace
 import PrimeFactors.FactorCircuit
+import PrimeFactors.FactorLaneAdvice
 import PrimeFactors.FactorialProgressions
 import PrimeFactors.FactorSum
 import PrimeFactors.FactorSumCRT
@@ -94,6 +96,7 @@ import PrimeFactors.MixedHeights
 import PrimeFactors.MixedRatioHeight
 import PrimeFactors.ModularHyperbola
 import PrimeFactors.MultipleShift
+import PrimeFactors.MultiplierLaneCover
 import PrimeFactors.Multiplier
 import PrimeFactors.MultiplierImages
 import PrimeFactors.MultiplierScore
@@ -196,3 +199,4 @@ import PrimeFactors.WeightedSparseCoverage
 import PrimeFactors.WeightedStride
 import PrimeFactors.WideModulus
 import PrimeFactors.WideScale
+import PrimeFactors.OrderLaneTests

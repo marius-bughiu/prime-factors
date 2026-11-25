@@ -1,12 +1,16 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/polynomial-factor-lanes.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/testing-one-factor-remainder.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have succeeded on specially constructed products whose primes share a pattern that our search can recognize. Once someone supplies the two primes, Lean can check that each is prime and that their product is the number you started with.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did we find from the product alone?
+
+We recovered both 1,024-bit primes of the previously unresolved comparison number in **2.21 seconds**. We guessed that one prime would leave remainder 1 after division by a large power of two. We chose that guess after seeing the published factors, then replayed it using only the product. The same guess worked on **3 of 10 constructed examples**, including the original, and missed the other seven. Lean checked each success. [Results and checked factors](discoveries/testing-one-factor-remainder.md)
+
+For an unknown pair, we can now test two of the earlier groups with a single equation. On eight smaller products this reduced the number of equations from 902 to 504. On the 2,048-bit comparison, a complete search would still have a 184-digit number of groups. We also bounded what a strategy can learn by querying the top and bottom halves of the product separately. [How two groups fit one equation](discoveries/difference-lanes.md) · [What partial information can reveal](discoveries/factor-lane-advice.md)
 
 For every balanced 2,048-bit input, choosing a possible remainder of one factor modulo $2^{616}$ leaves **at most four possible values** for that factor. The product gives an equation whose roots contain those values. On our full-size test, this gave about 64 quintillion times fewer remainder pairs than the earlier linear search. Each equation took longer to check, and more than $2^{611}$ groups remain. The first four checks found neither factor. [Proof, comparisons and what remains](discoveries/polynomial-factor-lanes.md)
 

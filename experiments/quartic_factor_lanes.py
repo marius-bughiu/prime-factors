@@ -6,6 +6,7 @@ import json
 from math import comb, gcd, isqrt
 
 from .midpoint_weights import residue_pairs, smooth_radix
+from . import newton_lanes
 from .norm_auxiliary import integer_roots, reduced_basis
 from .powered_order import prime_powers
 
@@ -31,13 +32,16 @@ def parameters(n, power=2):
     return bound, smooth_radix(n, high)
 
 
-def lane_basis(n, u, radix, power=2):
+def lane_basis(n, u, radix, power=2, factorials=None):
     """Triangular basis annihilating all Taylor coefficients below the chosen degree."""
     degree = 2*power
     factors = [n**max(power-j, 0) for j in range(degree+1)]
-    bounds = [radix**(degree-i) for i in range(degree)]
-    column = [[comb(k, i)*factors[k]*u**(k-i) % m if k >= i else 0 for k in range(degree+1)]
-              for i, m in enumerate(bounds)]
+    if factorials is None:
+        bounds = [radix**(degree-i) for i in range(degree)]
+        column = [[comb(k, i)*factors[k]*u**(k-i) % m if k >= i else 0 for k in range(degree+1)]
+                  for i, m in enumerate(bounds)]
+    else:
+        bounds, column = newton_lanes.congruences(factors, u, radix, factorials)
     inverse = [pow(factors[i], -1, m) for i,m in enumerate(bounds)]
     rows = []
     for j in range(degree+1):
@@ -51,11 +55,13 @@ def lane_basis(n, u, radix, power=2):
     return rows
 
 
-def equation(n, u, radix, bound, work, power=2):
+def equation(n, u, radix, bound, work, power=2, factorials=None):
     """Certify the trace is zero, then return its eliminant in the coordinate (x-u)/R."""
     degree = 2*power
     modulus = radix**degree
-    basis = lane_basis(n, u, radix, power)
+    if factorials is not None:
+        modulus *= factorials[-1]
+    basis = lane_basis(n, u, radix, power, factorials)
     scale = [bound**abs(j-power) for j in range(degree+1)]
     weighted = [[c*w for c,w in zip(row, scale)] for row in basis]
     _, coefficients = reduced_basis(weighted, work, initial_coefficients=basis)
@@ -65,8 +71,11 @@ def equation(n, u, radix, bound, work, power=2):
     full = [c*n**max(power-j, 0) for j,c in enumerate(best)]
     shifted = [radix**j * sum(comb(i,j)*full[i]*u**(i-j) for i in range(j,degree+1))
                for j in range(degree+1)]
-    if any(v % modulus for v in shifted):
-        raise ArithmeticError('a Taylor coefficient failed its divisibility check')
+    if factorials is None:
+        if any(v % modulus for v in shifted):
+            raise ArithmeticError('a Taylor coefficient failed its divisibility check')
+    elif not newton_lanes.vanishes_on_grid(shifted, modulus):
+        raise ArithmeticError('the polynomial failed its consecutive-value check')
     content = gcd(*shifted)
     return [v//content for v in shifted]
 
@@ -98,7 +107,7 @@ def signed_representatives(pairs, radix, work):
             yield u, w
 
 
-def pairs_in_windows(n, u, w, radix, bound, windows, work, power):
+def pairs_in_windows(n, u, w, radix, bound, windows, work, power, factorials=None):
     """Solve all signed coordinate bands with one certified lane polynomial."""
     poly = None
     for low_x, high_x in windows:
@@ -106,7 +115,7 @@ def pairs_in_windows(n, u, w, radix, bound, windows, work, power):
         if lo > hi:
             continue
         if poly is None:
-            poly = equation(n, u, radix, bound, work, power)
+            poly = equation(n, u, radix, bound, work, power, factorials)
         for k in integer_roots(poly, lo, hi, work):
             work['candidate_roots'] += 1
             x = u+radix*k
@@ -118,10 +127,22 @@ def pairs_in_windows(n, u, w, radix, bound, windows, work, power):
                 yield small, large
 
 
-def search(n, max_orbits=None, *, power=2, signed=False):
+def search(n, max_orbits=None, *, power=2, signed=False, basis="taylor"):
     if n < 3 or n % 2 == 0 or (max_orbits is not None and max_orbits < 0):
         raise ValueError('expected odd n >= 3 and a nonnegative optional budget')
-    bound, radix = parameters(n, power)
+    factorials = None
+    if basis == 'taylor':
+        bound, radix = parameters(n, power)
+    else:
+        if basis not in ('taylor-exact', 'newton') or power < 1:
+            raise ValueError('expected a supported basis and a positive factor power')
+        bound = isqrt(2*n)
+        scale_factors = [1]*(2*power+1)
+        if basis == 'newton':
+            factorials = newton_lanes.coprime_factorials(n, 2*power)
+            scale_factors = factorials
+        target = newton_lanes.radix_threshold(bound, power, scale_factors)
+        radix = smooth_radix(n, target)
     lower = max(2, isqrt((n-1)//2)+1)
     work, pairs = Counter(), set()
     ordinary, representatives = residue_pairs(n, radix, work)
@@ -135,10 +156,12 @@ def search(n, max_orbits=None, *, power=2, signed=False):
         both = signed and radix > 2 and u+w != radix
         windows = ((lower, bound), (-bound, -lower)) if both else ((lower, bound),)
         covered += len(windows)
-        pairs.update(pairs_in_windows(n, u, w, radix, bound, windows, work, power))
+        pairs.update(pairs_in_windows(n, u, w, radix, bound, windows, work, power, factorials))
     result = dict(n=str(n), power=power, coordinate_bound=bound, radix=radix, total_orbits=total,
                   visited_orbits=visited, remaining_orbits=total-visited,
                   work=dict(work), pairs=[[str(x),str(y)] for x,y in sorted(pairs)])
+    if basis != 'taylor':
+        result.update(basis=basis, minimum_radix=target)
     if signed:
         result.update(signed=True, ordinary_total_orbits=ordinary, ordinary_covered_orbits=covered)
     return result
@@ -150,5 +173,7 @@ if __name__ == '__main__':
     parser.add_argument('--max-orbits', type=int)
     parser.add_argument('--power', type=int, default=2, help='largest factor power (polynomial degree is twice this)')
     parser.add_argument('--signed', action='store_true', help='share each polynomial with the negated pair')
+    parser.add_argument('--basis', choices=['taylor', 'taylor-exact', 'newton'], default='taylor',
+                        help='use legacy Taylor bounds, exact Taylor bounds, or integer-valued Newton polynomials')
     args = parser.parse_args()
-    print(json.dumps(search(args.n, args.max_orbits, power=args.power, signed=args.signed), indent=2))
+    print(json.dumps(search(args.n, args.max_orbits, power=args.power, signed=args.signed, basis=args.basis), indent=2))
