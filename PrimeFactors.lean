@@ -203,6 +203,8 @@ import PrimeFactors.QuarticPrimeCover
 import PrimeFactors.LevelMaskCertificate
 import PrimeFactors.ProjectedLevelCertificate
 import PrimeFactors.ProjectedQuarticLevels
+import PrimeFactors.ProjectedSweepBudget
+import PrimeFactors.ProjectedSweepRange
 import PrimeFactors.AffineWindowOccupancy
 import PrimeFactors.CRTResidueAdvice
 import PrimeFactors.WeightedBaseOrder

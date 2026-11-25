@@ -23,6 +23,8 @@ The earlier input-specific positive quartics used $2^{612}$ and $2^{611}$ on the
 
 At $2^{600}$ on the fresh input the sieve performed 9,240 mask intersections spanning 605,115,912 logical bit positions in total, taking 0.022 seconds. The periodic tables occupied 3,351,845 bits of integer payload, about 409 KiB before Python object overhead. Bit-parallel rejection still visits the level interval block by block. At the narrower comparison radix $2^{606}$, three-run medians for periodic versus individual tests were 0.712 versus 3.116 seconds across 5,897 levels on the crossed control, and 0.769 versus 1.439 seconds across 979 levels on the fresh control. On the small 15- and 48-level comparisons, individual tests were faster because the setup cost exceeded the savings. All paired runs gave the same factor results. [Matched comparisons and work counters](../research/projected-level-sieve.json)
 
+A complete sweep can choose the modulus separately for every query. The number of level blocks grows as the modulus shrinks. On the fresh input, any such sweep that covers all odd 600-bit remainders costs at least $2^{247}$ checks. [Work required to cover every group](projected-sweep-budget.md)
+
 ## Certifying an unsuccessful search from the product alone
 
 For the fresh input, two Lean certificates state that if $xy=N$ with $x,y<2^{1024}$, then $x$ cannot leave remainder 1 modulo $2^{604}$ or $2^{600}$, respectively. Neither certificate uses primality or the primes recorded when the input was generated. The smaller modulus covers the larger one as well. The two independently built traces provide separate checks at the original predeclared precisions.
