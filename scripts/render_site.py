@@ -63,12 +63,28 @@ def case_row(result):
         w = result['midpoint_weights']
         count = (f'Weighted sums · {w["visited_orbits"]:,} of {w["total_orbits"]:,} remainder pairs'
                  f' · {w["candidate_traces"]:,} candidate sums · {w["square_tests"]:,} square tests')
+    elif result['method'] == 'quartic-factor-lanes':
+        w = result['quartic_factor_lanes']
+        total = w['total_orbits']
+        available = (f'{total:,}' if total.bit_length() <= 64 else
+                     f'at least 2<sup>{total.bit_length()-1}</sup>')
+        label = 'sign groups' if w.get('signed') else 'remainder pairs'
+        count = (f'Degree {2*w["power"]} equations · {w["visited_orbits"]:,} of {available} {label} searched'
+                 f' · {w["work"].get("lll_calls", 0):,} LLL calls'
+                 f' · {w["work"].get("integer_root_nodes", 0):,} root-isolation nodes'
+                 f' · search {duration(result["discovery_seconds"])}')
+        if w.get('signed'):
+            count += f' · {w["ordinary_covered_orbits"]:,} ordinary remainder pairs covered'
     elif result['method'] == 'midpoint-slope-batches':
         w = result['midpoint_slope_batches']
         counts = w['work']
         count = (f'CRT half sums · {w["visited_slopes"]:,} slopes searched · '
                  f'{counts.get("candidate_traces", 0):,} candidate sums · '
                  f'{counts.get("square_tests", 0):,} square tests')
+        if w.get('geometry') == 'hexagon_slope':
+            count += f' · compared {counts["radix_candidates"]} radices by slope count'
+        if w.get('curve'):
+            count += ' · curved interval'
         if w['outcome'] == 'half_list_limit':
             count += (f' · next list requires {counts["next_half_size"]:,} entries'
                       f' · limit {w["max_half_entries"]:,}')

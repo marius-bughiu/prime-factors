@@ -108,7 +108,7 @@ theorem quotientBudget_primorial_constants :
   decide +kernel
 
 /-- Complete an exchange of differing entries by comparing every entry to the same cutoff. -/
-private theorem compare_product_at_cut {R : Type*} [CommMonoidWithZero R] [PartialOrder R]
+theorem quotientBudget_product_exchange {R : Type*} [CommMonoidWithZero R] [PartialOrder R]
     [ZeroLEOneClass R] [PosMulMono R] [MulPosMono R] {s t : Finset ℕ} (f : ℕ → R) {cut : R}
     (hc : 1 ≤ cut) (card : s.card ≤ t.card) (pos : ∀ x ∈ s, 0 ≤ f x)
     (lo : ∀ x ∈ s \ t, f x ≤ cut) (hi : ∀ x ∈ t \ s, cut ≤ f x) :
@@ -128,21 +128,28 @@ private theorem compare_product_at_cut {R : Type*} [CommMonoidWithZero R] [Parti
   rw [← Finset.prod_union (disjoint_sdiff_inter s t), sdiff_union_inter] at full
   rwa [inter_comm s t, ← Finset.prod_union (disjoint_sdiff_inter t s), sdiff_union_inter] at full
 
-/-- Any wheel with 167 distinct prime factors is at least the 167th primorial. -/
-theorem quotientBudget_primeFactors_card {m : ℕ} (positive : 0 < m) (bound : m ≤ 2^1366) :
-    m.primeFactors.card ≤ 166 := by
+/-- A wheel below a primorial has fewer distinct prime factors than it.
+For equal cardinalities, replacing a small prime by a larger one increases the product. -/
+theorem quotientBudget_primeFactors_below {m k : ℕ} (positive : 0 < m) (hk : 1 ≤ k)
+    (bound : m < quotientBudgetWheel k) :
+    m.primeFactors.card < (quotientBudgetPrimes k).card := by
   by_contra! many
-  obtain ⟨card, primorial, _⟩ := quotientBudget_primorial_constants
-  have h := compare_product_at_cut (s := quotientBudgetPrimes 991) (t := m.primeFactors)
-    (fun p => p) (cut := 991) (by decide) (by omega) (by simp)
+  have h := quotientBudget_product_exchange (s := quotientBudgetPrimes k) (t := m.primeFactors)
+    (fun p => p) (cut := k) hk many (by simp)
     (fun _ hp => (mem_budgetPrimes.mp (mem_sdiff.mp hp).1).1) (by
       intro p hp
       obtain ⟨inside, outside⟩ := mem_sdiff.mp hp
       have pp := Nat.prime_of_mem_primeFactors inside
-      have large : ¬ p ≤ 991 := fun hpk => outside (mem_budgetPrimes.mpr ⟨hpk, pp⟩)
-      exact (Nat.le_of_lt (lt_of_not_ge large)))
-  exact (not_lt_of_ge bound) (primorial.trans_le (h.trans (Nat.le_of_dvd positive
-    (Nat.prod_primeFactors_dvd m))))
+      have large : ¬ p ≤ k := fun hpk => outside (mem_budgetPrimes.mpr ⟨hpk, pp⟩)
+      exact Nat.le_of_lt (lt_of_not_ge large))
+  exact (not_le_of_gt bound) (h.trans (Nat.le_of_dvd positive (Nat.prod_primeFactors_dvd m)))
+
+/-- Any wheel with 167 distinct prime factors is at least the 167th primorial. -/
+theorem quotientBudget_primeFactors_card {m : ℕ} (positive : 0 < m) (bound : m ≤ 2^1366) :
+    m.primeFactors.card ≤ 166 := by
+  obtain ⟨card, primorial, _⟩ := quotientBudget_primorial_constants
+  have := quotientBudget_primeFactors_below positive (by decide : 1 ≤ 991) (bound.trans_lt primorial)
+  omega
 
 
 private noncomputable def primeLoss (p : ℕ) : ℚ := p / ((p - 1 : ℕ) : ℚ)
@@ -167,7 +174,7 @@ theorem quotientBudget_wheel_ratio {m : ℕ} (positive : 0 < m) (bound : m ≤ 2
     m < 13 * m.totient := by
   obtain ⟨_, _, card, ratio, _⟩ := quotientBudget_primorial_constants
   have count := quotientBudget_primeFactors_card positive bound
-  have h := compare_product_at_cut (s := m.primeFactors) (t := quotientBudgetPrimes 983)
+  have h := quotientBudget_product_exchange (s := m.primeFactors) (t := quotientBudgetPrimes 983)
     primeLoss (cut := primeLoss 983) (by norm_num [primeLoss]) (by omega)
     (fun p _ => div_nonneg (Nat.cast_nonneg _) (Nat.cast_nonneg _)) (by
       intro p hp

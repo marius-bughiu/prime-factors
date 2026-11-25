@@ -69,7 +69,7 @@ theorem canonical_slope_count (c e : G) (he : e^2 = 1) (digits : G → List ℤ)
   rw [canonicalSlopes_eq c e he digits flip, AffineSlopeClasses.slope_count c]
 
 /-- Read the signed differences of the two unit digits in an ordered list of CRT components. -/
-def digitDifferences (c : G) (rows : List (ℤ × (G → ℤ))) (u : G) : List ℤ :=
+noncomputable def digitDifferences (c : G) (rows : List (ℤ × (G → ℤ))) (u : G) : List ℤ :=
   rows.map fun row ↦ row.2 u - row.2 (c/u)
 
 theorem crt_canonical_slope_count (c e : G) (he : e^2 = 1) (rows : List (ℤ × (G → ℤ)))

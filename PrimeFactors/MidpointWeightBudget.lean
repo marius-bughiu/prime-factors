@@ -3,27 +3,30 @@ import Mathlib.Data.Nat.Sqrt
 
 namespace PrimeFactors
 
-/-- The actual rounded midpoint and half-gap bounds at target size give a
-uniform lower bound on the area used to choose the radix. -/
-theorem midpoint_weight_volume {N : ℕ} (size : 2^2047 ≤ N) :
-    let H := (9*N/8).sqrt - ((N-1).sqrt+1)
-    2^2043 ≤ 8*H*(N/8).sqrt := by
+/-- Bounds on the two rounded coordinate ranges, uniformly over the whole target. -/
+theorem midpoint_weight_target_ranges {N : ℕ} (size : 2^2047 ≤ N) :
+    2^1019 ≤ (9*N/8).sqrt - ((N-1).sqrt+1) ∧ 2^1022 ≤ (N/8).sqrt := by
   let s := N.sqrt
-  let J : ℕ := 2^1018
-  have s0 : 2^1023 ≤ s := Nat.le_sqrt.mpr
-    ((by decide +kernel : 2^1023 * 2^1023 ≤ (2:ℕ)^2047).trans size)
-  have margin : 20*(J+1) ≤ s := (by decide +kernel : 20*(J+1) ≤ 2^1023).trans s0
+  let J : ℕ := 2^1019
+  have margin : 20*(J+1) ≤ s := Nat.le_sqrt.mpr
+    ((by decide +kernel : (20*(J+1))*(20*(J+1)) ≤ (2:ℕ)^2047).trans size)
   have sq := Nat.mul_self_le_mul_self (show 20*(s+J+1) ≤ 21*s by omega)
   have bound : 8*((s+J+1)*(s+J+1)) ≤ 9*N := by
     have hs : s*s ≤ N := Nat.sqrt_le N
     nlinarith
   have up : s+J+1 ≤ (9*N/8).sqrt := Nat.le_sqrt.mpr (by omega)
   have down : (N-1).sqrt ≤ s := Nat.sqrt_le_sqrt (Nat.sub_le ..)
-  have height : J ≤ (9*N/8).sqrt - ((N-1).sqrt+1) := by omega
-  have width : 2^1022 ≤ (N/8).sqrt := Nat.le_sqrt.mpr (by
-    have e : 8*(2^1022 * 2^1022) = (2:ℕ)^2047 := by decide +kernel
-    omega)
-  exact (by decide +kernel : 2^2043 ≤ 8*J*2^1022).trans
+  refine ⟨(by omega : J ≤ _), Nat.le_sqrt.mpr ?_⟩
+  have e : 8*(2^1022 * 2^1022) = (2:ℕ)^2047 := by decide +kernel
+  omega
+
+/-- The actual rounded coordinate bounds at target size give a uniform
+lower bound on the area used to choose the radix. -/
+theorem midpoint_weight_volume {N : ℕ} (size : 2^2047 ≤ N) :
+    let H := (9*N/8).sqrt - ((N-1).sqrt+1)
+    2^2043 ≤ 8*H*(N/8).sqrt := by
+  obtain ⟨height, width⟩ := midpoint_weight_target_ranges size
+  exact (by decide +kernel : 2^2043 ≤ 8*2^1019*2^1022).trans
     (Nat.mul_le_mul (Nat.mul_le_mul_left _ height) width)
 
 /-- Choosing the smaller member of each pair leaves representatives which,

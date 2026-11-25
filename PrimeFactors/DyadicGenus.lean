@@ -93,7 +93,7 @@ theorem normalized_square {G : Type*} [CommGroup G] (χ : G →* ℤ) {T : G}
 
 /-- Canonical reduced forms, enumerating nonnegative middle coefficients
 and counting both signs exactly off the boundary. -/
-def reducedCountThrough (Q maxA : ℕ) : ℕ :=
+noncomputable def reducedCountThrough (Q maxA : ℕ) : ℕ :=
   ((List.range maxA).map fun i =>
     let a := i+1
     ((List.range (a+1)).map fun b =>

@@ -1,0 +1,3102 @@
+{
+  "seed": "midpoint-weight-holdout-v1",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.9.6",
+  "max_half_entries": 65536,
+  "rows": [
+    {
+      "n": "502005281288939",
+      "expected_factors": [
+        "17838631",
+        "28141469"
+      ],
+      "repetitions": 5,
+      "methods": {
+        "rectangle": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 7,
+            "table_entries": 42,
+            "gauss_iterations": 1426,
+            "distinct_trace_residues": 4096,
+            "half_entries": 1624,
+            "candidate_traces": 2470,
+            "square_tests": 2095
+          },
+          "seconds": [
+            0.005248665999999999,
+            0.004380042000000001,
+            0.004362166000000001,
+            0.004485249999999996,
+            0.004386625000000005
+          ],
+          "median_seconds": 0.004386625000000005
+        },
+        "hexagon": {
+          "radix": 41580,
+          "outcome": "complete",
+          "total_slopes": 270,
+          "visited_slopes": 270,
+          "remaining_slopes": 0,
+          "total_orbits": 4320,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 7,
+            "table_entries": 40,
+            "gauss_iterations": 2502,
+            "distinct_trace_residues": 4188,
+            "half_entries": 2126,
+            "candidate_traces": 2592,
+            "square_tests": 2436
+          },
+          "seconds": [
+            0.007241042000000003,
+            0.0059561250000000066,
+            0.006052708000000018,
+            0.006100999999999995,
+            0.006675416999999989
+          ],
+          "median_seconds": 0.006100999999999995
+        },
+        "hexagon_slope": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 2,
+            "trial_divisibility_tests": 33,
+            "trial_divisions": 21,
+            "table_entries": 42,
+            "gauss_iterations": 1426,
+            "distinct_trace_residues": 4128,
+            "half_entries": 1632,
+            "candidate_traces": 2197,
+            "square_tests": 2062
+          },
+          "seconds": [
+            0.004228207999999997,
+            0.0049947080000000005,
+            0.004537125000000003,
+            0.008015875000000006,
+            0.004322582999999991
+          ],
+          "median_seconds": 0.004537125000000003
+        },
+        "rectangle_curve": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 7,
+            "table_entries": 42,
+            "gauss_iterations": 1426,
+            "distinct_trace_residues": 4096,
+            "half_entries": 1624,
+            "candidate_traces": 2073,
+            "square_tests": 2073
+          },
+          "seconds": [
+            0.004364499999999993,
+            0.004241749999999989,
+            0.007277666999999988,
+            0.004423082999999994,
+            0.004376957999999986
+          ],
+          "median_seconds": 0.004376957999999986
+        },
+        "hexagon_curve": {
+          "radix": 41580,
+          "outcome": "complete",
+          "total_slopes": 270,
+          "visited_slopes": 270,
+          "remaining_slopes": 0,
+          "total_orbits": 4320,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 7,
+            "table_entries": 40,
+            "gauss_iterations": 2502,
+            "distinct_trace_residues": 4188,
+            "half_entries": 2126,
+            "candidate_traces": 2436,
+            "square_tests": 2436
+          },
+          "seconds": [
+            0.007161374999999998,
+            0.00650524999999999,
+            0.006263207999999992,
+            0.006742667000000008,
+            0.008449333000000003
+          ],
+          "median_seconds": 0.006742667000000008
+        },
+        "hexagon_slope_curve": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 2,
+            "trial_divisibility_tests": 33,
+            "trial_divisions": 21,
+            "table_entries": 42,
+            "gauss_iterations": 1426,
+            "distinct_trace_residues": 4128,
+            "half_entries": 1632,
+            "candidate_traces": 2062,
+            "square_tests": 2062
+          },
+          "seconds": [
+            0.004271417,
+            0.005033958000000005,
+            0.005161209,
+            0.004573125000000011,
+            0.004542916000000008
+          ],
+          "median_seconds": 0.004573125000000011
+        }
+      }
+    },
+    {
+      "n": "728927474612287",
+      "expected_factors": [
+        "25703177",
+        "28359431"
+      ],
+      "repetitions": 5,
+      "methods": {
+        "hexagon": {
+          "radix": 48510,
+          "outcome": "complete",
+          "total_slopes": 630,
+          "visited_slopes": 630,
+          "remaining_slopes": 0,
+          "total_orbits": 5040,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 10,
+            "trial_divisions": 6,
+            "table_entries": 63,
+            "gauss_iterations": 5831,
+            "distinct_trace_residues": 4936,
+            "half_entries": 3728,
+            "candidate_traces": 2804,
+            "square_tests": 2642
+          },
+          "seconds": [
+            0.012547167000000026,
+            0.01150891599999998,
+            0.011540791999999966,
+            0.011998999999999982,
+            0.012775541000000001
+          ],
+          "median_seconds": 0.011998999999999982
+        },
+        "hexagon_slope": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 2,
+            "trial_divisibility_tests": 36,
+            "trial_divisions": 20,
+            "table_entries": 124,
+            "gauss_iterations": 3076,
+            "distinct_trace_residues": 4888,
+            "half_entries": 2540,
+            "candidate_traces": 2702,
+            "square_tests": 2523
+          },
+          "seconds": [
+            0.007964833999999976,
+            0.007560375000000008,
+            0.008046584000000023,
+            0.007305207999999952,
+            0.007176082999999944
+          ],
+          "median_seconds": 0.007560375000000008
+        },
+        "rectangle_curve": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 13,
+            "trial_divisions": 7,
+            "table_entries": 124,
+            "gauss_iterations": 3076,
+            "distinct_trace_residues": 4904,
+            "half_entries": 2544,
+            "candidate_traces": 2531,
+            "square_tests": 2531
+          },
+          "seconds": [
+            0.007793249999999974,
+            0.01335441599999998,
+            0.007650875000000001,
+            0.007736541000000041,
+            0.008010084000000028
+          ],
+          "median_seconds": 0.007793249999999974
+        },
+        "hexagon_curve": {
+          "radix": 48510,
+          "outcome": "complete",
+          "total_slopes": 630,
+          "visited_slopes": 630,
+          "remaining_slopes": 0,
+          "total_orbits": 5040,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 10,
+            "trial_divisions": 6,
+            "table_entries": 63,
+            "gauss_iterations": 5831,
+            "distinct_trace_residues": 4936,
+            "half_entries": 3728,
+            "candidate_traces": 2642,
+            "square_tests": 2642
+          },
+          "seconds": [
+            0.018361084000000027,
+            0.014061125000000008,
+            0.012441458000000016,
+            0.012083459000000019,
+            0.012097249999999948
+          ],
+          "median_seconds": 0.012441458000000016
+        },
+        "hexagon_slope_curve": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 2,
+            "trial_divisibility_tests": 36,
+            "trial_divisions": 20,
+            "table_entries": 124,
+            "gauss_iterations": 3076,
+            "distinct_trace_residues": 4888,
+            "half_entries": 2540,
+            "candidate_traces": 2523,
+            "square_tests": 2523
+          },
+          "seconds": [
+            0.007598500000000008,
+            0.007629916999999986,
+            0.007366916999999973,
+            0.007657874999999981,
+            0.00853079200000001
+          ],
+          "median_seconds": 0.007629916999999986
+        },
+        "rectangle": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 13,
+            "trial_divisions": 7,
+            "table_entries": 124,
+            "gauss_iterations": 3076,
+            "distinct_trace_residues": 4904,
+            "half_entries": 2544,
+            "candidate_traces": 3068,
+            "square_tests": 2567
+          },
+          "seconds": [
+            0.007529333999999999,
+            0.009350334000000016,
+            0.007303999999999977,
+            0.007378083000000035,
+            0.008102500000000012
+          ],
+          "median_seconds": 0.007529333999999999
+        }
+      }
+    },
+    {
+      "n": "693050785559401",
+      "expected_factors": [
+        "23975767",
+        "28906303"
+      ],
+      "repetitions": 5,
+      "methods": {
+        "hexagon_slope": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 2,
+            "trial_divisibility_tests": 35,
+            "trial_divisions": 21,
+            "table_entries": 42,
+            "gauss_iterations": 1356,
+            "distinct_trace_residues": 4048,
+            "half_entries": 1612,
+            "candidate_traces": 1873,
+            "square_tests": 1811
+          },
+          "seconds": [
+            0.0038853750000000797,
+            0.004625292000000059,
+            0.004165916000000047,
+            0.003918541999999969,
+            0.003810832999999958
+          ],
+          "median_seconds": 0.003918541999999969
+        },
+        "rectangle_curve": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 13,
+            "trial_divisions": 7,
+            "table_entries": 124,
+            "gauss_iterations": 3048,
+            "distinct_trace_residues": 4456,
+            "half_entries": 2430,
+            "candidate_traces": 2079,
+            "square_tests": 2079
+          },
+          "seconds": [
+            0.007206625000000022,
+            0.007521792000000027,
+            0.007379208999999998,
+            0.007888833000000095,
+            0.00714404099999999
+          ],
+          "median_seconds": 0.007379208999999998
+        },
+        "hexagon_curve": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 7,
+            "table_entries": 42,
+            "gauss_iterations": 1356,
+            "distinct_trace_residues": 4048,
+            "half_entries": 1612,
+            "candidate_traces": 1811,
+            "square_tests": 1811
+          },
+          "seconds": [
+            0.004017249999999972,
+            0.004001582999999975,
+            0.005816292000000001,
+            0.003941167000000023,
+            0.003920041000000096
+          ],
+          "median_seconds": 0.004001582999999975
+        },
+        "hexagon_slope_curve": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 2,
+            "trial_divisibility_tests": 35,
+            "trial_divisions": 21,
+            "table_entries": 42,
+            "gauss_iterations": 1356,
+            "distinct_trace_residues": 4048,
+            "half_entries": 1612,
+            "candidate_traces": 1811,
+            "square_tests": 1811
+          },
+          "seconds": [
+            0.003999375000000027,
+            0.004054791999999918,
+            0.004463125000000012,
+            0.003998084000000013,
+            0.004011790999999931
+          ],
+          "median_seconds": 0.004011790999999931
+        },
+        "rectangle": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 13,
+            "trial_divisions": 7,
+            "table_entries": 124,
+            "gauss_iterations": 3048,
+            "distinct_trace_residues": 4456,
+            "half_entries": 2430,
+            "candidate_traces": 2462,
+            "square_tests": 2108
+          },
+          "seconds": [
+            0.007452416999999989,
+            0.007281792000000009,
+            0.007364666999999936,
+            0.0071146669999999634,
+            0.006953082999999971
+          ],
+          "median_seconds": 0.007281792000000009
+        },
+        "hexagon": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 7,
+            "table_entries": 42,
+            "gauss_iterations": 1356,
+            "distinct_trace_residues": 4048,
+            "half_entries": 1612,
+            "candidate_traces": 1873,
+            "square_tests": 1811
+          },
+          "seconds": [
+            0.0038838339999999194,
+            0.004285416999999958,
+            0.003863292000000018,
+            0.003846915999999978,
+            0.003912083000000011
+          ],
+          "median_seconds": 0.0038838339999999194
+        }
+      }
+    },
+    {
+      "n": "780188099549371",
+      "expected_factors": [
+        "26866493",
+        "29039447"
+      ],
+      "repetitions": 5,
+      "methods": {
+        "rectangle_curve": {
+          "radix": 53130,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 5,
+            "table_entries": 45,
+            "gauss_iterations": 3045,
+            "distinct_trace_residues": 5004,
+            "half_entries": 2570,
+            "candidate_traces": 2306,
+            "square_tests": 2306
+          },
+          "seconds": [
+            0.007731790999999988,
+            0.0077319589999998994,
+            0.007745416999999977,
+            0.007595874999999919,
+            0.007487249999999945
+          ],
+          "median_seconds": 0.007731790999999988
+        },
+        "hexagon_curve": {
+          "radix": 48510,
+          "outcome": "complete",
+          "total_slopes": 630,
+          "visited_slopes": 630,
+          "remaining_slopes": 0,
+          "total_orbits": 5040,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 10,
+            "trial_divisions": 6,
+            "table_entries": 63,
+            "gauss_iterations": 5766,
+            "distinct_trace_residues": 4840,
+            "half_entries": 3680,
+            "candidate_traces": 2539,
+            "square_tests": 2539
+          },
+          "seconds": [
+            0.012468499999999993,
+            0.012243333000000023,
+            0.012032417000000017,
+            0.012092790999999936,
+            0.012433334000000018
+          ],
+          "median_seconds": 0.012243333000000023
+        },
+        "hexagon_slope_curve": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 3,
+            "trial_divisibility_tests": 47,
+            "trial_divisions": 25,
+            "table_entries": 124,
+            "gauss_iterations": 3104,
+            "distinct_trace_residues": 4972,
+            "half_entries": 2562,
+            "candidate_traces": 2419,
+            "square_tests": 2419
+          },
+          "seconds": [
+            0.007654916999999983,
+            0.007309458000000046,
+            0.007679042000000025,
+            0.007598457999999919,
+            0.007369624999999935
+          ],
+          "median_seconds": 0.007598457999999919
+        },
+        "rectangle": {
+          "radix": 53130,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 5,
+            "table_entries": 45,
+            "gauss_iterations": 3045,
+            "distinct_trace_residues": 5004,
+            "half_entries": 2570,
+            "candidate_traces": 2725,
+            "square_tests": 2323
+          },
+          "seconds": [
+            0.0074898340000000285,
+            0.007423500000000027,
+            0.007516999999999996,
+            0.007867959000000035,
+            0.007431874999999977
+          ],
+          "median_seconds": 0.0074898340000000285
+        },
+        "hexagon": {
+          "radix": 48510,
+          "outcome": "complete",
+          "total_slopes": 630,
+          "visited_slopes": 630,
+          "remaining_slopes": 0,
+          "total_orbits": 5040,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 10,
+            "trial_divisions": 6,
+            "table_entries": 63,
+            "gauss_iterations": 5766,
+            "distinct_trace_residues": 4840,
+            "half_entries": 3680,
+            "candidate_traces": 2661,
+            "square_tests": 2539
+          },
+          "seconds": [
+            0.011290124999999929,
+            0.011578458999999985,
+            0.011459250000000032,
+            0.012248584000000062,
+            0.011355375000000056
+          ],
+          "median_seconds": 0.011459250000000032
+        },
+        "hexagon_slope": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 3,
+            "trial_divisibility_tests": 47,
+            "trial_divisions": 25,
+            "table_entries": 124,
+            "gauss_iterations": 3104,
+            "distinct_trace_residues": 4972,
+            "half_entries": 2562,
+            "candidate_traces": 2584,
+            "square_tests": 2419
+          },
+          "seconds": [
+            0.007202250000000077,
+            0.007466708000000044,
+            0.007123458000000027,
+            0.007824750000000047,
+            0.007466332999999992
+          ],
+          "median_seconds": 0.007466332999999992
+        }
+      }
+    },
+    {
+      "n": "679959698230159",
+      "expected_factors": [
+        "25763873",
+        "26391983"
+      ],
+      "repetitions": 5,
+      "methods": {
+        "hexagon_curve": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 7,
+            "table_entries": 42,
+            "gauss_iterations": 1384,
+            "distinct_trace_residues": 4344,
+            "half_entries": 1686,
+            "candidate_traces": 2231,
+            "square_tests": 2231
+          },
+          "seconds": [
+            0.004402750000000011,
+            0.00437929200000009,
+            0.004240333999999901,
+            0.004222417000000034,
+            0.004420749999999973
+          ],
+          "median_seconds": 0.00437929200000009
+        },
+        "hexagon_slope_curve": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 2,
+            "trial_divisibility_tests": 35,
+            "trial_divisions": 21,
+            "table_entries": 42,
+            "gauss_iterations": 1384,
+            "distinct_trace_residues": 4344,
+            "half_entries": 1686,
+            "candidate_traces": 2231,
+            "square_tests": 2231
+          },
+          "seconds": [
+            0.004272084000000009,
+            0.004360208000000032,
+            0.004283458000000184,
+            0.004274416999999975,
+            0.0043442500000001605
+          ],
+          "median_seconds": 0.004283458000000184
+        },
+        "rectangle": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 13,
+            "trial_divisions": 7,
+            "table_entries": 124,
+            "gauss_iterations": 3104,
+            "distinct_trace_residues": 5020,
+            "half_entries": 2574,
+            "candidate_traces": 2738,
+            "square_tests": 2324
+          },
+          "seconds": [
+            0.007175541999999924,
+            0.007660749999999994,
+            0.007579791999999808,
+            0.007645875000000135,
+            0.007342249999999995
+          ],
+          "median_seconds": 0.007579791999999808
+        },
+        "hexagon": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 7,
+            "table_entries": 42,
+            "gauss_iterations": 1384,
+            "distinct_trace_residues": 4344,
+            "half_entries": 1686,
+            "candidate_traces": 2365,
+            "square_tests": 2231
+          },
+          "seconds": [
+            0.0043793340000000125,
+            0.004116167000000059,
+            0.004134249999999895,
+            0.00405416599999997,
+            0.004182667000000029
+          ],
+          "median_seconds": 0.004134249999999895
+        },
+        "hexagon_slope": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 2,
+            "trial_divisibility_tests": 35,
+            "trial_divisions": 21,
+            "table_entries": 42,
+            "gauss_iterations": 1384,
+            "distinct_trace_residues": 4344,
+            "half_entries": 1686,
+            "candidate_traces": 2365,
+            "square_tests": 2231
+          },
+          "seconds": [
+            0.004236958000000013,
+            0.004172708000000025,
+            0.004284375000000118,
+            0.004099708000000035,
+            0.004089333000000028
+          ],
+          "median_seconds": 0.004172708000000025
+        },
+        "rectangle_curve": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 13,
+            "trial_divisions": 7,
+            "table_entries": 124,
+            "gauss_iterations": 3104,
+            "distinct_trace_residues": 5020,
+            "half_entries": 2574,
+            "candidate_traces": 2304,
+            "square_tests": 2304
+          },
+          "seconds": [
+            0.007646624999999907,
+            0.007504415999999958,
+            0.0077735000000001,
+            0.007369332999999978,
+            0.007467874999999902
+          ],
+          "median_seconds": 0.007504415999999958
+        }
+      }
+    },
+    {
+      "n": "758692368050633",
+      "expected_factors": [
+        "24365941",
+        "31137413"
+      ],
+      "repetitions": 5,
+      "methods": {
+        "hexagon_slope_curve": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 2,
+            "trial_divisibility_tests": 36,
+            "trial_divisions": 20,
+            "table_entries": 124,
+            "gauss_iterations": 3069,
+            "distinct_trace_residues": 4624,
+            "half_entries": 2472,
+            "candidate_traces": 2242,
+            "square_tests": 2242
+          },
+          "seconds": [
+            0.007362416000000094,
+            0.007622708999999839,
+            0.007577500000000015,
+            0.007339250000000019,
+            0.007227166000000063
+          ],
+          "median_seconds": 0.007362416000000094
+        },
+        "rectangle": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 13,
+            "trial_divisions": 7,
+            "table_entries": 124,
+            "gauss_iterations": 3069,
+            "distinct_trace_residues": 4608,
+            "half_entries": 2468,
+            "candidate_traces": 2684,
+            "square_tests": 2272
+          },
+          "seconds": [
+            0.007396500000000028,
+            0.007366957999999979,
+            0.00746320800000011,
+            0.007342999999999877,
+            0.007003290999999967
+          ],
+          "median_seconds": 0.007366957999999979
+        },
+        "hexagon": {
+          "radix": 48510,
+          "outcome": "complete",
+          "total_slopes": 630,
+          "visited_slopes": 630,
+          "remaining_slopes": 0,
+          "total_orbits": 5040,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 10,
+            "trial_divisions": 6,
+            "table_entries": 63,
+            "gauss_iterations": 5910,
+            "distinct_trace_residues": 4952,
+            "half_entries": 3736,
+            "candidate_traces": 2820,
+            "square_tests": 2679
+          },
+          "seconds": [
+            0.012137540999999974,
+            0.011782334000000061,
+            0.011761875000000144,
+            0.01159341700000005,
+            0.01101845899999998
+          ],
+          "median_seconds": 0.011761875000000144
+        },
+        "hexagon_slope": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 2,
+            "trial_divisibility_tests": 36,
+            "trial_divisions": 20,
+            "table_entries": 124,
+            "gauss_iterations": 3069,
+            "distinct_trace_residues": 4624,
+            "half_entries": 2472,
+            "candidate_traces": 2380,
+            "square_tests": 2242
+          },
+          "seconds": [
+            0.007280165999999921,
+            0.0071700839999999655,
+            0.006931457999999946,
+            0.007151124999999814,
+            0.006482000000000099
+          ],
+          "median_seconds": 0.007151124999999814
+        },
+        "rectangle_curve": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 13,
+            "trial_divisions": 7,
+            "table_entries": 124,
+            "gauss_iterations": 3069,
+            "distinct_trace_residues": 4608,
+            "half_entries": 2468,
+            "candidate_traces": 2236,
+            "square_tests": 2236
+          },
+          "seconds": [
+            0.007381124999999988,
+            0.008014125000000094,
+            0.007756749999999979,
+            0.007496249999999982,
+            0.007308416999999956
+          ],
+          "median_seconds": 0.007496249999999982
+        },
+        "hexagon_curve": {
+          "radix": 48510,
+          "outcome": "complete",
+          "total_slopes": 630,
+          "visited_slopes": 630,
+          "remaining_slopes": 0,
+          "total_orbits": 5040,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 10,
+            "trial_divisions": 6,
+            "table_entries": 63,
+            "gauss_iterations": 5910,
+            "distinct_trace_residues": 4952,
+            "half_entries": 3736,
+            "candidate_traces": 2679,
+            "square_tests": 2679
+          },
+          "seconds": [
+            0.012292291999999927,
+            0.012432957999999994,
+            0.012114958999999814,
+            0.011971249999999989,
+            0.011984500000000065
+          ],
+          "median_seconds": 0.012114958999999814
+        }
+      }
+    },
+    {
+      "n": "821504195393939",
+      "expected_factors": [
+        "25289567",
+        "32483917"
+      ],
+      "repetitions": 5,
+      "methods": {
+        "rectangle": {
+          "radix": 53130,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 5,
+            "table_entries": 45,
+            "gauss_iterations": 3123,
+            "distinct_trace_residues": 5116,
+            "half_entries": 2598,
+            "candidate_traces": 3153,
+            "square_tests": 2701
+          },
+          "seconds": [
+            0.00739754200000009,
+            0.007337458000000074,
+            0.007308708999999913,
+            0.007321707999999871,
+            0.007661833000000007
+          ],
+          "median_seconds": 0.007337458000000074
+        },
+        "hexagon": {
+          "radix": 48510,
+          "outcome": "complete",
+          "total_slopes": 630,
+          "visited_slopes": 630,
+          "remaining_slopes": 0,
+          "total_orbits": 5040,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 10,
+            "trial_divisions": 6,
+            "table_entries": 63,
+            "gauss_iterations": 5840,
+            "distinct_trace_residues": 4906,
+            "half_entries": 3713,
+            "candidate_traces": 3013,
+            "square_tests": 2806
+          },
+          "seconds": [
+            0.01146025000000006,
+            0.011356499999999992,
+            0.011008040999999968,
+            0.011490208000000113,
+            0.011598915999999848
+          ],
+          "median_seconds": 0.01146025000000006
+        },
+        "hexagon_slope": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 3,
+            "trial_divisibility_tests": 47,
+            "trial_divisions": 25,
+            "table_entries": 124,
+            "gauss_iterations": 3078,
+            "distinct_trace_residues": 5020,
+            "half_entries": 2574,
+            "candidate_traces": 2951,
+            "square_tests": 2753
+          },
+          "seconds": [
+            0.007223999999999897,
+            0.007211708000000039,
+            0.006853708999999819,
+            0.00710845800000004,
+            0.007331250000000011
+          ],
+          "median_seconds": 0.007211708000000039
+        },
+        "rectangle_curve": {
+          "radix": 53130,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 5,
+            "table_entries": 45,
+            "gauss_iterations": 3123,
+            "distinct_trace_residues": 5116,
+            "half_entries": 2598,
+            "candidate_traces": 2677,
+            "square_tests": 2677
+          },
+          "seconds": [
+            0.007879291999999927,
+            0.007199708999999999,
+            0.0074519589999999525,
+            0.007659542000000075,
+            0.007721499999999937
+          ],
+          "median_seconds": 0.007659542000000075
+        },
+        "hexagon_curve": {
+          "radix": 48510,
+          "outcome": "complete",
+          "total_slopes": 630,
+          "visited_slopes": 630,
+          "remaining_slopes": 0,
+          "total_orbits": 5040,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 10,
+            "trial_divisions": 6,
+            "table_entries": 63,
+            "gauss_iterations": 5840,
+            "distinct_trace_residues": 4906,
+            "half_entries": 3713,
+            "candidate_traces": 2806,
+            "square_tests": 2806
+          },
+          "seconds": [
+            0.012019375000000165,
+            0.011562457999999998,
+            0.011514541000000156,
+            0.011769875000000152,
+            0.012364708999999863
+          ],
+          "median_seconds": 0.011769875000000152
+        },
+        "hexagon_slope_curve": {
+          "radix": 50820,
+          "outcome": "complete",
+          "total_slopes": 330,
+          "visited_slopes": 330,
+          "remaining_slopes": 0,
+          "total_orbits": 5280,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 3,
+            "trial_divisibility_tests": 47,
+            "trial_divisions": 25,
+            "table_entries": 124,
+            "gauss_iterations": 3078,
+            "distinct_trace_residues": 5020,
+            "half_entries": 2574,
+            "candidate_traces": 2753,
+            "square_tests": 2753
+          },
+          "seconds": [
+            0.007462875000000091,
+            0.007374834000000163,
+            0.007361874999999962,
+            0.00729945799999987,
+            0.00737566700000003
+          ],
+          "median_seconds": 0.007374834000000163
+        }
+      }
+    },
+    {
+      "n": "542176358007751",
+      "expected_factors": [
+        "23013373",
+        "23559187"
+      ],
+      "repetitions": 5,
+      "methods": {
+        "hexagon": {
+          "radix": 43890,
+          "outcome": "complete",
+          "total_slopes": 270,
+          "visited_slopes": 270,
+          "remaining_slopes": 0,
+          "total_orbits": 4320,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 5,
+            "table_entries": 41,
+            "gauss_iterations": 2492,
+            "distinct_trace_residues": 4092,
+            "half_entries": 2102,
+            "candidate_traces": 2149,
+            "square_tests": 2009
+          },
+          "seconds": [
+            0.006057583000000033,
+            0.009161375000000138,
+            0.005701417000000042,
+            0.005778709000000104,
+            0.005601416999999831
+          ],
+          "median_seconds": 0.005778709000000104
+        },
+        "hexagon_slope": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 2,
+            "trial_divisibility_tests": 33,
+            "trial_divisions": 19,
+            "table_entries": 42,
+            "gauss_iterations": 1370,
+            "distinct_trace_residues": 4312,
+            "half_entries": 1678,
+            "candidate_traces": 2166,
+            "square_tests": 2049
+          },
+          "seconds": [
+            0.003921416000000066,
+            0.003967542000000046,
+            0.003866582999999979,
+            0.0037817920000000615,
+            0.0037853330000001684
+          ],
+          "median_seconds": 0.003866582999999979
+        },
+        "rectangle_curve": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 7,
+            "table_entries": 42,
+            "gauss_iterations": 1370,
+            "distinct_trace_residues": 4280,
+            "half_entries": 1670,
+            "candidate_traces": 2046,
+            "square_tests": 2046
+          },
+          "seconds": [
+            0.0042664579999998065,
+            0.008525125000000022,
+            0.006716833000000033,
+            0.004009332999999948,
+            0.0039523329999999746
+          ],
+          "median_seconds": 0.0042664579999998065
+        },
+        "hexagon_curve": {
+          "radix": 43890,
+          "outcome": "complete",
+          "total_slopes": 270,
+          "visited_slopes": 270,
+          "remaining_slopes": 0,
+          "total_orbits": 4320,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 5,
+            "table_entries": 41,
+            "gauss_iterations": 2492,
+            "distinct_trace_residues": 4092,
+            "half_entries": 2102,
+            "candidate_traces": 2009,
+            "square_tests": 2009
+          },
+          "seconds": [
+            0.007594875000000112,
+            0.012112125000000029,
+            0.005975709000000107,
+            0.00587970800000015,
+            0.006161915999999934
+          ],
+          "median_seconds": 0.006161915999999934
+        },
+        "hexagon_slope_curve": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "radix_candidates": 2,
+            "trial_divisibility_tests": 33,
+            "trial_divisions": 19,
+            "table_entries": 42,
+            "gauss_iterations": 1370,
+            "distinct_trace_residues": 4312,
+            "half_entries": 1678,
+            "candidate_traces": 2049,
+            "square_tests": 2049
+          },
+          "seconds": [
+            0.004470250000000009,
+            0.008152082999999921,
+            0.004109375000000082,
+            0.004027875000000014,
+            0.0039977919999998335
+          ],
+          "median_seconds": 0.004109375000000082
+        },
+        "rectangle": {
+          "radix": 46200,
+          "outcome": "complete",
+          "total_slopes": 150,
+          "visited_slopes": 150,
+          "remaining_slopes": 0,
+          "total_orbits": 4800,
+          "remaining_orbits": 0,
+          "work": {
+            "trial_divisibility_tests": 11,
+            "trial_divisions": 7,
+            "table_entries": 42,
+            "gauss_iterations": 1370,
+            "distinct_trace_residues": 4280,
+            "half_entries": 1670,
+            "candidate_traces": 2434,
+            "square_tests": 2066
+          },
+          "seconds": [
+            0.004267542000000013,
+            0.008289624999999967,
+            0.0038837499999999636,
+            0.004083542000000051,
+            0.004043624999999995
+          ],
+          "median_seconds": 0.004083542000000051
+        }
+      }
+    }
+  ],
+  "complete_82": {
+    "n": "3043806426885490749164321",
+    "expected_factors": [
+      "1688035255729",
+      "1803165198449"
+    ],
+    "repetitions": 2,
+    "methods": {
+      "rectangle": {
+        "radix": 80660580,
+        "outcome": "complete",
+        "total_slopes": 56160,
+        "visited_slopes": 56160,
+        "remaining_slopes": 0,
+        "total_orbits": 7188480,
+        "remaining_orbits": 0,
+        "work": {
+          "trial_divisibility_tests": 17,
+          "trial_divisions": 8,
+          "table_entries": 130,
+          "gauss_iterations": 764701,
+          "distinct_trace_residues": 6338752,
+          "half_entries": 1241556,
+          "candidate_traces": 3835797,
+          "square_tests": 3261252
+        },
+        "seconds": [
+          3.735121791,
+          3.8425838340000027
+        ],
+        "median_seconds": 3.7888528125000014
+      },
+      "hexagon": {
+        "radix": 75044970,
+        "outcome": "complete",
+        "total_slopes": 211680,
+        "visited_slopes": 211680,
+        "remaining_slopes": 0,
+        "total_orbits": 6773760,
+        "remaining_orbits": 0,
+        "work": {
+          "trial_divisibility_tests": 16,
+          "trial_divisions": 9,
+          "table_entries": 343,
+          "gauss_iterations": 2876497,
+          "distinct_trace_residues": 6600780,
+          "half_entries": 2496914,
+          "candidate_traces": 3984801,
+          "square_tests": 3744091
+        },
+        "seconds": [
+          7.210447541,
+          7.4852404160000034
+        ],
+        "median_seconds": 7.347843978500002
+      },
+      "hexagon_slope": {
+        "radix": 75555480,
+        "outcome": "complete",
+        "total_slopes": 25920,
+        "visited_slopes": 25920,
+        "remaining_slopes": 0,
+        "total_orbits": 6635520,
+        "remaining_orbits": 0,
+        "work": {
+          "radix_candidates": 12,
+          "trial_divisibility_tests": 222,
+          "trial_divisions": 113,
+          "table_entries": 90,
+          "gauss_iterations": 351968,
+          "distinct_trace_residues": 5606720,
+          "half_entries": 763384,
+          "candidate_traces": 3343692,
+          "square_tests": 3142652
+        },
+        "seconds": [
+          2.7181995410000006,
+          2.7263324169999947
+        ],
+        "median_seconds": 2.7222659789999977
+      },
+      "rectangle_curve": {
+        "radix": 80660580,
+        "outcome": "complete",
+        "total_slopes": 56160,
+        "visited_slopes": 56160,
+        "remaining_slopes": 0,
+        "total_orbits": 7188480,
+        "remaining_orbits": 0,
+        "work": {
+          "trial_divisibility_tests": 17,
+          "trial_divisions": 8,
+          "table_entries": 130,
+          "gauss_iterations": 764701,
+          "distinct_trace_residues": 6338752,
+          "half_entries": 1241556,
+          "candidate_traces": 3229018,
+          "square_tests": 3229018
+        },
+        "seconds": [
+          3.636808875,
+          3.6690400410000024
+        ],
+        "median_seconds": 3.652924458000001
+      },
+      "hexagon_curve": {
+        "radix": 75044970,
+        "outcome": "complete",
+        "total_slopes": 211680,
+        "visited_slopes": 211680,
+        "remaining_slopes": 0,
+        "total_orbits": 6773760,
+        "remaining_orbits": 0,
+        "work": {
+          "trial_divisibility_tests": 16,
+          "trial_divisions": 9,
+          "table_entries": 343,
+          "gauss_iterations": 2876497,
+          "distinct_trace_residues": 6600780,
+          "half_entries": 2496914,
+          "candidate_traces": 3744091,
+          "square_tests": 3744091
+        },
+        "seconds": [
+          7.6029230000000005,
+          7.423579167
+        ],
+        "median_seconds": 7.5132510835
+      },
+      "hexagon_slope_curve": {
+        "radix": 75555480,
+        "outcome": "complete",
+        "total_slopes": 25920,
+        "visited_slopes": 25920,
+        "remaining_slopes": 0,
+        "total_orbits": 6635520,
+        "remaining_orbits": 0,
+        "work": {
+          "radix_candidates": 12,
+          "trial_divisibility_tests": 222,
+          "trial_divisions": 113,
+          "table_entries": 90,
+          "gauss_iterations": 351968,
+          "distinct_trace_residues": 5606720,
+          "half_entries": 763384,
+          "candidate_traces": 3142652,
+          "square_tests": 3142652
+        },
+        "seconds": [
+          2.7174604160000015,
+          2.7034264999999955
+        ],
+        "median_seconds": 2.7104434579999985
+      }
+    }
+  },
+  "capped_2048": {
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "expected_factors": [],
+    "repetitions": 3,
+    "methods": {
+      "rectangle": {
+        "radix": 14761412789877398598231539921630752927114724257085462292775441282901779146702882788113242727951170230912592535838426537678698613706588500426220468432340332442832710042048152380233157473717127431625366432490,
+        "outcome": "half_list_limit",
+        "total_slopes": 133833468323704964045938273274102647020084806921513891352436188155337978105905323232266993786938674470889429047173147369936744929022804446147568992256000000000000000000000000000,
+        "visited_slopes": 0,
+        "remaining_slopes": 133833468323704964045938273274102647020084806921513891352436188155337978105905323232266993786938674470889429047173147369936744929022804446147568992256000000000000000000000000000,
+        "total_orbits": 662711236137384079185778321979620432635397841935683776402620051025963644341483947646462886125198617047421013002154184797220566594740343684391800626048635789496415671170552037376000000000000000000000000000,
+        "remaining_orbits": 662711236137384079185778321979620432635397841935683776402620051025963644341483947646462886125198617047421013002154184797220566594740343684391800626048635789496415671170552037376000000000000000000000000000,
+        "work": {
+          "trial_divisibility_tests": 338,
+          "trial_divisions": 94,
+          "table_entries": 24307,
+          "gauss_iterations": 278,
+          "next_half_size": 70368744177664
+        },
+        "seconds": [
+          0.06360995899999722,
+          0.05159879200000006,
+          0.05300058400000296
+        ],
+        "median_seconds": 0.05300058400000296
+      },
+      "hexagon": {
+        "radix": 13760639041411134286487028740503244254089997188808481798349987636603353441841670395698785593852785808477840499510397619869973283963768941075290267182690140412810153429027938659539384085668508622701612776050,
+        "outcome": "half_list_limit",
+        "total_slopes": 124760012844131746144518729323316026883129904757343458040406616077009979590250725047028553530197069422015569450754628904178321544004309229459598213120000000000000000000000000000,
+        "visited_slopes": 0,
+        "remaining_slopes": 124760012844131746144518729323316026883129904757343458040406616077009979590250725047028553530197069422015569450754628904178321544004309229459598213120000000000000000000000000000,
+        "total_orbits": 617781660806036006020640808625069894829608157736654367832950895024203397267485035941617944692981761654375520595228477353341206147639303434602526007333474041055980710413226475520000000000000000000000000000,
+        "remaining_orbits": 617781660806036006020640808625069894829608157736654367832950895024203397267485035941617944692981761654375520595228477353341206147639303434602526007333474041055980710413226475520000000000000000000000000000,
+        "work": {
+          "trial_divisibility_tests": 339,
+          "trial_divisions": 95,
+          "table_entries": 21059,
+          "gauss_iterations": 277,
+          "next_half_size": 70368744177664
+        },
+        "seconds": [
+          0.04421654099999728,
+          0.046948541000006117,
+          0.04444341600000001
+        ],
+        "median_seconds": 0.04444341600000001
+      },
+      "hexagon_slope": {
+        "radix": 14010832478527700364423156535785121422346178955877726921956351048177959868056973493802399877377381914086528508592404849322154616399473830913022817495102688420315792582282992089712827432680663324932551190160,
+        "outcome": "half_list_limit",
+        "total_slopes": 31757094178506262654968403827753170479342157574596516592103502274147994804791093648334540898595617671058508587464814630154481847564733258407897726976000000000000000000000000000,
+        "visited_slopes": 0,
+        "remaining_slopes": 31757094178506262654968403827753170479342157574596516592103502274147994804791093648334540898595617671058508587464814630154481847564733258407897726976000000000000000000000000000,
+        "total_orbits": 629014054638873024311925186963707529281055578786411719975368184024643459035984763867829180051035975502636893696959904214311046259414563497049844662012264478166089450602557865984000000000000000000000000000,
+        "remaining_orbits": 629014054638873024311925186963707529281055578786411719975368184024643459035984763867829180051035975502636893696959904214311046259414563497049844662012264478166089450602557865984000000000000000000000000000,
+        "work": {
+          "radix_candidates": 5,
+          "trial_divisibility_tests": 2037,
+          "trial_divisions": 573,
+          "table_entries": 20986,
+          "gauss_iterations": 278,
+          "next_half_size": 140737488355328
+        },
+        "seconds": [
+          0.04941579100000126,
+          0.045158250000000066,
+          0.046875333000002684
+        ],
+        "median_seconds": 0.046875333000002684
+      },
+      "rectangle_curve": {
+        "radix": 14761412789877398598231539921630752927114724257085462292775441282901779146702882788113242727951170230912592535838426537678698613706588500426220468432340332442832710042048152380233157473717127431625366432490,
+        "outcome": "half_list_limit",
+        "total_slopes": 133833468323704964045938273274102647020084806921513891352436188155337978105905323232266993786938674470889429047173147369936744929022804446147568992256000000000000000000000000000,
+        "visited_slopes": 0,
+        "remaining_slopes": 133833468323704964045938273274102647020084806921513891352436188155337978105905323232266993786938674470889429047173147369936744929022804446147568992256000000000000000000000000000,
+        "total_orbits": 662711236137384079185778321979620432635397841935683776402620051025963644341483947646462886125198617047421013002154184797220566594740343684391800626048635789496415671170552037376000000000000000000000000000,
+        "remaining_orbits": 662711236137384079185778321979620432635397841935683776402620051025963644341483947646462886125198617047421013002154184797220566594740343684391800626048635789496415671170552037376000000000000000000000000000,
+        "work": {
+          "trial_divisibility_tests": 338,
+          "trial_divisions": 94,
+          "table_entries": 24307,
+          "gauss_iterations": 278,
+          "next_half_size": 70368744177664
+        },
+        "seconds": [
+          0.056207666999995354,
+          0.0520725000000013,
+          0.05303570899999954
+        ],
+        "median_seconds": 0.05303570899999954
+      },
+      "hexagon_curve": {
+        "radix": 13760639041411134286487028740503244254089997188808481798349987636603353441841670395698785593852785808477840499510397619869973283963768941075290267182690140412810153429027938659539384085668508622701612776050,
+        "outcome": "half_list_limit",
+        "total_slopes": 124760012844131746144518729323316026883129904757343458040406616077009979590250725047028553530197069422015569450754628904178321544004309229459598213120000000000000000000000000000,
+        "visited_slopes": 0,
+        "remaining_slopes": 124760012844131746144518729323316026883129904757343458040406616077009979590250725047028553530197069422015569450754628904178321544004309229459598213120000000000000000000000000000,
+        "total_orbits": 617781660806036006020640808625069894829608157736654367832950895024203397267485035941617944692981761654375520595228477353341206147639303434602526007333474041055980710413226475520000000000000000000000000000,
+        "remaining_orbits": 617781660806036006020640808625069894829608157736654367832950895024203397267485035941617944692981761654375520595228477353341206147639303434602526007333474041055980710413226475520000000000000000000000000000,
+        "work": {
+          "trial_divisibility_tests": 339,
+          "trial_divisions": 95,
+          "table_entries": 21059,
+          "gauss_iterations": 277,
+          "next_half_size": 70368744177664
+        },
+        "seconds": [
+          0.04397495799999973,
+          0.04708758299999971,
+          0.044136125000001414
+        ],
+        "median_seconds": 0.044136125000001414
+      },
+      "hexagon_slope_curve": {
+        "radix": 14010832478527700364423156535785121422346178955877726921956351048177959868056973493802399877377381914086528508592404849322154616399473830913022817495102688420315792582282992089712827432680663324932551190160,
+        "outcome": "half_list_limit",
+        "total_slopes": 31757094178506262654968403827753170479342157574596516592103502274147994804791093648334540898595617671058508587464814630154481847564733258407897726976000000000000000000000000000,
+        "visited_slopes": 0,
+        "remaining_slopes": 31757094178506262654968403827753170479342157574596516592103502274147994804791093648334540898595617671058508587464814630154481847564733258407897726976000000000000000000000000000,
+        "total_orbits": 629014054638873024311925186963707529281055578786411719975368184024643459035984763867829180051035975502636893696959904214311046259414563497049844662012264478166089450602557865984000000000000000000000000000,
+        "remaining_orbits": 629014054638873024311925186963707529281055578786411719975368184024643459035984763867829180051035975502636893696959904214311046259414563497049844662012264478166089450602557865984000000000000000000000000000,
+        "work": {
+          "radix_candidates": 5,
+          "trial_divisibility_tests": 2037,
+          "trial_divisions": 573,
+          "table_entries": 20986,
+          "gauss_iterations": 278,
+          "next_half_size": 140737488355328
+        },
+        "seconds": [
+          0.047279708000004916,
+          0.04554325000000148,
+          0.04657850000000252
+        ],
+        "median_seconds": 0.04657850000000252
+      }
+    }
+  },
+  "fresh": {
+    "seed": "hex-radix-slope-holdout-v1",
+    "rows": [
+      {
+        "sample": 0,
+        "n": "536405719223639",
+        "expected_factors": [
+          "20888741",
+          "25679179"
+        ],
+        "repetitions": 5,
+        "methods": {
+          "rectangle": {
+            "radix": 46200,
+            "outcome": "complete",
+            "total_slopes": 150,
+            "visited_slopes": 150,
+            "remaining_slopes": 0,
+            "total_orbits": 4800,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 7,
+              "table_entries": 42,
+              "gauss_iterations": 1382,
+              "distinct_trace_residues": 4312,
+              "half_entries": 1678,
+              "candidate_traces": 2566,
+              "square_tests": 2199
+            },
+            "seconds": [
+              0.004267624999999997,
+              0.004504707999999996,
+              0.0043424579999999935,
+              0.004147290999999997,
+              0.004246250000000007
+            ],
+            "median_seconds": 0.004267624999999997
+          },
+          "hexagon": {
+            "radix": 43890,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4320,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 41,
+              "gauss_iterations": 2495,
+              "distinct_trace_residues": 4140,
+              "half_entries": 2114,
+              "candidate_traces": 2228,
+              "square_tests": 2120
+            },
+            "seconds": [
+              0.005992540999999997,
+              0.006171707999999998,
+              0.006066332999999979,
+              0.0059514999999999985,
+              0.005946082999999991
+            ],
+            "median_seconds": 0.005992540999999997
+          },
+          "hexagon_slope": {
+            "radix": 46200,
+            "outcome": "complete",
+            "total_slopes": 150,
+            "visited_slopes": 150,
+            "remaining_slopes": 0,
+            "total_orbits": 4800,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 2,
+              "trial_divisibility_tests": 33,
+              "trial_divisions": 19,
+              "table_entries": 42,
+              "gauss_iterations": 1382,
+              "distinct_trace_residues": 4312,
+              "half_entries": 1678,
+              "candidate_traces": 2275,
+              "square_tests": 2148
+            },
+            "seconds": [
+              0.004250916000000007,
+              0.004190166999999995,
+              0.004441500000000001,
+              0.004079833000000005,
+              0.004162042000000005
+            ],
+            "median_seconds": 0.004190166999999995
+          },
+          "rectangle_curve": {
+            "radix": 46200,
+            "outcome": "complete",
+            "total_slopes": 150,
+            "visited_slopes": 150,
+            "remaining_slopes": 0,
+            "total_orbits": 4800,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 7,
+              "table_entries": 42,
+              "gauss_iterations": 1382,
+              "distinct_trace_residues": 4312,
+              "half_entries": 1678,
+              "candidate_traces": 2179,
+              "square_tests": 2179
+            },
+            "seconds": [
+              0.004234625000000006,
+              0.004411417000000001,
+              0.0043209999999999915,
+              0.004277915999999993,
+              0.004285750000000005
+            ],
+            "median_seconds": 0.004285750000000005
+          },
+          "hexagon_curve": {
+            "radix": 43890,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4320,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 41,
+              "gauss_iterations": 2495,
+              "distinct_trace_residues": 4140,
+              "half_entries": 2114,
+              "candidate_traces": 2120,
+              "square_tests": 2120
+            },
+            "seconds": [
+              0.006583166000000001,
+              0.006768457999999991,
+              0.006367624999999988,
+              0.006325874999999981,
+              0.0063142499999999935
+            ],
+            "median_seconds": 0.006367624999999988
+          },
+          "hexagon_slope_curve": {
+            "radix": 46200,
+            "outcome": "complete",
+            "total_slopes": 150,
+            "visited_slopes": 150,
+            "remaining_slopes": 0,
+            "total_orbits": 4800,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 2,
+              "trial_divisibility_tests": 33,
+              "trial_divisions": 19,
+              "table_entries": 42,
+              "gauss_iterations": 1382,
+              "distinct_trace_residues": 4312,
+              "half_entries": 1678,
+              "candidate_traces": 2148,
+              "square_tests": 2148
+            },
+            "seconds": [
+              0.004675582999999997,
+              0.004404207999999993,
+              0.004272999999999999,
+              0.004262833000000021,
+              0.0042712079999999986
+            ],
+            "median_seconds": 0.004272999999999999
+          }
+        }
+      },
+      {
+        "sample": 1,
+        "n": "790874215187963",
+        "expected_factors": [
+          "27246671",
+          "29026453"
+        ],
+        "repetitions": 5,
+        "methods": {
+          "hexagon": {
+            "radix": 48510,
+            "outcome": "complete",
+            "total_slopes": 630,
+            "visited_slopes": 630,
+            "remaining_slopes": 0,
+            "total_orbits": 5040,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 10,
+              "trial_divisions": 6,
+              "table_entries": 63,
+              "gauss_iterations": 5910,
+              "distinct_trace_residues": 4952,
+              "half_entries": 3736,
+              "candidate_traces": 2901,
+              "square_tests": 2739
+            },
+            "seconds": [
+              0.011808999999999986,
+              0.01173329199999995,
+              0.011475709,
+              0.011601417000000003,
+              0.011571082999999982
+            ],
+            "median_seconds": 0.011601417000000003
+          },
+          "hexagon_slope": {
+            "radix": 50820,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 3,
+              "trial_divisibility_tests": 47,
+              "trial_divisions": 25,
+              "table_entries": 124,
+              "gauss_iterations": 3038,
+              "distinct_trace_residues": 4832,
+              "half_entries": 2528,
+              "candidate_traces": 2588,
+              "square_tests": 2418
+            },
+            "seconds": [
+              0.007283125000000001,
+              0.006856749999999967,
+              0.006961459000000003,
+              0.007120916000000033,
+              0.007261042000000051
+            ],
+            "median_seconds": 0.007120916000000033
+          },
+          "rectangle_curve": {
+            "radix": 53130,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 45,
+              "gauss_iterations": 3128,
+              "distinct_trace_residues": 5120,
+              "half_entries": 2600,
+              "candidate_traces": 2648,
+              "square_tests": 2648
+            },
+            "seconds": [
+              0.007791667000000002,
+              0.007765000000000022,
+              0.007883083000000013,
+              0.0075312080000000114,
+              0.007562667000000023
+            ],
+            "median_seconds": 0.007765000000000022
+          },
+          "hexagon_curve": {
+            "radix": 48510,
+            "outcome": "complete",
+            "total_slopes": 630,
+            "visited_slopes": 630,
+            "remaining_slopes": 0,
+            "total_orbits": 5040,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 10,
+              "trial_divisions": 6,
+              "table_entries": 63,
+              "gauss_iterations": 5910,
+              "distinct_trace_residues": 4952,
+              "half_entries": 3736,
+              "candidate_traces": 2739,
+              "square_tests": 2739
+            },
+            "seconds": [
+              0.01207783400000001,
+              0.012266041000000005,
+              0.012233292000000007,
+              0.013229166000000014,
+              0.011998416999999983
+            ],
+            "median_seconds": 0.012233292000000007
+          },
+          "hexagon_slope_curve": {
+            "radix": 50820,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 3,
+              "trial_divisibility_tests": 47,
+              "trial_divisions": 25,
+              "table_entries": 124,
+              "gauss_iterations": 3038,
+              "distinct_trace_residues": 4832,
+              "half_entries": 2528,
+              "candidate_traces": 2418,
+              "square_tests": 2418
+            },
+            "seconds": [
+              0.007096874999999975,
+              0.007586417000000012,
+              0.007379625000000001,
+              0.007142541999999974,
+              0.007333334000000025
+            ],
+            "median_seconds": 0.007333334000000025
+          },
+          "rectangle": {
+            "radix": 53130,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 45,
+              "gauss_iterations": 3128,
+              "distinct_trace_residues": 5120,
+              "half_entries": 2600,
+              "candidate_traces": 3097,
+              "square_tests": 2659
+            },
+            "seconds": [
+              0.00777233300000002,
+              0.007548041999999977,
+              0.007546125000000015,
+              0.008117041000000047,
+              0.007404208000000023
+            ],
+            "median_seconds": 0.007548041999999977
+          }
+        }
+      },
+      {
+        "sample": 2,
+        "n": "398639112895561",
+        "expected_factors": [
+          "17485493",
+          "22798277"
+        ],
+        "repetitions": 5,
+        "methods": {
+          "hexagon_slope": {
+            "radix": 39270,
+            "outcome": "complete",
+            "total_slopes": 240,
+            "visited_slopes": 240,
+            "remaining_slopes": 0,
+            "total_orbits": 3840,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 2,
+              "trial_divisibility_tests": 33,
+              "trial_divisions": 17,
+              "table_entries": 39,
+              "gauss_iterations": 2244,
+              "distinct_trace_residues": 3632,
+              "half_entries": 1868,
+              "candidate_traces": 2215,
+              "square_tests": 2079
+            },
+            "seconds": [
+              0.005272667000000009,
+              0.005321792000000047,
+              0.005214249999999976,
+              0.00538237500000005,
+              0.005372374999999985
+            ],
+            "median_seconds": 0.005321792000000047
+          },
+          "rectangle_curve": {
+            "radix": 41580,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4320,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 7,
+              "table_entries": 40,
+              "gauss_iterations": 2485,
+              "distinct_trace_residues": 3740,
+              "half_entries": 2010,
+              "candidate_traces": 1856,
+              "square_tests": 1856
+            },
+            "seconds": [
+              0.005624416000000021,
+              0.0057349169999999505,
+              0.006214457999999978,
+              0.005864208999999954,
+              0.005790333999999953
+            ],
+            "median_seconds": 0.005790333999999953
+          },
+          "hexagon_curve": {
+            "radix": 39270,
+            "outcome": "complete",
+            "total_slopes": 240,
+            "visited_slopes": 240,
+            "remaining_slopes": 0,
+            "total_orbits": 3840,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 39,
+              "gauss_iterations": 2244,
+              "distinct_trace_residues": 3632,
+              "half_entries": 1868,
+              "candidate_traces": 2079,
+              "square_tests": 2079
+            },
+            "seconds": [
+              0.0054180829999999625,
+              0.005511041999999966,
+              0.005564792000000041,
+              0.00552991699999994,
+              0.005542958999999903
+            ],
+            "median_seconds": 0.00552991699999994
+          },
+          "hexagon_slope_curve": {
+            "radix": 39270,
+            "outcome": "complete",
+            "total_slopes": 240,
+            "visited_slopes": 240,
+            "remaining_slopes": 0,
+            "total_orbits": 3840,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 2,
+              "trial_divisibility_tests": 33,
+              "trial_divisions": 17,
+              "table_entries": 39,
+              "gauss_iterations": 2244,
+              "distinct_trace_residues": 3632,
+              "half_entries": 1868,
+              "candidate_traces": 2079,
+              "square_tests": 2079
+            },
+            "seconds": [
+              0.005507749999999978,
+              0.005664000000000002,
+              0.005446708999999994,
+              0.00576037500000004,
+              0.0056377079999999635
+            ],
+            "median_seconds": 0.0056377079999999635
+          },
+          "rectangle": {
+            "radix": 41580,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4320,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 7,
+              "table_entries": 40,
+              "gauss_iterations": 2485,
+              "distinct_trace_residues": 3740,
+              "half_entries": 2010,
+              "candidate_traces": 2248,
+              "square_tests": 1871
+            },
+            "seconds": [
+              0.0058191249999999806,
+              0.005694457999999902,
+              0.0057862910000000545,
+              0.005789500000000003,
+              0.005975874999999964
+            ],
+            "median_seconds": 0.005789500000000003
+          },
+          "hexagon": {
+            "radix": 39270,
+            "outcome": "complete",
+            "total_slopes": 240,
+            "visited_slopes": 240,
+            "remaining_slopes": 0,
+            "total_orbits": 3840,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 39,
+              "gauss_iterations": 2244,
+              "distinct_trace_residues": 3632,
+              "half_entries": 1868,
+              "candidate_traces": 2215,
+              "square_tests": 2079
+            },
+            "seconds": [
+              0.005243707999999958,
+              0.005273917000000017,
+              0.005371874999999915,
+              0.005448750000000002,
+              0.005406584000000048
+            ],
+            "median_seconds": 0.005371874999999915
+          }
+        }
+      },
+      {
+        "sample": 3,
+        "n": "757297102101583",
+        "expected_factors": [
+          "26601023",
+          "28468721"
+        ],
+        "repetitions": 5,
+        "methods": {
+          "rectangle_curve": {
+            "radix": 50820,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 13,
+              "trial_divisions": 7,
+              "table_entries": 124,
+              "gauss_iterations": 3134,
+              "distinct_trace_residues": 4968,
+              "half_entries": 2560,
+              "candidate_traces": 2626,
+              "square_tests": 2626
+            },
+            "seconds": [
+              0.007889166999999975,
+              0.007579667000000012,
+              0.007479458999999911,
+              0.007911125000000019,
+              0.007695917000000052
+            ],
+            "median_seconds": 0.007695917000000052
+          },
+          "hexagon_curve": {
+            "radix": 48510,
+            "outcome": "complete",
+            "total_slopes": 630,
+            "visited_slopes": 630,
+            "remaining_slopes": 0,
+            "total_orbits": 5040,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 10,
+              "trial_divisions": 6,
+              "table_entries": 63,
+              "gauss_iterations": 5946,
+              "distinct_trace_residues": 4904,
+              "half_entries": 3712,
+              "candidate_traces": 2646,
+              "square_tests": 2646
+            },
+            "seconds": [
+              0.012162541999999998,
+              0.012215458000000012,
+              0.012062332999999925,
+              0.011965333000000022,
+              0.01195041600000002
+            ],
+            "median_seconds": 0.012062332999999925
+          },
+          "hexagon_slope_curve": {
+            "radix": 50820,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 2,
+              "trial_divisibility_tests": 36,
+              "trial_divisions": 20,
+              "table_entries": 124,
+              "gauss_iterations": 3134,
+              "distinct_trace_residues": 5000,
+              "half_entries": 2568,
+              "candidate_traces": 2640,
+              "square_tests": 2640
+            },
+            "seconds": [
+              0.007450791999999984,
+              0.007751000000000063,
+              0.007553499999999991,
+              0.007583624999999983,
+              0.007590541000000006
+            ],
+            "median_seconds": 0.007583624999999983
+          },
+          "rectangle": {
+            "radix": 50820,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 13,
+              "trial_divisions": 7,
+              "table_entries": 124,
+              "gauss_iterations": 3134,
+              "distinct_trace_residues": 4968,
+              "half_entries": 2560,
+              "candidate_traces": 3230,
+              "square_tests": 2653
+            },
+            "seconds": [
+              0.0075212909999999855,
+              0.00750033299999997,
+              0.007328958999999968,
+              0.00744408299999999,
+              0.007328582999999944
+            ],
+            "median_seconds": 0.00744408299999999
+          },
+          "hexagon": {
+            "radix": 48510,
+            "outcome": "complete",
+            "total_slopes": 630,
+            "visited_slopes": 630,
+            "remaining_slopes": 0,
+            "total_orbits": 5040,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 10,
+              "trial_divisions": 6,
+              "table_entries": 63,
+              "gauss_iterations": 5946,
+              "distinct_trace_residues": 4904,
+              "half_entries": 3712,
+              "candidate_traces": 2812,
+              "square_tests": 2646
+            },
+            "seconds": [
+              0.011964540999999995,
+              0.011535666,
+              0.012014084000000036,
+              0.012252458000000077,
+              0.011939291000000019
+            ],
+            "median_seconds": 0.011964540999999995
+          },
+          "hexagon_slope": {
+            "radix": 50820,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 2,
+              "trial_divisibility_tests": 36,
+              "trial_divisions": 20,
+              "table_entries": 124,
+              "gauss_iterations": 3134,
+              "distinct_trace_residues": 5000,
+              "half_entries": 2568,
+              "candidate_traces": 2874,
+              "square_tests": 2640
+            },
+            "seconds": [
+              0.007108250000000038,
+              0.007066165999999985,
+              0.007279625000000012,
+              0.007193291999999962,
+              0.007059999999999955
+            ],
+            "median_seconds": 0.007108250000000038
+          }
+        }
+      },
+      {
+        "sample": 4,
+        "n": "587182958207473",
+        "expected_factors": [
+          "19985191",
+          "29380903"
+        ],
+        "repetitions": 5,
+        "methods": {
+          "hexagon_curve": {
+            "radix": 43890,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4320,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 41,
+              "gauss_iterations": 2499,
+              "distinct_trace_residues": 4192,
+              "half_entries": 2128,
+              "candidate_traces": 2490,
+              "square_tests": 2490
+            },
+            "seconds": [
+              0.006552082999999986,
+              0.0064319159999999265,
+              0.006852333000000099,
+              0.006506625000000099,
+              0.006428334000000202
+            ],
+            "median_seconds": 0.006506625000000099
+          },
+          "hexagon_slope_curve": {
+            "radix": 46200,
+            "outcome": "complete",
+            "total_slopes": 150,
+            "visited_slopes": 150,
+            "remaining_slopes": 0,
+            "total_orbits": 4800,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 3,
+              "trial_divisibility_tests": 43,
+              "trial_divisions": 25,
+              "table_entries": 42,
+              "gauss_iterations": 1404,
+              "distinct_trace_residues": 4096,
+              "half_entries": 1624,
+              "candidate_traces": 1947,
+              "square_tests": 1947
+            },
+            "seconds": [
+              0.004202291000000025,
+              0.004135749999999994,
+              0.004388084000000125,
+              0.004193082999999875,
+              0.004192042000000118
+            ],
+            "median_seconds": 0.004193082999999875
+          },
+          "rectangle": {
+            "radix": 48510,
+            "outcome": "complete",
+            "total_slopes": 630,
+            "visited_slopes": 630,
+            "remaining_slopes": 0,
+            "total_orbits": 5040,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 10,
+              "trial_divisions": 6,
+              "table_entries": 63,
+              "gauss_iterations": 5831,
+              "distinct_trace_residues": 4944,
+              "half_entries": 3732,
+              "candidate_traces": 2929,
+              "square_tests": 2474
+            },
+            "seconds": [
+              0.011532084000000054,
+              0.011620709000000007,
+              0.01180133299999997,
+              0.01144995900000012,
+              0.01151545899999995
+            ],
+            "median_seconds": 0.011532084000000054
+          },
+          "hexagon": {
+            "radix": 43890,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4320,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 41,
+              "gauss_iterations": 2499,
+              "distinct_trace_residues": 4192,
+              "half_entries": 2128,
+              "candidate_traces": 2664,
+              "square_tests": 2490
+            },
+            "seconds": [
+              0.00625241700000001,
+              0.006392042000000098,
+              0.006348790999999965,
+              0.0060734579999999205,
+              0.006341249999999965
+            ],
+            "median_seconds": 0.006341249999999965
+          },
+          "hexagon_slope": {
+            "radix": 46200,
+            "outcome": "complete",
+            "total_slopes": 150,
+            "visited_slopes": 150,
+            "remaining_slopes": 0,
+            "total_orbits": 4800,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 3,
+              "trial_divisibility_tests": 43,
+              "trial_divisions": 25,
+              "table_entries": 42,
+              "gauss_iterations": 1404,
+              "distinct_trace_residues": 4096,
+              "half_entries": 1624,
+              "candidate_traces": 2075,
+              "square_tests": 1947
+            },
+            "seconds": [
+              0.004031875000000018,
+              0.0039624580000000575,
+              0.004260209000000126,
+              0.004160458000000089,
+              0.004036499999999998
+            ],
+            "median_seconds": 0.004036499999999998
+          },
+          "rectangle_curve": {
+            "radix": 48510,
+            "outcome": "complete",
+            "total_slopes": 630,
+            "visited_slopes": 630,
+            "remaining_slopes": 0,
+            "total_orbits": 5040,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 10,
+              "trial_divisions": 6,
+              "table_entries": 63,
+              "gauss_iterations": 5831,
+              "distinct_trace_residues": 4944,
+              "half_entries": 3732,
+              "candidate_traces": 2453,
+              "square_tests": 2453
+            },
+            "seconds": [
+              0.012027249999999934,
+              0.012078707999999994,
+              0.012458832999999947,
+              0.0122518330000001,
+              0.011848625000000057
+            ],
+            "median_seconds": 0.012078707999999994
+          }
+        }
+      },
+      {
+        "sample": 5,
+        "n": "536681563183907",
+        "expected_factors": [
+          "20350711",
+          "26371637"
+        ],
+        "repetitions": 5,
+        "methods": {
+          "hexagon_slope_curve": {
+            "radix": 46200,
+            "outcome": "complete",
+            "total_slopes": 150,
+            "visited_slopes": 150,
+            "remaining_slopes": 0,
+            "total_orbits": 4800,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 2,
+              "trial_divisibility_tests": 33,
+              "trial_divisions": 19,
+              "table_entries": 42,
+              "gauss_iterations": 1373,
+              "distinct_trace_residues": 4128,
+              "half_entries": 1632,
+              "candidate_traces": 1881,
+              "square_tests": 1881
+            },
+            "seconds": [
+              0.004071500000000006,
+              0.004166333999999994,
+              0.004166083000000098,
+              0.004179500000000003,
+              0.004096208999999851
+            ],
+            "median_seconds": 0.004166083000000098
+          },
+          "rectangle": {
+            "radix": 46200,
+            "outcome": "complete",
+            "total_slopes": 150,
+            "visited_slopes": 150,
+            "remaining_slopes": 0,
+            "total_orbits": 4800,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 7,
+              "table_entries": 42,
+              "gauss_iterations": 1373,
+              "distinct_trace_residues": 4096,
+              "half_entries": 1624,
+              "candidate_traces": 2243,
+              "square_tests": 1893
+            },
+            "seconds": [
+              0.004146458999999991,
+              0.004341499999999998,
+              0.004149292000000138,
+              0.004194500000000101,
+              0.00404316700000007
+            ],
+            "median_seconds": 0.004149292000000138
+          },
+          "hexagon": {
+            "radix": 43890,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4320,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 41,
+              "gauss_iterations": 2480,
+              "distinct_trace_residues": 4256,
+              "half_entries": 2144,
+              "candidate_traces": 2394,
+              "square_tests": 2263
+            },
+            "seconds": [
+              0.0062251250000000535,
+              0.006358834000000035,
+              0.006196499999999938,
+              0.006282083000000105,
+              0.006099040999999916
+            ],
+            "median_seconds": 0.0062251250000000535
+          },
+          "hexagon_slope": {
+            "radix": 46200,
+            "outcome": "complete",
+            "total_slopes": 150,
+            "visited_slopes": 150,
+            "remaining_slopes": 0,
+            "total_orbits": 4800,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 2,
+              "trial_divisibility_tests": 33,
+              "trial_divisions": 19,
+              "table_entries": 42,
+              "gauss_iterations": 1373,
+              "distinct_trace_residues": 4128,
+              "half_entries": 1632,
+              "candidate_traces": 2001,
+              "square_tests": 1881
+            },
+            "seconds": [
+              0.00402166600000009,
+              0.004153833999999801,
+              0.004090249999999962,
+              0.003982709000000195,
+              0.004008790999999956
+            ],
+            "median_seconds": 0.00402166600000009
+          },
+          "rectangle_curve": {
+            "radix": 46200,
+            "outcome": "complete",
+            "total_slopes": 150,
+            "visited_slopes": 150,
+            "remaining_slopes": 0,
+            "total_orbits": 4800,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 7,
+              "table_entries": 42,
+              "gauss_iterations": 1373,
+              "distinct_trace_residues": 4096,
+              "half_entries": 1624,
+              "candidate_traces": 1863,
+              "square_tests": 1863
+            },
+            "seconds": [
+              0.004275457999999954,
+              0.004211791999999992,
+              0.0041993339999999435,
+              0.00414804099999988,
+              0.004073207999999884
+            ],
+            "median_seconds": 0.0041993339999999435
+          },
+          "hexagon_curve": {
+            "radix": 43890,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4320,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 41,
+              "gauss_iterations": 2480,
+              "distinct_trace_residues": 4256,
+              "half_entries": 2144,
+              "candidate_traces": 2263,
+              "square_tests": 2263
+            },
+            "seconds": [
+              0.006655875000000089,
+              0.0068017910000000015,
+              0.006380250000000087,
+              0.006431124999999982,
+              0.006329583000000083
+            ],
+            "median_seconds": 0.006431124999999982
+          }
+        }
+      },
+      {
+        "sample": 6,
+        "n": "485195391746641",
+        "expected_factors": [
+          "17845307",
+          "27188963"
+        ],
+        "repetitions": 5,
+        "methods": {
+          "rectangle": {
+            "radix": 43890,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4320,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 41,
+              "gauss_iterations": 2536,
+              "distinct_trace_residues": 4048,
+              "half_entries": 2090,
+              "candidate_traces": 2210,
+              "square_tests": 1896
+            },
+            "seconds": [
+              0.006199000000000066,
+              0.005920459000000156,
+              0.006088708000000054,
+              0.006072083000000061,
+              0.006133582999999998
+            ],
+            "median_seconds": 0.006088708000000054
+          },
+          "hexagon": {
+            "radix": 41580,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4336,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 7,
+              "table_entries": 40,
+              "gauss_iterations": 2382,
+              "distinct_trace_residues": 3760,
+              "half_entries": 2020,
+              "candidate_traces": 1586,
+              "square_tests": 1509
+            },
+            "seconds": [
+              0.00539466700000002,
+              0.005354957999999854,
+              0.005416582999999919,
+              0.005441124999999936,
+              0.005453457999999856
+            ],
+            "median_seconds": 0.005416582999999919
+          },
+          "hexagon_slope": {
+            "radix": 41580,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4336,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 2,
+              "trial_divisibility_tests": 33,
+              "trial_divisions": 19,
+              "table_entries": 40,
+              "gauss_iterations": 2382,
+              "distinct_trace_residues": 3760,
+              "half_entries": 2020,
+              "candidate_traces": 1586,
+              "square_tests": 1509
+            },
+            "seconds": [
+              0.005300000000000082,
+              0.00532062500000019,
+              0.005366375000000145,
+              0.005335666999999988,
+              0.005403625000000023
+            ],
+            "median_seconds": 0.005335666999999988
+          },
+          "rectangle_curve": {
+            "radix": 43890,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4320,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 41,
+              "gauss_iterations": 2536,
+              "distinct_trace_residues": 4048,
+              "half_entries": 2090,
+              "candidate_traces": 1878,
+              "square_tests": 1878
+            },
+            "seconds": [
+              0.0061333750000001075,
+              0.006111084000000044,
+              0.006272584000000192,
+              0.006216416000000002,
+              0.006097749999999902
+            ],
+            "median_seconds": 0.0061333750000001075
+          },
+          "hexagon_curve": {
+            "radix": 41580,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4336,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 7,
+              "table_entries": 40,
+              "gauss_iterations": 2382,
+              "distinct_trace_residues": 3760,
+              "half_entries": 2020,
+              "candidate_traces": 1509,
+              "square_tests": 1509
+            },
+            "seconds": [
+              0.005307541999999943,
+              0.005504500000000023,
+              0.005510375000000067,
+              0.005689124999999962,
+              0.005772499999999958
+            ],
+            "median_seconds": 0.005510375000000067
+          },
+          "hexagon_slope_curve": {
+            "radix": 41580,
+            "outcome": "complete",
+            "total_slopes": 270,
+            "visited_slopes": 270,
+            "remaining_slopes": 0,
+            "total_orbits": 4336,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 2,
+              "trial_divisibility_tests": 33,
+              "trial_divisions": 19,
+              "table_entries": 40,
+              "gauss_iterations": 2382,
+              "distinct_trace_residues": 3760,
+              "half_entries": 2020,
+              "candidate_traces": 1509,
+              "square_tests": 1509
+            },
+            "seconds": [
+              0.005449457999999963,
+              0.0055053750000000345,
+              0.005640332999999886,
+              0.00566208300000004,
+              0.005714624999999973
+            ],
+            "median_seconds": 0.005640332999999886
+          }
+        }
+      },
+      {
+        "sample": 7,
+        "n": "793931598984479",
+        "expected_factors": [
+          "27082009",
+          "29315831"
+        ],
+        "repetitions": 5,
+        "methods": {
+          "hexagon": {
+            "radix": 48510,
+            "outcome": "complete",
+            "total_slopes": 630,
+            "visited_slopes": 630,
+            "remaining_slopes": 0,
+            "total_orbits": 5040,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 10,
+              "trial_divisions": 6,
+              "table_entries": 63,
+              "gauss_iterations": 5840,
+              "distinct_trace_residues": 4906,
+              "half_entries": 3713,
+              "candidate_traces": 3007,
+              "square_tests": 2815
+            },
+            "seconds": [
+              0.011510500000000201,
+              0.011471999999999927,
+              0.011956167000000129,
+              0.011711666999999926,
+              0.01152608299999991
+            ],
+            "median_seconds": 0.01152608299999991
+          },
+          "hexagon_slope": {
+            "radix": 50820,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 3,
+              "trial_divisibility_tests": 47,
+              "trial_divisions": 25,
+              "table_entries": 124,
+              "gauss_iterations": 3078,
+              "distinct_trace_residues": 5020,
+              "half_entries": 2574,
+              "candidate_traces": 2876,
+              "square_tests": 2673
+            },
+            "seconds": [
+              0.007520415999999974,
+              0.007442666000000209,
+              0.0076825000000000365,
+              0.00746645800000012,
+              0.007653582999999964
+            ],
+            "median_seconds": 0.007520415999999974
+          },
+          "rectangle_curve": {
+            "radix": 53130,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 45,
+              "gauss_iterations": 3123,
+              "distinct_trace_residues": 5116,
+              "half_entries": 2598,
+              "candidate_traces": 2570,
+              "square_tests": 2570
+            },
+            "seconds": [
+              0.007548667000000009,
+              0.007792416000000024,
+              0.007806999999999897,
+              0.0077261669999999505,
+              0.007858125000000049
+            ],
+            "median_seconds": 0.007792416000000024
+          },
+          "hexagon_curve": {
+            "radix": 48510,
+            "outcome": "complete",
+            "total_slopes": 630,
+            "visited_slopes": 630,
+            "remaining_slopes": 0,
+            "total_orbits": 5040,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 10,
+              "trial_divisions": 6,
+              "table_entries": 63,
+              "gauss_iterations": 5840,
+              "distinct_trace_residues": 4906,
+              "half_entries": 3713,
+              "candidate_traces": 2815,
+              "square_tests": 2815
+            },
+            "seconds": [
+              0.011858125000000053,
+              0.012075292000000015,
+              0.012168665999999995,
+              0.012485333000000098,
+              0.012441708999999967
+            ],
+            "median_seconds": 0.012168665999999995
+          },
+          "hexagon_slope_curve": {
+            "radix": 50820,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "radix_candidates": 3,
+              "trial_divisibility_tests": 47,
+              "trial_divisions": 25,
+              "table_entries": 124,
+              "gauss_iterations": 3078,
+              "distinct_trace_residues": 5020,
+              "half_entries": 2574,
+              "candidate_traces": 2673,
+              "square_tests": 2673
+            },
+            "seconds": [
+              0.0074409579999998865,
+              0.00752066699999987,
+              0.007748000000000088,
+              0.00760287500000012,
+              0.00745845799999989
+            ],
+            "median_seconds": 0.00752066699999987
+          },
+          "rectangle": {
+            "radix": 53130,
+            "outcome": "complete",
+            "total_slopes": 330,
+            "visited_slopes": 330,
+            "remaining_slopes": 0,
+            "total_orbits": 5280,
+            "remaining_orbits": 0,
+            "work": {
+              "trial_divisibility_tests": 11,
+              "trial_divisions": 5,
+              "table_entries": 45,
+              "gauss_iterations": 3123,
+              "distinct_trace_residues": 5116,
+              "half_entries": 2598,
+              "candidate_traces": 3076,
+              "square_tests": 2596
+            },
+            "seconds": [
+              0.007777083000000129,
+              0.007622333000000037,
+              0.0077499169999999395,
+              0.007558957999999949,
+              0.007847040999999999
+            ],
+            "median_seconds": 0.0077499169999999395
+          }
+        }
+      }
+    ]
+  }
+}

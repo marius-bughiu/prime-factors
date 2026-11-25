@@ -86,6 +86,47 @@ private theorem norm_lt {x y r : ℤ} (plus : |x+y| < r) (minus : |x-y| < r) :
   · rw [abs_of_nonpos hx, abs_of_nonneg hy]; omega
   · rw [abs_of_nonpos hx, abs_of_nonpos hy]; omega
 
+/-- An arbitrary collection of more than 4HGR integer points has a pair
+whose difference is the image of stationary weights. The choice of the
+collection can impose additional bounds on that difference. -/
+theorem lattice_collision {P : Type*} [Fintype P] (point : P → ℤ × ℤ)
+    (H G R : ℕ) (hH : 0 < H) (hG : 0 < G) (hR : 0 < R)
+    (large : 4*H*G*R < Fintype.card P) (s : ℤ) :
+    ∃ p q : P, p ≠ q ∧ ∃ A B : ℤ, B ≡ s*A [ZMOD (R:ℤ)] ∧
+      (point p).1-(point q).1 = H*(A+B)+G*(A-B) ∧
+      (point p).2-(point q).2 = H*(A+B)-G*(A-B) := by
+  let encode (p : P) := record H G R hH hG hR s (point p).1 (point p).2
+  have size : Fintype.card (Labels H G R) < Fintype.card P := by
+    simpa only [Labels, Fintype.card_prod, Fintype.card_fin, Nat.mul_left_comm,
+      Nat.mul_comm, Nat.mul_assoc, show 4=2*2 by decide] using large
+  obtain ⟨p,q,neq,eq⟩ := Fintype.exists_ne_map_eq_of_card_lt (fun p => (encode p).2) size
+  let A := (encode p).1.1 - (encode q).1.1
+  let B := (encode p).1.2 - (encode q).1.2
+  have rebuild' (t : P) :
+      (point t).1 = H*((encode t).1.1+(encode t).1.2) +
+        G*((encode t).1.1-(encode t).1.2) + errorX (encode t).2 ∧
+      (point t).2 = H*((encode t).1.1+(encode t).1.2) -
+        G*((encode t).1.1-(encode t).1.2) + errorY (encode t).2 :=
+    rebuild H G R hH hG hR s (point t).1 (point t).2
+  have hp := rebuild' p
+  have hq := rebuild' q
+  rw [eq] at hp
+  have dx : (point p).1 - (point q).1 = H*(A+B) + G*(A-B) := by
+    dsimp only [A,B]; linear_combination hp.1 - hq.1
+  have dy : (point p).2 - (point q).2 = H*(A+B) - G*(A-B) := by
+    dsimp only [A,B]; linear_combination hp.2 - hq.2
+  refine ⟨p,q,neq,A,B,?_,dx,dy⟩
+  have sp := slope_residue H G R hH hG hR s (point p).1 (point p).2
+  have sq := slope_residue H G R hH hG hR s (point q).1 (point q).2
+  change ((encode p).2.2.2.2.2.val : ℤ) = ((encode p).1.2-s*(encode p).1.1) % R at sp
+  change ((encode q).2.2.2.2.2.val : ℤ) = ((encode q).1.2-s*(encode q).1.1) % R at sq
+  rw [eq] at sp
+  have lane : (encode p).1.2 - s*(encode p).1.1 ≡
+      (encode q).1.2 - s*(encode q).1.1 [ZMOD (R:ℤ)] := sp.symm.trans sq
+  apply Int.modEq_iff_dvd.mpr
+  obtain ⟨k,hk⟩ := Int.modEq_iff_dvd.mp lane
+  exact ⟨k, by dsimp only [A,B]; linear_combination hk⟩
+
 end MidpointWeightLattice
 
 open MidpointWeightLattice in
@@ -95,29 +136,15 @@ theorem exists_short_midpoint_weights (H G R : ℕ) (hH : 0 < H) (hG : 0 < G)
     (hR : 0 < R) (area : 4*H*G < R^3) (s : ℤ) :
     ∃ A B : ℤ, (A ≠ 0 ∨ B ≠ 0) ∧ B ≡ s*A [ZMOD (R:ℤ)] ∧
       H*|A+B| + G*|A-B| < (R:ℤ)^2 := by
-  let encode (p : Fin (R^2) × Fin (R^2)) := record H G R hH hG hR s p.1 p.2
-  have size : Fintype.card (Labels H G R) < Fintype.card (Fin (R^2) × Fin (R^2)) := by
-    simp only [Labels, Fintype.card_prod, Fintype.card_fin]
+  let point (p : Fin (R^2) × Fin (R^2)) : ℤ × ℤ := (p.1, p.2)
+  have size : 4*H*G*R < Fintype.card (Fin (R^2) × Fin (R^2)) := by
+    simp only [Fintype.card_prod, Fintype.card_fin]
     calc
-      _ = (4*H*G)*R := by ring
       _ < R^3*R := Nat.mul_lt_mul_of_pos_right area hR
       _ = _ := by ring
-  obtain ⟨p,q,neq,eq⟩ := Fintype.exists_ne_map_eq_of_card_lt (fun p => (encode p).2) size
-  let A := (encode p).1.1 - (encode q).1.1
-  let B := (encode p).1.2 - (encode q).1.2
-  have rebuild' (t : Fin (R^2) × Fin (R^2)) :
-      (t.1 : ℤ) = H*((encode t).1.1+(encode t).1.2) +
-        G*((encode t).1.1-(encode t).1.2) + errorX (encode t).2 ∧
-      (t.2 : ℤ) = H*((encode t).1.1+(encode t).1.2) -
-        G*((encode t).1.1-(encode t).1.2) + errorY (encode t).2 :=
-    rebuild H G R hH hG hR s t.1 t.2
-  have hp := rebuild' p
-  have hq := rebuild' q
-  rw [eq] at hp
-  have dx : (p.1 : ℤ) - q.1 = H*(A+B) + G*(A-B) := by
-    dsimp only [A,B]; linear_combination hp.1 - hq.1
-  have dy : (p.2 : ℤ) - q.2 = H*(A+B) - G*(A-B) := by
-    dsimp only [A,B]; linear_combination hp.2 - hq.2
+  obtain ⟨p,q,neq,A,B,lane,dx,dy⟩ := lattice_collision point H G R hH hG hR size s
+  change (p.1:ℤ)-q.1 = _ at dx
+  change (p.2:ℤ)-q.2 = _ at dy
   have bounds (i j : Fin (R^2)) : |(i : ℤ)-j| < (R:ℤ)^2 := by
     have hi : (i : ℤ) < (R:ℤ)^2 := by exact_mod_cast i.isLt
     have hj : (j : ℤ) < (R:ℤ)^2 := by exact_mod_cast j.isLt
@@ -130,16 +157,7 @@ theorem exists_short_midpoint_weights (H G R : ℕ) (hH : 0 < H) (hG : 0 < G)
     simp only [add_zero, sub_zero, mul_zero] at dx dy
     apply neq
     apply Prod.ext <;> apply Fin.ext <;> omega
-  · have sp := slope_residue H G R hH hG hR s p.1 p.2
-    have sq := slope_residue H G R hH hG hR s q.1 q.2
-    change ((encode p).2.2.2.2.2.val : ℤ) = ((encode p).1.2-s*(encode p).1.1) % R at sp
-    change ((encode q).2.2.2.2.2.val : ℤ) = ((encode q).1.2-s*(encode q).1.1) % R at sq
-    rw [eq] at sp
-    have lane : (encode p).1.2 - s*(encode p).1.1 ≡
-        (encode q).1.2 - s*(encode q).1.1 [ZMOD (R:ℤ)] := sp.symm.trans sq
-    apply Int.modEq_iff_dvd.mpr
-    obtain ⟨k,hk⟩ := Int.modEq_iff_dvd.mp lane
-    exact ⟨k, by dsimp only [A,B]; linear_combination hk⟩
+  · exact lane
   · have near := norm_lt (x := (H:ℤ)*(A+B)) (y := (G:ℤ)*(A-B))
         (by rw [←dx]; apply bounds) (by rw [←dy]; apply bounds)
     simpa only [abs_mul, abs_of_nonneg (Int.natCast_nonneg H),

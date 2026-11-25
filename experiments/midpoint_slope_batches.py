@@ -5,7 +5,8 @@ from collections import Counter, defaultdict
 from itertools import product
 from math import gcd, isqrt, prod
 
-from . import midpoint_weights
+from . import hex_weight_interval, midpoint_weights
+from .curved_weight_interval import curved_interval
 from .powered_order import prime_powers
 
 
@@ -94,10 +95,12 @@ def in_slope(x, y, slope, radix, moduli):
     return True
 
 
-def search(n, *, multiplier=1, max_slopes=None, max_half_entries=65536):
+def search(n, *, multiplier=1, max_slopes=None, max_half_entries=65536, geometry='rectangle', curve=False):
     """Run a complete or budgeted search, with a per-slope limit on each half list."""
     if n < 3 or n % 2 == 0 or multiplier < 1 or gcd(n, multiplier) != 1:
         raise ValueError('expected odd N >= 3 and a positive coprime radix multiplier')
+    if geometry not in ('rectangle', 'hexagon', 'hexagon_slope'):
+        raise ValueError('unknown weight geometry')
     if any(k is not None and k < 0 for k in (max_slopes, max_half_entries)):
         raise ValueError('budgets must be nonnegative')
     lo, hi, gap = isqrt(n-1)+1, isqrt(9*n//8), isqrt(n//8)
@@ -108,9 +111,19 @@ def search(n, *, multiplier=1, max_slopes=None, max_half_entries=65536):
                     remaining_slopes=direct['remaining_orbits'], total_orbits=direct['total_orbits'],
                     remaining_orbits=direct['remaining_orbits'], pairs=direct['pairs'],
                     work=dict(square_tests=direct['square_tests'], candidate_traces=direct['visited_orbits']))
-    radix = multiplier*midpoint_weights.choose_radix(n, 4*(hi-lo)*(2*gap))
-    step = radix*radix
+    height, gap_width = hi-lo, 2*gap
     work, hits = Counter(), set()
+    if geometry == 'rectangle':
+        radix = midpoint_weights.choose_radix(n, 4*height*gap_width)
+        weight_interval = midpoint_weights.weight_interval
+    else:
+        if geometry == 'hexagon_slope':
+            radix = hex_weight_interval.choose_slope_radix(n, height, gap_width, work, multiplier)
+        else:
+            radix = midpoint_weights.choose_radix(n, hex_weight_interval.cube_threshold(height, gap_width))
+        weight_interval = hex_weight_interval.weight_interval
+    radix *= multiplier
+    step = radix*radix
     tables, moduli, total_orbits = local_slope_tables(n, radix, work)
     total_slopes = prod(map(len, tables))
     outcome, visited, used_orbits = 'complete', 0, 0
@@ -119,7 +132,9 @@ def search(n, *, multiplier=1, max_slopes=None, max_half_entries=65536):
             outcome = 'slope_limit'
             break
         slope = sum(row[0] for row in configuration) % radix
-        a, b, left, right = midpoint_weights.weight_interval(radix, slope, lo, hi, gap, work)
+        a, b, left, right = weight_interval(radix, slope, lo, hi, gap, work)
+        if curve:
+            left, right = curved_interval(n, a, b, left, right)
         sides, sizes, offset, orbits = split_lists(configuration, a, b, step)
         if max_half_entries is not None and max(sizes) > max_half_entries:
             work['next_half_size'] = max(sizes)

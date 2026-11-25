@@ -3,6 +3,7 @@
 from collections import Counter
 from math import gcd, isqrt
 
+from .curved_weight_interval import curved_interval
 from .reduced_weight_discriminant import discriminant_root
 from .powered_order import prime_powers
 from .short_basis_sieve import reduced_lattice_basis
@@ -17,7 +18,11 @@ def choose_radix(n, volume):
             low = middle
         else:
             high = middle
-    target = max(2, low + 1)
+    return smooth_radix(n, max(2, low+1))
+
+
+def smooth_radix(n, target):
+    """Round a positive threshold upward to a smooth modulus coprime to odd n."""
     wheel, candidate, primes = 1, 2, []
     while wheel * candidate <= target // 16:
         if all(candidate % p for p in primes if p*p <= candidate):
@@ -105,7 +110,7 @@ def possible_x(n, a, b, trace, work, square_divisor=1):
             yield numerator // (2*b)
 
 
-def search(n, max_orbits=None, *, reduce_discriminant=False):
+def search(n, max_orbits=None, *, reduce_discriminant=False, curve=False):
     """Return all balanced pairs in visited orbits and account for every unvisited orbit."""
     if n < 3 or n % 2 == 0 or (max_orbits is not None and max_orbits < 0):
         raise ValueError('expected an odd n >= 3 and a nonnegative optional orbit budget')
@@ -138,7 +143,10 @@ def search(n, max_orbits=None, *, reduce_discriminant=False):
             inverse = w * inv_n % radix
             slope = w * inverse % radix
             if slope not in weights:
-                weights[slope] = weight_interval(radix, slope, lower, upper, gap, work)
+                a, b, left, right = weight_interval(radix, slope, lower, upper, gap, work)
+                if curve:
+                    left, right = curved_interval(n, a, b, left, right)
+                weights[slope] = a, b, left, right
                 work['weight_choices'] += 1
             a, b, left, right = weights[slope]
             lift = w + radix * (((n-u*w)//radix * inverse) % radix)

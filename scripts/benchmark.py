@@ -19,6 +19,7 @@ if str(ROOT) not in sys.path:
 from experiments.class_order_search import search as class_order_search
 from experiments.midpoint_slope_batches import search as slope_batch_search
 from experiments.midpoint_weights import search as weight_orbit_search
+from experiments.quartic_factor_lanes import search as quartic_lane_search
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.local_midpoint_lanes import search as local_midpoint_search
 from experiments.divisor_samples import search as divisor_sample_search
@@ -133,13 +134,25 @@ def run_case(case, method, proofs):
     complete = case['status'] == 'complete'
     if method == 'midpoint-weights':
         work = weight_orbit_search(int(case['n']), case.get('max_orbits'),
-                                   reduce_discriminant=case.get('reduce_discriminant', False))
+                                   reduce_discriminant=case.get('reduce_discriminant', False),
+                                   curve=case.get('curve', False))
         elapsed = time.perf_counter() - start
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'quartic-factor-lanes':
+        work = quartic_lane_search(int(case['n']), case['max_orbits'], power=case['power'],
+                                   signed=case.get('signed', False))
+        elapsed = time.perf_counter() - start
+        pairs = work.pop('pairs')
+        agree(case, {'expected_pairs': pairs}, ['expected_pairs'])
+        agree(case, work, list(work))
+        work.update(max_orbits=case['max_orbits'], pairs=pairs)
+        result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed,
+                               'quartic_factor_lanes', work)
     elif method == 'midpoint-slope-batches':
         settings = {k: case[k] for k in ('multiplier', 'max_half_entries')}
+        settings.update({k: case[k] for k in ('geometry', 'curve') if k in case})
         work = slope_batch_search(int(case['n']), **settings)
         elapsed = time.perf_counter() - start
         pairs = work.pop('pairs')
@@ -606,6 +619,7 @@ def main():
                              ('modular-hyperbola.json', 'modular-hyperbola'),
                              ('midpoint-weights.json', 'midpoint-weights'),
                              ('midpoint-slope-batches.json', 'midpoint-slope-batches'),
+                             ('quartic-factor-lanes.json', 'quartic-factor-lanes'),
                              ('class-orders.json', 'class-orders')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':
