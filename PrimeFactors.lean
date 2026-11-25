@@ -307,3 +307,7 @@ import PrimeFactors.WeightedStride
 import PrimeFactors.WideModulus
 import PrimeFactors.WideScale
 import PrimeFactors.OrderLaneTests
+import PrimeFactors.SiftedDivisorWindow
+import PrimeFactors.BinomialWindowWork
+import PrimeFactors.IntervalReciprocalStencil
+import PrimeFactors.BoundaryWindowSelection

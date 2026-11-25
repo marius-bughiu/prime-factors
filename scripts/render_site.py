@@ -159,6 +159,20 @@ def case_row(result):
                  f" · height {w['height']:,} against bound {w['height_bound']:,}"
                  f" · separate ordinary heights {left['height']:,} and {right['height']:,}"
                  f" · ordinary enclosing-window height {combined['height']:,}")
+    elif result['method'] == 'sifted-divisor-window':
+        w = result['sifted_divisor_window']
+        ref = w['reference']
+        if w['denominator_gcd'] != 1:
+            count = f"Degree-six wheel denominator shares gcd {w['denominator_gcd']:,} with the input"
+            if w['denominator_factor']:
+                count += f" · proper divisor {w['denominator_factor']:,} recovered before lattice reduction"
+        else:
+            count = (f"Wheel modulo 105, degree {w['degree']} · {compact_count(w['progression_size'])} odd positions"
+                     f" · shift {w['shift']} · sifted height {'passed' if w['short'] else 'missed'}"
+                     f" · ordinary centered height {'passed' if ref['short'] else 'missed'}"
+                     f" · {w['work']['lll_swaps']:,} and {ref['work']['lll_swaps']:,} row swaps"
+                     f" · {w['work']['modular_evaluations']:,} sifted modular evaluations"
+                     f" · centered comparison took {duration(w['reference_seconds'])}")
     elif result['method'] == 'binomial-divisor-window':
         w = result['binomial_divisor_window']
         ref = w['reference']

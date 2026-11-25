@@ -1,12 +1,14 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/integer-valued-factor-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/sifting-a-divisor-window.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have succeeded on constructed examples where a factor has a pattern we knew to look for. Once someone supplies the two primes, Lean can check that each is prime and that their product is the number you started with.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?
+
+**Checking 3, 5 and 7 first lets one equation cover more ground.** The new test found 269 in a range of possible factors of 132,079, and Lean checked that 269 × 491 gives the full factorization. On the two large examples we ruled out ranges twice and one and a half times as wide as the previous checked ranges, respectively. Both large numbers remain unfactored. Changing the sizes of the older windows can save less than a factor of four in their total coefficient count on either example if the whole range must be checked. [New test and matched results](discoveries/sifting-a-divisor-window.md) · [What a full search costs](discoveries/counting-binomial-coefficients.md)
 
 **Knowing that a factor is a whole number lets one equation check 5,359 of the original ranges.** This brings the complete search below $2^{497}$ locations for a 2,048-bit product of two 1,024-bit primes. Our two large examples still need roughly $2^{495}$ and $2^{496}$ locations, with 24,576 rows apiece. We ran the seven-row version on both examples. It ruled out the two ranges we tried at radius $2^{439}$. [Why the bound improves and what we tested](discoveries/integer-valued-factor-windows.md)
 

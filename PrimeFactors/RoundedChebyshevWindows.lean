@@ -13,7 +13,8 @@ namespace PrimeFactors.RoundedChebyshevWindows
 open Polynomial Finset
 open BinomialDivisorWindow (cleared value)
 
-private theorem falling_expansion (i : ℕ) (P : ℤ[X]) (h : P.natDegree≤ i) :
+/-- Expand an integral polynomial in monic falling factorials, preserving the top coefficient. -/
+theorem falling_expansion (i : ℕ) (P : ℤ[X]) (h : P.natDegree≤ i) :
     ∃ b : Fin (i+1) → ℤ, P=∑ j, C (b j)*descPochhammer ℤ j.val ∧ b (Fin.last i)=P.coeff i := by
   induction i generalizing P with
   | zero =>
