@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+An approximation of the boundary reading from the finite Euler factors can select one divisor window even when its error is too large for our earlier exact-sum rounding guarantee. With a sufficiently separated pair, error at most $2^{-516}$ suffices for one of the larger-factor windows. The cost of computing that reading cheaply from the product remains unresolved. [Conditions, precision and the near-equal case](../discoveries/what-the-product-says-about-the-window.md#how-precise-would-a-clue-have-to-be) · [Earlier boundary identity](../discoveries/reading-the-boundary.md)
+
 The determinant identity $|D|=Nq^2$ follows from an integer basis change and Bézout’s identity. It identifies the cofactor when four basis equations share the right offset. None of the zero-location statements reviewed below selects such a basis or offset. [Determinant and numerical checks](../discoveries/a-determinant-that-gives-the-cofactor.md)
 
 The quartic test at a chosen location uses the divisibility of a polynomial by the square of an unknown factor. Its existence proof counts finite lists of residues. It uses no assumption about zeta or Dirichlet zeros. Testing the lower quartile of two full-size products ruled out an interval on each. Choosing a location that contains a factor remains open. [Proof and experiments](../discoveries/quartics-at-a-chosen-location.md) · [Pinned Dirichlet statements](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab/src/Statements.lean)
