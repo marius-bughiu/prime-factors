@@ -127,10 +127,12 @@ def run_case(case, method, proofs):
     start = time.perf_counter()
     complete = case['status'] == 'complete'
     if method == 'modular-hyperbola':
-        work = hyperbola_search(int(case['n']))
+        work = hyperbola_search(int(case['n']), radix_policy=case.get('radix_policy', 'binary'))
         elapsed = time.perf_counter() - start
         pairs = work.pop('pairs')
         agree(case, work, ['low_classes', 'modular_hits'])
+        if 'radix' in case:
+            agree(case, work, ['radix', 'euclidean_steps'])
         factor = pairs[0][0] if pairs else None
         result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
     elif method == 'quotient-search':

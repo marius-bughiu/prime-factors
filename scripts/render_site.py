@@ -61,7 +61,8 @@ def case_row(result):
             verification += f' (certificate generation and replay {duration(result["certificate_seconds"])})'
     elif result['method'] == 'modular-hyperbola':
         w = result['hyperbola']
-        count = (f'Balanced-interval modular search · {w["low_classes"]:,} low residue classes'
+        radix = f' · radix {w["radix"]:,}' if 'radix' in w else ''
+        count = (f'Balanced-interval modular search{radix} · {w["low_classes"]:,} low residue classes'
                  f' · {w["modular_hits"]:,} candidate products · {w["euclidean_steps"]:,} Euclidean steps'
                  f' · search {duration(result["discovery_seconds"])}')
     elif result['method'] == 'quotient-search':

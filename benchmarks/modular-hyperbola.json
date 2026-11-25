@@ -36,5 +36,53 @@
     "id": "modular-hyperbola-control",
     "description": "No balanced pair for 51",
     "status": "partial"
+  },
+  {
+    "id": "modular-hyperbola-primorial-41",
+    "description": "Complete search using the nearby primorial multiple",
+    "n": "1900014700027",
+    "factors": [
+      "1000003",
+      "1900009"
+    ],
+    "remaining": [],
+    "status": "complete",
+    "radix_policy": "primorial",
+    "radix": 16380,
+    "low_classes": 3456,
+    "euclidean_steps": 26824,
+    "modular_hits": 160
+  },
+  {
+    "id": "modular-hyperbola-holdout-binary-46",
+    "description": "Fresh holdout pair using the binary radix",
+    "n": "45249671261437",
+    "factors": [
+      "6045709",
+      "7484593"
+    ],
+    "remaining": [],
+    "status": "complete",
+    "radix_policy": "binary",
+    "radix": 65536,
+    "low_classes": 32768,
+    "euclidean_steps": 251983,
+    "modular_hits": 632
+  },
+  {
+    "id": "modular-hyperbola-holdout-primorial-46",
+    "description": "Same holdout pair using the primorial rule",
+    "n": "45249671261437",
+    "factors": [
+      "6045709",
+      "7484593"
+    ],
+    "remaining": [],
+    "status": "complete",
+    "radix_policy": "primorial",
+    "radix": 64680,
+    "low_classes": 13440,
+    "euclidean_steps": 103512,
+    "modular_hits": 281
   }
 ]
