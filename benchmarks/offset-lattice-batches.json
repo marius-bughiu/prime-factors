@@ -1,0 +1,332 @@
+[
+  {
+    "id": "offset-lattice-batches-mixed-134683853",
+    "description": "Complete mixed-infinity search with one deferred prime",
+    "n": "134683853",
+    "drop": 1,
+    "max_batches": 168,
+    "max_events": 2000,
+    "exhaust": true,
+    "raw_slots": 7837,
+    "full_tuples": 2184,
+    "total_batches": 168,
+    "started_batches": 168,
+    "completed_batches": 168,
+    "unfinished_batches": 0,
+    "gauss_iterations": 739,
+    "rows": 523,
+    "rejected_rows": 0,
+    "point_visits": 693,
+    "primitive_points": 307,
+    "deferred_checks": 302,
+    "pivot_prime_tests": 164,
+    "row_divisibility_tests": 0,
+    "square_tests": 172,
+    "proper_hits": 1,
+    "first_hit": [
+      44,
+      35
+    ],
+    "deferred_primes": [
+      23
+    ],
+    "wheel_work": {
+      "trial_divisions": 14,
+      "euler_tests": 14,
+      "eligible_primes": 14,
+      "left_subsets": 128,
+      "right_subsets": 128,
+      "threshold_queries": 128,
+      "feasible_queries": 128
+    },
+    "status": "complete",
+    "factors": [
+      "8231",
+      "16363"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "offset-lattice-batches-slack-117449",
+    "description": "Two deferred primes recover a factor at the final multiplier",
+    "n": "117449",
+    "drop": 2,
+    "max_batches": 4,
+    "max_events": 1000,
+    "exhaust": true,
+    "raw_slots": 241,
+    "full_tuples": 168,
+    "total_batches": 4,
+    "started_batches": 4,
+    "completed_batches": 4,
+    "unfinished_batches": 0,
+    "gauss_iterations": 12,
+    "rows": 28,
+    "rejected_rows": 11,
+    "point_visits": 81,
+    "primitive_points": 53,
+    "deferred_checks": 69,
+    "pivot_prime_tests": 11,
+    "row_divisibility_tests": 35,
+    "square_tests": 12,
+    "proper_hits": 1,
+    "first_hit": [
+      17,
+      12
+    ],
+    "deferred_primes": [
+      11,
+      13
+    ],
+    "wheel_work": {
+      "trial_divisions": 13,
+      "euler_tests": 13,
+      "eligible_primes": 13,
+      "left_subsets": 64,
+      "right_subsets": 128,
+      "threshold_queries": 64,
+      "feasible_queries": 64
+    },
+    "status": "complete",
+    "factors": [
+      "257",
+      "457"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "offset-lattice-batches-midpoint-holdout-49",
+    "description": "Exhaust two-deferred-prime batches on the first published midpoint-weight holdout product",
+    "n": "502005281288939",
+    "drop": 2,
+    "max_batches": 4800,
+    "max_events": 2000000,
+    "exhaust": true,
+    "raw_slots": 14937992,
+    "full_tuples": 1368000,
+    "total_batches": 4800,
+    "started_batches": 4800,
+    "completed_batches": 4800,
+    "unfinished_batches": 0,
+    "gauss_iterations": 30504,
+    "rows": 96203,
+    "rejected_rows": 13757,
+    "point_visits": 1070273,
+    "primitive_points": 365362,
+    "deferred_checks": 547550,
+    "pivot_prime_tests": 31015,
+    "row_divisibility_tests": 117527,
+    "square_tests": 91261,
+    "proper_hits": 1,
+    "first_hit": [
+      2921,
+      2322
+    ],
+    "deferred_primes": [
+      29,
+      37
+    ],
+    "wheel_work": {
+      "trial_divisions": 17,
+      "euler_tests": 17,
+      "eligible_primes": 17,
+      "left_subsets": 256,
+      "right_subsets": 512,
+      "threshold_queries": 256,
+      "feasible_queries": 256
+    },
+    "status": "complete",
+    "factors": [
+      "17838631",
+      "28141469"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "offset-lattice-batches-dyadic-midpoint-holdout-49",
+    "description": "Complete parity-chart lattice search on the first midpoint-weight holdout product, deferring two odd primes in each chart",
+    "n": "502005281288939",
+    "drop": 2,
+    "max_batches": 6000,
+    "max_events": 2000000,
+    "exhaust": true,
+    "raw_slots": 14937992,
+    "full_tuples": 998400,
+    "total_batches": 6000,
+    "started_batches": 6000,
+    "completed_batches": 6000,
+    "unfinished_batches": 0,
+    "gauss_iterations": 36895,
+    "rows": 91682,
+    "rejected_rows": 8218,
+    "point_visits": 798404,
+    "primitive_points": 188536,
+    "deferred_checks": 282888,
+    "pivot_prime_tests": 31463,
+    "row_divisibility_tests": 49130,
+    "square_tests": 47509,
+    "proper_hits": 1,
+    "first_hit": [
+      2921,
+      2322
+    ],
+    "deferred_primes": {
+      "forward": [
+        23,
+        31
+      ],
+      "reverse": [
+        19,
+        31
+      ]
+    },
+    "wheel_work": {
+      "trial_divisions": 17,
+      "euler_tests": 34,
+      "eligible_primes": 17,
+      "left_subsets": 3328,
+      "right_subsets": 6656,
+      "threshold_queries": 3328,
+      "feasible_queries": 3328,
+      "selection_tables": 13,
+      "half_subsets": 9984
+    },
+    "status": "complete",
+    "factors": [
+      "17838631",
+      "28141469"
+    ],
+    "remaining": [],
+    "dyadic_exponent": 12,
+    "charts": {
+      "forward": {
+        "moduli": [
+          8,
+          3,
+          11,
+          17,
+          19
+        ],
+        "deferred_primes": [
+          23,
+          31
+        ],
+        "total_batches": 1200,
+        "full_tuples": 230400,
+        "started_batches": 1200,
+        "completed_batches": 1200
+      },
+      "reverse": {
+        "moduli": [
+          2,
+          3,
+          7,
+          11,
+          13,
+          17
+        ],
+        "deferred_primes": [
+          19,
+          31
+        ],
+        "total_batches": 4800,
+        "full_tuples": 768000,
+        "started_batches": 4800,
+        "completed_batches": 4800
+      }
+    },
+    "setup": {
+      "odd_unit_images": 64,
+      "deferred_square_images": 73,
+      "dyadic_unit_images": 4,
+      "dyadic_reverse_entries": 1
+    },
+    "odd_only_tuples": 1368000
+  },
+  {
+    "id": "offset-lattice-batches-fresh-2048",
+    "description": "First eight partial lattices on the fresh 2,048-bit comparison",
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "drop": 1,
+    "max_batches": 8,
+    "max_events": 4096,
+    "exhaust": true,
+    "raw_slots": 105551359451310889810298856013145882316331942441451983440295330672959540446627344953117386933456670949848836094835055260838128686439512818046730080193200235194024467220775055853054412539715303999717789461404575230044127546698378067868870380192834456127984748097687258033140963834261812821578890599351335415768,
+    "full_tuples": 3156216183839043179326693736804702422407474550756138308831819507550124223791849431578323034975235913112532612294042082493435908754754184752568647049173711706831929521642316067114265454452846540458826051167550323878180697639233977046794240000000000000000000000000000000000,
+    "total_batches": 8461705586699847665755211090629229014497250806316724688557156856702745908289140567234110013338434083411615582557753572368460881380038028827261788335586358463356379414590659697357280038747577856457978689457239474204237795279447659642880000000000000000000000000000000000,
+    "started_batches": 8,
+    "completed_batches": 8,
+    "unfinished_batches": 8461705586699847665755211090629229014497250806316724688557156856702745908289140567234110013338434083411615582557753572368460881380038028827261788335586358463356379414590659697357280038747577856457978689457239474204237795279447659642879999999999999999999999999999999992,
+    "gauss_iterations": 3261,
+    "rows": 150,
+    "rejected_rows": 28,
+    "point_visits": 1106,
+    "primitive_points": 188,
+    "deferred_checks": 188,
+    "pivot_prime_tests": 52,
+    "row_divisibility_tests": 214,
+    "square_tests": 102,
+    "proper_hits": 0,
+    "first_hit": null,
+    "deferred_primes": [
+      743
+    ],
+    "wheel_work": {
+      "trial_divisions": 139,
+      "euler_tests": 139,
+      "eligible_primes": 139,
+      "left_subsets": 4096,
+      "right_subsets": 8192,
+      "threshold_queries": 4096,
+      "feasible_queries": 4096
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    ]
+  },
+  {
+    "id": "offset-lattice-batches-crossed-2048",
+    "description": "First eight partial lattices on the crossed 2,048-bit comparison",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "drop": 1,
+    "max_batches": 8,
+    "max_events": 4096,
+    "exhaust": true,
+    "raw_slots": 90025274456823724179883353423699550260917943977865757452879984718139995633341173962029454205178984351931879145117306548960205035348123769302541737653287113359598280852123283147759297741670534006915298885633224395477343575542122619267151564170311719793370206682531288877092377114833639075352681157913840375857,
+    "full_tuples": 4714061974591733955486355747617624782757495396635673416259071705757732366840140137239742263321311903395433341237940880291188581096519325606790830161528828430154204338497748039825587636938683922173089674142614022008189965014433332891484160000000000000000000000000000000000,
+    "total_batches": 11814691665643443497459538214580513239993722798585647659797172194881534753985313627167273842910556148860735191072533534564382408763206329841581027973756462230962918141598366014600470268016751684644335022913819604030551290762990809251840000000000000000000000000000000000,
+    "started_batches": 8,
+    "completed_batches": 8,
+    "unfinished_batches": 11814691665643443497459538214580513239993722798585647659797172194881534753985313627167273842910556148860735191072533534564382408763206329841581027973756462230962918141598366014600470268016751684644335022913819604030551290762990809251839999999999999999999999999999999992,
+    "gauss_iterations": 3351,
+    "rows": 141,
+    "rejected_rows": 29,
+    "point_visits": 1200,
+    "primitive_points": 279,
+    "deferred_checks": 279,
+    "pivot_prime_tests": 45,
+    "row_divisibility_tests": 141,
+    "square_tests": 137,
+    "proper_hits": 0,
+    "first_hit": null,
+    "deferred_primes": [
+      797
+    ],
+    "wheel_work": {
+      "trial_divisions": 139,
+      "euler_tests": 139,
+      "eligible_primes": 139,
+      "left_subsets": 4096,
+      "right_subsets": 8192,
+      "threshold_queries": 4096,
+      "feasible_queries": 4096
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  }
+]

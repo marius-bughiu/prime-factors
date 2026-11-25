@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Stopping before the final prime tests lets one lattice cover multiple possibilities. On a 49-bit example this preserved the winning test while cutting the exhaustive run from 7.39 to 0.59 seconds. Even adaptive prime-power choices leave more than $2^{889}$ combinations at 2,048 bits if every branch continues to the single-position reconstruction threshold. [Grouping and adaptive bound](grouping-remainder-searches.md)
+
 Remainders modulo 130 small primes now let us jump directly to possible positions. On a 2,048-bit product of two distinct 1,024-bit primes we can reach every winner in fewer than $2^{901}$ reconstructions. Our two full-size examples still require about $2^{899}$ reconstructions for full coverage with the fixed prime list. [Proof and search costs](reconstructing-winning-positions.md)
 
 For every pair of distinct 1,024-bit primes, the product specifies a bounded range of weighted square tests containing exactly one or two winning positions. A shortest-vector argument bounds the adjustment. A counting argument shows why testing only small adjustments rarely works. [Complete range and proof](complete-offset-search.md) · [Count of winners](one-or-two-winning-tests.md)

@@ -79,6 +79,10 @@ import PrimeFactors.OffsetWinnerExamples
 import PrimeFactors.OffsetProjectiveSlopes
 import PrimeFactors.OffsetCRTReconstruction
 import PrimeFactors.OffsetSquareDetectors
+import PrimeFactors.OffsetAdaptiveFloor
+import PrimeFactors.OffsetDyadicSlopes
+import PrimeFactors.OffsetLatticeBatches
+import PrimeFactors.OffsetPrimePowerSlopes
 import PrimeFactors.DedekindLaneRanking
 import PrimeFactors.HyperbolaBoxes
 import PrimeFactors.ImplicitPowers

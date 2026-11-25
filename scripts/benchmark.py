@@ -20,6 +20,9 @@ if str(ROOT) not in sys.path:
 from experiments.class_order_search import search as class_order_search
 from experiments.complete_offset_search import search as complete_offset_search
 from experiments.offset_crt_reconstruction import search as offset_crt_search
+from experiments.offset_dyadic_search import search as offset_dyadic_search
+from experiments.offset_lattice_batches import search as offset_lattice_search
+from experiments.offset_prime_power_slopes import search as offset_prime_power_search
 from experiments.grouped_offset_frame import choose_frame
 from experiments.grouped_offset_rows import bounded_rows
 from experiments.midpoint_slope_batches import search as slope_batch_search
@@ -170,6 +173,34 @@ def run_case(case, method, proofs):
         if case.get('optimize_wheel'):
             agree(case, work, ['baseline_tuples', 'wheel_work'])
         result = certify_split(case, proof, work.pop('factor'), elapsed, 'offset_crt', work)
+    elif method == 'offset-lattice-batches':
+        work = offset_lattice_search(int(case['n']), case['max_batches'], drop=case['drop'],
+                                     max_events=case['max_events'], exhaust=case['exhaust'],
+                                     dyadic_exponent=case.get('dyadic_exponent'))
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['raw_slots', 'full_tuples', 'total_batches', 'started_batches',
+                           'completed_batches', 'unfinished_batches', 'gauss_iterations', 'rows',
+                           'rejected_rows', 'point_visits', 'primitive_points', 'deferred_checks',
+                           'pivot_prime_tests', 'row_divisibility_tests', 'square_tests', 'proper_hits',
+                           'first_hit', 'deferred_primes', 'wheel_work'])
+        if case.get('dyadic_exponent'):
+            agree(case, work, ['charts', 'setup', 'odd_only_tuples'])
+        result = certify_split(case, proof, work.pop('factor'), elapsed, 'offset_lattice', work)
+    elif method == 'offset-dyadic':
+        work = offset_dyadic_search(int(case['n']), case['max_per_chart'], max_exponent=case['max_exponent'])
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['odd_only_tuples', 'total_tuples', 'visited_tuples', 'unchecked_tuples',
+                           'reconstructed', 'square_tests', 'proper_hits'])
+        for chart, expected in case['charts'].items():
+            agree(dict(expected, id=case['id']+'-'+chart), work['charts'][chart], expected)
+        result = certify_split(case, proof, work.pop('factor'), elapsed, 'offset_dyadic', work)
+    elif method == 'offset-prime-power':
+        work = offset_prime_power_search(int(case['n']), case['max_tuples'], exhaust=case['exhaust'])
+        elapsed = time.perf_counter() - start
+        work['lifts'] = [[p, e] for p, e in work['powers'] if e > 1]
+        agree(case, work, ['total_tuples', 'visited', 'unchecked', 'square_tests', 'distinct_count',
+                           'selection_queries', 'right_subsets', 'all_powers_lower', 'lifts'])
+        result = certify_split(case, proof, work.pop('factor'), elapsed, 'offset_prime_power', work)
     elif method == 'offset-rows':
         n = int(case['n'])
         T = isqrt(n)
@@ -724,7 +755,10 @@ def main():
                              ('class-orders.json', 'class-orders'), ('grouped-norm.json', 'grouped-norm'),
                              ('offset-rows.json', 'offset-rows'),
                              ('complete-offset-search.json', 'complete-offset-search'),
-                             ('offset-crt.json', 'offset-crt')]:
+                             ('offset-crt.json', 'offset-crt'),
+                             ('offset-lattice-batches.json', 'offset-lattice-batches'),
+                             ('offset-dyadic.json', 'offset-dyadic'),
+                             ('offset-prime-power.json', 'offset-prime-power')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':
             cases = expand_cases(cases)

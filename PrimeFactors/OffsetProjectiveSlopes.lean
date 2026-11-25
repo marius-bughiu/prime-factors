@@ -275,7 +275,7 @@ private theorem prefix_floor_cost : 2^898 < (primes131.map fun p => (p+1)/2).pro
   by decide +kernel
 
 set_option maxRecDepth 4000 in
-private theorem prefix_complete : ∀ p∈List.range 744, p∈primes131 ∨ p=2 ∨ ¬p.Prime :=
+theorem primes131_complete : ∀ p∈List.range 744, p∈primes131 ∨ p=2 ∨ ¬p.Prime :=
   by decide +kernel
 
 private theorem first131_floor : oddThrough743.card=131 ∧
@@ -302,7 +302,7 @@ theorem many_primes_floor {N T : ℕ} (S : Finset ℕ) (ok : ∀ p∈S, p.Prime 
       have lower := prime.two_le
       have cap : 743<x := by
         by_contra! no
-        rcases prefix_complete x (List.mem_range.mpr (by omega)) with inside|two|non
+        rcases primes131_complete x (List.mem_range.mpr (by omega)) with inside|two|non
         · exact xout (List.mem_toFinset.mpr inside)
         · exact odd two
         · exact non prime

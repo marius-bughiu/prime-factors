@@ -282,7 +282,8 @@ private theorem zero_digit_count (hodd : p ≠ 2) (k : ℕ) :
     exact h.symm
   | succ k => exact (card_squares_zero_digit k).trans (card_primePower_squares hodd k)
 
-private theorem base_singular_count (hodd : p ≠ 2) {n : ZMod p} (hn : n ≠ 0) :
+/-- An odd prime has two singular sum digits for a split unit and none for a nonsplit unit. -/
+theorem base_singular_count (hodd : p ≠ 2) {n : ZMod p} (hn : n ≠ 0) :
     Nat.card {r : ZMod p // r^2-4*n = 0} = if IsSquare n then 2 else 0 := by
   have four : (4 : ZMod p) ≠ 0 := by
     convert mul_ne_zero (double_ne_zero hodd) (double_ne_zero hodd) using 1

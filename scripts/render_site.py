@@ -85,6 +85,20 @@ def case_row(result):
             selection = w['wheel_work']
             subsets = selection.get('left_subsets', 0) + selection.get('right_subsets', 0)
             count += f" · prime selection examined {subsets:,} subsets and tried {selection['trial_divisions']} divisors"
+    elif result['method'] == 'offset-lattice-batches':
+        w = result['offset_lattice']
+        total = w['total_batches']
+        available = f'at least 2<sup>{total.bit_length()-1}</sup>' if total.bit_length() > 64 else f'{total:,}'
+        count = (f"Lattice search · {w['completed_batches']:,} of {available} groups completed"
+                 f" · {w['rows']:,} rows · {w['point_visits']:,} candidate visits · {w['square_tests']:,} square tests")
+    elif result['method'] in ('offset-dyadic', 'offset-prime-power'):
+        dyadic = result['method'] == 'offset-dyadic'
+        w = result['offset_dyadic'] if dyadic else result['offset_prime_power']
+        total = w['total_tuples']
+        available = f'at least 2<sup>{total.bit_length()-1}</sup>' if total.bit_length() > 64 else f'{total:,}'
+        visited = w['visited_tuples'] if dyadic else w['visited']
+        name_of_search = 'Separate searches by denominator parity' if dyadic else 'Odd prime-power search'
+        count = f"{name_of_search} · {visited:,} of {available} combinations · {w['square_tests']:,} square tests"
     elif result['method'] == 'offset-rows':
         w = result['offset_rows']
         tested = w['search']['square_tests']
