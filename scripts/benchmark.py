@@ -19,6 +19,7 @@ if str(ROOT) not in sys.path:
 
 from experiments.class_order_search import search as class_order_search
 from experiments.complete_offset_search import search as complete_offset_search
+from experiments.offset_crt_reconstruction import search as offset_crt_search
 from experiments.grouped_offset_frame import choose_frame
 from experiments.grouped_offset_rows import bounded_rows
 from experiments.midpoint_slope_batches import search as slope_batch_search
@@ -160,6 +161,15 @@ def run_case(case, method, proofs):
         if 'filter_prime_limit' in case:
             agree(case, work, ['covered_pairs', 'skipped_pairs', 'skipped_rows'])
         result = certify_split(case, proof, work.pop('factor'), elapsed, 'complete_offset', work)
+    elif method == 'offset-crt':
+        work = offset_crt_search(int(case['n']), case['max_tuples'], exhaust=case['exhaust'],
+                                 optimize_wheel=case.get('optimize_wheel', False))
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['total_tuples', 'visited_tuples', 'unchecked_tuples', 'convergents',
+                           'reconstructed', 'square_tests', 'proper_hits', 'raw_slots', 'first_hit'])
+        if case.get('optimize_wheel'):
+            agree(case, work, ['baseline_tuples', 'wheel_work'])
+        result = certify_split(case, proof, work.pop('factor'), elapsed, 'offset_crt', work)
     elif method == 'offset-rows':
         n = int(case['n'])
         T = isqrt(n)
@@ -713,7 +723,8 @@ def main():
                              ('centered-quartic.json', 'centered-quartic'), ('projected-levels.json', 'projected-level-sieve'),
                              ('class-orders.json', 'class-orders'), ('grouped-norm.json', 'grouped-norm'),
                              ('offset-rows.json', 'offset-rows'),
-                             ('complete-offset-search.json', 'complete-offset-search')]:
+                             ('complete-offset-search.json', 'complete-offset-search'),
+                             ('offset-crt.json', 'offset-crt')]:
         cases = json.loads((ROOT / 'benchmarks' / filename).read_text())
         if method == 'cyclotomic':
             cases = expand_cases(cases)

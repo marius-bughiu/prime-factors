@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+For every candidate position in the complete 2,048-bit search range, Dirichlet GRH and an explicit bound of Lamzouri, Li and Soundararajan imply that some prime below 2,735,716 detects a positive nonsquare discriminant. We give the analytic deduction on paper. Lean proves what follows from the finite detection hypothesis. A separate, unconditional reconstruction uses 130 primes to reduce the number of positions we must try. [Bounds, hypotheses and worked search](../discoveries/reconstructing-winning-positions.md)
+
 For the complete square-test range, the density of surviving coprime pairs has an Euler product at $s=2$. Absolute convergence gives the counting formula unconditionally. The zero-location statements in the pinned RH release apply to a different region. [Complete pair count and error bounds](../discoveries/complete-offset-work.md) · [Statements in the release](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab/src/Statements.lean)
 
 In the grouped offset search, a proposed direction gives an integer whose square character can reject entire rows. For each nonsquare direction, the Dirichlet GRH small-prime theorem bounds how far one must search for a rejecting odd prime. The actual row counts on both full-size inputs check the local arithmetic directly. [Quadratic character and the row test](../discoveries/grouped-offset-rows.md#what-dirichlet-grh-can-guarantee)

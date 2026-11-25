@@ -75,6 +75,16 @@ def case_row(result):
                  f" · {w['integer_square_roots']:,} integer square roots")
         if w.get('skipped_pairs'):
             count += f" · {w['skipped_pairs']:,} further pairs skipped by the offset filter"
+    elif result['method'] == 'offset-crt':
+        w = result['offset_crt']
+        total = w['total_tuples']
+        available = f'at least 2<sup>{total.bit_length()-1}</sup>' if total.bit_length() > 64 else f'{total:,}'
+        count = (f"Reconstruction from remainders · {w['visited_tuples']:,} of {available} combinations tried"
+                 f" · {w['convergents']:,} continued-fraction steps · {w['square_tests']:,} square tests")
+        if 'wheel_work' in w:
+            selection = w['wheel_work']
+            subsets = selection.get('left_subsets', 0) + selection.get('right_subsets', 0)
+            count += f" · prime selection examined {subsets:,} subsets and tried {selection['trial_divisions']} divisors"
     elif result['method'] == 'offset-rows':
         w = result['offset_rows']
         tested = w['search']['square_tests']

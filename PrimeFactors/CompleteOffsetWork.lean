@@ -7,6 +7,29 @@ open Finset FareyWork
 
 def height (h : ℕ) := (4*h/3).sqrt
 
+/-- Twice the enclosing rectangle area always exceeds the integer square root
+of the product. The case h = 2 attains the weaker small-height ratio h = 2J². -/
+theorem rectangle_threshold {T h : ℕ} (hp : 0<h) :
+    let J := height h
+    T < 2*J*(T*J/h+1) := by
+  intro J
+  have jp : 1≤J := Nat.le_sqrt'.mpr ((Nat.le_div_iff_mul_le (by decide : 0<3)).mpr (by omega))
+  have upper : 4*h<(J+1)^2*3 := (Nat.div_lt_iff_lt_mul (by decide : 0<3)).mp (Nat.lt_succ_sqrt' _)
+  have fit : h ≤ 2*J^2 := by
+    by_cases one : J=1
+    · rw [one] at upper ⊢
+      omega
+    · obtain ⟨a,ha⟩ := Nat.exists_eq_add_of_le (show 2≤J by omega)
+      rw [ha] at upper ⊢
+      nlinarith only [upper,Nat.zero_le (a*a),Nat.zero_le a]
+  have roundUp : T*J < (T*J/h+1)*h :=
+    (Nat.div_lt_iff_lt_mul hp).mp (Nat.lt_succ_self _)
+  apply (Nat.mul_lt_mul_right hp).mp
+  calc T*h ≤ T*(2*J^2) := Nat.mul_le_mul_left T fit
+       _ = 2*J*(T*J) := by ring
+       _ < 2*J*((T*J/h+1)*h) := Nat.mul_lt_mul_of_pos_left roundUp (by omega)
+       _ = _ := by ring
+
 noncomputable def rawSlots (T h : ℕ) : Finset (ℕ × ℕ) :=
   (Icc 1 (height h)).biUnion fun j => (Icc 1 (T*j/h+1)).image (Prod.mk j)
 

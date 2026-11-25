@@ -76,6 +76,9 @@ import PrimeFactors.OffsetSquareSplit
 import PrimeFactors.OffsetSquareWitness
 import PrimeFactors.OffsetWinningCount
 import PrimeFactors.OffsetWinnerExamples
+import PrimeFactors.OffsetProjectiveSlopes
+import PrimeFactors.OffsetCRTReconstruction
+import PrimeFactors.OffsetSquareDetectors
 import PrimeFactors.DedekindLaneRanking
 import PrimeFactors.HyperbolaBoxes
 import PrimeFactors.ImplicitPowers
