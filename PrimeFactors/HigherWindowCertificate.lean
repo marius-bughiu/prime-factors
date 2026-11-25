@@ -13,7 +13,7 @@ def jetChecks {r : ℕ} (v : Fin r → ℤ) (n depth : ℕ) (t : ℤ) : Prop :=
 def rootChecks {r : ℕ} (v : Fin r → ℤ) (m : ℕ) : Prop :=
   ∀ k : Fin m, (∑ i, v i*(k.val:ℤ)^i.val) % (m:ℤ) ≠ 0
 
-private theorem no_integer_root {r m : ℕ} {v : Fin r → ℤ} (hm : 0 < m)
+theorem no_integer_root {r m : ℕ} {v : Fin r → ℤ} (hm : 0 < m)
     (checked : rootChecks v m) (x : ℤ) : (ofFn r v).eval x ≠ 0 := by
   intro hz
   have mp : 0 < (m:ℤ) := by exact_mod_cast hm

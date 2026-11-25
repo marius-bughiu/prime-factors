@@ -159,6 +159,15 @@ def case_row(result):
                  f" · height {w['height']:,} against bound {w['height_bound']:,}"
                  f" · separate ordinary heights {left['height']:,} and {right['height']:,}"
                  f" · ordinary enclosing-window height {combined['height']:,}")
+    elif result['method'] == 'binomial-divisor-window':
+        w = result['binomial_divisor_window']
+        ref = w['reference']
+        basis = 'Centered binomial' if w.get('centered', False) else 'One-sided binomial'
+        count = (f"{basis}, degree {w['degree']} · {compact_count(w['progression_size'])} odd positions"
+                 f" · binomial height {'passed' if w['short'] else 'missed'}"
+                 f" · Chebyshev height {'passed' if ref['short'] else 'missed'}"
+                 f" · {w['work']['lll_swaps']:,} and {ref['work']['lll_swaps']:,} row swaps"
+                 f" · matching Chebyshev comparison took {duration(w['reference_seconds'])}")
     elif result['method'] == 'chebyshev-divisor-window':
         w = result['chebyshev_divisor_window']
         ordinary = w['ordinary']

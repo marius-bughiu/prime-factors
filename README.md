@@ -1,12 +1,14 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/two-ranges-with-one-equation.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Current research](discoveries/integer-valued-factor-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have succeeded on constructed examples where a factor has a pattern we knew to look for. Once someone supplies the two primes, Lean can check that each is prime and that their product is the number you started with.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?
+
+**Knowing that a factor is a whole number lets one equation check 5,359 of the original ranges.** This brings the complete search below $2^{497}$ locations for a 2,048-bit product of two 1,024-bit primes. Our two large examples still need roughly $2^{495}$ and $2^{496}$ locations, with 24,576 rows apiece. We ran the seven-row version on both examples. It ruled out the two ranges we tried at radius $2^{439}$. [Why the bound improves and what we tested](discoveries/integer-valued-factor-windows.md)
 
 **One equation can now check two neighboring ranges.** On 132,079, this recovered **269 × 491** in a range where the old equation missed its cutoff. For two 1,024-bit primes we can cover the whole smaller-prime range with about half as many locations as before. Each of our two full-size examples still needs more than $2^{506}$ locations with this construction. We also found an exact formula for the sum of the two primes using two large products. Computing those products was slower than ordinary search in our comparisons. [Equations, examples and coverage](discoveries/two-ranges-with-one-equation.md) · [Factor-sum formula and cost](discoveries/second-digit-of-a-product.md)
 

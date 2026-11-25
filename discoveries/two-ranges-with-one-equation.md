@@ -46,6 +46,8 @@ Suppose the possible offsets are within $W$ of either $-A$ or $A$, with $A>W$. T
 
 For 9,009, the smaller-divisor range gave midpoint 83. We checked the groups $75,77,79$ and $87,89,91$. One quartic found divisors 77 and 91 in the two different groups. It took 24 row swaps and 34 size reductions. Testing the groups separately took two lattice reductions with 59 swaps and 83 size reductions in total. One ordinary quartic on the enclosing interval missed its bound. This example has several divisors in the smaller-factor range. Its checked prime factorization is $3^2\cdot7\cdot11\cdot13$. A semiprime with two unequal primes has only one prime below the square root. [Reproducible comparison and certificate](https://marius-bughiu.github.io/prime-factors/#paired-divisor-windows-9009)
 
+When the ranges are separated, different degrees can use different Chebyshev coordinates. On 11,227 this gives a guarantee where all three unmixed bounds miss. [What the distance between the ranges costs](two-windows-in-one-basis.md)
+
 ## What does an equation for the other factor add?
 
 If $xy=N$, then multiplying $x^iy^j$ by $x^B$ gives $N^jx^{B+i-j}$ for $j\le B$. All monomials on the same diagonal $i-j$ contribute to the same coefficient. Lean proves that the full rectangle of such monomials spans exactly the corresponding one-variable lattice. Shifting to an equation for the cofactor can still select a different short row. After expressing both rows in the same variable, we can test whether their common roots give additional information. [Elimination and cofactor transform](../PrimeFactors/FactorCurveElimination.lean)

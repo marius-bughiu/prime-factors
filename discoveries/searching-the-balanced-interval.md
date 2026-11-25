@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+At 24,576 rows, a centered integer-valued polynomial now serves 5,359 original addresses. The grid has fewer than $2^{497}$ locations, while the two measured products still need about $2^{495.45}$ and $2^{496.32}$. At degree 128, rounding in binomial coordinates gives a separate fourfold increase in the span guaranteed by the one-sided box comparison on both products. [Complete grid and bounded experiments](integer-valued-factor-windows.md) · [Rounded equations](rounding-chebyshev-into-binomial-coordinates.md) · [Two separated ranges](two-windows-in-one-basis.md)
+
 Monic Chebyshev coordinates let neighboring 24,576-row windows merge in pairs, giving fewer than $2^{508}$ locations. The two controls still need more than $2^{506}$ locations each. The five-row experiment split 132,079 where the ordinary height bound failed. A separate formula recovers the exact prime sum from two band products measured modulo $N^2$. [Coverage, disjoint windows and reciprocal equations](two-ranges-with-one-equation.md) · [Sum and evaluation cost](second-digit-of-a-product.md)
 
 Using the product-dependent lower bound and two window widths covers the whole feasible smaller-factor range in fewer than $(19/20)2^{509}$ locations at dimension 24,576. The determinant estimate at a fixed public floor succeeds on one comparison input and fails in all dimensions on the other. [Coupled bounds, reciprocal intervals and analytic clues](what-the-product-says-about-the-window.md)

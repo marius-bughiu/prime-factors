@@ -19,6 +19,7 @@ if str(ROOT) not in sys.path:
 
 from experiments.adaptive_quartic_cover import search as adaptive_quartic_search
 from experiments.higher_divisor_window import search as higher_window_search
+from experiments.binomial_divisor_window import search as binomial_window_search
 from experiments.divisor_product_derivative import compare as compare_product_digits
 from experiments.paired_divisor_windows import compare as compare_paired_windows
 from experiments.arbitrary_divisor_window import quartile_center, search as arbitrary_window_search
@@ -53,6 +54,8 @@ from experiments.centered_sum_quartic import probe as centered_quartic_probe
 from experiments.projected_level_sieve import centered_search as projected_level_search
 from scripts.factor import verify_file
 from scripts.higher_window_certificate import check_higher_interval
+from scripts.binomial_window_certificate import check_binomial_interval
+from scripts.centered_binomial_certificate import check_centered_binomial_interval
 from experiments.modular_hyperbola import search as hyperbola_search
 from experiments.local_midpoint_lanes import search as local_midpoint_search
 from experiments.divisor_samples import search as divisor_sample_search
@@ -412,6 +415,25 @@ def run_case(case, method, proofs):
         agree(case, work, ['center', 'height', 'height_bound', 'relation_verified', 'divisors', 'roots', 'work', 'ordinary'])
         factor = next((d for d in work['divisors'] if 1 < d < int(case['n'])), None)
         result = certify_split(case, proof, factor, elapsed, 'paired_divisor_windows', work)
+    elif method == 'binomial-divisor-window':
+        n, radius = int(case['n']), int(case['radius'])
+        center = odd_quartile_center(n)
+        params = dict(degree=case['degree'], depth=case['depth'], modulus_limit=case['modulus_limit'])
+        work = binomial_window_search(n, center-2*radius, 2*radius, centered=case['centered'], **params)
+        elapsed = time.perf_counter()-start
+        reference_start = time.perf_counter()
+        reference = higher_window_search(n, center, radius, chebyshev=True, **params)
+        reference_seconds = time.perf_counter()-reference_start
+        agree(case, work, ['lower', 'upper', 'height', 'height_bound', 'short', 'divisors',
+                           'rootless_modulus', 'work'])
+        work['reference'] = {k: reference[k] for k in ('height', 'short', 'divisors', 'work')}
+        agree(case, work, ['reference'])
+        work['reference_seconds'] = reference_seconds
+        factor = work['denominator_factor'] or next((d for d in work['divisors'] if 1 < d < n), None)
+        result = certify_split(case, proof, factor, elapsed, 'binomial_divisor_window', work)
+        if work['rootless_modulus'] is not None:
+            checker = check_centered_binomial_interval if case['centered'] else check_binomial_interval
+            result['exclusion'] = checker(n, work, proof, verify_interval)
     elif method == 'chebyshev-divisor-window':
         n = int(case['n'])
         center, radius = odd_quartile_center(n), int(case['radius'])
@@ -1142,6 +1164,7 @@ def main():
                              ('divisor-product-derivative.json', 'divisor-product-derivative'),
                              ('paired-divisor-windows.json', 'paired-divisor-windows'),
                              ('chebyshev-divisor-window.json', 'chebyshev-divisor-window'),
+                             ('binomial-divisor-window.json', 'binomial-divisor-window'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

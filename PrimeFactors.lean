@@ -274,6 +274,15 @@ import PrimeFactors.DivisorWindowDimension
 import PrimeFactors.FactorIntervalProduct
 import PrimeFactors.HigherDivisorWindow
 import PrimeFactors.ChebyshevDivisorWindow
+import PrimeFactors.BinomialDivisorWindow
+import PrimeFactors.BinomialDivisorScale
+import PrimeFactors.CenteredBinomialDivisorWindow
+import PrimeFactors.BinomialDivisorCover
+import PrimeFactors.BinomialAnalyticWindow
+import PrimeFactors.BinomialWindowCertificate
+import PrimeFactors.CenteredBinomialCertificate
+import PrimeFactors.RoundedChebyshevWindows
+import PrimeFactors.PairedChebyshevWindows
 import PrimeFactors.ChebyshevDivisorCover
 import PrimeFactors.ChebyshevDivisorThreshold
 import PrimeFactors.DivisorProductDerivative

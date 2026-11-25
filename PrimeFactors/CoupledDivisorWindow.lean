@@ -61,7 +61,7 @@ private theorem lll_bound {r e : ℕ} (dim : r^(2*r)<2^e) (w : ℕ) :
 
 /-- Transfer a single exponent calculation to every public input using N≤2^1024 D.
 The extra D^t from N^t cancels t of the c powers available at the target. -/
-private theorem coupled_cost {n a e t c : ℕ} (large : 2^2047≤n)
+theorem coupled_cost {n a e t c : ℕ} (large : 2^2047≤n)
     (cheap : a<2^e) (tc : t≤c) (budget : e+2047*t≤1023*c) :
     a*n^t < (lower n)^c := by
   have room : (2:ℕ)^e*(2^1024)^t ≤ (lower n)^(c-t) := calc
