@@ -251,4 +251,42 @@ theorem holdout_index {i w : ℤ}
     omega
   · omega
 
+/-- Every line discriminant has a public modular square root at the target modulus. -/
+theorem line_square_mod (X N k V : ℤ) :
+    X^2-4*N*k^2*V ≡ X^2 [ZMOD N] := by
+  apply Int.modEq_iff_dvd.mpr
+  exact ⟨4*k^2*V, by ring⟩
+
+/-- Multiplying a packet of discriminants preserves that public modular square root. -/
+theorem packet_square_mod {ι : Type*} (s : Finset ι) (X V : ι → ℤ) (N k : ℤ) :
+    (∏ i ∈ s, ((X i)^2-4*N*k^2*V i)) ≡ (∏ i ∈ s, X i)^2 [ZMOD N] := by
+  classical
+  induction s using Finset.induction_on with
+  | empty => simp
+  | insert a s ha ih =>
+    simpa only [Finset.prod_insert ha,mul_pow] using (line_square_mod (X a) N k (V a)).mul ih
+
+/-- Every line equation factors into the two public affine forms modulo the target. -/
+theorem line_factors_mod (N k q F G S d i : ℤ) :
+    (F+G*i)^2-q^2*((S+d*i)^2-4*N*k^2) ≡
+      (F+G*i-q*(S+d*i))*(F+G*i+q*(S+d*i)) [ZMOD N] := by
+  apply Int.modEq_iff_dvd.mpr
+  exact ⟨-4*q^2*k^2,by ring⟩
+
+/-- The resultant of a linear factor of one equation and a linear factor h units
+of intercept away. Multiplying over the two choices of a and b gives the tested resultant. -/
+theorem pair_determinant (G F S d q h a b : ℤ) :
+    (G+a*q*d)*(F+h+b*q*S)-(G+b*q*d)*(F+a*q*S) =
+      (G+a*q*d)*h+(b-a)*q*(G*S-d*F) := by ring
+
+/-- On a genuine intersection the complementary signs instead expose S+w and S-w. -/
+theorem signed_readout (S w G q d : ℤ) :
+    (G*S-q*d*w)+(G*w-q*d*S)=(G-q*d)*(S+w) ∧
+    (G*S-q*d*w)-(G*w-q*d*S)=(G+q*d)*(S-w) := by constructor <;> ring
+
+/-- On the checked 117449 endpoint, the discriminant is an exact square coprime to N. -/
+theorem endpoint_packet_miss :
+    (-20736:ℤ)^2-4*117449*12^2*(-429981696)=170553600^2 ∧
+    Int.gcd (170553600^2) 117449=1 ∧ 117449=257*457 := by decide +kernel
+
 end PrimeFactors.OffsetArcLines

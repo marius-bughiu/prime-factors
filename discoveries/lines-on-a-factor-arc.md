@@ -57,3 +57,51 @@ python3 -m experiments.offset_arc_lines 502005281288939 --all-vectors --max-vect
 ```
 
 Short arcs, determinant tests for collinearity, and recovery by auxiliary equations are established techniques. Hiary uses continued fractions and quadratics for short divisor intervals. Bombieri and Pila study integral points on convex arcs, and Elkies uses lattice reduction for rational points near curves. The earlier repository approach recovers a line in divisor coordinates using counts and moments of lattice points. Here the public signed-gap congruence specifies the lattice, a convergent gives a normal direction, and an integer interval gives the possible lines before finding points. All claims here use finite integer inequalities. [Hiary](https://arxiv.org/abs/1408.2608) · [Bombieri and Pila](https://people.maths.ox.ac.uk/pila/Ovals.pdf) · [Elkies](https://arxiv.org/abs/math/0005139) · [Divisor intervals and moment fitting](quotient-search.md)
+
+## Can one gcd detect a successful line in a batch?
+
+Write $X_t=G S_0-\Delta F_t$, with $F_{t+1}=F_t+M$ and $V=G^2-q^2\Delta^2$. **Every** line discriminant $D_t=X_t^2-4Nk^2V$ already has the public square root $X_t$ modulo $N$. Thus $\gcd(N,\prod_t D_t)$ tests divisibility of the affine $X_t$ by a factor of $N$. On the winning line for $117449$, $X_t=-20736$ and $D_t=170553600^2$, with $\gcd(D_t,117449)=1$. On the complete 49-bit line schedule, all 7,045 discriminants were coprime to $N$. Exactly one was an integer square, 6,646 were positive nonsquares, and 398 were negative. A gcd of any subset of these discriminants therefore misses the successful line. [Kernel-checked congruences and endpoint](../PrimeFactors/OffsetArcLines.lean) · [Frozen schedules](../benchmarks/offset-arc-lines.json)
+
+We also tested the resultant of two line equations with different levels in the same signed band. Modulo $N$ each quadratic factors into the two public linear polynomials $(G\pm q\Delta)i+F_t\pm q S_0$. Put $A_\pm=G\pm q\Delta$ and $h=F_{t'}-F_t$. Multiplying the four linear-factor determinants gives the quadratic resultant modulo $N$,
+
+$$Vh^2(A_-h+2qX_t)(A_+h-2qX_t).$$
+
+Both leading factors $A_\pm$ were units in every 49-bit band with scheduled lines. Each level therefore admits modular roots at both hidden primes, even when no integer root exists. The aggregate resultant gcd was 1 for all 470,001 distinct same-band pairs, including all 5,574 adjacent pairs. Adding an independent index constraint would be a different test. Existing batch gcd methods use prescribed factor intervals or an independent modular square root to supply such information. [Linear-factor determinant](../PrimeFactors/OffsetArcLines.lean) · [Batch gcd across factor intervals](batch-intervals.md) · [Independent roots and mixed signs](masked-relations.md)
+
+To reproduce the census, run the following from the repository root. The callback counts the projected levels of the existing scanner without using the expected factors.
+
+```python
+from math import gcd, isqrt
+from unittest.mock import patch
+from experiments import offset_arc_lines as arcs
+
+n = 502005281288939
+counts = dict(lines=0, squares=0, positive_nonsquares=0, pairs=0, adjacent=0)
+products = [1, 1]
+
+def census(params, strip, direction, count, work):
+    S, step, P, r, beta, M, sign = params
+    p, q, first, _, _ = direction
+    G = sign*beta*q + M*p
+    a, b = G-q*step, G+q*step
+    assert not count or gcd(a*b, n) == 1
+    for t in range(first, first+count):
+        X = G*S-step*(sign*r*q+M*t)
+        D = X*X-P*a*b
+        square = D >= 0 and isqrt(D)**2 == D
+        counts["lines"] += 1
+        counts["squares"] += square
+        counts["positive_nonsquares"] += D > 0 and not square
+        products[0] = products[0]*D % n
+        for j in range(1, first+count-t):
+            h = j*M
+            products[1] = products[1]*a*b*h*h*(a*h+2*q*X)*(b*h-2*q*X) % n
+            counts["pairs"] += 1
+            counts["adjacent"] += j == 1
+    return iter(())
+
+with patch.object(arcs, "projected_hits", census):
+    arcs.search(n, 16, max_vectors=1000, max_tests=10000, all_vectors=True, hybrid=False)
+assert counts == dict(lines=7045, squares=1, positive_nonsquares=6646, pairs=470001, adjacent=5574)
+assert all(gcd(n, product) == 1 for product in products)
+```
