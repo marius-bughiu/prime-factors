@@ -2,7 +2,6 @@ import PrimeFactors.ActualSigns
 import PrimeFactors.AdditiveCover
 import PrimeFactors.AffineSlopeClasses
 import PrimeFactors.AmbiguousTwist
-import PrimeFactors.LocalMidpointLanes
 import PrimeFactors.AnalyticAccess
 import PrimeFactors.AnchorScale
 import PrimeFactors.ApproximateTotient
@@ -48,6 +47,8 @@ import PrimeFactors.Fermat
 import PrimeFactors.FoldedSquare
 import PrimeFactors.FourierAccess
 import PrimeFactors.FourSquareLines
+import PrimeFactors.FrobeniusFixedCounts
+import PrimeFactors.FrobeniusShiftCount
 import PrimeFactors.GapStride
 import PrimeFactors.GroupedImages
 import PrimeFactors.HyperbolaBoxes
@@ -60,6 +61,7 @@ import PrimeFactors.JacobiSeparation
 import PrimeFactors.JointPeriod
 import PrimeFactors.LegendreTraceSelection
 import PrimeFactors.LinePower
+import PrimeFactors.LocalMidpointLanes
 import PrimeFactors.LongPeriod
 import PrimeFactors.LowFactorBits
 import PrimeFactors.LowProductRank
@@ -93,6 +95,7 @@ import PrimeFactors.PascalProjection
 import PrimeFactors.PascalReadout
 import PrimeFactors.PellCycles
 import PrimeFactors.PellMultiplier
+import PrimeFactors.PersistentLocalSurvivors
 import PrimeFactors.PhaseBlocks
 import PrimeFactors.PhaseCharacters
 import PrimeFactors.PhaseEvaluation

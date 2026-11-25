@@ -1,5 +1,8 @@
 # Short periods from signed divisors of the hidden primes
 
+For a quadratic equation that splits at exactly one hidden prime, a conjugate power test can recover a factor on a small input. We proved an upper bound on its chance of success at each general 2,048-bit input and derived an exact factor formula from two counts. Directly computing those counts still takes too much work. [Proof, costs and examples](frobenius-shift-count.md)
+
+
 Given only $N=pq$ with distinct odd primes $p<q$, one can use all four common divisors $\gcd(p\pm1,q\pm1)$ in the short-period search. The algorithm chooses a random unit $D$ modulo $N$, computes its Jacobi symbol $j=(D/N)$, and raises a norm-one element of a quadratic algebra to the public exponent $N-j$. A large common divisor in any of the four sign patterns can shorten the search. Galbraith and McKee discuss common divisors of the two predecessors and the two successors. Williams uses local groups of order $p+1$ in his factorization method. Here the common divisor may be unknown and may contain large primes. [Galbraith and McKee, §5](https://www.math.auckland.ac.nz/~sgal018/pair-mod-n.pdf) · [Williams, *A p+1 method of factoring*](https://doi.org/10.1090/S0025-5718-1982-0658227-7)
 
 ## What the public exponent removes
