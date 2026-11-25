@@ -84,6 +84,9 @@ import PrimeFactors.OffsetDyadicSlopes
 import PrimeFactors.OffsetLatticeBatches
 import PrimeFactors.OffsetPrimePowerSlopes
 import PrimeFactors.OffsetCoordinateGaps
+import PrimeFactors.OffsetGapLift
+import PrimeFactors.OffsetUnitTrace
+import PrimeFactors.TargetSquareModulus
 import PrimeFactors.OffsetFactorProjection
 import PrimeFactors.OffsetRowGeometry
 import PrimeFactors.OffsetRowNorm

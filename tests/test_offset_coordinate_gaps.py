@@ -1,6 +1,9 @@
 import unittest
-from math import gcd, isqrt
+from collections import Counter
+from math import gcd, isqrt, lcm
+from random import Random
 
+from experiments.offset_class_intersection import intersect_pair
 from experiments.offset_coordinate_gaps import chart, exact_gaps, residues, search
 from experiments.offset_winner_window import bounds
 
@@ -55,3 +58,28 @@ class CoordinateGapsTest(unittest.TestCase):
         sample = search(117449,8,max_vectors=4)
         self.assertFalse(sample['all_vectors'])
         self.assertEqual(sample['tested_positions'],0)
+
+    def test_affine_intersection_with_clipped_non_coprime_moduli(self):
+        rng = Random(116041)
+        for _ in range(300):
+            def draw():
+                return (rng.randrange(12),rng.randrange(1,7),rng.randrange(12),
+                        rng.randrange(-20,21),rng.randrange(-8,9),rng.randrange(1,15))
+            a,b = draw(),draw()
+            merged = intersect_pair(a,b,Counter())
+            period = lcm(a[-1],b[-1])
+            def points(row):
+                if row is None:
+                    return set()
+                start,step,count,base,slope,modulus = row
+                return {(start+i*step,z) for i in range(count)
+                        for z in range((base+slope*i)%modulus, period, modulus)}
+            self.assertEqual(points(merged),points(a)&points(b))
+
+    def test_composed_lifts_and_matched_comparison(self):
+        options = dict(all_vectors=True,max_vectors=50,max_tests=1000,lift_cap=8,trace_units=True)
+        matched = search(117449,4,split_only=True,**options)
+        lifted = search(117449,4,**options)
+        self.assertEqual(matched['eligible_positions'],lifted['eligible_positions'])
+        self.assertEqual(lifted['hits'], [[17,12,'257','457']])
+        self.assertEqual(matched['hits'],lifted['hits'])

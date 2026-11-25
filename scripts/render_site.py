@@ -103,6 +103,15 @@ def case_row(result):
                  f" · {candidates} candidate positions"
                  f" · {w['tested_positions']:,} positions checked with a budget of {w['max_tests']:,}"
                  f" · {w['untested_intervals']:,} intervals still have unchecked positions")
+        if 'lift_setup' in w:
+            digits = 'original precision' if w['split_only'] else 'lifted precision'
+            setup = w['lift_setup']
+            count += (f" · {w['classes']:,} residue classes at {digits}"
+                      f" · {w['coprime_tests']:,} tested positions passed the gcd check"
+                      f" · {setup.get('class_inverses', 0):,} inverses for the divisor classes")
+            if setup.get('class_pairs'):
+                count += (f" · {setup['class_pairs']:,} class pairs considered"
+                          f" · {setup.get('crt_inverses', 0):,} inverses to combine them")
     elif result['method'] == 'offset-crt':
         w = result['offset_crt']
         total = w['total_tuples']

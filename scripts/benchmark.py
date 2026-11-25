@@ -177,7 +177,10 @@ def run_case(case, method, proofs):
     elif method == 'offset-coordinate-gaps':
         work = offset_coordinate_gap_search(int(case['n']), case['parts'], max_vectors=case['max_vectors'],
                                             max_tests=case['max_tests'], all_vectors=case['all_vectors'],
-                                            tilted=case['tilted'])
+                                            tilted=case['tilted'], lift_cap=case.get('lift_cap', 1),
+                                            split_only=case.get('split_only', False),
+                                            unit_square=case.get('unit_square', 1),
+                                            trace_units=case.get('trace_units', False))
         elapsed = time.perf_counter() - start
         hits = work.pop('hits')
         work['proper_hits'] = len(hits)
@@ -792,6 +795,7 @@ def main():
                              ('complete-offset-search.json', 'complete-offset-search'),
                              ('offset-winner-window.json', 'offset-winner-window'),
                              ('offset-coordinate-gaps.json', 'offset-coordinate-gaps'),
+                             ('offset-gap-lifts.json', 'offset-coordinate-gaps'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),
