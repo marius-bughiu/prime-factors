@@ -41,15 +41,31 @@ jobs:
     needs: verify
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pages: write
       id-token: write
     concurrency:
       group: github-pages
-      cancel-in-progress: false
+      queue: max
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
+      # Verification runs may finish out of order. Check main after acquiring
+      # the deployment lock so an older artifact cannot replace a newer one.
+      - name: Compare the verified revision with main
+        id: revision
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          head_sha=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)
+          if [ "$head_sha" = "$GITHUB_SHA" ]; then
+            echo "current=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "current=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping deployment of $GITHUB_SHA because main is $head_sha."
+          fi
       - name: Deploy verified progress report
+        if: steps.revision.outputs.current == 'true'
         id: deploy
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

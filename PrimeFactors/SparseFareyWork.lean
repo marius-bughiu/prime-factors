@@ -6,7 +6,7 @@ open Finset FareyWork
 
 /-- Indices in an aligned window are grouped by their quotient modulo M;
 a block costs a record only if one of its allowed indices is in the window. -/
-def occupied (M phase length : ℕ) (kept : Finset ℕ) : Finset ℕ :=
+noncomputable def occupied (M phase length : ℕ) (kept : Finset ℕ) : Finset ℕ :=
   ((Ico phase (phase+length)).filter (fun u => u%M ∈ kept)).image (fun u => u/M)
 
 /-- Following a single retained index through all its periods gives a
