@@ -23,9 +23,8 @@ def residues(low, high, modulus):
     return [(start, modulus), (0, stop-modulus)]
 
 
-def block_filters(trace, length, product, residue, slope, modulus, tilted, trace_step=2):
-    """Affine residue bounds for traces starting at trace with the given positive step."""
-    width = trace_step*(length-1)
+def gap_band(trace, width, product, tilted):
+    """Return (a,b,L,U) with L <= b*abs(gap)-a*(S-trace) <= U, and root cost."""
     delta = trace*trace-product
     l = isqrt(delta)
     r = isqrt((trace+width)**2-product)
@@ -37,10 +36,18 @@ def block_filters(trace, length, product, residue, slope, modulus, tilted, trace
         constant = (a*a-b*b)*product
         ceiling = isqrt(constant-1)+1 if constant else 0
         cap = a*trace-ceiling
-        ranges = residues(b*l, cap, b*modulus)
+        return (a,b,b*l,cap), 2+int(constant != 0)
+    return (0,1,l+(l*l < delta),r), 2
+
+
+def block_filters(trace, length, product, residue, slope, modulus, tilted, trace_step=2):
+    """Affine residue bounds for traces starting at trace with the given positive step."""
+    band, cost = gap_band(trace, trace_step*(length-1), product, tilted)
+    a,b,l,r = band
+    if a:
+        ranges = residues(l, r, b*modulus)
         filters = [(sign*b*slope-trace_step*a, sign*b*residue, b*modulus, ranges) for sign in (1,-1)]
-        return filters, (a,b,b*l,cap), 2+int(constant != 0)
-    l += l*l < delta
+        return filters, band, cost
     pieces = sorted(residues(l,r,modulus)+residues(-r,-l,modulus))
     merged = []
     for low, stop in pieces:
@@ -48,7 +55,7 @@ def block_filters(trace, length, product, residue, slope, modulus, tilted, trace
             merged[-1] = (merged[-1][0], max(merged[-1][1], stop))
         else:
             merged.append((low, stop))
-    return [(slope, residue, modulus, merged)], (0,1,l,r), 2
+    return [(slope, residue, modulus, merged)], band, cost
 
 
 def exact_gaps(delta, residue, modulus, band, offset, result):
@@ -130,16 +137,21 @@ def lifted_classes(n, t, s, v, first, length, divisor, split_only, unit_square, 
             for start,stride,size,_,_,_ in combined]
 
 
+def subintervals(length, parts):
+    """Give more intervals to the sharply curved end near the first possible square."""
+    parts = min(parts, length)
+    for block in range(parts):
+        start = block + (length-parts)*block**2//parts**2
+        stop = block+1 + (length-parts)*(block+1)**2//parts**2
+        yield start, stop
+
+
 def scan_class(n, s, v, first, trace_step, length, shift, parts, intercept, slope, modulus,
                tilted, max_tests, result, work):
     """Accumulate interval bounds and tests on one disjoint progression of offsets."""
     k = s*v
     product = 4*n*k*k
-    parts = min(parts, length)
-    for block in range(parts):
-        # Give more intervals to the sharply curved end near the first possible square.
-        start = block + (length-parts)*block**2//parts**2
-        stop = block+1 + (length-parts)*(block+1)**2//parts**2
+    for start,stop in subintervals(length, parts):
         size = stop-start
         j0 = first+trace_step*start
         gap_residue = (intercept+slope*start)%modulus
@@ -176,19 +188,22 @@ def scan_class(n, s, v, first, trace_step, length, shift, parts, intercept, slop
                 break
 
 
+def chart_window(n, box, s, v):
+    shift = 2*box['T']*s*v
+    first = max(1, isqrt(4*n*(s*v)**2-1)+1-shift)
+    first += (s+v-first) % 2
+    return shift, first, max(0, (box['J']-first)//2+1)
+
+
 def chart(n, box, s, v, parts, *, max_tests=0, tilted=True, lift_cap=1, split_only=False,
           unit_square=1, trace_units=False):
     """Count a cover in O(parts) floor-sum queries per class, with a global position budget."""
     if (not 0 < v <= s or gcd(s, v) != 1 or min(parts,lift_cap) < 1 or max_tests < 0
             or unit_square not in (1,8,24) or trace_units and unit_square != 1):
         raise ValueError('expected ordered, positive, coprime coordinates and valid budgets')
-    t, j_limit = box['T'], box['J']
+    t = box['T']
     k = s*v
-    shift = 2*t*k
-    product = 4*n*k*k
-    first = max(1, isqrt(product-1)+1-shift)
-    first += (s+v-first) % 2
-    length = max(0, (j_limit-first)//2+1)
+    shift, first, length = chart_window(n, box, s, v)
     work = Work()
     result = dict(s=s, v=v, parity_positions=length, intervals=0, empty_intervals=0,
                   candidate_lower=0, candidate_upper=0, tested_positions=0, untested_intervals=0, bound_roots=1,
@@ -232,17 +247,23 @@ def sample_coordinates(box):
     return pairs
 
 
+def coordinate_pairs(box, all_vectors):
+    if not all_vectors:
+        yield from sample_coordinates(box)
+        return
+    for v in range(1,isqrt(box['K'])+1):
+        for s in coordinate_range(box['T'],box['L'],box['K'],v):
+            if gcd(s,v) == 1:
+                yield s,v
+
+
 def search(n, parts, *, all_vectors=False, max_vectors, max_tests=0, tilted=True,
            lift_cap=1, split_only=False, unit_square=1, trace_units=False):
     if (n < 5 or n % 2 == 0 or isqrt(n)**2 == n or min(parts, max_vectors, lift_cap) < 1 or max_tests < 0
             or unit_square not in (1,8,24) or trace_units and unit_square != 1):
         raise ValueError('expected a positive search budget and an odd nonsquare input >= 5')
     box = bounds(n)
-    if all_vectors:
-        pairs = ((s,v) for v in range(1,isqrt(box['K'])+1)
-                 for s in coordinate_range(box['T'],box['L'],box['K'],v) if gcd(s,v) == 1)
-    else:
-        pairs = iter(sample_coordinates(box))
+    pairs = coordinate_pairs(box, all_vectors)
     total = dict(vectors=0, parity_positions=0, intervals=0, empty_intervals=0, candidate_lower=0, candidate_upper=0,
                  tested_positions=0, untested_intervals=0, gap_square_checks=0, fallback_roots=0,
                  bound_roots=0, range_counts=0, euclidean_steps=0)

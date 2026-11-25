@@ -112,6 +112,32 @@ def case_row(result):
             if setup.get('class_pairs'):
                 count += (f" · {setup['class_pairs']:,} class pairs considered"
                           f" · {setup.get('crt_inverses', 0):,} inverses to combine them")
+    elif result['method'] == 'offset-arc-lines':
+        w = result['offset_arc_lines']
+        scope = 'full coordinate range' if w['all_vectors'] and w['schedule_exhausted'] else 'sampled coordinates'
+        count = (f"Projected lines · {w['vectors']:,} coordinate pairs ({scope})"
+                 f" · {w['tests']:,} of {compact_count(w['scheduled'])} scheduled tests"
+                 f" · {w['tested_lines']:,} lines, {w['tested_points']:,} isolated points"
+                 f" and {w['tested_vertical']:,} vertical slices"
+                 f" · {w['discriminant_roots']:,} discriminant square roots")
+    elif result['method'] == 'offset-tangent-cover':
+        w = result['offset_tangent_cover']
+        scope = 'full coordinate range' if w['all_vectors'] and w['schedule_exhausted'] else 'sampled coordinates'
+        count = (f"Tangent arcs · {w['vectors']:,} coordinate pairs ({scope})"
+                 f" · {w['visited_arcs']:,} of {compact_count(w['planned_arcs'])} arcs visited"
+                 f" · {w['singletons_tested']:,} single positions and {w['line_equations']:,} line equations"
+                 f" · {w['epoch_roots']:,} square roots and {w['width_cube_roots']:,} cube roots to plan arcs")
+    elif result['method'] == 'offset-trace-words':
+        w = result['offset_trace_words']
+        if w['outcome'] == 'word_cap':
+            count = (f"Trace bit masks · required width {compact_count(w['word_bits_required'])} bits"
+                     f" exceeds the {w['max_word_bits']:,}-bit cap · no coordinates visited")
+        else:
+            count = (f"Trace bit masks · {w['raw_pairs']:,} coordinate pairs, {w['parity_positions']:,} parity positions"
+                     f" · {w['mask_entries']:,} mask entries prepared · {w['word_intersections']:,} intersections"
+                     f" · {w['residue_survivors']:,} survivors · {w['square_tests']:,} square tests")
+            if w['unvisited_upper']:
+                count += f" · at most {compact_count(w['unvisited_upper'])} coordinate pairs unvisited"
     elif result['method'] == 'offset-crt':
         w = result['offset_crt']
         total = w['total_tuples']

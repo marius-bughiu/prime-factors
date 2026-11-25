@@ -85,6 +85,14 @@ import PrimeFactors.OffsetLatticeBatches
 import PrimeFactors.OffsetPrimePowerSlopes
 import PrimeFactors.OffsetCoordinateGaps
 import PrimeFactors.OffsetGapLift
+import PrimeFactors.OffsetArcLines
+import PrimeFactors.OffsetTangentCover
+import PrimeFactors.ShiftedOffsetBase
+import PrimeFactors.OffsetGlobalArcs
+import PrimeFactors.TargetArcSchedule
+import PrimeFactors.OffsetCoordinateFloor
+import PrimeFactors.OffsetTraceImage
+import PrimeFactors.DivisorWindowSignal
 import PrimeFactors.OffsetUnitTrace
 import PrimeFactors.TargetSquareModulus
 import PrimeFactors.OffsetFactorProjection

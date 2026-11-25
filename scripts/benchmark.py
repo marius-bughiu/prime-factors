@@ -19,12 +19,15 @@ if str(ROOT) not in sys.path:
 
 from experiments.class_order_search import search as class_order_search
 from experiments.complete_offset_search import search as complete_offset_search
+from experiments.offset_arc_lines import search as offset_arc_line_search
 from experiments.offset_coordinate_gaps import search as offset_coordinate_gap_search
 from experiments.offset_crt_reconstruction import search as offset_crt_search
 from experiments.offset_dyadic_search import search as offset_dyadic_search
 from experiments.offset_lattice_batches import search as offset_lattice_search
 from experiments.offset_prime_power_slopes import search as offset_prime_power_search
 from experiments.offset_row_geometry import search as offset_row_geometry_search
+from experiments.offset_tangent_cover import search as offset_tangent_cover_search
+from experiments.offset_trace_words import search as offset_trace_word_search
 from experiments.offset_winner_window import search as offset_winner_window_search
 from experiments.grouped_offset_frame import choose_frame
 from experiments.grouped_offset_rows import bounded_rows
@@ -187,6 +190,27 @@ def run_case(case, method, proofs):
         agree(case, work, work.keys())
         factor = int(hits[0][2]) if hits else None
         result = certify_split(case, proof, factor, elapsed, 'offset_coordinate_gaps', work)
+    elif method in ('offset-arc-lines', 'offset-tangent-cover'):
+        settings = {key: case[key] for key in ('all_vectors', 'max_vectors', 'lift_cap', 'unit_square', 'trace_units')}
+        if method == 'offset-arc-lines':
+            work = offset_arc_line_search(int(case['n']), case['parts'], max_tests=case['max_tests'],
+                                          hybrid=case['hybrid'], **settings)
+        else:
+            work = offset_tangent_cover_search(int(case['n']), max_arcs=case['max_arcs'],
+                                              shifted_base=case.get('shifted_base', False), **settings)
+        elapsed = time.perf_counter() - start
+        hits = work.pop('hits')
+        work.update(proper_hits=len(hits), first_hit=hits[0][:2] if hits else None)
+        agree(case, work, work)
+        factor = int(hits[0][2]) if hits else None
+        result = certify_split(case, proof, factor, elapsed, method.replace('-', '_'), work)
+    elif method == 'offset-trace-words':
+        work = offset_trace_word_search(int(case['n']), prime_limit=case['prime_limit'],
+                                        max_word_bits=case['max_word_bits'], max_pairs=case['max_pairs'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, work)
+        result = certify_split(case, proof, factor, elapsed, 'offset_trace_words', work)
     elif method == 'offset-crt':
         work = offset_crt_search(int(case['n']), case['max_tuples'], exhaust=case['exhaust'],
                                  optimize_wheel=case.get('optimize_wheel', False))
@@ -796,6 +820,9 @@ def main():
                              ('offset-winner-window.json', 'offset-winner-window'),
                              ('offset-coordinate-gaps.json', 'offset-coordinate-gaps'),
                              ('offset-gap-lifts.json', 'offset-coordinate-gaps'),
+                             ('offset-arc-lines.json', 'offset-arc-lines'),
+                             ('offset-tangent-cover.json', 'offset-tangent-cover'),
+                             ('offset-trace-words.json', 'offset-trace-words'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),
