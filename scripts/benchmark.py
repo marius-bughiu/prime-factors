@@ -38,6 +38,7 @@ from experiments.midpoint_slope_batches import search as slope_batch_search
 from experiments.midpoint_weights import search as weight_orbit_search
 from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
+from experiments.quartic_three_row import search as three_row_search
 from experiments.quartic_basis_translation import search as translated_window_search
 from experiments.quartic_interval_extension import extend as extend_quartic_window
 from experiments.quartic_divisor_window import odd_quartile_center, search as quartic_window_search
@@ -324,6 +325,13 @@ def run_case(case, method, proofs):
         agree(case, work, work)
         factor = int(hits[0][2]) if hits else None
         result = certify_split(case, proof, factor, elapsed, 'offset_factor_blocks', work)
+    elif method == 'quartic-three-row':
+        work = three_row_search(int(case['n']), schedule=case['schedule'], blocks=case['blocks'])
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['radius', 'first_center', 'max_blocks', 'total_blocks', 'visited_blocks',
+                           'unvisited_prefix_blocks', 'unvisited_suffix_blocks', 'unvisited_blocks',
+                           'schedule_exhausted', 'work'])
+        result = certify_split(case, proof, work['factor'], elapsed, 'quartic_three_row', work)
     elif method == 'quartic-minor-gcd':
         n = int(case['n'])
         work = minor_gcd_search(n, full=case['full'], blocks=case['blocks'])
@@ -1017,6 +1025,7 @@ def main():
                              ('quartic-window-extension.json', 'quartic-window-extension'),
                              ('quartic-basis-translation.json', 'quartic-basis-translation'),
                              ('quartic-minor-gcd.json', 'quartic-minor-gcd'),
+                             ('quartic-three-row.json', 'quartic-three-row'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

@@ -265,6 +265,10 @@ import PrimeFactors.PowerJetContent
 import PrimeFactors.QuarticDeterminantFactor
 import PrimeFactors.QuarticMinorExample
 import PrimeFactors.QuarticMinorTracking
+import PrimeFactors.ThreeRowCofactor
+import PrimeFactors.DivisorWindowQuotient
+import PrimeFactors.QuadraticJetMinor
+import PrimeFactors.JetQuotientContent
 import PrimeFactors.QuarticHomogeneousImage
 import PrimeFactors.QuarticRankCounterexample
 import PrimeFactors.QuarticBasisTranslation

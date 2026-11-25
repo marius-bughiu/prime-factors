@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Three sufficiently short equations in the right window already have every three-column determinant divisible by the other prime. On 22,663 this split an interval that the previous four-row gcd test missed. [Three-row theorem and controlled comparison](three-rows-reveal-a-cofactor.md)
+
 If four basis equations vanish at the smaller factor’s offset, one determinant gives the product times the square of the cofactor. On the complete 49-bit control it gave the cofactor at one window. [Exact law, example and full-size budgets](a-determinant-that-gives-the-cofactor.md)
 
 A degree-four equation now covers $2^{408}+1$ odd positions around any prescribed odd center for a 1,024-bit divisor. Covering every possible position takes $2^{614}$ equations. Two public 2,048-bit examples have kernel-checked interval exclusions. A cheaper weighted sum offers at most two candidates in a smaller window. [Bounds and actual work](quartics-at-a-chosen-location.md)
