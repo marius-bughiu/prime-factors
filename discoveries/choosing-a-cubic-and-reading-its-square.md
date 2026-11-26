@@ -1,6 +1,6 @@
 # Choosing a cubic and reading its square
 
-The cubic search needs rows that pass two tests on the same input. Each test asks whether a number can be built entirely from the small primes in our list. We changed the polynomial so that the first test passed by construction. On each ordinary 2,048-bit input we obtained 130 such rows. None passed the second test. We also examined what happens after several rows have produced a real square. On 1,333, a square that returned only the whole input with the original calculation gave **31 and 43** with a different calculation. [Earlier cubic search](cubic-square-relations.md) · [Public inputs and work counts](../research/cubic-smooth-bases.json) · [Readout census](../research/cubic-readout-panel.json)
+The cubic search needs rows that pass two tests on the same input. Each test asks whether a number can be built entirely from the small primes in our list. We changed the polynomial so that the first test passed by construction. On each of the fresh and crossed 2,048-bit controls we obtained 130 such rows. None passed the second test. We also examined what happens after several rows have produced a real square. On 1,333, a square that returned only the whole input with the original calculation gave **31 and 43** with a different calculation. [Earlier cubic search](cubic-square-relations.md) · [Public inputs and work counts](../research/cubic-smooth-bases.json) · [Readout census](../research/cubic-readout-panel.json)
 
 ## Can we make suitable rows from the product?
 

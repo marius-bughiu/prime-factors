@@ -2,7 +2,7 @@
 
 Take sixteen numbers computed from the public product. There are 65,535 ways to select at least one of them. **Even if every selection were free to test, fewer than one in $2^{277}$ eligible 2,048-bit products would give a factor this way.** Lean proves this over all distinct pairs of 1,024-bit primes with a 2,048-bit product. It includes factors exposed by a single label and both gcd signs for every square relation. [Exact theorem](../PrimeFactors/WeightedSubsetLabels.lean)
 
-The sixteen numbers are the first two permitted square remainders at each weight from one through eight. For a label $A$ and weight $r$, the remainder is $D=A^2-4rN$. If remainders multiply to a square $z^2$, multiply their labels and take a gcd of $N$ with this product plus or minus $z$. On 2,100,271 one selection gave the primes 1,283 and 1,637. On both ordinary full-size controls, every selection failed the square test. The population bound says how many inputs could succeed even with perfect selection. [Worked example, comparison and control inputs](testing-three-weighted-remainders.md)
+The sixteen numbers are the first two permitted square remainders at each weight from one through eight. For a label $A$ and weight $r$, the remainder is $D=A^2-4rN$. If remainders multiply to a square $z^2$, multiply their labels and take a gcd of $N$ with this product plus or minus $z$. On 2,100,271 one selection gave the primes 1,283 and 1,637. Every selection failed the square test on both the fresh and the crossed 2,048-bit controls. The population bound says how many inputs could succeed even with perfect selection. [Worked example, comparison and control inputs](testing-three-weighted-remainders.md)
 
 ## When the extra combinations actually help
 

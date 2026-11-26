@@ -36,6 +36,6 @@ We compared three ways to spend up to 120 more integer square tests after checki
 | All 228,713 eligible products of 14-bit primes | 172,516 | 67,639 | 172,737 | 228,713 |
 | 8,192 fresh products of 16-bit primes | 3,442 | 1,219 | 3,440 | 8,192 |
 | Eight ordinary 80-bit products | 0 | 0 | 0 | 0 |
-| Two ordinary 2,048-bit controls | 0 | 0 | 0 | 0 |
+| Fresh and crossed 2,048-bit controls | 0 | 0 | 0 | 0 |
 
 On the complete 14-bit-prime census the combined search gained 396 answers the ordinary search missed and lost 175 others. That small net gain disappeared on the fresh sample. The sieved single search found every product in both smaller populations. It did more work to achieve that coverage. On the full census it took 11.29 seconds, compared with 4.26 seconds for ordinary single labels and 6.67 seconds for the combined search. On the fresh sample it screened 2,758,740 additional labels to perform 81,653 additional exact roots. Paired roots can have roughly twice the operand width of single roots. The published resource counts include sieve arithmetic and gcds; individual timings describe the measured run. The census checks discovered divisors against independently generated primes. The highlighted factorizations also have Lean certificates. [Work counts and independent draw](../research/weighted-pair-hybrid.json) · [Early-stop timings](../research/weighted-pair-hybrid-timing.json) · [Complete matched-label comparison](../research/weighted-pair-menu.json)

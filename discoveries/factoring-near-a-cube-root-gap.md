@@ -1,6 +1,6 @@
 # Factoring products whose prime gap is close to a cube root
 
-We recovered the two 1,024-bit prime factors of **two specially constructed 2,048-bit numbers**, starting only from each product. We guessed roughly how far apart the primes were, used that guess to pick one midpoint, and tested it. Lean verified both factorizations. The same test missed both ordinary full-size controls. [First full-size certificate](../benchmarks/controls/CubicForcedControl.lean) · [Second full-size certificate](../benchmarks/controls/CubicGapControl.lean)
+We recovered the two 1,024-bit prime factors of **two specially constructed 2,048-bit numbers**, starting only from each product. We guessed roughly how far apart the primes were, used that guess to pick one midpoint, and tested it. Lean verified both factorizations. The same test missed on the independently generated fresh input and the structured crossed input. Another method had already recovered the crossed factors. [Fresh control generation](certified-fresh-control.md) · [Crossed factorization](testing-one-factor-remainder.md) · [First full-size certificate](../benchmarks/controls/CubicForcedControl.lean) · [Second full-size certificate](../benchmarks/controls/CubicGapControl.lean)
 
 ## How can a wrong guess find the right primes?
 
@@ -15,7 +15,7 @@ For any odd 2,048-bit product of the form $p(p+2d)$, Lean proves that an error $
 | 1,007 | Product alone | 19 × 53 |
 | Constructed 2,048-bit product in the exact polynomial family | Product alone | Both 1,024-bit primes checked |
 | Second constructed 2,048-bit product, outside the exact family | Product alone | Both 1,024-bit primes checked despite a 338-bit half-gap error |
-| Two ordinary 2,048-bit controls | Each product alone | One midpoint tested on each, both cofactors unresolved |
+| Fresh and crossed 2,048-bit controls | Each product alone | One midpoint tested on each, both cofactors unresolved |
 
 The second control was generated specifically to test the tolerance. Its primes each have a predecessor divisible by the same independently certified 513-bit prime. This makes their primality certificates inexpensive to construct. Only the generator uses that shared prime and the target gap. The search takes $N$ alone. Starting Fermat's search at the square root and moving one midpoint at a time would require more than $6\times10^{102}$ square tests on each of the two constructed products. That is an exact count to the first nontrivial midpoint, calculated from the checked factors. [Off-family construction and work counts](../research/cubic-gap-control.json) · [Independent parameter generation](../experiments/cubic_gap_control.py)
 

@@ -1,6 +1,6 @@
 # Choosing a multiplier almost as large as the product
 
-Given only the public product $N$, try a multiplier $r=a^2N+b$. Its size grows with $N$, and the first square above $4rN$ is easy to locate. On 10,961, two nonsquare remainders from different multipliers multiplied to a square. The resulting gcds gave 97 and 113. Ordinary Fermat search found the same pair on its first test. The new search found no additional split on the exhaustive small panels, and both 2,048-bit controls remain unresolved. [Individual benchmark inputs](../benchmarks/affine-excess.json)
+Given only the public product $N$, try a multiplier $r=a^2N+b$. Its size grows with $N$, and the first square above $4rN$ is easy to locate. On 10,961, two nonsquare remainders from different multipliers multiplied to a square. The resulting gcds gave 97 and 113. Ordinary Fermat search found the same pair on its first test. The new search found no additional split on the exhaustive small panels and found no factor on either 2,048-bit control. [Individual benchmark inputs](../benchmarks/affine-excess.json)
 
 ## What the large weights become
 

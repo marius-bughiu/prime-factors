@@ -16,7 +16,7 @@ Both solvers used signed quartic equations, the exact same LLL inequality and th
 | Wall time | 0.353 s | 0.210 s |
 | Process CPU time | 0.352 s | 0.210 s |
 
-For the 2,048-bit comparison input, Newton's smooth radix reduced the number of signed groups by **43.32%**, from about $4.492\times10^{183}$ to $2.546\times10^{183}$. We searched the first two groups at each method's own radix. Taylor took 5.75 seconds, used 820 integer-root search nodes and returned no factor. Newton took 5.52 seconds, used four integer-root search nodes and returned no factor. The two prefixes cover different remainder classes. These single timings do not establish an average cost per group. The entire input remains unresolved. [Exact counts, work and cofactor](../research/newton-lane-holdout.json)
+For the 2,048-bit comparison input, Newton's smooth radix reduced the number of signed groups by **43.32%**, from about $4.492\times10^{183}$ to $2.546\times10^{183}$. We searched the first two groups at each method's own radix. Taylor took 5.75 seconds, used 820 integer-root search nodes and returned no factor. Newton took 5.52 seconds, used four integer-root search nodes and returned no factor. The two prefixes cover different remainder classes. These single timings do not establish an average cost per group. A later search recovered the crossed factors at remainder 1. [Remainder selection and factorization](testing-one-factor-remainder.md) · [Exact counts, work and cofactor](../research/newton-lane-holdout.json)
 
 ## What the values of an integer polynomial force
 
