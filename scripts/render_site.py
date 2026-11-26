@@ -581,6 +581,12 @@ def case_row(result):
         if work.get('probe_certificate'):
             url = escape(work['probe_certificate']['proof'], quote=True)
             count += f' · <a href="{url}">Power test proof</a>'
+    elif result['method'] == 'weighted-square-triples':
+        checks = result['weighted_square_triples']
+        count = (f'{checks["work"]["triple_tests"]:,} triples · '
+                 f'{checks["work"]["extra_single_tests"]:,} comparison single tests · '
+                 f'{checks["subsets"]["square_subsets"]:,} square products among '
+                 f'{checks["subsets"]["nonempty_subsets"]:,} nonempty subsets')
     elif result['method'] == 'weighted-square-menu':
         runs = result['weighted_square_menu']
         hybrid = runs['hybrid']

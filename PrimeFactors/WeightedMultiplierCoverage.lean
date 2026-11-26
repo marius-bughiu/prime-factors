@@ -80,7 +80,9 @@ private theorem by_product {k b : ℕ} (row : (k,b)∈budgets) (P : Finset ℕ)
 
 attribute [local irreducible] MixedPrefixSample.ordered MixedPrefixSample.primes MixedPrefixSample.X
 
-private theorem sample_data {E : ℕ → Prop} {z : ℕ×ℕ} (mem : z∈MixedPrefixSample.sample E) :
+/-- An eligible pair has increasing prime entries and its product lies below
+the square-root endpoint used to count weighted labels. -/
+theorem sample_data {E : ℕ → Prop} {z : ℕ×ℕ} (mem : z∈MixedPrefixSample.sample E) :
     z.1.Prime ∧ z.2.Prime ∧ z.1<z.2 ∧
     Real.sqrt (z.1*z.2 : ℕ) ≤ 2*(2:ℝ)^1023 ∧ E (z.1*z.2) := by
   rw [MixedPrefixSample.sample, mem_filter] at mem

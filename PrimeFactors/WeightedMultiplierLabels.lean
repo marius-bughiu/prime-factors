@@ -72,7 +72,8 @@ def Found (k b n : ℕ) : Prop :=
     let v := (A^2-4*r*n)*(B^2-4*s*n)
     v.sqrt^2=v ∧ 1<(A*B-v.sqrt).gcd n ∧ (A*B-v.sqrt).gcd n<n
 
-private theorem above (n w i : ℕ) : 4*w*n≤(labelAt n w i)^2 := by
+/-- Every executable label is on or above its weighted square-root endpoint. -/
+theorem above (n w i : ℕ) : 4*w*n≤(labelAt n w i)^2 := by
   apply ceilSqrt_le_iff.mp
   exact (Nat.le_add_right _ _).trans (Nat.le_add_right _ _)
 

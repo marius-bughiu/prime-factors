@@ -429,6 +429,11 @@ import PrimeFactors.WeightedMultiplierLabels
 import PrimeFactors.AffineExcess
 import PrimeFactors.AffineExcessSingle
 import PrimeFactors.AffineExcessPopulation
+import PrimeFactors.WeightedTripleSupport
+import PrimeFactors.WeightedTripleFiber
+import PrimeFactors.WeightedTripleReduction
+import PrimeFactors.WeightedTriplePopulation
+import PrimeFactors.WeightedTripleLabels
 import PrimeFactors.LiftedPeriodTrace
 import PrimeFactors.WideModulus
 import PrimeFactors.WideScale

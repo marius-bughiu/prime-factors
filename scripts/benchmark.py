@@ -56,6 +56,7 @@ from scripts.factor_sum_quantile_benchmark import quantile_case
 from experiments.affine_excess import compare as compare_affine_excess
 from experiments.weighted_square_pairs import search as weighted_square_pair_search
 from experiments.weighted_pair_hybrid import run as weighted_menu_search
+from experiments.weighted_square_triples import compare as weighted_triple_comparison
 from scripts.memory_partition_benchmark import memory_partition_case
 from scripts.cyclotomic_sum_lift_benchmark import cyclotomic_sum_case
 from scripts.lifted_period_benchmark import lifted_period_case
@@ -589,6 +590,16 @@ def run_case(case, method, proofs):
         result = lifted_trace_case(case, proof, agree, certify_split)
     elif method == 'cyclotomic-sum-lift':
         result = cyclotomic_sum_case(case, proof, agree, certify_split)
+    elif method == 'weighted-square-triples':
+        tick = time.perf_counter()
+        comparison = weighted_triple_comparison(int(case['n']), all_subsets=True)
+        elapsed = time.perf_counter() - tick
+        agree(case, comparison['work'], ['initial_tests', 'pair_tests', 'triple_tests',
+                                         'extra_single_tests', 'genuine_triple_splits'])
+        agree(case, comparison['subsets'], ['square_subsets', 'private_pruned'])
+        hit = comparison['genuine_triple']
+        factor = int(hit['divisor']) if hit else None
+        result = certify_split(case, proof, factor, elapsed, 'weighted_square_triples', comparison)
     elif method == 'weighted-square-menu':
         n = int(case['n'])
         comparisons = {}
@@ -1641,6 +1652,7 @@ def main():
                              ('weighted-square-pairs.json', 'weighted-square-pair'),
                              ('affine-excess.json', 'affine-excess'),
                              ('weighted-square-menu.json', 'weighted-square-menu'),
+                             ('weighted-square-triples.json', 'weighted-square-triples'),
                              ('memory-partition-sum.json', 'memory-partition-sum'),
                              ('cyclotomic-sum-lift.json', 'cyclotomic-sum-lift'),
                              ('lifted-period-join.json', 'lifted-period-join'),
