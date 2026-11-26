@@ -56,6 +56,13 @@ def case_row(result):
             claim = f'Lean excludes every even factor gap through {int(x["max_gap"]):,}.'
         evidence += f'<p>{claim} <a href="{escape(x["proof"])}">Download exclusion proof</a></p>'
         verification = duration(x['verification_seconds']) + ' (exclusion proof)'
+    if 'schedule_proof' in result:
+        sp = result['schedule_proof']
+        if not checked:
+            evidence += f'<p><a href="{escape(sp["proof"])}">Download the minimum-schedule proof</a></p>'
+            verification = duration(sp['seconds']) + ' (schedule proof)'
+        else:
+            evidence += '<p>The certificate also proves the stated minimum schedule.</p>'
     if result['method'] == 'subgroup':
         w = result['subgroup']
         unit = 'base' if w['bases_tested'] == 1 else 'bases'
@@ -446,6 +453,18 @@ def case_row(result):
         count = (f'Base selection · {selection["bases_tested"]:,} of {w["max_primes"]:,} primes tested'
                  f' · combined order {escape(selection["combined_order"])}'
                  f' · {escape(w["outcome"].replace("_", " "))}')
+    elif result['method'] == 'trace-cover':
+        w = result['trace_cover']
+        count = (f'{w["catalogue"]:,} weight pairs · minimum {w["optimum"]:,} blocks · '
+                 f'{compact_count(int(w["block"]))} starting powers in the priced table · '
+                 f'{w["probes"]:,} weighted test ratios · '
+                 f'{"public plan replay" if w.get("replayed_plan") else "planning"} {duration(w["plan_seconds"])}')
+        if 'gap_three_blocks' in w:
+            count += f' · earlier restricted planner {w["gap_three_blocks"]:,} blocks'
+        if w['executed']:
+            count += f' · factor search {duration(w["search_seconds"])}'
+        else:
+            count += ' · planned schedule only'
     elif result['method'] in ('weighted-stride', 'weighted-sparse'):
         w = result['weighted_stride']
         counts = w['work']

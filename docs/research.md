@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+The weighted-sum cover uses publicly known integer congruences and inequalities between rational lines. Its operation counts also apply without an analytic zero-location assumption. A Dirichlet bound can help select modular bases in the collision search; it does not choose the hidden factor ratio in the schedule theorem. [Schedules and cost](../discoveries/the-minimum-weighted-search.md) · [Base-selection argument and its assumptions](../discoveries/combining-weighted-bases.md)
+
 The approximate-sum recovery uses integer root bounds and divisor equations. Its population estimates use the published prime-count inequality already stated by the project. The Dirichlet and zeta zero-location statements do not provide the input-specific approximation of the prime sum used here. [New result and its assumptions](../discoveries/near-a-smooth-prime-sum.md) · [Pinned analytic statements](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab/src/Statements.lean)
 
 A 2,048-bit constructed control split in 26 square tests because its factor sum had only two prime divisors, 2 and 3. Its recovery proof uses elementary integer arithmetic. The conditional population calculations take explicit published prime counts as their denominator and use an unconditional divisor bound for their numerators. [Full-size example and proof](../discoveries/recovering-a-smooth-prime-sum.md) · [Population model](../discoveries/which-inverse-guesses-can-work.md)

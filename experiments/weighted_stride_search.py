@@ -110,6 +110,31 @@ def _giants(n, k, m, max_giants, max_slopes, beta, stride, work, *, wheel=None):
     return records, None
 
 
+def records_from_allocation(n, m, max_giants, max_slopes, beta, stride, work,
+                            fractions, windows, lengths, slope_visits):
+    """Build the collision records for a complete allocation of label prefixes."""
+    work['slope_visits'] = work['primitive_slopes'] = slope_visits
+    if work['slope_visits'] > max_slopes:
+        raise ValueError("the benchmark requires a complete allocation")
+    work['allocated_slopes'] = len(fractions)
+    work['nonempty_slopes'] = sum(bool(length) for length in lengths)
+    work['labels_covered'] = sum(lengths)
+    if sum((length+m-1)//m for length in lengths) > max_giants:
+        raise ValueError("the benchmark requires a complete allocation")
+    records = []
+    jump = pow(beta, -stride*m, n)
+    # Preserve the ordinary denominator-first search order among retained slopes.
+    ordered = sorted(zip(fractions, windows, lengths), key=lambda row: (row[0][1], row[0][0]))
+    for (a, b), (start, step), length in ordered:
+        if not length:
+            continue
+        power = pow(beta, (stride//step)*(a+b*n-start), n)
+        for offset in range(0, length, m):
+            records.append((power, a, b, start+step*offset, step, 0, min(length-offset, m)))
+            power = power*jump%n
+    return records, None
+
+
 def search(n, k, baby_steps, max_giants, *, beta=2, max_babies=262144,
            max_slopes=131072, stride=24, record_builder=_giants, wheel_primes=None,
            max_span=262144):

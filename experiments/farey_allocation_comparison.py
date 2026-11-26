@@ -14,26 +14,9 @@ def allocated_records(n, k, m, max_giants, max_slopes, beta, stride, work):
     if stride != 24:
         raise ValueError("this benchmark adapter uses stride 24")
     fractions, windows, _, lengths = fast(n, k, m, max_centers=min(max_slopes, MAX_CENTERS))
-    work['slope_visits'] = work['primitive_slopes'] = sum(1 for _ in slopes(k))
-    if work['slope_visits'] > max_slopes:
-        raise ValueError("the benchmark requires a complete allocation")
-    work['allocated_slopes'] = len(fractions)
-    work['nonempty_slopes'] = sum(bool(length) for length in lengths)
-    work['labels_covered'] = sum(lengths)
-    if sum((length+m-1)//m for length in lengths) > max_giants:
-        raise ValueError("the benchmark requires a complete allocation")
-    records = []
-    jump = pow(beta, -stride*m, n)
-    # Preserve the ordinary denominator-first search order among retained slopes.
-    ordered = sorted(zip(fractions, windows, lengths), key=lambda row: (row[0][1], row[0][0]))
-    for (a, b), (start, step), length in ordered:
-        if not length:
-            continue
-        power = pow(beta, (stride//step)*(a+b*n-start), n)
-        for offset in range(0, length, m):
-            records.append((power, a, b, start+step*offset, step, 0, min(length-offset, m)))
-            power = power*jump%n
-    return records, None
+    return weighted_stride_search.records_from_allocation(
+        n, m, max_giants, max_slopes, beta, stride, work, fractions, windows, lengths,
+        sum(1 for _ in slopes(k)))
 
 
 def run(repetitions):

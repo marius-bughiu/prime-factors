@@ -1,12 +1,14 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Latest checked factorization](discoveries/near-a-smooth-prime-sum.md) · [General search bounds](discoveries/recursive-integer-valued-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Latest checked search](discoveries/the-minimum-weighted-search.md) · [General search bounds](discoveries/recursive-integer-valued-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. In our latest successful examples, we chose the primes so their sum was close to a number the search could guess. Lean checked that each recovered number was prime and that multiplying them gave the original input.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?
+
+**We can now tell when a weighted search has no more redundant blocks to remove.** On one 89-bit product the minimum fell from 34,264 blocks under our previous scheduling rules to 33,010 when we let the checks move freely. The search recovered both primes. Finding the best schedule took 155 seconds and running it took about one second. On the 2,048-bit comparisons we proved precise limits on the same idea. Even the optimized schedules remain impractical. [Results, costs and proofs](discoveries/the-minimum-weighted-search.md)
 
 **Our sum guess can now be wrong by a large amount and still reveal both primes.** On a constructed 2,048-bit input our guess was off by a 399-bit integer. Four polynomial calculations recovered the two 1,024-bit primes. On two other 2,048-bit inputs, Lean proved every candidate sum in the tested bands misses. The shortcut still depends on a rare relationship between the primes. [Worked example, cost and limits](discoveries/near-a-smooth-prime-sum.md)
 

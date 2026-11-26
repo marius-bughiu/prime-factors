@@ -9,6 +9,7 @@ import subprocess
 import sys
 import time
 from datetime import datetime, timezone
+from fractions import Fraction
 from functools import partial
 from math import isqrt
 from pathlib import Path
@@ -45,7 +46,8 @@ from experiments.monotone_divisor_sampling import scan as scan_divisor_prefixes,
 from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
 from experiments.smooth_factor_sums import scan_two_three
 from experiments.near_smooth_sum import search as near_smooth_search
-from scripts import near_smooth_certificate
+from scripts import near_smooth_certificate, trace_cover_certificate
+from experiments import trace_cover
 from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
 from experiments.quartic_three_row import search as three_row_search
@@ -824,6 +826,23 @@ end PrimeFactors.Generated
         agree(case, work, list(work))
         work.update(settings)
         result = certify_split(case, proof, run['factor'], elapsed, 'weighted_base', work)
+    elif method == 'trace-cover':
+        n, block = int(case['n']), int(case['baby_steps'])
+        plan, work, factor = trace_cover.compare(n, case['k'], block,
+            search_factors=case['execute_search'], equal_width=case['equal_width'], sparse=case['sparse'],
+            certificate=ROOT/'research'/case['public_plan'] if 'public_plan' in case else None)
+        elapsed = time.perf_counter() - start
+        for key, expected in case['expected'].items():
+            if work[key] != expected:
+                raise ValueError(f'{name}: {key} differs from the expected schedule or measured search')
+        result = certify_split(case, proof, factor, elapsed, 'trace_cover', work)
+        if case['schedule_certificate']:
+            checked_at = time.perf_counter()
+            trace_cover_certificate.check_schedule(n, case['k'], block, plan, Fraction(work['right']), proof)
+            seconds = time.perf_counter()-checked_at
+            result['schedule_proof'] = dict(proof=f'proofs/{proof.name}', seconds=seconds)
+            if result['verified']:
+                result['verification_seconds'] += seconds
     elif method in ('weighted-stride', 'weighted-sparse'):
         settings = {k: case[k] for k in ('k', 'baby_steps', 'max_giants', 'max_slopes', 'beta', 'stride')}
         if method == 'weighted-sparse':
@@ -1221,6 +1240,7 @@ def main():
                              ('norm-band-product.json', 'norm-band-product'),
                              ('factorial-progressions.json', 'factorial-progressions'),
                              ('weighted-stride.json', 'weighted-stride'),
+                             ('trace-cover.json', 'trace-cover'),
                              ('weighted-sparse.json', 'weighted-sparse'),
                              ('weighted-base.json', 'weighted-base'),
                              ('quartic-trace.json', 'quartic-trace'),

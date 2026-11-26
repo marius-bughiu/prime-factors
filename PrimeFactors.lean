@@ -322,6 +322,15 @@ import PrimeFactors.TraceStripPacking
 import PrimeFactors.TraceStripThresholds
 import PrimeFactors.UniversalTraceWindow
 import PrimeFactors.WeightedCollision
+import PrimeFactors.WeightedCollisionReuse
+import PrimeFactors.WeightedRatioCover
+import PrimeFactors.TraceCoverCertificate
+import PrimeFactors.TraceProgression
+import PrimeFactors.TraceGapPopulation
+import PrimeFactors.SparseTraceDual
+import PrimeFactors.SequentialTraceCover
+import PrimeFactors.TwoTraceBudget
+import PrimeFactors.TwoTraceExamples
 import PrimeFactors.WeightedSparseCoverage
 import PrimeFactors.WeightedStride
 import PrimeFactors.WideModulus

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+We now have matching upper and lower certificates for the number of weighted search blocks across the entire balanced ratio range. On the 89-bit examples the minima are 33,010 and 32,802 at the earlier table sizes. On both 2,048-bit inputs even the exact two-slope schedule requires more than $2^{1017}$ single-label checks to cover that range. [Minimum schedules and which alternatives the lower bounds include](the-minimum-weighted-search.md)
+
 An approximate sum now recovers both primes on two constructed 2,048-bit products where the exact smooth sums miss. The larger actual error has 399 bits. Four quartics found the factors. Lean excluded the full family at tolerance $2^{400}$ on the two earlier comparisons. [Calculations, inputs and population bounds](near-a-smooth-prime-sum.md)
 
 For primes with a sum supported on 2 and 3, at most 647 candidates recover a full-size pair. A constructed 2,048-bit product split after 26 square tests, and one public remainder excludes both earlier comparison products. [Proof, construction and frequency](recovering-a-smooth-prime-sum.md) · [Population bounds when guesses read the whole product](affine-guesses-from-the-product.md)
