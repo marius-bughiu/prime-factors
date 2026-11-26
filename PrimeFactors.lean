@@ -148,6 +148,9 @@ import PrimeFactors.TwoReflectionKeys
 import PrimeFactors.FactorSumQuantile
 import PrimeFactors.SumMenuPartition
 import PrimeFactors.PartialOrderLift
+import PrimeFactors.QuantilePopulationBounds
+import PrimeFactors.QuantileResidueBins
+import PrimeFactors.LiftedWheelPeriod
 import PrimeFactors.ReusableSumBase
 import PrimeFactors.SignatureUpdates
 import PrimeFactors.FixedBaseSignature

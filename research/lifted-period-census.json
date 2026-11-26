@@ -1,0 +1,776 @@
+{
+  "source": "benchmarks/factor-sum-quantile.json",
+  "rule": "The full-interval plan supplies Q. Choose the nearest positive multiple of Q to the central prefix length that leaves a nonempty suffix; if none exists search the full interval once.",
+  "caps": {
+    "max_right": 20000,
+    "max_total_visits": 32768,
+    "max_total_lookups": 100000
+  },
+  "aggregate": {
+    "full": {
+      "first_piece": 8,
+      "complete": 8,
+      "right_built": 13776,
+      "left_visited": 3406,
+      "lookups": 10411,
+      "square_tests": 8,
+      "signature_multiplications": 72254,
+      "setup_powers": 435,
+      "signature_inversions": 409
+    },
+    "quantile": {
+      "first_piece": 4,
+      "complete": 8,
+      "right_built": 13776,
+      "left_visited": 5071,
+      "lookups": 10033,
+      "square_tests": 8,
+      "signature_multiplications": 70744,
+      "setup_powers": 431,
+      "signature_inversions": 409
+    },
+    "aligned": {
+      "first_piece": 7,
+      "complete": 8,
+      "right_built": 13776,
+      "left_visited": 3676,
+      "lookups": 7193,
+      "square_tests": 8,
+      "signature_multiplications": 65474,
+      "setup_powers": 427,
+      "signature_inversions": 409
+    }
+  },
+  "rows": [
+    {
+      "id": "quantile-80-draw-0",
+      "lower": "1905951148991",
+      "upper": "1925480560384",
+      "central": "1910827264402",
+      "aligned": "1925480560384",
+      "periods": 0,
+      "aligned_cut_used": false,
+      "lifted_period": "24094029960",
+      "first_interval_lengths": {
+        "full": "19529411394",
+        "quantile": "4876115412",
+        "aligned": "19529411394"
+      },
+      "planning": {
+        "local_sites": 33032,
+        "local_inverses": 20410,
+        "wheel_layouts": 104,
+        "lift_candidates": 998
+      },
+      "aligned_area_fraction": "0.999999999983",
+      "local_menu_counts": {
+        "full": {
+          "exact": "3081417"
+        },
+        "quantile": {
+          "exact": "769419"
+        },
+        "aligned": {
+          "exact": "3081417"
+        }
+      },
+      "estimated_score": 3912,
+      "right_entries": 1800,
+      "policies": {
+        "full": {
+          "status": "sum_square",
+          "factors": [
+            "904121435479",
+            "1004469543523"
+          ],
+          "first": true,
+          "right_built": 1800,
+          "left_visited": 970,
+          "lookups": 1570,
+          "square_tests": 1,
+          "setup_powers": 58,
+          "signature_inversions": 56,
+          "signature_multiplications": 10032
+        },
+        "quantile": {
+          "status": "sum_square",
+          "factors": [
+            "904121435479",
+            "1004469543523"
+          ],
+          "first": true,
+          "right_built": 1800,
+          "left_visited": 970,
+          "lookups": 1361,
+          "square_tests": 1,
+          "setup_powers": 58,
+          "signature_inversions": 56,
+          "signature_multiplications": 9800
+        },
+        "aligned": {
+          "status": "sum_square",
+          "factors": [
+            "904121435479",
+            "1004469543523"
+          ],
+          "first": true,
+          "right_built": 1800,
+          "left_visited": 970,
+          "lookups": 1570,
+          "square_tests": 1,
+          "setup_powers": 58,
+          "signature_inversions": 56,
+          "signature_multiplications": 10032
+        }
+      }
+    },
+    {
+      "id": "quantile-80-draw-1",
+      "lower": "1840977791659",
+      "upper": "1870126313369",
+      "central": "1848250556592",
+      "aligned": "1851686249418",
+      "periods": 1,
+      "aligned_cut_used": true,
+      "lifted_period": "10708457760",
+      "first_interval_lengths": {
+        "full": "29148521711",
+        "quantile": "7272764934",
+        "aligned": "10708457760"
+      },
+      "planning": {
+        "local_sites": 33032,
+        "local_inverses": 20410,
+        "wheel_layouts": 104,
+        "lift_candidates": 1214
+      },
+      "aligned_area_fraction": "0.606619368181",
+      "local_menu_counts": {
+        "full": {
+          "exact": "3386589"
+        },
+        "quantile": {
+          "exact": "845001"
+        },
+        "aligned": {
+          "exact": "1244160"
+        }
+      },
+      "estimated_score": 3384,
+      "right_entries": 1080,
+      "policies": {
+        "full": {
+          "status": "sum_square",
+          "factors": [
+            "851410458433",
+            "995171951381"
+          ],
+          "first": true,
+          "right_built": 1080,
+          "left_visited": 506,
+          "lookups": 1602,
+          "square_tests": 1,
+          "setup_powers": 53,
+          "signature_inversions": 49,
+          "signature_multiplications": 7626
+        },
+        "quantile": {
+          "status": "sum_square",
+          "factors": [
+            "851410458433",
+            "995171951381"
+          ],
+          "first": true,
+          "right_built": 1080,
+          "left_visited": 506,
+          "lookups": 542,
+          "square_tests": 1,
+          "setup_powers": 49,
+          "signature_inversions": 49,
+          "signature_multiplications": 4494
+        },
+        "aligned": {
+          "status": "sum_square",
+          "factors": [
+            "851410458433",
+            "995171951381"
+          ],
+          "first": true,
+          "right_built": 1080,
+          "left_visited": 506,
+          "lookups": 1012,
+          "square_tests": 1,
+          "setup_powers": 51,
+          "signature_inversions": 49,
+          "signature_multiplications": 6374
+        }
+      }
+    },
+    {
+      "id": "quantile-80-draw-2",
+      "lower": "2090722734414",
+      "upper": "2093389600907",
+      "central": "2091389344765",
+      "aligned": "2092294084193",
+      "periods": 1,
+      "aligned_cut_used": true,
+      "lifted_period": "1571349780",
+      "first_interval_lengths": {
+        "full": "2666866494",
+        "quantile": "666610352",
+        "aligned": "1571349780"
+      },
+      "planning": {
+        "local_sites": 33002,
+        "local_inverses": 20380,
+        "wheel_layouts": 104,
+        "lift_candidates": 1606
+      },
+      "aligned_area_fraction": "0.767634974853",
+      "local_menu_counts": {
+        "full": {
+          "exact": "923856"
+        },
+        "quantile": {
+          "exact": "230939"
+        },
+        "aligned": {
+          "exact": "544320"
+        }
+      },
+      "estimated_score": 1809,
+      "right_entries": 864,
+      "policies": {
+        "full": {
+          "status": "sum_square",
+          "factors": [
+            "1016063535881",
+            "1075503991097"
+          ],
+          "first": true,
+          "right_built": 864,
+          "left_visited": 285,
+          "lookups": 665,
+          "square_tests": 1,
+          "setup_powers": 49,
+          "signature_inversions": 45,
+          "signature_multiplications": 4662
+        },
+        "quantile": {
+          "status": "sum_square",
+          "factors": [
+            "1016063535881",
+            "1075503991097"
+          ],
+          "first": false,
+          "right_built": 864,
+          "left_visited": 600,
+          "lookups": 980,
+          "square_tests": 1,
+          "setup_powers": 49,
+          "signature_inversions": 45,
+          "signature_multiplications": 5370
+        },
+        "aligned": {
+          "status": "sum_square",
+          "factors": [
+            "1016063535881",
+            "1075503991097"
+          ],
+          "first": true,
+          "right_built": 864,
+          "left_visited": 285,
+          "lookups": 570,
+          "square_tests": 1,
+          "setup_powers": 47,
+          "signature_inversions": 45,
+          "signature_multiplications": 4472
+        }
+      }
+    },
+    {
+      "id": "quantile-80-draw-3",
+      "lower": "1649620081199",
+      "upper": "1718251426326",
+      "central": "1666689603632",
+      "aligned": "1685761126138",
+      "periods": 1,
+      "aligned_cut_used": true,
+      "lifted_period": "36141044940",
+      "first_interval_lengths": {
+        "full": "68631345128",
+        "quantile": "17069522434",
+        "aligned": "36141044940"
+      },
+      "planning": {
+        "local_sites": 33032,
+        "local_inverses": 20410,
+        "wheel_layouts": 104,
+        "lift_candidates": 1818
+      },
+      "aligned_area_fraction": "0.726848195267",
+      "local_menu_counts": {
+        "full": {
+          "exact": "14175930"
+        },
+        "quantile": {
+          "exact": "3525721"
+        },
+        "aligned": {
+          "exact": "7464960"
+        }
+      },
+      "estimated_score": 6696,
+      "right_entries": 3240,
+      "policies": {
+        "full": {
+          "status": "sum_square",
+          "factors": [
+            "824576781643",
+            "825043365541"
+          ],
+          "first": true,
+          "right_built": 3240,
+          "left_visited": 601,
+          "lookups": 1623,
+          "square_tests": 1,
+          "setup_powers": 61,
+          "signature_inversions": 57,
+          "signature_multiplications": 14508
+        },
+        "quantile": {
+          "status": "sum_square",
+          "factors": [
+            "824576781643",
+            "825043365541"
+          ],
+          "first": true,
+          "right_built": 3240,
+          "left_visited": 601,
+          "lookups": 838,
+          "square_tests": 1,
+          "setup_powers": 57,
+          "signature_inversions": 57,
+          "signature_multiplications": 11736
+        },
+        "aligned": {
+          "status": "sum_square",
+          "factors": [
+            "824576781643",
+            "825043365541"
+          ],
+          "first": true,
+          "right_built": 3240,
+          "left_visited": 601,
+          "lookups": 1202,
+          "square_tests": 1,
+          "setup_powers": 59,
+          "signature_inversions": 57,
+          "signature_multiplications": 13192
+        }
+      }
+    },
+    {
+      "id": "quantile-80-draw-5",
+      "lower": "1682147776759",
+      "upper": "1742892987138",
+      "central": "1697266140930",
+      "aligned": "1699995206358",
+      "periods": 2,
+      "aligned_cut_used": true,
+      "lifted_period": "8923714800",
+      "first_interval_lengths": {
+        "full": "60745210380",
+        "quantile": "15118364172",
+        "aligned": "17847429600"
+      },
+      "planning": {
+        "local_sites": 33032,
+        "local_inverses": 20410,
+        "wheel_layouts": 104,
+        "lift_candidates": 1716
+      },
+      "aligned_area_fraction": "0.543183959430",
+      "local_menu_counts": {
+        "full": {
+          "exact": "23055056"
+        },
+        "quantile": {
+          "exact": "5737985"
+        },
+        "aligned": {
+          "exact": "6773760"
+        }
+      },
+      "estimated_score": 7392,
+      "right_entries": 3360,
+      "policies": {
+        "full": {
+          "status": "sum_square",
+          "factors": [
+            "727836918349",
+            "971928282119"
+          ],
+          "first": true,
+          "right_built": 3360,
+          "left_visited": 319,
+          "lookups": 2441,
+          "square_tests": 1,
+          "setup_powers": 57,
+          "signature_inversions": 53,
+          "signature_multiplications": 16754
+        },
+        "quantile": {
+          "status": "sum_square",
+          "factors": [
+            "727836918349",
+            "971928282119"
+          ],
+          "first": false,
+          "right_built": 3360,
+          "left_visited": 823,
+          "lookups": 3166,
+          "square_tests": 1,
+          "setup_powers": 61,
+          "signature_inversions": 53,
+          "signature_multiplications": 19326
+        },
+        "aligned": {
+          "status": "sum_square",
+          "factors": [
+            "727836918349",
+            "971928282119"
+          ],
+          "first": true,
+          "right_built": 3360,
+          "left_visited": 319,
+          "lookups": 955,
+          "square_tests": 1,
+          "setup_powers": 55,
+          "signature_inversions": 53,
+          "signature_multiplications": 13782
+        }
+      }
+    },
+    {
+      "id": "quantile-80-draw-6",
+      "lower": "1805064880186",
+      "upper": "1840354002555",
+      "central": "1813865705999",
+      "aligned": "1814997362745",
+      "periods": 1,
+      "aligned_cut_used": true,
+      "lifted_period": "9932482560",
+      "first_interval_lengths": {
+        "full": "35289122370",
+        "quantile": "8800825814",
+        "aligned": "9932482560"
+      },
+      "planning": {
+        "local_sites": 33032,
+        "local_inverses": 20410,
+        "wheel_layouts": 104,
+        "lift_candidates": 1320
+      },
+      "aligned_area_fraction": "0.531146777262",
+      "local_menu_counts": {
+        "full": {
+          "exact": "3683542"
+        },
+        "quantile": {
+          "exact": "918665"
+        },
+        "aligned": {
+          "exact": "1036800"
+        }
+      },
+      "estimated_score": 3360,
+      "right_entries": 1200,
+      "policies": {
+        "full": {
+          "status": "sum_square",
+          "factors": [
+            "868870925971",
+            "937498057619"
+          ],
+          "first": true,
+          "right_built": 1200,
+          "left_visited": 84,
+          "lookups": 374,
+          "square_tests": 1,
+          "setup_powers": 62,
+          "signature_inversions": 60,
+          "signature_multiplications": 5374
+        },
+        "quantile": {
+          "status": "sum_square",
+          "factors": [
+            "868870925971",
+            "937498057619"
+          ],
+          "first": true,
+          "right_built": 1200,
+          "left_visited": 84,
+          "lookups": 150,
+          "square_tests": 1,
+          "setup_powers": 62,
+          "signature_inversions": 60,
+          "signature_multiplications": 4814
+        },
+        "aligned": {
+          "status": "sum_square",
+          "factors": [
+            "868870925971",
+            "937498057619"
+          ],
+          "first": true,
+          "right_built": 1200,
+          "left_visited": 84,
+          "lookups": 168,
+          "square_tests": 1,
+          "setup_powers": 62,
+          "signature_inversions": 60,
+          "signature_multiplications": 4886
+        }
+      }
+    },
+    {
+      "id": "quantile-80-draw-8",
+      "lower": "1769227942008",
+      "upper": "1811229319455",
+      "central": "1779697310238",
+      "aligned": "1783505885687",
+      "periods": 1,
+      "aligned_cut_used": true,
+      "lifted_period": "14277943680",
+      "first_interval_lengths": {
+        "full": "42001377448",
+        "quantile": "10469368231",
+        "aligned": "14277943680"
+      },
+      "planning": {
+        "local_sites": 33032,
+        "local_inverses": 20410,
+        "wheel_layouts": 104,
+        "lift_candidates": 1432
+      },
+      "aligned_area_fraction": "0.583801074851",
+      "local_menu_counts": {
+        "full": {
+          "exact": "5367972"
+        },
+        "quantile": {
+          "exact": "1338007"
+        },
+        "aligned": {
+          "exact": "1824768"
+        }
+      },
+      "estimated_score": 3888,
+      "right_entries": 1584,
+      "policies": {
+        "full": {
+          "status": "sum_square",
+          "factors": [
+            "782882014301",
+            "999565532737"
+          ],
+          "first": true,
+          "right_built": 1584,
+          "left_visited": 390,
+          "lookups": 1489,
+          "square_tests": 1,
+          "setup_powers": 52,
+          "signature_inversions": 48,
+          "signature_multiplications": 9096
+        },
+        "quantile": {
+          "status": "sum_square",
+          "factors": [
+            "782882014301",
+            "999565532737"
+          ],
+          "first": false,
+          "right_built": 1584,
+          "left_visited": 966,
+          "lookups": 2065,
+          "square_tests": 1,
+          "setup_powers": 52,
+          "signature_inversions": 48,
+          "signature_multiplications": 10376
+        },
+        "aligned": {
+          "status": "sum_square",
+          "factors": [
+            "782882014301",
+            "999565532737"
+          ],
+          "first": true,
+          "right_built": 1584,
+          "left_visited": 390,
+          "lookups": 779,
+          "square_tests": 1,
+          "setup_powers": 50,
+          "signature_inversions": 48,
+          "signature_multiplications": 7676
+        }
+      }
+    },
+    {
+      "id": "quantile-80-draw-10",
+      "lower": "2060466162150",
+      "upper": "2064831297462",
+      "central": "2061557157142",
+      "aligned": "2062949282789",
+      "periods": 1,
+      "aligned_cut_used": true,
+      "lifted_period": "2483120640",
+      "first_interval_lengths": {
+        "full": "4365135313",
+        "quantile": "1090994993",
+        "aligned": "2483120640"
+      },
+      "planning": {
+        "local_sites": 33002,
+        "local_inverses": 20380,
+        "wheel_layouts": 104,
+        "lift_candidates": 2042
+      },
+      "aligned_area_fraction": "0.754280866255",
+      "local_menu_counts": {
+        "full": {
+          "exact": "615148"
+        },
+        "quantile": {
+          "exact": "153759"
+        },
+        "aligned": {
+          "exact": "349920"
+        }
+      },
+      "estimated_score": 1458,
+      "right_entries": 648,
+      "policies": {
+        "full": {
+          "status": "sum_square",
+          "factors": [
+            "975183830683",
+            "1088389868603"
+          ],
+          "first": true,
+          "right_built": 648,
+          "left_visited": 251,
+          "lookups": 647,
+          "square_tests": 1,
+          "setup_powers": 43,
+          "signature_inversions": 41,
+          "signature_multiplications": 4202
+        },
+        "quantile": {
+          "status": "sum_square",
+          "factors": [
+            "975183830683",
+            "1088389868603"
+          ],
+          "first": false,
+          "right_built": 648,
+          "left_visited": 521,
+          "lookups": 931,
+          "square_tests": 1,
+          "setup_powers": 43,
+          "signature_inversions": 41,
+          "signature_multiplications": 4828
+        },
+        "aligned": {
+          "status": "sum_square",
+          "factors": [
+            "975183830683",
+            "1088389868603"
+          ],
+          "first": false,
+          "right_built": 648,
+          "left_visited": 521,
+          "lookups": 937,
+          "square_tests": 1,
+          "setup_powers": 45,
+          "signature_inversions": 41,
+          "signature_multiplications": 5060
+        }
+      }
+    },
+    {
+      "id": "quantile-fresh-2048",
+      "lower": "316654078353932669430896568039437646948995827324355950320885992018878621339882034859352160800370012849546508284505165782514386059318538454140190240579600679710842127862944181242520006361222093577810698295926626034770148286024885798179904628489506435612856553841327654419558392803832226047978898967565521689259",
+      "upper": "319211640145973391504136949566204264038054148714647760876997719860347996751144163242305860503932279036164132985199820126898309402021267767181643093625401697953000712471875161689173724346324968593028074780015432512491105422670134115350708627227712961274083607306261644222495478934949276491201391556144794396169",
+      "central": "317292824570970205197776305682289454983380391998448156805576266852530612367464624407271454017656284084090612320318903865075229644221905411438547129622057875244677489634148051946900610161375679141240943227678187393029154540994222139479297830688160487747308880261777690026677142470255194895054513861001051288718",
+      "aligned": "317510809983325186924963437218068175537126320969945010029433946090838689085151587089899682491680966195464573746531047731807352406824370877925712502745647118548470463331493592373513013573332863324138499968369012497489603767171966122351513805920117268845233016611881440406713299842908432713896329410946611838518",
+      "periods": 1,
+      "aligned_cut_used": true,
+      "lifted_period": "856731629392517494066869178630528588130493645589059708547954071960067745269552230547521691310953345918065462025881949292966347505832423785522262166046438837628335468549411130993007212110769746327801672442386462719455481147080324171609177430610833232376462770553785987154907039076206665917430443381090149260",
+      "first_interval_lengths": {
+        "full": "2557561792040722073240381526766617089058321390291810556111727841469375411262128382953699703562266186617624700694654344383923342702729313041452853045801018242158584608930980446653717985102875015217376484088806477720957136645248317170803998738206525661227053464933989802937086131117050443222492588579272706911",
+        "quantile": "638746217037535766879737642851808034384564674092206484690274833651991027582589547919293217286271234544104035813738082560843584903366957298356889042457195533835361771203870704380603800153585563430244931751561358259006254969336341299393202198654052134452326420450035607118749666422968847075614893435529599460",
+        "aligned": "856731629392517494066869178630528588130493645589059708547954071960067745269552230547521691310953345918065462025881949292966347505832423785522262166046438837628335468549411130993007212110769746327801672442386462719455481147080324171609177430610833232376462770553785987154907039076206665917430443381090149260"
+      },
+      "planning": {
+        "local_sites": 76692,
+        "local_inverses": 64070,
+        "wheel_layouts": 104,
+        "lift_candidates": 285208
+      },
+      "aligned_area_fraction": "0.579033034769",
+      "local_menu_counts": {
+        "full": {
+          "lower": "118203346998293624289318316991893518488549626400370480129243902962122415350128228096921233932187795292484549604935191577859824253067811504801429788786353843075414888661135790787175496713476246340320704660692243334858250721742028800000000000000000000000000000000000000",
+          "upper": "132978765373080327325483106615880208299618329700416790145399390832387717268894256609036388173711269704045118305552090525092302284701287942901608512384648073459841749743777764635572433802660777132860792743278773751715532061959782400000000000000000000000000000000000000"
+        },
+        "quantile": {
+          "lower": "29550836749573406072329579247973379622137406600092620032310975740530603837532057024230308483046948823121137401233797894464956063266952876200357447196588460768853722165283947696793874178369061585080176165173060833714562680435507200000000000000000000000000000000000000",
+          "upper": "44326255124360109108494368871960069433206109900138930048466463610795905756298085536345462724570423234681706101850696841697434094900429314300536170794882691153280583247925921545190811267553592377620264247759591250571844020653260800000000000000000000000000000000000000"
+        },
+        "aligned": {
+          "exact": "44326255124360109108494368871960069433206109900138930048466463610795905756298085536345462724570423234681706101850696841697434094900429314300536170794882691153280583247925921545190811267553592377620264247759591250571844020653260800000000000000000000000000000000000000"
+        }
+      },
+      "estimated_score": 18901074508413276251490889130531953610375785281086643927702976703800536523024470268205890658584917098059650341378457600000000000000000,
+      "right_entries": 8638044703823974672513995844703350979476500473329928781785707591304371721442718928976062915479922513515955919362457600000000000000000
+    },
+    {
+      "id": "quantile-crossed-2048",
+      "lower": "270075823370471172539650060271098650782753831933597272358639954154419986900023521886088362615536953055795637435351919646880615106044371307907625212959861347578783586375530282566149441260866241026834381879296406989063497151609370317039875224466571605726029312917602102470016115053325769991836901677876153809229",
+      "upper": "281206189662020681255976483514800118147901591336409624423334573617843743325515046573725086523879792302711935500433480130177336765107548687409478625532529999035156737990591750415187734606590828221532917426017451927202241764678583961144638853076381600436844687347668623701773963116904961634308945452600997707777",
+      "central": "272844226234568739611856792713388071421330162612870551049041660134038436227849359160478192388015551037965378329682341258535267446705652976986123772481794109847639577941326122794724108417872140358712888009885689948144355844969493255422087439099245452069033613452002362138281236488781513074264884212609372858706",
+      "aligned": "272931595468446230853206290866533746076522144085560804720466467727620212717588695987913434919906797542189188975438192811190502931063812720526032753513349477037544704604028319669459465301235473514593720787437695198128348755432971397611905815901941049833950855486114722427199138516913125544895003155813120973428",
+      "periods": 2,
+      "aligned_cut_used": true,
+      "lifted_period": "1427886048987529156778115297717547646884156075981766180913256786600112908782587050912536152184922243196775770043136582154943912509720706309203770276744064729380559114249018551655012020184616243879669454070644104532425801911800540286015295717684722053960771284256309978591511731793677776529050738968483582100",
+      "first_interval_lengths": {
+        "full": "11130366291549508716326423243701467365147759402812352064694619463423756425491524687636723908342839246916298065081560483296721659063177379501853412572668651456373151615061467849038293345724587194698535546721044938138744613069213644104763628609809994710815374430066521231757848063579191642472043774724843898549",
+        "quantile": "2768402864097567072206732442289420638576330679273278690401705979618449327825837274389829772478597982169740894330421611654652340661281669078498559521932762268855991565795840228574667157005899331878506130589282959080858693360122938382212214632673846343004300534400259668265121435455743082427982534733219049478",
+        "aligned": "2855772097975058313556230595435095293768312151963532361826513573200225817565174101825072304369844486393551540086273164309887825019441412618407540553488129458761118228498037103310024040369232487759338908141288209064851603823601080572030591435369444107921542568512619957183023463587355553058101477936967164200"
+      },
+      "planning": {
+        "local_sites": 77434,
+        "local_inverses": 64812,
+        "wheel_layouts": 104,
+        "lift_candidates": 22098
+      },
+      "aligned_area_fraction": "0.507814934590",
+      "local_menu_counts": {
+        "full": {
+          "lower": "979847491934864218622255652299842545683919490376300490251965304603888072469401750881649152892156029782546527630106346198236715074143048859474314830598701303800077748496267133562454630160278458948040245273062794811472472965120000000000000000000000000000000000000000000",
+          "upper": "1005632952248939592796525537886680507412443687491466292627017023146095653323859691694324130599844346355771436251951250045558733891883655408407849431403930285479027162930379426550940278322391049972988672780248657832827011727360000000000000000000000000000000000000000000"
+        },
+        "quantile": {
+          "lower": "232069142826678367568428970281541655556717774036492221375465466879868227690121467314074799369194849159024177596604134625898169359665458940401811407247060835110544729907010636896370833459013319224535847564672767192190848860160000000000000000000000000000000000000000000",
+          "upper": "257854603140753741742698855868379617285241971151658023750517185422075808544579408126749777076883165732249086218449038473220188177406065489335346008052289816789494144341122929884856481621125910249484275071858630213545387622400000000000000000000000000000000000000000000"
+        },
+        "aligned": {
+          "exact": "257854603140753741742698855868379617285241971151658023750517185422075808544579408126749777076883165732249086218449038473220188177406065489335346008052289816789494144341122929884856481621125910249484275071858630213545387622400000000000000000000000000000000000000000000"
+        }
+      },
+      "estimated_score": 48400910203266548575316255835034998316822122336021191487406506778293062404118986387757324911234645580353414103040000000000000000000000,
+      "right_entries": 21857557310548043610709251882989848200734676503307856950643435750453411702512707784656904481365647081138678661120000000000000000000000
+    }
+  ]
+}

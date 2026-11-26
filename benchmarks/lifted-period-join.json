@@ -1,0 +1,658 @@
+[
+  {
+    "id": "lifted-period-holdout-92",
+    "description": "Cover the whole balanced sum interval of the 92-bit SHAKE holdout under all three caps",
+    "n": "2999205669099453866424720319",
+    "max_right": 20000,
+    "max_visited": 32256,
+    "max_lookups": 100000,
+    "origin": {
+      "seed": "streamed-sum-join-holdout-v1",
+      "generator": "experiments.affine_radix_holdout.draw_prime",
+      "sample": 0,
+      "bits": 46,
+      "sides": [
+        "p",
+        "q"
+      ]
+    },
+    "certificate_trial_limit": 2000000,
+    "outcome": "sum_square",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "522048206678895806524088445"
+      }
+    ],
+    "work_checks": {
+      "local_inverses": 20446,
+      "wheel_layouts": 104,
+      "lift_candidates": 3620,
+      "plan_budget_hit": 0,
+      "right_built": 17820,
+      "left_visited": 765,
+      "lookups": 3612,
+      "orientation_powers": 1,
+      "square_tests": 1,
+      "signature_multiplications": 62338
+    },
+    "plan_checks": {
+      "period": 349363434420,
+      "lift": 5,
+      "drop": 2,
+      "upgrade": [
+        3,
+        81
+      ],
+      "zero": 0,
+      "half": 0,
+      "fixed": 0,
+      "raw_right": 7128,
+      "right_entries": 17820,
+      "left_rows": 4704,
+      "lookup_bound": 23520,
+      "score": 41340
+    },
+    "ordinary_checks": {
+      "right_entries": 19712,
+      "left_rows": 61236,
+      "optimal": true,
+      "right_built": 0
+    },
+    "status": "complete",
+    "factors": [
+      "45058864713217",
+      "66561944873407"
+    ],
+    "remaining": [],
+    "strong_reference_checks": {
+      "right_built": 12096,
+      "left_visited": 15773,
+      "lookups": 25460,
+      "square_tests": 1
+    }
+  },
+  {
+    "id": "lifted-period-holdout-91",
+    "description": "Cover the whole balanced sum interval of the 91-bit SHAKE holdout under all three caps",
+    "n": "1880522624182833254908575971",
+    "max_right": 20000,
+    "max_visited": 32256,
+    "max_lookups": 100000,
+    "origin": {
+      "seed": "streamed-sum-join-holdout-v1",
+      "generator": "experiments.affine_radix_holdout.draw_prime",
+      "sample": 1,
+      "bits": 46,
+      "sides": [
+        "p",
+        "q"
+      ]
+    },
+    "outcome": "sum_square",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "1343167214011364956243451469"
+      }
+    ],
+    "work_checks": {
+      "local_inverses": 20446,
+      "wheel_layouts": 104,
+      "lift_candidates": 3218,
+      "plan_budget_hit": 0,
+      "right_built": 14400,
+      "left_visited": 6867,
+      "lookups": 24872,
+      "orientation_powers": 1,
+      "square_tests": 1,
+      "signature_multiplications": 107106
+    },
+    "plan_checks": {
+      "period": 2005604901300,
+      "lift": 1,
+      "drop": 1,
+      "upgrade": [
+        5,
+        25
+      ],
+      "zero": 0,
+      "half": 0,
+      "fixed": 0,
+      "raw_right": 28800,
+      "right_entries": 14400,
+      "left_rows": 7546,
+      "lookup_bound": 30184,
+      "score": 44584
+    },
+    "ordinary_checks": {
+      "right_entries": 19800,
+      "left_rows": 42336,
+      "optimal": true,
+      "right_built": 0
+    },
+    "status": "complete",
+    "factors": [
+      "39492927787793",
+      "47616693152947"
+    ],
+    "remaining": [],
+    "strong_reference_checks": {
+      "right_built": 14784,
+      "left_visited": 11222,
+      "lookups": 20417,
+      "square_tests": 1
+    }
+  },
+  {
+    "id": "lifted-period-fresh-2048",
+    "description": "Plan a short lifted sum wheel over the equal-factor-width interval of the fresh product",
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "max_right": 20000,
+    "max_visited": 32256,
+    "max_lookups": 100000,
+    "factor_bits": 1024,
+    "outcome": "no_complete_plan_within_caps",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "3838931063561706717653313343672527785834545225599475798189725025709417240397619710859370484136202539234080028907264469749714099969284321199085487675688055565673768825491458136178605470960124897013282281179840932521672801419754089736530375826192341635616375040830267781001741492078251256558094641895798774651540410644059772450289871508966648291800633603595067382226874076659494536656030570847333165053656054714303568445320867627428365629759107587347058105799967560179826789326583152566074120801493931623457994054427888450938165126993579024209718912815122224852518889666925740015860486365197589710156217523038170160487"
+      }
+    ],
+    "work_checks": {
+      "local_inverses": 64070,
+      "wheel_layouts": 104,
+      "lift_candidates": 285208,
+      "plan_budget_hit": 0,
+      "right_built": 0,
+      "left_visited": 0,
+      "lookups": 0,
+      "orientation_powers": 0,
+      "square_tests": 0,
+      "signature_multiplications": 0
+    },
+    "plan_checks": {
+      "period": 285577209797505831355623059543509529376831215196353236182651357320022581756517410182507230436984448639355154008627316430988782501944141261840754055348812945876111822849803710331002404036923248775933890814128820906485160382360108057203059143536944410792154256851261995718302346358735555305810147793696716420,
+      "lift": 3,
+      "drop": 1,
+      "upgrade": [
+        3,
+        81
+      ],
+      "zero": 0,
+      "half": 0,
+      "fixed": 0,
+      "raw_right": 5758696469215983115009330563135567319651000315553285854523805060869581147628479285984041943653281675677303946241638400000000000000000,
+      "right_entries": 8638044703823974672513995844703350979476500473329928781785707591304371721442718928976062915479922513515955919362457600000000000000000,
+      "left_rows": 2565757451147325394744223321457150657724821201939178786479317278124041200395437834807456935776248646135923605504000000000000000000000,
+      "lookup_bound": 10263029804589301578976893285828602630899284807756715145917269112496164801581751339229827743104994584543694422016000000000000000000000,
+      "score": 18901074508413276251490889130531953610375785281086643927702976703800536523024470268205890658584917098059650341378457600000000000000000
+    },
+    "ordinary_checks": {
+      "right_entries": 20000,
+      "left_rows": 34075808626851833877155046070319303376777196985731802474758593900799352550154153256065574469513512861661561565797723197054902460454705035368537181298566068824084448371843052187865436161931824140295578140465185773877105090877194240000000000000000000000000000000000,
+      "optimal": true,
+      "right_built": 0
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    ]
+  },
+  {
+    "id": "lifted-period-crossed-2048",
+    "description": "Plan a short lifted sum wheel over the equal-factor-width interval of the crossed product",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "max_right": 20000,
+    "max_visited": 32256,
+    "max_lookups": 100000,
+    "factor_bits": 1024,
+    "outcome": "no_complete_plan_within_caps",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "16701082433629238891622000657050352323076716724061575954961591637832874417243965814509284489823055062173675745965613415931937191768755801860496265697991458663150244002401014839339911345199570446702439151699944978104902072294104895824100063939337388160351301328429053077011565537612530253619274444696828603740599639129489838810771144799842799349359048947104357222293938692498455871766767874613554219387312406713291382880526176351720763451839420894479362659294283918608743985583382969825883497352038267024089317196655405484271354455076487313903723780004376501124414257716147555301821718411145453149736391316297280031548"
+      }
+    ],
+    "work_checks": {
+      "local_inverses": 64812,
+      "wheel_layouts": 104,
+      "lift_candidates": 22098,
+      "plan_budget_hit": 0,
+      "right_built": 0,
+      "left_visited": 0,
+      "lookups": 0,
+      "orientation_powers": 0,
+      "square_tests": 0,
+      "signature_multiplications": 0
+    },
+    "plan_checks": {
+      "period": 285577209797505831355623059543509529376831215196353236182651357320022581756517410182507230436984448639355154008627316430988782501944141261840754055348812945876111822849803710331002404036923248775933890814128820906485160382360108057203059143536944410792154256851261995718302346358735555305810147793696716420,
+      "lift": 5,
+      "drop": 2,
+      "upgrade": [
+        3,
+        81
+      ],
+      "zero": 0,
+      "half": 0,
+      "fixed": 0,
+      "raw_right": 8743022924219217444283700753195939280293870601323142780257374300181364681005083113862761792546258832455471464448000000000000000000000,
+      "right_entries": 21857557310548043610709251882989848200734676503307856950643435750453411702512707784656904481365647081138678661120000000000000000000000,
+      "left_rows": 2949261432524278329400778216893905568454160648079259392973674558648850077956253178122268936652110944357192826880000000000000000000000,
+      "lookup_bound": 26543352892718504964607003952045150116087445832713334536763071027839650701606278603100420429868998499214735441920000000000000000000000,
+      "score": 48400910203266548575316255835034998316822122336021191487406506778293062404118986387757324911234645580353414103040000000000000000000000
+    },
+    "ordinary_checks": {
+      "right_entries": 20000,
+      "left_rows": 22181942235183340633415669076077356576962940568321381493138240875934071430047443584103649573038874332116727641942078534658766687961356783720073140342698231489316233766945100043344778831457356429211884763056638664120241970216960000000000000000000000000000000000000000,
+      "optimal": true,
+      "right_built": 0
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  },
+  {
+    "id": "lifted-period-postdesign-96-2",
+    "description": "Post-design SHAKE sample 2 from the first four eligible 96-bit products at the frozen caps",
+    "n": "63950837604051759061822145249",
+    "factor_bits": 48,
+    "max_right": 20000,
+    "max_visited": 32256,
+    "max_lookups": 100000,
+    "origin": {
+      "seed": "short-period-join-96-postdesign-v1",
+      "generator": "experiments.affine_radix_holdout.draw_prime",
+      "sample": 2,
+      "bits": 48,
+      "sides": [
+        "p",
+        "q"
+      ]
+    },
+    "certificate_trial_limit": 2000000,
+    "outcome": "sum_square",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "54935694188057305440144612999"
+      }
+    ],
+    "work_checks": {
+      "local_inverses": 20446,
+      "wheel_layouts": 104,
+      "lift_candidates": 2398,
+      "plan_budget_hit": 0,
+      "right_built": 10560,
+      "left_visited": 1776,
+      "lookups": 4460,
+      "orientation_powers": 1,
+      "square_tests": 1,
+      "signature_multiplications": 49744
+    },
+    "plan_checks": {
+      "period": 828120733440,
+      "lift": 2,
+      "drop": 2,
+      "upgrade": [
+        4,
+        256
+      ],
+      "zero": 0,
+      "half": 0,
+      "fixed": 0,
+      "raw_right": 10560,
+      "right_entries": 10560,
+      "left_rows": 4704,
+      "lookup_bound": 14112,
+      "score": 24672
+    },
+    "ordinary_checks": {
+      "right_entries": 19950,
+      "left_rows": 44352,
+      "optimal": true,
+      "right_built": 0
+    },
+    "greedy_checks": {
+      "outcome": "sum_square",
+      "factors": [
+        "227373199262387",
+        "281259347238427"
+      ],
+      "right_entries": 18810,
+      "left_rows": 47040,
+      "lookup_bound": 94080,
+      "visit_cap": 32256,
+      "right_built": 18810,
+      "left_visited": 26837,
+      "lookups": 32089,
+      "square_tests": 1
+    },
+    "strong_reference_outcome": "sum_square",
+    "strong_reference_checks": {
+      "right_built": 10080,
+      "left_visited": 3694,
+      "lookups": 6931,
+      "square_tests": 1,
+      "plan_budget_hit": 0
+    },
+    "status": "complete",
+    "factors": [
+      "227373199262387",
+      "281259347238427"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "lifted-period-postdesign-96-3",
+    "description": "Post-design SHAKE sample 3 from the first four eligible 96-bit products at the frozen caps",
+    "n": "46271889280788194893624741769",
+    "factor_bits": 48,
+    "max_right": 20000,
+    "max_visited": 32256,
+    "max_lookups": 100000,
+    "origin": {
+      "seed": "short-period-join-96-postdesign-v1",
+      "generator": "experiments.affine_radix_holdout.draw_prime",
+      "sample": 3,
+      "bits": 48,
+      "sides": [
+        "p",
+        "q"
+      ]
+    },
+    "certificate_trial_limit": 2000000,
+    "outcome": "sum_square",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "8666249343031152920520662500"
+      }
+    ],
+    "work_checks": {
+      "local_inverses": 20486,
+      "wheel_layouts": 104,
+      "lift_candidates": 1070,
+      "plan_budget_hit": 0,
+      "right_built": 17011,
+      "left_visited": 2649,
+      "lookups": 14764,
+      "orientation_powers": 1,
+      "square_tests": 1,
+      "signature_multiplications": 90754
+    },
+    "plan_checks": {
+      "period": 828120733440,
+      "lift": 4,
+      "drop": 3,
+      "upgrade": [
+        4,
+        256
+      ],
+      "zero": 1,
+      "half": 0,
+      "fixed": 2,
+      "raw_right": 8505,
+      "right_entries": 17011,
+      "left_rows": 3960,
+      "lookup_bound": 23760,
+      "score": 40771
+    },
+    "ordinary_checks": {
+      "right_entries": 19845,
+      "left_rows": 641520,
+      "optimal": true,
+      "right_built": 0
+    },
+    "greedy_checks": {
+      "outcome": "right_limit",
+      "factors": [],
+      "right_entries": 55440,
+      "left_rows": 229635,
+      "lookup_bound": 459270,
+      "visit_cap": 32256,
+      "right_built": 0,
+      "left_visited": 0,
+      "lookups": 0,
+      "square_tests": 0
+    },
+    "strong_reference_outcome": "sum_square",
+    "strong_reference_checks": {
+      "right_built": 13608,
+      "left_visited": 4412,
+      "lookups": 7111,
+      "square_tests": 1,
+      "plan_budget_hit": 0
+    },
+    "status": "complete",
+    "factors": [
+      "180663206036333",
+      "256122374311693"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "lifted-period-postdesign-96-5",
+    "description": "Post-design SHAKE sample 5 from the first four eligible 96-bit products at the frozen caps",
+    "n": "44999777202387676883929306237",
+    "factor_bits": 48,
+    "max_right": 20000,
+    "max_visited": 32256,
+    "max_lookups": 100000,
+    "origin": {
+      "seed": "short-period-join-96-postdesign-v1",
+      "generator": "experiments.affine_radix_holdout.draw_prime",
+      "sample": 5,
+      "bits": 48,
+      "sides": [
+        "p",
+        "q"
+      ]
+    },
+    "certificate_trial_limit": 2000000,
+    "outcome": "sum_square",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "197785757467089095216021543"
+      }
+    ],
+    "work_checks": {
+      "local_inverses": 20486,
+      "wheel_layouts": 104,
+      "lift_candidates": 1112,
+      "plan_budget_hit": 0,
+      "right_built": 14400,
+      "left_visited": 16648,
+      "lookups": 42895,
+      "orientation_powers": 1,
+      "square_tests": 1,
+      "signature_multiplications": 154676
+    },
+    "plan_checks": {
+      "period": 10830266467020,
+      "lift": 1,
+      "drop": 2,
+      "upgrade": [
+        3,
+        81
+      ],
+      "zero": 0,
+      "half": 0,
+      "fixed": 0,
+      "raw_right": 28800,
+      "right_entries": 14400,
+      "left_rows": 17010,
+      "lookup_bound": 51030,
+      "score": 65430
+    },
+    "ordinary_checks": {
+      "right_entries": 19950,
+      "left_rows": 1224720,
+      "optimal": true,
+      "right_built": 0
+    },
+    "greedy_checks": {
+      "outcome": "right_limit",
+      "factors": [],
+      "right_entries": 102060,
+      "left_rows": 239400,
+      "lookup_bound": 478800,
+      "visit_cap": 32256,
+      "right_built": 0,
+      "left_visited": 0,
+      "lookups": 0,
+      "square_tests": 0
+    },
+    "strong_reference_outcome": "no_complete_plan_within_caps",
+    "strong_reference_checks": {
+      "right_built": 0,
+      "left_visited": 0,
+      "lookups": 0,
+      "square_tests": 0,
+      "plan_budget_hit": 0
+    },
+    "status": "complete",
+    "factors": [
+      "209966509290409",
+      "214318832819893"
+    ],
+    "remaining": [],
+    "refined_checks": {
+      "wheels": 67,
+      "transitions": 56848,
+      "min_raw_choices": 1347192000,
+      "raw_capacity": 1290240000,
+      "left_rows": 34020,
+      "lookup_bound": 68040,
+      "stored": 19800,
+      "right_moduli": [
+        5,
+        11,
+        23,
+        29,
+        243
+      ],
+      "period": 32490799401060,
+      "factors": [
+        "209966509290409",
+        "214318832819893"
+      ],
+      "outcome": "sum_square",
+      "left_visited": 8143,
+      "left_unvisited": 25877,
+      "right_built": 19800,
+      "lookups": 12449,
+      "square_tests": 1
+    },
+    "memory_prefix_checks": {
+      "outcome": "left_limit",
+      "factors": [],
+      "right_built": 19950,
+      "left_visited": 32256,
+      "left_unvisited": 1192464,
+      "lookups": 33154,
+      "square_tests": 0
+    }
+  },
+  {
+    "id": "lifted-period-postdesign-96-6",
+    "description": "Post-design SHAKE sample 6 from the first four eligible 96-bit products at the frozen caps",
+    "n": "55631654279629532816596583971",
+    "factor_bits": 48,
+    "max_right": 20000,
+    "max_visited": 32256,
+    "max_lookups": 100000,
+    "origin": {
+      "seed": "short-period-join-96-postdesign-v1",
+      "generator": "experiments.affine_radix_holdout.draw_prime",
+      "sample": 6,
+      "bits": 48,
+      "sides": [
+        "p",
+        "q"
+      ]
+    },
+    "certificate_trial_limit": 2000000,
+    "outcome": "sum_square",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "55249512221988933511191260835"
+      }
+    ],
+    "work_checks": {
+      "local_inverses": 20446,
+      "wheel_layouts": 104,
+      "lift_candidates": 3804,
+      "plan_budget_hit": 0,
+      "right_built": 17820,
+      "left_visited": 926,
+      "lookups": 4628,
+      "orientation_powers": 1,
+      "square_tests": 1,
+      "signature_multiplications": 64736
+    },
+    "plan_checks": {
+      "period": 349363434420,
+      "lift": 5,
+      "drop": 2,
+      "upgrade": [
+        3,
+        81
+      ],
+      "zero": 0,
+      "half": 0,
+      "fixed": 0,
+      "raw_right": 7128,
+      "right_entries": 17820,
+      "left_rows": 3920,
+      "lookup_bound": 23520,
+      "score": 41340
+    },
+    "ordinary_checks": {
+      "right_entries": 19845,
+      "left_rows": 53504,
+      "optimal": true,
+      "right_built": 0
+    },
+    "greedy_checks": {
+      "outcome": "left_limit",
+      "factors": [],
+      "right_entries": 18816,
+      "left_rows": 56430,
+      "lookup_bound": 112860,
+      "visit_cap": 32256,
+      "right_built": 18816,
+      "left_visited": 32256,
+      "lookups": 48266,
+      "square_tests": 0
+    },
+    "strong_reference_outcome": "sum_square",
+    "strong_reference_checks": {
+      "right_built": 12096,
+      "left_visited": 8066,
+      "lookups": 13565,
+      "square_tests": 1,
+      "plan_budget_hit": 0
+    },
+    "status": "complete",
+    "factors": [
+      "208709403583319",
+      "266550779813909"
+    ],
+    "remaining": []
+  }
+]

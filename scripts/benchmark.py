@@ -55,6 +55,7 @@ from scripts.trace_folded_benchmark import trace_folded_case
 from scripts.factor_sum_quantile_benchmark import quantile_case
 from scripts.memory_partition_benchmark import memory_partition_case
 from scripts.cyclotomic_sum_lift_benchmark import cyclotomic_sum_case
+from scripts.lifted_period_benchmark import lifted_period_case
 from experiments import trace_cover, trace_cover_transfer
 from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
@@ -578,6 +579,8 @@ def run_case(case, method, proofs):
         result = certify_split(case, proof, search.pop('factor'), elapsed, 'geometric_sum_readout', search)
     elif method == 'streamed-sum-join':
         result = streamed_sum_case(case, proof, agree, certify_split)
+    elif method == 'lifted-period-join':
+        result = lifted_period_case(case, proof, agree, certify_split)
     elif method == 'cyclotomic-sum-lift':
         result = cyclotomic_sum_case(case, proof, agree, certify_split)
     elif method == 'memory-partition-sum':
@@ -1598,6 +1601,7 @@ def main():
                              ('factor-sum-quantile.json', 'factor-sum-quantile'),
                              ('memory-partition-sum.json', 'memory-partition-sum'),
                              ('cyclotomic-sum-lift.json', 'cyclotomic-sum-lift'),
+                             ('lifted-period-join.json', 'lifted-period-join'),
                              ('geometric-sum-readout.json', 'geometric-sum-readout'),
                              ('geometric-sum-binary.json', 'geometric-sum-binary'),
                              ('geometric-readout-blocks.json', 'geometric-readout-blocks'),

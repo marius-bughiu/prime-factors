@@ -558,6 +558,15 @@ def case_row(result):
             count += ' · proper gcd at k = ' + ', '.join(str(hit['k']) for hit in search['quotient_hits'])
         if search['equal_hits']:
             count += ' · full gcd at k = ' + ', '.join(str(hit['k']) for hit in search['equal_hits'])
+    elif result['method'] == 'lifted-period-join':
+        search = result['lifted_period_join']
+        work = search['work']
+        plan = search['feasible_plan'] or search['best_plan']
+        count = (f'{escape(search["outcome"].replace("_", " "))} · {work["right_built"]:,} entries built'
+                 f' · {work["left_visited"]:,} rows visited · {work["lookups"]:,} lookups')
+        if plan:
+            count += (f' · planned {compact_count(plan["right_entries"])} entries'
+                      f' and at most {compact_count(plan["lookup_bound"])} lookups')
     elif result['method'] == 'cyclotomic-sum-lift':
         work = result['cyclotomic_sum_lift']
         count = (f'{escape(work["outcome"].replace("_", " "))} · base {work["base"]:,}'
