@@ -145,6 +145,9 @@ import PrimeFactors.GeometricOrderReadout
 import PrimeFactors.StreamedSumBudget
 import PrimeFactors.TraceFoldedRight
 import PrimeFactors.TwoReflectionKeys
+import PrimeFactors.FactorSumQuantile
+import PrimeFactors.SumMenuPartition
+import PrimeFactors.PartialOrderLift
 import PrimeFactors.ReusableSumBase
 import PrimeFactors.SignatureUpdates
 import PrimeFactors.FixedBaseSignature

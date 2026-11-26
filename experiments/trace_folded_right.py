@@ -11,6 +11,7 @@ gives a divisor directly via the difference of the corresponding units.
 from bisect import bisect_left, bisect_right
 from collections import defaultdict
 from math import gcd, prod
+from .sum_menu_partition import prefix_sizes
 
 
 def orbit_count(groups, lower, ordinary_count):
@@ -21,11 +22,15 @@ def orbit_count(groups, lower, ordinary_count):
     return (ordinary_count + fixed)//2, fixed
 
 
-def _layers(groups, period, n, base, period_power, period_inverse, lower, right, work):
+def _layers(groups, period, n, base, period_power, period_inverse, lower, right, work,
+            prefix=None, reverse=False):
     """Compute the CRT center and paired multipliers for regular and wrapped edges."""
     center = 0
     layers = []
-    for m, values in sorted(groups, key=lambda group: len(group[1])):
+    ordered = sorted(groups, key=lambda group: len(group[1]))
+    sizes = [len(values) for m, values in ordered]
+    needed = sizes if prefix is None else prefix_sizes(sizes, prefix)
+    for (m, values), count in zip(ordered, needed):
         other = period//m
         basis = other * pow(other, -1, m)
         work['crt_inverses'] += 1
@@ -36,7 +41,11 @@ def _layers(groups, period, n, base, period_power, period_inverse, lower, right,
             continue
         all_choices = []
         representatives = []
-        for v in sorted(values):
+        ordered_values = sorted(values)
+        if prefix is not None:
+            work['left_digit_choices_skipped'] += len(values)-count
+            ordered_values = ordered_values[-count:] if reverse else ordered_values[:count]
+        for v in ordered_values:
             digit = basis*v % period
             plain = inverse = wrap = inv_wrap = 1
             if digit:
@@ -137,7 +146,8 @@ def events(n, base, lower, width, period, left, right, max_visited, reverse, wor
     work['setup_powers'] += 1
     work['signature_inversions'] += 1
     center, right_layers = _layers(right, period, n, base, power, inverse, lower, True, work)
-    _, left_layers = _layers(left, period, n, base, power, inverse, lower, False, work)
+    prefix = max_visited if 'partition' in work else None
+    _, left_layers = _layers(left, period, n, base, power, inverse, lower, False, work, prefix, reverse)
     work['trace_center'] = center
     buckets = _right_table(right_layers, period, n, power, inverse, work)
     exponent = n+1-lower-center

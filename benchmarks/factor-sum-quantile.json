@@ -1,0 +1,326 @@
+[
+  {
+    "id": "quantile-80-draw-0",
+    "n": "908162445584950626852517",
+    "factor_bits": 40,
+    "max_right": 20000,
+    "max_visited": 32768,
+    "sample": 0,
+    "description": "Same capped search in the full factor-sum interval and both parts of the median cut",
+    "expect_runs": {
+      "full": {
+        "outcome": "sum_square",
+        "right_potential": 4620,
+        "left_visited": 10234
+      },
+      "inner": {
+        "outcome": "sum_square",
+        "right_potential": 1260,
+        "left_visited": 2554
+      },
+      "outer": {
+        "outcome": "exhausted",
+        "right_potential": 4620,
+        "left_visited": 10800
+      }
+    },
+    "factors": [
+      "904121435479",
+      "1004469543523"
+    ],
+    "remaining": [],
+    "status": "complete",
+    "certificate_trial_limit": 1000000
+  },
+  {
+    "id": "quantile-80-draw-1",
+    "n": "847299807344960397445973",
+    "factor_bits": 40,
+    "max_right": 20000,
+    "max_visited": 32768,
+    "sample": 1,
+    "description": "Same capped search in the full factor-sum interval and both parts of the median cut",
+    "expect_runs": {
+      "full": {
+        "outcome": "sum_square",
+        "right_potential": 2520,
+        "left_visited": 7590
+      },
+      "inner": {
+        "outcome": "sum_square",
+        "right_potential": 648,
+        "left_visited": 2030
+      },
+      "outer": {
+        "outcome": "exhausted",
+        "right_potential": 2520,
+        "left_visited": 8640
+      }
+    },
+    "factors": [
+      "851410458433",
+      "995171951381"
+    ],
+    "remaining": [],
+    "status": "complete",
+    "certificate_trial_limit": 1000000
+  },
+  {
+    "id": "quantile-80-draw-2",
+    "n": "1092780388048145364051457",
+    "factor_bits": 40,
+    "max_right": 20000,
+    "max_visited": 32768,
+    "sample": 2,
+    "description": "Same capped search in the full factor-sum interval and both parts of the median cut",
+    "expect_runs": {
+      "full": {
+        "outcome": "sum_square",
+        "right_potential": 1350,
+        "left_visited": 1926
+      },
+      "inner": {
+        "outcome": "exhausted",
+        "right_potential": 1350,
+        "left_visited": 3024
+      },
+      "outer": {
+        "outcome": "sum_square",
+        "right_potential": 1350,
+        "left_visited": 699
+      }
+    },
+    "factors": [
+      "1016063535881",
+      "1075503991097"
+    ],
+    "remaining": [],
+    "status": "complete",
+    "certificate_trial_limit": 1000000
+  },
+  {
+    "id": "quantile-80-draw-3",
+    "n": "680311603073706987563863",
+    "factor_bits": 40,
+    "max_right": 20000,
+    "max_visited": 32768,
+    "sample": 3,
+    "description": "Same capped search in the full factor-sum interval and both parts of the median cut",
+    "expect_runs": {
+      "full": {
+        "outcome": "sum_square",
+        "right_potential": 5400,
+        "left_visited": 6057
+      },
+      "inner": {
+        "outcome": "sum_square",
+        "right_potential": 5400,
+        "left_visited": 6057
+      },
+      "outer": {
+        "outcome": "exhausted",
+        "right_potential": 5400,
+        "left_visited": 12096
+      }
+    },
+    "factors": [
+      "824576781643",
+      "825043365541"
+    ],
+    "remaining": [],
+    "status": "complete",
+    "certificate_trial_limit": 1000000
+  },
+  {
+    "id": "quantile-80-draw-5",
+    "n": "707405285713730439701531",
+    "factor_bits": 40,
+    "max_right": 20000,
+    "max_visited": 32768,
+    "sample": 5,
+    "description": "Same capped search in the full factor-sum interval and both parts of the median cut",
+    "expect_runs": {
+      "full": {
+        "outcome": "sum_square",
+        "right_potential": 2880,
+        "left_visited": 2005
+      },
+      "inner": {
+        "outcome": "exhausted",
+        "right_potential": 2880,
+        "left_visited": 15120
+      },
+      "outer": {
+        "outcome": "sum_square",
+        "right_potential": 2880,
+        "left_visited": 8734
+      }
+    },
+    "factors": [
+      "727836918349",
+      "971928282119"
+    ],
+    "remaining": [],
+    "status": "complete",
+    "certificate_trial_limit": 1000000
+  },
+  {
+    "id": "quantile-80-draw-6",
+    "n": "814564805419434441523049",
+    "factor_bits": 40,
+    "max_right": 20000,
+    "max_visited": 32768,
+    "sample": 6,
+    "description": "Same capped search in the full factor-sum interval and both parts of the median cut",
+    "expect_runs": {
+      "full": {
+        "outcome": "sum_square",
+        "right_potential": 2475,
+        "left_visited": 2509
+      },
+      "inner": {
+        "outcome": "sum_square",
+        "right_potential": 900,
+        "left_visited": 1738
+      },
+      "outer": {
+        "outcome": "exhausted",
+        "right_potential": 2475,
+        "left_visited": 10800
+      }
+    },
+    "factors": [
+      "868870925971",
+      "937498057619"
+    ],
+    "remaining": [],
+    "status": "complete",
+    "certificate_trial_limit": 1000000
+  },
+  {
+    "id": "quantile-80-draw-8",
+    "n": "782541877694994717671837",
+    "factor_bits": 40,
+    "max_right": 20000,
+    "max_visited": 32768,
+    "sample": 8,
+    "description": "Same capped search in the full factor-sum interval and both parts of the median cut",
+    "expect_runs": {
+      "full": {
+        "outcome": "sum_square",
+        "right_potential": 2970,
+        "left_visited": 5837
+      },
+      "inner": {
+        "outcome": "exhausted",
+        "right_potential": 720,
+        "left_visited": 2376
+      },
+      "outer": {
+        "outcome": "sum_square",
+        "right_potential": 2970,
+        "left_visited": 1740
+      }
+    },
+    "factors": [
+      "782882014301",
+      "999565532737"
+    ],
+    "remaining": [],
+    "status": "complete",
+    "certificate_trial_limit": 1000000
+  },
+  {
+    "id": "quantile-80-draw-10",
+    "n": "1061380201340840569745849",
+    "factor_bits": 40,
+    "max_right": 20000,
+    "max_visited": 32768,
+    "sample": 10,
+    "description": "Same capped search in the full factor-sum interval and both parts of the median cut",
+    "expect_runs": {
+      "full": {
+        "outcome": "sum_square",
+        "right_potential": 972,
+        "left_visited": 646
+      },
+      "inner": {
+        "outcome": "exhausted",
+        "right_potential": 972,
+        "left_visited": 2025
+      },
+      "outer": {
+        "outcome": "sum_square",
+        "right_potential": 972,
+        "left_visited": 2011
+      }
+    },
+    "factors": [
+      "975183830683",
+      "1088389868603"
+    ],
+    "remaining": [],
+    "status": "complete",
+    "certificate_trial_limit": 1000000
+  },
+  {
+    "id": "quantile-fresh-2048",
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "factor_bits": 1024,
+    "max_right": 20000,
+    "max_visited": 32768,
+    "description": "Full-size control at the median cutoff and its complement",
+    "expect_runs": {
+      "full": {
+        "outcome": "right_limit",
+        "right_potential": 18253256524685485134994085714056376175325898212125952698456074171420819033054000176471527014988925599307473616896000000000000000000000,
+        "left_visited": 0
+      },
+      "inner": {
+        "outcome": "right_limit",
+        "right_potential": 18253256524685485134994085714056376175325898212125952698456074171420819033054000176471527014988925599307473616896000000000000000000000,
+        "left_visited": 0
+      },
+      "outer": {
+        "outcome": "right_limit",
+        "right_potential": 18253256524685485134994085714056376175325898212125952698456074171420819033054000176471527014988925599307473616896000000000000000000000,
+        "left_visited": 0
+      }
+    },
+    "factors": [],
+    "remaining": [
+      "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    ],
+    "status": "partial"
+  },
+  {
+    "id": "quantile-crossed-2048",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "factor_bits": 1024,
+    "max_right": 20000,
+    "max_visited": 32768,
+    "description": "Full-size control at the median cutoff and its complement",
+    "expect_runs": {
+      "full": {
+        "outcome": "right_limit",
+        "right_potential": 364755303874822979175131699821209596456478509365878635537353360829713991103522211867463418258605444021165752320000000000000000000000000,
+        "left_visited": 0
+      },
+      "inner": {
+        "outcome": "right_limit",
+        "right_potential": 19959541489506784367249723313465608988260356300079964781235636339917638276541702258735367107553811157898434644541440000000000000000000,
+        "left_visited": 0
+      },
+      "outer": {
+        "outcome": "right_limit",
+        "right_potential": 364755303874822979175131699821209596456478509365878635537353360829713991103522211867463418258605444021165752320000000000000000000000000,
+        "left_visited": 0
+      }
+    },
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ],
+    "status": "partial"
+  }
+]

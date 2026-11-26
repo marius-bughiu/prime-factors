@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+For two equally wide primes, a public window using at most a quarter of the sum span covers about half of uniformly sampled eligible pairs. Trying this window first took more row visits across eight held-out examples. [Population estimate, exact endpoints and costs](where-to-look-for-the-factor-sum.md)
+
 The latest search can stream one list and pair entries in the other. This halved the stored table on two ordinary small products whose factors Lean checked. On each 2,048-bit input the reduced table still exceeds $10^{134}$ entries. [Method and measured costs](finishing-a-factor-sum-search-with-one-witness.md#pairing-entries-to-halve-the-stored-table)
 
 A more precise geometric reading can recover the factor sum even when several positions match at both primes. We derive a public precision that suffices for one small lattice and exhibit both the recovered root and the cost of obtaining the reading. [Repeated matches and small integer roots](recovering-a-factor-sum-from-repeated-matches.md)

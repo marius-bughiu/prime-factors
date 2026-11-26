@@ -52,6 +52,9 @@ from scripts import near_smooth_certificate, trace_cover_certificate
 from scripts.geometric_wheel_benchmark import wheel_readout_case
 from scripts.streamed_sum_benchmark import streamed_sum_case
 from scripts.trace_folded_benchmark import trace_folded_case
+from scripts.factor_sum_quantile_benchmark import quantile_case
+from scripts.memory_partition_benchmark import memory_partition_case
+from scripts.cyclotomic_sum_lift_benchmark import cyclotomic_sum_case
 from experiments import trace_cover, trace_cover_transfer
 from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
@@ -575,6 +578,12 @@ def run_case(case, method, proofs):
         result = certify_split(case, proof, search.pop('factor'), elapsed, 'geometric_sum_readout', search)
     elif method == 'streamed-sum-join':
         result = streamed_sum_case(case, proof, agree, certify_split)
+    elif method == 'cyclotomic-sum-lift':
+        result = cyclotomic_sum_case(case, proof, agree, certify_split)
+    elif method == 'memory-partition-sum':
+        result = memory_partition_case(case, proof, agree, certify_split)
+    elif method == 'factor-sum-quantile':
+        result = quantile_case(case, proof, agree, certify_split)
     elif method == 'trace-folded-right':
         result = trace_folded_case(case, proof, agree, certify_split)
     elif method == 'collision-gap-readout':
@@ -1586,6 +1595,9 @@ def main():
                              ('collision-gap-readout.json', 'collision-gap-readout'),
                              ('streamed-sum-join.json', 'streamed-sum-join'),
                              ('trace-folded-right.json', 'trace-folded-right'),
+                             ('factor-sum-quantile.json', 'factor-sum-quantile'),
+                             ('memory-partition-sum.json', 'memory-partition-sum'),
+                             ('cyclotomic-sum-lift.json', 'cyclotomic-sum-lift'),
                              ('geometric-sum-readout.json', 'geometric-sum-readout'),
                              ('geometric-sum-binary.json', 'geometric-sum-binary'),
                              ('geometric-readout-blocks.json', 'geometric-readout-blocks'),

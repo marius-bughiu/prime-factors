@@ -6,13 +6,20 @@ from math import gcd, isqrt
 
 from . import trace_folded_right
 from .collision_gap_readout import factor_from_gap
+from .sum_menu_partition import partition, prefix_sizes
 from .sum_signature_join import _contributions, _fermat_preflight, _plan_crt
 
 
-def _digits(groups, period, n, base, inverse_period, subtract, work):
+def _digits(groups, period, n, base, inverse_period, subtract, work, prefix=None, reverse=False):
     """Each digit has one multiplier for its ordinary sum and one for a wrap."""
     layers = []
-    for digits in sorted(_contributions(groups, period, work), key=len):
+    ordered = sorted(_contributions(groups, period, work), key=len)
+    sizes = [len(digits) for digits in ordered]
+    needed = sizes if prefix is None else prefix_sizes(sizes, prefix)
+    for digits, count in zip(ordered, needed):
+        if prefix is not None:
+            work['left_digit_choices_skipped'] += len(digits)-count
+            digits = digits[-count:] if reverse else digits[:count]
         if digits == [0]:
             continue
         options = []
@@ -94,7 +101,8 @@ def _ordinary_events(n, base, lower, width, period, left, right, max_visited, re
     start = pow(base, n+1-lower, n)
     work.update(setup_powers=2, signature_inversions=1)
     right_digits = _digits(right, period, n, base, inverse_period, False, work)
-    left_digits = _digits(left, period, n, base, inverse_period, True, work)
+    prefix = max_visited if 'partition' in work else None
+    left_digits = _digits(left, period, n, base, inverse_period, True, work, prefix, reverse)
 
     buckets = defaultdict(list)
     for b, key in _rows(right_digits, period, n, 1, work):
@@ -110,7 +118,8 @@ def _ordinary_events(n, base, lower, width, period, left, right, max_visited, re
 
 
 def search(n, *, candidates=(2,), max_right=65536, max_visited=65536, reverse=False,
-           gap_trial_cap=None, folded=False):
+           gap_trial_cap=None, folded=False, memory_partition=False, partition_budget=100000,
+           sum_interval=None):
     """Factor a balanced odd semiprime using a publicly screened base.
 
     candidates is a finite sequence of integer bases. max_right caps stored residues and
@@ -118,14 +127,24 @@ def search(n, *, candidates=(2,), max_right=65536, max_visited=65536, reverse=Fa
     trial divisors across all gap attempts. After a bounded gap miss the scan still tests
     every new match it visits, retrying the auxiliary factorization only on a shorter gcd.
     With folded=True the storage cap counts centered sign orbits in the right table.
+    With memory_partition=True the planner places whole moduli on the right to
+    minimize the complete left scan under max_right; partition_budget limits DP transitions.
+    sum_interval optionally restricts the search to inclusive integer sum bounds.
     """
     if n < 9 or n % 2 == 0 or min(max_right, max_visited) < 0:
         raise ValueError('expected an odd input at least 9 and nonnegative table and row caps')
     if gap_trial_cap is not None and gap_trial_cap < 0:
         raise ValueError('expected a nonnegative trial cap')
+    if memory_partition and partition_budget < 0:
+        raise ValueError('expected a nonnegative partition transition budget')
     lower = isqrt(4*n-1) + 1
     upper = isqrt(9*n//2)
-    width = upper - lower
+    if sum_interval is not None:
+        first, last = sum_interval
+        if not isinstance(first, int) or not isinstance(last, int):
+            raise ValueError('expected integer sum endpoints')
+        lower, upper = max(lower, first), min(upper, last)
+    width = max(0, upper-lower)
     work = dict(width=width, period=1, candidate_bases=len(candidates), preflight_gcds=0,
                 preflight_powers=0, local_sites=0, local_inverses=0, local_moduli=0,
                 left_potential=None, right_potential=None, left_visited=0, left_unvisited=None,
@@ -141,6 +160,8 @@ def search(n, *, candidates=(2,), max_right=65536, max_visited=65536, reverse=Fa
                     fixed_residue_probes=0, right_orbits_visited=0, trace_center=None,
                     trace_matches=0, orientation_powers=0, trace_gcds=0, trace_split=None)
     bases = []
+    if sum_interval is not None:
+        work.update(lower=lower, upper=upper)
 
     def result(outcome, factor=None):
         if factor is not None and (not 1 < factor < n or n % factor):
@@ -148,6 +169,9 @@ def search(n, *, candidates=(2,), max_right=65536, max_visited=65536, reverse=Fa
         factors = [] if factor is None else list(map(str, sorted((factor, n//factor))))
         return dict(outcome=outcome, factors=factors, bases=bases, probes=probes, work=work)
 
+    if lower > upper:
+        probes = []
+        return result('empty_interval')
     probes, base, factor = _fermat_preflight(n, candidates)
     work['preflight_powers'] = sum(probe['fermat'] is not None for probe in probes)
     work['preflight_gcds'] = len(probes) + work['preflight_powers']
@@ -160,10 +184,15 @@ def search(n, *, candidates=(2,), max_right=65536, max_visited=65536, reverse=Fa
     factor, period, halves, sizes = _plan_crt(n, lower, width, work)
     if factor is not None:
         return result('local_gcd', factor)
-    if sizes[0] < sizes[1]:
-        halves.reverse()
-        sizes.reverse()
-    left, right = halves
+    if memory_partition:
+        left, right, plan = partition(halves, lower, max_right, folded, partition_budget)
+        work.update(partition=plan, left_digit_choices_skipped=0)
+        sizes = [plan['left_rows'], plan['right_choices']]
+    else:
+        if sizes[0] < sizes[1]:
+            halves.reverse()
+            sizes.reverse()
+        left, right = halves
     work.update(left_potential=sizes[0], right_potential=sizes[1], left_unvisited=sizes[0])
     if folded:
         orbits, fixed = trace_folded_right.orbit_count(right, lower, sizes[1])

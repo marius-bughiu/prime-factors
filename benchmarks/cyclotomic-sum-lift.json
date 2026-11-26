@@ -1,0 +1,34 @@
+[
+  {
+    "id": "cyclotomic-sum-lift-4193821",
+    "description": "Fifth cyclotomic value at the public integer fourth root; compare the lifted sum lane, ordinary modular sieve, and direct divisors in the certified class",
+    "n": "4193821",
+    "max_tests": 16,
+    "comparison_cap": 150,
+    "work_checks": {
+      "outcome": "sum_square", "base": 45, "residue": 1, "base_tests": 1,
+      "order_gcds": 1, "modulus_gcds": 1, "lower": 4096, "upper": 4344,
+      "even_positions": 125, "sum_modulus": 25, "sum_residue": 22,
+      "eligible": 5, "square_tests": 5, "unvisited": 0, "hit_sum": 4322
+    },
+    "comparison_checks": {
+      "ordinary": {"menu": [0,3,5,10,15,20,22], "local_gcds": 24, "local_inverses": 20,
+                   "even_sites_visited": 125, "eligible": 35, "square_tests": 32, "exhausted": true},
+      "trial": {"eligible": 60, "divisor_tests": 3}
+    },
+    "factors": ["1471","2851"], "remaining": [], "status": "complete"
+  },
+  {
+    "id": "cyclotomic-sum-lift-matched-miss",
+    "description": "Matched balanced semiprime with the same fourth root, bit length and residue modulo 25; the public base misses the order condition",
+    "n": "4201121",
+    "max_tests": 16,
+    "work_checks": {
+      "outcome": "no_order_witness", "base": 45, "residue": 3879922, "base_tests": 1,
+      "order_gcds": 0, "modulus_gcds": 0, "lower": 4100, "upper": 4347, "even_positions": 124,
+      "sum_modulus": null, "sum_residue": null, "eligible": null,
+      "square_tests": 0, "unvisited": null, "hit_sum": null
+    },
+    "factors": [], "remaining": ["4201121"], "status": "partial"
+  }
+]

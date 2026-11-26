@@ -558,6 +558,29 @@ def case_row(result):
             count += ' · proper gcd at k = ' + ', '.join(str(hit['k']) for hit in search['quotient_hits'])
         if search['equal_hits']:
             count += ' · full gcd at k = ' + ', '.join(str(hit['k']) for hit in search['equal_hits'])
+    elif result['method'] == 'cyclotomic-sum-lift':
+        work = result['cyclotomic_sum_lift']
+        count = (f'{escape(work["outcome"].replace("_", " "))} · base {work["base"]:,}'
+                 f' · {work["square_tests"]} square tests')
+        if work.get('probe_certificate'):
+            url = escape(work['probe_certificate']['proof'], quote=True)
+            count += f' · <a href="{url}">Power test proof</a>'
+    elif result['method'] == 'memory-partition-sum':
+        search = result['memory_partition_sum']
+        work = search['work']
+        count = (f'{work["right_built"]:,} entries stored · {work["left_visited"]:,} rows visited'
+                 f' · {compact_count(work["left_unvisited"])} unvisited · {escape(search["outcome"].replace("_", " "))}')
+        if search.get('capacity_certificate'):
+            url = escape(search['capacity_certificate']['proof'], quote=True)
+            count += f' · <a href="{url}">Table bound proof</a>'
+    elif result['method'] == 'factor-sum-quantile':
+        plan = result['factor_sum_quantile']
+        runs = plan['runs']
+        count = (f'{compact_count(int(runs["inner"]["positions"]))} central sums out of '
+                 f'{compact_count(int(runs["full"]["positions"]))} · {plan["max_right"]:,} entries allowed per run')
+        for label in ('full', 'inner', 'outer'):
+            row = runs[label]
+            count += f' · {label} {escape(row["outcome"].replace("_", " "))} after {row["left_visited"]:,} visits'
     elif result['method'] in ('streamed-sum-join', 'trace-folded-right'):
         search = result[result['method'].replace('-', '_')]
         work = search['work']
