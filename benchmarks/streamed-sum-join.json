@@ -1,0 +1,370 @@
+[
+  {
+    "id": "streamed-sum-many-matches",
+    "description": "Separate two incorrect matching sums on the constructed 54-bit product in the first streamed row",
+    "n": "16000030340009399",
+    "bases": [
+      "8392506781771267"
+    ],
+    "max_right": 65536,
+    "max_visited": 1,
+    "reverse": false,
+    "gap_trial_cap": 2,
+    "outcome": "gap_order_gcd",
+    "probes": [
+      {
+        "base": "8392506781771267",
+        "gcd": "1",
+        "fermat": "15170441625164825"
+      }
+    ],
+    "work_checks": {
+      "left_potential": 162,
+      "right_potential": 135,
+      "right_built": 135,
+      "left_visited": 1,
+      "left_unvisited": 161,
+      "left_entries_stored": 0,
+      "matching_sums_seen": 2,
+      "first_two_sums": [
+        "258220920",
+        "258313740"
+      ],
+      "square_tests": 2,
+      "gap_attempts": 1,
+      "gap_budget_stops": 0,
+      "trial_divisions": 2,
+      "factor_divisions": 3,
+      "order_powers": 4,
+      "projection_gcds": 3,
+      "setup_powers": 37,
+      "lookups": 1
+    },
+    "certify_gap": true,
+    "status": "complete",
+    "factors": [
+      "100000039",
+      "160000241"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "streamed-sum-fresh-88",
+    "description": "Compare the reverse stream with both full lists on the archived 88-bit product",
+    "n": "216743551899887872400389319",
+    "bases": [
+      "2"
+    ],
+    "max_right": 41000,
+    "max_visited": 65536,
+    "reverse": true,
+    "gap_trial_cap": null,
+    "outcome": "sum_square",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "134356927526034537296890128"
+      }
+    ],
+    "work_checks": {
+      "left_potential": 51840,
+      "right_potential": 40824,
+      "right_built": 40824,
+      "left_visited": 22138,
+      "left_unvisited": 29702,
+      "left_entries_stored": 0,
+      "matching_sums_seen": 1,
+      "first_two_sums": [
+        "29450318410776"
+      ],
+      "square_tests": 1,
+      "gap_attempts": 0,
+      "gap_budget_stops": 0,
+      "trial_divisions": 0,
+      "factor_divisions": 0,
+      "order_powers": 0,
+      "projection_gcds": 0,
+      "setup_powers": 98,
+      "lookups": 24803
+    },
+    "compare_complete": true,
+    "comparison_list_cap": 65536,
+    "comparison_checks": {
+      "original_lists": [
+        40824,
+        51840
+      ],
+      "full_outcome": "factor",
+      "full_matching_sums": 1,
+      "same_storage_cap_outcome": "half_list_limit",
+      "reverse_visited": 29703
+    },
+    "status": "complete",
+    "factors": [
+      "14430605773673",
+      "15019712637103"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "streamed-sum-holdout-92-forward",
+    "description": "Stop the forward traversal at half the available rows on the first 46-bit-prime holdout",
+    "n": "2999205669099453866424720319",
+    "bases": [
+      "2"
+    ],
+    "max_right": 40000,
+    "max_visited": 32256,
+    "reverse": false,
+    "gap_trial_cap": null,
+    "origin": {
+      "seed": "streamed-sum-join-holdout-v1",
+      "generator": "experiments.affine_radix_holdout.draw_prime",
+      "sample": 0,
+      "bits": 46,
+      "sides": [
+        "p",
+        "q"
+      ]
+    },
+    "outcome": "left_limit",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "522048206678895806524088445"
+      }
+    ],
+    "work_checks": {
+      "left_potential": 64512,
+      "right_potential": 37422,
+      "right_built": 37422,
+      "left_visited": 32256,
+      "left_unvisited": 32256,
+      "left_entries_stored": 0,
+      "matching_sums_seen": 0,
+      "first_two_sums": [],
+      "square_tests": 0,
+      "gap_attempts": 0,
+      "gap_budget_stops": 0,
+      "trial_divisions": 0,
+      "factor_divisions": 0,
+      "order_powers": 0,
+      "projection_gcds": 0,
+      "setup_powers": 90,
+      "lookups": 46703
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "2999205669099453866424720319"
+    ]
+  },
+  {
+    "id": "streamed-sum-holdout-92-reverse",
+    "certificate_trial_limit": 2000000,
+    "description": "Recover the first 46-bit-prime holdout within the same right-table and half-visit limits",
+    "n": "2999205669099453866424720319",
+    "bases": [
+      "2"
+    ],
+    "max_right": 40000,
+    "max_visited": 32256,
+    "reverse": true,
+    "gap_trial_cap": null,
+    "origin": {
+      "seed": "streamed-sum-join-holdout-v1",
+      "generator": "experiments.affine_radix_holdout.draw_prime",
+      "sample": 0,
+      "bits": 46,
+      "sides": [
+        "p",
+        "q"
+      ]
+    },
+    "outcome": "sum_square",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "522048206678895806524088445"
+      }
+    ],
+    "work_checks": {
+      "left_potential": 64512,
+      "right_potential": 37422,
+      "right_built": 37422,
+      "left_visited": 22985,
+      "left_unvisited": 41527,
+      "left_entries_stored": 0,
+      "matching_sums_seen": 1,
+      "first_two_sums": [
+        "111620809586624"
+      ],
+      "square_tests": 1,
+      "gap_attempts": 0,
+      "gap_budget_stops": 0,
+      "trial_divisions": 0,
+      "factor_divisions": 0,
+      "order_powers": 0,
+      "projection_gcds": 0,
+      "setup_powers": 90,
+      "lookups": 33271
+    },
+    "compare_complete": true,
+    "comparison_list_cap": 65536,
+    "comparison_checks": {
+      "original_lists": [
+        37422,
+        64512
+      ],
+      "full_outcome": "factor",
+      "full_matching_sums": 1,
+      "same_storage_cap_outcome": "half_list_limit",
+      "reverse_visited": 41528
+    },
+    "status": "complete",
+    "factors": [
+      "45058864713217",
+      "66561944873407"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "streamed-sum-trial-cap",
+    "description": "Continue testing candidate sums after auxiliary trial division reaches its zero budget",
+    "n": "49998072529",
+    "bases": [
+      "3"
+    ],
+    "max_right": 65536,
+    "max_visited": 65536,
+    "reverse": false,
+    "gap_trial_cap": 0,
+    "outcome": "sum_square",
+    "probes": [
+      {
+        "base": "3",
+        "gcd": "1",
+        "fermat": "21587921481"
+      }
+    ],
+    "work_checks": {
+      "left_potential": 36,
+      "right_potential": 18,
+      "right_built": 18,
+      "left_visited": 21,
+      "left_unvisited": 15,
+      "left_entries_stored": 0,
+      "matching_sums_seen": 7,
+      "first_two_sums": [
+        "456050",
+        "449330"
+      ],
+      "square_tests": 7,
+      "gap_attempts": 2,
+      "gap_budget_stops": 2,
+      "trial_divisions": 0,
+      "factor_divisions": 0,
+      "order_powers": 2,
+      "projection_gcds": 0,
+      "setup_powers": 20,
+      "lookups": 29
+    },
+    "status": "complete",
+    "factors": [
+      "167329",
+      "298801"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "streamed-sum-fresh-2048",
+    "description": "Price the stored half on the fresh 2048-bit control before allocating any entries",
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "bases": [
+      "2"
+    ],
+    "max_right": 40000,
+    "max_visited": 32256,
+    "reverse": false,
+    "gap_trial_cap": null,
+    "outcome": "right_limit",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "3838931063561706717653313343672527785834545225599475798189725025709417240397619710859370484136202539234080028907264469749714099969284321199085487675688055565673768825491458136178605470960124897013282281179840932521672801419754089736530375826192341635616375040830267781001741492078251256558094641895798774651540410644059772450289871508966648291800633603595067382226874076659494536656030570847333165053656054714303568445320867627428365629759107587347058105799967560179826789326583152566074120801493931623457994054427888450938165126993579024209718912815122224852518889666925740015860486365197589710156217523038170160487"
+      }
+    ],
+    "work_checks": {
+      "left_potential": 951030527661335951438936960561962954959023772276588323516575248316125815284886153272253793320740220390314805821440000000000000000000000,
+      "right_potential": 533156420976757751499205650750230811020006437799275219055810590399904656612018539059318632972093416426666670198074900480000000000000000,
+      "right_built": 0,
+      "left_visited": 0,
+      "left_unvisited": 951030527661335951438936960561962954959023772276588323516575248316125815284886153272253793320740220390314805821440000000000000000000000,
+      "left_entries_stored": 0,
+      "matching_sums_seen": 0,
+      "first_two_sums": [],
+      "square_tests": 0,
+      "gap_attempts": 0,
+      "gap_budget_stops": 0,
+      "trial_divisions": 0,
+      "factor_divisions": 0,
+      "order_powers": 0,
+      "projection_gcds": 0,
+      "setup_powers": 0,
+      "lookups": 0
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    ]
+  },
+  {
+    "id": "streamed-sum-crossed-2048",
+    "description": "Price the stored half on the crossed 2048-bit control before allocating any entries",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "bases": [
+      "2"
+    ],
+    "max_right": 40000,
+    "max_visited": 32256,
+    "reverse": false,
+    "gap_trial_cap": null,
+    "outcome": "right_limit",
+    "probes": [
+      {
+        "base": "2",
+        "gcd": "1",
+        "fermat": "16701082433629238891622000657050352323076716724061575954961591637832874417243965814509284489823055062173675745965613415931937191768755801860496265697991458663150244002401014839339911345199570446702439151699944978104902072294104895824100063939337388160351301328429053077011565537612530253619274444696828603740599639129489838810771144799842799349359048947104357222293938692498455871766767874613554219387312406713291382880526176351720763451839420894479362659294283918608743985583382969825883497352038267024089317196655405484271354455076487313903723780004376501124414257716147555301821718411145453149736391316297280031548"
+      }
+    ],
+    "work_checks": {
+      "left_potential": 1216264273585217422832687467881899500362878472849651797392579077625174604224097973530683337681338317562755332765122560000000000000000000,
+      "right_potential": 729510607749645958350263399642419192912957018731757271074706721659427982207044423734926836517210888042331504640000000000000000000000000,
+      "right_built": 0,
+      "left_visited": 0,
+      "left_unvisited": 1216264273585217422832687467881899500362878472849651797392579077625174604224097973530683337681338317562755332765122560000000000000000000,
+      "left_entries_stored": 0,
+      "matching_sums_seen": 0,
+      "first_two_sums": [],
+      "square_tests": 0,
+      "gap_attempts": 0,
+      "gap_budget_stops": 0,
+      "trial_divisions": 0,
+      "factor_divisions": 0,
+      "order_powers": 0,
+      "projection_gcds": 0,
+      "setup_powers": 0,
+      "lookups": 0
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  }
+]

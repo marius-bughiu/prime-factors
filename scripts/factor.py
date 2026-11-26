@@ -22,6 +22,7 @@ TRIAL_LIMIT = 10_000
 ROOT_LIMIT = 256
 
 
+@lru_cache(maxsize=4)
 def primes_through(limit: int) -> list[int]:
     sieve = bytearray([1]) * (limit + 1)
     for p in range(2, isqrt(limit) + 1):
@@ -43,7 +44,7 @@ class Witness:
 
 
 @lru_cache(maxsize=4096)
-def prime_witness(n: int) -> Witness | None:
+def prime_witness(n: int, trial_limit: int = TRIAL_LIMIT) -> Witness | None:
     """Construct a full or partial order certificate, with trial division for small leaves.
 
     A recursive certificate can cover the last cofactor of n-1. If it cannot,
@@ -56,7 +57,8 @@ def prime_witness(n: int) -> Witness | None:
         return None
     powers = []
     rest = n - 1
-    for p in TRIAL_PRIMES:
+    trial_primes = TRIAL_PRIMES if trial_limit == TRIAL_LIMIT else primes_through(trial_limit)
+    for p in trial_primes:
         if p * p > rest:
             break
         exponent = 0
@@ -65,10 +67,10 @@ def prime_witness(n: int) -> Witness | None:
             rest //= p
         if exponent:
             powers.append((p, exponent))
-    if rest > 1 and prime_witness(rest) is not None:
+    if rest > 1 and prime_witness(rest, trial_limit) is not None:
         powers.append((rest, 1))
         rest = 1
-    if any(prime_witness(p) is None for p, _ in powers):
+    if any(prime_witness(p, trial_limit) is None for p, _ in powers):
         return None
     order = (n - 1) // rest
     if rest > 1 and order * order < n:
@@ -85,9 +87,9 @@ def prime_witness(n: int) -> Witness | None:
     return None
 
 
-def certificate_witness(n: int) -> Witness | None:
+def certificate_witness(n: int, trial_limit: int = TRIAL_LIMIT) -> Witness | None:
     """Keep an accepted witness, shortening its proof when one power of two suffices."""
-    witness = prime_witness(n)
+    witness = prime_witness(n, trial_limit)
     if witness is None or len(witness.powers) < 2:
         return witness
     exponent = (n.bit_length() + 1) // 2
@@ -139,10 +141,13 @@ def adjacent_shift_split(n: int) -> int | None:
     return None
 
 
-def discover(n: int, max_steps: int, hints: list[int]) -> tuple[list[int], list[int], int]:
+def discover(n: int, max_steps: int, hints: list[int], *,
+             certificate_trial_limit: int = TRIAL_LIMIT) -> tuple[list[int], list[int], int]:
     """Return prime candidates with witnesses, unresolved cofactors and midpoint count."""
     if n < 1 or max_steps < 0:
         raise ValueError("expected a positive integer and a nonnegative step budget")
+    if certificate_trial_limit < 2:
+        raise ValueError("expected a certificate trial limit of at least 2")
     factors = []
     pending = [*hints, remove_hints(n, hints)]
     steps = 0
@@ -158,7 +163,7 @@ def discover(n: int, max_steps: int, hints: list[int]) -> tuple[list[int], list[
                 value //= p
         if value == 1:
             continue
-        if prime_witness(value) is not None:
+        if prime_witness(value, certificate_trial_limit) is not None:
             factors.append(value)
             continue
         divisor, used = fermat_split(value, max_steps - steps)
@@ -170,7 +175,7 @@ def discover(n: int, max_steps: int, hints: list[int]) -> tuple[list[int], list[
     return sorted(factors), sorted(remaining), steps
 
 
-def render_certificate(n: int, factors: list[int]) -> str:
+def render_certificate(n: int, factors: list[int], *, certificate_trial_limit: int = TRIAL_LIMIT) -> str:
     """Produce Lean source for a full factorization (also accepts externally found factors)."""
     if n < 1 or prod(factors) != n:
         raise ValueError("factor product must equal the positive input")
@@ -192,7 +197,7 @@ def render_certificate(n: int, factors: list[int]) -> str:
         nonlocal order_module
         if p in emitted:
             return
-        witness = certificate_witness(p)
+        witness = certificate_witness(p, certificate_trial_limit)
         if witness is None:
             raise ValueError(f"no primality witness found for {p}")
         for q, _ in witness.powers:
@@ -289,6 +294,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("n", type=int, help="positive integer in decimal")
     parser.add_argument("--max-steps", type=int, default=10000, help="total Fermat midpoint budget")
+    parser.add_argument("--certificate-trial-limit", type=int, default=TRIAL_LIMIT,
+                        help="largest trial prime when factoring p-1 for a primality witness")
     parser.add_argument("--method", choices=("fermat", "subgroup", "shifted"), default="fermat",
                         help="optionally try a subgroup or shifted-square split before Fermat")
     parser.add_argument("--max-base", type=int,
@@ -326,10 +333,11 @@ def main() -> int:
                 if split is not None:
                     hints.append(split)
                     shifted["factor"] = str(split)
-        factors, remaining, steps = discover(args.n, args.max_steps, hints)
+        factors, remaining, steps = discover(args.n, args.max_steps, hints,
+                                            certificate_trial_limit=args.certificate_trial_limit)
         source = None
         if not remaining and (args.lean or args.verify):
-            source = render_certificate(args.n, factors)
+            source = render_certificate(args.n, factors, certificate_trial_limit=args.certificate_trial_limit)
         discovery_seconds = perf_counter() - start
         verification_seconds = None
         if source is not None:
@@ -353,6 +361,8 @@ def main() -> int:
         }
         if subgroup is not None:
             report["subgroup"] = subgroup
+        if args.certificate_trial_limit != TRIAL_LIMIT:
+            report["certificate_trial_limit"] = args.certificate_trial_limit
         if shifted is not None:
             report["shifted"] = shifted
         print(json.dumps(report))

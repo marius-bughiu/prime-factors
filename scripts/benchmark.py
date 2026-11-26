@@ -50,6 +50,7 @@ from experiments import carry_interval, geometric_lifted_readout, geometric_read
 from experiments import geometric_precision_readout, geometric_sum_readout, radix_carries, sum_signature_join
 from scripts import near_smooth_certificate, trace_cover_certificate
 from scripts.geometric_wheel_benchmark import wheel_readout_case
+from scripts.streamed_sum_benchmark import streamed_sum_case
 from experiments import trace_cover, trace_cover_transfer
 from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
@@ -147,10 +148,14 @@ def certify_split(case, proof, factor, search_seconds, key, work):
     result[key] = work
     if factor is not None:
         certificate_start = time.perf_counter()
+        certificate_options = (['--certificate-trial-limit', case['certificate_trial_limit']]
+                               if 'certificate_trial_limit' in case else [])
         checked = cli(['scripts/factor.py', case['n'], '--factor-hint', factor, '--max-steps', 0,
-                       '--verify', '--lean', proof])
+                       '--verify', '--lean', proof, *certificate_options])
         result.update({key: checked[key] for key in
                        ['factors', 'remaining', 'status', 'verified', 'verification_seconds']})
+        if certificate_options:
+            result['certificate_trial_limit'] = checked['certificate_trial_limit']
         result['certificate_seconds'] = time.perf_counter() - certificate_start
     return result
 
@@ -567,6 +572,8 @@ def run_case(case, method, proofs):
         elapsed = time.perf_counter() - start
         agree(case, search, ['outcome', 'winning_index', 'quotient_hits', 'equal_hits', 'work'])
         result = certify_split(case, proof, search.pop('factor'), elapsed, 'geometric_sum_readout', search)
+    elif method == 'streamed-sum-join':
+        result = streamed_sum_case(case, proof, agree, certify_split)
     elif method == 'collision-gap-readout':
         n = int(case['n'])
         bases = tuple(map(int, case['bases']))
@@ -1574,6 +1581,7 @@ def main():
                              ('carry-interval.json', 'carry-interval'),
                              ('sum-signature.json', 'sum-signature'),
                              ('collision-gap-readout.json', 'collision-gap-readout'),
+                             ('streamed-sum-join.json', 'streamed-sum-join'),
                              ('geometric-sum-readout.json', 'geometric-sum-readout'),
                              ('geometric-sum-binary.json', 'geometric-sum-binary'),
                              ('geometric-readout-blocks.json', 'geometric-readout-blocks'),

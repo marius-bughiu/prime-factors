@@ -558,6 +558,15 @@ def case_row(result):
             count += ' · proper gcd at k = ' + ', '.join(str(hit['k']) for hit in search['quotient_hits'])
         if search['equal_hits']:
             count += ' · full gcd at k = ' + ', '.join(str(hit['k']) for hit in search['equal_hits'])
+    elif result['method'] == 'streamed-sum-join':
+        search = result['streamed_sum_join']
+        work = search['work']
+        count = (f'{escape(search["outcome"].replace("_", " "))} · '
+                 f'{work["right_built"]:,} right entries built · {work["left_visited"]:,} left rows visited'
+                 f' · {"reverse" if work["reverse"] else "forward"} order · {work["square_tests"]} square tests')
+        if work['right_potential'] is not None:
+            count += (f' · required table {compact_count(work["right_potential"])} · cap {work["max_right"]:,}'
+                      f' · {compact_count(work["left_unvisited"])} left rows unvisited')
     elif result['method'] == 'collision-gap-readout':
         search = result['collision_gap_readout']
         work = search['work']

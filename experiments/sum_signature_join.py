@@ -39,6 +39,67 @@ def _moduli():
         yield value
 
 
+def _plan_crt(n, left, width, work):
+    """Choose CRT moduli and split the local sum menus before either table is built."""
+    # The modulus must strictly exceed the span, including for a span of zero.
+    period = 1
+    local = []
+    moduli = _moduli()
+    while period <= width:
+        m = next(moduli)
+        work["local_moduli"] += 1
+        common = gcd(m, n)
+        if 1 < common < n:
+            return common, period, (), ()
+        sums = set()
+        for x in range(1, m):
+            work["local_sites"] += 1
+            if gcd(x, m) == 1:
+                work["local_inverses"] += 1
+                sums.add((x+n*pow(x, -1, m)-left) % m)
+        local.append((m, sums))
+        period *= m
+        work["period"] = period
+
+    halves = [[], []]
+    sizes = [1, 1]
+    for m, sums in sorted(local, key=lambda group: -len(group[1])):
+        side = int(sizes[1] < sizes[0])
+        halves[side].append((m, sums))
+        sizes[side] *= len(sums)
+    return None, period, halves, sizes
+
+
+def _contributions(groups, period, work):
+    contributions = []
+    for m, residues in groups:
+        other = period//m
+        work["crt_inverses"] += 1
+        basis = other*pow(other, -1, m)
+        contributions.append([basis*r % period for r in sorted(residues)])
+    return contributions
+
+
+def _fermat_preflight(n, candidates):
+    """Return the tested records, a certified unit witness, or an immediate factor."""
+    probes = []
+    for base in candidates:
+        if not 1 <= base < n:
+            raise ValueError('candidate base outside [1,n)')
+        common = gcd(base, n)
+        record = dict(base=str(base), gcd=str(common), fermat=None)
+        probes.append(record)
+        if common == 1:
+            value = pow(base, n-1, n)
+            common = gcd(value-1, n)
+            record.update(fermat=str(value), gcd=str(common))
+        if 1 < common < n:
+            return probes, None, common
+        if common == 1:
+            return probes, base, None
+    return probes, None, None
+
+
 def _incremental_entries(groups, period, start, subtract, signature, multiply, inverse_period, work):
     """Carry a power alongside each partial CRT residue; each digit wraps at most once."""
     entries = [(0, start)]
@@ -102,45 +163,13 @@ def search(n, *, bases=None, max_half_entries=65536, incremental=False, gap_tria
         factors = [] if factor is None else list(map(str, sorted((factor, n//factor))))
         return dict(outcome=status, factors=factors, bases=list(map(str, bases)), work=work)
 
-    # The modulus must strictly exceed the span, including for a span of zero.
-    period = 1
-    local = []
-    moduli = _moduli()
-    while period <= width:
-        m = next(moduli)
-        work["local_moduli"] += 1
-        common = gcd(m, n)
-        if 1 < common < n:
-            return result("factor", common)
-        sums = set()
-        for x in range(1, m):
-            work["local_sites"] += 1
-            if gcd(x, m) == 1:
-                work["local_inverses"] += 1
-                sums.add((x+n*pow(x, -1, m)-left) % m)
-        local.append((m, sums))
-        period *= m
-        work["period"] = period
-
-    halves = [[], []]
-    sizes = [1, 1]
-    for m, sums in sorted(local, key=lambda group: -len(group[1])):
-        side = int(sizes[1] < sizes[0])
-        halves[side].append((m, sums))
-        sizes[side] *= len(sums)
+    factor, period, halves, sizes = _plan_crt(n, left, width, work)
+    if factor is not None:
+        return result("factor", factor)
     work.update(left_entries=sizes[0], right_entries=sizes[1])
     if max(sizes) > max_half_entries:
         work["unvisited_half_entries"] = sum(sizes)
         return result("half_list_limit")
-
-    def contributions_for(groups):
-        contributions = []
-        for m, residues in groups:
-            other = period//m
-            work["crt_inverses"] += 1
-            basis = other*pow(other, -1, m)
-            contributions.append([basis*r % period for r in sorted(residues)])
-        return contributions
 
     def signature(exponent):
         work["modular_powers"] += len(bases)
@@ -152,7 +181,7 @@ def search(n, *, bases=None, max_half_entries=65536, incremental=False, gap_tria
         work["signature_multiplications"] += len(bases)
         return tuple(x*y % n for x, y in zip(first, second))
 
-    left_digits, right_digits = map(contributions_for, halves)
+    left_digits, right_digits = (_contributions(groups, period, work) for groups in halves)
     wrap_signature = signature(period)
     if incremental:
         work["signature_inversions"] += len(bases)
@@ -269,22 +298,12 @@ def witnessed_search(n, candidates, max_half_entries=65536, gap_trial_cap=None, 
         gap_trial_cap = 1 + max(0, (trial_root-1)//2)
     if gap_trial_cap < 0:
         raise ValueError('expected an odd n >= 9, a positive list cap and valid gap budgets')
-    probes = []
-    for base in candidates:
-        if not 1 <= base < n:
-            raise ValueError('candidate base outside [1,n)')
-        common = gcd(base, n)
-        record = dict(base=str(base), gcd=str(common), fermat=None)
-        probes.append(record)
-        if common == 1:
-            value = pow(base, n-1, n)
-            common = gcd(value-1, n)
-            record.update(fermat=str(value), gcd=str(common))
-        if 1 < common < n:
-            return dict(outcome='preflight_gcd', factors=list(map(str, sorted((common, n//common)))),
-                        probes=probes, work={}, bases=[])
-        if common == 1:
-            run = search(n, bases=[base], max_half_entries=max_half_entries, incremental=True,
-                         gap_trial_cap=gap_trial_cap, gap_candidate_cap=gap_candidate_cap)
-            return dict(run, probes=probes)
-    return dict(outcome='no_witness_within_cap', factors=[], probes=probes, work={}, bases=[])
+    probes, base, factor = _fermat_preflight(n, candidates)
+    if factor is not None:
+        return dict(outcome='preflight_gcd', factors=list(map(str, sorted((factor, n//factor)))),
+                    probes=probes, work={}, bases=[])
+    if base is None:
+        return dict(outcome='no_witness_within_cap', factors=[], probes=probes, work={}, bases=[])
+    run = search(n, bases=[base], max_half_entries=max_half_entries, incremental=True,
+                 gap_trial_cap=gap_trial_cap, gap_candidate_cap=gap_candidate_cap)
+    return dict(run, probes=probes)

@@ -8,7 +8,7 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
-**We can now check in advance whether a base will resolve every tie in a completed search.** Base 2 passed on both 2,048-bit controls. Their search tables would still need more than $2^{449}$ entries, so both inputs remain unresolved. On a deliberately constructed 54-bit example, 5,763 sums matched and the first 16 were all wrong. The differences between those sums gave a factor. [The guarantee, examples and remaining cost](discoveries/finishing-a-factor-sum-search-with-one-witness.md)
+**One table was enough to factor a fresh 92-bit number.** The search stored 37,422 entries and found **45,058,864,713,217 × 66,561,944,873,407** after visiting 22,985 rows in reverse order. The earlier version needed a second table with 64,512 entries. Forward order missed under the same visit budget. Base 2 passes the new check on both 2,048-bit controls, but even their smaller table is impractical. [Recovery proof, inputs and both search orders](discoveries/finishing-a-factor-sum-search-with-one-witness.md#stopping-the-join-as-soon-as-it-gives-an-answer)
 
 **Filtering out impossible sums let us factor a fresh 66-bit number under a budget the unfiltered search exceeded.** The input was 52,039,784,862,843,034,889. The search found **6,860,100,517 × 7,585,863,317** in 0.69 seconds, and Lean verified both primes. Under the same filter both 2,048-bit comparisons still needed a polynomial with more than $2^{507}$ coefficients. [Method, costs and reproducible input](discoveries/reading-an-index-from-a-geometric-product.md#a-shared-grid-for-the-admissible-sums)
 

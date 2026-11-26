@@ -142,6 +142,7 @@ import PrimeFactors.GeometricCollisionGap
 import PrimeFactors.GeometricGapBudget
 import PrimeFactors.GeometricOrderFailure
 import PrimeFactors.GeometricOrderReadout
+import PrimeFactors.StreamedSumBudget
 import PrimeFactors.ReusableSumBase
 import PrimeFactors.SignatureUpdates
 import PrimeFactors.FixedBaseSignature
