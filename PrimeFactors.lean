@@ -259,6 +259,10 @@ import PrimeFactors.CubicTraceMasks
 import PrimeFactors.CubicTraceProjection
 import PrimeFactors.CubicSmoothBaseChoice
 import PrimeFactors.CubicSmoothRows
+import PrimeFactors.CubicForcedUnits
+import PrimeFactors.CubicForcedParameters
+import PrimeFactors.CubicPlantedPrimality
+import PrimeFactors.CubicGapWindow
 import PrimeFactors.MultiplierPolynomialScore
 import PrimeFactors.PolynomialRootPacking
 import PrimeFactors.PooledRelations

@@ -1,0 +1,925 @@
+{
+  "pairs": [
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      1,
+      16
+    ],
+    [
+      1,
+      36
+    ],
+    [
+      1,
+      64
+    ],
+    [
+      1,
+      100
+    ],
+    [
+      1,
+      144
+    ],
+    [
+      1,
+      196
+    ],
+    [
+      1,
+      256
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      4,
+      25
+    ],
+    [
+      9,
+      16
+    ]
+  ],
+  "diagonal_full_size": {
+    "n": "16161929744653390850862881672440913000628249482677910605912189159649385244226031140794520302190904323829211306086659279591285293393570175597405377467872244687956579986441096679827675750462429294744705482880111529192350623522869645684180796743211433068819015050621779283495675029034382611652841227341837470621614712350157976469015827439496228888583000022860107080359772733495246553872891001495226141741912937013289243438052594676289981085306151885067251277639362896029773124054318622923865083615065577531738683430708433253708250340950917017402589116033528278032142664956499520303253532283526332784767336755558581534731",
+    "search": {
+      "integer_cube_roots": 1,
+      "integer_square_roots": 1,
+      "factors": [
+        "127129578559253435648541507735294911849454349040037030060933960160483474946670235851032901473558596630304867051023760085460439834323772054689648697067675516576256507741056100642044591626366566915782452033498676118382475183929908062048610916687175504933685595197796768733673015269804974558445300767816668938241",
+        "127129578559253435648541507735294911849454349040037030060933960160483474946670235851032901473558596630385136028556547672458978917559780245002249525037989193716150769812783182682515459615782244501379219129641228211031152889372868967588721750313492839480535825340720620713172381055958437969969217129348469882891"
+      ],
+      "fermat_tests_to_displayed_pair": "6335178668861186388447403108217832324489073760285704576258770192695563278031626554044771688560176660483"
+    },
+    "prime_proof": "benchmarks/controls/CubicForcedControl.lean"
+  },
+  "shift_bound": 64,
+  "shift_primes": [
+    2,
+    3,
+    5,
+    7
+  ],
+  "representative_order": "least absolute value, positive on ties",
+  "census": {
+    "odd_products_with_integral_trace": 221,
+    "maximum_before_irreducibility": 4198095,
+    "distinct_square_inputs": 221,
+    "maximum_square_input": 4198095,
+    "distinct_elementary_splits": 209,
+    "maximum_elementary_split": 4198095,
+    "distinct_unramified_elementary_splits": 63,
+    "largest_unramified_split": 4196087,
+    "work": {
+      "parameter_triples": 571,
+      "signed_divisor_tests": 121282,
+      "irreducible_by_spacing": 160,
+      "elementary_gcds": 452,
+      "parameter_divisibility_tests": 4384,
+      "integer_root_tests": 452
+    }
+  },
+  "rows": [
+    {
+      "id": "holdout-31-1",
+      "n": "1734799141",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          0,
+          0
+        ],
+        "quartic_mod5_tests": 10,
+        "h": -1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 5,
+          "irreducible_by_spacing": 2,
+          "irreducible_cubics_scanned": 2,
+          "parameter_divisibility_tests": 13,
+          "signed_divisor_tests": 156,
+          "no_representative": 5
+        },
+        "trace_hits": []
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [],
+      "remaining_cofactor": "1734799141"
+    },
+    {
+      "id": "holdout-31-2",
+      "n": "1915966849",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          125,
+          63
+        ],
+        "quartic_mod5_tests": 10,
+        "h": -1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 5,
+          "parameter_divisibility_tests": 58,
+          "integer_root_tests": 18,
+          "irreducible_cubics_scanned": 5,
+          "signed_divisor_tests": 338,
+          "irreducible_by_spacing": 2,
+          "no_representative": 2
+        },
+        "trace_hits": []
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [],
+      "remaining_cofactor": "1915966849"
+    },
+    {
+      "id": "holdout-31-3",
+      "n": "1566558233",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          119,
+          55
+        ],
+        "quartic_mod5_tests": 10,
+        "h": -1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 3,
+          "no_representative": 6,
+          "irreducible_by_spacing": 3,
+          "irreducible_cubics_scanned": 3,
+          "parameter_divisibility_tests": 21,
+          "signed_divisor_tests": 402
+        },
+        "trace_hits": []
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [],
+      "remaining_cofactor": "1566558233"
+    },
+    {
+      "id": "holdout-31-4",
+      "n": "1746445889",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          121,
+          57
+        ],
+        "quartic_mod5_tests": 10,
+        "h": -1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 5,
+          "irreducible_by_spacing": 1,
+          "irreducible_cubics_scanned": 1,
+          "parameter_divisibility_tests": 7,
+          "signed_divisor_tests": 30,
+          "no_representative": 6
+        },
+        "trace_hits": []
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [],
+      "remaining_cofactor": "1746445889"
+    },
+    {
+      "id": "holdout-39-1",
+      "n": "538242898783",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          157,
+          251
+        ],
+        "quartic_mod5_tests": 10,
+        "h": 1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 5,
+          "no_representative": 7
+        },
+        "trace_hits": []
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [],
+      "remaining_cofactor": "538242898783"
+    },
+    {
+      "id": "holdout-39-2",
+      "n": "465584196557",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          151,
+          75
+        ],
+        "quartic_mod5_tests": 10,
+        "h": -1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 5,
+          "no_representative": 7
+        },
+        "trace_hits": []
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [],
+      "remaining_cofactor": "465584196557"
+    },
+    {
+      "id": "holdout-39-3",
+      "n": "537292063219",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          0,
+          0
+        ],
+        "quartic_mod5_tests": 10,
+        "h": 1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 5,
+          "no_representative": 7
+        },
+        "trace_hits": []
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [],
+      "remaining_cofactor": "537292063219"
+    },
+    {
+      "id": "holdout-39-4",
+      "n": "416781386033",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          153,
+          77
+        ],
+        "quartic_mod5_tests": 10,
+        "h": -1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 5,
+          "irreducible_by_spacing": 3,
+          "irreducible_cubics_scanned": 3,
+          "parameter_divisibility_tests": 21,
+          "signed_divisor_tests": 486,
+          "no_representative": 4
+        },
+        "trace_hits": []
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [],
+      "remaining_cofactor": "416781386033"
+    },
+    {
+      "id": "holdout-79-1",
+      "n": "428359581921440786444417",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          313,
+          157
+        ],
+        "quartic_mod5_tests": 10,
+        "h": -1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 6,
+          "no_representative": 6
+        },
+        "trace_hits": []
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [],
+      "remaining_cofactor": "428359581921440786444417"
+    },
+    {
+      "id": "arbitrary-divisor-window-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          0,
+          0
+        ],
+        "quartic_mod5_tests": 10,
+        "h": 1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 5,
+          "no_representative": 7
+        },
+        "trace_hits": []
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [],
+      "remaining_cofactor": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    },
+    {
+      "id": "arbitrary-divisor-window-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          8189,
+          4095
+        ],
+        "quartic_mod5_tests": 10,
+        "h": -1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 9,
+          "no_representative": 3
+        },
+        "trace_hits": []
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [],
+      "remaining_cofactor": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    },
+    {
+      "id": "public-base-989",
+      "n": "989",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          39,
+          21
+        ],
+        "quartic_mod5_tests": 10,
+        "h": -1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 1,
+          "irreducible_by_spacing": 5,
+          "irreducible_cubics_scanned": 5,
+          "parameter_divisibility_tests": 32,
+          "signed_divisor_tests": 590,
+          "no_representative": 6
+        },
+        "trace_hits": []
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [],
+      "remaining_cofactor": "989"
+    },
+    {
+      "id": "universal-91",
+      "n": "91",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 7,
+        "ordinary_traces": [
+          "20"
+        ],
+        "ordinary_gcds": [
+          [
+            91,
+            1
+          ]
+        ],
+        "direct_gcds": [
+          [
+            91,
+            1
+          ]
+        ],
+        "projected_traces": [
+          "56"
+        ],
+        "projected_gcds": [
+          [
+            91,
+            7
+          ]
+        ],
+        "root_nodes": [
+          23,
+          41
+        ],
+        "quartic_mod5_tests": 10,
+        "h": 1,
+        "complementary_traces": [
+          -9
+        ],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": [
+          [
+            91,
+            1
+          ]
+        ]
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "irreducible_by_spacing": 6,
+          "irreducible_cubics_scanned": 6,
+          "signed_divisor_tests": 212,
+          "elementary_gcds": 2,
+          "parameter_divisibility_tests": 28,
+          "no_representative": 6
+        },
+        "trace_hits": [
+          {
+            "r": 1,
+            "t": 4,
+            "h": 1,
+            "w": 23,
+            "u": -9,
+            "gcds": [
+              91,
+              1
+            ],
+            "readouts": {
+              "rational_square_root": 2,
+              "norm": "1",
+              "derivative_gcd": 7,
+              "ordinary_traces": [
+                "20"
+              ],
+              "ordinary_gcds": [
+                [
+                  91,
+                  1
+                ]
+              ],
+              "direct_gcds": [
+                [
+                  91,
+                  1
+                ]
+              ],
+              "projected_traces": [
+                "56"
+              ],
+              "projected_gcds": [
+                [
+                  91,
+                  7
+                ]
+              ],
+              "root_nodes": [
+                23,
+                41
+              ],
+              "quartic_mod5_tests": 10
+            }
+          }
+        ]
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [
+        "7",
+        "13"
+      ],
+      "remaining_cofactor": "1"
+    },
+    {
+      "id": "varied-semiprime-1883747",
+      "n": "1883747",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          85,
+          135
+        ],
+        "quartic_mod5_tests": 10,
+        "h": 1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 2,
+          "irreducible_by_spacing": 4,
+          "irreducible_cubics_scanned": 5,
+          "parameter_divisibility_tests": 37,
+          "signed_divisor_tests": 362,
+          "no_representative": 5,
+          "elementary_gcds": 2,
+          "integer_root_tests": 6
+        },
+        "trace_hits": [
+          {
+            "r": 1,
+            "t": 196,
+            "h": 9,
+            "w": 9611,
+            "u": -3,
+            "gcds": [
+              1193,
+              1579
+            ],
+            "readouts": {
+              "rational_square_root": 14,
+              "norm": "81",
+              "derivative_gcd": 1,
+              "ordinary_traces": [
+                "-9512"
+              ],
+              "ordinary_gcds": [
+                [
+                  1193,
+                  1579
+                ]
+              ],
+              "direct_gcds": [
+                [
+                  1193,
+                  1579
+                ]
+              ],
+              "projected_traces": [
+                "-1921694"
+              ],
+              "projected_gcds": [
+                [
+                  1193,
+                  1579
+                ]
+              ],
+              "root_nodes": [
+                63,
+                155
+              ],
+              "quartic_mod5_tests": 10
+            }
+          }
+        ]
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": []
+      },
+      "split": [
+        "1193",
+        "1579"
+      ],
+      "remaining_cofactor": "1"
+    },
+    {
+      "id": "diagonal-s2",
+      "n": "1007",
+      "universal": {
+        "rational_square_root": 2,
+        "norm": "1",
+        "derivative_gcd": 1,
+        "ordinary_traces": [],
+        "ordinary_gcds": [],
+        "direct_gcds": [],
+        "projected_traces": [],
+        "projected_gcds": [],
+        "root_nodes": [
+          41,
+          85
+        ],
+        "quartic_mod5_tests": 10,
+        "h": 1,
+        "complementary_traces": [],
+        "work": {
+          "signed_divisor_tests": 6
+        },
+        "elementary_gcds": []
+      },
+      "varied": {
+        "parameter_pairs": 12,
+        "work": {
+          "representative_visits": 864,
+          "height_exclusions": 1,
+          "irreducible_by_spacing": 9,
+          "irreducible_cubics_scanned": 9,
+          "parameter_divisibility_tests": 42,
+          "signed_divisor_tests": 362,
+          "elementary_gcds": 2,
+          "no_representative": 2
+        },
+        "trace_hits": [
+          {
+            "r": 1,
+            "t": 16,
+            "h": 1,
+            "w": 63,
+            "u": 1,
+            "gcds": [
+              19,
+              53
+            ],
+            "readouts": {
+              "rational_square_root": 4,
+              "norm": "1",
+              "derivative_gcd": 1,
+              "ordinary_traces": [
+                "-54"
+              ],
+              "ordinary_gcds": [
+                [
+                  19,
+                  53
+                ]
+              ],
+              "direct_gcds": [
+                [
+                  19,
+                  53
+                ]
+              ],
+              "projected_traces": [
+                "-744"
+              ],
+              "projected_gcds": [
+                [
+                  19,
+                  53
+                ]
+              ],
+              "root_nodes": [
+                33,
+                69
+              ],
+              "quartic_mod5_tests": 10
+            }
+          }
+        ]
+      },
+      "diagonal": {
+        "integer_cube_roots": 1,
+        "integer_square_roots": 1,
+        "factors": [
+          "19",
+          "53"
+        ],
+        "fermat_tests_to_displayed_pair": "5"
+      },
+      "split": [
+        "19",
+        "53"
+      ],
+      "remaining_cofactor": "1"
+    }
+  ]
+}

@@ -8,6 +8,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**One midpoint gave both primes of two new, deliberately constructed 2,048-bit numbers.** The product predicts roughly how far apart the primes are. On the second example the prediction was wrong by a 338-bit number and still pointed to the correct midpoint. This search missed both ordinary controls. [Small worked example, full-size prime certificates and coverage](discoveries/factoring-near-a-cube-root-gap.md)
+
 **We can force one of the two checks to pass on a large input.** On each ordinary 2,048-bit input, choosing the base produced 130 smooth ordinary numbers. None of the 53,950 rows passed both required checks. Lean also bounds the chance of finding even one qualifying row across a much larger class of cubic polynomials. [What choosing the polynomial buys us](discoveries/choosing-a-cubic-and-reading-its-square.md)
 
 **Eight extra checks singled out the clue that gave 36,151 × 52,999.** We started with their product, 1,915,966,849. An earlier test admitted 511 combinations, and its first 32 all failed. Eight checks left one combination, which gave both primes. Across eight independently drawn 31-bit products the cubic search factored one and the comparison quadratic sieve factored six. On both ordinary 2,048-bit inputs the cubic search found no usable rows. [How the clue works and what Lean verified](discoveries/cubic-square-relations.md)

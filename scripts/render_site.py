@@ -829,6 +829,30 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'cubic-forced':
+        w = result['cubic_forced']
+        if w['mode'] == 'universal':
+            count = (f'Rows 1 and 4 · {w["work"]["signed_divisor_tests"]} signed divisor tests'
+                     f' · {len(w["complementary_traces"])} matching traces'
+                     f' · {sum(w["root_nodes"])} quartic isolation intervals')
+            if w.get('first_proper_gcd_source') == 'derivative':
+                count += f' · ordinary gcds {w["ordinary_gcds"][0]} · derivative gcd {w["derivative_gcd"]}'
+            if 'forced_nonsquare' in result:
+                link = escape(result['forced_nonsquare']['proof'])
+                evidence += f'<p><a href="{link}">Check why these rows give no cubic square</a></p>'
+        elif w['mode'] == 'varied':
+            count = (f'{w["parameter_pairs"]} parameter pairs · {w["work"]["representative_visits"]} shifts'
+                     f' · {w["work"].get("signed_divisor_tests",0)} signed divisor tests'
+                     f' · {len(w["trace_hits"])} matching traces')
+            if w.get('first_proper_gcd_source'):
+                count += f' · first proper gcd from the {escape(w["first_proper_gcd_source"])} test'
+        else:
+            label = 'One diagonal shape tested' if w['mode'] == 'diagonal' else 'One predicted midpoint tested'
+            count = (f'{label} · {w["integer_cube_roots"]} integer cube root'
+                     f' · {w["integer_square_roots"]} integer square root'
+                     f'{"s" if w["integer_square_roots"] != 1 else ""}')
+        if 'fermat_tests_to_displayed_pair' in w:
+            count += f' · ordinary Fermat positions to these factors {compact_count(int(w["fermat_tests_to_displayed_pair"]))}'
     elif result['method'] == 'cubic-readout':
         w = result['cubic_readout']
         count = f'{w.get("tested", 0):,} combinations tested · {w.get("counts", {}).get("square", 0):,} unit square relations'

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A public cube-root estimate recovered both primes on two deliberately constructed 2,048-bit inputs. One lies outside the original polynomial family, and its predicted half-gap differs from the actual one by a 338-bit integer. Both ordinary controls remain unresolved. [Derivation, exact receipts and population bounds](factoring-near-a-cube-root-gap.md)
+
 Choosing the base gave 130 smooth ordinary values on each full-size control. All failed the accompanying algebraic check. A bound for arbitrary choices of cubic polynomial explains the limitation at the tested sizes. When a square already exists, a new trace calculation recovers two real small-example relations that the original gcds lost. [Counts, proofs and paired readouts](choosing-a-cubic-and-reading-its-square.md)
 
 A cubic square relation recovered 36,151 and 52,999 from their product alone. Eight small-prime tests reduced 511 possible combinations to the successful one. At the same row budget the comparison quadratic sieve found six of the eight small products, including this one. Neither full-size input yielded a row. [Search, comparison and formal results](cubic-square-relations.md)
