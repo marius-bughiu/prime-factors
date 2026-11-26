@@ -8,6 +8,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**A match between two square tests can guarantee a factor.** On 43,423, the match gave 173 and 251. Two constructions guarantee an unequal match on more than 28% of the full-size prime pairs we study. On a new 2,048-bit example, the guaranteed answer lay more than $2^{1010}$ positions into the search. [When the guarantee helps and what it costs](discoveries/when-two-negative-remainders-give-a-factor.md)
+
 **Choosing a multiplier found all eight fresh 79-bit examples.** The ordinary search found three at the same number of positions and seven when it received enough extra positions to match both marks and divisions. Neither full-size example produced a single usable row. [What the selector changes and what the comparison cost](discoveries/multipliers-for-polynomial-relations.md)
 
 **Five remainders together gave 8,928,473 = 2,543 × 3,511.** They were the only group among the sixteen tested remainders whose product was a square. On two ordinary 2,048-bit inputs, small primes certified that all 65,535 combinations missed. Even with a perfect choice of combination, this method covers fewer than one in $2^{277}$ eligible full-size products. [Examples and checked limit](discoveries/all-subsets-of-sixteen-square-tests.md) · [Three-test comparison](discoveries/testing-three-weighted-remainders.md)

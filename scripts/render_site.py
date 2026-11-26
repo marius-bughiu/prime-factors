@@ -829,6 +829,16 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'mixed-negative-template':
+        w = result['mixed_negative_template']
+        count = (f'Odd factor-sum candidates · {w["visited"]:,} tested · '
+                 f'{compact_count(int(w["candidates_left"]))} later candidates')
+    elif result['method'] == 'mixed-negative-norms':
+        w = result['mixed_negative_norms']['work']
+        count = (f'{w["label_gcds"]:,} label gcds · {w["square_tests"]:,} pairs tested · '
+                 f'{w["unequal_matches"]:,} unequal square matches · {w["splits"]:,} splitting matches')
+        if result.get('mixed_relation'):
+            evidence += f'<p><a href="{escape(result["mixed_relation"])}">Download the two-remainder proof</a></p>'
     elif result['method'] == 'multiplier-polynomials':
         w = result['multiplier_polynomials']
         choice = 'Factor during selection' if w['multiplier'] is None else f'Multiplier {w["multiplier"]}'

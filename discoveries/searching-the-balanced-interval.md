@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Two negative remainders gave a factor on 43,423. For every balanced product congruent to 5 modulo 12 an unequal match provably exists, although finding the guaranteed one on a new full-size control would take more than $2^{1010}$ visits in the tested order. [Proof, small census and public scan](when-two-negative-remainders-give-a-factor.md)
+
 A small-prime multiplier score found 12 products in 24 trials. The ordinary search found 10 when given enough blocks to match both sieve marks and divisions on each input. Both full-size products remained unresolved. [Measured work and finite-interval theory](multipliers-for-polynomial-relations.md)
 
 Allowing up to 33,554,432 remainders per product and free choice of every combination still gives a successful fraction below $2^{-60}$ for the specified family. [Exact integer calculation and proof status](finite-budgets-for-weighted-subsets.md)

@@ -125,7 +125,7 @@ def base_two_certificate(record):
     return lines
 
 
-def lean_source(record):
+def lean_source(record, *, include_signature=True):
     lines = [
         'import PrimeFactors.Certificate', 'import PrimeFactors.PartialOrder', 'import PrimeFactors.FixedBaseSignature',
         'import Mathlib.Tactic.NormNum.Prime', 'import Mathlib.Tactic.ReduceModChar', '',
@@ -164,7 +164,8 @@ def lean_source(record):
         'theorem factorization : ExactFactorization controlProduct [left1024, right1024] :=',
         '  ExactFactorization.cons (n := right1024) left1024_prime',
         '    (.cons (n := 1) right1024_prime exactFactorization_nil)', '',
-        '#print axioms factorization', '', *base_two_certificate(record), 'end PrimeFactors.Generated', '',
+        '#print axioms factorization', '', *(base_two_certificate(record) if include_signature else []),
+        'end PrimeFactors.Generated', '',
     ])
     return '\n'.join(lines)
 

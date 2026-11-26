@@ -102,6 +102,8 @@ from experiments.fraction_chains import search as fraction_chain_search
 from experiments.pair_class_search import search as same_source_pair_search
 from experiments.guided_pairs import cover as guided_pair_cover
 from experiments.seed_gap_sieve import search as seed_gap_search
+from experiments.mixed_negative_templates import scan as mixed_template_search
+from experiments.mixed_negative_norms import search as mixed_negative_search, witness_lean as mixed_negative_witness
 from experiments.multiplier_polynomials import search as multiplier_polynomial_search
 from experiments.polynomial_relations import search as polynomial_relation_search
 from experiments.polynomial_packet import search as polynomial_packet_search
@@ -1379,6 +1381,26 @@ end PrimeFactors.Generated
         work.update(coefficient=case['coefficient'], max_norm=case['max_norm'],
                     max_lifts=case['max_lifts'])
         result = certify_split(case, proof, factor, elapsed, 'polynomial_packet', work)
+    elif method == 'mixed-negative-template':
+        work = mixed_template_search(int(case['n']), case['max_tests'])
+        elapsed = time.perf_counter() - start
+        factors = work.pop('factors', [])
+        work['candidates_left'] = str(work.pop('remaining'))
+        agree(case, work, work.keys())
+        result = certify_split(case, proof, factors[0] if factors else None, elapsed,
+                               'mixed_negative_template', dict(work, max_tests=case['max_tests']))
+    elif method == 'mixed-negative-norms':
+        n = int(case['n'])
+        work = mixed_negative_search(n, case['width'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, ('factor_source', 'work', 'split_witness'))
+        result = certify_split(case, proof, factor, elapsed, 'mixed_negative_norms', work)
+        if work['split_witness'] is not None:
+            relation = proof.with_name(f'{name}-relation.lean')
+            relation.write_text(mixed_negative_witness(n, work['split_witness']))
+            verify_file(relation, 'PrimeFactors.Generated.MixedNegative.witness')
+            result['mixed_relation'] = f'proofs/{relation.name}'
     elif method == 'multiplier-polynomials':
         work = multiplier_polynomial_search(int(case['n']), case['arm'], bound=case['bound'],
                                            radius=case['radius'], blocks=case['blocks'])
@@ -1681,6 +1703,8 @@ def main():
                              ('seed-gap-sieve.json', 'seed-gap-sieve'),
                              ('polynomial-relations.json', 'polynomial-relations'),
                              ('multiplier-polynomials.json', 'multiplier-polynomials'),
+                             ('mixed-negative-norms.json', 'mixed-negative-norms'),
+                             ('mixed-negative-template.json', 'mixed-negative-template'),
                              ('norm-directions.json', 'norm-directions'),
                              ('norm-curves.json', 'norm-curves'),
                              ('universal-norms.json', 'universal-norms'),
