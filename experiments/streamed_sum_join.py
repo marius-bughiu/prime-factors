@@ -4,6 +4,7 @@ from bisect import bisect_left, bisect_right
 from collections import defaultdict
 from math import gcd, isqrt
 
+from . import trace_folded_right
 from .collision_gap_readout import factor_from_gap
 from .sum_signature_join import _contributions, _fermat_preflight, _plan_crt
 
@@ -87,14 +88,36 @@ def _matching_sums(rows, buckets, lower, width, period, n, wrap_power, max_visit
             break
 
 
+def _ordinary_events(n, base, lower, width, period, left, right, max_visited, reverse, work):
+    wrap_power = pow(base, period, n)
+    inverse_period = pow(wrap_power, -1, n)
+    start = pow(base, n+1-lower, n)
+    work.update(setup_powers=2, signature_inversions=1)
+    right_digits = _digits(right, period, n, base, inverse_period, False, work)
+    left_digits = _digits(left, period, n, base, inverse_period, True, work)
+
+    buckets = defaultdict(list)
+    for b, key in _rows(right_digits, period, n, 1, work):
+        buckets[key].append(b)
+        work['right_built'] += 1
+    for bucket in buckets.values():
+        bucket.sort()
+    work['right_buckets'] = len(buckets)
+
+    rows = _rows(left_digits, period, n, start, work, reverse)
+    for total in _matching_sums(rows, buckets, lower, width, period, n, wrap_power, max_visited, work):
+        yield total, None
+
+
 def search(n, *, candidates=(2,), max_right=65536, max_visited=65536, reverse=False,
-           gap_trial_cap=None):
+           gap_trial_cap=None, folded=False):
     """Factor a balanced odd semiprime using a publicly screened base.
 
     candidates is a finite sequence of integer bases. max_right caps stored residues and
     max_visited caps streamed left leaves. If supplied, gap_trial_cap caps total tested
     trial divisors across all gap attempts. After a bounded gap miss the scan still tests
     every new match it visits, retrying the auxiliary factorization only on a shorter gcd.
+    With folded=True the storage cap counts centered sign orbits in the right table.
     """
     if n < 9 or n % 2 == 0 or min(max_right, max_visited) < 0:
         raise ValueError('expected an odd input at least 9 and nonnegative table and row caps')
@@ -113,6 +136,10 @@ def search(n, *, candidates=(2,), max_right=65536, max_visited=65536, reverse=Fa
                 matching_sums_seen=0, square_tests=0, first_two_sums=[], gap_attempts=0,
                 gap_budget_stops=0, gap_gcds=0, trial_divisions=0, factor_divisions=0,
                 order_powers=0, projection_gcds=0, gap_square_tests=0, last_gap=None)
+    if folded:
+        work.update(folded=True, ordinary_right_potential=None, right_fixed_points=None,
+                    fixed_residue_probes=0, right_orbits_visited=0, trace_center=None,
+                    trace_matches=0, orientation_powers=0, trace_gcds=0, trace_split=None)
     bases = []
 
     def result(outcome, factor=None):
@@ -138,32 +165,23 @@ def search(n, *, candidates=(2,), max_right=65536, max_visited=65536, reverse=Fa
         sizes.reverse()
     left, right = halves
     work.update(left_potential=sizes[0], right_potential=sizes[1], left_unvisited=sizes[0])
+    if folded:
+        orbits, fixed = trace_folded_right.orbit_count(right, lower, sizes[1])
+        probes_checked = len(right) + sum(m % 2 == 0 for m, _ in right)
+        work.update(ordinary_right_potential=sizes[1], right_potential=orbits,
+                    right_fixed_points=fixed, fixed_residue_probes=probes_checked)
     if not max_visited:
         return result('left_limit')
     if work['right_potential'] > max_right:
         return result('right_limit')
 
-    wrap_power = pow(base, period, n)
-    inverse_period = pow(wrap_power, -1, n)
-    start = pow(base, n+1-lower, n)
-    work.update(setup_powers=2, signature_inversions=1)
-    right_digits = _digits(right, period, n, base, inverse_period, False, work)
-    left_digits = _digits(left, period, n, base, inverse_period, True, work)
-
-    buckets = defaultdict(list)
-    for b, key in _rows(right_digits, period, n, 1, work):
-        buckets[key].append(b)
-        work['right_built'] += 1
-    for bucket in buckets.values():
-        bucket.sort()
-    work['right_buckets'] = len(buckets)
-
     anchor = None
     second = None
     gap = 0
-    rows = _rows(left_digits, period, n, start, work, reverse)
-    matches = _matching_sums(rows, buckets, lower, width, period, n, wrap_power, max_visited, work)
-    for s in matches:
+    generate = trace_folded_right.events if folded else _ordinary_events
+    for s, split in generate(n, base, lower, width, period, left, right, max_visited, reverse, work):
+        if split is not None:
+            return result('trace_mixed_gcd', split)
         work['matching_sums_seen'] += 1
         if len(work['first_two_sums']) < 2:
             work['first_two_sums'].append(str(s))

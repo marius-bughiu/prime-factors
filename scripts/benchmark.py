@@ -51,6 +51,7 @@ from experiments import geometric_precision_readout, geometric_sum_readout, radi
 from scripts import near_smooth_certificate, trace_cover_certificate
 from scripts.geometric_wheel_benchmark import wheel_readout_case
 from scripts.streamed_sum_benchmark import streamed_sum_case
+from scripts.trace_folded_benchmark import trace_folded_case
 from experiments import trace_cover, trace_cover_transfer
 from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
@@ -574,6 +575,8 @@ def run_case(case, method, proofs):
         result = certify_split(case, proof, search.pop('factor'), elapsed, 'geometric_sum_readout', search)
     elif method == 'streamed-sum-join':
         result = streamed_sum_case(case, proof, agree, certify_split)
+    elif method == 'trace-folded-right':
+        result = trace_folded_case(case, proof, agree, certify_split)
     elif method == 'collision-gap-readout':
         n = int(case['n'])
         bases = tuple(map(int, case['bases']))
@@ -1582,6 +1585,7 @@ def main():
                              ('sum-signature.json', 'sum-signature'),
                              ('collision-gap-readout.json', 'collision-gap-readout'),
                              ('streamed-sum-join.json', 'streamed-sum-join'),
+                             ('trace-folded-right.json', 'trace-folded-right'),
                              ('geometric-sum-readout.json', 'geometric-sum-readout'),
                              ('geometric-sum-binary.json', 'geometric-sum-binary'),
                              ('geometric-readout-blocks.json', 'geometric-readout-blocks'),

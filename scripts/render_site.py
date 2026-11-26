@@ -558,8 +558,8 @@ def case_row(result):
             count += ' · proper gcd at k = ' + ', '.join(str(hit['k']) for hit in search['quotient_hits'])
         if search['equal_hits']:
             count += ' · full gcd at k = ' + ', '.join(str(hit['k']) for hit in search['equal_hits'])
-    elif result['method'] == 'streamed-sum-join':
-        search = result['streamed_sum_join']
+    elif result['method'] in ('streamed-sum-join', 'trace-folded-right'):
+        search = result[result['method'].replace('-', '_')]
         work = search['work']
         count = (f'{escape(search["outcome"].replace("_", " "))} · '
                  f'{work["right_built"]:,} right entries built · {work["left_visited"]:,} left rows visited'
@@ -567,6 +567,9 @@ def case_row(result):
         if work['right_potential'] is not None:
             count += (f' · required table {compact_count(work["right_potential"])} · cap {work["max_right"]:,}'
                       f' · {compact_count(work["left_unvisited"])} left rows unvisited')
+        if result['method'] == 'trace-folded-right' and work['right_potential'] is not None:
+            count += (f' · unfolded table {compact_count(work["ordinary_right_potential"])}'
+                      f' · {work["trace_gcds"]} trace gcds')
     elif result['method'] == 'collision-gap-readout':
         search = result['collision_gap_readout']
         work = search['work']

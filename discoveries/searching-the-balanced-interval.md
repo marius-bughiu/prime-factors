@@ -1,6 +1,6 @@
 # Searching the balanced interval
 
-One public Fermat test can certify a base before building the two residue tables. When many sums match, the gcd of their differences supplies an exponent that resolves them. The two full-size tables remain beyond budget. [One-base guarantee and measured work](finishing-a-factor-sum-search-with-one-witness.md)
+The latest search can stream one list and pair entries in the other. This halved the stored table on two ordinary small products whose factors Lean checked. On each 2,048-bit input the reduced table still exceeds $10^{134}$ entries. [Method and measured costs](finishing-a-factor-sum-search-with-one-witness.md#pairing-entries-to-halve-the-stored-table)
 
 A more precise geometric reading can recover the factor sum even when several positions match at both primes. We derive a public precision that suffices for one small lattice and exhibit both the recovered root and the cost of obtaining the reading. [Repeated matches and small integer roots](recovering-a-factor-sum-from-repeated-matches.md)
 
