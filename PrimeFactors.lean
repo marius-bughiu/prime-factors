@@ -151,6 +151,8 @@ import PrimeFactors.PartialOrderLift
 import PrimeFactors.QuantilePopulationBounds
 import PrimeFactors.QuantileResidueBins
 import PrimeFactors.SquareRootPhasePopulation
+import PrimeFactors.JointSquareRootPhase
+import PrimeFactors.OrderTorsionCeiling
 import PrimeFactors.QuantileThetaBounds
 import PrimeFactors.LiftedWheelPeriod
 import PrimeFactors.ReusableSumBase

@@ -4,6 +4,8 @@ On small products, a square root whose fractional part is above one half looks l
 
 For the project's population of 2,048-bit products, we obtain a stronger conclusion. Even with the **first 300 bits after the binary point in the square root**, the outer search window remains more likely for *every* possible reading. For this two-way prediction, always choosing the outer window achieves the best population accuracy attainable from those bits. Its advantage over an even guess is tiny. This result is unconditional. The argument combines a prime-count estimate, an exponential-sum bound and finite arithmetic checked in Lean. [Search windows and input distribution](where-to-look-for-the-factor-sum.md) · [Phase transfer](../PrimeFactors/SquareRootPhasePopulation.lean) · [Prime-count error transfer](../PrimeFactors/QuantileThetaBounds.lean)
 
+The same decision holds when a rule reads 177 fractional bits from each of two different square roots, $\sqrt N$ and $\sqrt{2N}$. [Joint estimate and its scope](two-square-root-readings.md)
+
 ## The public reading
 
 Draw distinct 1,024-bit primes $p<q$ uniformly among pairs with $N=pq$ of exactly 2,048 bits. Set $X=2^{1023}$ and $B=2X$. The central window contains the true sum precisely when $q^3\le B^2p$. Denote that event by $G$ and its complement by $J$.

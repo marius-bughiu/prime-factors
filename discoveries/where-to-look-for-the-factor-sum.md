@@ -88,3 +88,5 @@ On the same eight 80-bit products we also tried moving the end of the first sear
 | Right entries built | 13,776 | 13,776 | 13,776 |
 
 Each ordering recovered all eight products. Seven hit in the first period-aligned piece, including one input whose sieve period exceeded the whole interval and hence had just one piece. The aligned pieces can be substantially wider than the median window. These eight measurements establish a saving in lookups and multiplications for this sample. They supply no general runtime guarantee. [Inputs, exact widths and counters](../research/lifted-period-census.json) · [Reproduce and verify](../experiments/lifted_period_census.py)
+
+Combining exact orders from several bases gives the least common multiple of their individual sum congruences. Even knowing the size of the subgroup they generate adds no further divisibility to this calculation. On 12,403 the residues themselves reveal 79 through a separate gcd. [Order bound and worked comparison](what-combining-orders-can-reveal.md)
