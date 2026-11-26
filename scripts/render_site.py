@@ -847,6 +847,14 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'adaptive-quartic':
+        w = result['adaptive_quartic']
+        count = f'{w["jacobi_tests"]} sign tests · {w["gcd_calls"]} gcds'
+        if w['selected_width'] is not None:
+            count += f' · selected width {w["selected_width"]}'
+        if w['successful_checks']:
+            checks = ', '.join(escape(label.replace('_', ' ')) for label in w['successful_checks'])
+            count += f' · factor found by {checks}'
     elif result['method'] == 'block-subresultant':
         w = result['block_subresultant']
         count = f'{w["rectangle_positions"]} consecutive candidates · block gcd {w["rectangle_gcd"]}'

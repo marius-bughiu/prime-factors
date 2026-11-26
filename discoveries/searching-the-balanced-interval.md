@@ -2,6 +2,8 @@
 
 Given only the product of two independently chosen 1,024-bit primes, we still do not know how to recover its factors in an hour on a PC. Some constructed examples have extra relationships that reveal the primes. The independently generated 2,048-bit example remains unresolved from the product alone. [How the example was generated and checked](certified-fresh-control.md)
 
+Using the distance from $N$ to the square just below it gave the factors 509 on 156,263 and 4,483 on 34,756,699 with two different formulas. Over all eligible 2,048-bit pairs, each formula succeeds on fewer than one pair in $2^{1003}$. A broader theorem also bounds a menu of one billion polynomial formulas. [Examples, full small populations and scope of the bound](how-often-a-square-root-formula-can-factor.md)
+
 For that product, one polynomial identity certifies that the first 64 integers in the feasible interval are coprime to the input. A separate degree bound explains why three blocks moving by the same step size up to sign cannot share one cubic address in the proposed representation. [Block exclusion and verification cost](certifying-a-block-of-missed-divisors.md) · [Limits of grouping more blocks](how-far-factorial-blocks-can-fold.md)
 
 On 157,601, a polynomial built from nine unsuccessful divisor candidates revealed the factor 439. On three complete populations of small products this additional check gave 13 splits. Testing the adjacent integer gave 59 different splits. [Formula, example and comparison](a-factor-outside-the-resultant-block.md)

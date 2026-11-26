@@ -280,6 +280,12 @@ import PrimeFactors.AffineFactorialAddress
 import PrimeFactors.FactorialBlockExclusion
 import PrimeFactors.BlockExclusionCheck
 import PrimeFactors.BlockSubresultantProbe
+import PrimeFactors.BlockProbePopulation
+import PrimeFactors.VariableBlockProbe
+import PrimeFactors.QuarticSquareRemainder
+import PrimeFactors.SquareRootPolynomialFormula
+import PrimeFactors.SquareRootFormulaPopulation
+import PrimeFactors.SquareRootFormulaExamples
 import PrimeFactors.HasseHankelBilinear
 import PrimeFactors.HankelProbePolynomial
 import PrimeFactors.HankelProbePopulation

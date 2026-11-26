@@ -10,6 +10,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**A formula using the distance to the nearest square below the product found a factor of 156,263.** Subtracting $395^2$ gives 238. The gcd of $238^2-22\cdot238+1$ with the product is 509. The same formula missed both 2,048-bit examples. Across all full-width prime pairs it can succeed on fewer than one pair in $2^{1004}$. [Calculation and proof of how rarely it works](discoveries/how-often-a-square-root-formula-can-factor.md)
+
 **Checking each block before building the next one saved work on fresh inputs.** On eight 80-bit products, the new search found every prime pair using 22.6% fewer polynomial input coefficients in total. In one paired run CPU time fell from 20.77 to 15.99 seconds. None of eight fresh 96-bit products split under a fixed budget. At 2,048 bits we can bound mean savings on one part of the calculation, and finding the primes is still impractical. [How the search stops and what Lean checked](discoveries/stopping-a-factorial-search-when-it-reaches-a-prime.md)
 
 **Testing the smallest candidates first reaches the answer sooner on average.** Across distinct 1,024-bit prime pairs with a 2,048-bit product, the smaller prime occurs before 48.5% of the way through the feasible odd candidates on average. Counting from the top takes more than 51.5%. Each product receives equal weight. The interval is still much too large to scan in practice. [What was counted and which steps Lean verifies](discoveries/where-the-smaller-prime-appears-in-order.md)

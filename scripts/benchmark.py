@@ -57,6 +57,7 @@ from scripts.short_pascal_benchmark import short_case
 from scripts.growing_factorial_benchmark import growing_case
 from scripts.block_exclusion_benchmark import block_exclusion_case
 from scripts.block_subresultant_benchmark import block_subresultant_case
+from scripts.adaptive_quartic_benchmark import adaptive_quartic_case
 from scripts.cubic_trace_benchmark import cubic_bases_case, cubic_readout_case, cubic_trace_case
 from scripts.streamed_sum_benchmark import streamed_sum_case
 from scripts.trace_folded_benchmark import trace_folded_case
@@ -1445,6 +1446,8 @@ end PrimeFactors.Generated
         result = block_exclusion_case(case, proof, agree, certify_split)
     elif method == 'block-subresultant':
         result = block_subresultant_case(case, proof, agree, certify_split)
+    elif method == 'adaptive-quartic':
+        result = adaptive_quartic_case(case, proof, agree, certify_split)
     elif method == 'short-pascal':
         result = short_case(case, proof, agree, certify_split)
     elif method == 'cubic-forced':
@@ -1784,6 +1787,7 @@ def main():
                              ('growing-factorial.json', 'growing-factorial'),
                              ('block-exclusion.json', 'block-exclusion'),
                              ('block-subresultant.json', 'block-subresultant'),
+                             ('adaptive-quartic.json', 'adaptive-quartic'),
                              ('translated-hasse.json', 'translated-hasse'),
                              ('hasse-hankel-probe.json', 'hasse-hankel-probe'),
                              ('cubic-readout.json', 'cubic-readout'),
