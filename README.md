@@ -8,6 +8,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**Making a multiplier almost as large as the product still left a narrow search.** Two of these tests split 10,961 into 97 and 113. Ordinary Fermat search found those same primes on its first try. Even allowing the product to choose from the largest parameter range we studied, Lean bounds the chance of a split below one in $2^{229}$ on the target population. [How the large multipliers simplify](discoveries/affine-multipliers-in-the-product.md)
+
 **Two failed square tests can still give a factor.** On 559,697 neither remainder was a square, but their product was. One gcd gave 887, and division gave 631. We also constructed a 2,048-bit example where it works. Its primes are far apart, but we chose their ratio. This was rare in an exhaustive comparison of smaller numbers. Even greatly expanding the same two searches leaves almost all ordinary 2,048-bit products beyond their reach. [Worked example and construction](discoveries/factoring-with-two-weighted-square-tests.md) · [How often any two weights can work](discoveries/how-often-two-weighted-remainders-can-split-a-product.md)
 
 **The square root gave a misleading clue on small examples.** At 2,048 bits, even the first 300 fractional bits of the square root cannot improve the choice between our two windows over always choosing the outer window. This statement covers uniformly drawn eligible prime pairs. A fresh sample of 65,536 smaller products gave the simple high-bit prediction 49.95% accuracy. [What the proof establishes and how the test was run](discoveries/what-the-square-root-reveals-about-the-gap.md)

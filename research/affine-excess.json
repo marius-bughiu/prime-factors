@@ -1,0 +1,431 @@
+{
+  "reproduce": "python3 -m experiments.affine_excess",
+  "exhaustive": [
+    {
+      "factor_bits": 7,
+      "source_limit": 4,
+      "labels_per_source": 1,
+      "counts": {
+        "eligible": 42,
+        "ordinary": 30,
+        "raw": 25,
+        "stride": 26,
+        "affine_single": 3,
+        "zero_slope": 3,
+        "proportional": 0,
+        "nonsingular": 0,
+        "two_nonsquares": 0,
+        "beyond_baselines": 0
+      },
+      "work": {
+        "proposal_labels": 672,
+        "stride_gcds": 672,
+        "setup_gcds": 42,
+        "ceiling_roots": 0,
+        "distinct_labels": 527,
+        "duplicates": 145,
+        "pairs": 3048,
+        "zero_slope_pairs": 1688,
+        "proportional_pairs": 23,
+        "positive_nonsingular": 1337,
+        "signed_nonsingular": 0,
+        "proper_pair_minus": 12,
+        "proper_pair_plus": 12,
+        "proper_pair_either": 12,
+        "square_weight_pruned": 155,
+        "weight_product_roots": 1279,
+        "joint_square_tests": 1182,
+        "reconstructed_squares": 287,
+        "nonsingular_squares": 0,
+        "affine_single_roots": 527,
+        "affine_single_gcds": 342,
+        "pair_gcds": 574,
+        "ordinary_roots": 84,
+        "ordinary_gcds": 60,
+        "raw_label_roots": 359,
+        "raw_excess_roots": 359,
+        "raw_gcds": 74,
+        "stride_label_roots": 359,
+        "stride_excess_roots": 359,
+        "stride_setup_gcds": 359,
+        "stride_gcds_baseline": 84
+      },
+      "first_two_nonsquares": null
+    },
+    {
+      "factor_bits": 8,
+      "source_limit": 4,
+      "labels_per_source": 1,
+      "counts": {
+        "eligible": 148,
+        "ordinary": 71,
+        "raw": 67,
+        "stride": 91,
+        "affine_single": 7,
+        "zero_slope": 7,
+        "proportional": 0,
+        "nonsingular": 0,
+        "two_nonsquares": 0,
+        "beyond_baselines": 0
+      },
+      "work": {
+        "proposal_labels": 2368,
+        "stride_gcds": 2368,
+        "setup_gcds": 148,
+        "ceiling_roots": 0,
+        "distinct_labels": 1853,
+        "duplicates": 515,
+        "pairs": 10692,
+        "zero_slope_pairs": 5932,
+        "proportional_pairs": 77,
+        "positive_nonsingular": 4683,
+        "signed_nonsingular": 0,
+        "proper_pair_minus": 28,
+        "proper_pair_plus": 28,
+        "proper_pair_either": 28,
+        "square_weight_pruned": 531,
+        "weight_product_roots": 4469,
+        "joint_square_tests": 4152,
+        "reconstructed_squares": 993,
+        "nonsingular_squares": 0,
+        "affine_single_roots": 1853,
+        "affine_single_gcds": 1198,
+        "pair_gcds": 1986,
+        "ordinary_roots": 296,
+        "ordinary_gcds": 142,
+        "raw_label_roots": 1261,
+        "raw_excess_roots": 1261,
+        "raw_gcds": 170,
+        "stride_label_roots": 1261,
+        "stride_excess_roots": 1261,
+        "stride_setup_gcds": 1261,
+        "stride_gcds_baseline": 258
+      },
+      "first_two_nonsquares": null
+    },
+    {
+      "factor_bits": 9,
+      "source_limit": 4,
+      "labels_per_source": 1,
+      "counts": {
+        "eligible": 543,
+        "ordinary": 214,
+        "raw": 181,
+        "stride": 312,
+        "affine_single": 9,
+        "zero_slope": 9,
+        "proportional": 0,
+        "nonsingular": 0,
+        "two_nonsquares": 0,
+        "beyond_baselines": 0
+      },
+      "work": {
+        "proposal_labels": 8688,
+        "stride_gcds": 8688,
+        "setup_gcds": 543,
+        "ceiling_roots": 0,
+        "distinct_labels": 6793,
+        "duplicates": 1895,
+        "pairs": 39162,
+        "zero_slope_pairs": 21742,
+        "proportional_pairs": 277,
+        "positive_nonsingular": 17143,
+        "signed_nonsingular": 0,
+        "proper_pair_minus": 36,
+        "proper_pair_plus": 36,
+        "proper_pair_either": 36,
+        "square_weight_pruned": 1928,
+        "weight_product_roots": 16331,
+        "joint_square_tests": 15215,
+        "reconstructed_squares": 3571,
+        "nonsingular_squares": 0,
+        "affine_single_roots": 6793,
+        "affine_single_gcds": 4362,
+        "pair_gcds": 7142,
+        "ordinary_roots": 1086,
+        "ordinary_gcds": 428,
+        "raw_label_roots": 4621,
+        "raw_excess_roots": 4621,
+        "raw_gcds": 446,
+        "stride_label_roots": 4621,
+        "stride_excess_roots": 4621,
+        "stride_setup_gcds": 4621,
+        "stride_gcds_baseline": 718
+      },
+      "first_two_nonsquares": null
+    },
+    {
+      "factor_bits": 10,
+      "source_limit": 4,
+      "labels_per_source": 1,
+      "counts": {
+        "eligible": 1718,
+        "ordinary": 448,
+        "raw": 425,
+        "stride": 833,
+        "affine_single": 24,
+        "zero_slope": 24,
+        "proportional": 0,
+        "nonsingular": 0,
+        "two_nonsquares": 0,
+        "beyond_baselines": 0
+      },
+      "work": {
+        "proposal_labels": 27488,
+        "stride_gcds": 27488,
+        "setup_gcds": 1718,
+        "ceiling_roots": 0,
+        "distinct_labels": 21485,
+        "duplicates": 6003,
+        "pairs": 123816,
+        "zero_slope_pairs": 68760,
+        "proportional_pairs": 869,
+        "positive_nonsingular": 54187,
+        "signed_nonsingular": 0,
+        "proper_pair_minus": 96,
+        "proper_pair_plus": 96,
+        "proper_pair_either": 96,
+        "square_weight_pruned": 6065,
+        "weight_product_roots": 51621,
+        "joint_square_tests": 48122,
+        "reconstructed_squares": 11273,
+        "nonsingular_squares": 0,
+        "affine_single_roots": 21485,
+        "affine_single_gcds": 13792,
+        "pair_gcds": 22546,
+        "ordinary_roots": 3436,
+        "ordinary_gcds": 896,
+        "raw_label_roots": 14613,
+        "raw_excess_roots": 14613,
+        "raw_gcds": 1048,
+        "stride_label_roots": 14613,
+        "stride_excess_roots": 14613,
+        "stride_setup_gcds": 14613,
+        "stride_gcds_baseline": 1730
+      },
+      "first_two_nonsquares": null
+    }
+  ],
+  "enlarged": {
+    "factor_bits": 7,
+    "source_limit": 8,
+    "labels_per_source": 2,
+    "counts": {
+      "eligible": 42,
+      "ordinary": 30,
+      "raw": 42,
+      "stride": 42,
+      "affine_single": 23,
+      "zero_slope": 23,
+      "proportional": 0,
+      "nonsingular": 1,
+      "two_nonsquares": 1,
+      "beyond_baselines": 0
+    },
+    "work": {
+      "proposal_labels": 5376,
+      "stride_gcds": 2688,
+      "setup_gcds": 42,
+      "ceiling_roots": 0,
+      "distinct_labels": 4204,
+      "duplicates": 1172,
+      "pairs": 208319,
+      "zero_slope_pairs": 32120,
+      "proportional_pairs": 771,
+      "positive_nonsingular": 175428,
+      "signed_nonsingular": 0,
+      "proper_pair_minus": 298,
+      "proper_pair_plus": 298,
+      "proper_pair_either": 298,
+      "square_weight_pruned": 12064,
+      "weight_product_roots": 39492,
+      "joint_square_tests": 163364,
+      "reconstructed_squares": 2243,
+      "nonsingular_squares": 4,
+      "affine_single_roots": 4204,
+      "affine_single_gcds": 746,
+      "pair_gcds": 4494,
+      "ordinary_roots": 84,
+      "ordinary_gcds": 60,
+      "raw_label_roots": 2233,
+      "raw_excess_roots": 2233,
+      "raw_gcds": 484,
+      "stride_label_roots": 2233,
+      "stride_excess_roots": 2233,
+      "stride_setup_gcds": 2233,
+      "stride_gcds_baseline": 602
+    },
+    "first_two_nonsquares": {
+      "n": "10961",
+      "hits": {
+        "ordinary": {
+          "midpoint": "105",
+          "minus": "97",
+          "plus": "113"
+        },
+        "stride": {
+          "weight": 9,
+          "label": "630",
+          "minus": "97",
+          "plus": "113"
+        },
+        "raw": {
+          "weight": 20,
+          "label": "937",
+          "minus": "113",
+          "plus": "97"
+        },
+        "nonsingular": {
+          "rows": [
+            [
+              12,
+              5
+            ],
+            [
+              24,
+              26
+            ]
+          ],
+          "sources": [
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              1,
+              2,
+              1
+            ]
+          ],
+          "excesses": [
+            "526153",
+            "1052932"
+          ],
+          "root": "744314",
+          "minus": "97",
+          "plus": "113"
+        },
+        "two_nonsquares": {
+          "rows": [
+            [
+              12,
+              5
+            ],
+            [
+              24,
+              26
+            ]
+          ],
+          "sources": [
+            [
+              4,
+              8,
+              0
+            ],
+            [
+              1,
+              2,
+              1
+            ]
+          ],
+          "excesses": [
+            "526153",
+            "1052932"
+          ],
+          "root": "744314",
+          "minus": "97",
+          "plus": "113"
+        }
+      }
+    }
+  },
+  "controls": [
+    {
+      "id": "quantile-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "source_limit": 8,
+      "labels_per_source": 1,
+      "work": {
+        "proposal_labels": 64,
+        "stride_gcds": 64,
+        "setup_gcds": 1,
+        "ceiling_roots": 0,
+        "distinct_labels": 45,
+        "duplicates": 19,
+        "pairs": 990,
+        "zero_slope_pairs": 324,
+        "proportional_pairs": 5,
+        "positive_nonsingular": 661,
+        "signed_nonsingular": 0,
+        "proper_pair_minus": 0,
+        "proper_pair_plus": 0,
+        "proper_pair_either": 0,
+        "square_weight_pruned": 61,
+        "weight_product_roots": 216,
+        "joint_square_tests": 600,
+        "reconstructed_squares": 33,
+        "nonsingular_squares": 0,
+        "affine_single_roots": 45,
+        "affine_single_gcds": 16,
+        "pair_gcds": 66,
+        "ordinary_roots": 2,
+        "ordinary_gcds": 0,
+        "raw_label_roots": 26,
+        "raw_excess_roots": 26,
+        "raw_gcds": 0,
+        "stride_label_roots": 26,
+        "stride_excess_roots": 26,
+        "stride_setup_gcds": 26,
+        "stride_gcds_baseline": 0
+      },
+      "small_baseline_weights": 26,
+      "hits": {},
+      "remaining_pairs": 0,
+      "unresolved_cofactor": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    },
+    {
+      "id": "quantile-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "source_limit": 8,
+      "labels_per_source": 1,
+      "work": {
+        "proposal_labels": 64,
+        "stride_gcds": 64,
+        "setup_gcds": 1,
+        "ceiling_roots": 0,
+        "distinct_labels": 45,
+        "duplicates": 19,
+        "pairs": 990,
+        "zero_slope_pairs": 324,
+        "proportional_pairs": 6,
+        "positive_nonsingular": 660,
+        "signed_nonsingular": 0,
+        "proper_pair_minus": 0,
+        "proper_pair_plus": 0,
+        "proper_pair_either": 0,
+        "square_weight_pruned": 50,
+        "weight_product_roots": 241,
+        "joint_square_tests": 610,
+        "reconstructed_squares": 34,
+        "nonsingular_squares": 0,
+        "affine_single_roots": 45,
+        "affine_single_gcds": 16,
+        "pair_gcds": 68,
+        "ordinary_roots": 2,
+        "ordinary_gcds": 0,
+        "raw_label_roots": 26,
+        "raw_excess_roots": 26,
+        "raw_gcds": 0,
+        "stride_label_roots": 26,
+        "stride_excess_roots": 26,
+        "stride_setup_gcds": 26,
+        "stride_gcds_baseline": 0
+      },
+      "small_baseline_weights": 26,
+      "hits": {},
+      "remaining_pairs": 0,
+      "unresolved_cofactor": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    }
+  ]
+}

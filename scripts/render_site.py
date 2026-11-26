@@ -589,6 +589,14 @@ def case_row(result):
                  f' · {hybrid["work"]["extra_single_tests"]} extra single tests'
                  f' · sieved comparison used {sieved["extra_single_tests"]} roots'
                  f' across {sieved["screened_single_labels"]} labels')
+    elif result['method'] == 'affine-excess':
+        search = result['affine_excess']
+        work = search['work']
+        count = (f'{work["distinct_labels"]:,} distinct affine rows · {work["pairs"]:,} pairs visited'
+                 f' · {search["remaining_pairs"]:,} pairs remaining · {work["joint_square_tests"]:,} joint square tests'
+                 f' · {work["pair_gcds"]:,} sign gcds · {search["small_baseline_weights"]:,} small weights compared')
+        if 'ordinary' in search['hits']:
+            count += ' · first ordinary Fermat test also split this input'
     elif result['method'] == 'weighted-square-pair':
         work = result['weighted_square_pair']
         match = 'square' if work['square'] else 'nonsquare'

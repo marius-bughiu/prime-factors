@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A multiplier of the form $a^2N+b$ makes the first weighted remainder linear in the input. Combining two such remainders recovered 97 and 113 on a small example. Both ordinary 2,048-bit controls exhausted the search, and a population count explains the limitation even for much larger choices of $a,b$. [Derivation, coverage and comparisons](affine-multipliers-in-the-product.md)
+
 Combining two nonsquare remainders found 22 extra answers among 2,753,877 products of 16-bit primes. Trying the next ordinary sum found 96,821 extra answers. A target-size count bounds how often the combined test can succeed even with many labels on each side. [Proof, examples and comparison](factoring-with-two-weighted-square-tests.md) · [Choosing both weights after seeing the product](how-often-two-weighted-remainders-can-split-a-product.md)
 
 For two equally wide primes, a public window using at most a quarter of the sum span covers about half of uniformly sampled eligible pairs. Trying this window first took more row visits across eight held-out examples. [Population estimate, exact endpoints and costs](where-to-look-for-the-factor-sum.md)

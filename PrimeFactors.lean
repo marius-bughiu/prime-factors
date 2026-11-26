@@ -426,6 +426,9 @@ import PrimeFactors.WeightedMultiplierPopulation
 import PrimeFactors.WeightedMultiplierFiber
 import PrimeFactors.WeightedMultiplierCoverage
 import PrimeFactors.WeightedMultiplierLabels
+import PrimeFactors.AffineExcess
+import PrimeFactors.AffineExcessSingle
+import PrimeFactors.AffineExcessPopulation
 import PrimeFactors.LiftedPeriodTrace
 import PrimeFactors.WideModulus
 import PrimeFactors.WideScale

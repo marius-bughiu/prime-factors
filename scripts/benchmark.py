@@ -53,6 +53,7 @@ from scripts.geometric_wheel_benchmark import wheel_readout_case
 from scripts.streamed_sum_benchmark import streamed_sum_case
 from scripts.trace_folded_benchmark import trace_folded_case
 from scripts.factor_sum_quantile_benchmark import quantile_case
+from experiments.affine_excess import compare as compare_affine_excess
 from experiments.weighted_square_pairs import search as weighted_square_pair_search
 from experiments.weighted_pair_hybrid import run as weighted_menu_search
 from scripts.memory_partition_benchmark import memory_partition_case
@@ -605,6 +606,16 @@ def run_case(case, method, proofs):
         chosen = comparisons['hybrid']
         factor = int(chosen['divisor']) if chosen['divisor'] else None
         result = certify_split(case, proof, factor, chosen['seconds'], 'weighted_square_menu', comparisons)
+    elif method == 'affine-excess':
+        run = compare_affine_excess(int(case['n']), case['source_limit'], case['labels_per_source'])
+        elapsed = time.perf_counter() - start
+        agree(case, run, ['small_baseline_weights', 'remaining_pairs'])
+        agree(dict(id=name, **case['checks']), run['work'], case['checks'])
+        agree(case, {'hit_arms': sorted(run['hits'])}, ['hit_arms'])
+        pair_arms = ('nonsingular', 'zero_slope', 'proportional')
+        hit = next((run['hits'][arm] for arm in pair_arms if arm in run['hits']), {})
+        factor = hit.get('minus') or hit.get('plus')
+        result = certify_split(case, proof, factor, elapsed, 'affine_excess', run)
     elif method == 'weighted-square-pair':
         tick = time.perf_counter()
         work = weighted_square_pair_search(int(case['n']))
@@ -1628,6 +1639,7 @@ def main():
                              ('trace-folded-right.json', 'trace-folded-right'),
                              ('factor-sum-quantile.json', 'factor-sum-quantile'),
                              ('weighted-square-pairs.json', 'weighted-square-pair'),
+                             ('affine-excess.json', 'affine-excess'),
                              ('weighted-square-menu.json', 'weighted-square-menu'),
                              ('memory-partition-sum.json', 'memory-partition-sum'),
                              ('cyclotomic-sum-lift.json', 'cyclotomic-sum-lift'),
