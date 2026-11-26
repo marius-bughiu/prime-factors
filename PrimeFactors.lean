@@ -391,6 +391,10 @@ import PrimeFactors.CRTResidueAdvice
 import PrimeFactors.WeightedBaseOrder
 import PrimeFactors.WeightedBands
 import PrimeFactors.WeightedDivisorExclusion
+import PrimeFactors.MultiplierDivisorReach
+import PrimeFactors.SharedMultiplierCoverage
+import PrimeFactors.DiscriminantRectangles
+import PrimeFactors.DiscriminantRectangle211
 import PrimeFactors.ArbitraryDivisorWindow
 import PrimeFactors.QuarticDivisorWindow
 import PrimeFactors.DivisorWindowRank
