@@ -1,6 +1,6 @@
 # The shortest repeating rule that separates the primes
 
-For 323, take the remainders 1, 2, 5, 16, 19 and 20 modulo 21. Between 16 and 31 the matching numbers are 16, 19, 20, 22, 23 and 26. Their product has gcd 19 with 323. The group also has a symmetry: if it contains a remainder $r$, it contains $21-r$. Both the symmetry and the separation can be found from 323 alone. [Lean calculation](../PrimeFactors/SymmetricDivisorSelector.lean)
+For 323, take the remainders 1, 2, 5, 16, 19 and 20 modulo 21. Between 16 and 31 the matching numbers are 16, 19, 20, 22, 23 and 26. Their product has gcd 19 with 323. The group also has a symmetry. Whenever it contains a remainder $r$, it contains $21-r$. Both the symmetry and the separation can be found from 323 alone. [Lean calculation](../PrimeFactors/SymmetricDivisorSelector.lean)
 
 ## When a rule exists
 
@@ -18,3 +18,17 @@ A unit is a square modulo an odd prime power exactly when it is a square modulo 
 We tried multiples of the existing wheel of 30 in ascending order, caching each small test. Once a period succeeds, we count both complementary groups over the possible range of either factor and evaluate the smaller group with the forward block algorithm. On the third product in the original 60-bit panel the unrestricted rule used period 30 and recovered 686,073,211. Requiring reflection raised the least period to 330 and recovered the other prime, 1,043,950,709. The forward evaluator used 37,814 and 34,428 polynomial input coefficients respectively. The longer period also sieves multiples of 11. These measurements use the forward evaluator in both cases. [Reproducible search](../experiments/separating_period.py) · [Benchmark cases and expected factors](../benchmarks/separating-period.json)
 
 On the fresh 2,048-bit input, 60 is the shortest multiple of 30 permitting reflection and separation. On the crossed input, the least such period is 330, down from the previous sign rule's period of 660. Lean checked that the selected periods work and every smaller coprime multiple fails the required test on each input. Both group products exceeded the two-million-unit evaluation budget before the first candidate. The least-period proof gives no factor on either input.
+
+## Does the shorter rule find factors faster?
+
+In an initial experiment on eight 60-bit products, a Jacobi group used 6.67% fewer polynomial input coefficients than searching the smaller-factor interval when both used wheel 210 and the same forward search that checks for factors as each block is built. On wheel 30 the ordinary interval used fewer coefficients. Folding whole blocks and evaluating them completely favored the ordinary interval on each of the eight products at both wheel settings. [Matched searches and counts](../research/character-column-backends.json)
+
+We froze wheel 210, the forward search with growing blocks, the two-million-unit budget, and the seed for 32 new 60-bit products. On these inputs the initial saving reversed. A follow-up applied the least-period rule to the same 32 products, using the smaller complementary group by candidate count. Search used only the products. Lean checked the factors found. [Independent Jacobi validation](../research/character-growing-validation.json) · [Least-period follow-up](../research/least-period-growing.json)
+
+| Search on the 32 products | Pairs recovered | Polynomial input coefficients | Charged arithmetic units |
+|---|---:|---:|---:|
+| Ordinary smaller-factor interval | 32 | 837,596 | 8,886,442 |
+| Original Jacobi group | 31 | 910,762 | 10,822,114 |
+| Least-period group | 32 | 936,604 | 10,301,836 |
+
+The missed product was 636,051,676,003,808,521. The original group's period of 4,620 gave a conservative cost estimate of 2,003,122, just over budget, so that run stopped before interpolation. The shortest rule used period 2,310 and recovered 892,242,809. Across all 32 products the shortest rule still used 11.8% more polynomial inputs and 15.9% more charged arithmetic than the ordinary search. These units track the operations listed in the replay, including preprocessing and polynomial evaluation. [Search, charging rules and comparison](../experiments/least_period_growing.py)

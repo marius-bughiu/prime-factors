@@ -1,0 +1,2961 @@
+{
+  "source": "character-divisor-comparison.json",
+  "wheels": [
+    30,
+    210
+  ],
+  "max_work": 2000000,
+  "diagnostic_cap": 2000000,
+  "rows": [
+    {
+      "id": "2",
+      "n": "587630649147298903",
+      "wheel_30": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 30,
+          "rho": 8,
+          "candidates": "58479205",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "59",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "512",
+                "offsets": "4096",
+                "integers": "30719",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 765085897,
+            "outcome": "product_gcd",
+            "visited": "58479205",
+            "planned_work": "723250",
+            "convolution_inputs": 38830,
+            "table_limit": 14275,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 765085897,
+            "outcome": "product_gcd",
+            "visited": "58479205",
+            "planned_work": "682296",
+            "convolution_inputs": 34734,
+            "table_limit": 16324,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 765085897,
+            "outcome": "prefix_gcd",
+            "visited": "58474502",
+            "planned_work": "723250",
+            "convolution_inputs": 38830,
+            "table_limit": 14275,
+            "checkpoints": 12
+          },
+          "growing_folded": {
+            "factor": 765085897,
+            "outcome": "prefix_gcd",
+            "visited": "58474496",
+            "planned_work": "682296",
+            "convolution_inputs": 34734,
+            "table_limit": 16324,
+            "checkpoints": 10
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 60,
+          "rho": 8,
+          "candidates": "70195751",
+          "checks": {
+            "reflections": [
+              30
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "119",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "512",
+                "offsets": "4096",
+                "integers": "61439",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 768058399,
+            "outcome": "product_gcd",
+            "visited": "70195751",
+            "planned_work": "815246",
+            "convolution_inputs": 41690,
+            "table_limit": 17135,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 768058399,
+            "outcome": "product_gcd",
+            "visited": "70195751",
+            "planned_work": "774292",
+            "convolution_inputs": 37594,
+            "table_limit": 19184,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 768058399,
+            "outcome": "prefix_gcd",
+            "visited": "70189063",
+            "planned_work": "815246",
+            "convolution_inputs": 41690,
+            "table_limit": 17135,
+            "checkpoints": 12
+          },
+          "growing_folded": {
+            "factor": 768058399,
+            "outcome": "prefix_gcd",
+            "visited": "70189056",
+            "planned_work": "774292",
+            "convolution_inputs": 37594,
+            "table_limit": 19184,
+            "checkpoints": 10
+          }
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 210,
+          "rho": 48,
+          "candidates": "50125032",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "419",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "64",
+                "offsets": "3072",
+                "integers": "26879",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 765085897,
+            "outcome": "product_gcd",
+            "visited": "50125032",
+            "planned_work": "703394",
+            "convolution_inputs": 34520,
+            "table_limit": 16315,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 765085897,
+            "outcome": "product_gcd",
+            "visited": "50125032",
+            "planned_work": "671820",
+            "convolution_inputs": 31362,
+            "table_limit": 17852,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 765085897,
+            "outcome": "prefix_gcd",
+            "visited": "50122791",
+            "planned_work": "703394",
+            "convolution_inputs": 34520,
+            "table_limit": 16315,
+            "checkpoints": 9
+          },
+          "growing_folded": {
+            "factor": 765085897,
+            "outcome": "prefix_gcd",
+            "visited": "50122752",
+            "planned_work": "671820",
+            "convolution_inputs": 31362,
+            "table_limit": 17852,
+            "checkpoints": 7
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 420,
+          "rho": 48,
+          "candidates": "60167786",
+          "checks": {
+            "reflections": [
+              210
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "839",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "64",
+                "offsets": "3072",
+                "integers": "53759",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 768058399,
+            "outcome": "product_gcd",
+            "visited": "60167786",
+            "planned_work": "815646",
+            "convolution_inputs": 37788,
+            "table_limit": 19583,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 768058399,
+            "outcome": "product_gcd",
+            "visited": "60167786",
+            "planned_work": "784072",
+            "convolution_inputs": 34630,
+            "table_limit": 21120,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 768058399,
+            "outcome": "prefix_gcd",
+            "visited": "60162067",
+            "planned_work": "815646",
+            "convolution_inputs": 37788,
+            "table_limit": 19583,
+            "checkpoints": 9
+          },
+          "growing_folded": {
+            "factor": 768058399,
+            "outcome": "prefix_gcd",
+            "visited": "60162048",
+            "planned_work": "784072",
+            "convolution_inputs": 34630,
+            "table_limit": 21120,
+            "checkpoints": 7
+          }
+        }
+      },
+      "factors": [
+        "765085897",
+        "768058399"
+      ],
+      "remaining": [],
+      "certificate_sha256": "82be258f93c19ce6b335e01f92f9f0b3bc9ea0d8555c1edea4fa3608c183e86b"
+    },
+    {
+      "id": "5",
+      "n": "718683803544489109",
+      "wheel_30": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 30,
+          "rho": 8,
+          "candidates": "47580201",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "59",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "512",
+                "offsets": "4096",
+                "integers": "30719",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 707682559,
+            "outcome": "product_gcd",
+            "visited": "47580201",
+            "planned_work": "626906",
+            "convolution_inputs": 36170,
+            "table_limit": 11615,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 707682559,
+            "outcome": "product_gcd",
+            "visited": "47580201",
+            "planned_work": "585952",
+            "convolution_inputs": 32074,
+            "table_limit": 13664,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 707682559,
+            "outcome": "prefix_gcd",
+            "visited": "16781314",
+            "planned_work": "626906",
+            "convolution_inputs": 20458,
+            "table_limit": 8193,
+            "checkpoints": 11
+          },
+          "growing_folded": {
+            "factor": 707682559,
+            "outcome": "prefix_gcd",
+            "visited": "47579136",
+            "planned_work": "585952",
+            "convolution_inputs": 32074,
+            "table_limit": 13664,
+            "checkpoints": 10
+          }
+        },
+        "clipped": {
+          "d": 2,
+          "sign": 1,
+          "period": 120,
+          "rho": 16,
+          "candidates": "53922048",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "16",
+                "integers": "239",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "256",
+                "offsets": "4096",
+                "integers": "61439",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 707682559,
+            "outcome": "product_gcd",
+            "visited": "53922048",
+            "planned_work": "678398",
+            "convolution_inputs": 37676,
+            "table_limit": 13163,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 707682559,
+            "outcome": "product_gcd",
+            "visited": "53922048",
+            "planned_work": "637264",
+            "convolution_inputs": 33562,
+            "table_limit": 15212,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 707682559,
+            "outcome": "prefix_gcd",
+            "visited": "16781320",
+            "planned_work": "678398",
+            "convolution_inputs": 20416,
+            "table_limit": 8193,
+            "checkpoints": 10
+          },
+          "growing_folded": {
+            "factor": 707682559,
+            "outcome": "prefix_gcd",
+            "visited": "53919744",
+            "planned_work": "637264",
+            "convolution_inputs": 33562,
+            "table_limit": 15212,
+            "checkpoints": 9
+          }
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 210,
+          "rho": 48,
+          "candidates": "40783030",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "419",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "64",
+                "offsets": "3072",
+                "integers": "26879",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 707682559,
+            "outcome": "product_gcd",
+            "visited": "40783030",
+            "planned_work": "636350",
+            "convolution_inputs": 31478,
+            "table_limit": 13273,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 707682559,
+            "outcome": "product_gcd",
+            "visited": "40783030",
+            "planned_work": "604776",
+            "convolution_inputs": 28320,
+            "table_limit": 14810,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 707682559,
+            "outcome": "prefix_gcd",
+            "visited": "9440265",
+            "planned_work": "636350",
+            "convolution_inputs": 15132,
+            "table_limit": 6145,
+            "checkpoints": 8
+          },
+          "growing_folded": {
+            "factor": 707682559,
+            "outcome": "prefix_gcd",
+            "visited": "40777728",
+            "planned_work": "604776",
+            "convolution_inputs": 28320,
+            "table_limit": 14810,
+            "checkpoints": 7
+          }
+        },
+        "clipped": {
+          "d": 2,
+          "sign": 1,
+          "period": 840,
+          "rho": 96,
+          "candidates": "46218898",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "96",
+                "integers": "1679",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "32",
+                "offsets": "3072",
+                "integers": "53759",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 707682559,
+            "outcome": "product_gcd",
+            "visited": "46218898",
+            "planned_work": "715512",
+            "convolution_inputs": 33006,
+            "table_limit": 15043,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 707682559,
+            "outcome": "product_gcd",
+            "visited": "46218898",
+            "planned_work": "682958",
+            "convolution_inputs": 29750,
+            "table_limit": 16580,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 707682559,
+            "outcome": "prefix_gcd",
+            "visited": "9440332",
+            "planned_work": "715512",
+            "convolution_inputs": 14890,
+            "table_limit": 6145,
+            "checkpoints": 7
+          },
+          "growing_folded": {
+            "factor": 707682559,
+            "outcome": "prefix_gcd",
+            "visited": "46215168",
+            "planned_work": "682958",
+            "convolution_inputs": 29750,
+            "table_limit": 16580,
+            "checkpoints": 6
+          }
+        }
+      },
+      "factors": [
+        "707682559",
+        "1015545451"
+      ],
+      "remaining": [],
+      "certificate_sha256": "d44f12ea2f3792901c413b2aceff47cc38a9a45dc44cdb2cc6bd6e00e5c7e38e"
+    },
+    {
+      "id": "6",
+      "n": "716226615049356599",
+      "wheel_30": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 30,
+          "rho": 8,
+          "candidates": "47803657",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "59",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "512",
+                "offsets": "4096",
+                "integers": "30719",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 686073211,
+            "outcome": "product_gcd",
+            "visited": "47803657",
+            "planned_work": "642050",
+            "convolution_inputs": 36224,
+            "table_limit": 11669,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 686073211,
+            "outcome": "product_gcd",
+            "visited": "47803657",
+            "planned_work": "601096",
+            "convolution_inputs": 32128,
+            "table_limit": 13718,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 686073211,
+            "outcome": "prefix_gcd",
+            "visited": "16781316",
+            "planned_work": "642050",
+            "convolution_inputs": 20458,
+            "table_limit": 8193,
+            "checkpoints": 11
+          },
+          "growing_folded": {
+            "factor": 686073211,
+            "outcome": "prefix_gcd",
+            "visited": "47800320",
+            "planned_work": "601096",
+            "convolution_inputs": 32128,
+            "table_limit": 13718,
+            "checkpoints": 10
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 60,
+          "rho": 8,
+          "candidates": "54227174",
+          "checks": {
+            "reflections": [
+              30
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "119",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "512",
+                "offsets": "4096",
+                "integers": "61439",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 686073211,
+            "outcome": "product_gcd",
+            "visited": "54227174",
+            "planned_work": "691888",
+            "convolution_inputs": 37792,
+            "table_limit": 13237,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 686073211,
+            "outcome": "product_gcd",
+            "visited": "54227174",
+            "planned_work": "650934",
+            "convolution_inputs": 33696,
+            "table_limit": 15286,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 686073211,
+            "outcome": "prefix_gcd",
+            "visited": "4196358",
+            "planned_work": "691888",
+            "convolution_inputs": 10216,
+            "table_limit": 4097,
+            "checkpoints": 10
+          },
+          "growing_folded": {
+            "factor": 686073211,
+            "outcome": "prefix_gcd",
+            "visited": "54222848",
+            "planned_work": "650934",
+            "convolution_inputs": 33696,
+            "table_limit": 15286,
+            "checkpoints": 10
+          }
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 210,
+          "rho": 48,
+          "candidates": "40974564",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "419",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "64",
+                "offsets": "3072",
+                "integers": "26879",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 686073211,
+            "outcome": "product_gcd",
+            "visited": "40974564",
+            "planned_work": "607698",
+            "convolution_inputs": 31542,
+            "table_limit": 13337,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 686073211,
+            "outcome": "product_gcd",
+            "visited": "40974564",
+            "planned_work": "576124",
+            "convolution_inputs": 28384,
+            "table_limit": 14874,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 686073211,
+            "outcome": "prefix_gcd",
+            "visited": "9440280",
+            "planned_work": "607698",
+            "convolution_inputs": 15132,
+            "table_limit": 6145,
+            "checkpoints": 8
+          },
+          "growing_folded": {
+            "factor": 686073211,
+            "outcome": "prefix_gcd",
+            "visited": "40974336",
+            "planned_work": "576124",
+            "convolution_inputs": 28384,
+            "table_limit": 14874,
+            "checkpoints": 7
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 420,
+          "rho": 48,
+          "candidates": "46480435",
+          "checks": {
+            "reflections": [
+              210
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "839",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "64",
+                "offsets": "3072",
+                "integers": "53759",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 686073211,
+            "outcome": "product_gcd",
+            "visited": "46480435",
+            "planned_work": "662956",
+            "convolution_inputs": 33334,
+            "table_limit": 15129,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 686073211,
+            "outcome": "product_gcd",
+            "visited": "46480435",
+            "planned_work": "631382",
+            "convolution_inputs": 30176,
+            "table_limit": 16666,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 686073211,
+            "outcome": "prefix_gcd",
+            "visited": "2360844",
+            "planned_work": "662956",
+            "convolution_inputs": 7450,
+            "table_limit": 3073,
+            "checkpoints": 7
+          },
+          "growing_folded": {
+            "factor": 686073211,
+            "outcome": "prefix_gcd",
+            "visited": "46479360",
+            "planned_work": "631382",
+            "convolution_inputs": 30176,
+            "table_limit": 16666,
+            "checkpoints": 7
+          }
+        }
+      },
+      "factors": [
+        "686073211",
+        "1043950709"
+      ],
+      "remaining": [],
+      "certificate_sha256": "361f9da2589042659147fdba8766c0d945abca4f04a807fe50f17ce94e56b760"
+    },
+    {
+      "id": "9",
+      "n": "600062511499731167",
+      "wheel_30": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 30,
+          "rho": 8,
+          "candidates": "57542735",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "59",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "512",
+                "offsets": "4096",
+                "integers": "30719",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 602478637,
+            "outcome": "product_gcd",
+            "visited": "57542735",
+            "planned_work": "701374",
+            "convolution_inputs": 38602,
+            "table_limit": 14047,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 602478637,
+            "outcome": "product_gcd",
+            "visited": "57542735",
+            "planned_work": "660420",
+            "convolution_inputs": 34506,
+            "table_limit": 16096,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 602478637,
+            "outcome": "prefix_gcd",
+            "visited": "16781319",
+            "planned_work": "701374",
+            "convolution_inputs": 20458,
+            "table_limit": 8193,
+            "checkpoints": 11
+          },
+          "growing_folded": {
+            "factor": 602478637,
+            "outcome": "prefix_gcd",
+            "visited": "57540608",
+            "planned_work": "660420",
+            "convolution_inputs": 34506,
+            "table_limit": 16096,
+            "checkpoints": 10
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 60,
+          "rho": 8,
+          "candidates": "68652008",
+          "checks": {
+            "reflections": [
+              30
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "119",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "512",
+                "offsets": "4096",
+                "integers": "61439",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 995989691,
+            "outcome": "product_gcd",
+            "visited": "68652008",
+            "planned_work": "782836",
+            "convolution_inputs": 41314,
+            "table_limit": 16759,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 995989691,
+            "outcome": "product_gcd",
+            "visited": "68652008",
+            "planned_work": "741882",
+            "convolution_inputs": 37218,
+            "table_limit": 18808,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 995989691,
+            "outcome": "prefix_gcd",
+            "visited": "68648968",
+            "planned_work": "782836",
+            "convolution_inputs": 41314,
+            "table_limit": 16759,
+            "checkpoints": 12
+          },
+          "growing_folded": {
+            "factor": 995989691,
+            "outcome": "prefix_gcd",
+            "visited": "68648960",
+            "planned_work": "741882",
+            "convolution_inputs": 37218,
+            "table_limit": 18808,
+            "checkpoints": 10
+          }
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 210,
+          "rho": 48,
+          "candidates": "49322344",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "419",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "64",
+                "offsets": "3072",
+                "integers": "26879",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 602478637,
+            "outcome": "product_gcd",
+            "visited": "49322344",
+            "planned_work": "709114",
+            "convolution_inputs": 34258,
+            "table_limit": 16053,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 602478637,
+            "outcome": "product_gcd",
+            "visited": "49322344",
+            "planned_work": "677540",
+            "convolution_inputs": 31100,
+            "table_limit": 17590,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 602478637,
+            "outcome": "prefix_gcd",
+            "visited": "49317894",
+            "planned_work": "709114",
+            "convolution_inputs": 34258,
+            "table_limit": 16053,
+            "checkpoints": 9
+          },
+          "growing_folded": {
+            "factor": 602478637,
+            "outcome": "prefix_gcd",
+            "visited": "49317888",
+            "planned_work": "677540",
+            "convolution_inputs": 31100,
+            "table_limit": 17590,
+            "checkpoints": 7
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 420,
+          "rho": 48,
+          "candidates": "58844578",
+          "checks": {
+            "reflections": [
+              210
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "839",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "64",
+                "offsets": "3072",
+                "integers": "53759",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 995989691,
+            "outcome": "product_gcd",
+            "visited": "58844578",
+            "planned_work": "790118",
+            "convolution_inputs": 37358,
+            "table_limit": 19153,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 995989691,
+            "outcome": "product_gcd",
+            "visited": "58844578",
+            "planned_work": "758544",
+            "convolution_inputs": 34200,
+            "table_limit": 20690,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 995989691,
+            "outcome": "prefix_gcd",
+            "visited": "58841115",
+            "planned_work": "790118",
+            "convolution_inputs": 37358,
+            "table_limit": 19153,
+            "checkpoints": 9
+          },
+          "growing_folded": {
+            "factor": 995989691,
+            "outcome": "prefix_gcd",
+            "visited": "58841088",
+            "planned_work": "758544",
+            "convolution_inputs": 34200,
+            "table_limit": 20690,
+            "checkpoints": 7
+          }
+        }
+      },
+      "factors": [
+        "602478637",
+        "995989691"
+      ],
+      "remaining": [],
+      "certificate_sha256": "fb34fe2e07644c08e32b358409e3814493727e2eab95df9ea2af7c5d737cab23"
+    },
+    {
+      "id": "12",
+      "n": "812461974774957707",
+      "wheel_30": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 30,
+          "rho": 8,
+          "candidates": "38587346",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "59",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "512",
+                "offsets": "4096",
+                "integers": "30719",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 877426489,
+            "outcome": "product_gcd",
+            "visited": "38587346",
+            "planned_work": "577184",
+            "convolution_inputs": 33974,
+            "table_limit": 9419,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 877426489,
+            "outcome": "product_gcd",
+            "visited": "38587346",
+            "planned_work": "536230",
+            "convolution_inputs": 29878,
+            "table_limit": 11468,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 877426489,
+            "outcome": "prefix_gcd",
+            "visited": "38584326",
+            "planned_work": "577184",
+            "convolution_inputs": 33974,
+            "table_limit": 9419,
+            "checkpoints": 12
+          },
+          "growing_folded": {
+            "factor": 877426489,
+            "outcome": "prefix_gcd",
+            "visited": "38584320",
+            "planned_work": "536230",
+            "convolution_inputs": 29878,
+            "table_limit": 11468,
+            "checkpoints": 10
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 60,
+          "rho": 8,
+          "candidates": "42277019",
+          "checks": {
+            "reflections": [
+              30
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "119",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "512",
+                "offsets": "4096",
+                "integers": "61439",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 925960163,
+            "outcome": "product_gcd",
+            "visited": "42277019",
+            "planned_work": "622022",
+            "convolution_inputs": 34874,
+            "table_limit": 10319,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 925960163,
+            "outcome": "product_gcd",
+            "visited": "42277019",
+            "planned_work": "581068",
+            "convolution_inputs": 30778,
+            "table_limit": 12368,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 925960163,
+            "outcome": "prefix_gcd",
+            "visited": "42270723",
+            "planned_work": "622022",
+            "convolution_inputs": 34874,
+            "table_limit": 10319,
+            "checkpoints": 12
+          },
+          "growing_folded": {
+            "factor": 925960163,
+            "outcome": "prefix_gcd",
+            "visited": "8392704",
+            "planned_work": "581068",
+            "convolution_inputs": 14312,
+            "table_limit": 5122,
+            "checkpoints": 9
+          }
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 210,
+          "rho": 48,
+          "candidates": "33074868",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "419",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "64",
+                "offsets": "3072",
+                "integers": "26879",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 877426489,
+            "outcome": "product_gcd",
+            "visited": "33074868",
+            "planned_work": "544610",
+            "convolution_inputs": 28970,
+            "table_limit": 10765,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 877426489,
+            "outcome": "product_gcd",
+            "visited": "33074868",
+            "planned_work": "513036",
+            "convolution_inputs": 25812,
+            "table_limit": 12302,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 877426489,
+            "outcome": "prefix_gcd",
+            "visited": "33073164",
+            "planned_work": "544610",
+            "convolution_inputs": 28970,
+            "table_limit": 10765,
+            "checkpoints": 9
+          },
+          "growing_folded": {
+            "factor": 877426489,
+            "outcome": "prefix_gcd",
+            "visited": "33073152",
+            "planned_work": "513036",
+            "convolution_inputs": 25812,
+            "table_limit": 12302,
+            "checkpoints": 7
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 420,
+          "rho": 48,
+          "candidates": "36237445",
+          "checks": {
+            "reflections": [
+              210
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "839",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "64",
+                "offsets": "3072",
+                "integers": "53759",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 925960163,
+            "outcome": "product_gcd",
+            "visited": "36237445",
+            "planned_work": "563952",
+            "convolution_inputs": 30000,
+            "table_limit": 11795,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 925960163,
+            "outcome": "product_gcd",
+            "visited": "36237445",
+            "planned_work": "532378",
+            "convolution_inputs": 26842,
+            "table_limit": 13332,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 925960163,
+            "outcome": "prefix_gcd",
+            "visited": "36237342",
+            "planned_work": "563952",
+            "convolution_inputs": 30000,
+            "table_limit": 11795,
+            "checkpoints": 9
+          },
+          "growing_folded": {
+            "factor": 925960163,
+            "outcome": "prefix_gcd",
+            "visited": "4721664",
+            "planned_work": "532378",
+            "convolution_inputs": 10436,
+            "table_limit": 3842,
+            "checkpoints": 6
+          }
+        }
+      },
+      "factors": [
+        "877426489",
+        "925960163"
+      ],
+      "remaining": [],
+      "certificate_sha256": "3a32e6018fc1f476f8194c8875b5d5ac384acb134a26808deb25308fee5f9327"
+    },
+    {
+      "id": "13",
+      "n": "1119830634859796303",
+      "wheel_30": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 30,
+          "rho": 8,
+          "candidates": "4079189",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "59",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "128",
+                "offsets": "1024",
+                "integers": "7679",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 1056447311,
+            "outcome": "product_gcd",
+            "visited": "4079189",
+            "planned_work": "195230",
+            "convolution_inputs": 10100,
+            "table_limit": 3981,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 1056447311,
+            "outcome": "product_gcd",
+            "visited": "4079189",
+            "planned_work": "184956",
+            "convolution_inputs": 9072,
+            "table_limit": 4494,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 1056447311,
+            "outcome": "prefix_gcd",
+            "visited": "4077574",
+            "planned_work": "195230",
+            "convolution_inputs": 10100,
+            "table_limit": 3981,
+            "checkpoints": 10
+          },
+          "growing_folded": {
+            "factor": 1056447311,
+            "outcome": "prefix_gcd",
+            "visited": "4077568",
+            "planned_work": "184956",
+            "convolution_inputs": 9072,
+            "table_limit": 4494,
+            "checkpoints": 8
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 60,
+          "rho": 8,
+          "candidates": "4109103",
+          "checks": {
+            "reflections": [
+              30
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "119",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "128",
+                "offsets": "1024",
+                "integers": "15359",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 1056447311,
+            "outcome": "product_gcd",
+            "visited": "4109103",
+            "planned_work": "191234",
+            "convolution_inputs": 10130,
+            "table_limit": 4011,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 1056447311,
+            "outcome": "product_gcd",
+            "visited": "4109103",
+            "planned_work": "180960",
+            "convolution_inputs": 9102,
+            "table_limit": 4524,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 1056447311,
+            "outcome": "prefix_gcd",
+            "visited": "4108295",
+            "planned_work": "191234",
+            "convolution_inputs": 10130,
+            "table_limit": 4011,
+            "checkpoints": 10
+          },
+          "growing_folded": {
+            "factor": 1056447311,
+            "outcome": "prefix_gcd",
+            "visited": "525312",
+            "planned_work": "180960",
+            "convolution_inputs": 3552,
+            "table_limit": 1282,
+            "checkpoints": 7
+          }
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 210,
+          "rho": 48,
+          "candidates": "3496448",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "419",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "16",
+                "offsets": "768",
+                "integers": "6719",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 1056447311,
+            "outcome": "product_gcd",
+            "visited": "3496448",
+            "planned_work": "197430",
+            "convolution_inputs": 8928,
+            "table_limit": 4551,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 1056447311,
+            "outcome": "product_gcd",
+            "visited": "3496448",
+            "planned_work": "188856",
+            "convolution_inputs": 8070,
+            "table_limit": 4936,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 1056447311,
+            "outcome": "prefix_gcd",
+            "visited": "3495955",
+            "planned_work": "197430",
+            "convolution_inputs": 8928,
+            "table_limit": 4551,
+            "checkpoints": 7
+          },
+          "growing_folded": {
+            "factor": 1056447311,
+            "outcome": "prefix_gcd",
+            "visited": "3495936",
+            "planned_work": "188856",
+            "convolution_inputs": 8070,
+            "table_limit": 4936,
+            "checkpoints": 5
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 420,
+          "rho": 48,
+          "candidates": "3522089",
+          "checks": {
+            "reflections": [
+              210
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "839",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "16",
+                "offsets": "768",
+                "integers": "13439",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 1056447311,
+            "outcome": "product_gcd",
+            "visited": "3522089",
+            "planned_work": "195556",
+            "convolution_inputs": 8962,
+            "table_limit": 4585,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 1056447311,
+            "outcome": "product_gcd",
+            "visited": "3522089",
+            "planned_work": "186982",
+            "convolution_inputs": 8104,
+            "table_limit": 4970,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 1056447311,
+            "outcome": "prefix_gcd",
+            "visited": "3522082",
+            "planned_work": "195556",
+            "convolution_inputs": 8962,
+            "table_limit": 4585,
+            "checkpoints": 7
+          },
+          "growing_folded": {
+            "factor": 1056447311,
+            "outcome": "prefix_gcd",
+            "visited": "3522048",
+            "planned_work": "186982",
+            "convolution_inputs": 8104,
+            "table_limit": 4970,
+            "checkpoints": 5
+          }
+        }
+      },
+      "factors": [
+        "1056447311",
+        "1059996673"
+      ],
+      "remaining": [],
+      "certificate_sha256": "4bd41021707179d741f42472ef8bf8de3ba966c17bf8ea19ea309638b1de4bb0"
+    },
+    {
+      "id": "14",
+      "n": "583207954785742373",
+      "wheel_30": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 30,
+          "rho": 8,
+          "candidates": "58806879",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "59",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "512",
+                "offsets": "4096",
+                "integers": "30719",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 678321991,
+            "outcome": "product_gcd",
+            "visited": "58806879",
+            "planned_work": "725454",
+            "convolution_inputs": 38910,
+            "table_limit": 14355,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 678321991,
+            "outcome": "product_gcd",
+            "visited": "58806879",
+            "planned_work": "684500",
+            "convolution_inputs": 34814,
+            "table_limit": 16404,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 678321991,
+            "outcome": "prefix_gcd",
+            "visited": "58802177",
+            "planned_work": "725454",
+            "convolution_inputs": 38910,
+            "table_limit": 14355,
+            "checkpoints": 12
+          },
+          "growing_folded": {
+            "factor": 678321991,
+            "outcome": "prefix_gcd",
+            "visited": "58802176",
+            "planned_work": "684500",
+            "convolution_inputs": 34814,
+            "table_limit": 16404,
+            "checkpoints": 10
+          }
+        },
+        "clipped": {
+          "d": 2,
+          "sign": 1,
+          "period": 120,
+          "rho": 16,
+          "candidates": "70744944",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "16",
+                "integers": "239",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "256",
+                "offsets": "4096",
+                "integers": "61439",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 678321991,
+            "outcome": "product_gcd",
+            "visited": "70744944",
+            "planned_work": "821686",
+            "convolution_inputs": 41782,
+            "table_limit": 17269,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 678321991,
+            "outcome": "product_gcd",
+            "visited": "70744944",
+            "planned_work": "780552",
+            "convolution_inputs": 37668,
+            "table_limit": 19318,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 678321991,
+            "outcome": "prefix_gcd",
+            "visited": "70737928",
+            "planned_work": "821686",
+            "convolution_inputs": 41782,
+            "table_limit": 17269,
+            "checkpoints": 11
+          },
+          "growing_folded": {
+            "factor": 678321991,
+            "outcome": "prefix_gcd",
+            "visited": "70737920",
+            "planned_work": "780552",
+            "convolution_inputs": 37668,
+            "table_limit": 19318,
+            "checkpoints": 9
+          }
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 210,
+          "rho": 48,
+          "candidates": "50405897",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "419",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "64",
+                "offsets": "3072",
+                "integers": "26879",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 678321991,
+            "outcome": "product_gcd",
+            "visited": "50405897",
+            "planned_work": "695416",
+            "convolution_inputs": 34612,
+            "table_limit": 16407,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 678321991,
+            "outcome": "product_gcd",
+            "visited": "50405897",
+            "planned_work": "663842",
+            "convolution_inputs": 31454,
+            "table_limit": 17944,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 678321991,
+            "outcome": "prefix_gcd",
+            "visited": "50405418",
+            "planned_work": "695416",
+            "convolution_inputs": 34612,
+            "table_limit": 16407,
+            "checkpoints": 9
+          },
+          "growing_folded": {
+            "factor": 678321991,
+            "outcome": "prefix_gcd",
+            "visited": "50405376",
+            "planned_work": "663842",
+            "convolution_inputs": 31454,
+            "table_limit": 17944,
+            "checkpoints": 7
+          }
+        },
+        "clipped": {
+          "d": 2,
+          "sign": 1,
+          "period": 840,
+          "rho": 96,
+          "candidates": "60638522",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "96",
+                "integers": "1679",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "32",
+                "offsets": "3072",
+                "integers": "53759",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 678321991,
+            "outcome": "product_gcd",
+            "visited": "60638522",
+            "planned_work": "844880",
+            "convolution_inputs": 37700,
+            "table_limit": 19737,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 678321991,
+            "outcome": "product_gcd",
+            "visited": "60638522",
+            "planned_work": "812326",
+            "convolution_inputs": 34444,
+            "table_limit": 21274,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 678321991,
+            "outcome": "prefix_gcd",
+            "visited": "60635156",
+            "planned_work": "844880",
+            "convolution_inputs": 37700,
+            "table_limit": 19737,
+            "checkpoints": 8
+          },
+          "growing_folded": {
+            "factor": 678321991,
+            "outcome": "prefix_gcd",
+            "visited": "60635136",
+            "planned_work": "812326",
+            "convolution_inputs": 34444,
+            "table_limit": 21274,
+            "checkpoints": 6
+          }
+        }
+      },
+      "factors": [
+        "678321991",
+        "859780403"
+      ],
+      "remaining": [],
+      "certificate_sha256": "a87c86726392175d8cf32d71282560fd7c16bd8f8628f75cc891e0181a18f066"
+    },
+    {
+      "id": "15",
+      "n": "727763119144097779",
+      "wheel_30": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 30,
+          "rho": 8,
+          "candidates": "46748830",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "59",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "512",
+                "offsets": "4096",
+                "integers": "30719",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 744098339,
+            "outcome": "product_gcd",
+            "visited": "46748830",
+            "planned_work": "646472",
+            "convolution_inputs": 35966,
+            "table_limit": 11411,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 744098339,
+            "outcome": "product_gcd",
+            "visited": "46748830",
+            "planned_work": "605518",
+            "convolution_inputs": 31870,
+            "table_limit": 13460,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 744098339,
+            "outcome": "prefix_gcd",
+            "visited": "46743554",
+            "planned_work": "646472",
+            "convolution_inputs": 35966,
+            "table_limit": 11411,
+            "checkpoints": 12
+          },
+          "growing_folded": {
+            "factor": 744098339,
+            "outcome": "prefix_gcd",
+            "visited": "46743552",
+            "planned_work": "605518",
+            "convolution_inputs": 31870,
+            "table_limit": 13460,
+            "checkpoints": 10
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 60,
+          "rho": 8,
+          "candidates": "52794613",
+          "checks": {
+            "reflections": [
+              30
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "119",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "512",
+                "offsets": "4096",
+                "integers": "61439",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 744098339,
+            "outcome": "product_gcd",
+            "visited": "52794613",
+            "planned_work": "688322",
+            "convolution_inputs": 37442,
+            "table_limit": 12887,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 744098339,
+            "outcome": "product_gcd",
+            "visited": "52794613",
+            "planned_work": "647368",
+            "convolution_inputs": 33346,
+            "table_limit": 14936,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 744098339,
+            "outcome": "prefix_gcd",
+            "visited": "16781317",
+            "planned_work": "688322",
+            "convolution_inputs": 20458,
+            "table_limit": 8193,
+            "checkpoints": 11
+          },
+          "growing_folded": {
+            "factor": 744098339,
+            "outcome": "prefix_gcd",
+            "visited": "52789248",
+            "planned_work": "647368",
+            "convolution_inputs": 33346,
+            "table_limit": 14936,
+            "checkpoints": 10
+          }
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 210,
+          "rho": 48,
+          "candidates": "40070426",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "419",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "64",
+                "offsets": "3072",
+                "integers": "26879",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 744098339,
+            "outcome": "product_gcd",
+            "visited": "40070426",
+            "planned_work": "630454",
+            "convolution_inputs": 31246,
+            "table_limit": 13041,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 744098339,
+            "outcome": "product_gcd",
+            "visited": "40070426",
+            "planned_work": "598880",
+            "convolution_inputs": 28088,
+            "table_limit": 14578,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 744098339,
+            "outcome": "prefix_gcd",
+            "visited": "40065053",
+            "planned_work": "630454",
+            "convolution_inputs": 31246,
+            "table_limit": 13041,
+            "checkpoints": 9
+          },
+          "growing_folded": {
+            "factor": 744098339,
+            "outcome": "prefix_gcd",
+            "visited": "40065024",
+            "planned_work": "598880",
+            "convolution_inputs": 28088,
+            "table_limit": 14578,
+            "checkpoints": 7
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 420,
+          "rho": 48,
+          "candidates": "45252525",
+          "checks": {
+            "reflections": [
+              210
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "839",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "64",
+                "offsets": "3072",
+                "integers": "53759",
+                "below_factor_floor": true,
+                "gcd": "1"
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": 744098339,
+            "outcome": "product_gcd",
+            "visited": "45252525",
+            "planned_work": "657096",
+            "convolution_inputs": 32934,
+            "table_limit": 14729,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": 744098339,
+            "outcome": "product_gcd",
+            "visited": "45252525",
+            "planned_work": "625522",
+            "convolution_inputs": 29776,
+            "table_limit": 16266,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": 744098339,
+            "outcome": "prefix_gcd",
+            "visited": "9440294",
+            "planned_work": "657096",
+            "convolution_inputs": 15132,
+            "table_limit": 6145,
+            "checkpoints": 8
+          },
+          "growing_folded": {
+            "factor": 744098339,
+            "outcome": "prefix_gcd",
+            "visited": "45250560",
+            "planned_work": "625522",
+            "convolution_inputs": 29776,
+            "table_limit": 16266,
+            "checkpoints": 7
+          }
+        }
+      },
+      "factors": [
+        "744098339",
+        "978046961"
+      ],
+      "remaining": [],
+      "certificate_sha256": "60f2bb26c8dfee21bf3acc95441b224e6d3a7175f5c320fb8ea737ddea143c20"
+    },
+    {
+      "id": "block-subresultant-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "wheel_30": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 30,
+          "rho": 8,
+          "candidates": "5035923337926542395797827608644542079531056757802899081833428615153063926479417952020985924976070242594462676513108299204712905720644821968346521947699404341383531969189977122236932916141912617421428618675436339661898507382605777390175146015431331652185381413063594993928256908119080756699577135269917489514",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "59",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "104748499452676539840422070298483172870932545473378073263465323779076281484949585756264642954428933028828373892081922272294952209468332577706512882860032",
+                "offsets": "837987995621412318723376562387865382967460363787024586107722590232610251879596686050117143635431464230626991136655378178359617675746660621652103062880256",
+                "integers": "6284909967160592390425324217908990372255952728402684395807919426744576889096975145375878577265735981729702433524915336337697132568099954662390772971601919",
+                "below_factor_floor": true
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "231141583051284869885613514281409912799661251807554442348655008899734646764228366996228353327880974602617540928772641384213993965225319168790942703271512960",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "222761703095070746698379748657531258969986648169684196487577782997408544245432400135727181891526659960311271017406087602430397788467852562574421672642720326",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "231141583051284869885613514281409912799661251807554442348655008899734646764228366996228353327880974602617540928772641384213993965225319168790942703271512960",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "222761703095070746698379748657531258969986648169684196487577782997408544245432400135727181891526659960311271017406087602430397788467852562574421672642720326",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 60,
+          "rho": 8,
+          "candidates": "5376931576865305338896545145546757691405499609841807155981658994015647314647701736414812552117705734143479303272395545122569351414342063707206902353806206773671343250380774515124095314155629286117078816553943870024692792268638886346282345847192201740348988541721460300986535058934687482462576147080487183768",
+          "checks": {
+            "reflections": [
+              30
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "119",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "104748499452676539840422070298483172870932545473378073263465323779076281484949585756264642954428933028828373892081922272294952209468332577706512882860032",
+                "offsets": "837987995621412318723376562387865382967460363787024586107722590232610251879596686050117143635431464230626991136655378178359617675746660621652103062880256",
+                "integers": "12569819934321184780850648435817980744511905456805368791615838853489153778193950290751757154531471963459404867049830672675394265136199909324781545943203839",
+                "below_factor_floor": true
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "240465683846436873720838603016641414903921429461228488949303417968359410003830468346552103340882767306361248359459976058008814452156291294944037341181980172",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "232085803890222750533604837392762761074246825823358243088226192066033307485034501486050931904528452664054978448093422276225218275398824688727516310553187538",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "240465683846436873720838603016641414903921429461228488949303417968359410003830468346552103340882767306361248359459976058008814452156291294944037341181980172",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "232085803890222750533604837392762761074246825823358243088226192066033307485034501486050931904528452664054978448093422276225218275398824688727516310553187538",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          }
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 210,
+          "rho": 48,
+          "candidates": "4316505718222750624969566521695321782455191506688199213000081670131197651268072530303702221408060207938110865582664256461182490617695561687154161669456632292614455973591408961917371070978782243504081673150374005424484434899376380620150125156083998559016041211197367137652791635530640648599637544517072133869",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "419",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "26187124863169134960105517574620793217733136368344518315866330944769070371237396439066160738607233257207093473020480568073738052367083144426628220715008",
+                "offsets": "1256981993432118478085064843581798074451190545680536879161583885348915377819395029075175715453147196345940486704983067267539426513619990932478154594320384",
+                "integers": "10998592442531036683244317381340733151447917274704697692663858996803009555919706504407787510215037968026979258668601838590969981994174920659183852700303359",
+                "below_factor_floor": true
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "186677074414249521682456694534034522195654602479126704283588493569816668935450116771761321114693053944130891955892613125358292092341904663941560358264934654",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "174107254479928336901606046098216541451142697022321335491972654716327515157256166481009563960161581980671487088842782452682897827205704754616778812321739900",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "186677074414249521682456694534034522195654602479126704283588493569816668935450116771761321114693053944130891955892613125358292092341904663941560358264934654",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "174107254479928336901606046098216541451142697022321335491972654716327515157256166481009563960161581980671487088842782452682897827205704754616778812321739900",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          }
+        },
+        "clipped": {
+          "d": -1,
+          "sign": -1,
+          "period": 420,
+          "rho": 48,
+          "candidates": "4608798494455976004768467267611506592633285379864406133698564852013411983983744345498410758958033486408696545662053324390773729783721768891891630588976748663146865643183521012963510269276253673814638985617666174306879536230261902582527725011879030063156275892904108829417030050515446413539350983211846157514",
+          "checks": {
+            "reflections": [
+              210
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "839",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "26187124863169134960105517574620793217733136368344518315866330944769070371237396439066160738607233257207093473020480568073738052367083144426628220715008",
+                "offsets": "1256981993432118478085064843581798074451190545680536879161583885348915377819395029075175715453147196345940486704983067267539426513619990932478154594320384",
+                "integers": "21997184885062073366488634762681466302895834549409395385327717993606019111839413008815575020430075936053958517337203677181939963988349841318367705400606719",
+                "below_factor_floor": true
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "202187796965535057770651546364556261590028360108505336487149076271138275383092112355511248426027362768114575231350227168062263725274765458593964194131388196",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "189617977031213872989800897928738280845516454651699967695533237417649121604898162064759491271495890804655170364300396495386869460138565549269182648188193442",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "202187796965535057770651546364556261590028360108505336487149076271138275383092112355511248426027362768114575231350227168062263725274765458593964194131388196",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "189617977031213872989800897928738280845516454651699967695533237417649121604898162064759491271495890804655170364300396495386869460138565549269182648188193442",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          }
+        }
+      },
+      "factors": [],
+      "remaining": [
+        "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+      ]
+    },
+    {
+      "id": "block-subresultant-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "wheel_30": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 30,
+          "rho": 8,
+          "candidates": "8960276135852398876474417519907114828072806006565245074510795897893046914666047333874019228345658732348265892563699480245802815127747623743248376423166613101867452965877033638450454833356903043023295057524201956311375331591617087693123165252728383890538794612191660206181690759530037244385296457589680889080",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "8",
+                "integers": "59",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "209496998905353079680844140596966345741865090946756146526930647558152562969899171512529285908857866057656747784163844544589904418936665155413025765720064",
+                "offsets": "1675975991242824637446753124775730765934920727574049172215445180465220503759193372100234287270862928461253982273310756356719235351493321243304206125760512",
+                "integers": "12569819934321184780850648435817980744511905456805368791615838853489153778193950290751757154531471963459404867049830672675394265136199909324781545943203839",
+                "below_factor_floor": true
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "290235275951460709776825302940321935003494142791898407607601373442631380585676112044008946478831455703227568971981810949883771644774242453811970671123156322",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "273475516039032463402357771692564627344144935516157915885446921637979175548084178323006603606122826418615029149248703386316579291259309241378928609865561148",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "290235275951460709776825302940321935003494142791898407607601373442631380585676112044008946478831455703227568971981810949883771644774242453811970671123156322",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "273475516039032463402357771692564627344144935516157915885446921637979175548084178323006603606122826418615029149248703386316579291259309241378928609865561148",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          }
+        },
+        "clipped": {
+          "d": 11,
+          "sign": -1,
+          "period": 660,
+          "rho": 80,
+          "candidates": "9494840886114242459379946017333918615235612660854750318003101660317770701271136932326287044961852089639793001128400798198817305760155703948632270999565848450955036225350208501505055102533498183924030118563946619451401163637132339612507559758214893804831070790485330033711579243642966178831729358381509159592",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "80",
+                "integers": "1319",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "26187124863169134960105517574620793217733136368344518315866330944769070371237396439066160738607233257207093473020480568073738052367083144426628220715008",
+                "offsets": "2094969989053530796808441405969663457418650909467561465269306475581525629698991715125292859088578660576567477841638445445899044189366651554130257657200640",
+                "integers": "34567004819383258147339283198499447047407740006214764176943556847095172890033363299567332174961547899513363384387034349857334229124549750643149251343810559",
+                "below_factor_floor": true
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "296439972921239285640380844076742403466995678576054496121744032927591235384660203331240956562627281067768022618377568154714687260162175729414486031962614848",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "275490273030703977672296430017045768892809169481378881469050968171775979087670286179988027971741494462002347839961183700255696818268509213873183455390616894",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "296439972921239285640380844076742403466995678576054496121744032927591235384660203331240956562627281067768022618377568154714687260162175729414486031962614848",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "275490273030703977672296430017045768892809169481378881469050968171775979087670286179988027971741494462002347839961183700255696818268509213873183455390616894",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          }
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "d": null,
+          "sign": null,
+          "period": 210,
+          "rho": 48,
+          "candidates": "7680236687873484751263786445634669852633833719913067206723539341051183069713754857606302195724850342012799336483170983067830984395212248922784322648428525515886388256466028832957532714305916894019967192163601676838321712792814646594105570216624329049033252524735708748155734936740031923758825535076869333497",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "48",
+                "integers": "419",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "26187124863169134960105517574620793217733136368344518315866330944769070371237396439066160738607233257207093473020480568073738052367083144426628220715008",
+                "offsets": "1256981993432118478085064843581798074451190545680536879161583885348915377819395029075175715453147196345940486704983067267539426513619990932478154594320384",
+                "integers": "10998592442531036683244317381340733151447917274704697692663858996803009555919706504407787510215037968026979258668601838590969981994174920659183852700303359",
+                "below_factor_floor": true
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "276459736930265838578228507664920088038092644890573107415374867543266754252999936149127406453156497852490990465514376815288448355987011208983522221994849798",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "263889916995944653797377859229102107293580739433767738623759028689777600474805985858375649298625025889031585598464546142613054090850811299658740676051655044",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "276459736930265838578228507664920088038092644890573107415374867543266754252999936149127406453156497852490990465514376815288448355987011208983522221994849798",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "263889916995944653797377859229102107293580739433767738623759028689777600474805985858375649298625025889031585598464546142613054090850811299658740676051655044",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          }
+        },
+        "clipped": {
+          "d": 11,
+          "sign": -1,
+          "period": 4620,
+          "rho": 480,
+          "candidates": "8138435045240779250897096586286215955916239423589785986859801423129517743946688799136817467110158933976965429538629255598986262080133460527399089428199298672247173907443035858432904373600141300506311530197668530958343854546113433953577908364184194689855203534701711457467067923122542438998625164327007851079",
+          "checks": {
+            "reflections": [
+              0
+            ],
+            "root_checks": [
+              {
+                "half_cycles": "1",
+                "offsets": "480",
+                "integers": "9239",
+                "below_factor_floor": true,
+                "gcd": "1"
+              },
+              {
+                "half_cycles": "3273390607896141870013189696827599152216642046043064789483291368096133796404674554883270092325904157150886684127560071009217256545885393053328527589376",
+                "offsets": "1571227491790148097606331054477247593063988182100671098951979856686144222274243786343969644316433995432425608381228834084424283142024988665597693242900480",
+                "integers": "30246129216960350878921872798687016166481772505437918654825612241208276278779192887121415653091354412074192961338655056125167450483981031812755594925834239",
+                "below_factor_floor": true
+              }
+            ]
+          },
+          "complete_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "266107278134234327072221100682751542003454152298816528705724920725811275342717015792954504529151080521189081552324901015869627250923704778226804015089450776",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "complete_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "250395003216332846096157790137979066072814270477809817716205122158949833119974577929514808085986740566864825468512612675025384419503454891570827082660446362",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_forward": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "266107278134234327072221100682751542003454152298816528705724920725811275342717015792954504529151080521189081552324901015869627250923704778226804015089450776",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          },
+          "growing_folded": {
+            "factor": null,
+            "outcome": "work_limit",
+            "visited": "0",
+            "planned_work": "250395003216332846096157790137979066072814270477809817716205122158949833119974577929514808085986740566864825468512612675025384419503454891570827082660446362",
+            "convolution_inputs": 0,
+            "table_limit": 0,
+            "checkpoints": 0
+          }
+        }
+      },
+      "factors": [],
+      "remaining": [
+        "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+      ]
+    }
+  ],
+  "search_cpu_seconds": [
+    {
+      "wheel_30": {
+        "ordinary": {
+          "complete_forward": 0.082356,
+          "complete_folded": 0.06945599999999999,
+          "growing_forward": 0.08083600000000002,
+          "growing_folded": 0.08748899999999998
+        },
+        "clipped": {
+          "complete_forward": 0.09696799999999994,
+          "complete_folded": 0.07376700000000003,
+          "growing_forward": 0.08993099999999998,
+          "growing_folded": 0.08210899999999999
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "complete_forward": 0.07915099999999997,
+          "complete_folded": 0.06292000000000009,
+          "growing_forward": 0.06747599999999998,
+          "growing_folded": 0.06471700000000002
+        },
+        "clipped": {
+          "complete_forward": 0.08018100000000006,
+          "complete_folded": 0.07733100000000004,
+          "growing_forward": 0.07839200000000002,
+          "growing_folded": 0.06791799999999992
+        }
+      }
+    },
+    {
+      "wheel_30": {
+        "ordinary": {
+          "complete_forward": 0.08029299999999995,
+          "complete_folded": 0.06874099999999994,
+          "growing_forward": 0.03974000000000011,
+          "growing_folded": 0.055790000000000006
+        },
+        "clipped": {
+          "complete_forward": 0.06988099999999986,
+          "complete_folded": 0.05625199999999997,
+          "growing_forward": 0.037261999999999906,
+          "growing_folded": 0.05631499999999989
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "complete_forward": 0.07294400000000012,
+          "complete_folded": 0.06129299999999982,
+          "growing_forward": 0.023137000000000185,
+          "growing_folded": 0.05094399999999988
+        },
+        "clipped": {
+          "complete_forward": 0.06390800000000008,
+          "complete_folded": 0.06392499999999979,
+          "growing_forward": 0.03226299999999993,
+          "growing_folded": 0.06439400000000006
+        }
+      }
+    },
+    {
+      "wheel_30": {
+        "ordinary": {
+          "complete_forward": 0.08983600000000003,
+          "complete_folded": 0.06831699999999996,
+          "growing_forward": 0.04764999999999997,
+          "growing_folded": 0.06858599999999981
+        },
+        "clipped": {
+          "complete_forward": 0.07690600000000014,
+          "complete_folded": 0.059957999999999956,
+          "growing_forward": 0.016588999999999743,
+          "growing_folded": 0.06392499999999979
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "complete_forward": 0.06937999999999978,
+          "complete_folded": 0.05485699999999971,
+          "growing_forward": 0.024912000000000045,
+          "growing_folded": 0.04846400000000006
+        },
+        "clipped": {
+          "complete_forward": 0.06916900000000004,
+          "complete_folded": 0.057948999999999806,
+          "growing_forward": 0.013633000000000006,
+          "growing_folded": 0.06273200000000001
+        }
+      }
+    },
+    {
+      "wheel_30": {
+        "ordinary": {
+          "complete_forward": 0.07012200000000002,
+          "complete_folded": 0.05982399999999988,
+          "growing_forward": 0.046088999999999825,
+          "growing_folded": 0.05490700000000004
+        },
+        "clipped": {
+          "complete_forward": 0.08001499999999995,
+          "complete_folded": 0.06384999999999996,
+          "growing_forward": 0.0841639999999999,
+          "growing_folded": 0.0735389999999998
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "complete_forward": 0.06298899999999996,
+          "complete_folded": 0.0772820000000003,
+          "growing_forward": 0.07445099999999982,
+          "growing_folded": 0.06075100000000022
+        },
+        "clipped": {
+          "complete_forward": 0.06913999999999998,
+          "complete_folded": 0.06814699999999974,
+          "growing_forward": 0.07046499999999956,
+          "growing_folded": 0.06236700000000006
+        }
+      }
+    },
+    {
+      "wheel_30": {
+        "ordinary": {
+          "complete_forward": 0.06872999999999951,
+          "complete_folded": 0.06358100000000011,
+          "growing_forward": 0.06887699999999963,
+          "growing_folded": 0.05180999999999969
+        },
+        "clipped": {
+          "complete_forward": 0.05243500000000001,
+          "complete_folded": 0.06352199999999986,
+          "growing_forward": 0.09240100000000062,
+          "growing_folded": 0.03123599999999982
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "complete_forward": 0.05404600000000048,
+          "complete_folded": 0.04520799999999969,
+          "growing_forward": 0.04653900000000011,
+          "growing_folded": 0.0468869999999999
+        },
+        "clipped": {
+          "complete_forward": 0.05756499999999942,
+          "complete_folded": 0.04505600000000065,
+          "growing_forward": 0.05340100000000003,
+          "growing_folded": 0.022655000000000314
+        }
+      }
+    },
+    {
+      "wheel_30": {
+        "ordinary": {
+          "complete_forward": 0.02953600000000023,
+          "complete_folded": 0.013498999999999484,
+          "growing_forward": 0.02679200000000037,
+          "growing_folded": 0.017107000000000205
+        },
+        "clipped": {
+          "complete_forward": 0.01671800000000001,
+          "complete_folded": 0.015563000000000216,
+          "growing_forward": 0.02518599999999971,
+          "growing_folded": 0.004898999999999987
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "complete_forward": 0.015501000000000431,
+          "complete_folded": 0.01824699999999968,
+          "growing_forward": 0.015744999999999898,
+          "growing_folded": 0.014390000000000569
+        },
+        "clipped": {
+          "complete_forward": 0.017881999999999287,
+          "complete_folded": 0.018823000000000256,
+          "growing_forward": 0.01737100000000069,
+          "growing_folded": 0.01393800000000045
+        }
+      }
+    },
+    {
+      "wheel_30": {
+        "ordinary": {
+          "complete_forward": 0.07582399999999989,
+          "complete_folded": 0.06359099999999973,
+          "growing_forward": 0.08574699999999957,
+          "growing_folded": 0.07569300000000023
+        },
+        "clipped": {
+          "complete_forward": 0.0801879999999997,
+          "complete_folded": 0.07297499999999957,
+          "growing_forward": 0.07627200000000034,
+          "growing_folded": 0.08438999999999997
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "complete_forward": 0.07250699999999988,
+          "complete_folded": 0.06353600000000004,
+          "growing_forward": 0.06821199999999994,
+          "growing_folded": 0.07103799999999971
+        },
+        "clipped": {
+          "complete_forward": 0.06950199999999995,
+          "complete_folded": 0.07751999999999981,
+          "growing_forward": 0.08384999999999998,
+          "growing_folded": 0.08546099999999957
+        }
+      }
+    },
+    {
+      "wheel_30": {
+        "ordinary": {
+          "complete_forward": 0.0645990000000003,
+          "complete_folded": 0.05538899999999991,
+          "growing_forward": 0.06206099999999992,
+          "growing_folded": 0.061671000000000475
+        },
+        "clipped": {
+          "complete_forward": 0.06828900000000004,
+          "complete_folded": 0.060703000000000173,
+          "growing_forward": 0.037668999999999286,
+          "growing_folded": 0.0578599999999998
+        }
+      },
+      "wheel_210": {
+        "ordinary": {
+          "complete_forward": 0.06161499999999975,
+          "complete_folded": 0.06096499999999949,
+          "growing_forward": 0.07073800000000041,
+          "growing_folded": 0.0548820000000001
+        },
+        "clipped": {
+          "complete_forward": 0.06547400000000003,
+          "complete_folded": 0.05349899999999952,
+          "growing_forward": 0.023268999999999984,
+          "growing_folded": 0.06308800000000048
+        }
+      }
+    },
+    {
+      "wheel_30": {
+        "ordinary": {},
+        "clipped": {}
+      },
+      "wheel_210": {
+        "ordinary": {},
+        "clipped": {}
+      }
+    },
+    {
+      "wheel_30": {
+        "ordinary": {},
+        "clipped": {}
+      },
+      "wheel_210": {
+        "ordinary": {},
+        "clipped": {}
+      }
+    }
+  ]
+}

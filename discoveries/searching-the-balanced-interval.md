@@ -2,6 +2,8 @@
 
 Given only the product of two independently chosen 1,024-bit primes, we still do not know how to recover its factors in an hour on a PC. Some constructed examples have extra relationships that reveal the primes. The independently generated 2,048-bit example remains unresolved from the product alone. [How the example was generated and checked](certified-fresh-control.md)
 
+A factor-sum test dropped 24.5% of the wheel candidates across eight fresh products. In 844-integer blocks between $0.98\sqrt N$ and $\sqrt N$, it provably keeps at most 36 of the usual 420 odd positions coprime to 211. [What this saves and what the faster Fermat comparison costs](ruling-out-factor-progressions-by-their-sums.md)
+
 Using the distance from $N$ to the square just below it gave the factors 509 on 156,263 and 4,483 on 34,756,699 with two different formulas. Over all eligible 2,048-bit pairs, each formula succeeds on fewer than one pair in $2^{1003}$. A broader theorem also bounds a menu of one billion polynomial formulas. [Examples, full small populations and scope of the bound](how-often-a-square-root-formula-can-factor.md)
 
 For repeated squaring of the integer square root, one gcd can detect a factor anywhere in the chain. On the fresh 2,048-bit control the first 1,023 squarings sufficed to rule out every exponent $2^k$, even beyond the computed range. Allowing all such exponents still splits fewer than one in $2^{989}$ eligible pairs. [Finite tests, checked cutoff and costs](one-gcd-for-a-whole-power-chain.md)

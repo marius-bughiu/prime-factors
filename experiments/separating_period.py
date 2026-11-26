@@ -55,8 +55,8 @@ def least_period(n, wheel, limit, reflect, work):
     return None, None
 
 
-def search(n, *, wheel=30, period_limit=MAX_PERIOD, reflect=False, max_work=2_000_000):
-    """Under the equal-width semiprime promise, try the smaller of the two masks."""
+def select_mask(n, *, wheel=30, period_limit=MAX_PERIOD, reflect=False, max_work=2_000_000):
+    """Return the public selection, inclusive endpoints and its sorted offsets, if available."""
     if not 2 <= wheel <= period_limit <= MAX_PERIOD or max_work < 0:
         raise ValueError('expected a bounded wheel, period limit and nonnegative budget')
     low, _ = interval(n)
@@ -67,7 +67,7 @@ def search(n, *, wheel=30, period_limit=MAX_PERIOD, reflect=False, max_work=2_00
     report = dict(mode='reflected' if reflect else 'unrestricted', selection=prep,
                   period=period, visited='0', factor=factor, work={}, max_work=max_work)
     if period is None:
-        return dict(report, outcome='period_divisor' if factor else 'period_limit')
+        return dict(report, outcome='period_divisor' if factor else 'period_limit'), low, high, None
 
     groups = [[], []]
     for x in range(1, period):
@@ -85,4 +85,13 @@ def search(n, *, wheel=30, period_limit=MAX_PERIOD, reflect=False, max_work=2_00
     counts = [_before(high+1, period, g)-_before(low, period, g) for g in groups]
     which = min(range(2), key=lambda i: (counts[i], -i))
     report.update(canonical=bool(which), residues_per_period=len(groups[which]))
-    return _evaluate(n, low, high, period, groups[which], max_work, report)
+    return report, low, high, groups[which]
+
+
+def search(n, *, wheel=30, period_limit=MAX_PERIOD, reflect=False, max_work=2_000_000):
+    """Under the equal-width semiprime promise, try the smaller of the two masks."""
+    report, low, high, offsets = select_mask(n, wheel=wheel, period_limit=period_limit,
+                                             reflect=reflect, max_work=max_work)
+    if offsets is None:
+        return report
+    return _evaluate(n, low, high, report['period'], offsets, max_work, report)

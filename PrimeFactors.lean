@@ -294,6 +294,9 @@ import PrimeFactors.DivisorResidueCover
 import PrimeFactors.LeastSeparatingModulus
 import PrimeFactors.SymmetricDivisorSelector
 import PrimeFactors.CharacterColumnReflection
+import PrimeFactors.ReciprocalSumLanes
+import PrimeFactors.ReciprocalSumSlice
+import PrimeFactors.SumIntervalExclusion
 import PrimeFactors.LastPowerGCD
 import PrimeFactors.PowerChainReceipt
 import PrimeFactors.ProductExponentPopulation

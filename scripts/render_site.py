@@ -72,6 +72,13 @@ def case_row(result):
         elif 'radix_exponent' in x:
             claim = (f'When both factors have at most {x["max_factor_bits"]:,} bits, Lean excludes '
                      f'remainder {escape(x["residue"])} modulo 2<sup>{x["radix_exponent"]}</sup>.')
+        elif x.get('method') == 'factor sum square tests':
+            count = int(x['upper']) - int(x['lower']) + 1
+            claim = (f'Lean excludes divisors at all {count:,} positions '
+                     f'from {x["sums"]:,} possible factor sums.')
+        elif x.get('method') == 'ordinary integer sum':
+            count = int(x['upper']) - int(x['lower']) + 1
+            claim = f'The ordinary integer sum bounds exclude divisors at all {count:,} positions in this interval.'
         elif 'lower' in x:
             count = int(x['upper']) - int(x['lower']) + 1
             claim = f'Lean proves that none of the {compact_count(count)} integers in the interval divides the input.'
@@ -847,6 +854,20 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'reciprocal-sum-slice':
+        w = result['reciprocal_sum_slice']
+        count = (f'{w["product_terms"]:,} of {w["ordinary_candidates"]:,} odd wheel candidates multiplied'
+                 f' · {w["sum_lookups"]:,} sum lookups'
+                 f' · {w["fermat_square_roots"]:,} integer square roots in the comparison'
+                 f' · {compact_count(int(w["untested_blocks"]))} slice blocks untested')
+    elif result['method'] == 'reciprocal-sum-lanes':
+        w = result['reciprocal_sum_lanes']
+        ops = w['work']
+        count = (f'{ops["product_terms"]:,} of {ops["ordinary_lower_terms"]:,} divisor candidates multiplied'
+                 f' · {ops["lane_pricings"]:,} progressions checked'
+                 f' · {ops["endpoint_quotients"]:,} endpoint divisions'
+                 f' · {ops["guarded_blocks"]:,} blocks needed no progression checks'
+                 f' · {compact_count(int(w["untested_blocks"]))} blocks untested')
     elif result['method'] == 'separating-period':
         w = result['separating_period']
         count = f'{w["mode"].capitalize()} mask · {escape(w["outcome"].replace("_", " "))}'

@@ -44,14 +44,28 @@ def grow_tables(limit, n, fact, inverse, reciprocals, work):
     return None
 
 
-def search(n, max_span, *, wheel=210, folded=False, final_grid=False, max_inputs=None):
+def search(n, max_span, *, wheel=210, folded=False, final_grid=False, max_inputs=None,
+           bounds=None, offsets=None):
+    """Search an inclusive interval, optionally using a subset of the wheel units."""
     if n < 3 or n % 2 == 0 or wheel < 2 or (max_span is not None and max_span < 0):
         raise ValueError('expected odd n >= 3, a wheel >= 2, and a nonnegative span cap')
     if max_inputs is not None and max_inputs < 0:
         raise ValueError('the convolution input budget must be nonnegative')
-    first, upper = interval(n)
+    if bounds is None:
+        first, upper = interval(n)
+    else:
+        first, upper = bounds
+        if not (type(first) is int and type(upper) is int and 1 <= first <= upper < n):
+            raise ValueError('custom bounds must be integers between 1 and n-1, in increasing order')
+    if offsets is not None:
+        residues = tuple(offsets)
+        if not residues or any(type(r) is not int or not 0 < r < wheel or gcd(r, wheel) != 1
+                               or (i > 0 and r <= residues[i-1]) for i, r in enumerate(residues)):
+            raise ValueError('custom offsets must be a nonempty, strictly increasing list of wheel units')
     last = upper if max_span is None else min(upper, first+max_span-1)
     work = Counter()
+    if offsets is not None:
+        work['offset_validation_gcds'] = len(residues)
     covered = first-1
     center_range = None
 
@@ -84,10 +98,11 @@ def search(n, max_span, *, wheel=210, folded=False, final_grid=False, max_inputs
                         return result('wheel_divisor', d)
             return result('whole_modulus')
         return result('wheel_divisor', common)
-    residues = [r for r in range(1, wheel) if gcd(r, wheel) == 1]
+    if offsets is None:
+        residues = [r for r in range(1, wheel) if gcd(r, wheel) == 1]
+        work['wheel_residue_gcds'] = wheel-1
     rho = len(residues)
     work['wheel_residues'] = rho
-    work['wheel_residue_gcds'] = wheel-1
 
     def check(values):
         accumulator = 1

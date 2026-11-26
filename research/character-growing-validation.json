@@ -1,0 +1,2026 @@
+{
+  "seed": "character-growing-210-validation-v1",
+  "count": 32,
+  "prime_bits": 30,
+  "product_bits": 60,
+  "wheel": 210,
+  "max_work": 2000000,
+  "mode": "growing_forward",
+  "final_grid": true,
+  "rows": [
+    {
+      "draw": 0,
+      "n": "790283299668081833",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "736773409",
+        "visited": "590628",
+        "unvisited": "34373970",
+        "planned": "582934",
+        "convolution_inputs": 3608,
+        "arithmetic_units": 42528,
+        "sources": {
+          "seed": 4704,
+          "table": 6140,
+          "interpolation": 15156,
+          "convolution": 10820,
+          "doublings": 2888,
+          "checkpoints": 2338,
+          "backend_gcds": 59,
+          "inversions": 4,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 3,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "1072627337",
+        "visited": "38596626",
+        "unvisited": "1447",
+        "planned": "593448",
+        "convolution_inputs": 30768,
+        "arithmetic_units": 320968,
+        "sources": {
+          "seed": 4704,
+          "table": 50238,
+          "interpolation": 129449,
+          "convolution": 92297,
+          "doublings": 24672,
+          "checkpoints": 18710,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 196
+        },
+        "remaining": []
+      },
+      "factors": [
+        "736773409",
+        "1072627337"
+      ],
+      "remaining": [],
+      "certificate_sha256": "9adf2a14911d0a3d38122055a6700b595d88134230efc9806678e4b5680f61a3"
+    },
+    {
+      "draw": 1,
+      "n": "658857088997269579",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "695997469",
+        "visited": "45275176",
+        "unvisited": "2912",
+        "planned": "663242",
+        "convolution_inputs": 32942,
+        "arithmetic_units": 351041,
+        "sources": {
+          "seed": 4704,
+          "table": 58934,
+          "interpolation": 140319,
+          "convolution": 98819,
+          "doublings": 26846,
+          "checkpoints": 20928,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "946637191",
+        "visited": "52586516",
+        "unvisited": "151",
+        "planned": "713196",
+        "convolution_inputs": 35322,
+        "arithmetic_units": 384725,
+        "sources": {
+          "seed": 4704,
+          "table": 68454,
+          "interpolation": 152219,
+          "convolution": 105959,
+          "doublings": 29226,
+          "checkpoints": 23268,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "695997469",
+        "946637191"
+      ],
+      "remaining": [],
+      "certificate_sha256": "c553ba1d3a6c64f66fa5b7d33c59183a6bb1cee5fd176ca18bf6cf7edefecec7"
+    },
+    {
+      "draw": 2,
+      "n": "641885057609675443",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "754967333",
+        "visited": "46485532",
+        "unvisited": "239",
+        "planned": "658164",
+        "convolution_inputs": 33336,
+        "arithmetic_units": 356533,
+        "sources": {
+          "seed": 4704,
+          "table": 60510,
+          "interpolation": 142289,
+          "convolution": 100001,
+          "doublings": 27240,
+          "checkpoints": 21298,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "850215671",
+        "visited": "54392869",
+        "unvisited": "247",
+        "planned": "730338",
+        "convolution_inputs": 35910,
+        "arithmetic_units": 392991,
+        "sources": {
+          "seed": 4704,
+          "table": 70806,
+          "interpolation": 155159,
+          "convolution": 107723,
+          "doublings": 29814,
+          "checkpoints": 23890,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "754967333",
+        "850215671"
+      ],
+      "remaining": [],
+      "certificate_sha256": "c494969482d0f3ddd9591eb64effffa924ccab1440e17b29f2ede971c6b25dc3"
+    },
+    {
+      "draw": 3,
+      "n": "612855053091303697",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "574833541",
+        "visited": "2360874",
+        "unvisited": "46115663",
+        "planned": "676968",
+        "convolution_inputs": 7450,
+        "arithmetic_units": 81727,
+        "sources": {
+          "seed": 4704,
+          "table": 12282,
+          "interpolation": 31293,
+          "convolution": 22345,
+          "doublings": 5962,
+          "checkpoints": 4656,
+          "backend_gcds": 61,
+          "inversions": 5,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 5,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "1066143517",
+        "visited": "57477165",
+        "unvisited": "5815",
+        "planned": "791906",
+        "convolution_inputs": 36914,
+        "arithmetic_units": 407068,
+        "sources": {
+          "seed": 4704,
+          "table": 74822,
+          "interpolation": 160179,
+          "convolution": 110735,
+          "doublings": 30818,
+          "checkpoints": 24910,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 198
+        },
+        "remaining": []
+      },
+      "factors": [
+        "574833541",
+        "1066143517"
+      ],
+      "remaining": [],
+      "certificate_sha256": "c6e69891686b4681be3f508d9e15ad53375cfa1cff8626c9646fcafe03828a81"
+    },
+    {
+      "draw": 4,
+      "n": "863919532604810299",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "837737507",
+        "visited": "9440289",
+        "unvisited": "19104843",
+        "planned": "493690",
+        "convolution_inputs": 15132,
+        "arithmetic_units": 160064,
+        "sources": {
+          "seed": 4704,
+          "table": 24568,
+          "interpolation": 63558,
+          "convolution": 45390,
+          "doublings": 12108,
+          "checkpoints": 9248,
+          "backend_gcds": 63,
+          "inversions": 6,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "837737507",
+        "visited": "9440297",
+        "unvisited": "21320167",
+        "planned": "534802",
+        "convolution_inputs": 15132,
+        "arithmetic_units": 160484,
+        "sources": {
+          "seed": 4704,
+          "table": 24568,
+          "interpolation": 63558,
+          "convolution": 45390,
+          "doublings": 12108,
+          "checkpoints": 9264,
+          "backend_gcds": 63,
+          "inversions": 6,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "837737507",
+        "1031253257"
+      ],
+      "remaining": [],
+      "certificate_sha256": "97a1d8dba0b1d3f75e95311b8074f16bc0a46178f9f8c00d273f0818773d3edb"
+    },
+    {
+      "draw": 5,
+      "n": "615116391005378221",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "664318943",
+        "visited": "48322566",
+        "unvisited": "2412",
+        "planned": "687814",
+        "convolution_inputs": 33934,
+        "arithmetic_units": 364861,
+        "sources": {
+          "seed": 4704,
+          "table": 62902,
+          "interpolation": 145279,
+          "convolution": 101795,
+          "doublings": 27838,
+          "checkpoints": 21852,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 2,
+        "sign": 1,
+        "outcome": "prefix_gcd",
+        "factor": "664318943",
+        "visited": "57237580",
+        "unvisited": "4710",
+        "planned": "822312",
+        "convolution_inputs": 36594,
+        "arithmetic_units": 418837,
+        "sources": {
+          "seed": 18624,
+          "table": 74512,
+          "interpolation": 158772,
+          "convolution": 109776,
+          "doublings": 30546,
+          "checkpoints": 24844,
+          "backend_gcds": 111,
+          "inversions": 6,
+          "selector_gcds": 1260,
+          "selector_jacobi": 386
+        },
+        "remaining": []
+      },
+      "factors": [
+        "664318943",
+        "925935347"
+      ],
+      "remaining": [],
+      "certificate_sha256": "3ee039d1f4fb7472c6794e12a7fcffd43164cc60081aaad0a3b5312607cace7d"
+    },
+    {
+      "draw": 6,
+      "n": "586777257538282763",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "730007779",
+        "visited": "50178072",
+        "unvisited": "1350",
+        "planned": "698462",
+        "convolution_inputs": 34538,
+        "arithmetic_units": 373353,
+        "sources": {
+          "seed": 4704,
+          "table": 65318,
+          "interpolation": 148299,
+          "convolution": 103607,
+          "doublings": 28442,
+          "checkpoints": 22492,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "730007779",
+        "visited": "60254244",
+        "unvisited": "4375",
+        "planned": "808524",
+        "convolution_inputs": 37818,
+        "arithmetic_units": 419701,
+        "sources": {
+          "seed": 4704,
+          "table": 78438,
+          "interpolation": 164699,
+          "convolution": 113447,
+          "doublings": 31722,
+          "checkpoints": 25796,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "730007779",
+        "803795897"
+      ],
+      "remaining": [],
+      "certificate_sha256": "a407f1540a259b054c4e3326cd3d9fb77cf12435632ca04bea045a54b53cf2fa"
+    },
+    {
+      "draw": 7,
+      "n": "627689020051225703",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "678599437",
+        "visited": "47468552",
+        "unvisited": "2835",
+        "planned": "682580",
+        "convolution_inputs": 33656,
+        "arithmetic_units": 360973,
+        "sources": {
+          "seed": 4704,
+          "table": 61790,
+          "interpolation": 143889,
+          "convolution": 100961,
+          "doublings": 27560,
+          "checkpoints": 21578,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "924977219",
+        "visited": "55898140",
+        "unvisited": "5959",
+        "planned": "778276",
+        "convolution_inputs": 36400,
+        "arithmetic_units": 399833,
+        "sources": {
+          "seed": 4704,
+          "table": 72766,
+          "interpolation": 157609,
+          "convolution": 109193,
+          "doublings": 30304,
+          "checkpoints": 24362,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "678599437",
+        "924977219"
+      ],
+      "remaining": [],
+      "certificate_sha256": "8a3be224d8451b02f1a31983ed697c2264039775678ad0a3517151395abcde80"
+    },
+    {
+      "draw": 8,
+      "n": "768403373824072697",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "870179521",
+        "visited": "36784147",
+        "unvisited": "5521",
+        "planned": "601378",
+        "convolution_inputs": 30178,
+        "arithmetic_units": 312303,
+        "sources": {
+          "seed": 4704,
+          "table": 47878,
+          "interpolation": 126499,
+          "convolution": 90527,
+          "doublings": 24082,
+          "checkpoints": 18122,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 3,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "883040057",
+        "visited": "40925218",
+        "unvisited": "1687",
+        "planned": "616208",
+        "convolution_inputs": 31526,
+        "arithmetic_units": 331612,
+        "sources": {
+          "seed": 4704,
+          "table": 53270,
+          "interpolation": 133239,
+          "convolution": 94571,
+          "doublings": 25430,
+          "checkpoints": 19500,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 196
+        },
+        "remaining": []
+      },
+      "factors": [
+        "870179521",
+        "883040057"
+      ],
+      "remaining": [],
+      "certificate_sha256": "aa66d1283f7c8d6eeb60936765c9594062728d95c8e2a4d0551a0dd6e776057e"
+    },
+    {
+      "draw": 10,
+      "n": "700833181057616099",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "831460613",
+        "visited": "42160146",
+        "unvisited": "1234",
+        "planned": "624650",
+        "convolution_inputs": 31928,
+        "arithmetic_units": 336801,
+        "sources": {
+          "seed": 4704,
+          "table": 54878,
+          "interpolation": 135249,
+          "convolution": 95777,
+          "doublings": 25832,
+          "checkpoints": 19870,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "842894023",
+        "visited": "48113673",
+        "unvisited": "5191",
+        "planned": "702602",
+        "convolution_inputs": 33866,
+        "arithmetic_units": 364319,
+        "sources": {
+          "seed": 4704,
+          "table": 62630,
+          "interpolation": 144939,
+          "convolution": 101591,
+          "doublings": 27770,
+          "checkpoints": 21790,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "831460613",
+        "842894023"
+      ],
+      "remaining": [],
+      "certificate_sha256": "d847d4720d66728998a8e8adc51a52883fa92ab1213674b265a65bca76f79761"
+    },
+    {
+      "draw": 13,
+      "n": "751480815947404201",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "826860137",
+        "visited": "38172707",
+        "unvisited": "752",
+        "planned": "585516",
+        "convolution_inputs": 30630,
+        "arithmetic_units": 318663,
+        "sources": {
+          "seed": 4704,
+          "table": 49686,
+          "interpolation": 128759,
+          "convolution": 91883,
+          "doublings": 24534,
+          "checkpoints": 18606,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 11,
+        "sign": 1,
+        "outcome": "prefix_gcd",
+        "factor": "826860137",
+        "visited": "14749804",
+        "unvisited": "24093912",
+        "planned": "1953952",
+        "convolution_inputs": 16806,
+        "arithmetic_units": 648054,
+        "sources": {
+          "seed": 461760,
+          "table": 30718,
+          "interpolation": 70587,
+          "convolution": 50415,
+          "doublings": 13446,
+          "checkpoints": 11776,
+          "backend_gcds": 489,
+          "inversions": 3,
+          "selector_gcds": 6930,
+          "selector_jacobi": 1930
+        },
+        "remaining": []
+      },
+      "factors": [
+        "826860137",
+        "908836673"
+      ],
+      "remaining": [],
+      "certificate_sha256": "53d0d2bf913b456aff618f5a33e3fd0470a2c8e6eeced06a60ac9f7f1c822f91"
+    },
+    {
+      "draw": 15,
+      "n": "838444602285449717",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "873168139",
+        "visited": "30812193",
+        "unvisited": "109",
+        "planned": "514558",
+        "convolution_inputs": 28234,
+        "arithmetic_units": 285115,
+        "sources": {
+          "seed": 4704,
+          "table": 40102,
+          "interpolation": 116779,
+          "convolution": 84695,
+          "doublings": 22138,
+          "checkpoints": 16206,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 2,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "873168139",
+        "visited": "33466455",
+        "unvisited": "5481",
+        "planned": "610340",
+        "convolution_inputs": 28856,
+        "arithmetic_units": 310527,
+        "sources": {
+          "seed": 18624,
+          "table": 43560,
+          "interpolation": 120082,
+          "convolution": 86562,
+          "doublings": 22808,
+          "checkpoints": 17128,
+          "backend_gcds": 111,
+          "inversions": 6,
+          "selector_gcds": 1260,
+          "selector_jacobi": 386
+        },
+        "remaining": []
+      },
+      "factors": [
+        "873168139",
+        "960232703"
+      ],
+      "remaining": [],
+      "certificate_sha256": "742f3a070e798f4f9918080217701abbc802292e8f3af7130012eec31bc4d8fa"
+    },
+    {
+      "draw": 18,
+      "n": "972833459450589497",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "958596521",
+        "visited": "18352159",
+        "unvisited": "2456",
+        "planned": "471702",
+        "convolution_inputs": 20934,
+        "arithmetic_units": 241288,
+        "sources": {
+          "seed": 4704,
+          "table": 47776,
+          "interpolation": 92568,
+          "convolution": 62796,
+          "doublings": 17910,
+          "checkpoints": 15046,
+          "backend_gcds": 63,
+          "inversions": 6,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 3,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "958596521",
+        "visited": "9440271",
+        "unvisited": "9727735",
+        "planned": "436750",
+        "convolution_inputs": 15132,
+        "arithmetic_units": 160435,
+        "sources": {
+          "seed": 4704,
+          "table": 24568,
+          "interpolation": 63558,
+          "convolution": 45390,
+          "doublings": 12108,
+          "checkpoints": 9212,
+          "backend_gcds": 63,
+          "inversions": 6,
+          "selector_gcds": 630,
+          "selector_jacobi": 196
+        },
+        "remaining": []
+      },
+      "factors": [
+        "958596521",
+        "1014851857"
+      ],
+      "remaining": [],
+      "certificate_sha256": "17dd9da6f099bbd7e448a9c9dbb6bdd0af47e4facf1f6819c52ffc990e7f4490"
+    },
+    {
+      "draw": 19,
+      "n": "793640901648876049",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "886421513",
+        "visited": "34676748",
+        "unvisited": "4296",
+        "planned": "574778",
+        "convolution_inputs": 29492,
+        "arithmetic_units": 302685,
+        "sources": {
+          "seed": 4704,
+          "table": 45134,
+          "interpolation": 123069,
+          "convolution": 88469,
+          "doublings": 23396,
+          "checkpoints": 17422,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 7,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "886421513",
+        "visited": "38240262",
+        "unvisited": "439",
+        "planned": "584080",
+        "convolution_inputs": 30652,
+        "arithmetic_units": 319324,
+        "sources": {
+          "seed": 4704,
+          "table": 49774,
+          "interpolation": 128869,
+          "convolution": 91949,
+          "doublings": 24556,
+          "checkpoints": 18570,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 200
+        },
+        "remaining": []
+      },
+      "factors": [
+        "886421513",
+        "895331273"
+      ],
+      "remaining": [],
+      "certificate_sha256": "2a37e55f1536301d473be3fe88d9a705be3ebe4ff7f9616e005563d77dd69d7d"
+    },
+    {
+      "draw": 21,
+      "n": "790282307272702669",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "821566873",
+        "visited": "34959368",
+        "unvisited": "5313",
+        "planned": "583432",
+        "convolution_inputs": 29584,
+        "arithmetic_units": 303965,
+        "sources": {
+          "seed": 4704,
+          "table": 45502,
+          "interpolation": 123529,
+          "convolution": 88745,
+          "doublings": 23488,
+          "checkpoints": 17506,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 2,
+        "sign": 1,
+        "outcome": "prefix_gcd",
+        "factor": "821566873",
+        "visited": "38596636",
+        "unvisited": "1542",
+        "planned": "633112",
+        "convolution_inputs": 30526,
+        "arithmetic_units": 333789,
+        "sources": {
+          "seed": 18624,
+          "table": 50240,
+          "interpolation": 128432,
+          "convolution": 91572,
+          "doublings": 24478,
+          "checkpoints": 18680,
+          "backend_gcds": 111,
+          "inversions": 6,
+          "selector_gcds": 1260,
+          "selector_jacobi": 386
+        },
+        "remaining": []
+      },
+      "factors": [
+        "821566873",
+        "961920853"
+      ],
+      "remaining": [],
+      "certificate_sha256": "b1904114f8171f180194f98816d39072c9a01c39e4178cfa81f68b3afb5c64fc"
+    },
+    {
+      "draw": 22,
+      "n": "718835710926764969",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "797265017",
+        "visited": "40765464",
+        "unvisited": "5706",
+        "planned": "638806",
+        "convolution_inputs": 31474,
+        "arithmetic_units": 330457,
+        "sources": {
+          "seed": 4704,
+          "table": 53062,
+          "interpolation": 132979,
+          "convolution": 94415,
+          "doublings": 25378,
+          "checkpoints": 19428,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 3,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "797265017",
+        "visited": "46196772",
+        "unvisited": "5959",
+        "planned": "689900",
+        "convolution_inputs": 33242,
+        "arithmetic_units": 355640,
+        "sources": {
+          "seed": 4704,
+          "table": 60134,
+          "interpolation": 141819,
+          "convolution": 99719,
+          "doublings": 27146,
+          "checkpoints": 21220,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 196
+        },
+        "remaining": []
+      },
+      "factors": [
+        "797265017",
+        "901627057"
+      ],
+      "remaining": [],
+      "certificate_sha256": "271fb8287f3cb95bcf8b15b1460d5cf8319b57415f4282ef4950fef84beb993c"
+    },
+    {
+      "draw": 24,
+      "n": "669446224956527573",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "793974023",
+        "visited": "44507156",
+        "unvisited": "1770",
+        "planned": "649270",
+        "convolution_inputs": 32692,
+        "arithmetic_units": 347501,
+        "sources": {
+          "seed": 4704,
+          "table": 57934,
+          "interpolation": 139069,
+          "convolution": 98069,
+          "doublings": 26596,
+          "checkpoints": 20638,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 2,
+        "sign": 1,
+        "outcome": "prefix_gcd",
+        "factor": "793974023",
+        "visited": "51456034",
+        "unvisited": "3558",
+        "planned": "762452",
+        "convolution_inputs": 34712,
+        "arithmetic_units": 392405,
+        "sources": {
+          "seed": 18624,
+          "table": 66984,
+          "interpolation": 149362,
+          "convolution": 104130,
+          "doublings": 28664,
+          "checkpoints": 22878,
+          "backend_gcds": 111,
+          "inversions": 6,
+          "selector_gcds": 1260,
+          "selector_jacobi": 386
+        },
+        "remaining": []
+      },
+      "factors": [
+        "793974023",
+        "843158851"
+      ],
+      "remaining": [],
+      "certificate_sha256": "788627bbca07c7fa7f0fdfa2af81a25ebfdc71dcaac0c576d9240d2496fdc64b"
+    },
+    {
+      "draw": 27,
+      "n": "695355002241014651",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "794284927",
+        "visited": "42577938",
+        "unvisited": "274",
+        "planned": "622698",
+        "convolution_inputs": 32064,
+        "arithmetic_units": 338705,
+        "sources": {
+          "seed": 4704,
+          "table": 55422,
+          "interpolation": 135929,
+          "convolution": 96185,
+          "doublings": 25968,
+          "checkpoints": 20006,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "794284927",
+        "visited": "48697377",
+        "unvisited": "4567",
+        "planned": "704322",
+        "convolution_inputs": 34056,
+        "arithmetic_units": 367027,
+        "sources": {
+          "seed": 4704,
+          "table": 63390,
+          "interpolation": 145889,
+          "convolution": 102161,
+          "doublings": 27960,
+          "checkpoints": 22028,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "794284927",
+        "875447813"
+      ],
+      "remaining": [],
+      "certificate_sha256": "c3aad089ce624e3d34bd5a1a51675cbdb34e4643629f4079e65103f286cd582f"
+    },
+    {
+      "draw": 29,
+      "n": "786016772686399361",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "757627583",
+        "visited": "9440269",
+        "unvisited": "25883321",
+        "planned": "565214",
+        "convolution_inputs": 15132,
+        "arithmetic_units": 160024,
+        "sources": {
+          "seed": 4704,
+          "table": 24568,
+          "interpolation": 63558,
+          "convolution": 45390,
+          "doublings": 12108,
+          "checkpoints": 9208,
+          "backend_gcds": 63,
+          "inversions": 6,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 3,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "1037471167",
+        "visited": "39051271",
+        "unvisited": "919",
+        "planned": "594358",
+        "convolution_inputs": 30916,
+        "arithmetic_units": 323018,
+        "sources": {
+          "seed": 4704,
+          "table": 50830,
+          "interpolation": 130189,
+          "convolution": 92741,
+          "doublings": 24820,
+          "checkpoints": 18836,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 196
+        },
+        "remaining": []
+      },
+      "factors": [
+        "757627583",
+        "1037471167"
+      ],
+      "remaining": [],
+      "certificate_sha256": "a3e7a09c4bc37110a9fe2e2a6fe4fc1f7bc8b1183ef6db02c94dee0899b58c3b"
+    },
+    {
+      "draw": 30,
+      "n": "683967514223578187",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "780201559",
+        "visited": "43431956",
+        "unvisited": "3222",
+        "planned": "648182",
+        "convolution_inputs": 32342,
+        "arithmetic_units": 342601,
+        "sources": {
+          "seed": 4704,
+          "table": 56534,
+          "interpolation": 137319,
+          "convolution": 97019,
+          "doublings": 26246,
+          "checkpoints": 20288,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": 1,
+        "outcome": "prefix_gcd",
+        "factor": "876654893",
+        "visited": "49913889",
+        "unvisited": "104",
+        "planned": "688632",
+        "convolution_inputs": 34452,
+        "arithmetic_units": 372571,
+        "sources": {
+          "seed": 4704,
+          "table": 64974,
+          "interpolation": 147869,
+          "convolution": 103349,
+          "doublings": 28356,
+          "checkpoints": 22424,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "780201559",
+        "876654893"
+      ],
+      "remaining": [],
+      "certificate_sha256": "cc57dd56c35c6efd697bd97671b36afde751648464b4708b5dd439ae29c851e4"
+    },
+    {
+      "draw": 31,
+      "n": "589449015564877343",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "599105291",
+        "visited": "50006044",
+        "unvisited": "2791",
+        "planned": "705564",
+        "convolution_inputs": 34482,
+        "arithmetic_units": 372577,
+        "sources": {
+          "seed": 4704,
+          "table": 65094,
+          "interpolation": 148019,
+          "convolution": 103439,
+          "doublings": 28386,
+          "checkpoints": 22444,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": 1,
+        "outcome": "prefix_gcd",
+        "factor": "983882173",
+        "visited": "59971597",
+        "unvisited": "2648",
+        "planned": "795448",
+        "convolution_inputs": 37726,
+        "arithmetic_units": 418367,
+        "sources": {
+          "seed": 4704,
+          "table": 78070,
+          "interpolation": 164239,
+          "convolution": 113171,
+          "doublings": 31630,
+          "checkpoints": 25658,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "599105291",
+        "983882173"
+      ],
+      "remaining": [],
+      "certificate_sha256": "a67cb1c6adc9b21d9a5ed629ea4736b53ff40daa6538badaef83cd6af39520f6"
+    },
+    {
+      "draw": 37,
+      "n": "790090643002067633",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "843150359",
+        "visited": "34977801",
+        "unvisited": "3040",
+        "planned": "569968",
+        "convolution_inputs": 29590,
+        "arithmetic_units": 304051,
+        "sources": {
+          "seed": 4704,
+          "table": 45526,
+          "interpolation": 123559,
+          "convolution": 88763,
+          "doublings": 23494,
+          "checkpoints": 17514,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 3,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "937069687",
+        "visited": "38615069",
+        "unvisited": "3511",
+        "planned": "606066",
+        "convolution_inputs": 30774,
+        "arithmetic_units": 321074,
+        "sources": {
+          "seed": 4704,
+          "table": 50262,
+          "interpolation": 129479,
+          "convolution": 92315,
+          "doublings": 24678,
+          "checkpoints": 18738,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 196
+        },
+        "remaining": []
+      },
+      "factors": [
+        "843150359",
+        "937069687"
+      ],
+      "remaining": [],
+      "certificate_sha256": "7282c26669240c66895002c6ed3f9f5dd5097351ca00d4819d0e6ae2ac359e52"
+    },
+    {
+      "draw": 38,
+      "n": "795299829121843429",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "856995149",
+        "visited": "34535430",
+        "unvisited": "5178",
+        "planned": "578746",
+        "convolution_inputs": 29446,
+        "arithmetic_units": 302029,
+        "sources": {
+          "seed": 4704,
+          "table": 44950,
+          "interpolation": 122839,
+          "convolution": 88331,
+          "doublings": 23350,
+          "checkpoints": 17364,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 2,
+        "sign": 1,
+        "outcome": "prefix_gcd",
+        "factor": "928009721",
+        "visited": "38062106",
+        "unvisited": "2022",
+        "planned": "631108",
+        "convolution_inputs": 30352,
+        "arithmetic_units": 331349,
+        "sources": {
+          "seed": 18624,
+          "table": 49544,
+          "interpolation": 127562,
+          "convolution": 91050,
+          "doublings": 24304,
+          "checkpoints": 18502,
+          "backend_gcds": 111,
+          "inversions": 6,
+          "selector_gcds": 1260,
+          "selector_jacobi": 386
+        },
+        "remaining": []
+      },
+      "factors": [
+        "856995149",
+        "928009721"
+      ],
+      "remaining": [],
+      "certificate_sha256": "8e3411067d96ca9802ba17372e244410a3f57b568b67189bb415a899d2ce449e"
+    },
+    {
+      "draw": 40,
+      "n": "984209557879601329",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "948130433",
+        "visited": "17246215",
+        "unvisited": "1050",
+        "planned": "442962",
+        "convolution_inputs": 20214,
+        "arithmetic_units": 231160,
+        "sources": {
+          "seed": 4704,
+          "table": 44896,
+          "interpolation": 88968,
+          "convolution": 60636,
+          "doublings": 17190,
+          "checkpoints": 14278,
+          "backend_gcds": 63,
+          "inversions": 6,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 7,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "948130433",
+        "visited": "17955867",
+        "unvisited": "1303",
+        "planned": "457536",
+        "convolution_inputs": 20676,
+        "arithmetic_units": 238079,
+        "sources": {
+          "seed": 4704,
+          "table": 46744,
+          "interpolation": 91278,
+          "convolution": 62022,
+          "doublings": 17652,
+          "checkpoints": 14780,
+          "backend_gcds": 63,
+          "inversions": 6,
+          "selector_gcds": 630,
+          "selector_jacobi": 200
+        },
+        "remaining": []
+      },
+      "factors": [
+        "948130433",
+        "1038052913"
+      ],
+      "remaining": [],
+      "certificate_sha256": "c661b49f946e78ef793e3b3fd9edb30b88a150d4717af8abf5923802e07409b5"
+    },
+    {
+      "draw": 41,
+      "n": "774414458792306659",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "822279223",
+        "visited": "36286465",
+        "unvisited": "5775",
+        "planned": "598258",
+        "convolution_inputs": 30016,
+        "arithmetic_units": 309999,
+        "sources": {
+          "seed": 4704,
+          "table": 47230,
+          "interpolation": 125689,
+          "convolution": 90041,
+          "doublings": 23920,
+          "checkpoints": 17924,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "822279223",
+        "visited": "40286232",
+        "unvisited": "871",
+        "planned": "605428",
+        "convolution_inputs": 31318,
+        "arithmetic_units": 328677,
+        "sources": {
+          "seed": 4704,
+          "table": 52438,
+          "interpolation": 132199,
+          "convolution": 93947,
+          "doublings": 25222,
+          "checkpoints": 19272,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "822279223",
+        "941790133"
+      ],
+      "remaining": [],
+      "certificate_sha256": "9026062aaa4f2c0df8818ec45d5725d7bac682de8bbd311da09f6f521453ca79"
+    },
+    {
+      "draw": 42,
+      "n": "1041675257656149859",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "990784231",
+        "visited": "11538445",
+        "unvisited": "1955",
+        "planned": "344380",
+        "convolution_inputs": 16498,
+        "arithmetic_units": 179148,
+        "sources": {
+          "seed": 4704,
+          "table": 30032,
+          "interpolation": 70388,
+          "convolution": 49488,
+          "doublings": 13474,
+          "checkpoints": 10574,
+          "backend_gcds": 63,
+          "inversions": 6,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "990784231",
+        "visited": "2360839",
+        "unvisited": "9479863",
+        "planned": "345344",
+        "convolution_inputs": 7450,
+        "arithmetic_units": 82061,
+        "sources": {
+          "seed": 4704,
+          "table": 12282,
+          "interpolation": 31293,
+          "convolution": 22345,
+          "doublings": 5962,
+          "checkpoints": 4586,
+          "backend_gcds": 61,
+          "inversions": 5,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "990784231",
+        "1051364389"
+      ],
+      "remaining": [],
+      "certificate_sha256": "198e661ff514c83fbc22892697994cc6fc88f0ac527d1a610d0a9cbfc72bc219"
+    },
+    {
+      "draw": 43,
+      "n": "672855613873477733",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "694226189",
+        "visited": "44255243",
+        "unvisited": "3532",
+        "planned": "657492",
+        "convolution_inputs": 32610,
+        "arithmetic_units": 346335,
+        "sources": {
+          "seed": 4704,
+          "table": 57606,
+          "interpolation": 138659,
+          "convolution": 97823,
+          "doublings": 26514,
+          "checkpoints": 20538,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 2,
+        "sign": 1,
+        "outcome": "prefix_gcd",
+        "factor": "969216697",
+        "visited": "51093533",
+        "unvisited": "3174",
+        "planned": "756814",
+        "convolution_inputs": 34594,
+        "arithmetic_units": 390743,
+        "sources": {
+          "seed": 18624,
+          "table": 66512,
+          "interpolation": 148772,
+          "convolution": 103776,
+          "doublings": 28546,
+          "checkpoints": 22750,
+          "backend_gcds": 111,
+          "inversions": 6,
+          "selector_gcds": 1260,
+          "selector_jacobi": 386
+        },
+        "remaining": []
+      },
+      "factors": [
+        "694226189",
+        "969216697"
+      ],
+      "remaining": [],
+      "certificate_sha256": "111ebd64fc36586bbf138dcf0022d6ffd109dcc084c5d6bfa1481c3fa288bc82"
+    },
+    {
+      "draw": 44,
+      "n": "599121431430927173",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "688197877",
+        "visited": "49379361",
+        "unvisited": "4417",
+        "planned": "709638",
+        "convolution_inputs": 34278,
+        "arithmetic_units": 369731,
+        "sources": {
+          "seed": 4704,
+          "table": 64278,
+          "interpolation": 146999,
+          "convolution": 102827,
+          "doublings": 28182,
+          "checkpoints": 22250,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 2,
+        "sign": 1,
+        "outcome": "prefix_gcd",
+        "factor": "870565649",
+        "visited": "58939456",
+        "unvisited": "5286",
+        "planned": "841208",
+        "convolution_inputs": 37148,
+        "arithmetic_units": 426569,
+        "sources": {
+          "seed": 18624,
+          "table": 76728,
+          "interpolation": 161542,
+          "convolution": 111438,
+          "doublings": 31100,
+          "checkpoints": 25374,
+          "backend_gcds": 111,
+          "inversions": 6,
+          "selector_gcds": 1260,
+          "selector_jacobi": 386
+        },
+        "remaining": []
+      },
+      "factors": [
+        "688197877",
+        "870565649"
+      ],
+      "remaining": [],
+      "certificate_sha256": "d9b72088c137cc1ddd806b7effc317f77ecc48b13478e1e80863e885c021edcf"
+    },
+    {
+      "draw": 45,
+      "n": "673361893564704307",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "649591207",
+        "visited": "9440302",
+        "unvisited": "34781225",
+        "planned": "654852",
+        "convolution_inputs": 15132,
+        "arithmetic_units": 160090,
+        "sources": {
+          "seed": 4704,
+          "table": 24568,
+          "interpolation": 63558,
+          "convolution": 45390,
+          "doublings": 12108,
+          "checkpoints": 9274,
+          "backend_gcds": 63,
+          "inversions": 6,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "649591207",
+        "visited": "9440303",
+        "unvisited": "41602519",
+        "planned": "725742",
+        "convolution_inputs": 15132,
+        "arithmetic_units": 160496,
+        "sources": {
+          "seed": 4704,
+          "table": 24568,
+          "interpolation": 63558,
+          "convolution": 45390,
+          "doublings": 12108,
+          "checkpoints": 9276,
+          "backend_gcds": 63,
+          "inversions": 6,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "649591207",
+        "1036593301"
+      ],
+      "remaining": [],
+      "certificate_sha256": "1a7c498bb56cb2d9c5a4d54e9b218bb5b79d16b511d05498f0d0c13497515917"
+    },
+    {
+      "draw": 48,
+      "n": "588931606267658903",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "573730043",
+        "visited": "9440268",
+        "unvisited": "40601675",
+        "planned": "720172",
+        "convolution_inputs": 15132,
+        "arithmetic_units": 160022,
+        "sources": {
+          "seed": 4704,
+          "table": 24568,
+          "interpolation": 63558,
+          "convolution": 45390,
+          "doublings": 12108,
+          "checkpoints": 9206,
+          "backend_gcds": 63,
+          "inversions": 6,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": -1,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "573730043",
+        "visited": "9440286",
+        "unvisited": "50589031",
+        "planned": "794608",
+        "convolution_inputs": 15132,
+        "arithmetic_units": 160462,
+        "sources": {
+          "seed": 4704,
+          "table": 24568,
+          "interpolation": 63558,
+          "convolution": 45390,
+          "doublings": 12108,
+          "checkpoints": 9242,
+          "backend_gcds": 63,
+          "inversions": 6,
+          "selector_gcds": 630,
+          "selector_jacobi": 193
+        },
+        "remaining": []
+      },
+      "factors": [
+        "573730043",
+        "1026496021"
+      ],
+      "remaining": [],
+      "certificate_sha256": "d3b77de6bd33e083b6575905ec1130cd8d8cdb6c2ae930203dae36d64b300776"
+    },
+    {
+      "draw": 51,
+      "n": "747516118337626849",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "705735731",
+        "visited": "2360862",
+        "unvisited": "36133197",
+        "planned": "595100",
+        "convolution_inputs": 7450,
+        "arithmetic_units": 81703,
+        "sources": {
+          "seed": 4704,
+          "table": 12282,
+          "interpolation": 31293,
+          "convolution": 22345,
+          "doublings": 5962,
+          "checkpoints": 4632,
+          "backend_gcds": 61,
+          "inversions": 5,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 11,
+        "sign": -1,
+        "outcome": "prefix_gcd",
+        "factor": "1059201179",
+        "visited": "39222228",
+        "unvisited": "5112",
+        "planned": "1954496",
+        "convolution_inputs": 30860,
+        "arithmetic_units": 772049,
+        "sources": {
+          "seed": 461760,
+          "table": 40844,
+          "interpolation": 125496,
+          "convolution": 92576,
+          "doublings": 23660,
+          "checkpoints": 18358,
+          "backend_gcds": 491,
+          "inversions": 4,
+          "selector_gcds": 6930,
+          "selector_jacobi": 1930
+        },
+        "remaining": []
+      },
+      "factors": [
+        "705735731",
+        "1059201179"
+      ],
+      "remaining": [],
+      "certificate_sha256": "ca95ae27e0365381eb6a9fb376fb84a0d84b66936e3135757012c1f553f694b5"
+    },
+    {
+      "draw": 53,
+      "n": "636051676003808521",
+      "ordinary": {
+        "d": null,
+        "sign": null,
+        "outcome": "prefix_gcd",
+        "factor": "712868369",
+        "visited": "46891050",
+        "unvisited": "2480",
+        "planned": "675390",
+        "convolution_inputs": 33468,
+        "arithmetic_units": 358409,
+        "sources": {
+          "seed": 4704,
+          "table": 61038,
+          "interpolation": 142949,
+          "convolution": 100397,
+          "doublings": 27372,
+          "checkpoints": 21458,
+          "backend_gcds": 65,
+          "inversions": 7,
+          "selector_gcds": 419,
+          "selector_jacobi": 0
+        },
+        "remaining": []
+      },
+      "clipped": {
+        "d": 11,
+        "sign": 1,
+        "outcome": "work_limit",
+        "factor": null,
+        "visited": "0",
+        "unvisited": "50012731",
+        "planned": "2003122",
+        "convolution_inputs": 0,
+        "arithmetic_units": 8860,
+        "sources": {
+          "seed": 0,
+          "table": 0,
+          "interpolation": 0,
+          "convolution": 0,
+          "doublings": 0,
+          "checkpoints": 0,
+          "backend_gcds": 0,
+          "inversions": 0,
+          "selector_gcds": 6930,
+          "selector_jacobi": 1930
+        },
+        "remaining": [
+          "636051676003808521"
+        ]
+      },
+      "factors": [
+        "712868369",
+        "892242809"
+      ],
+      "remaining": [],
+      "certificate_sha256": "4345dfcc53e34e986c34415752ba94155aa980fbce353cc8eebb1eaa4c286252"
+    }
+  ],
+  "arithmetic_sources": {
+    "ordinary": {
+      "seed": 150528,
+      "table": 1452988,
+      "interpolation": 3551866,
+      "convolution": 2512578,
+      "doublings": 678620,
+      "checkpoints": 524192,
+      "backend_gcds": 2052,
+      "inversions": 210,
+      "selector_gcds": 13408,
+      "selector_jacobi": 0
+    },
+    "clipped": {
+      "seed": 1157376,
+      "table": 1658236,
+      "interpolation": 3885454,
+      "convolution": 2732090,
+      "doublings": 743722,
+      "checkpoints": 585622,
+      "backend_gcds": 3173,
+      "inversions": 196,
+      "selector_gcds": 43470,
+      "selector_jacobi": 12775
+    }
+  },
+  "search_cpu_seconds": [
+    {
+      "ordinary": 0.011248999999999981,
+      "clipped": 0.074635
+    },
+    {
+      "ordinary": 0.07662999999999998,
+      "clipped": 0.06856699999999999
+    },
+    {
+      "ordinary": 0.09006599999999998,
+      "clipped": 0.07329299999999994
+    },
+    {
+      "ordinary": 0.014610000000000012,
+      "clipped": 0.09004699999999999
+    },
+    {
+      "ordinary": 0.03265300000000004,
+      "clipped": 0.030098999999999987
+    },
+    {
+      "ordinary": 0.08410600000000001,
+      "clipped": 0.081322
+    },
+    {
+      "ordinary": 0.08342499999999997,
+      "clipped": 0.07964799999999994
+    },
+    {
+      "ordinary": 0.07398800000000016,
+      "clipped": 0.0918540000000001
+    },
+    {
+      "ordinary": 0.08503599999999989,
+      "clipped": 0.07533999999999996
+    },
+    {
+      "ordinary": 0.08174999999999999,
+      "clipped": 0.07704899999999992
+    },
+    {
+      "ordinary": 0.0682799999999999,
+      "clipped": 0.060383000000000076
+    },
+    {
+      "ordinary": 0.07856500000000022,
+      "clipped": 0.07152700000000012
+    },
+    {
+      "ordinary": 0.04874500000000004,
+      "clipped": 0.03266200000000019
+    },
+    {
+      "ordinary": 0.059078000000000186,
+      "clipped": 0.06480400000000008
+    },
+    {
+      "ordinary": 0.06082900000000002,
+      "clipped": 0.05574100000000026
+    },
+    {
+      "ordinary": 0.059025000000000105,
+      "clipped": 0.06340099999999982
+    },
+    {
+      "ordinary": 0.06695700000000038,
+      "clipped": 0.0789850000000003
+    },
+    {
+      "ordinary": 0.06894,
+      "clipped": 0.07026200000000005
+    },
+    {
+      "ordinary": 0.024026000000000103,
+      "clipped": 0.05460200000000004
+    },
+    {
+      "ordinary": 0.062274999999999636,
+      "clipped": 0.06820099999999973
+    },
+    {
+      "ordinary": 0.07472400000000023,
+      "clipped": 0.07426699999999986
+    },
+    {
+      "ordinary": 0.06033400000000011,
+      "clipped": 0.06411100000000003
+    },
+    {
+      "ordinary": 0.04784100000000002,
+      "clipped": 0.06310100000000007
+    },
+    {
+      "ordinary": 0.04278599999999999,
+      "clipped": 0.03786299999999976
+    },
+    {
+      "ordinary": 0.06315800000000005,
+      "clipped": 0.05661200000000033
+    },
+    {
+      "ordinary": 0.03833600000000015,
+      "clipped": 0.01478299999999999
+    },
+    {
+      "ordinary": 0.06935899999999995,
+      "clipped": 0.06926699999999997
+    },
+    {
+      "ordinary": 0.07071000000000005,
+      "clipped": 0.07727499999999976
+    },
+    {
+      "ordinary": 0.031610999999999834,
+      "clipped": 0.03369099999999969
+    },
+    {
+      "ordinary": 0.03564199999999973,
+      "clipped": 0.03494799999999998
+    },
+    {
+      "ordinary": 0.012391999999999737,
+      "clipped": 0.08388700000000071
+    },
+    {
+      "ordinary": 0.06856200000000001,
+      "clipped": 0.002449999999999619
+    }
+  ]
+}
