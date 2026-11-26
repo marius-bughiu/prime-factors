@@ -411,6 +411,29 @@ def lifted_readout_case(case, proof):
     agree(case, measured, ['outcome', 'winning_index', 'total_terms', 'required_width',
                           'signed_targets', 'scalar_products', 'root_polynomials', 'block_evaluations', 'work'])
 
+    if 'reflected' in case:
+        start = time.perf_counter()
+        reflected = geometric_lifted_readout.search(*args, reflected=True)
+        seconds = time.perf_counter()-start
+        block = reflected.get('block_work', {})
+        counters = {key: block.get('reflected_'+key, 0) for key in
+                    ('denominators', 'batch_gcds', 'scan_gcds', 'inversions', 'products', 'mirrors')}
+        counters['status'] = block.get('reflected_status', 'unrun')
+        if counters != case['reflected']:
+            raise ValueError(f"{case['id']}: reflected coefficient work mismatch")
+        if counters['status'] == 'proper_divisor':
+            factor = reflected['factor']
+            if not (1 < factor < n and n % factor == 0):
+                raise ValueError(f"{case['id']}: invalid reflected divisor")
+        else:
+            for key in ('samples', 'linear', 'quadratic', 'outcome', 'factor', 'winning_index'):
+                if reflected[key] != run[key]:
+                    raise ValueError(f"{case['id']}: tree and reflected {key} disagree")
+        run['reflected'] = dict(counters, seconds=seconds, outcome=reflected['outcome'],
+                                factor=str(reflected['factor']) if reflected['factor'] else None,
+                                scalar_products=block.get('scalar_products', 0),
+                                unvisited_terms=reflected['work']['unvisited_terms'])
+
     start = time.perf_counter()
     eager = geometric_lifted_readout.search(*args, all_targets=True)
     run['eager_seconds'] = time.perf_counter()-start

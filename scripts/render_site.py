@@ -473,6 +473,13 @@ def case_row(result):
             count += (f' · all three targets {duration(search["eager_seconds"])}'
                       f' · checked readings against {escape(search["reference"].replace("_", " "))}'
                       f' evaluation at the transported base')
+            comparison = search.get('reflected')
+            if comparison:
+                count += (f' · reflected setup checked {comparison["denominators"]:,} denominators'
+                          f' in {comparison["batch_gcds"] + comparison["scan_gcds"]} gcds'
+                          f' · {comparison["inversions"]} batch inversions'
+                          f' · reflected search {duration(comparison["seconds"])}'
+                          f' vs tree {duration(result["discovery_seconds"])}')
         elif work['unvisited_terms']:
             count += f' · zero setup powers · {compact_count(work["unvisited_terms"])} unvisited'
     elif result['method'] == 'geometric-readout-blocks':

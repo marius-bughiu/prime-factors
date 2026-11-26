@@ -6,7 +6,7 @@ from .geometric_readout_blocks import _prepare_family, _setup, _shape
 from .geometric_sum_readout import _decode, _interval
 
 
-def search(n, base, max_block_width, max_quotient=48, *, all_targets=False):
+def search(n, base, max_block_width, max_quotient=48, *, all_targets=False, reflected=False):
     """Evaluate signed directions on one grid, and check every reported divisor.
 
     The coefficient interpretation assumes n=p*q for distinct odd primes p≤q≤2p.
@@ -48,8 +48,12 @@ def search(n, base, max_block_width, max_quotient=48, *, all_targets=False):
     report.update(reduced_base=lifted % n, reduced_target=target % n)
     work.update(setup_powers=2, terms=count, unvisited_terms=0)
     shape, ops = _setup(n, lifted, count, 3)
-    at = _prepare_family(lifted*(1+n) % mod, mod, *shape, ops)
+    at = _prepare_family(lifted*(1+n) % mod, mod, *shape, ops,
+                         reflected_modulus=n if reflected else None)
     report['block_work'] = ops
+    if at is None:
+        work.update(terms=0, unvisited_terms=count)
+        return finish('reflected_denominator_gcd', int(ops['reflected_factor']))
 
     def sample(z):
         key = str(z)
@@ -57,6 +61,13 @@ def search(n, base, max_block_width, max_quotient=48, *, all_targets=False):
             report['samples'][key] = at(target*(1+z*n) % mod)
         return report['samples'][key]
 
+    return _decode_samples(n, lower, count, max_quotient, report, sample, finish, all_targets)
+
+
+def _decode_samples(n, lower, count, max_quotient, report, sample, finish, all_targets):
+    """Decode signed scalars in absolute index coordinates using the full interval length."""
+    work = report['work']
+    ops = report['block_work']
     if all_targets:
         for z in (-1, 0, 1):
             sample(z)

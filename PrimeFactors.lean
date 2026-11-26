@@ -130,6 +130,9 @@ import PrimeFactors.GeometricGeneratorFraction
 import PrimeFactors.GeometricPrincipalLift
 import PrimeFactors.GeometricLiftedDigit
 import PrimeFactors.GeometricNegativeDirection
+import PrimeFactors.GeometricSparseFilter
+import PrimeFactors.ReflectedGeometricBlocks
+import PrimeFactors.OddSumWheel
 import PrimeFactors.ReusableSumBase
 import PrimeFactors.SignatureUpdates
 import PrimeFactors.FixedBaseSignature

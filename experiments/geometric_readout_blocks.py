@@ -4,6 +4,7 @@ from functools import partial
 from math import gcd, isqrt
 
 from .geometric_sum_readout import _interval, _lane
+from .reflected_geometric_blocks import reflected_polynomial
 from .weighted_stride_search import geometric_values, root_polynomial, triangular_powers
 
 
@@ -13,14 +14,20 @@ def _shape(count):
     return width, groups, tail
 
 
-def _prepare_family(q, mod, width, groups, tail, work):
+def _prepare_family(q, mod, width, groups, tail, work, *, reflected_modulus=None):
     """Prepare one baby polynomial and one reusable grid for this geometric base."""
     roots = [1]
     for _ in range(1, width):
         roots.append(roots[-1]*q % mod)
     work['baby_roots'] += width
+    poly = None
+    if reflected_modulus is not None:
+        poly, factor = reflected_polynomial(roots, q, mod, reflected_modulus, work)
+        if factor is not None:
+            return None
+    if poly is None:
+        poly = root_polynomial(roots, mod, stats=work)
     work['root_polynomials'] += 1
-    poly = root_polynomial(roots, mod, stats=work)
     jump = roots[-1]*q % mod
     inverse = pow(jump, -1, mod)
     work['grid_inversions'] += 1
