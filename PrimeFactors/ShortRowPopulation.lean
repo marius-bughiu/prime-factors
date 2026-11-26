@@ -328,4 +328,211 @@ theorem population (analytic : AxlerEndpoints) :
   have b : 42*(661*(stepSize/708)^2)+1000*X < 1000*(28*(stepSize/711)^2) := by decide +kernel
   constructor <;> omega
 
+private def excess (n : ℕ) := n-2*X^2
+private def credit (ij : ℕ×ℕ) := (32+ij.1)*(32+ij.2)-2048
+
+/-- Each fully eligible square contributes its lower product corner above the full-size
+cutoff, measured in units of (X/32)². -/
+private theorem credits : ∑ ij∈certain 2 1, credit ij = 373061 := by decide +kernel
+
+private theorem credit_box {ij z : ℕ×ℕ} (h : z∈box ij) :
+    credit ij*stepSize^2 ≤ excess (z.1*z.2) := by
+  obtain ⟨p,q⟩ := mem_product.mp h
+  have bound := Nat.mul_le_mul (mem_bin.mp p).1.1 (mem_bin.mp q).1.1
+  dsimp only [edge] at bound
+  simp only [credit,excess]
+  by_cases low : (32+ij.1)*(32+ij.2)≤2048
+  · simp [Nat.sub_eq_zero_of_le low]
+  have eq : ((32+ij.1)*(32+ij.2)-2048)+2048=(32+ij.1)*(32+ij.2) := by omega
+  have h' := congrArg (· *stepSize^2) eq
+  rw [←scale]
+  have : ((32+ij.1)*(32+ij.2)-2048)*stepSize^2 + 2*(32*stepSize)^2 ≤ z.1*z.2 := by
+    nlinarith only [h',bound]
+  omega
+
+private theorem weighted_cover : (certain 2 1).biUnion box ⊆ ordered (fun _ => True) ∪ primes.diag := by
+  intro z hz
+  obtain ⟨ij,h,boxm⟩ := mem_biUnion.mp hz
+  obtain ⟨base,threshold⟩ := mem_filter.mp h
+  obtain ⟨i,j⟩ := mem_product.mp base
+  obtain ⟨p,q⟩ := mem_product.mp boxm
+  have ip := bin_in_primes (mem_range.mp i) p
+  have jq := bin_in_primes (mem_range.mp j) q
+  by_cases same : z.1=z.2
+  · exact mem_union_right _ (mem_diag.mpr ⟨ip,same⟩)
+  have lim := Nat.mul_le_mul (mem_bin.mp p).1.1 (mem_bin.mp q).1.1
+  change 2*1024 ≤ 1*((32+ij.1)*(32+ij.2)) at threshold
+  have h1 := Nat.mul_le_mul_right (stepSize^2) threshold
+  have enough : 2*X^2≤z.1*z.2 := by
+    rw [←scale]
+    dsimp only [edge] at lim
+    nlinarith only [h1,lim]
+  exact mem_union_left _ (mem_ordered.mpr ⟨ip,jq,same,enough,trivial⟩)
+
+private theorem price_sum {f : ℕ×ℕ→ℕ} (G : Finset (ℕ×ℕ)) (c : ℕ×ℕ→ℕ)
+    {K P : ℕ} (price : ∑ ij∈G,c ij=P)
+    (per : ∀ ij∈G, c ij*K ≤ ∑ z∈box ij, f z) :
+    P*K ≤ ∑ z∈G.biUnion box, f z := by
+  rw [←price,Finset.sum_mul,Finset.sum_biUnion (disjoint_boxes _)]
+  exact sum_le_sum per
+
+private theorem union_sum {ι : Type*} [DecidableEq ι] (s t : Finset ι) (f : ι→ℕ) :
+    ∑ x∈s∪t, f x ≤ (∑ x∈s,f x)+(∑ x∈t,f x) :=
+  le_trans (Nat.le_add_right _ _) (Finset.sum_union_inter (s₁:=s) (s₂:=t) (f:=f)).le
+
+private def score (z : ℕ×ℕ) := excess (z.1*z.2)
+
+private theorem unit_box_credit {ι : Type*} (F : Finset ι) (v : ι→ℕ) {L C H : ℕ}
+    (card : L≤F.card) (each : ∀ z∈F, C*H ≤ v z) :
+    C*(L*H) ≤ F.sum v := by
+  calc
+    _ = L*(C*H) := by ring
+    _ ≤ F.card*(C*H) := Nat.mul_le_mul_right _ card
+    _ = _ := (nsmul_eq_mul ..).symm
+    _ ≤ _ := card_nsmul_le_sum F v (C*H) each
+
+private theorem unit_sum_upper {ι : Type*} (F : Finset ι) (v : ι→ℕ) {L B : ℕ}
+    (card : F.card≤B) (each : ∀ z∈F, v z≤(2*B)^2) (endp : 4*B^3=L) :
+    F.sum v ≤ L := by
+  calc
+    _ ≤ _ := sum_le_card_nsmul F v ((2*B)^2) each
+    _ = F.card*((2*B)^2) := nsmul_eq_mul ..
+    _ ≤ B*((2*B)^2) := Nat.mul_le_mul_right _ card
+    _ = L := by rw [←endp]; ring
+
+private theorem box_credit (analytic : AxlerEndpoints) (ij : ℕ×ℕ) (hh : ij∈certain 2 1) :
+    credit ij*((stepSize/711)^2*stepSize^2) ≤ ∑ z∈box ij, score z := by
+  obtain ⟨i,j⟩ := mem_product.mp (mem_filter.mp hh).1
+  have lo : (stepSize/711)^2≤(box ij).card := by
+    simp only [box,card_product,sq]
+    exact Nat.mul_le_mul (bin_count analytic (mem_range.mp i)).1
+      (bin_count analytic (mem_range.mp j)).1
+  exact unit_box_credit (box ij) score lo (fun _ hz => credit_box hz)
+
+private theorem diagonal_credit : ∑ z∈primes.diag, score z ≤ 4*X^3 := by
+  have count : primes.card≤X := by
+    rw [primes]
+    exact (card_filter_le _ _).trans (by rw [Nat.card_Ico]; omega)
+  apply unit_sum_upper primes.diag score (by simpa only [diag_card] using count) _ rfl
+  intro z hz
+  obtain ⟨p,same⟩ := mem_diag.mp hz
+  have pair := mem_Ico.mp (mem_filter.mp (show z.1∈(Ico X (2*X)).filter Nat.Prime by simpa [primes] using p)).1
+  dsimp only [score,excess]
+  exact (Nat.sub_le _ _).trans (by rw [←same,←sq]; exact Nat.pow_le_pow_left pair.2.le _)
+
+private theorem priced_union {ι : Type*} [DecidableEq ι] (S D T : Finset ι) (v : ι→ℕ)
+    {p u h m : ℕ} (tiles : p*(u*h) ≤ T.sum v) (incl : T⊆S∪D) (diag : D.sum v ≤ m) :
+    p*u*h ≤ S.sum v + m := by
+  calc
+    _ = _ := Nat.mul_assoc p u h
+    _ ≤ _ := tiles
+    _ ≤ _ := sum_le_sum_of_subset (f:=v) incl
+    _ ≤ _ := union_sum S D v
+    _ ≤ _ := Nat.add_le_add_left diag _
+
+private theorem weighted_boxes (analytic : AxlerEndpoints) :
+    373061*(stepSize/711)^2*stepSize^2 ≤ (ordered (fun _ => True)).sum score+4*X^3 :=
+  priced_union (ordered (fun _ => True)) primes.diag ((certain 2 1).biUnion box) score
+    (price_sum (f:=score) (certain 2 1) credit credits (box_credit analytic))
+    weighted_cover diagonal_credit
+
+private theorem two_sums (f : (ℕ×ℕ)→ℕ) (sym : ∀z, f z=f z.swap) : (ordered (fun _ => True)).sum f =
+    2*eligible.sum f := by
+  let V := ordered (fun _ => True)
+  let lowerSide (z : ℕ×ℕ) := z.1<z.2
+  have flip {z : ℕ×ℕ} (h : z∈V) : z.swap∈V := by
+    obtain ⟨p,q,ne,size,_⟩ := (mem_ordered (E:=fun _ => True) (z:=z)).mp h
+    exact mem_ordered.mpr ⟨q,p,ne.symm,by simpa only [Prod.swap,mul_comm] using size,trivial⟩
+  have same : ∑ z∈V.filter lowerSide, f z = ∑ z∈V.filter (fun z => ¬lowerSide z), f z := by
+    apply sum_nbij' Prod.swap Prod.swap
+    · intro z hz
+      obtain ⟨h,l⟩ := mem_filter.mp hz
+      exact mem_filter.mpr ⟨flip h,by dsimp only [lowerSide,Prod.swap] at *; omega⟩
+    · intro z hz
+      obtain ⟨h,l⟩ := mem_filter.mp hz
+      have ne := ((mem_ordered (E:=fun _ => True) (z:=z)).mp h).2.2.1
+      exact mem_filter.mpr ⟨flip h,by dsimp only [lowerSide,Prod.swap] at *; omega⟩
+    · intros; rfl
+    · intros; rfl
+    · intro z _; exact sym z
+  have partition := sum_filter_add_sum_filter_not V lowerSide f
+  have matchSets : V.filter lowerSide=eligible := by rw [eligible,sample]
+  change ∑ z∈V, f z = 2*∑ z∈eligible, f z
+  rw [←matchSets,←partition,←same,two_mul]
+
+/-- The tangent (5s−8B)² ≥ 0 converts the cost of the two inclusive intervals into
+a linear inequality in n. The constant term includes both endpoint roundings. -/
+private theorem width_envelope {B n : ℕ} (size : 200000≤B) (low : 2*B^2≤n)
+    (fits : ShortPascalRow.lower n B ≤ n.sqrt+1) :
+    80000*B*partnerWidth B n + 20075*(n-2*B^2) ≤ 56000*B*ratioWidth n + 10859*B^2 := by
+  obtain ⟨limit,ratio⟩ := endpoints (by omega : 0<B) (show 0<n by nlinarith [Nat.zero_le ((B-1)^2)])
+  let s := n.sqrt
+  have sq : s^2≤n := Nat.sqrt_le' n
+  have tangent : 80*B*s≤25*n+64*B^2 := by
+    zify at sq ⊢
+    nlinarith only [sq,sq_nonneg (5*(s:ℤ)-8*B)]
+  have a : partnerWidth B n + ShortPascalRow.lower n B=s+1 := Nat.sub_add_cancel fits
+  have b : s+1≤ratioWidth n+ceilSqrt ((n+1)/2) := by unfold ratioWidth; dsimp [s]; omega
+  change 100*ceilSqrt ((n+1)/2) ≤ 71*(s+1)+100 at ratio
+  have m1 := congrArg (B*·) a
+  have m2 := Nat.mul_le_mul_left B b
+  have m3 := Nat.mul_le_mul_left B ratio
+  have padding := Nat.mul_le_mul_right B size
+  have sub := Nat.sub_add_cancel low
+  nlinarith only [tangent,limit,m1,m2,m3,padding,sub,Nat.zero_le B]
+
+private theorem aggregate_moment (analytic : AxlerEndpoints) :
+    10859*X^2*eligible.card < 20075*(eligible.sum score) := by
+  have top := upper analytic
+  have bottom := weighted_boxes analytic
+  rw [two_sums score (by intro z; dsimp only [score,Prod.swap]; rw [mul_comm])] at bottom
+  have constant : 10859*X^2*(661*(stepSize/708)^2) + 20075*(4*X^3) <
+      20075*(373061*(stepSize/711)^2*stepSize^2) := by decide +kernel
+  have u := Nat.mul_le_mul_left (10859*X^2) top
+  have v := Nat.mul_le_mul_left 20075 bottom
+  nlinarith only [constant,u,v]
+
+/-- The inclusive number of candidates charged to a pair by the bit-width bound. -/
+def partnerPrice (z : ℕ×ℕ) := partnerWidth X (z.1*z.2)
+/-- The inclusive number charged to the same pair by the ratio-only bound. -/
+def ratioPrice (z : ℕ×ℕ) := ratioWidth (z.1*z.2)
+
+private theorem sample_envelope (z : ℕ×ℕ) (hz : z∈eligible) : 80000*X*partnerPrice z +
+    20075*score z ≤ 56000*X*ratioPrice z+10859*X^2 := by
+  rw [eligible,sample] at hz
+  obtain ⟨ord,hlt⟩ := mem_filter.mp hz
+  obtain ⟨p,q,_,bounded,_⟩ := (mem_ordered (E:=fun _ => True) (z:=z)).mp ord
+  have pm : z.1∈(Ico X (2*X)).filter Nat.Prime := by simpa only [primes] using p
+  have qm : z.2∈(Ico X (2*X)).filter Nat.Prime := by simpa only [primes] using q
+  obtain ⟨⟨pl,_⟩,pp⟩ := (show (_∧_)∧_ by simpa only [mem_filter,mem_Ico] using pm)
+  obtain ⟨⟨_,qh⟩,qp⟩ := (show (_∧_)∧_ by simpa only [mem_filter,mem_Ico] using qm)
+  have ps := pp.pos
+  have bot := Nat.le_sqrt.mpr (Nat.mul_le_mul_left z.1 hlt.le)
+  have den : 0<2*X-1 := by decide +kernel
+  have small : (z.1*z.2-1)/(2*X-1)<z.1 := (Nat.div_lt_iff_lt_mul den).mpr (by
+    have lim := Nat.mul_le_mul_left z.1 (show z.2≤2*X-1 by omega)
+    have pos := Nat.mul_pos ps qp.pos
+    omega)
+  apply width_envelope (by decide +kernel) bounded
+  exact le_trans (max_le pl (by omega)) (Nat.le_succ_of_le bot)
+
+private theorem weighted_conclusion {ι : Type*} (S : Finset ι) {B : ℕ} (pos : 0<B)
+    (P R E : ι→ℕ) (mean : 10859*B^2*S.card < 20075*S.sum E)
+    (costs : ∀ z∈S, 80000*B*P z+20075*E z ≤ 56000*B*R z+10859*B^2) :
+    10*S.sum P < 7*S.sum R := by
+  have allCosts := sum_le_sum costs
+  simp only [sum_add_distrib,←Finset.mul_sum,Finset.sum_const,nsmul_eq_mul] at allCosts
+  have final : 8000*B*(10*∑ z∈S,P z) < 8000*B*(7*∑ z∈S,R z) := by
+    nlinarith only [mean,allCosts]
+  exact (Nat.mul_lt_mul_left (Nat.mul_pos (by decide) pos)).mp final
+
+/-- Across the same uniform eligible population, summing the inclusive candidate
+counts after using both prime bit lengths retains less than 70% of the original
+total. This bounds expected interval length, separately from running time. -/
+theorem aggregate (analytic : AxlerEndpoints) :
+    10*eligible.sum partnerPrice <
+    7*eligible.sum ratioPrice := by
+  exact weighted_conclusion eligible (by decide +kernel : 0<X)
+    partnerPrice ratioPrice score (aggregate_moment analytic) sample_envelope
+
 end PrimeFactors.ShortRowPopulation

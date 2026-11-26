@@ -8,7 +8,7 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
-**Knowing the primes’ bit length saved search work on ordinary inputs.** On eight fresh 80-bit products the same algorithm found all eight prime pairs while checking 21% fewer candidates in total. On an 88-bit product CPU time dropped from 18.9 to 14.6 seconds. The smaller range still exceeded $2^{1020}$ integers on each ordinary 2,048-bit input. [A small example, the general proof and the timings](discoveries/a-shorter-pascal-row-for-equal-width-primes.md)
+**Knowing the primes’ bit length cuts the average candidate range by more than 30% for ordinary 2,048-bit products.** The calculation combines a published prime-count bound with a Lean proof. On eight fresh 80-bit products the same algorithm found all eight prime pairs while checking 21% fewer candidates in total. On an 88-bit product CPU time dropped from 18.9 to 14.6 seconds. The smaller range still exceeded $2^{1020}$ integers on each ordinary 2,048-bit input. [A small example, the general proof and the timings](discoveries/a-shorter-pascal-row-for-equal-width-primes.md)
 
 **Changing one number in a polynomial recovered 11 and 17 from 187.** For an entire class of products at least one third of the possible changes expose a prime. A related binomial coefficient always gives the other prime when both have the same bit length. The expensive step is computing the coefficients. [Which changes work and what they cost](discoveries/which-translated-coefficients-reveal-a-prime.md)
 
