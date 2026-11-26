@@ -46,7 +46,7 @@ from experiments.monotone_divisor_sampling import scan as scan_divisor_prefixes,
 from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
 from experiments.smooth_factor_sums import scan_two_three
 from experiments.near_smooth_sum import search as near_smooth_search
-from experiments import carry_interval, radix_carries
+from experiments import carry_interval, radix_carries, sum_signature_join
 from scripts import near_smooth_certificate, trace_cover_certificate
 from experiments import trace_cover, trace_cover_transfer
 from experiments.gap_newton_lanes import search as gap_lane_search
@@ -411,6 +411,16 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'sum-signature':
+        search = sum_signature_join.search(int(case['n']), bases=case.get('input_bases'),
+                                           max_half_entries=case['max_half_entries'])
+        elapsed = time.perf_counter() - start
+        agree(case, search, ['outcome', 'factors'])
+        agree(dict(id=name, **case['work_checks']), search['work'], case['work_checks'])
+        factors = search.pop('factors')
+        search['max_half_entries'] = case['max_half_entries']
+        result = certify_split(case, proof, int(factors[0]) if factors else None,
+                               elapsed, 'sum_signature', search)
     elif method == 'carry-interval':
         n = int(case['n'])
         exponent, high, budget = case['exponent'], case['high'], int(case['low_budget'])
@@ -1373,6 +1383,7 @@ def main():
                              ('trace-transfer.json', 'trace-transfer'),
                              ('radix-carries.json', 'radix-carries'),
                              ('carry-interval.json', 'carry-interval'),
+                             ('sum-signature.json', 'sum-signature'),
                              ('weighted-sparse.json', 'weighted-sparse'),
                              ('weighted-base.json', 'weighted-base'),
                              ('quartic-trace.json', 'quartic-trace'),

@@ -460,6 +460,18 @@ def case_row(result):
         count = (f'Base selection · {selection["bases_tested"]:,} of {w["max_primes"]:,} primes tested'
                  f' · combined order {escape(selection["combined_order"])}'
                  f' · {escape(w["outcome"].replace("_", " "))}')
+    elif result['method'] == 'sum-signature':
+        search = result['sum_signature']
+        w = search['work']
+        count = (f'{len(search["bases"])} modular bases · {w["local_sites"]:,} local residues tested · '
+                 f'planned lists of {compact_count(w["left_entries"])} and {compact_count(w["right_entries"])}')
+        if search['outcome'] == 'half_list_limit':
+            count += f' · cap {search["max_half_entries"]:,} per list · stopped before construction'
+        elif w['signature_matches'] is not None:
+            count += (f' · {w["raw_interval_survivors"]:,} candidate sums · {w["signature_matches"]:,} matches'
+                      f' · {w["modular_powers"]:,} modular powers · {w["square_tests"]:,} square tests')
+            if w["halving_gcds"]:
+                count += f' · {w["halving_gcds"]:,} gcds from the common exponent'
     elif result['method'] == 'carry-interval':
         w = result['carry_interval']
         ops = w['work']

@@ -1,0 +1,183 @@
+[
+  {
+    "id": "sum-signature-fresh-52",
+    "description": "Count possible prime sums on an independently drawn 52-bit product with two reproducible bases",
+    "n": "2961805344422983",
+    "max_half_entries": 65536,
+    "outcome": "factor",
+    "work_checks": {
+      "local_moduli": 8,
+      "local_sites": 71,
+      "local_inverses": 70,
+      "left_entries": 216,
+      "right_entries": 216,
+      "unvisited_half_entries": 0,
+      "raw_interval_survivors": 15902,
+      "signature_matches": 1,
+      "modular_powers": 866,
+      "lookups": 289,
+      "square_tests": 1,
+      "aggregate_exponent": null,
+      "halving_squares": 0,
+      "halving_gcds": 0
+    },
+    "status": "complete",
+    "factors": [
+      "52902449",
+      "55986167"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "sum-signature-one-base-52",
+    "description": "Repeat the fresh 52-bit search with base 3, the first prime with negative Jacobi symbol on this input",
+    "n": "2961805344422983",
+    "max_half_entries": 65536,
+    "outcome": "factor",
+    "work_checks": {
+      "local_moduli": 8,
+      "local_sites": 71,
+      "local_inverses": 70,
+      "left_entries": 216,
+      "right_entries": 216,
+      "unvisited_half_entries": 0,
+      "raw_interval_survivors": 15902,
+      "signature_matches": 1,
+      "modular_powers": 433,
+      "lookups": 289,
+      "square_tests": 1,
+      "aggregate_exponent": null,
+      "halving_squares": 0,
+      "halving_gcds": 0
+    },
+    "status": "complete",
+    "factors": [
+      "52902449",
+      "55986167"
+    ],
+    "remaining": [],
+    "input_bases": [
+      3
+    ]
+  },
+  {
+    "id": "sum-signature-ambiguous-52",
+    "description": "Count surviving sums on the same product when both bases are 1",
+    "n": "2961805344422983",
+    "max_half_entries": 65536,
+    "input_bases": [
+      1,
+      1
+    ],
+    "outcome": "ambiguous_signature",
+    "work_checks": {
+      "local_moduli": 8,
+      "local_sites": 71,
+      "local_inverses": 70,
+      "left_entries": 216,
+      "right_entries": 216,
+      "unvisited_half_entries": 0,
+      "raw_interval_survivors": 15902,
+      "signature_matches": 15902,
+      "modular_powers": 866,
+      "lookups": 289,
+      "square_tests": 0,
+      "aggregate_exponent": "47098626803659719200",
+      "halving_squares": 0,
+      "halving_gcds": 0
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "2961805344422983"
+    ]
+  },
+  {
+    "id": "sum-signature-two-matches",
+    "description": "Recover factors from the common exponent of two matching sums",
+    "n": "109969",
+    "max_half_entries": 65536,
+    "input_bases": [
+      35
+    ],
+    "outcome": "factor",
+    "work_checks": {
+      "local_moduli": 3,
+      "local_sites": 9,
+      "local_inverses": 8,
+      "left_entries": 3,
+      "right_entries": 2,
+      "unvisited_half_entries": 0,
+      "raw_interval_survivors": 4,
+      "signature_matches": 2,
+      "modular_powers": 7,
+      "lookups": 5,
+      "square_tests": 0,
+      "aggregate_exponent": "218580",
+      "halving_squares": 1,
+      "halving_gcds": 2
+    },
+    "status": "complete",
+    "factors": [
+      "277",
+      "397"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "sum-signature-fresh-2048",
+    "description": "Price both full lists for the independently constructed 2,048-bit comparison",
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "max_half_entries": 65536,
+    "outcome": "half_list_limit",
+    "work_checks": {
+      "local_moduli": 132,
+      "local_sites": 44553,
+      "local_inverses": 44552,
+      "left_entries": 951030527661335951438936960561962954959023772276588323516575248316125815284886153272253793320740220390314805821440000000000000000000000,
+      "right_entries": 533156420976757751499205650750230811020006437799275219055810590399904656612018539059318632972093416426666670198074900480000000000000000,
+      "unvisited_half_entries": 1484186948638093702938142611312193765979030210075863542572385838716030471896904692331572426292833636816981476019514900480000000000000000,
+      "raw_interval_survivors": null,
+      "signature_matches": null,
+      "modular_powers": 0,
+      "lookups": 0,
+      "square_tests": 0,
+      "aggregate_exponent": null,
+      "halving_squares": 0,
+      "halving_gcds": 0
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    ]
+  },
+  {
+    "id": "sum-signature-crossed-2048",
+    "description": "Price both full lists for the crossed 2,048-bit comparison",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "max_half_entries": 65536,
+    "outcome": "half_list_limit",
+    "work_checks": {
+      "local_moduli": 132,
+      "local_sites": 44553,
+      "local_inverses": 44552,
+      "left_entries": 1216264273585217422832687467881899500362878472849651797392579077625174604224097973530683337681338317562755332765122560000000000000000000,
+      "right_entries": 729510607749645958350263399642419192912957018731757271074706721659427982207044423734926836517210888042331504640000000000000000000000000,
+      "unvisited_half_entries": 1945774881334863381182950867524318693275835491581409068467285799284602586431142397265610174198549205605086837405122560000000000000000000,
+      "raw_interval_survivors": null,
+      "signature_matches": null,
+      "modular_powers": 0,
+      "lookups": 0,
+      "square_tests": 0,
+      "aggregate_exponent": null,
+      "halving_squares": 0,
+      "halving_gcds": 0
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  }
+]

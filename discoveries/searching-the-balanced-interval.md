@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+Two randomly chosen bases distinguish every sum in the standard balanced interval with probability above 39 in 40 for each product of distinct primes $64\le p<q\le 2p$. The complete two-list search recovered a fresh 52-bit example, and a wrong sum helped factor 109,969. At 2,048 bits at least one complete list needs more than $2^{442}$ entries even with product-dependent prime selection. [Search, proof and measured costs](reading-the-factor-sum.md)
+
+At radix $2^{704}$, even 640 extra leading bits in addition to the 1,023 trailing bits leave a single bounded lower-carry guess successful on fewer than one in $2^{72}$ eligible pairs. Once the residual divisors and a strip are specified, the observed words determine an explicit line containing every candidate there. [Proof and worked example](predicting-a-carry-from-both-ends.md)
+
 Letting the product choose a base through the divisors of $N-1$ and $N+1$ finds small factors that all comparable dyadic bases miss. Even granting every such large base and lower corrections through $\pm2^{357}$, the search covers fewer than one in $2^{117}$ target pairs. [Adaptive base selection, sample and counting proof](choosing-a-base-from-the-product.md)
 
 A whole interval of candidate corrections can sometimes be checked with two square tests. At a public base and upper correction, a 354-bit lower correction recovered the two primes on a selected 2,048-bit input. Even if every interval were cheap to check, the same tolerance across all 512 tested bases reaches fewer than one in $2^{113}$ eligible prime pairs. [Checked result, alternative search and frequency proof](checking-a-range-of-product-carries.md)

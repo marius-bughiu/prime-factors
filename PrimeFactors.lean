@@ -110,6 +110,10 @@ import PrimeFactors.Isolation
 import PrimeFactors.JacobiReadings
 import PrimeFactors.JacobiSeparation
 import PrimeFactors.JointPeriod
+import PrimeFactors.SumSignatureProbability
+import PrimeFactors.SumSignatureCost
+import PrimeFactors.AmbiguousSignatureSplit
+import PrimeFactors.JacobiHalvingCount
 import PrimeFactors.LegendreTraceSelection
 import PrimeFactors.LinePower
 import PrimeFactors.LocalMidpointLanes
@@ -341,6 +345,12 @@ import PrimeFactors.ShiftedSmallRadices
 import PrimeFactors.CarryRemainderPairs
 import PrimeFactors.CarryRadixCoverage
 import PrimeFactors.LowBitsCarryMenu
+import PrimeFactors.MixedPrefixSlab
+import PrimeFactors.MixedPrefixBand
+import PrimeFactors.MixedPrefixWords
+import PrimeFactors.MixedPrefixPopulation
+import PrimeFactors.MixedPrefixSample
+import PrimeFactors.MixedPrefixLine
 import PrimeFactors.CenteredCarryDistances
 import PrimeFactors.CarryInterval
 import PrimeFactors.NeighborRadixDivisors
