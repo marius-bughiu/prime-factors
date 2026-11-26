@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+For the same sixteen remainders, allowing any nonempty subset and either gcd sign still reaches fewer than one in $2^{277}$ eligible target pairs. [Checked population count](all-subsets-of-sixteen-square-tests.md) · [When the number of rows grows](growing-weighted-square-menus.md)
+
 On 2,100,271, precisely one of the 65,535 nonempty subsets of sixteen remainders multiplied to a square. Its three rows gave the factors 1,283 and 1,637. On both ordinary 2,048-bit controls all 65,535 subsets were excluded. [Three-row proof and comparisons](testing-three-weighted-remainders.md)
 
 A multiplier of the form $a^2N+b$ makes the first weighted remainder linear in the input. Combining two such remainders recovered 97 and 113 on a small example. Both ordinary 2,048-bit controls exhausted the search, and a population count explains the limitation even for much larger choices of $a,b$. [Derivation, coverage and comparisons](affine-multipliers-in-the-product.md)

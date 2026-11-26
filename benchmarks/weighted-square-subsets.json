@@ -1,0 +1,53 @@
+[
+  {
+    "id": "weighted-square-subsets-2222417",
+    "n": "2222417",
+    "description": "The only square subset among sixteen publicly computed remainders uses 4 rows and factors the input.",
+    "outcome": "relation",
+    "minimum_rows": 4,
+    "square_subsets": 1,
+    "covered_subsets": 65535,
+    "remaining_subsets": 0,
+    "status": "complete",
+    "factors": [
+      "1123",
+      "1979"
+    ],
+    "remaining": [],
+    "check_unique_subset": true
+  },
+  {
+    "id": "weighted-square-subsets-8928473",
+    "n": "8928473",
+    "description": "The only square subset among sixteen publicly computed remainders uses 5 rows and factors the input.",
+    "outcome": "relation",
+    "minimum_rows": 5,
+    "square_subsets": 1,
+    "covered_subsets": 65535,
+    "remaining_subsets": 0,
+    "status": "complete",
+    "factors": [
+      "2543",
+      "3511"
+    ],
+    "remaining": [],
+    "check_unique_subset": true
+  },
+  {
+    "id": "weighted-square-subsets-137649271",
+    "n": "137649271",
+    "description": "A four-row split on a product of 14-bit primes. Ordinary round-robin finds the answer at test 190.",
+    "outcome": "relation",
+    "minimum_rows": 4,
+    "square_subsets": 1,
+    "covered_subsets": 65535,
+    "remaining_subsets": 0,
+    "status": "complete",
+    "factors": [
+      "9203",
+      "14957"
+    ],
+    "remaining": [],
+    "check_unique_subset": true
+  }
+]

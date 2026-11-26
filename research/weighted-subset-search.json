@@ -1,0 +1,822 @@
+{
+  "reproduce": "python3 -m experiments.weighted_subset_search --verify-examples",
+  "protocol": "After checking label gcds, remove rows with nonsquare private parts. Refine the remaining integers into coprime bases. Enumerate every nonzero parity-kernel vector, check its square and both gcd signs. Keep the shortest splitting subset, breaking ties by mask.",
+  "cohorts": "All eligible distinct equal-width prime pairs with full-width product at the named bit sizes, in weighted_pair_hybrid.population order. The 16-bit panel reuses its published sampling seed and ordered draw list. The search sees only the product. The ten fixed controls supply id and n.",
+  "baseline": "Ordinary search checks weights 1..8 round-robin starting at rank zero, up to 65,535 labels. The matched run caps integer square-root calls at the measured subset total, including the eight shared setup roots. A further matched run screens by 2,3,5,7,11 before each root and caps visits at 4,096 labels. Operand lengths, gcd refinement, screening and parity elimination costs differ.",
+  "exhaustive": {
+    "11": {
+      "counts": {
+        "inputs": 5530,
+        "relation": 4081,
+        "minimum_1": 3992,
+        "no_split": 1321,
+        "label_gcd": 128,
+        "minimum_2": 81,
+        "minimum_4": 1,
+        "minimum_3": 7
+      },
+      "long_only": [
+        {
+          "n": "2222417",
+          "ordinal": 191,
+          "divisor": "1979",
+          "search": {
+            "factor": 1979,
+            "outcome": "relation",
+            "minimum_rows": 4,
+            "witness": {
+              "rows": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  5,
+                  0
+                ],
+                [
+                  8,
+                  1
+                ]
+              ],
+              "labels": [
+                "2982",
+                "2994",
+                "6670",
+                "8437"
+              ],
+              "excesses": [
+                "2656",
+                "74368",
+                "40560",
+                "65625"
+              ],
+              "square_root": "725088000",
+              "minus_gcd": "1979",
+              "plus_gcd": "1123"
+            },
+            "work": {
+              "rows": 16,
+              "label_gcds": 16,
+              "pruning_rounds": 2,
+              "private_square_tests": 25,
+              "rows_removed": 12,
+              "basis_rows": 4,
+              "dimension": 1,
+              "square_subsets": 1,
+              "relation_square_tests": 1,
+              "relation_gcds": 2,
+              "covered_subsets": 65535,
+              "remaining_subsets": 0
+            }
+          },
+          "subset_operations": {
+            "isqrt": 45,
+            "gcd": 180
+          },
+          "first_ordinary": {
+            "factor": 1979,
+            "tests": 34,
+            "labels": 34,
+            "weight": 2,
+            "rank": 4,
+            "screen": {}
+          },
+          "first_ordinary_operations": {
+            "isqrt": 42,
+            "gcd": 10
+          },
+          "matched_ordinary": {
+            "factor": 1979,
+            "tests": 34,
+            "labels": 34,
+            "weight": 2,
+            "rank": 4,
+            "screen": {}
+          },
+          "matched_ordinary_operations": {
+            "isqrt": 42,
+            "gcd": 10
+          },
+          "sieved_ordinary": {
+            "factor": 1979,
+            "tests": 1,
+            "labels": 34,
+            "weight": 2,
+            "rank": 4,
+            "screen": {
+              "screened_single_labels": 34,
+              "keys": 34,
+              "odd_mod8_checks": 30,
+              "odd_remainders": 66,
+              "odd_unit_divisions": 19
+            }
+          },
+          "sieved_ordinary_operations": {
+            "isqrt": 9,
+            "gcd": 10
+          }
+        }
+      ]
+    },
+    "12": {
+      "counts": {
+        "inputs": 19546,
+        "relation": 10681,
+        "minimum_1": 10462,
+        "no_split": 8632,
+        "label_gcd": 233,
+        "minimum_2": 204,
+        "minimum_3": 14,
+        "minimum_5": 1
+      },
+      "long_only": [
+        {
+          "n": "8928473",
+          "ordinal": 3194,
+          "divisor": "3511",
+          "search": {
+            "factor": 3511,
+            "outcome": "relation",
+            "minimum_rows": 5,
+            "witness": {
+              "rows": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  6,
+                  0
+                ],
+                [
+                  8,
+                  0
+                ]
+              ],
+              "labels": [
+                "5982",
+                "5994",
+                "8455",
+                "14639",
+                "16903"
+              ],
+              "excesses": [
+                "70432",
+                "214144",
+                "59241",
+                "16969",
+                "273"
+              ],
+              "square_root": "64336673856",
+              "minus_gcd": "3511",
+              "plus_gcd": "2543"
+            },
+            "work": {
+              "rows": 16,
+              "label_gcds": 16,
+              "pruning_rounds": 2,
+              "private_square_tests": 27,
+              "rows_removed": 11,
+              "basis_rows": 5,
+              "dimension": 1,
+              "square_subsets": 1,
+              "relation_square_tests": 1,
+              "relation_gcds": 2,
+              "covered_subsets": 65535,
+              "remaining_subsets": 0
+            }
+          },
+          "subset_operations": {
+            "isqrt": 48,
+            "gcd": 156
+          },
+          "first_ordinary": {
+            "factor": 2543,
+            "tests": 49,
+            "labels": 49,
+            "weight": 1,
+            "rank": 6,
+            "screen": {}
+          },
+          "first_ordinary_operations": {
+            "isqrt": 57,
+            "gcd": 10
+          },
+          "matched_ordinary": {
+            "factor": null,
+            "tests": 40,
+            "labels": 40,
+            "screen": {}
+          },
+          "matched_ordinary_operations": {
+            "isqrt": 48,
+            "gcd": 8
+          },
+          "sieved_ordinary": {
+            "factor": 2543,
+            "tests": 2,
+            "labels": 49,
+            "weight": 1,
+            "rank": 6,
+            "screen": {
+              "screened_single_labels": 49,
+              "keys": 49,
+              "odd_mod8_checks": 45,
+              "odd_remainders": 99,
+              "odd_unit_divisions": 30
+            }
+          },
+          "sieved_ordinary_operations": {
+            "isqrt": 10,
+            "gcd": 10
+          }
+        }
+      ]
+    },
+    "14": {
+      "counts": {
+        "inputs": 228713,
+        "relation": 67574,
+        "minimum_1": 66460,
+        "no_split": 160496,
+        "minimum_2": 1070,
+        "label_gcd": 643,
+        "minimum_3": 41,
+        "minimum_4": 1,
+        "minimum_5": 2
+      },
+      "long_only": [
+        {
+          "n": "137649271",
+          "ordinal": 11011,
+          "divisor": "14957",
+          "search": {
+            "factor": 14957,
+            "outcome": "relation",
+            "minimum_rows": 4,
+            "witness": {
+              "rows": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ],
+                [
+                  4,
+                  0
+                ],
+                [
+                  6,
+                  0
+                ]
+              ],
+              "labels": [
+                "23472",
+                "40646",
+                "46931",
+                "57477"
+              ],
+              "excesses": [
+                "337700",
+                "306064",
+                "130425",
+                "23025"
+              ],
+              "square_root": "17617809000",
+              "minus_gcd": "14957",
+              "plus_gcd": "9203"
+            },
+            "work": {
+              "rows": 16,
+              "label_gcds": 16,
+              "pruning_rounds": 1,
+              "private_square_tests": 20,
+              "rows_removed": 12,
+              "basis_rows": 4,
+              "dimension": 1,
+              "square_subsets": 1,
+              "relation_square_tests": 1,
+              "relation_gcds": 2,
+              "covered_subsets": 65535,
+              "remaining_subsets": 0
+            }
+          },
+          "subset_operations": {
+            "isqrt": 41,
+            "gcd": 121
+          },
+          "first_ordinary": {
+            "factor": 9203,
+            "tests": 190,
+            "labels": 190,
+            "weight": 6,
+            "rank": 23,
+            "screen": {}
+          },
+          "first_ordinary_operations": {
+            "isqrt": 198,
+            "gcd": 10
+          },
+          "matched_ordinary": {
+            "factor": null,
+            "tests": 33,
+            "labels": 33,
+            "screen": {}
+          },
+          "matched_ordinary_operations": {
+            "isqrt": 41,
+            "gcd": 8
+          },
+          "sieved_ordinary": {
+            "factor": 9203,
+            "tests": 5,
+            "labels": 190,
+            "weight": 6,
+            "rank": 23,
+            "screen": {
+              "screened_single_labels": 190,
+              "keys": 190,
+              "odd_mod8_checks": 173,
+              "odd_remainders": 388,
+              "odd_unit_divisions": 83
+            }
+          },
+          "sieved_ordinary_operations": {
+            "isqrt": 13,
+            "gcd": 10
+          }
+        },
+        {
+          "n": "179554709",
+          "ordinal": 84261,
+          "divisor": "15959",
+          "search": {
+            "factor": 15959,
+            "outcome": "relation",
+            "minimum_rows": 5,
+            "witness": {
+              "rows": [
+                [
+                  3,
+                  1
+                ],
+                [
+                  5,
+                  0
+                ],
+                [
+                  7,
+                  1
+                ],
+                [
+                  8,
+                  0
+                ],
+                [
+                  8,
+                  1
+                ]
+              ],
+              "labels": [
+                "46432",
+                "59926",
+                "70932",
+                "75801",
+                "75803"
+              ],
+              "excesses": [
+                "1274116",
+                "31296",
+                "3816772",
+                "40913",
+                "344121"
+              ],
+              "square_root": "46289582222304",
+              "minus_gcd": "15959",
+              "plus_gcd": "11251"
+            },
+            "work": {
+              "rows": 16,
+              "label_gcds": 16,
+              "pruning_rounds": 2,
+              "private_square_tests": 27,
+              "rows_removed": 11,
+              "basis_rows": 5,
+              "dimension": 1,
+              "square_subsets": 1,
+              "relation_square_tests": 1,
+              "relation_gcds": 2,
+              "covered_subsets": 65535,
+              "remaining_subsets": 0
+            }
+          },
+          "subset_operations": {
+            "isqrt": 50,
+            "gcd": 195
+          },
+          "first_ordinary": {
+            "factor": 15959,
+            "tests": 102,
+            "labels": 102,
+            "weight": 6,
+            "rank": 12,
+            "screen": {}
+          },
+          "first_ordinary_operations": {
+            "isqrt": 110,
+            "gcd": 10
+          },
+          "matched_ordinary": {
+            "factor": null,
+            "tests": 42,
+            "labels": 42,
+            "screen": {}
+          },
+          "matched_ordinary_operations": {
+            "isqrt": 50,
+            "gcd": 8
+          },
+          "sieved_ordinary": {
+            "factor": 15959,
+            "tests": 4,
+            "labels": 102,
+            "weight": 6,
+            "rank": 12,
+            "screen": {
+              "screened_single_labels": 102,
+              "keys": 102,
+              "odd_mod8_checks": 93,
+              "odd_remainders": 198,
+              "odd_unit_divisions": 50
+            }
+          },
+          "sieved_ordinary_operations": {
+            "isqrt": 12,
+            "gcd": 10
+          }
+        },
+        {
+          "n": "191144531",
+          "ordinal": 148790,
+          "divisor": "15227",
+          "search": {
+            "factor": 15227,
+            "outcome": "relation",
+            "minimum_rows": 5,
+            "witness": {
+              "rows": [
+                [
+                  3,
+                  1
+                ],
+                [
+                  7,
+                  0
+                ],
+                [
+                  7,
+                  1
+                ],
+                [
+                  8,
+                  0
+                ],
+                [
+                  8,
+                  1
+                ]
+              ],
+              "labels": [
+                "47898",
+                "73158",
+                "73170",
+                "78209",
+                "78211"
+              ],
+              "excesses": [
+                "484032",
+                "46096",
+                "1802032",
+                "22689",
+                "335529"
+              ],
+              "square_root": "17495349224832",
+              "minus_gcd": "15227",
+              "plus_gcd": "12553"
+            },
+            "work": {
+              "rows": 16,
+              "label_gcds": 16,
+              "pruning_rounds": 1,
+              "private_square_tests": 21,
+              "rows_removed": 11,
+              "basis_rows": 5,
+              "dimension": 1,
+              "square_subsets": 1,
+              "relation_square_tests": 1,
+              "relation_gcds": 2,
+              "covered_subsets": 65535,
+              "remaining_subsets": 0
+            }
+          },
+          "subset_operations": {
+            "isqrt": 41,
+            "gcd": 169
+          },
+          "first_ordinary": {
+            "factor": 12553,
+            "tests": 41,
+            "labels": 41,
+            "weight": 1,
+            "rank": 5,
+            "screen": {}
+          },
+          "first_ordinary_operations": {
+            "isqrt": 49,
+            "gcd": 10
+          },
+          "matched_ordinary": {
+            "factor": null,
+            "tests": 33,
+            "labels": 33,
+            "screen": {}
+          },
+          "matched_ordinary_operations": {
+            "isqrt": 41,
+            "gcd": 8
+          },
+          "sieved_ordinary": {
+            "factor": 12553,
+            "tests": 3,
+            "labels": 41,
+            "weight": 1,
+            "rank": 5,
+            "screen": {
+              "screened_single_labels": 41,
+              "keys": 41,
+              "odd_mod8_checks": 38,
+              "odd_remainders": 92,
+              "odd_unit_divisions": 29
+            }
+          },
+          "sieved_ordinary_operations": {
+            "isqrt": 11,
+            "gcd": 10
+          }
+        }
+      ]
+    }
+  },
+  "holdout": {
+    "bits": 16,
+    "seed": "weighted-pair-hybrid-16-v1",
+    "draws": 13501,
+    "counts": {
+      "inputs": 8192,
+      "no_split": 6969,
+      "relation": 1219,
+      "minimum_1": 1210,
+      "minimum_2": 9,
+      "label_gcd": 4
+    },
+    "long_only": []
+  },
+  "panel": [
+    {
+      "id": "quantile-80-draw-0",
+      "n": "908162445584950626852517",
+      "factor": null,
+      "outcome": "no_split",
+      "minimum_rows": null,
+      "witness": null,
+      "work": {
+        "rows": 16,
+        "label_gcds": 16,
+        "pruning_rounds": 1,
+        "private_square_tests": 16,
+        "rows_removed": 16,
+        "basis_rows": 0,
+        "dimension": 0,
+        "square_subsets": 0,
+        "relation_square_tests": 0,
+        "relation_gcds": 0,
+        "covered_subsets": 65535,
+        "remaining_subsets": 0
+      }
+    },
+    {
+      "id": "quantile-80-draw-1",
+      "n": "847299807344960397445973",
+      "factor": null,
+      "outcome": "no_split",
+      "minimum_rows": null,
+      "witness": null,
+      "work": {
+        "rows": 16,
+        "label_gcds": 16,
+        "pruning_rounds": 1,
+        "private_square_tests": 16,
+        "rows_removed": 16,
+        "basis_rows": 0,
+        "dimension": 0,
+        "square_subsets": 0,
+        "relation_square_tests": 0,
+        "relation_gcds": 0,
+        "covered_subsets": 65535,
+        "remaining_subsets": 0
+      }
+    },
+    {
+      "id": "quantile-80-draw-2",
+      "n": "1092780388048145364051457",
+      "factor": null,
+      "outcome": "no_split",
+      "minimum_rows": null,
+      "witness": null,
+      "work": {
+        "rows": 16,
+        "label_gcds": 16,
+        "pruning_rounds": 1,
+        "private_square_tests": 16,
+        "rows_removed": 16,
+        "basis_rows": 0,
+        "dimension": 0,
+        "square_subsets": 0,
+        "relation_square_tests": 0,
+        "relation_gcds": 0,
+        "covered_subsets": 65535,
+        "remaining_subsets": 0
+      }
+    },
+    {
+      "id": "quantile-80-draw-3",
+      "n": "680311603073706987563863",
+      "factor": null,
+      "outcome": "no_split",
+      "minimum_rows": null,
+      "witness": null,
+      "work": {
+        "rows": 16,
+        "label_gcds": 16,
+        "pruning_rounds": 1,
+        "private_square_tests": 16,
+        "rows_removed": 16,
+        "basis_rows": 0,
+        "dimension": 0,
+        "square_subsets": 0,
+        "relation_square_tests": 0,
+        "relation_gcds": 0,
+        "covered_subsets": 65535,
+        "remaining_subsets": 0
+      }
+    },
+    {
+      "id": "quantile-80-draw-5",
+      "n": "707405285713730439701531",
+      "factor": null,
+      "outcome": "no_split",
+      "minimum_rows": null,
+      "witness": null,
+      "work": {
+        "rows": 16,
+        "label_gcds": 16,
+        "pruning_rounds": 1,
+        "private_square_tests": 16,
+        "rows_removed": 16,
+        "basis_rows": 0,
+        "dimension": 0,
+        "square_subsets": 0,
+        "relation_square_tests": 0,
+        "relation_gcds": 0,
+        "covered_subsets": 65535,
+        "remaining_subsets": 0
+      }
+    },
+    {
+      "id": "quantile-80-draw-6",
+      "n": "814564805419434441523049",
+      "factor": null,
+      "outcome": "no_split",
+      "minimum_rows": null,
+      "witness": null,
+      "work": {
+        "rows": 16,
+        "label_gcds": 16,
+        "pruning_rounds": 1,
+        "private_square_tests": 16,
+        "rows_removed": 16,
+        "basis_rows": 0,
+        "dimension": 0,
+        "square_subsets": 0,
+        "relation_square_tests": 0,
+        "relation_gcds": 0,
+        "covered_subsets": 65535,
+        "remaining_subsets": 0
+      }
+    },
+    {
+      "id": "quantile-80-draw-8",
+      "n": "782541877694994717671837",
+      "factor": null,
+      "outcome": "no_split",
+      "minimum_rows": null,
+      "witness": null,
+      "work": {
+        "rows": 16,
+        "label_gcds": 16,
+        "pruning_rounds": 1,
+        "private_square_tests": 16,
+        "rows_removed": 16,
+        "basis_rows": 0,
+        "dimension": 0,
+        "square_subsets": 0,
+        "relation_square_tests": 0,
+        "relation_gcds": 0,
+        "covered_subsets": 65535,
+        "remaining_subsets": 0
+      }
+    },
+    {
+      "id": "quantile-80-draw-10",
+      "n": "1061380201340840569745849",
+      "factor": null,
+      "outcome": "no_split",
+      "minimum_rows": null,
+      "witness": null,
+      "work": {
+        "rows": 16,
+        "label_gcds": 16,
+        "pruning_rounds": 1,
+        "private_square_tests": 16,
+        "rows_removed": 16,
+        "basis_rows": 0,
+        "dimension": 0,
+        "square_subsets": 0,
+        "relation_square_tests": 0,
+        "relation_gcds": 0,
+        "covered_subsets": 65535,
+        "remaining_subsets": 0
+      }
+    },
+    {
+      "id": "quantile-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "factor": null,
+      "outcome": "no_split",
+      "minimum_rows": null,
+      "witness": null,
+      "work": {
+        "rows": 16,
+        "label_gcds": 16,
+        "pruning_rounds": 1,
+        "private_square_tests": 16,
+        "rows_removed": 16,
+        "basis_rows": 0,
+        "dimension": 0,
+        "square_subsets": 0,
+        "relation_square_tests": 0,
+        "relation_gcds": 0,
+        "covered_subsets": 65535,
+        "remaining_subsets": 0
+      }
+    },
+    {
+      "id": "quantile-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "factor": null,
+      "outcome": "no_split",
+      "minimum_rows": null,
+      "witness": null,
+      "work": {
+        "rows": 16,
+        "label_gcds": 16,
+        "pruning_rounds": 1,
+        "private_square_tests": 16,
+        "rows_removed": 16,
+        "basis_rows": 0,
+        "dimension": 0,
+        "square_subsets": 0,
+        "relation_square_tests": 0,
+        "relation_gcds": 0,
+        "covered_subsets": 65535,
+        "remaining_subsets": 0
+      }
+    }
+  ]
+}

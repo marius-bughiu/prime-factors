@@ -42,7 +42,9 @@ def case_row(result):
     verification = duration(result['verification_seconds']) if checked else 'not run'
     if 'exclusion' in result:
         x = result['exclusion']
-        if 'low_budget' in x:
+        if 'square_subsets_excluded' in x:
+            claim = f'Lean excludes a square product for all {x["square_subsets_excluded"]:,} nonempty subsets.'
+        elif 'low_budget' in x:
             claim = (f'Lean proves every probe with low correction within ±{compact_count(int(x["low_budget"]))} '
                      f'returns no factor at radix 2<sup>{x["exponent"]}</sup> with high correction {x["high"]}.')
         elif 'sum_tolerance' in x:
@@ -581,6 +583,17 @@ def case_row(result):
         if work.get('probe_certificate'):
             url = escape(work['probe_certificate']['proof'], quote=True)
             count += f' · <a href="{url}">Power test proof</a>'
+    elif result['method'] == 'weighted-square-subsets':
+        search = result['weighted_square_subsets']
+        work = search['work']
+        count = (f'{work["covered_subsets"]:,} combinations covered · '
+                 f'{work["square_subsets"]:,} square products')
+        if search['minimum_rows'] is not None:
+            count += f' · shortest successful combination used {search["minimum_rows"]} rows'
+        if 'unique_subset' in result:
+            witness = result['unique_subset']
+            evidence += (f'<p><a href="{escape(witness["proof"])}">Proof that only this subset works</a></p>')
+            verification += f' + {duration(witness["verification_seconds"])} (uniqueness proof)'
     elif result['method'] == 'weighted-square-triples':
         checks = result['weighted_square_triples']
         count = (f'{checks["work"]["triple_tests"]:,} triples · '

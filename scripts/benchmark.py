@@ -57,6 +57,8 @@ from experiments.affine_excess import compare as compare_affine_excess
 from experiments.weighted_square_pairs import search as weighted_square_pair_search
 from experiments.weighted_pair_hybrid import run as weighted_menu_search
 from experiments.weighted_square_triples import compare as weighted_triple_comparison
+from experiments.weighted_subset_search import relation_certificate, search as weighted_subset_search
+from experiments.weighted_subset_witness import certificate as subset_exclusion_certificate
 from scripts.memory_partition_benchmark import memory_partition_case
 from scripts.cyclotomic_sum_lift_benchmark import cyclotomic_sum_case
 from scripts.lifted_period_benchmark import lifted_period_case
@@ -590,6 +592,24 @@ def run_case(case, method, proofs):
         result = lifted_trace_case(case, proof, agree, certify_split)
     elif method == 'cyclotomic-sum-lift':
         result = cyclotomic_sum_case(case, proof, agree, certify_split)
+    elif method == 'weighted-square-subsets':
+        n = int(case['n'])
+        tick = time.perf_counter()
+        search = weighted_subset_search(n)
+        elapsed = time.perf_counter() - tick
+        agree(case, search, ['outcome', 'minimum_rows'])
+        agree(case, search['work'], ['square_subsets', 'covered_subsets', 'remaining_subsets'])
+        result = certify_split(case, proof, None, elapsed, 'weighted_square_subsets', search)
+        factor = search['factor']
+        if factor is not None:
+            cert_start = time.perf_counter()
+            source, theorem = relation_certificate(n, search)
+            proof.write_text(source)
+            check_start = time.perf_counter()
+            verify_file(proof, theorem)
+            result.update(factors=[str(x) for x in sorted((factor, n//factor))], remaining=[],
+                          status='complete', verified=True, verification_seconds=time.perf_counter()-check_start,
+                          certificate_seconds=time.perf_counter()-cert_start)
     elif method == 'weighted-square-triples':
         tick = time.perf_counter()
         comparison = weighted_triple_comparison(int(case['n']), all_subsets=True)
@@ -1550,6 +1570,25 @@ end PrimeFactors.Generated
             raise ValueError(f"Unexpected shifted-square result for {name}")
     if result['verified'] != complete or (complete and not proof.is_file()):
         raise ValueError(f'Unexpected proof status for {name}')
+    if method == 'weighted-square-subsets' and case.get('check_unique_subset'):
+        mask = sum(1 << (2*(w-1)+i) for w, i in search['witness']['rows'])
+        source, counts = subset_exclusion_certificate(int(case['n']), 'WeightedSubsetControl', allow_pivot=True)
+        if counts.get('mask') != mask:
+            raise ValueError(f'{name}: character certificate identifies a different subset')
+        unique = proofs / f'{name}-unique.lean'
+        unique.write_text(source + f"\nexample : PrimeFactors.WeightedSubsetControl.product = {int(case['n'])} := rfl\n")
+        check_start = time.perf_counter()
+        verify_file(unique, 'PrimeFactors.WeightedSubsetControl.onlySquareSubset')
+        result['unique_subset'] = dict(proof=f'proofs/{unique.name}', character_search=counts,
+                                       verification_seconds=time.perf_counter()-check_start)
+    if method == 'weighted-square-triples' and case.get('check_subset_exclusion'):
+        source, counts = subset_exclusion_certificate(int(case['n']), 'WeightedSubsetControl')
+        proof.write_text(source + f"\nexample : PrimeFactors.WeightedSubsetControl.product = {int(case['n'])} := rfl\n")
+        check_start = time.perf_counter()
+        verify_file(proof, 'PrimeFactors.WeightedSubsetControl.noSquareSubset')
+        result['exclusion'] = dict(square_subsets_excluded=comparison['subsets']['nonempty_subsets'],
+                                   proof=f'proofs/{proof.name}', character_search=counts,
+                                   verification_seconds=time.perf_counter()-check_start)
     if 'exclusion' in case:
         exclusion = case['exclusion']
         theorem = exclusion['theorem']
@@ -1653,6 +1692,7 @@ def main():
                              ('affine-excess.json', 'affine-excess'),
                              ('weighted-square-menu.json', 'weighted-square-menu'),
                              ('weighted-square-triples.json', 'weighted-square-triples'),
+                             ('weighted-square-subsets.json', 'weighted-square-subsets'),
                              ('memory-partition-sum.json', 'memory-partition-sum'),
                              ('cyclotomic-sum-lift.json', 'cyclotomic-sum-lift'),
                              ('lifted-period-join.json', 'lifted-period-join'),

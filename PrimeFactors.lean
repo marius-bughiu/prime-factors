@@ -434,6 +434,14 @@ import PrimeFactors.WeightedTripleFiber
 import PrimeFactors.WeightedTripleReduction
 import PrimeFactors.WeightedTriplePopulation
 import PrimeFactors.WeightedTripleLabels
+import PrimeFactors.WeightedSubsetMenu
+import PrimeFactors.WeightedSubsetFiber
+import PrimeFactors.WeightedSubsetPopulation
+import PrimeFactors.WeightedSubsetReduction
+import PrimeFactors.WeightedSubsetNonunit
+import PrimeFactors.WeightedSubsetAnchor
+import PrimeFactors.WeightedSubsetLabels
+import PrimeFactors.WeightedSubsetWitness
 import PrimeFactors.LiftedPeriodTrace
 import PrimeFactors.WideModulus
 import PrimeFactors.WideScale
