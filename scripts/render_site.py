@@ -30,6 +30,24 @@ def compact_count(value):
     return f'<abbr title="{value:,}">about 2<sup>{log2(value):.2f}</sup></abbr>'
 
 
+def hasse_summary(work):
+    if work["mode"] == "gaussian":
+        return (f'{work["symbol_evaluations"]} Jacobi evaluations over {work["positions"]} positions'
+                f' · {work["selector_tests"]} selector tests · signed traces {work["signed_traces"]}'
+                f' · normalized coordinates {work["direction"]} · {work["gauss_iterations"]} comparison lattice iterations')
+    if work["mode"] == "derivative":
+        return (f'Pascal entry in row {compact_count(int(work["index"]))}, column {compact_count(int(work["column"]))}'
+                f' · {work["binomials"]} binomial evaluations · {work["coefficient_bits"]} output bits'
+                f' · residue {work["residue"]} · gcd {work["gcd"]}')
+    text = (f'{work["terms"]} of {compact_count(int(work["required_terms"]))} coefficient terms'
+            f' · index cap {work["max_index"]} · {work["exact_divisions"]} exact divisions'
+            f' · {work["horner_updates"]} Horner updates · {work["coefficient_gcds"]} gcds')
+    if work["readings"]:
+        text += ' · shift, residue, gcd ' + ', '.join(
+            f'({r["shift"]}, {r["residue"]}, {r["gcd"]})' for r in work["readings"])
+    return text
+
+
 def case_row(result):
     checked = result['verified']
     name = escape(result['id'])
@@ -829,6 +847,28 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'short-pascal':
+        w = result['short_pascal']
+        if w['mode'] == 'exact':
+            count = (f"Row {compact_count(int(w['row']))} · column {compact_count(int(w['column']))}"
+                     f" · {w['coefficients_evaluated']} entries evaluated")
+            if w['coefficient_bits'] is not None:
+                count += f" · {w['coefficient_bits']:,}-bit entry"
+            if 'short_row_size' in result:
+                size = result['short_row_size']
+                link = escape(size['proof'])
+                evidence += f'<p><a href="{link}">Check why this entry needs more than 2<sup>{size["exponent"]}</sup> bits</a></p>'
+        elif w['mode'] == 'tree':
+            count = (f"{w['checked_candidates']:,} of {compact_count(int(w['candidates']))} candidates"
+                     f" · degree {w['work']['roots']:,} · {w['work']['points']:,} evaluations")
+        else:
+            count = (f"{compact_count(int(w['span']))} integers · wheel {w['wheel']}"
+                     f" · {w['work'].get('blocks',0):,} blocks")
+    elif result['method'] == 'translated-hasse':
+        count = hasse_summary(result['hasse'])
+        if 'coefficient_proof' in result:
+            link = escape(result['coefficient_proof']['proof'])
+            evidence += f'<p><a href="{link}">Check the computed residues and gcds</a></p>'
     elif result['method'] == 'cubic-forced':
         w = result['cubic_forced']
         if w['mode'] == 'universal':

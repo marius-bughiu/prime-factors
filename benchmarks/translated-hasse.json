@@ -1,0 +1,203 @@
+[
+  {
+    "id": "translated-hasse-187-shift-rescue",
+    "description": "The first translated coefficient vanishes modulo 187. Shifts two and three return a proper gcd.",
+    "n": "187",
+    "mode": "shifted",
+    "shifts": [
+      1,
+      2,
+      3
+    ],
+    "max_index": 8192,
+    "checks": {
+      "outcome": "coefficient_divisor",
+      "terms": 47,
+      "initial_binomials": 1,
+      "exact_divisions": 92,
+      "horner_updates": 141,
+      "coefficient_gcds": 3,
+      "largest_binomial_bits": 252,
+      "readings": [
+        {
+          "shift": 1,
+          "residue": 0,
+          "gcd": 187
+        },
+        {
+          "shift": 2,
+          "residue": 143,
+          "gcd": 11
+        },
+        {
+          "shift": 3,
+          "residue": 33,
+          "gcd": 11
+        }
+      ]
+    },
+    "status": "complete",
+    "factors": [
+      "11",
+      "17"
+    ],
+    "remaining": [],
+    "certify_readings": true
+  },
+  {
+    "id": "translated-hasse-77-three-shifts",
+    "description": "Three translated coefficients vanish modulo 77. Each gcd returns the full input.",
+    "n": "77",
+    "mode": "shifted",
+    "shifts": [
+      1,
+      2,
+      3
+    ],
+    "max_index": 8192,
+    "checks": {
+      "outcome": "no_split",
+      "terms": 20,
+      "initial_binomials": 1,
+      "exact_divisions": 38,
+      "horner_updates": 60,
+      "coefficient_gcds": 3,
+      "largest_binomial_bits": 102,
+      "readings": [
+        {
+          "shift": 1,
+          "residue": 0,
+          "gcd": 77
+        },
+        {
+          "shift": 2,
+          "residue": 0,
+          "gcd": 77
+        },
+        {
+          "shift": 3,
+          "residue": 0,
+          "gcd": 77
+        }
+      ]
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "77"
+    ],
+    "certify_readings": true
+  },
+  {
+    "id": "translated-hasse-187-derivative",
+    "description": "The unsigned normalized derivative selects the other prime of 187 from a single Pascal entry.",
+    "n": "187",
+    "mode": "derivative",
+    "max_index": 8192,
+    "checks": {
+      "outcome": "coefficient_divisor",
+      "index": "93",
+      "column": "47",
+      "binomials": 1,
+      "coefficient_gcds": 1,
+      "coefficient_bits": 90,
+      "residue": 51,
+      "gcd": 17
+    },
+    "status": "complete",
+    "factors": [
+      "11",
+      "17"
+    ],
+    "remaining": [],
+    "certify_readings": true
+  },
+  {
+    "id": "translated-hasse-65-gaussian",
+    "description": "Two complete quartic traces determine a primitive Gaussian direction and a factor of 65.",
+    "n": "65",
+    "mode": "gaussian",
+    "max_positions": 32,
+    "max_selector": 3,
+    "checks": {
+      "outcome": "trace_divisor",
+      "bits": 7,
+      "selector": 3,
+      "selector_tests": 2,
+      "positions": 32,
+      "required_positions": "32",
+      "symbol_evaluations": 64,
+      "signed_traces": [
+        -12,
+        24
+      ],
+      "direction": [
+        1,
+        2
+      ],
+      "normalization_gcds": 1,
+      "gauss_iterations": 4
+    },
+    "status": "complete",
+    "factors": [
+      "5",
+      "13"
+    ],
+    "remaining": [],
+    "certify_readings": true
+  },
+  {
+    "id": "translated-hasse-fresh-2048",
+    "description": "The fresh 2048-bit comparison exceeds the index budget before any coefficient evaluation.",
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "mode": "shifted",
+    "shifts": [
+      1,
+      2,
+      3
+    ],
+    "max_index": 8192,
+    "checks": {
+      "outcome": "index_limit",
+      "terms": 0,
+      "initial_binomials": 0,
+      "exact_divisions": 0,
+      "horner_updates": 0,
+      "coefficient_gcds": 0,
+      "largest_binomial_bits": 0,
+      "readings": []
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    ]
+  },
+  {
+    "id": "translated-hasse-crossed-2048",
+    "description": "The crossed 2048-bit comparison exceeds the index budget before any coefficient evaluation.",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "mode": "shifted",
+    "shifts": [
+      1,
+      2,
+      3
+    ],
+    "max_index": 8192,
+    "checks": {
+      "outcome": "index_limit",
+      "terms": 0,
+      "initial_binomials": 0,
+      "exact_divisions": 0,
+      "horner_updates": 0,
+      "coefficient_gcds": 0,
+      "largest_binomial_bits": 0,
+      "readings": []
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  }
+]

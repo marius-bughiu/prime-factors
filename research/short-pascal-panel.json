@@ -1,0 +1,231 @@
+{
+  "seed": "short-pascal-fullwidth-v1",
+  "sample": "First eight accepted distinct 40-bit prime pairs with an 80-bit product.",
+  "wheel": 210,
+  "rows": [
+    {
+      "draw": 0,
+      "n": "673576766693660387851187",
+      "ratio_only": {
+        "lower": "580334716648",
+        "upper": "820717226999",
+        "span": "240382510352",
+        "candidates": 54944573796,
+        "degree": 196608,
+        "blocks": 279462,
+        "convolution_inputs": 1148530,
+        "product_residue": "629866431181207441741017"
+      },
+      "equal_width": {
+        "lower": "612614500546",
+        "upper": "820717226999",
+        "span": "208102726454",
+        "candidates": 47566337475,
+        "degree": 196608,
+        "blocks": 241934,
+        "convolution_inputs": 1073474,
+        "product_residue": "531116321133073175691057"
+      },
+      "factors": [
+        "778913882249",
+        "864764105563"
+      ]
+    },
+    {
+      "draw": 1,
+      "n": "645374236724346992098169",
+      "equal_width": {
+        "lower": "586964448963",
+        "upper": "803351876032",
+        "span": "216387427070",
+        "candidates": 49459983331,
+        "degree": 196608,
+        "blocks": 251566,
+        "convolution_inputs": 1092738,
+        "product_residue": "277126516907851162882865"
+      },
+      "ratio_only": {
+        "lower": "568055559222",
+        "upper": "803351876032",
+        "span": "235296316811",
+        "candidates": 53782015272,
+        "degree": 196608,
+        "blocks": 273549,
+        "convolution_inputs": 1136704,
+        "product_residue": "392341943934435513475882"
+      },
+      "factors": [
+        "606159833239",
+        "1064693173871"
+      ]
+    },
+    {
+      "draw": 4,
+      "n": "875311066778439040751291",
+      "ratio_only": {
+        "lower": "661555389510",
+        "upper": "935580604105",
+        "span": "274025214596",
+        "candidates": 62634334765,
+        "degree": 196608,
+        "blocks": 318574,
+        "convolution_inputs": 1226754,
+        "product_residue": "277471532499660282442889"
+      },
+      "equal_width": {
+        "lower": "796090777639",
+        "upper": "935580604105",
+        "span": "139489826467",
+        "candidates": 31883388906,
+        "degree": 196608,
+        "blocks": 162167,
+        "convolution_inputs": 913940,
+        "product_residue": "244413737051812902960582"
+      },
+      "factors": [
+        "885448343167",
+        "988551250373"
+      ]
+    },
+    {
+      "draw": 7,
+      "n": "620355650505786837605809",
+      "equal_width": {
+        "lower": "564210177351",
+        "upper": "787626593320",
+        "span": "223416415970",
+        "candidates": 51066609364,
+        "degree": 196608,
+        "blocks": 259738,
+        "convolution_inputs": 1109082,
+        "product_residue": "579785189005212777696303"
+      },
+      "ratio_only": {
+        "lower": "556936105180",
+        "upper": "787626593320",
+        "span": "230690488141",
+        "candidates": 52729254432,
+        "degree": 196608,
+        "blocks": 268194,
+        "convolution_inputs": 1125994,
+        "product_residue": "364180735827265843942444"
+      },
+      "factors": [
+        "723056443141",
+        "857962965949"
+      ]
+    },
+    {
+      "draw": 10,
+      "n": "729501354829626182616151",
+      "ratio_only": {
+        "lower": "603945922592",
+        "upper": "854108514668",
+        "span": "250162592077",
+        "candidates": 57180021046,
+        "degree": 196608,
+        "blocks": 290832,
+        "convolution_inputs": 1171270,
+        "product_residue": "282272749620357009808309"
+      },
+      "equal_width": {
+        "lower": "663477617155",
+        "upper": "854108514668",
+        "span": "190630897514",
+        "candidates": 43572776574,
+        "degree": 196608,
+        "blocks": 221622,
+        "convolution_inputs": 1032850,
+        "product_residue": "595612003584010879571553"
+      },
+      "factors": [
+        "785289658337",
+        "928958311223"
+      ]
+    },
+    {
+      "draw": 11,
+      "n": "634197994064456719781383",
+      "equal_width": {
+        "lower": "576799715478",
+        "upper": "796365490252",
+        "span": "219565774775",
+        "candidates": 50186462806,
+        "degree": 196608,
+        "blocks": 255261,
+        "convolution_inputs": 1100128,
+        "product_residue": "318550350870351190954175"
+      },
+      "ratio_only": {
+        "lower": "563115438461",
+        "upper": "796365490252",
+        "span": "233250051792",
+        "candidates": 53314297553,
+        "degree": 196608,
+        "blocks": 271170,
+        "convolution_inputs": 1131946,
+        "product_residue": "447744061347347542115876"
+      },
+      "factors": [
+        "683837438503",
+        "927410460961"
+      ]
+    },
+    {
+      "draw": 12,
+      "n": "701194272212240752238831",
+      "ratio_only": {
+        "lower": "592112435359",
+        "upper": "837373436533",
+        "span": "245261001175",
+        "candidates": 56059657412,
+        "degree": 196608,
+        "blocks": 285134,
+        "convolution_inputs": 1159874,
+        "product_residue": "583062559285394623590707"
+      },
+      "equal_width": {
+        "lower": "637732475492",
+        "upper": "837373436533",
+        "span": "199640961042",
+        "candidates": 45632219667,
+        "degree": 196608,
+        "blocks": 232097,
+        "convolution_inputs": 1053800,
+        "product_residue": "528386699575103692275480"
+      },
+      "factors": [
+        "723443793139",
+        "969244990229"
+      ]
+    },
+    {
+      "draw": 13,
+      "n": "819729145438881902257871",
+      "equal_width": {
+        "lower": "745539314667",
+        "upper": "905388947049",
+        "span": "159849632383",
+        "candidates": 36537058831,
+        "degree": 196608,
+        "blocks": 185837,
+        "convolution_inputs": 961280,
+        "product_residue": "119937547139360491954173"
+      },
+      "ratio_only": {
+        "lower": "640206664070",
+        "upper": "905388947049",
+        "span": "265182282980",
+        "candidates": 60613093252,
+        "degree": 196608,
+        "blocks": 308294,
+        "convolution_inputs": 1206194,
+        "product_residue": "553416972958832363900781"
+      },
+      "factors": [
+        "749681180917",
+        "1093437005363"
+      ]
+    }
+  ]
+}

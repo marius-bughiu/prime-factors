@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Eight fresh 80-bit products required 21% fewer candidate divisors in total when the search used the shared prime width. Both 2048-bit controls still have more than $2^{1020}$ candidate integers. An independent polynomial approach captured all 61 mixed-prime products in a small exhaustive panel. [Equal-width comparisons](a-shorter-pascal-row-for-equal-width-primes.md) · [Translated coefficients](which-translated-coefficients-reveal-a-prime.md)
+
 A public cube-root estimate recovered both primes on two deliberately constructed 2,048-bit inputs. One lies outside the original polynomial family, and its predicted half-gap differs from the actual one by a 338-bit integer. Both ordinary controls remain unresolved. [Derivation, exact receipts and population bounds](factoring-near-a-cube-root-gap.md)
 
 Choosing the base gave 130 smooth ordinary values on each full-size control. All failed the accompanying algebraic check. A bound for arbitrary choices of cubic polynomial explains the limitation at the tested sizes. When a square already exists, a new trace calculation recovers two real small-example relations that the original gcds lost. [Counts, proofs and paired readouts](choosing-a-cubic-and-reading-its-square.md)

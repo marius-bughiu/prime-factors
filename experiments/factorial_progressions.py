@@ -11,6 +11,7 @@ from decimal import Decimal, Inexact, MAX_EMAX, MIN_EMIN, localcontext
 import json
 from math import gcd, isqrt
 
+from .short_pascal_row import interval as equal_width_interval
 from .wide_modulus import multiply
 
 
@@ -178,7 +179,7 @@ def folded_blocks(base, cycles, wheel, residues, n, convolution, work):
     return values, width, None
 
 
-def search(n, max_span, *, wheel=30, backend='decimal', folded=False):
+def search(n, max_span, *, wheel=30, backend='decimal', folded=False, equal_width=False):
     """Assume N=pq for distinct odd p<q<=2p. max_span counts consecutive integers."""
     if n < 3 or n % 2 == 0 or wheel < 2 or (max_span is not None and max_span < 0):
         raise ValueError('expected odd N >= 3, a wheel >= 2, and a nonnegative span cap')
@@ -186,8 +187,10 @@ def search(n, max_span, *, wheel=30, backend='decimal', folded=False):
         raise ValueError('expected decimal or binary convolution')
     convolution = decimal_convolution if backend == 'decimal' else multiply
     # For odd N this is ceil(sqrt(ceil(N/2))).
-    first = isqrt((n-1)//2)+1
-    upper = isqrt(n)
+    if equal_width:
+        first, upper = equal_width_interval(n)
+    else:
+        first, upper = isqrt((n-1)//2)+1, isqrt(n)
     span = upper-first+1 if max_span is None else min(max_span, upper-first+1)
     last = first+span-1
     work = Counter()
@@ -254,6 +257,8 @@ if __name__ == '__main__':
     parser.add_argument('--wheel', type=int, default=30)
     parser.add_argument('--backend', choices=('decimal','binary'), default='decimal')
     parser.add_argument('--folded', action='store_true', help='use the reflected half-degree block polynomial')
+    parser.add_argument('--equal-width', action='store_true', help='use the promise that both prime factors have the same bit length')
     parser.add_argument('--max-span', type=int, required=True)
     args = parser.parse_args()
-    print(json.dumps(search(args.n, args.max_span, wheel=args.wheel, backend=args.backend, folded=args.folded), indent=2))
+    print(json.dumps(search(args.n, args.max_span, wheel=args.wheel, backend=args.backend,
+                            folded=args.folded, equal_width=args.equal_width), indent=2))

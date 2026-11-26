@@ -8,6 +8,10 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**Knowing the primes’ bit length saved search work on ordinary inputs.** On eight fresh 80-bit products the same algorithm found all eight prime pairs while checking 21% fewer candidates in total. On an 88-bit product CPU time dropped from 18.9 to 14.6 seconds. The smaller range still exceeded $2^{1020}$ integers on each ordinary 2,048-bit input. [A small example, the general proof and the timings](discoveries/a-shorter-pascal-row-for-equal-width-primes.md)
+
+**Changing one number in a polynomial recovered 11 and 17 from 187.** For an entire class of products at least one third of the possible changes expose a prime. A related binomial coefficient always gives the other prime when both have the same bit length. The expensive step is computing the coefficients. [Which changes work and what they cost](discoveries/which-translated-coefficients-reveal-a-prime.md)
+
 **One midpoint gave both primes of two new, deliberately constructed 2,048-bit numbers.** The product predicts roughly how far apart the primes are. On the second example the prediction was wrong by a 338-bit number and still pointed to the correct midpoint. This search missed both ordinary controls. [Small worked example, full-size prime certificates and coverage](discoveries/factoring-near-a-cube-root-gap.md)
 
 **We can force one of the two checks to pass on a large input.** On each ordinary 2,048-bit input, choosing the base produced 130 smooth ordinary numbers. None of the 53,950 rows passed both required checks. Lean also bounds the chance of finding even one qualifying row across a much larger class of cubic polynomials. [What choosing the polynomial buys us](discoveries/choosing-a-cubic-and-reading-its-square.md)

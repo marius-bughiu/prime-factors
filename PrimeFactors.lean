@@ -263,6 +263,13 @@ import PrimeFactors.CubicForcedUnits
 import PrimeFactors.CubicForcedParameters
 import PrimeFactors.CubicPlantedPrimality
 import PrimeFactors.CubicGapWindow
+import PrimeFactors.GaussianTraceRecovery
+import PrimeFactors.HasseShiftDegree
+import PrimeFactors.HasseTruncatedSeries
+import PrimeFactors.TranslatedHasse
+import PrimeFactors.HasseBinomialDerivative
+import PrimeFactors.ShortPascalRow
+import PrimeFactors.ShortRowPopulation
 import PrimeFactors.MultiplierPolynomialScore
 import PrimeFactors.PolynomialRootPacking
 import PrimeFactors.PooledRelations
