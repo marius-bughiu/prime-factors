@@ -10,7 +10,7 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
-**Near the square root, at most 36 of 420 candidates in a full block can survive.** The proof uses what the product tells us about the sum of its two primes. On the two 2,048-bit inputs, Lean excluded every divisor in a tested interval of 1,688 integers each. The remaining search is still enormous. [Worked example, proof and comparison with searching the sums directly](discoveries/ruling-out-factor-progressions-by-their-sums.md)
+**One modular lookup can leave at most four candidates out of 420 in a block.** We choose weights using the product and the block’s position. A simpler test near the square root keeps at most 36. Across the full interval allowed by the two prime bit widths, either at most 38 wheel candidates remain or this rule removes more than 6% of them. Lean certified more than 15% on one 2,048-bit input and more than 7% on the other. The remaining search is still enormous. [Worked example, proof and comparison with searching the sums directly](discoveries/ruling-out-factor-progressions-by-their-sums.md)
 
 **The product can tell us how to put its two primes into opposite groups.** For 323, multiplying just four selected candidates and taking a gcd gives 17. On our 2,048-bit examples the rule selects a group immediately, but evaluating its product remains out of reach. On 32 fresh 60-bit products an ordinary search recovered all 32 using less arithmetic than either group-based search. [How the groups are chosen and what they cost](discoveries/choosing-a-group-that-contains-one-prime.md) · [When the shortest rule can pair its candidates](discoveries/the-shortest-rule-that-separates-the-primes.md)
 

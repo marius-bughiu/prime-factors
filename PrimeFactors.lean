@@ -296,6 +296,8 @@ import PrimeFactors.SymmetricDivisorSelector
 import PrimeFactors.CharacterColumnReflection
 import PrimeFactors.ReciprocalSumLanes
 import PrimeFactors.ReciprocalSumSlice
+import PrimeFactors.ReciprocalSumTail
+import PrimeFactors.WeightedSumResidueSlice
 import PrimeFactors.SumIntervalExclusion
 import PrimeFactors.LastPowerGCD
 import PrimeFactors.PowerChainReceipt

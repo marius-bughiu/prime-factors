@@ -86,6 +86,10 @@ def case_row(result):
             claim = f'Lean excludes every even factor gap through {int(x["max_gap"]):,}.'
         evidence += f'<p>{claim} <a href="{escape(x["proof"])}">Download exclusion proof</a></p>'
         verification = duration(x['verification_seconds']) + ' (exclusion proof)'
+    if 'clipped_proof' in result:
+        receipt = result['clipped_proof']
+        evidence += (f'<p>More than {receipt["percent"]}% of the full equal-width wheel candidates '
+                     f'can be discarded. <a href="{escape(receipt["proof"])}">Download the counting proof</a></p>')
     if 'carry_proof' in result:
         witness = result['carry_proof']
         evidence += f'<p><a href="{escape(witness["proof"])}">Download the signed-carry calculation</a></p>'
