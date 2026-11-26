@@ -460,6 +460,21 @@ def case_row(result):
         count = (f'Base selection · {selection["bases_tested"]:,} of {w["max_primes"]:,} primes tested'
                  f' · combined order {escape(selection["combined_order"])}'
                  f' · {escape(w["outcome"].replace("_", " "))}')
+    elif result['method'] == 'geometric-lifted-readout':
+        search = result['geometric_lifted_readout']
+        work = search['work']
+        count = (f'Base {search["base"]} · {compact_count(int(search["total_terms"]))} sum positions'
+                 f' · required degree {compact_count(search["required_width"])} · cap {search["max_block_width"]:,}')
+        ops = search.get('block_work')
+        if ops:
+            count += (f' · {work["setup_powers"]} setup powers · {ops["root_polynomials"]} polynomial'
+                      f' · {ops["scalar_products"]} signed targets · {ops["block_evaluations"]:,} block values'
+                      f' · {ops["tail_terms"]:,} tail terms · {work["sample_gcds"]} sample gcds')
+            count += (f' · all three targets {duration(search["eager_seconds"])}'
+                      f' · checked readings against {escape(search["reference"].replace("_", " "))}'
+                      f' evaluation at the transported base')
+        elif work['unvisited_terms']:
+            count += f' · zero setup powers · {compact_count(work["unvisited_terms"])} unvisited'
     elif result['method'] == 'geometric-readout-blocks':
         search = result['geometric_readout_blocks']
         count = (f'Base {search["base"]} · {compact_count(int(search["total_terms"]))} original terms'

@@ -50,6 +50,29 @@ def _lane(n, base, origin, end, stride, count, step_base, max_terms, max_quotien
                   quadratic_A=None, quadratic_B=None, quadratic_D=None, quotient_hits=[],
                   equal_hits=[], winning_index=None)
 
+    if common > 1:
+        return dict(report, outcome="base_gcd", factor=common)
+    if count > max_terms:
+        return dict(report, outcome="term_limit", factor=None)
+
+    target = pow(base, n+1-origin, n)
+    work.update(terms=count, unvisited_terms=0, modular_powers=1,
+                target_exponent_bits=(n+1-origin).bit_length())
+    if reader is None:
+        constant, linear, quadratic = coefficients(n, step_base, target, count)
+        # Two scalar products for factor coefficients, one for the shared constant,
+        # and five coefficient products for each signed probe.
+        work.update(term_multiplications=18*count, geometric_steps=max(0, count-1),
+                    jet_updates=3*count)
+    else:
+        (constant, linear, quadratic), report['block_work'] = reader(n, step_base, target, count)
+    return _decode(n, origin, stride, count, max_quotient, report, constant, linear, quadratic)
+
+
+def _decode(n, origin, stride, count, max_quotient, report, constant, linear, quadratic):
+    """Use only the supplied readings and check each proposed integer split."""
+    work = report['work']
+
     def finish(reason, factor=None):
         if factor is not None and (not 1 < factor < n or n % factor):
             raise ArithmeticError("invalid split")
@@ -72,22 +95,6 @@ def _lane(n, base, origin, end, stride, count, step_base, max_terms, max_quotien
             return factor
         return None
 
-    if common > 1:
-        return finish("base_gcd", common)
-    if count > max_terms:
-        return finish("term_limit")
-
-    target = pow(base, n+1-origin, n)
-    work.update(terms=count, unvisited_terms=0, modular_powers=1,
-                target_exponent_bits=(n+1-origin).bit_length())
-    if reader is None:
-        constant, linear, quadratic = coefficients(n, step_base, target, count)
-        # Two scalar products for factor coefficients, one for the shared constant,
-        # and five coefficient products for each signed probe.
-        work.update(term_multiplications=18*count, geometric_steps=max(0, count-1),
-                    jet_updates=3*count)
-    else:
-        (constant, linear, quadratic), report['block_work'] = reader(n, step_base, target, count)
     # An adaptive reader supplies the next measurements only on this path.
     report.update(constant=constant, linear=linear,
                   quadratic=None if callable(quadratic) else quadratic)
@@ -157,6 +164,7 @@ def _lane(n, base, origin, end, stride, count, step_base, max_terms, max_quotien
     if equal_factor is not None:
         return finish(equal_reason, equal_factor)
     return finish("quotient_limit")
+
 
 def _binary_classes(n):
     """Compress the exact factor-pair sum residues modulo 32 into disjoint classes."""

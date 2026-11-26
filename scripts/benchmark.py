@@ -46,7 +46,8 @@ from experiments.monotone_divisor_sampling import scan as scan_divisor_prefixes,
 from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
 from experiments.smooth_factor_sums import scan_two_three
 from experiments.near_smooth_sum import search as near_smooth_search
-from experiments import carry_interval, geometric_readout_blocks, geometric_sum_readout, radix_carries, sum_signature_join
+from experiments import carry_interval, geometric_lifted_readout, geometric_readout_blocks
+from experiments import geometric_sum_readout, radix_carries, sum_signature_join
 from scripts import near_smooth_certificate, trace_cover_certificate
 from experiments import trace_cover, trace_cover_transfer
 from experiments.gap_newton_lanes import search as gap_lane_search
@@ -396,6 +397,52 @@ def short_basis_case(case, proof):
     return certify_split(case, proof, factor, elapsed, 'short_basis', work)
 
 
+def lifted_readout_case(case, proof):
+    n = int(case['n'])
+    args = n, case['base'], case['max_block_width'], case['max_quotient']
+    start = time.perf_counter()
+    run = geometric_lifted_readout.search(*args)
+    elapsed = time.perf_counter()-start
+    ops = run.get('block_work', {})
+    measured = dict(run, signed_targets=list(map(int, run['samples'])),
+                    scalar_products=ops.get('scalar_products', 0),
+                    root_polynomials=ops.get('root_polynomials', 0),
+                    block_evaluations=ops.get('block_evaluations', 0))
+    agree(case, measured, ['outcome', 'winning_index', 'total_terms', 'required_width',
+                          'signed_targets', 'scalar_products', 'root_polynomials', 'block_evaluations', 'work'])
+
+    start = time.perf_counter()
+    eager = geometric_lifted_readout.search(*args, all_targets=True)
+    run['eager_seconds'] = time.perf_counter()-start
+    for key in ['factor', 'outcome', 'linear_minus', 'linear', 'quadratic', 'winning_index',
+                'quotient_hits', 'equal_hits']:
+        if eager[key] != run[key]:
+            raise ValueError(f"{case['id']}: eager and adaptive lifted {key} disagree")
+    if any(eager['samples'][key] != value for key, value in run['samples'].items()):
+        raise ValueError(f"{case['id']}: eager and adaptive scalar values disagree")
+    run['eager_block_work'] = eager.get('block_work', {})
+    run['reference'] = 'unrun'
+    if ops:
+        count = int(run['total_terms'])
+        base, target = run['reduced_base'], run['reduced_target']
+        start = time.perf_counter()
+        if count <= case['max_direct_terms']:
+            run['reference'] = 'direct'
+            reference = geometric_sum_readout.coefficients(n, base, target, count)
+        else:
+            run['reference'] = 'seven_product'
+            reference, reference_work = geometric_readout_blocks.blocked_coefficients(n, base, target, count)
+            run['reference_block_work'] = reference_work
+        run['reference_seconds'] = time.perf_counter()-start
+        constant, linear, quadratic = reference
+        for key, value in [('constant', constant), ('linear_minus', linear[2]),
+                           ('linear', linear), ('quadratic', quadratic)]:
+            if run[key] is not None and run[key] != value:
+                raise ValueError(f"{case['id']}: lifted {key} disagrees at the transported base")
+    agree(case, run, ['reference'])
+    return certify_split(case, proof, run.pop('factor'), elapsed, 'geometric_lifted_readout', run)
+
+
 def compare_adaptive_readings(case, reference):
     comparisons = {}
     saved_fields = ['outcome', 'constant', 'linear', 'quadratic', 'readout_index', 'winning_index',
@@ -439,6 +486,8 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'geometric-lifted-readout':
+        result = lifted_readout_case(case, proof)
     elif method == 'geometric-readout-blocks':
         n = int(case['n'])
         search = geometric_readout_blocks.search(n, case['base'], case['max_block_width'],
@@ -1468,6 +1517,7 @@ def main():
                              ('geometric-sum-readout.json', 'geometric-sum-readout'),
                              ('geometric-sum-binary.json', 'geometric-sum-binary'),
                              ('geometric-readout-blocks.json', 'geometric-readout-blocks'),
+                             ('geometric-lifted-readout.json', 'geometric-lifted-readout'),
                              ('weighted-sparse.json', 'weighted-sparse'),
                              ('weighted-base.json', 'weighted-base'),
                              ('quartic-trace.json', 'quartic-trace'),

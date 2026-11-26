@@ -127,6 +127,9 @@ import PrimeFactors.GeometricReadingLift
 import PrimeFactors.GeometricBlockReading
 import PrimeFactors.GeometricReadingStencil
 import PrimeFactors.GeometricGeneratorFraction
+import PrimeFactors.GeometricPrincipalLift
+import PrimeFactors.GeometricLiftedDigit
+import PrimeFactors.GeometricNegativeDirection
 import PrimeFactors.ReusableSumBase
 import PrimeFactors.SignatureUpdates
 import PrimeFactors.FixedBaseSignature

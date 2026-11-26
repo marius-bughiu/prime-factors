@@ -8,7 +8,7 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
-**One calculation recovered two primes from nearly 100 million possible sums.** On a fresh 60-bit number it gave **650,523,521 × 1,027,720,019** in 1.32 seconds on the test machine. Lean verified both factors. Extra readings recovered 163 × 211 on an example where the first calculation gave zero. On the two 2,048-bit comparisons the calculation still required polynomials with more than $2^{510}$ coefficients apiece. [How it works, what we measured and where it stops](discoveries/reading-an-index-from-a-geometric-product.md)
+**The search factored a fresh 60-bit product in 0.443 seconds.** Using only the product, it covered 99,197,914 possible sums with one polynomial. Evaluating 9,959 blocks for each of two target values gave **650,523,521 × 1,027,720,019**. Lean verified both primes and their product separately. On each of the two 2,048-bit comparisons, even that single polynomial would need more than $2^{510}$ coefficients. Both products remain unfactored by this search. [How the search works and where it stops](discoveries/reading-an-index-from-a-geometric-product.md#one-grid-for-all-three-directions)
 
 **For one 2,048-bit comparison we can prove that a single check identifies the correct sum.** We used its known factors to verify that property. Finding the sum from the product alone still exceeded our budget. On a fresh 88-bit product, the search picked the right sum out of 254,689,123 candidates. Reusing intermediate powers cut 92,665 modular exponentiations to 98 and recovered **14,430,605,773,673 × 15,019,712,637,103**. [What one check reveals, and what computing it costs](discoveries/one-base-for-the-factor-sum.md)
 

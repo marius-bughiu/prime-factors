@@ -1,5 +1,7 @@
 # Reading the factor sum when several powers match
 
+The search factored **668,556,045,362,066,899** from the product alone in **0.443 seconds** on the test machine. It covered 99,197,914 possible sums by building one polynomial and reading it in two directions. The answer was **650,523,521 × 1,027,720,019**. Lean checked the factorization separately. On each 2,048-bit comparison, the required polynomial degree still exceeded $2^{510}$, so the calculation stopped before building it. [Search, inputs and budgets](../benchmarks/geometric-lifted-readout.json)
+
 On **34,393**, an initial calculation gave zero. Three further readings of the same product gave the factor **163**, leaving **211**. On **30,353** the same three readings gave two possible positions. Just one was in range, and it gave **127 × 239**. Both examples were chosen to test those branches of the calculation. Lean checks the readings from the public input, the arithmetic, and the resulting prime factors. [Checked examples](../PrimeFactors/GeometricReadoutExamples.lean) · [Benchmark records](../benchmarks/geometric-sum-readout.json)
 
 On a separately generated **1,599,371,087**, the ordinary interval had 4,852 possible sums. Its last three binary digits forced the sum to be a multiple of eight, leaving exactly 606. At the same 1,024-term budget the shorter search recovered **34,949 × 45,763**. The longer search stopped before evaluating the product. On the two 2,048-bit controls the same low-digit test still left more than $2^{1017}$ terms apiece. [Filtered runs](../benchmarks/geometric-sum-binary.json) · [Binary restrictions](prime-power-counts.md#including-the-prime-two)
@@ -44,6 +46,28 @@ Three scalar products modulo $N^2$ suffice to try the linear readout. They evalu
 On the 60-bit input, representative medians over six rotating runs were 1.411 seconds for the reference, 0.769 seconds starting at cubic precision, and 0.560 seconds starting at quadratic precision. All three recovered the same prime pair. Starting at quadratic precision was slower on the two deliberately selected inputs that required the second derivative. These are local search times. The Lean certificates run separately.
 
 For every fixed target product, at least $1403/5408$ of its units yield a factor or the true index from the first derivative alone. The count includes bases whose order at the smaller prime is its maximum, one half, or one quarter of that maximum, and includes the corresponding one-eighth case at the larger prime. Orders this large exceed the search width on that side. The other side either also has a single match, giving the index, or gives a proper gcd. This probability is over a fresh uniform base for the fixed product. It provides no input-specific shortcut for evaluating the products. [Uniform count and recovery theorem](../PrimeFactors/GeometricGeneratorFraction.lean)
+
+## One grid for all three directions
+
+Use the same balanced interval and assume $N=pq$ for distinct odd primes $p<q\le2p$. From the product and a chosen base $g$ coprime to $N$, compute $G=g^N\bmod N^3$ and $Y=G^{N+1-L}\bmod N^3$. If the original powers agree at an index modulo $p$, their $N$th powers agree modulo $p^2$. The balance assumption gives $\gcd(N,p-1)=\gcd(N,q-1)=1$, so raising to $N$ preserves the matching indices at each prime. [Local congruence and order proofs](../PrimeFactors/GeometricPrincipalLift.lean) · [Power-lifting lemma in Mathlib 4.19 (Apache-2.0)](https://github.com/leanprover-community/mathlib4/blob/v4.19.0/Mathlib/NumberTheory/Basic.lean#L28)
+
+For $z=-1,0,1$, let $V_z$ be the least nonnegative residue modulo $N^3$ of
+
+$$
+\prod_{i=0}^W \bigl(Y(1+zN)-(G(1+N))^i\bigr).
+$$
+
+Every direction uses the same sequence of powers. The code builds its root polynomial once and uses the same geometric grid to evaluate the required target values. Let $H_z=(V_z/N)\bmod N$. At each prime this gives the first coefficient of the product expanded in $t$ about zero with target $Y(1+zt)$ and base $G(1+t)$. A single match on each side guarantees that the unperturbed product is divisible by $N^2$. For example, on 33,127 with base 2 its residue modulo $N^3$ is $28{,}035N^2$. [Proof of the digit extraction](../PrimeFactors/GeometricLiftedDigit.lean) · [Regression test](../tests/test_geometric_lifted_readout.py)
+
+The search starts with $H_{-1}$. When $W+1<p$, every candidate index avoids $-1$ modulo either prime. A prime divides $H_{-1}$ exactly when it has at least two matching indices. This gives three cases. [Negative-direction coefficient and gcd](../PrimeFactors/GeometricNegativeDirection.lean)
+
+| $\gcd(H_{-1},N)$ | What the search can read |
+| --- | --- |
+| A proper divisor | The gcd itself splits $N$. For $33{,}127$ and base 13, $H_{-1}=14{,}915$ gave the factor 157 from one target. |
+| $1$ | Each prime has a single match. Read $H_0$ and recover its common index $j=-H_0/(H_0-H_{-1})\bmod N$. The integer square test checks the sum $L+j$. |
+| $N$ | Each prime has at least two matches. In this case $N^2\mid V_z$ and $(V_z/N^2)\bmod N$ gives the quadratic coefficient. Three targets supply the cofactor and square tests above. If both primes have more than two matches, all three quadratic coefficients vanish. |
+
+The 60-bit run used one degree-9,960 polynomial, 19,918 block values and 12,548 individual tail terms. The two targets took 0.443 seconds. Computing all three on that grid took 0.540 seconds. A seven-product reference at the same transformed base took 1.418 seconds and agreed on the measured coefficients. At 37 bits, the two targets took 4.1 milliseconds, all three took 5.3 milliseconds, and the independent direct evaluation took 50.6 milliseconds. These are local search or comparison times. The fixture records the full-size degree cap of 16,384 and the unvisited sums. [Implementation](../experiments/geometric_lifted_readout.py) · [Benchmark records](../benchmarks/geometric-lifted-readout.json)
 
 ## What the low digits save
 
