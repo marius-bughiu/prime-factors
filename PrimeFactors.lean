@@ -114,6 +114,8 @@ import PrimeFactors.SumSignatureProbability
 import PrimeFactors.SingleBaseRepeat
 import PrimeFactors.DivisorSecondMoment
 import PrimeFactors.SingleBasePopulation
+import PrimeFactors.OrderDivisorSumBits
+import PrimeFactors.PrimePowerSumFilter
 import PrimeFactors.ReusableSumBase
 import PrimeFactors.SignatureUpdates
 import PrimeFactors.FixedBaseSignature
