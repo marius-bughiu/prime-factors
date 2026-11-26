@@ -8,6 +8,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**We can force one of the two checks to pass on a large input.** On each ordinary 2,048-bit input, choosing the base produced 130 smooth ordinary numbers. None of the 53,950 rows passed both required checks. Lean also bounds the chance of finding even one qualifying row across a much larger class of cubic polynomials. [What choosing the polynomial buys us](discoveries/choosing-a-cubic-and-reading-its-square.md)
+
 **Eight extra checks singled out the clue that gave 36,151 × 52,999.** We started with their product, 1,915,966,849. An earlier test admitted 511 combinations, and its first 32 all failed. Eight checks left one combination, which gave both primes. Across eight independently drawn 31-bit products the cubic search factored one and the comparison quadratic sieve factored six. On both ordinary 2,048-bit inputs the cubic search found no usable rows. [How the clue works and what Lean verified](discoveries/cubic-square-relations.md)
 
 **A match between two square tests can guarantee a factor.** On 43,423, the match gave 173 and 251. Two constructions guarantee an unequal match on more than 28% of the full-size prime pairs we study. On a new 2,048-bit example, the guaranteed answer lay more than $2^{1010}$ positions into the search. [When the guarantee helps and what it costs](discoveries/when-two-negative-remainders-give-a-factor.md)

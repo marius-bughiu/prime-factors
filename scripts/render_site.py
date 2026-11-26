@@ -829,6 +829,20 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'cubic-readout':
+        w = result['cubic_readout']
+        count = f'{w.get("tested", 0):,} combinations tested · {w.get("counts", {}).get("square", 0):,} unit square relations'
+        if 'projected_relation' in result:
+            i = w['first_rescue']['index']
+            count += f' · combination {i} gave a factor only after changing the readout'
+            evidence += f'<p><a href="{escape(result["projected_relation"])}">Check both original gcds and the projected factor</a></p>'
+    elif result['method'] == 'cubic-smooth-bases':
+        w = result['cubic_smooth_bases']['two_three']
+        arm = w['adaptive']
+        count = (f'{arm["work"]["certified_bases"]:,} smooth-base cubics · {arm["all_rows"]["visited"]:,} rows'
+                 f' · {arm["all_rows"]["rational_smooth"]:,} smooth ordinary values'
+                 f' · {arm["all_rows"]["joint"]:,} smooth on both sides'
+                 f' · {w["matched_offsets"]["all_rows"]["joint"]:,} on both sides for matched conventional bases')
     elif result['method'] == 'cubic-trace':
         w = result['cubic_trace']
         limits = w['limits']

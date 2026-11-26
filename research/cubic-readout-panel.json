@@ -1,0 +1,2609 @@
+{
+  "min_prime": 17,
+  "max_prime": 83,
+  "partner_ratio_max": 2,
+  "row_count": 415,
+  "character_bits": 8,
+  "dependency_cap": 128,
+  "cases": [
+    {
+      "n": 323,
+      "status": "tested",
+      "m": 6,
+      "f": [
+        -1,
+        0,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 622,
+        "original_root_nodes": 490,
+        "square": 1,
+        "ordinary_splits": 1,
+        "direct_splits": 1,
+        "projected_splits": 1,
+        "nonunit_rational_root": 112,
+        "nonsquare": 15
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        17,
+        19
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 391,
+      "status": "excluded ramified input"
+    },
+    {
+      "n": 493,
+      "status": "tested",
+      "m": 7,
+      "f": [
+        3,
+        0,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "nonunit_rational_root": 113,
+        "projected_root_nodes": 1291,
+        "original_root_nodes": 971,
+        "square": 15,
+        "ordinary_splits": 8,
+        "direct_splits": 8,
+        "projected_splits": 8
+      },
+      "first": {
+        "ordinary": 4,
+        "direct": 4,
+        "projected": 4
+      },
+      "factors": [
+        17,
+        29
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 527,
+      "status": "tested",
+      "m": 8,
+      "f": [
+        -1,
+        2,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 2835,
+        "original_root_nodes": 2109,
+        "square": 31,
+        "ordinary_splits": 16,
+        "direct_splits": 16,
+        "projected_splits": 16,
+        "nonunit_rational_root": 97
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        17,
+        31
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 437,
+      "status": "tested",
+      "m": 7,
+      "f": [
+        3,
+        -1,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 5815,
+        "original_root_nodes": 4343,
+        "square": 63,
+        "ordinary_splits": 32,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 65
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        19,
+        23
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 551,
+      "status": "tested",
+      "m": 8,
+      "f": [
+        -1,
+        -3,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 3936,
+        "original_root_nodes": 2382,
+        "square": 32,
+        "ordinary_splits": 17,
+        "direct_splits": 17,
+        "projected_splits": 17,
+        "nonunit_rational_root": 96
+      },
+      "first": {
+        "ordinary": 8,
+        "direct": 8,
+        "projected": 8
+      },
+      "factors": [
+        19,
+        29
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 589,
+      "status": "tested",
+      "m": 8,
+      "f": [
+        -3,
+        2,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "nonunit_rational_root": 96,
+        "projected_root_nodes": 2928,
+        "original_root_nodes": 2138,
+        "square": 32,
+        "ordinary_splits": 19,
+        "direct_splits": 17,
+        "projected_splits": 17,
+        "ordinary_only": 2
+      },
+      "first": {
+        "ordinary": 3,
+        "direct": 3,
+        "projected": 3
+      },
+      "factors": [
+        19,
+        31
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 703,
+      "status": "tested",
+      "m": 8,
+      "f": [
+        -1,
+        0,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 1626,
+        "original_root_nodes": 1290,
+        "nonsquare": 32,
+        "nonunit_rational_root": 96
+      },
+      "first": {},
+      "factors": [],
+      "first_rescue": null
+    },
+    {
+      "n": 667,
+      "status": "excluded ramified input"
+    },
+    {
+      "n": 713,
+      "status": "tested",
+      "m": 8,
+      "f": [
+        1,
+        1,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 2390,
+        "original_root_nodes": 1648,
+        "square": 32,
+        "ordinary_splits": 17,
+        "direct_splits": 17,
+        "projected_splits": 17,
+        "nonunit_rational_root": 96
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        23,
+        31
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 851,
+      "status": "excluded ramified input"
+    },
+    {
+      "n": 943,
+      "status": "excluded ramified input"
+    },
+    {
+      "n": 989,
+      "status": "excluded ramified input"
+    },
+    {
+      "n": 899,
+      "status": "excluded ramified input"
+    },
+    {
+      "n": 1073,
+      "status": "tested",
+      "m": 10,
+      "f": [
+        3,
+        -3,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 3361,
+        "original_root_nodes": 2607,
+        "square": 15,
+        "ordinary_splits": 8,
+        "direct_splits": 8,
+        "projected_splits": 8,
+        "nonunit_rational_root": 97,
+        "nonsquare": 16
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        29,
+        37
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1189,
+      "status": "tested",
+      "m": 10,
+      "f": [
+        -1,
+        -1,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 8280,
+        "original_root_nodes": 6654,
+        "nonsquare": 127,
+        "square": 1,
+        "ordinary_splits": 0,
+        "direct_splits": 0,
+        "projected_splits": 0
+      },
+      "first": {},
+      "factors": [],
+      "first_rescue": null
+    },
+    {
+      "n": 1247,
+      "status": "tested",
+      "m": 10,
+      "f": [
+        -3,
+        -5,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 11742,
+        "original_root_nodes": 8412,
+        "square": 64,
+        "ordinary_splits": 33,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 64,
+        "ordinary_only": 1
+      },
+      "first": {
+        "ordinary": 2,
+        "direct": 2,
+        "projected": 2
+      },
+      "factors": [
+        29,
+        43
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1363,
+      "status": "tested",
+      "m": 11,
+      "f": [
+        -1,
+        3,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 7350,
+        "original_root_nodes": 5692,
+        "square": 64,
+        "ordinary_splits": 32,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 64
+      },
+      "first": {
+        "ordinary": 4,
+        "direct": 4,
+        "projected": 4
+      },
+      "factors": [
+        29,
+        47
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1537,
+      "status": "tested",
+      "m": 11,
+      "f": [
+        -3,
+        -3,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 12922,
+        "original_root_nodes": 9364,
+        "square": 64,
+        "ordinary_splits": 32,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 64
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        29,
+        53
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1147,
+      "status": "tested",
+      "m": 10,
+      "f": [
+        -3,
+        -5,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 23002,
+        "original_root_nodes": 16108,
+        "square": 128,
+        "ordinary_splits": 66,
+        "direct_splits": 64,
+        "projected_splits": 64,
+        "ordinary_only": 2
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        31,
+        37
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1271,
+      "status": "tested",
+      "m": 10,
+      "f": [
+        1,
+        -3,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 6407,
+        "original_root_nodes": 4731,
+        "square": 63,
+        "ordinary_splits": 34,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 65,
+        "ordinary_only": 2
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        31,
+        41
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1333,
+      "status": "tested",
+      "m": 11,
+      "f": [
+        2,
+        0,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 3476,
+        "original_root_nodes": 2566,
+        "square": 32,
+        "ordinary_splits": 16,
+        "direct_splits": 16,
+        "projected_splits": 16,
+        "nonunit_rational_root": 96,
+        "direct_only": 1,
+        "ordinary_only": 1
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        31,
+        43
+      ],
+      "first_rescue": {
+        "index": 59,
+        "rows": [
+          [
+            -26,
+            1
+          ],
+          [
+            -4,
+            1
+          ],
+          [
+            -2,
+            1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            38,
+            1
+          ],
+          [
+            -35,
+            2
+          ],
+          [
+            -19,
+            2
+          ],
+          [
+            -5,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            17,
+            2
+          ],
+          [
+            -16,
+            3
+          ],
+          [
+            -10,
+            3
+          ],
+          [
+            -1,
+            3
+          ]
+        ],
+        "beta": [
+          "7260876325332",
+          "-6589425588192",
+          "5176550623788"
+        ],
+        "z": "268992360",
+        "ordinary": [
+          [
+            1333,
+            1333
+          ]
+        ],
+        "direct": [
+          {
+            "coefficients": [
+              1650006,
+              -1738722,
+              652542
+            ],
+            "denominator": 1,
+            "cancelled_content": 1848157732820243952,
+            "specialized_numerator": 1020,
+            "denominator_gcd": 1,
+            "gcds": [
+              31,
+              43
+            ]
+          }
+        ],
+        "projected": {
+          "derivative": 363,
+          "derivative_gcd": 1,
+          "masked_element": [
+            83231685379346436,
+            -80630090038325592,
+            60669935496938232
+          ],
+          "signed_traces": [
+            566316738
+          ],
+          "gcds": [
+            [
+              31,
+              43
+            ]
+          ],
+          "work": {
+            "integer_root_nodes": 123,
+            "mod5_root_mask": 12,
+            "radius": 2147483648,
+            "max_isolation_nodes": 641
+          }
+        }
+      }
+    },
+    {
+      "n": 1457,
+      "status": "tested",
+      "m": 11,
+      "f": [
+        5,
+        0,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 7681,
+        "original_root_nodes": 5985,
+        "nonsquare": 48,
+        "square": 15,
+        "ordinary_splits": 9,
+        "direct_splits": 8,
+        "projected_splits": 8,
+        "ordinary_only": 1,
+        "nonunit_rational_root": 65
+      },
+      "first": {
+        "ordinary": 24,
+        "direct": 24,
+        "projected": 24
+      },
+      "factors": [
+        31,
+        47
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1643,
+      "status": "excluded ramified input"
+    },
+    {
+      "n": 1829,
+      "status": "tested",
+      "m": 12,
+      "f": [
+        5,
+        -4,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 6526,
+        "original_root_nodes": 4672,
+        "square": 64,
+        "ordinary_splits": 32,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 64
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        31,
+        59
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1891,
+      "status": "tested",
+      "m": 12,
+      "f": [
+        -5,
+        2,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 3931,
+        "original_root_nodes": 3003,
+        "square": 31,
+        "ordinary_splits": 16,
+        "direct_splits": 16,
+        "projected_splits": 16,
+        "nonsquare": 33,
+        "nonunit_rational_root": 64
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        31,
+        61
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1517,
+      "status": "tested",
+      "m": 11,
+      "f": [
+        -1,
+        -5,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 28042,
+        "original_root_nodes": 20990,
+        "square": 128,
+        "ordinary_splits": 65,
+        "direct_splits": 65,
+        "projected_splits": 65
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        37,
+        41
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1591,
+      "status": "tested",
+      "m": 11,
+      "f": [
+        -4,
+        2,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 7916,
+        "original_root_nodes": 6004,
+        "square": 64,
+        "ordinary_splits": 36,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "ordinary_only": 4,
+        "nonunit_rational_root": 64
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        37,
+        43
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1739,
+      "status": "tested",
+      "m": 12,
+      "f": [
+        -1,
+        1,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 2897,
+        "original_root_nodes": 2017,
+        "square": 31,
+        "ordinary_splits": 16,
+        "direct_splits": 16,
+        "projected_splits": 16,
+        "nonunit_rational_root": 97
+      },
+      "first": {
+        "ordinary": 6,
+        "direct": 6,
+        "projected": 6
+      },
+      "factors": [
+        37,
+        47
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1961,
+      "status": "tested",
+      "m": 12,
+      "f": [
+        5,
+        -5,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 6983,
+        "original_root_nodes": 5163,
+        "square": 63,
+        "ordinary_splits": 33,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "ordinary_only": 1,
+        "nonunit_rational_root": 65
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        37,
+        53
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2183,
+      "status": "tested",
+      "m": 12,
+      "f": [
+        -1,
+        2,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 4471,
+        "original_root_nodes": 2635,
+        "square": 63,
+        "ordinary_splits": 33,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "ordinary_only": 1,
+        "nonunit_rational_root": 65
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        37,
+        59
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2257,
+      "status": "tested",
+      "m": 13,
+      "f": [
+        -5,
+        5,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 2561,
+        "original_root_nodes": 2121,
+        "square": 7,
+        "ordinary_splits": 4,
+        "direct_splits": 4,
+        "projected_splits": 4,
+        "nonunit_rational_root": 113,
+        "nonsquare": 8
+      },
+      "first": {
+        "ordinary": 24,
+        "direct": 24,
+        "projected": 24
+      },
+      "factors": [
+        37,
+        61
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2479,
+      "status": "excluded ramified input"
+    },
+    {
+      "n": 2627,
+      "status": "tested",
+      "m": 13,
+      "f": [
+        1,
+        -6,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 3525,
+        "original_root_nodes": 2619,
+        "nonsquare": 56,
+        "square": 7,
+        "ordinary_splits": 5,
+        "direct_splits": 4,
+        "projected_splits": 4,
+        "ordinary_only": 1,
+        "nonunit_rational_root": 65
+      },
+      "first": {
+        "ordinary": 13,
+        "direct": 13,
+        "projected": 13
+      },
+      "factors": [
+        37,
+        71
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2701,
+      "status": "tested",
+      "m": 13,
+      "f": [
+        -3,
+        0,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 4213,
+        "original_root_nodes": 3367,
+        "square": 1,
+        "ordinary_splits": 0,
+        "direct_splits": 0,
+        "projected_splits": 0,
+        "nonunit_rational_root": 65,
+        "nonsquare": 62
+      },
+      "first": {},
+      "factors": [],
+      "first_rescue": null
+    },
+    {
+      "n": 1763,
+      "status": "tested",
+      "m": 12,
+      "f": [
+        -1,
+        3,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 17574,
+        "original_root_nodes": 13838,
+        "square": 128,
+        "ordinary_splits": 64,
+        "direct_splits": 64,
+        "projected_splits": 64
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        41,
+        43
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 1927,
+      "status": "tested",
+      "m": 12,
+      "f": [
+        -5,
+        5,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 4417,
+        "original_root_nodes": 3573,
+        "square": 15,
+        "ordinary_splits": 9,
+        "direct_splits": 8,
+        "projected_splits": 8,
+        "ordinary_only": 1,
+        "nonsquare": 16,
+        "nonunit_rational_root": 97
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 2,
+        "projected": 2
+      },
+      "factors": [
+        41,
+        47
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2173,
+      "status": "tested",
+      "m": 12,
+      "f": [
+        1,
+        1,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 7066,
+        "original_root_nodes": 5206,
+        "square": 64,
+        "ordinary_splits": 32,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 64
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        41,
+        53
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2419,
+      "status": "tested",
+      "m": 13,
+      "f": [
+        1,
+        4,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 14397,
+        "original_root_nodes": 10569,
+        "nonsquare": 64,
+        "square": 63,
+        "ordinary_splits": 32,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 1
+      },
+      "first": {
+        "ordinary": 3,
+        "direct": 3,
+        "projected": 3
+      },
+      "factors": [
+        41,
+        59
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2501,
+      "status": "tested",
+      "m": 13,
+      "f": [
+        5,
+        -3,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 16232,
+        "original_root_nodes": 12496,
+        "square": 128,
+        "ordinary_splits": 65,
+        "direct_splits": 64,
+        "projected_splits": 64,
+        "ordinary_only": 1
+      },
+      "first": {
+        "ordinary": 2,
+        "direct": 2,
+        "projected": 2
+      },
+      "factors": [
+        41,
+        61
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2747,
+      "status": "tested",
+      "m": 14,
+      "f": [
+        3,
+        0,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 7427,
+        "original_root_nodes": 5431,
+        "square": 63,
+        "ordinary_splits": 33,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 65,
+        "ordinary_only": 1
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        41,
+        67
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2911,
+      "status": "tested",
+      "m": 14,
+      "f": [
+        -1,
+        -2,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 14957,
+        "original_root_nodes": 11175,
+        "square": 7,
+        "ordinary_splits": 5,
+        "direct_splits": 4,
+        "projected_splits": 4,
+        "nonsquare": 56,
+        "ordinary_only": 1,
+        "nonunit_rational_root": 65
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        41,
+        71
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2993,
+      "status": "tested",
+      "m": 14,
+      "f": [
+        -3,
+        4,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 17252,
+        "original_root_nodes": 13280,
+        "square": 128,
+        "ordinary_splits": 66,
+        "direct_splits": 65,
+        "projected_splits": 65,
+        "ordinary_only": 1
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        41,
+        73
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3239,
+      "status": "tested",
+      "m": 14,
+      "f": [
+        5,
+        -7,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 19050,
+        "original_root_nodes": 15074,
+        "square": 128,
+        "ordinary_splits": 66,
+        "direct_splits": 65,
+        "projected_splits": 65,
+        "ordinary_only": 2,
+        "direct_only": 1
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        41,
+        79
+      ],
+      "first_rescue": {
+        "index": 92,
+        "rows": [
+          [
+            -36,
+            1
+          ],
+          [
+            -20,
+            1
+          ],
+          [
+            -10,
+            1
+          ],
+          [
+            -3,
+            1
+          ],
+          [
+            -2,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            16,
+            1
+          ],
+          [
+            25,
+            1
+          ],
+          [
+            -19,
+            2
+          ],
+          [
+            -9,
+            2
+          ],
+          [
+            -5,
+            2
+          ],
+          [
+            -3,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            29,
+            2
+          ],
+          [
+            -35,
+            3
+          ]
+        ],
+        "beta": [
+          "519583367375766040",
+          "-667963883338130666",
+          "37914297730859098"
+        ],
+        "z": "170075505600",
+        "ordinary": [
+          [
+            3239,
+            3239
+          ]
+        ],
+        "direct": [
+          {
+            "coefficients": [
+              -818916985,
+              394201744,
+              216233763
+            ],
+            "denominator": 1,
+            "cancelled_content": 2509886352230485494974754868,
+            "specialized_numerator": 3181,
+            "denominator_gcd": 1,
+            "gcds": [
+              79,
+              41
+            ]
+          }
+        ],
+        "projected": {
+          "derivative": 665,
+          "derivative_gcd": 1,
+          "masked_element": [
+            28715044049074064468900,
+            -32972919941861436999930,
+            -2206459720007805339182
+          ],
+          "signed_traces": [
+            164023588664
+          ],
+          "gcds": [
+            [
+              79,
+              41
+            ]
+          ],
+          "work": {
+            "integer_root_nodes": 157,
+            "mod5_root_mask": 18,
+            "radius": 1099511627776,
+            "max_isolation_nodes": 821
+          }
+        }
+      }
+    },
+    {
+      "n": 2021,
+      "status": "tested",
+      "m": 12,
+      "f": [
+        5,
+        0,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 6996,
+        "original_root_nodes": 5100,
+        "square": 64,
+        "ordinary_splits": 33,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 64,
+        "ordinary_only": 1
+      },
+      "first": {
+        "ordinary": 48,
+        "direct": 48,
+        "projected": 48
+      },
+      "factors": [
+        43,
+        47
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2279,
+      "status": "tested",
+      "m": 13,
+      "f": [
+        4,
+        6,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 19417,
+        "original_root_nodes": 15603,
+        "square": 127,
+        "ordinary_splits": 66,
+        "direct_splits": 64,
+        "projected_splits": 64,
+        "ordinary_only": 2,
+        "nonunit_rational_root": 1
+      },
+      "first": {
+        "ordinary": 2,
+        "direct": 2,
+        "projected": 2
+      },
+      "factors": [
+        43,
+        53
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2537,
+      "status": "excluded ramified input"
+    },
+    {
+      "n": 2623,
+      "status": "tested",
+      "m": 13,
+      "f": [
+        -3,
+        -6,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 14766,
+        "original_root_nodes": 10904,
+        "square": 64,
+        "ordinary_splits": 33,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 64,
+        "ordinary_only": 1
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        43,
+        61
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2881,
+      "status": "tested",
+      "m": 14,
+      "f": [
+        -3,
+        -4,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 11205,
+        "original_root_nodes": 7409,
+        "square": 63,
+        "ordinary_splits": 33,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "ordinary_only": 1,
+        "nonunit_rational_root": 65
+      },
+      "first": {
+        "ordinary": 2,
+        "direct": 2,
+        "projected": 2
+      },
+      "factors": [
+        43,
+        67
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3053,
+      "status": "tested",
+      "m": 14,
+      "f": [
+        1,
+        -6,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 11045,
+        "original_root_nodes": 7261,
+        "square": 63,
+        "ordinary_splits": 32,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonsquare": 64,
+        "nonunit_rational_root": 1
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        43,
+        71
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3139,
+      "status": "tested",
+      "m": 14,
+      "f": [
+        3,
+        0,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 5961,
+        "original_root_nodes": 4015,
+        "square": 63,
+        "ordinary_splits": 32,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 65
+      },
+      "first": {
+        "ordinary": 2,
+        "direct": 2,
+        "projected": 2
+      },
+      "factors": [
+        43,
+        73
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3397,
+      "status": "tested",
+      "m": 15,
+      "f": [
+        7,
+        1,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 21087,
+        "original_root_nodes": 17037,
+        "square": 127,
+        "ordinary_splits": 67,
+        "direct_splits": 64,
+        "projected_splits": 64,
+        "ordinary_only": 3,
+        "nonunit_rational_root": 1
+      },
+      "first": {
+        "ordinary": 2,
+        "direct": 2,
+        "projected": 2
+      },
+      "factors": [
+        43,
+        79
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3569,
+      "status": "tested",
+      "m": 15,
+      "f": [
+        -1,
+        -2,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 3817,
+        "original_root_nodes": 2913,
+        "nonsquare": 60,
+        "square": 3,
+        "ordinary_splits": 2,
+        "direct_splits": 2,
+        "projected_splits": 2,
+        "nonunit_rational_root": 65
+      },
+      "first": {
+        "ordinary": 8,
+        "direct": 8,
+        "projected": 8
+      },
+      "factors": [
+        43,
+        83
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2491,
+      "status": "tested",
+      "m": 13,
+      "f": [
+        -5,
+        -3,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 8822,
+        "original_root_nodes": 7040,
+        "square": 3,
+        "ordinary_splits": 2,
+        "direct_splits": 2,
+        "projected_splits": 2,
+        "nonsquare": 125
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        47,
+        53
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 2773,
+      "status": "excluded ramified input"
+    },
+    {
+      "n": 2867,
+      "status": "excluded ramified input"
+    },
+    {
+      "n": 3149,
+      "status": "tested",
+      "m": 14,
+      "f": [
+        -1,
+        1,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 14971,
+        "original_root_nodes": 11117,
+        "square": 127,
+        "ordinary_splits": 66,
+        "direct_splits": 64,
+        "projected_splits": 64,
+        "ordinary_only": 2,
+        "nonunit_rational_root": 1
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        47,
+        67
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3337,
+      "status": "tested",
+      "m": 14,
+      "f": [
+        5,
+        0,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 15486,
+        "original_root_nodes": 11504,
+        "square": 128,
+        "ordinary_splits": 64,
+        "direct_splits": 64,
+        "projected_splits": 64
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        47,
+        71
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3431,
+      "status": "tested",
+      "m": 15,
+      "f": [
+        -4,
+        4,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 8176,
+        "original_root_nodes": 6146,
+        "square": 64,
+        "ordinary_splits": 32,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 64
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        47,
+        73
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3713,
+      "status": "tested",
+      "m": 15,
+      "f": [
+        -7,
+        -7,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 7802,
+        "original_root_nodes": 5910,
+        "square": 31,
+        "ordinary_splits": 18,
+        "direct_splits": 16,
+        "projected_splits": 16,
+        "nonsquare": 97,
+        "ordinary_only": 2
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        47,
+        79
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3901,
+      "status": "tested",
+      "m": 15,
+      "f": [
+        1,
+        5,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 8580,
+        "original_root_nodes": 6642,
+        "square": 64,
+        "ordinary_splits": 32,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonunit_rational_root": 64
+      },
+      "first": {
+        "ordinary": 12,
+        "direct": 12,
+        "projected": 12
+      },
+      "factors": [
+        47,
+        83
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3127,
+      "status": "excluded ramified input"
+    },
+    {
+      "n": 3233,
+      "status": "tested",
+      "m": 14,
+      "f": [
+        -1,
+        -7,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 16063,
+        "original_root_nodes": 12173,
+        "square": 63,
+        "ordinary_splits": 6,
+        "direct_splits": 0,
+        "projected_splits": 0,
+        "ordinary_only": 6,
+        "nonsquare": 65
+      },
+      "first": {
+        "ordinary": 13
+      },
+      "factors": [
+        53,
+        61
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3551,
+      "status": "tested",
+      "m": 15,
+      "f": [
+        -4,
+        -3,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 13154,
+        "original_root_nodes": 9146,
+        "square": 128,
+        "ordinary_splits": 65,
+        "direct_splits": 65,
+        "projected_splits": 65
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        53,
+        67
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3763,
+      "status": "tested",
+      "m": 15,
+      "f": [
+        -2,
+        -4,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 33896,
+        "original_root_nodes": 25718,
+        "square": 128,
+        "ordinary_splits": 65,
+        "direct_splits": 65,
+        "projected_splits": 65
+      },
+      "first": {
+        "ordinary": 4,
+        "direct": 4,
+        "projected": 4
+      },
+      "factors": [
+        53,
+        71
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3869,
+      "status": "tested",
+      "m": 15,
+      "f": [
+        -1,
+        3,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 16127,
+        "original_root_nodes": 12189,
+        "square": 127,
+        "ordinary_splits": 66,
+        "direct_splits": 64,
+        "projected_splits": 64,
+        "ordinary_only": 2,
+        "nonunit_rational_root": 1
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        53,
+        73
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 4187,
+      "status": "tested",
+      "m": 16,
+      "f": [
+        -5,
+        6,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 17192,
+        "original_root_nodes": 13320,
+        "square": 128,
+        "ordinary_splits": 64,
+        "direct_splits": 64,
+        "projected_splits": 64
+      },
+      "first": {
+        "ordinary": 4,
+        "direct": 4,
+        "projected": 4
+      },
+      "factors": [
+        53,
+        79
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 4399,
+      "status": "tested",
+      "m": 16,
+      "f": [
+        -1,
+        3,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 15058,
+        "original_root_nodes": 10890,
+        "square": 128,
+        "ordinary_splits": 65,
+        "direct_splits": 65,
+        "projected_splits": 65
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        53,
+        83
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3599,
+      "status": "tested",
+      "m": 15,
+      "f": [
+        -1,
+        0,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 8066,
+        "original_root_nodes": 6020,
+        "square": 64,
+        "ordinary_splits": 33,
+        "direct_splits": 33,
+        "projected_splits": 33,
+        "nonunit_rational_root": 64
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        59,
+        61
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 3953,
+      "status": "tested",
+      "m": 15,
+      "f": [
+        -7,
+        -6,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 32840,
+        "original_root_nodes": 24864,
+        "square": 128,
+        "ordinary_splits": 66,
+        "direct_splits": 65,
+        "projected_splits": 65,
+        "ordinary_only": 1
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        59,
+        67
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 4189,
+      "status": "tested",
+      "m": 16,
+      "f": [
+        -3,
+        6,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 15888,
+        "original_root_nodes": 11880,
+        "square": 128,
+        "ordinary_splits": 67,
+        "direct_splits": 64,
+        "projected_splits": 64,
+        "ordinary_only": 3
+      },
+      "first": {
+        "ordinary": 2,
+        "direct": 2,
+        "projected": 2
+      },
+      "factors": [
+        59,
+        71
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 4307,
+      "status": "tested",
+      "m": 16,
+      "f": [
+        3,
+        -3,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 21024,
+        "original_root_nodes": 16926,
+        "square": 32,
+        "ordinary_splits": 17,
+        "direct_splits": 17,
+        "projected_splits": 17,
+        "nonsquare": 96
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        59,
+        73
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 4661,
+      "status": "tested",
+      "m": 16,
+      "f": [
+        5,
+        3,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 15982,
+        "original_root_nodes": 11780,
+        "square": 128,
+        "ordinary_splits": 65,
+        "direct_splits": 64,
+        "projected_splits": 64,
+        "ordinary_only": 1
+      },
+      "first": {
+        "ordinary": 2,
+        "direct": 2,
+        "projected": 2
+      },
+      "factors": [
+        59,
+        79
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 4897,
+      "status": "tested",
+      "m": 16,
+      "f": [
+        1,
+        2,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 13956,
+        "original_root_nodes": 9874,
+        "square": 128,
+        "ordinary_splits": 65,
+        "direct_splits": 65,
+        "projected_splits": 65
+      },
+      "first": {
+        "ordinary": 2,
+        "direct": 2,
+        "projected": 2
+      },
+      "factors": [
+        59,
+        83
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 4087,
+      "status": "tested",
+      "m": 15,
+      "f": [
+        7,
+        2,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 21138,
+        "original_root_nodes": 16982,
+        "square": 31,
+        "ordinary_splits": 16,
+        "direct_splits": 16,
+        "projected_splits": 16,
+        "nonsquare": 97
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        61,
+        67
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 4331,
+      "status": "tested",
+      "m": 16,
+      "f": [
+        -5,
+        -1,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 15906,
+        "original_root_nodes": 11912,
+        "square": 128,
+        "ordinary_splits": 69,
+        "direct_splits": 65,
+        "projected_splits": 65,
+        "ordinary_only": 4
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        61,
+        71
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 4453,
+      "status": "tested",
+      "m": 16,
+      "f": [
+        5,
+        6,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 10009,
+        "original_root_nodes": 8043,
+        "square": 31,
+        "ordinary_splits": 16,
+        "direct_splits": 16,
+        "projected_splits": 16,
+        "nonsquare": 32,
+        "nonunit_rational_root": 65
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        61,
+        73
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 4819,
+      "status": "tested",
+      "m": 16,
+      "f": [
+        3,
+        -3,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 17664,
+        "original_root_nodes": 13468,
+        "square": 128,
+        "ordinary_splits": 67,
+        "direct_splits": 65,
+        "projected_splits": 65,
+        "ordinary_only": 2
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        61,
+        79
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 5063,
+      "status": "tested",
+      "m": 17,
+      "f": [
+        -3,
+        -8,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 28084,
+        "original_root_nodes": 19824,
+        "square": 128,
+        "ordinary_splits": 65,
+        "direct_splits": 64,
+        "projected_splits": 64,
+        "ordinary_only": 1
+      },
+      "first": {
+        "ordinary": 8,
+        "direct": 8,
+        "projected": 8
+      },
+      "factors": [
+        61,
+        83
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 4757,
+      "status": "tested",
+      "m": 16,
+      "f": [
+        5,
+        -7,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 18672,
+        "original_root_nodes": 14644,
+        "square": 63,
+        "ordinary_splits": 34,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "ordinary_only": 2,
+        "nonsquare": 65
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        67,
+        71
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 4891,
+      "status": "tested",
+      "m": 16,
+      "f": [
+        -5,
+        2,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 18930,
+        "original_root_nodes": 14752,
+        "square": 128,
+        "ordinary_splits": 64,
+        "direct_splits": 64,
+        "projected_splits": 64
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        67,
+        73
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 5293,
+      "status": "tested",
+      "m": 17,
+      "f": [
+        6,
+        5,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 16994,
+        "original_root_nodes": 12732,
+        "square": 128,
+        "ordinary_splits": 65,
+        "direct_splits": 65,
+        "projected_splits": 65
+      },
+      "first": {
+        "ordinary": 4,
+        "direct": 4,
+        "projected": 4
+      },
+      "factors": [
+        67,
+        79
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 5561,
+      "status": "tested",
+      "m": 17,
+      "f": [
+        2,
+        4,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 20924,
+        "original_root_nodes": 16498,
+        "square": 63,
+        "ordinary_splits": 32,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonsquare": 65
+      },
+      "first": {
+        "ordinary": 12,
+        "direct": 12,
+        "projected": 12
+      },
+      "factors": [
+        67,
+        83
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 5183,
+      "status": "tested",
+      "m": 17,
+      "f": [
+        -2,
+        -1,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 18306,
+        "original_root_nodes": 14002,
+        "square": 128,
+        "ordinary_splits": 65,
+        "direct_splits": 65,
+        "projected_splits": 65
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        71,
+        73
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 5609,
+      "status": "tested",
+      "m": 17,
+      "f": [
+        -1,
+        7,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 19622,
+        "original_root_nodes": 15354,
+        "square": 128,
+        "ordinary_splits": 65,
+        "direct_splits": 65,
+        "projected_splits": 65
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        71,
+        79
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 5893,
+      "status": "tested",
+      "m": 18,
+      "f": [
+        7,
+        3,
+        0
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 24260,
+        "original_root_nodes": 19944,
+        "square": 128,
+        "ordinary_splits": 68,
+        "direct_splits": 65,
+        "projected_splits": 65,
+        "ordinary_only": 3
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        71,
+        83
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 5767,
+      "status": "tested",
+      "m": 17,
+      "f": [
+        4,
+        -1,
+        3
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 18868,
+        "original_root_nodes": 14624,
+        "square": 128,
+        "ordinary_splits": 64,
+        "direct_splits": 64,
+        "projected_splits": 64
+      },
+      "first": {
+        "ordinary": 1,
+        "direct": 1,
+        "projected": 1
+      },
+      "factors": [
+        73,
+        79
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 6059,
+      "status": "tested",
+      "m": 18,
+      "f": [
+        -7,
+        -5,
+        1
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 17700,
+        "original_root_nodes": 13406,
+        "square": 64,
+        "ordinary_splits": 33,
+        "direct_splits": 32,
+        "projected_splits": 32,
+        "nonsquare": 64,
+        "ordinary_only": 1
+      },
+      "first": {
+        "ordinary": 8,
+        "direct": 8,
+        "projected": 8
+      },
+      "factors": [
+        73,
+        83
+      ],
+      "first_rescue": null
+    },
+    {
+      "n": 6557,
+      "status": "tested",
+      "m": 18,
+      "f": [
+        5,
+        4,
+        2
+      ],
+      "tested": 128,
+      "counts": {
+        "projected_root_nodes": 20976,
+        "original_root_nodes": 16578,
+        "square": 128,
+        "ordinary_splits": 67,
+        "direct_splits": 65,
+        "projected_splits": 65,
+        "ordinary_only": 2
+      },
+      "first": {
+        "ordinary": 2,
+        "direct": 2,
+        "projected": 2
+      },
+      "factors": [
+        79,
+        83
+      ],
+      "first_rescue": null
+    }
+  ]
+}

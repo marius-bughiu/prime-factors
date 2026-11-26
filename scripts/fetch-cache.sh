@@ -32,4 +32,8 @@ exec lake env lean --run .lake/packages/mathlib/Cache/Main.lean get \
   Mathlib.Algebra.BigOperators.Intervals Mathlib.Algebra.Polynomial.FieldDivision Mathlib.RingTheory.Coprime.Lemmas \
   Mathlib.LinearAlgebra.Lagrange Mathlib.Tactic.LinearCombination Mathlib.Tactic.ReduceModChar Mathlib.Tactic.Ring \
   Mathlib.RingTheory.Polynomial.Pochhammer Mathlib.Data.Nat.Prime.Factorial Mathlib.Algebra.Polynomial.Sequence \
-  Mathlib.Algebra.Polynomial.Taylor Mathlib.Algebra.Polynomial.ofFn Mathlib.Algebra.Order.Floor.Div
+  Mathlib.Algebra.Polynomial.Taylor Mathlib.Algebra.Polynomial.ofFn Mathlib.Algebra.Order.Floor.Div \
+  Mathlib.FieldTheory.KummerPolynomial Mathlib.FieldTheory.Finite.GaloisField \
+  Mathlib.RingTheory.Polynomial.GaussLemma Mathlib.RingTheory.Polynomial.RationalRoot \
+  Mathlib.Algebra.Polynomial.SpecificDegree Mathlib.LinearAlgebra.Matrix.Charpoly.Basic \
+  Mathlib.RingTheory.Norm.Defs Mathlib.RingTheory.Trace.Defs

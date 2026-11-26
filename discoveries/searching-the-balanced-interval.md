@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Choosing the base gave 130 smooth ordinary values on each full-size control. All failed the accompanying algebraic check. A bound for arbitrary choices of cubic polynomial explains the limitation at the tested sizes. When a square already exists, a new trace calculation recovers two real small-example relations that the original gcds lost. [Counts, proofs and paired readouts](choosing-a-cubic-and-reading-its-square.md)
+
 A cubic square relation recovered 36,151 and 52,999 from their product alone. Eight small-prime tests reduced 511 possible combinations to the successful one. At the same row budget the comparison quadratic sieve found six of the eight small products, including this one. Neither full-size input yielded a row. [Search, comparison and formal results](cubic-square-relations.md)
 
 Two negative remainders gave a factor on 43,423. For every balanced product congruent to 5 modulo 12 an unequal match provably exists, although finding the guaranteed one on a new full-size control would take more than $2^{1010}$ visits in the tested order. [Proof, small census and public scan](when-two-negative-remainders-give-a-factor.md)

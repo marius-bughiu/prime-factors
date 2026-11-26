@@ -1,0 +1,3040 @@
+{
+  "bound": 127,
+  "certificate_prime_limit": 97,
+  "max_power_of_three": 12,
+  "shifts": [
+    0,
+    1,
+    -1,
+    2,
+    -2
+  ],
+  "primitive_rows_per_base": 415,
+  "inputs": [
+    {
+      "id": "holdout-31-1",
+      "n": "1734799141",
+      "original_first_certified": {
+        "bases_offered": 9,
+        "work": {
+          "bases_tried": 1,
+          "certificate_primes": 1,
+          "certificate_evaluations": 2,
+          "certified_bases": 1,
+          "trial_prime_visits": 22699,
+          "exact_prime_divisions": 1565
+        },
+        "all_rows": {
+          "visited": 415,
+          "rational_smooth": 149,
+          "norm_smooth": 65,
+          "joint": 29
+        },
+        "five_small_shifts": {
+          "visited": 5,
+          "rational_smooth": 2,
+          "norm_smooth": 5,
+          "joint": 2
+        },
+        "designated_rows": {
+          "visited": 0,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "bases_with_joint_rows": 1,
+        "most_joint_rows_in_one_field": 29,
+        "all_norm_bits": [
+          5,
+          20
+        ],
+        "designated_norm_bits": [],
+        "designated_minimum_residue_bits": [],
+        "first_designated_joint": null
+      },
+      "dyadic": {
+        "smooth_values": 2,
+        "adaptive": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 24,
+            "certificate_evaluations": 80,
+            "certified_bases": 10,
+            "trial_prime_visits": 234450,
+            "exact_prime_divisions": 15104
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 1348,
+            "norm_smooth": 201,
+            "joint": 69
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 39,
+            "norm_smooth": 16,
+            "joint": 11
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 10,
+            "norm_smooth": 6,
+            "joint": 6
+          },
+          "bases_with_joint_rows": 9,
+          "most_joint_rows_in_one_field": 11,
+          "all_norm_bits": [
+            5,
+            25
+          ],
+          "designated_norm_bits": [
+            8,
+            14
+          ],
+          "designated_minimum_residue_bits": [
+            8,
+            8
+          ],
+          "first_designated_joint": {
+            "m": "1024",
+            "t": 0,
+            "s": "1024",
+            "norm": "219",
+            "coefficients": [
+              "-219",
+              "444",
+              "630"
+            ],
+            "irreducibility_prime": 7
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 16,
+            "certificate_evaluations": 35,
+            "certified_bases": 10,
+            "trial_prime_visits": 227386,
+            "exact_prime_divisions": 14915
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 1488,
+            "norm_smooth": 532,
+            "joint": 223
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 25,
+            "norm_smooth": 38,
+            "joint": 19
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 7,
+            "norm_smooth": 9,
+            "joint": 6
+          },
+          "bases_with_joint_rows": 10,
+          "most_joint_rows_in_one_field": 35,
+          "all_norm_bits": [
+            3,
+            21
+          ],
+          "designated_norm_bits": [
+            7,
+            11
+          ],
+          "designated_minimum_residue_bits": [
+            7,
+            9
+          ],
+          "first_designated_joint": {
+            "m": "1200",
+            "t": -1,
+            "s": "1199",
+            "norm": "387",
+            "coefficients": [
+              "-59",
+              "-334",
+              "5"
+            ],
+            "irreducibility_prime": 2
+          }
+        }
+      },
+      "two_three": {
+        "smooth_values": 15,
+        "adaptive": {
+          "bases_offered": 75,
+          "work": {
+            "bases_tried": 75,
+            "certificate_primes": 154,
+            "certificate_evaluations": 560,
+            "certified_bases": 75,
+            "trial_prime_visits": 1746847,
+            "exact_prime_divisions": 114132
+          },
+          "all_rows": {
+            "visited": 31125,
+            "rational_smooth": 10840,
+            "norm_smooth": 1720,
+            "joint": 587
+          },
+          "five_small_shifts": {
+            "visited": 375,
+            "rational_smooth": 228,
+            "norm_smooth": 172,
+            "joint": 102
+          },
+          "designated_rows": {
+            "visited": 75,
+            "rational_smooth": 75,
+            "norm_smooth": 43,
+            "joint": 43
+          },
+          "bases_with_joint_rows": 74,
+          "most_joint_rows_in_one_field": 28,
+          "all_norm_bits": [
+            3,
+            26
+          ],
+          "designated_norm_bits": [
+            5,
+            14
+          ],
+          "designated_minimum_residue_bits": [
+            5,
+            10
+          ],
+          "first_designated_joint": {
+            "m": "1152",
+            "t": 0,
+            "s": "1152",
+            "norm": "-37",
+            "coefficients": [
+              "37",
+              "238",
+              "155"
+            ],
+            "irreducibility_prime": 2
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 75,
+          "work": {
+            "bases_tried": 75,
+            "certificate_primes": 105,
+            "certificate_evaluations": 232,
+            "certified_bases": 75,
+            "trial_prime_visits": 1716035,
+            "exact_prime_divisions": 107233
+          },
+          "all_rows": {
+            "visited": 31125,
+            "rational_smooth": 11085,
+            "norm_smooth": 3743,
+            "joint": 1359
+          },
+          "five_small_shifts": {
+            "visited": 375,
+            "rational_smooth": 197,
+            "norm_smooth": 232,
+            "joint": 103
+          },
+          "designated_rows": {
+            "visited": 75,
+            "rational_smooth": 36,
+            "norm_smooth": 57,
+            "joint": 24
+          },
+          "bases_with_joint_rows": 75,
+          "most_joint_rows_in_one_field": 35,
+          "all_norm_bits": [
+            3,
+            22
+          ],
+          "designated_norm_bits": [
+            3,
+            11
+          ],
+          "designated_minimum_residue_bits": [
+            3,
+            10
+          ],
+          "first_designated_joint": {
+            "m": "1200",
+            "t": -1,
+            "s": "1199",
+            "norm": "387",
+            "coefficients": [
+              "-59",
+              "-334",
+              "5"
+            ],
+            "irreducibility_prime": 2
+          }
+        }
+      },
+      "unbounded_dyadic_witnesses": [
+        {
+          "base_power_of_two": 10,
+          "sign": -1,
+          "exponent": "89",
+          "exponent_bits": 7,
+          "norm_bits_lower_bound": "179",
+          "lift_steps_and_squarings": 8,
+          "extra_modular_multiplications": 4,
+          "verification_powers": 1
+        },
+        {
+          "base_power_of_two": 11,
+          "sign": -1,
+          "exponent": "89",
+          "exponent_bits": 7,
+          "norm_bits_lower_bound": "179",
+          "lift_steps_and_squarings": 9,
+          "extra_modular_multiplications": 4,
+          "verification_powers": 1
+        }
+      ]
+    },
+    {
+      "id": "holdout-31-2",
+      "n": "1915966849",
+      "original_first_certified": {
+        "bases_offered": 9,
+        "work": {
+          "bases_tried": 1,
+          "certificate_primes": 7,
+          "certificate_evaluations": 34,
+          "certified_bases": 1,
+          "trial_prime_visits": 21811,
+          "exact_prime_divisions": 1898
+        },
+        "all_rows": {
+          "visited": 415,
+          "rational_smooth": 145,
+          "norm_smooth": 104,
+          "joint": 41
+        },
+        "five_small_shifts": {
+          "visited": 5,
+          "rational_smooth": 4,
+          "norm_smooth": 5,
+          "joint": 4
+        },
+        "designated_rows": {
+          "visited": 0,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "bases_with_joint_rows": 1,
+        "most_joint_rows_in_one_field": 41,
+        "all_norm_bits": [
+          5,
+          20
+        ],
+        "designated_norm_bits": [],
+        "designated_minimum_residue_bits": [],
+        "first_designated_joint": null
+      },
+      "dyadic": {
+        "smooth_values": 2,
+        "adaptive": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 21,
+            "certificate_evaluations": 80,
+            "certified_bases": 10,
+            "trial_prime_visits": 233841,
+            "exact_prime_divisions": 15313
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 1348,
+            "norm_smooth": 217,
+            "joint": 72
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 39,
+            "norm_smooth": 18,
+            "joint": 13
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 10,
+            "norm_smooth": 5,
+            "joint": 5
+          },
+          "bases_with_joint_rows": 10,
+          "most_joint_rows_in_one_field": 16,
+          "all_norm_bits": [
+            6,
+            25
+          ],
+          "designated_norm_bits": [
+            9,
+            13
+          ],
+          "designated_minimum_residue_bits": [
+            9,
+            10
+          ],
+          "first_designated_joint": {
+            "m": "1024",
+            "t": 0,
+            "s": "1024",
+            "norm": "-385",
+            "coefficients": [
+              "385",
+              "213",
+              "803"
+            ],
+            "irreducibility_prime": 3
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 52,
+            "certificate_evaluations": 255,
+            "certified_bases": 10,
+            "trial_prime_visits": 219148,
+            "exact_prime_divisions": 17834
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 1458,
+            "norm_smooth": 1044,
+            "joint": 396
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 39,
+            "norm_smooth": 43,
+            "joint": 32
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 8,
+            "norm_smooth": 10,
+            "joint": 8
+          },
+          "bases_with_joint_rows": 10,
+          "most_joint_rows_in_one_field": 42,
+          "all_norm_bits": [
+            4,
+            20
+          ],
+          "designated_norm_bits": [
+            7,
+            10
+          ],
+          "designated_minimum_residue_bits": [
+            7,
+            10
+          ],
+          "first_designated_joint": {
+            "m": "1242",
+            "t": 0,
+            "s": "1242",
+            "norm": "-517",
+            "coefficients": [
+              "517",
+              "82",
+              "0"
+            ],
+            "irreducibility_prime": 17
+          }
+        }
+      },
+      "two_three": {
+        "smooth_values": 15,
+        "adaptive": {
+          "bases_offered": 75,
+          "work": {
+            "bases_tried": 75,
+            "certificate_primes": 144,
+            "certificate_evaluations": 400,
+            "certified_bases": 75,
+            "trial_prime_visits": 1748700,
+            "exact_prime_divisions": 114564
+          },
+          "all_rows": {
+            "visited": 31125,
+            "rational_smooth": 10840,
+            "norm_smooth": 1594,
+            "joint": 573
+          },
+          "five_small_shifts": {
+            "visited": 375,
+            "rational_smooth": 228,
+            "norm_smooth": 169,
+            "joint": 97
+          },
+          "designated_rows": {
+            "visited": 75,
+            "rational_smooth": 75,
+            "norm_smooth": 35,
+            "joint": 35
+          },
+          "bases_with_joint_rows": 75,
+          "most_joint_rows_in_one_field": 20,
+          "all_norm_bits": [
+            3,
+            26
+          ],
+          "designated_norm_bits": [
+            5,
+            14
+          ],
+          "designated_minimum_residue_bits": [
+            5,
+            10
+          ],
+          "first_designated_joint": {
+            "m": "1296",
+            "t": 0,
+            "s": "1296",
+            "norm": "-625",
+            "coefficients": [
+              "625",
+              "-367",
+              "-155"
+            ],
+            "irreducibility_prime": 3
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 75,
+          "work": {
+            "bases_tried": 75,
+            "certificate_primes": 170,
+            "certificate_evaluations": 611,
+            "certified_bases": 75,
+            "trial_prime_visits": 1704240,
+            "exact_prime_divisions": 117298
+          },
+          "all_rows": {
+            "visited": 31125,
+            "rational_smooth": 10954,
+            "norm_smooth": 4344,
+            "joint": 1605
+          },
+          "five_small_shifts": {
+            "visited": 375,
+            "rational_smooth": 218,
+            "norm_smooth": 249,
+            "joint": 138
+          },
+          "designated_rows": {
+            "visited": 75,
+            "rational_smooth": 54,
+            "norm_smooth": 50,
+            "joint": 32
+          },
+          "bases_with_joint_rows": 75,
+          "most_joint_rows_in_one_field": 42,
+          "all_norm_bits": [
+            4,
+            22
+          ],
+          "designated_norm_bits": [
+            5,
+            11
+          ],
+          "designated_minimum_residue_bits": [
+            5,
+            10
+          ],
+          "first_designated_joint": {
+            "m": "1242",
+            "t": 0,
+            "s": "1242",
+            "norm": "-517",
+            "coefficients": [
+              "517",
+              "82",
+              "0"
+            ],
+            "irreducibility_prime": 17
+          }
+        }
+      },
+      "unbounded_dyadic_witnesses": [
+        {
+          "base_power_of_two": 10,
+          "sign": -1,
+          "exponent": "160",
+          "exponent_bits": 8,
+          "norm_bits_lower_bound": "321",
+          "lift_steps_and_squarings": 8,
+          "extra_modular_multiplications": 2,
+          "verification_powers": 1
+        },
+        {
+          "base_power_of_two": 11,
+          "sign": -1,
+          "exponent": "160",
+          "exponent_bits": 8,
+          "norm_bits_lower_bound": "321",
+          "lift_steps_and_squarings": 9,
+          "extra_modular_multiplications": 2,
+          "verification_powers": 1
+        }
+      ]
+    },
+    {
+      "id": "holdout-31-3",
+      "n": "1566558233",
+      "original_first_certified": {
+        "bases_offered": 9,
+        "work": {
+          "bases_tried": 1,
+          "certificate_primes": 1,
+          "certificate_evaluations": 2,
+          "certified_bases": 1,
+          "trial_prime_visits": 22029,
+          "exact_prime_divisions": 1758
+        },
+        "all_rows": {
+          "visited": 415,
+          "rational_smooth": 144,
+          "norm_smooth": 90,
+          "joint": 27
+        },
+        "five_small_shifts": {
+          "visited": 5,
+          "rational_smooth": 4,
+          "norm_smooth": 4,
+          "joint": 3
+        },
+        "designated_rows": {
+          "visited": 0,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "bases_with_joint_rows": 1,
+        "most_joint_rows_in_one_field": 27,
+        "all_norm_bits": [
+          6,
+          20
+        ],
+        "designated_norm_bits": [],
+        "designated_minimum_residue_bits": [],
+        "first_designated_joint": null
+      },
+      "dyadic": {
+        "smooth_values": 2,
+        "adaptive": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 20,
+            "certificate_evaluations": 49,
+            "certified_bases": 10,
+            "trial_prime_visits": 233789,
+            "exact_prime_divisions": 15582
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 1348,
+            "norm_smooth": 238,
+            "joint": 86
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 39,
+            "norm_smooth": 25,
+            "joint": 20
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 10,
+            "norm_smooth": 4,
+            "joint": 4
+          },
+          "bases_with_joint_rows": 10,
+          "most_joint_rows_in_one_field": 15,
+          "all_norm_bits": [
+            5,
+            25
+          ],
+          "designated_norm_bits": [
+            5,
+            13
+          ],
+          "designated_minimum_residue_bits": [
+            5,
+            5
+          ],
+          "first_designated_joint": {
+            "m": "1024",
+            "t": 0,
+            "s": "1024",
+            "norm": "-25",
+            "coefficients": [
+              "25",
+              "-14",
+              "470"
+            ],
+            "irreducibility_prime": 3
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 15,
+            "certificate_evaluations": 33,
+            "certified_bases": 10,
+            "trial_prime_visits": 224606,
+            "exact_prime_divisions": 16284
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 1465,
+            "norm_smooth": 666,
+            "joint": 229
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 35,
+            "norm_smooth": 37,
+            "joint": 26
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 8,
+            "norm_smooth": 8,
+            "joint": 6
+          },
+          "bases_with_joint_rows": 10,
+          "most_joint_rows_in_one_field": 29,
+          "all_norm_bits": [
+            5,
+            20
+          ],
+          "designated_norm_bits": [
+            6,
+            11
+          ],
+          "designated_minimum_residue_bits": [
+            6,
+            10
+          ],
+          "first_designated_joint": {
+            "m": "1161",
+            "t": 0,
+            "s": "1161",
+            "norm": "-35",
+            "coefficients": [
+              "35",
+              "236",
+              "1"
+            ],
+            "irreducibility_prime": 2
+          }
+        }
+      },
+      "two_three": {
+        "smooth_values": 15,
+        "adaptive": {
+          "bases_offered": 75,
+          "work": {
+            "bases_tried": 75,
+            "certificate_primes": 186,
+            "certificate_evaluations": 636,
+            "certified_bases": 75,
+            "trial_prime_visits": 1746757,
+            "exact_prime_divisions": 115501
+          },
+          "all_rows": {
+            "visited": 31125,
+            "rational_smooth": 10840,
+            "norm_smooth": 1696,
+            "joint": 592
+          },
+          "five_small_shifts": {
+            "visited": 375,
+            "rational_smooth": 228,
+            "norm_smooth": 167,
+            "joint": 94
+          },
+          "designated_rows": {
+            "visited": 75,
+            "rational_smooth": 75,
+            "norm_smooth": 30,
+            "joint": 30
+          },
+          "bases_with_joint_rows": 75,
+          "most_joint_rows_in_one_field": 20,
+          "all_norm_bits": [
+            3,
+            26
+          ],
+          "designated_norm_bits": [
+            5,
+            14
+          ],
+          "designated_minimum_residue_bits": [
+            5,
+            10
+          ],
+          "first_designated_joint": {
+            "m": "1153",
+            "t": -1,
+            "s": "1152",
+            "norm": "-665",
+            "coefficients": [
+              "193",
+              "446",
+              "25"
+            ],
+            "irreducibility_prime": 2
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 75,
+          "work": {
+            "bases_tried": 75,
+            "certificate_primes": 138,
+            "certificate_evaluations": 358,
+            "certified_bases": 75,
+            "trial_prime_visits": 1705228,
+            "exact_prime_divisions": 116450
+          },
+          "all_rows": {
+            "visited": 31125,
+            "rational_smooth": 11273,
+            "norm_smooth": 4154,
+            "joint": 1478
+          },
+          "five_small_shifts": {
+            "visited": 375,
+            "rational_smooth": 207,
+            "norm_smooth": 233,
+            "joint": 131
+          },
+          "designated_rows": {
+            "visited": 75,
+            "rational_smooth": 41,
+            "norm_smooth": 52,
+            "joint": 29
+          },
+          "bases_with_joint_rows": 75,
+          "most_joint_rows_in_one_field": 34,
+          "all_norm_bits": [
+            4,
+            22
+          ],
+          "designated_norm_bits": [
+            6,
+            11
+          ],
+          "designated_minimum_residue_bits": [
+            6,
+            10
+          ],
+          "first_designated_joint": {
+            "m": "1161",
+            "t": 0,
+            "s": "1161",
+            "norm": "-35",
+            "coefficients": [
+              "35",
+              "236",
+              "1"
+            ],
+            "irreducibility_prime": 2
+          }
+        }
+      },
+      "unbounded_dyadic_witnesses": [
+        {
+          "base_power_of_two": 10,
+          "sign": -1,
+          "exponent": "2",
+          "exponent_bits": 2,
+          "norm_bits_lower_bound": "5",
+          "lift_steps_and_squarings": 8,
+          "extra_modular_multiplications": 1,
+          "verification_powers": 1
+        },
+        {
+          "base_power_of_two": 11,
+          "sign": -1,
+          "exponent": "2",
+          "exponent_bits": 2,
+          "norm_bits_lower_bound": "5",
+          "lift_steps_and_squarings": 9,
+          "extra_modular_multiplications": 1,
+          "verification_powers": 1
+        }
+      ]
+    },
+    {
+      "id": "holdout-31-4",
+      "n": "1746445889",
+      "original_first_certified": {
+        "bases_offered": 9,
+        "work": {
+          "bases_tried": 1,
+          "certificate_primes": 1,
+          "certificate_evaluations": 2,
+          "certified_bases": 1,
+          "trial_prime_visits": 23090,
+          "exact_prime_divisions": 1219
+        },
+        "all_rows": {
+          "visited": 415,
+          "rational_smooth": 143,
+          "norm_smooth": 39,
+          "joint": 16
+        },
+        "five_small_shifts": {
+          "visited": 5,
+          "rational_smooth": 2,
+          "norm_smooth": 2,
+          "joint": 1
+        },
+        "designated_rows": {
+          "visited": 0,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "bases_with_joint_rows": 1,
+        "most_joint_rows_in_one_field": 16,
+        "all_norm_bits": [
+          4,
+          20
+        ],
+        "designated_norm_bits": [],
+        "designated_minimum_residue_bits": [],
+        "first_designated_joint": null
+      },
+      "dyadic": {
+        "smooth_values": 2,
+        "adaptive": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 25,
+            "certificate_evaluations": 122,
+            "certified_bases": 10,
+            "trial_prime_visits": 234641,
+            "exact_prime_divisions": 14657
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 1348,
+            "norm_smooth": 172,
+            "joint": 58
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 39,
+            "norm_smooth": 19,
+            "joint": 16
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 10,
+            "norm_smooth": 3,
+            "joint": 3
+          },
+          "bases_with_joint_rows": 10,
+          "most_joint_rows_in_one_field": 15,
+          "all_norm_bits": [
+            5,
+            25
+          ],
+          "designated_norm_bits": [
+            9,
+            14
+          ],
+          "designated_minimum_residue_bits": [
+            9,
+            9
+          ],
+          "first_designated_joint": {
+            "m": "1022",
+            "t": 2,
+            "s": "1024",
+            "norm": "-2625",
+            "coefficients": [
+              "167",
+              "67",
+              "650"
+            ],
+            "irreducibility_prime": 2
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 14,
+            "certificate_evaluations": 30,
+            "certified_bases": 10,
+            "trial_prime_visits": 225895,
+            "exact_prime_divisions": 14792
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 1458,
+            "norm_smooth": 664,
+            "joint": 259
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 25,
+            "norm_smooth": 35,
+            "joint": 21
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 6,
+            "norm_smooth": 10,
+            "joint": 6
+          },
+          "bases_with_joint_rows": 10,
+          "most_joint_rows_in_one_field": 38,
+          "all_norm_bits": [
+            1,
+            20
+          ],
+          "designated_norm_bits": [
+            4,
+            11
+          ],
+          "designated_minimum_residue_bits": [
+            4,
+            10
+          ],
+          "first_designated_joint": {
+            "m": "1204",
+            "t": 0,
+            "s": "1204",
+            "norm": "-545",
+            "coefficients": [
+              "545",
+              "-284",
+              "1"
+            ],
+            "irreducibility_prime": 2
+          }
+        }
+      },
+      "two_three": {
+        "smooth_values": 15,
+        "adaptive": {
+          "bases_offered": 75,
+          "work": {
+            "bases_tried": 75,
+            "certificate_primes": 176,
+            "certificate_evaluations": 595,
+            "certified_bases": 75,
+            "trial_prime_visits": 1747307,
+            "exact_prime_divisions": 115764
+          },
+          "all_rows": {
+            "visited": 31125,
+            "rational_smooth": 10840,
+            "norm_smooth": 1686,
+            "joint": 572
+          },
+          "five_small_shifts": {
+            "visited": 375,
+            "rational_smooth": 228,
+            "norm_smooth": 173,
+            "joint": 97
+          },
+          "designated_rows": {
+            "visited": 75,
+            "rational_smooth": 75,
+            "norm_smooth": 33,
+            "joint": 33
+          },
+          "bases_with_joint_rows": 75,
+          "most_joint_rows_in_one_field": 33,
+          "all_norm_bits": [
+            3,
+            26
+          ],
+          "designated_norm_bits": [
+            5,
+            14
+          ],
+          "designated_minimum_residue_bits": [
+            5,
+            10
+          ],
+          "first_designated_joint": {
+            "m": "1152",
+            "t": 0,
+            "s": "1152",
+            "norm": "-65",
+            "coefficients": [
+              "65",
+              "-20",
+              "164"
+            ],
+            "irreducibility_prime": 17
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 75,
+          "work": {
+            "bases_tried": 75,
+            "certificate_primes": 138,
+            "certificate_evaluations": 369,
+            "certified_bases": 75,
+            "trial_prime_visits": 1699382,
+            "exact_prime_divisions": 112673
+          },
+          "all_rows": {
+            "visited": 31125,
+            "rational_smooth": 11088,
+            "norm_smooth": 4734,
+            "joint": 1676
+          },
+          "five_small_shifts": {
+            "visited": 375,
+            "rational_smooth": 201,
+            "norm_smooth": 259,
+            "joint": 130
+          },
+          "designated_rows": {
+            "visited": 75,
+            "rational_smooth": 35,
+            "norm_smooth": 55,
+            "joint": 27
+          },
+          "bases_with_joint_rows": 75,
+          "most_joint_rows_in_one_field": 41,
+          "all_norm_bits": [
+            1,
+            22
+          ],
+          "designated_norm_bits": [
+            1,
+            11
+          ],
+          "designated_minimum_residue_bits": [
+            1,
+            10
+          ],
+          "first_designated_joint": {
+            "m": "1204",
+            "t": 0,
+            "s": "1204",
+            "norm": "-545",
+            "coefficients": [
+              "545",
+              "-284",
+              "1"
+            ],
+            "irreducibility_prime": 2
+          }
+        }
+      },
+      "unbounded_dyadic_witnesses": [
+        {
+          "base_power_of_two": 10,
+          "sign": -1,
+          "exponent": "112",
+          "exponent_bits": 7,
+          "norm_bits_lower_bound": "225",
+          "lift_steps_and_squarings": 8,
+          "extra_modular_multiplications": 3,
+          "verification_powers": 1
+        },
+        {
+          "base_power_of_two": 11,
+          "sign": -1,
+          "exponent": "112",
+          "exponent_bits": 7,
+          "norm_bits_lower_bound": "225",
+          "lift_steps_and_squarings": 9,
+          "extra_modular_multiplications": 3,
+          "verification_powers": 1
+        }
+      ]
+    },
+    {
+      "id": "holdout-39-1",
+      "n": "538242898783",
+      "original_first_certified": {
+        "bases_offered": 9,
+        "work": {
+          "bases_tried": 1,
+          "certificate_primes": 1,
+          "certificate_evaluations": 2,
+          "certified_bases": 1,
+          "trial_prime_visits": 24241,
+          "exact_prime_divisions": 1608
+        },
+        "all_rows": {
+          "visited": 415,
+          "rational_smooth": 71,
+          "norm_smooth": 56,
+          "joint": 6
+        },
+        "five_small_shifts": {
+          "visited": 5,
+          "rational_smooth": 3,
+          "norm_smooth": 2,
+          "joint": 1
+        },
+        "designated_rows": {
+          "visited": 0,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "bases_with_joint_rows": 1,
+        "most_joint_rows_in_one_field": 6,
+        "all_norm_bits": [
+          9,
+          23
+        ],
+        "designated_norm_bits": [],
+        "designated_minimum_residue_bits": [],
+        "first_designated_joint": null
+      },
+      "dyadic": {
+        "smooth_values": 2,
+        "adaptive": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 18,
+            "certificate_evaluations": 42,
+            "certified_bases": 10,
+            "trial_prime_visits": 242199,
+            "exact_prime_divisions": 15491
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 929,
+            "norm_smooth": 201,
+            "joint": 42
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 23,
+            "norm_smooth": 9,
+            "joint": 5
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 10,
+            "norm_smooth": 4,
+            "joint": 4
+          },
+          "bases_with_joint_rows": 9,
+          "most_joint_rows_in_one_field": 11,
+          "all_norm_bits": [
+            5,
+            29
+          ],
+          "designated_norm_bits": [
+            11,
+            17
+          ],
+          "designated_minimum_residue_bits": [
+            11,
+            11
+          ],
+          "first_designated_joint": {
+            "m": "8192",
+            "t": 0,
+            "s": "8192",
+            "norm": "1185",
+            "coefficients": [
+              "-1185",
+              "3639",
+              "-172"
+            ],
+            "irreducibility_prime": 2
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 19,
+            "certificate_evaluations": 48,
+            "certified_bases": 10,
+            "trial_prime_visits": 243858,
+            "exact_prime_divisions": 14865
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 709,
+            "norm_smooth": 320,
+            "joint": 49
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 23,
+            "norm_smooth": 14,
+            "joint": 7
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 8,
+            "norm_smooth": 1,
+            "joint": 1
+          },
+          "bases_with_joint_rows": 10,
+          "most_joint_rows_in_one_field": 7,
+          "all_norm_bits": [
+            6,
+            23
+          ],
+          "designated_norm_bits": [
+            9,
+            13
+          ],
+          "designated_minimum_residue_bits": [
+            9,
+            12
+          ],
+          "first_designated_joint": {
+            "m": "8134",
+            "t": 0,
+            "s": "8134",
+            "norm": "2805",
+            "coefficients": [
+              "-2805",
+              "1892",
+              "1"
+            ],
+            "irreducibility_prime": 2
+          }
+        }
+      },
+      "two_three": {
+        "smooth_values": 18,
+        "adaptive": {
+          "bases_offered": 90,
+          "work": {
+            "bases_tried": 90,
+            "certificate_primes": 207,
+            "certificate_evaluations": 1041,
+            "certified_bases": 90,
+            "trial_prime_visits": 2207220,
+            "exact_prime_divisions": 139055
+          },
+          "all_rows": {
+            "visited": 37350,
+            "rational_smooth": 7334,
+            "norm_smooth": 1077,
+            "joint": 194
+          },
+          "five_small_shifts": {
+            "visited": 450,
+            "rational_smooth": 207,
+            "norm_smooth": 114,
+            "joint": 43
+          },
+          "designated_rows": {
+            "visited": 90,
+            "rational_smooth": 90,
+            "norm_smooth": 16,
+            "joint": 16
+          },
+          "bases_with_joint_rows": 76,
+          "most_joint_rows_in_one_field": 11,
+          "all_norm_bits": [
+            5,
+            29
+          ],
+          "designated_norm_bits": [
+            10,
+            17
+          ],
+          "designated_minimum_residue_bits": [
+            10,
+            13
+          ],
+          "first_designated_joint": {
+            "m": "8192",
+            "t": 0,
+            "s": "8192",
+            "norm": "1185",
+            "coefficients": [
+              "-1185",
+              "3639",
+              "-172"
+            ],
+            "irreducibility_prime": 2
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 90,
+          "work": {
+            "bases_tried": 90,
+            "certificate_primes": 172,
+            "certificate_evaluations": 507,
+            "certified_bases": 90,
+            "trial_prime_visits": 2195780,
+            "exact_prime_divisions": 132840
+          },
+          "all_rows": {
+            "visited": 37350,
+            "rational_smooth": 7027,
+            "norm_smooth": 2305,
+            "joint": 461
+          },
+          "five_small_shifts": {
+            "visited": 450,
+            "rational_smooth": 164,
+            "norm_smooth": 151,
+            "joint": 44
+          },
+          "designated_rows": {
+            "visited": 90,
+            "rational_smooth": 39,
+            "norm_smooth": 27,
+            "joint": 10
+          },
+          "bases_with_joint_rows": 90,
+          "most_joint_rows_in_one_field": 12,
+          "all_norm_bits": [
+            5,
+            24
+          ],
+          "designated_norm_bits": [
+            6,
+            14
+          ],
+          "designated_minimum_residue_bits": [
+            6,
+            12
+          ],
+          "first_designated_joint": {
+            "m": "8134",
+            "t": 0,
+            "s": "8134",
+            "norm": "2805",
+            "coefficients": [
+              "-2805",
+              "1892",
+              "1"
+            ],
+            "irreducibility_prime": 2
+          }
+        }
+      },
+      "unbounded_dyadic_witnesses": [
+        {
+          "base_power_of_two": 13,
+          "sign": 1,
+          "exponent": "600",
+          "exponent_bits": 10,
+          "norm_bits_lower_bound": "1201",
+          "lift_steps_and_squarings": 11,
+          "extra_modular_multiplications": 4,
+          "verification_powers": 1
+        },
+        {
+          "base_power_of_two": 12,
+          "sign": 1,
+          "exponent": "600",
+          "exponent_bits": 10,
+          "norm_bits_lower_bound": "1201",
+          "lift_steps_and_squarings": 10,
+          "extra_modular_multiplications": 4,
+          "verification_powers": 1
+        }
+      ]
+    },
+    {
+      "id": "holdout-39-2",
+      "n": "465584196557",
+      "original_first_certified": {
+        "bases_offered": 9,
+        "work": {
+          "bases_tried": 1,
+          "certificate_primes": 5,
+          "certificate_evaluations": 20,
+          "certified_bases": 1,
+          "trial_prime_visits": 24188,
+          "exact_prime_divisions": 1815
+        },
+        "all_rows": {
+          "visited": 415,
+          "rational_smooth": 82,
+          "norm_smooth": 38,
+          "joint": 7
+        },
+        "five_small_shifts": {
+          "visited": 5,
+          "rational_smooth": 3,
+          "norm_smooth": 1,
+          "joint": 1
+        },
+        "designated_rows": {
+          "visited": 0,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "bases_with_joint_rows": 1,
+        "most_joint_rows_in_one_field": 7,
+        "all_norm_bits": [
+          11,
+          23
+        ],
+        "designated_norm_bits": [],
+        "designated_minimum_residue_bits": [],
+        "first_designated_joint": null
+      },
+      "dyadic": {
+        "smooth_values": 2,
+        "adaptive": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 25,
+            "certificate_evaluations": 71,
+            "certified_bases": 10,
+            "trial_prime_visits": 242961,
+            "exact_prime_divisions": 15917
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 929,
+            "norm_smooth": 136,
+            "joint": 23
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 23,
+            "norm_smooth": 24,
+            "joint": 6
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 10,
+            "norm_smooth": 4,
+            "joint": 4
+          },
+          "bases_with_joint_rows": 8,
+          "most_joint_rows_in_one_field": 6,
+          "all_norm_bits": [
+            5,
+            29
+          ],
+          "designated_norm_bits": [
+            11,
+            17
+          ],
+          "designated_minimum_residue_bits": [
+            11,
+            12
+          ],
+          "first_designated_joint": {
+            "m": "8192",
+            "t": 0,
+            "s": "8192",
+            "norm": "-3021",
+            "coefficients": [
+              "3021",
+              "-2088",
+              "-1254"
+            ],
+            "irreducibility_prime": 7
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 24,
+            "certificate_evaluations": 80,
+            "certified_bases": 10,
+            "trial_prime_visits": 244543,
+            "exact_prime_divisions": 14958
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 766,
+            "norm_smooth": 240,
+            "joint": 52
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 23,
+            "norm_smooth": 14,
+            "joint": 5
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 2,
+            "norm_smooth": 4,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 10,
+          "most_joint_rows_in_one_field": 8,
+          "all_norm_bits": [
+            10,
+            23
+          ],
+          "designated_norm_bits": [
+            10,
+            14
+          ],
+          "designated_minimum_residue_bits": [
+            10,
+            12
+          ],
+          "first_designated_joint": null
+        }
+      },
+      "two_three": {
+        "smooth_values": 18,
+        "adaptive": {
+          "bases_offered": 90,
+          "work": {
+            "bases_tried": 90,
+            "certificate_primes": 189,
+            "certificate_evaluations": 558,
+            "certified_bases": 90,
+            "trial_prime_visits": 2201947,
+            "exact_prime_divisions": 139444
+          },
+          "all_rows": {
+            "visited": 37350,
+            "rational_smooth": 7569,
+            "norm_smooth": 1132,
+            "joint": 239
+          },
+          "five_small_shifts": {
+            "visited": 450,
+            "rational_smooth": 208,
+            "norm_smooth": 154,
+            "joint": 58
+          },
+          "designated_rows": {
+            "visited": 90,
+            "rational_smooth": 90,
+            "norm_smooth": 29,
+            "joint": 29
+          },
+          "bases_with_joint_rows": 76,
+          "most_joint_rows_in_one_field": 13,
+          "all_norm_bits": [
+            5,
+            29
+          ],
+          "designated_norm_bits": [
+            9,
+            17
+          ],
+          "designated_minimum_residue_bits": [
+            9,
+            13
+          ],
+          "first_designated_joint": {
+            "m": "7776",
+            "t": 0,
+            "s": "7776",
+            "norm": "979",
+            "coefficients": [
+              "-979",
+              "-689",
+              "-76"
+            ],
+            "irreducibility_prime": 2
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 90,
+          "work": {
+            "bases_tried": 90,
+            "certificate_primes": 221,
+            "certificate_evaluations": 749,
+            "certified_bases": 90,
+            "trial_prime_visits": 2180866,
+            "exact_prime_divisions": 138682
+          },
+          "all_rows": {
+            "visited": 37350,
+            "rational_smooth": 7251,
+            "norm_smooth": 2993,
+            "joint": 675
+          },
+          "five_small_shifts": {
+            "visited": 450,
+            "rational_smooth": 144,
+            "norm_smooth": 195,
+            "joint": 47
+          },
+          "designated_rows": {
+            "visited": 90,
+            "rational_smooth": 26,
+            "norm_smooth": 46,
+            "joint": 13
+          },
+          "bases_with_joint_rows": 90,
+          "most_joint_rows_in_one_field": 18,
+          "all_norm_bits": [
+            4,
+            24
+          ],
+          "designated_norm_bits": [
+            4,
+            14
+          ],
+          "designated_minimum_residue_bits": [
+            4,
+            12
+          ],
+          "first_designated_joint": {
+            "m": "7744",
+            "t": -1,
+            "s": "7743",
+            "norm": "856",
+            "coefficients": [
+              "1613",
+              "-2490",
+              "20"
+            ],
+            "irreducibility_prime": 7
+          }
+        }
+      },
+      "unbounded_dyadic_witnesses": [
+        {
+          "base_power_of_two": 13,
+          "sign": -1,
+          "exponent": "319",
+          "exponent_bits": 9,
+          "norm_bits_lower_bound": "639",
+          "lift_steps_and_squarings": 11,
+          "extra_modular_multiplications": 7,
+          "verification_powers": 1
+        },
+        {
+          "base_power_of_two": 12,
+          "sign": -1,
+          "exponent": "319",
+          "exponent_bits": 9,
+          "norm_bits_lower_bound": "639",
+          "lift_steps_and_squarings": 10,
+          "extra_modular_multiplications": 7,
+          "verification_powers": 1
+        }
+      ]
+    },
+    {
+      "id": "holdout-39-3",
+      "n": "537292063219",
+      "original_first_certified": {
+        "bases_offered": 9,
+        "work": {
+          "bases_tried": 1,
+          "certificate_primes": 2,
+          "certificate_evaluations": 4,
+          "certified_bases": 1,
+          "trial_prime_visits": 24073,
+          "exact_prime_divisions": 1732
+        },
+        "all_rows": {
+          "visited": 415,
+          "rational_smooth": 75,
+          "norm_smooth": 38,
+          "joint": 11
+        },
+        "five_small_shifts": {
+          "visited": 5,
+          "rational_smooth": 2,
+          "norm_smooth": 1,
+          "joint": 0
+        },
+        "designated_rows": {
+          "visited": 0,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "bases_with_joint_rows": 1,
+        "most_joint_rows_in_one_field": 11,
+        "all_norm_bits": [
+          8,
+          23
+        ],
+        "designated_norm_bits": [],
+        "designated_minimum_residue_bits": [],
+        "first_designated_joint": null
+      },
+      "dyadic": {
+        "smooth_values": 2,
+        "adaptive": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 20,
+            "certificate_evaluations": 56,
+            "certified_bases": 10,
+            "trial_prime_visits": 243404,
+            "exact_prime_divisions": 14575
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 929,
+            "norm_smooth": 105,
+            "joint": 29
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 23,
+            "norm_smooth": 6,
+            "joint": 1
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 10,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 7,
+          "most_joint_rows_in_one_field": 6,
+          "all_norm_bits": [
+            8,
+            29
+          ],
+          "designated_norm_bits": [
+            9,
+            17
+          ],
+          "designated_minimum_residue_bits": [
+            9,
+            9
+          ],
+          "first_designated_joint": null
+        },
+        "matched_offsets": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 16,
+            "certificate_evaluations": 35,
+            "certified_bases": 10,
+            "trial_prime_visits": 241473,
+            "exact_prime_divisions": 16588
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 733,
+            "norm_smooth": 405,
+            "joint": 118
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 22,
+            "norm_smooth": 27,
+            "joint": 11
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 7,
+            "norm_smooth": 6,
+            "joint": 4
+          },
+          "bases_with_joint_rows": 10,
+          "most_joint_rows_in_one_field": 13,
+          "all_norm_bits": [
+            6,
+            23
+          ],
+          "designated_norm_bits": [
+            9,
+            12
+          ],
+          "designated_minimum_residue_bits": [
+            9,
+            12
+          ],
+          "first_designated_joint": {
+            "m": "8127",
+            "t": -2,
+            "s": "8125",
+            "norm": "531",
+            "coefficients": [
+              "1759",
+              "-1165",
+              "8"
+            ],
+            "irreducibility_prime": 2
+          }
+        }
+      },
+      "two_three": {
+        "smooth_values": 18,
+        "adaptive": {
+          "bases_offered": 90,
+          "work": {
+            "bases_tried": 90,
+            "certificate_primes": 179,
+            "certificate_evaluations": 502,
+            "certified_bases": 90,
+            "trial_prime_visits": 2210226,
+            "exact_prime_divisions": 134136
+          },
+          "all_rows": {
+            "visited": 37350,
+            "rational_smooth": 7334,
+            "norm_smooth": 825,
+            "joint": 151
+          },
+          "five_small_shifts": {
+            "visited": 450,
+            "rational_smooth": 207,
+            "norm_smooth": 99,
+            "joint": 37
+          },
+          "designated_rows": {
+            "visited": 90,
+            "rational_smooth": 90,
+            "norm_smooth": 12,
+            "joint": 12
+          },
+          "bases_with_joint_rows": 67,
+          "most_joint_rows_in_one_field": 6,
+          "all_norm_bits": [
+            6,
+            29
+          ],
+          "designated_norm_bits": [
+            9,
+            17
+          ],
+          "designated_minimum_residue_bits": [
+            9,
+            13
+          ],
+          "first_designated_joint": {
+            "m": "7778",
+            "t": -2,
+            "s": "7776",
+            "norm": "-12019",
+            "coefficients": [
+              "3567",
+              "2016",
+              "1103"
+            ],
+            "irreducibility_prime": 2
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 90,
+          "work": {
+            "bases_tried": 90,
+            "certificate_primes": 177,
+            "certificate_evaluations": 519,
+            "certified_bases": 90,
+            "trial_prime_visits": 2183520,
+            "exact_prime_divisions": 138856
+          },
+          "all_rows": {
+            "visited": 37350,
+            "rational_smooth": 7037,
+            "norm_smooth": 3359,
+            "joint": 771
+          },
+          "five_small_shifts": {
+            "visited": 450,
+            "rational_smooth": 151,
+            "norm_smooth": 194,
+            "joint": 55
+          },
+          "designated_rows": {
+            "visited": 90,
+            "rational_smooth": 34,
+            "norm_smooth": 38,
+            "joint": 11
+          },
+          "bases_with_joint_rows": 90,
+          "most_joint_rows_in_one_field": 18,
+          "all_norm_bits": [
+            5,
+            24
+          ],
+          "designated_norm_bits": [
+            5,
+            14
+          ],
+          "designated_minimum_residue_bits": [
+            5,
+            12
+          ],
+          "first_designated_joint": {
+            "m": "8127",
+            "t": -2,
+            "s": "8125",
+            "norm": "531",
+            "coefficients": [
+              "1759",
+              "-1165",
+              "8"
+            ],
+            "irreducibility_prime": 2
+          }
+        }
+      },
+      "unbounded_dyadic_witnesses": [
+        {
+          "base_power_of_two": 13,
+          "sign": 1,
+          "exponent": "623",
+          "exponent_bits": 10,
+          "norm_bits_lower_bound": "1247",
+          "lift_steps_and_squarings": 11,
+          "extra_modular_multiplications": 7,
+          "verification_powers": 1
+        },
+        {
+          "base_power_of_two": 12,
+          "sign": 1,
+          "exponent": "623",
+          "exponent_bits": 10,
+          "norm_bits_lower_bound": "1247",
+          "lift_steps_and_squarings": 10,
+          "extra_modular_multiplications": 7,
+          "verification_powers": 1
+        }
+      ]
+    },
+    {
+      "id": "holdout-39-4",
+      "n": "416781386033",
+      "original_first_certified": {
+        "bases_offered": 9,
+        "work": {
+          "bases_tried": 1,
+          "certificate_primes": 1,
+          "certificate_evaluations": 2,
+          "certified_bases": 1,
+          "trial_prime_visits": 24257,
+          "exact_prime_divisions": 1399
+        },
+        "all_rows": {
+          "visited": 415,
+          "rational_smooth": 76,
+          "norm_smooth": 37,
+          "joint": 6
+        },
+        "five_small_shifts": {
+          "visited": 5,
+          "rational_smooth": 2,
+          "norm_smooth": 2,
+          "joint": 1
+        },
+        "designated_rows": {
+          "visited": 0,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "bases_with_joint_rows": 1,
+        "most_joint_rows_in_one_field": 6,
+        "all_norm_bits": [
+          6,
+          22
+        ],
+        "designated_norm_bits": [],
+        "designated_minimum_residue_bits": [],
+        "first_designated_joint": null
+      },
+      "dyadic": {
+        "smooth_values": 2,
+        "adaptive": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 14,
+            "certificate_evaluations": 31,
+            "certified_bases": 10,
+            "trial_prime_visits": 243515,
+            "exact_prime_divisions": 14621
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 929,
+            "norm_smooth": 92,
+            "joint": 19
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 23,
+            "norm_smooth": 21,
+            "joint": 10
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 10,
+            "norm_smooth": 7,
+            "joint": 7
+          },
+          "bases_with_joint_rows": 8,
+          "most_joint_rows_in_one_field": 4,
+          "all_norm_bits": [
+            8,
+            28
+          ],
+          "designated_norm_bits": [
+            9,
+            17
+          ],
+          "designated_minimum_residue_bits": [
+            9,
+            9
+          ],
+          "first_designated_joint": {
+            "m": "8192",
+            "t": 0,
+            "s": "8192",
+            "norm": "-305",
+            "coefficients": [
+              "305",
+              "-3878",
+              "-1981"
+            ],
+            "irreducibility_prime": 2
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 19,
+            "certificate_evaluations": 56,
+            "certified_bases": 10,
+            "trial_prime_visits": 241301,
+            "exact_prime_divisions": 15436
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 770,
+            "norm_smooth": 434,
+            "joint": 74
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 20,
+            "norm_smooth": 24,
+            "joint": 11
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 2,
+            "norm_smooth": 1,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 10,
+          "most_joint_rows_in_one_field": 11,
+          "all_norm_bits": [
+            6,
+            22
+          ],
+          "designated_norm_bits": [
+            6,
+            13
+          ],
+          "designated_minimum_residue_bits": [
+            6,
+            12
+          ],
+          "first_designated_joint": null
+        }
+      },
+      "two_three": {
+        "smooth_values": 18,
+        "adaptive": {
+          "bases_offered": 90,
+          "work": {
+            "bases_tried": 90,
+            "certificate_primes": 179,
+            "certificate_evaluations": 568,
+            "certified_bases": 90,
+            "trial_prime_visits": 2206153,
+            "exact_prime_divisions": 134147
+          },
+          "all_rows": {
+            "visited": 37350,
+            "rational_smooth": 7569,
+            "norm_smooth": 881,
+            "joint": 172
+          },
+          "five_small_shifts": {
+            "visited": 450,
+            "rational_smooth": 208,
+            "norm_smooth": 140,
+            "joint": 52
+          },
+          "designated_rows": {
+            "visited": 90,
+            "rational_smooth": 90,
+            "norm_smooth": 18,
+            "joint": 18
+          },
+          "bases_with_joint_rows": 69,
+          "most_joint_rows_in_one_field": 8,
+          "all_norm_bits": [
+            6,
+            29
+          ],
+          "designated_norm_bits": [
+            9,
+            17
+          ],
+          "designated_minimum_residue_bits": [
+            9,
+            13
+          ],
+          "first_designated_joint": {
+            "m": "8192",
+            "t": 0,
+            "s": "8192",
+            "norm": "-305",
+            "coefficients": [
+              "305",
+              "-3878",
+              "-1981"
+            ],
+            "irreducibility_prime": 2
+          }
+        },
+        "matched_offsets": {
+          "bases_offered": 90,
+          "work": {
+            "bases_tried": 90,
+            "certificate_primes": 204,
+            "certificate_evaluations": 623,
+            "certified_bases": 90,
+            "trial_prime_visits": 2186190,
+            "exact_prime_divisions": 135837
+          },
+          "all_rows": {
+            "visited": 37350,
+            "rational_smooth": 7315,
+            "norm_smooth": 2630,
+            "joint": 536
+          },
+          "five_small_shifts": {
+            "visited": 450,
+            "rational_smooth": 162,
+            "norm_smooth": 205,
+            "joint": 72
+          },
+          "designated_rows": {
+            "visited": 90,
+            "rational_smooth": 33,
+            "norm_smooth": 40,
+            "joint": 9
+          },
+          "bases_with_joint_rows": 90,
+          "most_joint_rows_in_one_field": 12,
+          "all_norm_bits": [
+            5,
+            24
+          ],
+          "designated_norm_bits": [
+            6,
+            13
+          ],
+          "designated_minimum_residue_bits": [
+            5,
+            12
+          ],
+          "first_designated_joint": {
+            "m": "7491",
+            "t": 2,
+            "s": "7493",
+            "norm": "7098",
+            "coefficients": [
+              "-2914",
+              "1960",
+              "-64"
+            ],
+            "irreducibility_prime": 5
+          }
+        }
+      },
+      "unbounded_dyadic_witnesses": [
+        {
+          "base_power_of_two": 13,
+          "sign": -1,
+          "exponent": "340",
+          "exponent_bits": 9,
+          "norm_bits_lower_bound": "681",
+          "lift_steps_and_squarings": 11,
+          "extra_modular_multiplications": 4,
+          "verification_powers": 1
+        },
+        {
+          "base_power_of_two": 12,
+          "sign": -1,
+          "exponent": "340",
+          "exponent_bits": 9,
+          "norm_bits_lower_bound": "681",
+          "lift_steps_and_squarings": 10,
+          "extra_modular_multiplications": 4,
+          "verification_powers": 1
+        }
+      ]
+    },
+    {
+      "id": "holdout-79-1",
+      "n": "428359581921440786444417",
+      "original_first_certified": {
+        "bases_offered": 9,
+        "work": {
+          "bases_tried": 1,
+          "certificate_primes": 2,
+          "certificate_evaluations": 4,
+          "certified_bases": 1,
+          "trial_prime_visits": 25730,
+          "exact_prime_divisions": 1388
+        },
+        "all_rows": {
+          "visited": 415,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "five_small_shifts": {
+          "visited": 5,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "designated_rows": {
+          "visited": 0,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "bases_with_joint_rows": 0,
+        "most_joint_rows_in_one_field": 0,
+        "all_norm_bits": [
+          22,
+          35
+        ],
+        "designated_norm_bits": [],
+        "designated_minimum_residue_bits": [],
+        "first_designated_joint": null
+      },
+      "dyadic": {
+        "smooth_values": 2,
+        "adaptive": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 22,
+            "certificate_evaluations": 61,
+            "certified_bases": 10,
+            "trial_prime_visits": 256993,
+            "exact_prime_divisions": 16216
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 20,
+            "norm_smooth": 1,
+            "joint": 0
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 10,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 10,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 0,
+          "most_joint_rows_in_one_field": 0,
+          "all_norm_bits": [
+            22,
+            41
+          ],
+          "designated_norm_bits": [
+            25,
+            30
+          ],
+          "designated_minimum_residue_bits": [
+            25,
+            26
+          ],
+          "first_designated_joint": null
+        },
+        "matched_offsets": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 18,
+            "certificate_evaluations": 40,
+            "certified_bases": 10,
+            "trial_prime_visits": 257300,
+            "exact_prime_divisions": 14214
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 0,
+          "most_joint_rows_in_one_field": 0,
+          "all_norm_bits": [
+            22,
+            36
+          ],
+          "designated_norm_bits": [
+            22,
+            26
+          ],
+          "designated_minimum_residue_bits": [
+            22,
+            26
+          ],
+          "first_designated_joint": null
+        }
+      },
+      "two_three": {
+        "smooth_values": 26,
+        "adaptive": {
+          "bases_offered": 130,
+          "work": {
+            "bases_tried": 130,
+            "certificate_primes": 324,
+            "certificate_evaluations": 1163,
+            "certified_bases": 130,
+            "trial_prime_visits": 3338705,
+            "exact_prime_divisions": 203135
+          },
+          "all_rows": {
+            "visited": 53950,
+            "rational_smooth": 330,
+            "norm_smooth": 27,
+            "joint": 0
+          },
+          "five_small_shifts": {
+            "visited": 650,
+            "rational_smooth": 136,
+            "norm_smooth": 5,
+            "joint": 0
+          },
+          "designated_rows": {
+            "visited": 130,
+            "rational_smooth": 130,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 0,
+          "most_joint_rows_in_one_field": 0,
+          "all_norm_bits": [
+            17,
+            42
+          ],
+          "designated_norm_bits": [
+            17,
+            31
+          ],
+          "designated_minimum_residue_bits": [
+            17,
+            26
+          ],
+          "first_designated_joint": null
+        },
+        "matched_offsets": {
+          "bases_offered": 130,
+          "work": {
+            "bases_tried": 130,
+            "certificate_primes": 248,
+            "certificate_evaluations": 660,
+            "certified_bases": 130,
+            "trial_prime_visits": 3341648,
+            "exact_prime_divisions": 197146
+          },
+          "all_rows": {
+            "visited": 53950,
+            "rational_smooth": 208,
+            "norm_smooth": 75,
+            "joint": 0
+          },
+          "five_small_shifts": {
+            "visited": 650,
+            "rational_smooth": 5,
+            "norm_smooth": 7,
+            "joint": 0
+          },
+          "designated_rows": {
+            "visited": 130,
+            "rational_smooth": 3,
+            "norm_smooth": 1,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 0,
+          "most_joint_rows_in_one_field": 0,
+          "all_norm_bits": [
+            18,
+            36
+          ],
+          "designated_norm_bits": [
+            20,
+            26
+          ],
+          "designated_minimum_residue_bits": [
+            20,
+            26
+          ],
+          "first_designated_joint": null
+        }
+      },
+      "unbounded_dyadic_witnesses": [
+        {
+          "base_power_of_two": 26,
+          "sign": -1,
+          "exponent": "10500064",
+          "exponent_bits": 24,
+          "norm_bits_lower_bound": "21000129",
+          "lift_steps_and_squarings": 24,
+          "extra_modular_multiplications": 10,
+          "verification_powers": 1
+        },
+        {
+          "base_power_of_two": 27,
+          "sign": -1,
+          "exponent": "27277280",
+          "exponent_bits": 25,
+          "norm_bits_lower_bound": "54554561",
+          "lift_steps_and_squarings": 25,
+          "extra_modular_multiplications": 11,
+          "verification_powers": 1
+        }
+      ]
+    },
+    {
+      "id": "arbitrary-divisor-window-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "original_first_certified": {
+        "bases_offered": 9,
+        "work": {
+          "bases_tried": 1,
+          "certificate_primes": 1,
+          "certificate_evaluations": 2,
+          "certified_bases": 1,
+          "trial_prime_visits": 25730,
+          "exact_prime_divisions": 1351
+        },
+        "all_rows": {
+          "visited": 415,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "five_small_shifts": {
+          "visited": 5,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "designated_rows": {
+          "visited": 0,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "bases_with_joint_rows": 0,
+        "most_joint_rows_in_one_field": 0,
+        "all_norm_bits": [
+          677,
+          692
+        ],
+        "designated_norm_bits": [],
+        "designated_minimum_residue_bits": [],
+        "first_designated_joint": null
+      },
+      "dyadic": {
+        "smooth_values": 2,
+        "adaptive": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 33,
+            "certificate_evaluations": 178,
+            "certified_bases": 10,
+            "trial_prime_visits": 257000,
+            "exact_prime_divisions": 22966
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 10,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 10,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 10,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 0,
+          "most_joint_rows_in_one_field": 0,
+          "all_norm_bits": [
+            679,
+            697
+          ],
+          "designated_norm_bits": [
+            680,
+            685
+          ],
+          "designated_minimum_residue_bits": [
+            680,
+            680
+          ],
+          "first_designated_joint": null
+        },
+        "matched_offsets": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 20,
+            "certificate_evaluations": 49,
+            "certified_bases": 10,
+            "trial_prime_visits": 257300,
+            "exact_prime_divisions": 17126
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 0,
+          "most_joint_rows_in_one_field": 0,
+          "all_norm_bits": [
+            677,
+            692
+          ],
+          "designated_norm_bits": [
+            678,
+            682
+          ],
+          "designated_minimum_residue_bits": [
+            678,
+            682
+          ],
+          "first_designated_joint": null
+        }
+      },
+      "two_three": {
+        "smooth_values": 26,
+        "adaptive": {
+          "bases_offered": 130,
+          "work": {
+            "bases_tried": 130,
+            "certificate_primes": 292,
+            "certificate_evaluations": 1050,
+            "certified_bases": 130,
+            "trial_prime_visits": 3341120,
+            "exact_prime_divisions": 283375
+          },
+          "all_rows": {
+            "visited": 53950,
+            "rational_smooth": 130,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "five_small_shifts": {
+            "visited": 650,
+            "rational_smooth": 130,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "designated_rows": {
+            "visited": 130,
+            "rational_smooth": 130,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 0,
+          "most_joint_rows_in_one_field": 0,
+          "all_norm_bits": [
+            675,
+            698
+          ],
+          "designated_norm_bits": [
+            678,
+            687
+          ],
+          "designated_minimum_residue_bits": [
+            678,
+            683
+          ],
+          "first_designated_joint": null
+        },
+        "matched_offsets": {
+          "bases_offered": 130,
+          "work": {
+            "bases_tried": 130,
+            "certificate_primes": 258,
+            "certificate_evaluations": 815,
+            "certified_bases": 130,
+            "trial_prime_visits": 3344900,
+            "exact_prime_divisions": 199096
+          },
+          "all_rows": {
+            "visited": 53950,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "five_small_shifts": {
+            "visited": 650,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "designated_rows": {
+            "visited": 130,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 0,
+          "most_joint_rows_in_one_field": 0,
+          "all_norm_bits": [
+            674,
+            692
+          ],
+          "designated_norm_bits": [
+            674,
+            683
+          ],
+          "designated_minimum_residue_bits": [
+            674,
+            682
+          ],
+          "first_designated_joint": null
+        }
+      },
+      "unbounded_dyadic_witnesses": [
+        {
+          "base_power_of_two": 682,
+          "sign": 1,
+          "exponent": "285624561369393642435751858674211272115817110096444537511368276667968641398702011793585104446331012154019057727116953583470052684227067920519665762721275764221446427159385491824664097164892593895326411916",
+          "exponent_bits": 676,
+          "norm_bits_lower_bound": "571249122738787284871503717348422544231634220192889075022736553335937282797404023587170208892662024308038115454233907166940105368454135841039331525442551528442892854318770983649328194329785187790652823833",
+          "lift_steps_and_squarings": 680,
+          "extra_modular_multiplications": 334,
+          "verification_powers": 1
+        },
+        {
+          "base_power_of_two": 683,
+          "sign": 1,
+          "exponent": "5302081071482512297870350669709490227146582455501235281814385800499080696506849463302742796666626394870181709605643848832855344976043592295603412454093079858493319587644123458544924486382577070052794494092",
+          "exponent_bits": 681,
+          "norm_bits_lower_bound": "10604162142965024595740701339418980454293164911002470563628771600998161393013698926605485593333252789740363419211287697665710689952087184591206824908186159716986639175288246917089848972765154140105588988185",
+          "lift_steps_and_squarings": 681,
+          "extra_modular_multiplications": 335,
+          "verification_powers": 1
+        }
+      ]
+    },
+    {
+      "id": "arbitrary-divisor-window-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "original_first_certified": {
+        "bases_offered": 9,
+        "work": {
+          "bases_tried": 1,
+          "certificate_primes": 1,
+          "certificate_evaluations": 2,
+          "certified_bases": 1,
+          "trial_prime_visits": 25730,
+          "exact_prime_divisions": 1350
+        },
+        "all_rows": {
+          "visited": 415,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "five_small_shifts": {
+          "visited": 5,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "designated_rows": {
+          "visited": 0,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "joint": 0
+        },
+        "bases_with_joint_rows": 0,
+        "most_joint_rows_in_one_field": 0,
+        "all_norm_bits": [
+          674,
+          692
+        ],
+        "designated_norm_bits": [],
+        "designated_minimum_residue_bits": [],
+        "first_designated_joint": null
+      },
+      "dyadic": {
+        "smooth_values": 2,
+        "adaptive": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 17,
+            "certificate_evaluations": 43,
+            "certified_bases": 10,
+            "trial_prime_visits": 257000,
+            "exact_prime_divisions": 21471
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 10,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 10,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 10,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 0,
+          "most_joint_rows_in_one_field": 0,
+          "all_norm_bits": [
+            680,
+            697
+          ],
+          "designated_norm_bits": [
+            680,
+            685
+          ],
+          "designated_minimum_residue_bits": [
+            680,
+            682
+          ],
+          "first_designated_joint": null
+        },
+        "matched_offsets": {
+          "bases_offered": 10,
+          "work": {
+            "bases_tried": 10,
+            "certificate_primes": 23,
+            "certificate_evaluations": 66,
+            "certified_bases": 10,
+            "trial_prime_visits": 257300,
+            "exact_prime_divisions": 15071
+          },
+          "all_rows": {
+            "visited": 4150,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "five_small_shifts": {
+            "visited": 50,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "designated_rows": {
+            "visited": 10,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 0,
+          "most_joint_rows_in_one_field": 0,
+          "all_norm_bits": [
+            674,
+            692
+          ],
+          "designated_norm_bits": [
+            680,
+            682
+          ],
+          "designated_minimum_residue_bits": [
+            680,
+            682
+          ],
+          "first_designated_joint": null
+        }
+      },
+      "two_three": {
+        "smooth_values": 26,
+        "adaptive": {
+          "bases_offered": 130,
+          "work": {
+            "bases_tried": 130,
+            "certificate_primes": 298,
+            "certificate_evaluations": 1099,
+            "certified_bases": 130,
+            "trial_prime_visits": 3341120,
+            "exact_prime_divisions": 286543
+          },
+          "all_rows": {
+            "visited": 53950,
+            "rational_smooth": 130,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "five_small_shifts": {
+            "visited": 650,
+            "rational_smooth": 130,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "designated_rows": {
+            "visited": 130,
+            "rational_smooth": 130,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 0,
+          "most_joint_rows_in_one_field": 0,
+          "all_norm_bits": [
+            673,
+            698
+          ],
+          "designated_norm_bits": [
+            679,
+            687
+          ],
+          "designated_minimum_residue_bits": [
+            679,
+            682
+          ],
+          "first_designated_joint": null
+        },
+        "matched_offsets": {
+          "bases_offered": 130,
+          "work": {
+            "bases_tried": 130,
+            "certificate_primes": 325,
+            "certificate_evaluations": 1273,
+            "certified_bases": 130,
+            "trial_prime_visits": 3344900,
+            "exact_prime_divisions": 199112
+          },
+          "all_rows": {
+            "visited": 53950,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "five_small_shifts": {
+            "visited": 650,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "designated_rows": {
+            "visited": 130,
+            "rational_smooth": 0,
+            "norm_smooth": 0,
+            "joint": 0
+          },
+          "bases_with_joint_rows": 0,
+          "most_joint_rows_in_one_field": 0,
+          "all_norm_bits": [
+            674,
+            692
+          ],
+          "designated_norm_bits": [
+            675,
+            683
+          ],
+          "designated_minimum_residue_bits": [
+            675,
+            682
+          ],
+          "first_designated_joint": null
+        }
+      },
+      "unbounded_dyadic_witnesses": [
+        {
+          "base_power_of_two": 682,
+          "sign": -1,
+          "exponent": "4427774192064782102099136339548962929827731021179801552457543649631231963625199697033216015144218762606423878282333597412465123559430145674182595163132520970821140797060921965963067125162109707239833993216",
+          "exponent_bits": 680,
+          "norm_bits_lower_bound": "8855548384129564204198272679097925859655462042359603104915087299262463927250399394066432030288437525212847756564667194824930247118860291348365190326265041941642281594121843931926134250324219414479667986433",
+          "lift_steps_and_squarings": 680,
+          "extra_modular_multiplications": 196,
+          "verification_powers": 1
+        },
+        {
+          "base_power_of_two": 683,
+          "sign": -1,
+          "exponent": "9444230702177900757533735150584241884858496366584592296760561173462344018733347148542373707364514145322586530160860492661850415851246670049266341854504325065093013957545659932683327514379794183397302075392",
+          "exponent_bits": 681,
+          "norm_bits_lower_bound": "18888461404355801515067470301168483769716992733169184593521122346924688037466694297084747414729028290645173060321720985323700831702493340098532683709008650130186027915091319865366655028759588366794604150785",
+          "lift_steps_and_squarings": 681,
+          "extra_modular_multiplications": 197,
+          "verification_powers": 1
+        }
+      ]
+    }
+  ]
+}

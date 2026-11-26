@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cubic-projection-1333",
+    "description": "A projected cubic trace reveals the factors in a square relation missed by both ordinary gcds on 1333",
+    "n": "1333",
+    "cap": 59,
+    "tested": 59,
+    "first_rescue": 59,
+    "factors": [
+      "31",
+      "43"
+    ],
+    "remaining": [],
+    "status": "complete"
+  },
+  {
+    "id": "cubic-projection-3239",
+    "description": "A projected cubic trace reveals the factors in a square relation missed by both ordinary gcds on 3239",
+    "n": "3239",
+    "cap": 92,
+    "tested": 92,
+    "first_rescue": 92,
+    "factors": [
+      "41",
+      "79"
+    ],
+    "remaining": [],
+    "status": "complete"
+  }
+]
