@@ -861,6 +861,10 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'interior-prime-family':
+        w = result['interior_prime_family']
+        count = (f'Multiplier six · {w["tests"]:,} of {w["budget"]:,} odd traces tested'
+                 f' · {w["squares"]:,} square discriminants')
     elif result['method'] == 'cheap-multiplier-selection':
         w = result['cheap_multiplier_selection']
         count = (f'Multiplier {w["k"]:,} chosen in {w["comparisons"]:,} comparisons'

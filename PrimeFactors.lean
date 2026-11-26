@@ -397,6 +397,7 @@ import PrimeFactors.SharedMultiplierCoverage
 import PrimeFactors.SharedMultiplierPartners
 import PrimeFactors.SharedMultiplierPopulation
 import PrimeFactors.SharedTraceOverlap
+import PrimeFactors.InteriorBatchPopulation
 import PrimeFactors.DiscriminantRectangles
 import PrimeFactors.DiscriminantRectangle211
 import PrimeFactors.ArbitraryDivisorWindow

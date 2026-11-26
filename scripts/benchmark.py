@@ -64,6 +64,7 @@ from scripts.reciprocal_sum_lane_benchmark import reciprocal_sum_lane_case
 from scripts.reciprocal_sum_slice_benchmark import slice_case as reciprocal_sum_slice_case
 from scripts.shared_multiplier_benchmark import shared_multiplier_case
 from scripts.cheap_multiplier_benchmark import cheap_multiplier_case
+from scripts.interior_prime_family_benchmark import interior_family_case
 from experiments.weighted_trace_reuse import search as weighted_trace_reuse_search
 from scripts.separating_period_benchmark import period_case as separating_period_case
 from scripts.cubic_trace_benchmark import cubic_bases_case, cubic_readout_case, cubic_trace_case
@@ -1458,6 +1459,8 @@ end PrimeFactors.Generated
         result = adaptive_quartic_case(case, proof, agree, certify_split)
     elif method == 'power-chain':
         result = power_chain_case(case, proof, agree, certify_split)
+    elif method == 'interior-prime-family':
+        result = interior_family_case(case, proof, agree, certify_split)
     elif method == 'cheap-multiplier-selection':
         result = cheap_multiplier_case(case, proof, agree, certify_split)
     elif method == 'shared-multiplier-prefix':
@@ -1824,6 +1827,7 @@ def main():
                              ('reciprocal-sum-slice.json', 'reciprocal-sum-slice'),
                              ('shared-multiplier-prefix.json', 'shared-multiplier-prefix'),
                              ('cheap-multiplier-selection.json', 'cheap-multiplier-selection'),
+                             ('interior-prime-family.json', 'interior-prime-family'),
                              ('weighted-trace-reuse.json', 'weighted-trace-reuse'),
                              ('translated-hasse.json', 'translated-hasse'),
                              ('hasse-hankel-probe.json', 'hasse-hankel-probe'),
