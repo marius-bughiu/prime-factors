@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Across the full eligible prime-pair population, an ascending scan tests less than 48.5% of each product’s feasible odd interval on average. This uses explicit prime counts and includes the test that finds the factor. [Derivation and Lean checks](where-the-smaller-prime-appears-in-order.md)
+
 Near the low end of the 2,048-bit range, the lower half of the feasible interval contains the smaller factor in more than 53.88% of the pairs in each qualifying product bin. The probability describes a population. The bin average does not determine where the smaller factor of an individual input lies. [Derivation and eligible bins](which-half-contains-the-smaller-prime.md)
 
 A population calculation bounds the mean length of the equal-width interval below 70% of the mean length using only the factor-ratio bound. Eight fresh 80-bit products required 21% fewer candidate divisors in total when the search used the shared prime width. Both 2048-bit controls still have more than $2^{1020}$ candidate integers. An independent polynomial approach captured all 61 mixed-prime products in a small exhaustive panel. [Equal-width comparisons](a-shorter-pascal-row-for-equal-width-primes.md) · [Translated coefficients](which-translated-coefficients-reveal-a-prime.md)

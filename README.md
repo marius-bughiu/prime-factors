@@ -10,6 +10,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**Testing the smallest candidates first reaches the answer sooner on average.** Across distinct 1,024-bit prime pairs with a 2,048-bit product, the smaller prime occurs before 48.5% of the way through the feasible odd candidates on average. Counting from the top takes more than 51.5%. Each product receives equal weight. The interval is still much too large to scan in practice. [What was counted and which steps Lean verifies](discoveries/where-the-smaller-prime-appears-in-order.md)
+
 **For a narrow range of 2,048-bit products, we know which half to try first.** Near the smallest 2,048-bit product, we mark at most half the candidate positions at the low end of the interval. They contain the smaller prime for more than 53.88% of the pairs in each sufficiently wide product bin. An ascending search already visits these positions first. Both halves are still enormous. [Exact range and assumptions](discoveries/which-half-contains-the-smaller-prime.md)
 
 **Knowing the primes’ bit length cuts the average candidate range by more than 30% for ordinary 2,048-bit products.** The calculation combines a published prime-count bound with a Lean proof. On eight fresh 80-bit products the same algorithm found all eight prime pairs while checking 21% fewer candidates in total. On an 88-bit product CPU time dropped from 18.9 to 14.6 seconds. The smaller range still exceeded $2^{1020}$ integers on each 2,048-bit comparison input. [A small example, the general proof and the timings](discoveries/a-shorter-pascal-row-for-equal-width-primes.md)

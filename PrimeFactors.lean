@@ -271,6 +271,7 @@ import PrimeFactors.HasseRecurrenceDegree
 import PrimeFactors.HankelTranslation
 import PrimeFactors.SquareRootShiftPartners
 import PrimeFactors.LowerHalfPrimeBins
+import PrimeFactors.AscendingDivisorRank
 import PrimeFactors.HasseHankelBilinear
 import PrimeFactors.HankelProbePolynomial
 import PrimeFactors.HankelProbePopulation
