@@ -277,6 +277,9 @@ import PrimeFactors.FactorialCheckpointCoverage
 import PrimeFactors.FactorialCheckpointMean
 import PrimeFactors.FactorialCheckpointTarget
 import PrimeFactors.AffineFactorialAddress
+import PrimeFactors.FactorialBlockExclusion
+import PrimeFactors.BlockExclusionCheck
+import PrimeFactors.BlockSubresultantProbe
 import PrimeFactors.HasseHankelBilinear
 import PrimeFactors.HankelProbePolynomial
 import PrimeFactors.HankelProbePopulation

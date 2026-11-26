@@ -847,6 +847,19 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'block-subresultant':
+        w = result['block_subresultant']
+        count = f'{w["rectangle_positions"]} consecutive candidates · block gcd {w["rectangle_gcd"]}'
+        if w['pivot_gcds']:
+            count += f' · polynomial gcd {w["pivot_gcd"]} · adjacent gcd {w["adjacent_gcd"]}'
+    elif result['method'] == 'block-exclusion':
+        block = result['block_exclusion']
+        count = (f'{block["count"]} blocks of {block["side"]} consecutive integers · '
+                 f'{block["positions"]:,} candidate positions')
+        if block['outcome'] == 'certified':
+            count += f' · {block["witness_coefficients"]:,} coefficients in the exclusion proof'
+        else:
+            count += f' · {block["work"]["candidate_gcds"]:,} individual gcds to locate a collision'
     elif result['method'] == 'growing-factorial':
         w = result['growing_factorial']
         operations = w['work']

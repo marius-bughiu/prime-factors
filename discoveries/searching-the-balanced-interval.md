@@ -2,6 +2,10 @@
 
 Given only the product of two independently chosen 1,024-bit primes, we still do not know how to recover its factors in an hour on a PC. Some constructed examples have extra relationships that reveal the primes. The independently generated 2,048-bit example remains unresolved from the product alone. [How the example was generated and checked](certified-fresh-control.md)
 
+For that product, one polynomial identity certifies that the first 64 integers in the feasible interval are coprime to the input. A separate degree bound explains why three blocks moving by the same step size up to sign cannot share one cubic address in the proposed representation. [Block exclusion and verification cost](certifying-a-block-of-missed-divisors.md) · [Limits of grouping more blocks](how-far-factorial-blocks-can-fold.md)
+
+On 157,601, a polynomial built from nine unsuccessful divisor candidates revealed the factor 439. On three complete populations of small products this additional check gave 13 splits. Testing the adjacent integer gave 59 different splits. [Formula, example and comparison](a-factor-outside-the-resultant-block.md)
+
 On eight independently drawn 80-bit products the search that checks each folded block stage used 22.6% fewer polynomial input coefficients in aggregate than the complete folded search. For uniformly chosen equal-width primes with a 2,048-bit product, the mean of per-product percentage savings is greater than 1.911% for the folded algorithm and 3.6889% for the forward algorithm. [Exact scope, proofs and timings](stopping-a-factorial-search-when-it-reaches-a-prime.md)
 
 Across the full eligible prime-pair population, an ascending scan tests less than 48.5% of each product’s feasible odd interval on average. This uses explicit prime counts and includes the test that finds the factor. [Derivation and Lean checks](where-the-smaller-prime-appears-in-order.md)
