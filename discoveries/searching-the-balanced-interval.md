@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Combining two nonsquare remainders found 22 extra answers among 2,753,877 products of 16-bit primes. Trying the next ordinary sum found 96,821 extra answers. A target-size count bounds how often the combined test can succeed even with many labels on each side. [Proof, examples and comparison](factoring-with-two-weighted-square-tests.md)
+
 For two equally wide primes, a public window using at most a quarter of the sum span covers about half of uniformly sampled eligible pairs. Trying this window first took more row visits across eight held-out examples. [Population estimate, exact endpoints and costs](where-to-look-for-the-factor-sum.md)
 
 The latest search can stream one list and pair entries in the other. This halved the stored table on two ordinary small products whose factors Lean checked. On each 2,048-bit input the reduced table still exceeds $10^{134}$ entries. [Method and measured costs](finishing-a-factor-sum-search-with-one-witness.md#pairing-entries-to-halve-the-stored-table)

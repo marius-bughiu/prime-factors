@@ -1,0 +1,101 @@
+[
+  {
+    "factor_bits": 8,
+    "eligible": 148,
+    "either_first": 138,
+    "cross": 0,
+    "additional_cross": 0,
+    "next_first_only_gain": 10,
+    "next_second_only_gain": 8,
+    "cross_missed_by_both_next": 0,
+    "first_additional_product": null
+  },
+  {
+    "factor_bits": 9,
+    "eligible": 543,
+    "either_first": 433,
+    "cross": 0,
+    "additional_cross": 0,
+    "next_first_only_gain": 68,
+    "next_second_only_gain": 22,
+    "cross_missed_by_both_next": 0,
+    "first_additional_product": null
+  },
+  {
+    "factor_bits": 10,
+    "eligible": 1718,
+    "either_first": 978,
+    "cross": 1,
+    "additional_cross": 1,
+    "next_first_only_gain": 275,
+    "next_second_only_gain": 62,
+    "cross_missed_by_both_next": 0,
+    "first_additional_product": "559697"
+  },
+  {
+    "factor_bits": 11,
+    "eligible": 5530,
+    "either_first": 2527,
+    "cross": 1,
+    "additional_cross": 1,
+    "next_first_only_gain": 748,
+    "next_second_only_gain": 77,
+    "cross_missed_by_both_next": 1,
+    "first_additional_product": "2654009"
+  },
+  {
+    "factor_bits": 12,
+    "eligible": 19546,
+    "either_first": 6260,
+    "cross": 0,
+    "additional_cross": 0,
+    "next_first_only_gain": 2203,
+    "next_second_only_gain": 117,
+    "cross_missed_by_both_next": 0,
+    "first_additional_product": null
+  },
+  {
+    "factor_bits": 13,
+    "eligible": 64719,
+    "either_first": 15320,
+    "cross": 4,
+    "additional_cross": 4,
+    "next_first_only_gain": 5708,
+    "next_second_only_gain": 201,
+    "cross_missed_by_both_next": 4,
+    "first_additional_product": "36527119"
+  },
+  {
+    "factor_bits": 14,
+    "eligible": 228713,
+    "either_first": 39699,
+    "cross": 6,
+    "additional_cross": 6,
+    "next_first_only_gain": 15048,
+    "next_second_only_gain": 325,
+    "cross_missed_by_both_next": 6,
+    "first_additional_product": "143840057"
+  },
+  {
+    "factor_bits": 15,
+    "eligible": 783832,
+    "either_first": 95344,
+    "cross": 7,
+    "additional_cross": 7,
+    "next_first_only_gain": 37219,
+    "next_second_only_gain": 640,
+    "cross_missed_by_both_next": 7,
+    "first_additional_product": "543002591"
+  },
+  {
+    "factor_bits": 16,
+    "eligible": 2753877,
+    "either_first": 242896,
+    "cross": 22,
+    "additional_cross": 22,
+    "next_first_only_gain": 96821,
+    "next_second_only_gain": 1150,
+    "cross_missed_by_both_next": 21,
+    "first_additional_product": "2322413087"
+  }
+]

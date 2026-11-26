@@ -1,0 +1,125 @@
+[
+  {
+    "id": "lifted-trace-fresh-92",
+    "description": "Recover a fresh 92-bit prime pair while measuring three ways to compute the same lookup keys",
+    "n": "3744658748524638520465885991",
+    "factor_bits": 46,
+    "caps": {
+      "max_right": 20000,
+      "max_visited": 32256,
+      "max_lookups": 100000,
+      "power_limit": 10000,
+      "drop_limit": 3,
+      "budget": 2000000
+    },
+    "origin": {
+      "seed": "short-wheel-deferred-prime-postdesign-v1",
+      "index": 0,
+      "sides": [
+        "p",
+        "q"
+      ],
+      "bits": 46,
+      "generator": "experiments.affine_radix_holdout.draw_prime"
+    },
+    "lift": 1,
+    "period": "802241960520",
+    "lookup_bound": 16200,
+    "table_sha256": "57de017cf493974ff94c557945cc69896699b3955955e2c920adeb5ccfb388c1",
+    "outcome": "sum_square",
+    "work_checks": {
+      "stock": {
+        "right_built": 6480,
+        "left_visited": 4727,
+        "lookups": 11774,
+        "left_keys_prepared": 11774,
+        "signature_multiplications": 45942,
+        "setup_powers": 79,
+        "square_tests": 1
+      },
+      "direct": {
+        "right_built": 6480,
+        "left_visited": 4727,
+        "lookups": 11774,
+        "left_keys_prepared": 11774,
+        "signature_multiplications": 43834,
+        "setup_powers": 79,
+        "square_tests": 1
+      },
+      "recurrence": {
+        "right_built": 6480,
+        "left_visited": 4727,
+        "lookups": 11774,
+        "left_keys_prepared": 11774,
+        "signature_multiplications": 41514,
+        "setup_powers": 77,
+        "square_tests": 1
+      }
+    },
+    "certificate_trial_limit": 2000000,
+    "status": "complete",
+    "factors": [
+      "58384406549849",
+      "64137994540159"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "lifted-trace-cohort-96",
+    "description": "Compare three trace evaluations on the 96-bit holdout with a four-period lift",
+    "n": "46271889280788194893624741769",
+    "factor_bits": 48,
+    "caps": {
+      "max_right": 20000,
+      "max_visited": 32256,
+      "max_lookups": 100000,
+      "power_limit": 10000,
+      "drop_limit": 3,
+      "budget": 2000000
+    },
+    "origin": {
+      "fixture": "lifted-period-postdesign-96-3"
+    },
+    "lift": 4,
+    "period": "828120733440",
+    "lookup_bound": 23760,
+    "table_sha256": "ac2f9ac500a72e91715eed3c1fe6e696889c3c22cb02d6b0bdc518534458b273",
+    "outcome": "sum_square",
+    "work_checks": {
+      "stock": {
+        "right_built": 17011,
+        "left_visited": 2649,
+        "lookups": 14764,
+        "left_keys_prepared": 14764,
+        "signature_multiplications": 90754,
+        "setup_powers": 72,
+        "square_tests": 1
+      },
+      "direct": {
+        "right_built": 17011,
+        "left_visited": 2649,
+        "lookups": 14764,
+        "left_keys_prepared": 14766,
+        "signature_multiplications": 64230,
+        "setup_powers": 80,
+        "square_tests": 1
+      },
+      "recurrence": {
+        "right_built": 17011,
+        "left_visited": 2649,
+        "lookups": 14764,
+        "left_keys_prepared": 14766,
+        "signature_multiplications": 46257,
+        "setup_powers": 70,
+        "square_tests": 1
+      }
+    },
+    "certificate_trial_limit": 2000000,
+    "status": "complete",
+    "factors": [
+      "180663206036333",
+      "256122374311693"
+    ],
+    "remaining": []
+  }
+]

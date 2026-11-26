@@ -558,6 +558,13 @@ def case_row(result):
             count += ' · proper gcd at k = ' + ', '.join(str(hit['k']) for hit in search['quotient_hits'])
         if search['equal_hits']:
             count += ' · full gcd at k = ' + ', '.join(str(hit['k']) for hit in search['equal_hits'])
+    elif result['method'] == 'lifted-period-trace':
+        run = result['lifted_period_trace']
+        stock, direct, recurrence = (run['methods'][name] for name in ('stock', 'direct', 'recurrence'))
+        count = (f'{recurrence["right_built"]:,} stored entries · {recurrence["lookups"]:,} lookups'
+                 f' · {recurrence["signature_multiplications"]:,} modular multiplications using the recurrence'
+                 f' · {direct["signature_multiplications"]:,} with direct keys'
+                 f' · {stock["signature_multiplications"]:,} in the original join')
     elif result['method'] == 'lifted-period-join':
         search = result['lifted_period_join']
         work = search['work']
@@ -574,6 +581,10 @@ def case_row(result):
         if work.get('probe_certificate'):
             url = escape(work['probe_certificate']['proof'], quote=True)
             count += f' · <a href="{url}">Power test proof</a>'
+    elif result['method'] == 'weighted-square-pair':
+        work = result['weighted_square_pair']
+        match = 'square' if work['square'] else 'nonsquare'
+        count = f'2 weighted labels · 1 excess-product test ({match}) · {work["gcd_tests"]} gcds'
     elif result['method'] == 'memory-partition-sum':
         search = result['memory_partition_sum']
         work = search['work']

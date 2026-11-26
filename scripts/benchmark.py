@@ -53,9 +53,11 @@ from scripts.geometric_wheel_benchmark import wheel_readout_case
 from scripts.streamed_sum_benchmark import streamed_sum_case
 from scripts.trace_folded_benchmark import trace_folded_case
 from scripts.factor_sum_quantile_benchmark import quantile_case
+from experiments.weighted_square_pairs import search as weighted_square_pair_search
 from scripts.memory_partition_benchmark import memory_partition_case
 from scripts.cyclotomic_sum_lift_benchmark import cyclotomic_sum_case
 from scripts.lifted_period_benchmark import lifted_period_case
+from scripts.lifted_period_trace_benchmark import lifted_trace_case
 from experiments import trace_cover, trace_cover_transfer
 from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
@@ -581,8 +583,16 @@ def run_case(case, method, proofs):
         result = streamed_sum_case(case, proof, agree, certify_split)
     elif method == 'lifted-period-join':
         result = lifted_period_case(case, proof, agree, certify_split)
+    elif method == 'lifted-period-trace':
+        result = lifted_trace_case(case, proof, agree, certify_split)
     elif method == 'cyclotomic-sum-lift':
         result = cyclotomic_sum_case(case, proof, agree, certify_split)
+    elif method == 'weighted-square-pair':
+        tick = time.perf_counter()
+        work = weighted_square_pair_search(int(case['n']))
+        elapsed = time.perf_counter() - tick
+        agree(case, work, ['square', 'square_tests', 'gcd_tests'])
+        result = certify_split(case, proof, work.pop('factor'), elapsed, 'weighted_square_pair', work)
     elif method == 'memory-partition-sum':
         result = memory_partition_case(case, proof, agree, certify_split)
     elif method == 'factor-sum-quantile':
@@ -1599,9 +1609,11 @@ def main():
                              ('streamed-sum-join.json', 'streamed-sum-join'),
                              ('trace-folded-right.json', 'trace-folded-right'),
                              ('factor-sum-quantile.json', 'factor-sum-quantile'),
+                             ('weighted-square-pairs.json', 'weighted-square-pair'),
                              ('memory-partition-sum.json', 'memory-partition-sum'),
                              ('cyclotomic-sum-lift.json', 'cyclotomic-sum-lift'),
                              ('lifted-period-join.json', 'lifted-period-join'),
+                             ('lifted-period-trace.json', 'lifted-period-trace'),
                              ('geometric-sum-readout.json', 'geometric-sum-readout'),
                              ('geometric-sum-binary.json', 'geometric-sum-binary'),
                              ('geometric-readout-blocks.json', 'geometric-readout-blocks'),

@@ -1,0 +1,294 @@
+{
+  "rule": "Inspect every signed right position in the clipped wrap until a locally allowed sum exists. Extra skips exclude pure geometry skips. Large panels instead exhibit a two-digit subcube in 256 equal bins.",
+  "caps": {
+    "max_right": 20000,
+    "max_visited": 32256,
+    "max_lookups": 100000,
+    "power_limit": 10000,
+    "drop_limit": 3,
+    "budget": 2000000
+  },
+  "small": [
+    {
+      "id": "fresh-92",
+      "n": "3744658748524638520465885991",
+      "deferred": [
+        37
+      ],
+      "largest": 37,
+      "menu_size": 19,
+      "right_projection_size": 37,
+      "signed_positions": 12960,
+      "right_keys": 6480,
+      "outcome": "sum_square",
+      "factors": [
+        "58384406549849",
+        "64137994540159"
+      ],
+      "complete_schedule": {
+        "rows": 5400,
+        "lookups": 13449,
+        "duplicate_keys": 0,
+        "full_range": 2649,
+        "geometry_skips": 1,
+        "single_prime_extra_skips": 0,
+        "joint_extra_skips": 0,
+        "positions_examined": 25485
+      },
+      "through_stock_stop": {
+        "rows": 4727,
+        "lookups": 11774,
+        "duplicate_keys": 0,
+        "full_range": 2320,
+        "geometry_skips": 1,
+        "single_prime_extra_skips": 0,
+        "joint_extra_skips": 0,
+        "positions_examined": 22278
+      }
+    },
+    {
+      "id": "lifted-period-holdout-92",
+      "n": "2999205669099453866424720319",
+      "deferred": [
+        31,
+        37
+      ],
+      "largest": 37,
+      "menu_size": 18,
+      "right_projection_size": 37,
+      "signed_positions": 35640,
+      "right_keys": 17820,
+      "outcome": "sum_square",
+      "factors": [
+        "45058864713217",
+        "66561944873407"
+      ],
+      "complete_schedule": {
+        "rows": 4704,
+        "lookups": 14112,
+        "duplicate_keys": 0,
+        "full_range": 4704,
+        "geometry_skips": 0,
+        "single_prime_extra_skips": 0,
+        "joint_extra_skips": 0,
+        "positions_examined": 55303
+      },
+      "through_stock_stop": {
+        "rows": 765,
+        "lookups": 2294,
+        "duplicate_keys": 0,
+        "full_range": 765,
+        "geometry_skips": 0,
+        "single_prime_extra_skips": 0,
+        "joint_extra_skips": 0,
+        "positions_examined": 8844
+      }
+    },
+    {
+      "id": "lifted-period-postdesign-96-2",
+      "n": "63950837604051759061822145249",
+      "deferred": [
+        31,
+        37
+      ],
+      "largest": 37,
+      "menu_size": 19,
+      "right_projection_size": 37,
+      "signed_positions": 21120,
+      "right_keys": 10560,
+      "outcome": "sum_square",
+      "factors": [
+        "227373199262387",
+        "281259347238427"
+      ],
+      "complete_schedule": {
+        "rows": 4704,
+        "lookups": 11809,
+        "duplicate_keys": 0,
+        "full_range": 2401,
+        "geometry_skips": 0,
+        "single_prime_extra_skips": 1,
+        "joint_extra_skips": 4,
+        "positions_examined": 48236
+      },
+      "through_stock_stop": {
+        "rows": 1776,
+        "lookups": 4460,
+        "duplicate_keys": 0,
+        "full_range": 909,
+        "geometry_skips": 0,
+        "single_prime_extra_skips": 0,
+        "joint_extra_skips": 1,
+        "positions_examined": 18216
+      }
+    },
+    {
+      "id": "lifted-period-postdesign-96-3",
+      "n": "46271889280788194893624741769",
+      "deferred": [
+        31,
+        37,
+        41
+      ],
+      "largest": 41,
+      "menu_size": 21,
+      "right_projection_size": 41,
+      "signed_positions": 34020,
+      "right_keys": 17011,
+      "outcome": "sum_square",
+      "factors": [
+        "180663206036333",
+        "256122374311693"
+      ],
+      "complete_schedule": {
+        "rows": 3960,
+        "lookups": 22078,
+        "duplicate_keys": 0,
+        "full_range": 14158,
+        "geometry_skips": 0,
+        "single_prime_extra_skips": 0,
+        "joint_extra_skips": 3,
+        "positions_examined": 170911
+      },
+      "through_stock_stop": {
+        "rows": 2649,
+        "lookups": 14764,
+        "duplicate_keys": 0,
+        "full_range": 9467,
+        "geometry_skips": 0,
+        "single_prime_extra_skips": 0,
+        "joint_extra_skips": 3,
+        "positions_examined": 114106
+      }
+    },
+    {
+      "id": "lifted-period-postdesign-96-5",
+      "n": "44999777202387676883929306237",
+      "deferred": [
+        37,
+        41
+      ],
+      "largest": 41,
+      "menu_size": 21,
+      "right_projection_size": 41,
+      "signed_positions": 28800,
+      "right_keys": 14400,
+      "outcome": "sum_square",
+      "factors": [
+        "209966509290409",
+        "214318832819893"
+      ],
+      "complete_schedule": {
+        "rows": 17010,
+        "lookups": 43825,
+        "duplicate_keys": 0,
+        "full_range": 9806,
+        "geometry_skips": 0,
+        "single_prime_extra_skips": 1,
+        "joint_extra_skips": 4,
+        "positions_examined": 169545
+      },
+      "through_stock_stop": {
+        "rows": 16648,
+        "lookups": 42895,
+        "duplicate_keys": 0,
+        "full_range": 9600,
+        "geometry_skips": 0,
+        "single_prime_extra_skips": 1,
+        "joint_extra_skips": 4,
+        "positions_examined": 165907
+      }
+    },
+    {
+      "id": "lifted-period-postdesign-96-6",
+      "n": "55631654279629532816596583971",
+      "deferred": [
+        31,
+        37
+      ],
+      "largest": 37,
+      "menu_size": 19,
+      "right_projection_size": 37,
+      "signed_positions": 35640,
+      "right_keys": 17820,
+      "outcome": "sum_square",
+      "factors": [
+        "208709403583319",
+        "266550779813909"
+      ],
+      "complete_schedule": {
+        "rows": 3920,
+        "lookups": 19600,
+        "duplicate_keys": 0,
+        "full_range": 11760,
+        "geometry_skips": 0,
+        "single_prime_extra_skips": 0,
+        "joint_extra_skips": 0,
+        "positions_examined": 69569
+      },
+      "through_stock_stop": {
+        "rows": 926,
+        "lookups": 4628,
+        "duplicate_keys": 0,
+        "full_range": 2777,
+        "geometry_skips": 0,
+        "single_prime_extra_skips": 0,
+        "joint_extra_skips": 0,
+        "positions_examined": 16741
+      }
+    }
+  ],
+  "wide": [
+    {
+      "id": "quantile-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "plan_fits_caps": false,
+      "lift": 3,
+      "period": "285577209797505831355623059543509529376831215196353236182651357320022581756517410182507230436984448639355154008627316430988782501944141261840754055348812945876111822849803710331002404036923248775933890814128820906485160382360108057203059143536944410792154256851261995718302346358735555305810147793696716420",
+      "lifted_period": "856731629392517494066869178630528588130493645589059708547954071960067745269552230547521691310953345918065462025881949292966347505832423785522262166046438837628335468549411130993007212110769746327801672442386462719455481147080324171609177430610833232376462770553785987154907039076206665917430443381090149260",
+      "varied_moduli": [
+        733,
+        709
+      ],
+      "deferred": [
+        739
+      ],
+      "prime": 739,
+      "menu_size": 369,
+      "sites": 388692,
+      "bins": 256,
+      "min_support": 641,
+      "factor_search_attempted": false,
+      "remaining": [
+        "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+      ],
+      "every_bin_meets_every_translate": true
+    },
+    {
+      "id": "quantile-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "plan_fits_caps": false,
+      "lift": 5,
+      "period": "285577209797505831355623059543509529376831215196353236182651357320022581756517410182507230436984448639355154008627316430988782501944141261840754055348812945876111822849803710331002404036923248775933890814128820906485160382360108057203059143536944410792154256851261995718302346358735555305810147793696716420",
+      "lifted_period": "1427886048987529156778115297717547646884156075981766180913256786600112908782587050912536152184922243196775770043136582154943912509720706309203770276744064729380559114249018551655012020184616243879669454070644104532425801911800540286015295717684722053960771284256309978591511731793677776529050738968483582100",
+      "varied_moduli": [
+        733,
+        709
+      ],
+      "deferred": [
+        739,
+        743
+      ],
+      "prime": 743,
+      "menu_size": 372,
+      "sites": 649650,
+      "bins": 256,
+      "min_support": 719,
+      "factor_search_attempted": false,
+      "remaining": [
+        "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+      ],
+      "every_bin_meets_every_translate": true
+    }
+  ]
+}

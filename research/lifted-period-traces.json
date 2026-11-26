@@ -1,0 +1,646 @@
+{
+  "seed": "short-wheel-deferred-prime-postdesign-v1",
+  "generator": "experiments.affine_radix_holdout.draw_prime",
+  "sample_rule": "First distinct 46-bit prime pair producing a 92-bit product, indices starting at zero, sides p and q. Accepted index 0.",
+  "caps": {
+    "max_right": 20000,
+    "max_visited": 32256,
+    "max_lookups": 100000,
+    "power_limit": 10000,
+    "drop_limit": 3,
+    "budget": 2000000
+  },
+  "timing": "Nine rotated rounds, one common measured product-only plan per input. Comparison and primality certification outside timings.",
+  "rows": [
+    {
+      "id": "fresh-92",
+      "n": "3744658748524638520465885991",
+      "bits": 46,
+      "lower": "122387233787265",
+      "upper": "123583545610957",
+      "probes": [
+        {
+          "base": "2",
+          "gcd": "1",
+          "fermat": "2419797451162523920639867757"
+        }
+      ],
+      "lift": 1,
+      "period": "802241960520",
+      "setup_local_sites": 33068,
+      "lift_candidates": 1554,
+      "left_bound": 5400,
+      "lookup_bound": 16200,
+      "table_sha256": "57de017cf493974ff94c557945cc69896699b3955955e2c920adeb5ccfb388c1",
+      "outcome": "sum_square",
+      "factors": [
+        "58384406549849",
+        "64137994540159"
+      ],
+      "methods": {
+        "stock": {
+          "right_built": 6480,
+          "right_buckets": 6480,
+          "base_orbits": 6480,
+          "left_visited": 4727,
+          "lookups": 11774,
+          "signature_multiplications": 45942,
+          "setup_powers": 79,
+          "signature_inversions": 77,
+          "digit_powers": 74,
+          "crt_inverses": 11,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 11774
+        },
+        "direct": {
+          "right_built": 6480,
+          "right_buckets": 6480,
+          "base_orbits": 6480,
+          "left_visited": 4727,
+          "lookups": 11774,
+          "signature_multiplications": 43834,
+          "setup_powers": 79,
+          "signature_inversions": 77,
+          "digit_powers": 74,
+          "crt_inverses": 11,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 11774
+        },
+        "recurrence": {
+          "right_built": 6480,
+          "right_buckets": 6480,
+          "base_orbits": 6480,
+          "left_visited": 4727,
+          "lookups": 11774,
+          "signature_multiplications": 41514,
+          "setup_powers": 77,
+          "signature_inversions": 77,
+          "digit_powers": 74,
+          "crt_inverses": 11,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 11774
+        }
+      },
+      "timing_ms": {
+        "rounds": 9,
+        "common_planning": 21.073,
+        "columns": [
+          "table_setup",
+          "sweep",
+          "setup_and_sweep"
+        ],
+        "medians": {
+          "stock": [
+            8.75,
+            9.501,
+            18.314
+          ],
+          "direct": [
+            6.539,
+            11.297,
+            17.981
+          ],
+          "recurrence": [
+            6.396,
+            10.107,
+            16.484
+          ]
+        }
+      }
+    },
+    {
+      "id": "lifted-period-holdout-92",
+      "n": "2999205669099453866424720319",
+      "bits": 46,
+      "lower": "109530008109184",
+      "upper": "112990020202246",
+      "probes": [
+        {
+          "base": "2",
+          "gcd": "1",
+          "fermat": "522048206678895806524088445"
+        }
+      ],
+      "lift": 5,
+      "period": "349363434420",
+      "setup_local_sites": 33068,
+      "lift_candidates": 2618,
+      "left_bound": 4704,
+      "lookup_bound": 14112,
+      "table_sha256": "192569eb31278ee7e61cd517c078e4ea6cbea2b794d9e4315ba4b18064f5f010",
+      "outcome": "sum_square",
+      "factors": [
+        "45058864713217",
+        "66561944873407"
+      ],
+      "methods": {
+        "stock": {
+          "right_built": 17820,
+          "right_buckets": 17820,
+          "base_orbits": 3564,
+          "left_visited": 765,
+          "lookups": 2294,
+          "signature_multiplications": 59702,
+          "setup_powers": 66,
+          "signature_inversions": 64,
+          "digit_powers": 61,
+          "crt_inverses": 10,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 2294
+        },
+        "direct": {
+          "right_built": 17820,
+          "right_buckets": 17820,
+          "base_orbits": 3564,
+          "left_visited": 765,
+          "lookups": 2294,
+          "signature_multiplications": 40366,
+          "setup_powers": 72,
+          "signature_inversions": 64,
+          "digit_powers": 61,
+          "crt_inverses": 10,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 2295
+        },
+        "recurrence": {
+          "right_built": 17820,
+          "right_buckets": 17820,
+          "base_orbits": 3564,
+          "left_visited": 765,
+          "lookups": 2294,
+          "signature_multiplications": 28909,
+          "setup_powers": 64,
+          "signature_inversions": 64,
+          "digit_powers": 61,
+          "crt_inverses": 10,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 2295
+        }
+      },
+      "timing_ms": {
+        "rounds": 9,
+        "common_planning": 21.108,
+        "columns": [
+          "table_setup",
+          "sweep",
+          "setup_and_sweep"
+        ],
+        "medians": {
+          "stock": [
+            16.452,
+            2.085,
+            18.514
+          ],
+          "direct": [
+            16.283,
+            2.294,
+            18.591
+          ],
+          "recurrence": [
+            15.341,
+            2.039,
+            17.382
+          ]
+        }
+      }
+    },
+    {
+      "id": "lifted-period-postdesign-96-2",
+      "n": "63950837604051759061822145249",
+      "bits": 48,
+      "lower": "505770056860039",
+      "upper": "508673992237320",
+      "probes": [
+        {
+          "base": "2",
+          "gcd": "1",
+          "fermat": "54935694188057305440144612999"
+        }
+      ],
+      "lift": 2,
+      "period": "828120733440",
+      "setup_local_sites": 33068,
+      "lift_candidates": 2398,
+      "left_bound": 4704,
+      "lookup_bound": 14112,
+      "table_sha256": "a11d87f1172cdde7af96ab388af5ebf40a05dce9f3a82f90583bc3c00dcff795",
+      "outcome": "sum_square",
+      "factors": [
+        "227373199262387",
+        "281259347238427"
+      ],
+      "methods": {
+        "stock": {
+          "right_built": 10560,
+          "right_buckets": 10560,
+          "base_orbits": 5280,
+          "left_visited": 1776,
+          "lookups": 4460,
+          "signature_multiplications": 49744,
+          "setup_powers": 76,
+          "signature_inversions": 72,
+          "digit_powers": 69,
+          "crt_inverses": 10,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 4460
+        },
+        "direct": {
+          "right_built": 10560,
+          "right_buckets": 10560,
+          "base_orbits": 5280,
+          "left_visited": 1776,
+          "lookups": 4460,
+          "signature_multiplications": 30334,
+          "setup_powers": 74,
+          "signature_inversions": 72,
+          "digit_powers": 69,
+          "crt_inverses": 10,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 4461
+        },
+        "recurrence": {
+          "right_built": 10560,
+          "right_buckets": 10560,
+          "base_orbits": 5280,
+          "left_visited": 1776,
+          "lookups": 4460,
+          "signature_multiplications": 29425,
+          "setup_powers": 72,
+          "signature_inversions": 72,
+          "digit_powers": 69,
+          "crt_inverses": 10,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 4461
+        }
+      },
+      "timing_ms": {
+        "rounds": 9,
+        "common_planning": 21.279,
+        "columns": [
+          "table_setup",
+          "sweep",
+          "setup_and_sweep"
+        ],
+        "medians": {
+          "stock": [
+            11.939,
+            4.039,
+            15.978
+          ],
+          "direct": [
+            14.042,
+            4.397,
+            18.571
+          ],
+          "recurrence": [
+            13.174,
+            3.823,
+            16.991
+          ]
+        }
+      }
+    },
+    {
+      "id": "lifted-period-postdesign-96-3",
+      "n": "46271889280788194893624741769",
+      "bits": 48,
+      "lower": "430218034400179",
+      "upper": "445865750702454",
+      "probes": [
+        {
+          "base": "2",
+          "gcd": "1",
+          "fermat": "8666249343031152920520662500"
+        }
+      ],
+      "lift": 4,
+      "period": "828120733440",
+      "setup_local_sites": 33108,
+      "lift_candidates": 1070,
+      "left_bound": 3960,
+      "lookup_bound": 23760,
+      "table_sha256": "ac2f9ac500a72e91715eed3c1fe6e696889c3c22cb02d6b0bdc518534458b273",
+      "outcome": "sum_square",
+      "factors": [
+        "180663206036333",
+        "256122374311693"
+      ],
+      "methods": {
+        "stock": {
+          "right_built": 17011,
+          "right_buckets": 17011,
+          "base_orbits": 4253,
+          "left_visited": 2649,
+          "lookups": 14764,
+          "signature_multiplications": 90754,
+          "setup_powers": 72,
+          "signature_inversions": 68,
+          "digit_powers": 65,
+          "crt_inverses": 10,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 14764
+        },
+        "direct": {
+          "right_built": 17011,
+          "right_buckets": 17011,
+          "base_orbits": 4253,
+          "left_visited": 2649,
+          "lookups": 14764,
+          "signature_multiplications": 64230,
+          "setup_powers": 80,
+          "signature_inversions": 68,
+          "digit_powers": 65,
+          "crt_inverses": 10,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 14766
+        },
+        "recurrence": {
+          "right_built": 17011,
+          "right_buckets": 17011,
+          "base_orbits": 4253,
+          "left_visited": 2649,
+          "lookups": 14764,
+          "signature_multiplications": 46257,
+          "setup_powers": 70,
+          "signature_inversions": 68,
+          "digit_powers": 65,
+          "crt_inverses": 10,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 14766
+        }
+      },
+      "timing_ms": {
+        "rounds": 9,
+        "common_planning": 20.6,
+        "columns": [
+          "table_setup",
+          "sweep",
+          "setup_and_sweep"
+        ],
+        "medians": {
+          "stock": [
+            15.716,
+            9.901,
+            25.616
+          ],
+          "direct": [
+            16.786,
+            9.949,
+            26.799
+          ],
+          "recurrence": [
+            15.227,
+            8.519,
+            23.746
+          ]
+        }
+      }
+    },
+    {
+      "id": "lifted-period-postdesign-96-5",
+      "n": "44999777202387676883929306237",
+      "bits": 48,
+      "lower": "424263018432612",
+      "upper": "441346300720553",
+      "probes": [
+        {
+          "base": "2",
+          "gcd": "1",
+          "fermat": "197785757467089095216021543"
+        }
+      ],
+      "lift": 1,
+      "period": "10830266467020",
+      "setup_local_sites": 33108,
+      "lift_candidates": 1112,
+      "left_bound": 17010,
+      "lookup_bound": 51030,
+      "table_sha256": "bd63703c40c115cbb91e9837e5d5e2f17cf88bf96033fbe1a72d38a403135e44",
+      "outcome": "sum_square",
+      "factors": [
+        "209966509290409",
+        "214318832819893"
+      ],
+      "methods": {
+        "stock": {
+          "right_built": 14400,
+          "right_buckets": 14400,
+          "base_orbits": 14400,
+          "left_visited": 16648,
+          "lookups": 42895,
+          "signature_multiplications": 154676,
+          "setup_powers": 86,
+          "signature_inversions": 84,
+          "digit_powers": 81,
+          "crt_inverses": 11,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 42895
+        },
+        "direct": {
+          "right_built": 14400,
+          "right_buckets": 14400,
+          "base_orbits": 14400,
+          "left_visited": 16648,
+          "lookups": 42895,
+          "signature_multiplications": 129382,
+          "setup_powers": 84,
+          "signature_inversions": 84,
+          "digit_powers": 81,
+          "crt_inverses": 11,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 42895
+        },
+        "recurrence": {
+          "right_built": 14400,
+          "right_buckets": 14400,
+          "base_orbits": 14400,
+          "left_visited": 16648,
+          "lookups": 42895,
+          "signature_multiplications": 119783,
+          "setup_powers": 84,
+          "signature_inversions": 84,
+          "digit_powers": 81,
+          "crt_inverses": 11,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 42895
+        }
+      },
+      "timing_ms": {
+        "rounds": 9,
+        "common_planning": 20.317,
+        "columns": [
+          "table_setup",
+          "sweep",
+          "setup_and_sweep"
+        ],
+        "medians": {
+          "stock": [
+            19.02,
+            38.139,
+            57.143
+          ],
+          "direct": [
+            13.734,
+            40.828,
+            54.862
+          ],
+          "recurrence": [
+            13.938,
+            36.071,
+            51.098
+          ]
+        }
+      }
+    },
+    {
+      "id": "lifted-period-postdesign-96-6",
+      "n": "55631654279629532816596583971",
+      "bits": 48,
+      "lower": "471727269848287",
+      "upper": "479118315844196",
+      "probes": [
+        {
+          "base": "2",
+          "gcd": "1",
+          "fermat": "55249512221988933511191260835"
+        }
+      ],
+      "lift": 5,
+      "period": "349363434420",
+      "setup_local_sites": 33068,
+      "lift_candidates": 3804,
+      "left_bound": 3920,
+      "lookup_bound": 23520,
+      "table_sha256": "98ce14b4bc5e2aff972fb40910c5667f5a09c0cc7699ebff2571e256e31815f9",
+      "outcome": "sum_square",
+      "factors": [
+        "208709403583319",
+        "266550779813909"
+      ],
+      "methods": {
+        "stock": {
+          "right_built": 17820,
+          "right_buckets": 17820,
+          "base_orbits": 3564,
+          "left_visited": 926,
+          "lookups": 4628,
+          "signature_multiplications": 64736,
+          "setup_powers": 68,
+          "signature_inversions": 66,
+          "digit_powers": 63,
+          "crt_inverses": 10,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 4628
+        },
+        "direct": {
+          "right_built": 17820,
+          "right_buckets": 17820,
+          "base_orbits": 3564,
+          "left_visited": 926,
+          "lookups": 4628,
+          "signature_multiplications": 45062,
+          "setup_powers": 78,
+          "signature_inversions": 66,
+          "digit_powers": 63,
+          "crt_inverses": 10,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 4630
+        },
+        "recurrence": {
+          "right_built": 17820,
+          "right_buckets": 17820,
+          "base_orbits": 3564,
+          "left_visited": 926,
+          "lookups": 4628,
+          "signature_multiplications": 31592,
+          "setup_powers": 68,
+          "signature_inversions": 66,
+          "digit_powers": 63,
+          "crt_inverses": 10,
+          "bucket_entries_seen": 1,
+          "square_tests": 1,
+          "orientation_powers": 1,
+          "trace_gcds": 0,
+          "left_keys_prepared": 4630
+        }
+      },
+      "timing_ms": {
+        "rounds": 9,
+        "common_planning": 21.616,
+        "columns": [
+          "table_setup",
+          "sweep",
+          "setup_and_sweep"
+        ],
+        "medians": {
+          "stock": [
+            15.928,
+            3.345,
+            19.262
+          ],
+          "direct": [
+            15.772,
+            3.268,
+            19.08
+          ],
+          "recurrence": [
+            15.6,
+            2.898,
+            19.089
+          ]
+        }
+      }
+    }
+  ]
+}

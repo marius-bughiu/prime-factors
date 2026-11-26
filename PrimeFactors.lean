@@ -416,6 +416,10 @@ import PrimeFactors.TwoTraceBudget
 import PrimeFactors.TwoTraceExamples
 import PrimeFactors.WeightedSparseCoverage
 import PrimeFactors.WeightedStride
+import PrimeFactors.WeightedPairPopulation
+import PrimeFactors.WeightedPairPell
+import PrimeFactors.WeightedSquarePair
+import PrimeFactors.LiftedPeriodTrace
 import PrimeFactors.WideModulus
 import PrimeFactors.WideScale
 import PrimeFactors.OrderLaneTests
