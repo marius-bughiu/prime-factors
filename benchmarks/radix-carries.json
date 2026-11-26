@@ -132,5 +132,46 @@
     "remaining": [
       "207314063849"
     ]
+  },
+  {
+    "id": "radix-carry-neighbors-135137",
+    "n": "135137",
+    "description": "Use bases dividing one of the two neighbors of 135,137",
+    "high_budget": 0,
+    "low_budget": 2,
+    "max_neighbor_checks": 481,
+    "radices": 2,
+    "candidates": 6,
+    "square_tests": 3,
+    "square_hits": 1,
+    "hit": {
+      "radix": 41,
+      "high": 0,
+      "low": -2
+    },
+    "neighbor_checks": 10,
+    "status": "complete",
+    "factors": [
+      "337",
+      "401"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "radix-carry-dyadic-135137",
+    "n": "135137",
+    "description": "Check the five dyadic bases on the same 135,137 example",
+    "high_budget": 4,
+    "low_budget": 4,
+    "radices": 5,
+    "candidates": 405,
+    "square_tests": 279,
+    "square_hits": 0,
+    "hit": null,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "135137"
+    ]
   }
 ]

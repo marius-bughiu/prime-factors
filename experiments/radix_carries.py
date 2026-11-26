@@ -8,14 +8,11 @@ def nearest(n, d):
     return (2 * n + d) // (2 * d)
 
 
-def search(n, high_budget, low_budget):
-    """Try increasing dyadic radices, using only n and the two carry limits."""
+def _scan(n, high_budget, low_budget, radices):
     if n < 2 or min(high_budget, low_budget) < 0:
         raise ValueError("expected n >= 2 and nonnegative carry limits")
-    bits = n.bit_length()
     work = dict(radices=0, candidates=0, square_tests=0, square_hits=0, hit=None)
-    for exponent in range(bits // 4 + 1, (bits + 1) // 2 + 1):
-        radix = 1 << exponent
+    for radix in radices:
         leading = nearest(n, radix * radix)
         middle = nearest(n, radix)
         work["radices"] += 1
@@ -42,6 +39,30 @@ def search(n, high_budget, low_budget):
                     continue
                 divisor = gcd(n, (trace + root) // 2)
                 if 1 < divisor < n:
-                    work["hit"] = dict(exponent=exponent, high=high, low=low)
+                    work["hit"] = dict(radix=radix, high=high, low=low)
                     return divisor, work
     return None, work
+
+
+def search(n, high_budget, low_budget):
+    """Try increasing dyadic radices, using only n and the two carry limits."""
+    bits = n.bit_length()
+    exponents = range(bits // 4 + 1, (bits + 1) // 2 + 1)
+    factor, work = _scan(n, high_budget, low_budget, (1 << e for e in exponents))
+    if factor is not None:
+        work["hit"]["exponent"] = work["hit"].pop("radix").bit_length() - 1
+    return factor, work
+
+
+def search_neighbors(n, high_budget, low_budget, max_radix_checks):
+    """Test bounded consecutive bases and retain those dividing n−1 or n+1."""
+    if max_radix_checks < 0:
+        raise ValueError("expected a nonnegative radix-check budget")
+    bits = n.bit_length()
+    first = 1 << (bits // 4 + 1)
+    stop = min(first + max_radix_checks, (1 << ((bits + 1) // 2)) + 1)
+    bases = range(first, stop)
+    usable = (base for base in bases if n % base in (1, base - 1))
+    factor, work = _scan(n, high_budget, low_budget, usable)
+    work["neighbor_checks"] = len(bases) if factor is None else work["hit"]["radix"] - first + 1
+    return factor, work

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Letting the product choose a base through the divisors of $N-1$ and $N+1$ finds small factors that all comparable dyadic bases miss. Even granting every such large base and lower corrections through $\pm2^{357}$, the search covers fewer than one in $2^{117}$ target pairs. [Adaptive base selection, sample and counting proof](choosing-a-base-from-the-product.md)
+
 A whole interval of candidate corrections can sometimes be checked with two square tests. At a public base and upper correction, a 354-bit lower correction recovered the two primes on a selected 2,048-bit input. Even if every interval were cheap to check, the same tolerance across all 512 tested bases reaches fewer than one in $2^{113}$ eligible prime pairs. [Checked result, alternative search and frequency proof](checking-a-range-of-product-carries.md)
 
 Rounding two digits of the product can predict a weighted sum of the hidden primes without guessing either weight. The rule recovered both primes of two constructed 2,048-bit numbers. A second proof bounds how often a random prime pair can meet the rule, including accidental squares. [Results, construction and population bound](factoring-from-two-rounded-digits.md)

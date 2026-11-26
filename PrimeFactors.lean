@@ -343,6 +343,9 @@ import PrimeFactors.CarryRadixCoverage
 import PrimeFactors.LowBitsCarryMenu
 import PrimeFactors.CenteredCarryDistances
 import PrimeFactors.CarryInterval
+import PrimeFactors.NeighborRadixDivisors
+import PrimeFactors.NeighborRadixExample
+import PrimeFactors.NeighborRadixPopulation
 import PrimeFactors.ShiftedDyadicMidpoints
 import PrimeFactors.TrueTraceTableCost
 import PrimeFactors.TraceGapPopulation

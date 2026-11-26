@@ -1,12 +1,14 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Latest checked search](discoveries/checking-a-range-of-product-carries.md) · [General search bounds](discoveries/recursive-integer-valued-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Latest checked search](discoveries/choosing-a-base-from-the-product.md) · [General search bounds](discoveries/recursive-integer-valued-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have factored specially constructed 2,048-bit examples. In some we chose primes whose sum was easy to guess. In others we chose primes with a predictable pattern in their binary digits. For each successful example, Lean verified that the answers were prime and that multiplying them gave the original number. That check starts *after* the search has found the answers.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?
+
+**A base chosen from the product found 337 × 401 where every comparable power of two missed.** On all 543 small test numbers of this size, the new rule found 34 pairs the other rule missed, and missed 59 it found. Even trying every large base dividing one of the two neighboring integers leaves this approach far short of a general 2,048-bit method. [Worked example, complete small comparison and full-size limits](discoveries/choosing-a-base-from-the-product.md)
 
 **Two square tests covered a range of guesses large enough to contain a 354-bit error.** The search recovered the primes of a deliberately constructed 2,048-bit number. An older method also solved it. On two earlier products, the new approach left most ranges unresolved. [What made the example easy, and which ranges we could rule out](discoveries/checking-a-range-of-product-carries.md)
 

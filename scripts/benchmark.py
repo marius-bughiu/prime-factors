@@ -155,8 +155,13 @@ def certify_split(case, proof, factor, search_seconds, key, work):
 
 def check_carry_probe(n, factor, hit, factor_proof):
     """Replay the reported radix and signed corrections as a public Lean computation."""
-    exponent, high, low = hit['exponent'], hit['high'], hit['low']
-    radix = 1 << exponent
+    high, low = hit['high'], hit['low']
+    if 'radix' in hit:
+        radix = hit['radix']
+        radix_term = str(radix)
+    else:
+        radix = 1 << hit['exponent']
+        radix_term = f"(2^{hit['exponent']})"
     coefficient = radix_carries.nearest(n, radix*radix) + high
     trace = coefficient*radix + radix_carries.nearest(n, radix) - low
     root = isqrt(trace*trace - 4*coefficient*n)
@@ -168,7 +173,7 @@ set_option exponentiation.threshold 8192
 set_option maxRecDepth 8192
 
 theorem {theorem} :
-    PrimeFactors.PredictedTraceCarries.probe {n} (2^{exponent}) ({high}) ({low})=some {factor} := by
+    PrimeFactors.PredictedTraceCarries.probe {n} {radix_term} ({high}) ({low})=some {factor} := by
   apply PrimeFactors.PredictedTraceCarries.probe_of_square
     (c:={coefficient}) (t:={trace}) (r:={root})
   all_goals decide +kernel
@@ -428,7 +433,12 @@ def run_case(case, method, proofs):
     elif method == 'radix-carries':
         n = int(case['n'])
         high, low = case['high_budget'], case['low_budget']
-        factor, work = radix_carries.search(n, high, low)
+        if 'max_neighbor_checks' in case:
+            factor, work = radix_carries.search_neighbors(n, high, low, case['max_neighbor_checks'])
+            agree(case, work, ['neighbor_checks'])
+            work['max_neighbor_checks'] = case['max_neighbor_checks']
+        else:
+            factor, work = radix_carries.search(n, high, low)
         elapsed = time.perf_counter() - start
         agree(case, work, ['radices', 'candidates', 'square_tests', 'square_hits', 'hit'])
         work.update(high_budget=high, low_budget=low)

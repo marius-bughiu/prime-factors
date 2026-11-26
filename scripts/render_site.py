@@ -476,12 +476,17 @@ def case_row(result):
             count += ' · recovered low correction ' + ', '.join(escape(hit['low']) for hit in w['hits'])
     elif result['method'] == 'radix-carries':
         w = result['radix_carries']
-        count = (f'{w["radices"]:,} dyadic radices · high correction ±{w["high_budget"]:,}, '
+        radices = f'{w["radices"]:,} dyadic radices'
+        if "neighbor_checks" in w:
+            radices = (f'{w["neighbor_checks"]:,} of {w["max_neighbor_checks"]:,} base remainders checked · '
+                       f'{w["radices"]:,} bases dividing N−1 or N+1 tested')
+        count = (f'{radices} · high correction ±{w["high_budget"]:,}, '
                  f'low correction ±{w["low_budget"]:,} · {w["candidates"]:,} candidates · '
                  f'{w["square_tests"]:,} square tests · {w["square_hits"]:,} exact squares')
         if w['hit'] is not None:
             hit = w['hit']
-            count += (f' · factor recovered at 2<sup>{hit["exponent"]}</sup> '
+            base = str(hit["radix"]) if "radix" in hit else f'2<sup>{hit["exponent"]}</sup>'
+            count += (f' · factor recovered at {base} '
                       f'with corrections ({hit["high"]}, {hit["low"]})')
     elif result['method'] == 'trace-transfer':
         w = result['trace_transfer']

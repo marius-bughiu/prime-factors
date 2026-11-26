@@ -1,6 +1,6 @@
 import unittest
 
-from experiments.radix_carries import nearest, search
+from experiments.radix_carries import nearest, search, search_neighbors
 
 
 class RadixCarryTests(unittest.TestCase):
@@ -20,3 +20,13 @@ class RadixCarryTests(unittest.TestCase):
         self.assertGreater(work["square_hits"], 0)
         self.assertEqual(work["candidates"], work["radices"] * 81)
         self.assertIsNone(work["hit"])
+
+    def test_neighbor_scan_counts_bases_before_the_winning_base(self):
+        divisor, short = search_neighbors(135137, 0, 2, 9)
+        self.assertIsNone(divisor)
+        self.assertEqual((short["neighbor_checks"], short["radices"]), (9, 1))
+        divisor, full = search_neighbors(135137, 0, 2, 10)
+        self.assertEqual(divisor, 337)
+        self.assertEqual(full["hit"], {"radix": 41, "high": 0, "low": -2})
+        self.assertEqual((full["neighbor_checks"], full["radices"]), (10, 2))
+        self.assertEqual(search_neighbors(15, 0, 2, 1)[0], 5)  # The radix divides N+1.
