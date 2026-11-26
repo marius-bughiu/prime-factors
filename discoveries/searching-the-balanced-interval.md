@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Rounding two digits of the product can predict a weighted sum of the hidden primes without guessing either weight. The rule recovered both primes of two constructed 2,048-bit numbers. A second proof bounds how often a random prime pair can meet the rule, including accidental squares. [Results, construction and population bound](factoring-from-two-rounded-digits.md)
+
 For any fixed base from 2 through $2048^2$, we can also bound accidental matches at just one prime. The chance of any matching comparison is below $2^{-66}$ on uniform eligible prime pairs, even allowing $2^{64}$ starting powers and $2^{64}$ initial blocks at every reduced direction with denominator through $2^{32}$. Even trying all those bases gives a fraction below $2^{-44}$. The bounded search really does split 33,017 at a wrong sum. [Mathematical scope, example and proof](can-an-accidental-match-find-the-primes.md)
 
 A weighted search plan for one product also covers every smaller positive product in its residue class modulo 12, with at most one extra candidate per active interval. We used four reusable plans to recover twelve previously unseen 88-bit and 89-bit pairs. [Transfer rule and timing comparison](reusing-a-factor-search.md)

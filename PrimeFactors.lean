@@ -334,6 +334,11 @@ import PrimeFactors.TraceCollisionOrder
 import PrimeFactors.TraceCollisionWidth
 import PrimeFactors.TraceCollisionPopulation
 import PrimeFactors.TraceCollisionLimit
+import PrimeFactors.PredictedTraceCarries
+import PrimeFactors.ShiftedEndpointPopulation
+import PrimeFactors.ShiftedEndpointProduct
+import PrimeFactors.ShiftedSmallRadices
+import PrimeFactors.ShiftedDyadicMidpoints
 import PrimeFactors.TrueTraceTableCost
 import PrimeFactors.TraceGapPopulation
 import PrimeFactors.SparseTraceDual

@@ -46,6 +46,7 @@ from experiments.monotone_divisor_sampling import scan as scan_divisor_prefixes,
 from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
 from experiments.smooth_factor_sums import scan_two_three
 from experiments.near_smooth_sum import search as near_smooth_search
+from experiments import radix_carries
 from scripts import near_smooth_certificate, trace_cover_certificate
 from experiments import trace_cover, trace_cover_transfer
 from experiments.gap_newton_lanes import search as gap_lane_search
@@ -150,6 +151,33 @@ def certify_split(case, proof, factor, search_seconds, key, work):
                        ['factors', 'remaining', 'status', 'verified', 'verification_seconds']})
         result['certificate_seconds'] = time.perf_counter() - certificate_start
     return result
+
+
+def check_carry_probe(n, factor, hit, factor_proof):
+    """Replay the reported radix and signed corrections as a public Lean computation."""
+    exponent, high, low = hit['exponent'], hit['high'], hit['low']
+    radix = 1 << exponent
+    coefficient = radix_carries.nearest(n, radix*radix) + high
+    trace = coefficient*radix + radix_carries.nearest(n, radix) - low
+    root = isqrt(trace*trace - 4*coefficient*n)
+    theorem = 'PrimeFactors.Generated.radix_carry_probe'
+    proof = factor_proof.with_name(f'{factor_proof.stem}-trace.lean')
+    proof.write_text(f"""import PrimeFactors.PredictedTraceCarries
+
+set_option exponentiation.threshold 8192
+set_option maxRecDepth 8192
+
+theorem {theorem} :
+    PrimeFactors.PredictedTraceCarries.probe {n} (2^{exponent}) ({high}) ({low})=some {factor} := by
+  apply PrimeFactors.PredictedTraceCarries.probe_of_square
+    (c:={coefficient}) (t:={trace}) (r:={root})
+  all_goals decide +kernel
+
+#print axioms {theorem}
+""")
+    start = time.perf_counter()
+    verify_file(proof, theorem)
+    return dict(proof=f'proofs/{proof.name}', seconds=time.perf_counter()-start)
 
 
 def verify_interval(n, work, proof, module, application):
@@ -334,6 +362,16 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'radix-carries':
+        n = int(case['n'])
+        high, low = case['high_budget'], case['low_budget']
+        factor, work = radix_carries.search(n, high, low)
+        elapsed = time.perf_counter() - start
+        agree(case, work, ['radices', 'candidates', 'square_tests', 'square_hits', 'hit'])
+        work.update(high_budget=high, low_budget=low)
+        result = certify_split(case, proof, factor, elapsed, 'radix_carries', work)
+        if factor is not None:
+            result['carry_proof'] = check_carry_probe(n, factor, work['hit'], proof)
     elif method == 'near-smooth-sum':
         n = int(case['n'])
         tolerance = int(case['tolerance'])
@@ -1260,6 +1298,7 @@ def main():
                              ('weighted-stride.json', 'weighted-stride'),
                              ('trace-cover.json', 'trace-cover'),
                              ('trace-transfer.json', 'trace-transfer'),
+                             ('radix-carries.json', 'radix-carries'),
                              ('weighted-sparse.json', 'weighted-sparse'),
                              ('weighted-base.json', 'weighted-base'),
                              ('quartic-trace.json', 'quartic-trace'),

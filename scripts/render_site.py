@@ -56,6 +56,10 @@ def case_row(result):
             claim = f'Lean excludes every even factor gap through {int(x["max_gap"]):,}.'
         evidence += f'<p>{claim} <a href="{escape(x["proof"])}">Download exclusion proof</a></p>'
         verification = duration(x['verification_seconds']) + ' (exclusion proof)'
+    if 'carry_proof' in result:
+        witness = result['carry_proof']
+        evidence += f'<p><a href="{escape(witness["proof"])}">Download the signed-carry calculation</a></p>'
+        verification += f' + {duration(witness["seconds"])} (carry calculation)'
     if 'schedule_proof' in result:
         sp = result['schedule_proof']
         if not checked:
@@ -453,6 +457,15 @@ def case_row(result):
         count = (f'Base selection · {selection["bases_tested"]:,} of {w["max_primes"]:,} primes tested'
                  f' · combined order {escape(selection["combined_order"])}'
                  f' · {escape(w["outcome"].replace("_", " "))}')
+    elif result['method'] == 'radix-carries':
+        w = result['radix_carries']
+        count = (f'{w["radices"]:,} dyadic radices · high correction ±{w["high_budget"]:,}, '
+                 f'low correction ±{w["low_budget"]:,} · {w["candidates"]:,} candidates · '
+                 f'{w["square_tests"]:,} square tests · {w["square_hits"]:,} exact squares')
+        if w['hit'] is not None:
+            hit = w['hit']
+            count += (f' · factor recovered at 2<sup>{hit["exponent"]}</sup> '
+                      f'with corrections ({hit["high"]}, {hit["low"]})')
     elif result['method'] == 'trace-transfer':
         w = result['trace_transfer']
         template, ops = w['template'], w['work']

@@ -1,12 +1,14 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Latest checked search](discoveries/can-an-accidental-match-find-the-primes.md) · [General search bounds](discoveries/recursive-integer-valued-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Latest checked search](discoveries/factoring-from-two-rounded-digits.md) · [General search bounds](discoveries/recursive-integer-valued-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have factored specially constructed 2,048-bit examples where we chose primes whose sum was easy to guess. For each successful example, Lean verified that the answers were prime and that multiplying them gave the original number. That check starts *after* the search has found the answers.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?
+
+**The digits of two specially built 2,048-bit numbers gave away their primes.** The searches took 129 and 996 square-root tests. Two earlier numbers of the same size each survived 41,472 guesses. We proved that this particular search can work on fewer than one in $2^{234}$ randomly chosen target pairs. [Worked example with 143, full-size comparisons and proof](discoveries/factoring-from-two-rounded-digits.md)
 
 **A wrong guess found the factors of 33,017. We also worked out how rarely that trick can help at full size.** The program guessed the two primes added up to 366. The sum is 378, but the calculation still revealed 241 and 137. Even trying over four million bases in this search, with an enormous budget for every one, can find a match on fewer than one in 17.5 trillion randomly chosen target pairs. This helps explain why our small successes do not give us a way to factor an ordinary 617-digit number. [Example, limits and proof](discoveries/can-an-accidental-match-find-the-primes.md)
 
