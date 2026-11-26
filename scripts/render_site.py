@@ -476,6 +476,16 @@ def case_row(result):
                           f' ({duration(search["direct_seconds"])})')
         elif search['work']['unvisited_terms']:
             count += f' · {compact_count(search["work"]["unvisited_terms"])} original terms unvisited'
+        comparisons = search.get('adaptive_comparisons', {})
+        if comparisons and not block:
+            count += ' · neither adaptive method began a scalar product'
+        for mode, run in comparisons.items():
+            ops = run['block_work']
+            if ops:
+                count += (f' · {mode.replace("_", "-")} {ops["square_products"]} products modulo N²'
+                          f' and {ops["cube_products"]} modulo N³ ({duration(run["seconds"])})')
+            if ops and run['quadratic'] is None:
+                count += ' · finished at the linear reading'
     elif result['method'] == 'geometric-sum-binary':
         search = result['geometric_sum_binary']
         work = search['work']

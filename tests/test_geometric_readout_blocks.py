@@ -59,3 +59,44 @@ class GeometricBlockTests(unittest.TestCase):
         self.assertEqual(b['work']['modular_powers'], 0)
         self.assertEqual(search(77, 7, 0)['factor'], 7)
         self.assertEqual(search(13, 2, 0)['outcome'], 'no_product_hit')
+
+
+class GeometricAdaptiveTests(unittest.TestCase):
+    def test_linear_paths_do_not_measure_quadratic_values(self):
+        for base, expected in [(2, 'linear_sum'), (13, 'linear_gcd')]:
+            reference = search(33127, base, 16)
+            for mode, counts in [('cube_first', (0, 3)), ('square_first', (3, 0))]:
+                adaptive = search(33127, base, 16, mode=mode)
+                self.assertEqual(adaptive['outcome'], expected)
+                self.assertEqual(adaptive['factor'], reference['factor'])
+                self.assertEqual(adaptive['linear'], reference['linear'])
+                self.assertIsNone(adaptive['quadratic'])
+                ops = adaptive['block_work']
+                self.assertEqual((ops['square_products'], ops['cube_products']), counts)
+                self.assertEqual(ops['root_polynomials'], 2)
+                self.assertEqual(ops['exact_divisions'], 2)
+
+    def test_six_samples_on_quadratic_branches(self):
+        for n, base in [(34393, 23), (30353, 22), (33127, 12)]:
+            ref = search(n, base, 16)
+            for mode, low in [('cube_first', 0), ('square_first', 3)]:
+                r = search(n, base, 16, mode=mode)
+                for key in ['constant', 'linear', 'quadratic', 'outcome', 'factor',
+                            'winning_index', 'quotient_hits', 'equal_hits', 'work']:
+                    self.assertEqual(r[key], ref[key])
+                ops = r['block_work']
+                self.assertEqual(ops['cube_products'], 6)
+                self.assertEqual(ops['square_products'], low)
+                self.assertEqual(ops['exact_divisions'], 7)
+                self.assertEqual(ops['root_polynomials'], 3 if low == 0 else 5)
+                self.assertEqual(ops['block_evaluations'], (6+low)*r['blocks_per_scalar'])
+
+    def test_caps_precede_either_precision(self):
+        for mode in ['cube_first', 'square_first']:
+            r = search(104757924493, 2, 198, mode=mode)
+            self.assertEqual(r['outcome'], 'block_width_limit')
+            self.assertIsNone(r['linear'])
+            self.assertNotIn('block_work', r)
+            self.assertEqual(r['work']['modular_powers'], 0)
+        with self.assertRaises(ValueError):
+            search(33127, 2, 64, mode='unknown')

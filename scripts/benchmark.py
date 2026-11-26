@@ -396,6 +396,34 @@ def short_basis_case(case, proof):
     return certify_split(case, proof, factor, elapsed, 'short_basis', work)
 
 
+def compare_adaptive_readings(case, reference):
+    comparisons = {}
+    saved_fields = ['outcome', 'constant', 'linear', 'quadratic', 'readout_index', 'winning_index',
+                    'factor', 'quotient_hits', 'equal_hits']
+    for mode in ('cube_first', 'square_first'):
+        start = time.perf_counter()
+        run = geometric_readout_blocks.search(int(case['n']), case['base'], case['max_block_width'],
+                                              case['max_quotient'], mode=mode)
+        seconds = time.perf_counter()-start
+        for field in saved_fields:
+            if field == 'quadratic' and run[field] is None:
+                continue
+            if run[field] != reference[field]:
+                raise ValueError(f"{case['id']}: {mode} and seven-product {field} disagree")
+        ops = run.get('block_work', {})
+        measured = dict(square_products=ops.get('square_products', 0),
+                        cube_products=ops.get('cube_products', 0),
+                        root_polynomials=ops.get('root_polynomials', 0),
+                        block_evaluations=ops.get('block_evaluations', 0),
+                        quadratic_available=run['quadratic'] is not None)
+        if measured != case['adaptive_checks'][mode]:
+            raise ValueError(f"{case['id']}: unexpected {mode} measurements")
+        comparisons[mode] = {key: run[key] for key in saved_fields}
+        comparisons[mode].update(seconds=seconds, block_work=ops, work=run['work'],
+                                 factor=str(run['factor']) if run['factor'] is not None else None)
+    return comparisons
+
+
 def run_case(case, method, proofs):
     name = case['id']
     if not re.fullmatch(r'[a-zA-Z0-9_-]+', name):
@@ -433,6 +461,8 @@ def run_case(case, method, proofs):
             if any(search[key] != direct[key] for key in keys):
                 raise ValueError(f'{name}: blocked product and direct readout disagree')
         agree(case, search, ['direct_outcome', 'matched_readings'])
+        if 'adaptive_checks' in case:
+            search['adaptive_comparisons'] = compare_adaptive_readings(case, search)
         result = certify_split(case, proof, search.pop('factor'), elapsed, 'geometric_readout_blocks', search)
     elif method == 'geometric-sum-binary':
         args = int(case['n']), case['base'], case['max_terms'], case['max_quotient']

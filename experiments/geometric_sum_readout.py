@@ -88,7 +88,9 @@ def _lane(n, base, origin, end, stride, count, step_base, max_terms, max_quotien
                     jet_updates=3*count)
     else:
         (constant, linear, quadratic), report['block_work'] = reader(n, step_base, target, count)
-    report.update(constant=constant, linear=linear, quadratic=quadratic)
+    # An adaptive reader supplies the next measurements only on this path.
+    report.update(constant=constant, linear=linear,
+                  quadratic=None if callable(quadratic) else quadratic)
     if constant:
         common = coefficient_gcd(constant)
         return (finish("product_gcd", common) if common > 1 else finish("no_product_hit"))
@@ -111,6 +113,9 @@ def _lane(n, base, origin, end, stride, count, step_base, max_terms, max_quotien
     intercept_gcd = coefficient_gcd(linear[0])
     if 1 < intercept_gcd < n:
         return finish("linear_intercept_gcd", intercept_gcd)
+    if callable(quadratic):
+        quadratic = quadratic()
+        report["quadratic"] = quadratic
     c0, cplus, cminus = quadratic
     a = (cplus+cminus-2*c0) % n
     b = (cminus-cplus) % n
