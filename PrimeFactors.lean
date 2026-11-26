@@ -286,6 +286,11 @@ import PrimeFactors.QuarticSquareRemainder
 import PrimeFactors.SquareRootPolynomialFormula
 import PrimeFactors.SquareRootFormulaPopulation
 import PrimeFactors.SquareRootFormulaExamples
+import PrimeFactors.FixedDivisorSignatures
+import PrimeFactors.LastPowerGCD
+import PrimeFactors.PowerChainReceipt
+import PrimeFactors.ProductExponentPopulation
+import PrimeFactors.SquareRootPowerPopulation
 import PrimeFactors.HasseHankelBilinear
 import PrimeFactors.HankelProbePolynomial
 import PrimeFactors.HankelProbePopulation

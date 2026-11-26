@@ -847,6 +847,18 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'power-chain':
+        w = result['power_chain']
+        label = 'Powers of two' if w['mode'] == 'powers-of-two' else 'Divisors of the product minus one'
+        count = f'{label} · {w["initial_powers"]} initial modular powers · {w["squarings"]:,} squarings · {w["gcd_calls"]} gcds'
+        if w['first_whole'] is not None:
+            count += f' · first residue equal to one at index {w["first_whole"]}'
+        if 'power_chain_proof' in result:
+            receipt = result['power_chain_proof']
+            link = escape(receipt['proof'], quote=True)
+            evidence += f'<p><a href="{link}">Download the power-chain proof</a></p>'
+            if not checked:
+                verification = duration(receipt['verification_seconds']) + ' (power-chain proof)'
     elif result['method'] == 'adaptive-quartic':
         w = result['adaptive_quartic']
         count = f'{w["jacobi_tests"]} sign tests · {w["gcd_calls"]} gcds'
