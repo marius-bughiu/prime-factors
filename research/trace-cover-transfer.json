@@ -1,0 +1,685 @@
+{
+  "seed": "frozen-89a-trace-holdout-v1",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.9.6",
+  "k": 231,
+  "baby_steps": 53130,
+  "max_giants": 262144,
+  "repetitions": 4,
+  "products_sha256": "81c5181d07366289a8f4f979bfe0e31966912821598e75de4ee75ba6a4423fa5",
+  "selection": "Indices 0..11 alternate 88 and 89 product bits. Factor candidates come from the square root of that bit band, so the factor ratio is below sqrt(2). Each unit residue modulo 24 appears at least once. SHA-256 selects the first factor residue and both starting offsets. The next prime in each prescribed class is taken before any search.",
+  "timing": "Single process. Four methods rotated by case and repetition. Each target time includes its own record allocation, table build and collision search. Archive and ceiling-template preparation are charged separately. Source optimality replay is optional for transfer. Earlier creation of the historical optimum took 155.15 s.",
+  "historic": {
+    "source_input": "439173623877940919234655961",
+    "cells": 9224,
+    "prepare_seconds": 0.21995058300000003,
+    "verify_optimality_seconds": 1.499184125,
+    "certificate_sha256": "b928437d9c3570c552eb906d373352f3720a16e7c8e14f760cb2ea04944551f0"
+  },
+  "family": {
+    "1": {
+      "source_input": "618970019642690137449562105",
+      "cells": 9931,
+      "blocks": 41359,
+      "boundary_cells": 1,
+      "universal_block_cap": 41360,
+      "prepare_seconds": 0.19975662500000002
+    },
+    "5": {
+      "source_input": "618970019642690137449562109",
+      "cells": 9950,
+      "blocks": 41240,
+      "boundary_cells": 4,
+      "universal_block_cap": 41244,
+      "prepare_seconds": 0.20127679100000018
+    },
+    "7": {
+      "source_input": "618970019642690137449562111",
+      "cells": 9960,
+      "blocks": 41163,
+      "boundary_cells": 0,
+      "universal_block_cap": 41163,
+      "prepare_seconds": 0.20461933399999976
+    },
+    "11": {
+      "source_input": "618970019642690137449562103",
+      "cells": 9806,
+      "blocks": 41288,
+      "boundary_cells": 0,
+      "universal_block_cap": 41288,
+      "prepare_seconds": 0.20246716599999992
+    }
+  },
+  "rows": [
+    {
+      "n": "182657281181428171915664953",
+      "bits": 88,
+      "residue": 1,
+      "methods": {
+        "historic": {
+          "giants": 25121,
+          "labels": 1081573112,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.751567,
+          "median_cpu_seconds": 0.751149
+        },
+        "fast": {
+          "giants": 23905,
+          "labels": 1190695221,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.872172,
+          "median_cpu_seconds": 0.868416
+        },
+        "family": {
+          "giants": 26629,
+          "labels": 1137441439,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.77783,
+          "median_cpu_seconds": 0.777154
+        },
+        "ordinary": {
+          "giants": 33904,
+          "labels": 1337952109,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.035391,
+          "median_cpu_seconds": 1.034452
+        }
+      },
+      "factors": [
+        "12695994837749",
+        "14387000271797"
+      ],
+      "lean_factorization": {
+        "file": "trace-transfer-00.lean",
+        "sha256": "90c4f0d5f866a3102b9e020b5941e4e70d5b3f1fe394ca9f4d16b8b2e9d8c228"
+      }
+    },
+    {
+      "n": "541763180846106101147620253",
+      "bits": 89,
+      "residue": 5,
+      "methods": {
+        "fast": {
+          "giants": 38782,
+          "labels": 1958857828,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.203426,
+          "median_cpu_seconds": 1.202202
+        },
+        "family": {
+          "giants": 40734,
+          "labels": 1952346065,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.088677,
+          "median_cpu_seconds": 1.084754
+        },
+        "ordinary": {
+          "giants": 51547,
+          "labels": 2300171179,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.42764,
+          "median_cpu_seconds": 1.425984
+        },
+        "historic": {
+          "giants": 59401,
+          "labels": 2896960629,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.547088,
+          "median_cpu_seconds": 1.545196
+        }
+      },
+      "factors": [
+        "23218126749407",
+        "23333630085379"
+      ],
+      "lean_factorization": {
+        "file": "trace-transfer-01.lean",
+        "sha256": "c8289bfec6679a22571ffc33c6c80f5b0e92cee080d72d9ac12524eaa80dc875"
+      }
+    },
+    {
+      "n": "164847949693077356365872991",
+      "bits": 88,
+      "residue": 7,
+      "methods": {
+        "family": {
+          "giants": 25037,
+          "labels": 1074684883,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.763224,
+          "median_cpu_seconds": 0.762484
+        },
+        "ordinary": {
+          "giants": 32623,
+          "labels": 1266459674,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.999897,
+          "median_cpu_seconds": 0.99877
+        },
+        "historic": {
+          "giants": 28153,
+          "labels": 1232197055,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.797413,
+          "median_cpu_seconds": 0.795239
+        },
+        "fast": {
+          "giants": 22848,
+          "labels": 1132765163,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.860137,
+          "median_cpu_seconds": 0.858687
+        }
+      },
+      "factors": [
+        "12528208862227",
+        "13158141878533"
+      ],
+      "lean_factorization": {
+        "file": "trace-transfer-02.lean",
+        "sha256": "368de5cf94f4915db70805c261b0c08388eaf811de7973d633b9dafb36d7e9a7"
+      }
+    },
+    {
+      "n": "428790321661203285953841467",
+      "bits": 89,
+      "residue": 11,
+      "methods": {
+        "ordinary": {
+          "giants": 46762,
+          "labels": 2043851777,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.375216,
+          "median_cpu_seconds": 1.372498
+        },
+        "historic": {
+          "giants": 63913,
+          "labels": 3199056802,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.638216,
+          "median_cpu_seconds": 1.632282
+        },
+        "fast": {
+          "giants": 34913,
+          "labels": 1755741474,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.115767,
+          "median_cpu_seconds": 1.113486
+        },
+        "family": {
+          "giants": 37877,
+          "labels": 1739865409,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.040488,
+          "median_cpu_seconds": 1.037693
+        }
+      },
+      "factors": [
+        "18677637299471",
+        "22957417728277"
+      ],
+      "lean_factorization": {
+        "file": "trace-transfer-03.lean",
+        "sha256": "0047f084a591e41d0babf7c9be5bf898e6b4a996fe5cad6593cac2df80368607"
+      }
+    },
+    {
+      "n": "275915371565770743755993917",
+      "bits": 88,
+      "residue": 13,
+      "methods": {
+        "historic": {
+          "giants": 29587,
+          "labels": 1329307095,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.818526,
+          "median_cpu_seconds": 0.817815
+        },
+        "fast": {
+          "giants": 28661,
+          "labels": 1434494241,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.94485,
+          "median_cpu_seconds": 0.944064
+        },
+        "family": {
+          "giants": 31151,
+          "labels": 1397972095,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.846673,
+          "median_cpu_seconds": 0.845716
+        },
+        "ordinary": {
+          "giants": 39425,
+          "labels": 1644409687,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.160263,
+          "median_cpu_seconds": 1.159203
+        }
+      },
+      "factors": [
+        "15867448818503",
+        "17388767074139"
+      ],
+      "lean_factorization": {
+        "file": "trace-transfer-04.lean",
+        "sha256": "ff7812869f8c733c9f71d0af932d5796fab0b5b3a0e46f7cbc4c3bf11f1614c4"
+      }
+    },
+    {
+      "n": "403337085227929423086533249",
+      "bits": 89,
+      "residue": 17,
+      "methods": {
+        "fast": {
+          "giants": 34016,
+          "labels": 1708722682,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.094943,
+          "median_cpu_seconds": 1.093778
+        },
+        "family": {
+          "giants": 37010,
+          "labels": 1684558641,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.005611,
+          "median_cpu_seconds": 1.004909
+        },
+        "ordinary": {
+          "giants": 45659,
+          "labels": 1984675333,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.362114,
+          "median_cpu_seconds": 1.360991
+        },
+        "historic": {
+          "giants": 50918,
+          "labels": 2499608003,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.334306,
+          "median_cpu_seconds": 1.332662
+        }
+      },
+      "factors": [
+        "18688101160909",
+        "21582561104261"
+      ],
+      "lean_factorization": {
+        "file": "trace-transfer-05.lean",
+        "sha256": "973ba123314fb3d9f22c6860cb4459e323135aa4729d50eeb45d1b759d412c18"
+      }
+    },
+    {
+      "n": "190952913273321923506257763",
+      "bits": 88,
+      "residue": 19,
+      "methods": {
+        "family": {
+          "giants": 27032,
+          "labels": 1156651542,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.794592,
+          "median_cpu_seconds": 0.793708
+        },
+        "ordinary": {
+          "giants": 34371,
+          "labels": 1363053026,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.052143,
+          "median_cpu_seconds": 1.051375
+        },
+        "historic": {
+          "giants": 29494,
+          "labels": 1326177218,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.820729,
+          "median_cpu_seconds": 0.820209
+        },
+        "fast": {
+          "giants": 24330,
+          "labels": 1211519466,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.87622,
+          "median_cpu_seconds": 0.875844
+        }
+      },
+      "factors": [
+        "13768093947731",
+        "13869233751473"
+      ],
+      "lean_factorization": {
+        "file": "trace-transfer-06.lean",
+        "sha256": "f23e1974e203bc8da12ae6345394340ec19a10b0d624acbedc695ecf5fbe6e8e"
+      }
+    },
+    {
+      "n": "424708686645486610968477167",
+      "bits": 89,
+      "residue": 23,
+      "methods": {
+        "ordinary": {
+          "giants": 46593,
+          "labels": 2034100877,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.364177,
+          "median_cpu_seconds": 1.36159
+        },
+        "historic": {
+          "giants": 63752,
+          "labels": 3183794537,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.594163,
+          "median_cpu_seconds": 1.592925
+        },
+        "fast": {
+          "giants": 34767,
+          "labels": 1748689141,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.088294,
+          "median_cpu_seconds": 1.087699
+        },
+        "family": {
+          "giants": 37754,
+          "labels": 1731564791,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.001555,
+          "median_cpu_seconds": 1.000463
+        }
+      },
+      "factors": [
+        "20019346045871",
+        "21214913098177"
+      ],
+      "lean_factorization": {
+        "file": "trace-transfer-07.lean",
+        "sha256": "2ae483d54b1e456270065e161dc789d7a393981d0189868bb17a83c106993151"
+      }
+    },
+    {
+      "n": "158912912782736192542949089",
+      "bits": 88,
+      "residue": 1,
+      "methods": {
+        "historic": {
+          "giants": 23914,
+          "labels": 1008827688,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.741268,
+          "median_cpu_seconds": 0.740594
+        },
+        "fast": {
+          "giants": 22542,
+          "labels": 1119730932,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.867912,
+          "median_cpu_seconds": 0.867259
+        },
+        "family": {
+          "giants": 24299,
+          "labels": 1060938385,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.755233,
+          "median_cpu_seconds": 0.754689
+        },
+        "ordinary": {
+          "giants": 32267,
+          "labels": 1247962907,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.997244,
+          "median_cpu_seconds": 0.996771
+        }
+      },
+      "factors": [
+        "12574514311897",
+        "12637697873737"
+      ],
+      "lean_factorization": {
+        "file": "trace-transfer-08.lean",
+        "sha256": "5c974f4192431a4866c95487a1163beedcd97d806a5940fdaf488ae8a99d7b71"
+      }
+    },
+    {
+      "n": "408614674016782234051183489",
+      "bits": 89,
+      "residue": 1,
+      "methods": {
+        "fast": {
+          "giants": 34208,
+          "labels": 1721630451,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.10179,
+          "median_cpu_seconds": 1.100686
+        },
+        "family": {
+          "giants": 37304,
+          "labels": 1701247622,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.015847,
+          "median_cpu_seconds": 1.015387
+        },
+        "ordinary": {
+          "giants": 45974,
+          "labels": 2001147265,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.374198,
+          "median_cpu_seconds": 1.372883
+        },
+        "historic": {
+          "giants": 32888,
+          "labels": 1617686528,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.939121,
+          "median_cpu_seconds": 0.938393
+        }
+      },
+      "factors": [
+        "19562298989011",
+        "20887865697499"
+      ],
+      "lean_factorization": {
+        "file": "trace-transfer-09.lean",
+        "sha256": "2a11eb7f3ec268ff588baa7f934e55bf884fa7350f779139ac8ceec9dadd111d"
+      }
+    },
+    {
+      "n": "251585823312438037976602177",
+      "bits": 88,
+      "residue": 1,
+      "methods": {
+        "family": {
+          "giants": 30375,
+          "labels": 1334915042,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.838563,
+          "median_cpu_seconds": 0.837793
+        },
+        "ordinary": {
+          "giants": 38092,
+          "labels": 1570236798,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.151324,
+          "median_cpu_seconds": 1.14956
+        },
+        "historic": {
+          "giants": 28547,
+          "labels": 1269347304,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.809914,
+          "median_cpu_seconds": 0.809237
+        },
+        "fast": {
+          "giants": 27473,
+          "labels": 1372289584,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.927826,
+          "median_cpu_seconds": 0.92704
+        }
+      },
+      "factors": [
+        "14682074593567",
+        "17135577244831"
+      ],
+      "lean_factorization": {
+        "file": "trace-transfer-10.lean",
+        "sha256": "d44a0e377862ee2edec2f97151cf46aa8af0a958faa40e1452135755e0db220e"
+      }
+    },
+    {
+      "n": "341706959372341428503568061",
+      "bits": 89,
+      "residue": 13,
+      "methods": {
+        "ordinary": {
+          "giants": 42834,
+          "labels": 1829991118,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.215112,
+          "median_cpu_seconds": 1.212764
+        },
+        "historic": {
+          "giants": 31824,
+          "labels": 1479327415,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.840539,
+          "median_cpu_seconds": 0.839742
+        },
+        "fast": {
+          "giants": 31548,
+          "labels": 1581691773,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 1.008999,
+          "median_cpu_seconds": 1.00485
+        },
+        "family": {
+          "giants": 34506,
+          "labels": 1555741628,
+          "outcome": "collision_divisor",
+          "median_wall_seconds": 0.967784,
+          "median_cpu_seconds": 0.963612
+        }
+      },
+      "factors": [
+        "17779374524897",
+        "19219290245213"
+      ],
+      "lean_factorization": {
+        "file": "trace-transfer-11.lean",
+        "sha256": "dad86a40420cf07e6b60e142f4d5eb79173d4cfa9ba1fd4dd3c7a681cca0db83"
+      }
+    }
+  ],
+  "summary": {
+    "all": {
+      "historic": {
+        "giants": 467512,
+        "sum_seconds": 12.63285,
+        "median_seconds": 0.830634,
+        "faster_than_fast": 8,
+        "first_case_with_setup_seconds": 0.971518,
+        "with_setup_seconds": 12.852801,
+        "with_setup_and_source_verification_seconds": 14.351985
+      },
+      "fast": {
+        "giants": 357993,
+        "sum_seconds": 11.962336,
+        "median_seconds": 0.976924,
+        "faster_than_fast": 0
+      },
+      "family": {
+        "giants": 389708,
+        "sum_seconds": 10.896077,
+        "median_seconds": 0.907228,
+        "faster_than_fast": 12,
+        "with_all_setup_seconds": 11.704197,
+        "first_case_with_all_setup_seconds": 1.58595,
+        "with_setup_per_product_seconds": 0.97535,
+        "first_case_with_its_class_setup_seconds": 0.977587
+      },
+      "ordinary": {
+        "giants": 490051,
+        "sum_seconds": 14.514719,
+        "median_seconds": 1.187688,
+        "faster_than_fast": 0
+      }
+    },
+    "historic_mod24": {
+      "historic": {
+        "giants": 110470,
+        "sum_seconds": 3.24187,
+        "median_seconds": 0.780741,
+        "faster_than_fast": 4
+      },
+      "fast": {
+        "giants": 108128,
+        "sum_seconds": 3.7697,
+        "median_seconds": 0.899999,
+        "faster_than_fast": 0
+      },
+      "family": {
+        "giants": 118607,
+        "sum_seconds": 3.387473,
+        "median_seconds": 0.808196,
+        "faster_than_fast": 4
+      },
+      "ordinary": {
+        "giants": 150237,
+        "sum_seconds": 4.558157,
+        "median_seconds": 1.093357,
+        "faster_than_fast": 0
+      }
+    },
+    "historic_mod12": {
+      "historic": {
+        "giants": 171881,
+        "sum_seconds": 4.900935,
+        "median_seconds": 0.81422,
+        "faster_than_fast": 6
+      },
+      "fast": {
+        "giants": 168337,
+        "sum_seconds": 5.723549,
+        "median_seconds": 0.936338,
+        "faster_than_fast": 0
+      },
+      "family": {
+        "giants": 184264,
+        "sum_seconds": 5.20193,
+        "median_seconds": 0.842618,
+        "faster_than_fast": 6
+      },
+      "ordinary": {
+        "giants": 232496,
+        "sum_seconds": 6.933532,
+        "median_seconds": 1.155794,
+        "faster_than_fast": 0
+      }
+    },
+    "other_mod12": {
+      "historic": {
+        "giants": 295631,
+        "sum_seconds": 7.731915,
+        "median_seconds": 1.440697,
+        "faster_than_fast": 2
+      },
+      "fast": {
+        "giants": 189656,
+        "sum_seconds": 6.238787,
+        "median_seconds": 1.091619,
+        "faster_than_fast": 0
+      },
+      "family": {
+        "giants": 205444,
+        "sum_seconds": 5.694147,
+        "median_seconds": 1.003583,
+        "faster_than_fast": 6
+      },
+      "ordinary": {
+        "giants": 257555,
+        "sum_seconds": 7.581187,
+        "median_seconds": 1.363145,
+        "faster_than_fast": 0
+      }
+    }
+  },
+  "reproduction": "python3 -m experiments.trace_cover_transfer --output REPORT --proof-dir PROOFS. To regenerate the Lean proofs alone, use --certify-report REPORT --proof-dir PROOFS."
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "trace-transfer-88",
+    "description": "Factor the first 88-bit holdout with a schedule transferred from an 89-bit template",
+    "n": "182657281181428171915664953",
+    "template_bits": 89,
+    "k": 231,
+    "baby_steps": 53130,
+    "max_giants": 262144,
+    "expected": {
+      "template": {
+        "source_input": "618970019642690137449562105",
+        "cells": 9931,
+        "blocks": 41359,
+        "boundary_cells": 1,
+        "universal_block_cap": 41360
+      },
+      "schedule_complete": true,
+      "limit": null,
+      "outcome": "collision_divisor",
+      "work": {
+        "base_gcds": 3,
+        "slope_visits": 9931,
+        "primitive_slopes": 9931,
+        "nonempty_slopes": 9930,
+        "giants": 26629,
+        "labels_covered": 1137441439,
+        "babies": 53130,
+        "order_gcds": 1,
+        "equality_checks": 0,
+        "polynomial_degree": 26629,
+        "evaluations": 53130,
+        "collision_gcds": 1,
+        "allocated_slopes": 9931
+      }
+    },
+    "status": "complete",
+    "factors": [
+      "12695994837749",
+      "14387000271797"
+    ],
+    "remaining": []
+  }
+]

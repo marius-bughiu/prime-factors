@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+A weighted search plan for one product also covers every smaller positive product in its residue class modulo 12, with at most one extra candidate per active interval. We used four reusable plans to recover twelve previously unseen 88-bit and 89-bit pairs. [Transfer rule and timing comparison](reusing-a-factor-search.md)
+
+With $2^{64}$ starting powers and $2^{64}$ blocks at each of the 23 weights, fewer than one in $2^{421}$ eligible prime pairs can have its actual weighted sum in the searched prefixes. The exact minimum number of table entries needed to reach a true sum on either full-size control exceeds $10^{152}$, even if the best weight and table size are known in advance. [Population and cost proofs](how-often-a-weighted-search-reaches-the-factors.md)
+
 We now have matching upper and lower certificates for the number of weighted search blocks across the entire balanced ratio range. On the 89-bit examples the minima are 33,010 and 32,802 at the earlier table sizes. On both 2,048-bit inputs even the exact two-slope schedule requires more than $2^{1017}$ single-label checks to cover that range. [Minimum schedules and which alternatives the lower bounds include](the-minimum-weighted-search.md)
 
 An approximate sum now recovers both primes on two constructed 2,048-bit products where the exact smooth sums miss. The larger actual error has 399 bits. Four quartics found the factors. Lean excluded the full family at tolerance $2^{400}$ on the two earlier comparisons. [Calculations, inputs and population bounds](near-a-smooth-prime-sum.md)

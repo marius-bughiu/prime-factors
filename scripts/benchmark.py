@@ -47,7 +47,7 @@ from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
 from experiments.smooth_factor_sums import scan_two_three
 from experiments.near_smooth_sum import search as near_smooth_search
 from scripts import near_smooth_certificate, trace_cover_certificate
-from experiments import trace_cover
+from experiments import trace_cover, trace_cover_transfer
 from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
 from experiments.quartic_three_row import search as three_row_search
@@ -826,6 +826,24 @@ end PrimeFactors.Generated
         agree(case, work, list(work))
         work.update(settings)
         result = certify_split(case, proof, run['factor'], elapsed, 'weighted_base', work)
+    elif method == 'trace-transfer':
+        n = int(case['n'])
+        if n.bit_length() > case['template_bits']:
+            raise ValueError(f'{name}: input exceeds the template size')
+        template, setup = trace_cover_transfer.ceiling_template(
+            case['template_bits'], n % 12, case['k'], case['baby_steps'])
+        search_start = time.perf_counter()
+        run = weighted_stride_search.search(n, case['k'], case['baby_steps'], case['max_giants'],
+                                            record_builder=template.records)
+        search_seconds = time.perf_counter() - search_start
+        factor = run.pop('factor')
+        setup_seconds = setup.pop('prepare_seconds')
+        work = dict(run, template=setup, template_bits=case['template_bits'], residue=n % 12,
+                    setup_seconds=setup_seconds, search_seconds=search_seconds)
+        for key, expected in case['expected'].items():
+            if work[key] != expected:
+                raise ValueError(f'{name}: unexpected transferred schedule or search count for {key}')
+        result = certify_split(case, proof, factor, time.perf_counter()-start, 'trace_transfer', work)
     elif method == 'trace-cover':
         n, block = int(case['n']), int(case['baby_steps'])
         plan, work, factor = trace_cover.compare(n, case['k'], block,
@@ -1241,6 +1259,7 @@ def main():
                              ('factorial-progressions.json', 'factorial-progressions'),
                              ('weighted-stride.json', 'weighted-stride'),
                              ('trace-cover.json', 'trace-cover'),
+                             ('trace-transfer.json', 'trace-transfer'),
                              ('weighted-sparse.json', 'weighted-sparse'),
                              ('weighted-base.json', 'weighted-base'),
                              ('quartic-trace.json', 'quartic-trace'),

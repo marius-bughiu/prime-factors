@@ -326,6 +326,11 @@ import PrimeFactors.WeightedCollisionReuse
 import PrimeFactors.WeightedRatioCover
 import PrimeFactors.TraceCoverCertificate
 import PrimeFactors.TraceProgression
+import PrimeFactors.TraceCoverTransfer
+import PrimeFactors.UniversalTraceCover
+import PrimeFactors.TraceHitFrequency
+import PrimeFactors.TracePrimePartners
+import PrimeFactors.TrueTraceTableCost
 import PrimeFactors.TraceGapPopulation
 import PrimeFactors.SparseTraceDual
 import PrimeFactors.SequentialTraceCover

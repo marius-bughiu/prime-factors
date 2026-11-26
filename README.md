@@ -2,11 +2,13 @@
 
 What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Latest checked search](discoveries/the-minimum-weighted-search.md) · [General search bounds](discoveries/recursive-integer-valued-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
-**Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. In our latest successful examples, we chose the primes so their sum was close to a number the search could guess. Lean checked that each recovered number was prime and that multiplying them gave the original input.
+**Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have factored specially constructed 2,048-bit examples where we chose primes whose sum was easy to guess. For each successful example, Lean verified that the answers were prime and that multiplying them gave the original number. That check starts *after* the search has found the answers.
 
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?
+
+**We reused four search plans to factor twelve new 27-digit numbers.** Building the plans and finding all twelve pairs took about 11.70 seconds in our comparison. Building a fresh plan for each number took about 11.96 seconds. The small saving came from avoiding repeated planning. The factor search at 617 digits remains impractical. [How a plan transfers and what it costs](discoveries/reusing-a-factor-search.md)
 
 **We can now tell when a weighted search has no more redundant blocks to remove.** On one 89-bit product the minimum fell from 34,264 blocks under our previous scheduling rules to 33,010 when we let the checks move freely. The search recovered both primes. Finding the best schedule took 155 seconds and running it took about one second. On the 2,048-bit comparisons we proved precise limits on the same idea. Even the optimized schedules remain impractical. [Results, costs and proofs](discoveries/the-minimum-weighted-search.md)
 

@@ -453,6 +453,15 @@ def case_row(result):
         count = (f'Base selection · {selection["bases_tested"]:,} of {w["max_primes"]:,} primes tested'
                  f' · combined order {escape(selection["combined_order"])}'
                  f' · {escape(w["outcome"].replace("_", " "))}')
+    elif result['method'] == 'trace-transfer':
+        w = result['trace_transfer']
+        template, ops = w['template'], w['work']
+        count = (f'Template setup {duration(w["setup_seconds"])} for {template["cells"]:,} ratio intervals'
+                 f' · at most {template["universal_block_cap"]:,} blocks for products below '
+                 f'2<sup>{w["template_bits"]}</sup> congruent to {w["residue"]} modulo 12'
+                 f' · factor search {duration(w["search_seconds"])}'
+                 f' · {ops["giants"]:,} blocks and {ops["babies"]:,} starting powers'
+                 f' · {ops["labels_covered"]:,} candidate sums represented')
     elif result['method'] == 'trace-cover':
         w = result['trace_cover']
         count = (f'{w["catalogue"]:,} weight pairs · minimum {w["optimum"]:,} blocks · '
