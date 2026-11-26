@@ -1,8 +1,10 @@
 # Searching the balanced interval
 
+Near the low end of the 2,048-bit range, the lower half of the feasible interval contains the smaller factor in more than 53.88% of the pairs in each qualifying product bin. The probability describes a population. The bin average does not determine where the smaller factor of an individual input lies. [Derivation and eligible bins](which-half-contains-the-smaller-prime.md)
+
 A population calculation bounds the mean length of the equal-width interval below 70% of the mean length using only the factor-ratio bound. Eight fresh 80-bit products required 21% fewer candidate divisors in total when the search used the shared prime width. Both 2048-bit controls still have more than $2^{1020}$ candidate integers. An independent polynomial approach captured all 61 mixed-prime products in a small exhaustive panel. [Equal-width comparisons](a-shorter-pascal-row-for-equal-width-primes.md) · [Translated coefficients](which-translated-coefficients-reveal-a-prime.md)
 
-A public cube-root estimate recovered both primes on two deliberately constructed 2,048-bit inputs. One lies outside the original polynomial family, and its predicted half-gap differs from the actual one by a 338-bit integer. Both ordinary controls remain unresolved. [Derivation, exact receipts and population bounds](factoring-near-a-cube-root-gap.md)
+A public cube-root estimate recovered both primes on two deliberately constructed 2,048-bit inputs. One lies outside the original polynomial family, and its predicted half-gap differs from the actual one by a 338-bit integer. This estimate missed on the fresh and crossed comparisons. [Derivation, exact receipts and population bounds](factoring-near-a-cube-root-gap.md)
 
 Choosing the base gave 130 smooth ordinary values on each full-size control. All failed the accompanying algebraic check. A bound for arbitrary choices of cubic polynomial explains the limitation at the tested sizes. When a square already exists, a new trace calculation recovers two real small-example relations that the original gcds lost. [Counts, proofs and paired readouts](choosing-a-cubic-and-reading-its-square.md)
 
@@ -10,15 +12,15 @@ A cubic square relation recovered 36,151 and 52,999 from their product alone. Ei
 
 Two negative remainders gave a factor on 43,423. For every balanced product congruent to 5 modulo 12 an unequal match provably exists, although finding the guaranteed one on a new full-size control would take more than $2^{1010}$ visits in the tested order. [Proof, small census and public scan](when-two-negative-remainders-give-a-factor.md)
 
-A small-prime multiplier score found 12 products in 24 trials. The ordinary search found 10 when given enough blocks to match both sieve marks and divisions on each input. Both full-size products remained unresolved. [Measured work and finite-interval theory](multipliers-for-polynomial-relations.md)
+A small-prime multiplier score found 12 products in 24 trials. The ordinary search found 10 when given enough blocks to match both sieve marks and divisions on each input. This multiplier search missed on both full-size comparisons. [Measured work and finite-interval theory](multipliers-for-polynomial-relations.md)
 
 Allowing up to 33,554,432 remainders per product and free choice of every combination still gives a successful fraction below $2^{-60}$ for the specified family. [Exact integer calculation and proof status](finite-budgets-for-weighted-subsets.md)
 
 For the same sixteen remainders, allowing any nonempty subset and either gcd sign still reaches fewer than one in $2^{277}$ eligible target pairs. [Checked population count](all-subsets-of-sixteen-square-tests.md) · [When the number of rows grows](growing-weighted-square-menus.md)
 
-On 2,100,271, precisely one of the 65,535 nonempty subsets of sixteen remainders multiplied to a square. Its three rows gave the factors 1,283 and 1,637. On both ordinary 2,048-bit controls all 65,535 subsets were excluded. [Three-row proof and comparisons](testing-three-weighted-remainders.md)
+On 2,100,271, precisely one of the 65,535 nonempty subsets of sixteen remainders multiplied to a square. Its three rows gave the factors 1,283 and 1,637. On both 2,048-bit comparisons all 65,535 subsets were excluded. [Three-row proof and comparisons](testing-three-weighted-remainders.md)
 
-A multiplier of the form $a^2N+b$ makes the first weighted remainder linear in the input. Combining two such remainders recovered 97 and 113 on a small example. Both ordinary 2,048-bit controls exhausted the search, and a population count explains the limitation even for much larger choices of $a,b$. [Derivation, coverage and comparisons](affine-multipliers-in-the-product.md)
+A multiplier of the form $a^2N+b$ makes the first weighted remainder linear in the input. Combining two such remainders recovered 97 and 113 on a small example. Both 2,048-bit comparisons exhausted the search, and a population count explains the limitation even for much larger choices of $a,b$. [Derivation, coverage and comparisons](affine-multipliers-in-the-product.md)
 
 Combining two nonsquare remainders found 22 extra answers among 2,753,877 products of 16-bit primes. Trying the next ordinary sum found 96,821 extra answers. A target-size count bounds how often the combined test can succeed even with many labels on each side. [Proof, examples and comparison](factoring-with-two-weighted-square-tests.md) · [Choosing both weights after seeing the product](how-often-two-weighted-remainders-can-split-a-product.md)
 

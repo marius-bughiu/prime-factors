@@ -269,6 +269,11 @@ import PrimeFactors.HasseTruncatedSeries
 import PrimeFactors.TranslatedHasse
 import PrimeFactors.HasseRecurrenceDegree
 import PrimeFactors.HankelTranslation
+import PrimeFactors.SquareRootShiftPartners
+import PrimeFactors.LowerHalfPrimeBins
+import PrimeFactors.HasseHankelBilinear
+import PrimeFactors.HankelProbePolynomial
+import PrimeFactors.HankelProbePopulation
 import PrimeFactors.HasseBinomialDerivative
 import PrimeFactors.ShortPascalRow
 import PrimeFactors.ShortRowPopulation

@@ -51,6 +51,7 @@ from experiments import geometric_precision_readout, geometric_sum_readout, radi
 from scripts import near_smooth_certificate, trace_cover_certificate
 from scripts.geometric_wheel_benchmark import wheel_readout_case
 from scripts.cubic_forced_benchmark import forced_case
+from experiments import hasse_hankel_probe
 from scripts.hasse_benchmark import hasse_case
 from scripts.short_pascal_benchmark import short_case
 from scripts.cubic_trace_benchmark import cubic_bases_case, cubic_readout_case, cubic_trace_case
@@ -517,6 +518,52 @@ def compare_adaptive_readings(case, reference):
         comparisons[mode].update(seconds=seconds, block_work=ops, work=run['work'],
                                  factor=str(run['factor']) if run['factor'] is not None else None)
     return comparisons
+
+
+def hankel_probe_case(case, proof):
+    n = int(case['n'])
+    start = time.perf_counter()
+    run = hasse_hankel_probe.search(n)
+    rows = run['rows']
+    raw = [g for row in rows for g in row['raw']]
+    hit = next(((i, j, g) for i, row in enumerate(rows) for j, g in enumerate(row['raw'])
+                if 1 < g < n), None)
+    control_gcds = sum(len(row[k]) for row in rows for k in ('residual', 'simple'))
+    control_gcds += len(run['random']) + len(run['descending_odd'])
+    work = dict(shifts_checked=len(rows), raw_gcds=len(raw), comparison_gcds=control_gcds,
+                raw_values=[str(g) for g in raw], first_shift=str(rows[hit[0]]['shift']) if hit else None,
+                first_start=hit[1] if hit else None)
+    elapsed = time.perf_counter() - start
+    agree(case, work, work)
+    result = certify_split(case, proof, hit[2] if hit else None, elapsed, 'hasse_hankel_probe', work)
+    if hit:
+        i, j, divisor = hit
+        shift = ('2', '3', f'(Nat.sqrt {n} : ℤ)', f'((Nat.sqrt {n} : ℤ) + 1)')[i]
+        coefficients = hasse_hankel_probe.POLYNOMIALS[j]
+        poly = ' + '.join(f'({a}) * (C^2)^{k} * (B^3)^{len(coefficients)-1-k}'
+                          for k, a in enumerate(coefficients))
+        prefactor = ('2*B*C^4', 'B*C^8')[j]
+        theorem = 'PrimeFactors.Generated.hankelProbeGcd'
+        reduce_shift = (f'  rw [show Nat.sqrt {n} = {isqrt(n)} by symm; '
+                        'exact Nat.eq_sqrt.mpr (by decide +kernel)]\n' if i >= 2 else '')
+        # Bind the actual public shift and signed polynomial to the same divisor
+        # used by the factor certificate. This arithmetic replay is outside discovery.
+        with proof.open('a') as source:
+            source.write(f"""
+theorem {theorem} :
+    let c : ℤ := {shift}
+    let B := 3*c^2-1
+    let C := c^3-c
+    Nat.gcd {n} (({prefactor}) * ({poly})).natAbs = {divisor} := by
+{reduce_shift}  decide +kernel
+#print axioms {theorem}
+""")
+        begin = time.perf_counter()
+        verify_file(proof, theorem)
+        checked_seconds = time.perf_counter() - begin
+        result['verification_seconds'] += checked_seconds
+        result['certificate_seconds'] += checked_seconds
+    return result
 
 
 def run_case(case, method, proofs):
@@ -1385,6 +1432,8 @@ end PrimeFactors.Generated
         work.update(coefficient=case['coefficient'], max_norm=case['max_norm'],
                     max_lifts=case['max_lifts'])
         result = certify_split(case, proof, factor, elapsed, 'polynomial_packet', work)
+    elif method == 'hasse-hankel-probe':
+        result = hankel_probe_case(case, proof)
     elif method == 'translated-hasse':
         result = hasse_case(case, proof, agree, certify_split)
     elif method == 'short-pascal':
@@ -1724,6 +1773,7 @@ def main():
                              ('cubic-forced.json', 'cubic-forced'),
                              ('short-pascal.json', 'short-pascal'),
                              ('translated-hasse.json', 'translated-hasse'),
+                             ('hasse-hankel-probe.json', 'hasse-hankel-probe'),
                              ('cubic-readout.json', 'cubic-readout'),
                              ('cubic-smooth-bases.json', 'cubic-smooth-bases'),
                              ('mixed-negative-template.json', 'mixed-negative-template'),

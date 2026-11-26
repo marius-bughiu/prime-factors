@@ -864,6 +864,12 @@ def case_row(result):
         else:
             count = (f"{compact_count(int(w['span']))} integers · wheel {w['wheel']}"
                      f" · {w['work'].get('blocks',0):,} blocks")
+    elif result['method'] == 'hasse-hankel-probe':
+        w = result['hasse_hankel_probe']
+        count = (f"{w['shifts_checked']} shifts · {w['raw_gcds']} determinant gcds"
+                 f" · {w['comparison_gcds']} comparison gcds")
+        if w['first_shift'] is not None:
+            count += f" · first factor at shift {escape(w['first_shift'])}, determinant {w['first_start'] + 1}"
     elif result['method'] == 'translated-hasse':
         count = hasse_summary(result['hasse'])
         if 'coefficient_proof' in result:

@@ -1,0 +1,467 @@
+{
+  "shifts": [
+    "2",
+    "3",
+    "isqrt(n)",
+    "isqrt(n)+1"
+  ],
+  "gcds_per_arm": 8,
+  "uniform_residue_seed": "20261126+n",
+  "population": "Every pair of distinct primes of the same bit width 4 through 10.",
+  "fixed_raw_bits": [
+    [
+      91,
+      149
+    ],
+    [
+      122,
+      202
+    ]
+  ],
+  "fixed_trial_primes_through_1023": [
+    [
+      [
+        2,
+        3,
+        5,
+        11
+      ],
+      [
+        2,
+        3,
+        5,
+        11,
+        61
+      ]
+    ],
+    [
+      [
+        2,
+        3,
+        5,
+        13
+      ],
+      [
+        2,
+        3,
+        5,
+        13,
+        23,
+        347,
+        613
+      ]
+    ]
+  ],
+  "totals": {
+    "raw": 298,
+    "residual": 201,
+    "simple": 108,
+    "random": 141,
+    "descending_odd": 724,
+    "raw_without_descending_odd": 177,
+    "descending_odd_without_raw": 603,
+    "raw_fixed": 127,
+    "raw_adaptive": 186,
+    "raw_adaptive_only": 171,
+    "raw_without_simple": 190,
+    "raw_without_fixed_or_simple": 69,
+    "raw_miss": 3743,
+    "raw_without_random": 288,
+    "random_without_raw": 131,
+    "common_nondegenerate_prime": 0,
+    "products": 4041
+  },
+  "by_factor_bits": {
+    "4": {
+      "raw": 1,
+      "residual": 1,
+      "simple": 1,
+      "random": 1,
+      "descending_odd": 1,
+      "raw_without_descending_odd": 0,
+      "descending_odd_without_raw": 0,
+      "raw_fixed": 1,
+      "raw_adaptive": 1,
+      "raw_adaptive_only": 0,
+      "raw_without_simple": 0,
+      "raw_without_fixed_or_simple": 0,
+      "raw_miss": 0,
+      "raw_without_random": 0,
+      "random_without_raw": 0,
+      "common_nondegenerate_prime": 0,
+      "products": 1
+    },
+    "5": {
+      "raw": 6,
+      "residual": 5,
+      "simple": 3,
+      "random": 3,
+      "descending_odd": 10,
+      "raw_without_descending_odd": 0,
+      "descending_odd_without_raw": 4,
+      "raw_fixed": 4,
+      "raw_adaptive": 6,
+      "raw_adaptive_only": 2,
+      "raw_without_simple": 3,
+      "raw_without_fixed_or_simple": 0,
+      "raw_miss": 4,
+      "raw_without_random": 4,
+      "random_without_raw": 1,
+      "common_nondegenerate_prime": 0,
+      "products": 10
+    },
+    "6": {
+      "raw": 11,
+      "residual": 7,
+      "simple": 6,
+      "random": 3,
+      "descending_odd": 21,
+      "raw_without_descending_odd": 0,
+      "descending_odd_without_raw": 10,
+      "raw_fixed": 6,
+      "raw_adaptive": 7,
+      "raw_adaptive_only": 5,
+      "raw_without_simple": 5,
+      "raw_without_fixed_or_simple": 0,
+      "raw_miss": 10,
+      "raw_without_random": 9,
+      "random_without_raw": 1,
+      "common_nondegenerate_prime": 0,
+      "products": 21
+    },
+    "7": {
+      "raw": 21,
+      "residual": 12,
+      "simple": 11,
+      "random": 11,
+      "descending_odd": 63,
+      "raw_without_descending_odd": 5,
+      "descending_odd_without_raw": 47,
+      "raw_fixed": 0,
+      "raw_adaptive": 21,
+      "raw_adaptive_only": 21,
+      "raw_without_simple": 10,
+      "raw_without_fixed_or_simple": 10,
+      "raw_miss": 57,
+      "raw_without_random": 21,
+      "random_without_raw": 11,
+      "common_nondegenerate_prime": 0,
+      "products": 78
+    },
+    "8": {
+      "raw": 28,
+      "residual": 16,
+      "simple": 12,
+      "random": 16,
+      "descending_odd": 110,
+      "raw_without_descending_odd": 13,
+      "descending_odd_without_raw": 95,
+      "raw_fixed": 0,
+      "raw_adaptive": 28,
+      "raw_adaptive_only": 28,
+      "raw_without_simple": 16,
+      "raw_without_fixed_or_simple": 16,
+      "raw_miss": 225,
+      "raw_without_random": 26,
+      "random_without_raw": 14,
+      "common_nondegenerate_prime": 0,
+      "products": 253
+    },
+    "9": {
+      "raw": 88,
+      "residual": 59,
+      "simple": 30,
+      "random": 43,
+      "descending_odd": 196,
+      "raw_without_descending_odd": 54,
+      "descending_odd_without_raw": 162,
+      "raw_fixed": 42,
+      "raw_adaptive": 48,
+      "raw_adaptive_only": 46,
+      "raw_without_simple": 58,
+      "raw_without_fixed_or_simple": 17,
+      "raw_miss": 815,
+      "raw_without_random": 87,
+      "random_without_raw": 42,
+      "common_nondegenerate_prime": 0,
+      "products": 903
+    },
+    "10": {
+      "raw": 143,
+      "residual": 101,
+      "simple": 45,
+      "random": 64,
+      "descending_odd": 323,
+      "raw_without_descending_odd": 105,
+      "descending_odd_without_raw": 285,
+      "raw_fixed": 74,
+      "raw_adaptive": 75,
+      "raw_adaptive_only": 69,
+      "raw_without_simple": 98,
+      "raw_without_fixed_or_simple": 26,
+      "raw_miss": 2632,
+      "raw_without_random": 141,
+      "random_without_raw": 62,
+      "common_nondegenerate_prime": 0,
+      "products": 2775
+    }
+  },
+  "examples": {
+    "raw_without_fixed_or_simple": {
+      "n": "5963",
+      "run": {
+        "rows": [
+          {
+            "shift": 2,
+            "raw": [
+              1,
+              1
+            ],
+            "residual": [
+              1,
+              1
+            ],
+            "simple": [
+              1,
+              1
+            ]
+          },
+          {
+            "shift": 3,
+            "raw": [
+              1,
+              1
+            ],
+            "residual": [
+              1,
+              1
+            ],
+            "simple": [
+              1,
+              1
+            ]
+          },
+          {
+            "shift": 77,
+            "raw": [
+              1,
+              1
+            ],
+            "residual": [
+              1,
+              1
+            ],
+            "simple": [
+              1,
+              1
+            ]
+          },
+          {
+            "shift": 78,
+            "raw": [
+              67,
+              1
+            ],
+            "residual": [
+              67,
+              1
+            ],
+            "simple": [
+              1,
+              1
+            ]
+          }
+        ],
+        "random": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "descending_odd": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          67,
+          1,
+          1
+        ]
+      },
+      "fermat_tests": 1
+    },
+    "also_missed_by_eight_nearby_trials": {
+      "n": "111281",
+      "run": {
+        "rows": [
+          {
+            "shift": 2,
+            "raw": [
+              1,
+              1
+            ],
+            "residual": [
+              1,
+              1
+            ],
+            "simple": [
+              1,
+              1
+            ]
+          },
+          {
+            "shift": 3,
+            "raw": [
+              1,
+              1
+            ],
+            "residual": [
+              1,
+              1
+            ],
+            "simple": [
+              1,
+              1
+            ]
+          },
+          {
+            "shift": 333,
+            "raw": [
+              1,
+              1
+            ],
+            "residual": [
+              1,
+              1
+            ],
+            "simple": [
+              1,
+              1
+            ]
+          },
+          {
+            "shift": 334,
+            "raw": [
+              257,
+              1
+            ],
+            "residual": [
+              257,
+              1
+            ],
+            "simple": [
+              1,
+              1
+            ]
+          }
+        ],
+        "random": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "descending_odd": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "fermat_tests": 12
+    }
+  },
+  "controls": {
+    "near-smooth-fresh-2048": {
+      "outcomes": {
+        "raw": false,
+        "residual": false,
+        "simple": false,
+        "random": false,
+        "descending_odd": false,
+        "raw_without_descending_odd": false,
+        "descending_odd_without_raw": false,
+        "raw_fixed": false,
+        "raw_adaptive": false,
+        "raw_adaptive_only": false,
+        "raw_without_simple": false,
+        "raw_without_fixed_or_simple": false,
+        "raw_miss": true,
+        "raw_without_random": false,
+        "random_without_raw": false,
+        "common_nondegenerate_prime": false
+      },
+      "raw": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "remaining": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    },
+    "near-smooth-crossed-2048": {
+      "outcomes": {
+        "raw": false,
+        "residual": false,
+        "simple": false,
+        "random": false,
+        "descending_odd": false,
+        "raw_without_descending_odd": false,
+        "descending_odd_without_raw": false,
+        "raw_fixed": false,
+        "raw_adaptive": false,
+        "raw_adaptive_only": false,
+        "raw_without_simple": false,
+        "raw_without_fixed_or_simple": false,
+        "raw_miss": true,
+        "raw_without_random": false,
+        "random_without_raw": false,
+        "common_nondegenerate_prime": false
+      },
+      "raw": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "remaining": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+# Which half contains the smaller prime?
+
+For a band of 2,048-bit products near the smallest possible value, the smaller prime lies in the lower half of its feasible integer interval **more than 53.88% of the time**. The choice uses only the product and the known bit widths. It gives a reason to search that half first. Both halves still contain exponentially many candidates, and for an individual product the search may have to visit both.
+
+Let $B=2^{1023}$. Draw two primes independently and uniformly from $[B,2B)$, condition on their being distinct and on their product lying in a public bin $(A,A+H]$, and order them as $p<q$. Each eligible unordered pair has the same probability. For every bin contained in $[2B^2,(2+1/1024)B^2]$, use the fixed cutoff $T=309B/256$. The bound on $\Pr(p\le T)$ holds unconditionally for $H\ge2^{-20}B^2$. Using the zeta RH statement exported by the pinned Riemann repository, it holds down to $H=2^{-484}B^2$. The latter width still spans $2^{1562}$ integers. Conditioning down to one specified product is outside this estimate. [Pinned theorem](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab/src/Main.lean#L1-L7) · [Statement of the zero-location property](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab/src/Statements.lean#L1-L7)
+
+For any product in the bin, its feasible smaller-prime interval has integer endpoints $L=\lceil N/(2B-1)\rceil$ and $U=\lfloor\sqrt N\rfloor$. Here $L\ge B+1$ and $U\ge181B/128$, since $181^2<2\cdot128^2$. Thus $L+U\ge2T+1$. At most half the integer candidates lie at or below $T$. This also holds for odd candidates by reflection about the even integer $T$. The earlier interval-width result estimates how much the known bit widths shrink the whole search. The present calculation gives a probability for choosing which side of that interval to test first. [Width and aggregate candidate counts](a-shorter-pascal-row-for-equal-width-primes.md)
+
+**Search cost.** Test odd candidates in a uniformly random order within the lower side, then within the upper side. Compared with shuffling the whole interval, this saves **more than 1.9412% of the full interval** in mean normalized candidate tests over each stated product bin. Each product contributes its own expected saving divided by its own number of odd candidates $W$. If $L_o$ candidates are on the lower side and $I$ is one when that side holds the smaller prime, the normalized saving is $(I-L_o/W)/2$. A candidate in a uniformly shuffled block of size $w$ is equally likely to occupy each rank from 1 to $w$, so its expected test rank is $(w+1)/2$. Averaging uses $L_o/W\le1/2$ and $\Pr(I=1)>0.538824$. The comparison charges one divisibility test per candidate. Batched search has different costs. [Rank identity and finite population bound](../PrimeFactors/LowerHalfPrimeBins.lean)
+
+## Counting the possible partners
+
+For a candidate prime $p$, its partner must lie in $(A/p,(A+H)/p]$, an interval of length $H/p$. This explains the bias toward smaller $p$. The exact number is a difference of two prime counts, with the partner interval clipped to $p<q<2B$. We bound the differences over groups of candidate primes. Evaluating the bound never requires a prime count at a 1,024-bit argument.
+
+For an interval of length $h$ inside $[B,2B]$, write $\epsilon$ for an upper bound on its prime-count error relative to $\int dt/\log t$. On this band $709<\log B<\log(2B)<710$. Under zeta RH, Schoenfeld's Corollary 1, equation (6.18), bounds each endpoint error by $\sqrt{2B}\log(2B)/(8\pi)$, so $\epsilon<100\sqrt B$. Unconditionally, partial summation of Axler's theta estimate gives $\epsilon<4\cdot10^{-13}B$. In either regime above, for each interval used below we have $h\ge H_{\min}/(2B)$, where $H_{\min}$ is the corresponding minimum bin width. This gives $710000\epsilon<h$. Consequently the two prime-count bounds are $lh$ and $uh$, where $l=999/(1000\cdot710)$ and $u=1001/(1000\cdot709)$. Only the narrower guarantee uses RH. [Schoenfeld, Corollary 1](https://doi.org/10.1090/S0025-5718-1976-0457374-X) · [Axler, Proposition 1.1](https://arxiv.org/pdf/2203.05917#page=1) · [Partial summation and finite error bounds](what-the-square-root-reveals-about-the-gap.md#removing-the-rh-assumption-from-the-decision)
+
+Divide the smaller-prime range into cells $(jB/1024,(j+1)B/1024]$. For $1025\le j<1236$, every partner interval lies strictly above $p$ and below $2B$. Each cell therefore contributes at least $l^2 H/(j+1)$ pairs with $p\le T$. We omit a short interval at the bottom, which only weakens this lower bound. Every pair with $p>T$ occurs in a cell $1236\le j<1449$, since $1449^2>2\cdot1024^2+1024$. In these cells counting the entire partner interval, including any partner below $p$, gives an upper bound of $u^2 H/j$ per cell. Those untrimmed partner intervals are still inside $[B,2B]$. Divide the lower sum by the lower sum plus the upper sum to obtain the claimed probability.
+
+Two narrower windows give a simpler comparison. For bins in the wider band $[2B^2,(2+1/64)B^2]$ satisfying the same minimum width ($2^{-20}B^2$ unconditionally or $2^{-484}B^2$ using RH), compare $(65B/64,66B/64]$ with $(89B/64,90B/64]$. All their partner intervals fit. The ratio of the lower window's pair count to the upper window's exceeds $(89/66)(l/u)^2>4/3$. Thus among pairs whose smaller factor lies in one of these two equal-width windows, more than four in seven lie in the lower one.
+
+The following exact rational calculation checks the numerical bounds. The positive lower counts also establish that the conditioning populations are nonempty. Lean checks the integer and odd-position injections in `target_positions`, the error budgets and rates in `discrepancy_constants` and `interval_rates`, and the two odds comparisons in `population` and `separated_windows`. The population theorem accepts the per-cell bounds and the coverage of the two sides as hypotheses. Applying the published prime-count estimates to those cells, including clipping the partner ranges, is the written argument above. [Finite proof](../PrimeFactors/LowerHalfPrimeBins.lean) · [Earlier theta-error arithmetic](../PrimeFactors/QuantileThetaBounds.lean)
+
+```python
+from fractions import Fraction as F
+
+assert 71_000_000**2 < 2**53                    # RH width
+assert 710000 * F(4, 10**13) < F(1, 2**21)    # unconditional width
+scale = F(999 * 709, 1001 * 710)**2
+low = scale * sum(F(1, j + 1) for j in range(1025, 1236))
+high = sum(F(1, j) for j in range(1236, 1449))
+assert low / (low + high) > F(538824, 1_000_000)
+assert F(89, 66) * scale > F(4, 3)
+```
