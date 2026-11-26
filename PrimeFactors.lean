@@ -133,6 +133,11 @@ import PrimeFactors.GeometricNegativeDirection
 import PrimeFactors.GeometricSparseFilter
 import PrimeFactors.ReflectedGeometricBlocks
 import PrimeFactors.OddSumWheel
+import PrimeFactors.GeometricWheelBlocks
+import PrimeFactors.GeometricPrecisionReadout
+import PrimeFactors.GeometricMultiplicityProbe
+import PrimeFactors.GeometricLatticePrecision
+import PrimeFactors.GeometricSmallRoot
 import PrimeFactors.ReusableSumBase
 import PrimeFactors.SignatureUpdates
 import PrimeFactors.FixedBaseSignature

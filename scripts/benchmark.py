@@ -47,8 +47,9 @@ from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
 from experiments.smooth_factor_sums import scan_two_three
 from experiments.near_smooth_sum import search as near_smooth_search
 from experiments import carry_interval, geometric_lifted_readout, geometric_readout_blocks
-from experiments import geometric_sum_readout, radix_carries, sum_signature_join
+from experiments import geometric_precision_readout, geometric_sum_readout, radix_carries, sum_signature_join
 from scripts import near_smooth_certificate, trace_cover_certificate
+from scripts.geometric_wheel_benchmark import wheel_readout_case
 from experiments import trace_cover, trace_cover_transfer
 from experiments.gap_newton_lanes import search as gap_lane_search
 from experiments.quartic_minor_gcd import search as minor_gcd_search
@@ -509,6 +510,18 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'geometric-precision-readout':
+        n = int(case['n'])
+        start = time.perf_counter()
+        run = geometric_precision_readout.search(n, case['base'], case['cap'], case['precision_policy'],
+                                                case['max_terms'], case['max_lattice_power'],
+                                                wheel=case['wheel'], auto_multiplicity=True)
+        elapsed = time.perf_counter()-start
+        run['lattice_dimension'] = run['lattice']['dimension'] if run['lattice'] else None
+        agree(case, run, ['outcome', 'multiplicity', 'precision', 'roots', 'retained', 'lattice_dimension'])
+        result = certify_split(case, proof, run.pop('factor'), elapsed, 'geometric_precision_readout', run)
+    elif method == 'geometric-wheel-readout':
+        result = wheel_readout_case(case, proof, agree, certify_split)
     elif method == 'geometric-lifted-readout':
         result = lifted_readout_case(case, proof)
     elif method == 'geometric-readout-blocks':
@@ -1541,6 +1554,8 @@ def main():
                              ('geometric-sum-binary.json', 'geometric-sum-binary'),
                              ('geometric-readout-blocks.json', 'geometric-readout-blocks'),
                              ('geometric-lifted-readout.json', 'geometric-lifted-readout'),
+                             ('geometric-wheel-readout.json', 'geometric-wheel-readout'),
+                             ('geometric-precision-readout.json', 'geometric-precision-readout'),
                              ('weighted-sparse.json', 'weighted-sparse'),
                              ('weighted-base.json', 'weighted-base'),
                              ('quartic-trace.json', 'quartic-trace'),

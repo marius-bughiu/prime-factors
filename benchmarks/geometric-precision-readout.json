@@ -1,0 +1,238 @@
+[
+  {
+    "id": "geometric-precision-mixed-rank",
+    "n": "793157",
+    "base": 79,
+    "wheel": true,
+    "cap": 5,
+    "precision_policy": null,
+    "max_terms": 128,
+    "max_lattice_power": 1,
+    "description": "Recover a common root across opposite local ranks on a masked interval",
+    "outcome": "polynomial_root",
+    "multiplicity": 2,
+    "precision": 1,
+    "roots": [
+      36
+    ],
+    "retained": "7",
+    "lattice_dimension": 3,
+    "factors": [
+      "727",
+      "1091"
+    ],
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "id": "geometric-precision-cubic-low",
+    "n": "30607",
+    "base": 8,
+    "wheel": false,
+    "cap": 5,
+    "precision_policy": 1,
+    "max_terms": 128,
+    "max_lattice_power": 1,
+    "description": "Try one prime digit with the same four-row lattice as the cubic recovery",
+    "outcome": "lattice_budget",
+    "multiplicity": 3,
+    "precision": 1,
+    "roots": [],
+    "retained": "22",
+    "lattice_dimension": null,
+    "factors": [],
+    "status": "partial",
+    "remaining": [
+      "30607"
+    ]
+  },
+  {
+    "id": "geometric-precision-cubic",
+    "n": "30607",
+    "base": 8,
+    "wheel": false,
+    "cap": 5,
+    "precision_policy": null,
+    "max_terms": 128,
+    "max_lattice_power": 1,
+    "description": "Recover the three-match sum with a second prime digit",
+    "outcome": "polynomial_root",
+    "multiplicity": 3,
+    "precision": 2,
+    "roots": [
+      18
+    ],
+    "retained": "22",
+    "lattice_dimension": 4,
+    "factors": [
+      "127",
+      "241"
+    ],
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "id": "geometric-precision-quartic",
+    "n": "45803",
+    "base": 59,
+    "wheel": false,
+    "cap": 5,
+    "precision_policy": null,
+    "max_terms": 128,
+    "max_lattice_power": 1,
+    "description": "Recover the factor sum after four geometric matches at each prime",
+    "outcome": "polynomial_root",
+    "multiplicity": 4,
+    "precision": 2,
+    "roots": [
+      15
+    ],
+    "retained": "25",
+    "lattice_dimension": 5,
+    "factors": [
+      "163",
+      "281"
+    ],
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "id": "geometric-precision-quintic",
+    "n": "81217",
+    "base": 8,
+    "wheel": false,
+    "cap": 5,
+    "precision_policy": null,
+    "max_terms": 128,
+    "max_lattice_power": 1,
+    "description": "Recover the factor sum after five geometric matches at each prime",
+    "outcome": "polynomial_root",
+    "multiplicity": 5,
+    "precision": 3,
+    "roots": [
+      8
+    ],
+    "retained": "35",
+    "lattice_dimension": 6,
+    "factors": [
+      "241",
+      "337"
+    ],
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "id": "geometric-precision-quintic-guaranteed",
+    "n": "81217",
+    "base": 8,
+    "wheel": false,
+    "cap": 5,
+    "precision_policy": "single_row",
+    "max_terms": 128,
+    "max_lattice_power": 1,
+    "description": "Use a public sufficient precision for one six-row lattice reduction",
+    "outcome": "polynomial_root",
+    "multiplicity": 5,
+    "precision": 5,
+    "roots": [
+      8
+    ],
+    "retained": "35",
+    "lattice_dimension": 6,
+    "factors": [
+      "241",
+      "337"
+    ],
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "id": "geometric-precision-probe-gcd",
+    "n": "33127",
+    "base": 13,
+    "wheel": false,
+    "cap": 5,
+    "precision_policy": null,
+    "max_terms": 128,
+    "max_lattice_power": 1,
+    "description": "One multiplicity probe gives a proper gcd before interpolation",
+    "outcome": "probe_gcd",
+    "multiplicity": null,
+    "precision": null,
+    "roots": [],
+    "retained": "22",
+    "lattice_dimension": null,
+    "factors": [
+      "157",
+      "211"
+    ],
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "id": "geometric-precision-order-cap",
+    "n": "33127",
+    "base": 33126,
+    "wheel": false,
+    "cap": 5,
+    "precision_policy": null,
+    "max_terms": 128,
+    "max_lattice_power": 1,
+    "description": "The chosen cap leaves too many local matches",
+    "outcome": "multiplicity_cap",
+    "multiplicity": null,
+    "precision": null,
+    "roots": [],
+    "retained": "22",
+    "lattice_dimension": null,
+    "factors": [],
+    "status": "partial",
+    "remaining": [
+      "33127"
+    ]
+  },
+  {
+    "id": "geometric-precision-fresh-2048",
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "base": 2,
+    "wheel": true,
+    "cap": 5,
+    "precision_policy": null,
+    "max_terms": 128,
+    "max_lattice_power": 1,
+    "description": "Stop before scalar construction on a full-size control",
+    "outcome": "term_limit",
+    "multiplicity": null,
+    "precision": null,
+    "roots": [],
+    "retained": "2401036348466318129958337375265201585536742745879119152281541569680460672638244200249501839390836573181481738370908934925527759459758046424367041409625701377182194248382077722801740685797871279503708294640227723588545721963078026455679131406691116385912754467294558849839991273590279298013897294525636368506",
+    "lattice_dimension": null,
+    "factors": [],
+    "status": "partial",
+    "remaining": [
+      "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    ]
+  },
+  {
+    "id": "geometric-precision-crossed-2048",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "base": 2,
+    "wheel": true,
+    "cap": 5,
+    "precision_policy": null,
+    "max_terms": 128,
+    "max_lattice_power": 1,
+    "description": "Stop before scalar construction on a full-size control",
+    "outcome": "term_limit",
+    "multiplicity": null,
+    "precision": null,
+    "roots": [],
+    "retained": "2047855729903681717185364730040067827586390959158114651486460659773607757278922734602543770834127912219070143959225709265366093959847673826508124554305803593716786108281162148788859289992447955998882719067851376295919382951315787746141081844650260663751503445623461185998062482594372618765481991665187041914",
+    "lattice_dimension": null,
+    "factors": [],
+    "status": "partial",
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  }
+]

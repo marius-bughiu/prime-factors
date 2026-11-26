@@ -460,6 +460,24 @@ def case_row(result):
         count = (f'Base selection · {selection["bases_tested"]:,} of {w["max_primes"]:,} primes tested'
                  f' · combined order {escape(selection["combined_order"])}'
                  f' · {escape(w["outcome"].replace("_", " "))}')
+    elif result['method'] == 'geometric-precision-readout':
+        search = result['geometric_precision_readout']
+        count = (f'{compact_count(int(search["retained"]))} sum positions · term cap {search["max_terms"]:,}'
+                 f' · multiplicity cap {search["probe"]["cap"]} · {escape(search["outcome"].replace("_", " "))}')
+        if search['multiplicity'] is not None:
+            count += f' · {search["multiplicity"]} matches per prime · precision {search["precision"]}'
+        if search['lattice'] is not None:
+            count += f' · dimension {search["lattice"]["dimension"]} · {len(search["roots"])} in-range roots'
+        if search['work']['unvisited']:
+            count += f' · {compact_count(int(search["work"]["unvisited"]))} retained sums unvisited'
+    elif result['method'] == 'geometric-wheel-readout':
+        search = result['geometric_wheel_readout']
+        count = (f'{compact_count(int(search["total_terms"]))} of {compact_count(int(search["dense_terms"]))} sums retained'
+                 f' · grid width {compact_count(search["required_width"])} · cap {search["max_block_width"]:,}'
+                 f' · {search["block_evaluations"]:,} block values · {search["scalar_products"]:,} lane evaluations'
+                 f' · {escape(search["outcome"].replace("_", " "))}')
+        if search['work']['unvisited_terms']:
+            count += f' · {compact_count(int(search["work"]["unvisited_terms"]))} retained sums unvisited'
     elif result['method'] == 'geometric-lifted-readout':
         search = result['geometric_lifted_readout']
         work = search['work']
