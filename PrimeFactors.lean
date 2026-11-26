@@ -249,6 +249,8 @@ import PrimeFactors.PhaseSeparation
 import PrimeFactors.PlantedHeightExample
 import PrimeFactors.PolynomialHeight
 import PrimeFactors.PolynomialRelations
+import PrimeFactors.MultiplierPolynomialRoots
+import PrimeFactors.MultiplierPolynomialScore
 import PrimeFactors.PolynomialRootPacking
 import PrimeFactors.PooledRelations
 import PrimeFactors.PowerSignature

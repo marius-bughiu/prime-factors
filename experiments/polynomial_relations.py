@@ -45,7 +45,7 @@ def join_roots(left, m, right, p):
     return left + m*((right-left)*pow(m, -1, p) % p)
 
 
-def polynomials(n, mode, bound, radius, blocks, base, work):
+def polynomials(n, mode, bound, radius, blocks, base, work, *, original=None):
     """Yield (A, centered B, square part, odd coefficient labels) without using the factors."""
     width = 2*radius+1
     if mode in ('single', 'centered'):
@@ -58,7 +58,7 @@ def polynomials(n, mode, bound, radius, blocks, base, work):
     target = max(1, isqrt(isqrt(2*n)//radius))
     scale, scale_root = 1, 0
     if target > 65535:
-        eligible = next(((p, roots[0]) for _, p, roots in base if p > 2), None)
+        eligible = next(((p, roots[0]) for _, p, roots in base if p > 2 and roots[0]), None)
         if eligible is None:
             work['outcome'] = 'coefficient_budget'
             return
@@ -78,7 +78,8 @@ def polynomials(n, mode, bound, radius, blocks, base, work):
     for p in choices:
         work['coefficient_prime_tests'] += 1
         if n % p == 0:
-            if p < n:
+            target_product = n if original is None else original
+            if p < target_product and target_product % p == 0:
                 work.update(factor=p, outcome='coefficient_gcd')
                 return
             continue
@@ -179,9 +180,11 @@ def analyze(n, rows, metadata, base_bits, policy):
     return work
 
 
-def search(n, mode, bound=BOUND, radius=RADIUS, blocks=BLOCKS, *, policy=None):
+def search(n, mode, bound=BOUND, radius=RADIUS, blocks=BLOCKS, *, policy=None, multiplier=1):
     if n <= 2 or n % 2 == 0 or mode not in SEARCH_MODES or min(radius, blocks) <= 0 or bound < 2:
         raise ValueError('expected an odd product, a known search mode and positive sieve dimensions')
+    if multiplier <= 0 or not multiplier % 2:
+        raise ValueError('expected a positive odd multiplier')
     policies = ('edges', 'coefficient', 'polynomial') if mode == 'edges' else ('base',)
     if policy is not None:
         if policy not in policies:
@@ -194,6 +197,13 @@ def search(n, mode, bound=BOUND, radius=RADIUS, blocks=BLOCKS, *, policy=None):
     root = isqrt(n)
     if root*root == n:
         return dict(work, factor=root, outcome='square')
+    if multiplier != 1:
+        common = gcd(multiplier, n)
+        if common == n:
+            raise ValueError('multiplier is a multiple of the entire input')
+        if common != 1:
+            return dict(work, factor=common, outcome='multiplier_gcd')
+    radicand = multiplier*n
     base = []
     for p in primes_through(bound):
         work['base_prime_tests'] += 1
@@ -201,16 +211,17 @@ def search(n, mode, bound=BOUND, radius=RADIUS, blocks=BLOCKS, *, policy=None):
             if p < n:
                 return dict(work, factor=p, outcome='base_gcd')
             continue
-        roots = local_roots_table(p)[n % p]
+        roots = (0,) if multiplier % p == 0 else local_roots_table(p)[radicand % p]
         if roots:
             base.append((1 << (len(base)+1), p, roots))
     work['base_size'] = len(base)
     rows, metadata = [], []
     width = 2*radius+1
-    for block, (a,b,square_part,edge) in enumerate(polynomials(n, mode, bound, radius, blocks, base, work)):
+    polys = polynomials(radicand, mode, bound, radius, blocks, base, work, original=n)
+    for block, (a,b,square_part,edge) in enumerate(polys):
         work['blocks'] += 1
         work['positions'] += width
-        smooth = sieve(n, a, b, radius, base, work)
+        smooth = sieve(radicand, a, b, radius, base, work)
         work['occupied_blocks'] += int(bool(smooth))
         inverse = pow(square_part, -1, n)
         for x, value, parity in smooth:

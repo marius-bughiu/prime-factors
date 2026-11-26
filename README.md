@@ -8,7 +8,11 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
-**Five remainders together gave 8,928,473 = 2,543 × 3,511.** They were the only group among the sixteen tested remainders whose product was a square. On two ordinary 2,048-bit inputs, small primes certified that all 65,535 combinations missed. Even with a perfect choice of combination, this method covers fewer than one in $2^{277}$ eligible full-size products. [Examples and checked limit](discoveries/all-subsets-of-sixteen-square-tests.md) · [Three-test comparison](discoveries/testing-three-weighted-remainders.md) A separate count allows 33,554,432 remainders on each product. Even that larger family can succeed on fewer than one in $2^{60}$ eligible products. [Larger search and proof status](discoveries/finite-budgets-for-weighted-subsets.md)
+**Choosing a multiplier found all eight fresh 79-bit examples.** The ordinary search found three at the same number of positions and seven when it received enough extra positions to match both marks and divisions. Neither full-size example produced a single usable row. [What the selector changes and what the comparison cost](discoveries/multipliers-for-polynomial-relations.md)
+
+**Five remainders together gave 8,928,473 = 2,543 × 3,511.** They were the only group among the sixteen tested remainders whose product was a square. On two ordinary 2,048-bit inputs, small primes certified that all 65,535 combinations missed. Even with a perfect choice of combination, this method covers fewer than one in $2^{277}$ eligible full-size products. [Examples and checked limit](discoveries/all-subsets-of-sixteen-square-tests.md) · [Three-test comparison](discoveries/testing-three-weighted-remainders.md)
+
+A separate count allows 33,554,432 remainders on each product. Even that larger family can succeed on fewer than one in $2^{60}$ eligible products. [Larger search and proof status](discoveries/finite-budgets-for-weighted-subsets.md)
 
 **Making a multiplier almost as large as the product still left a narrow search.** Two of these tests split 10,961 into 97 and 113. Ordinary Fermat search found those same primes on its first try. Even allowing the product to choose from the largest parameter range we studied, Lean bounds the chance of a split below one in $2^{229}$ on the target population. [How the large multipliers simplify](discoveries/affine-multipliers-in-the-product.md)
 

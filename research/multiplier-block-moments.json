@@ -1,0 +1,65 @@
+{
+  "source": "benchmarks/arbitrary-divisor-window.json",
+  "radius": 512,
+  "prime_bound": 97,
+  "prime_power_bound": 4096,
+  "weight_scale": 256,
+  "controls": [
+    {
+      "id": "arbitrary-divisor-window-fresh-2048",
+      "input_bits": 2048,
+      "compared": [
+        {
+          "multiplier": 1,
+          "root_lanes": 42,
+          "residues_tested": 43135,
+          "smooth_rows": 0
+        },
+        {
+          "multiplier": 3,
+          "root_lanes": 38,
+          "residues_tested": 43135,
+          "smooth_rows": 0
+        }
+      ],
+      "direct_positions_per_polynomial": 1025,
+      "pairwise_crt_checks": 3240,
+      "gain_sum": 114282,
+      "squared_gain_sum": 1809206080,
+      "classical_price_wins": 479,
+      "actual_price_wins": 480,
+      "mean_classical_price_bits": 0.79248125,
+      "mean_actual_price_bits": 0.79381558,
+      "net_mean_classical_bits": -0.35695534,
+      "net_mean_actual_bits": -0.35828967
+    },
+    {
+      "id": "arbitrary-divisor-window-crossed-2048",
+      "input_bits": 2048,
+      "compared": [
+        {
+          "multiplier": 1,
+          "root_lanes": 102,
+          "residues_tested": 43135,
+          "smooth_rows": 0
+        },
+        {
+          "multiplier": 3,
+          "root_lanes": 28,
+          "residues_tested": 43135,
+          "smooth_rows": 0
+        }
+      ],
+      "direct_positions_per_polynomial": 1025,
+      "pairwise_crt_checks": 8515,
+      "gain_sum": -1189535,
+      "squared_gain_sum": 3654945659,
+      "classical_price_wins": 154,
+      "actual_price_wins": 154,
+      "mean_classical_price_bits": 0.79248125,
+      "mean_actual_price_bits": 0.79085838,
+      "net_mean_classical_bits": -5.32577012,
+      "net_mean_actual_bits": -5.32414725
+    }
+  ]
+}

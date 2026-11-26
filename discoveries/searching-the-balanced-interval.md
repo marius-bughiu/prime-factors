@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A small-prime multiplier score found 12 products in 24 trials. The ordinary search found 10 when given enough blocks to match both sieve marks and divisions on each input. Both full-size products remained unresolved. [Measured work and finite-interval theory](multipliers-for-polynomial-relations.md)
+
 Allowing up to 33,554,432 remainders per product and free choice of every combination still gives a successful fraction below $2^{-60}$ for the specified family. [Exact integer calculation and proof status](finite-budgets-for-weighted-subsets.md)
 
 For the same sixteen remainders, allowing any nonempty subset and either gcd sign still reaches fewer than one in $2^{277}$ eligible target pairs. [Checked population count](all-subsets-of-sixteen-square-tests.md) · [When the number of rows grows](growing-weighted-square-menus.md)

@@ -102,6 +102,7 @@ from experiments.fraction_chains import search as fraction_chain_search
 from experiments.pair_class_search import search as same_source_pair_search
 from experiments.guided_pairs import cover as guided_pair_cover
 from experiments.seed_gap_sieve import search as seed_gap_search
+from experiments.multiplier_polynomials import search as multiplier_polynomial_search
 from experiments.polynomial_relations import search as polynomial_relation_search
 from experiments.polynomial_packet import search as polynomial_packet_search
 from experiments.norm_directions import search as norm_direction_search
@@ -1378,6 +1379,13 @@ end PrimeFactors.Generated
         work.update(coefficient=case['coefficient'], max_norm=case['max_norm'],
                     max_lifts=case['max_lifts'])
         result = certify_split(case, proof, factor, elapsed, 'polynomial_packet', work)
+    elif method == 'multiplier-polynomials':
+        work = multiplier_polynomial_search(int(case['n']), case['arm'], bound=case['bound'],
+                                           radius=case['radius'], blocks=case['blocks'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case['expected_work'] | {'id': name}, work, list(work))
+        result = certify_split(case, proof, factor, elapsed, 'multiplier_polynomials', work)
     elif method == 'polynomial-relations':
         mode, policy = case['mode'], case['policy']
         work = polynomial_relation_search(int(case['n']), mode, case['bound'], case['radius'],
@@ -1672,6 +1680,7 @@ def main():
                              ('guided-pairs.json', 'guided-pairs'),
                              ('seed-gap-sieve.json', 'seed-gap-sieve'),
                              ('polynomial-relations.json', 'polynomial-relations'),
+                             ('multiplier-polynomials.json', 'multiplier-polynomials'),
                              ('norm-directions.json', 'norm-directions'),
                              ('norm-curves.json', 'norm-curves'),
                              ('universal-norms.json', 'universal-norms'),

@@ -829,6 +829,12 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'multiplier-polynomials':
+        w = result['multiplier_polynomials']
+        choice = 'Factor during selection' if w['multiplier'] is None else f'Multiplier {w["multiplier"]}'
+        count = (f'{choice} · {w["positions"]:,} positions · '
+                 f'{w.get("sieve_marks", 0):,} sieve marks · {w.get("prime_divisions", 0):,} divisions · '
+                 f'{w.get("smooth_rows", 0):,} smooth rows · {w.get("dependencies", 0):,} square relations')
     elif result['method'] == 'polynomial-relations':
         w = result['polynomial_relations']
         modes = {'single': 'Single interval', 'square': 'Square coefficients', 'edges': 'Shared prime coefficients'}
