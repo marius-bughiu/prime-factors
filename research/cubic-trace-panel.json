@@ -1,0 +1,3016 @@
+{
+  "seed": "cubic-trace-panel-v1",
+  "cohorts": {
+    "31": 4,
+    "39": 4,
+    "79": 1
+  },
+  "first_base_offsets": [
+    0,
+    1,
+    -1,
+    2,
+    -2,
+    3,
+    -3,
+    4,
+    -4
+  ],
+  "prime_bound": 127,
+  "character_arms": [
+    0,
+    4,
+    8
+  ],
+  "trace_budget_per_arm": 32,
+  "candidate_rectangle": {
+    "a": [
+      -40,
+      40
+    ],
+    "b": [
+      1,
+      8
+    ],
+    "primitive_rows": 415
+  },
+  "rows": [
+    {
+      "id": "holdout-31-1",
+      "draw_index": 1,
+      "n": "1734799141",
+      "cubic": {
+        "status": "no_norm_dependency",
+        "remaining_cofactor": "1734799141",
+        "m": "1201",
+        "f_ascending_monic": [
+          "279",
+          "-341",
+          "2",
+          "1"
+        ],
+        "irreducibility_prime": 2,
+        "candidate_rows": 415,
+        "smooth_rows": 29,
+        "available_character_places": [],
+        "work": {
+          "polynomials_tried": 1,
+          "irreducibility_residues": 2,
+          "rational_smooth": 149,
+          "norm_smooth": 65,
+          "trial_prime_visits": 22699,
+          "exact_prime_divisions": 1565,
+          "character_primes_tried": 0,
+          "character_root_residues": 0,
+          "euler_criterion_powers": 0
+        },
+        "arms": [
+          {
+            "bits": 0,
+            "kernel_dimension": 0,
+            "matrix_rank": 29,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 4,
+            "kernel_dimension": 0,
+            "matrix_rank": 29,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 8,
+            "kernel_dimension": 0,
+            "matrix_rank": 29,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          }
+        ]
+      },
+      "quadratic": {
+        "positions_budget": 415,
+        "positions": 415,
+        "smooth_rows": 13,
+        "sieve_marks": 945,
+        "prime_divisions": 1351,
+        "kernel_dimension": 0,
+        "gcd_tests": 0,
+        "remaining_cofactor": "1734799141",
+        "outcome": "no_split",
+        "divisors": []
+      }
+    },
+    {
+      "id": "holdout-31-2",
+      "draw_index": 4,
+      "n": "1915966849",
+      "cubic": {
+        "status": "no_norm_dependency",
+        "remaining_cofactor": "1915966849",
+        "m": "1242",
+        "f_ascending_monic": [
+          "517",
+          "82",
+          "0",
+          "1"
+        ],
+        "irreducibility_prime": 17,
+        "candidate_rows": 415,
+        "smooth_rows": 41,
+        "available_character_places": [],
+        "work": {
+          "polynomials_tried": 1,
+          "irreducibility_residues": 34,
+          "rational_smooth": 145,
+          "norm_smooth": 104,
+          "trial_prime_visits": 21811,
+          "exact_prime_divisions": 1898,
+          "character_primes_tried": 0,
+          "character_root_residues": 0,
+          "euler_criterion_powers": 0
+        },
+        "arms": [
+          {
+            "bits": 0,
+            "kernel_dimension": 0,
+            "matrix_rank": 41,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 4,
+            "kernel_dimension": 0,
+            "matrix_rank": 41,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 8,
+            "kernel_dimension": 0,
+            "matrix_rank": 41,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          }
+        ]
+      },
+      "quadratic": {
+        "positions_budget": 415,
+        "positions": 415,
+        "smooth_rows": 37,
+        "sieve_marks": 1023,
+        "prime_divisions": 1846,
+        "kernel_dimension": 16,
+        "gcd_tests": 4,
+        "remaining_cofactor": "1",
+        "outcome": "relation",
+        "divisors": [
+          "36151",
+          "52999"
+        ]
+      }
+    },
+    {
+      "id": "holdout-31-3",
+      "draw_index": 5,
+      "n": "1566558233",
+      "cubic": {
+        "status": "no_norm_dependency",
+        "remaining_cofactor": "1566558233",
+        "m": "1161",
+        "f_ascending_monic": [
+          "35",
+          "236",
+          "1",
+          "1"
+        ],
+        "irreducibility_prime": 2,
+        "candidate_rows": 415,
+        "smooth_rows": 27,
+        "available_character_places": [],
+        "work": {
+          "polynomials_tried": 1,
+          "irreducibility_residues": 2,
+          "rational_smooth": 144,
+          "norm_smooth": 90,
+          "trial_prime_visits": 22029,
+          "exact_prime_divisions": 1758,
+          "character_primes_tried": 0,
+          "character_root_residues": 0,
+          "euler_criterion_powers": 0
+        },
+        "arms": [
+          {
+            "bits": 0,
+            "kernel_dimension": 0,
+            "matrix_rank": 27,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 4,
+            "kernel_dimension": 0,
+            "matrix_rank": 27,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 8,
+            "kernel_dimension": 0,
+            "matrix_rank": 27,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          }
+        ]
+      },
+      "quadratic": {
+        "positions_budget": 415,
+        "positions": 415,
+        "smooth_rows": 16,
+        "sieve_marks": 624,
+        "prime_divisions": 1279,
+        "kernel_dimension": 2,
+        "gcd_tests": 1,
+        "remaining_cofactor": "1",
+        "outcome": "relation",
+        "divisors": [
+          "36697",
+          "42689"
+        ]
+      }
+    },
+    {
+      "id": "holdout-31-4",
+      "draw_index": 6,
+      "n": "1746445889",
+      "cubic": {
+        "status": "no_norm_dependency",
+        "remaining_cofactor": "1746445889",
+        "m": "1204",
+        "f_ascending_monic": [
+          "545",
+          "-284",
+          "1",
+          "1"
+        ],
+        "irreducibility_prime": 2,
+        "candidate_rows": 415,
+        "smooth_rows": 16,
+        "available_character_places": [],
+        "work": {
+          "polynomials_tried": 1,
+          "irreducibility_residues": 2,
+          "rational_smooth": 143,
+          "norm_smooth": 39,
+          "trial_prime_visits": 23090,
+          "exact_prime_divisions": 1219,
+          "character_primes_tried": 0,
+          "character_root_residues": 0,
+          "euler_criterion_powers": 0
+        },
+        "arms": [
+          {
+            "bits": 0,
+            "kernel_dimension": 0,
+            "matrix_rank": 16,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 4,
+            "kernel_dimension": 0,
+            "matrix_rank": 16,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 8,
+            "kernel_dimension": 0,
+            "matrix_rank": 16,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          }
+        ]
+      },
+      "quadratic": {
+        "positions_budget": 415,
+        "positions": 415,
+        "smooth_rows": 16,
+        "sieve_marks": 677,
+        "prime_divisions": 1346,
+        "kernel_dimension": 2,
+        "gcd_tests": 1,
+        "remaining_cofactor": "1",
+        "outcome": "relation",
+        "divisors": [
+          "33469",
+          "52181"
+        ]
+      }
+    },
+    {
+      "id": "holdout-39-1",
+      "draw_index": 0,
+      "n": "538242898783",
+      "cubic": {
+        "status": "no_norm_dependency",
+        "remaining_cofactor": "538242898783",
+        "m": "8134",
+        "f_ascending_monic": [
+          "-2805",
+          "1892",
+          "1",
+          "1"
+        ],
+        "irreducibility_prime": 2,
+        "candidate_rows": 415,
+        "smooth_rows": 6,
+        "available_character_places": [],
+        "work": {
+          "polynomials_tried": 1,
+          "irreducibility_residues": 2,
+          "rational_smooth": 71,
+          "norm_smooth": 56,
+          "trial_prime_visits": 24241,
+          "exact_prime_divisions": 1608,
+          "character_primes_tried": 0,
+          "character_root_residues": 0,
+          "euler_criterion_powers": 0
+        },
+        "arms": [
+          {
+            "bits": 0,
+            "kernel_dimension": 0,
+            "matrix_rank": 6,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 4,
+            "kernel_dimension": 0,
+            "matrix_rank": 6,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 8,
+            "kernel_dimension": 0,
+            "matrix_rank": 6,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          }
+        ]
+      },
+      "quadratic": {
+        "positions_budget": 415,
+        "positions": 415,
+        "smooth_rows": 1,
+        "sieve_marks": 832,
+        "prime_divisions": 998,
+        "kernel_dimension": 0,
+        "gcd_tests": 0,
+        "remaining_cofactor": "538242898783",
+        "outcome": "no_split",
+        "divisors": []
+      }
+    },
+    {
+      "id": "holdout-39-2",
+      "draw_index": 1,
+      "n": "465584196557",
+      "cubic": {
+        "status": "no_norm_dependency",
+        "remaining_cofactor": "465584196557",
+        "m": "7750",
+        "f_ascending_monic": [
+          "1557",
+          "-2620",
+          "2",
+          "1"
+        ],
+        "irreducibility_prime": 11,
+        "candidate_rows": 415,
+        "smooth_rows": 7,
+        "available_character_places": [],
+        "work": {
+          "polynomials_tried": 1,
+          "irreducibility_residues": 20,
+          "rational_smooth": 82,
+          "norm_smooth": 38,
+          "trial_prime_visits": 24188,
+          "exact_prime_divisions": 1815,
+          "character_primes_tried": 0,
+          "character_root_residues": 0,
+          "euler_criterion_powers": 0
+        },
+        "arms": [
+          {
+            "bits": 0,
+            "kernel_dimension": 0,
+            "matrix_rank": 7,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 4,
+            "kernel_dimension": 0,
+            "matrix_rank": 7,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 8,
+            "kernel_dimension": 0,
+            "matrix_rank": 7,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          }
+        ]
+      },
+      "quadratic": {
+        "positions_budget": 415,
+        "positions": 415,
+        "smooth_rows": 0,
+        "sieve_marks": 593,
+        "prime_divisions": 830,
+        "kernel_dimension": 0,
+        "gcd_tests": 0,
+        "remaining_cofactor": "465584196557",
+        "outcome": "no_split",
+        "divisors": []
+      }
+    },
+    {
+      "id": "holdout-39-3",
+      "draw_index": 4,
+      "n": "537292063219",
+      "cubic": {
+        "status": "no_norm_dependency",
+        "remaining_cofactor": "537292063219",
+        "m": "8129",
+        "f_ascending_monic": [
+          "-4016",
+          "-1184",
+          "2",
+          "1"
+        ],
+        "irreducibility_prime": 3,
+        "candidate_rows": 415,
+        "smooth_rows": 11,
+        "available_character_places": [],
+        "work": {
+          "polynomials_tried": 1,
+          "irreducibility_residues": 4,
+          "rational_smooth": 75,
+          "norm_smooth": 38,
+          "trial_prime_visits": 24073,
+          "exact_prime_divisions": 1732,
+          "character_primes_tried": 0,
+          "character_root_residues": 0,
+          "euler_criterion_powers": 0
+        },
+        "arms": [
+          {
+            "bits": 0,
+            "kernel_dimension": 0,
+            "matrix_rank": 11,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 4,
+            "kernel_dimension": 0,
+            "matrix_rank": 11,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 8,
+            "kernel_dimension": 0,
+            "matrix_rank": 11,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          }
+        ]
+      },
+      "quadratic": {
+        "positions_budget": 415,
+        "positions": 415,
+        "smooth_rows": 8,
+        "sieve_marks": 1039,
+        "prime_divisions": 1247,
+        "kernel_dimension": 0,
+        "gcd_tests": 0,
+        "remaining_cofactor": "537292063219",
+        "outcome": "no_split",
+        "divisors": []
+      }
+    },
+    {
+      "id": "holdout-39-4",
+      "draw_index": 5,
+      "n": "416781386033",
+      "cubic": {
+        "status": "no_norm_dependency",
+        "remaining_cofactor": "416781386033",
+        "m": "7469",
+        "f_ascending_monic": [
+          "-2529",
+          "599",
+          "2",
+          "1"
+        ],
+        "irreducibility_prime": 2,
+        "candidate_rows": 415,
+        "smooth_rows": 6,
+        "available_character_places": [],
+        "work": {
+          "polynomials_tried": 1,
+          "irreducibility_residues": 2,
+          "rational_smooth": 76,
+          "norm_smooth": 37,
+          "trial_prime_visits": 24257,
+          "exact_prime_divisions": 1399,
+          "character_primes_tried": 0,
+          "character_root_residues": 0,
+          "euler_criterion_powers": 0
+        },
+        "arms": [
+          {
+            "bits": 0,
+            "kernel_dimension": 0,
+            "matrix_rank": 6,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 4,
+            "kernel_dimension": 0,
+            "matrix_rank": 6,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 8,
+            "kernel_dimension": 0,
+            "matrix_rank": 6,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          }
+        ]
+      },
+      "quadratic": {
+        "positions_budget": 415,
+        "positions": 415,
+        "smooth_rows": 7,
+        "sieve_marks": 562,
+        "prime_divisions": 1200,
+        "kernel_dimension": 0,
+        "gcd_tests": 0,
+        "remaining_cofactor": "416781386033",
+        "outcome": "no_split",
+        "divisors": []
+      }
+    },
+    {
+      "id": "holdout-79-1",
+      "draw_index": 0,
+      "n": "428359581921440786444417",
+      "cubic": {
+        "status": "no_norm_dependency",
+        "remaining_cofactor": "428359581921440786444417",
+        "m": "75382319",
+        "f_ascending_monic": [
+          "-23665804",
+          "-7001421",
+          "1",
+          "1"
+        ],
+        "irreducibility_prime": 3,
+        "candidate_rows": 415,
+        "smooth_rows": 0,
+        "available_character_places": [],
+        "work": {
+          "polynomials_tried": 1,
+          "irreducibility_residues": 4,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "trial_prime_visits": 25730,
+          "exact_prime_divisions": 1388,
+          "character_primes_tried": 0,
+          "character_root_residues": 0,
+          "euler_criterion_powers": 0
+        },
+        "arms": [
+          {
+            "bits": 0,
+            "kernel_dimension": 0,
+            "matrix_rank": 0,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 4,
+            "kernel_dimension": 0,
+            "matrix_rank": 0,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 8,
+            "kernel_dimension": 0,
+            "matrix_rank": 0,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          }
+        ]
+      },
+      "quadratic": {
+        "positions_budget": 415,
+        "positions": 415,
+        "smooth_rows": 0,
+        "sieve_marks": 466,
+        "prime_divisions": 1107,
+        "kernel_dimension": 0,
+        "gcd_tests": 0,
+        "remaining_cofactor": "428359581921440786444417",
+        "outcome": "no_split",
+        "divisors": []
+      }
+    },
+    {
+      "id": "arbitrary-divisor-window-fresh-2048",
+      "draw_index": null,
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "cubic": {
+        "status": "no_norm_dependency",
+        "remaining_cofactor": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+        "m": "29266450953600690044902996748220718247506779365190051113967971943092481154015862535744152350683354804561959443880250352706438029427432099254486242968167178236216973788369412776195438632833585300308830686588",
+        "f_ascending_monic": [
+          "-11915053238424877573615023338436606266416984159005286065220753568993930935094253620368438456454005488812066684174719598841082147924438077424341619090811967277424168820436525989118678914083270403822277952501",
+          "4167871894280701501656769511058693048703912054010875850984127429308814691337631874568626920246487635829278517109548320522622406345745183952232683272420059062327231972029803116382102945704763429878660458415",
+          "2",
+          "1"
+        ],
+        "irreducibility_prime": 2,
+        "candidate_rows": 415,
+        "smooth_rows": 0,
+        "available_character_places": [],
+        "work": {
+          "polynomials_tried": 1,
+          "irreducibility_residues": 2,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "trial_prime_visits": 25730,
+          "exact_prime_divisions": 1351,
+          "character_primes_tried": 0,
+          "character_root_residues": 0,
+          "euler_criterion_powers": 0
+        },
+        "arms": [
+          {
+            "bits": 0,
+            "kernel_dimension": 0,
+            "matrix_rank": 0,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 4,
+            "kernel_dimension": 0,
+            "matrix_rank": 0,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 8,
+            "kernel_dimension": 0,
+            "matrix_rank": 0,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          }
+        ]
+      },
+      "quadratic": {
+        "positions_budget": 415,
+        "positions": 415,
+        "smooth_rows": 0,
+        "sieve_marks": 808,
+        "prime_divisions": 996,
+        "kernel_dimension": 0,
+        "gcd_tests": 0,
+        "remaining_cofactor": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+        "outcome": "no_split",
+        "divisors": []
+      }
+    },
+    {
+      "id": "arbitrary-divisor-window-crossed-2048",
+      "draw_index": null,
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "cubic": {
+        "status": "no_norm_dependency",
+        "remaining_cofactor": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+        "m": "26321086277350004763246605059942532218284120037998274279500410729877980427661563810957400193618018519235555253374801675987274808377413576505576376818132257035668139115658746771246177160785629306067956780768",
+        "f_ascending_monic": [
+          "-4543357482325059696205824106693354882156167190721304283809968501919339678557396406619034745379576273211671306837764724842584720714832473458088586133341057975351202165067645320990056038253490889736252745471",
+          "-4618156126809827901530039271651168705181427385434955145461965751511943998903179379224020630040801543769094452465362666536455728416129133628915789913106788672181081797480370362064012825892705170904426945112",
+          "1",
+          "1"
+        ],
+        "irreducibility_prime": 2,
+        "candidate_rows": 415,
+        "smooth_rows": 0,
+        "available_character_places": [],
+        "work": {
+          "polynomials_tried": 1,
+          "irreducibility_residues": 2,
+          "rational_smooth": 0,
+          "norm_smooth": 0,
+          "trial_prime_visits": 25730,
+          "exact_prime_divisions": 1350,
+          "character_primes_tried": 0,
+          "character_root_residues": 0,
+          "euler_criterion_powers": 0
+        },
+        "arms": [
+          {
+            "bits": 0,
+            "kernel_dimension": 0,
+            "matrix_rank": 0,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 4,
+            "kernel_dimension": 0,
+            "matrix_rank": 0,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          },
+          {
+            "bits": 8,
+            "kernel_dimension": 0,
+            "matrix_rank": 0,
+            "tested": 0,
+            "remaining_dependencies": "0",
+            "true_squares": 0,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 0,
+            "gcd_tests": 0,
+            "proper_hits": 0,
+            "row_multiplications": 0,
+            "first_hit": null
+          }
+        ]
+      },
+      "quadratic": {
+        "positions_budget": 415,
+        "positions": 415,
+        "smooth_rows": 0,
+        "sieve_marks": 996,
+        "prime_divisions": 1827,
+        "kernel_dimension": 0,
+        "gcd_tests": 0,
+        "remaining_cofactor": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+        "outcome": "no_split",
+        "divisors": []
+      }
+    },
+    {
+      "id": "public-base-989",
+      "draw_index": null,
+      "n": "989",
+      "cubic": {
+        "status": "split",
+        "remaining_cofactor": "1",
+        "m": "9",
+        "f_ascending_monic": [
+          "-1",
+          "2",
+          "3",
+          "1"
+        ],
+        "irreducibility_prime": 2,
+        "candidate_rows": 415,
+        "smooth_rows": 106,
+        "available_character_places": [
+          [
+            137,
+            72
+          ],
+          [
+            149,
+            29
+          ],
+          [
+            157,
+            109
+          ],
+          [
+            167,
+            72
+          ],
+          [
+            173,
+            96
+          ],
+          [
+            181,
+            29
+          ],
+          [
+            191,
+            36
+          ],
+          [
+            199,
+            53
+          ]
+        ],
+        "work": {
+          "polynomials_tried": 1,
+          "irreducibility_residues": 2,
+          "rational_smooth": 414,
+          "norm_smooth": 107,
+          "trial_prime_visits": 14333,
+          "exact_prime_divisions": 1187,
+          "character_primes_tried": 15,
+          "character_root_residues": 1657,
+          "euler_criterion_powers": 848
+        },
+        "arms": [
+          {
+            "bits": 0,
+            "kernel_dimension": 62,
+            "matrix_rank": 44,
+            "tested": 32,
+            "remaining_dependencies": "4611686018427387871",
+            "true_squares": 16,
+            "false_squares": 16,
+            "scalar_squares": 0,
+            "rootless_mod5": 16,
+            "isolation_nodes": 776,
+            "gcd_tests": 32,
+            "proper_hits": 15,
+            "row_multiplications": 331,
+            "first_hit": {
+              "rows": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "beta": [
+                "0",
+                "1",
+                "0"
+              ],
+              "abc": [
+                "-3",
+                "2",
+                "1"
+              ],
+              "rational_root": "3",
+              "check": 1,
+              "divisors": [
+                "23",
+                "43"
+              ],
+              "traces": [
+                1
+              ],
+              "probes": [
+                {
+                  "trace": 1,
+                  "modular_values": [
+                    23,
+                    946
+                  ],
+                  "gcds": [
+                    23,
+                    43
+                  ]
+                }
+              ],
+              "field_roots": [
+                {
+                  "trace": 1,
+                  "second": 2,
+                  "numerators": [
+                    1,
+                    -1,
+                    -1
+                  ],
+                  "denominator": 1
+                }
+              ]
+            }
+          },
+          {
+            "bits": 4,
+            "kernel_dimension": 58,
+            "matrix_rank": 48,
+            "tested": 32,
+            "remaining_dependencies": "288230376151711711",
+            "true_squares": 32,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 1792,
+            "gcd_tests": 64,
+            "proper_hits": 29,
+            "row_multiplications": 363,
+            "first_hit": {
+              "rows": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "beta": [
+                "0",
+                "1",
+                "0"
+              ],
+              "abc": [
+                "-3",
+                "2",
+                "1"
+              ],
+              "rational_root": "3",
+              "check": 1,
+              "divisors": [
+                "23",
+                "43"
+              ],
+              "traces": [
+                1
+              ],
+              "probes": [
+                {
+                  "trace": 1,
+                  "modular_values": [
+                    23,
+                    946
+                  ],
+                  "gcds": [
+                    23,
+                    43
+                  ]
+                }
+              ],
+              "field_roots": [
+                {
+                  "trace": 1,
+                  "second": 2,
+                  "numerators": [
+                    1,
+                    -1,
+                    -1
+                  ],
+                  "denominator": 1
+                }
+              ]
+            }
+          },
+          {
+            "bits": 8,
+            "kernel_dimension": 57,
+            "matrix_rank": 49,
+            "tested": 32,
+            "remaining_dependencies": "144115188075855839",
+            "true_squares": 32,
+            "false_squares": 0,
+            "scalar_squares": 0,
+            "rootless_mod5": 0,
+            "isolation_nodes": 1792,
+            "gcd_tests": 64,
+            "proper_hits": 29,
+            "row_multiplications": 363,
+            "first_hit": {
+              "rows": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "beta": [
+                "0",
+                "1",
+                "0"
+              ],
+              "abc": [
+                "-3",
+                "2",
+                "1"
+              ],
+              "rational_root": "3",
+              "check": 1,
+              "divisors": [
+                "23",
+                "43"
+              ],
+              "traces": [
+                1
+              ],
+              "probes": [
+                {
+                  "trace": 1,
+                  "modular_values": [
+                    23,
+                    946
+                  ],
+                  "gcds": [
+                    23,
+                    43
+                  ]
+                }
+              ],
+              "field_roots": [
+                {
+                  "trace": 1,
+                  "second": 2,
+                  "numerators": [
+                    1,
+                    -1,
+                    -1
+                  ],
+                  "denominator": 1
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "quadratic": {
+        "positions_budget": 415,
+        "positions": 0,
+        "smooth_rows": 0,
+        "sieve_marks": 0,
+        "prime_divisions": 0,
+        "kernel_dimension": 0,
+        "gcd_tests": 0,
+        "remaining_cofactor": "1",
+        "outcome": "base_gcd",
+        "divisors": [
+          "23",
+          "43"
+        ]
+      }
+    }
+  ],
+  "expanded": {
+    "fresh_seed": "cubic-trace-panel-expanded-v1",
+    "a_limit": 80,
+    "b_limit": 16,
+    "rows": [
+      {
+        "id": "expanded-original-31-1",
+        "draw_index": 1,
+        "n": "1734799141",
+        "cubic": {
+          "status": "no_norm_dependency",
+          "remaining_cofactor": "1734799141",
+          "m": "1201",
+          "f_ascending_monic": [
+            "279",
+            "-341",
+            "2",
+            "1"
+          ],
+          "irreducibility_prime": 2,
+          "candidate_rows": 1583,
+          "smooth_rows": 43,
+          "available_character_places": [],
+          "work": {
+            "polynomials_tried": 1,
+            "irreducibility_residues": 2,
+            "rational_smooth": 445,
+            "norm_smooth": 117,
+            "trial_prime_visits": 90374,
+            "exact_prime_divisions": 5776,
+            "character_primes_tried": 0,
+            "character_root_residues": 0,
+            "euler_criterion_powers": 0
+          },
+          "arms": [
+            {
+              "bits": 0,
+              "kernel_dimension": 0,
+              "matrix_rank": 43,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 4,
+              "kernel_dimension": 0,
+              "matrix_rank": 43,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 8,
+              "kernel_dimension": 0,
+              "matrix_rank": 43,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            }
+          ]
+        },
+        "quadratic": {
+          "positions_budget": 1583,
+          "positions": 1583,
+          "smooth_rows": 26,
+          "sieve_marks": 3605,
+          "prime_divisions": 5142,
+          "kernel_dimension": 12,
+          "gcd_tests": 3,
+          "remaining_cofactor": "1",
+          "outcome": "relation",
+          "divisors": [
+            "37463",
+            "46307"
+          ]
+        }
+      },
+      {
+        "id": "expanded-original-31-2",
+        "draw_index": 4,
+        "n": "1915966849",
+        "cubic": {
+          "status": "split",
+          "remaining_cofactor": "1",
+          "m": "1242",
+          "f_ascending_monic": [
+            "517",
+            "82",
+            "0",
+            "1"
+          ],
+          "irreducibility_prime": 17,
+          "candidate_rows": 1583,
+          "smooth_rows": 63,
+          "available_character_places": [
+            [
+              131,
+              22
+            ],
+            [
+              149,
+              32
+            ],
+            [
+              157,
+              107
+            ],
+            [
+              163,
+              57
+            ],
+            [
+              173,
+              48
+            ],
+            [
+              191,
+              185
+            ],
+            [
+              193,
+              176
+            ],
+            [
+              197,
+              15
+            ]
+          ],
+          "work": {
+            "polynomials_tried": 1,
+            "irreducibility_residues": 34,
+            "rational_smooth": 444,
+            "norm_smooth": 223,
+            "trial_prime_visits": 88417,
+            "exact_prime_divisions": 7093,
+            "character_primes_tried": 14,
+            "character_root_residues": 1604,
+            "euler_criterion_powers": 504
+          },
+          "arms": [
+            {
+              "bits": 0,
+              "kernel_dimension": 9,
+              "matrix_rank": 54,
+              "tested": 32,
+              "remaining_dependencies": "479",
+              "true_squares": 0,
+              "false_squares": 32,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 8804,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 818,
+              "first_hit": null
+            },
+            {
+              "bits": 4,
+              "kernel_dimension": 5,
+              "matrix_rank": 58,
+              "tested": 31,
+              "remaining_dependencies": "0",
+              "true_squares": 1,
+              "false_squares": 30,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 9839,
+              "gcd_tests": 2,
+              "proper_hits": 1,
+              "row_multiplications": 896,
+              "first_hit": {
+                "rows": [
+                  [
+                    -67,
+                    1
+                  ],
+                  [
+                    -58,
+                    1
+                  ],
+                  [
+                    -54,
+                    1
+                  ],
+                  [
+                    -23,
+                    1
+                  ],
+                  [
+                    -21,
+                    1
+                  ],
+                  [
+                    -6,
+                    1
+                  ],
+                  [
+                    -2,
+                    1
+                  ],
+                  [
+                    -1,
+                    1
+                  ],
+                  [
+                    19,
+                    1
+                  ],
+                  [
+                    22,
+                    1
+                  ],
+                  [
+                    29,
+                    1
+                  ],
+                  [
+                    32,
+                    1
+                  ],
+                  [
+                    71,
+                    1
+                  ],
+                  [
+                    -19,
+                    2
+                  ],
+                  [
+                    -13,
+                    3
+                  ],
+                  [
+                    11,
+                    3
+                  ],
+                  [
+                    25,
+                    3
+                  ],
+                  [
+                    70,
+                    3
+                  ],
+                  [
+                    -9,
+                    4
+                  ],
+                  [
+                    -9,
+                    5
+                  ],
+                  [
+                    43,
+                    5
+                  ],
+                  [
+                    73,
+                    5
+                  ],
+                  [
+                    17,
+                    6
+                  ],
+                  [
+                    -32,
+                    7
+                  ],
+                  [
+                    39,
+                    7
+                  ],
+                  [
+                    -69,
+                    8
+                  ],
+                  [
+                    39,
+                    8
+                  ],
+                  [
+                    13,
+                    9
+                  ]
+                ],
+                "beta": [
+                  "948144024100797197997746712986758484588515625",
+                  "246051116103270744271267806981463205818046875",
+                  "10630764889897914540581406627631811909062500"
+                ],
+                "abc": [
+                  "1100986630359133609337889452028658300679296875",
+                  "9172100100810343157866041184967902900368417759112418146575048887509893380587100982666015625",
+                  "11064416736640760690123856720376698619446884083598428022055719535651698738358464882195053364141601562500000000000000000000000000"
+                ],
+                "rational_root": "2409460926380863750191491123005531828058080896000",
+                "check": 3,
+                "divisors": [
+                  "36151",
+                  "52999"
+                ],
+                "traces": [
+                  84606545400595532145625
+                ],
+                "probes": [
+                  {
+                    "trace": 84606545400595532145625,
+                    "modular_values": [
+                      792335050,
+                      308512634
+                    ],
+                    "gcds": [
+                      52999,
+                      36151
+                    ]
+                  }
+                ],
+                "field_roots": [
+                  {
+                    "trace": 84606545400595532145625,
+                    "second": 3028640447131949692847213577128907207763671875,
+                    "numerators": [
+                      281428596636502301982399177448055077943151301894965506639210224813417968750000000000000,
+                      4129627077491083302185103029157565508442968750,
+                      -1
+                    ],
+                    "denominator": 256239479170546325233087307376858545808953577841342933419647216796875
+                  }
+                ]
+              }
+            },
+            {
+              "bits": 8,
+              "kernel_dimension": 1,
+              "matrix_rank": 62,
+              "tested": 1,
+              "remaining_dependencies": "0",
+              "true_squares": 1,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 295,
+              "gcd_tests": 2,
+              "proper_hits": 1,
+              "row_multiplications": 28,
+              "first_hit": {
+                "rows": [
+                  [
+                    -67,
+                    1
+                  ],
+                  [
+                    -58,
+                    1
+                  ],
+                  [
+                    -54,
+                    1
+                  ],
+                  [
+                    -23,
+                    1
+                  ],
+                  [
+                    -21,
+                    1
+                  ],
+                  [
+                    -6,
+                    1
+                  ],
+                  [
+                    -2,
+                    1
+                  ],
+                  [
+                    -1,
+                    1
+                  ],
+                  [
+                    19,
+                    1
+                  ],
+                  [
+                    22,
+                    1
+                  ],
+                  [
+                    29,
+                    1
+                  ],
+                  [
+                    32,
+                    1
+                  ],
+                  [
+                    71,
+                    1
+                  ],
+                  [
+                    -19,
+                    2
+                  ],
+                  [
+                    -13,
+                    3
+                  ],
+                  [
+                    11,
+                    3
+                  ],
+                  [
+                    25,
+                    3
+                  ],
+                  [
+                    70,
+                    3
+                  ],
+                  [
+                    -9,
+                    4
+                  ],
+                  [
+                    -9,
+                    5
+                  ],
+                  [
+                    43,
+                    5
+                  ],
+                  [
+                    73,
+                    5
+                  ],
+                  [
+                    17,
+                    6
+                  ],
+                  [
+                    -32,
+                    7
+                  ],
+                  [
+                    39,
+                    7
+                  ],
+                  [
+                    -69,
+                    8
+                  ],
+                  [
+                    39,
+                    8
+                  ],
+                  [
+                    13,
+                    9
+                  ]
+                ],
+                "beta": [
+                  "948144024100797197997746712986758484588515625",
+                  "246051116103270744271267806981463205818046875",
+                  "10630764889897914540581406627631811909062500"
+                ],
+                "abc": [
+                  "1100986630359133609337889452028658300679296875",
+                  "9172100100810343157866041184967902900368417759112418146575048887509893380587100982666015625",
+                  "11064416736640760690123856720376698619446884083598428022055719535651698738358464882195053364141601562500000000000000000000000000"
+                ],
+                "rational_root": "2409460926380863750191491123005531828058080896000",
+                "check": 1,
+                "divisors": [
+                  "36151",
+                  "52999"
+                ],
+                "traces": [
+                  84606545400595532145625
+                ],
+                "probes": [
+                  {
+                    "trace": 84606545400595532145625,
+                    "modular_values": [
+                      792335050,
+                      308512634
+                    ],
+                    "gcds": [
+                      52999,
+                      36151
+                    ]
+                  }
+                ],
+                "field_roots": [
+                  {
+                    "trace": 84606545400595532145625,
+                    "second": 3028640447131949692847213577128907207763671875,
+                    "numerators": [
+                      281428596636502301982399177448055077943151301894965506639210224813417968750000000000000,
+                      4129627077491083302185103029157565508442968750,
+                      -1
+                    ],
+                    "denominator": 256239479170546325233087307376858545808953577841342933419647216796875
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "quadratic": {
+          "positions_budget": 1583,
+          "positions": 1583,
+          "smooth_rows": 94,
+          "sieve_marks": 3902,
+          "prime_divisions": 7033,
+          "kernel_dimension": 73,
+          "gcd_tests": 2,
+          "remaining_cofactor": "1",
+          "outcome": "relation",
+          "divisors": [
+            "36151",
+            "52999"
+          ]
+        }
+      },
+      {
+        "id": "expanded-original-31-3",
+        "draw_index": 5,
+        "n": "1566558233",
+        "cubic": {
+          "status": "no_norm_dependency",
+          "remaining_cofactor": "1566558233",
+          "m": "1161",
+          "f_ascending_monic": [
+            "35",
+            "236",
+            "1",
+            "1"
+          ],
+          "irreducibility_prime": 2,
+          "candidate_rows": 1583,
+          "smooth_rows": 46,
+          "available_character_places": [],
+          "work": {
+            "polynomials_tried": 1,
+            "irreducibility_residues": 2,
+            "rational_smooth": 452,
+            "norm_smooth": 170,
+            "trial_prime_visits": 89191,
+            "exact_prime_divisions": 6522,
+            "character_primes_tried": 0,
+            "character_root_residues": 0,
+            "euler_criterion_powers": 0
+          },
+          "arms": [
+            {
+              "bits": 0,
+              "kernel_dimension": 0,
+              "matrix_rank": 46,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 4,
+              "kernel_dimension": 0,
+              "matrix_rank": 46,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 8,
+              "kernel_dimension": 0,
+              "matrix_rank": 46,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            }
+          ]
+        },
+        "quadratic": {
+          "positions_budget": 1583,
+          "positions": 1583,
+          "smooth_rows": 29,
+          "sieve_marks": 2388,
+          "prime_divisions": 4892,
+          "kernel_dimension": 12,
+          "gcd_tests": 1,
+          "remaining_cofactor": "1",
+          "outcome": "relation",
+          "divisors": [
+            "36697",
+            "42689"
+          ]
+        }
+      },
+      {
+        "id": "expanded-original-31-4",
+        "draw_index": 6,
+        "n": "1746445889",
+        "cubic": {
+          "status": "no_norm_dependency",
+          "remaining_cofactor": "1746445889",
+          "m": "1204",
+          "f_ascending_monic": [
+            "545",
+            "-284",
+            "1",
+            "1"
+          ],
+          "irreducibility_prime": 2,
+          "candidate_rows": 1583,
+          "smooth_rows": 21,
+          "available_character_places": [],
+          "work": {
+            "polynomials_tried": 1,
+            "irreducibility_residues": 2,
+            "rational_smooth": 447,
+            "norm_smooth": 58,
+            "trial_prime_visits": 91179,
+            "exact_prime_divisions": 4573,
+            "character_primes_tried": 0,
+            "character_root_residues": 0,
+            "euler_criterion_powers": 0
+          },
+          "arms": [
+            {
+              "bits": 0,
+              "kernel_dimension": 0,
+              "matrix_rank": 21,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 4,
+              "kernel_dimension": 0,
+              "matrix_rank": 21,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 8,
+              "kernel_dimension": 0,
+              "matrix_rank": 21,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            }
+          ]
+        },
+        "quadratic": {
+          "positions_budget": 1583,
+          "positions": 1583,
+          "smooth_rows": 32,
+          "sieve_marks": 2582,
+          "prime_divisions": 5163,
+          "kernel_dimension": 17,
+          "gcd_tests": 3,
+          "remaining_cofactor": "1",
+          "outcome": "relation",
+          "divisors": [
+            "33469",
+            "52181"
+          ]
+        }
+      },
+      {
+        "id": "expanded-fresh-31-1",
+        "draw_index": 2,
+        "n": "1940860319",
+        "cubic": {
+          "status": "no_norm_dependency",
+          "remaining_cofactor": "1940860319",
+          "m": "1247",
+          "f_ascending_monic": [
+            "-409",
+            "168",
+            "1",
+            "1"
+          ],
+          "irreducibility_prime": 2,
+          "candidate_rows": 1583,
+          "smooth_rows": 24,
+          "available_character_places": [],
+          "work": {
+            "polynomials_tried": 1,
+            "irreducibility_residues": 2,
+            "rational_smooth": 444,
+            "norm_smooth": 69,
+            "trial_prime_visits": 90720,
+            "exact_prime_divisions": 4712,
+            "character_primes_tried": 0,
+            "character_root_residues": 0,
+            "euler_criterion_powers": 0
+          },
+          "arms": [
+            {
+              "bits": 0,
+              "kernel_dimension": 0,
+              "matrix_rank": 24,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 4,
+              "kernel_dimension": 0,
+              "matrix_rank": 24,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 8,
+              "kernel_dimension": 0,
+              "matrix_rank": 24,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            }
+          ]
+        },
+        "quadratic": {
+          "positions_budget": 1583,
+          "positions": 1583,
+          "smooth_rows": 11,
+          "sieve_marks": 2334,
+          "prime_divisions": 2520,
+          "kernel_dimension": 0,
+          "gcd_tests": 0,
+          "remaining_cofactor": "1940860319",
+          "outcome": "no_split",
+          "divisors": []
+        }
+      },
+      {
+        "id": "expanded-fresh-31-2",
+        "draw_index": 3,
+        "n": "2027899331",
+        "cubic": {
+          "status": "no_norm_dependency",
+          "remaining_cofactor": "2027899331",
+          "m": "1265",
+          "f_ascending_monic": [
+            "601",
+            "327",
+            "2",
+            "1"
+          ],
+          "irreducibility_prime": 2,
+          "candidate_rows": 1583,
+          "smooth_rows": 25,
+          "available_character_places": [],
+          "work": {
+            "polynomials_tried": 1,
+            "irreducibility_residues": 2,
+            "rational_smooth": 448,
+            "norm_smooth": 78,
+            "trial_prime_visits": 90892,
+            "exact_prime_divisions": 4967,
+            "character_primes_tried": 0,
+            "character_root_residues": 0,
+            "euler_criterion_powers": 0
+          },
+          "arms": [
+            {
+              "bits": 0,
+              "kernel_dimension": 0,
+              "matrix_rank": 25,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 4,
+              "kernel_dimension": 0,
+              "matrix_rank": 25,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 8,
+              "kernel_dimension": 0,
+              "matrix_rank": 25,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            }
+          ]
+        },
+        "quadratic": {
+          "positions_budget": 1583,
+          "positions": 1583,
+          "smooth_rows": 21,
+          "sieve_marks": 2754,
+          "prime_divisions": 2967,
+          "kernel_dimension": 3,
+          "gcd_tests": 3,
+          "remaining_cofactor": "1",
+          "outcome": "relation",
+          "divisors": [
+            "43321",
+            "46811"
+          ]
+        }
+      },
+      {
+        "id": "expanded-fresh-31-3",
+        "draw_index": 4,
+        "n": "1622685353",
+        "cubic": {
+          "status": "no_norm_dependency",
+          "remaining_cofactor": "1622685353",
+          "m": "1175",
+          "f_ascending_monic": [
+            "-222",
+            "384",
+            "0",
+            "1"
+          ],
+          "irreducibility_prime": 5,
+          "candidate_rows": 1583,
+          "smooth_rows": 10,
+          "available_character_places": [],
+          "work": {
+            "polynomials_tried": 1,
+            "irreducibility_residues": 7,
+            "rational_smooth": 465,
+            "norm_smooth": 35,
+            "trial_prime_visits": 90982,
+            "exact_prime_divisions": 4979,
+            "character_primes_tried": 0,
+            "character_root_residues": 0,
+            "euler_criterion_powers": 0
+          },
+          "arms": [
+            {
+              "bits": 0,
+              "kernel_dimension": 0,
+              "matrix_rank": 10,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 4,
+              "kernel_dimension": 0,
+              "matrix_rank": 10,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 8,
+              "kernel_dimension": 0,
+              "matrix_rank": 10,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            }
+          ]
+        },
+        "quadratic": {
+          "positions_budget": 1583,
+          "positions": 1583,
+          "smooth_rows": 35,
+          "sieve_marks": 2592,
+          "prime_divisions": 5109,
+          "kernel_dimension": 19,
+          "gcd_tests": 2,
+          "remaining_cofactor": "1",
+          "outcome": "relation",
+          "divisors": [
+            "33179",
+            "48907"
+          ]
+        }
+      },
+      {
+        "id": "expanded-fresh-31-4",
+        "draw_index": 7,
+        "n": "1212745739",
+        "cubic": {
+          "status": "no_norm_dependency",
+          "remaining_cofactor": "1212745739",
+          "m": "1066",
+          "f_ascending_monic": [
+            "179",
+            "238",
+            "1",
+            "1"
+          ],
+          "irreducibility_prime": 2,
+          "candidate_rows": 1583,
+          "smooth_rows": 24,
+          "available_character_places": [],
+          "work": {
+            "polynomials_tried": 1,
+            "irreducibility_residues": 2,
+            "rational_smooth": 456,
+            "norm_smooth": 71,
+            "trial_prime_visits": 90491,
+            "exact_prime_divisions": 4692,
+            "character_primes_tried": 0,
+            "character_root_residues": 0,
+            "euler_criterion_powers": 0
+          },
+          "arms": [
+            {
+              "bits": 0,
+              "kernel_dimension": 0,
+              "matrix_rank": 24,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 4,
+              "kernel_dimension": 0,
+              "matrix_rank": 24,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 8,
+              "kernel_dimension": 0,
+              "matrix_rank": 24,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            }
+          ]
+        },
+        "quadratic": {
+          "positions_budget": 1583,
+          "positions": 1583,
+          "smooth_rows": 10,
+          "sieve_marks": 2587,
+          "prime_divisions": 2845,
+          "kernel_dimension": 0,
+          "gcd_tests": 0,
+          "remaining_cofactor": "1212745739",
+          "outcome": "no_split",
+          "divisors": []
+        }
+      }
+    ]
+  },
+  "sensitivity": {
+    "a_limit": 160,
+    "b_limit": 32,
+    "rows": [
+      {
+        "id": "sensitivity-31-1",
+        "draw_index": 1,
+        "n": "1734799141",
+        "cubic": {
+          "status": "no_proper_split",
+          "remaining_cofactor": "1734799141",
+          "m": "1201",
+          "f_ascending_monic": [
+            "279",
+            "-341",
+            "2",
+            "1"
+          ],
+          "irreducibility_prime": 2,
+          "candidate_rows": 6361,
+          "smooth_rows": 60,
+          "available_character_places": [
+            [
+              137,
+              119
+            ],
+            [
+              139,
+              5
+            ],
+            [
+              151,
+              14
+            ],
+            [
+              157,
+              34
+            ],
+            [
+              167,
+              51
+            ],
+            [
+              173,
+              162
+            ],
+            [
+              179,
+              80
+            ],
+            [
+              191,
+              22
+            ]
+          ],
+          "work": {
+            "polynomials_tried": 1,
+            "irreducibility_residues": 2,
+            "rational_smooth": 1472,
+            "norm_smooth": 188,
+            "trial_prime_visits": 372323,
+            "exact_prime_divisions": 23512,
+            "character_primes_tried": 12,
+            "character_root_residues": 1119,
+            "euler_criterion_powers": 480
+          },
+          "arms": [
+            {
+              "bits": 0,
+              "kernel_dimension": 12,
+              "matrix_rank": 48,
+              "tested": 32,
+              "remaining_dependencies": "4063",
+              "true_squares": 0,
+              "false_squares": 32,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 3728,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 724,
+              "first_hit": null
+            },
+            {
+              "bits": 4,
+              "kernel_dimension": 8,
+              "matrix_rank": 52,
+              "tested": 32,
+              "remaining_dependencies": "223",
+              "true_squares": 0,
+              "false_squares": 32,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 4506,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 825,
+              "first_hit": null
+            },
+            {
+              "bits": 8,
+              "kernel_dimension": 5,
+              "matrix_rank": 55,
+              "tested": 31,
+              "remaining_dependencies": "0",
+              "true_squares": 1,
+              "false_squares": 30,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 4843,
+              "gcd_tests": 2,
+              "proper_hits": 0,
+              "row_multiplications": 896,
+              "first_hit": null
+            }
+          ]
+        },
+        "quadratic": {
+          "positions_budget": 6361,
+          "positions": 6361,
+          "smooth_rows": 58,
+          "sieve_marks": 14477,
+          "prime_divisions": 20666,
+          "kernel_dimension": 44,
+          "gcd_tests": 4,
+          "remaining_cofactor": "1",
+          "outcome": "relation",
+          "divisors": [
+            "37463",
+            "46307"
+          ]
+        }
+      },
+      {
+        "id": "sensitivity-39-1",
+        "draw_index": 0,
+        "n": "538242898783",
+        "cubic": {
+          "status": "no_norm_dependency",
+          "remaining_cofactor": "538242898783",
+          "m": "8134",
+          "f_ascending_monic": [
+            "-2805",
+            "1892",
+            "1",
+            "1"
+          ],
+          "irreducibility_prime": 2,
+          "candidate_rows": 6361,
+          "smooth_rows": 26,
+          "available_character_places": [],
+          "work": {
+            "polynomials_tried": 1,
+            "irreducibility_residues": 2,
+            "rational_smooth": 758,
+            "norm_smooth": 194,
+            "trial_prime_visits": 383289,
+            "exact_prime_divisions": 24393,
+            "character_primes_tried": 0,
+            "character_root_residues": 0,
+            "euler_criterion_powers": 0
+          },
+          "arms": [
+            {
+              "bits": 0,
+              "kernel_dimension": 0,
+              "matrix_rank": 26,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 4,
+              "kernel_dimension": 0,
+              "matrix_rank": 26,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            },
+            {
+              "bits": 8,
+              "kernel_dimension": 0,
+              "matrix_rank": 26,
+              "tested": 0,
+              "remaining_dependencies": "0",
+              "true_squares": 0,
+              "false_squares": 0,
+              "scalar_squares": 0,
+              "rootless_mod5": 0,
+              "isolation_nodes": 0,
+              "gcd_tests": 0,
+              "proper_hits": 0,
+              "row_multiplications": 0,
+              "first_hit": null
+            }
+          ]
+        },
+        "quadratic": {
+          "positions_budget": 6361,
+          "positions": 6361,
+          "smooth_rows": 9,
+          "sieve_marks": 12792,
+          "prime_divisions": 15315,
+          "kernel_dimension": 0,
+          "gcd_tests": 0,
+          "remaining_cofactor": "538242898783",
+          "outcome": "no_split",
+          "divisors": []
+        }
+      }
+    ]
+  },
+  "timing_cpu_ns": {
+    "holdout-31-1": {
+      "cubic_setup_ns": 2986000,
+      "cubic_arms_ns": {
+        "0": 6000,
+        "4": 4000,
+        "8": 2000
+      },
+      "cubic_total_ns": 3009000,
+      "quadratic_total_ns": 551000
+    },
+    "holdout-31-2": {
+      "cubic_setup_ns": 2954000,
+      "cubic_arms_ns": {
+        "0": 15000,
+        "4": 3000,
+        "8": 2000
+      },
+      "cubic_total_ns": 2986000,
+      "quadratic_total_ns": 510000
+    },
+    "holdout-31-3": {
+      "cubic_setup_ns": 2914000,
+      "cubic_arms_ns": {
+        "0": 5000,
+        "4": 3000,
+        "8": 2000
+      },
+      "cubic_total_ns": 2933000,
+      "quadratic_total_ns": 346000
+    },
+    "holdout-31-4": {
+      "cubic_setup_ns": 2932000,
+      "cubic_arms_ns": {
+        "0": 7000,
+        "4": 3000,
+        "8": 2000
+      },
+      "cubic_total_ns": 2954000,
+      "quadratic_total_ns": 363000
+    },
+    "holdout-39-1": {
+      "cubic_setup_ns": 3151000,
+      "cubic_arms_ns": {
+        "0": 3000,
+        "4": 2000,
+        "8": 2000
+      },
+      "cubic_total_ns": 3170000,
+      "quadratic_total_ns": 304000
+    },
+    "holdout-39-2": {
+      "cubic_setup_ns": 3096000,
+      "cubic_arms_ns": {
+        "0": 3000,
+        "4": 2000,
+        "8": 2000
+      },
+      "cubic_total_ns": 3110000,
+      "quadratic_total_ns": 268000
+    },
+    "holdout-39-3": {
+      "cubic_setup_ns": 3097000,
+      "cubic_arms_ns": {
+        "0": 17000,
+        "4": 3000,
+        "8": 2000
+      },
+      "cubic_total_ns": 3133000,
+      "quadratic_total_ns": 378000
+    },
+    "holdout-39-4": {
+      "cubic_setup_ns": 3008000,
+      "cubic_arms_ns": {
+        "0": 5000,
+        "4": 2000,
+        "8": 1000
+      },
+      "cubic_total_ns": 3024000,
+      "quadratic_total_ns": 309000
+    },
+    "holdout-79-1": {
+      "cubic_setup_ns": 3337000,
+      "cubic_arms_ns": {
+        "0": 8000,
+        "4": 3000,
+        "8": 2000
+      },
+      "cubic_total_ns": 3365000,
+      "quadratic_total_ns": 348000
+    },
+    "arbitrary-divisor-window-fresh-2048": {
+      "cubic_setup_ns": 5800000,
+      "cubic_arms_ns": {
+        "0": 4000,
+        "4": 5000,
+        "8": 2000
+      },
+      "cubic_total_ns": 5833000,
+      "quadratic_total_ns": 739000
+    },
+    "arbitrary-divisor-window-crossed-2048": {
+      "cubic_setup_ns": 5772000,
+      "cubic_arms_ns": {
+        "0": 9000,
+        "4": 3000,
+        "8": 2000
+      },
+      "cubic_total_ns": 5800000,
+      "quadratic_total_ns": 1104000
+    },
+    "public-base-989": {
+      "cubic_setup_ns": 3171000,
+      "cubic_arms_ns": {
+        "0": 6740000,
+        "4": 14190000,
+        "8": 14419000
+      },
+      "cubic_total_ns": 38542000,
+      "quadratic_total_ns": 65000
+    },
+    "expanded-original-31-1": {
+      "cubic_setup_ns": 11531000,
+      "cubic_arms_ns": {
+        "0": 19000,
+        "4": 5000,
+        "8": 2000
+      },
+      "cubic_total_ns": 11579000,
+      "quadratic_total_ns": 1317000
+    },
+    "expanded-original-31-2": {
+      "cubic_setup_ns": 12087000,
+      "cubic_arms_ns": {
+        "0": 71607000,
+        "4": 80909000,
+        "8": 2491000
+      },
+      "cubic_total_ns": 167122000,
+      "quadratic_total_ns": 1547000
+    },
+    "expanded-original-31-3": {
+      "cubic_setup_ns": 11368000,
+      "cubic_arms_ns": {
+        "0": 4000,
+        "4": 2000,
+        "8": 2000
+      },
+      "cubic_total_ns": 11391000,
+      "quadratic_total_ns": 1088000
+    },
+    "expanded-original-31-4": {
+      "cubic_setup_ns": 11267000,
+      "cubic_arms_ns": {
+        "0": 5000,
+        "4": 2000,
+        "8": 2000
+      },
+      "cubic_total_ns": 11294000,
+      "quadratic_total_ns": 1149000
+    },
+    "expanded-fresh-31-1": {
+      "cubic_setup_ns": 10990000,
+      "cubic_arms_ns": {
+        "0": 4000,
+        "4": 3000,
+        "8": 2000
+      },
+      "cubic_total_ns": 11013000,
+      "quadratic_total_ns": 827000
+    },
+    "expanded-fresh-31-2": {
+      "cubic_setup_ns": 11003000,
+      "cubic_arms_ns": {
+        "0": 7000,
+        "4": 2000,
+        "8": 2000
+      },
+      "cubic_total_ns": 11031000,
+      "quadratic_total_ns": 933000
+    },
+    "expanded-fresh-31-3": {
+      "cubic_setup_ns": 11111000,
+      "cubic_arms_ns": {
+        "0": 4000,
+        "4": 2000,
+        "8": 4000
+      },
+      "cubic_total_ns": 11136000,
+      "quadratic_total_ns": 1131000
+    },
+    "expanded-fresh-31-4": {
+      "cubic_setup_ns": 11077000,
+      "cubic_arms_ns": {
+        "0": 4000,
+        "4": 3000,
+        "8": 2000
+      },
+      "cubic_total_ns": 11103000,
+      "quadratic_total_ns": 927000
+    },
+    "sensitivity-31-1": {
+      "cubic_setup_ns": 46313000,
+      "cubic_arms_ns": {
+        "0": 31055000,
+        "4": 37628000,
+        "8": 40584000
+      },
+      "cubic_total_ns": 155640000,
+      "quadratic_total_ns": 4944000
+    },
+    "sensitivity-39-1": {
+      "cubic_setup_ns": 46795000,
+      "cubic_arms_ns": {
+        "0": 6000,
+        "4": 4000,
+        "8": 2000
+      },
+      "cubic_total_ns": 46861000,
+      "quadratic_total_ns": 4449000
+    }
+  },
+  "supplied_989_examples": {
+    "m": 10,
+    "f": [
+      -11,
+      0,
+      0,
+      1
+    ],
+    "true_rows": [
+      [
+        -2,
+        1
+      ],
+      [
+        -2,
+        3
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    "false_rows": [
+      [
+        2,
+        1
+      ],
+      [
+        -5,
+        2
+      ],
+      [
+        -10,
+        3
+      ]
+    ],
+    "true": {
+      "status": "square_witness",
+      "norm_root": 255,
+      "roots": [
+        21
+      ],
+      "witnesses": [
+        {
+          "trace": 21,
+          "second": 147,
+          "numerators": [
+            5355,
+            294,
+            -1
+          ],
+          "denominator": 2832
+        }
+      ],
+      "work": {
+        "integer_root_nodes": 11,
+        "mod5_root_mask": 18,
+        "radius": 32,
+        "max_isolation_nodes": 121
+      },
+      "probes": [
+        {
+          "trace": 21,
+          "modular_values": [
+            46,
+            258
+          ],
+          "gcds": [
+            23,
+            43
+          ]
+        }
+      ],
+      "proper_divisors": [
+        23,
+        43
+      ]
+    },
+    "false": {
+      "status": "no_trace",
+      "norm_root": 703,
+      "roots": [],
+      "witnesses": [],
+      "work": {
+        "integer_root_nodes": 0,
+        "mod5_root_mask": 0,
+        "radius": 64,
+        "max_isolation_nodes": 141
+      },
+      "probes": [],
+      "proper_divisors": []
+    }
+  }
+}

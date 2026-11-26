@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A cubic square relation recovered 36,151 and 52,999 from their product alone. Eight small-prime tests reduced 511 possible combinations to the successful one. At the same row budget the comparison quadratic sieve found six of the eight small products, including this one. Neither full-size input yielded a row. [Search, comparison and formal results](cubic-square-relations.md)
+
 Two negative remainders gave a factor on 43,423. For every balanced product congruent to 5 modulo 12 an unequal match provably exists, although finding the guaranteed one on a new full-size control would take more than $2^{1010}$ visits in the tested order. [Proof, small census and public scan](when-two-negative-remainders-give-a-factor.md)
 
 A small-prime multiplier score found 12 products in 24 trials. The ordinary search found 10 when given enough blocks to match both sieve marks and divisions on each input. Both full-size products remained unresolved. [Measured work and finite-interval theory](multipliers-for-polynomial-relations.md)

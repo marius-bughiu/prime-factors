@@ -829,6 +829,22 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'cubic-trace':
+        w = result['cubic_trace']
+        limits = w['limits']
+        count = (f'{w.get("candidate_rows", 0):,} primitive linear rows'
+                 f' (|a| ≤ {limits["a_limit"]}, 1 ≤ b ≤ {limits["b_limit"]})'
+                 f' · {w.get("smooth_rows", 0):,} rows smooth on both sides'
+                 f' · {w["work"]["trial_prime_visits"]:,} trial-prime visits'
+                 f' · up to {limits["trace_cap"]} dependencies per character filter')
+        for arm in w['arms']:
+            count += (f'<br>{arm["bits"]} character bits · {arm["tested"]} dependencies tested'
+                      f' · {arm["true_squares"]} field squares · {arm["gcd_tests"]} gcds'
+                      f' · {compact_count(int(arm["remaining_dependencies"]))} dependencies left')
+        if 'cubic_relation' in result:
+            relation = result['cubic_relation']
+            evidence += (f'<p><a href="{escape(relation["proof"])}">Check the cubic square and both gcds</a>'
+                         f' ({relation["row_count"]} selected rows)</p>')
     elif result['method'] == 'mixed-negative-template':
         w = result['mixed_negative_template']
         count = (f'Odd factor-sum candidates · {w["visited"]:,} tested · '

@@ -253,6 +253,9 @@ import PrimeFactors.MultiplierPolynomialRoots
 import PrimeFactors.MixedNegativeNorms
 import PrimeFactors.MixedNegativeTemplates
 import PrimeFactors.MixedNegativeCongruences
+import PrimeFactors.CubicTraceSquare
+import PrimeFactors.CubicLocalCharacters
+import PrimeFactors.CubicTraceMasks
 import PrimeFactors.MultiplierPolynomialScore
 import PrimeFactors.PolynomialRootPacking
 import PrimeFactors.PooledRelations

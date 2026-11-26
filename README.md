@@ -8,6 +8,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**Eight extra checks singled out the clue that gave 36,151 × 52,999.** We started with their product, 1,915,966,849. An earlier test admitted 511 combinations, and its first 32 all failed. Eight checks left one combination, which gave both primes. Across eight independently drawn 31-bit products the cubic search factored one and the comparison quadratic sieve factored six. On both ordinary 2,048-bit inputs the cubic search found no usable rows. [How the clue works and what Lean verified](discoveries/cubic-square-relations.md)
+
 **A match between two square tests can guarantee a factor.** On 43,423, the match gave 173 and 251. Two constructions guarantee an unequal match on more than 28% of the full-size prime pairs we study. On a new 2,048-bit example, the guaranteed answer lay more than $2^{1010}$ positions into the search. [When the guarantee helps and what it costs](discoveries/when-two-negative-remainders-give-a-factor.md)
 
 **Choosing a multiplier found all eight fresh 79-bit examples.** The ordinary search found three at the same number of positions and seven when it received enough extra positions to match both marks and divisions. Neither full-size example produced a single usable row. [What the selector changes and what the comparison cost](discoveries/multipliers-for-polynomial-relations.md)

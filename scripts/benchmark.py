@@ -50,6 +50,7 @@ from experiments import carry_interval, geometric_lifted_readout, geometric_read
 from experiments import geometric_precision_readout, geometric_sum_readout, radix_carries, sum_signature_join
 from scripts import near_smooth_certificate, trace_cover_certificate
 from scripts.geometric_wheel_benchmark import wheel_readout_case
+from scripts.cubic_trace_benchmark import cubic_trace_case
 from scripts.streamed_sum_benchmark import streamed_sum_case
 from scripts.trace_folded_benchmark import trace_folded_case
 from scripts.factor_sum_quantile_benchmark import quantile_case
@@ -1381,6 +1382,8 @@ end PrimeFactors.Generated
         work.update(coefficient=case['coefficient'], max_norm=case['max_norm'],
                     max_lifts=case['max_lifts'])
         result = certify_split(case, proof, factor, elapsed, 'polynomial_packet', work)
+    elif method == 'cubic-trace':
+        result = cubic_trace_case(case, proof, agree, certify_split)
     elif method == 'mixed-negative-template':
         work = mixed_template_search(int(case['n']), case['max_tests'])
         elapsed = time.perf_counter() - start
@@ -1704,6 +1707,7 @@ def main():
                              ('polynomial-relations.json', 'polynomial-relations'),
                              ('multiplier-polynomials.json', 'multiplier-polynomials'),
                              ('mixed-negative-norms.json', 'mixed-negative-norms'),
+                             ('cubic-trace.json', 'cubic-trace'),
                              ('mixed-negative-template.json', 'mixed-negative-template'),
                              ('norm-directions.json', 'norm-directions'),
                              ('norm-curves.json', 'norm-curves'),
