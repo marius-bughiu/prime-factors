@@ -46,7 +46,7 @@ from experiments.monotone_divisor_sampling import scan as scan_divisor_prefixes,
 from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
 from experiments.smooth_factor_sums import scan_two_three
 from experiments.near_smooth_sum import search as near_smooth_search
-from experiments import radix_carries
+from experiments import carry_interval, radix_carries
 from scripts import near_smooth_certificate, trace_cover_certificate
 from experiments import trace_cover, trace_cover_transfer
 from experiments.gap_newton_lanes import search as gap_lane_search
@@ -178,6 +178,50 @@ theorem {theorem} :
     start = time.perf_counter()
     verify_file(proof, theorem)
     return dict(proof=f'proofs/{proof.name}', seconds=time.perf_counter()-start)
+
+
+def check_carry_interval_absence(n, work, proof):
+    """Check every direct probe in a measured interval using two nonsquare witnesses."""
+    if not work['covered'] or work['status'] != 'two_labels' or work['hits']:
+        raise ValueError('Expected a covered low-carry interval with no split')
+    exponent, high, budget = work['exponent'], work['high'], int(work['low_budget'])
+    center_sum = int(work['center_sum'])
+    product = int(work['coefficient'])*n
+    center, radius, a, b = (int(work['certificate'][key]) for key in ('center', 'radius', 'a', 'b'))
+    first, last = center_sum-budget, center_sum+budget
+    if first <= 0 or first*first < 4*product:
+        raise ValueError('The interval certificate requires a positive lower trace above the square-root threshold')
+    top_floor = isqrt(last*last-4*product)
+    bottom_ceil = carry_interval.ceil_sqrt(first*first-4*product)
+    final_label = (2*(a*center*center+b*product)+3*center-1)//(2*center)
+    radicands = [z*z-4*a*b*product for z in (final_label-1, final_label)]
+    roots = [isqrt(max(0, delta)) for delta in radicands]
+    theorem = 'PrimeFactors.Generated.noCarryInInterval'
+    proof.write_text(f"""import PrimeFactors.CarryInterval
+
+open PrimeFactors.PredictedTraceCarries PrimeFactors.ArbitraryDivisorWindow PrimeFactors.CarryInterval
+set_option exponentiation.threshold 16384
+set_option maxRecDepth 8192
+
+theorem {theorem} (k : ℤ) (inside : |k| ≤ {budget}) :
+    probe {n} (2^{exponent}) ({high}) k = none := by
+  apply excludes_of_nonsquares
+    (S₀ := {center_sum}) (c := {center}) (w := {radius}) (a := {a}) (b := {b})
+    (r₁ := {roots[0]}) (r₂ := {roots[1]}) (budget := {budget})
+    (by decide +kernel) (by decide +kernel) ?_ ?_ ?_ ?_ ?_ k inside
+  · apply fit_checked (f := {top_floor}) (u := {bottom_ceil}) <;> decide +kernel
+  · unfold Curvature
+    decide +kernel
+  · unfold Weights
+    decide +kernel
+  all_goals (unfold NotSquareAt; decide +kernel)
+
+#print axioms {theorem}
+""")
+    start = time.perf_counter()
+    verify_file(proof, theorem)
+    return dict(low_budget=str(budget), exponent=exponent, high=high,
+                proof=f'proofs/{proof.name}', verification_seconds=time.perf_counter()-start)
 
 
 def verify_interval(n, work, proof, module, application):
@@ -362,6 +406,25 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'carry-interval':
+        n = int(case['n'])
+        exponent, high, budget = case['exponent'], case['high'], int(case['low_budget'])
+        work = carry_interval.search(n, exponent, high, budget)
+        elapsed = time.perf_counter() - start
+        winning_lows = [hit['low'] for hit in work['hits']]
+        agree(case, dict(covered=work['covered'], interval_status=work['status'],
+                         work=work['work'], winning_lows=winning_lows),
+              ['covered', 'interval_status', 'work', 'winning_lows'])
+        if int(work['low_candidates']) != 2*budget+1:
+            raise ValueError(f'{name}: incorrect inclusive low-carry count')
+        work.update(exponent=exponent, high=high, low_budget=str(budget))
+        factor = int(work['hits'][0]['factor']) if work['hits'] else None
+        result = certify_split(case, proof, factor, elapsed, 'carry_interval', work)
+        if factor is not None:
+            hit = dict(exponent=exponent, high=high, low=int(winning_lows[0]))
+            result['carry_proof'] = check_carry_probe(n, factor, hit, proof)
+        elif case.get('check_empty'):
+            result['exclusion'] = check_carry_interval_absence(n, work, proof)
     elif method == 'radix-carries':
         n = int(case['n'])
         high, low = case['high_budget'], case['low_budget']
@@ -1299,6 +1362,7 @@ def main():
                              ('trace-cover.json', 'trace-cover'),
                              ('trace-transfer.json', 'trace-transfer'),
                              ('radix-carries.json', 'radix-carries'),
+                             ('carry-interval.json', 'carry-interval'),
                              ('weighted-sparse.json', 'weighted-sparse'),
                              ('weighted-base.json', 'weighted-base'),
                              ('quartic-trace.json', 'quartic-trace'),

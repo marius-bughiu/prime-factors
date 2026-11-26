@@ -338,6 +338,11 @@ import PrimeFactors.PredictedTraceCarries
 import PrimeFactors.ShiftedEndpointPopulation
 import PrimeFactors.ShiftedEndpointProduct
 import PrimeFactors.ShiftedSmallRadices
+import PrimeFactors.CarryRemainderPairs
+import PrimeFactors.CarryRadixCoverage
+import PrimeFactors.LowBitsCarryMenu
+import PrimeFactors.CenteredCarryDistances
+import PrimeFactors.CarryInterval
 import PrimeFactors.ShiftedDyadicMidpoints
 import PrimeFactors.TrueTraceTableCost
 import PrimeFactors.TraceGapPopulation

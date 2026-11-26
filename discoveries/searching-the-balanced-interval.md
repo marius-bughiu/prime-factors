@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A whole interval of candidate corrections can sometimes be checked with two square tests. At a public base and upper correction, a 354-bit lower correction recovered the two primes on a selected 2,048-bit input. Even if every interval were cheap to check, the same tolerance across all 512 tested bases reaches fewer than one in $2^{113}$ eligible prime pairs. [Checked result, alternative search and frequency proof](checking-a-range-of-product-carries.md)
+
 Rounding two digits of the product can predict a weighted sum of the hidden primes without guessing either weight. The rule recovered both primes of two constructed 2,048-bit numbers. A second proof bounds how often a random prime pair can meet the rule, including accidental squares. [Results, construction and population bound](factoring-from-two-rounded-digits.md)
 
 For any fixed base from 2 through $2048^2$, we can also bound accidental matches at just one prime. The chance of any matching comparison is below $2^{-66}$ on uniform eligible prime pairs, even allowing $2^{64}$ starting powers and $2^{64}$ initial blocks at every reduced direction with denominator through $2^{32}$. Even trying all those bases gives a fraction below $2^{-44}$. The bounded search really does split 33,017 at a wrong sum. [Mathematical scope, example and proof](can-an-accidental-match-find-the-primes.md)

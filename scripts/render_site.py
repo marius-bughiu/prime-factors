@@ -42,7 +42,10 @@ def case_row(result):
     verification = duration(result['verification_seconds']) if checked else 'not run'
     if 'exclusion' in result:
         x = result['exclusion']
-        if 'sum_tolerance' in x:
+        if 'low_budget' in x:
+            claim = (f'Lean proves every probe with low correction within ±{compact_count(int(x["low_budget"]))} '
+                     f'returns no factor at radix 2<sup>{x["exponent"]}</sup> with high correction {x["high"]}.')
+        elif 'sum_tolerance' in x:
             claim = (f'For two 1,024-bit factors, Lean excludes every sum within '
                      f'{compact_count(int(x["sum_tolerance"]))} of the 647 centers '
                      f'using {x["bands"]} divisor intervals.')
@@ -457,6 +460,20 @@ def case_row(result):
         count = (f'Base selection · {selection["bases_tested"]:,} of {w["max_primes"]:,} primes tested'
                  f' · combined order {escape(selection["combined_order"])}'
                  f' · {escape(w["outcome"].replace("_", " "))}')
+    elif result['method'] == 'carry-interval':
+        w = result['carry_interval']
+        ops = w['work']
+        total = compact_count(int(w['low_candidates']))
+        if w['covered']:
+            scope = f'one interval covering {total} signed low corrections'
+        else:
+            scope = f'curvature bound failed · interval of {total} low corrections unresolved'
+        count = (f'Radix 2<sup>{w["exponent"]}</sup> · high correction {w["high"]} · {scope} · '
+                 f'{ops["geometry_sqrts"]} geometry square roots · {ops["convergent_steps"]} continued-fraction steps · '
+                 f'{ops["trace_labels"]} auxiliary traces · {ops["square_tests"]} square tests · '
+                 f'{ops["divisor_tests"]} divisor tests · {ops["gcd_tests"]} gcd tests')
+        if w['hits']:
+            count += ' · recovered low correction ' + ', '.join(escape(hit['low']) for hit in w['hits'])
     elif result['method'] == 'radix-carries':
         w = result['radix_carries']
         count = (f'{w["radices"]:,} dyadic radices · high correction ±{w["high_budget"]:,}, '

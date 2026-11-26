@@ -55,7 +55,9 @@ theorem curvature_of_window {n c w a b : ℤ} (win : Window n c w)
     _ = c^2*(4*w^3) := by ring
     _ ≤ c^2*(c-w) := mul_le_mul_of_nonneg_left size.le (sq_nonneg c)
 
-private theorem strip {n c w a b d q : ℤ} (cur : Curvature n c w b)
+/-- The curvature and weight bounds place every divisor's weighted sum
+inside this open interval of length two, at either parity. -/
+theorem strip {n c w a b d q : ℤ} (cur : Curvature n c w b)
     (wt : Weights n c w a b) (pair : n=d*q) (nearby : |d-c| ≤ w) :
     -c < 2*(c*(a*d+b*q)-(a*c^2+b*n)) ∧
     2*(c*(a*d+b*q)-(a*c^2+b*n)) < 3*c := by

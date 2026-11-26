@@ -1,6 +1,7 @@
 import PrimeFactors.TraceProgression
 import PrimeFactors.PartialOrder
 import Mathlib.Tactic.ReduceModChar
+import Mathlib.Tactic.NormNum.Prime
 
 /-! A weighted-sum label directly from two rounded digits of the product.
 At radix D write p=AD+u, q=BD+v with signed displacements. Only the
@@ -235,6 +236,17 @@ theorem one_trial_example :
   refine ⟨by decide +kernel,by decide +kernel,by decide +kernel,by decide +kernel,
     by decide +kernel,?_,by decide +kernel,sample_smaller_prime,sample_larger_prime⟩
   apply probe_of_square (c:=35) (t:=2360770572) (r:=11960318)
+  all_goals decide +kernel
+
+set_option maxRecDepth 8192 in
+/-- At the nonbinary base supplied in Example 3.3 of Mackall's
+"A factorization algorithm based on Cohn's irreducibility criterion",
+the two signed corrections select the smaller prime. -/
+theorem mackall_example :
+    probe 207314063849 40098 (-1) 1 = some 323131 ∧
+    323131*641579=(207314063849:ℕ) ∧ Nat.Prime 323131 ∧ Nat.Prime 641579 := by
+  refine ⟨?_,by decide +kernel,by norm_num,by norm_num⟩
+  apply probe_of_square (c:=128) (t:=10302728) (r:=37464)
   all_goals decide +kernel
 
 end PrimeFactors.PredictedTraceCarries
