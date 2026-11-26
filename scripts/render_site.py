@@ -470,6 +470,11 @@ def case_row(result):
         elif w['signature_matches'] is not None:
             count += (f' · {w["raw_interval_survivors"]:,} candidate sums · {w["signature_matches"]:,} matches'
                       f' · {w["modular_powers"]:,} modular powers · {w["square_tests"]:,} square tests')
+            if 'incremental_work' in search:
+                updated = search['incremental_work']
+                count += (f' · reusing digit powers took {updated["modular_powers"]:,} powers, '
+                          f'{updated["signature_multiplications"]:,} multiplications, '
+                          f'{updated["signature_inversions"]:,} inversions')
             if w["halving_gcds"]:
                 count += f' · {w["halving_gcds"]:,} gcds from the common exponent'
     elif result['method'] == 'carry-interval':

@@ -19,14 +19,24 @@
       "square_tests": 1,
       "aggregate_exponent": null,
       "halving_squares": 0,
-      "halving_gcds": 0
+      "halving_gcds": 0,
+      "digit_powers": 0,
+      "signature_multiplications": 432,
+      "signature_inversions": 0,
+      "crt_inverses": 8
     },
     "status": "complete",
     "factors": [
       "52902449",
       "55986167"
     ],
-    "remaining": []
+    "remaining": [],
+    "incremental_work": {
+      "modular_powers": 78,
+      "digit_powers": 74,
+      "signature_multiplications": 1484,
+      "signature_inversions": 2
+    }
   },
   {
     "id": "sum-signature-one-base-52",
@@ -48,7 +58,11 @@
       "square_tests": 1,
       "aggregate_exponent": null,
       "halving_squares": 0,
-      "halving_gcds": 0
+      "halving_gcds": 0,
+      "digit_powers": 0,
+      "signature_multiplications": 216,
+      "signature_inversions": 0,
+      "crt_inverses": 8
     },
     "status": "complete",
     "factors": [
@@ -58,7 +72,13 @@
     "remaining": [],
     "input_bases": [
       3
-    ]
+    ],
+    "incremental_work": {
+      "modular_powers": 39,
+      "digit_powers": 37,
+      "signature_multiplications": 742,
+      "signature_inversions": 1
+    }
   },
   {
     "id": "sum-signature-ambiguous-52",
@@ -84,13 +104,23 @@
       "square_tests": 0,
       "aggregate_exponent": "47098626803659719200",
       "halving_squares": 0,
-      "halving_gcds": 0
+      "halving_gcds": 0,
+      "digit_powers": 0,
+      "signature_multiplications": 432,
+      "signature_inversions": 0,
+      "crt_inverses": 8
     },
     "status": "partial",
     "factors": [],
     "remaining": [
       "2961805344422983"
-    ]
+    ],
+    "incremental_work": {
+      "modular_powers": 78,
+      "digit_powers": 74,
+      "signature_multiplications": 1484,
+      "signature_inversions": 2
+    }
   },
   {
     "id": "sum-signature-two-matches",
@@ -115,14 +145,23 @@
       "square_tests": 0,
       "aggregate_exponent": "218580",
       "halving_squares": 1,
-      "halving_gcds": 2
+      "halving_gcds": 2,
+      "digit_powers": 0,
+      "signature_multiplications": 2,
+      "signature_inversions": 0,
+      "crt_inverses": 3
     },
     "status": "complete",
     "factors": [
       "277",
       "397"
     ],
-    "remaining": []
+    "remaining": [],
+    "incremental_work": {
+      "digit_powers": 4,
+      "signature_multiplications": 10,
+      "signature_inversions": 1
+    }
   },
   {
     "id": "sum-signature-fresh-2048",
@@ -144,13 +183,18 @@
       "square_tests": 0,
       "aggregate_exponent": null,
       "halving_squares": 0,
-      "halving_gcds": 0
+      "halving_gcds": 0,
+      "digit_powers": 0,
+      "signature_multiplications": 0,
+      "signature_inversions": 0,
+      "crt_inverses": 0
     },
     "status": "partial",
     "factors": [],
     "remaining": [
       "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
-    ]
+    ],
+    "incremental_work": {}
   },
   {
     "id": "sum-signature-crossed-2048",
@@ -172,12 +216,101 @@
       "square_tests": 0,
       "aggregate_exponent": null,
       "halving_squares": 0,
-      "halving_gcds": 0
+      "halving_gcds": 0,
+      "digit_powers": 0,
+      "signature_multiplications": 0,
+      "signature_inversions": 0,
+      "crt_inverses": 0
     },
     "status": "partial",
     "factors": [],
     "remaining": [
       "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
-    ]
+    ],
+    "incremental_work": {}
+  },
+  {
+    "id": "sum-signature-holdout-80",
+    "description": "Find both primes of the fresh 80-bit holdout using fixed base 2, comparing direct and reused powers",
+    "n": "880619770595831157555173",
+    "max_half_entries": 65536,
+    "input_bases": [
+      2
+    ],
+    "outcome": "factor",
+    "work_checks": {
+      "local_moduli": 11,
+      "local_sites": 151,
+      "local_inverses": 150,
+      "left_entries": 7200,
+      "right_entries": 7056,
+      "unvisited_half_entries": 0,
+      "raw_interval_survivors": 14419339,
+      "signature_matches": 1,
+      "modular_powers": 14257,
+      "lookups": 9227,
+      "square_tests": 1,
+      "aggregate_exponent": null,
+      "halving_squares": 0,
+      "halving_gcds": 0,
+      "digit_powers": 0,
+      "signature_multiplications": 7200,
+      "signature_inversions": 0,
+      "crt_inverses": 11
+    },
+    "incremental_work": {
+      "modular_powers": 78,
+      "digit_powers": 76,
+      "signature_multiplications": 22562,
+      "signature_inversions": 1
+    },
+    "status": "complete",
+    "factors": [
+      "864821852333",
+      "1018267251481"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "sum-signature-holdout-88",
+    "description": "Find both primes of the fresh 88-bit holdout using fixed base 2, comparing direct and reused powers",
+    "n": "216743551899887872400389319",
+    "max_half_entries": 65536,
+    "input_bases": [
+      2
+    ],
+    "outcome": "factor",
+    "work_checks": {
+      "local_moduli": 12,
+      "local_sites": 187,
+      "local_inverses": 186,
+      "left_entries": 40824,
+      "right_entries": 51840,
+      "unvisited_half_entries": 0,
+      "raw_interval_survivors": 254689123,
+      "signature_matches": 1,
+      "modular_powers": 92665,
+      "lookups": 45737,
+      "square_tests": 1,
+      "aggregate_exponent": null,
+      "halving_squares": 0,
+      "halving_gcds": 0,
+      "digit_powers": 0,
+      "signature_multiplications": 40824,
+      "signature_inversions": 0,
+      "crt_inverses": 12
+    },
+    "incremental_work": {
+      "modular_powers": 98,
+      "digit_powers": 96,
+      "signature_multiplications": 133997,
+      "signature_inversions": 1
+    },
+    "status": "complete",
+    "factors": [
+      "14430605773673",
+      "15019712637103"
+    ],
+    "remaining": []
   }
 ]

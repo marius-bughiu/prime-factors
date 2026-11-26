@@ -2,6 +2,8 @@
 
 For a product of two distinct primes of similar size, two random checks have a better than **39 in 40** chance of distinguishing the true sum from every other number in the standard search interval. On a fresh 52-bit product we found that sum and recovered **52,902,449 × 55,986,167**. On each 2,048-bit comparison we stopped before building the search tables. Even the smaller of our two plans needed more than $2^{449}$ entries in total. [Checked probability](../PrimeFactors/SumSignatureProbability.lean) · [Search fixtures](../benchmarks/sum-signature.json)
 
+A subsequent result shows when one base suffices. For random eligible prime pairs and one uniformly sampled unit, the probability of any repeat in the interval is below $2^{-972}$. On the 52-bit example, reusing digit powers reduced the original 866 modular exponentiations to 78 with the same two bases. [Single-base proof, full-size certificate and work comparison](one-base-for-the-factor-sum.md)
+
 ## How the product tells us what to look for
 
 Write $N=pq$ with distinct primes $64\le p<q\le2p$, and let $S=p+q$. For any base $g$ coprime to $N$, the two powers $g^S$ and $g^{N+1}$ have the same remainder modulo $N$. This follows because their exponents differ by $(p-1)(q-1)$. The target on the right is computable from $N$. Once a candidate sum $s$ is known, we check whether $s^2-4N=d^2$, then test $(s-d)/2$ and $(s+d)/2$. The advantage of using powers is that a lookup can compare many sums at once. Hittmeir gives both the classical power identity and the residue-list construction. His estimate about survivor density in a short interval is a separate heuristic. [Hittmeir, §6](https://arxiv.org/html/2205.10074v2#S6) · [Product-and-sum proof](../PrimeFactors/PowerSignature.lean)

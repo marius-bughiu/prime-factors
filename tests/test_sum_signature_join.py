@@ -1,7 +1,8 @@
 import unittest
+from itertools import product
 from math import gcd, isqrt
 
-from experiments.sum_signature_join import _moduli, search
+from experiments.sum_signature_join import _incremental_entries, _moduli, search
 
 
 class SumSignatureJoinTests(unittest.TestCase):
@@ -58,3 +59,43 @@ class SumSignatureJoinTests(unittest.TestCase):
         self.assertEqual(work["aggregate_exponent"], "218580")
         self.assertEqual((work["halving_squares"], work["halving_gcds"]), (1, 2))
         self.assertEqual(work["square_tests"], 0)
+
+    def test_incremental_updates_include_both_wrap_directions(self):
+        n, period = 143, 12
+        bases = (2, 5)
+        groups = [[0], [0, 8], [5, 7], [0, 9, 11]]
+
+        def signature(value):
+            return tuple(pow(g, value, n) for g in bases)
+
+        def multiply(a, b):
+            return tuple(x*y % n for x, y in zip(a, b))
+
+        for sign, start in ((1, 0), (-1, 23)):
+            entries = _incremental_entries(groups, period, signature(start), sign == -1,
+                                           signature, multiply, signature(-period), {"digit_powers": 0})
+            residues = [sum(digits) % period for digits in product(*groups)]
+            expected = [(r, signature(start+sign*r)) for r in residues]
+            self.assertEqual(sorted(entries), sorted(expected))
+
+    def test_search_matches_direct_counts_and_charges_updates(self):
+        n = 2961805344422983
+        for value, bases, cap in ((n, (3,), 65536), (n, (1, 1), 65536), (n, (3,), 215),
+                                  (109969, (35,), 65536), (9, (2,), 1)):
+            args = {"bases": bases, "max_half_entries": cap}
+            direct = search(value, **args)
+            updated = search(value, incremental=True, **args)
+            self.assertEqual(direct["outcome"], updated["outcome"])
+            self.assertEqual(direct["factors"], updated["factors"])
+            for key in direct["work"].keys() - {
+                    "digit_powers", "signature_multiplications", "modular_powers", "signature_inversions"}:
+                self.assertEqual(direct["work"][key], updated["work"][key], key)
+            if cap == 215:
+                for key in ("digit_powers", "signature_multiplications", "signature_inversions", "crt_inverses"):
+                    self.assertEqual(updated["work"][key], 0, key)
+            if value == n and bases == (3,) and cap == 65536:
+                self.assertEqual(direct["work"]["modular_powers"], 433)
+                self.assertEqual(updated["work"]["modular_powers"], 39)
+                self.assertEqual(updated["work"]["signature_inversions"], 1)
+                self.assertGreater(updated["work"]["signature_multiplications"],
+                                   direct["work"]["signature_multiplications"])

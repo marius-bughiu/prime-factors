@@ -417,8 +417,18 @@ def run_case(case, method, proofs):
         elapsed = time.perf_counter() - start
         agree(case, search, ['outcome', 'factors'])
         agree(dict(id=name, **case['work_checks']), search['work'], case['work_checks'])
+        incremental_start = time.perf_counter()
+        incremental = sum_signature_join.search(int(case['n']), bases=case.get('input_bases'),
+                                                max_half_entries=case['max_half_entries'], incremental=True)
+        incremental_seconds = time.perf_counter() - incremental_start
+        agree(case, incremental, ['outcome', 'factors'])
+        changed = case['incremental_work']
+        expected = {**case['work_checks'], **changed}
+        agree(dict(id=name, **expected), incremental['work'], expected)
         factors = search.pop('factors')
         search['max_half_entries'] = case['max_half_entries']
+        search['incremental_work'] = incremental['work']
+        search['incremental_seconds'] = incremental_seconds
         result = certify_split(case, proof, int(factors[0]) if factors else None,
                                elapsed, 'sum_signature', search)
     elif method == 'carry-interval':

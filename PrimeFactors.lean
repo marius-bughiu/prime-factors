@@ -111,6 +111,12 @@ import PrimeFactors.JacobiReadings
 import PrimeFactors.JacobiSeparation
 import PrimeFactors.JointPeriod
 import PrimeFactors.SumSignatureProbability
+import PrimeFactors.SingleBaseRepeat
+import PrimeFactors.DivisorSecondMoment
+import PrimeFactors.SingleBasePopulation
+import PrimeFactors.ReusableSumBase
+import PrimeFactors.SignatureUpdates
+import PrimeFactors.FixedBaseSignature
 import PrimeFactors.SumSignatureCost
 import PrimeFactors.AmbiguousSignatureSplit
 import PrimeFactors.JacobiHalvingCount

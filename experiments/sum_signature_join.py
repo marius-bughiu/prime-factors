@@ -38,11 +38,44 @@ def _moduli():
         yield value
 
 
-def search(n, *, bases=None, max_half_entries=65536):
+def _incremental_entries(groups, period, start, subtract, signature, multiply, inverse_period, work):
+    """Carry a power alongside each partial CRT residue; each digit wraps at most once."""
+    entries = [(0, start)]
+    for digits in sorted(groups, key=len):
+        if digits == [0]:
+            continue
+        # Precompute the two multipliers for every nonzero digit. The left
+        # target decreases with its residue, and the right power increases.
+        has_zero = 0 in digits
+        powers = []
+        for d in digits:
+            if d == 0:
+                continue
+            power = signature(period-d if subtract else d)
+            work["digit_powers"] += len(power)
+            adjusted = multiply(power, inverse_period)
+            plain, wrapped = (adjusted, power) if subtract else (power, adjusted)
+            powers.append((d, plain, wrapped))
+        children = []
+        for previous, prev_power in entries:
+            if has_zero:
+                children.append((previous, prev_power))
+            for d, plain, wrapped in powers:
+                value = previous+d
+                wrap = value >= period
+                if wrap:
+                    value -= period
+                children.append((value, multiply(prev_power, wrapped if wrap else plain)))
+        entries = children
+    return entries
+
+
+def search(n, *, bases=None, max_half_entries=65536, incremental=False):
     """Count matching sums; recover a unique sum or test their common exponent.
 
     Bounds use p≤q≤2p. Planning and both list sizes are reported even when the
     size cap stops construction. Explicit bases need only be coprime to n.
+    Incremental mode precomputes the signed CRT digit powers on each side.
     """
     if n < 9 or n % 2 == 0 or max_half_entries < 1:
         raise ValueError("expected an odd integer at least 9 and a positive list cap")
@@ -56,7 +89,8 @@ def search(n, *, bases=None, max_half_entries=65536):
     work = dict(width=width, period=1, left_entries=0, right_entries=0,
                 local_sites=0, local_inverses=0, local_moduli=0,
                 raw_interval_survivors=None, signature_matches=None,
-                modular_powers=0, lookups=0, square_tests=0,
+                modular_powers=0, digit_powers=0, signature_multiplications=0,
+                signature_inversions=0, crt_inverses=0, lookups=0, square_tests=0,
                 unvisited_half_entries=0, raw_range_queries=0, matched_range_queries=0,
                 aggregate_exponent=None, halving_squares=0, halving_gcds=0)
 
@@ -95,28 +129,48 @@ def search(n, *, bases=None, max_half_entries=65536):
         work["unvisited_half_entries"] = sum(sizes)
         return result("half_list_limit")
 
-    def entries(groups):
+    def contributions_for(groups):
         contributions = []
         for m, residues in groups:
             other = period//m
+            work["crt_inverses"] += 1
             basis = other*pow(other, -1, m)
             contributions.append([basis*r % period for r in sorted(residues)])
-        return half_sums(contributions, period)
+        return contributions
 
     def signature(exponent):
         work["modular_powers"] += len(bases)
+        if exponent < 0:
+            work["signature_inversions"] += len(bases)
         return tuple(pow(g, exponent, n) for g in bases)
 
-    alpha = entries(halves[0])
-    beta = sorted(entries(halves[1]))
-    buckets = defaultdict(list)
-    for b in beta:
-        buckets[signature(b)].append(b)
-    moments = {key: list(accumulate(values, initial=0)) for key, values in buckets.items()}
+    def multiply(first, second):
+        work["signature_multiplications"] += len(bases)
+        return tuple(x*y % n for x, y in zip(first, second))
+
+    left_digits, right_digits = map(contributions_for, halves)
     wrap_signature = signature(period)
+    if incremental:
+        work["signature_inversions"] += len(bases)
+        inverse_period = tuple(pow(x, -1, n) for x in wrap_signature)
+        left_records = _incremental_entries(left_digits, period, signature(n+1-left), True,
+                                            signature, multiply, inverse_period, work)
+        right_records = _incremental_entries(right_digits, period, (1,)*len(bases), False,
+                                             signature, multiply, inverse_period, work)
+        right_records.sort()
+        beta = [b for b, _ in right_records]
+    else:
+        alpha = half_sums(left_digits, period)
+        beta = sorted(half_sums(right_digits, period))
+        left_records = ((a, signature(n+1-left-a)) for a in alpha)
+        right_records = ((b, signature(b)) for b in beta)
+    buckets = defaultdict(list)
+    for b, key in right_records:
+        buckets[key].append(b)
+    del right_records
+    moments = {key: list(accumulate(values, initial=0)) for key, values in buckets.items()}
     hits = raw = total = 0
-    for a in alpha:
-        target = signature(n+1-left-a)
+    for a, target in left_records:
         for wrap in (0, 1):
             lower, upper = max(0, wrap*period-a), min(period-1, wrap*period+width-a)
             if lower > upper:
@@ -124,7 +178,7 @@ def search(n, *, bases=None, max_half_entries=65536):
             work["raw_range_queries"] += 1
             raw += bisect_right(beta, upper) - bisect_left(beta, lower)
             if wrap:
-                key = tuple(x*y % n for x, y in zip(target, wrap_signature))
+                key = multiply(target, wrap_signature)
             else:
                 key = target
             work["lookups"] += 1
