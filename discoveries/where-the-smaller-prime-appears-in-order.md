@@ -27,6 +27,14 @@ Finally $l\le L<l+2$. With $D=s-l$, $k=C(p)$ and $w=C(U)$, parity and rounding g
 
 Lean checks the fixed-product integral, its upper bound, the integrated log-width moments, monotonicity, integer-rounding inequalities the bound for the exceptional set, and the finite population aggregation in `finite_mean`. Its hypotheses explicitly record the smooth mass, the integrated count discrepancy and the per-pair rounding allowance. The Jacobian calculation, use of the published prime-count estimate on interval sections, and integration of their errors are the written steps connecting the actual population to that implication.
 
+## How often does the factor fall in a particular band?
+
+Over the same population, **more than 9.97%** have their smaller prime between 1% and 11% of the way through the continuous interval, and **more than 3.90%** lie between 48% and 52%. Each percentage still uses the entire eligible population as denominator. Both numerators omit all products with $D<2^{40}$. These bounds concern the position $R$ before integer rounding. They can be applied to search schedules whose checked integers contain the respective band. [Band preimages and population bounds](../PrimeFactors/AscendingDivisorRank.lean)
+
+Fix a product, let $E=e^a-1$ and take a rank interval $[l_0,h_0]$. Its length in the $v$ coordinate is $\log(1+h_0E)-\log(1+l_0E)$, at least $(h_0-l_0)E/(1+h_0E)$. The cubic lower Taylor bound for $e^a$ gives $E(1-0.46a)\ge a$ for $0\le a\le0.35$. Consequently the first interval has log-length at least $a/10$, and the central interval at least $(40/1021)a$: at its right endpoint, $a(1+0.52E)\le(1+0.06a)E\le1.021E$. Integrating those lower bounds and dividing by the smooth population upper bound costs a factor of $(709/710)^2$.
+
+For each band, subtract the open upper superlevel from the closed lower superlevel. The prime-count discrepancy on the difference is at most $2.4\cdot10^{-15}B^2$. In the omitted corner both primes lie within $3\cdot2^{40}$ of $2B$, costing less than $10^{-16}B^2$ additional pairs. The analytic integration and application of Axler's estimate to these two sets follow the written argument above. Lean checks the log preimage, both lengths, the corner budget and the numerical transfer to integer counts in `band_counts`.
+
 As a check on the statistic, complete enumeration of all eligible pairs at smaller widths gave the following results. Each percentage is an arithmetic mean of individually normalized one-based positions. The analytic 48.5% bound above uses 1,024-bit factors.
 
 | Bits per prime | Eligible pairs | Ascending | Descending | Uniform shuffle |

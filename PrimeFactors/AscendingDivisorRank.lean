@@ -267,4 +267,83 @@ theorem reverse_order {k w : ℝ} (pos : 0<w) :
   · apply (le_div_iff₀ (by positivity)).mpr
     linarith
 
+/-- The preimage length of an interval of normalized ranks at fixed product,
+measured in the logarithmic factor coordinate v. -/
+noncomputable def bandLength (a l h : ℝ) : ℝ :=
+  log (1+h*(exp a-1)) - log (1+l*(exp a-1))
+
+theorem band_membership {a l h v : ℝ} (ap : 0<a) (lp : 0≤l) (lh : l≤h) :
+    (l≤(exp v-1)/(exp a-1) ∧ (exp v-1)/(exp a-1)≤h) ↔
+    (log (1+l*(exp a-1))≤v ∧ v≤log (1+h*(exp a-1))) := by
+  have e : 0<exp a-1 := by linarith only [Real.one_lt_exp_iff.mpr ap]
+  have hp := lp.trans lh
+  rw [le_div_iff₀ e,div_le_iff₀ e,Real.log_le_iff_le_exp (by positivity),
+    Real.le_log_iff_exp_le (by positivity)]
+  constructor <;> rintro ⟨a,b⟩ <;> constructor <;> linarith
+
+private theorem band_lower {a l h : ℝ} (ap : 0≤a) (lp : 0≤l) (lh : l≤h) :
+    (h-l)*(exp a-1)/(1+h*(exp a-1)) ≤ bandLength a l h := by
+  have e : 0≤exp a-1 := by linarith only [Real.one_le_exp_iff.mpr ap]
+  have hp := lp.trans lh
+  have dl : 0<1+l*(exp a-1) := by positivity
+  have dh : 0<1+h*(exp a-1) := by positivity
+  have bound := Real.one_sub_inv_le_log_of_pos (div_pos dh dl)
+  rw [Real.log_div dh.ne' dl.ne'] at bound
+  calc
+    _ = 1-((1+h*(exp a-1))/(1+l*(exp a-1)))⁻¹ := by
+      rw [inv_div]
+      field_simp
+      ring
+    _ ≤ _ := bound
+
+private theorem band_density {a : ℝ} (lo : 0≤a) (hi : a≤35/100) :
+    a ≤ (exp a-1)*(1-23/50*a) := by
+  have tay := Real.sum_le_exp_of_nonneg lo 4
+  norm_num [Finset.sum_range_succ,Nat.factorial] at tay
+  have c : 0≤1-23/50*a := by linarith only [hi]
+  have prod := mul_le_mul_of_nonneg_right tay c
+  have s2 := mul_le_mul_of_nonneg_left hi (sq_nonneg a)
+  have s3 := mul_le_mul_of_nonneg_left hi (pow_nonneg lo 3)
+  nlinarith only [prod,s2,s3,sq_nonneg a]
+
+/-- Per-product log-area lower bounds simultaneously for both fixed bands.
+Here a≤log(2)/2<0.35 throughout the full-width eligible region. -/
+theorem two_bands {a : ℝ} (lo : 0≤a) (hi : a≤35/100) :
+    a/10 ≤ bandLength a (1/100) (11/100) ∧
+    (40/1021)*a ≤ bandLength a (48/100) (52/100) := by
+  have e : 0≤exp a-1 := by linarith only [Real.one_le_exp_iff.mpr lo]
+  have den := band_density lo hi
+  constructor
+  · apply le_trans _ (band_lower lo (by norm_num) (by norm_num))
+    apply (le_div_iff₀ (by positivity)).mpr
+    nlinarith only [den,mul_nonneg lo e]
+  · apply le_trans _ (band_lower lo (by norm_num) (by norm_num))
+    apply (le_div_iff₀ (by positivity)).mpr
+    nlinarith only [den,mul_le_mul_of_nonneg_right hi e]
+
+/-- In units of B², discarding all integer pairs in the corner forced by
+D<2^40 costs less than 10^-16. -/
+theorem occupancy_corner : (3*2^40+1)^2*(10:ℕ)^16 < (2^1023)^2 := by decide +kernel
+
+/-- Numerical transfer from the smooth mass bounds, the two prime-count
+discrepancies per band, and the discarded corner, all normalized by B². -/
+theorem band_population {P early central : ℝ}
+    (pop : P ≤ (1-log 2)/709^2+12/10^16)
+    (forward : (1-log 2)/(10*710^2)-25/10^16 ≤ early)
+    (middle : (1-log 2)*40/(1021*710^2)-25/10^16 ≤ central) :
+    997*P < 10000*early ∧ 39*P < 1000*central := by
+  have h := Real.log_two_lt_d9.le
+  constructor <;> linarith only [pop,forward,middle,h]
+
+/-- Natural-cardinality form of the two occupancy bounds. -/
+theorem band_counts {P early central : ℕ} {B : ℝ} (bp : 0<B)
+    (pop : (P:ℝ)/B^2 ≤ (1-log 2)/709^2+12/10^16)
+    (forward : (1-log 2)/(10*710^2)-25/10^16 ≤ (early:ℝ)/B^2)
+    (middle : (1-log 2)*40/(1021*710^2)-25/10^16 ≤ (central:ℝ)/B^2) :
+    997*P < 10000*early ∧ 39*P < 1000*central := by
+  obtain ⟨p,q⟩ := band_population pop forward middle
+  have pos : 0<B^2 := sq_pos_of_pos bp
+  rw [←mul_div_assoc,←mul_div_assoc,div_lt_div_iff_of_pos_right pos] at p q
+  exact_mod_cast And.intro p q
+
 end PrimeFactors.AscendingDivisorRank

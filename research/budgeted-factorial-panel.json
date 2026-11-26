@@ -1,0 +1,362 @@
+{
+  "protocol": {
+    "seed": "budgeted-factorial-96-v1",
+    "prime_bits": 48,
+    "sample_size": 8,
+    "rule": "First distinct full-width products of distinct primes, in ascending draw order.",
+    "public_inputs_sha256": "5f5436141aafed5a5d8e69bc4eb4da6b517b5d73e01b0d8223a73621c9f81389",
+    "wheel": 210,
+    "mode": "centered",
+    "final_grid": true,
+    "max_span": null,
+    "max_inputs": 1100000
+  },
+  "rows": [
+    {
+      "draw": 1,
+      "n": "58882078928245072338972469981",
+      "outcome": "convolution_limit",
+      "low": "209191167244588",
+      "upper": "242656297936495",
+      "last": "242656297936495",
+      "covered_through": "209191167244587",
+      "covered_span": "84558028800",
+      "ranges": [
+        [
+          "225881449965991",
+          "225966007994790"
+        ]
+      ],
+      "work": {
+        "wheel_gcds": 1,
+        "wheel_residues": 48,
+        "wheel_residue_gcds": 209,
+        "seed_terms": 4704,
+        "table_entries_built": 245763,
+        "batched_candidates": 19327549440,
+        "last_block_cycles": 2048,
+        "peak_samples": 98305,
+        "checkpoint_multiplications": 147444,
+        "checkpoint_gcds": 12,
+        "factorial_limit": 245762,
+        "peak_table_index": 245762,
+        "setup_gcds": 11,
+        "inversions": 11,
+        "convolutions": 11,
+        "convolution_input_coefficients": 687836,
+        "shifted_values": 294779,
+        "paired_products": 196523,
+        "next_convolution_inputs": 688132
+      },
+      "factors": [],
+      "remaining": [
+        "58882078928245072338972469981"
+      ],
+      "unvisited_span": "33380572663108"
+    },
+    {
+      "draw": 5,
+      "n": "51088769873065621181544830479",
+      "outcome": "convolution_limit",
+      "low": "181503771561132",
+      "upper": "226028250165915",
+      "last": "226028250165915",
+      "covered_through": "181503771561131",
+      "covered_span": "84558028800",
+      "ranges": [
+        [
+          "203723727027451",
+          "203808285056250"
+        ]
+      ],
+      "work": {
+        "wheel_gcds": 1,
+        "wheel_residues": 48,
+        "wheel_residue_gcds": 209,
+        "seed_terms": 4704,
+        "table_entries_built": 245763,
+        "batched_candidates": 19327549440,
+        "last_block_cycles": 2048,
+        "peak_samples": 98305,
+        "checkpoint_multiplications": 147444,
+        "checkpoint_gcds": 12,
+        "factorial_limit": 245762,
+        "peak_table_index": 245762,
+        "setup_gcds": 11,
+        "inversions": 11,
+        "convolutions": 11,
+        "convolution_input_coefficients": 687836,
+        "shifted_values": 294779,
+        "paired_products": 196523,
+        "next_convolution_inputs": 688132
+      },
+      "factors": [],
+      "remaining": [
+        "51088769873065621181544830479"
+      ],
+      "unvisited_span": "44439920575984"
+    },
+    {
+      "draw": 7,
+      "n": "55480112773870096201992005341",
+      "outcome": "convolution_limit",
+      "low": "197104955553124",
+      "upper": "235542167719221",
+      "last": "235542167719221",
+      "covered_through": "197104955553123",
+      "covered_span": "84558028800",
+      "ranges": [
+        [
+          "216281279587801",
+          "216365837616600"
+        ]
+      ],
+      "work": {
+        "wheel_gcds": 1,
+        "wheel_residues": 48,
+        "wheel_residue_gcds": 209,
+        "seed_terms": 4704,
+        "table_entries_built": 245763,
+        "batched_candidates": 19327549440,
+        "last_block_cycles": 2048,
+        "peak_samples": 98305,
+        "checkpoint_multiplications": 147444,
+        "checkpoint_gcds": 12,
+        "factorial_limit": 245762,
+        "peak_table_index": 245762,
+        "setup_gcds": 11,
+        "inversions": 11,
+        "convolutions": 11,
+        "convolution_input_coefficients": 687836,
+        "shifted_values": 294779,
+        "paired_products": 196523,
+        "next_convolution_inputs": 688132
+      },
+      "factors": [],
+      "remaining": [
+        "55480112773870096201992005341"
+      ],
+      "unvisited_span": "38352654137298"
+    },
+    {
+      "draw": 8,
+      "n": "47590793219385802328009439551",
+      "outcome": "convolution_limit",
+      "low": "169076462055479",
+      "upper": "218153141667466",
+      "last": "218153141667466",
+      "covered_through": "169076462055478",
+      "covered_span": "84558028800",
+      "ranges": [
+        [
+          "193572517863481",
+          "193657075892280"
+        ]
+      ],
+      "work": {
+        "wheel_gcds": 1,
+        "wheel_residues": 48,
+        "wheel_residue_gcds": 209,
+        "seed_terms": 4704,
+        "table_entries_built": 245763,
+        "batched_candidates": 19327549440,
+        "last_block_cycles": 2048,
+        "peak_samples": 98305,
+        "checkpoint_multiplications": 147444,
+        "checkpoint_gcds": 12,
+        "factorial_limit": 245762,
+        "peak_table_index": 245762,
+        "setup_gcds": 11,
+        "inversions": 11,
+        "convolutions": 11,
+        "convolution_input_coefficients": 687836,
+        "shifted_values": 294779,
+        "paired_products": 196523,
+        "next_convolution_inputs": 688132
+      },
+      "factors": [],
+      "remaining": [
+        "47590793219385802328009439551"
+      ],
+      "unvisited_span": "48992121583188"
+    },
+    {
+      "draw": 9,
+      "n": "42961674275139664715076389911",
+      "outcome": "convolution_limit",
+      "low": "152630527861461",
+      "upper": "207271981403998",
+      "last": "207271981403998",
+      "covered_through": "152630527861460",
+      "covered_span": "84558028800",
+      "ranges": [
+        [
+          "179908974187321",
+          "179993532216120"
+        ]
+      ],
+      "work": {
+        "wheel_gcds": 1,
+        "wheel_residues": 48,
+        "wheel_residue_gcds": 209,
+        "seed_terms": 4704,
+        "table_entries_built": 245763,
+        "batched_candidates": 19327549440,
+        "last_block_cycles": 2048,
+        "peak_samples": 98305,
+        "checkpoint_multiplications": 147444,
+        "checkpoint_gcds": 12,
+        "factorial_limit": 245762,
+        "peak_table_index": 245762,
+        "setup_gcds": 11,
+        "inversions": 11,
+        "convolutions": 11,
+        "convolution_input_coefficients": 687836,
+        "shifted_values": 294779,
+        "paired_products": 196523,
+        "next_convolution_inputs": 688132
+      },
+      "factors": [],
+      "remaining": [
+        "42961674275139664715076389911"
+      ],
+      "unvisited_span": "54556895513738"
+    },
+    {
+      "draw": 12,
+      "n": "53630585430359941764230734247",
+      "outcome": "convolution_limit",
+      "low": "190534114460520",
+      "upper": "231582783104357",
+      "last": "231582783104357",
+      "covered_through": "190534114460519",
+      "covered_span": "84558028800",
+      "ranges": [
+        [
+          "211016168256391",
+          "211100726285190"
+        ]
+      ],
+      "work": {
+        "wheel_gcds": 1,
+        "wheel_residues": 48,
+        "wheel_residue_gcds": 209,
+        "seed_terms": 4704,
+        "table_entries_built": 245763,
+        "batched_candidates": 19327549440,
+        "last_block_cycles": 2048,
+        "peak_samples": 98305,
+        "checkpoint_multiplications": 147444,
+        "checkpoint_gcds": 12,
+        "factorial_limit": 245762,
+        "peak_table_index": 245762,
+        "setup_gcds": 11,
+        "inversions": 11,
+        "convolutions": 11,
+        "convolution_input_coefficients": 687836,
+        "shifted_values": 294779,
+        "paired_products": 196523,
+        "next_convolution_inputs": 688132
+      },
+      "factors": [],
+      "remaining": [
+        "53630585430359941764230734247"
+      ],
+      "unvisited_span": "40964110615038"
+    },
+    {
+      "draw": 13,
+      "n": "45384939755637496564735935157",
+      "outcome": "convolution_limit",
+      "low": "161239696281391",
+      "upper": "213037413980825",
+      "last": "213037413980825",
+      "covered_through": "161239696281390",
+      "covered_span": "84558028800",
+      "ranges": [
+        [
+          "187096270602151",
+          "187180828630950"
+        ]
+      ],
+      "work": {
+        "wheel_gcds": 1,
+        "wheel_residues": 48,
+        "wheel_residue_gcds": 209,
+        "seed_terms": 4704,
+        "table_entries_built": 245763,
+        "batched_candidates": 19327549440,
+        "last_block_cycles": 2048,
+        "peak_samples": 98305,
+        "checkpoint_multiplications": 147444,
+        "checkpoint_gcds": 12,
+        "factorial_limit": 245762,
+        "peak_table_index": 245762,
+        "setup_gcds": 11,
+        "inversions": 11,
+        "convolutions": 11,
+        "convolution_input_coefficients": 687836,
+        "shifted_values": 294779,
+        "paired_products": 196523,
+        "next_convolution_inputs": 688132
+      },
+      "factors": [],
+      "remaining": [
+        "45384939755637496564735935157"
+      ],
+      "unvisited_span": "51713159670635"
+    },
+    {
+      "draw": 15,
+      "n": "71822052162168354412096801823",
+      "outcome": "convolution_limit",
+      "low": "255163187156060",
+      "upper": "267996365949556",
+      "last": "267996365949556",
+      "covered_through": "255163187156059",
+      "covered_span": "84558028800",
+      "ranges": [
+        [
+          "261537495303421",
+          "261622053332220"
+        ]
+      ],
+      "work": {
+        "wheel_gcds": 1,
+        "wheel_residues": 48,
+        "wheel_residue_gcds": 209,
+        "seed_terms": 4704,
+        "table_entries_built": 245763,
+        "batched_candidates": 19327549440,
+        "last_block_cycles": 2048,
+        "peak_samples": 98305,
+        "checkpoint_multiplications": 147444,
+        "checkpoint_gcds": 12,
+        "factorial_limit": 245762,
+        "peak_table_index": 245762,
+        "setup_gcds": 11,
+        "inversions": 11,
+        "convolutions": 11,
+        "convolution_input_coefficients": 687836,
+        "shifted_values": 294779,
+        "paired_products": 196523,
+        "next_convolution_inputs": 688132
+      },
+      "factors": [],
+      "remaining": [
+        "71822052162168354412096801823"
+      ],
+      "unvisited_span": "12748620764697"
+    }
+  ],
+  "search_cpu_ns": [
+    2291215000,
+    2278965000,
+    2238755000,
+    2432555000,
+    2304969000,
+    2234131000,
+    2277859000,
+    2227881000
+  ]
+}

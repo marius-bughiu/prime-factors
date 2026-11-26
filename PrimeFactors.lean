@@ -272,6 +272,11 @@ import PrimeFactors.HankelTranslation
 import PrimeFactors.SquareRootShiftPartners
 import PrimeFactors.LowerHalfPrimeBins
 import PrimeFactors.AscendingDivisorRank
+import PrimeFactors.GrowingFactorial
+import PrimeFactors.FactorialCheckpointCoverage
+import PrimeFactors.FactorialCheckpointMean
+import PrimeFactors.FactorialCheckpointTarget
+import PrimeFactors.AffineFactorialAddress
 import PrimeFactors.HasseHankelBilinear
 import PrimeFactors.HankelProbePolynomial
 import PrimeFactors.HankelProbePopulation

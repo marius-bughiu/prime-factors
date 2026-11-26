@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+Given only the product of two independently chosen 1,024-bit primes, we still do not know how to recover its factors in an hour on a PC. Some constructed examples have extra relationships that reveal the primes. The independently generated 2,048-bit example remains unresolved from the product alone. [How the example was generated and checked](certified-fresh-control.md)
+
+On eight independently drawn 80-bit products the search that checks each folded block stage used 22.6% fewer polynomial input coefficients in aggregate than the complete folded search. For uniformly chosen equal-width primes with a 2,048-bit product, the mean of per-product percentage savings is greater than 1.911% for the folded algorithm and 3.6889% for the forward algorithm. [Exact scope, proofs and timings](stopping-a-factorial-search-when-it-reaches-a-prime.md)
+
 Across the full eligible prime-pair population, an ascending scan tests less than 48.5% of each product’s feasible odd interval on average. This uses explicit prime counts and includes the test that finds the factor. [Derivation and Lean checks](where-the-smaller-prime-appears-in-order.md)
 
 Near the low end of the 2,048-bit range, the lower half of the feasible interval contains the smaller factor in more than 53.88% of the pairs in each qualifying product bin. The probability describes a population. The bin average does not determine where the smaller factor of an individual input lies. [Derivation and eligible bins](which-half-contains-the-smaller-prime.md)

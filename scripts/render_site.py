@@ -847,6 +847,22 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'growing-factorial':
+        w = result['growing_factorial']
+        operations = w['work']
+        cap = '' if w['max_span'] is None else f" · cap {w['max_span']:,}"
+        grid = ' on the final grid' if w['final_grid'] else ''
+        count = (f"{w['mode'].capitalize()} growth{grid} · {compact_count(int(w['covered_span']))} of "
+                 f"{compact_count(int(w['full_span']))} integers covered{cap}"
+                 f" · {operations.get('checkpoint_gcds', 0):,} checkpoint gcds"
+                 f" · {operations.get('peak_samples', 0):,} peak samples"
+                 f" · {operations.get('convolution_input_coefficients', 0):,} convolution input coefficients")
+        if w.get('max_inputs') is not None:
+            count += f" · coefficient budget {w['max_inputs']:,}"
+            if 'next_convolution_inputs' in operations:
+                count += f" · next convolution requires {operations['next_convolution_inputs']:,} inputs"
+        if w.get('checked_factor_range'):
+            evidence += '<p>The factor certificate also checks the public interval and the reported range containing the factor.</p>'
     elif result['method'] == 'short-pascal':
         w = result['short_pascal']
         if w['mode'] == 'exact':
