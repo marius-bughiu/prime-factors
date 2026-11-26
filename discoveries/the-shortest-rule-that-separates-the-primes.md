@@ -1,0 +1,20 @@
+# The shortest repeating rule that separates the primes
+
+For 323, take the remainders 1, 2, 5, 16, 19 and 20 modulo 21. Between 16 and 31 the matching numbers are 16, 19, 20, 22, 23 and 26. Their product has gcd 19 with 323. The group also has a symmetry: if it contains a remainder $r$, it contains $21-r$. Both the symmetry and the separation can be found from 323 alone. [Lean calculation](../PrimeFactors/SymmetricDivisorSelector.lean)
+
+## When a rule exists
+
+Suppose $N$ is a product of two distinct primes in the same known interval $[B,2B)$, and choose a period $W$ coprime to $N$. Each possible remainder $x$ coprime to $W$ has one partner $y=N/x\pmod W$. We want a rule that selects exactly one from **every** such pair, so it works whichever pair the primes occupy.
+
+* An unrestricted rule exists exactly when $N$ has no square root modulo $W$. Otherwise some pair has identical remainders. When all partners are distinct, select the smaller remainder in each pair.
+* A rule that also keeps $x$ and $-x$ together exists exactly when **neither $N$ nor $-N$ has a square root modulo $W$**. To build it, give each remainder the rank $\min(x,W-x)$, using representatives from 1 to $W-1$. Select the member of each partner pair with smaller rank. The two ranks coincide only if $y=x$ or $y=-x$, which are precisely the two square obstructions. The complement of either rule works as well. [Construction and sharp criteria](../PrimeFactors/SymmetricDivisorSelector.lean)
+
+Reflection can make the group product cheaper to represent. In one wheel cycle the selected offsets $a$ and $W-a$ contribute $(X+a)(X+W-a)=X(X+W)+a(W-a)$. For a positive Jacobi selector on a period divisible by four times its magnitude, this gives a polynomial of degree exactly $\varphi(W)/4$ in $X(X+W)$. A negative Jacobi selector swaps signs under that reflection, though another reflection can still work. The earlier interpolation that pairs separate blocks works with any fixed mask. Its savings and this degree identity cannot simply be multiplied. [Reflection and degree proof](../PrimeFactors/CharacterColumnReflection.lean) · [Existing paired-block algorithm](folded-factorial.md)
+
+## Finding the least period
+
+A unit is a square modulo an odd prime power exactly when it is a square modulo its prime. For powers of two, the tests modulo 4 and 8 suffice. The Chinese remainder theorem combines these tests. Consequently every working modulus contains a divisor equal to 4, 8 or an odd prime witnessing the failure of the square test. A reflected rule can use two different witnesses, one for each sign. In the 323 example, 323 is a nonsquare modulo 3, and −323 is a nonsquare modulo 7. Neither constituent modulus permits reflection and separation together. Their product does. [Proof for arbitrary positive periods](../PrimeFactors/LeastSeparatingModulus.lean)
+
+We tried multiples of the existing wheel of 30 in ascending order, caching each small test. Once a period succeeds, we count both complementary groups over the possible range of either factor and evaluate the smaller group with the forward block algorithm. On the third product in the original 60-bit panel the unrestricted rule used period 30 and recovered 686,073,211. Requiring reflection raised the least period to 330 and recovered the other prime, 1,043,950,709. The forward evaluator used 37,814 and 34,428 polynomial input coefficients respectively. The longer period also sieves multiples of 11. These measurements use the forward evaluator in both cases. [Reproducible search](../experiments/separating_period.py) · [Benchmark cases and expected factors](../benchmarks/separating-period.json)
+
+On the fresh 2,048-bit input, 60 is the shortest multiple of 30 permitting reflection and separation. On the crossed input, the least such period is 330, down from the previous sign rule's period of 660. Lean checked that the selected periods work and every smaller coprime multiple fails the required test on each input. Both group products exceeded the two-million-unit evaluation budget before the first candidate. The least-period proof gives no factor on either input.

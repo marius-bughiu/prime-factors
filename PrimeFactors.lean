@@ -291,6 +291,9 @@ import PrimeFactors.OptimalDivisorSignatures
 import PrimeFactors.CharacterDivisorColumn
 import PrimeFactors.CharacterColumnSpan
 import PrimeFactors.DivisorResidueCover
+import PrimeFactors.LeastSeparatingModulus
+import PrimeFactors.SymmetricDivisorSelector
+import PrimeFactors.CharacterColumnReflection
 import PrimeFactors.LastPowerGCD
 import PrimeFactors.PowerChainReceipt
 import PrimeFactors.ProductExponentPopulation

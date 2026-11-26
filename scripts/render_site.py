@@ -847,6 +847,15 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'separating-period':
+        w = result['separating_period']
+        count = f'{w["mode"].capitalize()} mask · {escape(w["outcome"].replace("_", " "))}'
+        if w['period'] is not None:
+            link = escape(result['separating_period_proof']['proof'])
+            count += (f' · <a href="{link}">least period {w["period"]}</a>'
+                      f' · {w["residues_per_period"]} residues'
+                      f' · {compact_count(int(w["visited"]))} of {compact_count(int(w["candidates"]))} positions'
+                      f' · planned work {compact_count(int(w["planned_block_work"]))} · budget {w["max_work"]:,}')
     elif result['method'] == 'character-column':
         w = result['character_column']
         count = f'{w["mode"].capitalize()} interval · {escape(w["outcome"].replace("_", " "))}'
