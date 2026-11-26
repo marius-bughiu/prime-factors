@@ -581,6 +581,14 @@ def case_row(result):
         if work.get('probe_certificate'):
             url = escape(work['probe_certificate']['proof'], quote=True)
             count += f' · <a href="{url}">Power test proof</a>'
+    elif result['method'] == 'weighted-square-menu':
+        runs = result['weighted_square_menu']
+        hybrid = runs['hybrid']
+        sieved = runs['sieved_ordinary']['work']
+        count = (f'Combined search · {hybrid["work"]["pair_tests"]} paired square tests'
+                 f' · {hybrid["work"]["extra_single_tests"]} extra single tests'
+                 f' · sieved comparison used {sieved["extra_single_tests"]} roots'
+                 f' across {sieved["screened_single_labels"]} labels')
     elif result['method'] == 'weighted-square-pair':
         work = result['weighted_square_pair']
         match = 'square' if work['square'] else 'nonsquare'

@@ -2,6 +2,8 @@
 
 On 559,697 the first two tests give the remainders 29,248 and 4,113. Neither is a square. Their product is the square of 10,968. This gives the prime factors **631 and 887** using one gcd. The extra comparison does recover cases that individual tests miss. In a census of 2,753,877 larger products it did so only 22 times. Spending the extra test on the next ordinary sum recovered 96,821 instead. [Search from the product](../experiments/weighted_square_pairs.py) · [Checked examples](../PrimeFactors/WeightedSquarePair.lean) · [Full census](../research/weighted-square-pairs.json)
 
+The method also has a proved population limit when both weights can be chosen after seeing the product. Even searching the first $2^{128}$ positions of every weight up to $2^{128}$ leaves fewer than one eligible pair in $2^{229}$ with any successful pair of labels. [General theorem and a larger comparison](how-often-two-weighted-remainders-can-split-a-product.md)
+
 ## The two remainders
 
 Take an odd product $N$ coprime to six. For weight $w=1$ or $2$, form the first integer at or above $2\sqrt{wN}$ congruent to $w+N$ modulo $s_w=\gcd(24,2(w+N))$. These are the progressions containing the weighted factor sums $wp+q$ when $N=pq$ has primes greater than three. Call the first labels $A,B$, respectively. Calculate

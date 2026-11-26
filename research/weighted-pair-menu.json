@@ -1,0 +1,473 @@
+{
+  "reproduce": "python3 -m experiments.weighted_pair_menu",
+  "sample": "All distinct sorted b-bit prime pairs with a full 2b-bit product. Small census divisors are compared with sieve labels.",
+  "panel_source": "benchmarks/factor-sum-quantile.json: first eight quantile 80-bit draws, followed by the fresh and crossed 2048-bit controls.",
+  "exhaustive": [
+    {
+      "factor_bits": 10,
+      "counts": {
+        "eligible": 1718,
+        "initial": 1564,
+        "pair_added": 8,
+        "nonsquare_pair_added": 8,
+        "cross_weight_nonsquare_pair_added": 8,
+        "extra_single_added": 154,
+        "both_arms_added": 8,
+        "pair_only": 0,
+        "cross_weight_nonsquare_pair_only": 0,
+        "extra_single_only": 146
+      },
+      "work": {
+        "setup_gcds": 15462,
+        "label_sqrts": 13744,
+        "label_remainders": 13744,
+        "initial_tests": 27488,
+        "pair_tests": 206160,
+        "extra_single_tests": 206160,
+        "initial_gcds": 1693,
+        "pair_gcds": 249,
+        "extra_single_gcds": 1992,
+        "proper_pair_gcds": 120
+      },
+      "max_operand_bits": {
+        "pair": 37,
+        "extra_single": 23
+      },
+      "first_examples": {
+        "nonsquare_pair_added": {
+          "n": "630761",
+          "rows": [
+            [
+              2,
+              1
+            ],
+            [
+              6,
+              0
+            ]
+          ],
+          "labels": [
+            "2249",
+            "3891"
+          ],
+          "excesses": [
+            "11913",
+            "1617"
+          ],
+          "square_root": "4389",
+          "divisor": "619"
+        }
+      }
+    },
+    {
+      "factor_bits": 12,
+      "counts": {
+        "eligible": 19546,
+        "initial": 10584,
+        "pair_added": 206,
+        "nonsquare_pair_added": 206,
+        "cross_weight_nonsquare_pair_added": 182,
+        "extra_single_added": 8960,
+        "both_arms_added": 206,
+        "pair_only": 0,
+        "cross_weight_nonsquare_pair_only": 0,
+        "extra_single_only": 8754
+      },
+      "work": {
+        "setup_gcds": 175914,
+        "label_sqrts": 156368,
+        "label_remainders": 156368,
+        "initial_tests": 312736,
+        "pair_tests": 2345520,
+        "extra_single_tests": 2345520,
+        "initial_gcds": 10584,
+        "pair_gcds": 371,
+        "extra_single_gcds": 14611,
+        "proper_pair_gcds": 371
+      },
+      "max_operand_bits": {
+        "pair": 41,
+        "extra_single": 25
+      },
+      "first_examples": {
+        "nonsquare_pair_added": {
+          "n": "9012473",
+          "rows": [
+            [
+              4,
+              0
+            ],
+            [
+              7,
+              1
+            ]
+          ],
+          "labels": [
+            "12009",
+            "15912"
+          ],
+          "excesses": [
+            "16513",
+            "842500"
+          ],
+          "square_root": "117950",
+          "divisor": "2203"
+        }
+      }
+    },
+    {
+      "factor_bits": 14,
+      "counts": {
+        "eligible": 228713,
+        "initial": 66568,
+        "pair_added": 1071,
+        "nonsquare_pair_added": 1071,
+        "cross_weight_nonsquare_pair_added": 914,
+        "extra_single_added": 105948,
+        "both_arms_added": 675,
+        "pair_only": 396,
+        "cross_weight_nonsquare_pair_only": 350,
+        "extra_single_only": 105273
+      },
+      "work": {
+        "setup_gcds": 2058417,
+        "label_sqrts": 1829704,
+        "label_remainders": 1829704,
+        "initial_tests": 3659408,
+        "pair_tests": 27445560,
+        "extra_single_tests": 27445560,
+        "initial_gcds": 66568,
+        "pair_gcds": 1368,
+        "extra_single_gcds": 107401,
+        "proper_pair_gcds": 1368
+      },
+      "max_operand_bits": {
+        "pair": 45,
+        "extra_single": 27
+      },
+      "first_examples": {
+        "nonsquare_pair_added": {
+          "n": "135217559",
+          "rows": [
+            [
+              3,
+              0
+            ],
+            [
+              5,
+              0
+            ]
+          ],
+          "labels": [
+            "40282",
+            "52004"
+          ],
+          "excesses": [
+            "28816",
+            "64836"
+          ],
+          "square_root": "43224",
+          "divisor": "8419"
+        },
+        "pair_only": {
+          "n": "136036757",
+          "rows": [
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              1
+            ]
+          ],
+          "labels": [
+            "52162",
+            "52166"
+          ],
+          "excesses": [
+            "139104",
+            "556416"
+          ],
+          "square_root": "278208",
+          "divisor": "8693"
+        },
+        "cross_weight_nonsquare_pair_only": {
+          "n": "137549339",
+          "rows": [
+            [
+              2,
+              0
+            ],
+            [
+              6,
+              0
+            ]
+          ],
+          "labels": [
+            "33173",
+            "57457"
+          ],
+          "excesses": [
+            "53217",
+            "122713"
+          ],
+          "square_root": "80811",
+          "divisor": "8693"
+        }
+      }
+    }
+  ],
+  "panel": [
+    {
+      "id": "quantile-80-draw-0",
+      "n": "908162445584950626852517",
+      "initial": null,
+      "extra_single": null,
+      "pair": null,
+      "nonsquare_pair": null,
+      "cross_weight_nonsquare_pair": null,
+      "work": {
+        "setup_gcds": 9,
+        "label_sqrts": 8,
+        "label_remainders": 8,
+        "initial_tests": 16,
+        "pair_tests": 120,
+        "extra_single_tests": 120,
+        "initial_gcds": 0,
+        "pair_gcds": 0,
+        "extra_single_gcds": 0,
+        "proper_pair_gcds": 0
+      },
+      "max_operand_bits": {
+        "pair": 94,
+        "extra_single": 51
+      }
+    },
+    {
+      "id": "quantile-80-draw-1",
+      "n": "847299807344960397445973",
+      "initial": null,
+      "extra_single": null,
+      "pair": null,
+      "nonsquare_pair": null,
+      "cross_weight_nonsquare_pair": null,
+      "work": {
+        "setup_gcds": 9,
+        "label_sqrts": 8,
+        "label_remainders": 8,
+        "initial_tests": 16,
+        "pair_tests": 120,
+        "extra_single_tests": 120,
+        "initial_gcds": 0,
+        "pair_gcds": 0,
+        "extra_single_gcds": 0,
+        "proper_pair_gcds": 0
+      },
+      "max_operand_bits": {
+        "pair": 96,
+        "extra_single": 52
+      }
+    },
+    {
+      "id": "quantile-80-draw-2",
+      "n": "1092780388048145364051457",
+      "initial": null,
+      "extra_single": null,
+      "pair": null,
+      "nonsquare_pair": null,
+      "cross_weight_nonsquare_pair": null,
+      "work": {
+        "setup_gcds": 9,
+        "label_sqrts": 8,
+        "label_remainders": 8,
+        "initial_tests": 16,
+        "pair_tests": 120,
+        "extra_single_tests": 120,
+        "initial_gcds": 0,
+        "pair_gcds": 0,
+        "extra_single_gcds": 0,
+        "proper_pair_gcds": 0
+      },
+      "max_operand_bits": {
+        "pair": 95,
+        "extra_single": 51
+      }
+    },
+    {
+      "id": "quantile-80-draw-3",
+      "n": "680311603073706987563863",
+      "initial": null,
+      "extra_single": null,
+      "pair": null,
+      "nonsquare_pair": null,
+      "cross_weight_nonsquare_pair": null,
+      "work": {
+        "setup_gcds": 9,
+        "label_sqrts": 8,
+        "label_remainders": 8,
+        "initial_tests": 16,
+        "pair_tests": 120,
+        "extra_single_tests": 120,
+        "initial_gcds": 0,
+        "pair_gcds": 0,
+        "extra_single_gcds": 0,
+        "proper_pair_gcds": 0
+      },
+      "max_operand_bits": {
+        "pair": 96,
+        "extra_single": 52
+      }
+    },
+    {
+      "id": "quantile-80-draw-5",
+      "n": "707405285713730439701531",
+      "initial": null,
+      "extra_single": null,
+      "pair": null,
+      "nonsquare_pair": null,
+      "cross_weight_nonsquare_pair": null,
+      "work": {
+        "setup_gcds": 9,
+        "label_sqrts": 8,
+        "label_remainders": 8,
+        "initial_tests": 16,
+        "pair_tests": 120,
+        "extra_single_tests": 120,
+        "initial_gcds": 0,
+        "pair_gcds": 0,
+        "extra_single_gcds": 0,
+        "proper_pair_gcds": 0
+      },
+      "max_operand_bits": {
+        "pair": 95,
+        "extra_single": 51
+      }
+    },
+    {
+      "id": "quantile-80-draw-6",
+      "n": "814564805419434441523049",
+      "initial": null,
+      "extra_single": null,
+      "pair": null,
+      "nonsquare_pair": null,
+      "cross_weight_nonsquare_pair": null,
+      "work": {
+        "setup_gcds": 9,
+        "label_sqrts": 8,
+        "label_remainders": 8,
+        "initial_tests": 16,
+        "pair_tests": 120,
+        "extra_single_tests": 120,
+        "initial_gcds": 0,
+        "pair_gcds": 0,
+        "extra_single_gcds": 0,
+        "proper_pair_gcds": 0
+      },
+      "max_operand_bits": {
+        "pair": 95,
+        "extra_single": 52
+      }
+    },
+    {
+      "id": "quantile-80-draw-8",
+      "n": "782541877694994717671837",
+      "initial": null,
+      "extra_single": null,
+      "pair": null,
+      "nonsquare_pair": null,
+      "cross_weight_nonsquare_pair": null,
+      "work": {
+        "setup_gcds": 9,
+        "label_sqrts": 8,
+        "label_remainders": 8,
+        "initial_tests": 16,
+        "pair_tests": 120,
+        "extra_single_tests": 120,
+        "initial_gcds": 0,
+        "pair_gcds": 0,
+        "extra_single_gcds": 0,
+        "proper_pair_gcds": 0
+      },
+      "max_operand_bits": {
+        "pair": 94,
+        "extra_single": 52
+      }
+    },
+    {
+      "id": "quantile-80-draw-10",
+      "n": "1061380201340840569745849",
+      "initial": null,
+      "extra_single": null,
+      "pair": null,
+      "nonsquare_pair": null,
+      "cross_weight_nonsquare_pair": null,
+      "work": {
+        "setup_gcds": 9,
+        "label_sqrts": 8,
+        "label_remainders": 8,
+        "initial_tests": 16,
+        "pair_tests": 120,
+        "extra_single_tests": 120,
+        "initial_gcds": 0,
+        "pair_gcds": 0,
+        "extra_single_gcds": 0,
+        "proper_pair_gcds": 0
+      },
+      "max_operand_bits": {
+        "pair": 97,
+        "extra_single": 52
+      }
+    },
+    {
+      "id": "quantile-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "initial": null,
+      "extra_single": null,
+      "pair": null,
+      "nonsquare_pair": null,
+      "cross_weight_nonsquare_pair": null,
+      "work": {
+        "setup_gcds": 9,
+        "label_sqrts": 8,
+        "label_remainders": 8,
+        "initial_tests": 16,
+        "pair_tests": 120,
+        "extra_single_tests": 120,
+        "initial_gcds": 0,
+        "pair_gcds": 0,
+        "extra_single_gcds": 0,
+        "proper_pair_gcds": 0
+      },
+      "max_operand_bits": {
+        "pair": 2063,
+        "extra_single": 1036
+      }
+    },
+    {
+      "id": "quantile-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "initial": null,
+      "extra_single": null,
+      "pair": null,
+      "nonsquare_pair": null,
+      "cross_weight_nonsquare_pair": null,
+      "work": {
+        "setup_gcds": 9,
+        "label_sqrts": 8,
+        "label_remainders": 8,
+        "initial_tests": 16,
+        "pair_tests": 120,
+        "extra_single_tests": 120,
+        "initial_gcds": 0,
+        "pair_gcds": 0,
+        "extra_single_gcds": 0,
+        "proper_pair_gcds": 0
+      },
+      "max_operand_bits": {
+        "pair": 2062,
+        "extra_single": 1035
+      }
+    }
+  ]
+}

@@ -419,6 +419,13 @@ import PrimeFactors.WeightedStride
 import PrimeFactors.WeightedPairPopulation
 import PrimeFactors.WeightedPairPell
 import PrimeFactors.WeightedSquarePair
+import PrimeFactors.WeightedMultiplierPell
+import PrimeFactors.WeightedMultiplierRoots
+import PrimeFactors.WeightedMultiplierPoints
+import PrimeFactors.WeightedMultiplierPopulation
+import PrimeFactors.WeightedMultiplierFiber
+import PrimeFactors.WeightedMultiplierCoverage
+import PrimeFactors.WeightedMultiplierLabels
 import PrimeFactors.LiftedPeriodTrace
 import PrimeFactors.WideModulus
 import PrimeFactors.WideScale

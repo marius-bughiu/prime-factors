@@ -1,0 +1,1357 @@
+{
+  "reproduce": "python3 -m experiments.weighted_pair_hybrid",
+  "filter": "v2 parity and odd unit mod 8, then v_p parity and unit square class at 3, 5, 7 and 11. Positive nonzero excesses.",
+  "common": "Eight weighted label square roots. First two labels on each row; stop on first proper gcd. Thereafter, up to 120 additional square tests.",
+  "ordinary_order": "For each label index 2 through 16, visit weights 1 through 8.",
+  "sieved_baseline": "Panel and blind holdout also apply the same small-prime square tests to singles, stopping after a split, 120 exact extra roots or 4,096 additional labels.",
+  "exhaustive": {
+    "10": {
+      "counts": {
+        "ordinary": 1718,
+        "pairs": 1572,
+        "hybrid": 1718,
+        "eligible": 1718,
+        "initial": 1564,
+        "hybrid_pair_hits": 8,
+        "pair_hits_also_ordinary": 8,
+        "pair_hits_inside_retained_ordinary_prefix": 8,
+        "only_hybrid": 0,
+        "only_ordinary": 0
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 15462,
+          "label_sqrts": 13744,
+          "label_remainders": 13744,
+          "initial_tests": 7119,
+          "pair_tests": 0,
+          "extra_single_tests": 720,
+          "gcds_after_squares": 1718,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 15462,
+          "label_sqrts": 13744,
+          "label_remainders": 13744,
+          "initial_tests": 7119,
+          "pair_tests": 17925,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 1572,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 15462,
+          "label_sqrts": 13744,
+          "label_remainders": 13744,
+          "initial_tests": 7119,
+          "pair_tests": 227,
+          "extra_single_tests": 691,
+          "gcds_after_squares": 1718,
+          "keys": 2464,
+          "odd_unit_divisions": 2321,
+          "odd_remainders": 12177,
+          "odd_mod8_checks": 2464,
+          "compatible_pairs": 234,
+          "screened_single_labels": 0
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 20
+        },
+        "pairs": {
+          "pair": 37
+        },
+        "hybrid": {
+          "extra_single": 20,
+          "pair": 35
+        }
+      },
+      "first_examples": {}
+    },
+    "12": {
+      "counts": {
+        "ordinary": 19544,
+        "pairs": 10790,
+        "hybrid": 19543,
+        "eligible": 19546,
+        "initial": 10584,
+        "hybrid_pair_hits": 206,
+        "pair_hits_also_ordinary": 206,
+        "pair_hits_inside_retained_ordinary_prefix": 206,
+        "only_hybrid": 0,
+        "only_ordinary": 1
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 175914,
+          "label_sqrts": 156368,
+          "label_remainders": 156368,
+          "initial_tests": 177401,
+          "pair_tests": 0,
+          "extra_single_tests": 238168,
+          "gcds_after_squares": 19544,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 175914,
+          "label_sqrts": 156368,
+          "label_remainders": 156368,
+          "initial_tests": 177401,
+          "pair_tests": 1063702,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 10790,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 175914,
+          "label_sqrts": 156368,
+          "label_remainders": 156368,
+          "initial_tests": 177401,
+          "pair_tests": 13456,
+          "extra_single_tests": 232723,
+          "gcds_after_squares": 19543,
+          "keys": 143392,
+          "odd_unit_divisions": 137961,
+          "odd_remainders": 711529,
+          "odd_mod8_checks": 143392,
+          "compatible_pairs": 13613,
+          "screened_single_labels": 0
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 24
+        },
+        "pairs": {
+          "pair": 41
+        },
+        "hybrid": {
+          "pair": 41,
+          "extra_single": 24
+        }
+      },
+      "first_examples": {
+        "only_ordinary": {
+          "n": "12211777",
+          "divisor": "4021",
+          "hybrid_ordinary_allowance": 117,
+          "ordinary_checks": 118
+        }
+      }
+    },
+    "14": {
+      "counts": {
+        "ordinary": 172516,
+        "pairs": 67639,
+        "hybrid": 172737,
+        "eligible": 228713,
+        "initial": 66568,
+        "hybrid_pair_hits": 1071,
+        "pair_hits_also_ordinary": 675,
+        "pair_hits_inside_retained_ordinary_prefix": 674,
+        "only_hybrid": 396,
+        "only_ordinary": 175
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 2058417,
+          "label_sqrts": 1829704,
+          "label_remainders": 1829704,
+          "initial_tests": 2795904,
+          "pair_tests": 0,
+          "extra_single_tests": 11527670,
+          "gcds_after_squares": 172516,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 2058417,
+          "label_sqrts": 1829704,
+          "label_remainders": 1829704,
+          "initial_tests": 2795904,
+          "pair_tests": 19388401,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 67639,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 2058417,
+          "label_sqrts": 1829704,
+          "label_remainders": 1829704,
+          "initial_tests": 2795904,
+          "pair_tests": 242496,
+          "extra_single_tests": 11363940,
+          "gcds_after_squares": 172737,
+          "keys": 2594320,
+          "odd_unit_divisions": 2501618,
+          "odd_remainders": 12878898,
+          "odd_mod8_checks": 2594320,
+          "compatible_pairs": 243536,
+          "screened_single_labels": 0
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 26
+        },
+        "pairs": {
+          "pair": 45
+        },
+        "hybrid": {
+          "extra_single": 26,
+          "pair": 45
+        }
+      },
+      "first_examples": {
+        "only_hybrid": {
+          "n": "136036757",
+          "divisor": "8693",
+          "hybrid_ordinary_allowance": 119,
+          "ordinary_checks": 120
+        },
+        "only_ordinary": {
+          "n": "139319071",
+          "divisor": "15461",
+          "hybrid_ordinary_allowance": 113,
+          "ordinary_checks": 114
+        }
+      }
+    }
+  },
+  "holdout": {
+    "seed": "weighted-pair-hybrid-16-v1",
+    "draws": 13501,
+    "size": 8192,
+    "counts": {
+      "ordinary": 3442,
+      "pairs": 1219,
+      "hybrid": 3440,
+      "sieved_ordinary": 8192,
+      "eligible": 8192,
+      "initial": 1210,
+      "hybrid_pair_hits": 9,
+      "pair_hits_also_ordinary": 3,
+      "pair_hits_inside_retained_ordinary_prefix": 3,
+      "only_hybrid": 6,
+      "only_ordinary": 8,
+      "only_hybrid_vs_sieved": 0,
+      "only_sieved_vs_hybrid": 4752,
+      "sieved_cap_exhausted": 0,
+      "sieved_root_budget_exhausted": 0
+    },
+    "work": {
+      "ordinary": {
+        "setup_gcds": 73728,
+        "label_sqrts": 65536,
+        "label_remainders": 65536,
+        "initial_tests": 115398,
+        "pair_tests": 0,
+        "extra_single_tests": 677118,
+        "gcds_after_squares": 3442,
+        "keys": 0,
+        "odd_unit_divisions": 0,
+        "odd_remainders": 0,
+        "odd_mod8_checks": 0,
+        "compatible_pairs": 0,
+        "screened_single_labels": 0
+      },
+      "pairs": {
+        "setup_gcds": 73728,
+        "label_sqrts": 65536,
+        "label_remainders": 65536,
+        "initial_tests": 115398,
+        "pair_tests": 837253,
+        "extra_single_tests": 0,
+        "gcds_after_squares": 1219,
+        "keys": 0,
+        "odd_unit_divisions": 0,
+        "odd_remainders": 0,
+        "odd_mod8_checks": 0,
+        "compatible_pairs": 0,
+        "screened_single_labels": 0
+      },
+      "hybrid": {
+        "setup_gcds": 73728,
+        "label_sqrts": 65536,
+        "label_remainders": 65536,
+        "initial_tests": 115398,
+        "pair_tests": 10473,
+        "extra_single_tests": 669062,
+        "gcds_after_squares": 3440,
+        "keys": 111712,
+        "odd_unit_divisions": 107812,
+        "odd_remainders": 554660,
+        "odd_mod8_checks": 111712,
+        "compatible_pairs": 10484,
+        "screened_single_labels": 0
+      },
+      "sieved_ordinary": {
+        "setup_gcds": 73728,
+        "label_sqrts": 65536,
+        "label_remainders": 65536,
+        "initial_tests": 115398,
+        "pair_tests": 0,
+        "extra_single_tests": 81653,
+        "gcds_after_squares": 8192,
+        "keys": 2758740,
+        "odd_unit_divisions": 1394669,
+        "odd_remainders": 5502494,
+        "odd_mod8_checks": 2529075,
+        "compatible_pairs": 0,
+        "screened_single_labels": 2758740
+      }
+    },
+    "max_operand_bits": {
+      "ordinary": {
+        "extra_single": 28
+      },
+      "pairs": {
+        "pair": 49
+      },
+      "hybrid": {
+        "extra_single": 28,
+        "pair": 49
+      },
+      "sieved_ordinary": {
+        "extra_single": 32
+      }
+    },
+    "first_examples": {
+      "only_sieved_vs_hybrid": {
+        "n": "2691196603",
+        "divisor": "48449"
+      },
+      "only_ordinary": {
+        "n": "2254412029",
+        "divisor": "57191",
+        "hybrid_ordinary_allowance": 117,
+        "ordinary_checks": 118
+      },
+      "only_hybrid": {
+        "n": "2667695059",
+        "divisor": "45751",
+        "hybrid_ordinary_allowance": 115,
+        "ordinary_checks": 120
+      }
+    }
+  },
+  "panel": [
+    {
+      "id": "quantile-80-draw-0",
+      "n": "908162445584950626852517",
+      "counts": {
+        "ordinary": 0,
+        "pairs": 0,
+        "hybrid": 0,
+        "sieved_ordinary": 0,
+        "eligible": 1,
+        "initial": 0,
+        "hybrid_pair_hits": 0,
+        "pair_hits_also_ordinary": 0,
+        "pair_hits_inside_retained_ordinary_prefix": 0,
+        "only_hybrid": 0,
+        "only_ordinary": 0,
+        "only_hybrid_vs_sieved": 0,
+        "only_sieved_vs_hybrid": 0,
+        "sieved_cap_exhausted": 1,
+        "sieved_root_budget_exhausted": 0
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 120,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 16,
+          "odd_unit_divisions": 19,
+          "odd_remainders": 83,
+          "odd_mod8_checks": 16,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "sieved_ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 79,
+          "gcds_after_squares": 0,
+          "keys": 4096,
+          "odd_unit_divisions": 2328,
+          "odd_remainders": 8141,
+          "odd_mod8_checks": 3755,
+          "compatible_pairs": 0,
+          "screened_single_labels": 4096
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 51
+        },
+        "pairs": {
+          "pair": 94
+        },
+        "hybrid": {
+          "extra_single": 51
+        },
+        "sieved_ordinary": {
+          "extra_single": 56
+        }
+      },
+      "first_examples": {}
+    },
+    {
+      "id": "quantile-80-draw-1",
+      "n": "847299807344960397445973",
+      "counts": {
+        "ordinary": 0,
+        "pairs": 0,
+        "hybrid": 0,
+        "sieved_ordinary": 0,
+        "eligible": 1,
+        "initial": 0,
+        "hybrid_pair_hits": 0,
+        "pair_hits_also_ordinary": 0,
+        "pair_hits_inside_retained_ordinary_prefix": 0,
+        "only_hybrid": 0,
+        "only_ordinary": 0,
+        "only_hybrid_vs_sieved": 0,
+        "only_sieved_vs_hybrid": 0,
+        "sieved_cap_exhausted": 1,
+        "sieved_root_budget_exhausted": 0
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 120,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 3,
+          "extra_single_tests": 117,
+          "gcds_after_squares": 0,
+          "keys": 16,
+          "odd_unit_divisions": 13,
+          "odd_remainders": 77,
+          "odd_mod8_checks": 16,
+          "compatible_pairs": 3,
+          "screened_single_labels": 0
+        },
+        "sieved_ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 113,
+          "gcds_after_squares": 0,
+          "keys": 4096,
+          "odd_unit_divisions": 2028,
+          "odd_remainders": 8094,
+          "odd_mod8_checks": 3754,
+          "compatible_pairs": 0,
+          "screened_single_labels": 4096
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 52
+        },
+        "pairs": {
+          "pair": 96
+        },
+        "hybrid": {
+          "pair": 94,
+          "extra_single": 52
+        },
+        "sieved_ordinary": {
+          "extra_single": 57
+        }
+      },
+      "first_examples": {}
+    },
+    {
+      "id": "quantile-80-draw-2",
+      "n": "1092780388048145364051457",
+      "counts": {
+        "ordinary": 0,
+        "pairs": 0,
+        "hybrid": 0,
+        "sieved_ordinary": 0,
+        "eligible": 1,
+        "initial": 0,
+        "hybrid_pair_hits": 0,
+        "pair_hits_also_ordinary": 0,
+        "pair_hits_inside_retained_ordinary_prefix": 0,
+        "only_hybrid": 0,
+        "only_ordinary": 0,
+        "only_hybrid_vs_sieved": 0,
+        "only_sieved_vs_hybrid": 0,
+        "sieved_cap_exhausted": 1,
+        "sieved_root_budget_exhausted": 0
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 120,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 1,
+          "extra_single_tests": 119,
+          "gcds_after_squares": 0,
+          "keys": 16,
+          "odd_unit_divisions": 24,
+          "odd_remainders": 88,
+          "odd_mod8_checks": 16,
+          "compatible_pairs": 1,
+          "screened_single_labels": 0
+        },
+        "sieved_ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 88,
+          "gcds_after_squares": 0,
+          "keys": 4096,
+          "odd_unit_divisions": 2240,
+          "odd_remainders": 8217,
+          "odd_mod8_checks": 3755,
+          "compatible_pairs": 0,
+          "screened_single_labels": 4096
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 51
+        },
+        "pairs": {
+          "pair": 95
+        },
+        "hybrid": {
+          "pair": 89,
+          "extra_single": 51
+        },
+        "sieved_ordinary": {
+          "extra_single": 56
+        }
+      },
+      "first_examples": {}
+    },
+    {
+      "id": "quantile-80-draw-3",
+      "n": "680311603073706987563863",
+      "counts": {
+        "ordinary": 0,
+        "pairs": 0,
+        "hybrid": 0,
+        "sieved_ordinary": 0,
+        "eligible": 1,
+        "initial": 0,
+        "hybrid_pair_hits": 0,
+        "pair_hits_also_ordinary": 0,
+        "pair_hits_inside_retained_ordinary_prefix": 0,
+        "only_hybrid": 0,
+        "only_ordinary": 0,
+        "only_hybrid_vs_sieved": 0,
+        "only_sieved_vs_hybrid": 0,
+        "sieved_cap_exhausted": 0,
+        "sieved_root_budget_exhausted": 1
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 120,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 1,
+          "extra_single_tests": 119,
+          "gcds_after_squares": 0,
+          "keys": 16,
+          "odd_unit_divisions": 17,
+          "odd_remainders": 81,
+          "odd_mod8_checks": 16,
+          "compatible_pairs": 1,
+          "screened_single_labels": 0
+        },
+        "sieved_ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 3749,
+          "odd_unit_divisions": 1905,
+          "odd_remainders": 7814,
+          "odd_mod8_checks": 3435,
+          "compatible_pairs": 0,
+          "screened_single_labels": 3749
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 52
+        },
+        "pairs": {
+          "pair": 96
+        },
+        "hybrid": {
+          "pair": 96,
+          "extra_single": 52
+        },
+        "sieved_ordinary": {
+          "extra_single": 57
+        }
+      },
+      "first_examples": {}
+    },
+    {
+      "id": "quantile-80-draw-5",
+      "n": "707405285713730439701531",
+      "counts": {
+        "ordinary": 0,
+        "pairs": 0,
+        "hybrid": 0,
+        "sieved_ordinary": 0,
+        "eligible": 1,
+        "initial": 0,
+        "hybrid_pair_hits": 0,
+        "pair_hits_also_ordinary": 0,
+        "pair_hits_inside_retained_ordinary_prefix": 0,
+        "only_hybrid": 0,
+        "only_ordinary": 0,
+        "only_hybrid_vs_sieved": 0,
+        "only_sieved_vs_hybrid": 0,
+        "sieved_cap_exhausted": 1,
+        "sieved_root_budget_exhausted": 0
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 120,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 16,
+          "odd_unit_divisions": 21,
+          "odd_remainders": 85,
+          "odd_mod8_checks": 16,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "sieved_ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 71,
+          "gcds_after_squares": 0,
+          "keys": 4096,
+          "odd_unit_divisions": 2513,
+          "odd_remainders": 8042,
+          "odd_mod8_checks": 3755,
+          "compatible_pairs": 0,
+          "screened_single_labels": 4096
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 51
+        },
+        "pairs": {
+          "pair": 95
+        },
+        "hybrid": {
+          "extra_single": 51
+        },
+        "sieved_ordinary": {
+          "extra_single": 56
+        }
+      },
+      "first_examples": {}
+    },
+    {
+      "id": "quantile-80-draw-6",
+      "n": "814564805419434441523049",
+      "counts": {
+        "ordinary": 0,
+        "pairs": 0,
+        "hybrid": 0,
+        "sieved_ordinary": 0,
+        "eligible": 1,
+        "initial": 0,
+        "hybrid_pair_hits": 0,
+        "pair_hits_also_ordinary": 0,
+        "pair_hits_inside_retained_ordinary_prefix": 0,
+        "only_hybrid": 0,
+        "only_ordinary": 0,
+        "only_hybrid_vs_sieved": 0,
+        "only_sieved_vs_hybrid": 0,
+        "sieved_cap_exhausted": 0,
+        "sieved_root_budget_exhausted": 1
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 120,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 1,
+          "extra_single_tests": 119,
+          "gcds_after_squares": 0,
+          "keys": 16,
+          "odd_unit_divisions": 15,
+          "odd_remainders": 79,
+          "odd_mod8_checks": 16,
+          "compatible_pairs": 1,
+          "screened_single_labels": 0
+        },
+        "sieved_ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 3879,
+          "odd_unit_divisions": 1988,
+          "odd_remainders": 7671,
+          "odd_mod8_checks": 3557,
+          "compatible_pairs": 0,
+          "screened_single_labels": 3879
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 52
+        },
+        "pairs": {
+          "pair": 95
+        },
+        "hybrid": {
+          "pair": 88,
+          "extra_single": 52
+        },
+        "sieved_ordinary": {
+          "extra_single": 57
+        }
+      },
+      "first_examples": {}
+    },
+    {
+      "id": "quantile-80-draw-8",
+      "n": "782541877694994717671837",
+      "counts": {
+        "ordinary": 0,
+        "pairs": 0,
+        "hybrid": 0,
+        "sieved_ordinary": 0,
+        "eligible": 1,
+        "initial": 0,
+        "hybrid_pair_hits": 0,
+        "pair_hits_also_ordinary": 0,
+        "pair_hits_inside_retained_ordinary_prefix": 0,
+        "only_hybrid": 0,
+        "only_ordinary": 0,
+        "only_hybrid_vs_sieved": 0,
+        "only_sieved_vs_hybrid": 0,
+        "sieved_cap_exhausted": 1,
+        "sieved_root_budget_exhausted": 0
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 120,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 3,
+          "extra_single_tests": 117,
+          "gcds_after_squares": 0,
+          "keys": 16,
+          "odd_unit_divisions": 12,
+          "odd_remainders": 76,
+          "odd_mod8_checks": 16,
+          "compatible_pairs": 3,
+          "screened_single_labels": 0
+        },
+        "sieved_ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 119,
+          "gcds_after_squares": 0,
+          "keys": 4096,
+          "odd_unit_divisions": 2012,
+          "odd_remainders": 8077,
+          "odd_mod8_checks": 3755,
+          "compatible_pairs": 0,
+          "screened_single_labels": 4096
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 52
+        },
+        "pairs": {
+          "pair": 94
+        },
+        "hybrid": {
+          "pair": 90,
+          "extra_single": 52
+        },
+        "sieved_ordinary": {
+          "extra_single": 57
+        }
+      },
+      "first_examples": {}
+    },
+    {
+      "id": "quantile-80-draw-10",
+      "n": "1061380201340840569745849",
+      "counts": {
+        "ordinary": 0,
+        "pairs": 0,
+        "hybrid": 0,
+        "sieved_ordinary": 0,
+        "eligible": 1,
+        "initial": 0,
+        "hybrid_pair_hits": 0,
+        "pair_hits_also_ordinary": 0,
+        "pair_hits_inside_retained_ordinary_prefix": 0,
+        "only_hybrid": 0,
+        "only_ordinary": 0,
+        "only_hybrid_vs_sieved": 0,
+        "only_sieved_vs_hybrid": 0,
+        "sieved_cap_exhausted": 0,
+        "sieved_root_budget_exhausted": 1
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 120,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 2,
+          "extra_single_tests": 118,
+          "gcds_after_squares": 0,
+          "keys": 16,
+          "odd_unit_divisions": 16,
+          "odd_remainders": 80,
+          "odd_mod8_checks": 16,
+          "compatible_pairs": 2,
+          "screened_single_labels": 0
+        },
+        "sieved_ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 3983,
+          "odd_unit_divisions": 2032,
+          "odd_remainders": 7862,
+          "odd_mod8_checks": 3653,
+          "compatible_pairs": 0,
+          "screened_single_labels": 3983
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 52
+        },
+        "pairs": {
+          "pair": 97
+        },
+        "hybrid": {
+          "pair": 92,
+          "extra_single": 52
+        },
+        "sieved_ordinary": {
+          "extra_single": 57
+        }
+      },
+      "first_examples": {}
+    },
+    {
+      "id": "quantile-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "counts": {
+        "ordinary": 0,
+        "pairs": 0,
+        "hybrid": 0,
+        "sieved_ordinary": 0,
+        "eligible": 1,
+        "initial": 0,
+        "hybrid_pair_hits": 0,
+        "pair_hits_also_ordinary": 0,
+        "pair_hits_inside_retained_ordinary_prefix": 0,
+        "only_hybrid": 0,
+        "only_ordinary": 0,
+        "only_hybrid_vs_sieved": 0,
+        "only_sieved_vs_hybrid": 0,
+        "sieved_cap_exhausted": 0,
+        "sieved_root_budget_exhausted": 1
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 120,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 1,
+          "extra_single_tests": 119,
+          "gcds_after_squares": 0,
+          "keys": 16,
+          "odd_unit_divisions": 12,
+          "odd_remainders": 76,
+          "odd_mod8_checks": 16,
+          "compatible_pairs": 1,
+          "screened_single_labels": 0
+        },
+        "sieved_ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 3224,
+          "odd_unit_divisions": 1424,
+          "odd_remainders": 6622,
+          "odd_mod8_checks": 2955,
+          "compatible_pairs": 0,
+          "screened_single_labels": 3224
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 1036
+        },
+        "pairs": {
+          "pair": 2063
+        },
+        "hybrid": {
+          "pair": 2058,
+          "extra_single": 1036
+        },
+        "sieved_ordinary": {
+          "extra_single": 1041
+        }
+      },
+      "first_examples": {}
+    },
+    {
+      "id": "quantile-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "counts": {
+        "ordinary": 0,
+        "pairs": 0,
+        "hybrid": 0,
+        "sieved_ordinary": 0,
+        "eligible": 1,
+        "initial": 0,
+        "hybrid_pair_hits": 0,
+        "pair_hits_also_ordinary": 0,
+        "pair_hits_inside_retained_ordinary_prefix": 0,
+        "only_hybrid": 0,
+        "only_ordinary": 0,
+        "only_hybrid_vs_sieved": 0,
+        "only_sieved_vs_hybrid": 0,
+        "sieved_cap_exhausted": 1,
+        "sieved_root_budget_exhausted": 0
+      },
+      "work": {
+        "ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "pairs": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 120,
+          "extra_single_tests": 0,
+          "gcds_after_squares": 0,
+          "keys": 0,
+          "odd_unit_divisions": 0,
+          "odd_remainders": 0,
+          "odd_mod8_checks": 0,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "hybrid": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 120,
+          "gcds_after_squares": 0,
+          "keys": 16,
+          "odd_unit_divisions": 18,
+          "odd_remainders": 82,
+          "odd_mod8_checks": 16,
+          "compatible_pairs": 0,
+          "screened_single_labels": 0
+        },
+        "sieved_ordinary": {
+          "setup_gcds": 9,
+          "label_sqrts": 8,
+          "label_remainders": 8,
+          "initial_tests": 16,
+          "pair_tests": 0,
+          "extra_single_tests": 111,
+          "gcds_after_squares": 0,
+          "keys": 4096,
+          "odd_unit_divisions": 1808,
+          "odd_remainders": 8022,
+          "odd_mod8_checks": 3754,
+          "compatible_pairs": 0,
+          "screened_single_labels": 4096
+        }
+      },
+      "max_operand_bits": {
+        "ordinary": {
+          "extra_single": 1035
+        },
+        "pairs": {
+          "pair": 2062
+        },
+        "hybrid": {
+          "extra_single": 1035
+        },
+        "sieved_ordinary": {
+          "extra_single": 1040
+        }
+      },
+      "first_examples": {}
+    }
+  ]
+}

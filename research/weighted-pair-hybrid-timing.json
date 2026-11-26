@@ -1,0 +1,146 @@
+[
+  {
+    "panel": "14-bit-side-full",
+    "inputs": 228713,
+    "repeats": 1,
+    "policy": "ordinary",
+    "splits_including_repetitions": 172516,
+    "cpu_ns": 4250454000,
+    "wall_ns": 4257053958
+  },
+  {
+    "panel": "14-bit-side-full",
+    "inputs": 228713,
+    "repeats": 1,
+    "policy": "pairs",
+    "splits_including_repetitions": 67639,
+    "cpu_ns": 4690730000,
+    "wall_ns": 4703933000
+  },
+  {
+    "panel": "14-bit-side-full",
+    "inputs": 228713,
+    "repeats": 1,
+    "policy": "hybrid",
+    "splits_including_repetitions": 172737,
+    "cpu_ns": 6650148000,
+    "wall_ns": 6670134917
+  },
+  {
+    "panel": "14-bit-side-full",
+    "inputs": 228713,
+    "repeats": 1,
+    "policy": "sieved_ordinary",
+    "splits_including_repetitions": 228713,
+    "cpu_ns": 11238086000,
+    "wall_ns": 11286774417
+  },
+  {
+    "panel": "16-bit-side",
+    "inputs": 1024,
+    "repeats": 1,
+    "policy": "ordinary",
+    "splits_including_repetitions": 407,
+    "cpu_ns": 29327000,
+    "wall_ns": 29553583
+  },
+  {
+    "panel": "16-bit-side",
+    "inputs": 1024,
+    "repeats": 1,
+    "policy": "pairs",
+    "splits_including_repetitions": 124,
+    "cpu_ns": 25476000,
+    "wall_ns": 25534834
+  },
+  {
+    "panel": "16-bit-side",
+    "inputs": 1024,
+    "repeats": 1,
+    "policy": "hybrid",
+    "splits_including_repetitions": 406,
+    "cpu_ns": 41974000,
+    "wall_ns": 41996250
+  },
+  {
+    "panel": "16-bit-side",
+    "inputs": 1024,
+    "repeats": 1,
+    "policy": "sieved_ordinary",
+    "splits_including_repetitions": 1024,
+    "cpu_ns": 231539000,
+    "wall_ns": 239133791
+  },
+  {
+    "panel": "80-bit",
+    "inputs": 8,
+    "repeats": 64,
+    "policy": "ordinary",
+    "splits_including_repetitions": 0,
+    "cpu_ns": 20652000,
+    "wall_ns": 20677291
+  },
+  {
+    "panel": "80-bit",
+    "inputs": 8,
+    "repeats": 64,
+    "policy": "pairs",
+    "splits_including_repetitions": 0,
+    "cpu_ns": 22279000,
+    "wall_ns": 22305375
+  },
+  {
+    "panel": "80-bit",
+    "inputs": 8,
+    "repeats": 64,
+    "policy": "hybrid",
+    "splits_including_repetitions": 0,
+    "cpu_ns": 29387000,
+    "wall_ns": 29395417
+  },
+  {
+    "panel": "80-bit",
+    "inputs": 8,
+    "repeats": 64,
+    "policy": "sieved_ordinary",
+    "splits_including_repetitions": 0,
+    "cpu_ns": 1311413000,
+    "wall_ns": 1312725625
+  },
+  {
+    "panel": "2048-bit",
+    "inputs": 2,
+    "repeats": 32,
+    "policy": "ordinary",
+    "splits_including_repetitions": 0,
+    "cpu_ns": 19319000,
+    "wall_ns": 19352000
+  },
+  {
+    "panel": "2048-bit",
+    "inputs": 2,
+    "repeats": 32,
+    "policy": "pairs",
+    "splits_including_repetitions": 0,
+    "cpu_ns": 36528000,
+    "wall_ns": 36551500
+  },
+  {
+    "panel": "2048-bit",
+    "inputs": 2,
+    "repeats": 32,
+    "policy": "hybrid",
+    "splits_including_repetitions": 0,
+    "cpu_ns": 21350000,
+    "wall_ns": 21360792
+  },
+  {
+    "panel": "2048-bit",
+    "inputs": 2,
+    "repeats": 32,
+    "policy": "sieved_ordinary",
+    "splits_including_repetitions": 0,
+    "cpu_ns": 344353000,
+    "wall_ns": 344625500
+  }
+]
