@@ -150,6 +150,8 @@ import PrimeFactors.SumMenuPartition
 import PrimeFactors.PartialOrderLift
 import PrimeFactors.QuantilePopulationBounds
 import PrimeFactors.QuantileResidueBins
+import PrimeFactors.SquareRootPhasePopulation
+import PrimeFactors.QuantileThetaBounds
 import PrimeFactors.LiftedWheelPeriod
 import PrimeFactors.ReusableSumBase
 import PrimeFactors.SignatureUpdates

@@ -8,6 +8,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**The square root gave a misleading clue on small examples.** At 2,048 bits, even the first 300 fractional bits of the square root cannot improve the choice between our two windows over always choosing the outer window. This statement covers uniformly drawn eligible prime pairs. A fresh sample of 65,536 smaller products gave the simple high-bit prediction 49.95% accuracy. [What the proof establishes and how the test was run](discoveries/what-the-square-root-reveals-about-the-gap.md)
+
 **Roughly half the prime pairs have their sum in the first quarter of the possible range.** We can calculate that window from the product alone. The estimate applies to randomly chosen 1,024-bit primes whose product has 2,048 bits. In eight smaller trials the window contained four answers. Trying it first increased total row visits, and on both full-size inputs the quarter was still too large to search. [Proof, population estimate and measured work](discoveries/where-to-look-for-the-factor-sum.md)
 
 **Reading only the ends of the product gives almost no clue about which window to choose.** Under the generalized Riemann hypothesis for Dirichlet L-functions, even an unlimited calculation using just the first and last 232 bits has success below 50.000099% on random eligible pairs. Using the other product bits remains open to different methods. [Which predictions the bound covers](discoveries/where-to-look-for-the-factor-sum.md#what-if-we-are-given-leading-or-trailing-bits-of-the-product)

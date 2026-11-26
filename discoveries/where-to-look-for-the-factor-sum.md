@@ -14,6 +14,8 @@ To see where the median comes from, write $n=N/B^2$, $a=\log(q/\sqrt N)$ and $H=
 
 ## A finite population estimate at 2,048 bits
 
+A later refinement using Axler’s bound for the Chebyshev theta function places the central fraction between **0.49999996837 and 0.49999999383 unconditionally**. The two derivations below explain the roles of the weaker Dusart estimate and the much smaller RH prime-count error. [Refined unconditional estimate and its effect on prediction](what-the-square-root-reveals-about-the-gap.md#removing-the-rh-assumption-from-the-decision)
+
 Draw two primes independently and uniformly from $[X,B]$ with $X=2^{1023}$ and $B=2X$. Keep distinct pairs with $pq\ge B^2/2$ and sort the pair. The following estimates apply to this population. Both are analytic deductions. The finite cutoff and width inequalities above are checked in Lean.
 
 Let $\mu$ count primes and $d\nu(x)=dx/\log x$ on $[X,B]$. Split the eligible triangle $p<q$ into the region $G$ with $q^3\le B^2p$ and its complement $J$. Every horizontal and vertical section of either region is an interval, possibly empty. If the discrepancy between $\mu$ and $\nu$ on every interval is at most $\epsilon$, replacing one measure at a time bounds the count error on each region by $E=\epsilon(2\nu([X,B])+\epsilon)$. Write $D=\nu^2(G)+\nu^2(J)$. Perturbing the good and missed counts by at most $E$ each changes the fraction by at most $E/D$ when both counts exceed $E$. Its extreme values occur with errors of opposite signs.

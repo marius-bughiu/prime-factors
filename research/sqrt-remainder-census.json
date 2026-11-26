@@ -1,0 +1,183 @@
+{
+  "reproduce": "python3 -m experiments.sqrt_remainder_census | diff - research/sqrt-remainder-census.json",
+  "population": "p < q, both b-bit primes, p*q >= 2^(2b-1).",
+  "prediction": "Predict inner when N - floor(sqrt(N))^2 > floor(sqrt(N)).",
+  "inner": "q^3 <= 2^(2b) * p",
+  "counts_order": [
+    "low_outer",
+    "low_inner",
+    "high_outer",
+    "high_inner"
+  ],
+  "seed": "sqrt-remainder-inner-postdesign-v1",
+  "sampler": "For index 0 onward and sides ASCII p,q, hash seed || NUL || side || index_u64be || retry_u64be with SHAKE256. Read 4 bytes big-endian, set the high and low bits, and take the first prime for each side starting at retry 0. Sort each pair, keep eligible draws in order with replacement, and stop after 65,536 accepted pairs.",
+  "primality": "Small primes by Eratosthenes sieve. Sampled 32-bit candidates by exact coprimality with the product of all primes through 65,535. The factors are generated for evaluation. No individual Lean factorization certificates are produced by this census.",
+  "exhaustive": [
+    {
+      "factor_bits": 5,
+      "pairs": 6,
+      "correct": 2,
+      "counts": [
+        2,
+        0,
+        4,
+        0
+      ]
+    },
+    {
+      "factor_bits": 6,
+      "pairs": 14,
+      "correct": 9,
+      "counts": [
+        4,
+        0,
+        5,
+        5
+      ]
+    },
+    {
+      "factor_bits": 7,
+      "pairs": 42,
+      "correct": 28,
+      "counts": [
+        7,
+        5,
+        9,
+        21
+      ]
+    },
+    {
+      "factor_bits": 8,
+      "pairs": 148,
+      "correct": 82,
+      "counts": [
+        32,
+        19,
+        47,
+        50
+      ]
+    },
+    {
+      "factor_bits": 9,
+      "pairs": 543,
+      "correct": 321,
+      "counts": [
+        130,
+        85,
+        137,
+        191
+      ]
+    },
+    {
+      "factor_bits": 10,
+      "pairs": 1718,
+      "correct": 995,
+      "counts": [
+        465,
+        277,
+        446,
+        530
+      ]
+    },
+    {
+      "factor_bits": 11,
+      "pairs": 5530,
+      "correct": 3078,
+      "counts": [
+        1374,
+        1071,
+        1381,
+        1704
+      ]
+    },
+    {
+      "factor_bits": 12,
+      "pairs": 19546,
+      "correct": 10461,
+      "counts": [
+        4948,
+        4128,
+        4957,
+        5513
+      ]
+    },
+    {
+      "factor_bits": 13,
+      "pairs": 64719,
+      "correct": 34120,
+      "counts": [
+        15975,
+        14484,
+        16115,
+        18145
+      ]
+    },
+    {
+      "factor_bits": 14,
+      "pairs": 228713,
+      "correct": 119036,
+      "counts": [
+        57607,
+        52080,
+        57597,
+        61429
+      ]
+    },
+    {
+      "factor_bits": 15,
+      "pairs": 783832,
+      "correct": 402679,
+      "counts": [
+        196058,
+        184345,
+        196808,
+        206621
+      ]
+    },
+    {
+      "factor_bits": 16,
+      "pairs": 2753877,
+      "correct": 1404758,
+      "counts": [
+        679199,
+        669073,
+        680046,
+        725559
+      ]
+    },
+    {
+      "factor_bits": 17,
+      "pairs": 9833320,
+      "correct": 4987268,
+      "counts": [
+        2470082,
+        2375590,
+        2470462,
+        2517186
+      ]
+    },
+    {
+      "factor_bits": 18,
+      "pairs": 34893133,
+      "correct": 17621865,
+      "counts": [
+        8685022,
+        8580163,
+        8691105,
+        8936843
+      ]
+    }
+  ],
+  "sample": {
+    "factor_bits": 32,
+    "pairs": 65536,
+    "correct": 32738,
+    "counts": [
+      16330,
+      16446,
+      16352,
+      16408
+    ],
+    "draw_indices": 107527
+  }
+}
