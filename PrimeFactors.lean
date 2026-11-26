@@ -116,6 +116,15 @@ import PrimeFactors.DivisorSecondMoment
 import PrimeFactors.SingleBasePopulation
 import PrimeFactors.OrderDivisorSumBits
 import PrimeFactors.PrimePowerSumFilter
+import PrimeFactors.GeometricIndexReadout
+import PrimeFactors.GeometricDoubleMatch
+import PrimeFactors.GeometricMatchRank
+import PrimeFactors.GeometricMatchMoments
+import PrimeFactors.GeometricMultiplicityReadout
+import PrimeFactors.GeometricReadoutExamples
+import PrimeFactors.GeometricSumLanes
+import PrimeFactors.GeometricReadingLift
+import PrimeFactors.GeometricBlockReading
 import PrimeFactors.ReusableSumBase
 import PrimeFactors.SignatureUpdates
 import PrimeFactors.FixedBaseSignature

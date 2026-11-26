@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A geometric product can reveal the index of the correct sum even when both of its first derivatives vanish. On 34,393 three quadratic readings gave a factor directly. On 30,353 a rank argument gave just two possible positions. Filtering by the low binary digits cut a fresh 31-bit search from 4,852 terms to 606. [Derivation, checks and limitations at 2,048 bits](reading-an-index-from-a-geometric-product.md)
+
 One uniformly sampled base distinguishes every possible sum with failure probability below $2^{-972}$ over uniform eligible target pairs. For the independently constructed 2,048-bit comparison, base 2 is certified to distinguish the true sum exactly. Its actual location remains too costly to recover by the table search. [Proof, fixed-base example and work comparison](one-base-for-the-factor-sum.md)
 
 Two randomly chosen bases distinguish every sum in the standard balanced interval with probability above 39 in 40 for each product of distinct primes $64\le p<q\le 2p$. The complete two-list search recovered a fresh 52-bit example, and a wrong sum helped factor 109,969. At 2,048 bits at least one complete list needs more than $2^{442}$ entries even with product-dependent prime selection. [Search, proof and measured costs](reading-the-factor-sum.md)

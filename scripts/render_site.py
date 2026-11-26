@@ -460,6 +460,54 @@ def case_row(result):
         count = (f'Base selection · {selection["bases_tested"]:,} of {w["max_primes"]:,} primes tested'
                  f' · combined order {escape(selection["combined_order"])}'
                  f' · {escape(w["outcome"].replace("_", " "))}')
+    elif result['method'] == 'geometric-readout-blocks':
+        search = result['geometric_readout_blocks']
+        count = (f'Base {search["base"]} · {compact_count(int(search["total_terms"]))} original terms'
+                 f' · required baby degree {compact_count(search["required_width"])}'
+                 f' · degree cap {search["max_block_width"]:,}')
+        block = search.get('block_work')
+        if block:
+            count += (f' · {block["baby_roots"]:,} baby roots across {block["root_polynomials"]} trees'
+                      f' · {block["scalar_products"]} products modulo N³'
+                      f' · {block["block_evaluations"]:,} block values · {block["tail_terms"]:,} scalar tail terms'
+                      f' · {block["grid_inversions"]} grid inversions')
+            if search['matched_readings']:
+                count += (f' · all seven coefficients agree with direct evaluation'
+                          f' ({duration(search["direct_seconds"])})')
+        elif search['work']['unvisited_terms']:
+            count += f' · {compact_count(search["work"]["unvisited_terms"])} original terms unvisited'
+    elif result['method'] == 'geometric-sum-binary':
+        search = result['geometric_sum_binary']
+        work = search['work']
+        dense = search['dense_comparison']
+        count = (f'Base {search["base"]} · {len(search["accepted_mod_32"])} sum residues modulo 32'
+                 f' · {len(search["lanes"])} progressions · {compact_count(int(search["dense_terms"]))} dense terms'
+                 f' · {compact_count(int(search["total_terms"]))} after filtering'
+                 f' · {work["terms"]:,} visited · global cap {search["max_terms"]:,}'
+                 f' · dense comparison {escape(dense["outcome"].replace("_", " "))}')
+        if work['unvisited_terms']:
+            count += f' · {compact_count(work["unvisited_terms"])} eligible terms unvisited'
+        else:
+            count += (f' · {work["modular_powers"]} modular powers · {work["jet_updates"]:,} coefficient updates'
+                      f' · {work["quotient_gcds"]:,} quotient gcds · {work["square_tests"]} square tests')
+        if search['winning_sum'] is not None:
+            count += f' · factor sum {escape(search["winning_sum"])}'
+    elif result['method'] == 'geometric-sum-readout':
+        search = result['geometric_sum_readout']
+        w = search['work']
+        count = (f'Base {search["base"]} · {w["terms"]:,} of {compact_count(int(search["total_terms"]))} '
+                 f'product terms · cap {search["max_terms"]:,}')
+        if w['unvisited_terms']:
+            count += f' · {compact_count(w["unvisited_terms"])} unvisited'
+        else:
+            count += (f' · {w["jet_updates"]:,} coefficient updates · {w["coefficient_gcds"]} coefficient gcds'
+                      f' · {w["quotient_gcds"]} quotient gcds · {w["square_tests"]} square tests')
+        if search['winning_index'] is not None:
+            count += f' · factor sum at index {search["winning_index"]}'
+        if search['quotient_hits']:
+            count += ' · proper gcd at k = ' + ', '.join(str(hit['k']) for hit in search['quotient_hits'])
+        if search['equal_hits']:
+            count += ' · full gcd at k = ' + ', '.join(str(hit['k']) for hit in search['equal_hits'])
     elif result['method'] == 'sum-signature':
         search = result['sum_signature']
         w = search['work']

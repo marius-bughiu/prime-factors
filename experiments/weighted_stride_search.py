@@ -13,10 +13,12 @@ from .weighted_windows import weighted_window
 from .weighted_residue_tables import Wheel
 
 
-def root_polynomial(roots, n):
+def root_polynomial(roots, n, *, stats=None):
     """Balanced tree for the monic polynomial with the supplied roots."""
     def build(lo, hi):
         if hi-lo <= 12:
+            if stats is not None:
+                stats["tree_leaf_multiplications"] += (hi-lo)*(hi-lo+1)//2
             poly = [1]
             for i in range(lo, hi):
                 root = roots[i]
@@ -27,6 +29,9 @@ def root_polynomial(roots, n):
             return poly
         mid = (lo+hi)//2
         left, right = build(lo, mid), build(mid, hi)
+        if stats is not None:
+            stats["tree_convolutions"] += 1
+            stats["tree_convolution_inputs"] += len(left)+len(right)
         conv = multiply if len(left) < 64 else decimal_convolution
         return conv(left, right, n)
     return build(0, len(roots))
@@ -43,11 +48,14 @@ def triangular_powers(h, count, n):
     return values
 
 
-def geometric_values(poly, h, count, n):
+def geometric_values(poly, h, count, n, *, grid=None):
     """Evaluate poly(1),…,poly(h^(count-1)) using one convolution."""
     degree = len(poly)-1
-    upwards = triangular_powers(h, degree+count, n)
-    downwards = triangular_powers(pow(h, -1, n), max(count, degree+1), n)
+    if grid is None:
+        upwards = triangular_powers(h, degree+count, n)
+        downwards = triangular_powers(pow(h, -1, n), max(count, degree+1), n)
+    else:
+        upwards, downwards = grid
     reversed_coeffs = [poly[j]*downwards[j] % n for j in range(degree, -1, -1)]
     mixed = decimal_convolution(reversed_coeffs, upwards, n)
     return [mixed[degree+i]*downwards[i] % n for i in range(count)]

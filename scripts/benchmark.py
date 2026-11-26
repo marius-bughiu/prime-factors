@@ -46,7 +46,7 @@ from experiments.monotone_divisor_sampling import scan as scan_divisor_prefixes,
 from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
 from experiments.smooth_factor_sums import scan_two_three
 from experiments.near_smooth_sum import search as near_smooth_search
-from experiments import carry_interval, radix_carries, sum_signature_join
+from experiments import carry_interval, geometric_readout_blocks, geometric_sum_readout, radix_carries, sum_signature_join
 from scripts import near_smooth_certificate, trace_cover_certificate
 from experiments import trace_cover, trace_cover_transfer
 from experiments.gap_newton_lanes import search as gap_lane_search
@@ -411,6 +411,47 @@ def run_case(case, method, proofs):
         pairs = work.pop('pairs')
         agree(case, work, ['total_orbits', 'visited_orbits', 'candidate_traces', 'square_tests'])
         result = certify_split(case, proof, pairs[0][0] if pairs else None, elapsed, 'midpoint_weights', work)
+    elif method == 'geometric-readout-blocks':
+        n = int(case['n'])
+        search = geometric_readout_blocks.search(n, case['base'], case['max_block_width'],
+                                                 case['max_quotient'])
+        elapsed = time.perf_counter() - start
+        agree(case, search, ['outcome', 'total_terms', 'required_width', 'winning_index', 'work'])
+        if case.get('block_work') != search.get('block_work'):
+            raise ValueError(f'{name}: unexpected geometric block work')
+        reference_start = time.perf_counter()
+        direct = geometric_sum_readout.search(n, case['base'], case['reference_term_cap'],
+                                              case['max_quotient'])
+        search['direct_seconds'] = time.perf_counter() - reference_start
+        search['direct_work'] = direct['work']
+        search['direct_outcome'] = direct['outcome']
+        compared = search['constant'] is not None and direct['constant'] is not None
+        search['matched_readings'] = compared
+        if compared:
+            keys = ['constant', 'linear', 'quadratic', 'readout_index', 'winning_index', 'outcome',
+                    'factor', 'quotient_hits', 'equal_hits']
+            if any(search[key] != direct[key] for key in keys):
+                raise ValueError(f'{name}: blocked product and direct readout disagree')
+        agree(case, search, ['direct_outcome', 'matched_readings'])
+        result = certify_split(case, proof, search.pop('factor'), elapsed, 'geometric_readout_blocks', search)
+    elif method == 'geometric-sum-binary':
+        args = int(case['n']), case['base'], case['max_terms'], case['max_quotient']
+        search = geometric_sum_readout.search_binary(*args)
+        elapsed = time.perf_counter() - start
+        agree(case, search, ['outcome', 'dense_terms', 'total_terms', 'accepted_mod_32',
+                             'winning_sum', 'winning_lane', 'work'])
+        comparison_start = time.perf_counter()
+        dense = geometric_sum_readout.search(*args)
+        search['dense_seconds'] = time.perf_counter() - comparison_start
+        search['dense_comparison'] = dict(outcome=dense['outcome'], work=dense['work'])
+        agree(case, search, ['dense_comparison'])
+        result = certify_split(case, proof, search.pop('factor'), elapsed, 'geometric_sum_binary', search)
+    elif method == 'geometric-sum-readout':
+        search = geometric_sum_readout.search(int(case['n']), case['base'], case['max_terms'],
+                                              case['max_quotient'])
+        elapsed = time.perf_counter() - start
+        agree(case, search, ['outcome', 'winning_index', 'quotient_hits', 'equal_hits', 'work'])
+        result = certify_split(case, proof, search.pop('factor'), elapsed, 'geometric_sum_readout', search)
     elif method == 'sum-signature':
         search = sum_signature_join.search(int(case['n']), bases=case.get('input_bases'),
                                            max_half_entries=case['max_half_entries'])
@@ -1394,6 +1435,9 @@ def main():
                              ('radix-carries.json', 'radix-carries'),
                              ('carry-interval.json', 'carry-interval'),
                              ('sum-signature.json', 'sum-signature'),
+                             ('geometric-sum-readout.json', 'geometric-sum-readout'),
+                             ('geometric-sum-binary.json', 'geometric-sum-binary'),
+                             ('geometric-readout-blocks.json', 'geometric-readout-blocks'),
                              ('weighted-sparse.json', 'weighted-sparse'),
                              ('weighted-base.json', 'weighted-base'),
                              ('quartic-trace.json', 'quartic-trace'),

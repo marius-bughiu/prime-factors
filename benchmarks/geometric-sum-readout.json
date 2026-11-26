@@ -1,0 +1,263 @@
+[
+  {
+    "id": "geometric-readout-linear-sum",
+    "description": "Recover the factor sum from the linear coefficient on the checked 33127 example",
+    "n": "33127",
+    "base": 2,
+    "max_terms": 64,
+    "max_quotient": 48,
+    "outcome": "linear_sum",
+    "winning_index": 3,
+    "quotient_hits": [],
+    "equal_hits": [],
+    "work": {
+      "terms": 22,
+      "unvisited_terms": 0,
+      "setup_roots": 2,
+      "modular_powers": 1,
+      "target_exponent_bits": 15,
+      "term_multiplications": 396,
+      "geometric_steps": 21,
+      "jet_updates": 66,
+      "coefficient_gcds": 1,
+      "setup_gcds": 1,
+      "inversions": 1,
+      "square_tests": 1,
+      "quotient_gcds": 0,
+      "equal_denominator_gcds": 0,
+      "equal_signs": 0
+    },
+    "status": "complete",
+    "factors": [
+      "157",
+      "211"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "geometric-readout-linear-gcd",
+    "description": "Split the same product using a gcd of the linear coefficient at a different base",
+    "n": "33127",
+    "base": 13,
+    "max_terms": 64,
+    "max_quotient": 48,
+    "outcome": "linear_gcd",
+    "winning_index": null,
+    "quotient_hits": [],
+    "equal_hits": [],
+    "work": {
+      "terms": 22,
+      "unvisited_terms": 0,
+      "setup_roots": 2,
+      "modular_powers": 1,
+      "target_exponent_bits": 15,
+      "term_multiplications": 396,
+      "geometric_steps": 21,
+      "jet_updates": 66,
+      "coefficient_gcds": 1,
+      "setup_gcds": 1,
+      "inversions": 0,
+      "square_tests": 0,
+      "quotient_gcds": 0,
+      "equal_denominator_gcds": 0,
+      "equal_signs": 0
+    },
+    "status": "complete",
+    "factors": [
+      "157",
+      "211"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "geometric-readout-quadratic-coefficient",
+    "description": "Split the same product when its linear coefficient vanishes at base 12",
+    "n": "33127",
+    "base": 12,
+    "max_terms": 64,
+    "max_quotient": 48,
+    "outcome": "quadratic_coefficient_gcd",
+    "winning_index": null,
+    "quotient_hits": [],
+    "equal_hits": [],
+    "work": {
+      "terms": 22,
+      "unvisited_terms": 0,
+      "setup_roots": 2,
+      "modular_powers": 1,
+      "target_exponent_bits": 15,
+      "term_multiplications": 396,
+      "geometric_steps": 21,
+      "jet_updates": 66,
+      "coefficient_gcds": 3,
+      "setup_gcds": 1,
+      "inversions": 0,
+      "square_tests": 0,
+      "quotient_gcds": 0,
+      "equal_denominator_gcds": 0,
+      "equal_signs": 0
+    },
+    "status": "complete",
+    "factors": [
+      "157",
+      "211"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "geometric-readout-quadratic-quotient",
+    "description": "Check 48 quotient gcds on the small product selected for two quadratic matches",
+    "n": "34393",
+    "base": 23,
+    "max_terms": 64,
+    "max_quotient": 48,
+    "outcome": "quadratic_quotient_gcd",
+    "winning_index": null,
+    "quotient_hits": [
+      {
+        "k": 9,
+        "factor": "163"
+      },
+      {
+        "k": 21,
+        "factor": "211"
+      }
+    ],
+    "equal_hits": [],
+    "work": {
+      "terms": 23,
+      "unvisited_terms": 0,
+      "setup_roots": 2,
+      "modular_powers": 1,
+      "target_exponent_bits": 16,
+      "term_multiplications": 414,
+      "geometric_steps": 22,
+      "jet_updates": 69,
+      "coefficient_gcds": 5,
+      "setup_gcds": 1,
+      "inversions": 0,
+      "square_tests": 0,
+      "quotient_gcds": 48,
+      "equal_denominator_gcds": 0,
+      "equal_signs": 0
+    },
+    "status": "complete",
+    "factors": [
+      "163",
+      "211"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "geometric-readout-equal-quotient",
+    "description": "Recover the sum from a full quotient gcd on a retrospectively selected small control",
+    "n": "30353",
+    "base": 22,
+    "max_terms": 64,
+    "max_quotient": 48,
+    "outcome": "equal_quotient_sum",
+    "winning_index": 17,
+    "quotient_hits": [],
+    "equal_hits": [
+      {
+        "k": 14,
+        "denominator_gcd": "1",
+        "indices": [
+          17,
+          28202
+        ]
+      }
+    ],
+    "work": {
+      "terms": 21,
+      "unvisited_terms": 0,
+      "setup_roots": 2,
+      "modular_powers": 1,
+      "target_exponent_bits": 15,
+      "term_multiplications": 378,
+      "geometric_steps": 20,
+      "jet_updates": 63,
+      "coefficient_gcds": 5,
+      "setup_gcds": 1,
+      "inversions": 1,
+      "square_tests": 1,
+      "quotient_gcds": 48,
+      "equal_denominator_gcds": 1,
+      "equal_signs": 2
+    },
+    "status": "complete",
+    "factors": [
+      "127",
+      "239"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "geometric-readout-fresh-2048",
+    "description": "Count the geometric product terms for the fresh 2048-bit comparison product under a fixed cap",
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "base": 2,
+    "max_terms": 65536,
+    "max_quotient": 48,
+    "outcome": "term_limit",
+    "winning_index": null,
+    "quotient_hits": [],
+    "equal_hits": [],
+    "work": {
+      "terms": 0,
+      "unvisited_terms": 19208290787730545039666699002121612684293941967032953218252332557443685381105953601996014715126692585451853906967271479404222075678064371394936331277005611017457553987056621782413925486382970236029666357121821788708365775704624211645433051253528931087302035738356470798719930188722234384111178356205090948053,
+      "setup_roots": 2,
+      "modular_powers": 0,
+      "target_exponent_bits": 0,
+      "term_multiplications": 0,
+      "geometric_steps": 0,
+      "jet_updates": 0,
+      "coefficient_gcds": 0,
+      "setup_gcds": 1,
+      "inversions": 0,
+      "square_tests": 0,
+      "quotient_gcds": 0,
+      "equal_denominator_gcds": 0,
+      "equal_signs": 0
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    ]
+  },
+  {
+    "id": "geometric-readout-crossed-2048",
+    "description": "Count the geometric product terms for the crossed 2048-bit comparison product under a fixed cap",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "base": 2,
+    "max_terms": 65536,
+    "max_quotient": 48,
+    "outcome": "term_limit",
+    "winning_index": null,
+    "quotient_hits": [],
+    "equal_hits": [],
+    "work": {
+      "terms": 0,
+      "unvisited_terms": 16382845839229453737482917840320542620691127673264917211891685278188862058231381876820350166673023297752561151673805674122928751678781390612064996434446428749734288866249297190310874319939583647991061752542811010367355063610526301969128654757202085310012027564987689487984499860754980950123855933321496335310,
+      "setup_roots": 2,
+      "modular_powers": 0,
+      "target_exponent_bits": 0,
+      "term_multiplications": 0,
+      "geometric_steps": 0,
+      "jet_updates": 0,
+      "coefficient_gcds": 0,
+      "setup_gcds": 1,
+      "inversions": 0,
+      "square_tests": 0,
+      "quotient_gcds": 0,
+      "equal_denominator_gcds": 0,
+      "equal_signs": 0
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  }
+]
