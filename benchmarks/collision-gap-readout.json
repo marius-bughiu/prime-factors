@@ -1,0 +1,278 @@
+[
+  {
+    "id": "collision-gap-fixed-witness",
+    "description": "Different local orders on a fixed base split an ambiguous twelve-hit search",
+    "n": "49998072529",
+    "bases": [
+      "3"
+    ],
+    "require_witness": true,
+    "max_half_entries": 65536,
+    "candidate_cap": 2,
+    "trial_cap": 3,
+    "outcome": "gap_order_gcd",
+    "hits": 12,
+    "listed": [
+      "36",
+      "18"
+    ],
+    "common_gap": "840",
+    "projection_gcds": 3,
+    "sample_tests": 2,
+    "gap_remaining": "7",
+    "factors": [
+      "167329",
+      "298801"
+    ],
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "id": "collision-gap-fixed-common",
+    "description": "Equal orders give a square modulus selecting the correct sum after eleven matches",
+    "n": "220254000931",
+    "bases": [
+      "3"
+    ],
+    "require_witness": false,
+    "max_half_entries": 65536,
+    "candidate_cap": 2,
+    "trial_cap": 2,
+    "outcome": "common_order_sum",
+    "hits": 11,
+    "listed": [
+      "21",
+      "30"
+    ],
+    "common_gap": "540",
+    "projection_gcds": 7,
+    "sample_tests": 2,
+    "gap_remaining": "1",
+    "factors": [
+      "451441",
+      "487891"
+    ],
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "id": "collision-gap-many-matches",
+    "description": "Resolve 5763 matching sums on the deliberately planted order-3/order-5 base",
+    "n": "16000030340009399",
+    "bases": [
+      "8392506781771267"
+    ],
+    "require_witness": true,
+    "max_half_entries": 65536,
+    "candidate_cap": 16,
+    "trial_cap": 2,
+    "outcome": "gap_order_gcd",
+    "hits": 5763,
+    "listed": [
+      "162",
+      "135"
+    ],
+    "common_gap": "60",
+    "projection_gcds": 3,
+    "sample_tests": 16,
+    "gap_remaining": "5",
+    "factors": [
+      "100000039",
+      "160000241"
+    ],
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "id": "collision-gap-trial-cap",
+    "description": "Expose the auxiliary cofactor left when the gap factorization budget is zero",
+    "n": "49998072529",
+    "bases": [
+      "3"
+    ],
+    "require_witness": true,
+    "max_half_entries": 65536,
+    "candidate_cap": 2,
+    "trial_cap": 0,
+    "outcome": "gap_budget",
+    "hits": 12,
+    "listed": [
+      "36",
+      "18"
+    ],
+    "common_gap": "840",
+    "projection_gcds": 0,
+    "sample_tests": 2,
+    "gap_remaining": "840",
+    "factors": [],
+    "status": "partial",
+    "remaining": [
+      "49998072529"
+    ]
+  },
+  {
+    "id": "collision-gap-preflight",
+    "description": "A cheap Fermat precheck gives the factor immediately",
+    "n": "33127",
+    "bases": [
+      "13"
+    ],
+    "require_witness": true,
+    "max_half_entries": 65536,
+    "candidate_cap": 2,
+    "trial_cap": 3,
+    "outcome": "preflight_gcd",
+    "hits": null,
+    "listed": [
+      "0",
+      "0"
+    ],
+    "common_gap": null,
+    "projection_gcds": 0,
+    "sample_tests": 0,
+    "gap_remaining": null,
+    "factors": [
+      "157",
+      "211"
+    ],
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "id": "collision-gap-no-witness",
+    "description": "Both tested bases pass Fermat at a composite input and the bounded selector stops",
+    "n": "104653",
+    "bases": [
+      "2",
+      "3"
+    ],
+    "require_witness": true,
+    "max_half_entries": 65536,
+    "candidate_cap": 2,
+    "trial_cap": 3,
+    "outcome": "no_witness_within_cap",
+    "hits": null,
+    "listed": [
+      "0",
+      "0"
+    ],
+    "common_gap": null,
+    "projection_gcds": 0,
+    "sample_tests": 0,
+    "gap_remaining": null,
+    "factors": [],
+    "status": "partial",
+    "remaining": [
+      "104653"
+    ]
+  },
+  {
+    "id": "collision-gap-small-order",
+    "description": "Show the surviving ambiguity when the chosen unit has common order two",
+    "n": "2961805344422983",
+    "bases": [
+      "2961805344422982"
+    ],
+    "require_witness": false,
+    "max_half_entries": 65536,
+    "candidate_cap": 2,
+    "trial_cap": 8,
+    "outcome": "short_common_order",
+    "hits": 15902,
+    "listed": [
+      "216",
+      "216"
+    ],
+    "common_gap": "4",
+    "projection_gcds": 3,
+    "sample_tests": 2,
+    "gap_remaining": "1",
+    "factors": [],
+    "status": "partial",
+    "remaining": [
+      "2961805344422983"
+    ]
+  },
+  {
+    "id": "collision-gap-fresh-88",
+    "description": "Complete the archived 88-bit comparison with one publicly certified base",
+    "n": "216743551899887872400389319",
+    "bases": [
+      "2"
+    ],
+    "require_witness": true,
+    "max_half_entries": 65536,
+    "candidate_cap": 2,
+    "trial_cap": 8,
+    "outcome": "factor",
+    "hits": 1,
+    "listed": [
+      "40824",
+      "51840"
+    ],
+    "common_gap": null,
+    "projection_gcds": 0,
+    "sample_tests": 1,
+    "gap_remaining": null,
+    "factors": [
+      "14430605773673",
+      "15019712637103"
+    ],
+    "status": "complete",
+    "remaining": []
+  },
+  {
+    "id": "collision-gap-fresh-2048",
+    "description": "Certify base 2 and retain the whole unresolved product at the list cap",
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "bases": [
+      "2"
+    ],
+    "require_witness": true,
+    "max_half_entries": 65536,
+    "candidate_cap": 16,
+    "trial_cap": 32,
+    "outcome": "half_list_limit",
+    "hits": null,
+    "listed": [
+      "951030527661335951438936960561962954959023772276588323516575248316125815284886153272253793320740220390314805821440000000000000000000000",
+      "533156420976757751499205650750230811020006437799275219055810590399904656612018539059318632972093416426666670198074900480000000000000000"
+    ],
+    "common_gap": null,
+    "projection_gcds": 0,
+    "sample_tests": 0,
+    "gap_remaining": null,
+    "factors": [],
+    "status": "partial",
+    "remaining": [
+      "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    ]
+  },
+  {
+    "id": "collision-gap-crossed-2048",
+    "description": "Certify base 2 and retain the whole unresolved product at the list cap",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "bases": [
+      "2"
+    ],
+    "require_witness": true,
+    "max_half_entries": 65536,
+    "candidate_cap": 16,
+    "trial_cap": 32,
+    "outcome": "half_list_limit",
+    "hits": null,
+    "listed": [
+      "1216264273585217422832687467881899500362878472849651797392579077625174604224097973530683337681338317562755332765122560000000000000000000",
+      "729510607749645958350263399642419192912957018731757271074706721659427982207044423734926836517210888042331504640000000000000000000000000"
+    ],
+    "common_gap": null,
+    "projection_gcds": 0,
+    "sample_tests": 0,
+    "gap_remaining": null,
+    "factors": [],
+    "status": "partial",
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ]
+  }
+]

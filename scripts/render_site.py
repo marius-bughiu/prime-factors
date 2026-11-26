@@ -558,6 +558,22 @@ def case_row(result):
             count += ' · proper gcd at k = ' + ', '.join(str(hit['k']) for hit in search['quotient_hits'])
         if search['equal_hits']:
             count += ' · full gcd at k = ' + ', '.join(str(hit['k']) for hit in search['equal_hits'])
+    elif result['method'] == 'collision-gap-readout':
+        search = result['collision_gap_readout']
+        work = search['work']
+        count = (f'{escape(search["outcome"].replace("_", " "))} · list cap {search["list_cap"]:,}'
+                 f' · candidate cap {search["candidate_cap"]:,} · trial-divisor cap {search["trial_cap"]:,}')
+        if search.get('probes'):
+            count += f' · {len(search["probes"])} bases screened'
+        if work.get('signature_matches') is not None:
+            count += f' · {work["signature_matches"]:,} matches · {work["square_tests"]} candidate square tests'
+        if 'collision_gap' in work:
+            gap = work['collision_gap']
+            count += f' · common gap {escape(gap["gap"])} · {gap["projection_gcds"]} order gcds'
+            if gap['square_tests']:
+                count += f' · {gap["square_tests"]} reconstructed sum checked'
+        if work.get('unvisited_half_entries'):
+            count += f' · {compact_count(work["unvisited_half_entries"])} unbuilt entries'
     elif result['method'] == 'sum-signature':
         search = result['sum_signature']
         w = search['work']

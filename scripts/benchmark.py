@@ -567,6 +567,29 @@ def run_case(case, method, proofs):
         elapsed = time.perf_counter() - start
         agree(case, search, ['outcome', 'winning_index', 'quotient_hits', 'equal_hits', 'work'])
         result = certify_split(case, proof, search.pop('factor'), elapsed, 'geometric_sum_readout', search)
+    elif method == 'collision-gap-readout':
+        n = int(case['n'])
+        bases = tuple(map(int, case['bases']))
+        start = time.perf_counter()
+        if case['require_witness']:
+            run = sum_signature_join.witnessed_search(n, bases, case['max_half_entries'],
+                                                      case['trial_cap'], case['candidate_cap'])
+        else:
+            run = sum_signature_join.search(n, bases=bases, max_half_entries=case['max_half_entries'],
+                                            incremental=True, gap_trial_cap=case['trial_cap'],
+                                            gap_candidate_cap=case['candidate_cap'])
+        elapsed = time.perf_counter()-start
+        work = run['work']
+        gap = work.get('collision_gap', {})
+        measured = dict(outcome=run['outcome'], hits=work.get('signature_matches'),
+                        listed=[str(work.get(k, 0)) for k in ('left_entries', 'right_entries')],
+                        common_gap=gap.get('gap'), projection_gcds=gap.get('projection_gcds', 0),
+                        sample_tests=work.get('square_tests', 0), gap_remaining=gap.get('remaining'))
+        agree(case, measured, list(measured))
+        run.update(list_cap=case['max_half_entries'], trial_cap=case['trial_cap'],
+                   candidate_cap=case['candidate_cap'], require_witness=case['require_witness'])
+        factor = int(run['factors'][0]) if run['factors'] else None
+        result = certify_split(case, proof, factor, elapsed, 'collision_gap_readout', run)
     elif method == 'sum-signature':
         search = sum_signature_join.search(int(case['n']), bases=case.get('input_bases'),
                                            max_half_entries=case['max_half_entries'])
@@ -1550,6 +1573,7 @@ def main():
                              ('radix-carries.json', 'radix-carries'),
                              ('carry-interval.json', 'carry-interval'),
                              ('sum-signature.json', 'sum-signature'),
+                             ('collision-gap-readout.json', 'collision-gap-readout'),
                              ('geometric-sum-readout.json', 'geometric-sum-readout'),
                              ('geometric-sum-binary.json', 'geometric-sum-binary'),
                              ('geometric-readout-blocks.json', 'geometric-readout-blocks'),

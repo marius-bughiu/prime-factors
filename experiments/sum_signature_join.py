@@ -6,6 +6,7 @@ from hashlib import shake_256
 from itertools import accumulate, count
 from math import gcd, isqrt
 
+from .collision_gap_readout import common_gap, factor_from_gap
 from .midpoint_slope_batches import half_sums
 
 
@@ -70,7 +71,8 @@ def _incremental_entries(groups, period, start, subtract, signature, multiply, i
     return entries
 
 
-def search(n, *, bases=None, max_half_entries=65536, incremental=False):
+def search(n, *, bases=None, max_half_entries=65536, incremental=False, gap_trial_cap=None,
+           gap_candidate_cap=2):
     """Count matching sums; recover a unique sum or test their common exponent.
 
     Bounds use p≤q≤2p. Planning and both list sizes are reported even when the
@@ -82,6 +84,8 @@ def search(n, *, bases=None, max_half_entries=65536, incremental=False):
     bases = tuple(replay_bases(n) if bases is None else bases)
     if not bases or any(not 0 < g < n or gcd(g, n) != 1 for g in bases):
         raise ValueError("bases must be units in [1,n)")
+    if gap_trial_cap is not None and (len(bases) != 1 or gap_trial_cap < 0 or gap_candidate_cap < 2):
+        raise ValueError('collision recovery needs one base, a nonnegative trial cap and room for two candidates')
     left = isqrt(4*n)
     left += left*left != 4*n
     right = isqrt(9*n//2)
@@ -169,6 +173,8 @@ def search(n, *, bases=None, max_half_entries=65536, incremental=False):
         buckets[key].append(b)
     del right_records
     moments = {key: list(accumulate(values, initial=0)) for key, values in buckets.items()}
+    samples = []
+    matched_ranges = []
     hits = raw = total = 0
     for a, target in left_records:
         for wrap in (0, 1):
@@ -188,11 +194,34 @@ def search(n, *, bases=None, max_half_entries=65536, incremental=False):
             work["matched_range_queries"] += 1
             start, stop = bisect_left(values, lower), bisect_right(values, upper)
             number = stop-start
+            if gap_trial_cap is not None and number:
+                offset = left+a-wrap*period
+                matched_ranges.append((key, offset, start, stop))
+                if len(samples) < gap_candidate_cap:
+                    last = min(stop, start+gap_candidate_cap-len(samples))
+                    samples.extend(offset+b for b in values[start:last])
             hits += number
             total += (left+a-wrap*period)*number + moments[key][stop]-moments[key][start]
     work.update(raw_interval_survivors=raw, signature_matches=hits)
     if hits == 0:
         return result("no_match")
+    if hits > 1 and gap_trial_cap is not None:
+        work['sampled_sums'] = list(map(str, samples))
+        for candidate in samples:
+            work['square_tests'] += 1
+            disc = candidate*candidate - 4*n
+            root = isqrt(disc)
+            factor = (candidate-root)//2
+            if root*root == disc and (candidate-root)%2 == 0 and 1 < factor < n and n%factor == 0:
+                return result('sample_sum', factor)
+        short, queries, tree_entries = common_gap(samples[0], buckets, matched_ranges)
+        if not 0 < short <= width//(hits-1):
+            raise ArithmeticError('invalid common gap for distinct in-range sums')
+        status, factor, report = factor_from_gap(n, bases[0], left, right, *samples[:2], gap_trial_cap,
+                                                 common_multiple=short)
+        report.update(range_queries=queries, tree_entries=tree_entries, max_gap=width//(hits-1))
+        work['collision_gap'] = report
+        return result(status, factor)
     if hits > 1:
         # Every matched exponent n+1-s annihilates each base, as does their sum.
         exponent = hits*(n+1)-total
@@ -220,3 +249,42 @@ def search(n, *, bases=None, max_half_entries=65536, incremental=False):
     if gap*gap == delta and (total-gap) % 2 == 0 and 1 < factor < n and n % factor == 0:
         return result("factor", factor)
     return result("no_match")
+
+
+def witnessed_search(n, candidates, max_half_entries=65536, gap_trial_cap=None, gap_candidate_cap=None):
+    """Screen bases before the join. Omitted ambiguity budgets cover every possible gap."""
+    if n < 9 or not n % 2 or max_half_entries < 1:
+        raise ValueError('expected an odd n >= 9 and a positive list cap')
+    width = isqrt(9*n//2) - isqrt(4*n-1) - 1
+    if gap_candidate_cap is None:
+        if gap_trial_cap is None:
+            from .offset_tangent_cover import cube_root
+            gap_candidate_cap = max(2, cube_root(max(0, width-1))+1)
+        else:
+            gap_candidate_cap = 2
+    if gap_candidate_cap < 2:
+        raise ValueError('expected room for at least two candidates')
+    if gap_trial_cap is None:
+        trial_root = isqrt(max(0, width)//gap_candidate_cap)
+        gap_trial_cap = 1 + max(0, (trial_root-1)//2)
+    if gap_trial_cap < 0:
+        raise ValueError('expected an odd n >= 9, a positive list cap and valid gap budgets')
+    probes = []
+    for base in candidates:
+        if not 1 <= base < n:
+            raise ValueError('candidate base outside [1,n)')
+        common = gcd(base, n)
+        record = dict(base=str(base), gcd=str(common), fermat=None)
+        probes.append(record)
+        if common == 1:
+            value = pow(base, n-1, n)
+            common = gcd(value-1, n)
+            record.update(fermat=str(value), gcd=str(common))
+        if 1 < common < n:
+            return dict(outcome='preflight_gcd', factors=list(map(str, sorted((common, n//common)))),
+                        probes=probes, work={}, bases=[])
+        if common == 1:
+            run = search(n, bases=[base], max_half_entries=max_half_entries, incremental=True,
+                         gap_trial_cap=gap_trial_cap, gap_candidate_cap=gap_candidate_cap)
+            return dict(run, probes=probes)
+    return dict(outcome='no_witness_within_cap', factors=[], probes=probes, work={}, bases=[])

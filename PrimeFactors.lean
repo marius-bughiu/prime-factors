@@ -138,6 +138,10 @@ import PrimeFactors.GeometricPrecisionReadout
 import PrimeFactors.GeometricMultiplicityProbe
 import PrimeFactors.GeometricLatticePrecision
 import PrimeFactors.GeometricSmallRoot
+import PrimeFactors.GeometricCollisionGap
+import PrimeFactors.GeometricGapBudget
+import PrimeFactors.GeometricOrderFailure
+import PrimeFactors.GeometricOrderReadout
 import PrimeFactors.ReusableSumBase
 import PrimeFactors.SignatureUpdates
 import PrimeFactors.FixedBaseSignature

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+One public Fermat test can certify a base before building the two residue tables. When many sums match, the gcd of their differences supplies an exponent that resolves them. The two full-size tables remain beyond budget. [One-base guarantee and measured work](finishing-a-factor-sum-search-with-one-witness.md)
+
 A more precise geometric reading can recover the factor sum even when several positions match at both primes. We derive a public precision that suffices for one small lattice and exhibit both the recovered root and the cost of obtaining the reading. [Repeated matches and small integer roots](recovering-a-factor-sum-from-repeated-matches.md)
 
 A geometric product can reveal the index of the correct sum even when both of its first derivatives vanish. On 34,393 three quadratic readings gave a factor directly. On 30,353 a rank argument gave just two possible positions. Filtering by the low binary digits cut a fresh 31-bit search from 4,852 terms to 606. [Derivation, checks and limitations at 2,048 bits](reading-an-index-from-a-geometric-product.md)
