@@ -34,3 +34,5 @@ At $E=2^{400}$, for all except fewer than one in $2^{55}$ target prime pairs, ea
 ## How the two positive inputs were chosen
 
 Both examples use the same center $2^{543}3^{304}$. We added $2+2^{80}t$, choosing $t$ from a fixed hash seed for each example. We searched arithmetic progressions for two primes with that sum and with easily certified divisors of their predecessors. The two products are coprime. Their shared construction explains why both succeed. The factor search receives only $N$ and $E$. It receives neither the center, the offset, the progression, nor the factors. The displayed discovery times exclude construction and certificate checking. Run `python3 -m experiments.near_smooth_control 2 --replay` to reproduce the 399-bit-offset selection. [Generator, seeds and first successful indices](../experiments/near_smooth_control.py) · [Earlier exact-sum construction](recovering-a-smooth-prime-sum.md)
+
+Even allowing the guesses to depend arbitrarily on the lowest 512 bits of the product, the success fraction at the same tolerance is below one in $2^{487}$ for up to 648 guesses. [Product-dependent predictions](predicting-a-sum-from-remainders.md)

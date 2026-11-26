@@ -149,6 +149,8 @@ import PrimeFactors.NearSmoothUniform
 import PrimeFactors.NearSmoothSumPopulation
 import PrimeFactors.NearSmoothExclusion
 import PrimeFactors.NearSmoothBoundary
+import PrimeFactors.AdaptiveSumBands
+import PrimeFactors.LocalSumMenu
 import PrimeFactors.SmallPrimeSumCoverage
 import PrimeFactors.InverseGapPopulation
 import PrimeFactors.ReciprocalInverseSums
