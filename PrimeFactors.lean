@@ -442,6 +442,11 @@ import PrimeFactors.WeightedSubsetNonunit
 import PrimeFactors.WeightedSubsetAnchor
 import PrimeFactors.WeightedSubsetLabels
 import PrimeFactors.WeightedSubsetWitness
+import PrimeFactors.WeightedSubsetRankin
+import PrimeFactors.WeightedPrimeBins
+import PrimeFactors.WeightedSignedSupport
+import PrimeFactors.WeightedGrowingCells
+import PrimeFactors.WeightedPrimeBudget
 import PrimeFactors.LiftedPeriodTrace
 import PrimeFactors.WideModulus
 import PrimeFactors.WideScale
