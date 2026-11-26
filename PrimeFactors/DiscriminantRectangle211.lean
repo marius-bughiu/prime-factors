@@ -26,7 +26,7 @@ private theorem bit_iff {v : ℕ} (bound : v<422) :
     exact h ⟨(v:ZMod 211)^53, by rw [← sq,yes]⟩
 
 /-- The bit at the negative of a product class records failure at every supplied trace. -/
-def mask (s : ZMod 211) (sites : List ℕ) : ℕ :=
+noncomputable def mask (s : ZMod 211) (sites : List ℕ) : ℕ :=
   sites.foldr (fun i tail => (nonsquares >>> (((s+(i:ZMod 211))^2).val)) &&& tail) (2^211-1)
 
 theorem mask_iff (s c : ZMod 211) (sites : List ℕ) :
@@ -59,7 +59,7 @@ theorem eighteen : ∀ j : ℕ, j < 18 → ¬IsSquare (((97:ZMod 211)+(j:ZMod 21
   have hit : (mask (97:ZMod 211) (List.range 18)).testBit (-(178:ZMod 211)).val = true := by decide +kernel
   simpa using (mask_iff _ _ _).mp hit
 
-private def positions (m : ℕ) : List ℕ :=
+private noncomputable def positions (m : ℕ) : List ℕ :=
   if m=0 then [] else (List.range 211).filter m.testBit
 
 private theorem mem_positions (m : ℕ) {i : ℕ} (bound : i<211) :
@@ -68,8 +68,8 @@ private theorem mem_positions (m : ℕ) {i : ℕ} (bound : i<211) :
   · simp [positions,eq]
   · simp [positions,eq,bound]
 
-/-- An executable complete list of the product classes excluded at all the given sites. -/
-def excluded (s : ZMod 211) (sites : List ℕ) : List (ZMod 211) :=
+/-- A complete list, reducible in the kernel, of the product classes excluded at all the given sites. -/
+noncomputable def excluded (s : ZMod 211) (sites : List ℕ) : List (ZMod 211) :=
   (positions (mask s sites)).map (fun j : ℕ => -(j : ZMod 211))
 
 theorem mem_excluded (s c : ZMod 211) (sites : List ℕ) :
@@ -91,7 +91,7 @@ theorem mem_excluded (s c : ZMod 211) (sites : List ℕ) :
     exact List.mem_map.mpr ⟨(-c).val,h,by simp⟩
 
 /-- The ordered list of squares of ten consecutive traces. -/
-def squaredSites (s : ZMod 211) : List (ZMod 211) :=
+noncomputable def squaredSites (s : ZMod 211) : List (ZMod 211) :=
   (List.range 10).map (fun j => (s+(j:ZMod 211))^2)
 
 private theorem countTen : ∀ s : Fin 211, (positions (mask s (List.range 10))).length ≤

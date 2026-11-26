@@ -1,0 +1,236 @@
+{
+  "group": "pilot",
+  "seed": "cheap-marginal-multiplier-v1",
+  "count_per_width": 256,
+  "menu": [
+    1,
+    2,
+    6,
+    12,
+    30,
+    60,
+    210,
+    21621600
+  ],
+  "compilation": {
+    "catalogue_cpu_ns": 7215000,
+    "score_cpu_ns": 27417000,
+    "small_fourth_roots": 6528
+  },
+  "widths": {
+    "12": {
+      "inputs": 256,
+      "selected": 251,
+      "ordinary_equal": 250,
+      "uniquely_selected": 4,
+      "uniquely_ordinary": 3,
+      "ordinary16": 229,
+      "ordinary32": 248,
+      "round_robin_equal": 249,
+      "common_prefix_round_robin": 249,
+      "comparisons": 463,
+      "roots": 8613,
+      "selected_cpu_ns": 4626000,
+      "ordinary_cpu_ns": 4703000,
+      "attempts": 433,
+      "multipliers": {
+        "1": 91,
+        "6": 128,
+        "12": 32,
+        "30": 5
+      },
+      "p_value": {
+        "numerator": "1",
+        "denominator": "1",
+        "approx": 1.0
+      },
+      "product_sha256": "8185d7e7686748a66361ec35fa000b3a5a1c362a8f04f043f5d713b614176bb5"
+    },
+    "16": {
+      "inputs": 256,
+      "selected": 135,
+      "ordinary_equal": 123,
+      "uniquely_selected": 29,
+      "uniquely_ordinary": 17,
+      "ordinary16": 95,
+      "ordinary32": 122,
+      "round_robin_equal": 98,
+      "common_prefix_round_robin": 116,
+      "comparisons": 455,
+      "roots": 8606,
+      "selected_cpu_ns": 5015000,
+      "ordinary_cpu_ns": 5220000,
+      "attempts": 417,
+      "multipliers": {
+        "1": 98,
+        "6": 120,
+        "12": 34,
+        "30": 4
+      },
+      "p_value": {
+        "numerator": "1826163126435",
+        "denominator": "17592186044416",
+        "approx": 0.10380535550410741
+      },
+      "product_sha256": "c0b097c77cbb47c8c0365a75802210cd3cb82e4e9c83c6a52ce2ec6283ff0b56"
+    },
+    "20": {
+      "inputs": 256,
+      "selected": 45,
+      "ordinary_equal": 40,
+      "uniquely_selected": 8,
+      "uniquely_ordinary": 3,
+      "ordinary16": 25,
+      "ordinary32": 40,
+      "round_robin_equal": 22,
+      "common_prefix_round_robin": 36,
+      "comparisons": 480,
+      "roots": 8612,
+      "selected_cpu_ns": 6726000,
+      "ordinary_cpu_ns": 6893000,
+      "attempts": 429,
+      "multipliers": {
+        "1": 92,
+        "6": 116,
+        "12": 33,
+        "30": 15
+      },
+      "p_value": {
+        "numerator": "29",
+        "denominator": "128",
+        "approx": 0.2265625
+      },
+      "product_sha256": "b3c24a7f8c78168e0df7a05fc6842d1f02e1e915e7440a76bb1cf376c1c63e69"
+    },
+    "24": {
+      "inputs": 256,
+      "selected": 6,
+      "ordinary_equal": 7,
+      "uniquely_selected": 0,
+      "uniquely_ordinary": 1,
+      "ordinary16": 6,
+      "ordinary32": 7,
+      "round_robin_equal": 3,
+      "common_prefix_round_robin": 6,
+      "comparisons": 453,
+      "roots": 8592,
+      "selected_cpu_ns": 6534000,
+      "ordinary_cpu_ns": 6571000,
+      "attempts": 422,
+      "multipliers": {
+        "1": 112,
+        "6": 100,
+        "12": 36,
+        "30": 8
+      },
+      "p_value": {
+        "numerator": "1",
+        "denominator": "1",
+        "approx": 1.0
+      },
+      "product_sha256": "ff6933c18dbf4b713d37263000e163d09ce6e1bc7a340666de39de791449f2da"
+    }
+  },
+  "representative": {
+    "n": "683799768761",
+    "factor": "674551",
+    "cofactor": "1013711",
+    "bits": 20,
+    "attempt": 28,
+    "selected": {
+      "k": 6,
+      "guards": 2,
+      "factors": [
+        674551
+      ],
+      "gcds": 1,
+      "witness": [
+        6,
+        4051074,
+        0,
+        4051075,
+        3769,
+        1013711
+      ],
+      "trace_tests": 32,
+      "total_roots": 34
+    },
+    "ordinary": {
+      "factors": [],
+      "gcds": 0,
+      "witness": null,
+      "trace_tests": 33,
+      "total_roots": 34
+    }
+  },
+  "total": {
+    "inputs": 1024,
+    "selected": 437,
+    "ordinary_equal": 420,
+    "uniquely_selected": 41,
+    "uniquely_ordinary": 24,
+    "ordinary16": 355,
+    "ordinary32": 417,
+    "round_robin_equal": 372,
+    "common_prefix_round_robin": 407,
+    "comparisons": 1851,
+    "roots": 34423,
+    "selected_cpu_ns": 22901000,
+    "ordinary_cpu_ns": 23387000,
+    "p_value": {
+      "numerator": "427535338973238889",
+      "denominator": "9223372036854775808",
+      "approx": 0.04635347433291122
+    }
+  },
+  "controls": [
+    {
+      "input": "near-smooth-fresh-2048",
+      "selected": {
+        "k": 1,
+        "guards": 2,
+        "factors": [],
+        "gcds": 0,
+        "witness": null,
+        "trace_tests": 32,
+        "total_roots": 33
+      },
+      "ordinary": {
+        "factors": [],
+        "gcds": 0,
+        "witness": null,
+        "trace_tests": 32,
+        "total_roots": 33
+      },
+      "selected_cpu_ns": 151000,
+      "ordinary_cpu_ns": 140000,
+      "positions": "248232704455146524605630169562566287565678774076273877298549856252563182407596337424965347321378732863842822541119813252860028609439943374446581239933961032",
+      "ordinary_equal_positions": "248232704455146524605630169562566287565678774076273877298549856252563182407596337424965347321378732863842822541119813252860028609439943374446581239933961032",
+      "remaining": "18884712517224533984241853532417032798241462841760871556875357306823989724297817320078697218660263409729235036924156122017673396452418082381299457303872518047483789737937808578218935869244606636556281046155587723875866839502364068875731832210546114962831337476447361413978103376837112894248967676022256624644"
+    },
+    {
+      "input": "near-smooth-crossed-2048",
+      "selected": {
+        "k": 6,
+        "guards": 2,
+        "factors": [],
+        "gcds": 0,
+        "witness": null,
+        "trace_tests": 32,
+        "total_roots": 34
+      },
+      "ordinary": {
+        "factors": [],
+        "gcds": 0,
+        "witness": null,
+        "trace_tests": 33,
+        "total_roots": 34
+      },
+      "selected_cpu_ns": 213000,
+      "ordinary_cpu_ns": 217000,
+      "positions": "199470510001707842337328654687046777969868543389694464942890047133688004542229529228080993893894732160990261080270736757387923191958156871672085229622185032",
+      "ordinary_equal_positions": "163278213967659576252937420798975300166389241262769721908549717091313957596211595868853948376794710469197521954044709140258204754612679361824669958208778481",
+      "remaining": "33601035509446495786779065699651680605273022524619669029415484617098925929997677502027572106296220246305997097113873050921760556729053589037181411586874599661492946914196538815534518578310416542793966771250814446120523805464021849319983788703837544857359489534638455036423952425045681509573189630731681149020"
+    }
+  ]
+}

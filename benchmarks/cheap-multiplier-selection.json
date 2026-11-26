@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cheap-multiplier-selection-802471205089",
+    "description": "First prospective selection-only split at factor width at least 20 on the independent confirmation panel. Ordinary Fermat missed at the same total number of square roots.",
+    "n": "802471205089",
+    "checks": {
+      "k": 12,
+      "comparisons": 2,
+      "trace_tests": 32,
+      "total_roots": 34,
+      "ordinary_tests": 33,
+      "ordinary_total_roots": 34,
+      "ordinary_factors": [],
+      "witness": [
+        "12",
+        "6206337",
+        "0",
+        "6206339",
+        "5093",
+        "776429"
+      ]
+    },
+    "status": "complete",
+    "factors": [
+      "776429",
+      "1033541"
+    ],
+    "remaining": []
+  }
+]

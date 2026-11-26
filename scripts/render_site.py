@@ -72,6 +72,9 @@ def case_row(result):
         elif 'radix_exponent' in x:
             claim = (f'When both factors have at most {x["max_factor_bits"]:,} bits, Lean excludes '
                      f'remainder {escape(x["residue"])} modulo 2<sup>{x["radix_exponent"]}</sup>.')
+        elif x.get('method') == 'shared multiplier interval union':
+            claim = (f'Lean excludes factors in {x["interval_count"]:,} disjoint intervals '
+                     f'containing {compact_count(int(x["positions"]))} integer positions.')
         elif x.get('method') == 'factor sum square tests':
             count = int(x['upper']) - int(x['lower']) + 1
             claim = (f'Lean excludes divisors at all {count:,} positions '
@@ -858,6 +861,24 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'cheap-multiplier-selection':
+        w = result['cheap_multiplier_selection']
+        count = (f'Multiplier {w["k"]:,} chosen in {w["comparisons"]:,} comparisons'
+                 f' · {w["trace_tests"]:,} discriminants tested'
+                 f' · {w["total_roots"]:,} total integer square roots'
+                 f' · {len(w["ordinary_factors"]):,} ordinary splits at the same root budget')
+    elif result['method'] == 'shared-multiplier-prefix':
+        w = result['shared_multiplier_prefix']
+        count = (f'{w["trace_tests"]:,} square tests shared by {w["directions"]:,} weight pairs'
+                 f' · {w["interval_count"]:,} disjoint intervals'
+                 f' · {compact_count(int(w["positions"]))} candidate positions examined'
+                 f' · {compact_count(int(w["unresolved_positions"]))} outside the intervals')
+    elif result['method'] == 'weighted-trace-reuse':
+        w = result['weighted_trace_reuse']
+        count = (f'{escape(w["mode"])} · {w["work"]["setups"]:,} equations'
+                 f' · {w["work"]["boundary_roots"]:,} endpoint roots'
+                 f' · {w["work"]["discriminant_roots"]:,} discriminant roots'
+                 f' · {compact_count(w["remaining_prefix_to_upper"])} positions beyond the examined prefix')
     elif result['method'] == 'reciprocal-sum-slice':
         w = result['reciprocal_sum_slice']
         count = (f'{w["product_terms"]:,} of {w["ordinary_candidates"]:,} odd wheel candidates multiplied'

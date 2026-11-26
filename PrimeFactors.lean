@@ -391,8 +391,12 @@ import PrimeFactors.CRTResidueAdvice
 import PrimeFactors.WeightedBaseOrder
 import PrimeFactors.WeightedBands
 import PrimeFactors.WeightedDivisorExclusion
+import PrimeFactors.WeightedTracePrefix
 import PrimeFactors.MultiplierDivisorReach
 import PrimeFactors.SharedMultiplierCoverage
+import PrimeFactors.SharedMultiplierPartners
+import PrimeFactors.SharedMultiplierPopulation
+import PrimeFactors.SharedTraceOverlap
 import PrimeFactors.DiscriminantRectangles
 import PrimeFactors.DiscriminantRectangle211
 import PrimeFactors.ArbitraryDivisorWindow
