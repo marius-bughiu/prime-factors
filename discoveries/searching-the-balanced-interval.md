@@ -6,7 +6,9 @@ Using the distance from $N$ to the square just below it gave the factors 509 on 
 
 For repeated squaring of the integer square root, one gcd can detect a factor anywhere in the chain. On the fresh 2,048-bit control the first 1,023 squarings sufficed to rule out every exponent $2^k$, even beyond the computed range. Allowing all such exponents still splits fewer than one in $2^{989}$ eligible pairs. [Finite tests, checked cutoff and costs](one-gcd-for-a-whole-power-chain.md)
 
-A table of 1,022 fixed gcd tests covers every target product. Any fixed table that always works needs more than $2^{1021}$ bits of literal storage. Generating one of its entries modulo the input efficiently remains open. [Construction and necessary storage](how-large-a-fixed-factoring-table-must-be.md)
+A table of 1,022 fixed gcd tests covers every target product without first listing the primes. With a prime catalogue the minimum is 1,013, using two explicit published prime-count estimates. Any fixed table that always works needs more than $2^{1021}$ bits of literal storage. Generating an entry modulo the input efficiently remains open. [Construction, exact count and necessary storage](how-large-a-fixed-factoring-table-must-be.md)
+
+The product also tells us how to give its two unknown primes opposite signs. On eight fresh 60-bit examples the search restricted to one sign recovered every pair, but the existing smaller-factor interval used fewer polynomial coefficients. Both full-size searches stopped at their arithmetic budget. [Worked example, RH connection and actual costs](choosing-a-group-that-contains-one-prime.md)
 
 For that product, one polynomial identity certifies that the first 64 integers in the feasible interval are coprime to the input. A separate degree bound explains why three blocks moving by the same step size up to sign cannot share one cubic address in the proposed representation. [Block exclusion and verification cost](certifying-a-block-of-missed-divisors.md) · [Limits of grouping more blocks](how-far-factorial-blocks-can-fold.md)
 

@@ -287,6 +287,10 @@ import PrimeFactors.SquareRootPolynomialFormula
 import PrimeFactors.SquareRootFormulaPopulation
 import PrimeFactors.SquareRootFormulaExamples
 import PrimeFactors.FixedDivisorSignatures
+import PrimeFactors.OptimalDivisorSignatures
+import PrimeFactors.CharacterDivisorColumn
+import PrimeFactors.CharacterColumnSpan
+import PrimeFactors.DivisorResidueCover
 import PrimeFactors.LastPowerGCD
 import PrimeFactors.PowerChainReceipt
 import PrimeFactors.ProductExponentPopulation

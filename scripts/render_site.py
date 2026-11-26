@@ -847,6 +847,14 @@ def case_row(result):
                  f' · {w["tested_lifts"]:,} of {int(w["possible_lifts"]):,} candidate quadratics checked'
                  f' · small values found {len(w["rows"]):,}'
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'character-column':
+        w = result['character_column']
+        count = f'{w["mode"].capitalize()} interval · {escape(w["outcome"].replace("_", " "))}'
+        if w['sign'] is not None:
+            count += (f' · selector {w["d"]} · sign {w["sign"]}'
+                      f' · {compact_count(int(w["visited"]))} of {compact_count(int(w["candidates"]))} positions'
+                      f' · planned arithmetic cost {compact_count(int(w["planned_block_work"]))}'
+                      f' · budget {w["max_work"]:,}')
     elif result['method'] == 'power-chain':
         w = result['power_chain']
         label = 'Powers of two' if w['mode'] == 'powers-of-two' else 'Divisors of the product minus one'

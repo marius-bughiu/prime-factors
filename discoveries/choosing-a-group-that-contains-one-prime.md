@@ -1,0 +1,27 @@
+# Choosing a group that contains exactly one prime
+
+Given only $N=323$ and the information that its two primes lie between 16 and 31, compute the Jacobi symbol $(2/N)=-1$. The odd numbers in that interval with Jacobi symbol $(2/a)=+1$ are 17, 23, 25 and 31. Multiply them together and take a gcd with 323. It gives 17. Taking the negative-sign group 19, 21, 27 and 29 gives 19. Both conclusions, including primality, are checked in Lean. [Worked example and general proof](../PrimeFactors/CharacterDivisorColumn.lean)
+
+For an odd product of distinct primes $N=pq$, find a selector $d$ with $(d/N)=-1$. Multiplicativity gives $(d/p)(d/q)=-1$, so one prime has each sign. In the interval $B\le a<2B$ containing both primes, no other integer is a multiple of either. The product of all odd entries with either chosen sign therefore has gcd exactly $p$ or $q$ with $N$. Filtering out integers having a common divisor with a small wheel preserves the argument when the wheel is coprime to $N$. Signed groups are periodic in the odd denominator with period $4|d|$. Their sizes can be counted before choosing which group to multiply.
+
+## Finding the selector and computing its product
+
+Exactly half of the invertible residues $d$ modulo $N$ have negative Jacobi symbol. Independent random unit draws take two trials on average. There is also a deterministic bound on the selector size using Dirichlet GRH. Apply Lamzouri, Li and Soundararajan's Theorem 1.1(2) to the kernel of the Jacobi character modulo $N$. For the target pairs all prime divisors exceed $(\log N)^2$, so a prime selector exists below 2,016,400. Our Lean proof checks the character argument and takes the small-prime conclusion as an explicit input. The deduction from the released Dirichlet theorem and the published least-prime estimate is on paper. [Least-prime theorem](https://arxiv.org/html/1309.3595v3#S1.SS1) · [Pinned Dirichlet statements and assumptions](../docs/research.md) · [Selector theorem](../PrimeFactors/CharacterDivisorColumn.lean)
+
+For **every** usable selector of magnitude at most 2,016,400, the full interval for 1,024-bit primes has at least $2^{1000}$ odd positions of each sign. One residue class with the required sign suffices to prove this lower bound: it repeats every $4|d|$ positions throughout an interval of length $2^{1023}$. This count applies before extra wheel filters. Multipoint polynomial evaluation can process groups without enumerating every position. Its cost still has to be compared with searching only the possible smaller factors.
+
+## Comparing the actual work
+
+We froze a wheel of 30 and tested eight freshly drawn 60-bit products. The full group, its intersection with the feasible range for either prime, and the existing forward search over the smaller-factor interval all recovered each pair. For the first draw, $587630649147298903$, the character group found the larger prime 768,058,399 and the ordinary interval found the smaller prime 765,085,897. Lean checked all eight factorizations. [Input construction, counts and certificate hashes](../research/character-divisor-comparison.json) · [Evaluator and replay](../experiments/character_divisor_column.py)
+
+| Search across the eight products | Polynomial input coefficients |
+|---|---:|
+| Forward search over the smaller-factor interval | 268,776 |
+| Character group restricted to the feasible range for either prime | 282,700 |
+| Character group over the full interval of 30-bit integers | 336,156 |
+
+The geometry explains why taking just one sign did not halve the computation. For a full-width product let $H=2B-1$, $L=\lceil N/H\rceil$, and $t=\lfloor\sqrt N\rfloor$. The smaller-factor interval is $[L,t]$. Either factor can lie in $[L,H]$, and $H+L\ge2t$ because $HL\ge N$. Consequently the second interval contains at least twice as many positions as the first, less one. If an ordinary sieve retains $\rho$ residues per period and one sign retains half of those, a common starting point and the possible partial period let the sign group save at most $\rho/2$ candidate positions over the matched ordinary sieve. This is a count of positions. Interpolation costs depend on the block shape as well. [Interval and periodic count](../PrimeFactors/CharacterColumnSpan.lean)
+
+Combining several remainder tests still leaves at least half the eligible remainders if the rule must cover every pair allowed by the modulus. To see why, fix a modulus $W$ coprime to $N$. Each eligible remainder $x$ has a unique partner $y$ with $xy=N\bmod W$. We must keep one member of each pair, including every remainder that is its own partner. Thus the smallest possible group has exactly $(\varphi(W)+r)/2$ members, where $r$ counts the solutions of $x^2=N\bmod W$. Keeping the smaller member of each pair attains the bound. Extra information about which remainders the actual primes can occupy could shrink the group further. [Proof of the minimum and a worked example modulo eight](../PrimeFactors/DivisorResidueCover.lean)
+
+On our two 2,048-bit examples, the fresh product selected $d=-1$ and the crossed example selected $d=11$. The clipped plans each required more than $2^{515}$ units in the experiment's arithmetic cost model. Both plans exceeded the budget of two million units before the first interpolation table was allocated. We could choose a group from either input. Its product remained too expensive to evaluate.
