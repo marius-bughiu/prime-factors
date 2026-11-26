@@ -33,6 +33,8 @@ For distinct 1,024-bit primes drawn uniformly subject to their product having 2,
 
 **Across the full 2,048-bit population, the mean number of integer candidates falls by more than 30%.** The theorem sums both interval lengths over exactly the same eligible prime pairs. It proves that ten times the sum of the new lengths is less than seven times the sum of the old lengths. This compares two means. The observed 21.1% reduction in the eight smaller examples is a separate measurement. [Aggregate cost theorem](../PrimeFactors/ShortRowPopulation.lean)
 
+When an algorithm searches in square blocks, an interval of $W$ integers fits into a grid with side $\lceil\sqrt W\rceil$. **The mean of that side falls by more than 16%** across the same prime pairs. The proof accounts for rounding on every input. Simply taking the square root of the two mean interval sizes would give a different quantity. The cost of multiplying and evaluating the block polynomials still enters the runtime. [Integer block-size theorem](../PrimeFactors/ShortRowBatchCost.lean)
+
 The finite population calculation uses the published unconditional bound on the first Chebyshev function at 33 endpoints. Their natural logarithms lie between 709 and 710, within the theorem’s range. Lean takes those 33 inequalities as hypotheses and checks the bin counts and final fractions. The width reductions for a specified input use integer arithmetic alone. [Axler, equation (1.6), citing Broadbent et al.](https://arxiv.org/pdf/2203.05917#page=1)
 
 ## How much work did this save?

@@ -267,9 +267,12 @@ import PrimeFactors.GaussianTraceRecovery
 import PrimeFactors.HasseShiftDegree
 import PrimeFactors.HasseTruncatedSeries
 import PrimeFactors.TranslatedHasse
+import PrimeFactors.HasseRecurrenceDegree
+import PrimeFactors.HankelTranslation
 import PrimeFactors.HasseBinomialDerivative
 import PrimeFactors.ShortPascalRow
 import PrimeFactors.ShortRowPopulation
+import PrimeFactors.ShortRowBatchCost
 import PrimeFactors.MultiplierPolynomialScore
 import PrimeFactors.PolynomialRootPacking
 import PrimeFactors.PooledRelations
