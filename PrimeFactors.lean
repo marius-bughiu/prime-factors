@@ -330,6 +330,10 @@ import PrimeFactors.TraceCoverTransfer
 import PrimeFactors.UniversalTraceCover
 import PrimeFactors.TraceHitFrequency
 import PrimeFactors.TracePrimePartners
+import PrimeFactors.TraceCollisionOrder
+import PrimeFactors.TraceCollisionWidth
+import PrimeFactors.TraceCollisionPopulation
+import PrimeFactors.TraceCollisionLimit
 import PrimeFactors.TrueTraceTableCost
 import PrimeFactors.TraceGapPopulation
 import PrimeFactors.SparseTraceDual

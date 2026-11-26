@@ -1,5 +1,39 @@
 [
   {
+    "id": "weighted-accidental-33017",
+    "description": "A wrong sum splits a product by a modular collision in the first block",
+    "n": "33017",
+    "k": 1,
+    "baby_steps": 1,
+    "max_giants": 1,
+    "max_slopes": 131072,
+    "beta": 2,
+    "stride": 24,
+    "schedule_complete": false,
+    "limit": "giant_limit",
+    "work": {
+      "base_gcds": 3,
+      "slope_visits": 2,
+      "primitive_slopes": 2,
+      "nonempty_slopes": 2,
+      "giants": 1,
+      "labels_covered": 1,
+      "babies": 1,
+      "order_gcds": 1,
+      "equality_checks": 0,
+      "polynomial_degree": 1,
+      "evaluations": 1,
+      "collision_gcds": 1
+    },
+    "outcome": "collision_divisor",
+    "status": "complete",
+    "factors": [
+      "137",
+      "241"
+    ],
+    "remaining": []
+  },
+  {
     "id": "weighted-stride-63",
     "description": "Complete weighted-sum schedule on the 63 comparison input",
     "n": "6091663632054090929",

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+For any fixed base from 2 through $2048^2$, we can also bound accidental matches at just one prime. The chance of any matching comparison is below $2^{-66}$ on uniform eligible prime pairs, even allowing $2^{64}$ starting powers and $2^{64}$ initial blocks at every reduced direction with denominator through $2^{32}$. Even trying all those bases gives a fraction below $2^{-44}$. The bounded search really does split 33,017 at a wrong sum. [Mathematical scope, example and proof](can-an-accidental-match-find-the-primes.md)
+
 A weighted search plan for one product also covers every smaller positive product in its residue class modulo 12, with at most one extra candidate per active interval. We used four reusable plans to recover twelve previously unseen 88-bit and 89-bit pairs. [Transfer rule and timing comparison](reusing-a-factor-search.md)
 
 With $2^{64}$ starting powers and $2^{64}$ blocks at each of the 23 weights, fewer than one in $2^{421}$ eligible prime pairs can have its actual weighted sum in the searched prefixes. The exact minimum number of table entries needed to reach a true sum on either full-size control exceeds $10^{152}$, even if the best weight and table size are known in advance. [Population and cost proofs](how-often-a-weighted-search-reaches-the-factors.md)
