@@ -356,6 +356,10 @@ import PrimeFactors.MixedPrefixBand
 import PrimeFactors.MixedPrefixWords
 import PrimeFactors.MixedPrefixPopulation
 import PrimeFactors.MixedPrefixSample
+import PrimeFactors.ChebyshevFactorialRatio
+import PrimeFactors.ChebyshevPrimePowers
+import PrimeFactors.ChebyshevPrimeCount
+import PrimeFactors.ChebyshevPrimeSample
 import PrimeFactors.MixedPrefixLine
 import PrimeFactors.CenteredCarryDistances
 import PrimeFactors.CarryInterval
