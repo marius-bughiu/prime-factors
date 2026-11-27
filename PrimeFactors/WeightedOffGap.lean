@@ -408,6 +408,7 @@ theorem large_order_square {P Q p q a b a' b' s : ℕ} (pp : p=2*P+1) (qq : q=2*
   rw [ip,iq]
   exact alternate_square P Q (a+b:ℕ) (b'-a':ℕ) s eq
 
+omit [NeZero n] in
 private theorem involution_match {A : Type*} [Field A] (f : ZMod n →+* A)
     (x y : (ZMod n)ˣ) (hit : trace 1 x=trace 1 y) (sy : y^2=1) :
     Units.map f.toMonoidHom x=Units.map f.toMonoidHom y := by

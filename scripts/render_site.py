@@ -1097,6 +1097,18 @@ def case_row(result):
         count = (f"Base {w['base']} · cap {w['budget']} · one initial power per method"
                  f" · signed {signed['squarings']} squarings, {signed['gcds']} gcds"
                  f" · ordinary {ordinary['squarings']} squarings, {ordinary['gcds']} gcds")
+    elif result['method'] == 'power-ratio-remainder':
+        w = result['power_ratio_remainder']
+        bits = w['factor_bits']
+        count = (f"Public exponent {int(w['exponent']):,} · {bits:,}-bit factors"
+                 f" · deficit from 2<sup>{bits}</sup> inclusive to 2<sup>{bits+1}</sup> exclusive"
+                 f" · product remainder {int(w['remainder']):,} · {w['convergents']:,} convergents"
+                 f" · {w['width_survivors']:,} width-compatible candidates · {w['square_tests']:,} square tests")
+        if not w['passed']:
+            count += " · ruled out by the public remainder"
+        if w['witness']:
+            hit = w['witness']
+            count += (f" · convergent {hit['index']} was {escape(hit['numerator'])}/{escape(hit['denominator'])}")
     elif result['method'] == 'local-gap-polynomial':
         w = result['local_gap_polynomial']
         count = (f"Multipliers through {w['multiplier_limit']:,} · up to {w['per_row']:,} positions per row"

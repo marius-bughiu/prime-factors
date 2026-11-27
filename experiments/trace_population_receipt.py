@@ -11,6 +11,44 @@ from scripts.factor import render_certificate, verify_file
 ROOT = Path(__file__).resolve().parents[1]
 
 
+FRESH_RATE = """
+private theorem order_class (x y : ℕ) (xp : 0<x) (yp : 0<y) (xd : x∣p-1) (yd : y∣q-1) :
+    Wins setup qs x y ↔ (x=7 ∨ x=14) ∧ y=8 := by
+  rw [order_table coverage xp yp xd yd, listed]
+  simp only [Finset.mem_insert,Finset.mem_singleton,Prod.mk.injEq]
+  tauto
+
+private def examplePower := ((p-1)/7).lcm ((q-1)/8)
+private def Calibration :=
+  (p-1)/(p-1).gcd examplePower=7 ∧ (q-1)/(q-1).gcd examplePower=8 ∧
+  112*examplePower=(p-1)*(q-1) ∧
+  7*PoweredTraceLimit.count ((p-1)/(p-1).gcd examplePower)
+    ((q-1)/(q-1).gcd examplePower)=3*(((p-1)/(p-1).gcd examplePower)*
+    ((q-1)/(q-1).gcd examplePower))
+
+private theorem calibration : Calibration := by unfold Calibration; decide +kernel
+
+private def Recovery := ∀ E : ℕ, 0<E → E≤n →
+  (p-1)*(q-1) ≤ (Finset.univ.filter (fun z : (ZMod p)ˣ × (ZMod q)ˣ =>
+    Wins setup qs (orderOf (z.1^E)) (orderOf (z.2^E)))).card*2^503 →
+  ∃ i, (E : ℚ)/((p-1)*(q-1) : ℕ) = ((E : ℝ)/n).convergent i
+
+private theorem recovery : Recovery := by
+  intro E _ en raw
+  have pd (z : (ZMod p)ˣ) : orderOf z∣p-1 :=
+    (Nat.prime_iff_card_units p).mp (Fact.out) ▸ orderOf_dvd_card
+  have qd (z : (ZMod q)ˣ) : orderOf z∣q-1 :=
+    (Nat.prime_iff_card_units q).mp (Fact.out) ▸ orderOf_dvd_card
+  have loc (z : (ZMod p)ˣ × (ZMod q)ˣ) :
+      Wins setup qs (orderOf (z.1^E)) (orderOf (z.2^E)) ↔
+        (orderOf (z.1^E)=7 ∨ orderOf (z.1^E)=14) ∧ orderOf (z.2^E)=8 :=
+    order_class _ _ (orderOf_pos _) (orderOf_pos _) (pd _) (qd _)
+  simp_rw [loc] at raw
+  exact PowerImageDenominator.rate_convergent (p:=p) (q:=q)
+    (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel) en raw
+"""
+
+
 def source(label, n, p, q):
     gaps, queries, _, off, _ = parameters(n, 1024, 64, 2)
     if label == "fresh":
@@ -28,7 +66,7 @@ def source(label, n, p, q):
         raise ValueError("expected fresh or crossed")
     rows = ",\n    ".join(f"({c},{s},{d})" for c, s, d in queries)
     off_indices = [i for i, row in enumerate(queries) if row in off]
-    return "import PrimeFactors.TraceOrderPopulation\n" + primes + f"""
+    return "import PrimeFactors.TraceOrderPopulation\nimport PrimeFactors.PowerImageDenominator\n" + primes + f"""
 namespace PrimeFactors.Generated.TracePopulation
 open TraceOrderPopulation
 
@@ -49,16 +87,21 @@ private def offQs := ({off_indices} : List ℕ).map fun i => qs[i]!
 
 set_option maxHeartbeats 0
 
+private theorem coverage : coverTable (p-1) (q-1) {bounds[0]} {bounds[1]} setup qs=true := by decide +kernel
+private theorem listed : orders (p-1) (q-1) {bounds[0]} {bounds[1]} setup qs={order_set} := by decide +kernel
+
 theorem all_bases : (winningBases cop setup qs).card = {expected} :=
   certified_count cop {bounds[0]} {bounds[1]} setup qs {order_set} {expected}
-    (by decide +kernel) (by decide +kernel) (by decide +kernel)
+    coverage listed (by decide +kernel)
 
 theorem off_bases : (winningBases cop setup offQs).card = 0 :=
   certified_count cop 0 0 setup offQs ∅ 0 (by decide +kernel)
     (by decide +kernel) (by decide +kernel)
 
+{FRESH_RATE if label=="fresh" else ""}
 theorem counts : (winningBases cop setup qs).card = {expected} ∧
-    (winningBases cop setup offQs).card = 0 := ⟨all_bases,off_bases⟩
+    (winningBases cop setup offQs).card = 0{" ∧ Recovery ∧ Calibration" if label=="fresh" else ""} :=
+  ⟨all_bases,off_bases{",recovery,calibration" if label=="fresh" else ""}⟩
 
 #print axioms counts
 end PrimeFactors.Generated.TracePopulation

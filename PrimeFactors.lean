@@ -686,3 +686,14 @@ import PrimeFactors.WeightedOffGap
 import PrimeFactors.WrappedGapExample
 import PrimeFactors.BlumSignedPowers
 import PrimeFactors.BlumSignedPowerExamples
+import PrimeFactors.DenseGapPrecheck
+import PrimeFactors.PoweredTraceLimit
+import PrimeFactors.PoweredOrderCounts
+import PrimeFactors.PowerImageWidth
+import PrimeFactors.PowerImageDenominator
+import PrimeFactors.PowerImageSupport
+import PrimeFactors.CommonPredecessorTail
+import PrimeFactors.SmallPowerImage
+import PrimeFactors.PowerRatioRemainder
+import PrimeFactors.UpperConvergentDeficit
+import PrimeFactors.UpperConvergentAgreement
