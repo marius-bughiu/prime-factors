@@ -124,6 +124,61 @@ class VerifyChecksTests(unittest.TestCase):
                 self.put(filename, 'changed template, fixture or workflow')
                 self.assertNotEqual(self.key(check), key)
 
+    def test_direct_lean_record_tracks_imports_and_fails_closed(self):
+        source = 'benchmarks/controls/Direct.lean'
+        check = Check('direct', ('lake', 'env', 'lean', source), (source,), True)
+        self.put(source, 'import PrimeFactors.Theorem\n')
+        self.put('PrimeFactors/Theorem.lean', 'import PrimeFactors.Helper\n')
+        self.put('PrimeFactors/Helper.lean', 'example : True := trivial\n')
+        execute = Mock()
+        def once():
+            return run(check, Inputs(self.root), 'runtime', self.cache, execute)
+        self.assertEqual(once(), 'ran')
+        self.put('PrimeFactors/New.lean', '#check Nat')
+        self.put('PrimeFactors.lean', 'import PrimeFactors.New')
+        self.assertEqual(once(), 'reused')
+        self.put('PrimeFactors/Helper.lean', '#check Bool')
+        self.assertEqual(once(), 'ran')
+        self.put('PrimeFactors/Helper.lean', 'run_cmd do IO.println "input"')
+        self.assertEqual([once(), once()], ['ran', 'ran'])
+        (self.root/'PrimeFactors/Helper.lean').unlink()
+        key = self.key(check)
+        self.put('PrimeFactors/New.lean', '#check Int')
+        self.assertNotEqual(self.key(check), key)
+        self.put('PrimeFactors/Helper.lean', '#check Nat')
+        extra = Check('direct', (*check.command[:3], '--deps', source), (source,), True)
+        key = self.key(extra)
+        self.put('PrimeFactors/New.lean', '#check Bool')
+        self.assertNotEqual(self.key(extra), key)
+
+    def test_generator_uses_only_reviewed_recipe_and_proof_hashes(self):
+        check = verify_checks.NEGATIVE_MENU
+        entry = self.put('experiments/negative_menu_control.py', 'from experiments import driver\n')
+        self.put(check.data[0], json.dumps({'lean_source_sha256': verify_checks.NEGATIVE_PROOFS}))
+        for name in verify_checks.NEGATIVE_ROOTS:
+            self.put(name, 'import PrimeFactors.Theorem\n')
+        sources = verify_checks.local_imports(self.root, entry)
+        driver = verify_checks.digest(verify_checks.canonical(Inputs(self.root).entries(sources)))
+        with patch.object(verify_checks, 'NEGATIVE_DRIVER', driver):
+            original = self.key(check)
+            self.put('PrimeFactors/Other.lean', '#check Int')
+            self.assertEqual(self.key(check), original)
+            self.put('PrimeFactors/Theorem.lean', '#check UInt8')
+            self.assertNotEqual(self.key(check), original)
+            variant = experiment(check.name, '--check', '--extra', data=check.data, lean=True)
+            changed = self.key(variant)
+            self.put('PrimeFactors/Other.lean', '#check Unit')
+            self.assertNotEqual(self.key(variant), changed)
+            self.put(check.data[0], '{"lean_source_sha256": {}}')
+            unreviewed = self.key(check)
+            self.put('PrimeFactors/Other.lean', '#check Int')
+            self.assertNotEqual(self.key(check), unreviewed)
+            self.put(check.data[0], json.dumps({'lean_source_sha256': verify_checks.NEGATIVE_PROOFS}))
+            self.put('experiments/shared.py', 'constant=21')
+            unreviewed = self.key(check)
+            self.put('PrimeFactors/Other.lean', '#check Bool')
+            self.assertNotEqual(self.key(check), unreviewed)
+
     def test_success_only_restore_repair_and_no_cache(self):
         check = Check('fixture', ('tool', 'check'), ('research/input.json',), outputs=('a.lean',))
         record = self.cache/'checks/fixture.json'

@@ -23,6 +23,21 @@ PINS = ('lean-toolchain', 'lakefile.toml', 'lake-manifest.json', 'scripts/fetch-
 OMIT = {'.git', '.lake', 'build', '__pycache__', '.venv', 'venv', '.DS_Store'}
 SCHEMA = 1
 
+# This exact --check driver kernel-checks two generated sources and compares their
+# hashes with the fixture. On a successful run we inspected both sources using
+# benchmark_state.project_imports. The Python digest below covers local_imports
+# of the driver, using the same (relative path, SHA-256) entries as a normal key.
+# Re-review both source headers and the driver closure before changing these pins.
+NEGATIVE_MENU = experiment('negative_menu_control', '--check',
+                           data=('research/negative-menu-control.json',), lean=True)
+NEGATIVE_DRIVER = '4d1e329b011c9445dcbda69a1579921ce1abb5f4ffa2e6d01b81fd833a2fbd3b'
+NEGATIVE_PROOFS = {
+    'Factor': '2a5ce0c5118c5cb90874a42b9b960e99dc0324a5c47e76583c8dd13d37532201',
+    'Obstruction': '81284398d3aa0304dd95b7ef50ce48522a9df2d9e4f33307c7b398b53854d7c7',
+}
+NEGATIVE_ROOTS = ('PrimeFactors/Certificate.lean', 'PrimeFactors/PartialOrder.lean',
+                  'PrimeFactors/NegativeTargetObstruction.lean')
+
 
 def digest(data):
     return hashlib.sha256(data).hexdigest()
@@ -120,6 +135,51 @@ class Inputs:
             self.groups[spec] = tuple(walk_files(path, self.ignored)) if path.is_dir() else (path,)
         return self.groups[spec]
 
+    def entries(self, files):
+        entries = []
+        for path in sorted(files):
+            if path not in self.hashes:
+                self.hashes[path] = digest(path.read_bytes()) if path.is_file() else None
+            entries.append((path.relative_to(self.root).as_posix(), self.hashes[path]))
+        return entries
+
+    def lean_sources(self, check, python):
+        """Follow only checked source roots. All other recipes retain the full library."""
+        broad = {*self.group('PrimeFactors'), self.root/'PrimeFactors.lean'}
+        if len(check.command) == 4 and check.command[:3] == ('lake', 'env', 'lean'):
+            name = check.command[3]
+            path = Path(name)
+            if (name not in check.data or name.startswith('-') or path.suffix != '.lean'
+                    or path.is_absolute() or '..' in path.parts):
+                return broad
+            todo = [path]
+        elif check == NEGATIVE_MENU and python and digest(canonical(self.entries(python))) == NEGATIVE_DRIVER:
+            try:
+                receipt = json.loads((self.root/check.data[0]).read_bytes())
+            except (OSError, ValueError, UnicodeError):
+                return broad
+            if not isinstance(receipt, dict) or receipt.get('lean_source_sha256') != NEGATIVE_PROOFS:
+                return broad
+            todo = [Path(name) for name in NEGATIVE_ROOTS]
+        else:
+            return broad
+        files = set()
+        while todo:
+            path = self.root/todo.pop()
+            if path in files:
+                continue
+            if not path.is_file():
+                return broad
+            if path.resolve() != self.root.resolve()/path.relative_to(self.root):
+                raise UntrackedProcess(path.relative_to(self.root))
+            files.add(path)
+            imports = benchmark_state.project_imports(path.read_text(encoding='utf-8'))
+            if imports is None:
+                # A metaprogram can read inputs beyond even the whole Lean source tree.
+                raise UntrackedProcess(path.relative_to(self.root))
+            todo.extend(Path(name) for name in imports)
+        return files
+
     def fingerprint(self, check, environment):
         root = self.root
         files = {root/'scripts/verify_checks.py', *(root/p for p in PINS)}
@@ -130,9 +190,7 @@ class Inputs:
         else:
             for spec in check.data:
                 files.update(self.group(spec))
-            if check.lean:
-                files.update(self.group('PrimeFactors'))
-                files.add(root/'PrimeFactors.lean')
+            sources = None
             if check.command[:2] == ('python3', '-m'):
                 name = check.command[2].replace('.', '/') + '.py'
                 sources = local_imports(root, root/name)
@@ -142,15 +200,12 @@ class Inputs:
                     files.update(self.group('.github'))
                 else:
                     files.update(sources)
-        entries = []
-        for path in sorted(files):
-            if path not in self.hashes:
-                self.hashes[path] = digest(path.read_bytes()) if path.is_file() else None
-            entries.append((str(path.relative_to(root)), self.hashes[path]))
+            if check.lean:
+                files.update(self.lean_sources(check, sources))
         # A command's expanded specification includes every setting it takes from the
         # registry. Registering a separate receipt does not change this specification.
         specification = (check.name, check.command, check.data, check.lean, check.outputs)
-        return digest(canonical([SCHEMA, specification, environment, entries]))
+        return digest(canonical([SCHEMA, specification, environment, self.entries(files)]))
 
 
 def load_outputs(path, check, key):
@@ -191,7 +246,7 @@ def run(check, inputs, environment, cache, execute=subprocess.run):
     try:
         key = inputs.fingerprint(check, environment)
     except UntrackedProcess as error:
-        print(f'  Running in full because {error} may use inputs from another process.', flush=True)
+        print(f'  Running in full because {error} may use untracked inputs.', flush=True)
         execute(check.command, cwd=root, check=True)
         return 'ran'
     record = cache/'checks'/(check.name + '.json')
