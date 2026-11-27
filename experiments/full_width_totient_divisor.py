@@ -1,4 +1,4 @@
-"""Replay the exact forced totient divisors at 2048 bits from six published primes.
+"""Replay forced totient divisors and universal factor-sum spacing at 2048 bits.
 
 Run python3 -m experiments.full_width_totient_divisor --check. All inputs and
 certificate emitters come from this MIT-licensed repository. The grouped-norm
@@ -14,7 +14,7 @@ from experiments.certified_control import lean_source
 from scripts.factor import render_certificate, verify_file
 
 ROOT = Path(__file__).resolve().parents[1]
-THEOREM = 'PrimeFactors.FullWidthTotientDivisor.common_iff'
+THEOREM = 'PrimeFactors.FullWidthTotientDivisor.checked_results'
 CASES = {
     1: (('adjacentSmall', 'separatedLarge'), ('reduced', 'freshLeft')),
     5: (('right1024', 'adjacentSmall'), ('left1024', 'reduced')),
@@ -22,6 +22,14 @@ CASES = {
     11: (('reduced', 'adjacentSmall'), ('right1024', 'left1024')),
 }
 TARGET = {1: 4, 5: 12, 7: 8, 11: 24}
+# The witnesses may use different products at different moduli. These three
+# pairs cover all local obstructions, with the indicated residues in 64,9,5,7.
+GAP_PAIRS = (
+    ('adjacentSmall', 'separatedLarge', (1, 4, 3, 5)),
+    ('right1024', 'adjacentSmall', (5, 8, 1, 3)),
+    ('left1024', 'separatedLarge', (59, 7, 2, 6)),
+)
+
 
 
 def fixture(filename, case):
@@ -58,6 +66,7 @@ def source():
         'reduced': reduced, 'freshLeft': int(node['prime']), 'left1024': left, 'right1024': right,
     }
     lines = ['import PrimeFactors.CyclotomicDigitPeriod', 'import PrimeFactors.CyclotomicRadixLift',
+             'import PrimeFactors.UniversalSumStride',
              imports, 'namespace PrimeFactors.FullWidthReduced', reduced_body,
              'end PrimeFactors.FullWidthReduced', 'namespace PrimeFactors.FullWidthTotientDivisor',
              'open GroupedNormExamples CyclotomicDigitPeriod', 'set_option exponentiation.threshold 4096',
@@ -112,7 +121,49 @@ theorem common_iff {r d : ℕ} (cls : r=1 ∨ r=5 ∨ r=7 ∨ r=11) :
     exact h.trans (CyclotomicRadixLift.divides (pp.odd_of_ne_two (by omega))
       (qp.odd_of_ne_two (by omega)))
 
+/-- Every local test at every positive modulus, on all ordered pairs in the
+1024-bit factor band with a 2048-bit product. -/
+def UniversalGap (t : ℤ) : Prop := ∀ {p q : ℕ}, FullPair (p*q) p q →
+  ∀ m : ℕ, 0<m → FactorSumSpacing.Gap m ((p*q : ℕ) : ZMod m) (t : ZMod m)
+
+private theorem gap_test {t : ℤ} (h : UniversalGap t) {p q : ℕ}
+    (pair : FullPair (p*q) p q) (m r : ℕ) (mp : 0<m) (v : p*q%m=r%m) :
+    FactorSumSpacing.Gap m (r : ZMod m) (t : ZMod m) := by
+  have eq : ((p*q : ℕ) : ZMod m) = (r : ZMod m) :=
+    (ZMod.natCast_eq_natCast_iff ..).mpr v
+  rw [←eq]
+  exact h pair m mp
+
+theorem universal_gap_iff (t : ℤ) : UniversalGap t ↔ (20160:ℤ)∣t := by
+  constructor
+  · intro h""")
+    for index, (a, b, residues) in enumerate(GAP_PAIRS):
+        p, q = primes[a], primes[b]
+        if not (2**1023 <= p < q < 2**1024 and (p*q).bit_length() == 2048
+                and tuple(p*q % m for m in (64, 9, 5, 7)) == residues):
+            raise ValueError(f'inconsistent spacing fixture {a}, {b}')
+        lines.extend([f'    have pair{index} : FullPair ({a}*{b}) {a} {b} :=',
+                      f'      ⟨rfl,{a}_prime,{b}_prime,by change Size _ _; unfold Size; decide +kernel⟩'])
+    lines.extend(['    apply UniversalSumStride.necessary'])
+    for modulus, pairs in [(64, (0, 1, 2)), (9, (0, 1)), (5, (0, 2)), (7, (0, 1, 2))]:
+        column = (64, 9, 5, 7).index(modulus)
+        proofs = [f'gap_test h pair{i} {modulus} {GAP_PAIRS[i][2][column]} (by decide) (by decide +kernel)'
+                  for i in pairs]
+        lines.append('    · exact ⟨'+',\n        '.join(proofs)+'⟩')
+    lines.append("""
+  · intro dt p q _ m mp
+    simpa only [Int.cast_natCast] using
+      UniversalSumStride.all_moduli ((p*q : ℕ) : ℤ) t dt m mp
+
+/-- A single replay checks both public results and their joint axiom set. -/
+theorem checked_results :
+    (∀ {r d : ℕ}, (r=1 ∨ r=5 ∨ r=7 ∨ r=11) →
+      (Common r d ↔ d∣CyclotomicRadixLift.stride r)) ∧
+    (∀ t : ℤ, UniversalGap t ↔ (20160:ℤ)∣t) := ⟨fun cls => common_iff cls,universal_gap_iff⟩
+
 #print axioms common_iff
+#print axioms universal_gap_iff
+#print axioms checked_results
 end PrimeFactors.FullWidthTotientDivisor
 """)
     return '\n'.join(lines)
@@ -127,7 +178,7 @@ def main():
     args.output.write_text(source())
     if args.check:
         verify_file(args.output, THEOREM)
-        print(f'Lean verified {THEOREM} for all four classes at exactly 2048 bits.')
+        print(f'Lean verified {THEOREM}, including the four totient classes and exact sum spacing at 2048 bits.')
     print(args.output)
 
 

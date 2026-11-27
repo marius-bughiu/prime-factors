@@ -740,3 +740,8 @@ import PrimeFactors.UniversalSpacing
 import PrimeFactors.PrimeSumListPacking
 import PrimeFactors.SumGuessIncidence
 import PrimeFactors.CyclotomicSmallNorm
+import PrimeFactors.TwoAdicSumSpacing
+import PrimeFactors.ThreeAdicUniversalSpacing
+import PrimeFactors.UniversalSumStride
+import PrimeFactors.UniversalPackingBudget
+import PrimeFactors.SmallRadixPackingPopulation

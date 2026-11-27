@@ -6,6 +6,8 @@ Can a larger prime supply another rule of this kind? **Only 2, 3, 5 and 7 can fo
 
 ## All the exceptions at prime moduli
 
+Taking all powers of the four exceptional primes into account gives an exact answer for integer distances. The multiples of 20,160 are precisely the spacings that every product admits at every positive modulus. [All moduli and the 2,048-bit restriction](why-the-factor-sum-spacing-repeats.md)
+
 Each distance and product in the table is a remainder modulo the prime in the first column. A product remainder absent from that column's cases allows every distance.
 
 | Prime | Product remainder | Distances that cannot occur |
