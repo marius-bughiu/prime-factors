@@ -1,0 +1,2457 @@
+{
+  "period": 9240,
+  "steps": 512,
+  "repetitions": 4,
+  "sample": "reciprocal-fermat-holdout-v1, first six per width used for choosing the step budget",
+  "timings": "Process CPU nanoseconds, rotating method order; fixed reusable tables measured separately.",
+  "python": "3.9.6",
+  "machine": "arm64",
+  "fixed_table_cpu_ns": {
+    "units": 353000,
+    "signs": 5267000,
+    "inverses": 1263000
+  },
+  "rows": [
+    {
+      "n": "789444367739",
+      "bits": 20,
+      "sample": 0,
+      "panel": "pilot",
+      "factorization": [
+        "837533",
+        "942583"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 358,
+        "direct_rank": 0,
+        "projected_rank": 2,
+        "smooth_dimension": 85,
+        "square_dimension": 83,
+        "constraints": [
+          {
+            "mask": 42,
+            "discriminant": 110,
+            "root": "234321963360",
+            "steps": [
+              79,
+              118,
+              141,
+              168,
+              220
+            ]
+          },
+          {
+            "mask": 11,
+            "discriminant": -10,
+            "root": "72176112818",
+            "steps": [
+              78,
+              118,
+              141,
+              282
+            ]
+          }
+        ],
+        "setup_factor": "837533"
+      },
+      "methods": {
+        "divisor": {
+          "factor": "837533",
+          "setup_hit": false,
+          "tests": 17593,
+          "cpu_ns": [
+            1682000,
+            1722000,
+            1786000,
+            1698000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "837533",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            12966000,
+            12022000,
+            12777000,
+            12275000
+          ]
+        },
+        "sum": {
+          "factor": "837533",
+          "setup_hit": false,
+          "tests": 14,
+          "cpu_ns": [
+            183000,
+            197000,
+            181000,
+            184000
+          ]
+        },
+        "projected_sum": {
+          "factor": "837533",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            12065000,
+            12243000,
+            12379000,
+            12243000
+          ]
+        }
+      }
+    },
+    {
+      "n": "312467649679",
+      "bits": 20,
+      "sample": 1,
+      "panel": "pilot",
+      "factorization": [
+        "539501",
+        "579179"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 275,
+        "direct_rank": 2,
+        "projected_rank": 3,
+        "smooth_dimension": 154,
+        "square_dimension": 151,
+        "constraints": [
+          {
+            "mask": 36,
+            "discriminant": 33,
+            "root": "278879833259",
+            "steps": [
+              16
+            ]
+          },
+          {
+            "mask": 8,
+            "discriminant": 5,
+            "root": "284806809140",
+            "steps": [
+              8,
+              36
+            ]
+          },
+          {
+            "mask": 15,
+            "discriminant": -30,
+            "root": "306748725244",
+            "steps": [
+              73,
+              96
+            ]
+          }
+        ],
+        "setup_factor": "539501"
+      },
+      "methods": {
+        "projected_divisor": {
+          "factor": "539501",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            15071000,
+            15107000,
+            14843000,
+            15006000
+          ]
+        },
+        "sum": {
+          "factor": "539501",
+          "setup_hit": false,
+          "tests": 9,
+          "cpu_ns": [
+            187000,
+            182000,
+            187000,
+            192000
+          ]
+        },
+        "projected_sum": {
+          "factor": "539501",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            14975000,
+            14901000,
+            15136000,
+            15064000
+          ]
+        },
+        "divisor": {
+          "factor": "539501",
+          "setup_hit": false,
+          "tests": 3161,
+          "cpu_ns": [
+            315000,
+            310000,
+            326000,
+            306000
+          ]
+        }
+      }
+    },
+    {
+      "n": "564896735363",
+      "bits": 20,
+      "sample": 2,
+      "panel": "pilot",
+      "factorization": [
+        "702913",
+        "803651"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 328,
+        "direct_rank": 0,
+        "projected_rank": 2,
+        "smooth_dimension": 108,
+        "square_dimension": 106,
+        "constraints": [
+          {
+            "mask": 17,
+            "discriminant": -7,
+            "root": "191255825144",
+            "steps": [
+              3,
+              6,
+              43,
+              54,
+              56,
+              62,
+              67,
+              81,
+              91,
+              131,
+              145,
+              175,
+              219,
+              280
+            ]
+          },
+          {
+            "mask": 18,
+            "discriminant": 14,
+            "root": "370619799571",
+            "steps": [
+              14,
+              39,
+              67,
+              79,
+              91,
+              131,
+              145,
+              175,
+              176,
+              238,
+              287
+            ]
+          }
+        ],
+        "setup_factor": "702913"
+      },
+      "methods": {
+        "sum": {
+          "factor": "702913",
+          "setup_hit": false,
+          "tests": 18,
+          "cpu_ns": [
+            185000,
+            185000,
+            182000,
+            191000
+          ]
+        },
+        "projected_sum": {
+          "factor": "702913",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            13289000,
+            13177000,
+            13509000,
+            14216000
+          ]
+        },
+        "divisor": {
+          "factor": "702913",
+          "setup_hit": false,
+          "tests": 34117,
+          "cpu_ns": [
+            3386000,
+            3177000,
+            3467000,
+            3453000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "702913",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            13325000,
+            13369000,
+            13474000,
+            13275000
+          ]
+        }
+      }
+    },
+    {
+      "n": "620209873819",
+      "bits": 20,
+      "sample": 3,
+      "panel": "pilot",
+      "factorization": [
+        "693827",
+        "893897"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 322,
+        "direct_rank": 2,
+        "projected_rank": 3,
+        "smooth_dimension": 121,
+        "square_dimension": 118,
+        "constraints": [
+          {
+            "mask": 13,
+            "discriminant": -15,
+            "root": "107316106201",
+            "steps": [
+              171
+            ]
+          },
+          {
+            "mask": 18,
+            "discriminant": 14,
+            "root": "391615206931",
+            "steps": [
+              10,
+              14,
+              81,
+              112,
+              159,
+              212
+            ]
+          },
+          {
+            "mask": 3,
+            "discriminant": -2,
+            "root": "604846004661",
+            "steps": [
+              10,
+              13,
+              14,
+              32,
+              74,
+              120,
+              170,
+              208,
+              237,
+              241
+            ]
+          }
+        ],
+        "setup_factor": "893897"
+      },
+      "methods": {
+        "projected_sum": {
+          "factor": "893897",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            11152000,
+            10860000,
+            10886000,
+            10909000
+          ]
+        },
+        "divisor": {
+          "factor": "693827",
+          "setup_hit": false,
+          "tests": 21266,
+          "cpu_ns": [
+            2154000,
+            2026000,
+            2076000,
+            2059000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "893897",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            11099000,
+            10971000,
+            10875000,
+            11034000
+          ]
+        },
+        "sum": {
+          "factor": "693827",
+          "setup_hit": false,
+          "tests": 163,
+          "cpu_ns": [
+            206000,
+            206000,
+            202000,
+            199000
+          ]
+        }
+      }
+    },
+    {
+      "n": "874142578667",
+      "bits": 20,
+      "sample": 4,
+      "panel": "pilot",
+      "factorization": [
+        "869317",
+        "1005551"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 371,
+        "direct_rank": 0,
+        "projected_rank": 1,
+        "smooth_dimension": 64,
+        "square_dimension": 63,
+        "constraints": [
+          {
+            "mask": 17,
+            "discriminant": -7,
+            "root": "791506020737",
+            "steps": [
+              58,
+              75,
+              91,
+              113,
+              125,
+              146,
+              151,
+              156,
+              189,
+              191,
+              241,
+              252,
+              264,
+              265
+            ]
+          }
+        ],
+        "setup_factor": "869317"
+      },
+      "methods": {
+        "divisor": {
+          "factor": "869317",
+          "setup_hit": false,
+          "tests": 7411,
+          "cpu_ns": [
+            755000,
+            706000,
+            704000,
+            778000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "869317",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            13943000,
+            13621000,
+            13700000,
+            14806000
+          ]
+        },
+        "sum": {
+          "factor": "869317",
+          "setup_hit": false,
+          "tests": 20,
+          "cpu_ns": [
+            191000,
+            188000,
+            178000,
+            216000
+          ]
+        },
+        "projected_sum": {
+          "factor": "869317",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            13943000,
+            13770000,
+            13740000,
+            13840000
+          ]
+        }
+      }
+    },
+    {
+      "n": "741311473907",
+      "bits": 20,
+      "sample": 5,
+      "panel": "pilot",
+      "factorization": [
+        "764189",
+        "970063"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 393,
+        "direct_rank": 0,
+        "projected_rank": 2,
+        "smooth_dimension": 56,
+        "square_dimension": 54,
+        "constraints": [
+          {
+            "mask": 18,
+            "discriminant": 14,
+            "root": "64492573982",
+            "steps": [
+              34,
+              35,
+              48,
+              55,
+              71,
+              88,
+              151,
+              162
+            ]
+          },
+          {
+            "mask": 34,
+            "discriminant": 22,
+            "root": "386890436514",
+            "steps": [
+              115,
+              151,
+              182,
+              230
+            ]
+          }
+        ],
+        "setup_factor": "764189"
+      },
+      "methods": {
+        "projected_divisor": {
+          "factor": "764189",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            7326000,
+            7310000,
+            7253000,
+            7221000
+          ]
+        },
+        "sum": {
+          "factor": "764189",
+          "setup_hit": false,
+          "tests": 64,
+          "cpu_ns": [
+            199000,
+            195000,
+            186000,
+            235000
+          ]
+        },
+        "projected_sum": {
+          "factor": "764189",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            7399000,
+            7328000,
+            7158000,
+            7250000
+          ]
+        },
+        "divisor": {
+          "factor": "764189",
+          "setup_hit": false,
+          "tests": 11888,
+          "cpu_ns": [
+            1260000,
+            1256000,
+            1205000,
+            1254000
+          ]
+        }
+      }
+    },
+    {
+      "n": "821782560553",
+      "bits": 20,
+      "sample": 6,
+      "panel": "validation",
+      "factorization": [
+        "885449",
+        "928097"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 352,
+        "direct_rank": 3,
+        "projected_rank": 3,
+        "smooth_dimension": 87,
+        "square_dimension": 84,
+        "constraints": [
+          {
+            "mask": 35,
+            "discriminant": -22,
+            "root": "324367935388",
+            "steps": [
+              16,
+              49,
+              84,
+              88,
+              162
+            ]
+          },
+          {
+            "mask": 2,
+            "discriminant": 2,
+            "root": "6966491605",
+            "steps": [
+              16,
+              34,
+              70,
+              88,
+              108,
+              230
+            ]
+          },
+          {
+            "mask": 3,
+            "discriminant": -2,
+            "root": "32665135100",
+            "steps": [
+              233
+            ]
+          }
+        ],
+        "setup_factor": "885449"
+      },
+      "methods": {
+        "sum": {
+          "factor": "885449",
+          "setup_hit": false,
+          "tests": 9,
+          "cpu_ns": [
+            184000,
+            193000,
+            179000,
+            177000
+          ]
+        },
+        "projected_sum": {
+          "factor": "885449",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            10120000,
+            10051000,
+            10011000,
+            10131000
+          ]
+        },
+        "divisor": {
+          "factor": "885449",
+          "setup_hit": false,
+          "tests": 21140,
+          "cpu_ns": [
+            2025000,
+            2039000,
+            2051000,
+            2061000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "885449",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            9972000,
+            10050000,
+            10110000,
+            10192000
+          ]
+        }
+      }
+    },
+    {
+      "n": "449993001581",
+      "bits": 20,
+      "sample": 7,
+      "panel": "validation",
+      "factorization": [
+        "581617",
+        "773693"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 360,
+        "direct_rank": 0,
+        "projected_rank": 2,
+        "smooth_dimension": 83,
+        "square_dimension": 81,
+        "constraints": [
+          {
+            "mask": 1,
+            "discriminant": -1,
+            "root": "279648575815",
+            "steps": [
+              37,
+              39,
+              97,
+              119,
+              145,
+              147,
+              196,
+              227,
+              262,
+              302
+            ]
+          },
+          {
+            "mask": 16,
+            "discriminant": 7,
+            "root": "308926987013",
+            "steps": [
+              34,
+              39,
+              119,
+              145,
+              163,
+              169,
+              185,
+              196,
+              305,
+              331,
+              352
+            ]
+          }
+        ],
+        "setup_factor": "773693"
+      },
+      "methods": {
+        "projected_sum": {
+          "factor": "773693",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            11766000,
+            11524000,
+            11599000,
+            11495000
+          ]
+        },
+        "divisor": {
+          "factor": "581617",
+          "setup_hit": false,
+          "tests": 11914,
+          "cpu_ns": [
+            1152000,
+            1166000,
+            1152000,
+            1188000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "773693",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            11552000,
+            11818000,
+            11816000,
+            11693000
+          ]
+        },
+        "sum": {
+          "factor": "581617",
+          "setup_hit": false,
+          "tests": 177,
+          "cpu_ns": [
+            202000,
+            201000,
+            222000,
+            205000
+          ]
+        }
+      }
+    },
+    {
+      "n": "774731001449",
+      "bits": 20,
+      "sample": 8,
+      "panel": "validation",
+      "factorization": [
+        "797333",
+        "971653"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 356,
+        "direct_rank": 2,
+        "projected_rank": 3,
+        "smooth_dimension": 83,
+        "square_dimension": 80,
+        "constraints": [
+          {
+            "mask": 32,
+            "discriminant": 11,
+            "root": "343416223334",
+            "steps": [
+              42
+            ]
+          },
+          {
+            "mask": 42,
+            "discriminant": 110,
+            "root": "121863830402",
+            "steps": [
+              78
+            ]
+          },
+          {
+            "mask": 43,
+            "discriminant": -110,
+            "root": "426246835504",
+            "steps": [
+              19,
+              20,
+              27,
+              129,
+              178,
+              216,
+              227,
+              242,
+              250,
+              303
+            ]
+          }
+        ],
+        "setup_factor": "971653"
+      },
+      "methods": {
+        "divisor": {
+          "factor": "797333",
+          "setup_hit": false,
+          "tests": 12153,
+          "cpu_ns": [
+            1183000,
+            1178000,
+            1181000,
+            1156000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "971653",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            12211000,
+            14754000,
+            12152000,
+            12181000
+          ]
+        },
+        "sum": {
+          "factor": "797333",
+          "setup_hit": false,
+          "tests": 100,
+          "cpu_ns": [
+            194000,
+            216000,
+            201000,
+            195000
+          ]
+        },
+        "projected_sum": {
+          "factor": "971653",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            12334000,
+            12460000,
+            12250000,
+            12081000
+          ]
+        }
+      }
+    },
+    {
+      "n": "622874996251",
+      "bits": 20,
+      "sample": 9,
+      "panel": "validation",
+      "factorization": [
+        "629899",
+        "988849"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 312,
+        "direct_rank": 3,
+        "projected_rank": 4,
+        "smooth_dimension": 128,
+        "square_dimension": 124,
+        "constraints": [
+          {
+            "mask": 20,
+            "discriminant": 21,
+            "root": "489418961606",
+            "steps": [
+              38,
+              72
+            ]
+          },
+          {
+            "mask": 23,
+            "discriminant": -42,
+            "root": "278399862326",
+            "steps": [
+              7,
+              38,
+              76
+            ]
+          },
+          {
+            "mask": 18,
+            "discriminant": 14,
+            "root": "58288944161",
+            "steps": [
+              53,
+              66,
+              81
+            ]
+          },
+          {
+            "mask": 11,
+            "discriminant": -10,
+            "root": "280736382162",
+            "steps": [
+              53,
+              66,
+              89,
+              127
+            ]
+          }
+        ],
+        "setup_factor": "988849"
+      },
+      "methods": {
+        "projected_divisor": {
+          "factor": "988849",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            9971000,
+            10219000,
+            10269000,
+            10264000
+          ]
+        },
+        "sum": {
+          "factor": "629899",
+          "setup_hit": false,
+          "tests": 520,
+          "cpu_ns": [
+            256000,
+            261000,
+            281000,
+            270000
+          ]
+        },
+        "projected_sum": {
+          "factor": "988849",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            10113000,
+            10231000,
+            10547000,
+            10488000
+          ]
+        },
+        "divisor": {
+          "factor": "629899",
+          "setup_hit": false,
+          "tests": 7457,
+          "cpu_ns": [
+            743000,
+            772000,
+            732000,
+            776000
+          ]
+        }
+      }
+    },
+    {
+      "n": "967295451601",
+      "bits": 20,
+      "sample": 10,
+      "panel": "validation",
+      "factorization": [
+        "932537",
+        "1037273"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 321,
+        "direct_rank": 3,
+        "projected_rank": 3,
+        "smooth_dimension": 118,
+        "square_dimension": 115,
+        "constraints": [
+          {
+            "mask": 2,
+            "discriminant": 2,
+            "root": "378281857724",
+            "steps": [
+              56
+            ]
+          },
+          {
+            "mask": 3,
+            "discriminant": -2,
+            "root": "743622463825",
+            "steps": [
+              97
+            ]
+          },
+          {
+            "mask": 15,
+            "discriminant": -30,
+            "root": "226451526139",
+            "steps": [
+              99
+            ]
+          }
+        ],
+        "setup_factor": "932537"
+      },
+      "methods": {
+        "sum": {
+          "factor": "932537",
+          "setup_hit": false,
+          "tests": 55,
+          "cpu_ns": [
+            207000,
+            200000,
+            203000,
+            198000
+          ]
+        },
+        "projected_sum": {
+          "factor": "932537",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            14563000,
+            14550000,
+            14418000,
+            14787000
+          ]
+        },
+        "divisor": {
+          "factor": "932537",
+          "setup_hit": false,
+          "tests": 2090,
+          "cpu_ns": [
+            207000,
+            212000,
+            206000,
+            215000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "932537",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            14601000,
+            14417000,
+            15458000,
+            14299000
+          ]
+        }
+      }
+    },
+    {
+      "n": "624744157033",
+      "bits": 20,
+      "sample": 11,
+      "panel": "validation",
+      "factorization": [
+        "746597",
+        "836789"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 364,
+        "direct_rank": 1,
+        "projected_rank": 2,
+        "smooth_dimension": 75,
+        "square_dimension": 73,
+        "constraints": [
+          {
+            "mask": 1,
+            "discriminant": -1,
+            "root": "198422180813",
+            "steps": [
+              63
+            ]
+          },
+          {
+            "mask": 6,
+            "discriminant": 6,
+            "root": "394193468130",
+            "steps": [
+              24,
+              36,
+              71,
+              72,
+              111,
+              172,
+              174
+            ]
+          }
+        ],
+        "setup_factor": "836789"
+      },
+      "methods": {
+        "projected_sum": {
+          "factor": "836789",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            10666000,
+            10489000,
+            10579000,
+            10701000
+          ]
+        },
+        "divisor": {
+          "factor": "746597",
+          "setup_hit": false,
+          "tests": 31335,
+          "cpu_ns": [
+            2991000,
+            3026000,
+            3112000,
+            3025000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "836789",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            10596000,
+            10607000,
+            10516000,
+            10656000
+          ]
+        },
+        "sum": {
+          "factor": "746597",
+          "setup_hit": false,
+          "tests": 35,
+          "cpu_ns": [
+            204000,
+            185000,
+            187000,
+            188000
+          ]
+        }
+      }
+    },
+    {
+      "n": "246180296426219",
+      "bits": 24,
+      "sample": 0,
+      "panel": "pilot",
+      "factorization": [
+        "15230737",
+        "16163387"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 448,
+        "direct_rank": 0,
+        "projected_rank": 3,
+        "smooth_dimension": 22,
+        "square_dimension": 19,
+        "constraints": [
+          {
+            "mask": 33,
+            "discriminant": -11,
+            "root": "130477127726457",
+            "steps": [
+              31,
+              145,
+              244,
+              263,
+              275,
+              315
+            ]
+          },
+          {
+            "mask": 18,
+            "discriminant": 14,
+            "root": "228876284726978",
+            "steps": [
+              38,
+              65,
+              239,
+              250,
+              263,
+              403
+            ]
+          },
+          {
+            "mask": 34,
+            "discriminant": 22,
+            "root": "230840503340143",
+            "steps": [
+              8,
+              31,
+              65,
+              145,
+              155,
+              166,
+              189,
+              201,
+              238,
+              263,
+              479
+            ]
+          }
+        ],
+        "setup_factor": null
+      },
+      "methods": {
+        "divisor": {
+          "factor": "15230737",
+          "setup_hit": false,
+          "tests": 115793,
+          "cpu_ns": [
+            11281000,
+            11082000,
+            11190000,
+            11436000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "15230737",
+          "setup_hit": false,
+          "tests": 14474,
+          "cpu_ns": [
+            6025000,
+            5889000,
+            5990000,
+            6007000
+          ]
+        },
+        "sum": {
+          "factor": "15230737",
+          "setup_hit": false,
+          "tests": 108,
+          "cpu_ns": [
+            212000,
+            204000,
+            207000,
+            202000
+          ]
+        },
+        "projected_sum": {
+          "factor": "15230737",
+          "setup_hit": false,
+          "tests": 29,
+          "cpu_ns": [
+            4560000,
+            4562000,
+            4660000,
+            4664000
+          ]
+        }
+      }
+    },
+    {
+      "n": "147646444176499",
+      "bits": 24,
+      "sample": 1,
+      "panel": "pilot",
+      "factorization": [
+        "11583821",
+        "12745919"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 417,
+        "direct_rank": 1,
+        "projected_rank": 4,
+        "smooth_dimension": 39,
+        "square_dimension": 35,
+        "constraints": [
+          {
+            "mask": 34,
+            "discriminant": 22,
+            "root": "147561584508399",
+            "steps": [
+              96
+            ]
+          },
+          {
+            "mask": 61,
+            "discriminant": -1155,
+            "root": "26006009709930",
+            "steps": [
+              21,
+              40,
+              49,
+              105,
+              117,
+              120,
+              181,
+              213,
+              214,
+              232,
+              343
+            ]
+          },
+          {
+            "mask": 42,
+            "discriminant": 110,
+            "root": "19136967893512",
+            "steps": [
+              73,
+              90,
+              187,
+              193,
+              214,
+              232,
+              303,
+              373,
+              428,
+              431
+            ]
+          },
+          {
+            "mask": 6,
+            "discriminant": 6,
+            "root": "107631239011101",
+            "steps": [
+              64,
+              73,
+              90,
+              105,
+              159,
+              169,
+              187,
+              204,
+              214,
+              232,
+              413,
+              470
+            ]
+          }
+        ],
+        "setup_factor": "11583821"
+      },
+      "methods": {
+        "projected_divisor": {
+          "factor": "11583821",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            5898000,
+            5838000,
+            5811000,
+            5915000
+          ]
+        },
+        "sum": {
+          "factor": "11583821",
+          "setup_hit": false,
+          "tests": 433,
+          "cpu_ns": [
+            243000,
+            251000,
+            246000,
+            254000
+          ]
+        },
+        "projected_sum": {
+          "factor": "11583821",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            5802000,
+            5908000,
+            5939000,
+            5847000
+          ]
+        },
+        "divisor": {
+          "factor": "11583821",
+          "setup_hit": false,
+          "tests": 578370,
+          "cpu_ns": [
+            56737000,
+            56371000,
+            55911000,
+            55928000
+          ]
+        }
+      }
+    },
+    {
+      "n": "273830199001523",
+      "bits": 24,
+      "sample": 2,
+      "panel": "pilot",
+      "factorization": [
+        "16345951",
+        "16752173"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 462,
+        "direct_rank": 0,
+        "projected_rank": 0,
+        "smooth_dimension": 18,
+        "square_dimension": 18,
+        "constraints": [],
+        "setup_factor": null
+      },
+      "methods": {
+        "sum": {
+          "factor": "16345951",
+          "setup_hit": false,
+          "tests": 13,
+          "cpu_ns": [
+            181000,
+            187000,
+            181000,
+            180000
+          ]
+        },
+        "projected_sum": {
+          "factor": "16345951",
+          "setup_hit": false,
+          "tests": 13,
+          "cpu_ns": [
+            3857000,
+            3857000,
+            3723000,
+            3718000
+          ]
+        },
+        "divisor": {
+          "factor": "16345951",
+          "setup_hit": false,
+          "tests": 5071,
+          "cpu_ns": [
+            492000,
+            501000,
+            490000,
+            500000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "16345951",
+          "setup_hit": false,
+          "tests": 5071,
+          "cpu_ns": [
+            4097000,
+            4068000,
+            4066000,
+            4031000
+          ]
+        }
+      }
+    },
+    {
+      "n": "118504240686943",
+      "bits": 24,
+      "sample": 3,
+      "panel": "pilot",
+      "factorization": [
+        "8455397",
+        "14015219"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 394,
+        "direct_rank": 1,
+        "projected_rank": 2,
+        "smooth_dimension": 51,
+        "square_dimension": 49,
+        "constraints": [
+          {
+            "mask": 33,
+            "discriminant": -11,
+            "root": "106163165421964",
+            "steps": [
+              9,
+              104
+            ]
+          },
+          {
+            "mask": 38,
+            "discriminant": 66,
+            "root": "66723912129449",
+            "steps": [
+              10,
+              23,
+              82,
+              113,
+              155,
+              169,
+              197,
+              279,
+              325,
+              339,
+              344,
+              363,
+              367,
+              396
+            ]
+          }
+        ],
+        "setup_factor": "14015219"
+      },
+      "methods": {
+        "projected_sum": {
+          "factor": "14015219",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            8604000,
+            8499000,
+            8563000,
+            8551000
+          ]
+        },
+        "divisor": {
+          "factor": "8455397",
+          "setup_hit": false,
+          "tests": 13878,
+          "cpu_ns": [
+            1319000,
+            1388000,
+            1456000,
+            1499000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "14015219",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            8621000,
+            8525000,
+            8641000,
+            8517000
+          ]
+        },
+        "sum": {
+          "factor": "8455397",
+          "setup_hit": false,
+          "tests": 5446,
+          "cpu_ns": [
+            1029000,
+            983000,
+            1046000,
+            1027000
+          ]
+        }
+      }
+    },
+    {
+      "n": "135957819928621",
+      "bits": 24,
+      "sample": 4,
+      "panel": "pilot",
+      "factorization": [
+        "9525419",
+        "14273159"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 429,
+        "direct_rank": 0,
+        "projected_rank": 3,
+        "smooth_dimension": 41,
+        "square_dimension": 38,
+        "constraints": [
+          {
+            "mask": 32,
+            "discriminant": 11,
+            "root": "6366189635169",
+            "steps": [
+              14,
+              102,
+              135,
+              150,
+              194,
+              207
+            ]
+          },
+          {
+            "mask": 36,
+            "discriminant": 33,
+            "root": "56887321454979",
+            "steps": [
+              14,
+              60,
+              151,
+              369
+            ]
+          },
+          {
+            "mask": 44,
+            "discriminant": 165,
+            "root": "106253477672287",
+            "steps": [
+              157,
+              213,
+              378
+            ]
+          }
+        ],
+        "setup_factor": "9525419"
+      },
+      "methods": {
+        "divisor": {
+          "factor": "9525419",
+          "setup_hit": false,
+          "tests": 236221,
+          "cpu_ns": [
+            23256000,
+            22606000,
+            22861000,
+            22411000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "9525419",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            4260000,
+            4139000,
+            4185000,
+            4245000
+          ]
+        },
+        "sum": {
+          "factor": "9525419",
+          "setup_hit": false,
+          "tests": 11184,
+          "cpu_ns": [
+            1826000,
+            1904000,
+            1751000,
+            1813000
+          ]
+        },
+        "projected_sum": {
+          "factor": "9525419",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            4211000,
+            4191000,
+            4248000,
+            4207000
+          ]
+        }
+      }
+    },
+    {
+      "n": "163012694043733",
+      "bits": 24,
+      "sample": 5,
+      "panel": "pilot",
+      "factorization": [
+        "11436647",
+        "14253539"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 445,
+        "direct_rank": 0,
+        "projected_rank": 1,
+        "smooth_dimension": 22,
+        "square_dimension": 21,
+        "constraints": [
+          {
+            "mask": 16,
+            "discriminant": 7,
+            "root": "94794683359418",
+            "steps": [
+              85,
+              112,
+              202,
+              278,
+              295
+            ]
+          }
+        ],
+        "setup_factor": "11436647"
+      },
+      "methods": {
+        "projected_divisor": {
+          "factor": "11436647",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            3901000,
+            3969000,
+            3966000,
+            3920000
+          ]
+        },
+        "sum": {
+          "factor": "11436647",
+          "setup_hit": false,
+          "tests": 2684,
+          "cpu_ns": [
+            581000,
+            570000,
+            576000,
+            562000
+          ]
+        },
+        "projected_sum": {
+          "factor": "11436647",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            4081000,
+            4021000,
+            3950000,
+            3882000
+          ]
+        },
+        "divisor": {
+          "factor": "11436647",
+          "setup_hit": false,
+          "tests": 357473,
+          "cpu_ns": [
+            35800000,
+            34616000,
+            35366000,
+            34248000
+          ]
+        }
+      }
+    },
+    {
+      "n": "145002691065893",
+      "bits": 24,
+      "sample": 6,
+      "panel": "validation",
+      "factorization": [
+        "9004531",
+        "16103303"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 468,
+        "direct_rank": 0,
+        "projected_rank": 0,
+        "smooth_dimension": 16,
+        "square_dimension": 16,
+        "constraints": [],
+        "setup_factor": null
+      },
+      "methods": {
+        "sum": {
+          "factor": "9004531",
+          "setup_hit": false,
+          "tests": 7982,
+          "cpu_ns": [
+            1322000,
+            1349000,
+            1302000,
+            1317000
+          ]
+        },
+        "projected_sum": {
+          "factor": "9004531",
+          "setup_hit": false,
+          "tests": 7982,
+          "cpu_ns": [
+            4266000,
+            4448000,
+            4241000,
+            4125000
+          ]
+        },
+        "divisor": {
+          "factor": "9004531",
+          "setup_hit": false,
+          "tests": 75157,
+          "cpu_ns": [
+            7391000,
+            7492000,
+            7431000,
+            7318000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "9004531",
+          "setup_hit": false,
+          "tests": 75157,
+          "cpu_ns": [
+            10333000,
+            10373000,
+            10137000,
+            10057000
+          ]
+        }
+      }
+    },
+    {
+      "n": "252256028742617",
+      "bits": 24,
+      "sample": 7,
+      "panel": "validation",
+      "factorization": [
+        "15453343",
+        "16323719"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 462,
+        "direct_rank": 0,
+        "projected_rank": 3,
+        "smooth_dimension": 18,
+        "square_dimension": 15,
+        "constraints": [
+          {
+            "mask": 2,
+            "discriminant": 2,
+            "root": "102184630366584",
+            "steps": [
+              29,
+              110,
+              184,
+              261,
+              375,
+              455
+            ]
+          },
+          {
+            "mask": 18,
+            "discriminant": 14,
+            "root": "25592306287335",
+            "steps": [
+              29,
+              72,
+              75,
+              76,
+              82,
+              166,
+              173,
+              184,
+              383,
+              460
+            ]
+          },
+          {
+            "mask": 35,
+            "discriminant": -22,
+            "root": "114203347348906",
+            "steps": [
+              41,
+              432,
+              506
+            ]
+          }
+        ],
+        "setup_factor": "15453343"
+      },
+      "methods": {
+        "projected_sum": {
+          "factor": "15453343",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            2819000,
+            2734000,
+            2807000,
+            2785000
+          ]
+        },
+        "divisor": {
+          "factor": "15453343",
+          "setup_hit": false,
+          "tests": 86799,
+          "cpu_ns": [
+            8275000,
+            8286000,
+            8576000,
+            8620000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "15453343",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            2765000,
+            2807000,
+            2724000,
+            2767000
+          ]
+        },
+        "sum": {
+          "factor": "15453343",
+          "setup_hit": false,
+          "tests": 124,
+          "cpu_ns": [
+            194000,
+            189000,
+            195000,
+            197000
+          ]
+        }
+      }
+    },
+    {
+      "n": "173120549043383",
+      "bits": 24,
+      "sample": 8,
+      "panel": "validation",
+      "factorization": [
+        "10743773",
+        "16113571"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 437,
+        "direct_rank": 0,
+        "projected_rank": 1,
+        "smooth_dimension": 28,
+        "square_dimension": 27,
+        "constraints": [
+          {
+            "mask": 19,
+            "discriminant": -14,
+            "root": "80995543518397",
+            "steps": [
+              77,
+              87,
+              89,
+              94,
+              242,
+              265,
+              266,
+              277,
+              299,
+              307,
+              382
+            ]
+          }
+        ],
+        "setup_factor": null
+      },
+      "methods": {
+        "divisor": {
+          "factor": "10743773",
+          "setup_hit": false,
+          "tests": 88309,
+          "cpu_ns": [
+            8797000,
+            8631000,
+            8407000,
+            8461000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "10743773",
+          "setup_hit": false,
+          "tests": 44154,
+          "cpu_ns": [
+            10240000,
+            10255000,
+            10096000,
+            9959000
+          ]
+        },
+        "sum": {
+          "factor": "10743773",
+          "setup_hit": false,
+          "tests": 2349,
+          "cpu_ns": [
+            513000,
+            516000,
+            540000,
+            522000
+          ]
+        },
+        "projected_sum": {
+          "factor": "10743773",
+          "setup_hit": false,
+          "tests": 2349,
+          "cpu_ns": [
+            6330000,
+            6332000,
+            6393000,
+            6297000
+          ]
+        }
+      }
+    },
+    {
+      "n": "235289969845961",
+      "bits": 24,
+      "sample": 9,
+      "panel": "validation",
+      "factorization": [
+        "15132121",
+        "15549041"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 402,
+        "direct_rank": 1,
+        "projected_rank": 4,
+        "smooth_dimension": 47,
+        "square_dimension": 43,
+        "constraints": [
+          {
+            "mask": 9,
+            "discriminant": -5,
+            "root": "107254188098757",
+            "steps": [
+              47,
+              124
+            ]
+          },
+          {
+            "mask": 3,
+            "discriminant": -2,
+            "root": "131244591728814",
+            "steps": [
+              10,
+              14,
+              17,
+              19,
+              29,
+              47,
+              59,
+              67,
+              71,
+              104,
+              137,
+              179,
+              187,
+              221,
+              226
+            ]
+          },
+          {
+            "mask": 11,
+            "discriminant": -10,
+            "root": "165681955706241",
+            "steps": [
+              47,
+              71,
+              104,
+              266,
+              271,
+              293,
+              313,
+              388
+            ]
+          },
+          {
+            "mask": 17,
+            "discriminant": -7,
+            "root": "222366237674983",
+            "steps": [
+              1,
+              10,
+              17,
+              19,
+              47,
+              59,
+              67,
+              137,
+              174,
+              179,
+              187,
+              204,
+              221,
+              238,
+              421
+            ]
+          }
+        ],
+        "setup_factor": "15549041"
+      },
+      "methods": {
+        "projected_divisor": {
+          "factor": "15549041",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            9116000,
+            13479000,
+            9377000,
+            9110000
+          ]
+        },
+        "sum": {
+          "factor": "15132121",
+          "setup_hit": false,
+          "tests": 40,
+          "cpu_ns": [
+            187000,
+            192000,
+            189000,
+            192000
+          ]
+        },
+        "projected_sum": {
+          "factor": "15549041",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            9111000,
+            9446000,
+            16478000,
+            9012000
+          ]
+        },
+        "divisor": {
+          "factor": "15132121",
+          "setup_hit": false,
+          "tests": 230183,
+          "cpu_ns": [
+            22862000,
+            34665000,
+            36992000,
+            21935000
+          ]
+        }
+      }
+    },
+    {
+      "n": "210639254300303",
+      "bits": 24,
+      "sample": 10,
+      "panel": "validation",
+      "factorization": [
+        "13502647",
+        "15599849"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 456,
+        "direct_rank": 0,
+        "projected_rank": 1,
+        "smooth_dimension": 18,
+        "square_dimension": 17,
+        "constraints": [
+          {
+            "mask": 2,
+            "discriminant": 2,
+            "root": "138061588440164",
+            "steps": [
+              17,
+              48,
+              69,
+              132,
+              180,
+              361,
+              391
+            ]
+          }
+        ],
+        "setup_factor": "13502647"
+      },
+      "methods": {
+        "sum": {
+          "factor": "13502647",
+          "setup_hit": false,
+          "tests": 296,
+          "cpu_ns": [
+            233000,
+            233000,
+            226000,
+            225000
+          ]
+        },
+        "projected_sum": {
+          "factor": "13502647",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            3834000,
+            3809000,
+            3791000,
+            3824000
+          ]
+        },
+        "divisor": {
+          "factor": "13502647",
+          "setup_hit": false,
+          "tests": 196898,
+          "cpu_ns": [
+            20004000,
+            19271000,
+            19246000,
+            18896000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "13502647",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            3850000,
+            3856000,
+            3778000,
+            3770000
+          ]
+        }
+      }
+    },
+    {
+      "n": "163433502902129",
+      "bits": 24,
+      "sample": 11,
+      "panel": "validation",
+      "factorization": [
+        "10330367",
+        "15820687"
+      ],
+      "relation": {
+        "steps": 512,
+        "input_rows": 512,
+        "private_pruned": 434,
+        "direct_rank": 1,
+        "projected_rank": 3,
+        "smooth_dimension": 29,
+        "square_dimension": 26,
+        "constraints": [
+          {
+            "mask": 9,
+            "discriminant": -5,
+            "root": "846876773197",
+            "steps": [
+              61,
+              68
+            ]
+          },
+          {
+            "mask": 2,
+            "discriminant": 2,
+            "root": "48567579293239",
+            "steps": [
+              11,
+              25,
+              30,
+              227,
+              260,
+              267
+            ]
+          },
+          {
+            "mask": 35,
+            "discriminant": -22,
+            "root": "13752519272245",
+            "steps": [
+              3,
+              330
+            ]
+          }
+        ],
+        "setup_factor": "15820687"
+      },
+      "methods": {
+        "projected_sum": {
+          "factor": "15820687",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            4040000,
+            4015000,
+            3987000,
+            4036000
+          ]
+        },
+        "divisor": {
+          "factor": "10330367",
+          "setup_hit": false,
+          "tests": 122385,
+          "cpu_ns": [
+            11964000,
+            12067000,
+            12000000,
+            11920000
+          ]
+        },
+        "projected_divisor": {
+          "factor": "15820687",
+          "setup_hit": true,
+          "tests": 0,
+          "cpu_ns": [
+            4020000,
+            4072000,
+            3952000,
+            3996000
+          ]
+        },
+        "sum": {
+          "factor": "10330367",
+          "setup_hit": false,
+          "tests": 6811,
+          "cpu_ns": [
+            1148000,
+            1131000,
+            1109000,
+            1145000
+          ]
+        }
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "bits": 20,
+      "panel": "pilot",
+      "methods": {
+        "divisor": {
+          "median_batch_cpu_ns": 9550000,
+          "tests": 95436
+        },
+        "projected_divisor": {
+          "median_batch_cpu_ns": 73269500,
+          "tests": 0
+        },
+        "sum": {
+          "median_batch_cpu_ns": 1152000,
+          "tests": 288
+        },
+        "projected_sum": {
+          "median_batch_cpu_ns": 72815500,
+          "tests": 0
+        }
+      },
+      "setup_hits": 6,
+      "rank_gains": 6
+    },
+    {
+      "bits": 20,
+      "panel": "validation",
+      "methods": {
+        "divisor": {
+          "median_batch_cpu_ns": 8407000,
+          "tests": 86089
+        },
+        "projected_divisor": {
+          "median_batch_cpu_ns": 69803000,
+          "tests": 0
+        },
+        "sum": {
+          "median_batch_cpu_ns": 1251500,
+          "tests": 896
+        },
+        "projected_sum": {
+          "median_batch_cpu_ns": 69483000,
+          "tests": 0
+        }
+      },
+      "setup_hits": 6,
+      "rank_gains": 4
+    },
+    {
+      "bits": 24,
+      "panel": "pilot",
+      "methods": {
+        "divisor": {
+          "median_batch_cpu_ns": 126919000,
+          "tests": 1306806
+        },
+        "projected_divisor": {
+          "median_batch_cpu_ns": 32647000,
+          "tests": 19545
+        },
+        "sum": {
+          "median_batch_cpu_ns": 4055000,
+          "tests": 19868
+        },
+        "projected_sum": {
+          "median_batch_cpu_ns": 31060500,
+          "tests": 42
+        }
+      },
+      "setup_hits": 4,
+      "rank_gains": 5
+    },
+    {
+      "bits": 24,
+      "panel": "validation",
+      "methods": {
+        "divisor": {
+          "median_batch_cpu_ns": 84852500,
+          "tests": 799731
+        },
+        "projected_divisor": {
+          "median_batch_cpu_ns": 40194000,
+          "tests": 119311
+        },
+        "sum": {
+          "median_batch_cpu_ns": 3597500,
+          "tests": 17602
+        },
+        "projected_sum": {
+          "median_batch_cpu_ns": 30592000,
+          "tests": 10331
+        }
+      },
+      "setup_hits": 4,
+      "rank_gains": 5
+    }
+  ]
+}

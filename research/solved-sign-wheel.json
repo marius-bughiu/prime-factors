@@ -1,0 +1,361 @@
+{
+  "source": "research/projected-divisor-wheel.json",
+  "python": "3.9.6",
+  "machine": "arm64",
+  "timings": "Median process CPU in rotated method orders; fixed preprocessing separately from warm table generation. Cached published roots are verified before timing; no method reruns continued fractions. Exact sorted list equality checked on every repetition. Indexed precomputes all 1920 residues in sign buckets and uses the same equation solver.",
+  "repetitions": 12,
+  "base": [
+    -1,
+    2,
+    3,
+    5,
+    7,
+    11
+  ],
+  "period": 9240,
+  "full_unit_rows": 1920,
+  "contributions": 26,
+  "fibers_checked": 194,
+  "fixed_setup_cpu_ns": {
+    "reference": 4759500,
+    "solved": 10500,
+    "indexed": 4982000
+  },
+  "batch_cpu_ns": {
+    "reference": 14506000,
+    "solved": 1873000,
+    "indexed": 440500
+  },
+  "rows": [
+    {
+      "sample": 0,
+      "bits": 20,
+      "n": "789444367739",
+      "rank": 2,
+      "signatures": 16,
+      "output_rows": 480,
+      "median_cpu_ns": {
+        "reference": 637000,
+        "solved": 69000,
+        "indexed": 16000
+      }
+    },
+    {
+      "sample": 1,
+      "bits": 20,
+      "n": "312467649679",
+      "rank": 3,
+      "signatures": 8,
+      "output_rows": 240,
+      "median_cpu_ns": {
+        "reference": 695500,
+        "solved": 37000,
+        "indexed": 11000
+      }
+    },
+    {
+      "sample": 2,
+      "bits": 20,
+      "n": "564896735363",
+      "rank": 2,
+      "signatures": 16,
+      "output_rows": 480,
+      "median_cpu_ns": {
+        "reference": 659500,
+        "solved": 75000,
+        "indexed": 17000
+      }
+    },
+    {
+      "sample": 3,
+      "bits": 20,
+      "n": "620209873819",
+      "rank": 3,
+      "signatures": 8,
+      "output_rows": 240,
+      "median_cpu_ns": {
+        "reference": 688000,
+        "solved": 37000,
+        "indexed": 11000
+      }
+    },
+    {
+      "sample": 4,
+      "bits": 20,
+      "n": "874142578667",
+      "rank": 1,
+      "signatures": 32,
+      "output_rows": 960,
+      "median_cpu_ns": {
+        "reference": 500500,
+        "solved": 131000,
+        "indexed": 27000
+      }
+    },
+    {
+      "sample": 5,
+      "bits": 20,
+      "n": "741311473907",
+      "rank": 2,
+      "signatures": 16,
+      "output_rows": 480,
+      "median_cpu_ns": {
+        "reference": 629000,
+        "solved": 68000,
+        "indexed": 16500
+      }
+    },
+    {
+      "sample": 6,
+      "bits": 20,
+      "n": "821782560553",
+      "rank": 3,
+      "signatures": 8,
+      "output_rows": 240,
+      "median_cpu_ns": {
+        "reference": 686000,
+        "solved": 37000,
+        "indexed": 10500
+      }
+    },
+    {
+      "sample": 7,
+      "bits": 20,
+      "n": "449993001581",
+      "rank": 2,
+      "signatures": 16,
+      "output_rows": 480,
+      "median_cpu_ns": {
+        "reference": 612000,
+        "solved": 69000,
+        "indexed": 16500
+      }
+    },
+    {
+      "sample": 8,
+      "bits": 20,
+      "n": "774731001449",
+      "rank": 3,
+      "signatures": 8,
+      "output_rows": 240,
+      "median_cpu_ns": {
+        "reference": 679500,
+        "solved": 37500,
+        "indexed": 11000
+      }
+    },
+    {
+      "sample": 9,
+      "bits": 20,
+      "n": "622874996251",
+      "rank": 4,
+      "signatures": 4,
+      "output_rows": 120,
+      "median_cpu_ns": {
+        "reference": 719000,
+        "solved": 22500,
+        "indexed": 9000
+      }
+    },
+    {
+      "sample": 10,
+      "bits": 20,
+      "n": "967295451601",
+      "rank": 3,
+      "signatures": 8,
+      "output_rows": 240,
+      "median_cpu_ns": {
+        "reference": 672000,
+        "solved": 38000,
+        "indexed": 11000
+      }
+    },
+    {
+      "sample": 11,
+      "bits": 20,
+      "n": "624744157033",
+      "rank": 2,
+      "signatures": 16,
+      "output_rows": 480,
+      "median_cpu_ns": {
+        "reference": 613000,
+        "solved": 68500,
+        "indexed": 16000
+      }
+    },
+    {
+      "sample": 0,
+      "bits": 24,
+      "n": "246180296426219",
+      "rank": 3,
+      "signatures": 8,
+      "output_rows": 240,
+      "median_cpu_ns": {
+        "reference": 703000,
+        "solved": 39500,
+        "indexed": 11000
+      }
+    },
+    {
+      "sample": 1,
+      "bits": 24,
+      "n": "147646444176499",
+      "rank": 4,
+      "signatures": 4,
+      "output_rows": 120,
+      "median_cpu_ns": {
+        "reference": 724000,
+        "solved": 22500,
+        "indexed": 9000
+      }
+    },
+    {
+      "sample": 2,
+      "bits": 24,
+      "n": "273830199001523",
+      "rank": 0,
+      "signatures": 64,
+      "output_rows": 1920,
+      "median_cpu_ns": {
+        "reference": 222000,
+        "solved": 260500,
+        "indexed": 53000
+      }
+    },
+    {
+      "sample": 3,
+      "bits": 24,
+      "n": "118504240686943",
+      "rank": 2,
+      "signatures": 16,
+      "output_rows": 480,
+      "median_cpu_ns": {
+        "reference": 625000,
+        "solved": 68000,
+        "indexed": 16500
+      }
+    },
+    {
+      "sample": 4,
+      "bits": 24,
+      "n": "135957819928621",
+      "rank": 3,
+      "signatures": 8,
+      "output_rows": 240,
+      "median_cpu_ns": {
+        "reference": 683500,
+        "solved": 37500,
+        "indexed": 11000
+      }
+    },
+    {
+      "sample": 5,
+      "bits": 24,
+      "n": "163012694043733",
+      "rank": 1,
+      "signatures": 32,
+      "output_rows": 960,
+      "median_cpu_ns": {
+        "reference": 483000,
+        "solved": 130000,
+        "indexed": 28000
+      }
+    },
+    {
+      "sample": 6,
+      "bits": 24,
+      "n": "145002691065893",
+      "rank": 0,
+      "signatures": 64,
+      "output_rows": 1920,
+      "median_cpu_ns": {
+        "reference": 222000,
+        "solved": 258000,
+        "indexed": 54000
+      }
+    },
+    {
+      "sample": 7,
+      "bits": 24,
+      "n": "252256028742617",
+      "rank": 3,
+      "signatures": 8,
+      "output_rows": 240,
+      "median_cpu_ns": {
+        "reference": 671000,
+        "solved": 37000,
+        "indexed": 11000
+      }
+    },
+    {
+      "sample": 8,
+      "bits": 24,
+      "n": "173120549043383",
+      "rank": 1,
+      "signatures": 32,
+      "output_rows": 960,
+      "median_cpu_ns": {
+        "reference": 497000,
+        "solved": 134000,
+        "indexed": 28500
+      }
+    },
+    {
+      "sample": 9,
+      "bits": 24,
+      "n": "235289969845961",
+      "rank": 4,
+      "signatures": 4,
+      "output_rows": 120,
+      "median_cpu_ns": {
+        "reference": 707000,
+        "solved": 22000,
+        "indexed": 8000
+      }
+    },
+    {
+      "sample": 10,
+      "bits": 24,
+      "n": "210639254300303",
+      "rank": 1,
+      "signatures": 32,
+      "output_rows": 960,
+      "median_cpu_ns": {
+        "reference": 479500,
+        "solved": 132000,
+        "indexed": 27000
+      }
+    },
+    {
+      "sample": 11,
+      "bits": 24,
+      "n": "163433502902129",
+      "rank": 3,
+      "signatures": 8,
+      "output_rows": 240,
+      "median_cpu_ns": {
+        "reference": 685000,
+        "solved": 38000,
+        "indexed": 11000
+      }
+    }
+  ],
+  "three_roots": {
+    "n": "246180296426219",
+    "factor": "15230737",
+    "cofactor": "16163387",
+    "masks": [
+      33,
+      18,
+      34
+    ],
+    "discriminants": [
+      -11,
+      14,
+      22
+    ],
+    "signatures": 8,
+    "output_rows": 240,
+    "divisions": 14474
+  }
+}

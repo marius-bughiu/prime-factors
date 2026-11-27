@@ -635,3 +635,6 @@ import PrimeFactors.FullSizeSquareDecoys
 import PrimeFactors.AffineNonsquareSign
 import PrimeFactors.NonsquareSignIsolation
 import PrimeFactors.SignPanelReadout
+import PrimeFactors.SquareClassProjection
+import PrimeFactors.GeneratingDivisorSigns
+import PrimeFactors.SquareClassPrivateRows

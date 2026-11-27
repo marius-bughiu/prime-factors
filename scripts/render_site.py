@@ -1091,6 +1091,11 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'projected-divisor-wheel':
+        w = result['projected_wheel']
+        count = (f"{w['steps']} continued-fraction steps · {w['projected_rank']} independent signs"
+                 f" · {w['allowed_rows']:,} of {w['unit_rows']:,} divisor classes"
+                 f" · {w['divisions']:,} trial divisions")
     elif result['method'] == 'reciprocal-anchor':
         w = result['reciprocal_anchor']
         if 'period' in (w['anchor'] or {}):

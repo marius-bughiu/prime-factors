@@ -80,6 +80,7 @@ from scripts.reciprocal_prefix_benchmark import prefix_case
 from scripts.twelve_residue_benchmark import twelve_residue_case
 from scripts.complementary_key_benchmark import case_result as complementary_key_case
 from scripts.signed_discriminant_benchmark import signed_discriminant_case
+from experiments.projected_divisor_wheel import run as projected_divisor_search
 from scripts.reciprocal_anchor_benchmark import run_case as reciprocal_anchor_case
 from experiments.neighbor_factorial import benchmark_case as neighbor_factorial_case
 from scripts.two_interior_benchmark import two_interior_case
@@ -1509,6 +1510,11 @@ end PrimeFactors.Generated
         result = twelve_residue_case(case, proof, agree, certify_split)
     elif method == 'complementary-keys':
         result = complementary_key_case(case, proof, agree, certify_split)
+    elif method == 'projected-divisor-wheel':
+        work = projected_divisor_search(int(case['n']), case['factor_bits'], case['steps'], case['division_limit'])
+        elapsed = time.perf_counter() - start
+        agree(dict(id=case['id'], **case['checks']), work, case['checks'])
+        result = certify_split(case, proof, work['factor'], elapsed, 'projected_wheel', work)
     elif method == 'reciprocal-anchor':
         result = reciprocal_anchor_case(case, proof, agree, certify_split)
     elif method == 'neighbor-factorial':
@@ -1946,6 +1952,7 @@ def main():
                              ('twelve-residue-collision.json', 'twelve-residue-collision'),
                              ('complementary-keys.json', 'complementary-keys'),
                              ('signed-discriminant-menu.json', 'signed-discriminant-menu'),
+                             ('projected-divisor-wheel.json', 'projected-divisor-wheel'),
                              ('reciprocal-anchors.json', 'reciprocal-anchor'),
                              ('neighbor-factorial.json', 'neighbor-factorial'),
                              ('two-interior-batches.json', 'two-interior-batches'),

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Combining continued-fraction remainders gave three independent restrictions on a 48-bit product. We could jump directly to one eighth of the previous divisor positions. The same calculation produced zero restrictions on either 2,048-bit input within 256 steps. A separate implementation using one larger modulus roughly halved trial divisions on twelve held-out small inputs, but its table preparation made both batches slower. [Combining remainders](combining-remainders-to-skip-divisors.md) · [Generating divisor positions directly](generating-divisor-signs.md)
+
 For any product of two distinct 1,024-bit primes, 1,100 independently chosen tests almost certainly leave its smaller prime as the only eligible prime. Lean bounds the probability of any false prime passing them all by $2^{-76}$. Finding the survivor still took longer than ordinary division on both small examples. [Unconditional proof and measured costs](recognizing-one-prime-with-random-tests.md)
 
 Counting only primes gives a two-sided result. On the fresh 2,048-bit product more than $10^{184}$ primes pass 400 public sign tests. Applying 512 brings the upper limit below $1.28\times10^{159}$ on each product. The counts use a prime-ideal theorem and the released Dirichlet GRH. [Prime counts, public witnesses and a timed search](how-many-primes-pass-hundreds-of-tests.md)

@@ -36,6 +36,8 @@ jobs:
           python3 -m experiments.many_character_receipt --verify
           python3 -m experiments.split_prime_receipt
           python3 -m experiments.affine_prime_signs
+          python3 -m experiments.projected_wheel_receipt --check
+          lake env lean benchmarks/controls/ProjectedWheelPrivate.lean
       - name: Generate progress report
         run: python3 scripts/render_site.py
       - name: Upload verified main artifact
