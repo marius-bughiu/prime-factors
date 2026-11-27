@@ -583,3 +583,9 @@ import PrimeFactors.TwelveImageSize
 import PrimeFactors.TwelveSeedBirthday
 import PrimeFactors.TwelvePracticalBudget
 import PrimeFactors.TwelveSmallSeeds
+import PrimeFactors.ComplementaryKeys
+import PrimeFactors.ComplementaryBatch
+import PrimeFactors.ComplementaryBirthday
+import PrimeFactors.DyadicFactorBands
+import PrimeFactors.TwelveRectangle
+import PrimeFactors.ReducedSmoothReadout

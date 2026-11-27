@@ -10,10 +10,9 @@ from experiments.twelve_residue_collision import search
 from scripts.factor import primes_through
 
 
-def run(bits, draws, sample):
-    if bits < 2 or draws < 0 or sample < 0:
-        raise ValueError('prime width must be at least two and budgets nonnegative')
-    rng = Random(86412)
+def eligible_pairs(bits, sample, rng):
+    if bits < 2 or sample < 0:
+        raise ValueError('prime width must be at least two and sample count nonnegative')
     primes = [p for p in primes_through((1 << bits)-1) if p.bit_length() == bits]
     if sample:
         lower_product = 1 << (2*bits-1)
@@ -26,9 +25,15 @@ def run(bits, draws, sample):
             p, q = sorted(rng.sample(primes, 2))
             if (p*q).bit_length() == 2*bits:
                 choices.add((p, q))
-        pairs = sorted(choices)
-    else:
-        pairs = ((p,q) for p,q in combinations(primes,2) if (p*q).bit_length()==2*bits)
+        return sorted(choices)
+    return ((p,q) for p,q in combinations(primes,2) if (p*q).bit_length()==2*bits)
+
+
+def run(bits, draws, sample):
+    if draws < 0:
+        raise ValueError('draw count must be nonnegative')
+    rng = Random(86412)
+    pairs = eligible_pairs(bits, sample, rng)
     counts = {mode: dict(splits=0, setup=0, pair=0, shared_key=0, seconds=0.0)
               for mode in ('twelve','matched','raw','power')}
     total = added = lost = 0

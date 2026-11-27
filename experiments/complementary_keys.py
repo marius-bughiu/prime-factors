@@ -1,0 +1,110 @@
+"""Group complementary labels, or look only for matches at the prime where three is a square."""
+from math import gcd
+from random import Random
+from time import perf_counter
+
+from experiments.twelve_residue_collision import keys, refine_duplicates, regular_samples, search_values
+from experiments.wide_modulus import product_tree, values_on_tree
+
+
+def fold(u, n):
+    return u*(1-u) % n
+
+
+def batch_product(values, n):
+    result = 1
+    for v in values:
+        result = result*v % n
+    return result
+
+
+def middle_hit(samples, values, n, work):
+    """Test the fixed point of the complement in every sample, including a singleton."""
+    terms = [(2*v-1) % n for v in values]
+    d = gcd(batch_product(terms, n), n)
+    work['middle_gcds'] += 1
+    if d == 1:
+        return None
+    for x, term in zip(samples, terms):
+        d = gcd(term, n)
+        work['middle_gcds'] += 1
+        if 1 < d < n:
+            work.update(source='middle', witness=[str(x)])
+            return d
+    return None
+
+
+def shared_fold(samples, values, folded, n, work):
+    """If the folded keys coincide globally, try the original equality and the complement."""
+    groups = {}
+    for x, u, key in zip(samples, values, folded):
+        previous = groups.setdefault(key, {})
+        if u in previous:
+            continue
+        for v, y in previous.items():
+            for expression, difference in (('original', u-v), ('complement', u+v-1)):
+                d = gcd(difference, n)
+                work['shared_gcds'] += 1
+                if 1 < d < n:
+                    work.update(source='shared fold', branch=expression, witness=[str(y), str(x)])
+                    return d
+        previous[u] = x
+    return None
+
+
+def target(samples, values, n, work):
+    """All ordered complement comparisons, including a position paired with itself."""
+    if not values:
+        return None
+    points = [(2*u-1) % n for u in values]
+    tree = product_tree(points, n)
+    poly = tree[-1][0]
+    reflected = [c if i % 2 == 0 else (-c) % n for i, c in enumerate(poly)]
+    rows = values_on_tree(reflected, tree, n)
+    work['target_values'] = len(rows)
+    divisor = gcd(batch_product(rows, n), n)
+    work['target_gcds'] = 1
+    if divisor == n:
+        raise ArithmeticError('all regular complement comparisons cannot saturate a mixed semiprime')
+    if divisor == 1:
+        return None
+    work.update(source='complement product')
+    return divisor
+
+
+def search(n, draws, seed, mode='folded'):
+    if n < 2 or draws < 0 or mode not in ('folded', 'target'):
+        raise ValueError('invalid input or search mode')
+    if mode == 'target' and n % 12 not in (5, 7):
+        raise ValueError('the directed comparison requires remainder 5 or 7 modulo 12')
+    start = perf_counter()
+    rng = Random(seed)
+    samples = [rng.randrange(n) for _ in range(draws)]
+    work = dict(mode=mode, draws=draws, regular=None, setup_gcds=0, inversions=0, middle_gcds=0,
+                shared_gcds=0, target_values=0, target_gcds=0, orientation_gcds=0, row_gcds=0,
+                pair_gcds=0, distinct_keys=0, derivative_values=0, source='none', witness=[])
+    divisor = None
+    if samples:
+        divisor, samples = regular_samples(samples, n, work)
+    if divisor is None:
+        work['regular'] = len(samples)
+    if samples:
+        values = keys(samples, n)
+        work['inversions'] = 1
+        if mode == 'target':
+            divisor = target(samples, values, n, work)
+        else:
+            divisor = middle_hit(samples, values, n, work)
+            if divisor is None:
+                divisor = refine_duplicates(samples, values, n, work)
+            if divisor is None:
+                folded = [fold(u, n) for u in values]
+                work['distinct_keys'] = len(set(folded))
+                divisor = shared_fold(samples, values, folded, n, work)
+                if divisor is None:
+                    divisor = search_values(samples, folded, n, work)
+                    if divisor is not None:
+                        x, y = map(int, work['witness'])
+                        u, v = keys([x,y], n)
+                        work['branch'] = 'original' if (u-v) % divisor == 0 else 'complement'
+    return divisor, work, perf_counter()-start

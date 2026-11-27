@@ -1,0 +1,161 @@
+{
+  "prime_bits": 12,
+  "baby_count": 6,
+  "giant_count": 6,
+  "population": "complete",
+  "counts": {
+    "products": 19546,
+    "smaller_prime_in_prefix": 5753,
+    "smaller_prime_in_expanded_prefix": 7520,
+    "gained_vs_screened_squares": 474,
+    "lost_vs_screened_squares": 0,
+    "gained_vs_factorial": 519,
+    "lost_vs_factorial": 0,
+    "expanded_gained_vs_squares": 2818,
+    "expanded_lost_vs_squares": 0,
+    "expanded_gained_vs_previous_twelve": 2748,
+    "expanded_lost_vs_previous_twelve": 449
+  },
+  "modes": {
+    "squares": {
+      "cpu_seconds": 1.780817000000035,
+      "splits": 5753,
+      "key difference": 5750,
+      "polynomial_degree": 117276,
+      "evaluation_points": 117276,
+      "row_gcds": 102241,
+      "pair_gcds": 20617,
+      "branch": 3,
+      "branch_gcds": 3
+    },
+    "screened_squares": {
+      "cpu_seconds": 1.754424999999904,
+      "splits": 5798,
+      "key difference": 5740,
+      "setup_gcds": 19546,
+      "polynomial_degree": 116946,
+      "evaluation_points": 116946,
+      "row_gcds": 101937,
+      "pair_gcds": 20584,
+      "denominator": 55,
+      "branch": 3,
+      "branch_gcds": 3
+    },
+    "twelve": {
+      "cpu_seconds": 1.7026269999999493,
+      "splits": 6272,
+      "key difference": 6209,
+      "setup_gcds": 19546,
+      "inversions": 19491,
+      "polynomial_degree": 77964,
+      "evaluation_points": 116946,
+      "row_gcds": 100373,
+      "pair_gcds": 20149,
+      "denominator": 55,
+      "branch": 8,
+      "branch_gcds": 35
+    },
+    "expanded_twelve": {
+      "cpu_seconds": 2.0127020000000475,
+      "splits": 8571,
+      "key difference": 8484,
+      "setup_gcds": 19546,
+      "inversions": 19479,
+      "polynomial_degree": 116874,
+      "evaluation_points": 116874,
+      "row_gcds": 93673,
+      "pair_gcds": 28292,
+      "denominator": 67,
+      "branch": 20,
+      "branch_gcds": 29
+    },
+    "folded_factorial": {
+      "cpu_seconds": 0.7351690000000264,
+      "splits": 5753,
+      "interval_gcd": 5753,
+      "setup_gcds": 39087,
+      "wheel_residues": 19546,
+      "wheel_residue_gcds": 19546,
+      "block_cycles": 156066,
+      "block_degree": 78033,
+      "blocks": 155738,
+      "factorial_limit": 350473,
+      "inversions": 19541,
+      "seed_terms": 78178,
+      "convolutions": 39015,
+      "convolution_input_coefficients": 681799,
+      "shifted_values": 330798,
+      "paired_products": 214149,
+      "batched_candidates": 1244458,
+      "edge_candidates": 154942,
+      "final_gcds": 19546
+    },
+    "fourfold_span": {
+      "cpu_seconds": 1.0744819999999147,
+      "splits": 17442,
+      "interval_gcd": 17442,
+      "setup_gcds": 39087,
+      "wheel_residues": 19546,
+      "wheel_residue_gcds": 19546,
+      "block_cycles": 303562,
+      "block_degree": 151781,
+      "blocks": 304213,
+      "factorial_limit": 684297,
+      "inversions": 19541,
+      "seed_terms": 78178,
+      "convolutions": 57452,
+      "convolution_input_coefficients": 1421237,
+      "shifted_values": 719933,
+      "paired_products": 454809,
+      "batched_candidates": 4772226,
+      "edge_candidates": 254439,
+      "final_gcds": 19546
+    }
+  },
+  "examples": {
+    "wider": {
+      "n": "8417663",
+      "factors": [
+        "2203",
+        "3821"
+      ],
+      "first_odd": 2057,
+      "last_odd": 2247,
+      "work": {
+        "setup_gcds": 1,
+        "inversions": 1,
+        "polynomial_degree": 6,
+        "evaluation_points": 6,
+        "row_gcds": 5,
+        "pair_gcds": 1
+      },
+      "source": "key difference",
+      "witness": [
+        1,
+        2200
+      ]
+    },
+    "extra": {
+      "n": "8448631",
+      "factors": [
+        "2309",
+        "3659"
+      ],
+      "first_odd": 2065,
+      "last_odd": 2207,
+      "work": {
+        "setup_gcds": 1,
+        "inversions": 1,
+        "polynomial_degree": 4,
+        "evaluation_points": 6,
+        "row_gcds": 6,
+        "pair_gcds": 3
+      },
+      "source": "key difference",
+      "witness": [
+        5,
+        2196
+      ]
+    }
+  }
+}

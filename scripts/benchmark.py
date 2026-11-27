@@ -46,6 +46,7 @@ from experiments.monotone_divisor_sampling import scan as scan_divisor_prefixes,
 from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
 from experiments.smooth_factor_sums import scan_two_three
 from experiments.near_smooth_sum import search as near_smooth_search
+from scripts.reduced_smooth_benchmark import reduced_smooth_case
 from experiments import carry_interval, geometric_lifted_readout, geometric_readout_blocks
 from experiments import geometric_precision_readout, geometric_sum_readout, radix_carries, sum_signature_join
 from scripts import near_smooth_certificate, trace_cover_certificate
@@ -56,7 +57,7 @@ from scripts.hasse_benchmark import hasse_case
 from scripts.short_pascal_benchmark import short_case
 from scripts.quotient_pascal_benchmark import quotient_pascal_case
 from scripts.half_gauss_benchmark import half_gauss_case
-from experiments import dyadic_totative_masks
+from experiments import dyadic_factor_bands, dyadic_totative_masks
 from scripts.growing_factorial_benchmark import growing_case
 from scripts.block_exclusion_benchmark import block_exclusion_case
 from scripts.block_subresultant_benchmark import block_subresultant_case
@@ -76,6 +77,7 @@ from scripts.geometry_weight_benchmark import geometry_weight_case
 from scripts.weighted_crowding_benchmark import weighted_crowding_case
 from scripts.reciprocal_prefix_benchmark import prefix_case
 from scripts.twelve_residue_benchmark import twelve_residue_case
+from scripts.complementary_key_benchmark import case_result as complementary_key_case
 from scripts.two_interior_benchmark import two_interior_case
 from scripts.residue_batch_benchmark import residue_batch_case
 from experiments.weighted_trace_reuse import search as weighted_trace_reuse_search
@@ -149,6 +151,7 @@ from experiments.line_powers import search as line_power_search
 from experiments.theta_residues import search as theta_residue_search
 from experiments.quotient_search import search as quotient_search
 from experiments.secant_quotient_cells import search as secant_quotient_search
+from scripts.twelve_rectangle_benchmark import rectangle_case
 from experiments.inverse_windows import search_product as inverse_windows_search
 from experiments.continued_square import search as continued_square_search
 from experiments.predecessor_square import search as predecessor_square_search, search_square_offset
@@ -817,6 +820,8 @@ def run_case(case, method, proofs):
         result = certify_split(case, proof, factor, elapsed, 'radix_carries', work)
         if factor is not None:
             result['carry_proof'] = check_carry_probe(n, factor, work['hit'], proof)
+    elif method == 'reduced-smooth-readout':
+        result = reduced_smooth_case(case, proof, agree, certify_split)
     elif method == 'near-smooth-sum':
         n = int(case['n'])
         tolerance = int(case['tolerance'])
@@ -1263,6 +1268,8 @@ end PrimeFactors.Generated
             agree(case, work, ['radix', 'euclidean_steps'])
         factor = pairs[0][0] if pairs else None
         result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
+    elif method == 'twelve-rectangle':
+        result = rectangle_case(case, proof, agree, certify_split)
     elif method == 'quotient-search':
         if 'secant' in case:
             if case['secant'] not in ('equal-area', 'maximum-width'):
@@ -1494,6 +1501,8 @@ end PrimeFactors.Generated
         result = weighted_crowding_case(case, proof, agree, certify_split)
     elif method == 'twelve-residue-collision':
         result = twelve_residue_case(case, proof, agree, certify_split)
+    elif method == 'complementary-keys':
+        result = complementary_key_case(case, proof, agree, certify_split)
     elif method == 'reciprocal-prefix-pairs':
         result = prefix_case(case, proof, agree, certify_split)
     elif method == 'two-interior-batches':
@@ -1521,6 +1530,27 @@ end PrimeFactors.Generated
         result = character_column_case(case, proof, agree, certify_split)
     elif method == 'quotient-pascal':
         result = quotient_pascal_case(case, proof, agree, certify_split)
+    elif method == 'dyadic-factor-bands':
+        n = int(case['n'])
+        work = dyadic_factor_bands.search(n, case['max_positions'])
+        elapsed = time.perf_counter() - start
+        factors = work.pop('factors')
+        remaining = work.pop('remaining')
+        agree(case, {'factors': factors, 'remaining': remaining}, ['factors', 'remaining'])
+        agree(dict(id=name, **case['checks']), work, case['checks'])
+        work['max_positions'] = case['max_positions']
+        result = certify_split(case, proof, factors[0] if factors else None,
+                               elapsed, 'dyadic_factor_bands', work)
+        if case.get('certify_first_mask'):
+            first = work['rows'][0]
+            if first['index'] != 1022 or first['mask_gcd'] != case['n'] or first['positions'] != '0':
+                raise ValueError(f'{name}: fresh gcd receipt requires the empty first band')
+            receipt = proof.with_name(f'{proof.stem}-first-mask.lean')
+            dyadic_factor_bands.fresh_proof(receipt, n)
+            verify_start = time.perf_counter()
+            verify_file(receipt, 'PrimeFactors.Generated.fresh_first_mask')
+            result['dyadic_first_mask_receipt'] = dict(proof=f'proofs/{receipt.name}',
+                                                        seconds=time.perf_counter() - verify_start)
     elif method == 'dyadic-totative-masks':
         n = int(case['n'])
         work = dyadic_totative_masks.search(n, case['max_row'])
@@ -1880,6 +1910,7 @@ def main():
                              ('quotient-pascal.json','quotient-pascal'),
                              ('half-gauss.json', 'half-gauss'),
                              ('dyadic-totative-masks.json', 'dyadic-totative-masks'),
+                             ('dyadic-factor-bands.json', 'dyadic-factor-bands'),
                              ('growing-factorial.json', 'growing-factorial'),
                              ('block-exclusion.json', 'block-exclusion'),
                              ('block-subresultant.json', 'block-subresultant'),
@@ -1901,6 +1932,7 @@ def main():
                              ('weighted-crowding.json', 'weighted-crowding'),
                              ('reciprocal-prefix-pairs.json', 'reciprocal-prefix-pairs'),
                              ('twelve-residue-collision.json', 'twelve-residue-collision'),
+                             ('complementary-keys.json', 'complementary-keys'),
                              ('two-interior-batches.json', 'two-interior-batches'),
                              ('residue-batch-allocation.json', 'residue-batch-allocation'),
                              ('weighted-trace-reuse.json', 'weighted-trace-reuse'),
@@ -1954,6 +1986,7 @@ def main():
                              ('partition-recurrence.json', 'partition-recurrence'),
                              ('quotient-search.json', 'quotient-search'),
                              ('secant-quotient-cells.json', 'quotient-search'),
+                             ('twelve-rectangle.json', 'twelve-rectangle'),
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola'),
                              ('midpoint-weights.json', 'midpoint-weights'),
@@ -1990,6 +2023,7 @@ def main():
                              ('neighbor-smooth-sum.json', 'neighbor-smooth-sum'),
                              ('two-three-sum.json', 'two-three-sum'),
                              ('near-smooth-sum.json', 'near-smooth-sum'),
+                             ('reduced-smooth-readout.json', 'reduced-smooth-readout'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

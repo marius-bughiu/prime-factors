@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+A product leaving 5 or 7 modulo 12 identifies an extra kind of match supported by exactly one prime. Collapsing complementary labels kept every earlier success and added 2,477 across 19,546 small products. In the mixed full-size family this lowers a sufficient random-sample budget by 17.97%. The budget remains about $5.5\times10^{153}$. Positioning samples to cover consecutive candidate divisors gives a separate deterministic improvement. A factorial search was faster in the measured deterministic comparisons. [Complementary labels](when-the-product-picks-a-collision.md) · [Placing samples](placing-twelve-key-rectangle-centers.md)
+
+Two routes produced information on the independent full-size comparison. The first obtained an exact factorial gcd by proving its corresponding divisor interval empty. The second showed that after removing their common divisor, both $p-1$ and $q-1$ have prime divisors above 13. The same second method split a constructed 2,048-bit product. [Disjoint divisor intervals](reading-factor-bits-with-divisor-intervals.md) · [Reduced predecessors](smooth-reduced-predecessors.md)
+
 Grouping twelve remainders at a time increased the number of small products split on the same samples. For two distinct 1,024-bit primes, a trillion uniform draws give this method less than a $2^{-939}$ chance of success. Taking $2^{511}$ independent uniform regular draws raises the chance above 95%. Taking that many consecutive integers starting at 16 is guaranteed to miss. [Grouped comparison](comparing-twelve-remainders-at-once.md) · [Trillion-draw bound](trillion-twelve-residue-draws.md) · [Consecutive inputs](counting-twelve-residue-keys.md)
 
 A separate complete divisor search reduced the number of cells on eight 25-bit prime pairs from 66,816 to 42,192. The full-size sweep remains out of reach. [Wider divisor intervals](two-wider-quotient-sweeps.md)

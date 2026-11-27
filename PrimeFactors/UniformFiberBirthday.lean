@@ -222,6 +222,23 @@ private theorem exp_threshold : Real.exp (-((2999:ℝ)/1000)) < 499/10000 := by
   apply (div_lt_iff₀ (Real.exp_pos _)).mpr
   linarith
 
+/-- Bounds on local collisions and joint saturation sufficient for a
+95 percent guarantee at an arbitrary sample budget. -/
+theorem bound_from_rates {m d e : ℕ} (mpos : 0<m) (dm : m≤d) (em : m≤e)
+    (expBound : -(m:ℝ)*(m-1)/(2*d) + -(m:ℝ)*(m-1)/(2*e) ≤ -(2999/1000))
+    (jointRate : (m:ℝ)*(m-1)/(2*(d*e:ℕ)) ≤ 1/10000) :
+    (95:ℝ)/100 < distinctProbability (d*e) m - distinctProbability d m * distinctProbability e m := by
+  have dp := mpos.trans_le dm
+  have ep := mpos.trans_le em
+  have de := Nat.mul_pos dp ep
+  have dem : m ≤ d*e := dm.trans (Nat.le_mul_of_pos_right _ ep)
+  have productUpper := mul_le_mul (distinct_probability_upper dp dm)
+    (distinct_probability_upper ep em) (probability_nonneg e m) (Real.exp_pos _).le
+  rw [← Real.exp_add] at productUpper
+  have upper := productUpper.trans_lt ((Real.exp_le_exp.mpr expBound).trans_lt exp_threshold)
+  have lower := distinct_probability_lower de dem
+  linarith only [lower, upper, jointRate]
+
 set_option exponentiation.threshold 2050 in
 set_option maxRecDepth 8192 in
 set_option maxHeartbeats 1200000 in
@@ -238,23 +255,17 @@ theorem full_size_bound {d e : ℕ} (dlo : 2^1019 ≤ d) (elo : 2^1019 ≤ e)
   have mpos : 0 < m := by norm_num [m]
   have dp := mpos.trans_le dm
   have ep := mpos.trans_le em
-  have de := Nat.mul_pos dp ep
-  have dem : m ≤ d*e := dm.trans (Nat.le_mul_of_pos_right _ ep)
   have localRate (n : ℕ) (npos : 0 < n) (cap : 12*n ≤ 2^1024) :
       (2999:ℝ)/2000 ≤ (m:ℝ)*(m-1)/(2*n) := by
     have h : (12:ℝ)*n ≤ 2^1024 := by exact_mod_cast cap
     apply (le_div_iff₀ (by positivity)).mpr
     norm_num [m] at h ⊢
     linarith
-  have productUpper := mul_le_mul (distinct_probability_upper dp dm)
-    (distinct_probability_upper ep em) (probability_nonneg e m) (Real.exp_pos _).le
-  rw [← Real.exp_add] at productUpper
   have expBound : -(m:ℝ)*(m-1)/(2*d) + -(m:ℝ)*(m-1)/(2*e) ≤ -(2999/1000) := by
     calc
       _ = -((m:ℝ)*(m-1)/(2*d) + m*(m-1)/(2*e)) := by ring
       _ ≤ -((2999:ℝ)/2000 + 2999/2000) := neg_le_neg (add_le_add (localRate d dp dhi) (localRate e ep ehi))
       _ = _ := by norm_num
-  have upper := productUpper.trans_lt ((Real.exp_le_exp.mpr expBound).trans_lt exp_threshold)
   have dR : (2:ℝ)^1019 ≤ d := by exact_mod_cast dlo
   have eR : (2:ℝ)^1019 ≤ e := by exact_mod_cast elo
   have prodLower := mul_le_mul dR eR (by positivity) (by positivity)
@@ -263,8 +274,7 @@ theorem full_size_bound {d e : ℕ} (dlo : 2^1019 ≤ d) (elo : 2^1019 ≤ e)
     apply (div_le_iff₀ (by positivity)).mpr
     norm_num [m] at prodLower ⊢
     linarith only [prodLower]
-  have lower := distinct_probability_lower de dem
-  linarith only [lower, upper, jointRate]
+  exact bound_from_rates mpos dm em expBound jointRate
 
 /-- Fraction of independent uniform joint output words containing a pair
 that agrees in exactly one coordinate. -/

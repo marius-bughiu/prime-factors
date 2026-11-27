@@ -125,6 +125,20 @@ def case_row(result):
         count += f' · search {duration(result["discovery_seconds"])}'
         if checked:
             verification += f' (certificate generation and replay {duration(result["certificate_seconds"])})'
+    elif result['method'] == 'reduced-smooth-readout':
+        w = result['reduced_smooth']
+        count = (f"Prime bound {w['bound']} · {w['bases']} of up to {w['base_limit']} bases tested · "
+                 f"{w['initial_powers']} product-derived powers · {w['blocks']} prime-power updates "
+                 f"({w['exponent_bits']:,} exponent bits) · {w['base_gcds']} base and "
+                 f"{w['readout_gcds']} readout gcds · {escape(w['source'])} · {duration(w['seconds'])}")
+        if w['accepted_base'] is not None:
+            comp = w['ordinary']
+            outcome = escape(comp['divisor']) if comp['divisor'] else 'no split'
+            count += (f" · ordinary predecessor sweep at base {w['accepted_base']} returned {outcome} "
+                      f"({comp['blocks']} updates, {comp['gcds']} checkpoint gcds, {duration(comp['seconds'])})")
+        if 'reduced_smooth_receipt' in result:
+            receipt = result['reduced_smooth_receipt']
+            evidence += f' · <a href="{escape(receipt["proof"])}">Download checked sweep and gcd</a>'
     elif result['method'] == 'near-smooth-sum':
         w = result['near_smooth_sum']
         ops = w['work']
@@ -473,6 +487,12 @@ def case_row(result):
         count = (f'Balanced-interval modular search{radix} · {w["low_classes"]:,} low residue classes'
                  f' · {w["modular_hits"]:,} candidate products · {w["euclidean_steps"]:,} Euclidean steps'
                  f' · search {duration(result["discovery_seconds"])}')
+    elif result['method'] == 'twelve-rectangle':
+        w = result['twelve_rectangle']
+        row = w['runs'][w['primary']]
+        count = (f'Signed divisor rectangle · {w["baby_count"]:,} baby seeds × {w["giant_count"]:,} centers'
+                 f' · {row["guaranteed_odd_candidates"]:,} consecutive odd candidates'
+                 f' · {row.get("row_gcds", 0):,} row gcds · {escape(row["source"])}')
     elif result['method'] == 'quotient-search':
         w = result['quotient_search']
         kind = 'Factor intervals'
@@ -1047,6 +1067,21 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'complementary-keys':
+        w = result['complementary_keys']
+        runs = w['runs']
+        count = f"{w['draws']:,} draws per method · seed {w['seed']} · product remainder {w['public_remainder']} modulo 12"
+        for key, title in [('folded', 'Complementary labels'), ('old', 'Original labels'), ('target', 'Directed product')]:
+            if key in runs:
+                r = runs[key]
+                outcome = escape(r['divisor']) if r['divisor'] else 'no factor'
+                count += f" · {title} returned {outcome} in {duration(r['seconds'])}"
+        if 'target' in runs:
+            r = runs['target']
+            count += f" · {r['target_values']:,} directed evaluations and {r['target_gcds']} readout gcds"
+        receipt = result.get('complement_receipt')
+        if receipt:
+            evidence += f' · <a href="{escape(receipt["proof"])}">Checked complement gcd</a>'
     elif result['method'] == 'twelve-residue-collision':
         work = result['twelve_residue']
         runs = work['runs']
@@ -1076,6 +1111,22 @@ def case_row(result):
                  f" · {work['inspected_lanes']:,} residue classes checked modulo {work['modulus']}"
                  f" · {compact_count(int(work['eliminated']))} smaller-factor locations removed"
                  f" · {compact_count(int(work['remaining']))} locations remain")
+    elif result['method'] == 'dyadic-factor-bands':
+        work = result['dyadic_factor_bands']
+        count = (f"{work['examined']:,} of {work['max_positions']:,} budgeted positions examined"
+                 f" · {work['modular_multiplications']:,} modular multiplications")
+        for row in work['rows']:
+            if row['mask_gcd'] is None:
+                slots = compact_count(int(row['positions']))
+                count += f" · binary position {row['index']} unfinished ({slots} positions in the band)"
+            else:
+                reading = 'the input' if row['mask_gcd'] == result['n'] else escape(row['mask_gcd'])
+                count += f" · binary position {row['index']} gave gcd {reading}"
+        if 'dyadic_first_mask_receipt' in result:
+            receipt = result['dyadic_first_mask_receipt']
+            link = escape(receipt['proof'], quote=True)
+            evidence += f'<p><a href="{link}">Check the exact first coefficient gcd in Lean</a></p>'
+            verification = duration(receipt['seconds']) + ' (coefficient gcd)'
     elif result['method'] == 'dyadic-totative-masks':
         work = result['dyadic_totative_masks']
         rows = work['rows']
