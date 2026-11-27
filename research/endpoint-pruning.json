@@ -1,0 +1,410 @@
+{
+  "budget": {
+    "ordinary": 16,
+    "weighted_and_reassigned": 15,
+    "starts": 3,
+    "roots_per_search": 34,
+    "comparison_replay_roots": 51
+  },
+  "census": [
+    {
+      "bits": 16,
+      "bin": "all",
+      "totals": {
+        "products": 4588935,
+        "prefix": 1580101,
+        "old_splits": 2517562,
+        "new_splits": 2698661,
+        "ordinary_splits": 2157622,
+        "bit_width_only_splits": 2698661,
+        "extra_conditioned_splits": 0,
+        "products_further_pruned_after_prefix": 0,
+        "new_only_vs_ordinary": 930232,
+        "ordinary_only_vs_new": 389193,
+        "gains": 181099,
+        "losses": 0
+      },
+      "extra_tests": {
+        "0": 3926648,
+        "1": 36256,
+        "2": 24918,
+        "3": 18198,
+        "4": 16607,
+        "5": 13532,
+        "6": 13108,
+        "7": 11014,
+        "8": 167459,
+        "9": 99109,
+        "10": 13067,
+        "11": 9113,
+        "12": 8300,
+        "13": 6379,
+        "14": 6492,
+        "15": 218735
+      },
+      "first_gains_by_remainder": {
+        "1": [
+          "1195060057",
+          "32771",
+          "36467"
+        ],
+        "13": [
+          "1195453309",
+          "32771",
+          "36479"
+        ],
+        "17": [
+          "1244871977",
+          "32771",
+          "37987"
+        ],
+        "7": [
+          "1245199687",
+          "32771",
+          "37997"
+        ],
+        "5": [
+          "1246838237",
+          "32771",
+          "38047"
+        ],
+        "19": [
+          "1250311963",
+          "32771",
+          "38153"
+        ],
+        "23": [
+          "1322539247",
+          "32771",
+          "40357"
+        ],
+        "11": [
+          "1330797539",
+          "32771",
+          "40609"
+        ]
+      }
+    },
+    {
+      "bits": 16,
+      "bin": "central",
+      "totals": {
+        "products": 592048,
+        "prefix": 145803,
+        "old_splits": 301570,
+        "new_splits": 301570,
+        "ordinary_splits": 208065,
+        "bit_width_only_splits": 301570,
+        "extra_conditioned_splits": 0,
+        "products_further_pruned_after_prefix": 0,
+        "new_only_vs_ordinary": 155767,
+        "ordinary_only_vs_new": 62262,
+        "gains": 0,
+        "losses": 0
+      },
+      "extra_tests": {
+        "0": 592048
+      },
+      "first_gains_by_remainder": {}
+    },
+    {
+      "bits": 16,
+      "bin": "upper",
+      "totals": {
+        "products": 102713,
+        "prefix": 95210,
+        "old_splits": 95210,
+        "new_splits": 101618,
+        "ordinary_splits": 101918,
+        "bit_width_only_splits": 101618,
+        "extra_conditioned_splits": 0,
+        "products_further_pruned_after_prefix": 0,
+        "new_only_vs_ordinary": 0,
+        "ordinary_only_vs_new": 300,
+        "gains": 6408,
+        "losses": 0
+      },
+      "extra_tests": {
+        "0": 95210,
+        "15": 7503
+      },
+      "first_gains_by_remainder": {
+        "17": [
+          "3758628473",
+          "57367",
+          "65519"
+        ],
+        "7": [
+          "3758743207",
+          "57367",
+          "65521"
+        ],
+        "5": [
+          "3758807333",
+          "57389",
+          "65497"
+        ],
+        "19": [
+          "3760069891",
+          "57389",
+          "65519"
+        ],
+        "1": [
+          "3758140153",
+          "58013",
+          "64781"
+        ],
+        "13": [
+          "3758836309",
+          "58013",
+          "64793"
+        ]
+      }
+    }
+  ],
+  "full_width": [
+    {
+      "id": "endpoint-pruning-controlled-2048",
+      "kept": [
+        0,
+        0
+      ],
+      "extra": 15,
+      "previous_splits": false,
+      "pruned_splits": true,
+      "ordinary_splits": true
+    },
+    {
+      "id": "endpoint-pruning-2048",
+      "kept": [
+        9,
+        6
+      ],
+      "extra": 0,
+      "previous_splits": false,
+      "pruned_splits": false,
+      "ordinary_splits": false
+    },
+    {
+      "id": "endpoint-pruning-fresh-2048",
+      "kept": [
+        0,
+        0
+      ],
+      "extra": 15,
+      "previous_splits": false,
+      "pruned_splits": false,
+      "ordinary_splits": false
+    },
+    {
+      "id": "endpoint-pruning-crossed-2048",
+      "kept": [
+        9,
+        6
+      ],
+      "extra": 0,
+      "previous_splits": false,
+      "pruned_splits": false,
+      "ordinary_splits": false
+    }
+  ],
+  "smaller_widths": [
+    {
+      "bits": 11,
+      "bin": "all",
+      "totals": {
+        "products": 9316,
+        "prefix": 9161,
+        "old_splits": 9309,
+        "new_splits": 9309,
+        "ordinary_splits": 9316,
+        "bit_width_only_splits": 9309,
+        "extra_conditioned_splits": 0,
+        "products_further_pruned_after_prefix": 155,
+        "new_only_vs_ordinary": 0,
+        "ordinary_only_vs_new": 7,
+        "gains": 0,
+        "losses": 0
+      },
+      "extra_tests": {
+        "0": 9161,
+        "8": 37,
+        "9": 48,
+        "10": 20,
+        "11": 13,
+        "12": 14,
+        "13": 17,
+        "14": 6
+      },
+      "first_gains_by_remainder": {}
+    },
+    {
+      "bits": 12,
+      "bin": "all",
+      "totals": {
+        "products": 32385,
+        "prefix": 29376,
+        "old_splits": 31451,
+        "new_splits": 32014,
+        "ordinary_splits": 31873,
+        "bit_width_only_splits": 31451,
+        "extra_conditioned_splits": 563,
+        "products_further_pruned_after_prefix": 3009,
+        "new_only_vs_ordinary": 219,
+        "ordinary_only_vs_new": 78,
+        "gains": 563,
+        "losses": 0
+      },
+      "extra_tests": {
+        "0": 29376,
+        "6": 1121,
+        "7": 266,
+        "8": 326,
+        "9": 124,
+        "10": 103,
+        "11": 135,
+        "12": 135,
+        "13": 131,
+        "14": 111,
+        "15": 557
+      },
+      "first_gains_by_remainder": {
+        "17": [
+          "7253249",
+          "2053",
+          "3533"
+        ],
+        "5": [
+          "7376429",
+          "2053",
+          "3593"
+        ],
+        "7": [
+          "8006503",
+          "2063",
+          "3881"
+        ],
+        "19": [
+          "8174779",
+          "2087",
+          "3917"
+        ]
+      }
+    },
+    {
+      "bits": 13,
+      "bin": "all",
+      "totals": {
+        "products": 107416,
+        "prefix": 83168,
+        "old_splits": 99995,
+        "new_splits": 101255,
+        "ordinary_splits": 98498,
+        "bit_width_only_splits": 99995,
+        "extra_conditioned_splits": 1260,
+        "products_further_pruned_after_prefix": 21394,
+        "new_only_vs_ordinary": 4530,
+        "ordinary_only_vs_new": 1773,
+        "gains": 1260,
+        "losses": 0
+      },
+      "extra_tests": {
+        "0": 86002,
+        "1": 1868,
+        "2": 339,
+        "3": 151,
+        "4": 1327,
+        "5": 3798,
+        "6": 3027,
+        "7": 4316,
+        "8": 2858,
+        "9": 1453,
+        "10": 798,
+        "11": 573,
+        "12": 321,
+        "13": 328,
+        "14": 257
+      },
+      "first_gains_by_remainder": {
+        "17": [
+          "26606609",
+          "4099",
+          "6491"
+        ],
+        "5": [
+          "26852549",
+          "4099",
+          "6551"
+        ],
+        "23": [
+          "29139791",
+          "4099",
+          "7109"
+        ],
+        "11": [
+          "29188979",
+          "4099",
+          "7121"
+        ]
+      }
+    },
+    {
+      "bits": 14,
+      "bin": "all",
+      "totals": {
+        "products": 379756,
+        "prefix": 230728,
+        "old_splits": 337310,
+        "new_splits": 339361,
+        "ordinary_splits": 294756,
+        "bit_width_only_splits": 339361,
+        "extra_conditioned_splits": 0,
+        "products_further_pruned_after_prefix": 18744,
+        "new_only_vs_ordinary": 47116,
+        "ordinary_only_vs_new": 2511,
+        "gains": 2051,
+        "losses": 0
+      },
+      "extra_tests": {
+        "0": 351364,
+        "1": 16395,
+        "2": 1662,
+        "3": 1341,
+        "4": 1365,
+        "5": 970,
+        "6": 816,
+        "7": 592,
+        "8": 1981,
+        "9": 837,
+        "10": 566,
+        "11": 466,
+        "12": 324,
+        "13": 410,
+        "14": 337,
+        "15": 330
+      },
+      "first_gains_by_remainder": {
+        "11": [
+          "172123307",
+          "11047",
+          "15581"
+        ],
+        "23": [
+          "172786127",
+          "11047",
+          "15641"
+        ],
+        "7": [
+          "172942279",
+          "11617",
+          "14887"
+        ],
+        "19": [
+          "172351051",
+          "11621",
+          "14831"
+        ]
+      }
+    }
+  ]
+}

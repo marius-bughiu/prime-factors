@@ -55,6 +55,7 @@ from experiments import hasse_hankel_probe
 from scripts.hasse_benchmark import hasse_case
 from scripts.short_pascal_benchmark import short_case
 from scripts.quotient_pascal_benchmark import quotient_pascal_case
+from scripts.half_gauss_benchmark import half_gauss_case
 from scripts.growing_factorial_benchmark import growing_case
 from scripts.block_exclusion_benchmark import block_exclusion_case
 from scripts.block_subresultant_benchmark import block_subresultant_case
@@ -68,8 +69,11 @@ from scripts.cheap_multiplier_benchmark import cheap_multiplier_case
 from scripts.interior_prime_family_benchmark import interior_family_case
 from scripts.primitive_multiplier_benchmark import primitive_multiplier_case
 from scripts.equal_six_budget_benchmark import equal_six_case
+from scripts.endpoint_offset_benchmark import endpoint_offset_case
+from scripts.endpoint_pruning_benchmark import endpoint_pruning_case
 from scripts.geometry_weight_benchmark import geometry_weight_case
 from scripts.weighted_crowding_benchmark import weighted_crowding_case
+from scripts.reciprocal_prefix_benchmark import prefix_case
 from scripts.two_interior_benchmark import two_interior_case
 from scripts.residue_batch_benchmark import residue_batch_case
 from experiments.weighted_trace_reuse import search as weighted_trace_reuse_search
@@ -1472,10 +1476,16 @@ end PrimeFactors.Generated
         result = primitive_multiplier_case(case, proof, agree, certify_split)
     elif method == 'equal-six-budget':
         result = equal_six_case(case, proof, agree, certify_split)
+    elif method == 'endpoint-offset-product':
+        result = endpoint_offset_case(case, proof, agree, certify_split)
+    elif method == 'endpoint-pruning':
+        result = endpoint_pruning_case(case, proof, agree, certify_split)
     elif method == 'geometry-weight-menu':
         result = geometry_weight_case(case, proof, agree, certify_split)
     elif method == 'weighted-crowding':
         result = weighted_crowding_case(case, proof, agree, certify_split)
+    elif method == 'reciprocal-prefix-pairs':
+        result = prefix_case(case, proof, agree, certify_split)
     elif method == 'two-interior-batches':
         result = two_interior_case(case, proof, agree, certify_split)
     elif method == 'residue-batch-allocation':
@@ -1501,6 +1511,8 @@ end PrimeFactors.Generated
         result = character_column_case(case, proof, agree, certify_split)
     elif method == 'quotient-pascal':
         result = quotient_pascal_case(case, proof, agree, certify_split)
+    elif method == 'half-gauss':
+        result = half_gauss_case(case, proof, agree, certify_split)
     elif method == 'short-pascal':
         result = short_case(case, proof, agree, certify_split)
     elif method == 'cubic-forced':
@@ -1841,6 +1853,7 @@ def main():
                              ('cubic-forced.json', 'cubic-forced'),
                              ('short-pascal.json', 'short-pascal'),
                              ('quotient-pascal.json','quotient-pascal'),
+                             ('half-gauss.json', 'half-gauss'),
                              ('growing-factorial.json', 'growing-factorial'),
                              ('block-exclusion.json', 'block-exclusion'),
                              ('block-subresultant.json', 'block-subresultant'),
@@ -1856,8 +1869,11 @@ def main():
                              ('prime-gap-blocks.json', 'interior-prime-family'),
                              ('primitive-multiplier.json', 'primitive-multiplier'),
                              ('equal-six-budget.json', 'equal-six-budget'),
+                             ('endpoint-offset-product.json', 'endpoint-offset-product'),
+                             ('endpoint-pruning.json', 'endpoint-pruning'),
                              ('geometry-weight-menu.json', 'geometry-weight-menu'),
                              ('weighted-crowding.json', 'weighted-crowding'),
+                             ('reciprocal-prefix-pairs.json', 'reciprocal-prefix-pairs'),
                              ('two-interior-batches.json', 'two-interior-batches'),
                              ('residue-batch-allocation.json', 'residue-batch-allocation'),
                              ('weighted-trace-reuse.json', 'weighted-trace-reuse'),

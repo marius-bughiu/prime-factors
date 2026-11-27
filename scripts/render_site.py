@@ -994,6 +994,36 @@ def case_row(result):
                 count += f" · next convolution requires {operations['next_convolution_inputs']:,} inputs"
         if w.get('checked_factor_range'):
             evidence += '<p>The factor certificate also checks the public interval and the reported range containing the factor.</p>'
+    elif result['method'] == 'endpoint-offset-product':
+        w = result['endpoint_offset']
+        count = (f"{w['predicted_products']} predicted offset product · {w['search_roots']} search square root"
+                 f" · stride {w['stride']} · {w['leading_ones']} leading one bits")
+        if 'ordinary' in w:
+            ordinary = w['ordinary']
+            trace_distance = int(ordinary['trace_distance'])
+            distance = (f"The factor sum lies {trace_distance:,} integer traces above the ordinary start.")
+            if ordinary['midpoint_distance'] is not None:
+                midpoint_distance = int(ordinary['midpoint_distance'])
+                distance += f" Ordinary Fermat would advance {midpoint_distance:,} midpoints before its hit."
+            evidence += f"<p>{distance} This comparison uses {ordinary['roots']} separate square root.</p>"
+        receipt = result['endpoint_offset_receipt']
+        link = escape(receipt['proof'], quote=True)
+        evidence += f'<p><a href="{link}">Check the public offset prediction and probe result in Lean</a></p>'
+        verification = ((verification + ' + ') if checked else '') + duration(receipt['seconds']) + ' (offset probe)'
+    elif result['method'] == 'endpoint-pruning':
+        w = result['endpoint_pruning']
+        count = (f"{w['roots_per_schedule']} search roots · {sum(w['weighted_kept'])} weighted tests kept"
+                 f" · {w['ordinary_extra']} tests reassigned to ordinary Fermat")
+        previous = 'found a factor' if w['old_found'] else 'missed'
+        ordinary = 'found a factor' if w['ordinary_found'] else 'missed'
+        evidence += (f"<p>Comparison replay used {w['diagnostic_roots']} separate roots. "
+                     f"The previous weighted search {previous}. Ordinary Fermat {ordinary}.</p>")
+        if 'endpoint_pruning_receipt' in result:
+            receipt = result['endpoint_pruning_receipt']
+            link = escape(receipt['proof'], quote=True)
+            evidence += (f'<p><a href="{link}">Check all 31 previous misses and the square at ordinary '
+                         f'label {receipt["ordinary_ordinal"]}</a></p>')
+            verification += ' + ' + duration(receipt['seconds']) + ' (trace comparison)'
     elif result['method'] == 'geometry-weight-menu':
         work = result['geometry_weight_menu']
         arms = ', '.join(f'({a}, {b}) for {h} tests' for a, b, h in work['selected_arms'])
@@ -1014,6 +1044,26 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'reciprocal-prefix-pairs':
+        work = result['reciprocal_prefix_pairs']
+        count = (f"{work['sweep_comparisons']:,} of {work['bracket_pairs']:,} interval pairs visited"
+                 f" · {work['inspected_lanes']:,} residue classes checked modulo {work['modulus']}"
+                 f" · {compact_count(int(work['eliminated']))} smaller-factor locations removed"
+                 f" · {compact_count(int(work['remaining']))} locations remain")
+    elif result['method'] == 'half-gauss':
+        work = result['half_gauss']
+        receipt = result['half_gauss_receipt']
+        count = (f"{work['terms']:,} coprimality checks · {work['units']:,} modular multiplications"
+                 f" · {compact_count(int(work['untested']))} positions untested")
+        if work['readout_gcd'] is None:
+            count += ' · half product unfinished'
+        else:
+            count += f" · completed residue {work['prefix_residue']} · readout gcd {work['readout_gcd']}"
+        if work['first_divisor'] is not None:
+            count += f" · first nonunit at {work['first_nonunit']} gave divisor {work['first_divisor']}"
+        link = escape(receipt['proof'], quote=True)
+        evidence += f'<p><a href="{link}">Check the computed prefix and spent budget in Lean</a></p>'
+        verification += ' + ' + duration(receipt['seconds']) + ' (prefix arithmetic)'
     elif result['method'] == 'quotient-pascal':
         work = result['quotient_pascal']
         receipt = result['quotient_pascal_receipt']

@@ -10,6 +10,10 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**We can recognize one easy case by looking at the product itself.** If a 2,048-bit product of two 1,024-bit primes starts with 511 ones in binary, our formula recovers both primes in one square root. Ordinary Fermat also succeeds immediately on every such input. Outside that range, the same formula found a deliberately constructed pair for which ordinary Fermat would miss over 63 quintillion midpoints. It missed both full-size comparisons. [Worked example and exact success condition](discoveries/when-the-product-is-near-the-largest-square.md)
+
+Across all 4,588,935 pairs of distinct 16-bit primes, using the known factor width to skip impossible tests found 181,099 additional pairs with the same 34-square-root budget and preserved every previous success. All three full-size controls remained unresolved. [Comparison and proof](discoveries/reassigning-impossible-weighted-tests.md)
+
 **Ten square tests illustrate both the progress and its limit.** On a deliberately constructed 2,048-bit product, test six found both primes. On the fresh and crossed 2,048-bit comparisons, all ten tests missed. Classical estimates imply that more than $2^{1503}$ distinct full-size products split this way, yet the chance for a uniformly chosen eligible pair is below one in $2^{460}$. [Construction, comparison and proof](discoveries/prime-products-found-by-first-square-tests.md)
 
 Using the product remainder to choose which two ratios to search increased the number of small products factored at the same budget. Among all 592,048 eligible products of two 16-bit primes, the new rule found 64,181 previously missed products and lost 52,191 previously found. At 24 bits per prime it gained 25,789,915 net. It missed all three full-size comparisons. [Rule, populations and full-size width guarantee](discoveries/choosing-two-slopes-from-the-product-remainder.md)

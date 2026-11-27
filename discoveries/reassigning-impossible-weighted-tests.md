@@ -1,0 +1,29 @@
+# Spend square tests only where the factors can lie
+
+The product and the promised bit width of its two prime factors can expose weighted square tests that cannot return a factor. We keep every possible test in the previous two-weight search and use the freed tests to continue ordinary Fermat. Across every pair of distinct 16-bit primes the change produced **181,099 additional factorizations and lost none**, using the same 34 integer square roots per schedule. [Previous two-weight rule](choosing-two-slopes-from-the-product-remainder.md) · [Complete counts](../research/endpoint-pruning.json)
+
+## How the product rules out a label
+
+Let the unknown primes be $p<q$, both in $[U/2,U)$, and let $N=pq$ be the public input. Then $p$ belongs to $[L,T]$ where $L=\max(U/2,\lceil N/(U-1)\rceil)$ and $T=\lfloor\sqrt N\rfloor$. The initial ordinary starting root supplies $T$ without another square root. On an ordinary-prefix miss the last tested label $s$ satisfies $s\le p+q$. Its already-paid discriminant root $d=\lfloor\sqrt{s^2-4N}\rfloor$ gives the additional bound $p\le\lfloor(s-d)/2\rfloor$.
+
+For a weighted label $t$ and multiplier $k$, a proper square and gcd imply $t=Ap+Bq$ for some positive integers $AB=k$. The selected weight orientation need not be the one that actually splits the product. For each divisor $A$ of $k$ put $B=k/A$. Check the mod-24 compatibility $\gcd(t,24)=\gcd(A+B(N\bmod24),24)$. On the remaining range of $p$, the function $Ax+BN/x$ reaches its maximum at an endpoint. Its minimum is at the nearer endpoint if its center $\sqrt{BN/A}$ lies outside the interval. Cross multiplication determines each test, with no additional square root. A label is discarded only if **all allocations** fail. Lean proves preservation of every proper square and equality of the old and new numbers of label tests. [Endpoint bounds, successful-label inclusion and equal budgets](../PrimeFactors/EndpointPrunedWeights.lean)
+
+We fixed the rule before counting outcomes. Pay for the same three starts, sixteen ordinary labels and fifteen weighted or replacement labels. After a prefix miss append the next ordinary admissible labels, one for each rejected weighted label. The separate ordinary-only comparison spends one start and all 33 remaining roots on ordinary labels. The endpoint checks add small-divisor enumeration, residue lookups, large-integer multiplication, division and comparisons. Benchmark diagnostics replay the three schedules jointly using 51 roots after the separate 34-root search. The diagnostic time is recorded separately. The comparison measures discoveries per root and supplies no matched wall-time result. [Product-only search](../experiments/endpoint_pruned_weights.py)
+
+## All 16-bit prime pairs
+
+| Product range | Products | Previous two weights | Endpoint pruning | Ordinary only |
+|---|---:|---:|---:|---:|
+| All equal-width pairs | 4,588,935 | 2,517,562 | 2,698,661 | 2,157,622 |
+| $9U^2/16$ through $10U^2/16$ | 592,048 | 301,570 | 301,570 | 208,065 |
+| $14U^2/16$ through $15U^2/16$ | 102,713 | 95,210 | 101,618 | 101,918 |
+
+Each input was tested from its product. The independently sieved primes served to verify each gcd. Over the full population the success rate rose from 54.86% to 58.81%. The new search found 930,232 pairs missed by the ordinary-only comparison, while ordinary-only found 389,193 pairs missed by the new search. No label was pruned in the central bin. In the upper bin every one of the 7,503 prefix misses freed all 15 weighted tests, yielding 6,408 extra factorizations. Ordinary-only found 300 more there because its single start leaves two additional ordinary tests.
+
+We also compared the rounded bit-width interval with the tighter upper endpoint computed after a prefix miss. At 16 bits they made identical decisions on every old label. All the measured gains at this width came from the bit-width bounds. On smaller complete populations, conditioning on the ordinary miss did matter. It added 563 splits over the bit-width-only rule among all 32,385 pairs of 12-bit primes, and 1,260 among all 107,416 pairs of 13-bit primes. At 11 and 14 bits it removed some extra labels without finding additional factors. For example, on $7,253,249=2,053\times3,533$ the initial interval kept every weighted label. The missed ordinary prefix ruled out all fifteen, and the ordinary continuation found the factors. To reproduce, run `python3 -m experiments.endpoint_pruned_weights --bits 16 --bin all`, with `central` or `upper` for the two subsets. [Outcomes and counts of reclaimed tests](../research/endpoint-pruning.json)
+
+## What happened at 2048 bits?
+
+Two pre-existing central products pruned zero labels. The pre-existing higher-product control pruned all 15. All three remained unresolved. A separate **constructed** example has 1024-bit primes $p=1+gj$ and $q=1+g(j+24)$ for $g=2^{512}$ and $j=61g/64+66{,}773$. We searched consecutive grid indices beginning at $61g/64$ for a certifiable pair at that prescribed separation. On this product the previous search missed, all 15 weighted labels were ruled out, and the **26th ordinary admissible label** returned a factor. Ordinary-only also succeeded. The fixture stores the exact decimal factors and Lean checks their primality and product. Another Lean receipt verifies all 31 original discriminants lie strictly between adjacent squares and verifies the winning square and proper gcd at ordinary label 26. The search receives only the product and common bit width. [Checked examples and controls](../benchmarks/endpoint-pruning.json)
+
+This full-size split illustrates what a provably safe reallocation can recover when the primes are close enough for the short ordinary continuation. It supplies no success rate for unrelated 1024-bit primes and no general method to factor a 2048-bit semiprime.

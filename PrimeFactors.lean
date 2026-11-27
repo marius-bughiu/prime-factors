@@ -564,3 +564,8 @@ import PrimeFactors.WeightedCrowdingEstimates
 import PrimeFactors.CrowdingOrdinarySeparation
 import PrimeFactors.FiveWeightEstimates
 import PrimeFactors.FiveWeightMenu
+import PrimeFactors.EndpointPrunedWeights
+import PrimeFactors.HalfGaussProduct
+import PrimeFactors.ReciprocalPrefixPairs
+import PrimeFactors.EndpointOffsetProduct
+import PrimeFactors.EndpointOffsetPopulation
