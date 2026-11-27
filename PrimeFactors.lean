@@ -769,3 +769,7 @@ import PrimeFactors.OldformSamples
 import PrimeFactors.CircularCoefficientFilter
 import PrimeFactors.IndexCoefficientWindow
 import PrimeFactors.ProjectiveWordMoments
+import PrimeFactors.JacobiHistogramSamples
+import PrimeFactors.JacobiMomentRecurrence
+import PrimeFactors.SignedIndexNotches
+import PrimeFactors.RotatedCoefficientFilter

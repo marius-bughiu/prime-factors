@@ -325,7 +325,7 @@ private theorem plain_coeff {R : Type*} [CommRing R] (a : ℕ → R) (s k : ℕ)
 
 /-- A homogeneous fixed-coefficient recurrence implies the usual rational
 prefix fit. The first s+1 numerator coefficients absorb the initial terms. -/
-private theorem fit_of_recurrence {R : Type*} [CommRing R] (a b : ℕ → R) (s m : ℕ)
+theorem fit_of_recurrence {R : Type*} [CommRing R] (a b : ℕ → R) (s m : ℕ)
     (a0 : a 0=1) (b0 : b 0=1)
     (rec : ∀ i, s < i → i ≤ m → (∑ j ∈ Finset.range (s+1), b j*a (i-j))=0) :
     ∃ u : ℕ → R, u 0=1 ∧ X^(m+1) ∣ plain s b*plain m a-plain s u := by

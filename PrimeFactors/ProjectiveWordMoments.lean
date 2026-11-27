@@ -204,7 +204,9 @@ private theorem signed_moment {p : ℕ} [Fact p.Prime] (odd : p≠2) (k : ℕ) (
 noncomputable def moment (n k : ℕ) [NeZero n] : ZMod n :=
   ∑ t : ZMod n, t^k*((jacobiSym ((t.val:ℤ)^2-4) n : ℤ) : ZMod n)
 
-private theorem components {p q : ℕ} [Fact p.Prime] [Fact q.Prime] (cop : p.Coprime q)
+/-- CRT projects a complete Jacobi moment onto the negative weighted quadratic-character
+sum over each of the two prime fields. -/
+theorem components {p q : ℕ} [Fact p.Prime] [Fact q.Prime] (cop : p.Coprime q)
     (hp : p≠2) (hq : q≠2) (k : ℕ) :
     ZMod.chineseRemainder cop (moment (p*q) k) =
       (-(∑ t : ZMod p, t^k*((quadraticChar (ZMod p) (t^2-4) : ℤ) : ZMod p)),

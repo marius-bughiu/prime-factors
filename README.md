@@ -12,7 +12,7 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
-**The first change in a sum of signs identifies the smaller prime.** On 77 the change occurs at degree six and gives 7. Lean proves the general relation, but a direct scan for two 1,024-bit primes must reach a degree of at least $2^{1023}-1$. All the earlier degrees give predictable answers. [What changes and what it costs](discoveries/when-jacobi-moments-first-change.md)
+**The first change in a sum of signs identifies the smaller prime.** On 77 the change occurs at degree six and gives 7. Lean proves the general relation, but a direct scan for two 1,024-bit primes must reach a degree of at least $2^{1023}-1$. We tested two ways around the scan. Learning a fixed linear recurrence from the early even sums already requires enormous order. Keeping only the signs of a trillion random samples gives almost exactly what fair coins would give. [First change](discoveries/when-jacobi-moments-first-change.md) · [Recurrence bound](discoveries/can-a-short-recurrence-skip-the-moment-scan.md) · [Random sampling bound](discoveries/what-random-jacobi-signs-can-reveal.md)
 
 **A geometric count determines the sum of the two primes.** At 527 the count gave 48, which recovers 17 and 31. Computing it took 10,236 gcd tests, and one of the first 106 had already found 17. For a 2,048-bit product, Lean establishes how accurate an estimate of this count at a larger level would need to be. The published average misses the target on the entire balanced family. [Counting experiment and precision proof](discoveries/how-accurately-a-modular-genus-would-determine-the-factors.md)
 

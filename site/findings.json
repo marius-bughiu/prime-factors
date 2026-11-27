@@ -1,5 +1,53 @@
 [
   {
+    "id": "fixed-recurrences-for-jacobi-moments",
+    "category": "limits",
+    "title": "A fixed rule for predicting the even Jacobi sums must reach far back",
+    "impact": "For 77, every fixed linear rule for all the even sums must reach back at least four terms. For two 1,024-bit primes the bound exceeds 2¹⁰²¹ terms.",
+    "scope": "The bound applies to constant coefficients and a recurrence with leading coefficient one. Sparse long rules and direct ways to obtain a single chosen sum remain open.",
+    "detail": "Even a rule that only fits the early even sums, before they reveal a prime, needs order at least floor((p − 3) / 4), where p is the smaller prime.",
+    "sources": [
+      {"href": "discoveries/can-a-short-recurrence-skip-the-moment-scan.md", "label": "Worked example and bounds"},
+      {"href": "PrimeFactors/JacobiMomentRecurrence.lean", "label": "Lean recurrence proof"}
+    ]
+  },
+  {
+    "id": "independent-jacobi-signs",
+    "category": "limits",
+    "title": "A trillion random signs look almost exactly like fair coin flips",
+    "impact": "For two 1,024-bit primes, replacing up to 2⁴⁰ sampled Jacobi signs with independent fair coins changes the probability of any event on the signs by less than 2⁻⁹⁸¹.",
+    "scope": "The calculation keeps only each sign from independent uniform draws. Retaining the chosen residues or selecting them adaptively gives a different experiment.",
+    "detail": "At 77 the distribution is visibly uneven. It has 32 zeros, 23 plus signs and 22 minus signs. The exact distance after any number of draws is the chance of seeing at least one zero.",
+    "sources": [
+      {"href": "discoveries/what-random-jacobi-signs-can-reveal.md", "label": "What sampling reveals"},
+      {"href": "PrimeFactors/JacobiHistogramSamples.lean", "label": "Lean sign probability proof"}
+    ]
+  },
+  {
+    "id": "rotating-the-coefficient-grid",
+    "category": "formulas",
+    "title": "Rotating 42 sample points recovers the prime sum of 323",
+    "impact": "Canceling one unwanted term gave the sum 36 and the factors 17 and 19. Across all 109 small products tested, the rotation recovered six.",
+    "scope": "On every success, correcting an ordinary grid recovered the same factors with as many evaluations and fewer preparation steps. The evaluation itself used coefficients through the target.",
+    "detail": "At 323 the rotation took 637 trial divisions to select. An ordinary grid with one subtraction took 26. Fermat found the factors in one square test.",
+    "sources": [
+      {"href": "discoveries/when-rotating-the-sample-circle-helps.md", "label": "All 109 products and setup costs"},
+      {"href": "PrimeFactors/RotatedCoefficientFilter.lean", "label": "Lean cancellation rule and factors"}
+    ]
+  },
+  {
+    "id": "signed-neighbor-cancellation",
+    "category": "limits",
+    "title": "Canceling three neighbors exactly still misses the coefficient of 527",
+    "impact": "A signed reading canceled 528, 529 and 530. The rest of the series moved the answer at least 79 units below the target. Direct rounding to the known sum class has a tolerance of 12/527, about 0.023.",
+    "scope": "The numerical enclosures cover three particular readings at 527. For one chosen neighbor, Lean proves the smallest possible error amplification given the frequency band and the log-distance to that neighbor.",
+    "detail": "Canceling just 528 left an error between 60 and 93. The computation includes the first 5,000 terms and a bound on every later contribution.",
+    "sources": [
+      {"href": "discoveries/cancelling-neighbors-of-a-series-coefficient.md", "label": "The readings and their errors"},
+      {"href": "PrimeFactors/SignedIndexNotches.lean", "label": "Lean precision bound"}
+    ]
+  },
+  {
     "id": "first-exceptional-jacobi-moment",
     "category": "formulas",
     "title": "The first degree where a Jacobi sum changes identifies the smaller prime",
