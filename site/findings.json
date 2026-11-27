@@ -905,11 +905,11 @@
   },
   {
     "id": "cubic-trace-holdout-31",
-    "title": "Eight checks for a useful cubic relation",
+    "title": "Eight character filters identify one useful cubic relation",
     "category": "cases",
     "impact": "One surviving relation split 1,915,966,849 into 36,151 and 52,999.",
     "scope": "Choosing the polynomial to satisfy the first condition yielded 130 rows on each 2,048-bit control. Every row failed the second condition.",
-    "detail": "Eight small checks left one square relation on 1,915,966,849. It gave 36,151 and 52,999. Choosing a polynomial to pass the first check on purpose also produced 130 smooth ordinary values on each full-size input. None passed the second check.",
+    "detail": "Of 1,583 candidate rows, 63 passed both smoothness tests. Eight character filters took 504 evaluations and left one combination, which gave 36,151 × 52,999. On each 2,048-bit control, all 130 rows from the revised polynomial choice failed the second condition.",
     "sources": [
       {
         "href": "#cubic-trace-holdout-31",
@@ -918,6 +918,10 @@
       {
         "href": "discoveries/choosing-a-cubic-and-reading-its-square.md",
         "label": "Search limits and tests on the same relations"
+      },
+      {
+        "href": "discoveries/cubic-square-relations.md",
+        "label": "Measured work for the eight filters"
       }
     ]
   },
@@ -927,7 +931,7 @@
     "category": "cases",
     "impact": "Two remainders multiplied to a square and revealed 173 × 251 on 43,423.",
     "scope": "A match is guaranteed on a constructed 2,048-bit example. Reaching it in the public scan takes more than 2¹⁰¹⁰ tests.",
-    "detail": "Two square tests gave 43,423 = 173 × 251. On a new 2,048-bit product we proved a match exists and checked that the public scan would need more than 2¹⁰¹⁰ tests to reach it.",
+    "detail": "Testing 1,024 pairs of remainders found one square product and gave 43,423 = 173 × 251. This small example was selected by screening. Ordinary Fermat search found the same factors in four midpoint tests. On a constructed 2,048-bit product, a match provably exists but the public scan would need more than 2¹⁰¹⁰ tests to reach it.",
     "sources": [
       {
         "href": "#mixed-negative-43423",
@@ -2237,9 +2241,9 @@
     "id": "pascal-readout",
     "title": "A binomial remainder that gives the larger prime",
     "category": "formulas",
-    "impact": "An exact remainder from a binomial coefficient determined by the product gives the larger prime.",
-    "scope": "Direct evaluation already produced a 761,262-bit intermediate on a 31-bit product. Efficient full-size evaluation remains open.",
-    "detail": "A binomial coefficient computed from the product gives the larger prime exactly. On a 31-bit product the direct calculation produced a 761,262-bit intermediate. Computing the remainder efficiently at 2,048 bits is the open step.",
+    "impact": "For odd primes p < q < 4p, a binomial remainder determined by their product gives the larger prime exactly.",
+    "scope": "This covers any two distinct 1,024-bit primes. Direct evaluation already needed a 761,262-bit intermediate on a 31-bit product. Efficient full-size evaluation remains open.",
+    "detail": "For 143 = 11 × 13, the chosen coefficient leaves remainder 12, revealing the larger prime 13. The ratio condition q < 4p is essential to the stated guarantee.",
     "sources": [
       {
         "href": "discoveries/pascal-readout.md",
