@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+On both 2,048-bit examples the two ordinary tests modulo 23 and 29 discarded more candidates, in total, than every higher power of the seven odd primes through 19. For any product, two fresh prime squares or three fresh ordinary primes have a similar guarantee over a complete joint period. [Actual percentages and a counterexample for two ordinary primes](how-much-higher-prime-powers-can-save.md#which-choice-wins-on-the-actual-2048-bit-examples)
+
 After checking the squares of any selection of odd primes coprime to the product, additional digits at those primes give less than another fourfold reduction over a full period. At 94,579 a selected example reaches 3.6466 times. The same seven prime-square checks on the two 2,048-bit comparisons also admit much shorter repeating lists and use fewer scalar lookups. [General limit and example](how-much-higher-prime-powers-can-save.md) · [Full-width work and storage](how-short-the-prime-square-pattern-can-be.md)
 
 Checking seven prime squares further shrank the list of possible sums by factors of 6.42 and 13.87 on the two published 2,048-bit products. Even unlimited precision at those primes leaves more than $2^{998}$ wrong sums on both. On a smaller scale, adding the single test modulo 9 let primes through 23 isolate the true sum on all 903 pairs of distinct nine-bit primes. [Examples, census and full-width bounds](when-a-prime-square-rules-out-a-sum.md)

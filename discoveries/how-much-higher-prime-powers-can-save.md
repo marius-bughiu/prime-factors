@@ -4,6 +4,23 @@ Choose **any finite set of odd primes** that do not divide the product $N$. Chec
 
 This gives a reason to distinguish a *new prime* from *another digit at a familiar prime*. The theorem caps what the second choice can accomplish once the first two digits are known. It measures the fraction of positions across a complete repeating pattern. A particular short interval can have a different fraction, and a new prime can rule out a sum that survives at every power of the earlier primes. [Finite-width examples](when-a-prime-square-rules-out-a-sum.md)
 
+## Which choice wins on the actual 2,048-bit examples?
+
+Start with the sums that have already passed the modulo-four test and the seven prime squares through $19^2$. One choice is to check ordinary remainders modulo **23 and 29**. Another is to keep *every positive power* of the seven odd primes already used. The modulo-four condition stays the same. On both published products, the two new primes leave fewer candidate sums across the actual factor-width interval. [Two-prime comparison](../PrimeFactors/PublicFreshPrimeComparison.lean) · [Interval counts at all old precisions](../PrimeFactors/PublicStableWheelCounts.lean)
+
+| Product | Fraction left with 23 and 29 | Fraction left with every higher old power | Additional sums removed by the new primes, per million starting sums |
+| --- | ---: | ---: | ---: |
+| Fresh | 24.7376–24.7377% | 31.24–31.26% | At least 65,023 |
+| Crossed | 23.0884–23.0885% | 28.85–28.86% | At least 57,615 |
+
+The new tables need 52 membership bits before padding. The comparison counts how many sums each choice leaves. The identities of those sums can differ. To count the old-prime survivors at every precision, the proof brackets them using the sixteenth power of each prime. Every accepted sum class with a nonzero discriminant at this depth passes at *every* later depth. For a product coprime to an odd prime, at most two classes at that prime can have zero discriminant. CRT and bounds for the final incomplete period give the percentages in the table. [Stable classes](../PrimeFactors/StableDiscriminantClasses.lean) · [Interval counting proof](../PrimeFactors/FiniteWheelPrecision.lean)
+
+## What can we guarantee for other products?
+
+Over a complete joint period, either **two fresh prime squares** or **three fresh ordinary primes** remove more candidate sums than every choice of higher finite powers at the old odd primes. All the test primes must be distinct and coprime to $N$. Each new prime-square test passes less than half of the positions that reach it. Three distinct odd primes pass at most $(2/3)(3/5)(4/7)=8/35$, and the example 94,579 attains that bound at 3, 5 and 7. Both alternatives leave less than one quarter. [General comparisons and equality case](../PrimeFactors/NewPrimesOrMoreDigits.lean)
+
+Two **ordinary** primes have no such guarantee. On 94,579, suppose we already checked the squares of 3, 5 and 13. Adding 7 and 11 reduces the surviving fraction by $77/24$, about 3.2083 times. Raising the three old primes to their eighth powers reduces it by about 3.2445 times. This example also shows why the two successes on the 2,048-bit products needed an individual count. [Exact counterexample](../PrimeFactors/NewPrimesOrMoreDigits.lean)
+
 ## Where four comes from
 
 Let $H_e$ be the number of sum residues that pass modulo $p^e$. At a nonsquare product residue every allowed first digit lifts at every depth, so the passing fraction $H_e/p^e$ is constant. At a square product residue, some lifts are lost at **every** new digit. Yet $pH_e-H_{e+1}$ is just $2(p-1)$ for odd $e$ and $p-1$ for even $e$. Those are counts in the *whole* next period of $p^{e+1}$ positions, so the losses become small fractions very quickly. The exact local count uses the modular hyperbola formulas of Bower, Evans, Luo and Miller. [Original formulas](https://arxiv.org/abs/1212.2930) · [Exact losses at successive depths](../PrimeFactors/PrimePowerEssentialDigits.lean)

@@ -1,5 +1,30 @@
 [
   {
+    "id": "two-new-primes-beat-all-old-powers-on-both-width-windows",
+    "category": "gains",
+    "title": "On both 2,048-bit examples, two new primes eliminate more sums than every higher old power",
+    "impact": "After seven prime squares, adding 23 and 29 removed at least 65,023 more sums per million on the fresh product and 57,615 more on the crossed product.",
+    "scope": "The actual width intervals of two published comparison products. Both alternatives start with the same candidates. The new tables use 52 bits before padding.",
+    "detail": "Adding the two primes kept about 24.74% and 23.09% of the candidates. Requiring every higher power of the original seven odd primes kept about 31.25% and 28.85%.",
+    "sources": [
+      {"href": "discoveries/how-much-higher-prime-powers-can-save.md#which-choice-wins-on-the-actual-2048-bit-examples", "label": "What the two choices cost and eliminate"},
+      {"href": "PrimeFactors/PublicFreshPrimeComparison.lean", "label": "Finite-width comparison"},
+      {"href": "PrimeFactors/PublicStableWheelCounts.lean", "label": "Bounds at unlimited odd-prime precision"}
+    ]
+  },
+  {
+    "id": "when-new-odd-primes-beat-deeper-precision",
+    "category": "formulas",
+    "title": "Two new prime squares or three new ordinary primes beat higher powers of the old primes",
+    "impact": "Over complete periods, either choice leaves fewer candidates than taking an arbitrary finite set of existing odd prime-square tests to any higher precisions.",
+    "scope": "A guarantee about fractions of residue classes for distinct primes coprime to the product. The cost of constructing or visiting the surviving sums is a separate question.",
+    "detail": "Three new ordinary primes keep at most 8/35 of the starting classes. Two ordinary primes can fall short, as the explicit comparison on 94,579 demonstrates.",
+    "sources": [
+      {"href": "discoveries/how-much-higher-prime-powers-can-save.md#what-can-we-guarantee-for-other-products", "label": "Guarantee and sharp example"},
+      {"href": "PrimeFactors/NewPrimesOrMoreDigits.lean", "label": "General proof and counterexample"}
+    ]
+  },
+  {
     "id": "raising-all-the-odd-prime-powers-after-the-second-digit",
     "category": "limits",
     "title": "After prime squares, more digits at the same primes buy less than another 4×",

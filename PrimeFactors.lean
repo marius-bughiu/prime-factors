@@ -887,3 +887,8 @@ import PrimeFactors.PrimePowerWheelDensity
 import PrimeFactors.DeepDigitDensityExample
 import PrimeFactors.PolynomialSumFilters
 import PrimeFactors.DyadicSumPeriods
+import PrimeFactors.FiniteWheelPrecision
+import PrimeFactors.StableDiscriminantClasses
+import PrimeFactors.PublicStableWheelCounts
+import PrimeFactors.NewPrimesOrMoreDigits
+import PrimeFactors.PublicFreshPrimeComparison
