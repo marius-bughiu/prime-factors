@@ -1,5 +1,29 @@
 [
   {
+    "id": "ordering-seven-tests-on-both-full-width-intervals",
+    "category": "gains",
+    "title": "Changing test order saves about a quarter of the small lookups at 2,048 bits",
+    "impact": "Across the full candidate interval, seven primes in order of their passing fractions save 24.5362–24.5363% of the lookups on the fresh product and 24.5833–24.5834% on the crossed product.",
+    "scope": "Two previously published synthetic products. The proof counts an exhaustive scan from public widths and residue tables. Both reordered scans still exceed 10³⁰⁶ lookups.",
+    "detail": "The final square tests are identical in both orders. Period counts and a rigorous bound for the last incomplete period give the totals without scanning the full interval.",
+    "sources": [
+      {"href": "discoveries/what-ordering-saves-on-the-full-width-interval.md", "label": "Costs for both fixtures"},
+      {"href": "PrimeFactors/PublicWheelLookupCosts.lean", "label": "Finite-interval percentage proof"}
+    ]
+  },
+  {
+    "id": "seven-prime-complete-period-savings-range",
+    "category": "formulas",
+    "title": "Ascending prime order already minimizes lookups in 2 of 128 residue patterns",
+    "impact": "For the seven odd primes through 19, sorting saves work in 126 patterns. The smallest positive saving is 180 lookups per full period and the largest is 2,992,699.",
+    "scope": "Uniform phases in a full period, equal cost per lookup and a product coprime to all seven primes. Each pattern contains exactly 12,960 invertible residues.",
+    "detail": "Both ties occur when the product is a nonsquare at every prime through 17. The result inventories residue classes and makes no sampling assumption about large prime factors.",
+    "sources": [
+      {"href": "discoveries/what-ordering-saves-on-the-full-width-interval.md#counting-the-work-without-performing-the-scan", "label": "Meaning of the 128 patterns"},
+      {"href": "PrimeFactors/SevenPrimeFilterSavings.lean", "label": "Exact census and multiplicities"}
+    ]
+  },
+  {
     "id": "reorder-public-remainders-39-bit",
     "category": "gains",
     "title": "Reordering the same 13 tests saved 3,495 lookups on the 39-bit product",

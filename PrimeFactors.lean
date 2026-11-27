@@ -867,3 +867,8 @@ import PrimeFactors.FiniteFilterWork
 import PrimeFactors.StratifiedPointQueryLower
 import PrimeFactors.IndependentFilterOrdering
 import PrimeFactors.PublicSumSieveOrdering
+import PrimeFactors.PublicWheelLookupCosts
+import PrimeFactors.SevenPrimeFilterSavings
+import PrimeFactors.FilterSwapPhaseMoment
+import PrimeFactors.OptionalFilterCost
+import PrimeFactors.PublicSumFinalTestCost

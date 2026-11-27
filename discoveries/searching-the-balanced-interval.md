@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+On both published 2,048-bit products, changing the order of seven small-prime tests saves about one quarter of the remainder lookups in an exhaustive scan. Both scans still require over $10^{306}$ lookups. Across all invertible product residues, the savings range from zero to just under 25% over a complete period. [Full-size counts, conditions and square-test costs](what-ordering-saves-on-the-full-width-interval.md)
+
 Reordering the same thirteen remainder tests saved 3,495 lookups in the 39-bit example. Both orders recovered the same factors from the product and widths. The order comes from the fraction of residues allowed at each prime. [Certified work comparison and partial-period counterexample](how-far-public-remainders-narrow-the-sum.md#which-remainder-should-we-check-first)
 
 Can a few cheap counts tell us which interval to keep? For a fixed product remainder, three single-prime counts and three pair counts decide the exact number of joint hits at 405 of 429 starts. Two small semiprimes with identical counts give opposite answers in their actual first four positions. [Worked examples and period census](when-pair-counts-determine-a-common-sum.md)
