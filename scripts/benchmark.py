@@ -86,6 +86,7 @@ from experiments.signed_norm_arcs import domain_size as signed_arc_domain, searc
 from experiments.tangent_lattice_receipt import benchmark_case as tangent_lattice_case
 from experiments.rectangular_receipt import benchmark as rectangular_case
 from experiments.power_denominator_census import run_fixture as power_ratio_search
+from experiments.scaled_power_menu import run_fixture as scaled_power_search
 from experiments.local_gap_polynomial import run_fixture as local_gap_search, check_fixture as check_local_gap
 from experiments.weighted_global_trace import run_fixture as weighted_trace_search, check_fixture as check_weighted_trace
 from experiments.blum_signed_powers import compare_public as blum_signed_search
@@ -1535,6 +1536,13 @@ end PrimeFactors.Generated
         pair = work['pair']
         result = certify_split(case, proof, pair[0] if pair else None, elapsed,
                                'power_ratio_remainder', work)
+    elif method == 'scaled-power-menu':
+        work = scaled_power_search(case)
+        elapsed = time.perf_counter() - start
+        agree(dict(id=case['id'], **case['checks']), work, case['checks'])
+        pair = work['cf']['pair']
+        result = certify_split(case, proof, pair[0] if pair else None, elapsed,
+                               'scaled_power_menu', work)
     elif method == 'local-gap-polynomial':
         started = time.perf_counter()
         work = local_gap_search(case)
@@ -2031,6 +2039,7 @@ def main():
                              ('tangent-lattice-arcs.json', 'tangent-lattice-arcs'),
                              ('rectangular-root-windows.json', 'rectangular-root-windows'),
                              ('power-ratio-remainder.json', 'power-ratio-remainder'),
+                             ('scaled-power-menu.json', 'scaled-power-menu'),
                              ('local-gap-polynomial.json', 'local-gap-polynomial'),
                              ('weighted-global-trace.json', 'weighted-global-trace'),
                              ('blum-signed-powers.json', 'blum-signed-powers'),

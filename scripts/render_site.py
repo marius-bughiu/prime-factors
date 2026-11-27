@@ -1109,6 +1109,18 @@ def case_row(result):
         if w['witness']:
             hit = w['witness']
             count += (f" · convergent {hit['index']} was {escape(hit['numerator'])}/{escape(hit['denominator'])}")
+    elif result['method'] == 'scaled-power-menu':
+        w = result['scaled_power_menu']
+        menu, cf, modular, fermat = w['menu'], w['cf'], w['modular'], w['fermat']
+        fermat_outcome = 'split' if fermat['pair'] else 'no factor'
+        count = (f"{menu['eligible']:,} distinct prefix LCMs · {cf['remainder_passes']:,} passed the remainder test"
+                 f" · {cf['convergents']:,} continued-fraction steps · {cf['early_stops']:,} early stops"
+                 f" · {cf['width_survivors']:,} width-compatible candidates · {cf['square_tests']:,} discriminant square roots"
+                 f" · base-two comparison used {menu['power_updates']:,} modular power updates and"
+                 f" {menu['eligible']:,} gcds ({modular['proper_gcd']:,} proper)"
+                 f" · Fermat used {fermat['steps']:,} midpoint tests ({fermat_outcome})")
+        if cf['first']:
+            count += f" · first successful prefix through {cf['first']['prefix_index']:,}"
     elif result['method'] == 'local-gap-polynomial':
         w = result['local_gap_polynomial']
         count = (f"Multipliers through {w['multiplier_limit']:,} · up to {w['per_row']:,} positions per row"

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Choosing all distinct least common multiples of successive integers large enough for the remainder test gave 106 powers on each 2,048-bit input. Every one passed the first check. Stopping as soon as a candidate fell below the permitted factor-sum range cut the two scans to 15,754 and 15,794 fractions, with no factor on either. The same choices found one of 64 independent small and mid-size inputs. Both comparison methods also found that pair. [Search costs and successes](testing-lcm-prefixes-at-the-product-width.md)
+
 For each proposed power, one division can rule it out and the known prime width leaves at most one fraction worth testing for a square. This cut 16,287 square roots to 797 across 12,994 small products and preserved all 130 successful factorizations. A fixed power found $1,291\times2,003$ after one square root. The same choice failed the initial division test at full size. [Derivation, input selection and census](when-one-power-needs-at-most-one-square-test.md)
 
 The same idea extends to an arbitrary set of at most $2^{20}$ successful powered residues. Outside a set containing fewer than one in $2^{55}$ balanced 2,048-bit prime pairs, a power at most the product that hits this set at rate $2^{-410}$ already yields the factor sum by rational approximation. Finding such a power from the product remains open. [General estimate and its assumptions](small-images-of-a-public-power.md)
