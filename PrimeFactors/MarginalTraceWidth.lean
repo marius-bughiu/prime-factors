@@ -17,7 +17,7 @@ noncomputable def rise (u j h : ℝ) : ℝ :=
 
 noncomputable def endpoint (u j h : ℝ) := 1+rise u j h/u
 
-private theorem linear_rise {u j h : ℝ} (big : 100000≤u) (one : 1≤j) (_lo : 0≤h)
+theorem linear_rise {u j h : ℝ} (big : 100000≤u) (one : 1≤j) (_lo : 0≤h)
     (hi : h≤900) : √h/j ≤ rise u j h ∧ rise u j h ≤ √h/j+1/100 := by
   let x := √h/j
   let s := x/(2*u)
@@ -131,7 +131,7 @@ private theorem height_gap {m a b c : ℝ} (H : Heights m a b c) :
           (by linarith : (39/2:ℝ)^2 ≤ a) (by linarith only [delta] : b≤a+408) (by norm_num)
     exact ⟨b,by norm_num⟩
 
-private theorem rise_gaps {u j m a b c : ℝ} (big : 100000≤u) (j1 : 1≤j)
+theorem rise_gaps {u j m a b c : ℝ} (big : 100000≤u) (j1 : 1≤j)
     (j2 : j≤157/100) (H : Heights m a b c) :
     0≤rise u 1 a ∧ 0≤rise u 1 b ∧ 44/10≤rise u j c ∧
     rise u 1 b-rise u 1 a≤861/100 ∧ (m≤12 → rise u 1 b-rise u 1 a≤641/100) := by
@@ -252,7 +252,7 @@ theorem six_root_bounds : 1≤sixRoot ∧ sixRoot≤157/100 ∧
   refine ⟨by linarith only [lo,jsq],by linarith only [hi,jsq],?_⟩
   rw [show sixRoot^4=(sixRoot^2)^2 by ring,jsq,sq_sqrt (by norm_num)]
 
-private theorem endpoint_small {u j h : ℝ} (big : 100000≤u) (j1 : 1≤j) (lo : 0≤h)
+theorem endpoint_small {u j h : ℝ} (big : 100000≤u) (j1 : 1≤j) (lo : 0≤h)
     (hi : h≤900) : 1≤endpoint u j h ∧ endpoint u j h≤1001/1000 := by
   have up : 0<u := by linarith
   have jp : 0<j := by linarith

@@ -1,7 +1,7 @@
 import unittest
 from math import gcd, isqrt
 
-from experiments.interior_prime_family import search_blocks
+from experiments.interior_prime_family import search, search_blocks, search_units
 
 
 class PrimeGapBlockTests(unittest.TestCase):
@@ -24,3 +24,17 @@ class PrimeGapBlockTests(unittest.TestCase):
     def test_nonunit(self):
         with self.assertRaises(ValueError):
             search_blocks(21, 2)
+
+    def test_equal_budget_preserves_every_split(self):
+        for n in range(5, 1000, 2):
+            if gcd(n, 6) != 1:
+                continue
+            for budget in (0, 1, 2, 5):
+                old = search(n, budget)
+                new = search_units(n, budget)
+                self.assertLessEqual(new['tests'], budget)
+                if old['factor'] is not None:
+                    self.assertEqual(old['factor'],new['factor'])
+                    self.assertLessEqual(new['tests'],old['tests'])
+                if new['factor'] is None:
+                    self.assertEqual(new['tests'], budget)

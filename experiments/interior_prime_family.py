@@ -1,5 +1,6 @@
 """Product-only multiplier-six search and a separate reproducible 2048-bit example."""
 import argparse
+from itertools import islice
 from math import gcd, isqrt
 import json
 
@@ -19,10 +20,22 @@ def search_blocks(n, blocks):
     if n <= 1 or gcd(n, 6) != 1 or blocks < 0:
         raise ValueError('expected a product coprime to six and a nonnegative block count')
     first = isqrt(24*n-1)+1
+    return _scan(n, first, _unit_labels(first, blocks))
+
+
+def _unit_labels(first, blocks):
     base = first - first%6
-    labels = (s for low in range(base, base+6*blocks, 6)
-              for s in (low+1, low+5) if s >= first)
-    return _scan(n, first, labels)
+    return (s for low in range(base, base+6*blocks, 6)
+            for s in (low+1, low+5) if s >= first)
+
+
+def search_units(n, budget):
+    """Give the unit-residue search an exact budget of square tests."""
+    if n <= 1 or gcd(n, 6) != 1 or budget < 0:
+        raise ValueError('expected a product coprime to six and a nonnegative square-test budget')
+    first = isqrt(24*n-1)+1
+    labels = _unit_labels(first, (budget+1)//2+1)
+    return _scan(n, first, islice(labels, budget))
 
 
 def _scan(n, first, labels):
@@ -65,9 +78,12 @@ if __name__ == '__main__':
     bound = parser.add_mutually_exclusive_group()
     bound.add_argument('--budget', type=int, default=25001)
     bound.add_argument('--blocks', type=int, help='test two possible labels per block of six')
+    bound.add_argument('--unit-budget', type=int, help='exact square-test budget on labels coprime to six')
     args = parser.parse_args()
     if args.n is None:
         result = control()
+    elif args.unit_budget is not None:
+        result = search_units(args.n, args.unit_budget)
     elif args.blocks is None:
         result = search(args.n, args.budget)
     else:

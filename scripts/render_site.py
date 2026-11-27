@@ -866,6 +866,19 @@ def case_row(result):
         labels = 'residues 1 and 5 modulo 6' if 'blocks' in w else 'odd labels'
         count = (f'Multiplier six · {w["tests"]:,} square tests, budget {w["budget"]:,}'
                  f' · {labels} · {w["squares"]:,} square discriminants')
+    elif result['method'] == 'two-interior-batches':
+        w = result['two_interior_batches']
+        names = ('ordinary', 'multiplier 6', 'multipliers 6 and 35')
+        outcomes = [f'{name} {"split" if found else "unresolved"}'
+                    for name,found in zip(names,w['found'])]
+        count = f'{w["roots_per_schedule"]} square roots per search · ' + ' · '.join(outcomes)
+    elif result['method'] == 'equal-six-budget':
+        w = result['equal_six_budget']
+        odd = 'split' if w['odd_found'] else 'unresolved'
+        unit = 'split' if w['unit_found'] else 'unresolved'
+        count = (f'{w["budget"]:,} square tests available per search'
+                 f' · odd labels {odd} after {w["odd_tests"]:,}'
+                 f' · residues 1 and 5 modulo 6 {unit} after {w["unit_tests"]:,}')
     elif result['method'] == 'primitive-multiplier':
         schedules = result['primitive_multiplier']['schedules']
         raw, wheel = schedules['raw'], schedules['wheel-prefix']

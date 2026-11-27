@@ -1,0 +1,27 @@
+{
+  "prime_bits": 16,
+  "products": 592048,
+  "common_prefix_splits": 145803,
+  "additional_splits": {
+    "ordinary": 62262,
+    "six": 89779,
+    "six_and_thirtyfive": 142452
+  },
+  "total_splits": {
+    "ordinary": 208065,
+    "six": 235582,
+    "six_and_thirtyfive": 288255
+  },
+  "unresolved": {
+    "ordinary": 383983,
+    "six": 356466,
+    "six_and_thirtyfive": 303793
+  },
+  "extra_outcomes": {
+    "0/0/0": 218572,
+    "0/0/1": 75632,
+    "0/1/0": 22959,
+    "0/1/1": 66820,
+    "1/0/0": 62262
+  }
+}

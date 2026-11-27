@@ -405,6 +405,11 @@ import PrimeFactors.SwitchedBatchComparison
 import PrimeFactors.PrimitiveMultiplierTraces
 import PrimeFactors.PrimeGapMultiplier
 import PrimeFactors.SixTraceResidues
+import PrimeFactors.SixTraceBudget
+import PrimeFactors.SixTraceNewProducts
+import PrimeFactors.DisplacedPrimePartners
+import PrimeFactors.DisplacedTraceSchedules
+import PrimeFactors.TwoInteriorTraceBatches
 import PrimeFactors.DiscriminantRectangles
 import PrimeFactors.DiscriminantRectangle211
 import PrimeFactors.ArbitraryDivisorWindow

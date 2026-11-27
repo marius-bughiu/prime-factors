@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+At a fixed square-test budget, eliminating labels that cannot give squares yields a strict increase in the set of actual 2,048-bit products recovered. A second constructed product confirms the prediction at 2,097,152 tests. The full-size comparison products remained unresolved. [Which successes the filter adds](factoring-more-products-at-the-same-budget.md)
+
 On the two full-size comparison inputs, removing duplicate checks saved 2,738 of 16,384 square tests in a fixed search. A separate result compares where to search after just sixteen tests. A prime-gap estimate also supplies families with a guaranteed split in at most 16,598 tests. [Removing repeated square tests](removing-scaled-multiplier-traces.md) · [Comparing the next sixteen tests](switching-after-sixteen-tests.md) · [Prime partners near three halves](prime-partners-near-three-halves.md)
 
 Given only the product of two independently chosen 1,024-bit primes, we still do not know how to recover its factors in an hour on a PC. Some constructed examples have extra relationships that reveal the primes. The independently generated 2,048-bit example remains unresolved from the product alone. [How the example was generated and checked](certified-fresh-control.md)
