@@ -20,6 +20,8 @@ $$x^2-Dy^2=mN,\qquad x^2+|D|y^2<3N,\qquad 1\le |m|\le2.$$
 
 When $|D|\le3$, the stronger conclusion $|m|=1$ holds. If $(x_1,y_1)$ and $(x_2,y_2)$ represent the two roots, $\gcd(|x_1 y_2-x_2 y_1|,N)$ is a proper factor. Applying lattice reduction directly takes a root as input. Starting with $N$ alone still requires a search. [Lattice bound and factor recovery](../PrimeFactors/SmallDiscriminantLattice.lean) · [Combined theorem and multiplier bound](../PrimeFactors/ThreeTargetRepresentations.lean)
 
+A second normalization chooses exactly one multiplier from the product for each target. This gives three actual equations in total. For positive targets the coordinate interval follows by choosing the shortest representative among equivalent solutions of the same equation. A complete block search on the two 2,048-bit comparisons still requires more than $2^{685}$ blocks on each. [Three equations and their intervals](../PrimeFactors/ThreeNormCurves.lean) · [Search costs](scanning-signed-norm-arcs.md)
+
 D. H. and Emma Lehmer published the three-equation factoring principle in 1974. They chose equations using $N$ modulo 24 and gave a complete search over intervals of length proportional to $\sqrt N$. Seven of the eight eligible remainders give the same three values of $D$ as our signed rule. For remainder 1 their choices are $-2,-3,6$ and ours are $-1,2,-2$. The formalization here uses the public signs and a lattice bound. It requires no hypothesis about zeta zeros. [Lehmer and Lehmer, pp. 625–627](https://doi.org/10.2307/2005939)
 
 ## Could the targets be smaller?

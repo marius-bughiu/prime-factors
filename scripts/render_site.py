@@ -1091,6 +1091,15 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'signed-norm-arcs':
+        w = result['signed_norm_arcs']
+        count = (f"{w['blocks']:,} of {compact_count(int(w['total_blocks']))} blocks"
+                 f" · {w['line_tests']:,} lines tested · {w['points']:,} solutions found")
+        if len(w['witnesses']) == 2:
+            _, _, x, y = w['witnesses'][0]
+            _, _, z, v = w['witnesses'][1]
+            evidence += (f'<p>The points ({x:,}, {y:,}) and ({z:,}, {v:,}) gave a prime using '
+                         f'the gcd of |{x:,} × {v:,} − {z:,} × {y:,}| and the input.</p>')
     elif result['method'] == 'three-root-targets':
         w = result['three_root_targets']
         targets = ', '.join(str(d) for d in w['targets'])

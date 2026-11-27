@@ -655,3 +655,7 @@ import PrimeFactors.TargetNormLocalGlobal
 import PrimeFactors.SmallConvergentTargetPopulation
 import PrimeFactors.SmallDiscriminantLattice
 import PrimeFactors.ThreeTargetRepresentations
+import PrimeFactors.HyperbolicNormArc
+import PrimeFactors.NegativeTargetObstruction
+import PrimeFactors.NormUnitInterval
+import PrimeFactors.ThreeNormCurves

@@ -82,6 +82,7 @@ from scripts.complementary_key_benchmark import case_result as complementary_key
 from scripts.signed_discriminant_benchmark import signed_discriminant_case
 from experiments.projected_divisor_wheel import run as projected_divisor_search
 from experiments.target_norm_multipliers import scan as target_norm_search
+from experiments.signed_norm_arcs import domain_size as signed_arc_domain, search as signed_arc_search
 from experiments.three_root_targets import attempt as three_root_search
 from scripts.reciprocal_anchor_benchmark import run_case as reciprocal_anchor_case
 from experiments.neighbor_factorial import benchmark_case as neighbor_factorial_case
@@ -1512,6 +1513,19 @@ end PrimeFactors.Generated
         result = twelve_residue_case(case, proof, agree, certify_split)
     elif method == 'complementary-keys':
         result = complementary_key_case(case, proof, agree, certify_split)
+    elif method == 'signed-norm-arcs':
+        n = int(case['n'])
+        total_positions, total_blocks = signed_arc_domain(n, case['domain'])
+        scan = signed_arc_search(n, case['scanner'], domain=case['domain'], max_blocks=case['max_blocks'])
+        elapsed = time.perf_counter() - start
+        work = dict(domain=case['domain'], scanner=case['scanner'], targets=scan['targets'],
+                    witnesses=[list(point) for point in scan['witnesses']],
+                    points=len(scan['points']), complete=scan['complete'], max_blocks=case['max_blocks'],
+                    blocks=scan['work']['blocks'], line_tests=scan['work']['line_tests'],
+                    chart_positions=str(scan['work']['coordinate_positions']),
+                    total_positions=str(total_positions), total_blocks=str(total_blocks))
+        agree(dict(id=case['id'], **case['checks']), work, case['checks'])
+        result = certify_split(case, proof, scan['factor'], elapsed, 'signed_norm_arcs', work)
     elif method == 'three-root-targets':
         work = three_root_search(int(case['n']), case['rule'], budget=case['budget'],
                                  limit=case['multiplier_limit'], depth=case['steps_per_multiplier'])
@@ -1971,6 +1985,7 @@ def main():
                              ('signed-discriminant-menu.json', 'signed-discriminant-menu'),
                              ('target-norm-multipliers.json', 'target-norm-multiplier'),
                              ('three-root-targets.json', 'three-root-targets'),
+                             ('signed-norm-arcs.json', 'signed-norm-arcs'),
                              ('projected-divisor-wheel.json', 'projected-divisor-wheel'),
                              ('reciprocal-anchors.json', 'reciprocal-anchor'),
                              ('neighbor-factorial.json', 'neighbor-factorial'),

@@ -1,0 +1,1106 @@
+{
+  "seed": "signed-norm-arc-holdout-v1",
+  "repetitions": 2,
+  "machine": "arm64",
+  "python": "3.9.6",
+  "timing": "Complete same-menu enumeration through the strict height bound, includes setup, all representations and gcd checks. Cold local residue tables. Large controls have separate caps.",
+  "checks": {
+    "signed_equations": 4064,
+    "nonnegative_solutions": 1129,
+    "wide_blocks": 4
+  },
+  "rows": [
+    {
+      "bits": 16,
+      "sample": 0,
+      "n": "2639616457",
+      "pair": [
+        "45631",
+        "57847"
+      ],
+      "targets": [
+        -1,
+        2,
+        -2
+      ],
+      "representations": 6,
+      "methods": {
+        "arcs": {
+          "work": {
+            "blocks": 25683,
+            "ellipse_blocks": 17333,
+            "hyperbola_blocks": 8350,
+            "line_tests": 10400,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 474858,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 10317,
+            "endpoint_isqrts": 51366,
+            "axis_isqrts": 10,
+            "bound_isqrts": 24,
+            "euclidean_steps": 59461,
+            "capped": 0,
+            "impossible_sign": 4
+          },
+          "witnesses": [
+            [
+              2,
+              1,
+              51383,
+              546
+            ],
+            [
+              2,
+              1,
+              54947,
+              13776
+            ]
+          ],
+          "first_work": {
+            "blocks": 10160,
+            "ellipse_blocks": 9176,
+            "hyperbola_blocks": 984,
+            "line_tests": 4133,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 189188,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 4086,
+            "endpoint_isqrts": 20320,
+            "axis_isqrts": 5,
+            "bound_isqrts": 10,
+            "euclidean_steps": 24142,
+            "capped": 0,
+            "impossible_sign": 2
+          },
+          "median_first_cpu_ns": 114108500,
+          "median_cpu_ns": 237428000
+        },
+        "direct": {
+          "work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 474858,
+            "coordinate_isqrts": 387152,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 10,
+            "bound_isqrts": 12,
+            "euclidean_steps": 0,
+            "capped": 0,
+            "impossible_sign": 4
+          },
+          "witnesses": [
+            [
+              2,
+              1,
+              51383,
+              546
+            ],
+            [
+              2,
+              1,
+              54947,
+              13776
+            ]
+          ],
+          "first_work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 189188,
+            "coordinate_isqrts": 189188,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 5,
+            "bound_isqrts": 5,
+            "euclidean_steps": 0,
+            "capped": 0,
+            "impossible_sign": 2
+          },
+          "median_first_cpu_ns": 28864000,
+          "median_cpu_ns": 68357000
+        }
+      },
+      "certificate_sha256": "b2b3b74f9689d8604c533de900bd9570439fc272d3ed73b6ada7eb5303313727"
+    },
+    {
+      "bits": 16,
+      "sample": 1,
+      "n": "2927341189",
+      "pair": [
+        "48197",
+        "60737"
+      ],
+      "targets": [
+        -1,
+        3,
+        -3
+      ],
+      "representations": 8,
+      "methods": {
+        "direct": {
+          "work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 314561,
+            "coordinate_isqrts": 289057,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 6,
+            "bound_isqrts": 8,
+            "euclidean_steps": 0,
+            "capped": 0,
+            "impossible_sign": 4,
+            "local_exclusions": 3
+          },
+          "witnesses": [
+            [
+              -1,
+              1,
+              3630,
+              53983
+            ],
+            [
+              -1,
+              1,
+              26758,
+              47025
+            ]
+          ],
+          "first_work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 26758,
+            "coordinate_isqrts": 26758,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 2,
+            "bound_isqrts": 1,
+            "euclidean_steps": 0,
+            "capped": 0
+          },
+          "median_first_cpu_ns": 4353500,
+          "median_cpu_ns": 47654500
+        },
+        "arcs": {
+          "work": {
+            "blocks": 16779,
+            "ellipse_blocks": 12845,
+            "hyperbola_blocks": 3934,
+            "line_tests": 6807,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 314561,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 6751,
+            "endpoint_isqrts": 33558,
+            "axis_isqrts": 6,
+            "bound_isqrts": 16,
+            "euclidean_steps": 38004,
+            "capped": 0,
+            "impossible_sign": 4,
+            "local_exclusions": 3
+          },
+          "witnesses": [
+            [
+              -1,
+              1,
+              3630,
+              53983
+            ],
+            [
+              -1,
+              1,
+              26758,
+              47025
+            ]
+          ],
+          "first_work": {
+            "blocks": 1487,
+            "ellipse_blocks": 1487,
+            "hyperbola_blocks": 0,
+            "line_tests": 604,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 26766,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 602,
+            "endpoint_isqrts": 2974,
+            "axis_isqrts": 2,
+            "bound_isqrts": 2,
+            "euclidean_steps": 3045,
+            "capped": 0
+          },
+          "median_first_cpu_ns": 17643500,
+          "median_cpu_ns": 166593500
+        }
+      },
+      "certificate_sha256": "eb722dbadb8383bfabe358e9fde28e6b31c2614db2078417f70dbc687972a94d"
+    },
+    {
+      "bits": 16,
+      "sample": 2,
+      "n": "1989809021",
+      "pair": [
+        "40063",
+        "49667"
+      ],
+      "targets": [
+        -1,
+        6,
+        -6
+      ],
+      "representations": 2,
+      "methods": {
+        "arcs": {
+          "work": {
+            "blocks": 15173,
+            "ellipse_blocks": 11945,
+            "hyperbola_blocks": 3228,
+            "line_tests": 6017,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 272599,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 5974,
+            "endpoint_isqrts": 30346,
+            "axis_isqrts": 6,
+            "bound_isqrts": 16,
+            "euclidean_steps": 33579,
+            "capped": 0,
+            "impossible_sign": 4,
+            "local_exclusions": 3
+          },
+          "witnesses": [
+            [
+              -6,
+              2,
+              11806,
+              25299
+            ],
+            [
+              -6,
+              2,
+              48254,
+              16589
+            ]
+          ],
+          "first_work": {
+            "blocks": 15011,
+            "ellipse_blocks": 11783,
+            "hyperbola_blocks": 3228,
+            "line_tests": 5944,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 270979,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 5904,
+            "endpoint_isqrts": 30022,
+            "axis_isqrts": 6,
+            "bound_isqrts": 16,
+            "euclidean_steps": 33293,
+            "capped": 0,
+            "impossible_sign": 3,
+            "local_exclusions": 3
+          },
+          "median_first_cpu_ns": 152106500,
+          "median_cpu_ns": 154067000
+        },
+        "direct": {
+          "work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 272599,
+            "coordinate_isqrts": 213123,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 6,
+            "bound_isqrts": 8,
+            "euclidean_steps": 0,
+            "capped": 0,
+            "impossible_sign": 4,
+            "local_exclusions": 3
+          },
+          "witnesses": [
+            [
+              -6,
+              2,
+              11806,
+              25299
+            ],
+            [
+              -6,
+              2,
+              48254,
+              16589
+            ]
+          ],
+          "first_work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 270978,
+            "coordinate_isqrts": 211502,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 6,
+            "bound_isqrts": 8,
+            "euclidean_steps": 0,
+            "capped": 0,
+            "impossible_sign": 3,
+            "local_exclusions": 3
+          },
+          "median_first_cpu_ns": 37475500,
+          "median_cpu_ns": 37746500
+        }
+      },
+      "certificate_sha256": "89bd6b3bd88e0717fb1d3678cb8721534a529a5bbf581591e1c61a3eb853b1ab"
+    },
+    {
+      "bits": 16,
+      "sample": 3,
+      "n": "1818360569",
+      "pair": [
+        "38993",
+        "46633"
+      ],
+      "targets": [
+        -1,
+        2,
+        -2
+      ],
+      "representations": 18,
+      "methods": {
+        "direct": {
+          "work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 394122,
+            "coordinate_isqrts": 321328,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 10,
+            "bound_isqrts": 12,
+            "euclidean_steps": 0,
+            "capped": 0,
+            "impossible_sign": 4
+          },
+          "witnesses": [
+            [
+              -1,
+              1,
+              437,
+              42640
+            ],
+            [
+              -1,
+              1,
+              21688,
+              36715
+            ]
+          ],
+          "first_work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 21688,
+            "coordinate_isqrts": 21688,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 2,
+            "bound_isqrts": 1,
+            "euclidean_steps": 0,
+            "capped": 0
+          },
+          "median_first_cpu_ns": 3409000,
+          "median_cpu_ns": 57993500
+        },
+        "arcs": {
+          "work": {
+            "blocks": 22574,
+            "ellipse_blocks": 15216,
+            "hyperbola_blocks": 7358,
+            "line_tests": 9014,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 394122,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 8972,
+            "endpoint_isqrts": 45148,
+            "axis_isqrts": 10,
+            "bound_isqrts": 24,
+            "euclidean_steps": 51395,
+            "capped": 0,
+            "impossible_sign": 4
+          },
+          "witnesses": [
+            [
+              -1,
+              1,
+              437,
+              42640
+            ],
+            [
+              -1,
+              1,
+              21688,
+              36715
+            ]
+          ],
+          "first_work": {
+            "blocks": 1276,
+            "ellipse_blocks": 1276,
+            "hyperbola_blocks": 0,
+            "line_tests": 507,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 21692,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 505,
+            "endpoint_isqrts": 2552,
+            "axis_isqrts": 2,
+            "bound_isqrts": 2,
+            "euclidean_steps": 2657,
+            "capped": 0
+          },
+          "median_first_cpu_ns": 15153500,
+          "median_cpu_ns": 206883500
+        }
+      },
+      "certificate_sha256": "0985d6f7ffb60bc4d635a5fad4a8c401b4260cfa9f8c5f939a86e7f4de5d61ea"
+    },
+    {
+      "bits": 20,
+      "sample": 0,
+      "n": "595126702369",
+      "pair": [
+        "735061",
+        "809629"
+      ],
+      "targets": [
+        -1,
+        2,
+        -2
+      ],
+      "representations": 8,
+      "methods": {
+        "arcs": {
+          "work": {
+            "blocks": 152579,
+            "ellipse_blocks": 103084,
+            "hyperbola_blocks": 49495,
+            "line_tests": 65197,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 7130178,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 64757,
+            "endpoint_isqrts": 305158,
+            "axis_isqrts": 10,
+            "bound_isqrts": 24,
+            "euclidean_steps": 469909,
+            "capped": 0,
+            "impossible_sign": 4
+          },
+          "witnesses": [
+            [
+              -1,
+              1,
+              99415,
+              765012
+            ],
+            [
+              -1,
+              1,
+              539088,
+              551825
+            ]
+          ],
+          "first_work": {
+            "blocks": 11980,
+            "ellipse_blocks": 11980,
+            "hyperbola_blocks": 0,
+            "line_tests": 5122,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 539100,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 5082,
+            "endpoint_isqrts": 23960,
+            "axis_isqrts": 2,
+            "bound_isqrts": 2,
+            "euclidean_steps": 37982,
+            "capped": 0
+          },
+          "median_first_cpu_ns": 156418000,
+          "median_cpu_ns": 1552537000
+        },
+        "direct": {
+          "work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 7130178,
+            "coordinate_isqrts": 5813241,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 10,
+            "bound_isqrts": 12,
+            "euclidean_steps": 0,
+            "capped": 0,
+            "impossible_sign": 4
+          },
+          "witnesses": [
+            [
+              -1,
+              1,
+              99415,
+              765012
+            ],
+            [
+              -1,
+              1,
+              539088,
+              551825
+            ]
+          ],
+          "first_work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 539088,
+            "coordinate_isqrts": 539088,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 2,
+            "bound_isqrts": 1,
+            "euclidean_steps": 0,
+            "capped": 0
+          },
+          "median_first_cpu_ns": 86148500,
+          "median_cpu_ns": 1057172000
+        }
+      },
+      "certificate_sha256": "aadf0482486155fb207d7e4615aadbe21b58d44812d88597a668ddeb900b5dc8"
+    },
+    {
+      "bits": 20,
+      "sample": 1,
+      "n": "669510769597",
+      "pair": [
+        "693731",
+        "965087"
+      ],
+      "targets": [
+        -1,
+        3,
+        -3
+      ],
+      "representations": 4,
+      "methods": {
+        "direct": {
+          "work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 4757243,
+            "coordinate_isqrts": 4371523,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 6,
+            "bound_isqrts": 8,
+            "euclidean_steps": 0,
+            "capped": 0,
+            "impossible_sign": 4,
+            "local_exclusions": 3
+          },
+          "witnesses": [
+            [
+              3,
+              1,
+              819197,
+              22898
+            ],
+            [
+              3,
+              1,
+              897763,
+              213282
+            ]
+          ],
+          "first_work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 3006914,
+            "coordinate_isqrts": 3006914,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 5,
+            "bound_isqrts": 5,
+            "euclidean_steps": 0,
+            "capped": 0,
+            "impossible_sign": 2
+          },
+          "median_first_cpu_ns": 466149500,
+          "median_cpu_ns": 719422500
+        },
+        "arcs": {
+          "work": {
+            "blocks": 101346,
+            "ellipse_blocks": 77399,
+            "hyperbola_blocks": 23947,
+            "line_tests": 43392,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 4757243,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 42957,
+            "endpoint_isqrts": 202692,
+            "axis_isqrts": 6,
+            "bound_isqrts": 16,
+            "euclidean_steps": 306271,
+            "capped": 0,
+            "impossible_sign": 4,
+            "local_exclusions": 3
+          },
+          "witnesses": [
+            [
+              3,
+              1,
+              819197,
+              22898
+            ],
+            [
+              3,
+              1,
+              897763,
+              213282
+            ]
+          ],
+          "first_work": {
+            "blocks": 63294,
+            "ellipse_blocks": 56628,
+            "hyperbola_blocks": 6666,
+            "line_tests": 27300,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 3006944,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 26983,
+            "endpoint_isqrts": 126588,
+            "axis_isqrts": 5,
+            "bound_isqrts": 10,
+            "euclidean_steps": 202222,
+            "capped": 0,
+            "impossible_sign": 2
+          },
+          "median_first_cpu_ns": 766485500,
+          "median_cpu_ns": 1105367500
+        }
+      },
+      "certificate_sha256": "7d937bd9dadcfa09f734bc4c1e30e7e49581c2aa6b3da55b3928eac98c79351b"
+    },
+    {
+      "bits": 20,
+      "sample": 2,
+      "n": "733718808857",
+      "pair": [
+        "738743",
+        "993199"
+      ],
+      "targets": [
+        -1,
+        2,
+        -2
+      ],
+      "representations": 7,
+      "methods": {
+        "arcs": {
+          "work": {
+            "blocks": 163040,
+            "ellipse_blocks": 110044,
+            "hyperbola_blocks": 52996,
+            "line_tests": 69055,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 7916998,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 68526,
+            "endpoint_isqrts": 326080,
+            "axis_isqrts": 10,
+            "bound_isqrts": 24,
+            "euclidean_steps": 508362,
+            "capped": 0,
+            "impossible_sign": 4
+          },
+          "witnesses": [
+            [
+              2,
+              1,
+              905275,
+              207128
+            ],
+            [
+              2,
+              1,
+              954863,
+              298366
+            ]
+          ],
+          "first_work": {
+            "blocks": 66162,
+            "ellipse_blocks": 58098,
+            "hyperbola_blocks": 8064,
+            "line_tests": 28028,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 3222892,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 27794,
+            "endpoint_isqrts": 132324,
+            "axis_isqrts": 5,
+            "bound_isqrts": 10,
+            "euclidean_steps": 212643,
+            "capped": 0,
+            "impossible_sign": 2
+          },
+          "median_first_cpu_ns": 807644500,
+          "median_cpu_ns": 1688312000
+        },
+        "direct": {
+          "work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 7916998,
+            "coordinate_isqrts": 6454736,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 10,
+            "bound_isqrts": 12,
+            "euclidean_steps": 0,
+            "capped": 0,
+            "impossible_sign": 4
+          },
+          "witnesses": [
+            [
+              2,
+              1,
+              905275,
+              207128
+            ],
+            [
+              2,
+              1,
+              954863,
+              298366
+            ]
+          ],
+          "first_work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 3222890,
+            "coordinate_isqrts": 3222890,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 5,
+            "bound_isqrts": 5,
+            "euclidean_steps": 0,
+            "capped": 0,
+            "impossible_sign": 2
+          },
+          "median_first_cpu_ns": 515750000,
+          "median_cpu_ns": 1193276000
+        }
+      },
+      "certificate_sha256": "4c577b8a7a5af2fe203de40c7dfd5e1edb4411136faeb9083d00f87c0e936ca9"
+    },
+    {
+      "bits": 20,
+      "sample": 3,
+      "n": "347341368919",
+      "pair": [
+        "562703",
+        "617273"
+      ],
+      "targets": [
+        2,
+        -3,
+        -6
+      ],
+      "representations": 6,
+      "methods": {
+        "direct": {
+          "work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 2961721,
+            "coordinate_isqrts": 2041937,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 5,
+            "bound_isqrts": 8,
+            "euclidean_steps": 0,
+            "capped": 0,
+            "impossible_sign": 4,
+            "local_exclusions": 2
+          },
+          "witnesses": [
+            [
+              2,
+              1,
+              623531,
+              143961
+            ],
+            [
+              2,
+              1,
+              778779,
+              359969
+            ]
+          ],
+          "first_work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 359969,
+            "coordinate_isqrts": 359969,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 1,
+            "bound_isqrts": 1,
+            "euclidean_steps": 0,
+            "capped": 0
+          },
+          "median_first_cpu_ns": 58335500,
+          "median_cpu_ns": 435028500
+        },
+        "arcs": {
+          "work": {
+            "blocks": 72621,
+            "ellipse_blocks": 31472,
+            "hyperbola_blocks": 41149,
+            "line_tests": 30497,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 2961721,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 30357,
+            "endpoint_isqrts": 145242,
+            "axis_isqrts": 5,
+            "bound_isqrts": 16,
+            "euclidean_steps": 206438,
+            "capped": 0,
+            "impossible_sign": 4,
+            "local_exclusions": 2
+          },
+          "witnesses": [
+            [
+              2,
+              1,
+              623531,
+              143961
+            ],
+            [
+              2,
+              1,
+              778779,
+              359969
+            ]
+          ],
+          "first_work": {
+            "blocks": 10909,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 10909,
+            "line_tests": 4507,
+            "max_lines_per_block": 1,
+            "coordinate_positions": 359997,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 4494,
+            "endpoint_isqrts": 21818,
+            "axis_isqrts": 1,
+            "bound_isqrts": 2,
+            "euclidean_steps": 34993,
+            "capped": 0
+          },
+          "median_first_cpu_ns": 45968500,
+          "median_cpu_ns": 577145000
+        }
+      },
+      "certificate_sha256": "34501b6053376b087d4b545ab1171d231f2fd77b2df808676e9c007ea8caf1c9"
+    }
+  ],
+  "full_size": [
+    {
+      "id": "projected-wheel-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "total_chart_positions": "795648873376944328433187337621449634332312546773824957511263437895616005735377098049365995642961584405094513488515586689434684774817942310708208562486674845568255818942463945586657770494557714638996785615332565457902147920995637666601221244433364224631014188559774872501339941134786065378396916752113267343503",
+      "total_arc_blocks": "300330352454263056247727574707886219249245994304747508379041311875482329830222990893140540059965660245548864553805675780222946697181901881213974053560191978353810800345837535301622782723103171844286580293530",
+      "methods": {
+        "arcs": {
+          "targets": [
+            2,
+            -3,
+            -6
+          ],
+          "points": [],
+          "work": {
+            "blocks": 64,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 64,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 137401564101085055214457179014603268022638719905602914647306041683396361094859654130957598553734935402624,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 128,
+            "axis_isqrts": 1,
+            "bound_isqrts": 2,
+            "euclidean_steps": 0,
+            "capped": 1
+          },
+          "complete": false,
+          "factor": null,
+          "witnesses": [],
+          "first_work": null,
+          "first_cpu_ns": null,
+          "cap": {
+            "max_blocks": 64
+          },
+          "cpu_ns": 2451000
+        },
+        "direct": {
+          "targets": [
+            2,
+            -3,
+            -6
+          ],
+          "points": [],
+          "work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 4096,
+            "coordinate_isqrts": 4096,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 1,
+            "bound_isqrts": 1,
+            "euclidean_steps": 0,
+            "capped": 1
+          },
+          "complete": false,
+          "factor": null,
+          "witnesses": [],
+          "first_work": null,
+          "first_cpu_ns": null,
+          "cap": {
+            "max_positions": 4096
+          },
+          "cpu_ns": 15115000
+        }
+      }
+    },
+    {
+      "id": "projected-wheel-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "total_chart_positions": "1248106896845579183903391106900585013763774499047717560037663164251267665166568612241038332103262335346585490762431249759208625480557233666808443451188268921603994716422384865928294234313777251916736841961919453471520447309463219030617695819613976396387155963259184840091041517461475926863513769417085684812142",
+      "total_arc_blocks": "471020712814351649242150412128250481780383822095237384253062483946366658966414249838359052152941103473787935534912026999136369082622019798280465705054095604607060640025990879017589977129642102149568145542961",
+      "methods": {
+        "arcs": {
+          "targets": [
+            -1,
+            2,
+            -2
+          ],
+          "points": [],
+          "work": {
+            "blocks": 64,
+            "ellipse_blocks": 64,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 164173056096322958343074308360988067626498811438836517530969065746924798471814402472138089021480932949056,
+            "coordinate_isqrts": 0,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 128,
+            "axis_isqrts": 2,
+            "bound_isqrts": 2,
+            "euclidean_steps": 0,
+            "capped": 1
+          },
+          "complete": false,
+          "factor": null,
+          "witnesses": [],
+          "first_work": null,
+          "first_cpu_ns": null,
+          "cap": {
+            "max_blocks": 64
+          },
+          "cpu_ns": 7692000
+        },
+        "direct": {
+          "targets": [
+            -1,
+            2,
+            -2
+          ],
+          "points": [],
+          "work": {
+            "blocks": 0,
+            "ellipse_blocks": 0,
+            "hyperbola_blocks": 0,
+            "line_tests": 0,
+            "max_lines_per_block": 0,
+            "coordinate_positions": 4096,
+            "coordinate_isqrts": 4096,
+            "discriminant_roots": 0,
+            "endpoint_isqrts": 0,
+            "axis_isqrts": 2,
+            "bound_isqrts": 1,
+            "euclidean_steps": 0,
+            "capped": 1
+          },
+          "complete": false,
+          "factor": null,
+          "witnesses": [],
+          "first_work": null,
+          "first_cpu_ns": null,
+          "cap": {
+            "max_positions": 4096
+          },
+          "cpu_ns": 15821000
+        }
+      }
+    }
+  ]
+}
