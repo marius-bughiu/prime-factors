@@ -1091,6 +1091,10 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'target-norm-multiplier':
+        w = result['target_norm']
+        count = (f"Square-root target {w['target']} · skipped {w['skipped_multipliers']} of "
+                 f"{w['eligible_multipliers']} eligible multipliers · {w['steps']:,} continued-fraction steps")
     elif result['method'] == 'projected-divisor-wheel':
         w = result['projected_wheel']
         count = (f"{w['steps']} continued-fraction steps · {w['projected_rank']} independent signs"

@@ -1,0 +1,1385 @@
+{
+  "multiplier_limit": 320,
+  "steps_per_multiplier": 256,
+  "timings": "Process CPU nanoseconds including all target-search setup; separate all-row gcd diagnostic untimed.",
+  "rows": [
+    {
+      "n": "789444367739",
+      "panel": "pilot",
+      "bits": 20,
+      "results": {
+        "all": {
+          "target": 3,
+          "eligible_multipliers": 147,
+          "skipped_multipliers": 0,
+          "steps": 37632,
+          "first_root": null,
+          "target_factor": null
+        },
+        "filtered": {
+          "target": 3,
+          "eligible_multipliers": 147,
+          "skipped_multipliers": 121,
+          "steps": 6656,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          12474000,
+          12742000,
+          12968000,
+          15760000
+        ],
+        "filtered": [
+          2713000,
+          2770000,
+          3670000,
+          4115000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "312467649679",
+      "panel": "pilot",
+      "bits": 20,
+      "results": {
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 96,
+          "steps": 8960,
+          "first_root": null,
+          "target_factor": null
+        },
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 0,
+          "steps": 33536,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          11708000,
+          11850000,
+          11624000,
+          11713000
+        ],
+        "filtered": [
+          4155000,
+          3730000,
+          3460000,
+          3941000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "564896735363",
+      "panel": "pilot",
+      "bits": 20,
+      "results": {
+        "all": {
+          "target": 3,
+          "eligible_multipliers": 39,
+          "skipped_multipliers": 0,
+          "steps": 9940,
+          "first_root": {
+            "root": "310948784386",
+            "multiplier": 11,
+            "step": 92,
+            "visits": 1372
+          },
+          "target_factor": {
+            "value": "803651",
+            "source": "different roots",
+            "root": "237706443199",
+            "multiplier": 83,
+            "step": 212,
+            "visits": 9940
+          }
+        },
+        "filtered": {
+          "target": 3,
+          "eligible_multipliers": 39,
+          "skipped_multipliers": 30,
+          "steps": 2260,
+          "first_root": {
+            "root": "310948784386",
+            "multiplier": 11,
+            "step": 92,
+            "visits": 348
+          },
+          "target_factor": {
+            "value": "803651",
+            "source": "different roots",
+            "root": "237706443199",
+            "multiplier": 83,
+            "step": 212,
+            "visits": 2260
+          }
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          5047000,
+          4969000,
+          5273000,
+          5435000
+        ],
+        "filtered": [
+          1909000,
+          1982000,
+          1521000,
+          1662000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "620209873819",
+      "panel": "pilot",
+      "bits": 20,
+      "results": {
+        "filtered": {
+          "target": 5,
+          "eligible_multipliers": 163,
+          "skipped_multipliers": 131,
+          "steps": 8192,
+          "first_root": null,
+          "target_factor": null
+        },
+        "all": {
+          "target": 5,
+          "eligible_multipliers": 163,
+          "skipped_multipliers": 0,
+          "steps": 41728,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          18780000,
+          14549000,
+          15186000,
+          17659000
+        ],
+        "filtered": [
+          3383000,
+          3827000,
+          5166000,
+          3621000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "874142578667",
+      "panel": "pilot",
+      "bits": 20,
+      "results": {
+        "all": {
+          "target": 3,
+          "eligible_multipliers": 12,
+          "skipped_multipliers": 0,
+          "steps": 2926,
+          "first_root": {
+            "root": "463220880156",
+            "multiplier": 11,
+            "step": 2,
+            "visits": 1282
+          },
+          "target_factor": {
+            "value": "1005551",
+            "source": "different roots",
+            "root": "631882954937",
+            "multiplier": 23,
+            "step": 110,
+            "visits": 2926
+          }
+        },
+        "filtered": {
+          "target": 3,
+          "eligible_multipliers": 12,
+          "skipped_multipliers": 9,
+          "steps": 622,
+          "first_root": {
+            "root": "463220880156",
+            "multiplier": 11,
+            "step": 2,
+            "visits": 258
+          },
+          "target_factor": {
+            "value": "1005551",
+            "source": "different roots",
+            "root": "631882954937",
+            "multiplier": 23,
+            "step": 110,
+            "visits": 622
+          }
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          981000,
+          1008000,
+          1001000,
+          973000
+        ],
+        "filtered": [
+          311000,
+          325000,
+          326000,
+          312000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "741311473907",
+      "panel": "pilot",
+      "bits": 20,
+      "results": {
+        "filtered": {
+          "target": 3,
+          "eligible_multipliers": 147,
+          "skipped_multipliers": 121,
+          "steps": 6656,
+          "first_root": null,
+          "target_factor": null
+        },
+        "all": {
+          "target": 3,
+          "eligible_multipliers": 147,
+          "skipped_multipliers": 0,
+          "steps": 37632,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          12967000,
+          12935000,
+          15445000,
+          16840000
+        ],
+        "filtered": [
+          2826000,
+          3933000,
+          3532000,
+          3642000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "821782560553",
+      "panel": "validation",
+      "bits": 20,
+      "results": {
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 30,
+          "skipped_multipliers": 0,
+          "steps": 7614,
+          "first_root": {
+            "root": "814816068948",
+            "multiplier": 47,
+            "step": 32,
+            "visits": 4896
+          },
+          "target_factor": {
+            "value": "885449",
+            "source": "different roots",
+            "root": "345377572618",
+            "multiplier": 71,
+            "step": 190,
+            "visits": 7614
+          }
+        },
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 30,
+          "skipped_multipliers": 22,
+          "steps": 1982,
+          "first_root": {
+            "root": "814816068948",
+            "multiplier": 47,
+            "step": 32,
+            "visits": 1568
+          },
+          "target_factor": {
+            "value": "885449",
+            "source": "different roots",
+            "root": "345377572618",
+            "multiplier": 71,
+            "step": 190,
+            "visits": 1982
+          }
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          2919000,
+          2604000,
+          3284000,
+          2790000
+        ],
+        "filtered": [
+          1175000,
+          843000,
+          880000,
+          871000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": {
+          "value": "928097",
+          "multiplier": 7,
+          "step": 27
+        },
+        "filtered": {
+          "value": "928097",
+          "multiplier": 7,
+          "step": 27
+        }
+      }
+    },
+    {
+      "n": "449993001581",
+      "panel": "validation",
+      "bits": 20,
+      "results": {
+        "filtered": {
+          "target": 5,
+          "eligible_multipliers": 163,
+          "skipped_multipliers": 131,
+          "steps": 8192,
+          "first_root": null,
+          "target_factor": null
+        },
+        "all": {
+          "target": 5,
+          "eligible_multipliers": 163,
+          "skipped_multipliers": 0,
+          "steps": 41728,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          13667000,
+          15919000,
+          15424000,
+          16546000
+        ],
+        "filtered": [
+          4365000,
+          3637000,
+          3861000,
+          3364000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "774731001449",
+      "panel": "validation",
+      "bits": 20,
+      "results": {
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 0,
+          "steps": 33536,
+          "first_root": null,
+          "target_factor": null
+        },
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 96,
+          "steps": 8960,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          11498000,
+          12134000,
+          12255000,
+          12981000
+        ],
+        "filtered": [
+          3645000,
+          3480000,
+          3973000,
+          3590000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "622874996251",
+      "panel": "validation",
+      "bits": 20,
+      "results": {
+        "filtered": {
+          "target": 5,
+          "eligible_multipliers": 47,
+          "skipped_multipliers": 36,
+          "steps": 2780,
+          "first_root": {
+            "root": "249791491916",
+            "multiplier": 59,
+            "step": 188,
+            "visits": 1724
+          },
+          "target_factor": {
+            "value": "629899",
+            "source": "different roots",
+            "root": "482835854845",
+            "multiplier": 89,
+            "step": 220,
+            "visits": 2780
+          }
+        },
+        "all": {
+          "target": 5,
+          "eligible_multipliers": 47,
+          "skipped_multipliers": 0,
+          "steps": 11996,
+          "first_root": {
+            "root": "249791491916",
+            "multiplier": 59,
+            "step": 188,
+            "visits": 7868
+          },
+          "target_factor": {
+            "value": "629899",
+            "source": "different roots",
+            "root": "482835854845",
+            "multiplier": 89,
+            "step": 220,
+            "visits": 11996
+          }
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          3897000,
+          3950000,
+          3946000,
+          4175000
+        ],
+        "filtered": [
+          1219000,
+          1240000,
+          1108000,
+          1157000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "967295451601",
+      "panel": "validation",
+      "bits": 20,
+      "results": {
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 99,
+          "skipped_multipliers": 0,
+          "steps": 25190,
+          "first_root": {
+            "root": "378281857724",
+            "multiplier": 1,
+            "step": 60,
+            "visits": 60
+          },
+          "target_factor": {
+            "value": "932537",
+            "source": "different roots",
+            "root": "112386650377",
+            "multiplier": 239,
+            "step": 102,
+            "visits": 25190
+          }
+        },
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 99,
+          "skipped_multipliers": 72,
+          "steps": 6758,
+          "first_root": {
+            "root": "378281857724",
+            "multiplier": 1,
+            "step": 60,
+            "visits": 60
+          },
+          "target_factor": {
+            "value": "932537",
+            "source": "different roots",
+            "root": "112386650377",
+            "multiplier": 239,
+            "step": 102,
+            "visits": 6758
+          }
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          8578000,
+          10851000,
+          10046000,
+          11010000
+        ],
+        "filtered": [
+          2642000,
+          2871000,
+          2990000,
+          2914000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "624744157033",
+      "panel": "validation",
+      "bits": 20,
+      "results": {
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 96,
+          "steps": 8960,
+          "first_root": null,
+          "target_factor": null
+        },
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 0,
+          "steps": 33536,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          11389000,
+          11361000,
+          12661000,
+          11589000
+        ],
+        "filtered": [
+          3710000,
+          4078000,
+          3429000,
+          3556000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "246180296426219",
+      "panel": "pilot",
+      "bits": 24,
+      "results": {
+        "all": {
+          "target": 3,
+          "eligible_multipliers": 137,
+          "skipped_multipliers": 0,
+          "steps": 34830,
+          "first_root": {
+            "root": "189325693069900",
+            "multiplier": 167,
+            "step": 168,
+            "visits": 19880
+          },
+          "target_factor": {
+            "value": "15230737",
+            "source": "different roots",
+            "root": "156855619935814",
+            "multiplier": 299,
+            "step": 14,
+            "visits": 34830
+          }
+        },
+        "filtered": {
+          "target": 3,
+          "eligible_multipliers": 137,
+          "skipped_multipliers": 113,
+          "steps": 5902,
+          "first_root": {
+            "root": "189325693069900",
+            "multiplier": 167,
+            "step": 168,
+            "visits": 3752
+          },
+          "target_factor": {
+            "value": "15230737",
+            "source": "different roots",
+            "root": "156855619935814",
+            "multiplier": 299,
+            "step": 14,
+            "visits": 5902
+          }
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          13343000,
+          11988000,
+          12743000,
+          12212000
+        ],
+        "filtered": [
+          3674000,
+          2657000,
+          2600000,
+          2543000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "147646444176499",
+      "panel": "pilot",
+      "bits": 24,
+      "results": {
+        "filtered": {
+          "target": 5,
+          "eligible_multipliers": 92,
+          "skipped_multipliers": 73,
+          "steps": 4846,
+          "first_root": {
+            "root": "91417603715236",
+            "multiplier": 31,
+            "step": 48,
+            "visits": 1072
+          },
+          "target_factor": {
+            "value": "12745919",
+            "source": "different roots",
+            "root": "102433748555908",
+            "multiplier": 181,
+            "step": 238,
+            "visits": 4846
+          }
+        },
+        "all": {
+          "target": 5,
+          "eligible_multipliers": 92,
+          "skipped_multipliers": 0,
+          "steps": 23534,
+          "first_root": {
+            "root": "91417603715236",
+            "multiplier": 31,
+            "step": 48,
+            "visits": 3888
+          },
+          "target_factor": {
+            "value": "12745919",
+            "source": "different roots",
+            "root": "102433748555908",
+            "multiplier": 181,
+            "step": 238,
+            "visits": 23534
+          }
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          12034000,
+          11677000,
+          9506000,
+          8570000
+        ],
+        "filtered": [
+          2898000,
+          3517000,
+          2231000,
+          1972000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "273830199001523",
+      "panel": "pilot",
+      "bits": 24,
+      "results": {
+        "all": {
+          "target": 3,
+          "eligible_multipliers": 147,
+          "skipped_multipliers": 0,
+          "steps": 37632,
+          "first_root": null,
+          "target_factor": null
+        },
+        "filtered": {
+          "target": 3,
+          "eligible_multipliers": 147,
+          "skipped_multipliers": 121,
+          "steps": 6656,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          13154000,
+          15475000,
+          15194000,
+          17571000
+        ],
+        "filtered": [
+          3533000,
+          2855000,
+          3335000,
+          3718000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "118504240686943",
+      "panel": "pilot",
+      "bits": 24,
+      "results": {
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 96,
+          "steps": 8960,
+          "first_root": null,
+          "target_factor": null
+        },
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 0,
+          "steps": 33536,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          11680000,
+          11312000,
+          11527000,
+          12443000
+        ],
+        "filtered": [
+          3510000,
+          3803000,
+          3494000,
+          3662000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "135957819928621",
+      "panel": "pilot",
+      "bits": 24,
+      "results": {
+        "all": {
+          "target": 3,
+          "eligible_multipliers": 147,
+          "skipped_multipliers": 0,
+          "steps": 37632,
+          "first_root": {
+            "root": "120417313344734",
+            "multiplier": 229,
+            "step": 6,
+            "visits": 27142
+          },
+          "target_factor": null
+        },
+        "filtered": {
+          "target": 3,
+          "eligible_multipliers": 147,
+          "skipped_multipliers": 123,
+          "steps": 6144,
+          "first_root": {
+            "root": "120417313344734",
+            "multiplier": 229,
+            "step": 6,
+            "visits": 4358
+          },
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          13382000,
+          12731000,
+          12713000,
+          12527000
+        ],
+        "filtered": [
+          2585000,
+          2535000,
+          2673000,
+          2613000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "163012694043733",
+      "panel": "pilot",
+      "bits": 24,
+      "results": {
+        "filtered": {
+          "target": 3,
+          "eligible_multipliers": 147,
+          "skipped_multipliers": 123,
+          "steps": 6144,
+          "first_root": {
+            "root": "136519961476789",
+            "multiplier": 13,
+            "step": 62,
+            "visits": 318
+          },
+          "target_factor": null
+        },
+        "all": {
+          "target": 3,
+          "eligible_multipliers": 147,
+          "skipped_multipliers": 0,
+          "steps": 37632,
+          "first_root": {
+            "root": "136519961476789",
+            "multiplier": 13,
+            "step": 62,
+            "visits": 1598
+          },
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          14559000,
+          13376000,
+          12886000,
+          15705000
+        ],
+        "filtered": [
+          3192000,
+          2610000,
+          2612000,
+          2662000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "145002691065893",
+      "panel": "validation",
+      "bits": 24,
+      "results": {
+        "all": {
+          "target": 6,
+          "eligible_multipliers": 98,
+          "skipped_multipliers": 0,
+          "steps": 25088,
+          "first_root": {
+            "root": "92826964333787",
+            "multiplier": 101,
+            "step": 58,
+            "visits": 7994
+          },
+          "target_factor": null
+        },
+        "filtered": {
+          "target": 6,
+          "eligible_multipliers": 98,
+          "skipped_multipliers": 78,
+          "steps": 5120,
+          "first_root": {
+            "root": "92826964333787",
+            "multiplier": 101,
+            "step": 58,
+            "visits": 1850
+          },
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          10631000,
+          12942000,
+          12114000,
+          8627000
+        ],
+        "filtered": [
+          2443000,
+          2405000,
+          3177000,
+          3073000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "252256028742617",
+      "panel": "validation",
+      "bits": 24,
+      "results": {
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 99,
+          "skipped_multipliers": 72,
+          "steps": 6900,
+          "first_root": {
+            "root": "107699892657676",
+            "multiplier": 79,
+            "step": 62,
+            "visits": 2366
+          },
+          "target_factor": {
+            "value": "15453343",
+            "source": "different roots",
+            "root": "150071398376033",
+            "multiplier": 239,
+            "step": 244,
+            "visits": 6900
+          }
+        },
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 99,
+          "skipped_multipliers": 0,
+          "steps": 25332,
+          "first_root": {
+            "root": "107699892657676",
+            "multiplier": 79,
+            "step": 62,
+            "visits": 8254
+          },
+          "target_factor": {
+            "value": "15453343",
+            "source": "different roots",
+            "root": "150071398376033",
+            "multiplier": 239,
+            "step": 244,
+            "visits": 25332
+          }
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          8663000,
+          8750000,
+          10174000,
+          9074000
+        ],
+        "filtered": [
+          2816000,
+          2712000,
+          2652000,
+          2806000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "173120549043383",
+      "panel": "validation",
+      "bits": 24,
+      "results": {
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 0,
+          "steps": 33536,
+          "first_root": null,
+          "target_factor": null
+        },
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 96,
+          "steps": 8960,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          11632000,
+          12195000,
+          11749000,
+          11385000
+        ],
+        "filtered": [
+          3471000,
+          3630000,
+          3424000,
+          3705000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "235289969845961",
+      "panel": "validation",
+      "bits": 24,
+      "results": {
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 96,
+          "steps": 8960,
+          "first_root": null,
+          "target_factor": null
+        },
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 0,
+          "steps": 33536,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          11257000,
+          11425000,
+          12037000,
+          12004000
+        ],
+        "filtered": [
+          3439000,
+          3484000,
+          3450000,
+          3799000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "210639254300303",
+      "panel": "validation",
+      "bits": 24,
+      "results": {
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 77,
+          "skipped_multipliers": 0,
+          "steps": 19558,
+          "first_root": {
+            "root": "72577665860139",
+            "multiplier": 89,
+            "step": 76,
+            "visits": 9292
+          },
+          "target_factor": {
+            "value": "15599849",
+            "source": "different roots",
+            "root": "87113792356527",
+            "multiplier": 191,
+            "step": 102,
+            "visits": 19558
+          }
+        },
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 77,
+          "skipped_multipliers": 56,
+          "steps": 5222,
+          "first_root": {
+            "root": "72577665860139",
+            "multiplier": 89,
+            "step": 76,
+            "visits": 2636
+          },
+          "target_factor": {
+            "value": "15599849",
+            "source": "different roots",
+            "root": "87113792356527",
+            "multiplier": 191,
+            "step": 102,
+            "visits": 5222
+          }
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          6945000,
+          6593000,
+          6602000,
+          6657000
+        ],
+        "filtered": [
+          2179000,
+          2055000,
+          2114000,
+          2029000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "163433502902129",
+      "panel": "validation",
+      "bits": 24,
+      "results": {
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 92,
+          "skipped_multipliers": 67,
+          "steps": 6394,
+          "first_root": {
+            "root": "29969934566190",
+            "multiplier": 7,
+            "step": 76,
+            "visits": 332
+          },
+          "target_factor": {
+            "value": "10330367",
+            "source": "different roots",
+            "root": "114865923608890",
+            "multiplier": 223,
+            "step": 250,
+            "visits": 6394
+          }
+        },
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 92,
+          "skipped_multipliers": 0,
+          "steps": 23546,
+          "first_root": {
+            "root": "29969934566190",
+            "multiplier": 7,
+            "step": 76,
+            "visits": 844
+          },
+          "target_factor": {
+            "value": "10330367",
+            "source": "different roots",
+            "root": "114865923608890",
+            "multiplier": 223,
+            "step": 250,
+            "visits": 23546
+          }
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          7973000,
+          8039000,
+          7881000,
+          7989000
+        ],
+        "filtered": [
+          2435000,
+          2696000,
+          2450000,
+          2429000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "panel": "projected-wheel-fresh-2048",
+      "bits": 1024,
+      "results": {
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 0,
+          "steps": 33536,
+          "first_root": null,
+          "target_factor": null
+        },
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 96,
+          "steps": 8960,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          103291000,
+          103314000,
+          102910000,
+          105969000
+        ],
+        "filtered": [
+          28185000,
+          28122000,
+          27951000,
+          27763000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    },
+    {
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "panel": "projected-wheel-crossed-2048",
+      "bits": 1024,
+      "results": {
+        "filtered": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 96,
+          "steps": 8960,
+          "first_root": null,
+          "target_factor": null
+        },
+        "all": {
+          "target": 2,
+          "eligible_multipliers": 131,
+          "skipped_multipliers": 0,
+          "steps": 33536,
+          "first_root": null,
+          "target_factor": null
+        }
+      },
+      "cpu_ns": {
+        "all": [
+          108897000,
+          103070000,
+          102847000,
+          102542000
+        ],
+        "filtered": [
+          27982000,
+          28170000,
+          28532000,
+          28422000
+        ]
+      },
+      "incidental_gcd_audit": {
+        "all": null,
+        "filtered": null
+      }
+    }
+  ],
+  "held_out_summaries": [
+    {
+      "bits": 20,
+      "held_out_inputs": 6,
+      "root_hits": 3,
+      "target_splits": 3,
+      "methods": {
+        "all": {
+          "steps": 153600,
+          "median_cpu_ns": 57217500
+        },
+        "filtered": {
+          "steps": 37632,
+          "median_cpu_ns": 16195000
+        }
+      }
+    },
+    {
+      "bits": 24,
+      "held_out_inputs": 6,
+      "root_hits": 4,
+      "target_splits": 3,
+      "methods": {
+        "all": {
+          "steps": 160596,
+          "median_cpu_ns": 58522500
+        },
+        "filtered": {
+          "steps": 41556,
+          "median_cpu_ns": 17124500
+        }
+      }
+    }
+  ]
+}

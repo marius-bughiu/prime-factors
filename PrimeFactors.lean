@@ -638,3 +638,10 @@ import PrimeFactors.SignPanelReadout
 import PrimeFactors.SquareClassProjection
 import PrimeFactors.GeneratingDivisorSigns
 import PrimeFactors.SquareClassPrivateRows
+import PrimeFactors.RootableSignSpan
+import PrimeFactors.TargetNormMultiplier
+import PrimeFactors.SignAmbiguityExamples
+import PrimeFactors.PrimeResidueRealization
+import PrimeFactors.PrimeResidueSignWheel
+import PrimeFactors.TargetNormMultiplierDensity
+import PrimeFactors.SameSignSumWindow

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A local square test ruled out 96 of 131 auxiliary searches on each 2,048-bit input. This saved 24,576 continued-fraction updates per input and left both products unresolved. On a 48-bit example the selected search found a prime in 5,902 updates. A separate result counts exactly how many different factor-sign patterns still fit the small-prime information and proves each pattern occurs at full size. [Targeted searches and density](skipping-impossible-square-root-searches.md) · [What the sign information determines](which-small-signs-are-still-missing.md)
+
 Combining continued-fraction remainders gave three independent restrictions on a 48-bit product. We could jump directly to one eighth of the previous divisor positions. The same calculation produced zero restrictions on either 2,048-bit input within 256 steps. A separate implementation using one larger modulus roughly halved trial divisions on twelve held-out small inputs, but its table preparation made both batches slower. [Combining remainders](combining-remainders-to-skip-divisors.md) · [Generating divisor positions directly](generating-divisor-signs.md)
 
 For any product of two distinct 1,024-bit primes, 1,100 independently chosen tests almost certainly leave its smaller prime as the only eligible prime. Lean bounds the probability of any false prime passing them all by $2^{-76}$. Finding the survivor still took longer than ordinary division on both small examples. [Unconditional proof and measured costs](recognizing-one-prime-with-random-tests.md)
