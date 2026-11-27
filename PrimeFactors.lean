@@ -754,3 +754,6 @@ import PrimeFactors.FirstSumMenuPopulation
 import PrimeFactors.HighLowSumPopulation
 import PrimeFactors.HighWordSumRankingBounds
 import PrimeFactors.HighWordSumRanking
+import PrimeFactors.HighWordSuffixTransfer
+import PrimeFactors.HighWordSuffixRanking
+import PrimeFactors.HighWordSuffixCost

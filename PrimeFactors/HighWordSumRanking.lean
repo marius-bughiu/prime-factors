@@ -42,10 +42,27 @@ noncomputable def pairs (x B n w u : ℕ) : Finset (ℕ×ℕ) :=
   ((Ico x B) ×ˢ (Ico x B)).filter fun z =>
     z.1<z.2 ∧ z.1%2=1 ∧ z.2%2=1 ∧ n≤z.1*z.2 ∧ z.1*z.2≤n+w ∧ z.1+z.2=2*u
 
-/-- Midpoint and half-gap coordinates count each actual factor pair once. -/
-theorem gaps_card (x B n w u : ℕ) : (gaps x B n w u).card=(pairs x B n w u).card := by
-  apply card_nbij' (fun v => (u-v,u+v)) (fun z => z.2-u)
-  · intro v hv
+/-- Half-gaps generate exactly the sorted pairs in a midpoint row. This set
+identity also transfers tests on the two factors through the same parametrization. -/
+theorem pairs_eq_gap_image (x B n w u : ℕ) :
+    pairs x B n w u=(gaps x B n w u).image (fun v => (u-v,u+v)) := by
+  ext ⟨p,q⟩
+  constructor
+  · intro hpq
+    simp only [pairs,mem_filter,mem_product,mem_Ico] at hpq
+    obtain ⟨⟨⟨pl,pb⟩,⟨ql,qb⟩⟩,pq,po,qo,lo,hi,sum⟩ := hpq
+    let v := q-u
+    have l : v≤u := by dsimp [v]; omega
+    have pe : u-v=p := by dsimp [v]; omega
+    have qe : u+v=q := by dsimp [v]; omega
+    have bound := from_product l (n:=n) (w:=w) (by rwa [pe,qe]) (by rwa [pe,qe])
+    refine mem_image.mpr ⟨v,?_,Prod.ext pe qe⟩
+    apply mem_gaps.mpr
+    change 0<v ∧ _
+    exact ⟨by dsimp [v]; omega,by dsimp [v]; omega,by dsimp [v]; omega,bound.1,bound.2,by dsimp [v]; omega⟩
+  · rintro hz
+    obtain ⟨v,hv,eq⟩ := mem_image.mp hz
+    cases eq
     obtain ⟨pos,l,b,low,high,par⟩ := mem_gaps.mp hv
     simp only [pairs,mem_filter,mem_product,mem_Ico]
     have rec : u=u-v+v := by omega
@@ -54,29 +71,17 @@ theorem gaps_card (x B n w u : ℕ) : (gaps x B n w u).card=(pairs x B n w u).ca
            _ = (u-v+v)^2 := by ring
            _ = u^2 := by rw [←rec]
     repeat' constructor <;> omega
-  · rintro ⟨p,q⟩ hpq
-    simp only [pairs,mem_filter,mem_product,mem_Ico] at hpq
-    obtain ⟨⟨⟨pl,pb⟩,⟨ql,qb⟩⟩,pq,po,qo,lo,hi,sum⟩ := hpq
-    let v := q-u
-    have l : v≤u := by dsimp [v]; omega
-    have pe : u-v=p := by dsimp [v]; omega
-    have qe : u+v=q := by dsimp [v]; omega
-    have bound := from_product l (n:=n) (w:=w) (by rwa [pe,qe]) (by rwa [pe,qe])
-    apply mem_gaps.mpr
-    change 0<v ∧ _
-    exact ⟨by dsimp [v]; omega,by dsimp [v]; omega,by dsimp [v]; omega,bound.1,bound.2,by dsimp [v]; omega⟩
-  · intro v hv
-    dsimp
-    omega
-  · rintro ⟨p,q⟩ hpq
-    simp only [pairs,mem_filter,mem_product,mem_Ico] at hpq
-    obtain ⟨_,pq,_,_,_,_,sum⟩ := hpq
-    exact Prod.ext (by dsimp; omega) (by dsimp; omega)
+
+/-- Midpoint and half-gap coordinates count each actual factor pair once. -/
+theorem gaps_card (x B n w u : ℕ) : (gaps x B n w u).card=(pairs x B n w u).card := by
+  rw [pairs_eq_gap_image,card_image_of_injective]
+  intro a b eq
+  exact Nat.add_left_cancel (congrArg Prod.snd eq)
 
 /-- If R is the first whole midpoint above the top of a positive word,
 an integer factor-width endpoint active at R makes later rows inject
 into R by preserving the smaller factor. -/
-private theorem clip_map {x B n w r u v : ℕ} (ru : r≤u) (top : n+w<r^2)
+theorem clip_map {x B n w r u v : ℕ} (ru : r≤u) (top : n+w<r^2)
     (mid : u+v<B) (xmin : x+v≤u)
     (share : u^2≤n+w+v^2) (clip : min (r-x) (B-1-r) ≤ (r^2-n).sqrt)
     (rlo : n≤r^2) :
@@ -105,11 +110,13 @@ private theorem clip_map {x B n w r u v : ℕ} (ru : r≤u) (top : n+w<r^2)
   rw [pz]
   nlinarith only [share,fall]
 
-private theorem root_up {v D : ℕ} : (v:ℝ) ≤ Real.sqrt (D:ℝ) ↔ v^2≤D := by
+/-- Move a natural upper bound on a squared gap through the real square root. -/
+theorem root_up {v D : ℕ} : (v:ℝ) ≤ Real.sqrt (D:ℝ) ↔ v^2≤D := by
   rw [Real.le_sqrt (by positivity) (by positivity)]
   norm_cast
 
-private theorem root_down {v D : ℕ} : Real.sqrt (D:ℝ) ≤ (v:ℝ) ↔ D≤v^2 := by
+/-- Move a natural lower bound on a squared gap through the real square root. -/
+theorem root_down {v D : ℕ} : Real.sqrt (D:ℝ) ≤ (v:ℝ) ↔ D≤v^2 := by
   rw [Real.sqrt_le_left (by positivity)]
   norm_cast
 

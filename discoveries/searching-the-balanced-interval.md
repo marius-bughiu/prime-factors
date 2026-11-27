@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+With the upper half of a 2,048-bit product and its remainder modulo 120, comparing 121 possible sums finds the one compatible with the most pairs of odd 1,024-bit integers. On all 228,713 eligible products of two 14-bit primes, that rule guessed correctly 64,531 times. Giving ordinary Fermat search the same total number of square roots let it recover 192,183 products, including every success of the ranking. [Proof, examples and search costs](choosing-a-sum-from-a-word-and-a-remainder.md)
+
 Two sums suffice to find the one supported by the largest number of equal-width odd integer pairs sharing an upper product word. Restricting the factors to primes changes the answer. In a complete 14-bit prime census, the integer-based rule found 83 products that the first ordinary Fermat guess missed and lost 2,481 that Fermat found. Even seeing three quarters of the product bits leaves a trillion guesses with coverage below one pair in $2^{434}$ at full size. [Two-row proof, prime counterexample and census](which-sum-fits-the-most-factor-pairs.md) · [What the leading and trailing bits reveal](what-three-quarters-of-the-product-bits-can-tell-us.md)
 
 The true start of the search interval helps on 7,294,033. A test modulo 315 leaves just one of 52 candidate sums and gives 2,293 × 3,181. Knowing the start saved zero bits of the required digit evaluation on each of the two full-size comparisons at the three tested moduli. [Worked example and evaluation costs](when-the-actual-interval-separates-factor-sums.md)

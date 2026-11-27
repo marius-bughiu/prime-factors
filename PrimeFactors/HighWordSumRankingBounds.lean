@@ -71,6 +71,37 @@ theorem endpoints {b h : ℕ} (hb : 14 ≤ b) (low : 2^b / 2 ≤ h) (high : h < 
       omega,
     au, prev, ce⟩
 
+/-- Two equal-width intervals at separation s², with their square roots
+bounded by 2s. The inverse width estimate retains the actual width W. -/
+theorem width_product_drop {s W a b c d : ℝ} (sp : 0<s) (wp : 0<W)
+    (an : 0≤a) (ab : a<b) (ac : a≤c) (bd : b≤d) (cd : c≤d) (cap : d≤2*s)
+    (w1 : b^2-a^2=W) (w2 : d^2-c^2=W)
+    (s1 : c^2-a^2=s^2) (s2 : d^2-b^2=s^2) :
+    W≤32*s*((b-a)-(d-c)) := by
+  have move {v z : ℝ} (vz : v≤z) (limit : v+z≤4*s) (square : z^2-v^2=s^2) :
+      s≤4*(z-v) := by
+    have t := mul_le_mul_of_nonneg_left limit (sub_nonneg.mpr vz)
+    exact le_of_mul_le_mul_left (a:=s) (by nlinarith only [square,t]) sp
+  have ca := move ac (by linarith) s1
+  have db := move bd (by linarith) s2
+  have span : s/2≤(c+d)-(a+b) := by linarith
+  let V := (a+b)*(c+d)
+  let diff := (b-a)-(d-c)
+  have vp : 0<V := mul_pos (by linarith) (by linarith)
+  have id : diff*V=W*((c+d)-(a+b)) := by
+    dsimp [diff,V]
+    linear_combination (c+d)*w1-(a+b)*w2
+  have difp : 0<diff := pos_of_mul_pos_left (id ▸ mul_pos wp (by linarith)) vp.le
+  have capV : V≤16*s^2 := by
+    have t := mul_le_mul (show a+b≤4*s by linarith) (show c+d≤4*s by linarith)
+      (show 0≤c+d by linarith) (show 0≤4*s by linarith)
+    dsimp [V]; nlinarith only [t]
+  have t := mul_le_mul_of_nonneg_left capV difp.le
+  have u := mul_le_mul_of_nonneg_left span wp.le
+  apply le_of_mul_le_mul_right (a:=s) _ sp
+  change W*s ≤ 32*s*diff*s
+  nlinarith only [id,t,u]
+
 /-- For roots a²=x, b²=x+w, c²=x+B, d²=x+B+w with x≤2B and
 B/2≤w≤B, the length of the square-root interval decreases by at
 least sqrt(B)/64 after a shift of B. -/
@@ -79,26 +110,13 @@ private theorem width_drop {s W a b c d : ℝ} (sp : 0<s) (wp : s^2/2≤W)
     (w1 : b^2-a^2=W) (w2 : d^2-c^2=W)
     (s1 : c^2-a^2=s^2) (s2 : d^2-b^2=s^2) :
     s ≤ 64*((b-a)-(d-c)) := by
-  have move {v z : ℝ} (vz : v≤z) (limit : v+z≤4*s) (square : z^2-v^2=s^2) :
-      s≤4*(z-v) := by
-    have times := mul_le_mul_of_nonneg_left limit (sub_nonneg.mpr vz)
-    apply (le_of_mul_le_mul_left (a:=s) (by nlinarith only [square,times]) sp)
-  have ca := move ac (by linarith) s1
-  have db := move bd (by linarith) s2
-  have span : s/2≤(c+d)-(a+b) := by linarith
-  have small : (a+b)*(c+d)≤16*s^2 := by
-    have t := mul_le_mul (show a+b≤4*s by linarith) (show c+d≤4*s by linarith)
-      (show 0≤c+d by linarith) (show 0≤4*s by linarith)
-    nlinarith only [t]
-  have lower := mul_le_mul wp span (show 0≤s/2 by positivity) (show 0≤W by nlinarith [sq_nonneg s])
-  have scaled := mul_le_mul_of_nonneg_right small sp.le
-  have identity : ((b-a)-(d-c))*((a+b)*(c+d))=W*((c+d)-(a+b)) := by
-    linear_combination (c+d)*w1-(a+b)*w2
-  have product : s*((a+b)*(c+d))≤(64*((b-a)-(d-c)))*((a+b)*(c+d)) := by
-    nlinarith only [lower,scaled,identity]
-  exact le_of_mul_le_mul_right product (mul_pos (by linarith) (by linarith [sq_pos_of_pos sp]))
+  have wp' : 0<W := lt_of_lt_of_le (half_pos (sq_pos_of_pos sp)) wp
+  have gain := width_product_drop sp wp' an ab ac bd cd cap w1 w2 s1 s2
+  apply le_of_mul_le_mul_left (a:=s) _ sp
+  nlinarith only [gain,wp]
 
-private theorem width_antitone {x y w : ℝ} (xn : 0≤x) (xy : x≤y) (wp : 0<w) :
+/-- Increasing the squared lower endpoint shortens the half-gap interval. -/
+theorem width_antitone {x y w : ℝ} (xn : 0≤x) (xy : x≤y) (wp : 0<w) :
     Real.sqrt (y+w)-Real.sqrt y ≤ Real.sqrt (x+w)-Real.sqrt x := by
   have yn : 0≤y := xn.trans xy
   have key (z : ℝ) (nonneg : 0≤z) :

@@ -1,5 +1,31 @@
 [
   {
+    "id": "choosing-a-sum-from-a-word-and-a-remainder",
+    "title": "121 sums suffice to find the most common sum for a word and remainder",
+    "category": "formulas",
+    "impact": "For a 2,048-bit product of two odd 1,024-bit integers, its upper half and remainder modulo 120 identify 121 sums worth comparing. One fits at least as many compatible integer pairs as any other sum.",
+    "scope": "This ranks possible sums. The rule missed both 2,048-bit comparison products.",
+    "detail": "Among 228,713 products of two 14-bit primes, ranking guessed correctly on 64,531. Ordinary Fermat search with the same remainder got 57,568 on its first guess and 192,183 with the ranking’s total square-root budget. Every successful ranked guess was covered at that budget.",
+    "sources": [
+      {
+        "href": "discoveries/choosing-a-sum-from-a-word-and-a-remainder.md",
+        "label": "Examples and census"
+      },
+      {
+        "href": "PrimeFactors/HighWordSuffixRanking.lean",
+        "label": "Lean ranking proof"
+      },
+      {
+        "href": "PrimeFactors/HighWordSuffixCost.lean",
+        "label": "Lean cost comparison"
+      },
+      {
+        "href": "#word-suffix-ranked-gain",
+        "label": "Certified 66-bit example"
+      }
+    ]
+  },
+  {
     "id": "when-the-actual-interval-separates-factor-sums",
     "category": "cases",
     "title": "One sum survives 52 candidates",

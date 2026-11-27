@@ -14,17 +14,22 @@ ROOT = Path(__file__).resolve().parents[1]
 CENSUS = ROOT / 'research/high-word-sum-ranking.json'
 
 
-def row_count(base, lower, upper, midpoint):
-    """Count distinct sorted odd factor pairs in the word and charge the roots used."""
+def gap_interval(base, lower, upper, midpoint):
+    """Inclusive physical half-gap interval and number of integer square roots evaluated."""
     square = midpoint * midpoint
     if square < lower or not base // 2 <= midpoint < base:
-        return 0, 0
+        return 1, 0, 0
     high_gap = min(isqrt(square - lower), midpoint - base // 2, base - 1 - midpoint)
     excess = square - upper
     low_gap = 1 if excess <= 0 else 1 + isqrt(excess - 1)
+    return low_gap, high_gap, 1 + int(excess > 0)
+
+
+def row_count(base, lower, upper, midpoint):
+    """Count distinct sorted odd factor pairs in the word and charge the roots used."""
+    low_gap, high_gap, roots = gap_interval(base, lower, upper, midpoint)
     first = low_gap + (midpoint + 1 - low_gap) % 2
-    count = max(0, 1 + (high_gap - first) // 2)
-    return count, 1 + int(excess > 0)
+    return max(0, 1 + (high_gap - first) // 2), roots
 
 
 def propose(factor_bits, word):
