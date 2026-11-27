@@ -573,3 +573,11 @@ import PrimeFactors.NearEndpointPrimes
 import PrimeFactors.FixedEndpointPartners
 import PrimeFactors.TopPartnerInterval
 import PrimeFactors.PrimesAtUpperEndpoint
+import PrimeFactors.DyadicTotativeMasks
+import PrimeFactors.SecantQuotientCells
+import PrimeFactors.SelbergMultipleCoefficients
+import PrimeFactors.TwelveResidueCollision
+import PrimeFactors.TwelveCollisionBatch
+import PrimeFactors.UniformFiberBirthday
+import PrimeFactors.TwelveImageSize
+import PrimeFactors.TwelveSeedBirthday

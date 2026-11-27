@@ -1,0 +1,30 @@
+[
+  {
+    "id": "quotient-secant-equal-area-41",
+    "description": "Complete wheel-210 parallel-chord sweep at matched area per lattice index.",
+    "n": "1900014700027",
+    "wheel": 210,
+    "secant": "equal-area",
+    "blocks": 768,
+    "initial_strip_points": 229,
+    "quadratic_solves": 17,
+    "bisected": 0,
+    "factors": ["1000003", "1900009"],
+    "remaining": [],
+    "status": "complete"
+  },
+  {
+    "id": "quotient-secant-maximum-width-41",
+    "description": "Complete wheel-210 parallel-chord sweep at the maximum guaranteed uniform width.",
+    "n": "1900014700027",
+    "wheel": 210,
+    "secant": "maximum-width",
+    "blocks": 624,
+    "initial_strip_points": 359,
+    "quadratic_solves": 61,
+    "bisected": 0,
+    "factors": ["1000003", "1900009"],
+    "remaining": [],
+    "status": "complete"
+  }
+]

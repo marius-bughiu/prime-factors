@@ -1,0 +1,276 @@
+[
+  {
+    "id": "twelve-residue-pair-32",
+    "description": "Twelve-residue keys split this selected 32-bit product on the same 64 draws used for the three comparisons.",
+    "n": "4291428937",
+    "draws": 64,
+    "seed": 1,
+    "status": "complete",
+    "factors": [
+      "65497",
+      "65521"
+    ],
+    "remaining": [],
+    "checks": {
+      "twelve": {
+        "regular": 64,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "distinct_keys": 64,
+        "derivative_values": 64,
+        "row_gcds": 37,
+        "pair_gcds": 62,
+        "orientation_gcds": 0,
+        "witness": [
+          "3871601465",
+          "991564255"
+        ],
+        "source": "pair",
+        "divisor": "65521"
+      },
+      "matched": {
+        "regular": 64,
+        "setup_gcds": 1,
+        "inversions": 0,
+        "distinct_keys": 64,
+        "derivative_values": 64,
+        "row_gcds": 64,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      },
+      "raw": {
+        "regular": null,
+        "setup_gcds": 0,
+        "inversions": 0,
+        "distinct_keys": 64,
+        "derivative_values": 64,
+        "row_gcds": 64,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      },
+      "power": {
+        "regular": null,
+        "setup_gcds": 0,
+        "inversions": 0,
+        "distinct_keys": 64,
+        "derivative_values": 64,
+        "row_gcds": 64,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      }
+    }
+  },
+  {
+    "id": "twelve-residue-shared-key-21",
+    "description": "A seed selected to exercise shared keys gives two different local orientations in eight draws.",
+    "n": "1161359",
+    "draws": 8,
+    "seed": 1044,
+    "status": "complete",
+    "factors": [
+      "1009",
+      "1151"
+    ],
+    "remaining": [],
+    "checks": {
+      "twelve": {
+        "regular": 8,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "distinct_keys": 7,
+        "derivative_values": 0,
+        "row_gcds": 0,
+        "pair_gcds": 0,
+        "orientation_gcds": 11,
+        "witness": [
+          "468899",
+          "441121"
+        ],
+        "source": "shared key",
+        "orientation": 10,
+        "signed_difference": "206841279116",
+        "divisor": "1151"
+      },
+      "matched": {
+        "regular": 8,
+        "setup_gcds": 1,
+        "inversions": 0,
+        "distinct_keys": 8,
+        "derivative_values": 8,
+        "row_gcds": 8,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      },
+      "raw": {
+        "regular": null,
+        "setup_gcds": 0,
+        "inversions": 0,
+        "distinct_keys": 8,
+        "derivative_values": 8,
+        "row_gcds": 8,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      },
+      "power": {
+        "regular": null,
+        "setup_gcds": 0,
+        "inversions": 0,
+        "distinct_keys": 8,
+        "derivative_values": 8,
+        "row_gcds": 8,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      }
+    }
+  },
+  {
+    "id": "twelve-residue-fresh-2048",
+    "description": "Four collision searches on 128 identical draws from the fresh 2,048-bit comparison.",
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "draws": 128,
+    "seed": 86412,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+    ],
+    "checks": {
+      "twelve": {
+        "regular": 128,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "distinct_keys": 128,
+        "derivative_values": 128,
+        "row_gcds": 128,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      },
+      "matched": {
+        "regular": 128,
+        "setup_gcds": 1,
+        "inversions": 0,
+        "distinct_keys": 128,
+        "derivative_values": 128,
+        "row_gcds": 128,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      },
+      "raw": {
+        "regular": null,
+        "setup_gcds": 0,
+        "inversions": 0,
+        "distinct_keys": 128,
+        "derivative_values": 128,
+        "row_gcds": 128,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      },
+      "power": {
+        "regular": null,
+        "setup_gcds": 0,
+        "inversions": 0,
+        "distinct_keys": 128,
+        "derivative_values": 128,
+        "row_gcds": 128,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      }
+    }
+  },
+  {
+    "id": "twelve-residue-crossed-2048",
+    "description": "Four collision searches on 128 identical draws from the crossed 2,048-bit comparison.",
+    "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+    "draws": 128,
+    "seed": 86412,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+    ],
+    "checks": {
+      "twelve": {
+        "regular": 128,
+        "setup_gcds": 1,
+        "inversions": 1,
+        "distinct_keys": 128,
+        "derivative_values": 128,
+        "row_gcds": 128,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      },
+      "matched": {
+        "regular": 128,
+        "setup_gcds": 1,
+        "inversions": 0,
+        "distinct_keys": 128,
+        "derivative_values": 128,
+        "row_gcds": 128,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      },
+      "raw": {
+        "regular": null,
+        "setup_gcds": 0,
+        "inversions": 0,
+        "distinct_keys": 128,
+        "derivative_values": 128,
+        "row_gcds": 128,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      },
+      "power": {
+        "regular": null,
+        "setup_gcds": 0,
+        "inversions": 0,
+        "distinct_keys": 128,
+        "derivative_values": 128,
+        "row_gcds": 128,
+        "pair_gcds": 0,
+        "orientation_gcds": 0,
+        "witness": [],
+        "source": "none",
+        "divisor": null
+      }
+    }
+  }
+]

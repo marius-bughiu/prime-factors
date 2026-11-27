@@ -475,7 +475,10 @@ def case_row(result):
                  f' · search {duration(result["discovery_seconds"])}')
     elif result['method'] == 'quotient-search':
         w = result['quotient_search']
-        count = (f'Factor intervals · wheel {w["wheel"]} · {w["blocks"]:,} initial strips · '
+        kind = 'Factor intervals'
+        if 'max_width' in w:
+            kind = 'Maximum-width parallel strips' if w['max_width'] else 'Equal-area parallel strips'
+        count = (f'{kind} · wheel {w["wheel"]} · {w["blocks"]:,} initial strips · '
                  f'{w["bisected"]:,} bisections · {w["quadratic_solves"]:,} quadratics · '
                  f'{w["euclidean_steps"]:,} Euclidean steps')
     elif result['method'] == 'pell-local-windows':
@@ -1044,12 +1047,47 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'twelve-residue-collision':
+        work = result['twelve_residue']
+        runs = work['runs']
+        primary = runs['twelve']
+        count = (f"{work['draws']:,} draws per method · seed {work['seed']} · "
+                 f"{primary['distinct_keys']:,} distinct twelve-residue keys · "
+                 f"{primary['derivative_values']:,} derivative evaluations · "
+                 f"{primary['inversions']:,} batch inversions · {primary['setup_gcds']:,} setup, {primary['row_gcds']:,} row, "
+                 f"{primary['pair_gcds']:,} pair and {primary['orientation_gcds']:,} orientation gcds")
+        if primary['regular'] is not None:
+            count += f" · {primary['regular']:,} regular samples"
+        if primary['source'] != 'none':
+            count += f" · {escape(primary['source'])} witness " + ", ".join(map(escape, primary['witness']))
+        receipt = result.get('twelve_residue_witness')
+        if receipt:
+            evidence += f' · <a href="{escape(receipt["proof"])}">Download checked gcd witness</a>'
+        if 'orientation' in primary:
+            count += f" · orientation {primary['orientation']} gave difference {escape(primary['signed_difference'])}"
+        for mode, label in [('matched', 'Same regular samples'), ('raw', 'Raw samples'), ('power', 'Twelfth powers')]:
+            run = runs[mode]
+            gcds = sum(run[key] for key in ('setup_gcds', 'row_gcds', 'pair_gcds', 'orientation_gcds'))
+            outcome = escape(run['divisor']) if run['divisor'] else 'no split'
+            count += f" · {label} returned {outcome} ({gcds:,} gcds)"
     elif result['method'] == 'reciprocal-prefix-pairs':
         work = result['reciprocal_prefix_pairs']
         count = (f"{work['sweep_comparisons']:,} of {work['bracket_pairs']:,} interval pairs visited"
                  f" · {work['inspected_lanes']:,} residue classes checked modulo {work['modulus']}"
                  f" · {compact_count(int(work['eliminated']))} smaller-factor locations removed"
                  f" · {compact_count(int(work['remaining']))} locations remain")
+    elif result['method'] == 'dyadic-totative-masks':
+        work = result['dyadic_totative_masks']
+        rows = work['rows']
+        count = (f"{len(rows):,} coefficient gcds evaluated · maximum allowed row {work['max_row']:,}")
+        if rows:
+            observations = ', '.join(f"row {row['row']} gave gcd {escape(row['gcd'])}" for row in rows)
+            count += f" · {observations}"
+        if work['stopped_before'] is not None:
+            count += (f" · stopped before binary position {work['stopped_before']:,}"
+                      f" · next row size has {work['next_row_bits']:,} bits")
+        if work['contrasts_checked']:
+            count += f" · {work['contrasts_checked']:,} coprimality-count contrasts checked"
     elif result['method'] == 'half-gauss':
         work = result['half_gauss']
         receipt = result['half_gauss_receipt']

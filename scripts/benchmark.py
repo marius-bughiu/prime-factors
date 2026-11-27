@@ -56,6 +56,7 @@ from scripts.hasse_benchmark import hasse_case
 from scripts.short_pascal_benchmark import short_case
 from scripts.quotient_pascal_benchmark import quotient_pascal_case
 from scripts.half_gauss_benchmark import half_gauss_case
+from experiments import dyadic_totative_masks
 from scripts.growing_factorial_benchmark import growing_case
 from scripts.block_exclusion_benchmark import block_exclusion_case
 from scripts.block_subresultant_benchmark import block_subresultant_case
@@ -74,6 +75,7 @@ from scripts.endpoint_pruning_benchmark import endpoint_pruning_case
 from scripts.geometry_weight_benchmark import geometry_weight_case
 from scripts.weighted_crowding_benchmark import weighted_crowding_case
 from scripts.reciprocal_prefix_benchmark import prefix_case
+from scripts.twelve_residue_benchmark import twelve_residue_case
 from scripts.two_interior_benchmark import two_interior_case
 from scripts.residue_batch_benchmark import residue_batch_case
 from experiments.weighted_trace_reuse import search as weighted_trace_reuse_search
@@ -146,6 +148,7 @@ from experiments.four_square_lines import search as four_square_line_search
 from experiments.line_powers import search as line_power_search
 from experiments.theta_residues import search as theta_residue_search
 from experiments.quotient_search import search as quotient_search
+from experiments.secant_quotient_cells import search as secant_quotient_search
 from experiments.inverse_windows import search_product as inverse_windows_search
 from experiments.continued_square import search as continued_square_search
 from experiments.predecessor_square import search as predecessor_square_search, search_square_offset
@@ -1261,7 +1264,12 @@ end PrimeFactors.Generated
         factor = pairs[0][0] if pairs else None
         result = certify_split(case, proof, factor, elapsed, 'hyperbola', work)
     elif method == 'quotient-search':
-        work = quotient_search(int(case['n']), case['width'], wheel=case['wheel'])
+        if 'secant' in case:
+            if case['secant'] not in ('equal-area', 'maximum-width'):
+                raise ValueError('unknown secant quotient schedule')
+            work = secant_quotient_search(int(case['n']), case['wheel'], case['secant'] == 'maximum-width')
+        else:
+            work = quotient_search(int(case['n']), case['width'], wheel=case['wheel'])
         elapsed = time.perf_counter() - start
         pairs = work.pop('pairs')
         checks = ['blocks', 'initial_strip_points', 'quadratic_solves', 'bisected']
@@ -1484,6 +1492,8 @@ end PrimeFactors.Generated
         result = geometry_weight_case(case, proof, agree, certify_split)
     elif method == 'weighted-crowding':
         result = weighted_crowding_case(case, proof, agree, certify_split)
+    elif method == 'twelve-residue-collision':
+        result = twelve_residue_case(case, proof, agree, certify_split)
     elif method == 'reciprocal-prefix-pairs':
         result = prefix_case(case, proof, agree, certify_split)
     elif method == 'two-interior-batches':
@@ -1511,6 +1521,21 @@ end PrimeFactors.Generated
         result = character_column_case(case, proof, agree, certify_split)
     elif method == 'quotient-pascal':
         result = quotient_pascal_case(case, proof, agree, certify_split)
+    elif method == 'dyadic-totative-masks':
+        n = int(case['n'])
+        work = dyadic_totative_masks.search(n, case['max_row'])
+        elapsed = time.perf_counter() - start
+        factors = work.pop('factors')
+        remaining = work.pop('remaining')
+        agree(case, {'factors': factors, 'remaining': remaining}, ['factors', 'remaining'])
+        agree(dict(id=name, **case['checks']), work, case['checks'])
+        comparisons = 0
+        if case['expected_small_contrasts']:
+            comparisons = dyadic_totative_masks.check_contrasts(n, *map(int, factors))
+        agree(case, {'expected_small_contrasts': comparisons}, ['expected_small_contrasts'])
+        work.update(max_row=case['max_row'], contrasts_checked=comparisons)
+        result = certify_split(case, proof, factors[0] if factors else None,
+                               elapsed, 'dyadic_totative_masks', work)
     elif method == 'half-gauss':
         result = half_gauss_case(case, proof, agree, certify_split)
     elif method == 'short-pascal':
@@ -1854,6 +1879,7 @@ def main():
                              ('short-pascal.json', 'short-pascal'),
                              ('quotient-pascal.json','quotient-pascal'),
                              ('half-gauss.json', 'half-gauss'),
+                             ('dyadic-totative-masks.json', 'dyadic-totative-masks'),
                              ('growing-factorial.json', 'growing-factorial'),
                              ('block-exclusion.json', 'block-exclusion'),
                              ('block-subresultant.json', 'block-subresultant'),
@@ -1874,6 +1900,7 @@ def main():
                              ('geometry-weight-menu.json', 'geometry-weight-menu'),
                              ('weighted-crowding.json', 'weighted-crowding'),
                              ('reciprocal-prefix-pairs.json', 'reciprocal-prefix-pairs'),
+                             ('twelve-residue-collision.json', 'twelve-residue-collision'),
                              ('two-interior-batches.json', 'two-interior-batches'),
                              ('residue-batch-allocation.json', 'residue-batch-allocation'),
                              ('weighted-trace-reuse.json', 'weighted-trace-reuse'),
@@ -1926,6 +1953,7 @@ def main():
                              ('theta-residues.json', 'theta-residues'),
                              ('partition-recurrence.json', 'partition-recurrence'),
                              ('quotient-search.json', 'quotient-search'),
+                             ('secant-quotient-cells.json', 'quotient-search'),
                              ('inverse-windows.json', 'inverse-windows'),
                              ('modular-hyperbola.json', 'modular-hyperbola'),
                              ('midpoint-weights.json', 'midpoint-weights'),

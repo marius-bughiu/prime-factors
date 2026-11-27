@@ -165,6 +165,8 @@ Base 2 gives $r=2557237514825$ and $\gcd(r-1,N)=100003$. The cofactor is 5030100
 
 ## Divisor sums and exact recovery
 
+The coefficient of $\zeta''/\zeta$ at a product of distinct primes is $2\log p\log q$. Knowing it exactly would determine both primes. The RH estimate we examined controls a sum over many integers and supplies insufficient precision for isolating this single coefficient. Looking at integer multiples either returns a predictable coefficient or exposes a factor through a public gcd. [Derivation, precision and the role of RH](../discoveries/selberg-coefficients-at-multiples.md)
+
 Sutherland combined the RH release with the independent Robin1984 project at `acab1a3`. The resulting verified inequality is $\sigma(N)<e^\gamma N\log\log N$ for $N>5040$, where $\sigma$ is the sum of all positive divisors. Robin1984’s original code is available under Apache-2.0, subject to its file-specific notices. [Combined theorem](https://math.mit.edu/~drew/grh/ArithSolution.lean) · [Verification evidence](https://math.mit.edu/~drew/grh/) · [Robin1984 licensing](https://github.com/kimihiro64/Robin1984/blob/main/LICENSING.md)
 
 For distinct primes $p,q$, multiplicativity gives $S=\sigma(N)-N-1=p+q$. With **exact** $\sigma(N)$, the discriminant $S^2-4N$ is $(q-p)^2$ and the roots $(S\pm\sqrt{S^2-4N})/2$ are the two factors. For example, $N=10403$ has $\sigma(N)=10608$, giving $S=204$, discriminant 4 and factors 101 and 103. A fast way to obtain that exact divisor sum from $N$ would itself solve the factorization problem for this family. [Mathlib’s divisor-sum results](https://leanprover-community.github.io/mathlib4_docs/Mathlib/NumberTheory/ArithmeticFunction/Misc.html)

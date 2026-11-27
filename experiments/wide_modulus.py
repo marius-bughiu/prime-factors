@@ -62,7 +62,11 @@ def product_tree(points, n):
 def values_at(poly, points, n):
     if not points:
         return []
-    tree = product_tree(points, n)
+    return values_on_tree(poly, product_tree(points, n), n)
+
+
+def values_on_tree(poly, tree, n):
+    """Evaluate on a previously built nonempty monic product tree."""
     level = [monic_remainder(poly, tree[-1][0], n)]
     for children in reversed(tree[:-1]):
         level = [monic_remainder(level[j//2], g, n) for j, g in enumerate(children)]

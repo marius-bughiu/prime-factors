@@ -10,6 +10,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**One change helps even when the primes were chosen independently.** We can group twelve possible remainders together to make a useful match more likely. On all 19,546 eligible products of two 12-bit primes, the grouped search found a factor in 8,470 cases. Comparing the same draws directly with the same preliminary checks found a factor in 2,075 cases. For two 1,024-bit primes, the sample count for our 95% guarantee is still about $6.7\times10^{153}$. [How a match reveals a prime and what it costs](discoveries/comparing-twelve-remainders-at-once.md)
+
 **We can recognize one easy case by looking at the product itself.** If a 2,048-bit product of two 1,024-bit primes starts with 511 ones in binary, our formula recovers both primes in one square root. Ordinary Fermat also succeeds immediately on every such input. Outside that range, the same formula found a deliberately constructed pair for which ordinary Fermat would miss over 63 quintillion midpoints. It missed both full-size comparisons. [Worked example and exact success condition](discoveries/when-the-product-is-near-the-largest-square.md)
 
 Across all 4,588,935 pairs of distinct 16-bit primes, using the known factor width to skip impossible tests found 181,099 additional pairs with the same 34-square-root budget and preserved every previous success. All three full-size controls remained unresolved. [Comparison and proof](discoveries/reassigning-impossible-weighted-tests.md)

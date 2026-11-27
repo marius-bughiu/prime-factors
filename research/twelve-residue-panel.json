@@ -1,0 +1,138 @@
+{
+  "generator": "python3 -m experiments.twelve_residue_panel",
+  "panel_seed": 86412,
+  "parameters": [
+    {
+      "bits": 12,
+      "draws": 12,
+      "sample": 0
+    },
+    {
+      "bits": 20,
+      "draws": 128,
+      "sample": 512
+    },
+    {
+      "bits": 24,
+      "draws": 256,
+      "sample": 256
+    }
+  ],
+  "timing": "Aggregated perf_counter seconds per mode on an arm64 Mac, Python 3.9.6. Other work was running concurrently.",
+  "panels": [
+    {
+      "prime_bits": 12,
+      "draws": 12,
+      "products": 19546,
+      "population": "complete",
+      "added_vs_matched": 6395,
+      "lost_vs_matched": 0,
+      "modes": {
+        "twelve": {
+          "splits": 8470,
+          "setup": 1333,
+          "pair": 7118,
+          "shared_key": 19,
+          "seconds": 3.931
+        },
+        "matched": {
+          "splits": 2075,
+          "setup": 1333,
+          "pair": 742,
+          "shared_key": 0,
+          "seconds": 3.622
+        },
+        "raw": {
+          "splits": 796,
+          "setup": 0,
+          "pair": 796,
+          "shared_key": 0,
+          "seconds": 3.721
+        },
+        "power": {
+          "splits": 4149,
+          "setup": 0,
+          "pair": 4149,
+          "shared_key": 0,
+          "seconds": 3.806
+        }
+      }
+    },
+    {
+      "prime_bits": 20,
+      "draws": 128,
+      "products": 512,
+      "population": "sample",
+      "added_vs_matched": 93,
+      "lost_vs_matched": 0,
+      "modes": {
+        "twelve": {
+          "splits": 106,
+          "setup": 2,
+          "pair": 104,
+          "shared_key": 0,
+          "seconds": 2.113
+        },
+        "matched": {
+          "splits": 13,
+          "setup": 2,
+          "pair": 11,
+          "shared_key": 0,
+          "seconds": 1.985
+        },
+        "raw": {
+          "splits": 11,
+          "setup": 0,
+          "pair": 11,
+          "shared_key": 0,
+          "seconds": 1.938
+        },
+        "power": {
+          "splits": 54,
+          "setup": 0,
+          "pair": 54,
+          "shared_key": 0,
+          "seconds": 1.981
+        }
+      }
+    },
+    {
+      "prime_bits": 24,
+      "draws": 256,
+      "products": 256,
+      "population": "sample",
+      "added_vs_matched": 16,
+      "lost_vs_matched": 0,
+      "modes": {
+        "twelve": {
+          "splits": 17,
+          "setup": 0,
+          "pair": 17,
+          "shared_key": 0,
+          "seconds": 2.521
+        },
+        "matched": {
+          "splits": 1,
+          "setup": 0,
+          "pair": 1,
+          "shared_key": 0,
+          "seconds": 2.407
+        },
+        "raw": {
+          "splits": 1,
+          "setup": 0,
+          "pair": 1,
+          "shared_key": 0,
+          "seconds": 2.415
+        },
+        "power": {
+          "splits": 8,
+          "setup": 0,
+          "pair": 8,
+          "shared_key": 0,
+          "seconds": 2.428
+        }
+      }
+    }
+  ]
+}

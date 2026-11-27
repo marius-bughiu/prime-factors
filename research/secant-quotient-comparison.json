@@ -1,0 +1,247 @@
+{
+  "wheel": 210,
+  "repetitions": 5,
+  "python": "3.9.6",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "groups": {
+    "published_41_bit": {
+      "products": [
+        "1900014700027"
+      ],
+      "methods": {
+        "tangent": {
+          "blocks": 1200,
+          "initial_strip_points": 399,
+          "euclidean_steps": 11061,
+          "moment_states": 30664,
+          "quadratic_solves": 34,
+          "widths": [
+            16526
+          ],
+          "cpu_seconds": [
+            0.068267,
+            0.06579000000000002,
+            0.06756200000000001,
+            0.06471700000000002,
+            0.066048
+          ],
+          "median_cpu_seconds": 0.066048
+        },
+        "equal_area": {
+          "blocks": 768,
+          "initial_strip_points": 229,
+          "euclidean_steps": 7778,
+          "moment_states": 18993,
+          "quadratic_solves": 17,
+          "widths": [
+            26234
+          ],
+          "cpu_seconds": [
+            0.040226999999999985,
+            0.04077400000000003,
+            0.041430999999999996,
+            0.03989799999999999,
+            0.04123100000000002
+          ],
+          "median_cpu_seconds": 0.04077400000000003
+        },
+        "maximum_width": {
+          "blocks": 624,
+          "initial_strip_points": 359,
+          "euclidean_steps": 6527,
+          "moment_states": 30876,
+          "quadratic_solves": 61,
+          "widths": [
+            33052
+          ],
+          "cpu_seconds": [
+            0.070264,
+            0.06942800000000005,
+            0.06865099999999996,
+            0.07143699999999997,
+            0.06958300000000006
+          ],
+          "median_cpu_seconds": 0.06958300000000006
+        }
+      }
+    },
+    "quartic-lane-holdout": {
+      "products": [
+        "3376036549",
+        "2810005999",
+        "1362300473",
+        "2996722829",
+        "3564883411",
+        "2787445163",
+        "2459316121",
+        "1776168403"
+      ],
+      "methods": {
+        "tangent": {
+          "blocks": 1200,
+          "initial_strip_points": 312,
+          "euclidean_steps": 7538,
+          "moment_states": 17478,
+          "quadratic_solves": 25,
+          "widths": [
+            5752,
+            5579,
+            4945,
+            5639,
+            5804,
+            5571,
+            5456,
+            5168
+          ],
+          "cpu_seconds": [
+            0.041575999999999946,
+            0.039077999999999946,
+            0.03975099999999987,
+            0.04019700000000004,
+            0.04015599999999986
+          ],
+          "median_cpu_seconds": 0.04015599999999986
+        },
+        "equal_area": {
+          "blocks": 768,
+          "initial_strip_points": 205,
+          "euclidean_steps": 5589,
+          "moment_states": 12512,
+          "quadratic_solves": 16,
+          "widths": [
+            9130,
+            8855,
+            7849,
+            8951,
+            9213,
+            8843,
+            8661,
+            8204
+          ],
+          "cpu_seconds": [
+            0.028485000000000094,
+            0.03255999999999992,
+            0.029098999999999986,
+            0.029379000000000044,
+            0.028411999999999882
+          ],
+          "median_cpu_seconds": 0.029098999999999986
+        },
+        "maximum_width": {
+          "blocks": 768,
+          "initial_strip_points": 320,
+          "euclidean_steps": 5388,
+          "moment_states": 20477,
+          "quadratic_solves": 59,
+          "widths": [
+            11503,
+            11157,
+            9889,
+            11277,
+            11608,
+            11142,
+            10912,
+            10336
+          ],
+          "cpu_seconds": [
+            0.05096400000000001,
+            0.04961599999999988,
+            0.049787000000000026,
+            0.05099799999999988,
+            0.05000300000000002
+          ],
+          "median_cpu_seconds": 0.05000300000000002
+        }
+      }
+    },
+    "midpoint-weight-holdout": {
+      "products": [
+        "502005281288939",
+        "728927474612287",
+        "693050785559401",
+        "780188099549371",
+        "679959698230159",
+        "758692368050633",
+        "821504195393939",
+        "542176358007751"
+      ],
+      "methods": {
+        "tangent": {
+          "blocks": 66816,
+          "initial_strip_points": 20126,
+          "euclidean_steps": 647604,
+          "moment_states": 1635991,
+          "quadratic_solves": 1493,
+          "widths": [
+            41863,
+            44547,
+            44174,
+            45055,
+            44034,
+            44846,
+            45444,
+            42403
+          ],
+          "cpu_seconds": [
+            3.5901929999999997,
+            3.7790099999999995,
+            4.283839,
+            3.893455000000003,
+            3.6278209999999973
+          ],
+          "median_cpu_seconds": 3.7790099999999995
+        },
+        "equal_area": {
+          "blocks": 42192,
+          "initial_strip_points": 12631,
+          "euclidean_steps": 440141,
+          "moment_states": 1120790,
+          "quadratic_solves": 939,
+          "widths": [
+            66453,
+            70714,
+            70122,
+            71520,
+            69900,
+            71188,
+            72138,
+            67311
+          ],
+          "cpu_seconds": [
+            2.5112950000000005,
+            2.5497829999999997,
+            2.695107,
+            2.7763430000000042,
+            2.838054999999997
+          ],
+          "median_cpu_seconds": 2.695107
+        },
+        "maximum_width": {
+          "blocks": 33504,
+          "initial_strip_points": 19991,
+          "euclidean_steps": 361559,
+          "moment_states": 1773289,
+          "quadratic_solves": 3022,
+          "widths": [
+            83725,
+            89094,
+            88348,
+            90109,
+            88068,
+            89691,
+            90888,
+            84806
+          ],
+          "cpu_seconds": [
+            4.241643,
+            4.279894999999998,
+            4.7588170000000005,
+            4.611619999999995,
+            4.114315000000005
+          ],
+          "median_cpu_seconds": 4.279894999999998
+        }
+      }
+    }
+  }
+}
