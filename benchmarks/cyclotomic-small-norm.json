@@ -1,0 +1,10 @@
+[
+  {
+    "id": "small-norm-square-174719",
+    "description": "One public square test forces a unique 9-bit factor sum after the width and parity bounds",
+    "n": "174719", "factor_bits": 9, "max_tests": 1, "comparison_cap": 3,
+    "square_probes": 1, "outcome": "sum_square", "before": 5, "survivors": 1,
+    "discriminant_tests": 1, "unvisited": 0, "hit_sum": 840, "fermat_tests": 3, "fermat_factor": "379",
+    "factors": ["379", "461"], "remaining": [], "status": "complete"
+  }
+]

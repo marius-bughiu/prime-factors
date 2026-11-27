@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+Adding five to 174,719 gives a square. That observation determines the factor sum in a short public interval and gives 379 × 461. It was the only success of this square test among 903 products of distinct nine-bit primes. [Proof, cost and full comparison set](a-fifth-root-test-for-the-factor-sum.md)
+
+A remainder modulo 315 left two possible sums from 45 guesses for 1,879,513. The second gave the two primes. For the qualifying product residues the same two-out-of-45 bound holds at any starting position with a publicly chosen step. [Example and sharp list bounds](how-many-factor-sums-pass-together.md)
+
 When can a remainder test guarantee that two guesses for the factor sum cannot both pass, just from the distance between them? Exactly four primes can do this. Every modulus built entirely from primes 11 and above admits every distance for every product. [A small example and the proof](which-primes-can-separate-two-factor-sums.md)
 
 The nearest perfect square yielded a correct sum for 21 of 903 small products using a short list of fractions. Even granting every divisor of every square, above and below each product, this particular rule can succeed on fewer than one in $2^{738}$ eligible full-size pairs. [The square test, worked example and coverage proof](can-a-square-reveal-the-prime-sum.md)

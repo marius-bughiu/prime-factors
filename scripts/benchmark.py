@@ -111,6 +111,7 @@ from experiments.weighted_square_triples import compare as weighted_triple_compa
 from experiments.weighted_subset_search import relation_certificate, search as weighted_subset_search
 from experiments.weighted_subset_witness import certificate as subset_exclusion_certificate
 from scripts.memory_partition_benchmark import memory_partition_case
+from experiments import cyclotomic_small_norm
 from scripts.cyclotomic_sum_lift_benchmark import cyclotomic_sum_case
 from scripts.lifted_period_benchmark import lifted_period_case
 from scripts.lifted_period_trace_benchmark import lifted_trace_case
@@ -126,7 +127,7 @@ from experiments.unit_factor_lane import search as unit_lane_search
 from experiments.unit_quartic_probe import probe as unit_quartic_probe
 from experiments.centered_sum_quartic import probe as centered_quartic_probe
 from experiments.projected_level_sieve import centered_search as projected_level_search
-from scripts.factor import verify_file
+from scripts.factor import fermat_split, verify_file
 from scripts.higher_window_certificate import check_higher_interval
 from scripts.binomial_window_certificate import check_binomial_interval
 from scripts.centered_binomial_certificate import check_centered_binomial_interval
@@ -692,6 +693,18 @@ def run_case(case, method, proofs):
         result = lifted_period_case(case, proof, agree, certify_split)
     elif method == 'lifted-period-trace':
         result = lifted_trace_case(case, proof, agree, certify_split)
+    elif method == 'cyclotomic-small-norm':
+        n = int(case['n'])
+        start = time.perf_counter()
+        factor, work = cyclotomic_small_norm.search(n, case['factor_bits'], case['max_tests'])
+        elapsed = time.perf_counter()-start
+        compare_start = time.perf_counter()
+        reference, work['fermat_tests'] = fermat_split(n, case['comparison_cap'])
+        work['fermat_seconds'] = time.perf_counter()-compare_start
+        work['fermat_factor'] = str(reference) if reference is not None else None
+        agree(case, work, ['outcome', 'square_probes', 'before', 'survivors', 'discriminant_tests',
+                           'unvisited', 'hit_sum', 'fermat_tests', 'fermat_factor'])
+        result = certify_split(case, proof, factor, elapsed, 'cyclotomic_small_norm', work)
     elif method == 'cyclotomic-sum-lift':
         result = cyclotomic_sum_case(case, proof, agree, certify_split)
     elif method == 'weighted-square-subsets':
@@ -2097,6 +2110,7 @@ def main():
                              ('weighted-square-triples.json', 'weighted-square-triples'),
                              ('weighted-square-subsets.json', 'weighted-square-subsets'),
                              ('memory-partition-sum.json', 'memory-partition-sum'),
+                             ('cyclotomic-small-norm.json', 'cyclotomic-small-norm'),
                              ('cyclotomic-sum-lift.json', 'cyclotomic-sum-lift'),
                              ('lifted-period-join.json', 'lifted-period-join'),
                              ('lifted-period-trace.json', 'lifted-period-trace'),

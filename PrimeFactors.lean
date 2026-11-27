@@ -737,3 +737,6 @@ import PrimeFactors.FactorSumSpacing
 import PrimeFactors.FactorSumSpacingSmall
 import PrimeFactors.FactorSumSpacingCRT
 import PrimeFactors.UniversalSpacing
+import PrimeFactors.PrimeSumListPacking
+import PrimeFactors.SumGuessIncidence
+import PrimeFactors.CyclotomicSmallNorm

@@ -655,6 +655,11 @@ def case_row(result):
         if plan:
             count += (f' · planned {compact_count(plan["right_entries"])} entries'
                       f' and at most {compact_count(plan["lookup_bound"])} lookups')
+    elif result['method'] == 'cyclotomic-small-norm':
+        work = result['cyclotomic_small_norm']
+        count = (f'{work["square_probes"]} square probe · {work["before"]} possible sums, '
+                 f'{work["survivors"]} after the probe · {work["discriminant_tests"]} discriminant test'
+                 f' · Fermat comparison {work["fermat_tests"]} square tests')
     elif result['method'] == 'cyclotomic-sum-lift':
         work = result['cyclotomic_sum_lift']
         count = (f'{escape(work["outcome"].replace("_", " "))} · base {work["base"]:,}'
