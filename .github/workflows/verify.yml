@@ -19,38 +19,64 @@ jobs:
           auto-config: false
           use-mathlib-cache: false
           use-github-cache: false
+      - name: Set compatible cache keys
+        id: keys
+        if: github.event_name != 'workflow_dispatch'
+        env:
+          PINS: ${{ hashFiles('lean-toolchain', 'lakefile.*', 'lake-manifest.json', 'scripts/ci_lean_build.py', 'scripts/fetch-cache.sh') }}
+        run: |
+          set -o pipefail
+          source /etc/os-release
+          platform="$RUNNER_OS-$RUNNER_ARCH-$ID-$VERSION_ID"
+          lean="lean-project-v1-$platform-$PINS-"
+          python_version=$(python3 -c 'import platform; print(platform.python_version())')
+          checks="verified-checks-v1-$platform-py$python_version-$PINS-"
+          # Git tree identities include filenames, so module renames change the key.
+          sources=$(git rev-parse HEAD:PrimeFactors HEAD:PrimeFactors.lean | sha256sum | cut -d' ' -f1)
+          {
+            echo "lean-prefix=$lean"
+            echo "lean-key=$lean$sources"
+            echo "checks-prefix=$checks"
+            echo "checks-key=$checks$GITHUB_SHA"
+          } >> "$GITHUB_OUTPUT"
+      - name: Restore compiled project modules
+        id: lean-cache
+        if: github.event_name != 'workflow_dispatch'
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .lake/build
+          key: ${{ steps.keys.outputs.lean-key }}
+          restore-keys: ${{ steps.keys.outputs.lean-prefix }}
+      - name: Restore individually verified results
+        id: checks-cache
+        if: github.event_name != 'workflow_dispatch'
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: build/verification-cache
+          key: ${{ steps.keys.outputs.checks-key }}
+          restore-keys: ${{ steps.keys.outputs.checks-prefix }}
+      - name: Record restored verification state
+        id: previous
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.checks-cache.outputs.cache-hit != 'true'
+        env:
+          DIGEST: ${{ hashFiles('build/verification-cache/**') }}
+        run: echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
       - name: Fetch the pinned dependencies and relevant compiled Mathlib modules
         run: sh scripts/fetch-cache.sh
       - name: Check library and audit project axioms
         run: |
+          python3 scripts/ci_lean_build.py
           lake build
           lake env lean scripts/Audit.lean
-      - name: Run search tests
-        run: python3 -m unittest discover -s tests
-      - name: Discover factors and kernel-check certificates
-        run: python3 scripts/benchmark.py
-      - name: Regenerate and verify the independently constructed comparison input
-        run: python3 -m experiments.certified_control --verify
-      - name: Verify factor-search bounds on the two full-size inputs
+      - name: Verify tests, benchmark certificates and research receipts
+        env:
+          FULL_REPLAY: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
-          python3 -m experiments.many_character_receipt --verify
-          python3 -m experiments.split_prime_receipt
-          python3 -m experiments.affine_prime_signs
-          python3 -m experiments.projected_wheel_receipt --check
-          lake env lean benchmarks/controls/ProjectedWheelPrivate.lean
-          python3 -m experiments.three_target_limits
-          python3 -m experiments.negative_menu_control --check
-          python3 -m experiments.divisor_weight_sectors --check
-          python3 -m experiments.rectangular_winner_receipt
-          python3 -m experiments.trace_population_receipt
-          python3 -m experiments.intermediate_menu_receipt --check
-          python3 -m experiments.intermediate_private_shift_receipt --check
-          python3 -m experiments.full_width_totient_divisor --check
-          python3 -m experiments.fixed_window_digit_packing --check
-          python3 -m experiments.high_word_sum_ranking --check
-          python3 -m experiments.high_word_suffix_ranking --check
-          python3 -m experiments.fractional_word_ranking --check
-          python3 -m experiments.word_ranking_tail
+          set --
+          if [[ "$FULL_REPLAY" != true ]]; then set -- --cache-dir build/verification-cache; fi
+          python3 scripts/verify_checks.py --group tests "$@"
+          python3 scripts/benchmark.py "$@"
+          python3 scripts/verify_checks.py --group receipts "$@"
       - name: Generate progress report
         run: python3 scripts/render_site.py
       - name: Upload verified main artifact
@@ -58,6 +84,18 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:
           path: build/site
+      - name: Save verified project build
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.lean-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .lake/build
+          key: ${{ steps.keys.outputs.lean-key }}
+      - name: Save updated verification records
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.checks-cache.outputs.cache-hit != 'true' && steps.previous.outputs.digest != hashFiles('build/verification-cache/**')
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: build/verification-cache
+          key: ${{ steps.keys.outputs.checks-key }}
 
   publish:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

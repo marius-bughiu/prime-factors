@@ -48,7 +48,16 @@ def hasse_summary(work):
     return text
 
 
-def case_row(result):
+def revision_label(record, repo):
+    sha = escape(record['commit'], quote=True)
+    label = f'<a href="{repo}/commit/{sha}">{sha[:7]}</a>' if repo else sha[:7]
+    run = record.get('run_id')
+    if repo and run:
+        label += f' · <a href="{repo}/actions/runs/{escape(str(run), quote=True)}">workflow run</a>'
+    return label
+
+
+def case_row(result, repo=None):
     checked = result['verified']
     name = escape(result['id'])
     size = result['bits']
@@ -1665,12 +1674,23 @@ def case_row(result):
     else:
         unit = 'midpoint' if result['fermat_steps'] == 1 else 'midpoints'
         count = f'Fermat pipeline · {result["fermat_steps"]} {unit} tested · budget {result["max_steps"]}'
+    provenance = ''
+    if measured := result.get('measurement'):
+        working_tree = ' · local changes present' if measured.get('local_changes_at_start') else ''
+        provenance = (f'<p>Measured {escape(measured["measured_at"])} on {escape(measured["cpu"])}'
+                      f' · Python {escape(measured["python"])} · {revision_label(measured, repo)}{working_tree}</p>')
+    receipt = result.get('certificate_verification')
+    if receipt and receipt['reused']:
+        working_tree = ' · local changes present' if receipt.get('local_changes_at_start') else ''
+        provenance += (f'<p>Factorization certificate reused. Kernel checked '
+                       f'{escape(receipt["measured_at"])} in {duration(receipt["kernel_seconds"])}'
+                       f' · {revision_label(receipt, repo)}{working_tree}</p>')
     return f'''<details id="{name}"><summary><span class="case-title">{escape(result['description'])}</span>
 <span class="numeric size">{size} bits</span><span class="{cls}">{status}</span>
 <span class="numeric time">{duration(result['wall_seconds'])}</span></summary><div class="payload">
 <p>{count}</p><p class="label">Input</p><code>{escape(result['n'])}</code>
 <p class="label">{'Prime factors' if checked else 'Resolved portion'}</p><code>{factors}</code>
-<p>Lean verification {verification}</p><div>{evidence}</div></div></details>'''
+<p>Verification step {verification}</p>{provenance}<div>{evidence}</div></div></details>'''
 
 
 FINDING_TYPES = {
@@ -1737,12 +1757,18 @@ def render(out):
         finish = escape(data['commit_at_finish'], quote=True)
         run_link += f' · checkout changed during measurement to <a href="{repo}/commit/{finish}">{finish[:7]}</a>'
     library = proof_library(out, f'{repo}/blob/{sha}', {row['id'] for row in results})
+    reuse = data.get('benchmark_cache', {})
+    if 'reused' in reuse:
+        run_link += (f' · {int(reuse["executed"]):,} cases run · '
+                     f'{int(reuse["reused"]):,} unchanged cases reused')
+    if not any('measurement' in row for row in results):
+        run_link += f' · Measured on {escape(data["cpu"])} · Python {escape(data["python"])}'
     html = Template((ROOT / 'site/index.html').read_text()).substitute(
         **library,
         repo=repo, tree=f'{repo}/blob/{sha}', commit_url=f'{repo}/commit/{sha}', sha=sha[:7],
         bits=f"{biggest['bits']:,}", largest_desc=escape(biggest['description']), largest_id=escape(biggest['id']),
         count=len(results), complete=complete, partial=len(results) - complete,
-        rows='\n'.join(map(case_row, results)), cpu=escape(data['cpu']), python=escape(data['python']),
+        rows='\n'.join(case_row(result, repo) for result in results), cpu=escape(data['cpu']), python=escape(data['python']),
         lean=escape(data['lean']), date=escape(data['measured_at']), run_link=run_link)
     (out / 'index.html').write_text(html)
     for asset in ('style.css', 'findings.js'):

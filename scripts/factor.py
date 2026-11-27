@@ -340,6 +340,7 @@ def main() -> int:
             source = render_certificate(args.n, factors, certificate_trial_limit=args.certificate_trial_limit)
         discovery_seconds = perf_counter() - start
         verification_seconds = None
+        verification_record = None
         if source is not None:
             destination = args.lean.resolve() if args.lean else None
             # Write in the destination filesystem so a successful replace is atomic.
@@ -348,7 +349,11 @@ def main() -> int:
                 proof.write_text(source, encoding="utf-8")
                 if args.verify:
                     start = perf_counter()
-                    verify_file(proof)
+                    if __package__:
+                        from .certificate_cache import check_generated
+                    else:
+                        from certificate_cache import check_generated
+                    verification_record = check_generated(proof, verify_file)
                     verification_seconds = perf_counter() - start
                 if destination:
                     proof.replace(destination)
@@ -359,6 +364,8 @@ def main() -> int:
             "fermat_steps": steps, "discovery_seconds": discovery_seconds,
             "verified": verification_seconds is not None, "verification_seconds": verification_seconds,
         }
+        if verification_record is not None:
+            report["certificate_verification"] = verification_record
         if subgroup is not None:
             report["subgroup"] = subgroup
         if args.certificate_trial_limit != TRIAL_LIMIT:

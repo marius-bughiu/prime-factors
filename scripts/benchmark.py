@@ -7,8 +7,8 @@ import platform
 import re
 import subprocess
 import sys
+import tempfile
 import time
-from datetime import datetime, timezone
 from fractions import Fraction
 from functools import partial
 from math import isqrt
@@ -18,6 +18,13 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from scripts import benchmark_state
+
+STARTUP_INPUTS = benchmark_state.Observed()
+# An embedding may already have imported an experiment and performed fixture I/O.
+STARTUP_INPUTS.opaque = any(k.startswith('experiments.') for k in sys.modules)
+_startup_observation = benchmark_state.observe(ROOT, STARTUP_INPUTS)
+_startup_observation.__enter__()
 from experiments.adaptive_quartic_cover import search as adaptive_quartic_search
 from experiments.higher_divisor_window import search as higher_window_search
 from experiments.binomial_divisor_window import search as binomial_window_search
@@ -178,6 +185,7 @@ from experiments.continued_square import search as continued_square_search
 from experiments.predecessor_square import search as predecessor_square_search, search_square_offset
 from experiments.gap_stride import search as gap_search
 from experiments.cyclotomic_periods import expand_cases, reduced_table_search, search as cyclotomic_search
+_startup_observation.__exit__(None, None, None)
 
 
 def cli(args, expected_code=0):
@@ -225,6 +233,8 @@ def certify_split(case, proof, factor, search_seconds, key, work):
                        '--verify', '--lean', proof, *certificate_options])
         result.update({key: checked[key] for key in
                        ['factors', 'remaining', 'status', 'verified', 'verification_seconds']})
+        if 'certificate_verification' in checked:
+            result['certificate_verification'] = checked['certificate_verification']
         if certificate_options:
             result['certificate_trial_limit'] = checked['certificate_trial_limit']
         result['certificate_seconds'] = time.perf_counter() - certificate_start
@@ -2053,17 +2063,7 @@ def cpu_name():
     return platform.processor() or platform.machine()
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--out', type=Path, default=ROOT / 'build' / 'site')
-    args = parser.parse_args()
-    revision_command = ['git', 'rev-parse', 'HEAD']
-    sha = subprocess.check_output(revision_command, cwd=ROOT, text=True).strip()
-    local_changes = bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT))
-    out = args.out.resolve()
-    proofs = out / 'proofs'
-    proofs.mkdir(parents=True, exist_ok=True)
-    results = []
+def iter_cases():
     for filename, method in [('cases.json', 'fermat'), ('subgroup.json', 'subgroup'),
                              ('shifted.json', 'shifted'), ('reduced-orders.json', 'reduced-order'),
                              ('cyclotomic-periods.json', 'cyclotomic'), ('gap-stride.json', 'gap-stride'),
@@ -2242,22 +2242,61 @@ def main():
         if method == 'cyclotomic':
             cases = expand_cases(cases)
         for case in cases:
-            result = run_case(case, method, proofs)
-            results.append(result)
-            print(f"{result['id']}  {result['status']}  {result['wall_seconds']:.3f}s", flush=True)
-    if len(results) != len({case['id'] for case in results}):
-        raise ValueError('Duplicate benchmark ID')
-    finished_sha = subprocess.check_output(revision_command, cwd=ROOT, text=True).strip()
-    data = dict(commit=sha, measured_at=datetime.now(timezone.utc).isoformat(timespec='seconds'),
-                repository=os.getenv('GITHUB_REPOSITORY', 'marius-bughiu/prime-factors'),
-                run_id=os.getenv('GITHUB_RUN_ID'), platform=platform.platform(), cpu=cpu_name(),
-                python=platform.python_version(), lean=(ROOT / 'lean-toolchain').read_text().strip(),
-                results=results)
-    if finished_sha != sha:
-        data['commit_at_finish'] = finished_sha
+            yield filename, method, case
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--out', type=Path, default=ROOT / 'build' / 'site')
+    parser.add_argument('--cache-dir', type=Path,
+                        help='reuse previously verified benchmark rows and proof sources')
+    args = parser.parse_args(argv)
+    from scripts.certificate_cache import configure
+    cache_dir = args.cache_dir.resolve() if args.cache_dir is not None else None
+    out = args.out.resolve()
+    if cache_dir is not None and (cache_dir == ROOT or cache_dir in ROOT.parents
+                                  or cache_dir == out or cache_dir in out.parents or out in cache_dir.parents):
+        parser.error('choose a dedicated cache directory separate from the repository and output')
+    out.mkdir(parents=True, exist_ok=True)
+    revision_command = ['git', 'rev-parse', 'HEAD']
+    sha = subprocess.check_output(revision_command, cwd=ROOT, text=True).strip()
+    local_changes = bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT))
+    provenance = dict(commit=sha, repository=os.getenv('GITHUB_REPOSITORY', 'marius-bughiu/prime-factors'),
+                      run_id=os.getenv('GITHUB_RUN_ID'), platform=platform.platform(), cpu=cpu_name(),
+                      python=platform.python_version(), lean=(ROOT/'lean-toolchain').read_text().strip())
     if local_changes:
-        data['local_changes_at_start'] = True
-    (out / 'results.json').write_text(json.dumps(data, indent=2) + '\n')
+        provenance['local_changes_at_start'] = True
+    if cache_dir is not None and not benchmark_state.clean_packages(ROOT):
+        print('Dependency checkout has local changes; running benchmark rows fresh.', flush=True)
+        cache_dir = None
+    configure(cache_dir)
+    runtime = benchmark_state.runtime_key() if cache_dir is not None else None
+    cache = cache_dir / benchmark_state.FORMAT if cache_dir is not None else None
+
+    with tempfile.TemporaryDirectory(dir=out.parent) as temp:
+        work = Path(temp)
+        fresh = work / 'proofs'
+        fresh.mkdir()
+        def inputs():
+            return benchmark_state.input_hashes(ROOT, runtime, ignored=(
+                work, cache, out/'proofs', out/'results.json', cache_dir and cache_dir/'certificates'))
+        initial = inputs() if cache is not None else None
+        results, hits, keys = benchmark_state.run_cases(
+            iter_cases(), run_case, fresh, work, provenance, initial, cache, STARTUP_INPUTS)
+        finished_sha = subprocess.check_output(revision_command, cwd=ROOT, text=True).strip()
+        if cache is not None and (inputs().snapshot() != initial.snapshot() or not benchmark_state.clean_packages(ROOT)):
+            raise RuntimeError('Benchmark inputs changed during measurement; rerun before caching.')
+        data = dict(provenance, measured_at=benchmark_state.timestamp(), results=results,
+                    benchmark_cache=dict(reused=hits, executed=len(results)-hits))
+        if finished_sha != sha:
+            data['commit_at_finish'] = finished_sha
+        (work/'results.json').write_text(json.dumps(data, indent=2) + '\n')
+        if cache is not None:
+            benchmark_state.publish_entries(work/'entries', keys, cache)
+        from scripts.verify_checks import CHECKS
+        standalone = {name for check in CHECKS for name in check.outputs}
+        benchmark_state.publish_site(work, out, standalone)
+    print(f'Benchmark rows: {len(results)-hits} executed, {hits} reused.', flush=True)
 
 
 if __name__ == '__main__':

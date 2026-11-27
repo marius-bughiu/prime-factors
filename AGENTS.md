@@ -12,6 +12,8 @@ Start with `README.md` for the research question and `discoveries/searching-the-
 
 Run `lake build`, `lake env lean scripts/Audit.lean`, and `python3 -m unittest discover -s tests` after relevant changes. For changes to discovery, proof generation, or benchmarks, also run `python3 scripts/benchmark.py` against the pinned toolchain. A complete result has a checked certificate. Keep unresolved cofactors and spent budgets visible in partial results.
 
+For incremental checks, pass `--cache-dir build/verification-cache` to the benchmark runner and to `python3 scripts/verify_checks.py`. Use a cache created by your own checks or the trusted main workflow. Keep each row’s original measurement and verification provenance when rebuilding the report. [Incremental and full replay](CONTRIBUTING.md#verification)
+
 Use bounded, reproducible examples in CI. Add a benchmark fixture with expected factors stored as decimal strings. The benchmark runner may use expected factors only to check output. Cite the origin and license of code you reuse. In the pull request, explain AI assistance, the mathematics you verified, and the checks you ran.
 
 ## Public research findings
