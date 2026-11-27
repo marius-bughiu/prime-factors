@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Can a few cheap counts tell us which interval to keep? For a fixed product remainder, three single-prime counts and three pair counts decide the exact number of joint hits at 405 of 429 starts. Two small semiprimes with identical counts give opposite answers in their actual first four positions. [Worked examples and period census](when-pair-counts-determine-a-common-sum.md)
+
 The product and the factor widths determine a family of remainder tests that isolates the true sum without assuming RH. Visiting each test would cost more than $2^{930}$ prime visits. Lean also checks the exact power at which a prime can reject a false sum when a square factor masks the first test. [Uniqueness, its hypotheses and a worked example](which-prime-rejects-a-wrong-factor-sum.md)
 
 Small remainders through 43 selected the exact sum on 419,636,024,497 using only the product and the factor widths. On two 2,048-bit controls, the checks through 19 reduce the full list about 125-fold and 84-fold, respectively. Gallagher’s larger sieve also gives an unconditional bound of $2^{519}$ surviving sums for any product of two 1,024-bit primes. Reaching that bound by visiting every test modulus would require more than $2^{511}$ primes. [Worked example, two control counts and proof of the full-width bound](how-far-public-remainders-narrow-the-sum.md)

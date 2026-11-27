@@ -1,5 +1,30 @@
 [
   {
+    "id": "identical-pair-counts-and-opposite-common-sum-answers",
+    "category": "limits",
+    "title": "Two products give identical pair counts and different common-sum answers",
+    "impact": "In the first four candidate sums, each prime test passes twice and each pair passes together once. For 10,961, one sum passes all three. For 187,709, none does.",
+    "scope": "Two small semiprimes selected to compare the same residue tables at 3, 13 and 11. Both windows start at the lower end allowed by their product and balance bounds.",
+    "detail": "The difference appears in the positions that pass modulo 13. Retaining the six counts alone discards this information.",
+    "sources": [
+      {"href": "discoveries/when-pair-counts-determine-a-common-sum.md", "label": "Both four-row tables"},
+      {"href": "PrimeFactors/PairwiseSumCounts.lean", "label": "Verified inputs, windows and counts"}
+    ]
+  },
+  {
+    "id": "exact-pair-counts-settle-405-of-429-starts",
+    "category": "formulas",
+    "title": "Six counts determine the exact number of joint hits at 405 of 429 starts",
+    "impact": "The counts force zero common hits in 275 windows, one in 128 and two in 2. In the 24 ambiguous windows the actual answers split evenly between zero and one.",
+    "scope": "A complete period for four consecutive allowed sums when the product is 665 modulo 1,716. The percentage is over starting positions for that residue, with all six counts supplied.",
+    "detail": "Sharp lower and upper bounds describe every answer consistent with three individual counts, three pair counts and the window length.",
+    "sources": [
+      {"href": "discoveries/when-pair-counts-determine-a-common-sum.md#all-429-starting-positions", "label": "Complete census and its scope"},
+      {"href": "PrimeFactors/ThreeTestMarginals.lean", "label": "Sharp bounds"},
+      {"href": "PrimeFactors/FourRowResidueCounts.lean", "label": "Certified census"}
+    ]
+  },
+  {
     "id": "no-common-sum-despite-pairwise-witnesses",
     "category": "limits",
     "title": "Every pair of tests can pass somewhere in an empty search interval",

@@ -34,6 +34,8 @@ Try dividing the range into short intervals. We would like to discard an interva
 
 Every pair of columns has a shared passing row. All three together have none. A search that asks only whether each pair can pass somewhere could keep this entire empty prefix. The next candidate, 384, also fails modulo three. The first common survivor is 388, the actual factor sum. The example pinpoints what was lost when we summarized each pair with a yes or no: the identity of its witness. [Proof for every subset of these tests](../PrimeFactors/PairwiseSumObstruction.lean)
 
+Even exact counts for each pair can lose the common position. On a second example, two different products give the same six counts and opposite answers. A survey over one full remainder period quantifies how often the counts settle the question. [Sharp bounds and all 429 starts](when-pair-counts-determine-a-common-sum.md)
+
 ## Why some prime must reject a wrong sum
 
 For a wrong sum the discriminant is a positive nonsquare below $2^{2050}$. The proof assigns each positive integer a sign using the Jacobi symbol of $D$. Integers sharing a factor with $120D$ get sign zero. This choice ensures that a prime with negative sign sees a nonsquare in the original discriminant, including any square factor. A finite construction shows that a negative sign occurs. [Sign and periodicity](../PrimeFactors/DiscriminantJacobiCharacter.lean) · [Existence of a negative sign](../PrimeFactors/NonsquareJacobiWitness.lean)

@@ -856,3 +856,7 @@ import PrimeFactors.UnconditionalSignBudget
 import PrimeFactors.DiscriminantPrimeSeparation
 import PrimeFactors.MaskedSquareWitness
 import PrimeFactors.PairwiseSumObstruction
+import PrimeFactors.PairwiseSumCounts
+import PrimeFactors.ThreeTestMarginals
+import PrimeFactors.BooleanMarginalAmbiguity
+import PrimeFactors.FourRowResidueCounts
