@@ -1,5 +1,116 @@
 [
   {
+    "id": "unbounded-square-scale-period-separation",
+    "category": "cases",
+    "title": "One square-root guess can succeed while the first period grows without bound",
+    "impact": "On the constructed product 547,606,837, the very first square-root guess gives 22,501 and 24,337. The shortest shared repeat is 422,500.",
+    "scope": "This is a special family with square totient. The finite formulas are checked in Lean. The infinitude argument applies a published theorem about fifty linear forms.",
+    "detail": "For any prescribed period threshold, the construction admits pairs above it with q−p at least p/300. The direct calculation needs only the product and scale one.",
+    "sources": [
+      {"href": "discoveries/which-period-guesses-give-the-prime-sum.md#can-the-difference-grow-without-bound", "label": "Construction and external theorem"},
+      {"href": "PrimeFactors/JacobiSquarePeriodFamily.lean", "label": "Lean prime-hit implication and control"}
+    ]
+  },
+  {
+    "id": "small-direct-square-scale-coverage",
+    "category": "limits",
+    "title": "A trillion square-root guesses still reach very few balanced pairs",
+    "impact": "Fewer than one in 2⁷³⁶ eligible prime pairs yields its true sum at any square-root scale up to 2⁴⁰.",
+    "scope": "The bound counts sorted distinct 1,024-bit primes with a 2,048-bit product. It applies to direct sum recovery, including successful guesses shorter than the first period.",
+    "detail": "A successful scale forces the totient to be that scale times a square. Counting the possible square roots and divisors gives a finite estimate at the project’s actual input size.",
+    "sources": [
+      {"href": "discoveries/which-period-guesses-give-the-prime-sum.md#how-often-can-the-direct-search-finish-early", "label": "Direct search population"},
+      {"href": "PrimeFactors/JacobiSquareClassPopulation.lean", "label": "Lean coverage bound"}
+    ]
+  },
+  {
+    "id": "single-sequence-unit-power-test",
+    "category": "gains",
+    "title": "A wrong guess for one sampled sequence can be rejected without summing it",
+    "impact": "After two direct divisor checks, testing the odd-stride sequence reduces to powers of units. A failing power certifies failure at that specific starting offset.",
+    "scope": "The reduction applies to odd primes p < q < 2p with the prescribed odd stride. It tests supplied guesses and relates the two shortest periods.",
+    "detail": "At 221 the odd-stride sequence has period 24. Dividing by its common factor with the power of two removed from the stride gives 12, the shared period at stride 110.",
+    "sources": [
+      {"href": "discoveries/reading-the-prime-sum-from-one-sampled-sequence.md#removing-the-powers-of-two-from-the-stride", "label": "When one sequence is enough"},
+      {"href": "PrimeFactors/JacobiScalarPeriodProbe.lean", "label": "Lean equivalence"}
+    ]
+  },
+  {
+    "id": "first-square-class-versus-jacobi-period",
+    "category": "formulas",
+    "title": "A square-root test can find the primes before the first shared repeat",
+    "impact": "On a constructed 2,048-bit product the square-root search split the number at guess 6. The shortest shared repeat, calculated from the recovered factors, had 2,043 bits.",
+    "scope": "For distinct primes with 7 ≤ p < q ≤ 2p, the first correct square-root guess is the squarefree part of the shortest shared repeat. Finding that part cheaply for a general product remains open.",
+    "detail": "The first guess is obtained by removing the largest square divisor from the repeat. We also characterize every later guess that recovers the sum. The 14,647 control was chosen for its square totient.",
+    "sources": [
+      {"href": "discoveries/which-period-guesses-give-the-prime-sum.md", "label": "Comparison of stopping points"},
+      {"href": "PrimeFactors/JacobiPeriodSquareClass.lean", "label": "Lean classification"},
+      {"href": "PrimeFactors/JacobiPeriodScales.lean", "label": "Which period multiples recover the sum"}
+    ]
+  },
+  {
+    "id": "testing-a-jacobi-stride-period",
+    "category": "gains",
+    "title": "One modular power can disprove a proposed shared repeat",
+    "impact": "At 221, six steps repeat from one start. The remainder 118 from a single power of 3 proves six fails as a shared repeat.",
+    "scope": "For two distinct primes at least seven and stride (N−1)/2, one failed test excludes the guess and all its divisors. A passing base can accept a wrong guess.",
+    "detail": "Lean gives the exact fraction of units passing each guess. At length six exactly 96 of 192 units pass. Lengths 12 and 24 both pass for every unit.",
+    "sources": [
+      {"href": "discoveries/testing-a-jacobi-stride-period.md#one-base", "label": "Example and cost"},
+      {"href": "PrimeFactors/JacobiPeriodProbe.lean", "label": "Lean equivalence and readout"},
+      {"href": "PrimeFactors/JacobiPeriodCount.lean", "label": "Exact passing counts"}
+    ]
+  },
+  {
+    "id": "two-bases-for-all-period-guesses",
+    "category": "gains",
+    "title": "Two reusable bases can test every proposed length",
+    "impact": "At 221, bases 4 and 5 together accept exactly the multiples of 12. Two thirds of all ordered pairs there give correct answers to every guess.",
+    "scope": "Two independently uniform units have a greater than 50% chance of being correct simultaneously for all guesses. Determining that a particular pair has this property is a separate task.",
+    "detail": "The small experiment tested all 36,864 ordered pairs at 221. It also found 3,072 qualifying pairs out of 3,600 at 77 and 9,216 out of 14,400 at 143.",
+    "sources": [
+      {"href": "discoveries/testing-a-jacobi-stride-period.md#reusing-two-bases", "label": "Proof and measured fractions"},
+      {"href": "PrimeFactors/JacobiPeriodPanel.lean", "label": "Lean simultaneous guarantee"}
+    ]
+  },
+  {
+    "id": "grh-prime-list-for-jacobi-shifts",
+    "category": "gains",
+    "title": "A fixed list of small primes can settle a proposed repeat",
+    "impact": "For a 2,048-bit product of two 1,024-bit primes, the prime bases through 2²¹ suffice to decide each shared-repeat guess under the published Dirichlet GRH estimate.",
+    "scope": "The local proof takes a finite subgroup bound as a hypothesis. The cited paper supplies it under Dirichlet GRH. Selecting the shortest repeat is a separate search.",
+    "detail": "A wrong guess has a proper subgroup of passing bases. The analytic result supplies a small prime outside that subgroup.",
+    "sources": [
+      {"href": "discoveries/testing-a-jacobi-stride-period.md#which-small-bases-suffice-under-dirichlet-grh", "label": "Assumptions and analytic source"},
+      {"href": "PrimeFactors/JacobiPeriodProbe.lean", "label": "Lean finite reduction"}
+    ]
+  },
+  {
+    "id": "small-jacobi-shared-period-coverage",
+    "category": "limits",
+    "title": "Even a trillion repeat guesses cover very few full-size products",
+    "impact": "Fewer than one in 2⁹⁷⁸ eligible prime pairs has any positive shared repeat at most 2⁴⁰.",
+    "scope": "The bound counts each sorted pair of distinct 1,024-bit primes with a 2,048-bit product once. It applies to the size of the shared repeat at stride (N−1)/2.",
+    "detail": "The shortest length is a product of two coprime reduced predecessors. If it is small, both predecessors must lie in a short interval that can be counted explicitly.",
+    "sources": [
+      {"href": "discoveries/testing-a-jacobi-stride-period.md#how-often-can-the-shortest-repeat-be-small", "label": "Population and counting argument"},
+      {"href": "PrimeFactors/JacobiStridePopulation.lean", "label": "Lean finite bound"}
+    ]
+  },
+  {
+    "id": "one-odd-stride-jacobi-sequence",
+    "category": "formulas",
+    "title": "One sampled sequence can encode the sum of balanced primes",
+    "impact": "At 3,053, changing the stride shortened the repeat from 105 to 15 and gave the sum 114. At 221, removing a power of two from the stride corrected a misleading six-step repeat.",
+    "scope": "For odd primes p < q < 2p, two direct divisor checks cover the exceptional cases. In the rest the exact shortest repeat at the specified odd stride gives the sum.",
+    "detail": "Grouping terms reduced 77,070 updates to 210 at 3,053. Computing the groups still used all 3,053 residues, while Fermat's method found the same primes in two square tests.",
+    "sources": [
+      {"href": "discoveries/reading-the-prime-sum-from-one-sampled-sequence.md", "label": "Formula and baseline work"},
+      {"href": "PrimeFactors/JacobiScalarStride.lean", "label": "Lean proof for the single sequence"},
+      {"href": "experiments/jacobi_scalar_stride.py", "label": "Reproducible controls"}
+    ]
+  },
+  {
     "id": "shortest-four-term-span",
     "category": "formulas",
     "title": "The shortest four-term rule determines the prime sum",

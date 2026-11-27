@@ -782,3 +782,13 @@ import PrimeFactors.NeighboringJacobiSamples
 import PrimeFactors.JacobiFourSpan
 import PrimeFactors.JacobiFourUpper
 import PrimeFactors.JacobiFourMinimum
+import PrimeFactors.JacobiPeriodCount
+import PrimeFactors.JacobiPeriodProbe
+import PrimeFactors.JacobiPeriodPanel
+import PrimeFactors.JacobiStridePopulation
+import PrimeFactors.JacobiPeriodScales
+import PrimeFactors.JacobiPeriodSquareClass
+import PrimeFactors.JacobiScalarStride
+import PrimeFactors.JacobiScalarPeriodProbe
+import PrimeFactors.JacobiSquareClassPopulation
+import PrimeFactors.JacobiSquarePeriodFamily

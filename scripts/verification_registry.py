@@ -58,6 +58,11 @@ CHECKS = (
     experiment('rotated_coefficient_filter', data=('benchmarks/rotated-coefficient-filter.json',)),
     experiment('signed_index_notches', data=('benchmarks/signed-index-notches.json',)),
     experiment('jacobi_moment_periods', data=('benchmarks/jacobi-moment-periods.json',)),
+    experiment('jacobi_stride_period_tests', data=('benchmarks/jacobi-stride-period-tests.json',)),
+    experiment('jacobi_period_scale_compare', data=('benchmarks/jacobi-period-scales.json',
+                                                   'benchmarks/predecessor-square.json')),
+    experiment('jacobi_scalar_stride', data=('benchmarks/jacobi-scalar-stride.json',)),
+    experiment('jacobi_square_period_family', data=('benchmarks/jacobi-square-period-family.json',)),
     experiment('neighboring_jacobi_samples', '--exhaustive', data=('benchmarks/neighboring-jacobi-samples.json',)),
     experiment('jacobi_four_width', data=('benchmarks/jacobi-four-width.json',)),
 )

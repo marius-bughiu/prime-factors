@@ -1,0 +1,39 @@
+[
+  {
+    "n": "77", "factors": ["7", "11"], "full_period": 15,
+    "offset_periods": [15], "shared_period": 15, "units": 60,
+    "panels": {"good_pairs": 3072, "ordered_pairs": 3600,
+               "witness": {"bases": [10, 6], "first_passes": [3, 5]}},
+    "probes": {
+      "1": {"matching_starts": 0, "first_match": null, "passing_units": 4},
+      "3": {"matching_starts": 0, "first_match": null, "passing_units": 12},
+      "5": {"matching_starts": 0, "first_match": null, "passing_units": 20},
+      "15": {"matching_starts": 15, "first_match": 0, "passing_units": 60},
+      "30": {"matching_starts": 15, "first_match": 0, "passing_units": 60}
+    }
+  },
+  {
+    "n": "143", "factors": ["11", "13"], "full_period": 30,
+    "offset_periods": [30], "shared_period": 30, "units": 120,
+    "panels": {"good_pairs": 9216, "ordered_pairs": 14400,
+               "witness": {"bases": [5, 3], "first_passes": [10, 15]}},
+    "probes": {
+      "5": {"matching_starts": 10, "first_match": 3, "passing_units": 20},
+      "15": {"matching_starts": 0, "first_match": null, "passing_units": 60},
+      "30": {"matching_starts": 30, "first_match": 0, "passing_units": 120},
+      "60": {"matching_starts": 30, "first_match": 0, "passing_units": 120}
+    }
+  },
+  {
+    "n": "221", "factors": ["13", "17"], "full_period": 24,
+    "offset_periods": [12, 6], "shared_period": 12, "units": 192,
+    "panels": {"good_pairs": 24576, "ordered_pairs": 36864,
+               "witness": {"bases": [4, 5], "first_passes": [3, 4]}},
+    "probes": {
+      "1": {"matching_starts": 0, "first_match": null, "passing_units": 16},
+      "6": {"matching_starts": 12, "first_match": 1, "passing_units": 96},
+      "12": {"matching_starts": 24, "first_match": 0, "passing_units": 192},
+      "24": {"matching_starts": 24, "first_match": 0, "passing_units": 192}
+    }
+  }
+]

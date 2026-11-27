@@ -1,0 +1,33 @@
+# Can a modular power check a proposed repeat?
+
+At 221, one sequence of Jacobi sums repeats after six steps. Starting one position earlier requires twelve. The number 3 settles whether six works **from every start**. Raising it to the power $220\times6$ gives 118 modulo 221. A genuine shared repeat would give 1. The test uses only the product and the proposed length. [Lean equivalence and rejection of divisors](../PrimeFactors/JacobiPeriodProbe.lean)
+
+## One base
+
+Let $N=pq$ for distinct primes at least seven. Let $u(j)$ be the complete Jacobi moment of degree $2(j+1)$ modulo $N$. Set $s=(N-1)/2$. A proposed length $t$ works at every offset if $u(j+s(k+t))=u(j+sk)$ for every $j,k\ge0$. Taking $k=0$ shows this is equivalent to an ordinary shift of $st$ in the whole sequence. Twice its least ordinary period equals the exponent of the unit group. Hence $t$ is a shared repeat if and only if every unit $x$ satisfies $x^{(N-1)t}=1\pmod N$. [Definition of the moments and ordinary periods](what-the-period-of-the-jacobi-moments-reveals.md) · [Lean power test](../PrimeFactors/JacobiPeriodProbe.lean)
+
+Write $g=\gcd(p-1,q-1)$, $a=(p-1)/g$ and $b=(q-1)/g$. The **shortest shared repeat** is $R=ab$. Among units chosen uniformly at random, the fraction passing a proposed $t$ is exactly $\gcd(R,t)/R$. For an incorrect guess this is at most one half. One failed power also rules out every divisor of $t$. The fraction follows by counting the kernel in each prime field and multiplying the counts; the familiar Fermat-base count is the case $t=1$. One test takes a gcd to check the base and $O(\log N+\log t)$ modular multiplications using repeated squaring. [Exact counts in Lean](../PrimeFactors/JacobiPeriodCount.lean) · [Classical Fermat-base count, p. 56](https://math.dartmouth.edu/~carlp/probprime.pdf#page=4)
+
+## Reusing two bases
+
+Two independently uniform units, chosen once, have probability **greater than one half** of giving the right joint decision for *every* $t$. If both pass any wrong guess, they also both pass $R/\ell$ for some prime divisor $\ell$ of $R$. For a specified $\ell$ the latter probability is $1/\ell^2$. Summing those probabilities over the finite set of prime divisors gives less than one half. This bounds the chance of even one false acceptance across all guesses, including guesses made after earlier results are seen. A given pair need not have this property. [Lean proof and checked example](../PrimeFactors/JacobiPeriodPanel.lean)
+
+| Product | Shortest repeat from each distinct stride orbit | Shortest shared repeat | Ordered base pairs correct for all guesses |
+|---:|---|---:|---:|
+| 77 | 15 | 15 | 3,072 of 3,600 |
+| 143 | 30 | 30 | 9,216 of 14,400 |
+| 221 | 12 and 6 | 12 | 24,576 of 36,864 |
+
+At 221 the powers of bases 4 and 5 pass exactly the multiples of 3 and 4 respectively. Requiring both selects the multiples of 12. At 143 a five-step shift happens to match 10 of 30 individual positions, even though the only stride orbit has period 30. The experiment computed $2N$ complete even moments from each product, costing 11,858, 40,898 and 97,682 weighted-term updates respectively. It tested each positive shift through twice the measured minimum and checked every ordered unit pair. Listing the units in increasing order already exposed a factor through a gcd on all three controls. [Product-only experiment](../experiments/jacobi_stride_period_tests.py) · [Exact small controls](../benchmarks/jacobi-stride-period-tests.json)
+
+## Which small bases suffice under Dirichlet GRH?
+
+For a wrong guess, the passing units form a proper subgroup. Theorem 1.1(2) of Lamzouri, Li and Soundararajan gives a prime outside it at most $(\log N)^2$ under Dirichlet GRH, provided $N\ge3000$ and no prime divisor is below $(\log N)^2$. Both size conditions hold for a 2,048-bit product of two 1,024-bit primes. Testing the prime bases through $2^{21}$ therefore suffices for an exact yes/no answer for **any given guess** in this family. The same list works for every guess. Our Lean theorem takes the finite subgroup bound as an explicit hypothesis. The external verification reports the required Dirichlet GRH statement; the application of the published analytic estimate is on paper. [Local Lean bridge](../PrimeFactors/JacobiPeriodProbe.lean) · [Least prime outside a subgroup, Theorem 1.1](https://arxiv.org/pdf/1309.3595#page=2) · [External Lean verification and scope](https://math.mit.edu/~drew/grh/)
+
+## How often can the shortest repeat be small?
+
+Fewer than one in $2^{978}$ eligible prime pairs has a shared positive repeat at most $2^{40}$. Here each sorted pair of distinct 1,024-bit primes with a 2,048-bit product counts once. The bound is unconditional. To see why, write $p=ga+1$, $q=gb+1$ as above with $p<q$. Equal width gives $b\le2a$. Thus $R=ab\le B$ forces $b^2\le2B$. For fixed $b$, there are at most $2^{1023}$ possibilities for the pair consisting of $g/2$ and $a$, even before checking primality. Summing over possible $b$ and using the project's lower bound for the whole prime-pair population gives the stated fraction. The bound covers a search confined to small period guesses. It does not bound methods that jump directly to a large candidate. [Lean counting proof](../PrimeFactors/JacobiStridePopulation.lean) · [Eligible pair count](../PrimeFactors/ChebyshevPrimeSample.lean)
+
+## What the shortest repeat tells us
+
+For every $p<q$ in the stated range, $g=\lfloor\sqrt{\lfloor N/R\rfloor}\rfloor$ and $p+q=N+1-g^2R$. This follows by expanding $(ga+1)(gb+1)$ and bounding it between $g^2R$ and $(g+1)^2R$. At 221 the exact length 12 gives $g=4$ and sum 30. Accepting an arbitrary multiple is insufficient: 24 passes every unit test and gives sum candidate 6. A direct sum calculation can also succeed *before* the first period. [Exact square-root readout](../PrimeFactors/JacobiPeriodProbe.lean) · [Which guesses give the sum](which-period-guesses-give-the-prime-sum.md)

@@ -1,0 +1,12 @@
+[
+  {
+    "n": "3053", "factors": ["43", "71"],
+    "ordinary": 105, "half_predecessor": 15, "odd_predecessor": 15,
+    "dyadic_multiplier": 1, "raw_readout_splits": true
+  },
+  {
+    "n": "221", "factors": ["13", "17"],
+    "ordinary": 24, "half_predecessor": 6, "odd_predecessor": 24,
+    "dyadic_multiplier": 2, "raw_readout_splits": false
+  }
+]
