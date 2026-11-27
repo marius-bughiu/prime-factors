@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Sixteen tests derived from the product leave at most 8.5580% of the smaller-factor positions that remain after removing multiples of 2, 3 and 5 on the fresh 2,048-bit example. On the crossed example the ceiling is 6.1590%. [Search interval, proof and verification](sixteen-tests-for-the-smaller-factor.md)
+
 Across 24 independently drawn small prime pairs, the extra sign halved the square tests left by an ordinary sieve. Setup made the search slower overall. All 24 factorizations were checked in Lean. [Timings from 20-bit and 24-bit prime pairs](timing-reciprocal-fermat-tables.md)
 
 Two product-selected Jacobi tests together leave at most 33.7461% of the smaller-factor positions on the fresh 2,048-bit input and 26.5876% on the crossed input. These whole-interval bounds use a published character-sum estimate and do not assume independent tests. [Proof, public witnesses and denominator](two-jacobi-tests-in-the-actual-factor-window.md)

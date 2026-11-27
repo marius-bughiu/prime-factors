@@ -624,3 +624,4 @@ import PrimeFactors.OrientedTraceClasses
 import PrimeFactors.TwoCharacterWindow
 import PrimeFactors.CharacterProductBound
 import PrimeFactors.CharacterWindowMoment
+import PrimeFactors.CharacterWindowRate
