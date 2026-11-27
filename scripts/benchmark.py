@@ -47,6 +47,7 @@ from experiments.neighbor_smooth_sum import search as neighbor_smooth_search
 from experiments.smooth_factor_sums import scan_two_three
 from experiments.near_smooth_sum import search as near_smooth_search
 from scripts.reduced_smooth_benchmark import reduced_smooth_case
+from scripts.shared_smooth_benchmark import shared_smooth_case
 from experiments import carry_interval, geometric_lifted_readout, geometric_readout_blocks
 from experiments import geometric_precision_readout, geometric_sum_readout, radix_carries, sum_signature_join
 from scripts import near_smooth_certificate, trace_cover_certificate
@@ -820,6 +821,8 @@ def run_case(case, method, proofs):
         result = certify_split(case, proof, factor, elapsed, 'radix_carries', work)
         if factor is not None:
             result['carry_proof'] = check_carry_probe(n, factor, work['hit'], proof)
+    elif method == 'shared-smooth-powers':
+        result = shared_smooth_case(case, proof, agree, certify_split)
     elif method == 'reduced-smooth-readout':
         result = reduced_smooth_case(case, proof, agree, certify_split)
     elif method == 'near-smooth-sum':
@@ -2024,6 +2027,7 @@ def main():
                              ('two-three-sum.json', 'two-three-sum'),
                              ('near-smooth-sum.json', 'near-smooth-sum'),
                              ('reduced-smooth-readout.json', 'reduced-smooth-readout'),
+                             ('shared-smooth-powers.json', 'shared-smooth-powers'),
                              ('offset-crt.json', 'offset-crt'),
                              ('offset-lattice-batches.json', 'offset-lattice-batches'),
                              ('offset-row-norm.json', 'offset-lattice-batches'),

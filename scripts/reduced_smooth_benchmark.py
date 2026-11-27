@@ -39,7 +39,7 @@ def check_sweep(n, work, divisor, proof):
         symbolic = ','.join(f'{prime}^Nat.log {prime} (2^{bits}-1)' for prime, _ in schedule)
         lines += [
             f'private theorem plan : schedule {bound} (2^{bits}-1) = [{exponents}] := calc',
-            f'  _ = [{symbolic}] := by rw [schedule, primes]']
+            f'  _ = [{symbolic}] := by simp only [schedule, primes, List.map_cons, List.map_nil]']
         if logs:
             lines.append(f"  _ = [{','.join(powers)}] := by rw [{', '.join(logs)}]")
         lines += [

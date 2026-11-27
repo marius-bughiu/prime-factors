@@ -1,0 +1,872 @@
+{
+  "generator": "python3 -m experiments.opposite_key_comparison",
+  "machine": "arm64",
+  "system": "Darwin",
+  "system_release": "27.0.0",
+  "python": "3.9.6",
+  "full_size": {
+    "fixture": "complementary-keys-fresh-2048",
+    "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+    "product_mod_12": 7,
+    "seeds": [
+      86412,
+      86413,
+      86414
+    ],
+    "median_seconds": [
+      {
+        "draws": 32,
+        "target": {
+          "wall_s": 0.025253,
+          "cpu_s": 0.025191
+        },
+        "euclid": {
+          "wall_s": 0.016122,
+          "cpu_s": 0.016006
+        },
+        "direct": {
+          "wall_s": 0.011097,
+          "cpu_s": 0.010964
+        }
+      },
+      {
+        "draws": 64,
+        "target": {
+          "wall_s": 0.071699,
+          "cpu_s": 0.071196
+        },
+        "euclid": {
+          "wall_s": 0.039082,
+          "cpu_s": 0.038699
+        },
+        "direct": {
+          "wall_s": 0.03132,
+          "cpu_s": 0.031035
+        }
+      },
+      {
+        "draws": 128,
+        "target": {
+          "wall_s": 0.214191,
+          "cpu_s": 0.209781
+        },
+        "euclid": {
+          "wall_s": 0.111799,
+          "cpu_s": 0.108783
+        },
+        "direct": {
+          "wall_s": 0.102462,
+          "cpu_s": 0.100448
+        }
+      },
+      {
+        "draws": 256,
+        "target": {
+          "wall_s": 0.598019,
+          "cpu_s": 0.592612
+        },
+        "euclid": {
+          "wall_s": 0.311375,
+          "cpu_s": 0.306545
+        },
+        "direct": {
+          "wall_s": 0.360143,
+          "cpu_s": 0.351601
+        }
+      },
+      {
+        "draws": 512,
+        "target": {
+          "wall_s": 1.708711,
+          "cpu_s": 1.700652
+        },
+        "euclid": {
+          "wall_s": 0.982332,
+          "cpu_s": 0.970824
+        },
+        "direct": {
+          "wall_s": 1.254627,
+          "cpu_s": 1.248564
+        }
+      }
+    ],
+    "measurements": [
+      {
+        "draws": 32,
+        "runs": [
+          {
+            "seed": 86412,
+            "order": [
+              "target",
+              "euclid",
+              "direct"
+            ],
+            "methods": {
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.025253,
+                "cpu_s": 0.025191,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 32,
+                "target_values": 32,
+                "target_gcds": 1
+              },
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.015164,
+                "cpu_s": 0.015097,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 32,
+                "euclid_gcds": 2,
+                "euclid_inversions": 15,
+                "coefficient_updates": 240
+              },
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.011097,
+                "cpu_s": 0.010964,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 32,
+                "products": 528,
+                "direct_gcds": 1
+              }
+            }
+          },
+          {
+            "seed": 86413,
+            "order": [
+              "euclid",
+              "direct",
+              "target"
+            ],
+            "methods": {
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.016439,
+                "cpu_s": 0.016281,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 32,
+                "euclid_gcds": 2,
+                "euclid_inversions": 15,
+                "coefficient_updates": 240
+              },
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.011469,
+                "cpu_s": 0.011375,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 32,
+                "products": 528,
+                "direct_gcds": 1
+              },
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.026213,
+                "cpu_s": 0.026014,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 32,
+                "target_values": 32,
+                "target_gcds": 1
+              }
+            }
+          },
+          {
+            "seed": 86414,
+            "order": [
+              "direct",
+              "target",
+              "euclid"
+            ],
+            "methods": {
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.010984,
+                "cpu_s": 0.01096,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 32,
+                "products": 528,
+                "direct_gcds": 1
+              },
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.024301,
+                "cpu_s": 0.024238,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 32,
+                "target_values": 32,
+                "target_gcds": 1
+              },
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.016122,
+                "cpu_s": 0.016006,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 32,
+                "euclid_gcds": 2,
+                "euclid_inversions": 15,
+                "coefficient_updates": 240
+              }
+            }
+          }
+        ]
+      },
+      {
+        "draws": 64,
+        "runs": [
+          {
+            "seed": 86412,
+            "order": [
+              "target",
+              "euclid",
+              "direct"
+            ],
+            "methods": {
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.071574,
+                "cpu_s": 0.071196,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 64,
+                "target_values": 64,
+                "target_gcds": 1
+              },
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.039082,
+                "cpu_s": 0.038699,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 64,
+                "euclid_gcds": 2,
+                "euclid_inversions": 31,
+                "coefficient_updates": 992
+              },
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.031218,
+                "cpu_s": 0.030963,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 64,
+                "products": 2080,
+                "direct_gcds": 1
+              }
+            }
+          },
+          {
+            "seed": 86413,
+            "order": [
+              "euclid",
+              "direct",
+              "target"
+            ],
+            "methods": {
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.038805,
+                "cpu_s": 0.038532,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 64,
+                "euclid_gcds": 2,
+                "euclid_inversions": 31,
+                "coefficient_updates": 992
+              },
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.032066,
+                "cpu_s": 0.031764,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 64,
+                "products": 2080,
+                "direct_gcds": 1
+              },
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.071699,
+                "cpu_s": 0.071131,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 64,
+                "target_values": 64,
+                "target_gcds": 1
+              }
+            }
+          },
+          {
+            "seed": 86414,
+            "order": [
+              "direct",
+              "target",
+              "euclid"
+            ],
+            "methods": {
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.03132,
+                "cpu_s": 0.031035,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 64,
+                "products": 2080,
+                "direct_gcds": 1
+              },
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.073529,
+                "cpu_s": 0.072385,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 64,
+                "target_values": 64,
+                "target_gcds": 1
+              },
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.039884,
+                "cpu_s": 0.039184,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 64,
+                "euclid_gcds": 2,
+                "euclid_inversions": 31,
+                "coefficient_updates": 992
+              }
+            }
+          }
+        ]
+      },
+      {
+        "draws": 128,
+        "runs": [
+          {
+            "seed": 86412,
+            "order": [
+              "target",
+              "euclid",
+              "direct"
+            ],
+            "methods": {
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.214191,
+                "cpu_s": 0.209781,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 128,
+                "target_values": 128,
+                "target_gcds": 1
+              },
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.113114,
+                "cpu_s": 0.109327,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 128,
+                "euclid_gcds": 2,
+                "euclid_inversions": 63,
+                "coefficient_updates": 4032
+              },
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.105721,
+                "cpu_s": 0.102928,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 128,
+                "products": 8256,
+                "direct_gcds": 1
+              }
+            }
+          },
+          {
+            "seed": 86413,
+            "order": [
+              "euclid",
+              "direct",
+              "target"
+            ],
+            "methods": {
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.111799,
+                "cpu_s": 0.108783,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 128,
+                "euclid_gcds": 2,
+                "euclid_inversions": 63,
+                "coefficient_updates": 4032
+              },
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.102462,
+                "cpu_s": 0.100448,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 128,
+                "products": 8256,
+                "direct_gcds": 1
+              },
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.208148,
+                "cpu_s": 0.205483,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 128,
+                "target_values": 128,
+                "target_gcds": 1
+              }
+            }
+          },
+          {
+            "seed": 86414,
+            "order": [
+              "direct",
+              "target",
+              "euclid"
+            ],
+            "methods": {
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.098215,
+                "cpu_s": 0.097668,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 128,
+                "products": 8256,
+                "direct_gcds": 1
+              },
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.215833,
+                "cpu_s": 0.210695,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 128,
+                "target_values": 128,
+                "target_gcds": 1
+              },
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.11164,
+                "cpu_s": 0.107817,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 128,
+                "euclid_gcds": 2,
+                "euclid_inversions": 63,
+                "coefficient_updates": 4032
+              }
+            }
+          }
+        ]
+      },
+      {
+        "draws": 256,
+        "runs": [
+          {
+            "seed": 86412,
+            "order": [
+              "target",
+              "euclid",
+              "direct"
+            ],
+            "methods": {
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.616493,
+                "cpu_s": 0.603253,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 256,
+                "target_values": 256,
+                "target_gcds": 1
+              },
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.311375,
+                "cpu_s": 0.306545,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 256,
+                "euclid_gcds": 2,
+                "euclid_inversions": 127,
+                "coefficient_updates": 16256
+              },
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.350164,
+                "cpu_s": 0.344613,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 256,
+                "products": 32896,
+                "direct_gcds": 1
+              }
+            }
+          },
+          {
+            "seed": 86413,
+            "order": [
+              "euclid",
+              "direct",
+              "target"
+            ],
+            "methods": {
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.313294,
+                "cpu_s": 0.307885,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 256,
+                "euclid_gcds": 2,
+                "euclid_inversions": 127,
+                "coefficient_updates": 16256
+              },
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.360143,
+                "cpu_s": 0.351601,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 256,
+                "products": 32896,
+                "direct_gcds": 1
+              },
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.598019,
+                "cpu_s": 0.592612,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 256,
+                "target_values": 256,
+                "target_gcds": 1
+              }
+            }
+          },
+          {
+            "seed": 86414,
+            "order": [
+              "direct",
+              "target",
+              "euclid"
+            ],
+            "methods": {
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.404019,
+                "cpu_s": 0.361856,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 256,
+                "products": 32896,
+                "direct_gcds": 1
+              },
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.588443,
+                "cpu_s": 0.585285,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 256,
+                "target_values": 256,
+                "target_gcds": 1
+              },
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.30173,
+                "cpu_s": 0.300324,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 256,
+                "euclid_gcds": 2,
+                "euclid_inversions": 127,
+                "coefficient_updates": 16256
+              }
+            }
+          }
+        ]
+      },
+      {
+        "draws": 512,
+        "runs": [
+          {
+            "seed": 86412,
+            "order": [
+              "target",
+              "euclid",
+              "direct"
+            ],
+            "methods": {
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 1.72315,
+                "cpu_s": 1.711928,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 512,
+                "target_values": 512,
+                "target_gcds": 1
+              },
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.982332,
+                "cpu_s": 0.970824,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 512,
+                "euclid_gcds": 2,
+                "euclid_inversions": 255,
+                "coefficient_updates": 65280
+              },
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 1.278015,
+                "cpu_s": 1.262145,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 512,
+                "products": 131328,
+                "direct_gcds": 1
+              }
+            }
+          },
+          {
+            "seed": 86413,
+            "order": [
+              "euclid",
+              "direct",
+              "target"
+            ],
+            "methods": {
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.98991,
+                "cpu_s": 0.976717,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 512,
+                "euclid_gcds": 2,
+                "euclid_inversions": 255,
+                "coefficient_updates": 65280
+              },
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 1.254627,
+                "cpu_s": 1.248564,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 512,
+                "products": 131328,
+                "direct_gcds": 1
+              },
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 1.708711,
+                "cpu_s": 1.700652,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 512,
+                "target_values": 512,
+                "target_gcds": 1
+              }
+            }
+          },
+          {
+            "seed": 86414,
+            "order": [
+              "direct",
+              "target",
+              "euclid"
+            ],
+            "methods": {
+              "direct": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 1.248753,
+                "cpu_s": 1.245669,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 512,
+                "products": 131328,
+                "direct_gcds": 1
+              },
+              "target": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 1.700437,
+                "cpu_s": 1.695469,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 512,
+                "target_values": 512,
+                "target_gcds": 1
+              },
+              "euclid": {
+                "factor": null,
+                "source": "none",
+                "wall_s": 0.970064,
+                "cpu_s": 0.965721,
+                "setup_gcds": 1,
+                "inversions": 1,
+                "regular": 512,
+                "euclid_gcds": 2,
+                "euclid_inversions": 255,
+                "coefficient_updates": 65280
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "mixed_census": {
+    "prime_bits": 12,
+    "product_bits": 24,
+    "residues": [
+      5,
+      7
+    ],
+    "draws": 12,
+    "seed": 86412,
+    "counts": {
+      "products": 9804,
+      "oracle_complement": 2152,
+      "euclid_splits": 2855,
+      "intended_factor": 2149,
+      "oracle_none": 6962,
+      "none": 6949,
+      "oracle_setup": 690,
+      "setup": 690,
+      "extra_without_complement": 13,
+      "other_factor_on_complement_word": 3
+    },
+    "euclid_sources": {
+      "constant remainder / intended_factor": 1775,
+      "constant term / intended_factor": 200,
+      "noninvertible leading coefficient / extra_without_complement": 13,
+      "noninvertible leading coefficient / intended_factor": 174,
+      "noninvertible leading coefficient / other_factor_on_complement_word": 3
+    },
+    "examples": [
+      {
+        "n": "8402599",
+        "seed": 3906372360401708107,
+        "primes": [
+          "2063",
+          "4073"
+        ],
+        "oracle_factor": "2063",
+        "euclid_factor": "2063",
+        "outcome": "intended_factor",
+        "euclid_source": "constant remainder"
+      },
+      {
+        "n": "8500351",
+        "seed": 5233486908045607198,
+        "primes": [
+          "2087",
+          "4073"
+        ],
+        "oracle_factor": "2087",
+        "euclid_factor": "2087",
+        "outcome": "intended_factor",
+        "euclid_source": "constant term"
+      },
+      {
+        "n": "8458421",
+        "seed": 6703207913402786163,
+        "primes": [
+          "2143",
+          "3947"
+        ],
+        "oracle_factor": null,
+        "euclid_factor": "3947",
+        "outcome": "extra_without_complement",
+        "euclid_source": "noninvertible leading coefficient"
+      },
+      {
+        "n": "8548217",
+        "seed": 4876746139570589350,
+        "primes": [
+          "2179",
+          "3923"
+        ],
+        "oracle_factor": "3923",
+        "euclid_factor": "3923",
+        "outcome": "intended_factor",
+        "euclid_source": "noninvertible leading coefficient"
+      },
+      {
+        "n": "8635483",
+        "seed": 6605346583519986254,
+        "primes": [
+          "2801",
+          "3083"
+        ],
+        "oracle_factor": "3083",
+        "euclid_factor": "2801",
+        "outcome": "other_factor_on_complement_word",
+        "euclid_source": "noninvertible leading coefficient"
+      }
+    ]
+  }
+}

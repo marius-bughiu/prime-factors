@@ -1,5 +1,6 @@
 import PrimeFactors.ReducedSmoothReadout
 import Mathlib.Data.Nat.Sqrt
+import Mathlib.Data.Nat.Prime.Factorial
 
 /-! A square-root prefix leaves at most one large prime-power component. -/
 
@@ -184,22 +185,27 @@ theorem certified_exclusion {p q a bound cap : ℕ} (hp : p.Prime) (hq : q.Prime
   rw [live_full _ _ live]
   exact clear
 
-/-- A trial-divisor predicate with a short kernel computation for the
-certificate's small prime table. -/
-noncomputable def trialPrime (n : ℕ) : Bool :=
-  decide (2 ≤ n) && (List.range (n.sqrt+1)).all (fun m => decide (m < 2 ∨ ¬m ∣ n))
+/-- Above the public sieve cutoff and below its next square, coprimality with
+the cutoff factorial recognizes primes. Only the small table uses this test. -/
+noncomputable def trialPrime (cut n : ℕ) : Bool :=
+  if 2 ≤ n ∧ cut < n ∧ n < (cut+1)^2 then decide (n.Coprime cut.factorial)
+  else decide n.Prime
 
-theorem trialPrime_eq (n : ℕ) : trialPrime n = decide n.Prime := by
-  apply Bool.eq_iff_iff.mpr
-  simp only [trialPrime, Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true, List.mem_range]
-  rw [Nat.prime_def_le_sqrt]
-  constructor
-  · rintro ⟨lo,h⟩
-    exact ⟨lo, fun m ge le => (h m (by omega)).resolve_left (by omega)⟩
-  · rintro ⟨lo,h⟩
-    refine ⟨lo,fun m lm => ?_⟩
-    by_cases small : m < 2
-    · exact Or.inl small
-    · exact Or.inr (h m (by omega) (by omega))
+theorem trialPrime_eq (cut n : ℕ) : trialPrime cut n = decide n.Prime := by
+  unfold trialPrime
+  split_ifs with range
+  · apply Bool.eq_iff_iff.mpr
+    simp only [decide_eq_true_eq]
+    rw [Nat.coprime_factorial_iff (by omega : n ≠ 1)]
+    constructor
+    · intro big
+      by_contra np
+      have small := Nat.minFac_sq_le_self (by omega : 0 < n) np
+      exact (Nat.not_lt_of_ge (Nat.pow_le_pow_left (Nat.succ_le_of_lt big) 2))
+        (small.trans_lt range.2.2)
+    · intro prime
+      rw [prime.minFac_eq]
+      exact range.2.1
+  · rfl
 
 end PrimeFactors.SharedSmoothPowers

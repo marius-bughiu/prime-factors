@@ -53,6 +53,17 @@ class ComplementaryKeyTests(unittest.TestCase):
         self.assertIn(shared_fold([x,y],[a,b],[fold(a,n),fold(b,n)],n,work),(p,q))
         self.assertEqual(work['source'],'shared fold')
 
+    def test_euclidean_search_preserves_directed_hits(self):
+        for p, q in ((1009,1013),(1019,1013),(1031,907)):
+            n = p*q
+            for draws in (0,1,2,7,16):
+                for seed in range(24):
+                    old = search(n,draws,seed,'target')[0]
+                    new = search(n,draws,seed,'euclid')[0]
+                    self.assertIn(new,(None,p,q))
+                    if old:
+                        self.assertIsNotNone(new)
+
     def test_retains_old_hits_and_finds_new_ones(self):
         for n in (1009*1013, 1009*1151, 1013*1019):
             for seed in (0,1,2,5,10,23,1044):

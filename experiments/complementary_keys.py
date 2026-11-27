@@ -3,6 +3,7 @@ from math import gcd
 from random import Random
 from time import perf_counter
 
+from experiments.opposite_key_polynomial import opposite_factor
 from experiments.twelve_residue_collision import keys, refine_duplicates, regular_samples, search_values
 from experiments.wide_modulus import product_tree, values_on_tree
 
@@ -18,6 +19,26 @@ def batch_product(values, n):
     return result
 
 
+def norm_forms(x, y):
+    """Six integral conjugate pairs whose product is the cleared complement equation."""
+    for u, v in ((x*y + 3, x-y), (3-x*y, x+y)):
+        three_v_squared = 3*v*v
+        yield u*u - three_v_squared
+        yield (u+3*v)**2 - 4*three_v_squared
+        yield (u-3*v)**2 - 4*three_v_squared
+
+
+def refine_complement(x, y, n, work):
+    for index, form in enumerate(norm_forms(x, y)):
+        divisor = gcd(form, n)
+        work['norm_gcds'] += 1
+        if 1 < divisor < n:
+            work.update(source='complement norm', branch='complement', norm_index=index,
+                        witness=[str(x), str(y)])
+            return divisor
+    return None
+
+
 def middle_hit(samples, values, n, work):
     """Test the fixed point of the complement in every sample, including a singleton."""
     terms = [(2*v-1) % n for v in values]
@@ -31,24 +52,33 @@ def middle_hit(samples, values, n, work):
         if 1 < d < n:
             work.update(source='middle', witness=[str(x)])
             return d
+        if d == n:
+            divisor = refine_complement(x, x, n, work)
+            if divisor is not None:
+                return divisor
     return None
 
 
 def shared_fold(samples, values, folded, n, work):
-    """If the folded keys coincide globally, try the original equality and the complement."""
+    """Refine a global fold tie, retaining each distinct seed for norm comparisons."""
     groups = {}
     for x, u, key in zip(samples, values, folded):
         previous = groups.setdefault(key, {})
-        if u in previous:
+        if x in previous:
             continue
-        for v, y in previous.items():
-            for expression, difference in (('original', u-v), ('complement', u+v-1)):
-                d = gcd(difference, n)
-                work['shared_gcds'] += 1
-                if 1 < d < n:
-                    work.update(source='shared fold', branch=expression, witness=[str(y), str(x)])
-                    return d
-        previous[u] = x
+        for y, v in previous.items():
+            if u != v:
+                for expression, difference in (('original', u-v), ('complement', u+v-1)):
+                    d = gcd(difference, n)
+                    work['shared_gcds'] += 1
+                    if 1 < d < n:
+                        work.update(source='shared fold', branch=expression, witness=[str(y), str(x)])
+                        return d
+            if (u+v-1) % n == 0:
+                divisor = refine_complement(y, x, n, work)
+                if divisor is not None:
+                    return divisor
+        previous[x] = u
     return None
 
 
@@ -73,16 +103,17 @@ def target(samples, values, n, work):
 
 
 def search(n, draws, seed, mode='folded'):
-    if n < 2 or draws < 0 or mode not in ('folded', 'target'):
+    if n < 2 or draws < 0 or mode not in ('folded', 'target', 'euclid'):
         raise ValueError('invalid input or search mode')
-    if mode == 'target' and n % 12 not in (5, 7):
+    if mode in ('target', 'euclid') and n % 12 not in (5, 7):
         raise ValueError('the directed comparison requires remainder 5 or 7 modulo 12')
     start = perf_counter()
     rng = Random(seed)
     samples = [rng.randrange(n) for _ in range(draws)]
     work = dict(mode=mode, draws=draws, regular=None, setup_gcds=0, inversions=0, middle_gcds=0,
-                shared_gcds=0, target_values=0, target_gcds=0, orientation_gcds=0, row_gcds=0,
-                pair_gcds=0, distinct_keys=0, derivative_values=0, source='none', witness=[])
+                shared_gcds=0, norm_gcds=0, target_values=0, target_gcds=0, orientation_gcds=0, row_gcds=0,
+                pair_gcds=0, distinct_keys=0, derivative_values=0, euclid_gcds=0, euclid_inversions=0,
+                coefficient_updates=0, source='none', witness=[])
     divisor = None
     if samples:
         divisor, samples = regular_samples(samples, n, work)
@@ -93,6 +124,8 @@ def search(n, draws, seed, mode='folded'):
         work['inversions'] = 1
         if mode == 'target':
             divisor = target(samples, values, n, work)
+        elif mode == 'euclid':
+            divisor = opposite_factor(values, n, work)
         else:
             divisor = middle_hit(samples, values, n, work)
             if divisor is None:

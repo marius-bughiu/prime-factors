@@ -125,6 +125,28 @@ def case_row(result):
         count += f' · search {duration(result["discovery_seconds"])}'
         if checked:
             verification += f' (certificate generation and replay {duration(result["certificate_seconds"])})'
+    elif result['method'] == 'shared-smooth-powers':
+        w = result['shared_smooth']
+        def quantity(number, noun):
+            return f"{number:,} {noun}{'s' if number != 1 else ''}"
+        count = (f"Prime bound {w['bound']} · {escape(w['outcome'])} · "
+                 f"{quantity(w['setup']['bases'],'setup gcd')} and {quantity(w['setup']['initial_powers'],'initial power')} "
+                 f"({duration(w['setup']['seconds'])}) · {w['prefix_blocks']} prefix blocks, "
+                 f"{w['tail_powers']} shared powers · {w['squares']:,} squares and "
+                 f"{w['multiplies']:,} other modular multiplications · "
+                 f"{w['prefix_gcds']+w['batch_gcds']} scan gcds · {duration(w['seconds'])}")
+        if 'checkpoint' in w:
+            for tag, label in [('checkpoint','full checkpoint sweep'),('fused','fused full power')]:
+                c = w[tag]
+                outcome = 'split' if c['divisor'] else 'no split'
+                count += f" · {label} {outcome} ({quantity(c['pow_calls'],'power')}, {quantity(c['gcds'],'gcd')}, {duration(c['seconds'])})"
+        if 'shared_smooth_receipt' in result:
+            receipt = result['shared_smooth_receipt']
+            count += (f" · for two distinct prime factors of at most {w['factor_bits']:,} bits each, "
+                      f"both reduced predecessors have a prime divisor above {w['bound']:,}")
+            evidence += f' · <a href="{escape(receipt["proof"])}">Download checked full-exponent gcd and exclusion</a>'
+            sweep_time = duration(receipt['seconds']) + ' (full-exponent gcd)'
+            verification = verification + ' + ' + sweep_time if checked else sweep_time
     elif result['method'] == 'reduced-smooth-readout':
         w = result['reduced_smooth']
         count = (f"Prime bound {w['bound']} · {w['bases']} of up to {w['base_limit']} bases tested · "
@@ -139,6 +161,8 @@ def case_row(result):
         if 'reduced_smooth_receipt' in result:
             receipt = result['reduced_smooth_receipt']
             evidence += f' · <a href="{escape(receipt["proof"])}">Download checked sweep and gcd</a>'
+            sweep_time = duration(receipt['seconds']) + ' (sweep and gcd)'
+            verification = verification + ' + ' + sweep_time if checked else sweep_time
     elif result['method'] == 'near-smooth-sum':
         w = result['near_smooth_sum']
         ops = w['work']
@@ -1071,7 +1095,8 @@ def case_row(result):
         w = result['complementary_keys']
         runs = w['runs']
         count = f"{w['draws']:,} draws per method · seed {w['seed']} · product remainder {w['public_remainder']} modulo 12"
-        for key, title in [('folded', 'Complementary labels'), ('old', 'Original labels'), ('target', 'Directed product')]:
+        for key, title in [('folded', 'Complementary labels'), ('old', 'Original labels'),
+                           ('target', 'Directed product'), ('euclid', 'Even and odd coefficients')]:
             if key in runs:
                 r = runs[key]
                 outcome = escape(r['divisor']) if r['divisor'] else 'no factor'
@@ -1079,9 +1104,23 @@ def case_row(result):
         if 'target' in runs:
             r = runs['target']
             count += f" · {r['target_values']:,} directed evaluations and {r['target_gcds']} readout gcds"
+        if 'euclid' in runs:
+            r = runs['euclid']
+            count += f" · {r['euclid_inversions']:,} leading-coefficient inversions and {r['coefficient_updates']:,} coefficient updates"
+        if w.get('certified_method') == 'euclid':
+            count += ' · factor certificate obtained from the Euclidean search'
+        if runs['folded'].get('norm_gcds'):
+            count += f" · {runs['folded']['norm_gcds']} norm gcds on shared complements"
         receipt = result.get('complement_receipt')
         if receipt:
             evidence += f' · <a href="{escape(receipt["proof"])}">Checked complement gcd</a>'
+            verification += ' + ' + duration(receipt['seconds']) + ' (complement gcd)'
+        exclusion = result.get('complement_no_match_receipt')
+        if exclusion:
+            evidence += (f' · <a href="{escape(exclusion["proof"])}">Lean checks the regularity tests, '
+                         f'middle labels and all {exclusion["pairs"]:,} pairs</a>')
+            elapsed = duration(exclusion['seconds']) + ' (sample exclusions)'
+            verification = verification + ' + ' + elapsed if checked else elapsed
     elif result['method'] == 'twelve-residue-collision':
         work = result['twelve_residue']
         runs = work['runs']

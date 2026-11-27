@@ -30,6 +30,9 @@ def run(bits, draws, sample):
                 raise ArithmeticError(f'{label} returned a false factor')
             outcomes[label] = factor is not None
             group[label+'_splits'] += int(factor is not None)
+            if label == 'folded':
+                group['norm_gcds'] += work['norm_gcds']
+                group['norm_hits'] += int(work['source'] == 'complement norm')
             if work['source'] == 'complement product':
                 if pow(3, (factor-1)//2, factor) != 1:
                     raise ArithmeticError('directed hit at the wrong prime')
