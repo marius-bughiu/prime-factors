@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+The exact winning-multiplier classification for two known products requires only elementary arithmetic and the certified prime factorizations. The uniform sampling bound follows from counting distinct coprime weight products and how many times a primitive solution can be scaled. Both conclusions hold independently of RH. [Exact positions and dependencies](../discoveries/where-the-multiplier-search-first-succeeds.md)
+
 The multiplier count uses the product, the bit widths of its factors and the spacing of consecutive squares. It holds unconditionally. The three signed equations motivated the interval search. On the measured inputs the fastest variant used the single difference-of-squares equation. [Proof and comparison](../discoveries/fewer-multiples-to-test.md)
 
 A finite sign calculation selects three small targets, one of which has square roots at both hidden primes. Quadratic reciprocity supplies the public signs. All parts of the three-target representation theorem are unconditional, including the bound on solution size. The outstanding computational question is how to find two suitable solutions from the product alone. [Selection rule, proof and data](../discoveries/three-targets-with-a-guaranteed-square-root.md)

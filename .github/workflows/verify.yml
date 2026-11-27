@@ -40,6 +40,8 @@ jobs:
           lake env lean benchmarks/controls/ProjectedWheelPrivate.lean
           python3 -m experiments.three_target_limits
           python3 -m experiments.negative_menu_control --check
+          python3 -m experiments.divisor_weight_sectors --check
+          python3 -m experiments.rectangular_winner_receipt
       - name: Generate progress report
         run: python3 scripts/render_site.py
       - name: Upload verified main artifact
