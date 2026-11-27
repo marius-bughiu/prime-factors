@@ -720,3 +720,5 @@ import PrimeFactors.PrimeSumDividesSuccessor
 import PrimeFactors.ShiftedPrimeSumPopulation
 import PrimeFactors.ShiftedDivisorReadout
 import PrimeFactors.IntermediatePrivateShiftWindow
+import PrimeFactors.CyclotomicSumDigit
+import PrimeFactors.UnitRunCounts

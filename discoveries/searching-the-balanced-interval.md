@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A single digit of a polynomial value gives the exact sum of two 1,024-bit primes. A count of consecutive integers gives a second formula that tolerates a specified counting error. The proofs identify the values that would suffice. Computing either from the product alone at low cost is still open. [Both formulas and the cost of using them](two-ways-to-read-the-prime-sum.md)
+
 A divisor of a nearby integer can give the factor sum directly. Testing divisors formed from the known part of each of 64 neighbors found 466 of 903 small products and one of 64 independent comparison products. A proof granting every divisor bounds the fraction of eligible 2,048-bit products this method could possibly split below one in $2^{976}$. [The direct formula, worked example and cost](looking-for-the-prime-sum-in-nearby-integers.md)
 
 Expanding a continued-fraction search to its intermediate steps recovered 40 extra pairs across all 903 products of distinct nine-bit primes. A single block per exponent can contain every feasible step. The leading eight root bits and one small interpolation cut 3,480 candidate fractions to 276 across 969 inputs and preserved all 119 recovered pairs. The exact and interpolated bounds gave the same per-exponent candidate counts and factor witnesses on this panel, and the timing ranges overlapped. Both full-size products remained unresolved. [The extra fractions, operation counts and proof for all smooth exponents](widening-the-fraction-search.md)
