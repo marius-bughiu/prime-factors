@@ -1,5 +1,41 @@
 [
   {
+    "id": "no-common-sum-despite-pairwise-witnesses",
+    "category": "limits",
+    "title": "Every pair of tests can pass somewhere in an empty search interval",
+    "impact": "On 34,387 the first three permitted sums each pass a different pair of the tests modulo 3, 13 and 11. None passes all three.",
+    "scope": "A prefix at the actual lower end of this product’s balanced interval, using its public modulo-four condition. Every proper subset of the tests has a witness in that prefix.",
+    "detail": "The first joint survivor is the fifth candidate, 388. Knowing just that each pair has some witness loses the positions needed to find a joint witness.",
+    "sources": [
+      {"href": "discoveries/which-prime-rejects-a-wrong-factor-sum.md#can-pairs-of-tests-tell-us-which-interval-to-search", "label": "Three-row example"},
+      {"href": "PrimeFactors/PairwiseSumObstruction.lean", "label": "Window and first-survivor proof"}
+    ]
+  },
+  {
+    "id": "unconditional-unique-factor-sum",
+    "category": "formulas",
+    "title": "Remainder tests single out one full-size sum without assuming RH",
+    "impact": "For any product of two 1,024-bit primes, the true sum is the only candidate in the stated public range that passes every odd prime through 2⁹⁴⁰.",
+    "scope": "The proof uses the product and factor widths. It deductively applies three published unconditional inequalities, supplied as hypotheses in Lean.",
+    "detail": "Visiting the entire family once would take more than 2⁹³⁰ prime visits. Finding the unique passing sum cheaply remains open.",
+    "sources": [
+      {"href": "discoveries/which-prime-rejects-a-wrong-factor-sum.md", "label": "Range, cost and sources"},
+      {"href": "PrimeFactors/DiscriminantPrimeSeparation.lean", "label": "Lean statement and prime count"}
+    ]
+  },
+  {
+    "id": "first-rejecting-prime-power-for-a-masked-square",
+    "category": "formulas",
+    "title": "The number of copies of a prime predicts its first rejecting power",
+    "impact": "If d is a nonsquare modulo an odd prime and x contains that prime exactly a times, the test on d × x² first fails at exponent 2a + 1.",
+    "scope": "Applies to a proposed discriminant with the stated decomposition. The example uses 9,523 = 89 × 107 and a deliberately wrong sum of 200.",
+    "detail": "The example gives 1,908 = 53 × 6². Although 53 already fails modulo 3, the original discriminant passes modulo 3 and 9. It fails modulo 27.",
+    "sources": [
+      {"href": "discoveries/which-prime-rejects-a-wrong-factor-sum.md#a-wrong-sum-that-passes-modulo-three", "label": "Worked example"},
+      {"href": "PrimeFactors/MaskedSquareWitness.lean", "label": "Exact threshold proof"}
+    ]
+  },
+  {
     "id": "public-remainders-39-bit-recovery",
     "category": "cases",
     "title": "Remainders through 43 recover the 39-bit factors without a clue",

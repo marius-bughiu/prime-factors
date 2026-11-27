@@ -847,3 +847,12 @@ import PrimeFactors.IntervalLargerSieve
 import PrimeFactors.IntervalSievePrimeWeights
 import PrimeFactors.IntervalSievePrimeCount
 import PrimeFactors.FactorSumLargerSieve
+import PrimeFactors.NonsquareJacobiWitness
+import PrimeFactors.DiscriminantJacobiCharacter
+import PrimeFactors.NegativeCharacterPrimeCover
+import PrimeFactors.CoprimePrefixDiscrepancy
+import PrimeFactors.FiniteUnitDensity
+import PrimeFactors.UnconditionalSignBudget
+import PrimeFactors.DiscriminantPrimeSeparation
+import PrimeFactors.MaskedSquareWitness
+import PrimeFactors.PairwiseSumObstruction
