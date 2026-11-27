@@ -672,3 +672,6 @@ import PrimeFactors.RectangularRowCost
 import PrimeFactors.RectangularWeightCost
 import PrimeFactors.RectangularFullWidth
 import PrimeFactors.RectangularSearchFloor
+import PrimeFactors.WeightDivisorSector
+import PrimeFactors.WeightWindowOverlap
+import PrimeFactors.RectangularFareyOracle
