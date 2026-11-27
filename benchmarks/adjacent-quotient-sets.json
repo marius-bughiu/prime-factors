@@ -1,0 +1,54 @@
+[
+  {
+    "n": "34387",
+    "factors": [
+      "137",
+      "251"
+    ],
+    "keys_per_set": 184,
+    "sieve_updates": 339,
+    "first_blocks": 9072,
+    "second_blocks": 397,
+    "new_states": 2,
+    "trial_divisions": 3
+  },
+  {
+    "n": "132079",
+    "factors": [
+      "269",
+      "491"
+    ],
+    "keys_per_set": 362,
+    "sieve_updates": 710,
+    "first_blocks": 25709,
+    "second_blocks": 766,
+    "new_states": 2,
+    "trial_divisions": 7
+  },
+  {
+    "n": "3641921",
+    "factors": [
+      "1811",
+      "2011"
+    ],
+    "keys_per_set": 1907,
+    "sieve_updates": 4237,
+    "first_blocks": 323054,
+    "second_blocks": 3901,
+    "new_states": 2,
+    "trial_divisions": 231
+  },
+  {
+    "n": "49884889",
+    "factors": [
+      "6827",
+      "7307"
+    ],
+    "keys_per_set": 7061,
+    "sieve_updates": 16873,
+    "first_blocks": 2335970,
+    "second_blocks": 14291,
+    "new_states": 2,
+    "trial_divisions": 917
+  }
+]

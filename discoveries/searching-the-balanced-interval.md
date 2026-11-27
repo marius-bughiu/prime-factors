@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Subtracting a guess from the product gives the ordinary continued-fraction search a factor at full size precisely when the guess was already the correct factor sum minus one, throughout the proven offset range. Comparing two adjacent division tables gives a separate exact readout, but even with the initial table supplied free the tested summation still visits at least $2^{1023}-1$ groups. [Guessing near the product](when-a-guess-near-the-product-repeats-the-sum.md) · [Where the quotient tables differ](adjacent-quotient-sets.md)
+
 For the power-ratio continued-fraction search, fewer than one in $2^{1295}$ uniformly chosen exponents from 1 through $N$ can work on any fixed eligible product. Fewer than one in $2^{553}$ eligible products admit even one successful exponent in that interval made entirely of primes up to 1,500. An exact test explains hits and misses when a candidate for the hidden prime sum is supplied. [Both counts and the exact test](which-powers-could-reveal-the-prime-sum.md)
 
 Choosing all distinct least common multiples of successive integers large enough for the remainder test gave 106 powers on each 2,048-bit input. Every one passed the first check. Stopping as soon as a candidate fell below the permitted factor-sum range cut the two scans to 15,754 and 15,794 fractions, with no factor on either. The same choices found one of 64 independent small and mid-size inputs. Both comparison methods also found that pair. [Search costs and successes](testing-lcm-prefixes-at-the-product-width.md)

@@ -124,5 +124,42 @@
         "sum": "24"
       }
     }
+  },
+  {
+    "id": "power-ratio-outside-window",
+    "description": "Fixed small example outside the certified window around the product. The second positive numerator is useful even when the offset differs from the true deficit.",
+    "n": "437",
+    "exponent_rule": "fixed",
+    "exponent": "264",
+    "factor_bits": 5,
+    "status": "complete",
+    "factors": [
+      "19",
+      "23"
+    ],
+    "remaining": [],
+    "checks": {
+      "exponent": "264",
+      "factor_bits": 5,
+      "deficit_lower": "32",
+      "deficit_upper_exclusive": "64",
+      "remainder": "173",
+      "passed": true,
+      "convergents": 7,
+      "integer_totients": 2,
+      "width_survivors": 1,
+      "square_tests": 1,
+      "pair": [
+        "19",
+        "23"
+      ],
+      "witness": {
+        "index": 4,
+        "numerator": "2",
+        "denominator": "3",
+        "totient": "396",
+        "sum": "42"
+      }
+    }
   }
 ]

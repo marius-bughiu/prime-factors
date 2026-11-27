@@ -706,3 +706,5 @@ import PrimeFactors.SmoothTotientTail
 import PrimeFactors.SmoothTotientEuler
 import PrimeFactors.LcmConvergentObstruction
 import PrimeFactors.SmoothConvergentPopulation
+import PrimeFactors.PowerRatioAnchor
+import PrimeFactors.AdjacentQuotientSets
