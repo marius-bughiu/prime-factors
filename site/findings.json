@@ -1,5 +1,67 @@
 [
   {
+    "id": "full-size-first-square-scale-bounds",
+    "category": "limits",
+    "title": "On the fresh comparison the first successful scale exceeds 2¹⁰⁷⁹",
+    "impact": "That first guess is larger than the smaller prime itself. On the crossed comparison the first successful scale exceeds 2⁶⁴. Both inputs exceed the trillion-guess budget.",
+    "scope": "These two retrospective certificates use the published prime factors. The fresh input’s prime construction supplied two additional certified divisors. Exact first scales remain unknown.",
+    "detail": "Primes occurring an odd number of times in the totient must divide every successful scale. The shortest shared periods on the fresh and crossed controls have 2,046 and 1,439 bits, respectively.",
+    "sources": [
+      {"href": "discoveries/which-period-guesses-give-the-prime-sum.md#what-the-two-comparison-products-require", "label": "Inputs, supplied data and bounds"},
+      {"href": "proofs/jacobi-scale-valuations-fresh-2048.lean", "label": "Fresh Lean certificate"},
+      {"href": "proofs/jacobi-scale-valuations-crossed-2048.lean", "label": "Crossed Lean certificate"},
+      {"href": "PrimeFactors/JacobiScaleValuations.lean", "label": "Why odd multiplicities give a bound"}
+    ]
+  },
+  {
+    "id": "product-predecessor-excludes-square-scales",
+    "category": "gains",
+    "title": "The product can rule out a whole class of guesses before the first square root",
+    "impact": "For 3,713, its first successful scale cannot be even or divisible by 29. The product-dependent check cut the remaining scale roots from 574 to 371.",
+    "scope": "The proof concerns squarefree guesses, including the first successful scale of a balanced semiprime. At 221 the check saved zero roots. Elapsed-time savings remain unmeasured.",
+    "detail": "At 4,757 it reduced 740 scale roots to 524 with an additional 2,220 candidate modulus tests. Both searches used the same balanced-sum window and returned the same factor.",
+    "sources": [
+      {"href": "discoveries/skipping-square-scales-before-the-discriminant.md#the-product-can-exclude-additional-guesses", "label": "When the product rules out a scale"},
+      {"href": "PrimeFactors/JacobiSquareScaleGcd.lean", "label": "Lean divisibility and height theorems"}
+    ]
+  },
+  {
+    "id": "squarefree-first-scale-wheel",
+    "category": "gains",
+    "title": "A fixed table skips 36% of square-root guesses in each full block",
+    "impact": "On 4,757 the same first factor appeared at guess 1,155, using 740 scale roots and 706 discriminant roots. The earlier scan used 1,155 and 1,104.",
+    "scope": "The first correct scale is squarefree for balanced prime pairs. The table skips multiples of 4, 9 and 25, and works at any positive search cap.",
+    "detail": "Exactly 576 of every 900 aligned guesses remain. Building the reusable table cost 2,175 small divisibility checks in the experiment.",
+    "sources": [
+      {"href": "discoveries/skipping-square-scales-before-the-discriminant.md", "label": "Operation counts and scope"},
+      {"href": "PrimeFactors/JacobiSquareScaleSieve.lean", "label": "Lean proof of the preserved first hit"}
+    ]
+  },
+  {
+    "id": "prime-support-of-a-supplied-period-guess",
+    "category": "formulas",
+    "title": "The distinct primes in a guessed repeat give a finite list of scales",
+    "impact": "For 221 the false period guess 3 still gives a two-entry list, 1 and 3, which contains the successful square-root scale.",
+    "scope": "For balanced primes, k supplied distinct prime divisors of the guess give exactly 2ᵏ scales when the list of divisors is complete. Obtaining that list has its own cost.",
+    "detail": "The list contains a correct scale precisely when the squarefree part of the true shortest repeat divides the guess. The recovered pair then decides whether the guess itself repeats.",
+    "sources": [
+      {"href": "discoveries/testing-a-jacobi-stride-period.md#what-the-shortest-repeat-tells-us", "label": "Deterministic decision from prime support"},
+      {"href": "PrimeFactors/JacobiPeriodPrimeSupport.lean", "label": "Lean criterion and count"}
+    ]
+  },
+  {
+    "id": "exact-shortest-jacobi-period-test",
+    "category": "gains",
+    "title": "Two square roots and one gcd decide whether a guess is the shortest repeat",
+    "impact": "Given 221, both 3 and 48 lead to the prime factors during the check. Recomputing the period rejects both guesses as the minimum and accepts 12.",
+    "scope": "This exact equality test uses the product and a proposed length for two distinct primes at least seven. It takes one guess as input.",
+    "detail": "A unit-power test accepts every multiple of the shortest repeat. The equality test reconstructs a candidate pair, verifies its product, and checks the exact reduced-predecessor product.",
+    "sources": [
+      {"href": "discoveries/testing-a-jacobi-stride-period.md#what-the-shortest-repeat-tells-us", "label": "Equality and divisibility checks"},
+      {"href": "PrimeFactors/JacobiExactPeriodGuess.lean", "label": "Executable Lean decoder"}
+    ]
+  },
+  {
     "id": "unbounded-square-scale-period-separation",
     "category": "cases",
     "title": "One square-root guess can succeed while the first period grows without bound",
@@ -67,10 +129,11 @@
     "title": "Two reusable bases can test every proposed length",
     "impact": "At 221, bases 4 and 5 together accept exactly the multiples of 12. Two thirds of all ordered pairs there give correct answers to every guess.",
     "scope": "Two independently uniform units have a greater than 50% chance of being correct simultaneously for all guesses. Determining that a particular pair has this property is a separate task.",
-    "detail": "The small experiment tested all 36,864 ordered pairs at 221. It also found 3,072 qualifying pairs out of 3,600 at 77 and 9,216 out of 14,400 at 143.",
+    "detail": "The exact fraction is a product with one factor 1−1/ℓ² for each distinct prime ℓ dividing the shortest repeat. At 221 the factors for 2 and 3 give exactly two thirds.",
     "sources": [
       {"href": "discoveries/testing-a-jacobi-stride-period.md#reusing-two-bases", "label": "Proof and measured fractions"},
-      {"href": "PrimeFactors/JacobiPeriodPanel.lean", "label": "Lean simultaneous guarantee"}
+      {"href": "PrimeFactors/JacobiPeriodPanel.lean", "label": "Lean simultaneous guarantee"},
+      {"href": "PrimeFactors/JacobiPanelExactCount.lean", "label": "Exact fraction in Lean"}
     ]
   },
   {

@@ -792,3 +792,9 @@ import PrimeFactors.JacobiScalarStride
 import PrimeFactors.JacobiScalarPeriodProbe
 import PrimeFactors.JacobiSquareClassPopulation
 import PrimeFactors.JacobiSquarePeriodFamily
+import PrimeFactors.JacobiExactPeriodGuess
+import PrimeFactors.JacobiPanelExactCount
+import PrimeFactors.JacobiPeriodPrimeSupport
+import PrimeFactors.JacobiSquareScaleSieve
+import PrimeFactors.JacobiSquareScaleGcd
+import PrimeFactors.JacobiScaleValuations

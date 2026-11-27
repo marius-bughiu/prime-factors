@@ -1,0 +1,68 @@
+{
+  "preparation_prime_limit": 41,
+  "shared_wheel": {"period": 900, "residues": 900, "retained_offsets": 576, "construction_modulos": 2175},
+  "products": [
+    {
+      "n": "221",
+      "factors": ["13", "17"],
+      "selection": "Shortest successful scale is 3.",
+      "preparation": {"prime_powers": [[2, 4], [5, 5], [11, 11]], "remaining_cofactor": 1, "divmods": 9, "extracted_prime_factors": 4},
+      "runs": [
+        {
+          "cap": 12, "first_scale": 3,
+          "wheel_only": {"wheel_reads": 3, "candidates": 3, "support_modulos": 0, "support_products": 0, "height_checks": 0, "height_rejections": 0, "scale_roots": 3, "scale_divisions": 2, "root_modulos": 0, "root_rejections": 0, "sum_window_checks": 3, "discriminant_roots": 1},
+          "gcd_screen": {"wheel_reads": 3, "candidates": 3, "support_modulos": 9, "support_products": 1, "height_checks": 1, "height_rejections": 0, "scale_roots": 3, "scale_divisions": 2, "root_modulos": 1, "root_rejections": 1, "sum_window_checks": 2, "discriminant_roots": 1}
+        }
+      ]
+    },
+    {
+      "n": "3713",
+      "factors": ["47", "79"],
+      "selection": "N−1 contains 2^7, which makes the height condition reject every positive even scale.",
+      "preparation": {"prime_powers": [[2, 128], [29, 29]], "remaining_cofactor": 1, "divmods": 18, "extracted_prime_factors": 8},
+      "runs": [
+        {
+          "cap": 896, "first_scale": null,
+          "wheel_only": {"wheel_reads": 574, "candidates": 573, "support_modulos": 0, "support_products": 0, "height_checks": 0, "height_rejections": 0, "scale_roots": 573, "scale_divisions": 572, "root_modulos": 0, "root_rejections": 0, "sum_window_checks": 573, "discriminant_roots": 1},
+          "gcd_screen": {"wheel_reads": 574, "candidates": 573, "support_modulos": 1146, "support_products": 210, "height_checks": 203, "height_rejections": 203, "scale_roots": 370, "scale_divisions": 369, "root_modulos": 0, "root_rejections": 0, "sum_window_checks": 370, "discriminant_roots": 1}
+        },
+        {
+          "cap": 897, "first_scale": 897,
+          "wheel_only": {"wheel_reads": 574, "candidates": 574, "support_modulos": 0, "support_products": 0, "height_checks": 0, "height_rejections": 0, "scale_roots": 574, "scale_divisions": 573, "root_modulos": 0, "root_rejections": 0, "sum_window_checks": 574, "discriminant_roots": 2},
+          "gcd_screen": {"wheel_reads": 574, "candidates": 574, "support_modulos": 1148, "support_products": 210, "height_checks": 203, "height_rejections": 203, "scale_roots": 371, "scale_divisions": 370, "root_modulos": 0, "root_rejections": 0, "sum_window_checks": 371, "discriminant_roots": 2}
+        }
+      ]
+    },
+    {
+      "n": "4757",
+      "factors": ["67", "71"],
+      "selection": "The existing wheel control first succeeds at 1155.",
+      "preparation": {"prime_powers": [[2, 4], [29, 29], [41, 41]], "remaining_cofactor": 1, "divmods": 17, "extracted_prime_factors": 4},
+      "runs": [
+        {
+          "cap": 900, "first_scale": null,
+          "wheel_only": {"wheel_reads": 576, "candidates": 576, "support_modulos": 0, "support_products": 0, "height_checks": 0, "height_rejections": 0, "scale_roots": 576, "scale_divisions": 575, "root_modulos": 0, "root_rejections": 0, "sum_window_checks": 576, "discriminant_roots": 1},
+          "gcd_screen": {"wheel_reads": 576, "candidates": 576, "support_modulos": 1728, "support_products": 226, "height_checks": 215, "height_rejections": 157, "scale_roots": 419, "scale_divisions": 418, "root_modulos": 58, "root_rejections": 31, "sum_window_checks": 388, "discriminant_roots": 1}
+        },
+        {
+          "cap": 1155, "first_scale": 1155,
+          "wheel_only": {"wheel_reads": 740, "candidates": 740, "support_modulos": 0, "support_products": 0, "height_checks": 0, "height_rejections": 0, "scale_roots": 740, "scale_divisions": 739, "root_modulos": 0, "root_rejections": 0, "sum_window_checks": 740, "discriminant_roots": 4},
+          "gcd_screen": {"wheel_reads": 740, "candidates": 740, "support_modulos": 2220, "support_products": 289, "height_checks": 274, "height_rejections": 216, "scale_roots": 524, "scale_divisions": 523, "root_modulos": 58, "root_rejections": 31, "sum_window_checks": 493, "discriminant_roots": 3}
+        }
+      ]
+    },
+    {
+      "n": "14647",
+      "factors": ["97", "151"],
+      "selection": "The totient is a square and scale 1 already succeeds.",
+      "preparation": {"prime_powers": [[2, 2], [3, 3]], "remaining_cofactor": 2441, "divmods": 15, "extracted_prime_factors": 2},
+      "runs": [
+        {
+          "cap": 1, "first_scale": 1,
+          "wheel_only": {"wheel_reads": 1, "candidates": 1, "support_modulos": 0, "support_products": 0, "height_checks": 0, "height_rejections": 0, "scale_roots": 1, "scale_divisions": 0, "root_modulos": 0, "root_rejections": 0, "sum_window_checks": 1, "discriminant_roots": 1},
+          "gcd_screen": {"wheel_reads": 1, "candidates": 1, "support_modulos": 2, "support_products": 0, "height_checks": 0, "height_rejections": 0, "scale_roots": 1, "scale_divisions": 0, "root_modulos": 0, "root_rejections": 0, "sum_window_checks": 1, "discriminant_roots": 1}
+        }
+      ]
+    }
+  ]
+}

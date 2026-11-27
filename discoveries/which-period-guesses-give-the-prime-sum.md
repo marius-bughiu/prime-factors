@@ -25,6 +25,15 @@ On the repository's existing **constructed 2,048-bit control**, the direct test 
 
 Among sorted pairs of distinct 1,024-bit primes whose product has 2,048 bits, fewer than one in $2^{736}$ has even one correct sum scale at most $2^{40}$. For any successful scale $t$, the predecessor product must equal $th^2$. Bound the number of possible roots $h$ at each $t$, then bound the number of possible divisors $p-1$ for each resulting product. This supplies an explicit full-size bound for the earlier asymptotic sparsity estimate. The separate fraction $2^{-978}$ covers the smaller event that the **period itself** is at most $2^{40}$. Both are upper bounds; dividing them would give no estimate of the relative frequency. [Lean count for direct recovery](../PrimeFactors/JacobiSquareClassPopulation.lean) · [Earlier asymptotic estimate](discriminant-strides.md#a-scaled-square-root-that-determines-both-factors)
 
+## What the two comparison products require
+
+| Previously factored 2,048-bit product | Bits in its shortest shared repeat | Proved lower bound on its first successful direct scale |
+|---|---:|---:|
+| Fresh comparison | 2,046 | Greater than $2^{1079}$ |
+| Crossed comparison | 1,439 | Greater than $2^{64}$ |
+
+These are diagnoses made **with the published prime factors**. For a successful scale $t$, every prime occurring to odd multiplicity in $(p-1)(q-1)=ty^2$ must divide $t$. We checked all primes through 25,000. On the fresh comparison we also checked the two distinct 513-bit primes used in its original Pocklington construction; both occur to multiplicity one. Multiplying just the certified odd-multiplicity primes gives the lower bounds above, without requiring the entire factorizations of $p-1$ and $q-1$. Both comparison products therefore exceed the $2^{40}$ budget for both searches. On the fresh comparison the first successful direct scale even exceeds the smaller prime itself. The exact first scales remain unknown. [Lean valuation argument](../PrimeFactors/JacobiScaleValuations.lean) · [Reproduce and check both certificates](../experiments/jacobi_scale_valuations.py) · [Expected bounds and disclosed factor pairs](../benchmarks/jacobi-scale-valuations.json)
+
 ## Can the difference grow without bound?
 
 Yes, on specially structured products. For $547{,}606{,}837$, the first square-root guess yields $22{,}501\times24{,}337$. Here $22{,}501=150^2+1$ and $24{,}337=156^2+1$. The shortest shared repeat is $(25\times26)^2=422{,}500$. A second constructed product, $59{,}068{,}927{,}717$, split at scale one into $240{,}101\times246{,}017$, and its shortest shared repeat was $3{,}691{,}777{,}600$. In both controls the program obtained the period from the recovered factors and cross-checked it with modular powers. It did not search through billions of candidates. [Lean example](../PrimeFactors/JacobiSquarePeriodFamily.lean) · [Product-only readout and separate period check](../experiments/jacobi_square_period_family.py) · [Family controls](../benchmarks/jacobi-square-period-family.json)

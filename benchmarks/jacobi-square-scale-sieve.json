@@ -1,0 +1,14 @@
+[
+  {"n": "77", "factors": ["7", "11"], "cap": 0, "hit": false, "covered_through": 0,
+   "sieved_scale_roots": 0, "plain_discriminant_roots": 0, "sieved_discriminant_roots": 0},
+  {"n": "77", "factors": ["7", "11"], "cap": 15, "hit": true, "covered_through": 15,
+   "sieved_scale_roots": 11, "plain_discriminant_roots": 10, "sieved_discriminant_roots": 8},
+  {"n": "221", "factors": ["13", "17"], "cap": 12, "hit": true, "covered_through": 3,
+   "sieved_scale_roots": 3, "plain_discriminant_roots": 2, "sieved_discriminant_roots": 2},
+  {"n": "4757", "factors": ["67", "71"], "cap": 900, "hit": false, "covered_through": 900,
+   "sieved_scale_roots": 576, "plain_discriminant_roots": 849, "sieved_discriminant_roots": 542},
+  {"n": "4757", "factors": ["67", "71"], "cap": 1154, "hit": false, "covered_through": 1154,
+   "sieved_scale_roots": 739, "plain_discriminant_roots": 1103, "sieved_discriminant_roots": 705},
+  {"n": "4757", "factors": ["67", "71"], "cap": 1155, "hit": true, "covered_through": 1155,
+   "sieved_scale_roots": 740, "plain_discriminant_roots": 1104, "sieved_discriminant_roots": 706}
+]

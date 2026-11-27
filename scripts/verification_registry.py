@@ -63,6 +63,11 @@ CHECKS = (
                                                    'benchmarks/predecessor-square.json')),
     experiment('jacobi_scalar_stride', data=('benchmarks/jacobi-scalar-stride.json',)),
     experiment('jacobi_square_period_family', data=('benchmarks/jacobi-square-period-family.json',)),
+    experiment('jacobi_square_scale_sieve', data=('benchmarks/jacobi-square-scale-sieve.json',)),
+    experiment('jacobi_scale_gcd_screen', data=('benchmarks/jacobi-scale-gcd-screen.json',)),
+    experiment('jacobi_scale_valuations', '--check', lean=True, proof='jacobi-scale-valuations',
+               data=('benchmarks/jacobi-scale-valuations.json', 'benchmarks/unit-quartic.json',
+                     'research/certified-control.json')),
     experiment('neighboring_jacobi_samples', '--exhaustive', data=('benchmarks/neighboring-jacobi-samples.json',)),
     experiment('jacobi_four_width', data=('benchmarks/jacobi-four-width.json',)),
 )

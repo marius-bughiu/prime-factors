@@ -12,6 +12,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**How far would the square-root guesses have to go on our fresh comparison?** Past $2^{1079}$ before even the first correct guess. On the crossed comparison the lower bound is $2^{64}$. We used the already published factors to certify these limits. A different 2,048-bit number deliberately constructed for this method still splits at guess six. [How we proved the two limits and what the positive control shows](discoveries/which-period-guesses-give-the-prime-sum.md#what-the-two-comparison-products-require)
+
 **Is it worth finding the shortest repeat of the Jacobi sums?** On 323 the first shared repeat was 72, but our square-root test already found 17 and 19 on its second guess. Lean proves why the earlier test can finish first and which guesses give the right sum. A repeat can now be rejected with one modular power, without calculating the Jacobi sums. [Comparison on four products](discoveries/which-period-guesses-give-the-prime-sum.md) · [Testing a proposed repeat](discoveries/testing-a-jacobi-stride-period.md)
 
 **The length of the shortest fixed rule for these sums gives the larger prime.** At 77, a rule using the previous four even sums works forever and three positions cannot suffice. That gives the larger prime as $2\times4+3=11$. For a product of two 1,024-bit primes the required span is at least $2^{1022}$. We have a proof of the formula and a small example. Getting that length cheaply from a large product remains open. [Exact order and example](discoveries/which-recurrence-order-reveals-the-larger-prime.md)
