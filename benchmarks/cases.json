@@ -87,6 +87,36 @@
     "fermat_steps": 14
   },
   {
+    "id": "nine-bit-last-plain-prime",
+    "description": "Fermat baseline for the nine-bit prime-pair window that needs prime 41",
+    "n": "136831",
+    "max_steps": 11,
+    "status": "complete",
+    "factors": ["293", "467"],
+    "remaining": [],
+    "fermat_steps": 11
+  },
+  {
+    "id": "nine-bit-lifted-cutoff",
+    "description": "Fermat baseline for a nine-bit prime-pair window still ambiguous at 19 after checking modulo 9",
+    "n": "137317",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": ["353", "389"],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
+    "id": "pseudosquare-masked-126727",
+    "description": "Fermat baseline for the small pseudosquare example with a zero residue at three",
+    "n": "126727",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": ["353", "359"],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
     "id": "balanced-34387",
     "description": "Fermat baseline for the weighted-interval and prime-power example",
     "n": "34387",

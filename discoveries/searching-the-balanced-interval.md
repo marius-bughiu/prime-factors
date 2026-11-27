@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Checking seven prime squares further shrank the list of possible sums by factors of 6.42 and 13.87 on the two published 2,048-bit products. Even unlimited precision at those primes leaves more than $2^{998}$ wrong sums on both. On a smaller scale, adding the single test modulo 9 let primes through 23 isolate the true sum on all 903 pairs of distinct nine-bit primes. [Examples, census and full-width bounds](when-a-prime-square-rules-out-a-sum.md)
+
 On both published 2,048-bit products, changing the order of seven small-prime tests saves about one quarter of the remainder lookups in an exhaustive scan. Both scans still require over $10^{306}$ lookups. Across all invertible product residues, the savings range from zero to just under 25% over a complete period. [Full-size counts, conditions and square-test costs](what-ordering-saves-on-the-full-width-interval.md)
 
 Reordering the same thirteen remainder tests saved 3,495 lookups in the 39-bit example. Both orders recovered the same factors from the product and widths. The order comes from the fraction of residues allowed at each prime. [Certified work comparison and partial-period counterexample](how-far-public-remainders-narrow-the-sum.md#which-remainder-should-we-check-first)

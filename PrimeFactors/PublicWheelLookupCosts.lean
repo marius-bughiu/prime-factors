@@ -172,7 +172,7 @@ theorem crossed_saving : saving crossed crossedOrder 245833 245834 := by
 
 /-- Bound the existing public width by comparing the squared lower endpoint
 to the same product on both sides. This uses no residue or candidate enumeration. -/
-private theorem width_between {n lo hi : ℕ}
+theorem width_between {n lo hi : ℕ}
     (room : lo ≤ PublicWheelWidthControls.stop n+1)
     (upperRoot : 4*n ≤ (PublicWheelWidthControls.stop n+1-lo)^2)
     (lowerRoot : (PublicWheelWidthControls.stop n+1-hi)^2 < 4*n) :

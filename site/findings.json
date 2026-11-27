@@ -1,5 +1,42 @@
 [
   {
+    "id": "full-width-factor-sums-after-seven-prime-squares",
+    "category": "gains",
+    "title": "Seven prime squares cut the remaining sums by another 6.42× and 13.87×",
+    "impact": "Measured from the initial modulo-four list, about one sum in 802 survives on the fresh product and one in 1,169 on the crossed product.",
+    "scope": "Two published 2,048-bit comparison products with known factor widths. These figures count candidates that still need an integer square test. The smaller list contains at least 2¹⁰⁰⁶ sums.",
+    "detail": "The seven odd primes range from 3 to 19. Their squared moduli give exact counts in each repeating block, which also bound the count across the actual interval.",
+    "sources": [
+      {"href": "discoveries/when-a-prime-square-rules-out-a-sum.md", "label": "Both full-width comparisons"},
+      {"href": "PrimeFactors/PublicPrimeSquareCounts.lean", "label": "Period counts and interval bounds"}
+    ]
+  },
+  {
+    "id": "all-small-prime-pairs-isolated-through-23-with-nine",
+    "category": "cases",
+    "title": "Adding a check modulo 9 isolates the sum through 23 for every nine-bit prime pair",
+    "impact": "Ordinary prime tests needed to reach 41 in the hardest case. With 9 included, 23 sufficed for all 903 distinct nine-bit pairs and all 253 eight-bit pairs.",
+    "scope": "Complete populations at these two small factor widths. Only the product and factor widths enter each search. The known primes check the returned sum.",
+    "detail": "For 136,831, the false guess 748 passes the ordinary primes through 37. Its discriminant is 3 modulo 9, which rules it out. Modulo 11 then leaves only 760, giving 293 and 467.",
+    "sources": [
+      {"href": "discoveries/when-a-prime-square-rules-out-a-sum.md#what-happened-on-every-pair-of-small-primes", "label": "Census and sharp cutoff"},
+      {"href": "PrimeFactors/ToySquareLiftIsolation.lean", "label": "Kernel-checked population comparison"},
+      {"href": "PrimeFactors/ToySumIsolation.lean", "label": "Ordinary prime baseline"}
+    ]
+  },
+  {
+    "id": "all-powers-through-19-in-the-factor-width-window",
+    "category": "limits",
+    "title": "Every power of every prime through 19 still admits over 2⁹⁹⁸ wrong sums",
+    "impact": "Inside the interval fixed by the factor widths, more than 2⁹⁹⁸ false sums on the fresh product and 2¹⁰⁰⁰ on the crossed product meet all these local conditions simultaneously.",
+    "scope": "Two published 2,048-bit products. The count includes powers of 2 as well as all seven odd primes and removes the genuine sum.",
+    "detail": "The proof counts whole classes of guesses that have a modular factor pair at every precision. Distinct guesses in these classes give distinct sums.",
+    "sources": [
+      {"href": "discoveries/when-a-prime-square-rules-out-a-sum.md#what-if-we-keep-taking-higher-powers", "label": "Scope of the lower bound"},
+      {"href": "PrimeFactors/PublicPrimeSquareCounts.lean", "label": "Width-specific proof"}
+    ]
+  },
+  {
     "id": "ordering-seven-tests-on-both-full-width-intervals",
     "category": "gains",
     "title": "Changing test order saves about a quarter of the small lookups at 2,048 bits",

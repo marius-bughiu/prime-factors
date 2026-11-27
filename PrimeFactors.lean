@@ -872,3 +872,8 @@ import PrimeFactors.SevenPrimeFilterSavings
 import PrimeFactors.FilterSwapPhaseMoment
 import PrimeFactors.OptionalFilterCost
 import PrimeFactors.PublicSumFinalTestCost
+import PrimeFactors.PublicPrimeSquareCounts
+import PrimeFactors.ToySumIsolation
+import PrimeFactors.ToySquareLiftIsolation
+import PrimeFactors.PseudosquareNormalization
+import PrimeFactors.PseudosquareThirteen
