@@ -724,3 +724,5 @@ import PrimeFactors.CyclotomicSumDigit
 import PrimeFactors.UnitRunCounts
 import PrimeFactors.DivisorCountPeriod
 import PrimeFactors.SquareAnchorCoverage
+import PrimeFactors.PowerfulAnchorCoverage
+import PrimeFactors.CyclotomicDigitPeriod
