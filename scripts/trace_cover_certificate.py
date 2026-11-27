@@ -5,7 +5,8 @@ from bisect import bisect_left
 from fractions import Fraction
 import json
 from pathlib import Path
-from tempfile import TemporaryDirectory
+import shutil
+from tempfile import mkdtemp
 
 from experiments.trace_cover import envelope
 from experiments.trace_cover_sparse import Ratios, read_certificate
@@ -239,11 +240,19 @@ def check_schedule(n, k, m, result, right, proof, *, sparse=None):
                 base = line + base
     source = base.rstrip() + '\n\n' + _statement(n, k, m, result, right, sparse) + suffix
     proof.parent.mkdir(parents=True, exist_ok=True)
-    with TemporaryDirectory(dir=proof.parent) as work:
-        candidate = Path(work) / 'CheckedTraceCover.lean'
+    work = Path(mkdtemp(dir=proof.parent))
+    try:
+        candidate = work / 'CheckedTraceCover.lean'
         candidate.write_text(source)
         verify_file(candidate, THEOREM)
         candidate.replace(proof)
+    finally:
+        # A successful atomic replacement leaves an empty directory. Removing
+        # it directly also keeps the cache from observing an untracked fd scan.
+        try:
+            work.rmdir()
+        except OSError:
+            shutil.rmtree(work)
     return THEOREM
 
 
