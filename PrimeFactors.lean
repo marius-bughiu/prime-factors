@@ -597,3 +597,8 @@ import PrimeFactors.ReducedSmoothReadout
 import PrimeFactors.SharedSmoothPowers
 import PrimeFactors.FourDiscriminants
 import PrimeFactors.RandomSignMenu
+import PrimeFactors.LabelPolynomialBudget
+import PrimeFactors.OppositePivotBudget
+import PrimeFactors.BoundedSmoothCount
+import PrimeFactors.SmoothSignedPairs
+import PrimeFactors.SmoothSignedStructure
