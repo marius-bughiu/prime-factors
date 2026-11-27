@@ -33,6 +33,8 @@ The cutoff can matter. At $77=7\cdot11$, use $P=\chi(3)+\chi(4)$. The signed sum
 
 ## One longer sum that does determine the answer
 
+For a worked example with a deliberately inaccurate reading, see [the five surviving sums on a 39-bit product](how-accurately-to-estimate-the-interval-total.md#a-deliberately-noisy-clue-on-the-39-bit-example).
+
 Choose $B=\lfloor\sqrt{N/2}\rfloor$ from the product and give every integer from 1 through $B$ weight one. Let $V$ be the even-minus-odd total of the squared magnitude of that sum. For distinct primes $p<q<2p$, the factor sum is
 
 $$p+q=B+1+\sqrt{V+2N-2B-1}.$$

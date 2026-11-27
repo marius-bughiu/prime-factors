@@ -1,5 +1,67 @@
 [
   {
+    "id": "five-sums-from-a-noisy-interval-total",
+    "category": "cases",
+    "title": "A deliberately noisy clue leaves five sums on the 39-bit example",
+    "impact": "With an error allowance of 16 million, five sums remain. Only 1,310,542 gives a square discriminant and the primes 556,559 and 753,983.",
+    "scope": "The disclosed factors of the seeded product 419,636,024,497 supplied the exact interval total. We added five million before giving the estimate to the sum test.",
+    "detail": "The proof certifies the exact signed total, its perturbation, the full list of five candidate sums, and the resulting factorization.",
+    "sources": [
+      {"href": "discoveries/how-accurately-to-estimate-the-interval-total.md#a-deliberately-noisy-clue-on-the-39-bit-example", "label": "Worked example"},
+      {"href": "PrimeFactors/PrimitiveIntervalSuppliedExample.lean", "label": "End-to-end proof"}
+    ]
+  },
+  {
+    "id": "interval-total-candidate-count",
+    "category": "formulas",
+    "title": "A specified error in the interval total bounds the remaining search",
+    "impact": "An absolute error of at most 2¹⁰⁴⁵ leaves at most 1,048,576 sums at 2,048 bits. At error 2¹⁰²⁵ only the correct sum survives when the estimate meets its guarantee.",
+    "scope": "The decoder receives an integer estimate for the individual product. The true sum is in the list for balanced distinct odd primes.",
+    "detail": "Legal sums differ by multiples of four. Their predicted totals get farther apart as the sum grows, which bounds how many can fit in one error interval.",
+    "sources": [
+      {"href": "discoveries/how-accurately-to-estimate-the-interval-total.md#a-less-accurate-estimate-still-narrows-the-search", "label": "Precision table"},
+      {"href": "PrimeFactors/PrimitiveIntervalCandidateBand.lean", "label": "Containment and cardinality"}
+    ]
+  },
+  {
+    "id": "interval-total-approximate-root",
+    "category": "formulas",
+    "title": "A coarser supplied total can still locate the smaller prime",
+    "impact": "With an estimate accurate to 2¹⁴⁵⁰, an explicit real number is within 2⁴⁷⁰ of the smaller prime except on fewer than one in 32,768 eligible pairs.",
+    "scope": "Uniform sorted pairs of distinct 1,024-bit primes with a 2,048-bit product. The location uses the supplied estimate, and the bound is a radius.",
+    "detail": "The calculation estimates the sum first, then takes its smaller real root. The gap between the actual primes controls the loss of accuracy in this second step.",
+    "sources": [
+      {"href": "discoveries/how-accurately-to-estimate-the-interval-total.md#what-if-the-estimate-is-much-coarser", "label": "Formula and its input"},
+      {"href": "PrimeFactors/PrimitiveIntervalRootBand.lean", "label": "Root sensitivity"},
+      {"href": "PrimeFactors/PrimitiveIntervalRootPopulation.lean", "label": "Population guarantee"}
+    ]
+  },
+  {
+    "id": "interval-total-fixed-coefficients",
+    "category": "limits",
+    "title": "Even a menu of 2⁶⁴ fixed multipliers almost always misses the interval total",
+    "impact": "The best prediction cN from such a menu reaches the decoding tolerance on fewer than one in 2⁴¹⁸ eligible pairs. A single coefficient reaches it on fewer than one in 2⁴⁸².",
+    "scope": "Coefficients are arbitrary real numbers fixed before seeing the prime pair. The choice among menu entries can use the entire product.",
+    "detail": "Each successful coefficient predicts the sum using one fixed factor ratio. Counting the larger primes that can fit around that ratio limits the coverage.",
+    "sources": [
+      {"href": "discoveries/how-accurately-to-estimate-the-interval-total.md#would-a-multiple-of-the-product-be-accurate-enough", "label": "Why a fixed scale misses"},
+      {"href": "PrimeFactors/PrimitiveIntervalShapePopulation.lean", "label": "Fixed menu bound"},
+      {"href": "PrimeFactors/FixedRatioSumPopulation.lean", "label": "Ratio population proof"}
+    ]
+  },
+  {
+    "id": "interval-total-full-period-mean",
+    "category": "limits",
+    "title": "The complete gcd average always decodes to the wrong sum at full size when used for the short interval",
+    "impact": "At 143 the substitution gives a sum of 20, while the primes add to 24. Its downward error in the interval total is at least half the squared interval length for balanced primes of size at least 11.",
+    "scope": "This tests replacing the triangular interval average by the exact mean over the whole modulus. At every balanced 2,048-bit input this specific substitution fails.",
+    "detail": "The complete mean has an exact divisor formula and itself contains the factor sum. Extrapolating it to the short interval introduces the error.",
+    "sources": [
+      {"href": "discoveries/how-accurately-to-estimate-the-interval-total.md#does-the-average-over-one-full-period-work", "label": "Full and partial means"},
+      {"href": "PrimeFactors/PrimitiveIntervalPeriodMean.lean", "label": "Wrong-sum proof"}
+    ]
+  },
+  {
     "id": "four-square-divisors-both-widths",
     "category": "limits",
     "title": "Four clues still leave at least 2⁴⁷⁴ sums after enforcing both factor widths",

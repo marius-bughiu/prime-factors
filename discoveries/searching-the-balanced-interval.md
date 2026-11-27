@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A deliberately noisy reading on 419,636,024,497 left five possible sums of the primes. Only one gave whole-number factors. The known primes supplied the reading. At 2,048 bits, the error allowance determines how many sums the same test can leave, and a simple prediction based on a multiple of the product almost always misses. [Worked example, accuracy targets and failed predictions](how-accurately-to-estimate-the-interval-total.md)
+
 An exact average over even Dirichlet characters recovers the sum of the factors. At 143 the average is $51/25$, giving 11 and 13. A second identity uses a longer interval chosen from the product and an integer square root. The short average needs extreme precision, and direct evaluation of the long sum already encounters the unknown primes. [Character identities, costs and examples](can-short-character-averages-reveal-the-primes.md)
 
 Knowing that $288^2$ divides $(p+1)(q+1)$ singles out the true sum on a 39-bit product. The known factors supplied that clue. At 2,048 bits, even after giving all four clues and requiring both candidate roots to have the right size, at least $2^{474}$ sums survive on all but fewer than one in 4,096 eligible prime pairs. The roots still need to be integers. [The worked example and both width limits](what-four-square-divisors-reveal.md#enforcing-both-factor-widths)
