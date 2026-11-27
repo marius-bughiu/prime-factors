@@ -697,3 +697,12 @@ import PrimeFactors.SmallPowerImage
 import PrimeFactors.PowerRatioRemainder
 import PrimeFactors.UpperConvergentDeficit
 import PrimeFactors.UpperConvergentAgreement
+import PrimeFactors.ConvergentGcdThreshold
+import PrimeFactors.SuccessfulExponentCount
+import PrimeFactors.FareyParentNecessary
+import PrimeFactors.FareyParentSufficient
+import PrimeFactors.FareyParentCriterion
+import PrimeFactors.SmoothTotientTail
+import PrimeFactors.SmoothTotientEuler
+import PrimeFactors.LcmConvergentObstruction
+import PrimeFactors.SmoothConvergentPopulation

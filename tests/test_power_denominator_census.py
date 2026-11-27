@@ -11,7 +11,7 @@ class PowerDenominatorCensus(unittest.TestCase):
         p,q = [draw_prime(s,7,bits=11,seed=b'local-gap-polynomial-v1/11') for s in (b'p',b'q')]
         self.assertEqual(p*q,int(cases[0]["n"]))
         for case in cases:
-            args = {k:case[k] for k in ("n","factor_bits","exponent_rule")}
+            args = {k:case[k] for k in ("n","factor_bits","exponent_rule","exponent") if k in case}
             outcome = run_fixture(args)
             self.assertEqual(outcome,case["checks"])
             self.assertEqual(outcome["pair"],case["factors"])

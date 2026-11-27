@@ -73,11 +73,16 @@ def probe(n, e, *, gate=True, factor_bits=None, early_stop=False):
 
 
 def run_fixture(case):
-    if case["exponent_rule"] != "lcm_through_16":
-        raise ValueError("the benchmark fixes the exponent at lcm(1,...,16)")
+    rule = case["exponent_rule"]
+    if rule == "lcm_through_16":
+        exponent = LONG_POWER
+    elif rule == "fixed":
+        exponent = int(case["exponent"])
+    else:
+        raise ValueError(f"unknown power-ratio exponent rule {rule!r}")
     bits = case["factor_bits"]
-    work = probe(int(case["n"]), LONG_POWER, factor_bits=bits)
-    return dict(exponent=str(LONG_POWER), factor_bits=bits, deficit_lower=str(1<<bits),
+    work = probe(int(case["n"]), exponent, factor_bits=bits)
+    return dict(exponent=str(exponent), factor_bits=bits, deficit_lower=str(1<<bits),
                 deficit_upper_exclusive=str(2<<bits), **work)
 
 

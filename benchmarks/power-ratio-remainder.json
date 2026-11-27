@@ -60,5 +60,69 @@
       "pair": [],
       "witness": null
     }
+  },
+  {
+    "id": "power-ratio-boundary-20",
+    "description": "Fixed exponent 20 on the small Farey-parent example. Chosen to illustrate the proven boundary.",
+    "n": "143",
+    "exponent_rule": "fixed",
+    "exponent": "20",
+    "factor_bits": 4,
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "143"
+    ],
+    "checks": {
+      "exponent": "20",
+      "factor_bits": 4,
+      "deficit_lower": "16",
+      "deficit_upper_exclusive": "32",
+      "remainder": "3",
+      "passed": false,
+      "convergents": 0,
+      "integer_totients": 0,
+      "width_survivors": 0,
+      "square_tests": 0,
+      "pair": [],
+      "witness": null
+    }
+  },
+  {
+    "id": "power-ratio-boundary-24",
+    "description": "Fixed exponent 24 on the small Farey-parent example. Chosen to illustrate the proven boundary.",
+    "n": "143",
+    "exponent_rule": "fixed",
+    "exponent": "24",
+    "factor_bits": 4,
+    "status": "complete",
+    "factors": [
+      "11",
+      "13"
+    ],
+    "remaining": [],
+    "checks": {
+      "exponent": "24",
+      "factor_bits": 4,
+      "deficit_lower": "16",
+      "deficit_upper_exclusive": "32",
+      "remainder": "23",
+      "passed": true,
+      "convergents": 4,
+      "integer_totients": 1,
+      "width_survivors": 1,
+      "square_tests": 1,
+      "pair": [
+        "11",
+        "13"
+      ],
+      "witness": {
+        "index": 2,
+        "numerator": "1",
+        "denominator": "5",
+        "totient": "120",
+        "sum": "24"
+      }
+    }
   }
 ]
