@@ -1,5 +1,23 @@
 [
   {
+    "id": "how-often-the-121-sums-can-work",
+    "category": "limits",
+    "title": "Even all 121 sums cover fewer than one prime pair in 2⁴⁹¹",
+    "impact": "For two distinct 1,024-bit primes with a 2,048-bit product, Lean bounded how often the true sum appears anywhere in the 121 candidates. Checking them all succeeds on a fraction between 2⁻⁵¹⁴ and 2⁻⁴⁹¹.",
+    "scope": "This bound counts each eligible pair once and applies to these 121 sums. It holds even if the choice among them uses every bit of the product.",
+    "detail": "A midpoint in the block forces the factors to differ by less than 2⁵¹⁷. The upper bound counts possible partners for each smaller prime. The lower bound groups primes into intervals short enough for every pair in a group to be covered.",
+    "sources": [
+      {
+        "href": "discoveries/how-often-the-121-sums-can-work.md",
+        "label": "Derivation and scope"
+      },
+      {
+        "href": "PrimeFactors/WordBlockFrequency.lean",
+        "label": "Lean frequency bounds"
+      }
+    ]
+  },
+  {
     "id": "choosing-a-sum-from-a-word-and-a-remainder",
     "title": "121 sums suffice to find the most common sum for a word and remainder",
     "category": "formulas",

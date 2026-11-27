@@ -757,3 +757,4 @@ import PrimeFactors.HighWordSumRanking
 import PrimeFactors.HighWordSuffixTransfer
 import PrimeFactors.HighWordSuffixRanking
 import PrimeFactors.HighWordSuffixCost
+import PrimeFactors.WordBlockFrequency
