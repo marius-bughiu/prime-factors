@@ -1,5 +1,54 @@
 [
   {
+    "id": "raising-all-the-odd-prime-powers-after-the-second-digit",
+    "category": "limits",
+    "title": "After prime squares, more digits at the same primes buy less than another 4×",
+    "impact": "For any finite set of odd primes coprime to the product, more than a quarter of the sums passing their squares still pass at any chosen higher precisions.",
+    "scope": "A universal bound on fractions over the complete joint period. A short interval or a new prime can change the outcome. The example 94,579 reaches a 3.6466–3.6467× reduction.",
+    "detail": "At each odd prime the extra reduction is bounded explicitly. Multiplying those bounds over any selection stays below four, however large the selected primes are.",
+    "sources": [
+      {"href": "discoveries/how-much-higher-prime-powers-can-save.md", "label": "Meaning of the fourfold bound"},
+      {"href": "PrimeFactors/PrimePowerWheelDensity.lean", "label": "Proof for any finite choice"},
+      {"href": "PrimeFactors/DeepDigitDensityExample.lean", "label": "Checked lower example"}
+    ]
+  },
+  {
+    "id": "smallest-prime-square-periods-on-the-full-size-products",
+    "category": "gains",
+    "title": "The full prime-square pattern on the fresh product fits in 90,720 offsets",
+    "impact": "Removing exact repetition cuts the list for one period from 29.3 billion offsets to 90,720 on the fresh product and from 20.1 billion to 8,279,040 on the crossed product.",
+    "scope": "Two published 2,048-bit products and seven fixed prime-square tests. These are storage savings for a list of offsets. The number of surviving sums across the full interval stays the same.",
+    "detail": "The proof certifies the shortest possible repeat in integer sums for each pattern. Separate per-prime tables can store the same tests using 101 and 485 bits before padding.",
+    "sources": [
+      {"href": "discoveries/how-short-the-prime-square-pattern-can-be.md", "label": "Counts, storage and scope"},
+      {"href": "PrimeFactors/CompressedPrimeSquareWheel.lean", "label": "Exact periods on both products"}
+    ]
+  },
+  {
+    "id": "ordered-prime-squares-reduce-full-width-lookups",
+    "category": "gains",
+    "title": "Using prime squares also saves about 26% and 29% of the small lookups",
+    "impact": "Compared with the already reordered seven-prime scan, seven ordered prime-square checks take 25.52% fewer lookups on the fresh product and 29.17% fewer on the crossed product.",
+    "scope": "Full public factor-width intervals on two 2,048-bit examples. Each reached table costs one lookup. The count excludes setup and machine-dependent costs.",
+    "detail": "Both the number of small lookups and the number of final integer square tests fall. The smaller scan still needs about 8.51 × 10³⁰⁵ small lookups.",
+    "sources": [
+      {"href": "discoveries/how-short-the-prime-square-pattern-can-be.md#how-many-lookups-does-an-ordinary-scan-save", "label": "Work comparison"},
+      {"href": "PrimeFactors/PublicPrimeSquareLookupCosts.lean", "label": "Finite-width bounds"}
+    ]
+  },
+  {
+    "id": "polynomial-transform-reuses-the-same-local-factor-pair",
+    "category": "limits",
+    "title": "Applying the same polynomial to both factors adds no rejection at the same modulus",
+    "impact": "Any sum that admits a modular factor pair also admits the transformed pair. If the linear coefficient of the polynomial remainder is a unit, both tests give exactly the same answer.",
+    "scope": "Every common polynomial, including at even and composite moduli. The transformed sum and product are calculated from the same proposed sum and product.",
+    "detail": "The false candidate 402 on 40,309 fails modulo 9. After squaring both factors, the transformed pair 2 and 2 passes modulo 9.",
+    "sources": [
+      {"href": "discoveries/how-much-higher-prime-powers-can-save.md#can-a-polynomial-provide-an-independent-test-at-the-same-modulus", "label": "Formula and example"},
+      {"href": "PrimeFactors/PolynomialSumFilters.lean", "label": "Arbitrary-modulus proof"}
+    ]
+  },
+  {
     "id": "full-width-factor-sums-after-seven-prime-squares",
     "category": "gains",
     "title": "Seven prime squares cut the remaining sums by another 6.42× and 13.87×",

@@ -117,6 +117,16 @@
     "fermat_steps": 1
   },
   {
+    "id": "prime-power-density-94579",
+    "description": "Fermat baseline for the selected nine-bit pair whose eight local densities approach the fourfold bound",
+    "n": "94579",
+    "max_steps": 3,
+    "status": "complete",
+    "factors": ["271", "349"],
+    "remaining": [],
+    "fermat_steps": 3
+  },
+  {
     "id": "balanced-34387",
     "description": "Fermat baseline for the weighted-interval and prime-power example",
     "n": "34387",

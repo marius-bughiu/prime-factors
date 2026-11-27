@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+After checking the squares of any selection of odd primes coprime to the product, additional digits at those primes give less than another fourfold reduction over a full period. At 94,579 a selected example reaches 3.6466 times. The same seven prime-square checks on the two 2,048-bit comparisons also admit much shorter repeating lists and use fewer scalar lookups. [General limit and example](how-much-higher-prime-powers-can-save.md) · [Full-width work and storage](how-short-the-prime-square-pattern-can-be.md)
+
 Checking seven prime squares further shrank the list of possible sums by factors of 6.42 and 13.87 on the two published 2,048-bit products. Even unlimited precision at those primes leaves more than $2^{998}$ wrong sums on both. On a smaller scale, adding the single test modulo 9 let primes through 23 isolate the true sum on all 903 pairs of distinct nine-bit primes. [Examples, census and full-width bounds](when-a-prime-square-rules-out-a-sum.md)
 
 On both published 2,048-bit products, changing the order of seven small-prime tests saves about one quarter of the remainder lookups in an exhaustive scan. Both scans still require over $10^{306}$ lookups. Across all invertible product residues, the savings range from zero to just under 25% over a complete period. [Full-size counts, conditions and square-test costs](what-ordering-saves-on-the-full-width-interval.md)

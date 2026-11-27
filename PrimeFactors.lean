@@ -877,3 +877,13 @@ import PrimeFactors.ToySumIsolation
 import PrimeFactors.ToySquareLiftIsolation
 import PrimeFactors.PseudosquareNormalization
 import PrimeFactors.PseudosquareThirteen
+import PrimeFactors.MinimalPrimeSquarePeriod
+import PrimeFactors.CompressedPrimeSquareWheel
+import PrimeFactors.PublicPrimeSquareLookupCosts
+import PrimeFactors.PrimePowerEssentialDigits
+import PrimeFactors.PrimePowerRatioProduct
+import PrimeFactors.PrimePowerDensityRatio
+import PrimeFactors.PrimePowerWheelDensity
+import PrimeFactors.DeepDigitDensityExample
+import PrimeFactors.PolynomialSumFilters
+import PrimeFactors.DyadicSumPeriods
