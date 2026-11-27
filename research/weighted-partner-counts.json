@@ -1,0 +1,152 @@
+{
+  "population": "All primes U/2 <= p < q < U with 9 U\u00b2/16 <= p*q <= 5 U\u00b2/8, U=2^prime_bits.",
+  "search": "Each schedule uses 34 roots per product. The common 16 ordinary traces are followed by 17 ordinary, 16 at (3,2), or 7 at (3,2) and 8 at (7,5).",
+  "census": "Sieve both primes, then count exact inclusive partner intervals using binary search in each residue class modulo 24. All ordered factor orientations of each multiplier are checked for admission and feasibility. Sieve and counting times measure the census, independently of factor search.",
+  "validation": "Every reported count at 16 bits agrees with the independent direct enumeration in research/two-interior-population.json. tests/test_weighted_partner_counts.py checks exact equality at a strict endpoint, compares direct prime products on either side of interval boundaries, and samples the product bin at all four bit sizes.",
+  "runs": [
+    {
+      "prime_bits": 16,
+      "products": 592048,
+      "common_prefix_splits": 145803,
+      "additional_splits": {
+        "ordinary": 62262,
+        "six": 89779,
+        "six_and_thirtyfive": 142452
+      },
+      "total_splits": {
+        "ordinary": 208065,
+        "six": 235582,
+        "six_and_thirtyfive": 288255
+      },
+      "unresolved": {
+        "ordinary": 383983,
+        "six": 356466,
+        "six_and_thirtyfive": 303793
+      },
+      "extra_outcomes": {
+        "0/0/0": 218572,
+        "1/0/0": 62262,
+        "0/1/0": 22959,
+        "0/0/1": 75632,
+        "0/1/1": 66820
+      },
+      "work": {
+        "all_primes": 3030,
+        "smaller_primes_with_partners": 1391,
+        "nonempty_residue_rows": 11050,
+        "interval_square_roots": 55250,
+        "prime_list_bisections": 56422
+      },
+      "sieve_seconds": 0.001670708,
+      "counting_seconds": 0.063662042
+    },
+    {
+      "prime_bits": 20,
+      "products": 96713943,
+      "common_prefix_splits": 5939001,
+      "additional_splits": {
+        "ordinary": 2575671,
+        "six": 3660406,
+        "six_and_thirtyfive": 5818060
+      },
+      "total_splits": {
+        "ordinary": 8514672,
+        "six": 9599407,
+        "six_and_thirtyfive": 11757061
+      },
+      "unresolved": {
+        "ordinary": 88199271,
+        "six": 87114536,
+        "six_and_thirtyfive": 84956882
+      },
+      "extra_outcomes": {
+        "0/0/0": 81141771,
+        "1/0/0": 2575671,
+        "0/1/0": 1239440,
+        "0/0/1": 3397094,
+        "0/1/1": 2420966
+      },
+      "work": {
+        "all_primes": 38635,
+        "smaller_primes_with_partners": 17752,
+        "nonempty_residue_rows": 141936,
+        "interval_square_roots": 709680,
+        "prime_list_bisections": 566318
+      },
+      "sieve_seconds": 0.025142083999999995,
+      "counting_seconds": 0.824832375
+    },
+    {
+      "prime_bits": 24,
+      "products": 17115589103,
+      "common_prefix_splits": 259706431,
+      "additional_splits": {
+        "ordinary": 113223856,
+        "six": 161933726,
+        "six_and_thirtyfive": 258705622
+      },
+      "total_splits": {
+        "ordinary": 372930287,
+        "six": 421640157,
+        "six_and_thirtyfive": 518412053
+      },
+      "unresolved": {
+        "ordinary": 16742658816,
+        "six": 16693948946,
+        "six_and_thirtyfive": 16597177050
+      },
+      "extra_outcomes": {
+        "0/0/0": 16429083916,
+        "1/0/0": 113223856,
+        "0/1/0": 54869278,
+        "0/0/1": 151641174,
+        "0/1/1": 107064448
+      },
+      "work": {
+        "all_primes": 513708,
+        "smaller_primes_with_partners": 235558,
+        "nonempty_residue_rows": 1884411,
+        "interval_square_roots": 9422055,
+        "prime_list_bisections": 6953918
+      },
+      "sieve_seconds": 0.40280445899999995,
+      "counting_seconds": 10.814439125
+    },
+    {
+      "prime_bits": 26,
+      "products": 232778357093,
+      "common_prefix_splits": 1771986096,
+      "additional_splits": {
+        "ordinary": 772972217,
+        "six": 1097018973,
+        "six_and_thirtyfive": 1754407933
+      },
+      "total_splits": {
+        "ordinary": 2544958313,
+        "six": 2869005069,
+        "six_and_thirtyfive": 3526394029
+      },
+      "unresolved": {
+        "ordinary": 230233398780,
+        "six": 229909352024,
+        "six_and_thirtyfive": 229251963064
+      },
+      "extra_outcomes": {
+        "0/0/0": 228107371296,
+        "1/0/0": 772972217,
+        "0/1/0": 371619551,
+        "0/0/1": 1029008511,
+        "0/1/1": 725399422
+      },
+      "work": {
+        "all_primes": 1894120,
+        "smaller_primes_with_partners": 868446,
+        "nonempty_residue_rows": 6947506,
+        "interval_square_roots": 34737530,
+        "prime_list_bisections": 25284288
+      },
+      "sieve_seconds": 1.708325417000001,
+      "counting_seconds": 42.571614
+    }
+  ]
+}

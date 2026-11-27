@@ -16,7 +16,7 @@ def upper (n a b h : ℤ) : ℤ := (h + radius n a b h)/(2*a)
 def Inside (n a b h x : ℤ) : Prop :=
   0 < disc n a b h ∧ lower n a b h ≤ x ∧ x ≤ upper n a b h
 
-private theorem square_strip {D y : ℤ} (pos : 0 < D) :
+theorem square_strip {D y : ℤ} (pos : 0 < D) :
     y^2 < D ↔ -((D-1).toNat.sqrt : ℤ) ≤ y ∧ y ≤ (D-1).toNat.sqrt := by
   have hcast : ((D-1).toNat : ℤ) = D-1 := Int.toNat_of_nonneg (by omega)
   have hsq : ((y.natAbs^2 : ℕ) : ℤ) = y^2 := by

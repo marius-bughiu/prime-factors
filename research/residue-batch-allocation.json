@@ -1,0 +1,343 @@
+{
+  "population": "All distinct eligible prime pairs in the same fixed normalized product bin.",
+  "rule": "34 roots per search. Allocate 3+12 for 1 and 13, 5+10 for 5, 7, 17 and 19, and 8+7 for 11 and 23 modulo 24, compared to 7+8 everywhere.",
+  "verification": "Direct testing of every 16-bit product agrees with every count by residue. All four fixed-search totals agree with the separate partner census.",
+  "runs": [
+    {
+      "prime_bits": 16,
+      "products": 592048,
+      "prefix": 145803,
+      "fixed_extra": 142452,
+      "adaptive_extra": 143777,
+      "fixed_only": 8085,
+      "adaptive_only": 9410,
+      "neither": 294383,
+      "residues": {
+        "1": {
+          "products": 73991,
+          "prefix": 12595,
+          "fixed_extra": 20973,
+          "adaptive_extra": 21398,
+          "fixed_only": 1245,
+          "adaptive_only": 1670,
+          "neither": 38753
+        },
+        "5": {
+          "products": 73902,
+          "prefix": 17672,
+          "fixed_extra": 17747,
+          "adaptive_extra": 17860,
+          "fixed_only": 1164,
+          "adaptive_only": 1277,
+          "neither": 37206
+        },
+        "7": {
+          "products": 73898,
+          "prefix": 17705,
+          "fixed_extra": 17742,
+          "adaptive_extra": 17889,
+          "fixed_only": 1120,
+          "adaptive_only": 1267,
+          "neither": 37184
+        },
+        "11": {
+          "products": 74038,
+          "prefix": 24917,
+          "fixed_extra": 14748,
+          "adaptive_extra": 14800,
+          "fixed_only": 499,
+          "adaptive_only": 551,
+          "neither": 33822
+        },
+        "13": {
+          "products": 74049,
+          "prefix": 12639,
+          "fixed_extra": 20977,
+          "adaptive_extra": 21338,
+          "fixed_only": 1312,
+          "adaptive_only": 1673,
+          "neither": 38760
+        },
+        "17": {
+          "products": 74118,
+          "prefix": 17698,
+          "fixed_extra": 17827,
+          "adaptive_extra": 17922,
+          "fixed_only": 1146,
+          "adaptive_only": 1241,
+          "neither": 37352
+        },
+        "19": {
+          "products": 74022,
+          "prefix": 17683,
+          "fixed_extra": 17780,
+          "adaptive_extra": 17882,
+          "fixed_only": 1125,
+          "adaptive_only": 1227,
+          "neither": 37332
+        },
+        "23": {
+          "products": 74030,
+          "prefix": 24894,
+          "fixed_extra": 14658,
+          "adaptive_extra": 14688,
+          "fixed_only": 474,
+          "adaptive_only": 504,
+          "neither": 33974
+        }
+      }
+    },
+    {
+      "prime_bits": 20,
+      "products": 96713943,
+      "prefix": 5939001,
+      "fixed_extra": 5818060,
+      "adaptive_extra": 5884012,
+      "fixed_only": 434488,
+      "adaptive_only": 500440,
+      "neither": 84456442,
+      "residues": {
+        "1": {
+          "products": 12088232,
+          "prefix": 510113,
+          "fixed_extra": 885700,
+          "adaptive_extra": 913345,
+          "fixed_only": 104633,
+          "adaptive_only": 132278,
+          "neither": 10560141
+        },
+        "5": {
+          "products": 12089292,
+          "prefix": 720586,
+          "fixed_extra": 714733,
+          "adaptive_extra": 716713,
+          "fixed_only": 46727,
+          "adaptive_only": 48707,
+          "neither": 10605266
+        },
+        "7": {
+          "products": 12088751,
+          "prefix": 720861,
+          "fixed_extra": 714532,
+          "adaptive_extra": 716446,
+          "fixed_only": 46922,
+          "adaptive_only": 48836,
+          "neither": 10604522
+        },
+        "11": {
+          "products": 12090440,
+          "prefix": 1017411,
+          "fixed_extra": 594009,
+          "adaptive_extra": 596003,
+          "fixed_only": 18829,
+          "adaptive_only": 20823,
+          "neither": 10458197
+        },
+        "13": {
+          "products": 12089917,
+          "prefix": 511280,
+          "fixed_extra": 885967,
+          "adaptive_extra": 912956,
+          "fixed_only": 104746,
+          "adaptive_only": 131735,
+          "neither": 10560935
+        },
+        "17": {
+          "products": 12088409,
+          "prefix": 720886,
+          "fixed_extra": 714174,
+          "adaptive_extra": 715817,
+          "fixed_only": 46968,
+          "adaptive_only": 48611,
+          "neither": 10604738
+        },
+        "19": {
+          "products": 12089580,
+          "prefix": 720526,
+          "fixed_extra": 714641,
+          "adaptive_extra": 716449,
+          "fixed_only": 46807,
+          "adaptive_only": 48615,
+          "neither": 10605798
+        },
+        "23": {
+          "products": 12089322,
+          "prefix": 1017338,
+          "fixed_extra": 594304,
+          "adaptive_extra": 596283,
+          "fixed_only": 18856,
+          "adaptive_only": 20835,
+          "neither": 10456845
+        }
+      }
+    },
+    {
+      "prime_bits": 24,
+      "products": 17115589103,
+      "prefix": 259706431,
+      "fixed_extra": 258705622,
+      "adaptive_extra": 261683493,
+      "fixed_only": 19259865,
+      "adaptive_only": 22237736,
+      "neither": 16574939314,
+      "residues": {
+        "1": {
+          "products": 2139425046,
+          "prefix": 22271105,
+          "fixed_extra": 39403289,
+          "adaptive_extra": 40615812,
+          "fixed_only": 4633022,
+          "adaptive_only": 5845545,
+          "neither": 2071905107
+        },
+        "5": {
+          "products": 2139455005,
+          "prefix": 31514722,
+          "fixed_extra": 31777756,
+          "adaptive_extra": 31872718,
+          "fixed_only": 2076365,
+          "adaptive_only": 2171327,
+          "neither": 2073991200
+        },
+        "7": {
+          "products": 2139460870,
+          "prefix": 31509269,
+          "fixed_extra": 31779818,
+          "adaptive_extra": 31874270,
+          "fixed_only": 2076908,
+          "adaptive_only": 2171360,
+          "neither": 2074000423
+        },
+        "11": {
+          "products": 2139456666,
+          "prefix": 44551422,
+          "fixed_extra": 26393819,
+          "adaptive_extra": 26476023,
+          "fixed_only": 845880,
+          "adaptive_only": 928084,
+          "neither": 2067583341
+        },
+        "13": {
+          "products": 2139447735,
+          "prefix": 22279798,
+          "fixed_extra": 39403875,
+          "adaptive_extra": 40619989,
+          "fixed_only": 4632927,
+          "adaptive_only": 5849041,
+          "neither": 2071915021
+        },
+        "17": {
+          "products": 2139438488,
+          "prefix": 31506550,
+          "fixed_extra": 31780755,
+          "adaptive_extra": 31877075,
+          "fixed_only": 2075747,
+          "adaptive_only": 2172067,
+          "neither": 2073979116
+        },
+        "19": {
+          "products": 2139462909,
+          "prefix": 31514644,
+          "fixed_extra": 31777031,
+          "adaptive_extra": 31873210,
+          "fixed_only": 2075247,
+          "adaptive_only": 2171426,
+          "neither": 2073999808
+        },
+        "23": {
+          "products": 2139442384,
+          "prefix": 44558921,
+          "fixed_extra": 26389279,
+          "adaptive_extra": 26474396,
+          "fixed_only": 843769,
+          "adaptive_only": 928886,
+          "neither": 2067565298
+        }
+      }
+    },
+    {
+      "prime_bits": 26,
+      "products": 232778357093,
+      "prefix": 1771986096,
+      "fixed_extra": 1754407933,
+      "adaptive_extra": 1774849195,
+      "fixed_only": 130466367,
+      "adaptive_only": 150907629,
+      "neither": 229101055435,
+      "residues": {
+        "1": {
+          "products": 29097193973,
+          "prefix": 151955715,
+          "fixed_extra": 267235258,
+          "adaptive_extra": 275538348,
+          "fixed_only": 31387988,
+          "adaptive_only": 39691078,
+          "neither": 28638311922
+        },
+        "5": {
+          "products": 29097295336,
+          "prefix": 214976924,
+          "fixed_extra": 215514507,
+          "adaptive_extra": 216187543,
+          "fixed_only": 14064015,
+          "adaptive_only": 14737051,
+          "neither": 28652066854
+        },
+        "7": {
+          "products": 29097326044,
+          "prefix": 214975008,
+          "fixed_extra": 215506028,
+          "adaptive_extra": 216185316,
+          "fixed_only": 14057842,
+          "adaptive_only": 14737130,
+          "neither": 28652107878
+        },
+        "11": {
+          "products": 29097343162,
+          "prefix": 304066016,
+          "fixed_extra": 178951149,
+          "adaptive_extra": 179521396,
+          "fixed_only": 5723136,
+          "adaptive_only": 6293383,
+          "neither": 28608032614
+        },
+        "13": {
+          "products": 29097311938,
+          "prefix": 151997453,
+          "fixed_extra": 267229160,
+          "adaptive_extra": 275529290,
+          "fixed_only": 31388033,
+          "adaptive_only": 39688163,
+          "neither": 28638397162
+        },
+        "17": {
+          "products": 29097355239,
+          "prefix": 214981426,
+          "fixed_extra": 215513345,
+          "adaptive_extra": 216189204,
+          "fixed_only": 14060205,
+          "adaptive_only": 14736064,
+          "neither": 28652124404
+        },
+        "19": {
+          "products": 29097286993,
+          "prefix": 214976756,
+          "fixed_extra": 215511246,
+          "adaptive_extra": 216184166,
+          "fixed_only": 14061924,
+          "adaptive_only": 14734844,
+          "neither": 28652064147
+        },
+        "23": {
+          "products": 29097244408,
+          "prefix": 304056798,
+          "fixed_extra": 178947240,
+          "adaptive_extra": 179513932,
+          "fixed_only": 5723224,
+          "adaptive_only": 6289916,
+          "neither": 28607950454
+        }
+      }
+    }
+  ]
+}

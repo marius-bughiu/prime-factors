@@ -68,6 +68,7 @@ from scripts.interior_prime_family_benchmark import interior_family_case
 from scripts.primitive_multiplier_benchmark import primitive_multiplier_case
 from scripts.equal_six_budget_benchmark import equal_six_case
 from scripts.two_interior_benchmark import two_interior_case
+from scripts.residue_batch_benchmark import residue_batch_case
 from experiments.weighted_trace_reuse import search as weighted_trace_reuse_search
 from scripts.separating_period_benchmark import period_case as separating_period_case
 from scripts.cubic_trace_benchmark import cubic_bases_case, cubic_readout_case, cubic_trace_case
@@ -1470,6 +1471,8 @@ end PrimeFactors.Generated
         result = equal_six_case(case, proof, agree, certify_split)
     elif method == 'two-interior-batches':
         result = two_interior_case(case, proof, agree, certify_split)
+    elif method == 'residue-batch-allocation':
+        result = residue_batch_case(case, proof, agree, certify_split)
     elif method == 'cheap-multiplier-selection':
         result = cheap_multiplier_case(case, proof, agree, certify_split)
     elif method == 'shared-multiplier-prefix':
@@ -1793,6 +1796,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, default=ROOT / 'build' / 'site')
     args = parser.parse_args()
+    revision_command = ['git', 'rev-parse', 'HEAD']
+    sha = subprocess.check_output(revision_command, cwd=ROOT, text=True).strip()
+    local_changes = bool(subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT))
     out = args.out.resolve()
     proofs = out / 'proofs'
     proofs.mkdir(parents=True, exist_ok=True)
@@ -1841,6 +1847,7 @@ def main():
                              ('primitive-multiplier.json', 'primitive-multiplier'),
                              ('equal-six-budget.json', 'equal-six-budget'),
                              ('two-interior-batches.json', 'two-interior-batches'),
+                             ('residue-batch-allocation.json', 'residue-batch-allocation'),
                              ('weighted-trace-reuse.json', 'weighted-trace-reuse'),
                              ('translated-hasse.json', 'translated-hasse'),
                              ('hasse-hankel-probe.json', 'hasse-hankel-probe'),
@@ -1942,12 +1949,16 @@ def main():
             print(f"{result['id']}  {result['status']}  {result['wall_seconds']:.3f}s", flush=True)
     if len(results) != len({case['id'] for case in results}):
         raise ValueError('Duplicate benchmark ID')
-    sha = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+    finished_sha = subprocess.check_output(revision_command, cwd=ROOT, text=True).strip()
     data = dict(commit=sha, measured_at=datetime.now(timezone.utc).isoformat(timespec='seconds'),
                 repository=os.getenv('GITHUB_REPOSITORY', 'marius-bughiu/prime-factors'),
                 run_id=os.getenv('GITHUB_RUN_ID'), platform=platform.platform(), cpu=cpu_name(),
                 python=platform.python_version(), lean=(ROOT / 'lean-toolchain').read_text().strip(),
                 results=results)
+    if finished_sha != sha:
+        data['commit_at_finish'] = finished_sha
+    if local_changes:
+        data['local_changes_at_start'] = True
     (out / 'results.json').write_text(json.dumps(data, indent=2) + '\n')
 
 

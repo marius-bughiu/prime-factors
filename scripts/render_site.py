@@ -866,6 +866,16 @@ def case_row(result):
         labels = 'residues 1 and 5 modulo 6' if 'blocks' in w else 'odd labels'
         count = (f'Multiplier six · {w["tests"]:,} square tests, budget {w["budget"]:,}'
                  f' · {labels} · {w["squares"]:,} square discriminants')
+    elif result['method'] == 'residue-batch-allocation':
+        w = result['residue_batch']
+        left, right = w['weighted_tests']
+        fixed = 'split' if w['fixed_found'] else 'unresolved'
+        adaptive = 'split' if w['adaptive_found'] else 'unresolved'
+        count = (f'{w["roots_per_schedule"]} square roots per search · remainder {w["residue"]} modulo 24'
+                 f' · fixed 7 + 8 {fixed} · selected {left} + {right} {adaptive}')
+        if 'fixed_certificate' in w:
+            url = escape(w['fixed_certificate'], quote=True)
+            evidence += f' · <a href="{url}">Checked factors from the fixed allocation</a>'
     elif result['method'] == 'two-interior-batches':
         w = result['two_interior_batches']
         names = ('ordinary', 'multiplier 6', 'multipliers 6 and 35')
@@ -1263,6 +1273,11 @@ def render(out):
     sha = escape(data['commit'])
     complete = sum(row['verified'] for row in results)
     run_link = f' · <a href="{repo}/actions/runs/{escape(data["run_id"])}">Workflow run</a>' if data['run_id'] else ''
+    if data.get('local_changes_at_start'):
+        run_link += ' · local changes present at start'
+    if data.get('commit_at_finish'):
+        finish = escape(data['commit_at_finish'], quote=True)
+        run_link += f' · checkout changed during measurement to <a href="{repo}/commit/{finish}">{finish[:7]}</a>'
     html = Template((ROOT / 'site/index.html').read_text()).substitute(
         repo=repo, tree=f'{repo}/blob/{sha}', commit_url=f'{repo}/commit/{sha}', sha=sha[:7],
         bits=f"{biggest['bits']:,}", largest_desc=escape(biggest['description']), largest_id=escape(biggest['id']),

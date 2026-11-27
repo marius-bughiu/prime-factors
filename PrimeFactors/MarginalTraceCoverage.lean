@@ -6,7 +6,7 @@ import PrimeFactors.GapStride
 namespace PrimeFactors.MarginalTraceWidth
 open Real
 
-private theorem ordered_offsets (r o a b : ℕ) (pos : 0 < (offsets r o a b).length) :
+theorem ordered_offsets (r o a b : ℕ) (pos : 0 < (offsets r o a b).length) :
     StrictMono (offset r o a b) := by
   let xs := offsets r o a b
   have sorted : xs.Pairwise (· < ·) := List.Pairwise.filter _ List.pairwise_lt_range
@@ -62,7 +62,7 @@ theorem admitted_iff {s f r a b H : ℕ} (lo : f≤s)
   · rintro ⟨i,lt,rfl⟩
     exact Nat.add_lt_add_left (mono lt) _
 
-private theorem sum_allowed {p q : ℕ} (a b : ℕ) (unit : p.Coprime 6) :
+theorem sum_allowed {p q : ℕ} (a b : ℕ) (unit : p.Coprime 6) :
     (a*p+b*q).gcd 24=(a+b*((p*q)%24)).gcd 24 := by
   have p24 := (unit.pow_right 3).coprime_dvd_right (by decide : 24∣6^3)
   have sq := (square_mod_twentyfour unit).mul_left a

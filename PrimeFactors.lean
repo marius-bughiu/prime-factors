@@ -410,6 +410,7 @@ import PrimeFactors.SixTraceNewProducts
 import PrimeFactors.DisplacedPrimePartners
 import PrimeFactors.DisplacedTraceSchedules
 import PrimeFactors.TwoInteriorTraceBatches
+import PrimeFactors.WeightedPartnerIntervals
 import PrimeFactors.DiscriminantRectangles
 import PrimeFactors.DiscriminantRectangle211
 import PrimeFactors.ArbitraryDivisorWindow
