@@ -663,3 +663,11 @@ import PrimeFactors.SignedCurveSchedule
 import PrimeFactors.CompleteCurveSigns
 import PrimeFactors.ConicTangentLattice
 import PrimeFactors.ConicTangentReceipt
+import PrimeFactors.ConicTangentUniform
+import PrimeFactors.RectangularRootWindows
+import PrimeFactors.RectangularMultiplierCount
+import PrimeFactors.MixedUnityRectangle
+import PrimeFactors.MixedUnityCofactors
+import PrimeFactors.RectangularRowCost
+import PrimeFactors.RectangularWeightCost
+import PrimeFactors.RectangularFullWidth

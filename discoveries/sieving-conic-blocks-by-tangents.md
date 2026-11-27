@@ -59,6 +59,12 @@ The eight input products are the existing four 16-bit and four 20-bit prime-pair
 | 20 | Its square | 588 | 185,054 | 71,276 | 839 |
 | 20 | First two split primes | 1,112 | 170,293 | 64,492 | 772 |
 
+## A bound for every balanced 2048-bit product
+
+For a 2048-bit product of two 1024-bit primes, every nonempty signed unit chart needs **at most 65% of the ordinary complete block count** when scanned with the specified tangent lattices. The bound applies to all seven signed discriminants in the menu. Summing it over the included charts gives the same percentage for the whole search.
+
+Lean checks a concrete square root and the totient estimate $1000\varphi(h)\le649h$ for each of seven fixed wheels. Every wheel is smaller than $2^{180}$ and coprime to both hidden primes. The public size bounds imply $W\ge2^{330}$, $W\le2^{350}$, and $X\ge2^{1000}$. These inequalities allow the last partial block in every class to be charged explicitly. The result bounds the number of block starts over a complete scan. Constructing the large wheels and solving their block equations still costs work, and the search still has order $N^{1/3}$ blocks when these seven wheels are fixed. [Uniform theorem, modular roots and numerical bounds](../PrimeFactors/ConicTangentUniform.lean)
+
 ## Two 2048-bit products
 
 For each full-size public control, the experiment computes the complete ordinary block count and the upper bound above, chart by chart, using all good split primes through 257. The fresh product's upper bound is 56.1697% of its ordinary count. The crossed product's is 52.4520%. Both ordinary counts have 686 bits. Even the sums of the numbers of residue classes have 174 and 167 bits, respectively. The benchmark generates a Lean proof for each product. It checks the selected targets, local representatives, all five chart dimensions and radii, the split-conic class counts, both decimal totals and their rounded ratio. The bound applies to every set of class counts obeying the chart’s pointwise start and stride rules. No full-size scan was run, and the entire product remains unresolved in each case. [Counting proof generator](../experiments/tangent_lattice_receipt.py) · [Native fixtures](../benchmarks/tangent-lattice-arcs.json) · [Counts and remaining cofactors](../research/tangent-lattice-arcs.json)
