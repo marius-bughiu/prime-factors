@@ -85,7 +85,9 @@ from experiments.target_norm_multipliers import scan as target_norm_search
 from experiments.signed_norm_arcs import domain_size as signed_arc_domain, search as signed_arc_search
 from experiments.tangent_lattice_receipt import benchmark_case as tangent_lattice_case
 from experiments.rectangular_receipt import benchmark as rectangular_case
+from experiments.local_gap_polynomial import run_fixture as local_gap_search, check_fixture as check_local_gap
 from experiments.weighted_global_trace import run_fixture as weighted_trace_search, check_fixture as check_weighted_trace
+from experiments.blum_signed_powers import compare_public as blum_signed_search
 from experiments.three_root_targets import attempt as three_root_search
 from scripts.reciprocal_anchor_benchmark import run_case as reciprocal_anchor_case
 from experiments.neighbor_factorial import benchmark_case as neighbor_factorial_case
@@ -1516,6 +1518,23 @@ end PrimeFactors.Generated
         result = twelve_residue_case(case, proof, agree, certify_split)
     elif method == 'complementary-keys':
         result = complementary_key_case(case, proof, agree, certify_split)
+    elif method == 'blum-signed-powers':
+        started = time.perf_counter()
+        work = blum_signed_search(int(case['n']), case['base'], case['budget'])
+        elapsed = time.perf_counter() - started
+        if work != case['checks']:
+            raise ValueError(f"public orbit differs for {case['id']}")
+        found = work['signed']['divisors']
+        result = certify_split(case, proof, int(found[0]) if found else None, elapsed,
+                               'blum_signed_powers', work)
+    elif method == 'local-gap-polynomial':
+        started = time.perf_counter()
+        work = local_gap_search(case)
+        elapsed = time.perf_counter() - started
+        check_local_gap(case, work)
+        divisors = work['divisors']
+        result = certify_split(case, proof, divisors[0] if divisors else None, elapsed,
+                               'local_gap_polynomial', work)
     elif method == 'weighted-global-trace':
         started = time.perf_counter()
         work = weighted_trace_search(case)
@@ -2003,7 +2022,9 @@ def main():
                              ('signed-norm-arcs.json', 'signed-norm-arcs'),
                              ('tangent-lattice-arcs.json', 'tangent-lattice-arcs'),
                              ('rectangular-root-windows.json', 'rectangular-root-windows'),
+                             ('local-gap-polynomial.json', 'local-gap-polynomial'),
                              ('weighted-global-trace.json', 'weighted-global-trace'),
+                             ('blum-signed-powers.json', 'blum-signed-powers'),
                              ('projected-divisor-wheel.json', 'projected-divisor-wheel'),
                              ('reciprocal-anchors.json', 'reciprocal-anchor'),
                              ('neighbor-factorial.json', 'neighbor-factorial'),

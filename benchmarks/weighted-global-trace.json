@@ -888,6 +888,104 @@
     "remaining": []
   },
   {
+    "id": "weighted-global-wrapped-1784821",
+    "description": "Selected small case where the alternate integer-square and candidate-gcd checks also miss.",
+    "n": "1784821",
+    "factor_bits": 11,
+    "base": 2,
+    "multiplier_limit": 64,
+    "per_row": 2,
+    "checks": {
+      "common": {
+        "weight_gcds": 14,
+        "assignments": 11,
+        "intervals": 11,
+        "gap_entries": 6,
+        "coordinate_visits": 14,
+        "omitted_coordinates_below_limit": "4",
+        "full_multiplier_limit": "119",
+        "whole_range": false
+      },
+      "square": {
+        "square_tests": 14,
+        "exact_squares": 0,
+        "readouts": {
+          "one": 0,
+          "whole": 0,
+          "proper": 0
+        },
+        "divisors": []
+      },
+      "own": {
+        "setup_powers": 6,
+        "setup_inversions": 7,
+        "setup_base_gcds": 1,
+        "prechecks": {
+          "one": 5,
+          "whole": 1,
+          "proper": 0
+        },
+        "setup_divisors": [],
+        "hashed_right_entries": 0,
+        "scan_powers": 14,
+        "scan_inversions": 14,
+        "lookups": 14,
+        "different_gap_hits": 0,
+        "first_off_gap_factor": null,
+        "readouts": {
+          "one": 0,
+          "whole": 0,
+          "proper": 0
+        },
+        "divisors": []
+      },
+      "global": {
+        "setup_powers": 6,
+        "setup_inversions": 7,
+        "setup_base_gcds": 1,
+        "prechecks": {
+          "one": 5,
+          "whole": 1,
+          "proper": 0
+        },
+        "setup_divisors": [],
+        "hashed_right_entries": 6,
+        "scan_powers": 14,
+        "scan_inversions": 14,
+        "lookups": 14,
+        "different_gap_hits": 1,
+        "first_off_gap_factor": {
+          "row": 45,
+          "y": "8962",
+          "weights": [
+            5,
+            9
+          ],
+          "sum": "17924",
+          "matched_gap": 3,
+          "left": "1779742",
+          "right": "1422528",
+          "trace": "319977",
+          "gcd": "1249"
+        },
+        "readouts": {
+          "one": 0,
+          "whole": 0,
+          "proper": 1
+        },
+        "divisors": [
+          "1249"
+        ]
+      }
+    },
+    "status": "complete",
+    "factors": [
+      "1249",
+      "1429"
+    ],
+    "remaining": []
+  },
+  {
     "id": "weighted-global-unit-readout",
     "description": "Diagnostic selected for an extra trace equality with gcd one.",
     "n": "25021",

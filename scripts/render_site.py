@@ -1091,6 +1091,19 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'blum-signed-powers':
+        w = result['blum_signed_powers']
+        signed, ordinary = w['signed'], w['ordinary']
+        count = (f"Base {w['base']} · cap {w['budget']} · one initial power per method"
+                 f" · signed {signed['squarings']} squarings, {signed['gcds']} gcds"
+                 f" · ordinary {ordinary['squarings']} squarings, {ordinary['gcds']} gcds")
+    elif result['method'] == 'local-gap-polynomial':
+        w = result['local_gap_polynomial']
+        count = (f"Multipliers through {w['multiplier_limit']:,} · up to {w['per_row']:,} positions per row"
+                 f" · {w['coordinates']:,} candidate positions · {w['right_powers']:,} signed gap powers"
+                 f" · {w['column_gcds']:,} polynomial gcds · {w['derivative_queries']:,} derivative readouts")
+        if w['skipped_coordinates'] != '0':
+            count += f" · {compact_count(int(w['skipped_coordinates']))} positions skipped below the multiplier cap"
     elif result['method'] == 'weighted-global-trace':
         w = result['weighted_global_trace']
         common = w['common']

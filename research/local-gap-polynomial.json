@@ -1,0 +1,6767 @@
+{
+  "seed": "local-gap-polynomial-v1/<width>",
+  "scaling_seed": "local-gap-polynomial-scale-v1/20",
+  "base": 2,
+  "cpu_repeats": 5,
+  "python": "3.9.6",
+  "machine": "arm64",
+  "holdout": [
+    {
+      "draw_index": 0,
+      "n": "1433779",
+      "factor_bits": 11,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 29,
+        "assignments": 22,
+        "intervals": 22,
+        "gap_entries": 9,
+        "coordinate_visits": 21,
+        "omitted_coordinates_below_limit": "1",
+        "full_multiplier_limit": "112",
+        "whole_range": false
+      },
+      "pair": [
+        "1097",
+        "1307"
+      ],
+      "remaining": [],
+      "methods": {
+        "square": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "square_tests": 21
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 46,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 15,
+            "distinct_left": 21,
+            "distinct_right": 17,
+            "left_trace_inversions": 21
+          }
+        },
+        "individual": {
+          "divisors": [
+            1097
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 46,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 15,
+            "distinct_left": 21,
+            "distinct_right": 17,
+            "leaf_one": 355,
+            "leaf_proper": 2
+          }
+        },
+        "row_product": {
+          "divisors": [
+            1097
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 46,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 15,
+            "distinct_left": 21,
+            "distinct_right": 17,
+            "row_multiplications": 357,
+            "row_one": 19,
+            "row_proper": 2
+          }
+        },
+        "geometric": {
+          "divisors": [
+            1097
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 46,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 15,
+            "distinct_left": 21,
+            "distinct_right": 17,
+            "tree_leaf_multiplications": 121,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 23,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 68,
+            "grid_points": 25,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 233,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 15,
+            "column_proper": 2
+          }
+        },
+        "derivative": {
+          "divisors": [
+            1097
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 46,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 15,
+            "distinct_left": 21,
+            "distinct_right": 17,
+            "tree_leaf_multiplications": 121,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 23,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 68,
+            "grid_points": 25,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 233,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 15,
+            "column_proper": 2
+          }
+        },
+        "ordinary": {
+          "divisors": [
+            1097,
+            1307
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 21,
+            "square_readout_proper": 2
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "different_gap": 2
+        },
+        "first_witness": {
+          "different_gap": {
+            "k": 3,
+            "y": "2075",
+            "weights": [
+              1,
+              3
+            ],
+            "s": "4150",
+            "gap": 12,
+            "x_power": "352359",
+            "y_power": "855882",
+            "gcd": "1097"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 36000,
+          "setup": 4000,
+          "comparison": 5000,
+          "first": null,
+          "complete": 47000
+        },
+        "global": {
+          "schedule": 39000,
+          "setup": 90000,
+          "comparison": 29000,
+          "first": null,
+          "complete": 172000
+        },
+        "individual": {
+          "schedule": 32000,
+          "setup": 49000,
+          "comparison": 106000,
+          "first": 110000,
+          "complete": 187000
+        },
+        "row_product": {
+          "schedule": 56000,
+          "setup": 55000,
+          "comparison": 117000,
+          "first": 171000,
+          "complete": 233000
+        },
+        "geometric": {
+          "schedule": 57000,
+          "setup": 79000,
+          "comparison": 194000,
+          "first": 324000,
+          "complete": 328000
+        },
+        "derivative": {
+          "schedule": 58000,
+          "setup": 75000,
+          "comparison": 198000,
+          "first": 317000,
+          "complete": 320000
+        },
+        "ordinary": {
+          "schedule": 41000,
+          "setup": 5000,
+          "comparison": 7000,
+          "first": 48000,
+          "complete": 53000
+        }
+      }
+    },
+    {
+      "draw_index": 1,
+      "n": "3616567",
+      "factor_bits": 11,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 12,
+        "assignments": 7,
+        "intervals": 7,
+        "gap_entries": 3,
+        "coordinate_visits": 8,
+        "omitted_coordinates_below_limit": "2",
+        "full_multiplier_limit": "152",
+        "whole_range": false
+      },
+      "pair": [
+        "1811",
+        "1997"
+      ],
+      "remaining": [],
+      "methods": {
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 8,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 13,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 5,
+            "coordinate_powers": 5,
+            "distinct_left": 8,
+            "distinct_right": 5,
+            "left_trace_inversions": 8,
+            "global_whole": 1
+          }
+        },
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 8,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 13,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 5,
+            "coordinate_powers": 5,
+            "distinct_left": 8,
+            "distinct_right": 5,
+            "leaf_one": 39,
+            "leaf_whole": 1
+          }
+        },
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 8,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 13,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 5,
+            "coordinate_powers": 5,
+            "distinct_left": 8,
+            "distinct_right": 5,
+            "row_multiplications": 39,
+            "row_one": 8
+          }
+        },
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 8,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 13,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 5,
+            "coordinate_powers": 5,
+            "distinct_left": 8,
+            "distinct_right": 5,
+            "tree_leaf_multiplications": 36,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 22,
+            "grid_points": 5,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 76,
+            "grid_inversions": 1,
+            "global_equal_cells": 1,
+            "column_one": 4,
+            "column_whole": 1,
+            "replay_one": 7
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 8,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 13,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 5,
+            "coordinate_powers": 5,
+            "distinct_left": 8,
+            "distinct_right": 5,
+            "tree_leaf_multiplications": 36,
+            "grid_convolutions": 2,
+            "grid_convolution_inputs": 42,
+            "grid_points": 10,
+            "grid_shift_powers": 2,
+            "grid_multiplications": 145,
+            "grid_inversions": 2,
+            "global_equal_cells": 1,
+            "derivative_coefficients": 8,
+            "column_one": 5,
+            "derivative_queries": 1
+          }
+        },
+        "ordinary": {
+          "divisors": [
+            1811,
+            1997
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 8,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 8,
+            "square_readout_proper": 2
+          }
+        },
+        "square": {
+          "divisors": [
+            1811,
+            1997
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 8,
+            "square_tests": 8,
+            "square_readout_proper": 2
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 16000,
+          "setup": 2000,
+          "comparison": 4000,
+          "first": 19000,
+          "complete": 21000
+        },
+        "global": {
+          "schedule": 18000,
+          "setup": 31000,
+          "comparison": 11000,
+          "first": null,
+          "complete": 57000
+        },
+        "individual": {
+          "schedule": 16000,
+          "setup": 20000,
+          "comparison": 13000,
+          "first": null,
+          "complete": 64000
+        },
+        "row_product": {
+          "schedule": 18000,
+          "setup": 33000,
+          "comparison": 18000,
+          "first": null,
+          "complete": 90000
+        },
+        "geometric": {
+          "schedule": 18000,
+          "setup": 19000,
+          "comparison": 42000,
+          "first": null,
+          "complete": 79000
+        },
+        "derivative": {
+          "schedule": 17000,
+          "setup": 21000,
+          "comparison": 56000,
+          "first": null,
+          "complete": 94000
+        },
+        "ordinary": {
+          "schedule": 16000,
+          "setup": 3000,
+          "comparison": 5000,
+          "first": 20000,
+          "complete": 24000
+        }
+      }
+    },
+    {
+      "draw_index": 2,
+      "n": "2118559",
+      "factor_bits": 11,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 24,
+        "assignments": 18,
+        "intervals": 18,
+        "gap_entries": 7,
+        "coordinate_visits": 18,
+        "omitted_coordinates_below_limit": "2",
+        "full_multiplier_limit": "127",
+        "whole_range": false
+      },
+      "pair": [
+        "1063",
+        "1993"
+      ],
+      "remaining": [],
+      "methods": {
+        "individual": {
+          "divisors": [
+            1063,
+            1993
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 18,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 35,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 11,
+            "coordinate_powers": 14,
+            "distinct_left": 18,
+            "distinct_right": 13,
+            "leaf_one": 231,
+            "leaf_proper": 3
+          }
+        },
+        "row_product": {
+          "divisors": [
+            1063,
+            1993
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 18,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 35,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 11,
+            "coordinate_powers": 14,
+            "distinct_left": 18,
+            "distinct_right": 13,
+            "row_multiplications": 234,
+            "row_one": 16,
+            "row_whole": 1,
+            "refine_multiplications": 6,
+            "bisect_proper": 1,
+            "row_proper": 1
+          }
+        },
+        "geometric": {
+          "divisors": [
+            1063,
+            1993
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 18,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 35,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 11,
+            "coordinate_powers": 14,
+            "distinct_left": 18,
+            "distinct_right": 13,
+            "tree_leaf_multiplications": 90,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 20,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 54,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 182,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11,
+            "column_proper": 2
+          }
+        },
+        "derivative": {
+          "divisors": [
+            1063,
+            1993
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 18,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 35,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 11,
+            "coordinate_powers": 14,
+            "distinct_left": 18,
+            "distinct_right": 13,
+            "tree_leaf_multiplications": 90,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 20,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 54,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 182,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11,
+            "column_proper": 2
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 18,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 18
+          }
+        },
+        "square": {
+          "divisors": [
+            1063,
+            1993
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 18,
+            "square_tests": 18,
+            "square_readout_proper": 2
+          }
+        },
+        "global": {
+          "divisors": [
+            1993
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 18,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 35,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 11,
+            "coordinate_powers": 14,
+            "distinct_left": 18,
+            "distinct_right": 13,
+            "left_trace_inversions": 18,
+            "global_proper": 1
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "own_gap": 2,
+          "different_gap": 1
+        },
+        "first_witness": {
+          "own_gap": {
+            "k": 91,
+            "y": "13885",
+            "weights": [
+              7,
+              13
+            ],
+            "s": "27770",
+            "gap": -6,
+            "x_power": "1381488",
+            "y_power": "1300700",
+            "gcd": "1063"
+          },
+          "different_gap": {
+            "k": 105,
+            "y": "14915",
+            "weights": [
+              7,
+              15
+            ],
+            "s": "29830",
+            "gap": 6,
+            "x_power": "1867780",
+            "y_power": "139849",
+            "gcd": "1993"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 25000,
+          "setup": 1000,
+          "comparison": 5000,
+          "first": 29000,
+          "complete": 32000
+        },
+        "global": {
+          "schedule": 28000,
+          "setup": 36000,
+          "comparison": 20000,
+          "first": 74000,
+          "complete": 82000
+        },
+        "individual": {
+          "schedule": 26000,
+          "setup": 35000,
+          "comparison": 70000,
+          "first": 94000,
+          "complete": 133000
+        },
+        "row_product": {
+          "schedule": 29000,
+          "setup": 36000,
+          "comparison": 43000,
+          "first": 94000,
+          "complete": 111000
+        },
+        "geometric": {
+          "schedule": 26000,
+          "setup": 36000,
+          "comparison": 83000,
+          "first": 142000,
+          "complete": 147000
+        },
+        "derivative": {
+          "schedule": 28000,
+          "setup": 38000,
+          "comparison": 86000,
+          "first": 168000,
+          "complete": 173000
+        },
+        "ordinary": {
+          "schedule": 27000,
+          "setup": 3000,
+          "comparison": 4000,
+          "first": null,
+          "complete": 35000
+        }
+      }
+    },
+    {
+      "draw_index": 3,
+      "n": "1586231",
+      "factor_bits": 11,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 27,
+        "assignments": 20,
+        "intervals": 20,
+        "gap_entries": 8,
+        "coordinate_visits": 23,
+        "omitted_coordinates_below_limit": "1",
+        "full_multiplier_limit": "115",
+        "whole_range": false
+      },
+      "pair": [
+        "1223",
+        "1297"
+      ],
+      "remaining": [],
+      "methods": {
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 23,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 40,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 23,
+            "distinct_right": 15,
+            "row_multiplications": 344,
+            "row_one": 23
+          }
+        },
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 23,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 40,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 23,
+            "distinct_right": 15,
+            "tree_leaf_multiplications": 144,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 25,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 64,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 217,
+            "grid_inversions": 1,
+            "global_equal_cells": 1,
+            "column_one": 14,
+            "column_whole": 1,
+            "replay_one": 22
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 23,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 40,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 23,
+            "distinct_right": 15,
+            "tree_leaf_multiplications": 144,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 25,
+            "grid_convolutions": 2,
+            "grid_convolution_inputs": 126,
+            "grid_points": 34,
+            "grid_shift_powers": 2,
+            "grid_multiplications": 427,
+            "grid_inversions": 2,
+            "global_equal_cells": 1,
+            "derivative_coefficients": 23,
+            "column_one": 15,
+            "derivative_queries": 1
+          }
+        },
+        "ordinary": {
+          "divisors": [
+            1223,
+            1297
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 23,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 23,
+            "square_readout_proper": 2
+          }
+        },
+        "square": {
+          "divisors": [
+            1223,
+            1297
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 23,
+            "square_tests": 23,
+            "square_readout_proper": 2
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 23,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 40,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 23,
+            "distinct_right": 15,
+            "left_trace_inversions": 23,
+            "global_whole": 1
+          }
+        },
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 23,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 40,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 23,
+            "distinct_right": 15,
+            "leaf_one": 344,
+            "leaf_whole": 1
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 27000,
+          "setup": 2000,
+          "comparison": 6000,
+          "first": 30000,
+          "complete": 34000
+        },
+        "global": {
+          "schedule": 26000,
+          "setup": 43000,
+          "comparison": 21000,
+          "first": null,
+          "complete": 89000
+        },
+        "individual": {
+          "schedule": 27000,
+          "setup": 39000,
+          "comparison": 92000,
+          "first": null,
+          "complete": 159000
+        },
+        "row_product": {
+          "schedule": 29000,
+          "setup": 41000,
+          "comparison": 56000,
+          "first": null,
+          "complete": 128000
+        },
+        "geometric": {
+          "schedule": 27000,
+          "setup": 39000,
+          "comparison": 100000,
+          "first": null,
+          "complete": 166000
+        },
+        "derivative": {
+          "schedule": 29000,
+          "setup": 40000,
+          "comparison": 135000,
+          "first": null,
+          "complete": 205000
+        },
+        "ordinary": {
+          "schedule": 29000,
+          "setup": 3000,
+          "comparison": 7000,
+          "first": 33000,
+          "complete": 39000
+        }
+      }
+    },
+    {
+      "draw_index": 4,
+      "n": "1825939",
+      "factor_bits": 11,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 27,
+        "assignments": 22,
+        "intervals": 22,
+        "gap_entries": 9,
+        "coordinate_visits": 20,
+        "omitted_coordinates_below_limit": "1",
+        "full_multiplier_limit": "120",
+        "whole_range": false
+      },
+      "pair": [
+        "1223",
+        "1493"
+      ],
+      "remaining": [],
+      "methods": {
+        "geometric": {
+          "divisors": [
+            1223,
+            1493
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 41,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 20,
+            "distinct_right": 17,
+            "tree_leaf_multiplications": 110,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 22,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 62,
+            "grid_points": 21,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 208,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 14,
+            "column_proper": 3
+          }
+        },
+        "derivative": {
+          "divisors": [
+            1223,
+            1493
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 41,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 20,
+            "distinct_right": 17,
+            "tree_leaf_multiplications": 110,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 22,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 62,
+            "grid_points": 21,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 208,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 14,
+            "column_proper": 3
+          }
+        },
+        "ordinary": {
+          "divisors": [
+            1223,
+            1493
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 20,
+            "square_readout_proper": 2
+          }
+        },
+        "square": {
+          "divisors": [
+            1223,
+            1493
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "square_tests": 20,
+            "square_readout_proper": 2
+          }
+        },
+        "global": {
+          "divisors": [
+            1493
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 41,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 20,
+            "distinct_right": 17,
+            "left_trace_inversions": 20,
+            "global_proper": 1
+          }
+        },
+        "individual": {
+          "divisors": [
+            1223,
+            1493
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 41,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 20,
+            "distinct_right": 17,
+            "leaf_one": 337,
+            "leaf_proper": 3
+          }
+        },
+        "row_product": {
+          "divisors": [
+            1223,
+            1493
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 41,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 20,
+            "distinct_right": 17,
+            "row_multiplications": 340,
+            "row_one": 18,
+            "row_whole": 1,
+            "refine_multiplications": 8,
+            "bisect_proper": 1,
+            "row_proper": 1
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "own_gap": 2,
+          "different_gap": 1
+        },
+        "first_witness": {
+          "own_gap": {
+            "k": 99,
+            "y": "13445",
+            "weights": [
+              9,
+              11
+            ],
+            "s": "26890",
+            "gap": -2,
+            "x_power": "792238",
+            "y_power": "436345",
+            "gcd": "1223"
+          },
+          "different_gap": {
+            "k": 96,
+            "y": "13240",
+            "weights": [
+              3,
+              8
+            ],
+            "s": "13240",
+            "gap": 1,
+            "x_power": "29332",
+            "y_power": "781477",
+            "gcd": "1223"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 29000,
+          "setup": 1000,
+          "comparison": 6000,
+          "first": 33000,
+          "complete": 35000
+        },
+        "global": {
+          "schedule": 27000,
+          "setup": 42000,
+          "comparison": 20000,
+          "first": 82000,
+          "complete": 88000
+        },
+        "individual": {
+          "schedule": 27000,
+          "setup": 39000,
+          "comparison": 92000,
+          "first": 123000,
+          "complete": 157000
+        },
+        "row_product": {
+          "schedule": 27000,
+          "setup": 39000,
+          "comparison": 61000,
+          "first": 105000,
+          "complete": 127000
+        },
+        "geometric": {
+          "schedule": 28000,
+          "setup": 39000,
+          "comparison": 85000,
+          "first": 146000,
+          "complete": 151000
+        },
+        "derivative": {
+          "schedule": 33000,
+          "setup": 43000,
+          "comparison": 85000,
+          "first": 170000,
+          "complete": 174000
+        },
+        "ordinary": {
+          "schedule": 29000,
+          "setup": 3000,
+          "comparison": 6000,
+          "first": 34000,
+          "complete": 39000
+        }
+      }
+    },
+    {
+      "draw_index": 5,
+      "n": "1950191",
+      "factor_bits": 11,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 26,
+        "assignments": 20,
+        "intervals": 20,
+        "gap_entries": 8,
+        "coordinate_visits": 21,
+        "omitted_coordinates_below_limit": "1",
+        "full_multiplier_limit": "124",
+        "whole_range": false
+      },
+      "pair": [
+        "1259",
+        "1549"
+      ],
+      "remaining": [],
+      "methods": {
+        "derivative": {
+          "divisors": [
+            1259,
+            1549
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 42,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 15,
+            "tree_leaf_multiplications": 121,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 23,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 64,
+            "grid_points": 21,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 215,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11,
+            "column_proper": 4
+          }
+        },
+        "ordinary": {
+          "divisors": [
+            1259,
+            1549
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 21,
+            "square_readout_proper": 2
+          }
+        },
+        "square": {
+          "divisors": [
+            1259,
+            1549
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "square_tests": 21,
+            "square_readout_proper": 4
+          }
+        },
+        "global": {
+          "divisors": [
+            1549
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 42,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 15,
+            "left_trace_inversions": 21,
+            "global_proper": 2
+          }
+        },
+        "individual": {
+          "divisors": [
+            1259,
+            1549
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 42,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 15,
+            "leaf_one": 311,
+            "leaf_proper": 4
+          }
+        },
+        "row_product": {
+          "divisors": [
+            1259,
+            1549
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 42,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 15,
+            "row_multiplications": 315,
+            "row_one": 19,
+            "row_whole": 2,
+            "refine_multiplications": 14,
+            "bisect_proper": 2
+          }
+        },
+        "geometric": {
+          "divisors": [
+            1259,
+            1549
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 42,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 15,
+            "tree_leaf_multiplications": 121,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 23,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 64,
+            "grid_points": 21,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 215,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11,
+            "column_proper": 4
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "own_gap": 4
+        },
+        "first_witness": {
+          "own_gap": {
+            "k": 99,
+            "y": "13895",
+            "weights": [
+              9,
+              11
+            ],
+            "s": "27790",
+            "gap": -2,
+            "x_power": "1085534",
+            "y_power": "469883",
+            "gcd": "1259"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 27000,
+          "setup": 3000,
+          "comparison": 7000,
+          "first": 34000,
+          "complete": 37000
+        },
+        "global": {
+          "schedule": 27000,
+          "setup": 44000,
+          "comparison": 25000,
+          "first": 93000,
+          "complete": 103000
+        },
+        "individual": {
+          "schedule": 28000,
+          "setup": 42000,
+          "comparison": 84000,
+          "first": 126000,
+          "complete": 153000
+        },
+        "row_product": {
+          "schedule": 26000,
+          "setup": 41000,
+          "comparison": 128000,
+          "first": 158000,
+          "complete": 200000
+        },
+        "geometric": {
+          "schedule": 36000,
+          "setup": 43000,
+          "comparison": 98000,
+          "first": 173000,
+          "complete": 177000
+        },
+        "derivative": {
+          "schedule": 29000,
+          "setup": 41000,
+          "comparison": 86000,
+          "first": 151000,
+          "complete": 156000
+        },
+        "ordinary": {
+          "schedule": 29000,
+          "setup": 3000,
+          "comparison": 7000,
+          "first": 34000,
+          "complete": 39000
+        }
+      }
+    },
+    {
+      "draw_index": 6,
+      "n": "2240467",
+      "factor_bits": 11,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 23,
+        "assignments": 17,
+        "intervals": 17,
+        "gap_entries": 7,
+        "coordinate_visits": 21,
+        "omitted_coordinates_below_limit": "2",
+        "full_multiplier_limit": "130",
+        "whole_range": false
+      },
+      "pair": [
+        "1229",
+        "1823"
+      ],
+      "remaining": [],
+      "methods": {
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 21
+          }
+        },
+        "square": {
+          "divisors": [
+            1229,
+            1823
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "square_tests": 21,
+            "square_readout_proper": 2
+          }
+        },
+        "global": {
+          "divisors": [
+            1823
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 38,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 13,
+            "left_trace_inversions": 21,
+            "global_proper": 1
+          }
+        },
+        "individual": {
+          "divisors": [
+            1229,
+            1823
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 38,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 13,
+            "leaf_one": 271,
+            "leaf_proper": 2
+          }
+        },
+        "row_product": {
+          "divisors": [
+            1229,
+            1823
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 38,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 13,
+            "row_multiplications": 273,
+            "row_one": 20,
+            "row_whole": 1,
+            "refine_multiplications": 6,
+            "bisect_proper": 1
+          }
+        },
+        "geometric": {
+          "divisors": [
+            1229,
+            1823
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 38,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 13,
+            "tree_leaf_multiplications": 121,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 23,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 60,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 203,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11,
+            "column_proper": 2
+          }
+        },
+        "derivative": {
+          "divisors": [
+            1229,
+            1823
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 38,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 13,
+            "tree_leaf_multiplications": 121,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 23,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 60,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 203,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11,
+            "column_proper": 2
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "own_gap": 2
+        },
+        "first_witness": {
+          "own_gap": {
+            "k": 24,
+            "y": "7333",
+            "weights": [
+              2,
+              3
+            ],
+            "s": "7333",
+            "gap": -1,
+            "x_power": "417146",
+            "y_power": "22637",
+            "gcd": "1229"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 24000,
+          "setup": 2000,
+          "comparison": 5000,
+          "first": 30000,
+          "complete": 32000
+        },
+        "global": {
+          "schedule": 25000,
+          "setup": 41000,
+          "comparison": 23000,
+          "first": 84000,
+          "complete": 89000
+        },
+        "individual": {
+          "schedule": 25000,
+          "setup": 39000,
+          "comparison": 74000,
+          "first": 118000,
+          "complete": 138000
+        },
+        "row_product": {
+          "schedule": 28000,
+          "setup": 42000,
+          "comparison": 50000,
+          "first": 108000,
+          "complete": 120000
+        },
+        "geometric": {
+          "schedule": 27000,
+          "setup": 38000,
+          "comparison": 85000,
+          "first": 147000,
+          "complete": 150000
+        },
+        "derivative": {
+          "schedule": 27000,
+          "setup": 39000,
+          "comparison": 81000,
+          "first": 143000,
+          "complete": 146000
+        },
+        "ordinary": {
+          "schedule": 26000,
+          "setup": 3000,
+          "comparison": 5000,
+          "first": null,
+          "complete": 33000
+        }
+      }
+    },
+    {
+      "draw_index": 7,
+      "n": "2585873",
+      "factor_bits": 11,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 20,
+        "assignments": 14,
+        "intervals": 14,
+        "gap_entries": 6,
+        "coordinate_visits": 15,
+        "omitted_coordinates_below_limit": "1",
+        "full_multiplier_limit": "135",
+        "whole_range": false
+      },
+      "pair": [
+        "1291",
+        "2003"
+      ],
+      "remaining": [],
+      "methods": {
+        "square": {
+          "divisors": [
+            1291,
+            2003
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 15,
+            "square_tests": 15,
+            "square_readout_proper": 4
+          }
+        },
+        "global": {
+          "divisors": [
+            2003
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 15,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 28,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 11,
+            "coordinate_powers": 11,
+            "distinct_left": 15,
+            "distinct_right": 11,
+            "left_trace_inversions": 15,
+            "global_proper": 2
+          }
+        },
+        "individual": {
+          "divisors": [
+            1291,
+            2003
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 15,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 28,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 11,
+            "coordinate_powers": 11,
+            "distinct_left": 15,
+            "distinct_right": 11,
+            "leaf_one": 158,
+            "leaf_proper": 7
+          }
+        },
+        "row_product": {
+          "divisors": [
+            1291,
+            2003
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 15,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 28,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 11,
+            "coordinate_powers": 11,
+            "distinct_left": 15,
+            "distinct_right": 11,
+            "row_multiplications": 165,
+            "row_proper": 3,
+            "row_one": 10,
+            "row_whole": 2,
+            "refine_multiplications": 10,
+            "bisect_proper": 2
+          }
+        },
+        "geometric": {
+          "divisors": [
+            1291,
+            2003
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 15,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 28,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 11,
+            "coordinate_powers": 11,
+            "distinct_left": 15,
+            "distinct_right": 11,
+            "tree_leaf_multiplications": 64,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 17,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 44,
+            "grid_points": 13,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 149,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 5,
+            "column_proper": 6
+          }
+        },
+        "derivative": {
+          "divisors": [
+            1291,
+            2003
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 15,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 28,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 11,
+            "coordinate_powers": 11,
+            "distinct_left": 15,
+            "distinct_right": 11,
+            "tree_leaf_multiplications": 64,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 17,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 44,
+            "grid_points": 13,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 149,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 5,
+            "column_proper": 6
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 15,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 15
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "different_gap": 2,
+          "own_gap": 5
+        },
+        "first_witness": {
+          "different_gap": {
+            "k": 1,
+            "y": "1609",
+            "weights": [
+              1,
+              1
+            ],
+            "s": "3218",
+            "gap": -3,
+            "x_power": "283160",
+            "y_power": "1238591",
+            "gcd": "2003"
+          },
+          "own_gap": {
+            "k": 15,
+            "y": "6229",
+            "weights": [
+              3,
+              5
+            ],
+            "s": "12458",
+            "gap": -2,
+            "x_power": "1721328",
+            "y_power": "1575109",
+            "gcd": "2003"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 42000,
+          "setup": 4000,
+          "comparison": 11000,
+          "first": 50000,
+          "complete": 56000
+        },
+        "global": {
+          "schedule": 40000,
+          "setup": 66000,
+          "comparison": 35000,
+          "first": 129000,
+          "complete": 141000
+        },
+        "individual": {
+          "schedule": 41000,
+          "setup": 61000,
+          "comparison": 95000,
+          "first": 108000,
+          "complete": 195000
+        },
+        "row_product": {
+          "schedule": 44000,
+          "setup": 63000,
+          "comparison": 75000,
+          "first": 115000,
+          "complete": 182000
+        },
+        "geometric": {
+          "schedule": 44000,
+          "setup": 70000,
+          "comparison": 155000,
+          "first": 262000,
+          "complete": 272000
+        },
+        "derivative": {
+          "schedule": 47000,
+          "setup": 63000,
+          "comparison": 127000,
+          "first": 234000,
+          "complete": 243000
+        },
+        "ordinary": {
+          "schedule": 44000,
+          "setup": 5000,
+          "comparison": 9000,
+          "first": null,
+          "complete": 57000
+        }
+      }
+    },
+    {
+      "draw_index": 8,
+      "n": "2632529",
+      "factor_bits": 11,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 20,
+        "assignments": 14,
+        "intervals": 14,
+        "gap_entries": 6,
+        "coordinate_visits": 12,
+        "omitted_coordinates_below_limit": "2",
+        "full_multiplier_limit": "136",
+        "whole_range": false
+      },
+      "pair": [
+        "1583",
+        "1663"
+      ],
+      "remaining": [],
+      "methods": {
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 25,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 7,
+            "coordinate_powers": 8,
+            "distinct_left": 12,
+            "distinct_right": 11,
+            "left_trace_inversions": 12,
+            "global_whole": 1
+          }
+        },
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 25,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 7,
+            "coordinate_powers": 8,
+            "distinct_left": 12,
+            "distinct_right": 11,
+            "leaf_one": 131,
+            "leaf_whole": 1
+          }
+        },
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 25,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 7,
+            "coordinate_powers": 8,
+            "distinct_left": 12,
+            "distinct_right": 11,
+            "row_multiplications": 131,
+            "row_one": 12
+          }
+        },
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 25,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 7,
+            "coordinate_powers": 8,
+            "distinct_left": 12,
+            "distinct_right": 11,
+            "tree_leaf_multiplications": 78,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 38,
+            "grid_points": 13,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 128,
+            "grid_inversions": 1,
+            "global_equal_cells": 1,
+            "column_one": 10,
+            "column_whole": 1,
+            "replay_one": 11
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 25,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 7,
+            "coordinate_powers": 8,
+            "distinct_left": 12,
+            "distinct_right": 11,
+            "tree_leaf_multiplications": 78,
+            "grid_convolutions": 2,
+            "grid_convolution_inputs": 74,
+            "grid_points": 26,
+            "grid_shift_powers": 2,
+            "grid_multiplications": 251,
+            "grid_inversions": 2,
+            "global_equal_cells": 1,
+            "derivative_coefficients": 12,
+            "column_one": 11,
+            "derivative_queries": 1
+          }
+        },
+        "ordinary": {
+          "divisors": [
+            1583,
+            1663
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 12,
+            "square_readout_proper": 2
+          }
+        },
+        "square": {
+          "divisors": [
+            1583,
+            1663
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "square_tests": 12,
+            "square_readout_proper": 2
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 39000,
+          "setup": 2000,
+          "comparison": 8000,
+          "first": 43000,
+          "complete": 50000
+        },
+        "global": {
+          "schedule": 39000,
+          "setup": 51000,
+          "comparison": 24000,
+          "first": null,
+          "complete": 115000
+        },
+        "individual": {
+          "schedule": 40000,
+          "setup": 51000,
+          "comparison": 71000,
+          "first": null,
+          "complete": 163000
+        },
+        "row_product": {
+          "schedule": 39000,
+          "setup": 50000,
+          "comparison": 51000,
+          "first": null,
+          "complete": 140000
+        },
+        "geometric": {
+          "schedule": 39000,
+          "setup": 49000,
+          "comparison": 116000,
+          "first": null,
+          "complete": 204000
+        },
+        "derivative": {
+          "schedule": 43000,
+          "setup": 52000,
+          "comparison": 158000,
+          "first": null,
+          "complete": 252000
+        },
+        "ordinary": {
+          "schedule": 42000,
+          "setup": 5000,
+          "comparison": 9000,
+          "first": 48000,
+          "complete": 56000
+        }
+      }
+    },
+    {
+      "draw_index": 9,
+      "n": "1601143",
+      "factor_bits": 11,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 27,
+        "assignments": 20,
+        "intervals": 20,
+        "gap_entries": 8,
+        "coordinate_visits": 24,
+        "omitted_coordinates_below_limit": "1",
+        "full_multiplier_limit": "116",
+        "whole_range": false
+      },
+      "pair": [
+        "1031",
+        "1553"
+      ],
+      "remaining": [],
+      "methods": {
+        "individual": {
+          "divisors": [
+            1031,
+            1553
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 24,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 41,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 23,
+            "distinct_right": 15,
+            "leaf_one": 342,
+            "leaf_proper": 3
+          }
+        },
+        "row_product": {
+          "divisors": [
+            1031,
+            1553
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 24,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 41,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 23,
+            "distinct_right": 15,
+            "row_multiplications": 345,
+            "row_one": 21,
+            "row_proper": 1,
+            "row_whole": 1,
+            "refine_multiplications": 7,
+            "bisect_proper": 1
+          }
+        },
+        "geometric": {
+          "divisors": [
+            1031,
+            1553
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 24,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 41,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 23,
+            "distinct_right": 15,
+            "tree_leaf_multiplications": 144,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 25,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 64,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 217,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_proper": 3,
+            "column_one": 12
+          }
+        },
+        "derivative": {
+          "divisors": [
+            1031,
+            1553
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 24,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 41,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 23,
+            "distinct_right": 15,
+            "tree_leaf_multiplications": 144,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 25,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 64,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 217,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_proper": 3,
+            "column_one": 12
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 24,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 24
+          }
+        },
+        "square": {
+          "divisors": [
+            1031,
+            1553
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 24,
+            "square_tests": 24,
+            "square_readout_proper": 4
+          }
+        },
+        "global": {
+          "divisors": [
+            1553
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 24,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 41,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 7,
+            "center_powers": 14,
+            "coordinate_powers": 16,
+            "distinct_left": 23,
+            "distinct_right": 15,
+            "left_trace_inversions": 23,
+            "global_proper": 1
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "different_gap": 1,
+          "own_gap": 2
+        },
+        "first_witness": {
+          "different_gap": {
+            "k": 1,
+            "y": "1269",
+            "weights": [
+              1,
+              1
+            ],
+            "s": "2538",
+            "gap": -8,
+            "x_power": "1038996",
+            "y_power": "1223803",
+            "gcd": "1553"
+          },
+          "own_gap": {
+            "k": 24,
+            "y": "6199",
+            "weights": [
+              2,
+              3
+            ],
+            "s": "6199",
+            "gap": -1,
+            "x_power": "688802",
+            "y_power": "312487",
+            "gcd": "1031"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 26000,
+          "setup": 2000,
+          "comparison": 8000,
+          "first": 32000,
+          "complete": 36000
+        },
+        "global": {
+          "schedule": 25000,
+          "setup": 43000,
+          "comparison": 24000,
+          "first": 87000,
+          "complete": 92000
+        },
+        "individual": {
+          "schedule": 28000,
+          "setup": 43000,
+          "comparison": 92000,
+          "first": 84000,
+          "complete": 162000
+        },
+        "row_product": {
+          "schedule": 29000,
+          "setup": 50000,
+          "comparison": 58000,
+          "first": 106000,
+          "complete": 151000
+        },
+        "geometric": {
+          "schedule": 29000,
+          "setup": 44000,
+          "comparison": 96000,
+          "first": 163000,
+          "complete": 169000
+        },
+        "derivative": {
+          "schedule": 29000,
+          "setup": 46000,
+          "comparison": 89000,
+          "first": 157000,
+          "complete": 163000
+        },
+        "ordinary": {
+          "schedule": 30000,
+          "setup": 4000,
+          "comparison": 6000,
+          "first": null,
+          "complete": 39000
+        }
+      }
+    },
+    {
+      "draw_index": 10,
+      "n": "1805807",
+      "factor_bits": 11,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 28,
+        "assignments": 22,
+        "intervals": 22,
+        "gap_entries": 9,
+        "coordinate_visits": 17,
+        "omitted_coordinates_below_limit": "2",
+        "full_multiplier_limit": "121",
+        "whole_range": false
+      },
+      "pair": [
+        "1321",
+        "1367"
+      ],
+      "remaining": [],
+      "methods": {
+        "row_product": {
+          "divisors": [
+            1321,
+            1367
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 17,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 38,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 12,
+            "coordinate_powers": 13,
+            "distinct_left": 17,
+            "distinct_right": 17,
+            "row_multiplications": 288,
+            "row_one": 10,
+            "row_proper": 5,
+            "row_whole": 2,
+            "refine_multiplications": 16,
+            "bisect_proper": 2
+          }
+        },
+        "geometric": {
+          "divisors": [
+            1321,
+            1367
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 17,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 38,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 12,
+            "coordinate_powers": 13,
+            "distinct_left": 17,
+            "distinct_right": 17,
+            "tree_leaf_multiplications": 81,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 19,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 56,
+            "grid_points": 21,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 193,
+            "grid_inversions": 1,
+            "global_equal_cells": 1,
+            "column_proper": 6,
+            "column_one": 9,
+            "column_whole": 2,
+            "replay_one": 16,
+            "refine_multiplications": 8,
+            "bisect_proper": 1
+          }
+        },
+        "derivative": {
+          "divisors": [
+            1321,
+            1367
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 17,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 38,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 12,
+            "coordinate_powers": 13,
+            "distinct_left": 17,
+            "distinct_right": 17,
+            "tree_leaf_multiplications": 81,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 19,
+            "grid_convolutions": 2,
+            "grid_convolution_inputs": 110,
+            "grid_points": 42,
+            "grid_shift_powers": 2,
+            "grid_multiplications": 381,
+            "grid_inversions": 2,
+            "global_equal_cells": 1,
+            "derivative_coefficients": 17,
+            "column_proper": 6,
+            "column_one": 10,
+            "derivative_queries": 1,
+            "column_whole": 1,
+            "refine_multiplications": 8,
+            "bisect_proper": 1
+          }
+        },
+        "ordinary": {
+          "divisors": [
+            1321,
+            1367
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 17,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 17,
+            "square_readout_proper": 2
+          }
+        },
+        "square": {
+          "divisors": [
+            1321,
+            1367
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 17,
+            "square_tests": 17,
+            "square_readout_proper": 2
+          }
+        },
+        "global": {
+          "divisors": [
+            1367
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 17,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 38,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 12,
+            "coordinate_powers": 13,
+            "distinct_left": 17,
+            "distinct_right": 17,
+            "left_trace_inversions": 17,
+            "global_whole": 1,
+            "global_proper": 2
+          }
+        },
+        "individual": {
+          "divisors": [
+            1321,
+            1367
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 17,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 38,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 12,
+            "coordinate_powers": 13,
+            "distinct_left": 17,
+            "distinct_right": 17,
+            "leaf_one": 279,
+            "leaf_whole": 1,
+            "leaf_proper": 9
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "different_gap": 8,
+          "own_gap": 1
+        },
+        "first_witness": {
+          "different_gap": {
+            "k": 1,
+            "y": "1346",
+            "weights": [
+              1,
+              1
+            ],
+            "s": "2692",
+            "gap": 8,
+            "x_power": "16",
+            "y_power": "1137397",
+            "gcd": "1321"
+          },
+          "own_gap": {
+            "k": 40,
+            "y": "8499",
+            "weights": [
+              2,
+              5
+            ],
+            "s": "8499",
+            "gap": -3,
+            "x_power": "85140",
+            "y_power": "898876",
+            "gcd": "1321"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 29000,
+          "setup": 2000,
+          "comparison": 4000,
+          "first": 31000,
+          "complete": 35000
+        },
+        "global": {
+          "schedule": 27000,
+          "setup": 37000,
+          "comparison": 18000,
+          "first": 77000,
+          "complete": 83000
+        },
+        "individual": {
+          "schedule": 28000,
+          "setup": 36000,
+          "comparison": 78000,
+          "first": 80000,
+          "complete": 144000
+        },
+        "row_product": {
+          "schedule": 28000,
+          "setup": 36000,
+          "comparison": 52000,
+          "first": 73000,
+          "complete": 116000
+        },
+        "geometric": {
+          "schedule": 29000,
+          "setup": 36000,
+          "comparison": 89000,
+          "first": 146000,
+          "complete": 162000
+        },
+        "derivative": {
+          "schedule": 29000,
+          "setup": 37000,
+          "comparison": 118000,
+          "first": 176000,
+          "complete": 186000
+        },
+        "ordinary": {
+          "schedule": 30000,
+          "setup": 3000,
+          "comparison": 6000,
+          "first": 34000,
+          "complete": 39000
+        }
+      }
+    },
+    {
+      "draw_index": 11,
+      "n": "1770809",
+      "factor_bits": 11,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 27,
+        "assignments": 22,
+        "intervals": 22,
+        "gap_entries": 9,
+        "coordinate_visits": 21,
+        "omitted_coordinates_below_limit": "2",
+        "full_multiplier_limit": "120",
+        "whole_range": false
+      },
+      "pair": [
+        "1061",
+        "1669"
+      ],
+      "remaining": [],
+      "methods": {
+        "geometric": {
+          "divisors": [
+            1061,
+            1669
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 42,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 17,
+            "tree_leaf_multiplications": 121,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 23,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 64,
+            "grid_points": 21,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 215,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 15,
+            "column_proper": 2
+          }
+        },
+        "derivative": {
+          "divisors": [
+            1061,
+            1669
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 42,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 17,
+            "tree_leaf_multiplications": 121,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 23,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 64,
+            "grid_points": 21,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 215,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 15,
+            "column_proper": 2
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 21
+          }
+        },
+        "square": {
+          "divisors": [
+            1061,
+            1669
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "square_tests": 21,
+            "square_readout_proper": 2
+          }
+        },
+        "global": {
+          "divisors": [
+            1669
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 42,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 17,
+            "left_trace_inversions": 21,
+            "global_proper": 1
+          }
+        },
+        "individual": {
+          "divisors": [
+            1061,
+            1669
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 42,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 17,
+            "leaf_one": 355,
+            "leaf_proper": 2
+          }
+        },
+        "row_product": {
+          "divisors": [
+            1061,
+            1669
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 21,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 42,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 13,
+            "coordinate_powers": 16,
+            "distinct_left": 21,
+            "distinct_right": 17,
+            "row_multiplications": 357,
+            "row_one": 20,
+            "row_whole": 1,
+            "refine_multiplications": 8,
+            "bisect_proper": 1
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "own_gap": 2
+        },
+        "first_witness": {
+          "own_gap": {
+            "k": 77,
+            "y": "11677",
+            "weights": [
+              7,
+              11
+            ],
+            "s": "23354",
+            "gap": -4,
+            "x_power": "842763",
+            "y_power": "1016767",
+            "gcd": "1061"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 28000,
+          "setup": 2000,
+          "comparison": 5000,
+          "first": 32000,
+          "complete": 34000
+        },
+        "global": {
+          "schedule": 28000,
+          "setup": 43000,
+          "comparison": 22000,
+          "first": 84000,
+          "complete": 93000
+        },
+        "individual": {
+          "schedule": 28000,
+          "setup": 40000,
+          "comparison": 103000,
+          "first": 125000,
+          "complete": 169000
+        },
+        "row_product": {
+          "schedule": 28000,
+          "setup": 40000,
+          "comparison": 64000,
+          "first": 106000,
+          "complete": 132000
+        },
+        "geometric": {
+          "schedule": 29000,
+          "setup": 41000,
+          "comparison": 94000,
+          "first": 154000,
+          "complete": 160000
+        },
+        "derivative": {
+          "schedule": 30000,
+          "setup": 43000,
+          "comparison": 87000,
+          "first": 162000,
+          "complete": 167000
+        },
+        "ordinary": {
+          "schedule": 31000,
+          "setup": 3000,
+          "comparison": 5000,
+          "first": null,
+          "complete": 38000
+        }
+      }
+    },
+    {
+      "draw_index": 0,
+      "n": "710865527",
+      "factor_bits": 15,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 28,
+        "assignments": 20,
+        "intervals": 20,
+        "gap_entries": 6,
+        "coordinate_visits": 32,
+        "omitted_coordinates_below_limit": "10",
+        "full_multiplier_limit": "891",
+        "whole_range": false
+      },
+      "pair": [],
+      "remaining": [
+        "710865527"
+      ],
+      "methods": {
+        "square": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 32,
+            "square_tests": 32
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 32,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 45,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 17,
+            "coordinate_powers": 20,
+            "distinct_left": 32,
+            "distinct_right": 11,
+            "left_trace_inversions": 32
+          }
+        },
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 32,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 45,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 17,
+            "coordinate_powers": 20,
+            "distinct_left": 32,
+            "distinct_right": 11,
+            "leaf_one": 352
+          }
+        },
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 32,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 45,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 17,
+            "coordinate_powers": 20,
+            "distinct_left": 32,
+            "distinct_right": 11,
+            "row_multiplications": 352,
+            "row_one": 32
+          }
+        },
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 32,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 45,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 17,
+            "coordinate_powers": 20,
+            "distinct_left": 32,
+            "distinct_right": 11,
+            "tree_leaf_multiplications": 144,
+            "tree_convolutions": 3,
+            "tree_convolution_inputs": 70,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 78,
+            "grid_points": 13,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 268,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 32,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 45,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 17,
+            "coordinate_powers": 20,
+            "distinct_left": 32,
+            "distinct_right": 11,
+            "tree_leaf_multiplications": 144,
+            "tree_convolutions": 3,
+            "tree_convolution_inputs": 70,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 78,
+            "grid_points": 13,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 268,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 32,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 32
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 31000,
+          "setup": 4000,
+          "comparison": 7000,
+          "first": null,
+          "complete": 50000
+        },
+        "global": {
+          "schedule": 31000,
+          "setup": 55000,
+          "comparison": 36000,
+          "first": null,
+          "complete": 122000
+        },
+        "individual": {
+          "schedule": 34000,
+          "setup": 90000,
+          "comparison": 108000,
+          "first": null,
+          "complete": 244000
+        },
+        "row_product": {
+          "schedule": 31000,
+          "setup": 50000,
+          "comparison": 65000,
+          "first": null,
+          "complete": 155000
+        },
+        "geometric": {
+          "schedule": 53000,
+          "setup": 57000,
+          "comparison": 146000,
+          "first": null,
+          "complete": 291000
+        },
+        "derivative": {
+          "schedule": 32000,
+          "setup": 68000,
+          "comparison": 147000,
+          "first": null,
+          "complete": 253000
+        },
+        "ordinary": {
+          "schedule": 35000,
+          "setup": 4000,
+          "comparison": 7000,
+          "first": null,
+          "complete": 47000
+        }
+      }
+    },
+    {
+      "draw_index": 1,
+      "n": "455570993",
+      "factor_bits": 15,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 49,
+        "assignments": 37,
+        "intervals": 37,
+        "gap_entries": 11,
+        "coordinate_visits": 62,
+        "omitted_coordinates_below_limit": "10",
+        "full_multiplier_limit": "768",
+        "whole_range": false
+      },
+      "pair": [
+        "18661",
+        "24413"
+      ],
+      "remaining": [],
+      "methods": {
+        "global": {
+          "divisors": [
+            24413
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 62,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 87,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 10,
+            "center_powers": 23,
+            "coordinate_powers": 35,
+            "distinct_left": 62,
+            "distinct_right": 21,
+            "left_trace_inversions": 62,
+            "global_proper": 1
+          }
+        },
+        "individual": {
+          "divisors": [
+            18661,
+            24413
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 62,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 87,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 10,
+            "center_powers": 23,
+            "coordinate_powers": 35,
+            "distinct_left": 62,
+            "distinct_right": 21,
+            "leaf_one": 1300,
+            "leaf_proper": 2
+          }
+        },
+        "row_product": {
+          "divisors": [
+            18661,
+            24413
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 62,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 87,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 10,
+            "center_powers": 23,
+            "coordinate_powers": 35,
+            "distinct_left": 62,
+            "distinct_right": 21,
+            "row_multiplications": 1302,
+            "row_one": 61,
+            "row_whole": 1,
+            "refine_multiplications": 10,
+            "bisect_proper": 1
+          }
+        },
+        "geometric": {
+          "divisors": [
+            18661,
+            24413
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 62,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 87,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 10,
+            "center_powers": 23,
+            "coordinate_powers": 35,
+            "distinct_left": 62,
+            "distinct_right": 21,
+            "tree_leaf_multiplications": 272,
+            "tree_convolutions": 7,
+            "tree_convolution_inputs": 200,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 150,
+            "grid_points": 25,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 514,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 19,
+            "column_proper": 2
+          }
+        },
+        "derivative": {
+          "divisors": [
+            18661,
+            24413
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 62,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 87,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 10,
+            "center_powers": 23,
+            "coordinate_powers": 35,
+            "distinct_left": 62,
+            "distinct_right": 21,
+            "tree_leaf_multiplications": 272,
+            "tree_convolutions": 7,
+            "tree_convolution_inputs": 200,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 150,
+            "grid_points": 25,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 514,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 19,
+            "column_proper": 2
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 62,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 62
+          }
+        },
+        "square": {
+          "divisors": [
+            18661,
+            24413
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 62,
+            "square_tests": 62,
+            "square_readout_proper": 2
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "own_gap": 2
+        },
+        "first_witness": {
+          "own_gap": {
+            "k": 221,
+            "y": "317303",
+            "weights": [
+              13,
+              17
+            ],
+            "s": "634606",
+            "gap": -4,
+            "x_power": "202755060",
+            "y_power": "272323268",
+            "gcd": "18661"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 49000,
+          "setup": 4000,
+          "comparison": 14000,
+          "first": 61000,
+          "complete": 66000
+        },
+        "global": {
+          "schedule": 50000,
+          "setup": 90000,
+          "comparison": 66000,
+          "first": 181000,
+          "complete": 204000
+        },
+        "individual": {
+          "schedule": 55000,
+          "setup": 104000,
+          "comparison": 431000,
+          "first": 468000,
+          "complete": 671000
+        },
+        "row_product": {
+          "schedule": 52000,
+          "setup": 82000,
+          "comparison": 338000,
+          "first": 368000,
+          "complete": 485000
+        },
+        "geometric": {
+          "schedule": 107000,
+          "setup": 169000,
+          "comparison": 386000,
+          "first": 651000,
+          "complete": 669000
+        },
+        "derivative": {
+          "schedule": 54000,
+          "setup": 100000,
+          "comparison": 376000,
+          "first": 582000,
+          "complete": 588000
+        },
+        "ordinary": {
+          "schedule": 53000,
+          "setup": 7000,
+          "comparison": 13000,
+          "first": null,
+          "complete": 73000
+        }
+      }
+    },
+    {
+      "draw_index": 2,
+      "n": "966154379",
+      "factor_bits": 15,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 13,
+        "assignments": 6,
+        "intervals": 6,
+        "gap_entries": 3,
+        "coordinate_visits": 10,
+        "omitted_coordinates_below_limit": "11",
+        "full_multiplier_limit": "987",
+        "whole_range": false
+      },
+      "pair": [],
+      "remaining": [
+        "966154379"
+      ],
+      "methods": {
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 10,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 15,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 6,
+            "coordinate_powers": 6,
+            "distinct_left": 10,
+            "distinct_right": 5,
+            "leaf_one": 50
+          }
+        },
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 10,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 15,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 6,
+            "coordinate_powers": 6,
+            "distinct_left": 10,
+            "distinct_right": 5,
+            "row_multiplications": 50,
+            "row_one": 10
+          }
+        },
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 10,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 15,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 6,
+            "coordinate_powers": 6,
+            "distinct_left": 10,
+            "distinct_right": 5,
+            "tree_leaf_multiplications": 55,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 26,
+            "grid_points": 5,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 90,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 5
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 10,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 15,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 6,
+            "coordinate_powers": 6,
+            "distinct_left": 10,
+            "distinct_right": 5,
+            "tree_leaf_multiplications": 55,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 26,
+            "grid_points": 5,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 90,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 5
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 10,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 10
+          }
+        },
+        "square": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 10,
+            "square_tests": 10
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 10,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 15,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 6,
+            "coordinate_powers": 6,
+            "distinct_left": 10,
+            "distinct_right": 5,
+            "left_trace_inversions": 10
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 14000,
+          "setup": 1000,
+          "comparison": 2000,
+          "first": null,
+          "complete": 18000
+        },
+        "global": {
+          "schedule": 14000,
+          "setup": 28000,
+          "comparison": 13000,
+          "first": null,
+          "complete": 57000
+        },
+        "individual": {
+          "schedule": 16000,
+          "setup": 23000,
+          "comparison": 15000,
+          "first": null,
+          "complete": 55000
+        },
+        "row_product": {
+          "schedule": 16000,
+          "setup": 24000,
+          "comparison": 13000,
+          "first": null,
+          "complete": 53000
+        },
+        "geometric": {
+          "schedule": 15000,
+          "setup": 23000,
+          "comparison": 44000,
+          "first": null,
+          "complete": 85000
+        },
+        "derivative": {
+          "schedule": 18000,
+          "setup": 23000,
+          "comparison": 39000,
+          "first": null,
+          "complete": 80000
+        },
+        "ordinary": {
+          "schedule": 16000,
+          "setup": 3000,
+          "comparison": 3000,
+          "first": null,
+          "complete": 22000
+        }
+      }
+    },
+    {
+      "draw_index": 3,
+      "n": "675266681",
+      "factor_bits": 15,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 30,
+        "assignments": 21,
+        "intervals": 21,
+        "gap_entries": 6,
+        "coordinate_visits": 35,
+        "omitted_coordinates_below_limit": "11",
+        "full_multiplier_limit": "875",
+        "whole_range": false
+      },
+      "pair": [
+        "25307",
+        "26683"
+      ],
+      "remaining": [],
+      "methods": {
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 48,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 18,
+            "coordinate_powers": 21,
+            "distinct_left": 35,
+            "distinct_right": 11,
+            "row_multiplications": 385,
+            "row_one": 35
+          }
+        },
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 48,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 18,
+            "coordinate_powers": 21,
+            "distinct_left": 35,
+            "distinct_right": 11,
+            "tree_leaf_multiplications": 171,
+            "tree_convolutions": 3,
+            "tree_convolution_inputs": 76,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 84,
+            "grid_points": 13,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 289,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 48,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 18,
+            "coordinate_powers": 21,
+            "distinct_left": 35,
+            "distinct_right": 11,
+            "tree_leaf_multiplications": 171,
+            "tree_convolutions": 3,
+            "tree_convolution_inputs": 76,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 84,
+            "grid_points": 13,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 289,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11
+          }
+        },
+        "ordinary": {
+          "divisors": [
+            25307,
+            26683
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 35,
+            "square_readout_proper": 2
+          }
+        },
+        "square": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "square_tests": 35
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 48,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 18,
+            "coordinate_powers": 21,
+            "distinct_left": 35,
+            "distinct_right": 11,
+            "left_trace_inversions": 35
+          }
+        },
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 48,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 18,
+            "coordinate_powers": 21,
+            "distinct_left": 35,
+            "distinct_right": 11,
+            "leaf_one": 385
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 30000,
+          "setup": 2000,
+          "comparison": 7000,
+          "first": null,
+          "complete": 39000
+        },
+        "global": {
+          "schedule": 37000,
+          "setup": 62000,
+          "comparison": 54000,
+          "first": null,
+          "complete": 168000
+        },
+        "individual": {
+          "schedule": 70000,
+          "setup": 82000,
+          "comparison": 179000,
+          "first": null,
+          "complete": 331000
+        },
+        "row_product": {
+          "schedule": 35000,
+          "setup": 59000,
+          "comparison": 68000,
+          "first": null,
+          "complete": 163000
+        },
+        "geometric": {
+          "schedule": 34000,
+          "setup": 55000,
+          "comparison": 142000,
+          "first": null,
+          "complete": 289000
+        },
+        "derivative": {
+          "schedule": 35000,
+          "setup": 56000,
+          "comparison": 138000,
+          "first": null,
+          "complete": 224000
+        },
+        "ordinary": {
+          "schedule": 34000,
+          "setup": 5000,
+          "comparison": 10000,
+          "first": 41000,
+          "complete": 48000
+        }
+      }
+    },
+    {
+      "draw_index": 4,
+      "n": "679752131",
+      "factor_bits": 15,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 30,
+        "assignments": 21,
+        "intervals": 21,
+        "gap_entries": 6,
+        "coordinate_visits": 35,
+        "omitted_coordinates_below_limit": "10",
+        "full_multiplier_limit": "877",
+        "whole_range": false
+      },
+      "pair": [],
+      "remaining": [
+        "679752131"
+      ],
+      "methods": {
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 48,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 18,
+            "coordinate_powers": 21,
+            "distinct_left": 35,
+            "distinct_right": 11,
+            "tree_leaf_multiplications": 171,
+            "tree_convolutions": 3,
+            "tree_convolution_inputs": 76,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 84,
+            "grid_points": 13,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 289,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 48,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 18,
+            "coordinate_powers": 21,
+            "distinct_left": 35,
+            "distinct_right": 11,
+            "tree_leaf_multiplications": 171,
+            "tree_convolutions": 3,
+            "tree_convolution_inputs": 76,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 84,
+            "grid_points": 13,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 289,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 35
+          }
+        },
+        "square": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "square_tests": 35
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 48,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 18,
+            "coordinate_powers": 21,
+            "distinct_left": 35,
+            "distinct_right": 11,
+            "left_trace_inversions": 35
+          }
+        },
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 48,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 18,
+            "coordinate_powers": 21,
+            "distinct_left": 35,
+            "distinct_right": 11,
+            "leaf_one": 385
+          }
+        },
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 35,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 48,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 18,
+            "coordinate_powers": 21,
+            "distinct_left": 35,
+            "distinct_right": 11,
+            "row_multiplications": 385,
+            "row_one": 35
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 31000,
+          "setup": 3000,
+          "comparison": 7000,
+          "first": null,
+          "complete": 41000
+        },
+        "global": {
+          "schedule": 29000,
+          "setup": 54000,
+          "comparison": 36000,
+          "first": null,
+          "complete": 122000
+        },
+        "individual": {
+          "schedule": 31000,
+          "setup": 53000,
+          "comparison": 109000,
+          "first": null,
+          "complete": 193000
+        },
+        "row_product": {
+          "schedule": 31000,
+          "setup": 52000,
+          "comparison": 66000,
+          "first": null,
+          "complete": 149000
+        },
+        "geometric": {
+          "schedule": 31000,
+          "setup": 57000,
+          "comparison": 132000,
+          "first": null,
+          "complete": 226000
+        },
+        "derivative": {
+          "schedule": 33000,
+          "setup": 54000,
+          "comparison": 128000,
+          "first": null,
+          "complete": 216000
+        },
+        "ordinary": {
+          "schedule": 32000,
+          "setup": 4000,
+          "comparison": 7000,
+          "first": null,
+          "complete": 44000
+        }
+      }
+    },
+    {
+      "draw_index": 5,
+      "n": "443903357",
+      "factor_bits": 15,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 51,
+        "assignments": 39,
+        "intervals": 39,
+        "gap_entries": 12,
+        "coordinate_visits": 63,
+        "omitted_coordinates_below_limit": "10",
+        "full_multiplier_limit": "762",
+        "whole_range": false
+      },
+      "pair": [
+        "18839",
+        "23563"
+      ],
+      "remaining": [],
+      "methods": {
+        "derivative": {
+          "divisors": [
+            18839,
+            23563
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 63,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 92,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 11,
+            "center_powers": 23,
+            "coordinate_powers": 39,
+            "distinct_left": 63,
+            "distinct_right": 23,
+            "tree_leaf_multiplications": 280,
+            "tree_convolutions": 7,
+            "tree_convolution_inputs": 203,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 156,
+            "grid_points": 29,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 533,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 21,
+            "column_proper": 2
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 63,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 63
+          }
+        },
+        "square": {
+          "divisors": [
+            18839,
+            23563
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 63,
+            "square_tests": 63,
+            "square_readout_proper": 2
+          }
+        },
+        "global": {
+          "divisors": [
+            23563
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 63,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 92,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 11,
+            "center_powers": 23,
+            "coordinate_powers": 39,
+            "distinct_left": 63,
+            "distinct_right": 23,
+            "left_trace_inversions": 63,
+            "global_proper": 1
+          }
+        },
+        "individual": {
+          "divisors": [
+            18839,
+            23563
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 63,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 92,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 11,
+            "center_powers": 23,
+            "coordinate_powers": 39,
+            "distinct_left": 63,
+            "distinct_right": 23,
+            "leaf_one": 1447,
+            "leaf_proper": 2
+          }
+        },
+        "row_product": {
+          "divisors": [
+            18839,
+            23563
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 63,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 92,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 11,
+            "center_powers": 23,
+            "coordinate_powers": 39,
+            "distinct_left": 63,
+            "distinct_right": 23,
+            "row_multiplications": 1449,
+            "row_one": 62,
+            "row_whole": 1,
+            "refine_multiplications": 11,
+            "bisect_proper": 1
+          }
+        },
+        "geometric": {
+          "divisors": [
+            18839,
+            23563
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 63,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 92,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 11,
+            "center_powers": 23,
+            "coordinate_powers": 39,
+            "distinct_left": 63,
+            "distinct_right": 23,
+            "tree_leaf_multiplications": 280,
+            "tree_convolutions": 7,
+            "tree_convolution_inputs": 203,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 156,
+            "grid_points": 29,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 533,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 21,
+            "column_proper": 2
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "own_gap": 2
+        },
+        "first_witness": {
+          "own_gap": {
+            "k": 80,
+            "y": "188447",
+            "weights": [
+              4,
+              5
+            ],
+            "s": "188447",
+            "gap": -1,
+            "x_power": "364829617",
+            "y_power": "315867056",
+            "gcd": "18839"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 80000,
+          "setup": 7000,
+          "comparison": 14000,
+          "first": 97000,
+          "complete": 99000
+        },
+        "global": {
+          "schedule": 50000,
+          "setup": 85000,
+          "comparison": 70000,
+          "first": 191000,
+          "complete": 200000
+        },
+        "individual": {
+          "schedule": 52000,
+          "setup": 89000,
+          "comparison": 411000,
+          "first": 596000,
+          "complete": 659000
+        },
+        "row_product": {
+          "schedule": 53000,
+          "setup": 85000,
+          "comparison": 231000,
+          "first": 346000,
+          "complete": 376000
+        },
+        "geometric": {
+          "schedule": 50000,
+          "setup": 83000,
+          "comparison": 282000,
+          "first": 409000,
+          "complete": 415000
+        },
+        "derivative": {
+          "schedule": 52000,
+          "setup": 84000,
+          "comparison": 270000,
+          "first": 403000,
+          "complete": 408000
+        },
+        "ordinary": {
+          "schedule": 57000,
+          "setup": 8000,
+          "comparison": 13000,
+          "first": null,
+          "complete": 79000
+        }
+      }
+    },
+    {
+      "draw_index": 6,
+      "n": "691694057",
+      "factor_bits": 15,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 28,
+        "assignments": 20,
+        "intervals": 20,
+        "gap_entries": 6,
+        "coordinate_visits": 31,
+        "omitted_coordinates_below_limit": "10",
+        "full_multiplier_limit": "883",
+        "whole_range": false
+      },
+      "pair": [
+        "22973",
+        "30109"
+      ],
+      "remaining": [],
+      "methods": {
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 31,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 31
+          }
+        },
+        "square": {
+          "divisors": [
+            22973,
+            30109
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 31,
+            "square_tests": 31,
+            "square_readout_proper": 2
+          }
+        },
+        "global": {
+          "divisors": [
+            30109
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 31,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 44,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 17,
+            "coordinate_powers": 20,
+            "distinct_left": 31,
+            "distinct_right": 11,
+            "left_trace_inversions": 31,
+            "global_proper": 1
+          }
+        },
+        "individual": {
+          "divisors": [
+            22973,
+            30109
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 31,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 44,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 17,
+            "coordinate_powers": 20,
+            "distinct_left": 31,
+            "distinct_right": 11,
+            "leaf_one": 339,
+            "leaf_proper": 2
+          }
+        },
+        "row_product": {
+          "divisors": [
+            22973,
+            30109
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 31,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 44,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 17,
+            "coordinate_powers": 20,
+            "distinct_left": 31,
+            "distinct_right": 11,
+            "row_multiplications": 341,
+            "row_one": 30,
+            "row_whole": 1,
+            "refine_multiplications": 5,
+            "bisect_proper": 1
+          }
+        },
+        "geometric": {
+          "divisors": [
+            22973,
+            30109
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 31,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 44,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 17,
+            "coordinate_powers": 20,
+            "distinct_left": 31,
+            "distinct_right": 11,
+            "tree_leaf_multiplications": 136,
+            "tree_convolutions": 3,
+            "tree_convolution_inputs": 68,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 76,
+            "grid_points": 13,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 261,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 9,
+            "column_proper": 2
+          }
+        },
+        "derivative": {
+          "divisors": [
+            22973,
+            30109
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 31,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 44,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 5,
+            "center_powers": 17,
+            "coordinate_powers": 20,
+            "distinct_left": 31,
+            "distinct_right": 11,
+            "tree_leaf_multiplications": 136,
+            "tree_convolutions": 3,
+            "tree_convolution_inputs": 68,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 76,
+            "grid_points": 13,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 261,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 9,
+            "column_proper": 2
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "own_gap": 2
+        },
+        "first_witness": {
+          "own_gap": {
+            "k": 221,
+            "y": "390979",
+            "weights": [
+              13,
+              17
+            ],
+            "s": "781958",
+            "gap": -4,
+            "x_power": "368505547",
+            "y_power": "316816297",
+            "gcd": "22973"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 54000,
+          "setup": 3000,
+          "comparison": 19000,
+          "first": 73000,
+          "complete": 77000
+        },
+        "global": {
+          "schedule": 64000,
+          "setup": 109000,
+          "comparison": 69000,
+          "first": 206000,
+          "complete": 233000
+        },
+        "individual": {
+          "schedule": 35000,
+          "setup": 54000,
+          "comparison": 109000,
+          "first": 147000,
+          "complete": 202000
+        },
+        "row_product": {
+          "schedule": 57000,
+          "setup": 105000,
+          "comparison": 119000,
+          "first": 229000,
+          "complete": 281000
+        },
+        "geometric": {
+          "schedule": 62000,
+          "setup": 73000,
+          "comparison": 140000,
+          "first": 270000,
+          "complete": 275000
+        },
+        "derivative": {
+          "schedule": 70000,
+          "setup": 105000,
+          "comparison": 147000,
+          "first": 323000,
+          "complete": 329000
+        },
+        "ordinary": {
+          "schedule": 34000,
+          "setup": 5000,
+          "comparison": 7000,
+          "first": null,
+          "complete": 46000
+        }
+      }
+    },
+    {
+      "draw_index": 7,
+      "n": "545205697",
+      "factor_bits": 15,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 41,
+        "assignments": 30,
+        "intervals": 30,
+        "gap_entries": 9,
+        "coordinate_visits": 49,
+        "omitted_coordinates_below_limit": "11",
+        "full_multiplier_limit": "816",
+        "whole_range": false
+      },
+      "pair": [
+        "23099",
+        "23603"
+      ],
+      "remaining": [],
+      "methods": {
+        "square": {
+          "divisors": [
+            23099,
+            23603
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 49,
+            "square_tests": 49,
+            "square_readout_proper": 2
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 49,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 74,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 21,
+            "coordinate_powers": 30,
+            "distinct_left": 49,
+            "distinct_right": 17,
+            "left_trace_inversions": 49,
+            "global_whole": 1
+          }
+        },
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 49,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 74,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 21,
+            "coordinate_powers": 30,
+            "distinct_left": 49,
+            "distinct_right": 17,
+            "leaf_one": 832,
+            "leaf_whole": 1
+          }
+        },
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 49,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 74,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 21,
+            "coordinate_powers": 30,
+            "distinct_left": 49,
+            "distinct_right": 17,
+            "row_multiplications": 832,
+            "row_one": 49
+          }
+        },
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 49,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 74,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 21,
+            "coordinate_powers": 30,
+            "distinct_left": 49,
+            "distinct_right": 17,
+            "tree_leaf_multiplications": 283,
+            "tree_convolutions": 4,
+            "tree_convolution_inputs": 119,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 124,
+            "grid_points": 25,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 423,
+            "grid_inversions": 1,
+            "global_equal_cells": 1,
+            "column_one": 16,
+            "column_whole": 1,
+            "replay_one": 48
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 49,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 74,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 8,
+            "center_powers": 21,
+            "coordinate_powers": 30,
+            "distinct_left": 49,
+            "distinct_right": 17,
+            "tree_leaf_multiplications": 283,
+            "tree_convolutions": 4,
+            "tree_convolution_inputs": 119,
+            "grid_convolutions": 2,
+            "grid_convolution_inputs": 246,
+            "grid_points": 50,
+            "grid_shift_powers": 2,
+            "grid_multiplications": 839,
+            "grid_inversions": 2,
+            "global_equal_cells": 1,
+            "derivative_coefficients": 49,
+            "column_one": 17,
+            "derivative_queries": 1
+          }
+        },
+        "ordinary": {
+          "divisors": [
+            23099,
+            23603
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 49,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 49,
+            "square_readout_proper": 2
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 40000,
+          "setup": 4000,
+          "comparison": 11000,
+          "first": 45000,
+          "complete": 54000
+        },
+        "global": {
+          "schedule": 39000,
+          "setup": 70000,
+          "comparison": 54000,
+          "first": null,
+          "complete": 162000
+        },
+        "individual": {
+          "schedule": 40000,
+          "setup": 69000,
+          "comparison": 233000,
+          "first": null,
+          "complete": 343000
+        },
+        "row_product": {
+          "schedule": 40000,
+          "setup": 69000,
+          "comparison": 131000,
+          "first": null,
+          "complete": 238000
+        },
+        "geometric": {
+          "schedule": 40000,
+          "setup": 69000,
+          "comparison": 217000,
+          "first": null,
+          "complete": 326000
+        },
+        "derivative": {
+          "schedule": 44000,
+          "setup": 70000,
+          "comparison": 326000,
+          "first": null,
+          "complete": 439000
+        },
+        "ordinary": {
+          "schedule": 43000,
+          "setup": 5000,
+          "comparison": 12000,
+          "first": 49000,
+          "complete": 61000
+        }
+      }
+    },
+    {
+      "draw_index": 8,
+      "n": "652965611",
+      "factor_bits": 15,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 32,
+        "assignments": 23,
+        "intervals": 23,
+        "gap_entries": 7,
+        "coordinate_visits": 36,
+        "omitted_coordinates_below_limit": "10",
+        "full_multiplier_limit": "866",
+        "whole_range": false
+      },
+      "pair": [
+        "20809",
+        "31379"
+      ],
+      "remaining": [],
+      "methods": {
+        "global": {
+          "divisors": [
+            31379
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 36,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 53,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 18,
+            "coordinate_powers": 23,
+            "distinct_left": 36,
+            "distinct_right": 13,
+            "left_trace_inversions": 36,
+            "global_proper": 1
+          }
+        },
+        "individual": {
+          "divisors": [
+            20809,
+            31379
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 36,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 53,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 18,
+            "coordinate_powers": 23,
+            "distinct_left": 36,
+            "distinct_right": 13,
+            "leaf_one": 466,
+            "leaf_proper": 2
+          }
+        },
+        "row_product": {
+          "divisors": [
+            20809,
+            31379
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 36,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 53,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 18,
+            "coordinate_powers": 23,
+            "distinct_left": 36,
+            "distinct_right": 13,
+            "row_multiplications": 468,
+            "row_one": 35,
+            "row_whole": 1,
+            "refine_multiplications": 6,
+            "bisect_proper": 1
+          }
+        },
+        "geometric": {
+          "divisors": [
+            20809,
+            31379
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 36,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 53,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 18,
+            "coordinate_powers": 23,
+            "distinct_left": 36,
+            "distinct_right": 13,
+            "tree_leaf_multiplications": 180,
+            "tree_convolutions": 3,
+            "tree_convolution_inputs": 78,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 90,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 308,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11,
+            "column_proper": 2
+          }
+        },
+        "derivative": {
+          "divisors": [
+            20809,
+            31379
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 36,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 53,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 18,
+            "coordinate_powers": 23,
+            "distinct_left": 36,
+            "distinct_right": 13,
+            "tree_leaf_multiplications": 180,
+            "tree_convolutions": 3,
+            "tree_convolution_inputs": 78,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 90,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 308,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11,
+            "column_proper": 2
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 36,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 36
+          }
+        },
+        "square": {
+          "divisors": [
+            20809,
+            31379
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 36,
+            "square_tests": 36,
+            "square_readout_proper": 2
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "own_gap": 2
+        },
+        "first_witness": {
+          "own_gap": {
+            "k": 24,
+            "y": "125185",
+            "weights": [
+              2,
+              3
+            ],
+            "s": "125185",
+            "gap": -1,
+            "x_power": "488660478",
+            "y_power": "240325872",
+            "gcd": "20809"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 32000,
+          "setup": 4000,
+          "comparison": 8000,
+          "first": 41000,
+          "complete": 44000
+        },
+        "global": {
+          "schedule": 32000,
+          "setup": 56000,
+          "comparison": 39000,
+          "first": 117000,
+          "complete": 130000
+        },
+        "individual": {
+          "schedule": 32000,
+          "setup": 55000,
+          "comparison": 134000,
+          "first": 176000,
+          "complete": 221000
+        },
+        "row_product": {
+          "schedule": 32000,
+          "setup": 55000,
+          "comparison": 80000,
+          "first": 143000,
+          "complete": 169000
+        },
+        "geometric": {
+          "schedule": 32000,
+          "setup": 55000,
+          "comparison": 141000,
+          "first": 231000,
+          "complete": 236000
+        },
+        "derivative": {
+          "schedule": 36000,
+          "setup": 62000,
+          "comparison": 142000,
+          "first": 251000,
+          "complete": 255000
+        },
+        "ordinary": {
+          "schedule": 35000,
+          "setup": 4000,
+          "comparison": 8000,
+          "first": null,
+          "complete": 47000
+        }
+      }
+    },
+    {
+      "draw_index": 9,
+      "n": "399193601",
+      "factor_bits": 15,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 55,
+        "assignments": 43,
+        "intervals": 43,
+        "gap_entries": 13,
+        "coordinate_visits": 65,
+        "omitted_coordinates_below_limit": "11",
+        "full_multiplier_limit": "734",
+        "whole_range": false
+      },
+      "pair": [
+        "19081",
+        "20921"
+      ],
+      "remaining": [],
+      "methods": {
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 65,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 98,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 12,
+            "center_powers": 23,
+            "coordinate_powers": 42,
+            "distinct_left": 65,
+            "distinct_right": 25,
+            "leaf_one": 1625
+          }
+        },
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 65,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 98,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 12,
+            "center_powers": 23,
+            "coordinate_powers": 42,
+            "distinct_left": 65,
+            "distinct_right": 25,
+            "row_multiplications": 1625,
+            "row_one": 65
+          }
+        },
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 65,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 98,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 12,
+            "center_powers": 23,
+            "coordinate_powers": 42,
+            "distinct_left": 65,
+            "distinct_right": 25,
+            "tree_leaf_multiplications": 297,
+            "tree_convolutions": 7,
+            "tree_convolution_inputs": 209,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 164,
+            "grid_points": 33,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 559,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 25
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 65,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 98,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 12,
+            "center_powers": 23,
+            "coordinate_powers": 42,
+            "distinct_left": 65,
+            "distinct_right": 25,
+            "tree_leaf_multiplications": 297,
+            "tree_convolutions": 7,
+            "tree_convolution_inputs": 209,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 164,
+            "grid_points": 33,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 559,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 25
+          }
+        },
+        "ordinary": {
+          "divisors": [
+            19081,
+            20921
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 65,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 65,
+            "square_readout_proper": 2
+          }
+        },
+        "square": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 65,
+            "square_tests": 65
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 65,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 98,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 12,
+            "center_powers": 23,
+            "coordinate_powers": 42,
+            "distinct_left": 65,
+            "distinct_right": 25,
+            "left_trace_inversions": 65
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 53000,
+          "setup": 5000,
+          "comparison": 12000,
+          "first": null,
+          "complete": 69000
+        },
+        "global": {
+          "schedule": 51000,
+          "setup": 90000,
+          "comparison": 73000,
+          "first": null,
+          "complete": 214000
+        },
+        "individual": {
+          "schedule": 55000,
+          "setup": 106000,
+          "comparison": 567000,
+          "first": null,
+          "complete": 796000
+        },
+        "row_product": {
+          "schedule": 57000,
+          "setup": 90000,
+          "comparison": 243000,
+          "first": null,
+          "complete": 384000
+        },
+        "geometric": {
+          "schedule": 54000,
+          "setup": 86000,
+          "comparison": 345000,
+          "first": null,
+          "complete": 490000
+        },
+        "derivative": {
+          "schedule": 55000,
+          "setup": 88000,
+          "comparison": 279000,
+          "first": null,
+          "complete": 424000
+        },
+        "ordinary": {
+          "schedule": 55000,
+          "setup": 7000,
+          "comparison": 16000,
+          "first": 68000,
+          "complete": 78000
+        }
+      }
+    },
+    {
+      "draw_index": 10,
+      "n": "633411671",
+      "factor_bits": 15,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 33,
+        "assignments": 24,
+        "intervals": 24,
+        "gap_entries": 7,
+        "coordinate_visits": 40,
+        "omitted_coordinates_below_limit": "11",
+        "full_multiplier_limit": "858",
+        "whole_range": false
+      },
+      "pair": [
+        "20123",
+        "31477"
+      ],
+      "remaining": [],
+      "methods": {
+        "row_product": {
+          "divisors": [
+            20123,
+            31477
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 40,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 57,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 19,
+            "coordinate_powers": 23,
+            "distinct_left": 40,
+            "distinct_right": 13,
+            "row_multiplications": 520,
+            "row_one": 39,
+            "row_whole": 1,
+            "refine_multiplications": 6,
+            "bisect_proper": 1
+          }
+        },
+        "geometric": {
+          "divisors": [
+            20123,
+            31477
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 40,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 57,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 19,
+            "coordinate_powers": 23,
+            "distinct_left": 40,
+            "distinct_right": 13,
+            "tree_leaf_multiplications": 220,
+            "tree_convolutions": 3,
+            "tree_convolution_inputs": 86,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 98,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 336,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11,
+            "column_proper": 2
+          }
+        },
+        "derivative": {
+          "divisors": [
+            20123,
+            31477
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 40,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 57,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 19,
+            "coordinate_powers": 23,
+            "distinct_left": 40,
+            "distinct_right": 13,
+            "tree_leaf_multiplications": 220,
+            "tree_convolutions": 3,
+            "tree_convolution_inputs": 86,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 98,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 336,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 11,
+            "column_proper": 2
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 40,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 40
+          }
+        },
+        "square": {
+          "divisors": [
+            20123,
+            31477
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 40,
+            "square_tests": 40,
+            "square_readout_proper": 2
+          }
+        },
+        "global": {
+          "divisors": [
+            31477
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 40,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 57,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 19,
+            "coordinate_powers": 23,
+            "distinct_left": 40,
+            "distinct_right": 13,
+            "left_trace_inversions": 40,
+            "global_proper": 1
+          }
+        },
+        "individual": {
+          "divisors": [
+            20123,
+            31477
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 40,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 57,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 19,
+            "coordinate_powers": 23,
+            "distinct_left": 40,
+            "distinct_right": 13,
+            "leaf_one": 518,
+            "leaf_proper": 2
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "own_gap": 2
+        },
+        "first_witness": {
+          "own_gap": {
+            "k": 77,
+            "y": "220846",
+            "weights": [
+              7,
+              11
+            ],
+            "s": "441692",
+            "gap": -4,
+            "x_power": "372512735",
+            "y_power": "197221282",
+            "gcd": "20123"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 35000,
+          "setup": 3000,
+          "comparison": 10000,
+          "first": 42000,
+          "complete": 48000
+        },
+        "global": {
+          "schedule": 34000,
+          "setup": 64000,
+          "comparison": 49000,
+          "first": 119000,
+          "complete": 142000
+        },
+        "individual": {
+          "schedule": 40000,
+          "setup": 63000,
+          "comparison": 153000,
+          "first": 179000,
+          "complete": 266000
+        },
+        "row_product": {
+          "schedule": 50000,
+          "setup": 60000,
+          "comparison": 100000,
+          "first": 150000,
+          "complete": 213000
+        },
+        "geometric": {
+          "schedule": 36000,
+          "setup": 60000,
+          "comparison": 243000,
+          "first": 332000,
+          "complete": 339000
+        },
+        "derivative": {
+          "schedule": 38000,
+          "setup": 86000,
+          "comparison": 167000,
+          "first": 303000,
+          "complete": 309000
+        },
+        "ordinary": {
+          "schedule": 43000,
+          "setup": 5000,
+          "comparison": 9000,
+          "first": null,
+          "complete": 57000
+        }
+      }
+    },
+    {
+      "draw_index": 11,
+      "n": "1045349989",
+      "factor_bits": 15,
+      "limit": 256,
+      "per_row": 4,
+      "common": {
+        "weight_gcds": 8,
+        "assignments": 1,
+        "intervals": 1,
+        "gap_entries": 1,
+        "coordinate_visits": 4,
+        "omitted_coordinates_below_limit": "12",
+        "full_multiplier_limit": "1014",
+        "whole_range": false
+      },
+      "pair": [
+        "32063",
+        "32603"
+      ],
+      "remaining": [],
+      "methods": {
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 5,
+            "right_precheck_whole": 1,
+            "center_powers": 1,
+            "coordinate_powers": 1,
+            "distinct_left": 4,
+            "distinct_right": 1,
+            "tree_leaf_multiplications": 10,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 10,
+            "grid_points": 1,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 36,
+            "grid_inversions": 1,
+            "global_equal_cells": 1,
+            "column_whole": 1,
+            "replay_one": 3
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 5,
+            "right_precheck_whole": 1,
+            "center_powers": 1,
+            "coordinate_powers": 1,
+            "distinct_left": 4,
+            "distinct_right": 1,
+            "tree_leaf_multiplications": 10,
+            "grid_convolutions": 2,
+            "grid_convolution_inputs": 18,
+            "grid_points": 2,
+            "grid_shift_powers": 2,
+            "grid_multiplications": 65,
+            "grid_inversions": 2,
+            "global_equal_cells": 1,
+            "derivative_coefficients": 4,
+            "derivative_queries": 1,
+            "column_one": 1
+          }
+        },
+        "ordinary": {
+          "divisors": [
+            32063,
+            32603
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 4,
+            "square_readout_proper": 2
+          }
+        },
+        "square": {
+          "divisors": [
+            32063,
+            32603
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "square_tests": 4,
+            "square_readout_proper": 2
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 5,
+            "right_precheck_whole": 1,
+            "center_powers": 1,
+            "coordinate_powers": 1,
+            "distinct_left": 4,
+            "distinct_right": 1,
+            "left_trace_inversions": 4,
+            "global_whole": 1
+          }
+        },
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 5,
+            "right_precheck_whole": 1,
+            "center_powers": 1,
+            "coordinate_powers": 1,
+            "distinct_left": 4,
+            "distinct_right": 1,
+            "leaf_one": 3,
+            "leaf_whole": 1
+          }
+        },
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 5,
+            "right_precheck_whole": 1,
+            "center_powers": 1,
+            "coordinate_powers": 1,
+            "distinct_left": 4,
+            "distinct_right": 1,
+            "row_multiplications": 3,
+            "row_one": 4
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 19000,
+          "setup": 1000,
+          "comparison": 5000,
+          "first": 23000,
+          "complete": 26000
+        },
+        "global": {
+          "schedule": 19000,
+          "setup": 23000,
+          "comparison": 9000,
+          "first": null,
+          "complete": 52000
+        },
+        "individual": {
+          "schedule": 19000,
+          "setup": 21000,
+          "comparison": 5000,
+          "first": null,
+          "complete": 46000
+        },
+        "row_product": {
+          "schedule": 18000,
+          "setup": 21000,
+          "comparison": 7000,
+          "first": null,
+          "complete": 47000
+        },
+        "geometric": {
+          "schedule": 15000,
+          "setup": 17000,
+          "comparison": 30000,
+          "first": null,
+          "complete": 70000
+        },
+        "derivative": {
+          "schedule": 20000,
+          "setup": 20000,
+          "comparison": 77000,
+          "first": null,
+          "complete": 105000
+        },
+        "ordinary": {
+          "schedule": 25000,
+          "setup": 5000,
+          "comparison": 7000,
+          "first": 33000,
+          "complete": 38000
+        }
+      }
+    }
+  ],
+  "scaling": [
+    {
+      "draw_index": 0,
+      "n": "861127154383",
+      "factor_bits": 20,
+      "limit": 256,
+      "per_row": 2,
+      "common": {
+        "weight_gcds": 17,
+        "assignments": 10,
+        "intervals": 10,
+        "gap_entries": 3,
+        "coordinate_visits": 20,
+        "omitted_coordinates_below_limit": "67",
+        "full_multiplier_limit": "9513",
+        "whole_range": false
+      },
+      "pair": [],
+      "remaining": [
+        "861127154383"
+      ],
+      "methods": {
+        "square": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "square_tests": 20
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 25,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 10,
+            "coordinate_powers": 10,
+            "distinct_left": 20,
+            "distinct_right": 5,
+            "left_trace_inversions": 20
+          }
+        },
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 25,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 10,
+            "coordinate_powers": 10,
+            "distinct_left": 20,
+            "distinct_right": 5,
+            "leaf_one": 100
+          }
+        },
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 25,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 10,
+            "coordinate_powers": 10,
+            "distinct_left": 20,
+            "distinct_right": 5,
+            "row_multiplications": 100,
+            "row_one": 20
+          }
+        },
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 25,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 10,
+            "coordinate_powers": 10,
+            "distinct_left": 20,
+            "distinct_right": 5,
+            "tree_leaf_multiplications": 110,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 22,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 46,
+            "grid_points": 5,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 160,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 5
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 25,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 10,
+            "coordinate_powers": 10,
+            "distinct_left": 20,
+            "distinct_right": 5,
+            "tree_leaf_multiplications": 110,
+            "tree_convolutions": 1,
+            "tree_convolution_inputs": 22,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 46,
+            "grid_points": 5,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 160,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 5
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 20,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 20
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 39000,
+          "setup": 3000,
+          "comparison": 5000,
+          "first": null,
+          "complete": 47000
+        },
+        "global": {
+          "schedule": 22000,
+          "setup": 66000,
+          "comparison": 56000,
+          "first": null,
+          "complete": 141000
+        },
+        "individual": {
+          "schedule": 25000,
+          "setup": 53000,
+          "comparison": 53000,
+          "first": null,
+          "complete": 131000
+        },
+        "row_product": {
+          "schedule": 40000,
+          "setup": 89000,
+          "comparison": 37000,
+          "first": null,
+          "complete": 181000
+        },
+        "geometric": {
+          "schedule": 29000,
+          "setup": 51000,
+          "comparison": 103000,
+          "first": null,
+          "complete": 180000
+        },
+        "derivative": {
+          "schedule": 25000,
+          "setup": 56000,
+          "comparison": 103000,
+          "first": null,
+          "complete": 183000
+        },
+        "ordinary": {
+          "schedule": 24000,
+          "setup": 4000,
+          "comparison": 6000,
+          "first": null,
+          "complete": 33000
+        }
+      }
+    },
+    {
+      "draw_index": 0,
+      "n": "861127154383",
+      "factor_bits": 20,
+      "limit": 1024,
+      "per_row": 2,
+      "common": {
+        "weight_gcds": 60,
+        "assignments": 42,
+        "intervals": 42,
+        "gap_entries": 7,
+        "coordinate_visits": 76,
+        "omitted_coordinates_below_limit": "73",
+        "full_multiplier_limit": "9513",
+        "whole_range": false
+      },
+      "pair": [],
+      "remaining": [
+        "861127154383"
+      ],
+      "methods": {
+        "square": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 76,
+            "square_tests": 76
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 76,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 93,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 34,
+            "coordinate_powers": 42,
+            "distinct_left": 76,
+            "distinct_right": 13,
+            "left_trace_inversions": 76
+          }
+        },
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 76,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 93,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 34,
+            "coordinate_powers": 42,
+            "distinct_left": 76,
+            "distinct_right": 13,
+            "leaf_one": 988
+          }
+        },
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 76,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 93,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 34,
+            "coordinate_powers": 42,
+            "distinct_left": 76,
+            "distinct_right": 13,
+            "row_multiplications": 988,
+            "row_one": 76
+          }
+        },
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 76,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 93,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 34,
+            "coordinate_powers": 42,
+            "distinct_left": 76,
+            "distinct_right": 13,
+            "tree_leaf_multiplications": 400,
+            "tree_convolutions": 7,
+            "tree_convolution_inputs": 242,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 170,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 588,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 13
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 76,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 93,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 6,
+            "center_powers": 34,
+            "coordinate_powers": 42,
+            "distinct_left": 76,
+            "distinct_right": 13,
+            "tree_leaf_multiplications": 400,
+            "tree_convolutions": 7,
+            "tree_convolution_inputs": 242,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 170,
+            "grid_points": 17,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 588,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 13
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 76,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 76
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 59000,
+          "setup": 5000,
+          "comparison": 16000,
+          "first": null,
+          "complete": 80000
+        },
+        "global": {
+          "schedule": 81000,
+          "setup": 223000,
+          "comparison": 112000,
+          "first": null,
+          "complete": 455000
+        },
+        "individual": {
+          "schedule": 64000,
+          "setup": 184000,
+          "comparison": 327000,
+          "first": null,
+          "complete": 597000
+        },
+        "row_product": {
+          "schedule": 85000,
+          "setup": 217000,
+          "comparison": 271000,
+          "first": null,
+          "complete": 573000
+        },
+        "geometric": {
+          "schedule": 66000,
+          "setup": 154000,
+          "comparison": 737000,
+          "first": null,
+          "complete": 957000
+        },
+        "derivative": {
+          "schedule": 86000,
+          "setup": 181000,
+          "comparison": 452000,
+          "first": null,
+          "complete": 721000
+        },
+        "ordinary": {
+          "schedule": 66000,
+          "setup": 7000,
+          "comparison": 18000,
+          "first": null,
+          "complete": 91000
+        }
+      }
+    },
+    {
+      "draw_index": 0,
+      "n": "861127154383",
+      "factor_bits": 20,
+      "limit": 4096,
+      "per_row": 2,
+      "common": {
+        "weight_gcds": 221,
+        "assignments": 166,
+        "intervals": 166,
+        "gap_entries": 13,
+        "coordinate_visits": 200,
+        "omitted_coordinates_below_limit": "73",
+        "full_multiplier_limit": "9513",
+        "whole_range": false
+      },
+      "pair": [
+        "827473",
+        "1040671"
+      ],
+      "remaining": [],
+      "methods": {
+        "square": {
+          "divisors": [
+            827473,
+            1040671
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 200,
+            "square_tests": 200,
+            "square_readout_proper": 2
+          }
+        },
+        "global": {
+          "divisors": [
+            1040671
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 200,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 233,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 12,
+            "center_powers": 82,
+            "coordinate_powers": 157,
+            "distinct_left": 200,
+            "distinct_right": 25,
+            "left_trace_inversions": 200,
+            "global_proper": 1
+          }
+        },
+        "individual": {
+          "divisors": [
+            827473,
+            1040671
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 200,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 233,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 12,
+            "center_powers": 82,
+            "coordinate_powers": 157,
+            "distinct_left": 200,
+            "distinct_right": 25,
+            "leaf_one": 4998,
+            "leaf_proper": 2
+          }
+        },
+        "row_product": {
+          "divisors": [
+            827473,
+            1040671
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 200,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 233,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 12,
+            "center_powers": 82,
+            "coordinate_powers": 157,
+            "distinct_left": 200,
+            "distinct_right": 25,
+            "row_multiplications": 5000,
+            "row_one": 199,
+            "row_whole": 1,
+            "refine_multiplications": 12,
+            "bisect_proper": 1
+          }
+        },
+        "geometric": {
+          "divisors": [
+            827473,
+            1040671
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 200,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 233,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 12,
+            "center_powers": 82,
+            "coordinate_powers": 157,
+            "distinct_left": 200,
+            "distinct_right": 25,
+            "tree_leaf_multiplications": 1016,
+            "tree_convolutions": 23,
+            "tree_convolution_inputs": 950,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 434,
+            "grid_points": 33,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 1504,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 23,
+            "column_proper": 2
+          }
+        },
+        "derivative": {
+          "divisors": [
+            827473,
+            1040671
+          ],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 200,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 233,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 12,
+            "center_powers": 82,
+            "coordinate_powers": 157,
+            "distinct_left": 200,
+            "distinct_right": 25,
+            "tree_leaf_multiplications": 1016,
+            "tree_convolutions": 23,
+            "tree_convolution_inputs": 950,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 434,
+            "grid_points": 33,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 1504,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 23,
+            "column_proper": 2
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 200,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 200
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {
+          "own_gap": 2
+        },
+        "first_witness": {
+          "own_gap": {
+            "k": 1209,
+            "y": "32266124",
+            "weights": [
+              31,
+              39
+            ],
+            "s": "64532248",
+            "gap": -8,
+            "x_power": "710937096438",
+            "y_power": "245051593032",
+            "gcd": "827473"
+          }
+        }
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 219000,
+          "setup": 14000,
+          "comparison": 40000,
+          "first": 245000,
+          "complete": 273000
+        },
+        "global": {
+          "schedule": 185000,
+          "setup": 567000,
+          "comparison": 278000,
+          "first": 834000,
+          "complete": 1086000
+        },
+        "individual": {
+          "schedule": 202000,
+          "setup": 492000,
+          "comparison": 1584000,
+          "first": 1142000,
+          "complete": 2276000
+        },
+        "row_product": {
+          "schedule": 209000,
+          "setup": 487000,
+          "comparison": 1069000,
+          "first": 1007000,
+          "complete": 1872000
+        },
+        "geometric": {
+          "schedule": 299000,
+          "setup": 474000,
+          "comparison": 1468000,
+          "first": 2272000,
+          "complete": 2283000
+        },
+        "derivative": {
+          "schedule": 193000,
+          "setup": 469000,
+          "comparison": 1389000,
+          "first": 2035000,
+          "complete": 2046000
+        },
+        "ordinary": {
+          "schedule": 187000,
+          "setup": 17000,
+          "comparison": 42000,
+          "first": null,
+          "complete": 245000
+        }
+      }
+    }
+  ],
+  "controls": [
+    {
+      "id": "weighted-global-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "factor_bits": 1024,
+      "limit": 64,
+      "per_row": 2,
+      "common": {
+        "weight_gcds": 5,
+        "assignments": 2,
+        "intervals": 2,
+        "gap_entries": 2,
+        "coordinate_visits": 4,
+        "omitted_coordinates_below_limit": "3045712160911060550065909159199016692169032104366849217169210236911873391247692433060110217692589295509",
+        "full_multiplier_limit": "29266450953600690044902996748220718247506779365190051113967971943092481154015862535744152350683354804561959443880250352706438029427432099254486242968167178236216973788369412776195438632833585300308830686588",
+        "whole_range": false
+      },
+      "pair": [],
+      "remaining": [
+        "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479"
+      ],
+      "methods": {
+        "square": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "square_tests": 4
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 9,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 1,
+            "center_powers": 2,
+            "coordinate_powers": 2,
+            "distinct_left": 4,
+            "distinct_right": 3,
+            "left_trace_inversions": 4
+          }
+        },
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 9,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 1,
+            "center_powers": 2,
+            "coordinate_powers": 2,
+            "distinct_left": 4,
+            "distinct_right": 3,
+            "leaf_one": 12
+          }
+        },
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 9,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 1,
+            "center_powers": 2,
+            "coordinate_powers": 2,
+            "distinct_left": 4,
+            "distinct_right": 3,
+            "row_multiplications": 12,
+            "row_one": 4
+          }
+        },
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 9,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 1,
+            "center_powers": 2,
+            "coordinate_powers": 2,
+            "distinct_left": 4,
+            "distinct_right": 3,
+            "tree_leaf_multiplications": 10,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 14,
+            "grid_points": 5,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 48,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 3
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 9,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 1,
+            "center_powers": 2,
+            "coordinate_powers": 2,
+            "distinct_left": 4,
+            "distinct_right": 3,
+            "tree_leaf_multiplications": 10,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 14,
+            "grid_points": 5,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 48,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 3
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 4,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 4
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 77000,
+          "setup": 3000,
+          "comparison": 11000,
+          "first": null,
+          "complete": 91000
+        },
+        "global": {
+          "schedule": 63000,
+          "setup": 38767000,
+          "comparison": 1207000,
+          "first": null,
+          "complete": 39981000
+        },
+        "individual": {
+          "schedule": 91000,
+          "setup": 34469000,
+          "comparison": 106000,
+          "first": null,
+          "complete": 34681000
+        },
+        "row_product": {
+          "schedule": 81000,
+          "setup": 34585000,
+          "comparison": 119000,
+          "first": null,
+          "complete": 34802000
+        },
+        "geometric": {
+          "schedule": 82000,
+          "setup": 34541000,
+          "comparison": 1591000,
+          "first": null,
+          "complete": 36238000
+        },
+        "derivative": {
+          "schedule": 79000,
+          "setup": 38500000,
+          "comparison": 1808000,
+          "first": null,
+          "complete": 41404000
+        },
+        "ordinary": {
+          "schedule": 164000,
+          "setup": 8000,
+          "comparison": 11000,
+          "first": null,
+          "complete": 185000
+        }
+      }
+    },
+    {
+      "id": "weighted-global-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "factor_bits": 1024,
+      "limit": 64,
+      "per_row": 2,
+      "common": {
+        "weight_gcds": 9,
+        "assignments": 6,
+        "intervals": 6,
+        "gap_entries": 3,
+        "coordinate_visits": 12,
+        "omitted_coordinates_below_limit": "4878196147440576085457687067874465298243517057253571939312305109419951206740494966950138580076263101016",
+        "full_multiplier_limit": "26321086277350004763246605059942532218284120037998274279500410729877980427661563810957400193618018519235555253374801675987274808377413576505576376818132257035668139115658746771246177160785629306067956780766",
+        "whole_range": false
+      },
+      "pair": [],
+      "remaining": [
+        "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169"
+      ],
+      "methods": {
+        "square": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "square_tests": 12
+          }
+        },
+        "global": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 17,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 6,
+            "coordinate_powers": 6,
+            "distinct_left": 12,
+            "distinct_right": 5,
+            "left_trace_inversions": 12
+          }
+        },
+        "individual": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 17,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 6,
+            "coordinate_powers": 6,
+            "distinct_left": 12,
+            "distinct_right": 5,
+            "leaf_one": 60
+          }
+        },
+        "row_product": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 17,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 6,
+            "coordinate_powers": 6,
+            "distinct_left": 12,
+            "distinct_right": 5,
+            "row_multiplications": 60,
+            "row_one": 12
+          }
+        },
+        "geometric": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 17,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 6,
+            "coordinate_powers": 6,
+            "distinct_left": 12,
+            "distinct_right": 5,
+            "tree_leaf_multiplications": 78,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 30,
+            "grid_points": 5,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 104,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 5
+          }
+        },
+        "derivative": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "base_gcd": 1,
+            "large_powers": 1,
+            "inversions": 2,
+            "key_multiplications": 17,
+            "right_precheck_whole": 1,
+            "right_precheck_one": 2,
+            "center_powers": 6,
+            "coordinate_powers": 6,
+            "distinct_left": 12,
+            "distinct_right": 5,
+            "tree_leaf_multiplications": 78,
+            "grid_convolutions": 1,
+            "grid_convolution_inputs": 30,
+            "grid_points": 5,
+            "grid_shift_powers": 1,
+            "grid_multiplications": 104,
+            "grid_inversions": 1,
+            "global_equal_cells": 0,
+            "column_one": 5
+          }
+        },
+        "ordinary": {
+          "divisors": [],
+          "setup_divisors": [],
+          "work": {
+            "coordinate_visits": 12,
+            "ordinary_start_isqrt": 1,
+            "square_tests": 12
+          }
+        }
+      },
+      "diagnosis": {
+        "raw_hit_counts": {},
+        "first_witness": {}
+      },
+      "cpu_ns_medians": {
+        "square": {
+          "schedule": 135000,
+          "setup": 5000,
+          "comparison": 45000,
+          "first": null,
+          "complete": 167000
+        },
+        "global": {
+          "schedule": 93000,
+          "setup": 63797000,
+          "comparison": 3122000,
+          "first": null,
+          "complete": 67009000
+        },
+        "individual": {
+          "schedule": 116000,
+          "setup": 66492000,
+          "comparison": 599000,
+          "first": null,
+          "complete": 67225000
+        },
+        "row_product": {
+          "schedule": 131000,
+          "setup": 63370000,
+          "comparison": 595000,
+          "first": null,
+          "complete": 64032000
+        },
+        "geometric": {
+          "schedule": 115000,
+          "setup": 69372000,
+          "comparison": 3505000,
+          "first": null,
+          "complete": 72993000
+        },
+        "derivative": {
+          "schedule": 112000,
+          "setup": 68764000,
+          "comparison": 3271000,
+          "first": null,
+          "complete": 72212000
+        },
+        "ordinary": {
+          "schedule": 110000,
+          "setup": 19000,
+          "comparison": 28000,
+          "first": null,
+          "complete": 172000
+        }
+      }
+    }
+  ],
+  "certificate": {
+    "theorem": "PrimeFactors.LocalGapCertificates.panel",
+    "pairs": 22,
+    "sha256": "292ca3b86f58888314c8ac685c8d59515024fa9a46d0c5fa55e4b890882f72f6"
+  }
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "blum-signed-synchronized",
+    "description": "Signed comparison splits a synchronized 12-step squaring orbit.",
+    "n": "5609",
+    "base": 3,
+    "budget": 64,
+    "checks": {
+      "base": 3,
+      "budget": 64,
+      "jacobi_tests": 1,
+      "signed": {
+        "setup_powers": 1,
+        "squarings": 12,
+        "gcds": 24,
+        "first": 12,
+        "divisors": [
+          "71",
+          "79"
+        ]
+      },
+      "ordinary": {
+        "setup_powers": 1,
+        "squarings": 64,
+        "gcds": 64,
+        "first": null,
+        "divisors": []
+      }
+    },
+    "factors": [
+      "71",
+      "79"
+    ],
+    "remaining": [],
+    "status": "complete"
+  },
+  {
+    "id": "blum-signed-long-period",
+    "description": "Selected 62-bit product with a proven long first return at every accepted base.",
+    "n": "4000061596123066801",
+    "base": 7,
+    "budget": 64,
+    "checks": {
+      "base": 7,
+      "budget": 64,
+      "jacobi_tests": 1,
+      "signed": {
+        "setup_powers": 1,
+        "squarings": 64,
+        "gcds": 128,
+        "first": null,
+        "divisors": []
+      },
+      "ordinary": {
+        "setup_powers": 1,
+        "squarings": 64,
+        "gcds": 64,
+        "first": null,
+        "divisors": []
+      }
+    },
+    "factors": [],
+    "remaining": [
+      "4000061596123066801"
+    ],
+    "status": "partial"
+  }
+]

@@ -12,6 +12,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**Would a different starting number rescue one of our searches?** On both 2,048-bit examples, we checked every possible starting number coprime to the product for a specific set of guesses. Trying different gaps between weights added zero ways to find a factor once the preliminary checks had run. This narrows which shortcuts are worth pursuing. We used the known factors to do the count. [The exact counts and what was tested](discoveries/trying-every-base-in-a-fixed-power-comparison.md)
+
 **On two 2,048-bit examples we can now say exactly why one search missed.** After looking at the published factors, we found that only two multiples on each input can work. For both numbers the search would visit at least $2^{501}$ different eligible multiples before its first success. The factors were used to diagnose the search. Finding the first working multiple from the product alone remains open. [Where the two answers occur](discoveries/where-the-multiplier-search-first-succeeds.md)
 
 **In one search, we can now skip at least 81% of the trial multiples for every 2,048-bit product of two distinct 1,024-bit primes.** Even after that shortcut, a complete search would visit more than $10^{102}$ different multiples. On our independently generated product, we could skip over 94%. Trying the remaining multiples up to 65,536, with one candidate per multiple, took 851 exact square tests and found no factor. On eight 48-bit examples the same rule took 20 ms total to reach the first factors. [How a multiple reveals a factor and how much work remains](discoveries/fewer-multiples-to-test.md)

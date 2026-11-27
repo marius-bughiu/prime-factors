@@ -680,3 +680,9 @@ import PrimeFactors.RectangularDistinctProducts
 import PrimeFactors.RectangularSampling
 import PrimeFactors.WeightedGlobalTrace
 import PrimeFactors.RelaxedWeightCoverage
+import PrimeFactors.TraceOrderPopulation
+import PrimeFactors.LocalGapProducts
+import PrimeFactors.WeightedOffGap
+import PrimeFactors.WrappedGapExample
+import PrimeFactors.BlumSignedPowers
+import PrimeFactors.BlumSignedPowerExamples

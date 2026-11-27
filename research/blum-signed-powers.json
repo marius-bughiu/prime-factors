@@ -1,0 +1,75 @@
+{
+  "panel": {
+    "primes": [
+      67,
+      71,
+      79,
+      83,
+      103,
+      107,
+      127
+    ],
+    "pairs": 21,
+    "budget_per_base": 64,
+    "units": 84330,
+    "signed_splits": 84330,
+    "ordinary_splits": 82368,
+    "equal_periods": 1962,
+    "equal_periods_with_two_nontrivial_orders": 1728,
+    "max_first_signed": 20,
+    "ordinary_squarings": 734912,
+    "signed_squarings": 630314,
+    "ordinary_gcds": 734912,
+    "signed_gcds": 1260628
+  },
+  "equal_period_example": {
+    "n": "5609",
+    "primes": [
+      "71",
+      "79"
+    ],
+    "base": 3,
+    "budget": 64,
+    "local_orders": [
+      35,
+      39
+    ],
+    "return_periods": [
+      12,
+      12
+    ],
+    "gcd_results": {
+      "ordinary": null,
+      "signed": [
+        12,
+        71,
+        79
+      ]
+    },
+    "remaining_after_budget": []
+  },
+  "long_period_example": {
+    "n": "4000061596123066801",
+    "primes": [
+      "2000004719",
+      "2000026079"
+    ],
+    "base": 7,
+    "budget": 64,
+    "local_orders": [
+      1000002359,
+      1000013039
+    ],
+    "return_periods": [
+      500001179,
+      500006519
+    ],
+    "gcd_results": {
+      "ordinary": null,
+      "signed": null
+    },
+    "remaining_after_budget": [
+      "4000061596123066801"
+    ]
+  }
+}
