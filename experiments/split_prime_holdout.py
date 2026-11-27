@@ -24,6 +24,9 @@ REPORT = ROOT / "research/split-prime-holdout.json"
 
 def interval_primes(lo, hi):
     """Segment the inclusive physical interval, streaming its primes in order."""
+    lo = max(lo, 2)
+    if lo > hi:
+        return
     base = primes_through(isqrt(hi))
     for start in range(lo, hi + 1, BLOCK):
         stop = min(start + BLOCK, hi + 1)

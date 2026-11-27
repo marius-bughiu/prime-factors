@@ -628,3 +628,10 @@ import PrimeFactors.CharacterWindowRate
 import PrimeFactors.DivisorSignPanel
 import PrimeFactors.SplitPrimeInterval
 import PrimeFactors.SplitPrimeBudget
+import PrimeFactors.AffinePrimeSign
+import PrimeFactors.PrimeSignIsolation
+import PrimeFactors.SquarePrimeDecoys
+import PrimeFactors.FullSizeSquareDecoys
+import PrimeFactors.AffineNonsquareSign
+import PrimeFactors.NonsquareSignIsolation
+import PrimeFactors.SignPanelReadout

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+For any product of two distinct 1,024-bit primes, 1,100 independently chosen tests almost certainly leave its smaller prime as the only eligible prime. Lean bounds the probability of any false prime passing them all by $2^{-76}$. Finding the survivor still took longer than ordinary division on both small examples. [Unconditional proof and measured costs](recognizing-one-prime-with-random-tests.md)
+
 Counting only primes gives a two-sided result. On the fresh 2,048-bit product more than $10^{184}$ primes pass 400 public sign tests. Applying 512 brings the upper limit below $1.28\times10^{159}$ on each product. The counts use a prime-ideal theorem and the released Dirichlet GRH. [Prime counts, public witnesses and a timed search](how-many-primes-pass-hundreds-of-tests.md)
 
 Sixteen tests derived from the product leave at most 8.5580% of the smaller-factor positions that remain after removing multiples of 2, 3 and 5 on the fresh 2,048-bit example. On the crossed example the ceiling is 6.1590%. [Search interval, proof and verification](sixteen-tests-for-the-smaller-factor.md)

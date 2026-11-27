@@ -1,0 +1,501 @@
+{
+  "domain": "affine-prime-signs-v1",
+  "sampling": "deterministic SHAKE256, separate index and rejection counters",
+  "encoding": "domain, NUL, 2-byte unsigned length of N, fixed-width unsigned N, 4-byte index, 4-byte attempt; all integers big endian",
+  "digest": "SHA-256 of the sampled labels in draw order, each padded to the byte length of N",
+  "interpretation": "The probability theorem assumes independent uniform draws. These published seeded labels are a reproducible experiment.",
+  "timing": "six method orders; cold prime cache; times to verified division include label generation and sieve, and exclude Lean",
+  "platform": {
+    "python": "3.9.6",
+    "machine": "arm64",
+    "os": "Darwin"
+  },
+  "small": [
+    {
+      "bits": 20,
+      "sample": 0,
+      "n": "789444367739",
+      "methods": {
+        "direct": {
+          "bounds": [
+            752874,
+            888506
+          ],
+          "label_count": 0,
+          "random_word_attempts": 0,
+          "primes_visited": 6258,
+          "legendre_checks": 0,
+          "division_tests": 6258,
+          "pair": [
+            "837533",
+            "942583"
+          ],
+          "median_times": {
+            "first": {
+              "cpu_ns": 2697000,
+              "wall_ns": 2696791
+            }
+          }
+        },
+        "streamed_signs": {
+          "bounds": [
+            752874,
+            888506
+          ],
+          "label_count": 64,
+          "random_word_attempts": 86,
+          "primes_visited": 6258,
+          "legendre_checks": 12506,
+          "division_tests": 1,
+          "pair": [
+            "837533",
+            "942583"
+          ],
+          "median_times": {
+            "first": {
+              "cpu_ns": 13427000,
+              "wall_ns": 13468291
+            }
+          }
+        },
+        "singleton_census": {
+          "bounds": [
+            752874,
+            888506
+          ],
+          "label_count": 64,
+          "random_word_attempts": 86,
+          "primes_sieved": 9995,
+          "survivors_by_prefix": [
+            9995,
+            4998,
+            2463,
+            1223,
+            624,
+            317,
+            148,
+            76,
+            30,
+            13,
+            4,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "unique_after": 12,
+          "checks_to_unique": 19893,
+          "checks_full": 19945,
+          "division_tests": 1,
+          "pair": [
+            "837533",
+            "942583"
+          ],
+          "digest": "303c6a0243227c650e4a398f4f668b8c014d9bef478b35b9f3b90ce141a5fb66",
+          "median_times": {
+            "first": {
+              "cpu_ns": 20638500,
+              "wall_ns": 20676416
+            },
+            "full": {
+              "cpu_ns": 20672500,
+              "wall_ns": 20707979
+            }
+          }
+        }
+      },
+      "certificate_sha256": "27a9793b02aa95c63ba4e6f844d8146c46c96d656186097972b6095284af1568"
+    },
+    {
+      "bits": 24,
+      "sample": 0,
+      "n": "246180296426219",
+      "methods": {
+        "direct": {
+          "bounds": [
+            14673490,
+            15690133
+          ],
+          "label_count": 0,
+          "random_word_attempts": 0,
+          "primes_visited": 33676,
+          "legendre_checks": 0,
+          "division_tests": 33676,
+          "pair": [
+            "15230737",
+            "16163387"
+          ],
+          "median_times": {
+            "first": {
+              "cpu_ns": 18518000,
+              "wall_ns": 18577083
+            }
+          }
+        },
+        "streamed_signs": {
+          "bounds": [
+            14673490,
+            15690133
+          ],
+          "label_count": 64,
+          "random_word_attempts": 77,
+          "primes_visited": 33676,
+          "legendre_checks": 67768,
+          "division_tests": 1,
+          "pair": [
+            "15230737",
+            "16163387"
+          ],
+          "median_times": {
+            "first": {
+              "cpu_ns": 85552000,
+              "wall_ns": 85801438
+            }
+          }
+        },
+        "singleton_census": {
+          "bounds": [
+            14673490,
+            15690133
+          ],
+          "label_count": 64,
+          "random_word_attempts": 77,
+          "primes_sieved": 61477,
+          "survivors_by_prefix": [
+            61477,
+            30854,
+            15473,
+            7720,
+            3837,
+            1913,
+            960,
+            463,
+            237,
+            114,
+            58,
+            25,
+            16,
+            12,
+            5,
+            3,
+            3,
+            3,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "unique_after": 20,
+          "checks_to_unique": 123177,
+          "checks_full": 123221,
+          "division_tests": 1,
+          "pair": [
+            "15230737",
+            "16163387"
+          ],
+          "digest": "017eb74465e80339fc108eb4aaa0073244ae0251a8ce1c9011a6fb26e23f536d",
+          "median_times": {
+            "first": {
+              "cpu_ns": 151860500,
+              "wall_ns": 152242479
+            },
+            "full": {
+              "cpu_ns": 151889500,
+              "wall_ns": 152269000
+            }
+          }
+        }
+      },
+      "certificate_sha256": "9f2b7f7c660edc5bb5e8c0a738d7765804bce640f7ea6efa15d8229d30d5f2ca"
+    }
+  ],
+  "large": [
+    {
+      "id": "reciprocal-anchor-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "product_bits": 2048,
+      "labels": 1100,
+      "random_word_attempts": 1462,
+      "distinct_labels": 1100,
+      "sha256": "a273f5ea0337e5175c0c249c47a898fdc476bafd0d443919075fa95c16272801",
+      "median_label_cpu_ns": 1413500,
+      "median_label_wall_ns": 1415854,
+      "candidate_primes_visited": 0,
+      "legendre_checks": 0,
+      "division_tests": 0
+    },
+    {
+      "id": "reciprocal-anchor-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "product_bits": 2048,
+      "labels": 1100,
+      "random_word_attempts": 1888,
+      "distinct_labels": 1100,
+      "sha256": "1c3ed80573af88808638758e8802b3fd73fd442319ceb00991f5da3d93a24e5a",
+      "median_label_cpu_ns": 1825500,
+      "median_label_wall_ns": 1835937,
+      "candidate_primes_visited": 0,
+      "legendre_checks": 0,
+      "division_tests": 0
+    }
+  ],
+  "odd_nonsquares": {
+    "repetitions": 1,
+    "timing": "single run from the shared public endpoints through verified division; includes integer-square checks, candidate construction and label generation; excludes Lean",
+    "cases": [
+      {
+        "bits": 20,
+        "sample": 0,
+        "n": "789444367739",
+        "lower": 752874,
+        "upper": 888506,
+        "labels_sha256": "303c6a0243227c650e4a398f4f668b8c014d9bef478b35b9f3b90ce141a5fb66",
+        "methods": {
+          "direct": {
+            "pair": [
+              "837533",
+              "942583"
+            ],
+            "odd_square_tests": 42330,
+            "nonsquares_visited": 42306,
+            "squares_skipped": 24,
+            "jacobi_checks": 0,
+            "division_tests": 42306,
+            "time": {
+              "cpu_ns": 12395000,
+              "wall_ns": 12449791
+            }
+          },
+          "streamed_jacobi": {
+            "pair": [
+              "837533",
+              "942583"
+            ],
+            "odd_square_tests": 42330,
+            "nonsquares_visited": 42306,
+            "squares_skipped": 24,
+            "jacobi_checks": 82585,
+            "division_tests": 1,
+            "time": {
+              "cpu_ns": 115027000,
+              "wall_ns": 115257583
+            }
+          },
+          "census": {
+            "pair": [
+              "837533",
+              "942583"
+            ],
+            "odd_square_tests": 67816,
+            "squares_skipped": 37,
+            "survivors_by_prefix": [
+              67779,
+              33609,
+              15838,
+              7511,
+              3716,
+              1887,
+              957,
+              446,
+              151,
+              60,
+              28,
+              10,
+              5,
+              3,
+              3,
+              3,
+              3,
+              2,
+              1
+            ],
+            "unique_after": 18,
+            "jacobi_checks_to_split": 132011,
+            "division_tests": 1,
+            "time": {
+              "cpu_ns": 172691000,
+              "wall_ns": 173106375
+            },
+            "additional_jacobi_checks": 46,
+            "survivors_after_64": 1
+          }
+        },
+        "certificate_sha256": "27a9793b02aa95c63ba4e6f844d8146c46c96d656186097972b6095284af1568"
+      },
+      {
+        "bits": 24,
+        "sample": 0,
+        "n": "246180296426219",
+        "lower": 14673490,
+        "upper": 15690133,
+        "labels_sha256": "017eb74465e80339fc108eb4aaa0073244ae0251a8ce1c9011a6fb26e23f536d",
+        "methods": {
+          "direct": {
+            "pair": [
+              "15230737",
+              "16163387"
+            ],
+            "odd_square_tests": 278624,
+            "nonsquares_visited": 278588,
+            "squares_skipped": 36,
+            "jacobi_checks": 0,
+            "division_tests": 278588,
+            "time": {
+              "cpu_ns": 81259000,
+              "wall_ns": 81308583
+            }
+          },
+          "streamed_jacobi": {
+            "pair": [
+              "15230737",
+              "16163387"
+            ],
+            "odd_square_tests": 278624,
+            "nonsquares_visited": 278588,
+            "squares_skipped": 36,
+            "jacobi_checks": 462030,
+            "division_tests": 1,
+            "time": {
+              "cpu_ns": 762887000,
+              "wall_ns": 768137792
+            }
+          },
+          "census": {
+            "pair": [
+              "15230737",
+              "16163387"
+            ],
+            "odd_square_tests": 508322,
+            "squares_skipped": 66,
+            "survivors_by_prefix": [
+              508256,
+              169699,
+              84990,
+              42569,
+              18761,
+              9380,
+              4708,
+              1988,
+              987,
+              469,
+              225,
+              107,
+              59,
+              31,
+              15,
+              9,
+              5,
+              3,
+              2,
+              2,
+              1
+            ],
+            "unique_after": 20,
+            "jacobi_checks_to_split": 842265,
+            "division_tests": 1,
+            "time": {
+              "cpu_ns": 1333486000,
+              "wall_ns": 1372006250
+            },
+            "additional_jacobi_checks": 44,
+            "survivors_after_64": 1
+          }
+        },
+        "certificate_sha256": "9f2b7f7c660edc5bb5e8c0a738d7765804bce640f7ea6efa15d8229d30d5f2ca"
+      }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 # Two Jacobi tests in the actual factor window
 
-For the two 2048-bit comparison products, a pair of tests computed from each product limits where its smaller prime can be. Starting with the candidates coprime to 60, we obtained the following upper bounds over the **whole possible interval**. Both products remain unresolved. [Exact integer counts and public witnesses](../research/two-character-windows.json)
+For the two 2048-bit comparison products, a pair of tests computed from each product limits where its smaller prime can be. Starting with the candidates coprime to 60, we obtained the following upper bounds over the **whole possible interval**. Neither run recovered a factor. [Exact integer counts and public witnesses](../research/two-character-windows.json)
 
 | Input | One Jacobi test, upper bound | Both tests, upper bound |
 | --- | ---: | ---: |

@@ -1,6 +1,6 @@
 # Sixteen tests for the smaller factor
 
-On the fresh 2,048-bit product, sixteen tests derived from the product leave at most **8.5580%** of the possible positions for its smaller factor after removing multiples of 2, 3 and 5. On the crossed product the corresponding ceiling is **6.1590%**. Both factors are assumed to have 1,024 bits. Both examples remain unfactored. [Public inputs, roots and integer bounds](../research/many-character-windows.json)
+On the fresh 2,048-bit product, sixteen tests derived from the product leave at most **8.5580%** of the possible positions for its smaller factor after removing multiples of 2, 3 and 5. On the crossed product the corresponding ceiling is **6.1590%**. Both factors are assumed to have 1,024 bits. These tests recovered neither pair. The older fast result on the crossed product used a clue chosen from its published factors. [Public inputs, roots and integer bounds](../research/many-character-windows.json) · [Origin of the earlier clue](testing-one-factor-remainder.md)
 
 These percentages count integers throughout the actual interval where the prime can lie. On the fresh input the 8.5580% ceiling still allows about $4.31\times10^{305}$ positions. There is no cheap way here to jump to the next survivor. In a separate eight-test experiment checking sampled divisors directly took less time than determining which of them passed the filters. [Same-position comparison](halving-the-sum-residues-on-a-fresh-product.md#trying-eight-moduli-on-the-same-positions)
 
