@@ -586,6 +586,12 @@ import PrimeFactors.TwelveSmallSeeds
 import PrimeFactors.ComplementaryKeys
 import PrimeFactors.ComplementaryBatch
 import PrimeFactors.ComplementaryBirthday
+import PrimeFactors.ComplementaryPracticalBudget
+import PrimeFactors.ComplementaryNormBranches
+import PrimeFactors.ComplementarySameBudget
+import PrimeFactors.OppositeKeyPolynomial
+import PrimeFactors.OppositeKeyDivision
 import PrimeFactors.DyadicFactorBands
 import PrimeFactors.TwelveRectangle
 import PrimeFactors.ReducedSmoothReadout
+import PrimeFactors.SharedSmoothPowers
