@@ -699,11 +699,24 @@ def run_case(case, method, proofs):
         factor, work = cyclotomic_small_norm.search(n, case['factor_bits'], case['max_tests'])
         elapsed = time.perf_counter()-start
         compare_start = time.perf_counter()
+        ordinary_factor, ordinary = cyclotomic_small_norm.search(
+            n, case['factor_bits'], case['comparison_cap'], square_probe=False)
+        ordinary['seconds'] = time.perf_counter()-compare_start
+        ordinary['factor'] = str(ordinary_factor) if ordinary_factor is not None else None
+        expected = case['ordinary_checks']
+        agree(dict(id=name, **expected), ordinary, expected)
+        work['ordinary'] = ordinary
+        compare_start = time.perf_counter()
         reference, work['fermat_tests'] = fermat_split(n, case['comparison_cap'])
         work['fermat_seconds'] = time.perf_counter()-compare_start
         work['fermat_factor'] = str(reference) if reference is not None else None
-        agree(case, work, ['outcome', 'square_probes', 'before', 'survivors', 'discriminant_tests',
-                           'unvisited', 'hit_sum', 'fermat_tests', 'fermat_factor'])
+        work['fermat_setup_roots'] = 1
+        work['local_context'] = cyclotomic_small_norm.local_context(n, case['factor_bits'], case['context_cap'])
+        expected = case['context_checks']
+        agree(dict(id=name, **expected), work['local_context'], expected)
+        agree(case, work, ['outcome', 'setup_roots', 'upper_divisions', 'square_probes', 'stride',
+                           'lower', 'upper', 'stride_sites', 'before', 'survivors', 'discriminant_tests',
+                           'unvisited', 'hit_sum', 'fermat_tests', 'fermat_factor', 'fermat_setup_roots'])
         result = certify_split(case, proof, factor, elapsed, 'cyclotomic_small_norm', work)
     elif method == 'cyclotomic-sum-lift':
         result = cyclotomic_sum_case(case, proof, agree, certify_split)

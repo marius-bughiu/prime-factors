@@ -1,6 +1,6 @@
 # Prime Factors
 
-What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Latest factor-sum result](discoveries/where-to-look-for-the-factor-sum.md) · [General search bounds](discoveries/recursive-integer-valued-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
+What information about two unknown primes can be recovered cheaply from their product alone? This project studies classical integer factorization in Lean 4. A motivating case is a 2,048-bit integer $N=pq$ with two 1,024-bit primes and no supplied relation between them. Progress can be a constructive formula, a proved reduction in the work needed to find a factor, or a proof that a proposed relation leaves too many candidates. [Factor-sum research](discoveries/searching-the-balanced-interval.md) · [General search bounds](discoveries/recursive-integer-valued-windows.md) · [Project progress](https://marius-bughiu.github.io/prime-factors/)
 
 **Can I give you a 2,048-bit number and get its prime factors easily?** No. If you multiply two randomly chosen 1,024-bit primes and give us only the result, we have no practical way to find them in general. We have factored specially constructed 2,048-bit examples. In some we chose primes whose sum was easy to guess. In others we chose primes with a predictable pattern in their binary digits. For each successful example, Lean verified that the answers were prime and that multiplying them gave the original number. That check starts *after* the search has found the answers.
 
@@ -11,6 +11,8 @@ We have also proved a limit for one shortcut that worked quickly on a constructe
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?
+
+**A failed square guess can narrow the next one.** For 2,748,959, the next square is 1,658², just five higher. Three possible factor sums survive the width bounds and several small remainder tests. That difference of five selects 3,360, giving 1,409 × 1,951. On the smaller 174,719 example, the existing remainder rule already singled out the answer. [Worked cases and costs](discoveries/a-fifth-root-test-for-the-factor-sum.md) · [Full-size limit on spacing tests](discoveries/why-the-factor-sum-spacing-repeats.md)
 
 **Can a nearby square tell us the primes?** Starting with 102,029, a divisor of the next square gave the exact sum 654 and the primes 257 and 397. The same short list of guesses missed all 64 larger comparison products and both 2,048-bit examples. Lean also bounds how often *any* square can supply the right sum by this rule. [Calculation and limits](discoveries/can-a-square-reveal-the-prime-sum.md)
 

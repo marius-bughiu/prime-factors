@@ -657,9 +657,13 @@ def case_row(result):
                       f' and at most {compact_count(plan["lookup_bound"])} lookups')
     elif result['method'] == 'cyclotomic-small-norm':
         work = result['cyclotomic_small_norm']
-        count = (f'{work["square_probes"]} square probe · {work["before"]} possible sums, '
-                 f'{work["survivors"]} after the probe · {work["discriminant_tests"]} discriminant test'
-                 f' · Fermat comparison {work["fermat_tests"]} square tests')
+        ordinary = work['ordinary']
+        count = (f'W = {work["stride"]} and mod 5 leave {work["before"]} sums. '
+                 f'The N+5 check leaves {work["survivors"]}. '
+                 f'Both sum searches use {work["setup_roots"]} boundary root and {work["upper_divisions"]} division. '
+                 f'The searches use {work["discriminant_tests"]} discriminant test with the probe, '
+                 f'{ordinary["discriminant_tests"]} without. '
+                 f'Fermat uses {work["fermat_setup_roots"]} boundary root and {work["fermat_tests"]} midpoint tests.')
     elif result['method'] == 'cyclotomic-sum-lift':
         work = result['cyclotomic_sum_lift']
         count = (f'{escape(work["outcome"].replace("_", " "))} · base {work["base"]:,}'

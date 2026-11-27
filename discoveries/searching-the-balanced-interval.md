@@ -1,6 +1,8 @@
 # Searching the balanced interval
 
-Adding five to 174,719 gives a square. That observation determines the factor sum in a short public interval and gives 379 × 461. It was the only success of this square test among 903 products of distinct nine-bit primes. [Proof, cost and full comparison set](a-fifth-root-test-for-the-factor-sum.md)
+Two candidate sums differing by 20,160 can pass together at some starting position for every product and every modulus. Lean checked the exact threshold at 2,048 bits and used it to bound how often a small polynomial digit could distinguish every position by this rule. [The threshold, the two full-size calculations and the population bound](why-the-factor-sum-spacing-repeats.md)
+
+The next square after 2,748,959 is five higher. This fact chooses 3,360 from three sums that pass the width bound and the ordinary tests modulo 5, 7, 9 and 11, giving 1,409 × 1,951. The nine-bit example needed only the existing remainder rule. [Small examples, cost and comparison set](a-fifth-root-test-for-the-factor-sum.md)
 
 A remainder modulo 315 left two possible sums from 45 guesses for 1,879,513. The second gave the two primes. For the qualifying product residues the same two-out-of-45 bound holds at any starting position with a publicly chosen step. [Example and sharp list bounds](how-many-factor-sums-pass-together.md)
 

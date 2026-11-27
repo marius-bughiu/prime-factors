@@ -1,3 +1,4 @@
+import PrimeFactors.CyclotomicRadixLift
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Expand
 import Mathlib.NumberTheory.LegendreSymbol.QuadraticReciprocity
 import Mathlib.NumberTheory.LSeries.PrimesInAP
@@ -221,30 +222,92 @@ theorem public_square {p q k x : ℕ} (pp : p.Prime) (qp : q.Prime) (neq : p≠q
   apply (reads_sum pp qp neq (Or.inr four)).mpr
   simpa [four] using bit
 
-/-- For this public 18-bit product of two 9-bit primes, the single square
-test at k=1 leaves one possible sum. The proof quantifies over every factor
-pair satisfying the public promise. -/
-theorem recovered_example {p q : ℕ} (pp : p.Prime) (qp : q.Prime)
-    (low : 256≤p) (ord : p<q) (high : q≤511) (prod : p*q=174719) : p+q=840 := by
-  have div := public_square (k:=1) (x:=418) pp qp ord.ne (by omega) (by omega)
-    (by rw [prod]) (by rw [prod]; decide)
-  have m4 : (p%4)*(q%4)%4=3 := by rw [←Nat.mul_mod,prod]
-  have table : ∀ (a b : Fin 4), (a.val*b.val)%4=3 → (a.val+b.val)%4=0 := by decide
-  have zero : (p+q)%4=0 := by
-    rw [Nat.add_mod]
-    exact table ⟨p%4,Nat.mod_lt _ (by decide)⟩ ⟨q%4,Nat.mod_lt _ (by decide)⟩ m4
-  have ep : (p:ℤ)*(q:ℤ)=174719 := by exact_mod_cast prod
-  have hp : (p:ℤ)≤511 := by exact_mod_cast ord.le.trans high
-  have hq : (q:ℤ)≤511 := by exact_mod_cast high
-  have upper : p+q≤852 := by
-    have : (p:ℤ)+q≤852 := by nlinarith [mul_nonneg (sub_nonneg.mpr hp) (sub_nonneg.mpr hq)]
-    exact_mod_cast this
-  have gap : (835:ℤ)^2<((p:ℤ)+q)^2 := by nlinarith [sq_nonneg ((p:ℤ)-q)]
-  have lowerZ : 836≤(p:ℤ)+q := lt_of_pow_lt_pow_left₀ 2 (by positivity) gap
-  have lower : 836≤p+q := by exact_mod_cast lowerZ
+private theorem known_stride {p q : ℕ} (po : Odd p) (qo : Odd q) :
+    (p+q)%CyclotomicRadixLift.stride (p*q) = (p*q+1)%CyclotomicRadixLift.stride (p*q) := by
+  have h := CyclotomicRadixLift.divides po qo
+  have eq : p*q+1=(p-1)*(q-1)+(p+q) := by
+    have posp := po.pos
+    have posq := qo.pos
+    obtain ⟨a,ha⟩ := Nat.exists_eq_succ_of_ne_zero posp.ne'
+    obtain ⟨b,hb⟩ := Nat.exists_eq_succ_of_ne_zero posq.ne'
+    rw [ha,hb]
+    simp only [Nat.succ_sub_one,Nat.succ_eq_add_one]
+    ring
+  rw [eq,Nat.add_mod ((p-1)*(q-1)),Nat.mod_eq_zero_of_dvd h,zero_add,Nat.mod_mod]
+
+/-- Product-only upper and lower inequalities on the sum. Either two factors
+above e or two factors below e give e*(p+q) ≤ e²+N. -/
+private theorem bounds {p q : ℕ} {n l u e : ℤ} (prod : (p:ℤ)*q=n)
+    (left : (l-1)^2<4*n) (right : e^2+n<e*(u+1)) (ep : 0<e)
+    (endpoint : (e≤(p:ℤ) ∧ e≤(q:ℤ)) ∨ ((p:ℤ)≤e ∧ (q:ℤ)≤e)) :
+    l≤(p:ℤ)+q ∧ (p:ℤ)+q≤u := by
+  have gap : (l-1)^2<((p:ℤ)+q)^2 := by nlinarith [sq_nonneg ((p:ℤ)-q)]
+  have low := lt_of_pow_lt_pow_left₀ 2 (by positivity : 0≤(p:ℤ)+q) gap
+  have upper : e*((p:ℤ)+q)≤e^2+n := by
+    rcases endpoint with ⟨a,b⟩|⟨a,b⟩
+    · nlinarith [mul_nonneg (sub_nonneg.mpr a) (sub_nonneg.mpr b)]
+    · nlinarith [mul_nonneg (sub_nonneg.mpr a) (sub_nonneg.mpr b)]
+  have high := lt_of_mul_lt_mul_left (upper.trans_lt right) ep.le
   omega
 
-/-- Independent product and prime certificates for the example. -/
-theorem example_factors : Nat.Prime 379 ∧ Nat.Prime 461 ∧ 379*461=174719 := by norm_num
+/-- The ordinary W=24 rule already fixes the sum of this 18-bit control.
+No square witness is used. -/
+theorem recovered_example {p q : ℕ} (pp : p.Prime) (qp : q.Prime)
+    (low : 256≤p) (ord : p<q) (high : q≤511) (prod : p*q=174719) : p+q=840 := by
+  have stride := known_stride (pp.odd_of_ne_two (by omega)) (qp.odd_of_ne_two (by omega))
+  rw [prod] at stride
+  change (p+q)%24=0 at stride
+  have ep : (p:ℤ)*(q:ℤ)=174719 := by exact_mod_cast prod
+  have b := bounds (l:=836) (u:=852) (e:=511) ep (by decide) (by decide) (by decide)
+    (Or.inr ⟨by exact_mod_cast ord.le.trans high,by exact_mod_cast high⟩)
+  omega
+
+/-- The ordinary stride and small-field mod-5 table leave three sums on each
+new input. The 10-bit product has the true sum first. -/
+theorem ordinary_menus (s : ℕ) :
+    ((1296≤s ∧ s≤1331 ∧ s%8=4 ∧ (s%5=0 ∨ s%5=1 ∨ s%5=4)) ↔
+        s=1300 ∨ s=1316 ∨ s=1324) ∧
+    ((3316≤s ∧ s≤3389 ∧ s%24=0 ∧ (s%5=0 ∨ s%5=1 ∨ s%5=4)) ↔
+        s=3336 ∨ s=3360 ∨ s=3384) := by
+  omega
+
+/-- With two distinct 10-bit primes the square witness selects the first
+of the three ordinary candidate sums. -/
+theorem first_selective {p q : ℕ} (pp : p.Prime) (qp : q.Prime) (low : 512≤p)
+    (ord : p<q) (_high : q≤1023) (prod : p*q=419899) : p+q=1300 := by
+  have po := pp.odd_of_ne_two (by omega)
+  have qo := qp.odd_of_ne_two (by omega)
+  have div := public_square (k:=1) (x:=648) pp qp ord.ne (by omega) (by omega)
+    (by rw [prod]) (by rw [prod]; decide)
+  have stride := known_stride po qo
+  rw [prod] at stride
+  change (p+q)%8=4 at stride
+  have ep : (p:ℤ)*(q:ℤ)=419899 := by exact_mod_cast prod
+  have above : 513≤p := by obtain ⟨a,ha⟩ := po; omega
+  have b := bounds (l:=1296) (u:=1331) (e:=513) ep (by decide) (by decide) (by decide)
+    (Or.inl ⟨by exact_mod_cast above,by exact_mod_cast above.trans ord.le⟩)
+  omega
+
+/-- With two distinct 11-bit primes the square witness excludes the first
+ordinary candidate and selects the second. -/
+theorem first_saving {p q : ℕ} (pp : p.Prime) (qp : q.Prime) (low : 1024≤p)
+    (ord : p<q) (high : q≤2047) (prod : p*q=2748959) : p+q=3360 := by
+  have po := pp.odd_of_ne_two (by omega)
+  have qo := qp.odd_of_ne_two (by omega)
+  have div := public_square (k:=1) (x:=1658) pp qp ord.ne (by omega) (by omega)
+    (by rw [prod]) (by rw [prod]; decide)
+  have stride := known_stride po qo
+  rw [prod] at stride
+  change (p+q)%24=0 at stride
+  have ep : (p:ℤ)*(q:ℤ)=2748959 := by exact_mod_cast prod
+  have b := bounds (l:=3316) (u:=3389) (e:=2047) ep (by decide) (by decide) (by decide)
+    (Or.inr ⟨by exact_mod_cast ord.le.trans high,by exact_mod_cast high⟩)
+  omega
+
+/-- Independent primality and product certificates for all three examples. -/
+theorem example_factors :
+    (Nat.Prime 379 ∧ Nat.Prime 461 ∧ 379*461=174719) ∧
+    (Nat.Prime 599 ∧ Nat.Prime 701 ∧ 599*701=419899) ∧
+    (Nat.Prime 1409 ∧ Nat.Prime 1951 ∧ 1409*1951=2748959) := by norm_num
 
 end PrimeFactors.CyclotomicSmallNorm
