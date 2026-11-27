@@ -43,6 +43,16 @@ noncomputable def seedEquiv {p q : ℕ} [Fact p.Prime] [Fact q.Prime] (cop : p.C
     exact Prod.ext (Subtype.ext (congrArg Prod.fst (e.apply_symm_apply _)))
       (Subtype.ext (congrArg Prod.snd (e.apply_symm_apply _)))
 
+/-- Counting regular inputs needs no set of distinct normalized values.
+Exactly 144 regular inputs contribute per attainable product key. -/
+theorem input_count {p q : ℕ} [Fact p.Prime] [Fact q.Prime]
+    (hp : 864<p) (hq : 864<q) (cop : p.Coprime q) :
+    (inputs (p*q)).card = 144*(keys (ZMod (p*q))).card := by
+  have h := Fintype.card_congr (seedEquiv cop)
+  simp only [Input,Seed,Fintype.card_prod,Fintype.card_coe] at h
+  rw [h,regulars_eq_twelve_keys hp,regulars_eq_twelve_keys hq,keys_crt cop]
+  ring
+
 noncomputable def label {p : ℕ} [Fact p.Prime] (big : 864<p) (x : Seed p) : Label p :=
   ⟨value x.val,by rw [prime_keys big]; exact mem_image_of_mem _ x.property⟩
 
@@ -158,8 +168,9 @@ theorem proper_gcd_iff {p q : ℕ} [Fact p.Prime] [Fact q.Prime] (cop : p.Coprim
     simpa only [map_natCast, Prod.snd_natCast] using congrArg Prod.snd cast
   have pa : p∣k ↔ (e u).1=(e v).1 := by rw [←ZMod.natCast_zmod_eq_zero_iff_dvd,a,sub_eq_zero]
   have qb : q∣k ↔ (e u).2=(e v).2 := by rw [←ZMod.natCast_zmod_eq_zero_iff_dvd,b,sub_eq_zero]
-  change (1 < (p*q).gcd k ∧ (p*q).gcd k < p*q) ↔ _
-  rw [←pa,←qb]
+  change (1 < (p*q).gcd k ∧ (p*q).gcd k < p*q) ↔
+    ((e u).1=(e v).1 ∧ (e u).2≠(e v).2) ∨ ((e u).2=(e v).2 ∧ (e u).1≠(e v).1)
+  simp only [ne_eq,←pa,←qb]
   have pp : p.Prime := Fact.out
   have qq : q.Prime := Fact.out
   have lp : p < p*q := by nlinarith only [Nat.mul_le_mul_left p qq.two_le,pp.one_lt]
@@ -186,7 +197,7 @@ private theorem coordinate_odds {p q : ℕ} [Fact p.Prime] [Fact q.Prime] (cop :
     gcdOdds f m = odds g m := by
   have eq (w : Fin m → Input (p*q)) :
       (∃ i j, i≠j ∧ ProperGcd (f (w i)) (f (w j))) ↔ ProperPair (g ∘ w) := by
-    simp only [proper_gcd_iff cop,red,ProperPair,Function.comp_apply,Subtype.ext_iff]
+    simp only [proper_gcd_iff cop,red,ProperPair,Function.comp_apply,ne_eq,Subtype.ext_iff]
   unfold gcdOdds odds
   rw [Nat.card_congr (Equiv.subtypeEquivRight eq)]
 

@@ -1051,7 +1051,7 @@ def case_row(result):
         work = result['twelve_residue']
         runs = work['runs']
         primary = runs['twelve']
-        count = (f"{work['draws']:,} draws per method · seed {work['seed']} · "
+        count = (f"{work['draws']:,} draws per method · seed {work['seed']} · twelve-residue search {duration(primary['seconds'])} · "
                  f"{primary['distinct_keys']:,} distinct twelve-residue keys · "
                  f"{primary['derivative_values']:,} derivative evaluations · "
                  f"{primary['inversions']:,} batch inversions · {primary['setup_gcds']:,} setup, {primary['row_gcds']:,} row, "
@@ -1069,7 +1069,7 @@ def case_row(result):
             run = runs[mode]
             gcds = sum(run[key] for key in ('setup_gcds', 'row_gcds', 'pair_gcds', 'orientation_gcds'))
             outcome = escape(run['divisor']) if run['divisor'] else 'no split'
-            count += f" · {label} returned {outcome} ({gcds:,} gcds)"
+            count += f" · {label} returned {outcome} ({gcds:,} gcds in {duration(run['seconds'])})"
     elif result['method'] == 'reciprocal-prefix-pairs':
         work = result['reciprocal_prefix_pairs']
         count = (f"{work['sweep_comparisons']:,} of {work['bracket_pairs']:,} interval pairs visited"
