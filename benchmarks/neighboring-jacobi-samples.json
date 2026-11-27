@@ -1,0 +1,4 @@
+[
+  {"id":"neighboring-signs-77","n":"77","expected_factors":["7","11"],"nonzero_pair_counts":[8,8,8,8],"both_zero":19,"pair_distance":"45/77","triple_distance":"45/77"},
+  {"id":"neighboring-signs-221","n":"221","expected_factors":["13","17"],"nonzero_pair_counts":[36,34,34,36],"both_zero":31,"pair_distance":"81/221","triple_distance":"1/2"}
+]

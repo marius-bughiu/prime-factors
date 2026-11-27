@@ -773,3 +773,12 @@ import PrimeFactors.JacobiHistogramSamples
 import PrimeFactors.JacobiMomentRecurrence
 import PrimeFactors.SignedIndexNotches
 import PrimeFactors.RotatedCoefficientFilter
+import PrimeFactors.JacobiMomentPeriod
+import PrimeFactors.JacobiSharpComposite
+import PrimeFactors.JacobiSparseSupport
+import PrimeFactors.JacobiThreeTerms
+import PrimeFactors.NeighboringJacobiMoments
+import PrimeFactors.NeighboringJacobiSamples
+import PrimeFactors.JacobiFourSpan
+import PrimeFactors.JacobiFourUpper
+import PrimeFactors.JacobiFourMinimum

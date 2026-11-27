@@ -205,14 +205,13 @@ theorem component_even {p : ℕ} [Fact p.Prime] (odd : p≠2) (n : ℕ) :
       intro z hz
       simp [f,fiber_card odd hz]; ring
 
-/-- For positive even degrees, each pair of opposite traces contributes one base. -/
-theorem local_even_order {p : ℕ} [Fact p.Prime] (odd : p≠2) (P : (ZMod p)[X])
-    (non : P≠0) (start : ℕ)
-    (fit : ∀ i : Fin ((p-3)/2), shift P (fun k => component p (2*(k+1))) (start+i)=0) :
-    (p-3)/2 ≤ P.natDegree := by
-  have count : (evenBases p).card=(p-3)/2 := by have := even_card odd; omega
-  rw [← count]
-  apply lower P non (evenBases p) (fun z => 2*weight z*z) start
+/-- Matching a whole block of even moments is equivalent to vanishing at every active square. -/
+theorem component_even_roots {p : ℕ} [Fact p.Prime] (odd : p≠2) (P : (ZMod p)[X])
+    (start : ℕ) :
+    (∀ i : Fin (evenBases p).card, shift P (fun k => component p (2*(k+1))) (start+i)=0) ↔
+      ∀ z ∈ evenBases p, P.eval z=0 := by
+  simp_rw [component_even odd]
+  apply annihilator_iff
   · intro z hz
     obtain ⟨t,ht,rfl⟩ := mem_image.mp hz
     obtain ⟨nz,reg⟩ := (mem_active t).mp ht
@@ -220,8 +219,17 @@ theorem local_even_order {p : ℕ} [Fact p.Prime] (odd : p≠2) (P : (ZMod p)[X]
   · intro z hz
     obtain ⟨t,ht,rfl⟩ := mem_image.mp hz
     exact pow_ne_zero _ ((mem_active t).mp ht).1
-  · intro i
-    simpa only [component_even odd] using fit ⟨i,count ▸ i.isLt⟩
+
+/-- For positive even degrees, each pair of opposite traces contributes one base. -/
+theorem local_even_order {p : ℕ} [Fact p.Prime] (odd : p≠2) (P : (ZMod p)[X])
+    (non : P≠0) (start : ℕ)
+    (fit : ∀ i : Fin ((p-3)/2), shift P (fun k => component p (2*(k+1))) (start+i)=0) :
+    (p-3)/2 ≤ P.natDegree := by
+  have count : (evenBases p).card=(p-3)/2 := by have := even_card odd; omega
+  rw [← count] at fit ⊢
+  apply Polynomial.card_le_degree_of_subset_roots
+  intro z hz
+  exact (Polynomial.mem_roots non).mpr ((component_even_roots odd P start).mp fit z hz)
 
 theorem local_sharp {p : ℕ} [Fact p.Prime] (odd : p≠2) :
     ∃ P : (ZMod p)[X], P.Monic ∧ P.natDegree=p-3 ∧

@@ -57,4 +57,7 @@ CHECKS = (
     experiment('word_ranking_tail', data=('benchmarks/high-word-suffix-ranking.json',)),
     experiment('rotated_coefficient_filter', data=('benchmarks/rotated-coefficient-filter.json',)),
     experiment('signed_index_notches', data=('benchmarks/signed-index-notches.json',)),
+    experiment('jacobi_moment_periods', data=('benchmarks/jacobi-moment-periods.json',)),
+    experiment('neighboring_jacobi_samples', '--exhaustive', data=('benchmarks/neighboring-jacobi-samples.json',)),
+    experiment('jacobi_four_width', data=('benchmarks/jacobi-four-width.json',)),
 )

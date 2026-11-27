@@ -1,0 +1,11 @@
+{
+  "span_cap": 24,
+  "cases": [
+    {"n": "143", "factors": ["11", "13"], "span": 11, "first_gcd_span": 6, "square_sign": null},
+    {"n": "187", "factors": ["11", "17"], "span": 13, "first_gcd_span": 8, "square_sign": -1},
+    {"n": "209", "factors": ["11", "19"], "span": 14, "first_gcd_span": 9, "square_sign": null},
+    {"n": "221", "factors": ["13", "17"], "span": 14, "first_gcd_span": 8, "square_sign": null},
+    {"n": "247", "factors": ["13", "19"], "span": 12, "first_gcd_span": 9, "square_sign": 1},
+    {"n": "323", "factors": ["17", "19"], "span": 17, "first_gcd_span": 9, "square_sign": null}
+  ]
+}

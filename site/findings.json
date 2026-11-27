@@ -1,5 +1,68 @@
 [
   {
+    "id": "shortest-four-term-span",
+    "category": "formulas",
+    "title": "The shortest four-term rule determines the prime sum",
+    "impact": "For 143 the shortest qualifying rule spans 11 even sums. Doubling the span and adding two gives 24, the sum of 11 and 13. Lean proves the general formula and its single exceptional ratio.",
+    "scope": "The result applies to distinct same-width primes at least 11 and four invertible coefficients. The direct measurement on six small products used many sums. It encountered a factor earlier on all six.",
+    "detail": "At 247 the exceptional span is 12 and the sum is 32. The quantity 24 × 247 + 1 is already the square of 77, which gives the factors 13 and 19 directly in this case.",
+    "sources": [
+      {"href": "discoveries/when-four-jacobi-terms-can-reveal-the-prime-sum.md", "label": "Both formulas and measured costs"},
+      {"href": "PrimeFactors/JacobiFourMinimum.lean", "label": "Lean minimum-span proof"},
+      {"href": "benchmarks/jacobi-four-width.json", "label": "Six small products"}
+    ]
+  },
+  {
+    "id": "three-neighboring-jacobi-signs",
+    "category": "formulas",
+    "title": "Counting when two neighboring readings both vanish gives the prime sum",
+    "impact": "At 77 there were exactly 19 such positions, giving the sum 18 and the factors 7 and 11. The same count at 221 gave 31 and recovered 13 and 17.",
+    "scope": "The direct count takes one table entry per residue. Three related signs are easy to sample, but two fair coins and their product reproduce their distribution to within 2⁻⁹⁸⁰ over a trillion full-size draws.",
+    "detail": "For every product of two distinct odd primes, the simultaneous-zero count is one plus their sum. We checked 526,786 positions across 276 small products.",
+    "sources": [
+      {"href": "discoveries/what-three-neighboring-jacobi-signs-reveal.md", "label": "The two counts and the sampling test"},
+      {"href": "PrimeFactors/NeighboringJacobiMoments.lean", "label": "Lean joint counts"},
+      {"href": "PrimeFactors/NeighboringJacobiSamples.lean", "label": "Lean comparison to two fair coins"}
+    ]
+  },
+  {
+    "id": "exact-even-jacobi-recurrence-order",
+    "category": "formulas",
+    "title": "The shortest recurrence for the even sums gives the larger prime exactly",
+    "impact": "At 77 a rule reaching back four terms works forever, and every shorter rule fails. Doubling four and adding three gives the larger prime, 11.",
+    "scope": "The formula works for any two distinct odd primes. For two 1,024-bit primes, the required order is at least 2¹⁰²². An inexpensive way to determine it from the product remains open.",
+    "detail": "Eight even sums suffice to fit the rule at 77 if an order bound of four is supplied. The direct calculation of each sum uses all 77 residues.",
+    "sources": [
+      {"href": "discoveries/which-recurrence-order-reveals-the-larger-prime.md", "label": "The worked recurrence"},
+      {"href": "PrimeFactors/JacobiSharpComposite.lean", "label": "Lean exact order and finite-window proofs"}
+    ]
+  },
+  {
+    "id": "exact-period-of-jacobi-moments",
+    "category": "formulas",
+    "title": "At 77 the sums repeat after 30 degrees, exactly the unit-group exponent",
+    "impact": "For primes at least seven, the smallest repeating shift gives the Carmichael function of their product. Taking only even degrees halves that period.",
+    "scope": "The checker measured seven small products by summing every residue at successive degrees. Finding the period quickly from a large product remains open.",
+    "detail": "The local sequence at prime 5 is constant. For 35 the even period is three, while half its Carmichael function is six.",
+    "sources": [
+      {"href": "discoveries/what-the-period-of-the-jacobi-moments-reveals.md", "label": "All seven measurements and the exceptions"},
+      {"href": "PrimeFactors/JacobiMomentPeriod.lean", "label": "Lean period theorem"}
+    ]
+  },
+  {
+    "id": "three-jacobi-terms-force-periods",
+    "category": "limits",
+    "title": "Three terms can only compare even sums that already repeat",
+    "impact": "For prime factors at least 11, every fixed three-term rule with invertible coefficients compares three identical values at different positions in the sequence.",
+    "scope": "The rule must hold at every starting position. Its three offsets span at least two full periods. The distance between offsets is separate from the cost of evaluating a single sum.",
+    "detail": "Four terms escape the restriction at 143. Offsets 0, 5, 6 and 11 satisfy an identity at every starting position, although the period is 30.",
+    "sources": [
+      {"href": "discoveries/which-short-recurrences-can-skip-a-jacobi-period.md", "label": "Three terms and both counterexamples"},
+      {"href": "PrimeFactors/JacobiThreeTerms.lean", "label": "Lean proof"},
+      {"href": "PrimeFactors/JacobiSparseSupport.lean", "label": "Why sparse rules group their exponents"}
+    ]
+  },
+  {
     "id": "fixed-recurrences-for-jacobi-moments",
     "category": "limits",
     "title": "A fixed rule for predicting the even Jacobi sums must reach far back",

@@ -1,0 +1,9 @@
+[
+  {"n": "15", "factors": ["3", "5"], "positive_period": 2, "even_period": 1, "unit_exponent": 4},
+  {"n": "21", "factors": ["3", "7"], "positive_period": 6, "even_period": 3, "unit_exponent": 6},
+  {"n": "35", "factors": ["5", "7"], "positive_period": 6, "even_period": 3, "unit_exponent": 12},
+  {"n": "65", "factors": ["5", "13"], "positive_period": 12, "even_period": 6, "unit_exponent": 12},
+  {"n": "77", "factors": ["7", "11"], "positive_period": 30, "even_period": 15, "unit_exponent": 30},
+  {"n": "143", "factors": ["11", "13"], "positive_period": 60, "even_period": 30, "unit_exponent": 60},
+  {"n": "221", "factors": ["13", "17"], "positive_period": 48, "even_period": 24, "unit_exponent": 48}
+]
