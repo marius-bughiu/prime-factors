@@ -558,3 +558,6 @@ import PrimeFactors.QuotientPascalTransfer
 import PrimeFactors.PascalCandidateCount
 import PrimeFactors.MeanSquarePrimePartners
 import PrimeFactors.PrimeGapPopulation
+import PrimeFactors.GeometryWeightMenu
+import PrimeFactors.WeightedPrimeCrowding
+import PrimeFactors.WeightedCrowdingEstimates

@@ -994,6 +994,22 @@ def case_row(result):
                 count += f" · next convolution requires {operations['next_convolution_inputs']:,} inputs"
         if w.get('checked_factor_range'):
             evidence += '<p>The factor certificate also checks the public interval and the reported range containing the factor.</p>'
+    elif result['method'] == 'geometry-weight-menu':
+        work = result['geometry_weight_menu']
+        arms = ', '.join(f'({a}, {b}) for {h} tests' for a, b, h in work['selected_arms'])
+        count = (f"Product remainder {work['residue']} modulo 24 · {arms}"
+                 f" · {work['roots_per_schedule']} square roots per schedule")
+        if work.get('previous_certificate'):
+            link = escape(work['previous_certificate'])
+            factors_before = ' × '.join(map(escape, work['previous_factors']))
+            evidence += f'<p>Previous schedule found {factors_before}. <a href="{link}">Check the prime factors</a></p>'
+    elif result['method'] == 'weighted-crowding':
+        work = result['weighted_crowding']
+        count = (f"{work['tests']:,} of 2,016 weight pairs · {work['integer_roots']:,} square roots"
+                 f" · {work['square_hits']} exact squares")
+        if work['weights']:
+            a, b = work['weights']
+            count += f" · first success at weights {a}, {b}"
     elif result['method'] == 'quotient-pascal':
         work = result['quotient_pascal']
         receipt = result['quotient_pascal_receipt']

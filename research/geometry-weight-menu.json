@@ -1,0 +1,506 @@
+{
+  "rule": {
+    "1": {
+      "previous": [
+        [
+          3,
+          2,
+          3
+        ],
+        [
+          7,
+          5,
+          12
+        ]
+      ],
+      "selected": [
+        [
+          7,
+          5,
+          9
+        ],
+        [
+          13,
+          11,
+          6
+        ]
+      ]
+    },
+    "5": {
+      "previous": [
+        [
+          3,
+          2,
+          5
+        ],
+        [
+          7,
+          5,
+          10
+        ]
+      ],
+      "selected": [
+        [
+          7,
+          5,
+          8
+        ],
+        [
+          9,
+          7,
+          7
+        ]
+      ]
+    },
+    "7": {
+      "previous": [
+        [
+          3,
+          2,
+          5
+        ],
+        [
+          7,
+          5,
+          10
+        ]
+      ],
+      "selected": [
+        [
+          7,
+          5,
+          7
+        ],
+        [
+          11,
+          7,
+          8
+        ]
+      ]
+    },
+    "11": {
+      "previous": [
+        [
+          3,
+          2,
+          8
+        ],
+        [
+          7,
+          5,
+          7
+        ]
+      ],
+      "selected": [
+        [
+          3,
+          2,
+          7
+        ],
+        [
+          11,
+          7,
+          8
+        ]
+      ]
+    },
+    "13": {
+      "previous": [
+        [
+          3,
+          2,
+          3
+        ],
+        [
+          7,
+          5,
+          12
+        ]
+      ],
+      "selected": [
+        [
+          7,
+          5,
+          9
+        ],
+        [
+          13,
+          11,
+          6
+        ]
+      ]
+    },
+    "17": {
+      "previous": [
+        [
+          3,
+          2,
+          5
+        ],
+        [
+          7,
+          5,
+          10
+        ]
+      ],
+      "selected": [
+        [
+          7,
+          5,
+          8
+        ],
+        [
+          9,
+          7,
+          7
+        ]
+      ]
+    },
+    "19": {
+      "previous": [
+        [
+          3,
+          2,
+          5
+        ],
+        [
+          7,
+          5,
+          10
+        ]
+      ],
+      "selected": [
+        [
+          7,
+          5,
+          7
+        ],
+        [
+          11,
+          7,
+          8
+        ]
+      ]
+    },
+    "23": {
+      "previous": [
+        [
+          3,
+          2,
+          8
+        ],
+        [
+          7,
+          5,
+          7
+        ]
+      ],
+      "selected": [
+        [
+          3,
+          2,
+          7
+        ],
+        [
+          11,
+          7,
+          8
+        ]
+      ]
+    }
+  },
+  "root_budget": {
+    "starts": 3,
+    "ordinary_tests": 16,
+    "weighted_tests": 15,
+    "total": 34
+  },
+  "sixteen_bit_direct_geometry": {
+    "clipped": 49409,
+    "weighted_overlap": 148068,
+    "prefix_overlap": 0
+  },
+  "populations": [
+    {
+      "prime_bits": 16,
+      "products": 592048,
+      "prefix": 145803,
+      "neither": 238287,
+      "residues": {
+        "1": {
+          "products": 73991,
+          "prefix": 12595,
+          "neither": 31383,
+          "previous_extra": 21398,
+          "selected_extra": 24232,
+          "previous_only": 5781,
+          "selected_only": 8615
+        },
+        "5": {
+          "products": 73902,
+          "prefix": 17672,
+          "neither": 30015,
+          "previous_extra": 17860,
+          "selected_extra": 18730,
+          "previous_only": 7485,
+          "selected_only": 8355
+        },
+        "7": {
+          "products": 73898,
+          "prefix": 17705,
+          "neither": 29575,
+          "previous_extra": 17889,
+          "selected_extra": 20916,
+          "previous_only": 5702,
+          "selected_only": 8729
+        },
+        "11": {
+          "products": 74038,
+          "prefix": 24917,
+          "neither": 27879,
+          "previous_extra": 14800,
+          "selected_extra": 14104,
+          "previous_only": 7138,
+          "selected_only": 6442
+        },
+        "13": {
+          "products": 74049,
+          "prefix": 12639,
+          "neither": 31532,
+          "previous_extra": 21338,
+          "selected_extra": 24143,
+          "previous_only": 5735,
+          "selected_only": 8540
+        },
+        "17": {
+          "products": 74118,
+          "prefix": 17698,
+          "neither": 30157,
+          "previous_extra": 17922,
+          "selected_extra": 18756,
+          "previous_only": 7507,
+          "selected_only": 8341
+        },
+        "19": {
+          "products": 74022,
+          "prefix": 17683,
+          "neither": 29763,
+          "previous_extra": 17882,
+          "selected_extra": 20817,
+          "previous_only": 5759,
+          "selected_only": 8694
+        },
+        "23": {
+          "products": 74030,
+          "prefix": 24894,
+          "neither": 27983,
+          "previous_extra": 14688,
+          "selected_extra": 14069,
+          "previous_only": 7084,
+          "selected_only": 6465
+        }
+      },
+      "previous_extra": 143777,
+      "selected_extra": 155767,
+      "previous_only": 52191,
+      "selected_only": 64181
+    },
+    {
+      "prime_bits": 20,
+      "products": 96713943,
+      "prefix": 5939001,
+      "neither": 81862498,
+      "residues": {
+        "1": {
+          "products": 12088232,
+          "prefix": 510113,
+          "neither": 10307826,
+          "previous_extra": 913345,
+          "selected_extra": 975966,
+          "previous_only": 294327,
+          "selected_only": 356948
+        },
+        "5": {
+          "products": 12089292,
+          "prefix": 720586,
+          "neither": 10315269,
+          "previous_extra": 716713,
+          "selected_extra": 748869,
+          "previous_only": 304568,
+          "selected_only": 336724
+        },
+        "7": {
+          "products": 12088751,
+          "prefix": 720861,
+          "neither": 10170797,
+          "previous_extra": 716446,
+          "selected_extra": 866091,
+          "previous_only": 331002,
+          "selected_only": 480647
+        },
+        "11": {
+          "products": 12090440,
+          "prefix": 1017411,
+          "neither": 10137264,
+          "previous_extra": 596003,
+          "selected_extra": 642783,
+          "previous_only": 292982,
+          "selected_only": 339762
+        },
+        "13": {
+          "products": 12089917,
+          "prefix": 511280,
+          "neither": 10308238,
+          "previous_extra": 912956,
+          "selected_extra": 976472,
+          "previous_only": 293927,
+          "selected_only": 357443
+        },
+        "17": {
+          "products": 12088409,
+          "prefix": 720886,
+          "neither": 10315472,
+          "previous_extra": 715817,
+          "selected_extra": 748047,
+          "previous_only": 304004,
+          "selected_only": 336234
+        },
+        "19": {
+          "products": 12089580,
+          "prefix": 720526,
+          "neither": 10172216,
+          "previous_extra": 716449,
+          "selected_extra": 865677,
+          "previous_only": 331161,
+          "selected_only": 480389
+        },
+        "23": {
+          "products": 12089322,
+          "prefix": 1017338,
+          "neither": 10135416,
+          "previous_extra": 596283,
+          "selected_extra": 643201,
+          "previous_only": 293367,
+          "selected_only": 340285
+        }
+      },
+      "previous_extra": 5884012,
+      "selected_extra": 6467106,
+      "previous_only": 2445338,
+      "selected_only": 3028432
+    },
+    {
+      "prime_bits": 24,
+      "products": 17115589103,
+      "prefix": 259706431,
+      "neither": 16459893465,
+      "residues": {
+        "1": {
+          "products": 2139425046,
+          "prefix": 22271105,
+          "neither": 2060691625,
+          "previous_extra": 40615812,
+          "selected_extra": 43445549,
+          "previous_only": 13016767,
+          "selected_only": 15846504
+        },
+        "5": {
+          "products": 2139455005,
+          "prefix": 31514722,
+          "neither": 2061227764,
+          "previous_extra": 31872718,
+          "selected_extra": 33235206,
+          "previous_only": 13477313,
+          "selected_only": 14839801
+        },
+        "7": {
+          "products": 2139460870,
+          "prefix": 31509269,
+          "neither": 2054716127,
+          "previous_extra": 31874270,
+          "selected_extra": 38569552,
+          "previous_only": 14665922,
+          "selected_only": 21361204
+        },
+        "11": {
+          "products": 2139456666,
+          "prefix": 44551422,
+          "neither": 2053328454,
+          "previous_extra": 26476023,
+          "selected_extra": 28485082,
+          "previous_only": 13091708,
+          "selected_only": 15100767
+        },
+        "13": {
+          "products": 2139447735,
+          "prefix": 22279798,
+          "neither": 2060698506,
+          "previous_extra": 40619989,
+          "selected_extra": 43448646,
+          "previous_only": 13020785,
+          "selected_only": 15849442
+        },
+        "17": {
+          "products": 2139438488,
+          "prefix": 31506550,
+          "neither": 2061207388,
+          "previous_extra": 31877075,
+          "selected_extra": 33242992,
+          "previous_only": 13481558,
+          "selected_only": 14847475
+        },
+        "19": {
+          "products": 2139462909,
+          "prefix": 31514644,
+          "neither": 2054716538,
+          "previous_extra": 31873210,
+          "selected_extra": 38563841,
+          "previous_only": 14667886,
+          "selected_only": 21358517
+        },
+        "23": {
+          "products": 2139442384,
+          "prefix": 44558921,
+          "neither": 2053307063,
+          "previous_extra": 26474396,
+          "selected_extra": 28482540,
+          "previous_only": 13093860,
+          "selected_only": 15102004
+        }
+      },
+      "previous_extra": 261683493,
+      "selected_extra": 287473408,
+      "previous_only": 108515799,
+      "selected_only": 134305714
+    }
+  ],
+  "full_width_controls": [
+    {
+      "fixture": "interior-prime-family-2048",
+      "eligible": true,
+      "residue": 1,
+      "previous_sites": "180492557255172968475717883154241040029246848725579987877019171181112788743183548799197184170945836124147721713414127250545097853937364600321800686700865631",
+      "selected_sites": "199106712214143439270327038500993466731909456469771664371821033556730414908374441344629420034480194427035386902690624405763313292064114076443170993648321474",
+      "previous_found": [],
+      "selected_found": []
+    },
+    {
+      "fixture": "interior-prime-family-fresh-2048",
+      "eligible": false,
+      "residue": 7,
+      "previous_sites": "0",
+      "selected_sites": "0",
+      "previous_found": [],
+      "selected_found": []
+    },
+    {
+      "fixture": "interior-prime-family-crossed-2048",
+      "eligible": true,
+      "residue": 1,
+      "previous_sites": "177048991025729601246875624489042667208547088400168132734293670332016436733636644524516739919131594697665552773695052730205184938877871462684549709600690693",
+      "selected_sites": "195184233669590296876491724285041405837843166642942015639668711785549370623460938364115850674875243724555097476445062411790586791444275125388620722737363235",
+      "previous_found": [],
+      "selected_found": []
+    }
+  ]
+}

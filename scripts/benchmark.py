@@ -68,6 +68,8 @@ from scripts.cheap_multiplier_benchmark import cheap_multiplier_case
 from scripts.interior_prime_family_benchmark import interior_family_case
 from scripts.primitive_multiplier_benchmark import primitive_multiplier_case
 from scripts.equal_six_budget_benchmark import equal_six_case
+from scripts.geometry_weight_benchmark import geometry_weight_case
+from scripts.weighted_crowding_benchmark import weighted_crowding_case
 from scripts.two_interior_benchmark import two_interior_case
 from scripts.residue_batch_benchmark import residue_batch_case
 from experiments.weighted_trace_reuse import search as weighted_trace_reuse_search
@@ -1470,6 +1472,10 @@ end PrimeFactors.Generated
         result = primitive_multiplier_case(case, proof, agree, certify_split)
     elif method == 'equal-six-budget':
         result = equal_six_case(case, proof, agree, certify_split)
+    elif method == 'geometry-weight-menu':
+        result = geometry_weight_case(case, proof, agree, certify_split)
+    elif method == 'weighted-crowding':
+        result = weighted_crowding_case(case, proof, agree, certify_split)
     elif method == 'two-interior-batches':
         result = two_interior_case(case, proof, agree, certify_split)
     elif method == 'residue-batch-allocation':
@@ -1850,6 +1856,8 @@ def main():
                              ('prime-gap-blocks.json', 'interior-prime-family'),
                              ('primitive-multiplier.json', 'primitive-multiplier'),
                              ('equal-six-budget.json', 'equal-six-budget'),
+                             ('geometry-weight-menu.json', 'geometry-weight-menu'),
+                             ('weighted-crowding.json', 'weighted-crowding'),
                              ('two-interior-batches.json', 'two-interior-batches'),
                              ('residue-batch-allocation.json', 'residue-batch-allocation'),
                              ('weighted-trace-reuse.json', 'weighted-trace-reuse'),

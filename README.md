@@ -10,6 +10,10 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**We recovered another specially constructed 2,048-bit product on test 567 of 2,016.** The fresh and crossed comparison inputs exhausted the same list and gave no square. Classical prime-count estimates imply that at least $2^{1504}$ distinct full-size products yield a factor on this list. Even so, for a uniformly chosen eligible pair its success chance is less than one in $2^{460}$. [Construction, count and probability](discoveries/prime-products-found-by-first-square-tests.md)
+
+Using the product remainder to choose which two ratios to search increased the number of small products factored at the same budget. Among all 592,048 eligible products of two 16-bit primes, the new rule found 64,181 previously missed products and lost 52,191 previously found. At 24 bits per prime it gained 25,789,915 net. It missed all three full-size comparisons. [Rule, populations and full-size width guarantee](discoveries/choosing-two-slopes-from-the-product-remainder.md)
+
 **A formula for the factors can still take an enormous amount of work.** For 2,623 the new formula checks five odd candidates and gives 43 × 61. On our independently generated 2,048-bit example, the same formula calls for more than $2^{1019}$ candidates. We checked five and found no factor. [Example and proof](discoveries/which-factors-a-quotient-pascal-row-sees.md)
 
 **We have a verified improvement for a specific factoring method.** On two deliberately constructed 2,048-bit products, skipping impossible checks reduced the first successful test from 15,264 to 10,176 and from 2,354,188 to 1,569,459. Each pair of primes was chosen near a ratio of three halves. Both searches missed the two comparison products at a budget of 2,097,152 tests each. [What the search uses and how Lean checked the gain](discoveries/factoring-more-products-at-the-same-budget.md)

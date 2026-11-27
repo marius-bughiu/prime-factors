@@ -1,0 +1,65 @@
+[
+  {
+    "id": "geometry-weight-gain-32",
+    "description": "First new-only split in the 16-bit census ordered by the two primes.",
+    "n": "2415956311",
+    "checks": {
+      "residue": 7,
+      "selected_arms": [
+        [
+          7,
+          5,
+          7
+        ],
+        [
+          11,
+          7,
+          8
+        ]
+      ],
+      "roots_per_schedule": 34,
+      "shared_run_roots": 43,
+      "previous_found": null,
+      "selected_found": "38393"
+    },
+    "status": "complete",
+    "factors": [
+      "38393",
+      "62927"
+    ],
+    "remaining": []
+  },
+  {
+    "id": "geometry-weight-loss-32",
+    "description": "First previous-only split in the 16-bit census ordered by the two primes.",
+    "n": "2417258621",
+    "checks": {
+      "residue": 5,
+      "selected_arms": [
+        [
+          7,
+          5,
+          8
+        ],
+        [
+          9,
+          7,
+          7
+        ]
+      ],
+      "roots_per_schedule": 34,
+      "shared_run_roots": 42,
+      "previous_found": "39719",
+      "selected_found": null
+    },
+    "status": "partial",
+    "factors": [],
+    "remaining": [
+      "2417258621"
+    ],
+    "previous_factors": [
+      "39719",
+      "60859"
+    ]
+  }
+]
