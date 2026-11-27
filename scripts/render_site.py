@@ -1091,6 +1091,23 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'reciprocal-anchor':
+        w = result['reciprocal_anchor']
+        if 'period' in (w['anchor'] or {}):
+            count = (f"{w['steps']:,} convergent steps · period of {int(w['anchor']['period']).bit_length()} bits"
+                     f" · at most {compact_count(int(w['possible_sum_positions_at_most']))} possible sums"
+                     f" among {compact_count(int(w['sum_positions']))} positions after the modulus-60 sieve"
+                     f" · {w['examined']} positions examined · {w['square_tests']} exact square tests")
+        else:
+            count = "Continued-fraction setup"
+        receipt = result.get('anchor_receipt')
+        if receipt:
+            evidence += f' · <a href="{escape(receipt["proof"])}">Checked square witnesses and period count</a>'
+            verification += ' + ' + duration(receipt['seconds']) + ' (residue proof)'
+    elif result['method'] == 'neighbor-factorial':
+        w = result['neighbor_factorial']
+        count = (f"{w['raw_terms']} consecutive offsets · {w['filtered_terms']} after the modulo-72 test"
+                 f" · gcd {escape(w['filtered_gcd'])} · {w['trace_square_roots']} square roots in the comparison")
     elif result['method'] == 'signed-discriminant-menu':
         w = result['signed_discriminant_menu']
         runs = w['modes']

@@ -12,6 +12,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**The product alone rules out about half the sums that an earlier test still allows.** On our fresh 2,048-bit example, we proved that at least 49.83% of those possible sums can be discarded. On a smaller product this reduced the actual list from 40 sums to 19 and gave 9,203 × 14,957. The full-size list remains far too large, and the 768 positions we tried did not yield a factor. [How we obtained the rule from the product](discoveries/halving-the-sum-residues-on-a-fresh-product.md)
+
 **The product can sometimes tell us which extra matches to look for.** When division by 12 leaves 5 or 7, an extra comparison can reveal only one of the two hidden primes. Keeping that comparison alongside the previous one found 2,479 more factors across 19,546 small products using the same random draws. Both 2,048-bit comparison products remained unresolved. [Small worked example and full-size cost](discoveries/when-the-product-picks-a-collision.md)
 
 **We can prove that this can find factors the earlier search would miss on exactly the same guesses.** On a specified family of 2,048-bit products, more than 7.5% of random sequences give the new method a factor while the old labels never match. The proof needs about $5.5\times10^{153}$ accepted guesses. That guarantee is far beyond a practical computation. [Same-input comparison and a certified example](discoveries/comparing-complementary-labels-at-the-same-budget.md)

@@ -80,6 +80,8 @@ from scripts.reciprocal_prefix_benchmark import prefix_case
 from scripts.twelve_residue_benchmark import twelve_residue_case
 from scripts.complementary_key_benchmark import case_result as complementary_key_case
 from scripts.signed_discriminant_benchmark import signed_discriminant_case
+from scripts.reciprocal_anchor_benchmark import run_case as reciprocal_anchor_case
+from experiments.neighbor_factorial import benchmark_case as neighbor_factorial_case
 from scripts.two_interior_benchmark import two_interior_case
 from scripts.residue_batch_benchmark import residue_batch_case
 from experiments.weighted_trace_reuse import search as weighted_trace_reuse_search
@@ -1507,6 +1509,10 @@ end PrimeFactors.Generated
         result = twelve_residue_case(case, proof, agree, certify_split)
     elif method == 'complementary-keys':
         result = complementary_key_case(case, proof, agree, certify_split)
+    elif method == 'reciprocal-anchor':
+        result = reciprocal_anchor_case(case, proof, agree, certify_split)
+    elif method == 'neighbor-factorial':
+        result = neighbor_factorial_case(case, proof, agree, certify_split)
     elif method == 'signed-discriminant-menu':
         result = signed_discriminant_case(case, proof, agree, certify_split)
     elif method == 'reciprocal-prefix-pairs':
@@ -1940,6 +1946,8 @@ def main():
                              ('twelve-residue-collision.json', 'twelve-residue-collision'),
                              ('complementary-keys.json', 'complementary-keys'),
                              ('signed-discriminant-menu.json', 'signed-discriminant-menu'),
+                             ('reciprocal-anchors.json', 'reciprocal-anchor'),
+                             ('neighbor-factorial.json', 'neighbor-factorial'),
                              ('two-interior-batches.json', 'two-interior-batches'),
                              ('residue-batch-allocation.json', 'residue-batch-allocation'),
                              ('weighted-trace-reuse.json', 'weighted-trace-reuse'),

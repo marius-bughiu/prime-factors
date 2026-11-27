@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+On both 2,048-bit controls, public square-root witnesses now cut the candidate sums of the same-modulus square test by at least 49.83% within the actual interval. An adaptive Jacobi test reads the extra sign without factoring the modulus. [Full-size bounds, samples and costs](halving-the-sum-residues-on-a-fresh-product.md) · [Four small factorizations](comparing-reciprocal-sum-classes.md) · [A neighboring-factorial batch and its stronger square-search baseline](what-neighboring-factorial-determinants-can-detect.md)
+
 A square root of a negative number modulo the public input can rule out half the unit residues for each hidden divisor. On 135,229, two related signs removed the last two false factor sums from a small wheel. A separate lifting theorem explains exactly when tracking the factor gap as well as the midpoint removes candidate pairs. [Divisor and sum sign rules](what-a-negative-square-says-about-every-divisor.md) · [Coupled midpoint and gap checks](lifting-the-midpoint-and-gap-together.md)
 
 For one predecessor-power search the limit now covers every base from 2 through $2^{21}$ together. Even permitting a different 1,000-smooth exponent for every input leaves the fraction that could split below $2^{-177}$. The count includes successful intermediate checkpoints. [Proof and assumptions](trying-every-small-base-in-a-predecessor-sweep.md)

@@ -613,3 +613,11 @@ import PrimeFactors.DyadicSumGap
 import PrimeFactors.CharacterInterval
 import PrimeFactors.ReciprocalSumCharacter
 import PrimeFactors.ReciprocalDivisorClasses
+import PrimeFactors.NeighborFactorialDeterminant
+import PrimeFactors.ReciprocalDivisorSums
+import PrimeFactors.ReciprocalSearchWindow
+import PrimeFactors.ReciprocalTraceHalving
+import PrimeFactors.HalfPeriodWindow
+import PrimeFactors.SaturatedTraceSplit
+import PrimeFactors.ReciprocalAdaptiveCharacter
+import PrimeFactors.OrientedTraceClasses
