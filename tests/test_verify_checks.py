@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import runpy
 import subprocess
 import tempfile
 import unittest
@@ -49,6 +50,44 @@ class VerifyChecksTests(unittest.TestCase):
         (self.root/'research/input.json').unlink()
         self.assertNotEqual(self.key(), key)
         self.assertNotEqual(self.key(), self.key(environment='different-interpreter'))
+
+    def test_registering_an_independent_receipt_preserves_previous_record(self):
+        source = (verify_checks.ROOT / 'scripts/verification_registry.py').read_text()
+        registry = self.put('scripts/verification_registry.py', source +
+                            "\nCHECKS += (experiment('driver', '--check', data=('research/input.json',)),)\n")
+        def registered():
+            return {check.name: check for check in runpy.run_path(str(registry))['CHECKS']}
+
+        execute = Mock()
+        def check_once(check):
+            return run(check, Inputs(self.root), 'runtime', self.cache, execute)
+
+        self.assertEqual(check_once(registered()['driver']), 'ran')
+        registry.write_text(registry.read_text() +
+                            "\nCHECKS += (experiment('new_receipt', data=('research/new.json',)),)\n")
+        self.put('experiments/new_receipt.py', 'print("new")\n')
+        self.put('research/new.json', '[]')
+        checks = registered()
+        self.assertEqual(check_once(checks['driver']), 'reused')
+        self.assertEqual(check_once(checks['new_receipt']), 'ran')
+        self.assertEqual(execute.call_count, 2)
+
+        self.put('scripts/verify_checks.py', '# changed verification engine')
+        self.assertEqual(check_once(checks['driver']), 'ran')
+
+    def test_receipt_key_includes_its_expanded_specification(self):
+        original = self.key()
+        empty = self.root / 'empty'
+        empty.mkdir()
+        # Adding an empty input directory changes the specification while leaving
+        # its list of expanded files the same.
+        with_extra_group = experiment('driver', '--check', data=(*self.check.data, 'empty'))
+        self.assertNotEqual(original, self.key(with_extra_group))
+        self.assertNotEqual(original, self.key(experiment('driver', '--check', data=self.check.data,
+                                                          proof='new-output')))
+        same_files = ('PrimeFactors', 'PrimeFactors.lean')
+        self.assertNotEqual(self.key(experiment('driver', data=same_files)),
+                            self.key(experiment('driver', data=same_files, lean=True)))
 
     def test_fallback_groups_command_and_toolchain(self):
         check = experiment('driver', data=('research',), lean=True)

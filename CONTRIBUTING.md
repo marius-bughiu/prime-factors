@@ -30,4 +30,8 @@ python3 scripts/benchmark.py --cache-dir build/verification-cache
 python3 scripts/verify_checks.py --group receipts --cache-dir build/verification-cache
 ```
 
-An empty cache runs the entire suite. Changes to shared verification code, toolchain pins, or inputs with wider dependencies can trigger a broader replay. GitHub saves reusable state from successful pushes to `main`. To run every benchmark and check again, use **Actions → Verify and publish → Run workflow**, or omit `--cache-dir` locally. [Verification workflow](.github/workflows/verify.yml)
+Adding a standalone experiment and its fixture lets benchmark cases keep their previous results when their own inputs are unchanged. Editing an existing fixture reruns the changed cases and any other cases that read the edited file. Editing a Lean module rebuilds it and its importers. Benchmark proofs that depend on that module are checked again. The runner uses broader dependencies for some child processes and runs cases fresh when it cannot account for their inputs. Changing shared benchmark code, including a Python module imported by the runner, or changing the toolchain can require a full replay.
+
+Independent research checks are listed in `scripts/verification_registry.py`. Give a new check its command, input files and any proof outputs it publishes. Adding a check with its own inputs preserves existing independent records. The unit-test suite has a single record covering the checkout.
+
+An empty cache runs the entire suite. GitHub saves reusable state from successful pushes to `main`. To run every benchmark and check again, use **Actions → Verify and publish → Run workflow**, or omit `--cache-dir` locally. [Verification workflow](.github/workflows/verify.yml)

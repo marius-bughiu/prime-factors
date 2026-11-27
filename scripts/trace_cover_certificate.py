@@ -217,7 +217,10 @@ def check_schedule(n, k, m, result, right, proof, *, sparse=None):
     without replaying optimization or using known factors.
     """
     proof = Path(proof)
-    previous = proof.read_text() if proof.exists() else ''
+    try:
+        previous = proof.read_text()
+    except FileNotFoundError:
+        previous = ''
     base, marked, section = previous.partition(_MARKER)
     suffix = ''
     if marked:

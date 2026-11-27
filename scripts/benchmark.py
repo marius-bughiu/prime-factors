@@ -22,7 +22,9 @@ from scripts import benchmark_state
 
 STARTUP_INPUTS = benchmark_state.Observed()
 # An embedding may already have imported an experiment and performed fixture I/O.
-STARTUP_INPUTS.opaque = any(k.startswith('experiments.') for k in sys.modules)
+STARTUP_INPUTS.unsafe = any(
+    k.startswith(('experiments.', 'scripts.')) and k not in (__name__, 'scripts.benchmark_state')
+    for k in sys.modules)
 _startup_observation = benchmark_state.observe(ROOT, STARTUP_INPUTS)
 _startup_observation.__enter__()
 from experiments.adaptive_quartic_cover import search as adaptive_quartic_search
@@ -1990,8 +1992,14 @@ end PrimeFactors.Generated
     if method == 'shifted':
         if result['shifted']['status'] != case['shifted']['status']:
             raise ValueError(f"Unexpected shifted-square result for {name}")
-    if result['verified'] != complete or (complete and not proof.is_file()):
+    if result['verified'] != complete:
         raise ValueError(f'Unexpected proof status for {name}')
+    if complete:
+        try:
+            with proof.open('rb'):
+                pass
+        except (FileNotFoundError, IsADirectoryError) as error:
+            raise ValueError(f'Unexpected proof status for {name}') from error
     if method == 'weighted-square-subsets' and case.get('check_unique_subset'):
         mask = sum(1 << (2*(w-1)+i) for w, i in search['witness']['rows'])
         source, counts = subset_exclusion_certificate(int(case['n']), 'WeightedSubsetControl', allow_pivot=True)
@@ -2051,10 +2059,13 @@ theorem {theorem} (x y : ℕ) (pair : x*y={int(case['n'])})
 
 def cpu_name():
     proc = Path('/proc/cpuinfo')
-    if proc.is_file():
-        for line in proc.read_text().splitlines():
-            if line.startswith('model name'):
-                return line.split(':', 1)[-1].strip()
+    try:
+        lines = proc.read_text().splitlines()
+    except FileNotFoundError:
+        lines = []
+    for line in lines:
+        if line.startswith('model name'):
+            return line.split(':', 1)[-1].strip()
     if platform.system() == 'Darwin':
         info = subprocess.run(['/usr/sbin/sysctl', '-n', 'machdep.cpu.brand_string'],
                               capture_output=True, text=True)
@@ -2252,8 +2263,8 @@ def main(argv=None):
                         help='reuse previously verified benchmark rows and proof sources')
     args = parser.parse_args(argv)
     from scripts.certificate_cache import configure
-    cache_dir = args.cache_dir.resolve() if args.cache_dir is not None else None
-    out = args.out.resolve()
+    cache_dir = benchmark_state.output_path(args.cache_dir) if args.cache_dir is not None else None
+    out = benchmark_state.output_path(args.out)
     if cache_dir is not None and (cache_dir == ROOT or cache_dir in ROOT.parents
                                   or cache_dir == out or cache_dir in out.parents or out in cache_dir.parents):
         parser.error('choose a dedicated cache directory separate from the repository and output')
@@ -2281,6 +2292,8 @@ def main(argv=None):
             return benchmark_state.input_hashes(ROOT, runtime, ignored=(
                 work, cache, out/'proofs', out/'results.json', cache_dir and cache_dir/'certificates'))
         initial = inputs() if cache is not None else None
+        if initial is not None and initial.guard:
+            print(f'Running benchmark rows fresh for untracked input access: {initial.guard}', flush=True)
         results, hits, keys = benchmark_state.run_cases(
             iter_cases(), run_case, fresh, work, provenance, initial, cache, STARTUP_INPUTS)
         finished_sha = subprocess.check_output(revision_command, cwd=ROOT, text=True).strip()
@@ -2293,9 +2306,7 @@ def main(argv=None):
         (work/'results.json').write_text(json.dumps(data, indent=2) + '\n')
         if cache is not None:
             benchmark_state.publish_entries(work/'entries', keys, cache)
-        from scripts.verify_checks import CHECKS
-        standalone = {name for check in CHECKS for name in check.outputs}
-        benchmark_state.publish_site(work, out, standalone)
+        benchmark_state.publish_site(work, out, benchmark_state.standalone_proofs())
     print(f'Benchmark rows: {len(results)-hits} executed, {hits} reused.', flush=True)
 
 

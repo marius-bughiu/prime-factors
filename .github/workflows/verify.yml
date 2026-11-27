@@ -30,7 +30,7 @@ jobs:
           platform="$RUNNER_OS-$RUNNER_ARCH-$ID-$VERSION_ID"
           lean="lean-project-v1-$platform-$PINS-"
           python_version=$(python3 -c 'import platform; print(platform.python_version())')
-          checks="verified-checks-v1-$platform-py$python_version-$PINS-"
+          checks="verified-checks-v2-$platform-py$python_version-$PINS-"
           # Git tree identities include filenames, so module renames change the key.
           sources=$(git rev-parse HEAD:PrimeFactors HEAD:PrimeFactors.lean | sha256sum | cut -d' ' -f1)
           {
