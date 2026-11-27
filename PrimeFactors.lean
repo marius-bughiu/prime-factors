@@ -745,3 +745,4 @@ import PrimeFactors.ThreeAdicUniversalSpacing
 import PrimeFactors.UniversalSumStride
 import PrimeFactors.UniversalPackingBudget
 import PrimeFactors.SmallRadixPackingPopulation
+import PrimeFactors.SmallNormSquarePopulation
