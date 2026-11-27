@@ -20,6 +20,8 @@ Let $r_p,r_q$ be the counts of regular remainders modulo the two primes. Fix one
 
 ## What the proof says at 2,048 bits
 
+With a trillion independent random draws from the whole product, the chance that this search finds either prime is smaller than the chance of tossing 939 heads in a row with a fair coin. That upper bound includes factors found during the preliminary checks. [Counting the chances of success](trillion-twelve-residue-draws.md)
+
 For any two distinct 1,024-bit primes, take $2^{511}$ independent uniform regular samples with replacement. The probability that some pair has equal values at exactly one prime exceeds 95%. The upper bound for direct equality on those same samples is $7/16$, or 43.75%. The proof counts words without any repeated value and accounts for pairs that match at both primes. It applies to every such prime pair, regardless of how the primes were chosen. It is a theorem about ideal random samples. The bounded experiments below use a seeded generator for reproducibility. [Counting proof](../PrimeFactors/UniformFiberBirthday.lean)
 
 The sample count is about $6.7\times10^{153}$. Even storing just one 256-byte remainder for each draw would take about $1.7\times10^{156}$ bytes. This gives a sufficient sample budget for this method. It places no lower bound on other factoring methods. Counting exactly how many distinct keys the product admits would itself yield the primes in at most four quadratic tests. Computing that count cheaply remains open. [Probability theorem on the actual keys](../PrimeFactors/TwelveSeedBirthday.lean) · [Recovering factors from the count](counting-twelve-residue-keys.md)

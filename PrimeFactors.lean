@@ -581,3 +581,5 @@ import PrimeFactors.TwelveCollisionBatch
 import PrimeFactors.UniformFiberBirthday
 import PrimeFactors.TwelveImageSize
 import PrimeFactors.TwelveSeedBirthday
+import PrimeFactors.TwelvePracticalBudget
+import PrimeFactors.TwelveSmallSeeds

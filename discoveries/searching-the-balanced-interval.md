@@ -1,6 +1,8 @@
 # Searching the balanced interval
 
-Grouping twelve remainders at a time increased the number of small products split on the same samples. The probability bound applies to any two distinct 1,024-bit primes and still needs about $6.7\times10^{153}$ samples for its 95% guarantee. A separate complete divisor search reduced the number of cells on eight 25-bit prime pairs from 66,816 to 42,192. The full-size search remains out of reach. [Grouped comparison](comparing-twelve-remainders-at-once.md) · [Wider divisor intervals](two-wider-quotient-sweeps.md)
+Grouping twelve remainders at a time increased the number of small products split on the same samples. For two distinct 1,024-bit primes, a trillion uniform draws give this method less than a $2^{-939}$ chance of success. Taking $2^{511}$ independent uniform regular draws raises the chance above 95%. Taking that many consecutive integers starting at 16 is guaranteed to miss. [Grouped comparison](comparing-twelve-remainders-at-once.md) · [Trillion-draw bound](trillion-twelve-residue-draws.md) · [Consecutive inputs](counting-twelve-residue-keys.md)
+
+A separate complete divisor search reduced the number of cells on eight 25-bit prime pairs from 66,816 to 42,192. The full-size sweep remains out of reach. [Wider divisor intervals](two-wider-quotient-sweeps.md)
 
 Two other results identify information that would suffice to recover the primes. One uses bits of the factors read from factorial ratios, and the other uses the zeta coefficient at the product. Both explain the work still needed to evaluate those quantities. [Factor bits](dyadic-totative-masks.md) · [Zeta coefficient](selberg-coefficients-at-multiples.md)
 
