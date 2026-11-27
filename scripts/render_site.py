@@ -1091,6 +1091,25 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'rectangular-root-windows':
+        w = result['rectangular_windows']
+        count = (f"{w['rows']:,} multipliers visited · {w['intervals']:,} intervals opened"
+                 f" · {w['coordinates']:,} coordinates · {w['square_tests']:,} exact square tests")
+        if w['first']:
+            count += f" · first factor at multiplier {w['first']['multiplier']:,}"
+        if 'bound' in w:
+            bound = w['bound']
+            kept = int(bound['allowed_at_most'])
+            total = int(bound['rows'])
+            removed = 10000*(total-kept)//total
+            evidence += (f"<p>The known prime widths exclude at least {removed/100:.2f}% of all "
+                         f"{compact_count(total)} multipliers. The complete retained intervals contain at most "
+                         f"{compact_count(int(bound['coordinates_at_most']))} candidate positions. "
+                         f'<a href="{escape(w["proof"])}">Checked counting proof</a></p>')
+            count_time = duration(w['count_seconds']) + ' (counting proof)'
+            verification = verification + ' + ' + count_time if checked else count_time
+        if w['per_row'] is not None:
+            count += f" · at most {w['per_row']} positions per interval through multiplier {w['rows_limit']:,}"
     elif result['method'] == 'tangent-lattice-arcs':
         w = result['tangent_lattice']
         if w['mode'] == 'count':

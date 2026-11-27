@@ -1,0 +1,2848 @@
+{
+  "seed": "rectangular-root-windows/v1",
+  "checks": {
+    "products": 126,
+    "root_classes": 438
+  },
+  "panel": [
+    {
+      "bits": 16,
+      "sample": 0,
+      "n": "2711864411",
+      "factors": [
+        "41687",
+        "65053"
+      ],
+      "methods": {
+        "signed": {
+          "data": {
+            "first": {
+              "target": 3,
+              "multiplier": 517,
+              "x": "1930",
+              "y": "683627",
+              "rows": 2273,
+              "coordinates": 681,
+              "square_tests": 283
+            },
+            "work": {
+              "rows": 6298,
+              "rejected_rows": 4714,
+              "intervals": 1584,
+              "coordinates": 1654,
+              "square_tests": 686,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "65053"
+          },
+          "times": [
+            4338000,
+            4223000,
+            4216000,
+            4721000
+          ],
+          "first_times": [
+            1877000,
+            1873000,
+            1877000,
+            1841000
+          ]
+        },
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": 3,
+              "multiplier": 517,
+              "x": "1930",
+              "y": "683627",
+              "rows": 2273,
+              "coordinates": 2708,
+              "square_tests": 2708
+            },
+            "work": {
+              "rows": 6298,
+              "rejected_rows": 0,
+              "intervals": 6298,
+              "coordinates": 6221,
+              "square_tests": 6221,
+              "squares": 4,
+              "truncated_positions": 0
+            },
+            "factor": "65053"
+          },
+          "times": [
+            6247000,
+            5997000,
+            6095000,
+            6103000
+          ],
+          "first_times": [
+            2577000,
+            2236000,
+            2414000,
+            2239000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 9169,
+              "ellipse_blocks": 7495,
+              "hyperbola_blocks": 1674,
+              "line_tests": 3670,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 173015,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 3648,
+              "endpoint_isqrts": 18338,
+              "axis_isqrts": 2,
+              "bound_isqrts": 10,
+              "euclidean_steps": 19227,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 5003,
+              "ellipse_blocks": 3702,
+              "hyperbola_blocks": 1301,
+              "line_tests": 1996,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 91481,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 1979,
+              "endpoint_isqrts": 10006,
+              "axis_isqrts": 1,
+              "bound_isqrts": 6,
+              "euclidean_steps": 10603,
+              "capped": 0
+            },
+            "factor": "65053"
+          },
+          "times": [
+            35450000,
+            35763000,
+            34707000,
+            37722000
+          ],
+          "first_times": [
+            19368000,
+            19770000,
+            18750000,
+            21193000
+          ]
+        },
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 975,
+              "x": "266",
+              "y": "1626059",
+              "rows": 975,
+              "coordinates": 724,
+              "square_tests": 202
+            },
+            "work": {
+              "rows": 1393,
+              "rejected_rows": 522,
+              "intervals": 871,
+              "coordinates": 871,
+              "square_tests": 240,
+              "squares": 1,
+              "truncated_positions": 0
+            },
+            "factor": "41687"
+          },
+          "times": [
+            1514000,
+            1426000,
+            1466000,
+            1381000
+          ],
+          "first_times": [
+            1224000,
+            1136000,
+            1166000,
+            1103000
+          ]
+        }
+      },
+      "certificate": "697798119390719a7ebb69ef5723ed4378ab4dd3c445c3f1901ee8cabc63dab1"
+    },
+    {
+      "bits": 16,
+      "sample": 1,
+      "n": "2758260559",
+      "factors": [
+        "50051",
+        "55109"
+      ],
+      "methods": {
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": -6,
+              "multiplier": 649,
+              "x": "2479",
+              "y": "546215",
+              "rows": 4436,
+              "coordinates": 4984,
+              "square_tests": 4984
+            },
+            "work": {
+              "rows": 6334,
+              "rejected_rows": 0,
+              "intervals": 6334,
+              "coordinates": 6250,
+              "square_tests": 6250,
+              "squares": 8,
+              "truncated_positions": 0
+            },
+            "factor": "50051"
+          },
+          "times": [
+            5990000,
+            6105000,
+            5989000,
+            5947000
+          ],
+          "first_times": [
+            4275000,
+            4426000,
+            4367000,
+            4292000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 9130,
+              "ellipse_blocks": 6477,
+              "hyperbola_blocks": 2653,
+              "line_tests": 3600,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 148008,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 3581,
+              "endpoint_isqrts": 18260,
+              "axis_isqrts": 3,
+              "bound_isqrts": 10,
+              "euclidean_steps": 19345,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 6742,
+              "ellipse_blocks": 4089,
+              "hyperbola_blocks": 2653,
+              "line_tests": 2662,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 111062,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 2646,
+              "endpoint_isqrts": 13484,
+              "axis_isqrts": 3,
+              "bound_isqrts": 8,
+              "euclidean_steps": 14173,
+              "capped": 0
+            },
+            "factor": "55109"
+          },
+          "times": [
+            33784000,
+            34954000,
+            35020000,
+            33624000
+          ],
+          "first_times": [
+            24875000,
+            25799000,
+            25198000,
+            24738000
+          ]
+        },
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 440,
+              "x": "529",
+              "y": "1101651",
+              "rows": 440,
+              "coordinates": 472,
+              "square_tests": 132
+            },
+            "work": {
+              "rows": 1401,
+              "rejected_rows": 525,
+              "intervals": 876,
+              "coordinates": 866,
+              "square_tests": 243,
+              "squares": 1,
+              "truncated_positions": 0
+            },
+            "factor": "55109"
+          },
+          "times": [
+            1516000,
+            1433000,
+            1444000,
+            1414000
+          ],
+          "first_times": [
+            763000,
+            770000,
+            784000,
+            762000
+          ]
+        },
+        "signed": {
+          "data": {
+            "first": {
+              "target": -6,
+              "multiplier": 649,
+              "x": "2479",
+              "y": "546215",
+              "rows": 4436,
+              "coordinates": 1486,
+              "square_tests": 508
+            },
+            "work": {
+              "rows": 6334,
+              "rejected_rows": 4502,
+              "intervals": 1832,
+              "coordinates": 1868,
+              "square_tests": 675,
+              "squares": 5,
+              "truncated_positions": 0
+            },
+            "factor": "50051"
+          },
+          "times": [
+            4542000,
+            4543000,
+            4514000,
+            4541000
+          ],
+          "first_times": [
+            3624000,
+            3628000,
+            3599000,
+            3623000
+          ]
+        }
+      },
+      "certificate": "3b14afd60c14e1f961fe1c2a49f26e805c08d4e245fb7f82e21a108507e587e3"
+    },
+    {
+      "bits": 16,
+      "sample": 3,
+      "n": "2495288833",
+      "factors": [
+        "45677",
+        "54629"
+      ],
+      "methods": {
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 120,
+              "x": "917",
+              "y": "547207",
+              "rows": 120,
+              "coordinates": 235,
+              "square_tests": 65
+            },
+            "work": {
+              "rows": 1355,
+              "rejected_rows": 508,
+              "intervals": 847,
+              "coordinates": 819,
+              "square_tests": 234,
+              "squares": 1,
+              "truncated_positions": 0
+            },
+            "factor": "54629"
+          },
+          "times": [
+            1416000,
+            1369000,
+            1358000,
+            1400000
+          ],
+          "first_times": [
+            551000,
+            528000,
+            517000,
+            529000
+          ]
+        },
+        "signed": {
+          "data": {
+            "first": {
+              "target": -1,
+              "multiplier": 50,
+              "x": "883",
+              "y": "353219",
+              "rows": 50,
+              "coordinates": 76,
+              "square_tests": 32
+            },
+            "work": {
+              "rows": 4771,
+              "rejected_rows": 3860,
+              "intervals": 911,
+              "coordinates": 1024,
+              "square_tests": 430,
+              "squares": 4,
+              "truncated_positions": 0
+            },
+            "factor": "54629"
+          },
+          "times": [
+            3768000,
+            3226000,
+            3362000,
+            3476000
+          ],
+          "first_times": [
+            462000,
+            461000,
+            452000,
+            455000
+          ]
+        },
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": -1,
+              "multiplier": 50,
+              "x": "883",
+              "y": "353219",
+              "rows": 50,
+              "coordinates": 234,
+              "square_tests": 234
+            },
+            "work": {
+              "rows": 4771,
+              "rejected_rows": 0,
+              "intervals": 4771,
+              "coordinates": 4689,
+              "square_tests": 4689,
+              "squares": 17,
+              "truncated_positions": 0
+            },
+            "factor": "54629"
+          },
+          "times": [
+            4978000,
+            4495000,
+            4574000,
+            4695000
+          ],
+          "first_times": [
+            235000,
+            103000,
+            104000,
+            118000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 10000,
+              "ellipse_blocks": 7477,
+              "hyperbola_blocks": 2523,
+              "line_tests": 4017,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 166264,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 4010,
+              "endpoint_isqrts": 20000,
+              "axis_isqrts": 4,
+              "bound_isqrts": 10,
+              "euclidean_steps": 23087,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 1242,
+              "ellipse_blocks": 1242,
+              "hyperbola_blocks": 0,
+              "line_tests": 510,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 22356,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 510,
+              "endpoint_isqrts": 2484,
+              "axis_isqrts": 2,
+              "bound_isqrts": 2,
+              "euclidean_steps": 2423,
+              "capped": 0
+            },
+            "factor": "54629"
+          },
+          "times": [
+            37761000,
+            37329000,
+            39400000,
+            37253000
+          ],
+          "first_times": [
+            4814000,
+            4551000,
+            4562000,
+            4643000
+          ]
+        }
+      },
+      "certificate": "a277732148e1f9d70144d13e0f90263779d406682a4ea882b800915febef584b"
+    },
+    {
+      "bits": 16,
+      "sample": 4,
+      "n": "3592650469",
+      "factors": [
+        "54973",
+        "65353"
+      ],
+      "methods": {
+        "signed": {
+          "data": {
+            "first": {
+              "target": -1,
+              "multiplier": 530,
+              "x": "239",
+              "y": "1379893",
+              "rows": 530,
+              "coordinates": 205,
+              "square_tests": 89
+            },
+            "work": {
+              "rows": 5946,
+              "rejected_rows": 4315,
+              "intervals": 1631,
+              "coordinates": 1663,
+              "square_tests": 574,
+              "squares": 8,
+              "truncated_positions": 0
+            },
+            "factor": "54973"
+          },
+          "times": [
+            4341000,
+            4221000,
+            4201000,
+            4243000
+          ],
+          "first_times": [
+            716000,
+            659000,
+            657000,
+            653000
+          ]
+        },
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": -1,
+              "multiplier": 530,
+              "x": "239",
+              "y": "1379893",
+              "rows": 530,
+              "coordinates": 890,
+              "square_tests": 890
+            },
+            "work": {
+              "rows": 5946,
+              "rejected_rows": 0,
+              "intervals": 5946,
+              "coordinates": 5896,
+              "square_tests": 5896,
+              "squares": 8,
+              "truncated_positions": 0
+            },
+            "factor": "54973"
+          },
+          "times": [
+            5695000,
+            5799000,
+            5727000,
+            5710000
+          ],
+          "first_times": [
+            621000,
+            589000,
+            583000,
+            584000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 10071,
+              "ellipse_blocks": 8188,
+              "hyperbola_blocks": 1883,
+              "line_tests": 3914,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 176087,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 3893,
+              "endpoint_isqrts": 20142,
+              "axis_isqrts": 4,
+              "bound_isqrts": 10,
+              "euclidean_steps": 23373,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 1782,
+              "ellipse_blocks": 1782,
+              "hyperbola_blocks": 0,
+              "line_tests": 695,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 33858,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 693,
+              "endpoint_isqrts": 3564,
+              "axis_isqrts": 2,
+              "bound_isqrts": 2,
+              "euclidean_steps": 4169,
+              "capped": 0
+            },
+            "factor": "54973"
+          },
+          "times": [
+            37925000,
+            37019000,
+            36754000,
+            36724000
+          ],
+          "first_times": [
+            6752000,
+            6609000,
+            6490000,
+            6554000
+          ]
+        },
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 525,
+              "x": "956",
+              "y": "1373369",
+              "rows": 525,
+              "coordinates": 544,
+              "square_tests": 136
+            },
+            "work": {
+              "rows": 1530,
+              "rejected_rows": 574,
+              "intervals": 956,
+              "coordinates": 923,
+              "square_tests": 228,
+              "squares": 2,
+              "truncated_positions": 0
+            },
+            "factor": "65353"
+          },
+          "times": [
+            1533000,
+            1481000,
+            1476000,
+            1470000
+          ],
+          "first_times": [
+            843000,
+            808000,
+            813000,
+            801000
+          ]
+        }
+      },
+      "certificate": "136da5ff2fdfaa9e28c72064365517692d797037f5acbfaa9379daa66cdc047f"
+    },
+    {
+      "bits": 16,
+      "sample": 5,
+      "n": "2307220897",
+      "factors": [
+        "42239",
+        "54623"
+      ],
+      "methods": {
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": 2,
+              "multiplier": 271,
+              "x": "569",
+              "y": "559132",
+              "rows": 1591,
+              "coordinates": 1943,
+              "square_tests": 1943
+            },
+            "work": {
+              "rows": 4648,
+              "rejected_rows": 0,
+              "intervals": 4648,
+              "coordinates": 4571,
+              "square_tests": 4571,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "54623"
+          },
+          "times": [
+            4534000,
+            4372000,
+            6220000,
+            6710000
+          ],
+          "first_times": [
+            1599000,
+            1613000,
+            3152000,
+            1614000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 9615,
+              "ellipse_blocks": 7189,
+              "hyperbola_blocks": 2426,
+              "line_tests": 3828,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 159872,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 3804,
+              "endpoint_isqrts": 19230,
+              "axis_isqrts": 4,
+              "bound_isqrts": 10,
+              "euclidean_steps": 22218,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 5393,
+              "ellipse_blocks": 3774,
+              "hyperbola_blocks": 1619,
+              "line_tests": 2134,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 90594,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 2122,
+              "endpoint_isqrts": 10786,
+              "axis_isqrts": 3,
+              "bound_isqrts": 6,
+              "euclidean_steps": 12997,
+              "capped": 0
+            },
+            "factor": "54623"
+          },
+          "times": [
+            40445000,
+            39729000,
+            38169000,
+            41242000
+          ],
+          "first_times": [
+            19817000,
+            20506000,
+            21546000,
+            25525000
+          ]
+        },
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 63,
+              "x": "1105",
+              "y": "381256",
+              "rows": 63,
+              "coordinates": 160,
+              "square_tests": 41
+            },
+            "work": {
+              "rows": 1320,
+              "rejected_rows": 495,
+              "intervals": 825,
+              "coordinates": 801,
+              "square_tests": 205,
+              "squares": 1,
+              "truncated_positions": 0
+            },
+            "factor": "42239"
+          },
+          "times": [
+            1343000,
+            1364000,
+            1364000,
+            1359000
+          ],
+          "first_times": [
+            475000,
+            479000,
+            461000,
+            476000
+          ]
+        },
+        "signed": {
+          "data": {
+            "first": {
+              "target": 2,
+              "multiplier": 271,
+              "x": "569",
+              "y": "559132",
+              "rows": 1591,
+              "coordinates": 420,
+              "square_tests": 170
+            },
+            "work": {
+              "rows": 4648,
+              "rejected_rows": 3760,
+              "intervals": 888,
+              "coordinates": 997,
+              "square_tests": 396,
+              "squares": 2,
+              "truncated_positions": 0
+            },
+            "factor": "54623"
+          },
+          "times": [
+            3224000,
+            3240000,
+            3259000,
+            3224000
+          ],
+          "first_times": [
+            1499000,
+            1510000,
+            1522000,
+            1506000
+          ]
+        }
+      },
+      "certificate": "2700a0f6a08a63f743c6992fb5ea73d30436c3b532d0419ee5bbbc02d109c92b"
+    },
+    {
+      "bits": 16,
+      "sample": 6,
+      "n": "2235277003",
+      "factors": [
+        "43093",
+        "51871"
+      ],
+      "methods": {
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 9595,
+              "ellipse_blocks": 6562,
+              "hyperbola_blocks": 3033,
+              "line_tests": 3752,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 137098,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 3722,
+              "endpoint_isqrts": 19190,
+              "axis_isqrts": 3,
+              "bound_isqrts": 10,
+              "euclidean_steps": 20198,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 6364,
+              "ellipse_blocks": 6364,
+              "hyperbola_blocks": 0,
+              "line_tests": 2571,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 107433,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 2549,
+              "endpoint_isqrts": 12728,
+              "axis_isqrts": 2,
+              "bound_isqrts": 8,
+              "euclidean_steps": 13569,
+              "capped": 0
+            },
+            "factor": "43093"
+          },
+          "times": [
+            40195000,
+            37784000,
+            43878000,
+            34988000
+          ],
+          "first_times": [
+            23868000,
+            26066000,
+            28404000,
+            23289000
+          ]
+        },
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 120,
+              "x": "797",
+              "y": "517913",
+              "rows": 120,
+              "coordinates": 233,
+              "square_tests": 58
+            },
+            "work": {
+              "rows": 1306,
+              "rejected_rows": 490,
+              "intervals": 816,
+              "coordinates": 812,
+              "square_tests": 207,
+              "squares": 1,
+              "truncated_positions": 0
+            },
+            "factor": "51871"
+          },
+          "times": [
+            1347000,
+            1325000,
+            2792000,
+            1502000
+          ],
+          "first_times": [
+            530000,
+            516000,
+            1102000,
+            513000
+          ]
+        },
+        "signed": {
+          "data": {
+            "first": {
+              "target": -3,
+              "multiplier": 1759,
+              "x": "115",
+              "y": "1144822",
+              "rows": 3405,
+              "coordinates": 1125,
+              "square_tests": 358
+            },
+            "work": {
+              "rows": 5906,
+              "rejected_rows": 4196,
+              "intervals": 1710,
+              "coordinates": 1736,
+              "square_tests": 624,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "43093"
+          },
+          "times": [
+            4362000,
+            7620000,
+            4318000,
+            4466000
+          ],
+          "first_times": [
+            2781000,
+            4704000,
+            2677000,
+            2809000
+          ]
+        },
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": -3,
+              "multiplier": 1759,
+              "x": "115",
+              "y": "1144822",
+              "rows": 3405,
+              "coordinates": 3392,
+              "square_tests": 3392
+            },
+            "work": {
+              "rows": 5906,
+              "rejected_rows": 0,
+              "intervals": 5906,
+              "coordinates": 5810,
+              "square_tests": 5810,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "43093"
+          },
+          "times": [
+            5473000,
+            5566000,
+            9609000,
+            9558000
+          ],
+          "first_times": [
+            3173000,
+            3204000,
+            4692000,
+            6690000
+          ]
+        }
+      },
+      "certificate": "43238c0cbddba2e4c9c2a00b93319a519a9ccf2db63eec3726a0c94d7a2fbdc9"
+    },
+    {
+      "bits": 16,
+      "sample": 7,
+      "n": "3946477141",
+      "factors": [
+        "62791",
+        "62851"
+      ],
+      "methods": {
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 1,
+              "x": "30",
+              "y": "62821",
+              "rows": 1,
+              "coordinates": 1,
+              "square_tests": 1
+            },
+            "work": {
+              "rows": 1578,
+              "rejected_rows": 592,
+              "intervals": 986,
+              "coordinates": 966,
+              "square_tests": 275,
+              "squares": 29,
+              "truncated_positions": 0
+            },
+            "factor": "62851"
+          },
+          "times": [
+            1622000,
+            1570000,
+            1626000,
+            1576000
+          ],
+          "first_times": [
+            430000,
+            410000,
+            465000,
+            408000
+          ]
+        },
+        "signed": {
+          "data": {
+            "first": {
+              "target": -3,
+              "multiplier": 436,
+              "x": "2053",
+              "y": "757333",
+              "rows": 4291,
+              "coordinates": 1212,
+              "square_tests": 429
+            },
+            "work": {
+              "rows": 6132,
+              "rejected_rows": 4453,
+              "intervals": 1679,
+              "coordinates": 1729,
+              "square_tests": 564,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "62791"
+          },
+          "times": [
+            4396000,
+            4454000,
+            4291000,
+            4355000
+          ],
+          "first_times": [
+            3205000,
+            3235000,
+            3161000,
+            3228000
+          ]
+        },
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": -3,
+              "multiplier": 436,
+              "x": "2053",
+              "y": "757333",
+              "rows": 4291,
+              "coordinates": 4725,
+              "square_tests": 4725
+            },
+            "work": {
+              "rows": 6132,
+              "rejected_rows": 0,
+              "intervals": 6132,
+              "coordinates": 6001,
+              "square_tests": 6001,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "62791"
+          },
+          "times": [
+            5913000,
+            5711000,
+            5726000,
+            5633000
+          ],
+          "first_times": [
+            4298000,
+            4128000,
+            4119000,
+            4051000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 10554,
+              "ellipse_blocks": 8581,
+              "hyperbola_blocks": 1973,
+              "line_tests": 4185,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 184555,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 4143,
+              "endpoint_isqrts": 21108,
+              "axis_isqrts": 4,
+              "bound_isqrts": 10,
+              "euclidean_steps": 24499,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 8232,
+              "ellipse_blocks": 6259,
+              "hyperbola_blocks": 1973,
+              "line_tests": 3269,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 150897,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 3240,
+              "endpoint_isqrts": 16464,
+              "axis_isqrts": 4,
+              "bound_isqrts": 8,
+              "euclidean_steps": 19204,
+              "capped": 0
+            },
+            "factor": "62851"
+          },
+          "times": [
+            39936000,
+            38969000,
+            39151000,
+            39732000
+          ],
+          "first_times": [
+            31256000,
+            30512000,
+            30612000,
+            30864000
+          ]
+        }
+      },
+      "certificate": "88395eff48e3a5bfe2e59918db360d0a712f27283fa572a6c3306a9283f57e94"
+    },
+    {
+      "bits": 16,
+      "sample": 8,
+      "n": "2688990671",
+      "factors": [
+        "46499",
+        "57829"
+      ],
+      "methods": {
+        "signed": {
+          "data": {
+            "first": {
+              "target": 3,
+              "multiplier": 169,
+              "x": "1474",
+              "y": "389205",
+              "rows": 1919,
+              "coordinates": 420,
+              "square_tests": 171
+            },
+            "work": {
+              "rows": 6280,
+              "rejected_rows": 4952,
+              "intervals": 1328,
+              "coordinates": 1338,
+              "square_tests": 551,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "57829"
+          },
+          "times": [
+            4018000,
+            4065000,
+            4153000,
+            4004000
+          ],
+          "first_times": [
+            1623000,
+            1614000,
+            1614000,
+            1614000
+          ]
+        },
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": 3,
+              "multiplier": 169,
+              "x": "1474",
+              "y": "389205",
+              "rows": 1919,
+              "coordinates": 2280,
+              "square_tests": 2280
+            },
+            "work": {
+              "rows": 6280,
+              "rejected_rows": 0,
+              "intervals": 6280,
+              "coordinates": 6125,
+              "square_tests": 6125,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "57829"
+          },
+          "times": [
+            5921000,
+            6225000,
+            6034000,
+            6103000
+          ],
+          "first_times": [
+            1926000,
+            1946000,
+            2009000,
+            2010000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 7221,
+              "ellipse_blocks": 0,
+              "hyperbola_blocks": 7221,
+              "line_tests": 2855,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 146668,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 2848,
+              "endpoint_isqrts": 14442,
+              "axis_isqrts": 1,
+              "bound_isqrts": 6,
+              "euclidean_steps": 15602,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 3655,
+              "ellipse_blocks": 0,
+              "hyperbola_blocks": 3655,
+              "line_tests": 1424,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 59437,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 1422,
+              "endpoint_isqrts": 7310,
+              "axis_isqrts": 1,
+              "bound_isqrts": 4,
+              "euclidean_steps": 7841,
+              "capped": 0
+            },
+            "factor": "57829"
+          },
+          "times": [
+            27326000,
+            27068000,
+            27942000,
+            27678000
+          ],
+          "first_times": [
+            13474000,
+            13378000,
+            13558000,
+            13636000
+          ]
+        },
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 80,
+              "x": "1179",
+              "y": "463811",
+              "rows": 80,
+              "coordinates": 190,
+              "square_tests": 54
+            },
+            "work": {
+              "rows": 1389,
+              "rejected_rows": 521,
+              "intervals": 868,
+              "coordinates": 865,
+              "square_tests": 256,
+              "squares": 2,
+              "truncated_positions": 0
+            },
+            "factor": "57829"
+          },
+          "times": [
+            1438000,
+            1444000,
+            1481000,
+            1464000
+          ],
+          "first_times": [
+            503000,
+            491000,
+            504000,
+            505000
+          ]
+        }
+      },
+      "certificate": "ce12f4d25bed57960c1a19e54122dfe596908ba70c0dc067b028ab73d0802c36"
+    },
+    {
+      "bits": 20,
+      "sample": 1,
+      "n": "690436661659",
+      "factors": [
+        "828101",
+        "833759"
+      ],
+      "methods": {
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": 6,
+              "multiplier": 8070,
+              "x": "1926",
+              "y": "30473551",
+              "rows": 31950,
+              "coordinates": 34900,
+              "square_tests": 34900
+            },
+            "work": {
+              "rows": 39939,
+              "rejected_rows": 0,
+              "intervals": 39939,
+              "coordinates": 39498,
+              "square_tests": 39498,
+              "squares": 2,
+              "truncated_positions": 0
+            },
+            "factor": "833759"
+          },
+          "times": [
+            37747000,
+            37291000,
+            37473000,
+            37346000
+          ],
+          "first_times": [
+            31281000,
+            30748000,
+            30838000,
+            30750000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 62812,
+              "ellipse_blocks": 43622,
+              "hyperbola_blocks": 19190,
+              "line_tests": 26359,
+              "max_lines_per_block": 2,
+              "coordinate_positions": 2409523,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 26131,
+              "endpoint_isqrts": 125624,
+              "axis_isqrts": 3,
+              "bound_isqrts": 10,
+              "euclidean_steps": 183391,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 52455,
+              "ellipse_blocks": 43622,
+              "hyperbola_blocks": 8833,
+              "line_tests": 22196,
+              "max_lines_per_block": 2,
+              "coordinate_positions": 2150614,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 21971,
+              "endpoint_isqrts": 104910,
+              "axis_isqrts": 3,
+              "bound_isqrts": 10,
+              "euclidean_steps": 151692,
+              "capped": 0
+            },
+            "factor": "833759"
+          },
+          "times": [
+            272106000,
+            268243000,
+            272394000,
+            270535000
+          ],
+          "first_times": [
+            227254000,
+            224112000,
+            228156000,
+            225728000
+          ]
+        },
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 1,
+              "x": "2829",
+              "y": "830930",
+              "rows": 1,
+              "coordinates": 5,
+              "square_tests": 2
+            },
+            "work": {
+              "rows": 8837,
+              "rejected_rows": 3314,
+              "intervals": 5523,
+              "coordinates": 5427,
+              "square_tests": 1479,
+              "squares": 2,
+              "truncated_positions": 0
+            },
+            "factor": "833759"
+          },
+          "times": [
+            6947000,
+            6543000,
+            6728000,
+            6663000
+          ],
+          "first_times": [
+            441000,
+            405000,
+            413000,
+            415000
+          ]
+        },
+        "signed": {
+          "data": {
+            "first": {
+              "target": 6,
+              "multiplier": 8070,
+              "x": "1926",
+              "y": "30473551",
+              "rows": 31950,
+              "coordinates": 10291,
+              "square_tests": 3493
+            },
+            "work": {
+              "rows": 39939,
+              "rejected_rows": 28559,
+              "intervals": 11380,
+              "coordinates": 11396,
+              "square_tests": 3932,
+              "squares": 2,
+              "truncated_positions": 0
+            },
+            "factor": "833759"
+          },
+          "times": [
+            21458000,
+            21576000,
+            21942000,
+            21623000
+          ],
+          "first_times": [
+            17969000,
+            18116000,
+            18436000,
+            18166000
+          ]
+        }
+      },
+      "certificate": "6ba261f607d1734c5bd8b8746d397fd620bf0f49663d2dcda002ea52725d4d9d"
+    },
+    {
+      "bits": 20,
+      "sample": 3,
+      "n": "607906798591",
+      "factors": [
+        "596363",
+        "1019357"
+      ],
+      "methods": {
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 1643,
+              "x": "3586",
+              "y": "31603653",
+              "rows": 1643,
+              "coordinates": 2295,
+              "square_tests": 649
+            },
+            "work": {
+              "rows": 8469,
+              "rejected_rows": 3176,
+              "intervals": 5293,
+              "coordinates": 5279,
+              "square_tests": 1476,
+              "squares": 1,
+              "truncated_positions": 0
+            },
+            "factor": "596363"
+          },
+          "times": [
+            6533000,
+            6940000,
+            6608000,
+            6558000
+          ],
+          "first_times": [
+            1861000,
+            2289000,
+            1874000,
+            1825000
+          ]
+        },
+        "signed": {
+          "data": {
+            "first": {
+              "target": -6,
+              "multiplier": 6295,
+              "x": "11287",
+              "y": "25254614",
+              "rows": 29182,
+              "coordinates": 9382,
+              "square_tests": 3232
+            },
+            "work": {
+              "rows": 38278,
+              "rejected_rows": 27259,
+              "intervals": 11019,
+              "coordinates": 11005,
+              "square_tests": 3927,
+              "squares": 4,
+              "truncated_positions": 0
+            },
+            "factor": "596363"
+          },
+          "times": [
+            21681000,
+            21151000,
+            21284000,
+            21407000
+          ],
+          "first_times": [
+            17165000,
+            16831000,
+            16874000,
+            17017000
+          ]
+        },
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": -6,
+              "multiplier": 6295,
+              "x": "11287",
+              "y": "25254614",
+              "rows": 29182,
+              "coordinates": 32394,
+              "square_tests": 32394
+            },
+            "work": {
+              "rows": 38278,
+              "rejected_rows": 0,
+              "intervals": 38278,
+              "coordinates": 37941,
+              "square_tests": 37941,
+              "squares": 4,
+              "truncated_positions": 0
+            },
+            "factor": "596363"
+          },
+          "times": [
+            38357000,
+            37373000,
+            36822000,
+            36203000
+          ],
+          "first_times": [
+            30287000,
+            29337000,
+            29148000,
+            28585000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 53503,
+              "ellipse_blocks": 38188,
+              "hyperbola_blocks": 15315,
+              "line_tests": 22513,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 2197336,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 22329,
+              "endpoint_isqrts": 107006,
+              "axis_isqrts": 3,
+              "bound_isqrts": 10,
+              "euclidean_steps": 154801,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 42885,
+              "ellipse_blocks": 27570,
+              "hyperbola_blocks": 15315,
+              "line_tests": 18110,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 1872178,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 17980,
+              "endpoint_isqrts": 85770,
+              "axis_isqrts": 3,
+              "bound_isqrts": 8,
+              "euclidean_steps": 124642,
+              "capped": 0
+            },
+            "factor": "596363"
+          },
+          "times": [
+            235860000,
+            233104000,
+            231490000,
+            240655000
+          ],
+          "first_times": [
+            188500000,
+            187582000,
+            185498000,
+            195027000
+          ]
+        }
+      },
+      "certificate": "f931ce25f32f1579fadbbaa8df7e87cde1cc20eb2d60e4721c67b4b5dcad9b83"
+    },
+    {
+      "bits": 20,
+      "sample": 5,
+      "n": "646266184261",
+      "factors": [
+        "709901",
+        "910361"
+      ],
+      "methods": {
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": -1,
+              "multiplier": 6245,
+              "x": "2099",
+              "y": "63528988",
+              "rows": 6245,
+              "coordinates": 7250,
+              "square_tests": 7250
+            },
+            "work": {
+              "rows": 33581,
+              "rejected_rows": 0,
+              "intervals": 33581,
+              "coordinates": 33443,
+              "square_tests": 33443,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "709901"
+          },
+          "times": [
+            31081000,
+            33017000,
+            32321000,
+            35657000
+          ],
+          "first_times": [
+            6017000,
+            6574000,
+            6440000,
+            6910000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 55566,
+              "ellipse_blocks": 45309,
+              "hyperbola_blocks": 10257,
+              "line_tests": 23804,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 2361727,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 23551,
+              "endpoint_isqrts": 111132,
+              "axis_isqrts": 4,
+              "bound_isqrts": 10,
+              "euclidean_steps": 168795,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 10235,
+              "ellipse_blocks": 10235,
+              "hyperbola_blocks": 0,
+              "line_tests": 4410,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 470810,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 4371,
+              "endpoint_isqrts": 20470,
+              "axis_isqrts": 2,
+              "bound_isqrts": 2,
+              "euclidean_steps": 31715,
+              "capped": 0
+            },
+            "factor": "709901"
+          },
+          "times": [
+            236926000,
+            258776000,
+            246071000,
+            248984000
+          ],
+          "first_times": [
+            43806000,
+            54480000,
+            44816000,
+            45020000
+          ]
+        },
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 63,
+              "x": "8291",
+              "y": "6380818",
+              "rows": 63,
+              "coordinates": 419,
+              "square_tests": 98
+            },
+            "work": {
+              "rows": 8645,
+              "rejected_rows": 3242,
+              "intervals": 5403,
+              "coordinates": 5338,
+              "square_tests": 1447,
+              "squares": 1,
+              "truncated_positions": 0
+            },
+            "factor": "709901"
+          },
+          "times": [
+            6478000,
+            7067000,
+            6883000,
+            7176000
+          ],
+          "first_times": [
+            523000,
+            527000,
+            533000,
+            532000
+          ]
+        },
+        "signed": {
+          "data": {
+            "first": {
+              "target": -1,
+              "multiplier": 6245,
+              "x": "2099",
+              "y": "63528988",
+              "rows": 6245,
+              "coordinates": 1382,
+              "square_tests": 581
+            },
+            "work": {
+              "rows": 33581,
+              "rejected_rows": 24488,
+              "intervals": 9093,
+              "coordinates": 9183,
+              "square_tests": 3141,
+              "squares": 2,
+              "truncated_positions": 0
+            },
+            "factor": "709901"
+          },
+          "times": [
+            18072000,
+            18961000,
+            18673000,
+            18731000
+          ],
+          "first_times": [
+            3081000,
+            3091000,
+            3128000,
+            3063000
+          ]
+        }
+      },
+      "certificate": "d7356a998a6e2e692e77a0b04e2a323c0e676673c6d8a3902f0b522789b21824"
+    },
+    {
+      "bits": 20,
+      "sample": 6,
+      "n": "735451519643",
+      "factors": [
+        "768419",
+        "957097"
+      ],
+      "methods": {
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 57822,
+              "ellipse_blocks": 47183,
+              "hyperbola_blocks": 10639,
+              "line_tests": 24545,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 2849289,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 24321,
+              "endpoint_isqrts": 115644,
+              "axis_isqrts": 2,
+              "bound_isqrts": 10,
+              "euclidean_steps": 167309,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 22904,
+              "ellipse_blocks": 22904,
+              "hyperbola_blocks": 0,
+              "line_tests": 9744,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 1030497,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 9639,
+              "endpoint_isqrts": 45808,
+              "axis_isqrts": 1,
+              "bound_isqrts": 4,
+              "euclidean_steps": 69160,
+              "capped": 0
+            },
+            "factor": "768419"
+          },
+          "times": [
+            253804000,
+            248429000,
+            250224000,
+            250170000
+          ],
+          "first_times": [
+            99208000,
+            98371000,
+            98649000,
+            98437000
+          ]
+        },
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 4047,
+              "x": "1610",
+              "y": "54556139",
+              "rows": 4047,
+              "coordinates": 3681,
+              "square_tests": 976
+            },
+            "work": {
+              "rows": 9025,
+              "rejected_rows": 3384,
+              "intervals": 5641,
+              "coordinates": 5536,
+              "square_tests": 1440,
+              "squares": 1,
+              "truncated_positions": 0
+            },
+            "factor": "768419"
+          },
+          "times": [
+            7053000,
+            6913000,
+            6929000,
+            6858000
+          ],
+          "first_times": [
+            3761000,
+            3537000,
+            3576000,
+            3544000
+          ]
+        },
+        "signed": {
+          "data": {
+            "first": {
+              "target": -2,
+              "multiplier": 9771,
+              "x": "415",
+              "y": "59942042",
+              "rows": 9771,
+              "coordinates": 2471,
+              "square_tests": 1049
+            },
+            "work": {
+              "rows": 40788,
+              "rejected_rows": 30706,
+              "intervals": 10082,
+              "coordinates": 10241,
+              "square_tests": 4309,
+              "squares": 8,
+              "truncated_positions": 0
+            },
+            "factor": "957097"
+          },
+          "times": [
+            20469000,
+            20175000,
+            20760000,
+            20724000
+          ],
+          "first_times": [
+            4893000,
+            4793000,
+            4814000,
+            4799000
+          ]
+        },
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": -2,
+              "multiplier": 9771,
+              "x": "415",
+              "y": "59942042",
+              "rows": 9771,
+              "coordinates": 10515,
+              "square_tests": 10515
+            },
+            "work": {
+              "rows": 40788,
+              "rejected_rows": 0,
+              "intervals": 40788,
+              "coordinates": 40549,
+              "square_tests": 40549,
+              "squares": 11,
+              "truncated_positions": 0
+            },
+            "factor": "957097"
+          },
+          "times": [
+            37492000,
+            39319000,
+            40036000,
+            39572000
+          ],
+          "first_times": [
+            9468000,
+            9593000,
+            9665000,
+            9643000
+          ]
+        }
+      },
+      "certificate": "9a312fd9be49c75983b94993100e882307bcc166522eb23723e167094752a72a"
+    },
+    {
+      "bits": 20,
+      "sample": 7,
+      "n": "613792996151",
+      "factors": [
+        "683381",
+        "898171"
+      ],
+      "methods": {
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 6440,
+              "x": "459",
+              "y": "62871511",
+              "rows": 6440,
+              "coordinates": 4599,
+              "square_tests": 1242
+            },
+            "work": {
+              "rows": 8497,
+              "rejected_rows": 3186,
+              "intervals": 5311,
+              "coordinates": 5295,
+              "square_tests": 1434,
+              "squares": 1,
+              "truncated_positions": 0
+            },
+            "factor": "683381"
+          },
+          "times": [
+            6577000,
+            6710000,
+            6526000,
+            6722000
+          ],
+          "first_times": [
+            5153000,
+            5140000,
+            5083000,
+            5352000
+          ]
+        },
+        "signed": {
+          "data": {
+            "first": {
+              "target": 6,
+              "multiplier": 3667,
+              "x": "12143",
+              "y": "19368269",
+              "rows": 26629,
+              "coordinates": 6216,
+              "square_tests": 2549
+            },
+            "work": {
+              "rows": 38404,
+              "rejected_rows": 30341,
+              "intervals": 8063,
+              "coordinates": 8159,
+              "square_tests": 3384,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "898171"
+          },
+          "times": [
+            18098000,
+            18110000,
+            18343000,
+            17959000
+          ],
+          "first_times": [
+            12789000,
+            12888000,
+            12983000,
+            12719000
+          ]
+        },
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": 6,
+              "multiplier": 3667,
+              "x": "12143",
+              "y": "19368269",
+              "rows": 26629,
+              "coordinates": 30197,
+              "square_tests": 30197
+            },
+            "work": {
+              "rows": 38404,
+              "rejected_rows": 0,
+              "intervals": 38404,
+              "coordinates": 38107,
+              "square_tests": 38107,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "898171"
+          },
+          "times": [
+            37100000,
+            36783000,
+            36722000,
+            36219000
+          ],
+          "first_times": [
+            26737000,
+            26131000,
+            26520000,
+            25946000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 43333,
+              "ellipse_blocks": 0,
+              "hyperbola_blocks": 43333,
+              "line_tests": 18162,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 2215928,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 18100,
+              "endpoint_isqrts": 86666,
+              "axis_isqrts": 1,
+              "bound_isqrts": 6,
+              "euclidean_steps": 126439,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 42325,
+              "ellipse_blocks": 0,
+              "hyperbola_blocks": 42325,
+              "line_tests": 17715,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 2153470,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 17653,
+              "endpoint_isqrts": 84650,
+              "axis_isqrts": 1,
+              "bound_isqrts": 6,
+              "euclidean_steps": 125129,
+              "capped": 0
+            },
+            "factor": "683381"
+          },
+          "times": [
+            187318000,
+            191309000,
+            189406000,
+            187173000
+          ],
+          "first_times": [
+            183120000,
+            187143000,
+            185208000,
+            182975000
+          ]
+        }
+      },
+      "certificate": "4165a285761adb40c7754d41c4dba192a29c65111c37c437cde404ab60c1dadd"
+    },
+    {
+      "bits": 20,
+      "sample": 8,
+      "n": "626533436201",
+      "factors": [
+        "727589",
+        "861109"
+      ],
+      "methods": {
+        "signed": {
+          "data": {
+            "first": {
+              "target": -1,
+              "multiplier": 1145,
+              "x": "7543",
+              "y": "26783964",
+              "rows": 1145,
+              "coordinates": 660,
+              "square_tests": 291
+            },
+            "work": {
+              "rows": 30116,
+              "rejected_rows": 24643,
+              "intervals": 5473,
+              "coordinates": 5808,
+              "square_tests": 2418,
+              "squares": 2,
+              "truncated_positions": 0
+            },
+            "factor": "727589"
+          },
+          "times": [
+            13878000,
+            14205000,
+            14253000,
+            14226000
+          ],
+          "first_times": [
+            1040000,
+            1016000,
+            1033000,
+            1018000
+          ]
+        },
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": -1,
+              "multiplier": 1145,
+              "x": "7543",
+              "y": "26783964",
+              "rows": 1145,
+              "coordinates": 3052,
+              "square_tests": 3052
+            },
+            "work": {
+              "rows": 30116,
+              "rejected_rows": 0,
+              "intervals": 30116,
+              "coordinates": 29721,
+              "square_tests": 29721,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "727589"
+          },
+          "times": [
+            28515000,
+            29270000,
+            29473000,
+            29825000
+          ],
+          "first_times": [
+            1513000,
+            1552000,
+            1657000,
+            1648000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 61853,
+              "ellipse_blocks": 46305,
+              "hyperbola_blocks": 15548,
+              "line_tests": 26399,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 2634577,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 26100,
+              "endpoint_isqrts": 123706,
+              "axis_isqrts": 4,
+              "bound_isqrts": 10,
+              "euclidean_steps": 190668,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 9114,
+              "ellipse_blocks": 9114,
+              "hyperbola_blocks": 0,
+              "line_tests": 3897,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 419244,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 3858,
+              "endpoint_isqrts": 18228,
+              "axis_isqrts": 2,
+              "bound_isqrts": 2,
+              "euclidean_steps": 27126,
+              "capped": 0
+            },
+            "factor": "727589"
+          },
+          "times": [
+            263669000,
+            266986000,
+            268948000,
+            269249000
+          ],
+          "first_times": [
+            38711000,
+            38912000,
+            39165000,
+            39941000
+          ]
+        },
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 143,
+              "x": "6771",
+              "y": "9465428",
+              "rows": 143,
+              "coordinates": 641,
+              "square_tests": 172
+            },
+            "work": {
+              "rows": 8556,
+              "rejected_rows": 3209,
+              "intervals": 5347,
+              "coordinates": 5307,
+              "square_tests": 1470,
+              "squares": 1,
+              "truncated_positions": 0
+            },
+            "factor": "727589"
+          },
+          "times": [
+            6552000,
+            6727000,
+            6748000,
+            6864000
+          ],
+          "first_times": [
+            617000,
+            620000,
+            617000,
+            623000
+          ]
+        }
+      },
+      "certificate": "41a83b5ab359122dff609cb3e658e7688d8e3bc6246a87c099a315c0282b2b8f"
+    },
+    {
+      "bits": 20,
+      "sample": 12,
+      "n": "695715799873",
+      "factors": [
+        "742519",
+        "936967"
+      ],
+      "methods": {
+        "signed": {
+          "data": {
+            "first": {
+              "target": 2,
+              "multiplier": 2591,
+              "x": "4527",
+              "y": "30021656",
+              "rows": 11451,
+              "coordinates": 2566,
+              "square_tests": 1075
+            },
+            "work": {
+              "rows": 31184,
+              "rejected_rows": 25520,
+              "intervals": 5664,
+              "coordinates": 6035,
+              "square_tests": 2537,
+              "squares": 2,
+              "truncated_positions": 0
+            },
+            "factor": "936967"
+          },
+          "times": [
+            14472000,
+            17216000,
+            13992000,
+            14158000
+          ],
+          "first_times": [
+            5815000,
+            5638000,
+            5485000,
+            5488000
+          ]
+        },
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": 2,
+              "multiplier": 2591,
+              "x": "4527",
+              "y": "30021656",
+              "rows": 11451,
+              "coordinates": 14095,
+              "square_tests": 14095
+            },
+            "work": {
+              "rows": 31184,
+              "rejected_rows": 0,
+              "intervals": 31184,
+              "coordinates": 30995,
+              "square_tests": 30995,
+              "squares": 4,
+              "truncated_positions": 0
+            },
+            "factor": "936967"
+          },
+          "times": [
+            30176000,
+            29261000,
+            29738000,
+            28892000
+          ],
+          "first_times": [
+            12043000,
+            11544000,
+            11212000,
+            11310000
+          ]
+        },
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 63654,
+              "ellipse_blocks": 47713,
+              "hyperbola_blocks": 15941,
+              "line_tests": 26880,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 2776223,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 26638,
+              "endpoint_isqrts": 127308,
+              "axis_isqrts": 4,
+              "bound_isqrts": 10,
+              "euclidean_steps": 198019,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 26930,
+              "ellipse_blocks": 25098,
+              "hyperbola_blocks": 1832,
+              "line_tests": 11405,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 1247372,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 11283,
+              "endpoint_isqrts": 53860,
+              "axis_isqrts": 3,
+              "bound_isqrts": 6,
+              "euclidean_steps": 83231,
+              "capped": 0
+            },
+            "factor": "936967"
+          },
+          "times": [
+            276707000,
+            272317000,
+            274338000,
+            272874000
+          ],
+          "first_times": [
+            117920000,
+            114551000,
+            116792000,
+            115311000
+          ]
+        },
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 667,
+              "x": "8595",
+              "y": "21541646",
+              "rows": 667,
+              "coordinates": 1461,
+              "square_tests": 384
+            },
+            "work": {
+              "rows": 8860,
+              "rejected_rows": 3323,
+              "intervals": 5537,
+              "coordinates": 5451,
+              "square_tests": 1497,
+              "squares": 1,
+              "truncated_positions": 0
+            },
+            "factor": "936967"
+          },
+          "times": [
+            6660000,
+            6826000,
+            6649000,
+            6613000
+          ],
+          "first_times": [
+            1125000,
+            1082000,
+            1073000,
+            1069000
+          ]
+        }
+      },
+      "certificate": "6e2b964aef6e9c9cf0db34100f846bbd918c926b2bc37fd96c5a0c4a7c2bea78"
+    },
+    {
+      "bits": 20,
+      "sample": 14,
+      "n": "937010231303",
+      "factors": [
+        "927161",
+        "1010623"
+      ],
+      "methods": {
+        "arc": {
+          "data": {
+            "work": {
+              "blocks": 49895,
+              "ellipse_blocks": 0,
+              "hyperbola_blocks": 49895,
+              "line_tests": 20912,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 2737896,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 20864,
+              "endpoint_isqrts": 99790,
+              "axis_isqrts": 1,
+              "bound_isqrts": 6,
+              "euclidean_steps": 148538,
+              "capped": 0
+            },
+            "first": {
+              "blocks": 14713,
+              "ellipse_blocks": 0,
+              "hyperbola_blocks": 14713,
+              "line_tests": 6138,
+              "max_lines_per_block": 1,
+              "coordinate_positions": 573807,
+              "coordinate_isqrts": 0,
+              "discriminant_roots": 6112,
+              "endpoint_isqrts": 29426,
+              "axis_isqrts": 1,
+              "bound_isqrts": 2,
+              "euclidean_steps": 49354,
+              "capped": 0
+            },
+            "factor": "1010623"
+          },
+          "times": [
+            216920000,
+            223134000,
+            228620000,
+            221016000
+          ],
+          "first_times": [
+            64038000,
+            65355000,
+            66531000,
+            66462000
+          ]
+        },
+        "one": {
+          "data": {
+            "first": {
+              "target": 1,
+              "multiplier": 528,
+              "x": "9079",
+              "y": "22242785",
+              "rows": 528,
+              "coordinates": 1386,
+              "square_tests": 381
+            },
+            "work": {
+              "rows": 9784,
+              "rejected_rows": 3669,
+              "intervals": 6115,
+              "coordinates": 6074,
+              "square_tests": 1654,
+              "squares": 2,
+              "truncated_positions": 0
+            },
+            "factor": "927161"
+          },
+          "times": [
+            7399000,
+            7684000,
+            7508000,
+            7300000
+          ],
+          "first_times": [
+            1004000,
+            996000,
+            1043000,
+            968000
+          ]
+        },
+        "signed": {
+          "data": {
+            "first": {
+              "target": 2,
+              "multiplier": 142,
+              "x": "7968",
+              "y": "8156455",
+              "rows": 142,
+              "coordinates": 292,
+              "square_tests": 121
+            },
+            "work": {
+              "rows": 44219,
+              "rejected_rows": 34935,
+              "intervals": 9284,
+              "coordinates": 9413,
+              "square_tests": 3931,
+              "squares": 3,
+              "truncated_positions": 0
+            },
+            "factor": "1010623"
+          },
+          "times": [
+            20914000,
+            20606000,
+            21063000,
+            20562000
+          ],
+          "first_times": [
+            540000,
+            550000,
+            583000,
+            544000
+          ]
+        },
+        "signed_unfiltered": {
+          "data": {
+            "first": {
+              "target": 2,
+              "multiplier": 142,
+              "x": "7968",
+              "y": "8156455",
+              "rows": 142,
+              "coordinates": 1251,
+              "square_tests": 1251
+            },
+            "work": {
+              "rows": 44219,
+              "rejected_rows": 0,
+              "intervals": 44219,
+              "coordinates": 44107,
+              "square_tests": 44107,
+              "squares": 13,
+              "truncated_positions": 0
+            },
+            "factor": "1010623"
+          },
+          "times": [
+            42102000,
+            41822000,
+            42508000,
+            42544000
+          ],
+          "first_times": [
+            438000,
+            429000,
+            443000,
+            441000
+          ]
+        }
+      },
+      "certificate": "924c0195bd8b951f1e45e382f298d3d049b223b49cf2573025f5d379d108a0d4"
+    }
+  ],
+  "full_size": [
+    {
+      "id": "target-norm-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "methods": {
+        "one_raw": {
+          "factor": null,
+          "first": null,
+          "first_cpu_ns": null,
+          "roots": {
+            "1": {}
+          },
+          "work": {
+            "rows": 512,
+            "rejected_rows": 0,
+            "intervals": 512,
+            "coordinates": 1024,
+            "square_tests": 1024,
+            "squares": 0,
+            "truncated_positions": 118520490875531457770869944836310261769591964516161410168061539456894797186955244154945763981118656758866
+          },
+          "row_limits": {
+            "1": "29266450953600690044902996748220718247506779365190051113967971943092481154015862535744152350683354804561959443880250352706438029427432099254486242968167178236216973788369412776195438632833585300308830686588"
+          },
+          "intervals_finished": false,
+          "cpu_ns": 7326000,
+          "candidate_upper_bound": "45867775536803488554284215240632462192644174705667444706096998136948679303676654846668722427041476229690077483470938583111245954522902983675496840320987231569482311626205511259869884193052512381975367724123"
+        },
+        "one_screened": {
+          "factor": null,
+          "first": null,
+          "first_cpu_ns": null,
+          "roots": {
+            "1": {}
+          },
+          "work": {
+            "rows": 512,
+            "rejected_rows": 192,
+            "intervals": 320,
+            "coordinates": 640,
+            "square_tests": 173,
+            "squares": 0,
+            "truncated_positions": 74012941607294129065675807825290891271327064031874232900660774667342702647946231099133688771100950438681
+          },
+          "row_limits": {
+            "1": "29266450953600690044902996748220718247506779365190051113967971943092481154015862535744152350683354804561959443880250352706438029427432099254486242968167178236216973788369412776195438632833585300308830686588"
+          },
+          "intervals_finished": false,
+          "cpu_ns": 4235000,
+          "candidate_upper_bound": "45867775536803488554284215240632462192644174705667444706096998136948679303676654846668722427041476229690077483470938583111245954522902983675496840320987231569482311626205511259869884193052512381975367724123"
+        },
+        "signed_raw": {
+          "factor": null,
+          "first": null,
+          "first_cpu_ns": null,
+          "roots": {
+            "2": {},
+            "-3": {},
+            "-6": {}
+          },
+          "work": {
+            "rows": 1536,
+            "rejected_rows": 0,
+            "intervals": 1536,
+            "coordinates": 3072,
+            "square_tests": 3072,
+            "squares": 0,
+            "truncated_positions": 435136741538914248686023697411189579919105015915663970399040624987110182929463415420687268824416932532915
+          },
+          "row_limits": {
+            "2": "36873417612157393314851039068317953611928537065182598619954920604798235685135258276960485853150665425355017851407929008882709662080318866286160770071532933227385259830052995575092793057425910097823696653496",
+            "-3": "42209526312253437512906584799864920102860286190115203638011477090343166225291141907117600560971301359438972216924957946992367872683898501445936457486741622968459086484841330911421130319992980911649868415215",
+            "-6": "53180670706899624939488297272054589786909881665708755638762761569536409640107013801040702136652712177364009391987005056224060032851627561573805428700519850244282051282489374509919621548725151346336900800307"
+          },
+          "intervals_finished": false,
+          "cpu_ns": 19607000,
+          "candidate_upper_bound": "213653290579427624540719840380012733241655930829411711260472450792339546444103762348777342857912623423806783735650041917958982668554924967288685227435527374704404296828896818847238419603290760262191813838188"
+        },
+        "signed_screened": {
+          "factor": null,
+          "first": null,
+          "first_cpu_ns": null,
+          "roots": {
+            "2": {},
+            "-3": {},
+            "-6": {}
+          },
+          "work": {
+            "rows": 1536,
+            "rejected_rows": 1094,
+            "intervals": 442,
+            "coordinates": 884,
+            "square_tests": 299,
+            "squares": 0,
+            "truncated_positions": 132784249276582385740512326831102559565044611695751874401053730928856547170828627197034208455528333151747
+          },
+          "row_limits": {
+            "2": "36873417612157393314851039068317953611928537065182598619954920604798235685135258276960485853150665425355017851407929008882709662080318866286160770071532933227385259830052995575092793057425910097823696653496",
+            "-3": "42209526312253437512906584799864920102860286190115203638011477090343166225291141907117600560971301359438972216924957946992367872683898501445936457486741622968459086484841330911421130319992980911649868415215",
+            "-6": "53180670706899624939488297272054589786909881665708755638762761569536409640107013801040702136652712177364009391987005056224060032851627561573805428700519850244282051282489374509919621548725151346336900800307"
+          },
+          "intervals_finished": false,
+          "cpu_ns": 6544000,
+          "candidate_upper_bound": "213653290579427624540719840380012733241655930829411711260472450792339546444103762348777342857912623423806783735650041917958982668554924967288685227435527374704404296828896818847238419603290760262191813838188"
+        }
+      }
+    },
+    {
+      "id": "target-norm-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "methods": {
+        "one_raw": {
+          "factor": null,
+          "first": null,
+          "first_cpu_ns": null,
+          "roots": {
+            "1": {}
+          },
+          "work": {
+            "rows": 512,
+            "rejected_rows": 0,
+            "intervals": 512,
+            "coordinates": 1024,
+            "square_tests": 1024,
+            "squares": 0,
+            "truncated_positions": 112398448334149913021035264904321849470486725740139883372357639607894998341782115094052162725340702606957
+          },
+          "row_limits": {
+            "1": "26321086277350004763246605059942532218284120037998274279500410729877980427661563810957400193618018519235555253374801675987274808377413576505576376818132257035668139115658746771246177160785629306067956780766"
+          },
+          "intervals_finished": false,
+          "cpu_ns": 6371000,
+          "candidate_upper_bound": "42809985404668168658194078470222135917567047118247904945285439238591259508088305247345272274902133931889816539118442503356263961061908108751451668551648841614799923105476771887323754186687237514867822307929"
+        },
+        "one_screened": {
+          "factor": null,
+          "first": null,
+          "first_cpu_ns": null,
+          "roots": {
+            "1": {}
+          },
+          "work": {
+            "rows": 512,
+            "rejected_rows": 192,
+            "intervals": 320,
+            "coordinates": 640,
+            "square_tests": 163,
+            "squares": 0,
+            "truncated_positions": 70189886422613085776473920118487619401280779343599740225160184602194263080997103910742805649877309881956
+          },
+          "row_limits": {
+            "1": "26321086277350004763246605059942532218284120037998274279500410729877980427661563810957400193618018519235555253374801675987274808377413576505576376818132257035668139115658746771246177160785629306067956780766"
+          },
+          "intervals_finished": false,
+          "cpu_ns": 3844000,
+          "candidate_upper_bound": "42809985404668168658194078470222135917567047118247904945285439238591259508088305247345272274902133931889816539118442503356263961061908108751451668551648841614799923105476771887323754186687237514867822307929"
+        },
+        "signed_raw": {
+          "factor": null,
+          "first": null,
+          "first_cpu_ns": null,
+          "roots": {
+            "-1": {},
+            "2": {},
+            "-2": {}
+          },
+          "work": {
+            "rows": 1536,
+            "rejected_rows": 0,
+            "intervals": 1536,
+            "coordinates": 3072,
+            "square_tests": 3072,
+            "squares": 0,
+            "truncated_positions": 364724433422040198577539255509217307865128301782940370273815696687341734356996916072326956953643853197147
+          },
+          "row_limits": {
+            "-1": "26321086277350004763246605059942532218284120037998274279500410729877980427661563810957400193618018519235555253374801675987274808377413576505576376818132257035668139115658746771246177160785629306067956780766",
+            "2": "33162490656932356718587656177781403380453700321356182161649016203036250054706378139561885402303732252174236651115770782682693153845428827257279354244357032830894451445529057078932459928229822387934719571176",
+            "-2": "33162490656932356718587656177781403380453700321356182161649016203036250054706378139561885402303732252174236651115770782682693153845428827257279354244357032830894451445529057078932459928229822387934719571176"
+          },
+          "intervals_finished": false,
+          "cpu_ns": 18983000,
+          "candidate_upper_bound": "143682364758671838132859449362244562858036783474101798832318873854730174152422094713494298502667966966491917159186999365163830934012999823728060945494942509962356472417040867550746145211574207388512874432391"
+        },
+        "signed_screened": {
+          "factor": null,
+          "first": null,
+          "first_cpu_ns": null,
+          "roots": {
+            "-1": {},
+            "2": {},
+            "-2": {}
+          },
+          "work": {
+            "rows": 1536,
+            "rejected_rows": 1220,
+            "intervals": 316,
+            "coordinates": 632,
+            "square_tests": 260,
+            "squares": 0,
+            "truncated_positions": 88830776422417194614569338198389165916538713273018613604642856053019523052790247269006073318078142461475
+          },
+          "row_limits": {
+            "-1": "26321086277350004763246605059942532218284120037998274279500410729877980427661563810957400193618018519235555253374801675987274808377413576505576376818132257035668139115658746771246177160785629306067956780766",
+            "2": "33162490656932356718587656177781403380453700321356182161649016203036250054706378139561885402303732252174236651115770782682693153845428827257279354244357032830894451445529057078932459928229822387934719571176",
+            "-2": "33162490656932356718587656177781403380453700321356182161649016203036250054706378139561885402303732252174236651115770782682693153845428827257279354244357032830894451445529057078932459928229822387934719571176"
+          },
+          "intervals_finished": false,
+          "cpu_ns": 5193000,
+          "candidate_upper_bound": "143682364758671838132859449362244562858036783474101798832318873854730174152422094713494298502667966966491917159186999365163830934012999823728060945494942509962356472417040867550746145211574207388512874432391"
+        }
+      }
+    }
+  ],
+  "timing": "Four rotated CPU measurements including setup. First-factor and complete times recorded."
+}

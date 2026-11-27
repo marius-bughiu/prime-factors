@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+The multiplier count uses the product, the bit widths of its factors and the spacing of consecutive squares. It holds unconditionally. The three signed equations motivated the interval search. On the measured inputs the fastest variant used the single difference-of-squares equation. [Proof and comparison](../discoveries/fewer-multiples-to-test.md)
+
 A finite sign calculation selects three small targets, one of which has square roots at both hidden primes. Quadratic reciprocity supplies the public signs. All parts of the three-target representation theorem are unconditional, including the bound on solution size. The outstanding computational question is how to find two suitable solutions from the product alone. [Selection rule, proof and data](../discoveries/three-targets-with-a-guaranteed-square-root.md)
 
 The Dirichlet results suggested asking how many prime pairs realize each possible pattern of small quadratic signs. For our fixed modulus of 9,240, an unconditional progression estimate already shows that each compatible pattern occurs on more than $2^{2000}$ full-size products with the same product residue. Lean takes that published inequality as a premise. Testing whether any one of those products has a given small square root remains an input-specific question. [Realization proof and assumptions](../discoveries/which-small-signs-are-still-missing.md) · [Bennett, Martin, O’Bryant and Rechnitzer, Theorem 1.2](https://personal.math.ubc.ca/~bennett/BeMaObRe-IJM-2018.pdf#page=5)

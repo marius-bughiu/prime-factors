@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+For every 2,048-bit product of two distinct 1,024-bit primes, a difference-of-squares search can skip at least 81.2316% of its multipliers while keeping a guaranteed factor-producing solution. The measured search found all 24 small products and missed both full-size controls within their budgets. [Derivation, worked example and costs](fewer-multiples-to-test.md)
+
 A tangent at a modular solution also describes all nearby solutions modulo the square of the chosen modulus. Using this cuts the complete block counts on the two 2,048-bit inputs to at most 56.17% and 52.46% of the earlier counts. The machine-checked bounds price blocks, and the measurements include the cost of preparing the search. [Tangent lattice, full-size costs and timing](sieving-conic-blocks-by-tangents.md)
 
 Searching the cheapest of three curves first reduced the work to find a factor on two independent small panels. For one full-size input the product permits a different set of three curves, cutting the number of blocks to cover them all by 29%. On the other input the set is forced. Finishing a curve without finding a point also reveals a sign at each hidden prime. Even one such complete scan costs more than $2^{683}$ blocks on both inputs. [Choice and timings](choosing-which-signed-curve-to-search.md) · [What a complete miss reveals](what-an-empty-curve-reveals.md)
