@@ -705,6 +705,7 @@ import PrimeFactors.FareyParentCriterion
 import PrimeFactors.SmoothTotientTail
 import PrimeFactors.SmoothTotientEuler
 import PrimeFactors.LcmConvergentObstruction
+import PrimeFactors.SchoenfeldLcmWindow
 import PrimeFactors.SmoothConvergentPopulation
 import PrimeFactors.PowerRatioAnchor
 import PrimeFactors.AdjacentQuotientSets
