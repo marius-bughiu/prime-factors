@@ -1,0 +1,7 @@
+[
+  {"id": "projective-moment-15", "n": "15", "factors": ["3", "5"]},
+  {"id": "projective-moment-35", "n": "35", "factors": ["5", "7"]},
+  {"id": "projective-moment-77", "n": "77", "factors": ["7", "11"]},
+  {"id": "projective-moment-143", "n": "143", "factors": ["11", "13"]},
+  {"id": "projective-moment-221", "n": "221", "factors": ["13", "17"]}
+]

@@ -1,5 +1,59 @@
 [
   {
+    "id": "first-exceptional-jacobi-moment",
+    "category": "formulas",
+    "title": "The first degree where a Jacobi sum changes identifies the smaller prime",
+    "impact": "For 77 the first change occurs at degree six, one less than the smaller prime, 7. Lean proves this location for every product of two distinct odd primes.",
+    "scope": "Each degree summarizes a complete sum over the product's residue classes. Directly evaluating those sums and reaching the exceptional degree is expensive.",
+    "detail": "Every lower degree has a known value modulo the product. At degree six the known value would be 20, while the measured value is 42 modulo 77.",
+    "sources": [
+      {"href": "discoveries/when-jacobi-moments-first-change.md", "label": "First change and its cost"},
+      {"href": "PrimeFactors/ProjectiveWordMoments.lean", "label": "Lean moment theorem"}
+    ]
+  },
+  {
+    "id": "equally-spaced-divisor-sum-samples",
+    "category": "limits",
+    "title": "Equally spaced samples mix the factor sum with much larger terms",
+    "impact": "For 77 the desired coefficient is 18. With four sample points, a single earlier coefficient contributes 73,728 to the same reading.",
+    "scope": "For an unrotated grid of up to 2⁴⁰ points on a 2,048-bit product, the earlier unwanted coefficient exceeds 2²⁰⁰⁵ even after all small divisor and cofactor contributions are removed through the stated cutoff.",
+    "detail": "The proof uses the positive divisor-sum series and one circle of samples. Signed combinations of measurements from different circles are outside this bound.",
+    "sources": [
+      {"href": "discoveries/reading-a-factor-sum-from-equally-spaced-samples.md", "label": "Four-point example and full-size limit"},
+      {"href": "PrimeFactors/CircularCoefficientFilter.lean", "label": "Lean sampling proof"}
+    ]
+  },
+  {
+    "id": "isolating-an-index-coefficient",
+    "category": "limits",
+    "title": "The neighboring level 528 obscures a reading tuned to 527",
+    "impact": "Even after removing the contributions of divisors up to 7, the contribution from 528 alone makes this positive average too inaccurate to round at any frequency height up to 527.",
+    "scope": "For balanced 2,048-bit products and a divisor cutoff of 1,000, Lean rules out this averaging rule at heights through 2²⁰³⁷. Height measures the sampled frequency range.",
+    "detail": "The exact coefficient at 527 is 49/527 after removing the small divisors. The nearby multiple of 11 contributes more than 1/22 of bias. Signed combinations can cancel contributions and require a separate analysis.",
+    "sources": [
+      {
+        "href": "discoveries/isolating-an-index-coefficient-by-averaging.md",
+        "label": "What the average measures"
+      },
+      {
+        "href": "PrimeFactors/IndexCoefficientWindow.lean",
+        "label": "Lean window and error bounds"
+      }
+    ]
+  },
+  {
+    "id": "prime-power-coefficient-samples",
+    "category": "limits",
+    "title": "All prime-power samples can agree while the coefficient at 77 differs",
+    "impact": "Two normalized modular forms of weight two and level 308 give identical coefficients at every prime power and give 96 and 97 at index 77.",
+    "scope": "The example tests recovery from the level and sample values across the full space. A method specialized to a particular form can use further information.",
+    "detail": "Every positive index that distinguishes the two forms is a multiple of 77. Knowing its complete factorization already gives 7 and 11. The same statement holds for any pair of distinct odd primes.",
+    "sources": [
+      {"href": "discoveries/can-prime-power-coefficients-predict-the-product-coefficient.md", "label": "Forms, hypotheses and example"},
+      {"href": "PrimeFactors/OldformSamples.lean", "label": "Lean sampling counterexample"}
+    ]
+  },
+  {
     "id": "recovering-a-factor-sum-from-a-genus",
     "category": "formulas",
     "title": "A modular curve gives the factor sum of 527",

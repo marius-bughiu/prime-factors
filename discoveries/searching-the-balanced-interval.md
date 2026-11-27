@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A sum of public Jacobi symbols changes at degree six on 77. Lean proves the first exceptional degree is one less than the smaller prime for every odd semiprime with distinct factors. Reaching it by direct summation takes more work than trying divisors. Two attempts to read the factor sum from a series also admit explicit lower bounds on their errors. [Jacobi moments and costs](when-jacobi-moments-first-change.md) · [Equally spaced samples](reading-a-factor-sum-from-equally-spaced-samples.md) · [Frequency averages](isolating-an-index-coefficient-by-averaging.md)
+
 At a larger modular-curve level, one genus estimate with error at most the square root of the level would recover the exact factor sum. Enumerating the curve recovered 527 at a considerable cost. We ruled out two inexpensive estimates, including the published average over levels. Counting the points fixed by a matrix gives a different piece of information, which can remain unchanged as the matrix is raised to higher powers. [Genus, required accuracy and experiment](how-accurately-a-modular-genus-would-determine-the-factors.md) · [What fixed points measure](what-projective-fixed-lines-count.md)
 
 Even testing every one of the 121 sums from the upper word and remainder can succeed on fewer than one in $2^{491}$ eligible 2,048-bit prime pairs. The bound covers any way of choosing among those sums, including one that reads the entire product. [Proof of how often the block contains the true sum](how-often-the-121-sums-can-work.md)

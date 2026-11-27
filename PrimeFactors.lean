@@ -765,3 +765,7 @@ import PrimeFactors.DyadicGenusPrecision
 import PrimeFactors.DyadicGenusAverage
 import PrimeFactors.ProjectiveFixedLines
 import PrimeFactors.ProjectiveWordCounts
+import PrimeFactors.OldformSamples
+import PrimeFactors.CircularCoefficientFilter
+import PrimeFactors.IndexCoefficientWindow
+import PrimeFactors.ProjectiveWordMoments

@@ -12,6 +12,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**The first change in a sum of signs identifies the smaller prime.** On 77 the change occurs at degree six and gives 7. Lean proves the general relation, but a direct scan for two 1,024-bit primes must reach a degree of at least $2^{1023}-1$. All the earlier degrees give predictable answers. [What changes and what it costs](discoveries/when-jacobi-moments-first-change.md)
+
 **A geometric count determines the sum of the two primes.** At 527 the count gave 48, which recovers 17 and 31. Computing it took 10,236 gcd tests, and one of the first 106 had already found 17. For a 2,048-bit product, Lean establishes how accurate an estimate of this count at a larger level would need to be. The published average misses the target on the entire balanced family. [Counting experiment and precision proof](discoveries/how-accurately-a-modular-genus-would-determine-the-factors.md)
 
 **A failed square guess can narrow the next one.** For 2,748,959, the next square is 1,658², just five higher. Three possible factor sums survive the width bounds and several small remainder tests. That difference of five selects 3,360, giving 1,409 × 1,951. On the smaller 174,719 example, the existing remainder rule already singled out the answer. [Worked cases and costs](discoveries/a-fifth-root-test-for-the-factor-sum.md) · [Full-size limit on spacing tests](discoveries/why-the-factor-sum-spacing-repeats.md)
