@@ -751,3 +751,6 @@ import PrimeFactors.ShortDiscriminantWindow
 import PrimeFactors.FixedWindowDigitPacking
 import PrimeFactors.ActualWindowAdvice
 import PrimeFactors.FirstSumMenuPopulation
+import PrimeFactors.HighLowSumPopulation
+import PrimeFactors.HighWordSumRankingBounds
+import PrimeFactors.HighWordSumRanking

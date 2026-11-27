@@ -87,6 +87,14 @@ theorem view_in_word {x n : ℕ} (xp : 1<x) (lo : 2*x^2≤n) (hi : n<(2*x)^2) :
     rw [Nat.add_sub_of_le lr,Nat.add_sub_of_le leftlo,Nat.add_sub_of_le rightlo]
     rfl
 
+/-- All five recorded fields take at most 288 joint values per high product word. -/
+theorem view_cover (x h : ℕ) : ∃ V : Finset View, V.card≤288 ∧
+    ∀ n, 1<x → 2*x^2≤n → n<(2*x)^2 → n/(2*x)=h → view x n∈V := by
+  refine ⟨views x h,views_card x h,?_⟩
+  intro n xp lo hi word
+  rw [←word]
+  exact view_in_word xp lo hi
+
 /-- Two increasing smaller factors with the same sum have products separated by
 at least the smaller-factor separation times a lower bound on the factor gap. -/
 theorem product_spacing {a b p q u d : ℕ} (step : p+u≤a) (gap : a+d≤b)
@@ -111,7 +119,8 @@ private theorem next_residue {a b u : ℕ} (lt : a<b) (same : a%u=b%u) : a+u≤b
   have bb := Nat.mod_add_div b u
   omega
 
-private theorem far_unique {B U D : ℕ} (bp : 0<B) (width : B≤U*D)
+/-- The upper product word, exact sum, and smaller-factor residue identify a separated pair. -/
+theorem far_unique {B U D : ℕ} (bp : 0<B) (width : B≤U*D)
     {p q a b : ℕ} (g1 : p+D≤q) (g2 : a+D≤b)
     (word : p*q/B=a*b/B) (sums : p+q=a+b) (res : p%U=a%U) : (p,q)=(a,b) := by
   have exclude {p q a b : ℕ} (smaller : p<a) (gap : a+D≤b) (eq : p*q/B=a*b/B)

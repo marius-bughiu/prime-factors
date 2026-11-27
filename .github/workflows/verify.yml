@@ -47,6 +47,7 @@ jobs:
           python3 -m experiments.intermediate_private_shift_receipt --check
           python3 -m experiments.full_width_totient_divisor --check
           python3 -m experiments.fixed_window_digit_packing --check
+          python3 -m experiments.high_word_sum_ranking --check
       - name: Generate progress report
         run: python3 scripts/render_site.py
       - name: Upload verified main artifact

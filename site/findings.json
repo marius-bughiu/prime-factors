@@ -22,6 +22,50 @@
     ]
   },
   {
+    "id": "which-sum-fits-the-most-factor-pairs",
+    "title": "Two guesses find the most common sum among odd factor pairs",
+    "category": "formulas",
+    "impact": "Knowing only the upper half of the product bits, two row counts suffice to identify a sum shared by the most odd factor pairs.",
+    "scope": "Proved for equal factor widths of at least 14 bits, including 1,024. The most common sum among prime pairs can be different.",
+    "detail": "On 228,713 products of two 14-bit primes, ranking odd pairs gave 14,926 correct guesses. The first ordinary Fermat midpoint gave 17,324. The new rule found 83 that Fermat missed and missed 2,481 that Fermat found. Neither full-size control split.",
+    "sources": [
+      {
+        "href": "discoveries/which-sum-fits-the-most-factor-pairs.md",
+        "label": "Derivation and census"
+      },
+      {
+        "href": "PrimeFactors/HighWordSumRanking.lean",
+        "label": "Lean proof"
+      },
+      {
+        "href": "#high-word-ranked-one-guess",
+        "label": "Certified recovery"
+      },
+      {
+        "href": "#high-word-first-fermat-wins",
+        "label": "Comparison miss"
+      }
+    ]
+  },
+  {
+    "id": "what-three-quarters-of-the-product-bits-can-tell-us",
+    "title": "Three quarters of the product bits still leave the sum hard to guess",
+    "category": "limits",
+    "impact": "Even a list of 2⁴⁰ sums can cover fewer than one in 2⁴³⁴ eligible prime pairs if it sees only the top 1,024 bits and the bottom 512 bits.",
+    "scope": "Uniformly chosen pairs of distinct 1,024-bit primes with a 2,048-bit product. A method using its middle 512 bits can use information outside this bound.",
+    "detail": "Giving the rule the exact square-root ceiling, width quotients and remainder modulo 24 as well still keeps coverage below one in 2⁴²⁶. The proof counts pairs by how many times their difference can be divided by two.",
+    "sources": [
+      {
+        "href": "discoveries/what-three-quarters-of-the-product-bits-can-tell-us.md",
+        "label": "Worked example and bound"
+      },
+      {
+        "href": "PrimeFactors/HighLowSumPopulation.lean",
+        "label": "Lean proof"
+      }
+    ]
+  },
+  {
     "id": "fewer-multiples-to-test",
     "title": "Skipping multiples that cannot reveal the factors",
     "category": "gains",

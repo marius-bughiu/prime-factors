@@ -111,7 +111,7 @@ from experiments.weighted_square_triples import compare as weighted_triple_compa
 from experiments.weighted_subset_search import relation_certificate, search as weighted_subset_search
 from experiments.weighted_subset_witness import certificate as subset_exclusion_certificate
 from scripts.memory_partition_benchmark import memory_partition_case
-from experiments import cyclotomic_small_norm
+from experiments import cyclotomic_small_norm, high_word_sum_ranking
 from experiments.fixed_window_digit_packing import scan_singleton as fixed_window_scan
 from scripts.cyclotomic_sum_lift_benchmark import cyclotomic_sum_case
 from scripts.lifted_period_benchmark import lifted_period_case
@@ -721,6 +721,14 @@ def run_case(case, method, proofs):
         result = certify_split(case, proof, factor, elapsed, 'cyclotomic_small_norm', work)
     elif method == 'cyclotomic-sum-lift':
         result = cyclotomic_sum_case(case, proof, agree, certify_split)
+    elif method == 'high-word-sum-ranking':
+        n = int(case['n'])
+        factor, work = high_word_sum_ranking.search(n, case['factor_bits'])
+        elapsed = time.perf_counter() - start
+        baseline, _ = high_word_sum_ranking.check_midpoint(n, 1 + isqrt(n - 1))
+        work['fermat_factor'] = str(baseline) if baseline is not None else None
+        agree(dict(id=name, **case['checks']), work, case['checks'])
+        result = certify_split(case, proof, factor, elapsed, 'high_word_sum_ranking', work)
     elif method == 'fixed-window-digit-packing':
         factor, work = fixed_window_scan(int(case['n']), case['factor_bits'], case['modulus'])
         elapsed = time.perf_counter()-start
@@ -2132,6 +2140,7 @@ def main():
                              ('cyclotomic-small-norm.json', 'cyclotomic-small-norm'),
                              ('cyclotomic-sum-lift.json', 'cyclotomic-sum-lift'),
                              ('fixed-window-digit-packing.json', 'fixed-window-digit-packing'),
+                             ('high-word-sum-ranking.json', 'high-word-sum-ranking'),
                              ('lifted-period-join.json', 'lifted-period-join'),
                              ('lifted-period-trace.json', 'lifted-period-trace'),
                              ('geometric-sum-readout.json', 'geometric-sum-readout'),

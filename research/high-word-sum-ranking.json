@@ -1,0 +1,50 @@
+[
+  {
+    "factor_bits": 8,
+    "prime_pairs": 148,
+    "occupied_words": 79,
+    "ranked": 59,
+    "first_occupied": 63,
+    "first_fermat": 71,
+    "ranked_only": 0,
+    "fermat_only": 12,
+    "oracle_best_per_word": 92,
+    "oracle_best_of_two": 73
+  },
+  {
+    "factor_bits": 10,
+    "prime_pairs": 1718,
+    "occupied_words": 433,
+    "ranked": 391,
+    "first_occupied": 377,
+    "first_fermat": 448,
+    "ranked_only": 0,
+    "fermat_only": 57,
+    "oracle_best_per_word": 573,
+    "oracle_best_of_two": 446
+  },
+  {
+    "factor_bits": 12,
+    "prime_pairs": 19546,
+    "occupied_words": 1922,
+    "ranked": 2394,
+    "first_occupied": 2311,
+    "first_fermat": 2760,
+    "ranked_only": 18,
+    "fermat_only": 384,
+    "oracle_best_per_word": 3400,
+    "oracle_best_of_two": 2660
+  },
+  {
+    "factor_bits": 14,
+    "prime_pairs": 228713,
+    "occupied_words": 7965,
+    "ranked": 14926,
+    "first_occupied": 14444,
+    "first_fermat": 17324,
+    "ranked_only": 83,
+    "fermat_only": 2481,
+    "oracle_best_per_word": 19901,
+    "oracle_best_of_two": 16300
+  }
+]

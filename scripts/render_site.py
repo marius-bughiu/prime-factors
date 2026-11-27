@@ -671,6 +671,11 @@ def case_row(result):
         if work.get('probe_certificate'):
             url = escape(work['probe_certificate']['proof'], quote=True)
             count += f' · <a href="{url}">Power test proof</a>'
+    elif result['method'] == 'high-word-sum-ranking':
+        work = result['high_word_sum_ranking']
+        count = (f'Compared two proposed sums · setup square roots {work["setup_roots"]:,} · '
+                 f'final square tests {work["square_tests"]:,} · '
+                 f'first ordinary Fermat midpoint {"hit" if work["fermat_factor"] else "missed"}')
     elif result['method'] == 'fixed-window-digit-packing':
         work = result['fixed_window_digit_packing']
         count = (f'{work["candidate_positions"]:,} candidate positions · '
