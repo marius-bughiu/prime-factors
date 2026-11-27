@@ -1091,6 +1091,15 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'weighted-global-trace':
+        w = result['weighted_global_trace']
+        common = w['common']
+        trace = w['global']
+        count = (f"{common['assignments']:,} weight assignments · {common['gap_entries']:,} weight gaps"
+                 f" · {common['coordinate_visits']:,} candidate positions"
+                 f" · {trace['different_gap_hits']:,} matches across different gaps")
+        if common['omitted_coordinates_below_limit'] != '0':
+            count += f" · {compact_count(int(common['omitted_coordinates_below_limit']))} positions skipped inside the tested multiplier range"
     elif result['method'] == 'rectangular-root-windows':
         w = result['rectangular_windows']
         count = (f"{w['rows']:,} multipliers visited · {w['intervals']:,} intervals opened"

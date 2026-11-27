@@ -675,3 +675,8 @@ import PrimeFactors.RectangularSearchFloor
 import PrimeFactors.WeightDivisorSector
 import PrimeFactors.WeightWindowOverlap
 import PrimeFactors.RectangularFareyOracle
+import PrimeFactors.RectangularRowNormalization
+import PrimeFactors.RectangularDistinctProducts
+import PrimeFactors.RectangularSampling
+import PrimeFactors.WeightedGlobalTrace
+import PrimeFactors.RelaxedWeightCoverage

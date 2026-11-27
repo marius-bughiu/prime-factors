@@ -1,0 +1,912 @@
+{
+  "selection": "First four inputs of each width from the pre-existing independent rectangular-weight panel. Each first input also gets a complete quotient-strip scan. Single timed runs; checked counts carry across machines.",
+  "cases": [
+    {
+      "n": "2496395833",
+      "bits": 16,
+      "range": [
+        "38093",
+        "49963"
+      ],
+      "span": 11871,
+      "pairs": 122,
+      "windows": 112,
+      "merged": 1,
+      "single": 9356,
+      "double": 2515,
+      "covered": 11871,
+      "weighted_positions": 14386,
+      "odd_covered": 5936,
+      "factor": [
+        "44249",
+        "56417"
+      ],
+      "witness_windows": [
+        [
+          29,
+          37,
+          1
+        ],
+        [
+          11,
+          14,
+          2
+        ]
+      ],
+      "projected": {
+        "setup_cpu_ns": 358000,
+        "scan_cpu_ns": 151000,
+        "total_cpu_ns": 509000,
+        "visits": 3079
+      },
+      "full_divisor": {
+        "cpu_ns": 177000,
+        "visits": 3079
+      },
+      "weight_rows": {
+        "first_cpu_ns": 500000,
+        "full_cpu_ns": 582000,
+        "first": {
+          "k": 1073,
+          "x": 560,
+          "y": 1636653,
+          "pair": [
+            "44249",
+            "56417"
+          ],
+          "visited": 67,
+          "coordinates": 86,
+          "isqrts": 17,
+          "peak_lanes": 1
+        },
+        "work": {
+          "lane_starts": 34,
+          "peak_lanes": 1,
+          "coprime_pairs": 122,
+          "visited_rows": 122,
+          "admitted_rows": 122,
+          "coordinates": 133,
+          "isqrts": 47,
+          "subsequent_gcds": 109,
+          "row_gcds": 2
+        }
+      },
+      "secant_full": {
+        "cpu_ns": 4066000,
+        "blocks": 64,
+        "floor_sums": 128,
+        "quadratic_solves": 2
+      },
+      "secant_union": {
+        "cpu_ns": 4098000,
+        "blocks": 64,
+        "floor_sums": 128,
+        "quadratic_solves": 2,
+        "with_window_setup_cpu_ns": 4456000
+      },
+      "certificate": "951a18354de3ba7277beadda4c12f11092ba87876caf216df526ec74ee3eafbc"
+    },
+    {
+      "n": "3515645813",
+      "bits": 16,
+      "range": [
+        "53646",
+        "59292"
+      ],
+      "span": 5647,
+      "pairs": 58,
+      "windows": 46,
+      "merged": 2,
+      "single": 4445,
+      "double": 1201,
+      "covered": 5646,
+      "weighted_positions": 6847,
+      "odd_covered": 2823,
+      "factor": [
+        "58013",
+        "60601"
+      ],
+      "witness_windows": [
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "projected": {
+        "setup_cpu_ns": 122000,
+        "scan_cpu_ns": 102000,
+        "total_cpu_ns": 224000,
+        "visits": 2184
+      },
+      "full_divisor": {
+        "cpu_ns": 118000,
+        "visits": 2184
+      },
+      "weight_rows": {
+        "first_cpu_ns": 437000,
+        "full_cpu_ns": 531000,
+        "first": {
+          "k": 1,
+          "x": 1294,
+          "y": 59307,
+          "pair": [
+            "58013",
+            "60601"
+          ],
+          "visited": 1,
+          "coordinates": 15,
+          "isqrts": 2,
+          "peak_lanes": 1
+        },
+        "work": {
+          "lane_starts": 32,
+          "peak_lanes": 1,
+          "coprime_pairs": 58,
+          "visited_rows": 58,
+          "admitted_rows": 58,
+          "coordinates": 73,
+          "isqrts": 21,
+          "row_gcds": 1,
+          "subsequent_gcds": 32
+        }
+      },
+      "certificate": "79497a201450922ae8a3545130c4a2f1fe316a45dbbe4f1dc2f02011407a1015"
+    },
+    {
+      "n": "2373105829",
+      "bits": 16,
+      "range": [
+        "36212",
+        "48714"
+      ],
+      "span": 12503,
+      "pairs": 132,
+      "windows": 119,
+      "merged": 1,
+      "single": 9911,
+      "double": 2592,
+      "covered": 12503,
+      "weighted_positions": 15095,
+      "odd_covered": 6251,
+      "factor": [
+        "46769",
+        "50741"
+      ],
+      "witness_windows": [
+        [
+          23,
+          25,
+          1
+        ],
+        [
+          12,
+          13,
+          2
+        ]
+      ],
+      "projected": {
+        "setup_cpu_ns": 267000,
+        "scan_cpu_ns": 249000,
+        "total_cpu_ns": 516000,
+        "visits": 5279
+      },
+      "full_divisor": {
+        "cpu_ns": 278000,
+        "visits": 5279
+      },
+      "weight_rows": {
+        "first_cpu_ns": 480000,
+        "full_cpu_ns": 614000,
+        "first": {
+          "k": 575,
+          "x": 1091,
+          "y": 1168134,
+          "pair": [
+            "46769",
+            "50741"
+          ],
+          "visited": 44,
+          "coordinates": 68,
+          "isqrts": 12,
+          "peak_lanes": 1
+        },
+        "work": {
+          "lane_starts": 34,
+          "peak_lanes": 1,
+          "coprime_pairs": 132,
+          "visited_rows": 132,
+          "admitted_rows": 132,
+          "coordinates": 135,
+          "isqrts": 48,
+          "subsequent_gcds": 120,
+          "row_gcds": 2
+        }
+      },
+      "certificate": "41401c5d0ad3f1d8b14a37ea5cf1c0a6aeabcd0d7a8d3e4c9a092aff07adeecc"
+    },
+    {
+      "n": "2341746973",
+      "bits": 16,
+      "range": [
+        "35733",
+        "48391"
+      ],
+      "span": 12659,
+      "pairs": 134,
+      "windows": 122,
+      "merged": 1,
+      "single": 10038,
+      "double": 2621,
+      "covered": 12659,
+      "weighted_positions": 15280,
+      "odd_covered": 6330,
+      "factor": [
+        "41617",
+        "56269"
+      ],
+      "witness_windows": [
+        [
+          17,
+          23,
+          1
+        ]
+      ],
+      "projected": {
+        "setup_cpu_ns": 252000,
+        "scan_cpu_ns": 142000,
+        "total_cpu_ns": 394000,
+        "visits": 2943
+      },
+      "full_divisor": {
+        "cpu_ns": 151000,
+        "visits": 2943
+      },
+      "weight_rows": {
+        "first_cpu_ns": 447000,
+        "full_cpu_ns": 599000,
+        "first": {
+          "k": 391,
+          "x": 309,
+          "y": 956882,
+          "pair": [
+            "41617",
+            "56269"
+          ],
+          "visited": 28,
+          "coordinates": 61,
+          "isqrts": 12,
+          "peak_lanes": 1
+        },
+        "work": {
+          "lane_starts": 34,
+          "peak_lanes": 1,
+          "coprime_pairs": 134,
+          "visited_rows": 134,
+          "admitted_rows": 134,
+          "coordinates": 138,
+          "isqrts": 49,
+          "subsequent_gcds": 122,
+          "row_gcds": 1
+        }
+      },
+      "certificate": "631f2e90022342c27a3a07436fdfde30c4c68d4b9d087fbc0a373f2ad5993878"
+    },
+    {
+      "n": "560292530957",
+      "bits": 20,
+      "range": [
+        "534338",
+        "748526"
+      ],
+      "span": 214189,
+      "pairs": 866,
+      "windows": 844,
+      "merged": 1,
+      "single": 168540,
+      "double": 45649,
+      "covered": 214189,
+      "weighted_positions": 259838,
+      "odd_covered": 107094,
+      "factor": [
+        "721087",
+        "777011"
+      ],
+      "witness_windows": [
+        [
+          13,
+          14,
+          2
+        ]
+      ],
+      "projected": {
+        "setup_cpu_ns": 1458000,
+        "scan_cpu_ns": 4354000,
+        "total_cpu_ns": 5812000,
+        "visits": 93375
+      },
+      "full_divisor": {
+        "cpu_ns": 4734000,
+        "visits": 93375
+      },
+      "weight_rows": {
+        "first_cpu_ns": 1284000,
+        "full_cpu_ns": 1650000,
+        "first": {
+          "k": 728,
+          "x": 5925,
+          "y": 20196361,
+          "pair": [
+            "721087",
+            "777011"
+          ],
+          "visited": 609,
+          "coordinates": 707,
+          "isqrts": 176,
+          "peak_lanes": 1
+        },
+        "work": {
+          "lane_starts": 89,
+          "peak_lanes": 1,
+          "coprime_pairs": 866,
+          "visited_rows": 866,
+          "admitted_rows": 866,
+          "coordinates": 892,
+          "isqrts": 295,
+          "subsequent_gcds": 968,
+          "row_gcds": 1
+        }
+      },
+      "secant_full": {
+        "cpu_ns": 50734000,
+        "blocks": 448,
+        "floor_sums": 896,
+        "quadratic_solves": 40
+      },
+      "secant_union": {
+        "cpu_ns": 50075000,
+        "blocks": 448,
+        "floor_sums": 896,
+        "quadratic_solves": 40,
+        "with_window_setup_cpu_ns": 51533000
+      },
+      "certificate": "8955e13b4ff1500b1f59222753f74a295fba9b84e25bd559d10c3afc210bd77a"
+    },
+    {
+      "n": "636485318731",
+      "bits": 20,
+      "range": [
+        "607001",
+        "797800"
+      ],
+      "span": 190800,
+      "pairs": 744,
+      "windows": 716,
+      "merged": 1,
+      "single": 149552,
+      "double": 41248,
+      "covered": 190800,
+      "weighted_positions": 232048,
+      "odd_covered": 95400,
+      "factor": [
+        "648191",
+        "981941"
+      ],
+      "witness_windows": [
+        [
+          35,
+          53,
+          1
+        ],
+        [
+          33,
+          50,
+          2
+        ]
+      ],
+      "projected": {
+        "setup_cpu_ns": 1217000,
+        "scan_cpu_ns": 981000,
+        "total_cpu_ns": 2198000,
+        "visits": 20596
+      },
+      "full_divisor": {
+        "cpu_ns": 1013000,
+        "visits": 20596
+      },
+      "weight_rows": {
+        "first_cpu_ns": 545000,
+        "full_cpu_ns": 1408000,
+        "first": {
+          "k": 1855,
+          "x": 6906,
+          "y": 34361029,
+          "pair": [
+            "648191",
+            "981941"
+          ],
+          "visited": 95,
+          "coordinates": 240,
+          "isqrts": 50,
+          "peak_lanes": 1
+        },
+        "work": {
+          "lane_starts": 90,
+          "peak_lanes": 1,
+          "coprime_pairs": 744,
+          "visited_rows": 744,
+          "admitted_rows": 744,
+          "coordinates": 763,
+          "isqrts": 258,
+          "subsequent_gcds": 804,
+          "row_gcds": 2
+        }
+      },
+      "certificate": "495d686b2b3154c9a6680fcecea28d1e25dcca9a69ecfc32ce2a6e998b10f812"
+    },
+    {
+      "n": "778731959947",
+      "bits": 20,
+      "range": [
+        "742658",
+        "882457"
+      ],
+      "span": 139800,
+      "pairs": 513,
+      "windows": 481,
+      "merged": 1,
+      "single": 109828,
+      "double": 29972,
+      "covered": 139800,
+      "weighted_positions": 169772,
+      "odd_covered": 69900,
+      "factor": [
+        "842489",
+        "924323"
+      ],
+      "witness_windows": [
+        [
+          41,
+          45,
+          1
+        ]
+      ],
+      "projected": {
+        "setup_cpu_ns": 876000,
+        "scan_cpu_ns": 2413000,
+        "total_cpu_ns": 3289000,
+        "visits": 49916
+      },
+      "full_divisor": {
+        "cpu_ns": 2592000,
+        "visits": 49916
+      },
+      "weight_rows": {
+        "first_cpu_ns": 524000,
+        "full_cpu_ns": 1106000,
+        "first": {
+          "k": 1845,
+          "x": 7381,
+          "y": 37904624,
+          "pair": [
+            "842489",
+            "924323"
+          ],
+          "visited": 71,
+          "coordinates": 182,
+          "isqrts": 38,
+          "peak_lanes": 1
+        },
+        "work": {
+          "lane_starts": 91,
+          "peak_lanes": 1,
+          "coprime_pairs": 513,
+          "visited_rows": 513,
+          "admitted_rows": 513,
+          "coordinates": 529,
+          "isqrts": 172,
+          "subsequent_gcds": 518,
+          "row_gcds": 1
+        }
+      },
+      "certificate": "4449fe9f95c90be5e9bda69da0ef7acdb2ec0de32ad851e88e94de39ffc92574"
+    },
+    {
+      "n": "571425362341",
+      "bits": 20,
+      "range": [
+        "544955",
+        "755926"
+      ],
+      "span": 210972,
+      "pairs": 859,
+      "windows": 829,
+      "merged": 1,
+      "single": 165032,
+      "double": 45940,
+      "covered": 210972,
+      "weighted_positions": 256912,
+      "odd_covered": 105486,
+      "factor": [
+        "704617",
+        "810973"
+      ],
+      "witness_windows": [
+        [
+          53,
+          61,
+          1
+        ]
+      ],
+      "projected": {
+        "setup_cpu_ns": 1457000,
+        "scan_cpu_ns": 3678000,
+        "total_cpu_ns": 5135000,
+        "visits": 79832
+      },
+      "full_divisor": {
+        "cpu_ns": 4011000,
+        "visits": 79832
+      },
+      "weight_rows": {
+        "first_cpu_ns": 812000,
+        "full_cpu_ns": 1607000,
+        "first": {
+          "k": 3233,
+          "x": 34,
+          "y": 42981603,
+          "pair": [
+            "704617",
+            "810973"
+          ],
+          "visited": 266,
+          "coordinates": 414,
+          "isqrts": 73,
+          "peak_lanes": 1
+        },
+        "work": {
+          "lane_starts": 89,
+          "peak_lanes": 1,
+          "coprime_pairs": 859,
+          "visited_rows": 859,
+          "admitted_rows": 859,
+          "coordinates": 869,
+          "isqrts": 274,
+          "subsequent_gcds": 946,
+          "row_gcds": 1
+        }
+      },
+      "certificate": "841cec1bd4720c6f25c1bfc1a2a7d4159f85643cb4ec88d560ec48787b564096"
+    },
+    {
+      "n": "157243323583487",
+      "bits": 24,
+      "range": [
+        "9372434",
+        "12539669"
+      ],
+      "span": 3167236,
+      "pairs": 4846,
+      "windows": 4777,
+      "merged": 1,
+      "single": 2484301,
+      "double": 682935,
+      "covered": 3167236,
+      "weighted_positions": 3850171,
+      "odd_covered": 1583618,
+      "factor": [
+        "10040453",
+        "15660979"
+      ],
+      "witness_windows": [
+        [
+          25,
+          39,
+          1
+        ]
+      ],
+      "projected": {
+        "setup_cpu_ns": 10232000,
+        "scan_cpu_ns": 17505000,
+        "total_cpu_ns": 27737000,
+        "visits": 334010
+      },
+      "full_divisor": {
+        "cpu_ns": 17103000,
+        "visits": 334010
+      },
+      "weight_rows": {
+        "first_cpu_ns": 587000,
+        "full_cpu_ns": 7237000,
+        "first": {
+          "k": 975,
+          "x": 26596,
+          "y": 391551071,
+          "pair": [
+            "10040453",
+            "15660979"
+          ],
+          "visited": 53,
+          "coordinates": 479,
+          "isqrts": 96,
+          "peak_lanes": 1
+        },
+        "work": {
+          "lane_starts": 230,
+          "peak_lanes": 1,
+          "coprime_pairs": 4846,
+          "visited_rows": 4846,
+          "admitted_rows": 4846,
+          "coordinates": 4952,
+          "isqrts": 1668,
+          "subsequent_gcds": 5692,
+          "row_gcds": 1
+        }
+      },
+      "secant_full": {
+        "cpu_ns": 277964000,
+        "blocks": 2576,
+        "floor_sums": 5152,
+        "quadratic_solves": 188
+      },
+      "secant_union": {
+        "cpu_ns": 275761000,
+        "blocks": 2576,
+        "floor_sums": 5152,
+        "quadratic_solves": 188,
+        "with_window_setup_cpu_ns": 285993000
+      },
+      "certificate": "7c9b9b6851e8c33bcd7da5164b2a1d2691963b157ccd0d604422a092e5c9d4d3"
+    },
+    {
+      "n": "157818374640337",
+      "bits": 24,
+      "range": [
+        "9406709",
+        "12562578"
+      ],
+      "span": 3155870,
+      "pairs": 4826,
+      "windows": 4751,
+      "merged": 1,
+      "single": 2475649,
+      "double": 680221,
+      "covered": 3155870,
+      "weighted_positions": 3836091,
+      "odd_covered": 1577935,
+      "factor": [
+        "10119259",
+        "15595843"
+      ],
+      "witness_windows": [
+        [
+          85,
+          131,
+          1
+        ]
+      ],
+      "projected": {
+        "setup_cpu_ns": 8574000,
+        "scan_cpu_ns": 17865000,
+        "total_cpu_ns": 26439000,
+        "visits": 356276
+      },
+      "full_divisor": {
+        "cpu_ns": 17719000,
+        "visits": 356276
+      },
+      "weight_rows": {
+        "first_cpu_ns": 1403000,
+        "full_cpu_ns": 7353000,
+        "first": {
+          "k": 11135,
+          "x": 11863,
+          "y": 1325634792,
+          "pair": [
+            "10119259",
+            "15595843"
+          ],
+          "visited": 592,
+          "coordinates": 1418,
+          "isqrts": 248,
+          "peak_lanes": 1
+        },
+        "work": {
+          "lane_starts": 230,
+          "peak_lanes": 1,
+          "coprime_pairs": 4826,
+          "visited_rows": 4826,
+          "admitted_rows": 4826,
+          "coordinates": 4875,
+          "isqrts": 1663,
+          "subsequent_gcds": 5658,
+          "row_gcds": 1
+        }
+      },
+      "certificate": "200157897c3459799798c60407a22ec0f121611a648f8346bdabc4c7f01b7b83"
+    },
+    {
+      "n": "222640104814697",
+      "bits": 24,
+      "range": [
+        "13270386",
+        "14921129"
+      ],
+      "span": 1650744,
+      "pairs": 2238,
+      "windows": 2155,
+      "merged": 1,
+      "single": 1296588,
+      "double": 354156,
+      "covered": 1650744,
+      "weighted_positions": 2004900,
+      "odd_covered": 825372,
+      "factor": [
+        "14230081",
+        "15645737"
+      ],
+      "witness_windows": [
+        [
+          181,
+          199,
+          1
+        ],
+        [
+          201,
+          221,
+          1
+        ]
+      ],
+      "projected": {
+        "setup_cpu_ns": 4019000,
+        "scan_cpu_ns": 24088000,
+        "total_cpu_ns": 28107000,
+        "visits": 479848
+      },
+      "full_divisor": {
+        "cpu_ns": 24169000,
+        "visits": 479848
+      },
+      "weight_rows": {
+        "first_cpu_ns": 1716000,
+        "full_cpu_ns": 3567000,
+        "first": {
+          "k": 36019,
+          "x": 46139,
+          "y": 2831832258,
+          "pair": [
+            "14230081",
+            "15645737"
+          ],
+          "visited": 911,
+          "coordinates": 1229,
+          "isqrts": 220,
+          "peak_lanes": 1
+        },
+        "work": {
+          "lane_starts": 239,
+          "peak_lanes": 1,
+          "coprime_pairs": 2238,
+          "visited_rows": 2238,
+          "admitted_rows": 2238,
+          "coordinates": 2290,
+          "isqrts": 750,
+          "subsequent_gcds": 2464,
+          "row_gcds": 2
+        }
+      },
+      "certificate": "07cb0f71f2c99c8ffcd08ed594057ef704e1c8afd4ac03a3751cd8681e00c2a6"
+    },
+    {
+      "n": "156149346964109",
+      "bits": 24,
+      "range": [
+        "9307227",
+        "12495973"
+      ],
+      "span": 3188747,
+      "pairs": 4893,
+      "windows": 4816,
+      "merged": 1,
+      "single": 2501426,
+      "double": 687321,
+      "covered": 3188747,
+      "weighted_positions": 3876068,
+      "odd_covered": 1594374,
+      "factor": [
+        "9777221",
+        "15970729"
+      ],
+      "witness_windows": [
+        [
+          30,
+          49,
+          2
+        ]
+      ],
+      "projected": {
+        "setup_cpu_ns": 8805000,
+        "scan_cpu_ns": 12260000,
+        "total_cpu_ns": 21065000,
+        "visits": 234998
+      },
+      "full_divisor": {
+        "cpu_ns": 11848000,
+        "visits": 234998
+      },
+      "weight_rows": {
+        "first_cpu_ns": 5190000,
+        "full_cpu_ns": 7394000,
+        "first": {
+          "k": 5880,
+          "x": 38041,
+          "y": 958205699,
+          "pair": [
+            "9777221",
+            "15970729"
+          ],
+          "visited": 3415,
+          "coordinates": 3828,
+          "isqrts": 930,
+          "peak_lanes": 1
+        },
+        "work": {
+          "lane_starts": 230,
+          "peak_lanes": 1,
+          "coprime_pairs": 4893,
+          "visited_rows": 4893,
+          "admitted_rows": 4893,
+          "coordinates": 4958,
+          "isqrts": 1623,
+          "subsequent_gcds": 5751,
+          "row_gcds": 1
+        }
+      },
+      "certificate": "ebd3aa9d04c7b8d02882d59c7eb039798d79733b8b1f21335ea0d0c103507f33"
+    }
+  ],
+  "controls": [
+    {
+      "id": "target-norm-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "span": "18884712517224533984241853532417032798241462841760871556875357306823989724297817320078697218660263409729235036924156122017673396452418082381299457303872766280188244884462414208388498435532172315330357320032886273732119402684771665213156797557867493695695180298988481227230963405446552837623414257262190585676",
+      "h": "29266450953600690044902996748220718247506779365190051113967971943092481154015862535744152350683354804561959443880250352706438029427432099254486242968167178236216973788369412776195438632833585300308830686588",
+      "k_limit": "29266450953600690044902996748220718247506779365190051113967971943092481154015862535744152350683354804561959443880250352706438029427432099254486242968167178236216973788369412776195438632833585300308830686588",
+      "relaxed_k_limit": "29266450953600690044902996748220718247506779365190051113967971943092481154015862535744152350683354804561959443880250352706438029427432099254486242968167178236216973788369412776195438632833585300308830686588",
+      "ratio_excess": 297,
+      "relaxed_ratio_excess": 297,
+      "k1_positions": "29266450953600690044902996748220718247506779365190051113967971943092481154015862535744152350683354804559254520084946652748389208402783542766852597043450869131300267043925096246817301156675959168158725552985",
+      "k1_odds": "14633225476800345022451498374110359123753389682595025556983985971546240577007931267872076175341677402279627260042473326374194604201391771383426298521725434565650133521962548123408650578337979584079362776493",
+      "prefix": {
+        "k_cap": 65536,
+        "pairs": 2536,
+        "windows": 2529,
+        "merged": 2529,
+        "covered": "1086821049575384373363666945103670938762327770166141048599967028602402743427734902454558531946717635812433105626314792474397674003766755481630691747340601782522730685149741713835575580233241935010070234605745",
+        "double": "0",
+        "odd_positions": "543410524787692186681833472551835469381163885083070524299983514301201371713867451227279265973358817906216552813157396237198837001883377740815345873670300891261365342574870856917787790116620967505035117302871"
+      }
+    },
+    {
+      "id": "target-norm-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "span": "33601035509446495786779065699651680605273022524619669029415484617098925929997677502027572106296220246305997097113873050921760556729053589037181411586874799132002948622038876144189205625088386411337356465715757336167657493468564078849211869697731439589520479795718725773181340348237639666444861715961303334052",
+      "h": "26321086277350004763246605059942532218284120037998274279500410729877980427661563810957400193618018519235555253374801675987274808377413576505576376818132257035668139115658746771246177160785629306067956780768",
+      "k_limit": "26321086277350004763246605059942532218284120037998274279500410729877980427661563810957400193618018519235555253374801675987274808377413576505576376818132257035668139115658746771246177160785629306067956780766",
+      "relaxed_k_limit": "26321086277350004763246605059942532218284120037998274279500410729877980427661563810957400193618018519235555253374801675987274808377413576505576376818132257035668139115658746771246177160785629306067956780766",
+      "ratio_excess": 791,
+      "relaxed_ratio_excess": 791,
+      "k1_positions": "26321086277350004763246605059942532218284120037998274279500410729877980427661563810957400193618018519232990049373296629763164272309273137948912332889400436449246747463363046795124077122158471665107317203439",
+      "k1_odds": "13160543138675002381623302529971266109142060018999137139750205364938990213830781905478700096809009259616495024686648314881582136154636568974456166444700218224623373731681523397562038561079235832553658601719",
+      "prefix": {
+        "k_cap": 65536,
+        "pairs": 5701,
+        "windows": 5699,
+        "merged": 5699,
+        "covered": "2038417228129663671737358805488077808712231467604519448247057969360300895087877329202753846648716010389653340886950554868861908415344502650091806756677076340986342815718631375521605165748077001824384111021827",
+        "double": "0",
+        "odd_positions": "1019208614064831835868679402744038904356115733802259724123528984680150447543938664601376923324358005194826670443475277434430954207672251325045903378338538170493171407859315687760802582874038500912192055510918"
+      }
+    }
+  ]
+}

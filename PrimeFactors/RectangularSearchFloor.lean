@@ -20,6 +20,39 @@ noncomputable def emitted (K scale e : ℕ) : Finset ℕ :=
   (((Icc 1 K.sqrt).filter (fun a => a%2=1)).biUnion (fun a => lane K scale e 1 a a)) ∪
     ((Icc 1 (K/4).sqrt).biUnion (fun a => lane K scale e 4 a (a+1)))
 
+private theorem lane_mono {K L scale e t a first : ℕ} (kl : K≤L) :
+    lane K scale e t a first ⊆ lane L scale e t a first := by
+  intro k hk
+  obtain ⟨b,hb,rfl⟩ := mem_image.mp hk
+  obtain ⟨rng,rest⟩ := mem_filter.mp hb
+  obtain ⟨low,cap⟩ := mem_Icc.mp rng
+  exact mem_image.mpr ⟨b,mem_filter.mpr ⟨mem_Icc.mpr ⟨low,cap.trans
+    (min_le_min (Nat.div_le_div_right kl) le_rfl)⟩,rest⟩,rfl⟩
+
+private theorem lane_le {k K scale e t a first : ℕ} (h : k∈lane K scale e t a first) : k≤K := by
+  obtain ⟨b,hb,rfl⟩ := mem_image.mp h
+  have cap := (mem_Icc.mp (mem_filter.mp hb).1).2.trans (min_le_left ..)
+  exact (Nat.mul_le_mul_left (t*a) cap).trans (Nat.mul_div_le ..)
+
+theorem emitted_mono {K L scale e : ℕ} (kl : K≤L) :
+    emitted K scale e ⊆ emitted L scale e := by
+  intro k hk
+  rcases mem_union.mp hk with odd|even
+  · obtain ⟨a,ha,w⟩ := mem_biUnion.mp odd
+    obtain ⟨rng,ao⟩ := mem_filter.mp ha
+    exact mem_union_left _ (mem_biUnion.mpr ⟨a,mem_filter.mpr ⟨mem_Icc.mpr
+      ⟨(mem_Icc.mp rng).1,(mem_Icc.mp rng).2.trans (Nat.sqrt_le_sqrt kl)⟩,ao⟩,lane_mono kl w⟩)
+  · obtain ⟨a,rng,w⟩ := mem_biUnion.mp even
+    exact mem_union_right _ (mem_biUnion.mpr ⟨a,mem_Icc.mpr
+      ⟨(mem_Icc.mp rng).1,(mem_Icc.mp rng).2.trans (Nat.sqrt_le_sqrt (Nat.div_le_div_right kl))⟩,lane_mono kl w⟩)
+
+theorem emitted_le {k K scale e : ℕ} (hk : k∈emitted K scale e) : k≤K := by
+  rcases mem_union.mp hk with odd|even
+  · obtain ⟨_,_,w⟩ := mem_biUnion.mp odd
+    exact lane_le w
+  · obtain ⟨_,_,w⟩ := mem_biUnion.mp even
+    exact lane_le w
+
 /-- Two unequal possible factors bounded by U have product strictly
 below U². Positive sqrt(N) makes the unrounded ratio strictly above 1. -/
 theorem positive_excess {p q : ℕ} (lt : p<q) (qu : q<2^1024)
