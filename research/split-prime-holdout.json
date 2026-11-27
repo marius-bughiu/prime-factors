@@ -1,0 +1,408 @@
+{
+  "seed": "reciprocal-fermat-holdout-v1",
+  "selection": "first existing sample at each factor width",
+  "cf_budget": 256,
+  "sieve_block_integers": 32768,
+  "repetitions": 5,
+  "timing": "median from method entry; cold base-prime cache, anchor setup and segmented sieve included; input generation and Lean verification excluded",
+  "work_columns": [
+    "visited_primes",
+    "jacobi_evaluations",
+    "trial_divisions"
+  ],
+  "platform": {
+    "python": "3.9.6",
+    "machine": "arm64",
+    "os": "Darwin"
+  },
+  "cases": [
+    {
+      "bits": 20,
+      "sample": 0,
+      "n": "789444367739",
+      "lower": 752874,
+      "upper": 888506,
+      "methods": {
+        "0": {
+          "moduli": [],
+          "cf_steps": 0,
+          "status": "complete",
+          "pair": [
+            "837533",
+            "942583"
+          ],
+          "first": [
+            6258,
+            0,
+            6258
+          ],
+          "full": [
+            9995,
+            0,
+            9995
+          ],
+          "median_times": {
+            "setup": {
+              "cpu_ns": 1000,
+              "wall_ns": 1167
+            },
+            "first": {
+              "cpu_ns": 2317000,
+              "wall_ns": 2320625
+            },
+            "full": {
+              "cpu_ns": 3750000,
+              "wall_ns": 3750958
+            }
+          }
+        },
+        "1": {
+          "moduli": [
+            299
+          ],
+          "cf_steps": 256,
+          "status": "complete",
+          "pair": [
+            "837533",
+            "942583"
+          ],
+          "first": [
+            6258,
+            6258,
+            3131
+          ],
+          "full": [
+            9995,
+            9995,
+            4967
+          ],
+          "median_times": {
+            "setup": {
+              "cpu_ns": 231000,
+              "wall_ns": 230458
+            },
+            "first": {
+              "cpu_ns": 5996000,
+              "wall_ns": 6003500
+            },
+            "full": {
+              "cpu_ns": 9429000,
+              "wall_ns": 9448417
+            }
+          }
+        },
+        "2": {
+          "moduli": [
+            299,
+            907
+          ],
+          "cf_steps": 256,
+          "status": "complete",
+          "pair": [
+            "837533",
+            "942583"
+          ],
+          "first": [
+            6258,
+            9389,
+            1515
+          ],
+          "full": [
+            9995,
+            14962,
+            2461
+          ],
+          "median_times": {
+            "setup": {
+              "cpu_ns": 226000,
+              "wall_ns": 225750
+            },
+            "first": {
+              "cpu_ns": 7957000,
+              "wall_ns": 7959959
+            },
+            "full": {
+              "cpu_ns": 12587000,
+              "wall_ns": 12599250
+            }
+          }
+        },
+        "4": {
+          "moduli": [
+            299,
+            907,
+            4279,
+            13147
+          ],
+          "cf_steps": 256,
+          "status": "complete",
+          "pair": [
+            "837533",
+            "942583"
+          ],
+          "first": [
+            6258,
+            11657,
+            367
+          ],
+          "full": [
+            9995,
+            18623,
+            592
+          ],
+          "median_times": {
+            "setup": {
+              "cpu_ns": 230000,
+              "wall_ns": 229708
+            },
+            "first": {
+              "cpu_ns": 9805000,
+              "wall_ns": 9807583
+            },
+            "full": {
+              "cpu_ns": 15500000,
+              "wall_ns": 15505625
+            }
+          }
+        },
+        "8": {
+          "moduli": [
+            299,
+            907,
+            4279,
+            13147,
+            16619,
+            27691,
+            40699,
+            77267
+          ],
+          "cf_steps": 256,
+          "status": "complete",
+          "pair": [
+            "837533",
+            "942583"
+          ],
+          "first": [
+            6258,
+            12367,
+            30
+          ],
+          "full": [
+            9995,
+            19756,
+            43
+          ],
+          "median_times": {
+            "setup": {
+              "cpu_ns": 239000,
+              "wall_ns": 239416
+            },
+            "first": {
+              "cpu_ns": 10557000,
+              "wall_ns": 10579458
+            },
+            "full": {
+              "cpu_ns": 16622000,
+              "wall_ns": 16706834
+            }
+          }
+        }
+      },
+      "certificate_sha256": "27a9793b02aa95c63ba4e6f844d8146c46c96d656186097972b6095284af1568"
+    },
+    {
+      "bits": 24,
+      "sample": 0,
+      "n": "246180296426219",
+      "lower": 14673490,
+      "upper": 15690133,
+      "methods": {
+        "0": {
+          "moduli": [],
+          "cf_steps": 0,
+          "status": "complete",
+          "pair": [
+            "15230737",
+            "16163387"
+          ],
+          "first": [
+            33676,
+            0,
+            33676
+          ],
+          "full": [
+            61477,
+            0,
+            61477
+          ],
+          "median_times": {
+            "setup": {
+              "cpu_ns": 4000,
+              "wall_ns": 3875
+            },
+            "first": {
+              "cpu_ns": 16941000,
+              "wall_ns": 16947000
+            },
+            "full": {
+              "cpu_ns": 30746000,
+              "wall_ns": 30755625
+            }
+          }
+        },
+        "1": {
+          "moduli": [
+            1079
+          ],
+          "cf_steps": 256,
+          "status": "complete",
+          "pair": [
+            "15230737",
+            "16163387"
+          ],
+          "first": [
+            33676,
+            33676,
+            16689
+          ],
+          "full": [
+            61477,
+            61477,
+            30546
+          ],
+          "median_times": {
+            "setup": {
+              "cpu_ns": 225000,
+              "wall_ns": 225875
+            },
+            "first": {
+              "cpu_ns": 39008000,
+              "wall_ns": 39020125
+            },
+            "full": {
+              "cpu_ns": 70779000,
+              "wall_ns": 70868708
+            }
+          }
+        },
+        "2": {
+          "moduli": [
+            1079,
+            194791
+          ],
+          "cf_steps": 256,
+          "status": "complete",
+          "pair": [
+            "15230737",
+            "16163387"
+          ],
+          "first": [
+            33676,
+            50365,
+            8357
+          ],
+          "full": [
+            61477,
+            92023,
+            15253
+          ],
+          "median_times": {
+            "setup": {
+              "cpu_ns": 231000,
+              "wall_ns": 230875
+            },
+            "first": {
+              "cpu_ns": 57722000,
+              "wall_ns": 57830417
+            },
+            "full": {
+              "cpu_ns": 104055000,
+              "wall_ns": 104206542
+            }
+          }
+        },
+        "4": {
+          "moduli": [
+            1079,
+            194791,
+            592499,
+            788219
+          ],
+          "cf_steps": 256,
+          "status": "complete",
+          "pair": [
+            "15230737",
+            "16163387"
+          ],
+          "first": [
+            33676,
+            62870,
+            2002
+          ],
+          "full": [
+            61477,
+            114834,
+            3690
+          ],
+          "median_times": {
+            "setup": {
+              "cpu_ns": 232000,
+              "wall_ns": 232375
+            },
+            "first": {
+              "cpu_ns": 72082000,
+              "wall_ns": 72156750
+            },
+            "full": {
+              "cpu_ns": 130335000,
+              "wall_ns": 130486125
+            }
+          }
+        },
+        "8": {
+          "moduli": [
+            1079,
+            194791,
+            592499,
+            788219,
+            884999,
+            886519,
+            1760779,
+            1859179
+          ],
+          "cf_steps": 256,
+          "status": "complete",
+          "pair": [
+            "15230737",
+            "16163387"
+          ],
+          "first": [
+            33676,
+            66602,
+            116
+          ],
+          "full": [
+            61477,
+            121714,
+            210
+          ],
+          "median_times": {
+            "setup": {
+              "cpu_ns": 236000,
+              "wall_ns": 235417
+            },
+            "first": {
+              "cpu_ns": 76697000,
+              "wall_ns": 77126167
+            },
+            "full": {
+              "cpu_ns": 139635000,
+              "wall_ns": 139779125
+            }
+          }
+        }
+      },
+      "certificate_sha256": "9f2b7f7c660edc5bb5e8c0a738d7765804bce640f7ea6efa15d8229d30d5f2ca"
+    }
+  ]
+}

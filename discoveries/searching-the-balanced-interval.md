@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Counting only primes gives a two-sided result. On the fresh 2,048-bit product more than $10^{184}$ primes pass 400 public sign tests. Applying 512 brings the upper limit below $1.28\times10^{159}$ on each product. The counts use a prime-ideal theorem and the released Dirichlet GRH. [Prime counts, public witnesses and a timed search](how-many-primes-pass-hundreds-of-tests.md)
+
 Sixteen tests derived from the product leave at most 8.5580% of the smaller-factor positions that remain after removing multiples of 2, 3 and 5 on the fresh 2,048-bit example. On the crossed example the ceiling is 6.1590%. [Search interval, proof and verification](sixteen-tests-for-the-smaller-factor.md)
 
 Across 24 independently drawn small prime pairs, the extra sign halved the square tests left by an ordinary sieve. Setup made the search slower overall. All 24 factorizations were checked in Lean. [Timings from 20-bit and 24-bit prime pairs](timing-reciprocal-fermat-tables.md)

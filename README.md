@@ -12,6 +12,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**We can rule out many primes and still be very far from finding the right one.** On our fresh 2,048-bit example, we found 512 tests using only the product. The smaller prime passes every test. A count using Dirichlet GRH shows that more than $10^{184}$ primes in its possible range still pass the first 400. We have no practical way to find which survivor divides the product. [What the tests tell us, how many primes qualify and what a small search cost](discoveries/how-many-primes-pass-hundreds-of-tests.md)
+
 **The product alone rules out about half the sums that an earlier test still allows.** On our fresh 2,048-bit example, we proved that at least 49.83% of those possible sums can be discarded. On a smaller product this reduced the actual list from 40 sums to 19 and gave 9,203 × 14,957. The full-size list remains far too large, and the 768 positions we tried did not yield a factor. [How we obtained the rule from the product](discoveries/halving-the-sum-residues-on-a-fresh-product.md)
 
 **The product can sometimes tell us which extra matches to look for.** When division by 12 leaves 5 or 7, an extra comparison can reveal only one of the two hidden primes. Keeping that comparison alongside the previous one found 2,479 more factors across 19,546 small products using the same random draws. Both 2,048-bit comparison products remained unresolved. [Small worked example and full-size cost](discoveries/when-the-product-picks-a-collision.md)

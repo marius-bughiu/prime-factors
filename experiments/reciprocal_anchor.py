@@ -21,8 +21,8 @@ def convergent_mod(radicand, steps, modulus):
     return a, m
 
 
-def collect_anchors(n, steps=32768, wheel=60, count=1):
-    """Select the shortest coprime periods found within a fixed public budget."""
+def collect_anchors(n, steps=32768, wheel=60, count=1, *, negative_only=False, stats=None):
+    """Select coprime periods in increasing order. Negative-only skips numerator/denominator replay."""
     if steps < 1 or count < 1:
         raise ValueError('the convergent and anchor budgets must be positive')
     candidates = {}
@@ -32,6 +32,9 @@ def collect_anchors(n, steps=32768, wheel=60, count=1):
             continue
         shared = gcd(norm, n)
         if 1 < shared < n:
+            if stats is not None:
+                stats.update(cf_steps=index, distinct_candidates=len(candidates), examined=0,
+                             coprimality_rejections=0, replay_steps=0)
             return [dict(setup_factor=shared, step=index)]
         d, b = norm, 1
         for prime, square in squares:
@@ -42,20 +45,29 @@ def collect_anchors(n, steps=32768, wheel=60, count=1):
             candidates.setdefault(d, (index, b, numerator))
     anchors = []
     combined = 1
+    examined = replays = 0
     for d in sorted(candidates):
+        examined += 1
         if gcd(d, combined) != 1:
             continue
         index, b, numerator = candidates[d]
-        a, m = convergent_mod(4*n, index, d)
         minus_root = numerator * pow(b, -1, n) % n
-        root = a * pow(2*m, -1, d) % d
-        if (minus_root**2+d) % n or (root**2-n) % d or d % 4 != 3:
+        if (minus_root**2+d) % n or d % 4 != 3:
             raise ArithmeticError('continued-fraction square-root certificate failed')
-        anchors.append(dict(period=d, step=index, removed_square_root=b,
-                            minus_root=minus_root, root=root))
+        anchor = dict(period=d, step=index, removed_square_root=b, minus_root=minus_root)
+        if not negative_only:
+            a, m = convergent_mod(4*n, index, d)
+            replays += index
+            anchor['root'] = a * pow(2*m, -1, d) % d
+            if (anchor['root']**2-n) % d:
+                raise ArithmeticError('continued-fraction square-root certificate failed')
+        anchors.append(anchor)
         combined *= d
         if len(anchors) == count:
             break
+    if stats is not None:
+        stats.update(cf_steps=steps, distinct_candidates=len(candidates), examined=examined,
+                     coprimality_rejections=examined-len(anchors), replay_steps=replays)
     return anchors
 
 

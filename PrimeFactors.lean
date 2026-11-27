@@ -625,3 +625,6 @@ import PrimeFactors.TwoCharacterWindow
 import PrimeFactors.CharacterProductBound
 import PrimeFactors.CharacterWindowMoment
 import PrimeFactors.CharacterWindowRate
+import PrimeFactors.DivisorSignPanel
+import PrimeFactors.SplitPrimeInterval
+import PrimeFactors.SplitPrimeBudget
