@@ -813,3 +813,6 @@ import PrimeFactors.SquareScalePairCoordinates
 import PrimeFactors.SquareScaleHarmonicBound
 import PrimeFactors.SquareScalePairCover
 import PrimeFactors.FourNeighborScaleFrequency
+import PrimeFactors.SquareDivisorClueWindow
+import PrimeFactors.FourSquareDivisorClues
+import PrimeFactors.SquareDivisorCluePopulation

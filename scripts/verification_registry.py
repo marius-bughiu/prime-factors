@@ -70,6 +70,7 @@ CHECKS = (
     experiment('jacobi_scale_prime_remainder', '--check', data=('benchmarks/jacobi-scale-prime-remainder.json',)),
     experiment('opposite_square_scales', data=('benchmarks/opposite-square-scales.json',)),
     experiment('four_neighbor_scales', data=('benchmarks/four-neighbor-scales.json',)),
+    experiment('square_divisor_clue_window', data=('benchmarks/square-divisor-clue-window.json',)),
     experiment('opposite_scale_valuations', '--check', lean=True, proof='opposite-scale-valuations',
                data=('benchmarks/opposite-scale-valuations.json', 'benchmarks/unit-quartic.json',
                      'research/certified-control.json')),

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Knowing that $288^2$ divides $(p+1)(q+1)$ singles out the true sum on a 39-bit product. The known factors supplied that clue. At 2,048 bits even all four supplied square divisors leave at least $2^{514}$ sums passing their congruences in the basic balanced window, except on a fraction below $2^{-13}$ of eligible prime pairs. [The worked example, full-size bounds and remaining square test](what-four-square-divisors-reveal.md)
+
 One scaled square root can check the four neighboring products $(p\pm1)(q\pm1)$. It yielded a factor on 1,343 pairs of distinct 12-bit primes through scale 16, including 919 that matched-budget Fermat search missed. The same family of tests fails at **every** scale through $2^{40}$ on the two published 2,048-bit controls, as verified from their known factors. [Root selection, census and full-size checks](checking-both-sides-of-a-square-scale.md)
 
 For a balanced product, the largest even degree below or equal to its square root already gives a factor through a complete Jacobi sum. At 493 the public choice was 22, and the calculation gave 29. An ordinary binomial coefficient at that same degree gave 17. A second formula dispenses with the coefficient, although direct evaluation still visits every residue. Two consecutive readings also suffice to tell whether the whole sequence repeats at a proposed shift. [Public degree and cost comparison](a-public-degree-for-the-jacobi-moment.md) · [Testing a repeat and classifying the zeros](which-jacobi-moments-recognize-a-repeat.md)

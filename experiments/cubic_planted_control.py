@@ -8,11 +8,12 @@ generated Lean receipt.
 
 import argparse
 from collections import Counter
-from math import gcd, isqrt, prod
+from math import gcd, prod
 from pathlib import Path
 from subprocess import run
 from time import perf_counter
 
+from experiments.small_factorization import factor_small
 from scripts.factor import primes_through
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,17 +56,6 @@ def forbidden_residues():
             if not (residue*p*q) % prime:
                 result.append((prime, (residue-1)*inverse % prime))
     return result
-
-
-def factor_small(d):
-    factors = {}
-    for prime in primes_through(isqrt(d)):
-        while d % prime == 0:
-            factors[prime] = factors.get(prime, 0)+1
-            d //= prime
-    if d > 1:
-        factors[d] = 1
-    return factors
 
 
 def order_witness(n, factors):

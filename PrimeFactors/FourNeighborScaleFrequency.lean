@@ -147,4 +147,44 @@ theorem full_factor_width : 2^462*(allSigns (2^1024)).card < eligible.card :=
 theorem near_product_width : 2^77*(allSigns (2^1792)).card < eligible.card :=
   at_cutoff 896 77 1792 (by decide) (by decide +kernel)
 
+/-- A large square divisor forces a small complementary scale for the same
+signs. Both thresholds are public and the square divisor is arbitrary. -/
+theorem large_square_divisor {p q y R L : ℕ} (ok : (p,q) ∈ eligible) (a b : Bool)
+    (divides : y^2 ∣ neighbor a p * neighbor b q) (large : R ≤ y) (rp : 0 < R)
+    (budget : 2^1024*2^1024 ≤ L*R^2) : (p,q) ∈ allSigns L := by
+  obtain ⟨hp,ord,_,top⟩ := PrimeFactors.OppositeSquareScalePopulation.bounds ok
+  obtain ⟨ap,ah⟩ := neighbor_bounds a hp (ord.trans top)
+  obtain ⟨bp,bh⟩ := neighbor_bounds b (hp.trans ord) top
+  obtain ⟨t,eqn⟩ := divides
+  have tp : 0 < t := by
+    have positive := Nat.mul_pos ap bp
+    rw [eqn] at positive
+    exact Nat.pos_of_mul_pos_left positive
+  have cap : t ≤ L := by
+    apply Nat.le_of_mul_le_mul_right (c := R^2) _ (pow_pos rp 2)
+    calc
+      t*R^2 ≤ t*y^2 := Nat.mul_le_mul_left _ (Nat.pow_le_pow_left large 2)
+      _ = neighbor a p*neighbor b q := (Nat.mul_comm ..).trans eqn.symm
+      _ ≤ 2^1024*2^1024 := Nat.mul_le_mul ah bh
+      _ ≤ L*R^2 := budget
+  have hit := (mem_event (upperP:=a) (upperQ:=b) (L:=L)).mpr
+    ⟨ok,t,y,tp,cap,eqn.trans (Nat.mul_comm ..)⟩
+  cases a <;> cases b <;> simp only [allSigns,mem_union] <;> tauto
+
+/-- Outside the exceptional set counted by `near_product_width`, every
+positive square divisor root of every neighboring product is below 2^128. -/
+theorem square_roots_small {p q : ℕ} (ok : (p,q) ∈ eligible)
+    (typical : (p,q) ∉ allSigns (2^1792)) (a b : Bool) {y : ℕ}
+    (divides : y^2 ∣ neighbor a p*neighbor b q) : y < 2^128 := by
+  by_contra! large
+  exact typical (large_square_divisor ok a b divides large (by positivity) (by decide +kernel))
+
+/-- With a lower root cutoff of 2^64, the exceptional fraction is below 2^-13. -/
+theorem root64_exceptions : 2^13*(allSigns (2^1920)).card < eligible.card :=
+  at_cutoff 960 13 1920 (by decide) (by decide +kernel)
+
+/-- At the intermediate root cutoff 2^96 the exceptional fraction is below 2^-45. -/
+theorem root96_exceptions : 2^45*(allSigns (2^1856)).card < eligible.card :=
+  at_cutoff 928 45 1856 (by decide) (by decide +kernel)
+
 end PrimeFactors.FourNeighborScaleFrequency

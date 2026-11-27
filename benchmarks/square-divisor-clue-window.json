@@ -1,0 +1,105 @@
+{
+  "selection": "One seeded uniform draw without replacement from the increasing list of all 20-bit primes, using Python Random(20261127).sample(primes, 2). Sort the two values. Keep the first draw regardless of product width and clue strength.",
+  "source": "Factor the four small disclosed neighbors to create the maximal clues. The public count receives only the product and its four labelled roots. The true sum is used separately to identify its subprogression.",
+  "expected": {
+    "prime_bits": 20,
+    "seed": 20261127,
+    "prime_population": 38635,
+    "factors": [
+      "556559",
+      "753983"
+    ],
+    "n": "419636024497",
+    "product_bits": 39,
+    "neighbor_factorizations": {
+      "p-": [
+        [
+          2,
+          1
+        ],
+        [
+          278279,
+          1
+        ]
+      ],
+      "p+": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          773,
+          1
+        ]
+      ],
+      "q-": [
+        [
+          2,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          12161,
+          1
+        ]
+      ],
+      "q+": [
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          17,
+          1
+        ]
+      ]
+    },
+    "largest_square_roots": {
+      "--": 2,
+      "++": 288,
+      "-+": 24,
+      "+-": 12
+    },
+    "public_counts": {
+      "low": 1295587,
+      "high": 1374176,
+      "all_integers": 78590,
+      "mod_four_residue": 2,
+      "mod_four_sums": 19647,
+      "both_sum_congruences": 1,
+      "all_four_congruences": 1,
+      "square_discriminants": 1,
+      "exact_sums": [
+        1310542
+      ]
+    },
+    "retrospective": {
+      "joint_modulus": 82944,
+      "true_sum_residue": 66382,
+      "true_class_sums": 1
+    }
+  }
+}

@@ -1,5 +1,31 @@
 [
   {
+    "id": "four-square-divisor-clue-limits",
+    "category": "limits",
+    "title": "Four supplied square divisors usually leave at least 2⁵¹⁴ possible sums",
+    "impact": "All four clues leave at least 2⁵¹⁴ compatible sums except on a fraction below 2⁻¹³. The lower bound of 2²⁵⁸ sums holds with an exceptional fraction below 2⁻⁴⁵.",
+    "scope": "Uniform sorted pairs of distinct 1,024-bit primes with a 2,048-bit product. Compatible sums pass the basic balanced interval, the true remainder modulo four, two sum congruences and two discriminant congruences.",
+    "detail": "One same-sign clue leaves at least 2⁷⁶⁴ sums, or one mixed-sign clue leaves at least 2⁷⁶⁷ gaps, except on a fraction below 2⁻⁷⁷. A candidate still needs an integer square discriminant to give factors.",
+    "sources": [
+      {"href": "discoveries/what-four-square-divisors-reveal.md#bounds-at-2048-bits", "label": "Counts and eligible population"},
+      {"href": "PrimeFactors/FourSquareDivisorClues.lean", "label": "Four-clue count"},
+      {"href": "PrimeFactors/SquareDivisorCluePopulation.lean", "label": "Population proof"}
+    ]
+  },
+  {
+    "id": "seeded-square-divisor-clue",
+    "category": "cases",
+    "title": "One supplied square divisor fixes the sum on a 39-bit product",
+    "impact": "The sum of the factors of 419,636,024,497 must lie among 78,590 integers. Knowing that 288² divides (p+1)(q+1) leaves only 1,310,542, giving the primes 556,559 and 753,983.",
+    "scope": "First seeded draw of two distinct 20-bit primes. Their disclosed factors supplied the four largest square divisors used as clues.",
+    "detail": "The sum is 66,382 modulo 82,944. Exactly one integer in the balanced window has that remainder, and its discriminant is 197,424².",
+    "sources": [
+      {"href": "discoveries/what-four-square-divisors-reveal.md#a-39-bit-example-with-supplied-clues", "label": "Worked example"},
+      {"href": "benchmarks/square-divisor-clue-window.json", "label": "Seed and counts"},
+      {"href": "PrimeFactors/SquareDivisorClueWindow.lean", "label": "Factorization and uniqueness proof"}
+    ]
+  },
+  {
     "id": "four-square-scale-frequency",
     "category": "limits",
     "title": "Even more guesses than possible smaller factors almost never reach a working scale",
