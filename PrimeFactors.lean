@@ -726,3 +726,7 @@ import PrimeFactors.DivisorCountPeriod
 import PrimeFactors.SquareAnchorCoverage
 import PrimeFactors.PowerfulAnchorCoverage
 import PrimeFactors.CyclotomicDigitPeriod
+import PrimeFactors.CyclotomicRadixLift
+import PrimeFactors.ForcedTotientDivisor
+import PrimeFactors.HybridSmoothWeight
+import PrimeFactors.CyclotomicResiduePacking
