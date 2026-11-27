@@ -18,6 +18,21 @@ Both factors have 20 bits. Their product and those widths put their sum between 
 
 Through 41, the three sums are 1,310,542, 1,321,358 and 1,323,998. The check modulo 43 eliminates the last two. For the survivor, the discriminant $s^2-4N$ is $197{,}424^2$, giving $556{,}559\times753{,}983$. The original experiment published these primes, and we reused that product for this comparison. The inputs to each filter were the product, the endpoints and the small modulus. A straightforward pass that checks every surviving candidate at each stage uses 16,226 small remainder lookups before the final square test. The Lean certificate checks the same stages using bit masks. [Stage counts, survivor and factorization](../PrimeFactors/PublicSumSieveControl.lean)
 
+## Which remainder should we check first?
+
+On the same 39-bit product, changing the order of the thirteen prime tests saves **3,495 of 16,226 lookups (21.54%)**. A lookup checks one candidate sum against one prime’s allowed remainders. Both orders start with all 7,273 candidates, use the same tables, apply all thirteen tests and finish with the same sum. The new order can be chosen before looking at any candidate. Sort the thirteen primes by the fraction of their residues that pass. These fractions come from the product alone. [Order, work counts and final sum](../PrimeFactors/PublicSumSieveOrdering.lean) · [Reproducible inputs and counts](../benchmarks/square-divisor-clue-window.json)
+
+| Order | First three primes | Candidates left after three tests | Total lookups |
+| --- | --- | ---: | ---: |
+| Increasing prime | 3, 5, 7 | 1,108 | 16,226 |
+| Increasing fraction of residues that pass | 5, 11, 29 | 638 | 12,731 |
+
+The setup cost shared by both scans is building the thirteen tables. The changed order also sorts thirteen fractions. The count above measures candidate lookups. A program using packed bit masks has a different cost, and the comparison gives no elapsed-time estimate. [Scalar replay](../experiments/square_divisor_clue_window.py)
+
+There is an exact rule for swapping two adjacent tests in any fixed order. Everything after them sees the same candidates either way, so the saving is exactly the difference between how many current candidates each of the two tests passes. On a complete period of coprime moduli, the Chinese remainder theorem makes the residue frequencies independent. With equal costs per lookup, sorting by increasing passing fraction minimizes the total on that complete period. [Adjacent exchange proof](../PrimeFactors/FiniteFilterWork.lean) · [Independence on complete periods](../PrimeFactors/FactorSumCRT.lean) · [Minimum over all orders](../PrimeFactors/IndependentFilterOrdering.lean)
+
+The actual search interval can favor a different order. In the 638 candidates left after 5, 11 and 29, the modulo-37 test passes 310 and the modulo-41 test passes only 286. Their full-period passing fractions are $18/37$ and $20/41$, in the opposite order. Swapping this particular adjacent pair would save another 24 lookups. Discovering such a reversal by counting the current candidates has its own cost. [Verified partial-period counterexample](../PrimeFactors/PublicSumSieveOrdering.lean)
+
 ## What do inexpensive remainders save at 2,048 bits?
 
 On the two published comparisons, we counted how many square tests would be needed to visit the **entire** interval allowed by the factor widths. Both columns use only the product and the widths. The first uses the known sum modulo four. The second also uses the odd primes through 19. Counting complete blocks of 19,399,380 residues and bounding the last partial block gives both an upper and a lower bound. [Exact comparison proofs](../PrimeFactors/PublicWheelWidthControls.lean)

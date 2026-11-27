@@ -2,6 +2,7 @@
 
 import json
 from collections import Counter
+from fractions import Fraction
 from math import isqrt, lcm, prod
 from pathlib import Path
 from random import Random
@@ -69,22 +70,35 @@ def count_from_clues(n, roots, *, factor_bits=None):
 
 
 def public_remainders(n, factor_bits):
-    """Replay the thirteen small-prime checks in the Lean control."""
-    _, _, candidates = sum_progression(n, factor_bits)
-    stages = [len(candidates)]
+    """Compare two orders of the same thirteen public remainder tables."""
+    _, _, window = sum_progression(n, factor_bits)
     primes = [prime for prime in primes_through(43) if prime != 2]
+    tables = {}
     for prime in primes:
         squares = {x*x % prime for x in range(prime)}
-        allowed = {s for s in range(prime) if (s*s-4*n) % prime in squares}
-        candidates = [s for s in candidates if s % prime in allowed]
-        stages.append(len(candidates))
+        tables[prime] = {s for s in range(prime) if (s*s-4*n) % prime in squares}
+
+    def scan(order):
+        candidates = window
+        stages = [len(window)]
+        for prime in order:
+            candidates = [s for s in candidates if s % prime in tables[prime]]
+            stages.append(len(candidates))
+        return candidates, stages
+
+    candidates, stages = scan(primes)
+    density_order = sorted(primes, key=lambda p: Fraction(len(tables[p]), p))
+    reordered, density_stages = scan(density_order)
+    assert candidates == reordered
     pairs = []
     for s in candidates:
         gap = isqrt(s*s-4*n)
         if gap*gap == s*s-4*n:
             pairs.append([str((s-gap)//2), str((s+gap)//2)])
     return dict(primes=primes, stage_counts=stages, residue_lookups=sum(stages[:-1]),
-                surviving_sums=candidates, recovered_pairs=pairs)
+                surviving_sums=candidates, recovered_pairs=pairs,
+                density_order=dict(primes=density_order, stage_counts=density_stages,
+                                   residue_lookups=sum(density_stages[:-1])))
 
 
 def retrospective(true_sum, public, survivors, roots):

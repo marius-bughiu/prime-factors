@@ -112,7 +112,12 @@
       "stage_counts": [7273, 4849, 1939, 1108, 505, 271, 141, 72, 38, 14, 7, 6, 3, 1],
       "residue_lookups": 16226,
       "surviving_sums": [1310542],
-      "recovered_pairs": [["556559", "753983"]]
+      "recovered_pairs": [["556559", "753983"]],
+      "density_order": {
+        "primes": [5, 11, 29, 37, 41, 43, 31, 23, 19, 17, 13, 7, 3],
+        "stage_counts": [7273, 2909, 1323, 638, 310, 143, 75, 37, 13, 5, 2, 2, 1, 1],
+        "residue_lookups": 12731
+      }
     },
     "retrospective": {
       "joint_modulus": 82944,

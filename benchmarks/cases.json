@@ -57,6 +57,36 @@
     "fermat_steps": 100
   },
   {
+    "id": "masked-discriminant-9523",
+    "description": "Baseline certificate for the square-multiplier example, using trial division through 97",
+    "n": "9523",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["89", "107"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "pair-counts-nonempty-prefix",
+    "description": "Baseline certificate for the four-sum prefix with a joint hit, using trial division through 97",
+    "n": "10961",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["97", "113"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "pair-counts-empty-prefix",
+    "description": "Fermat baseline for the four-sum prefix with no joint hit",
+    "n": "187709",
+    "max_steps": 14,
+    "status": "complete",
+    "factors": ["337", "557"],
+    "remaining": [],
+    "fermat_steps": 14
+  },
+  {
     "id": "balanced-34387",
     "description": "Fermat baseline for the weighted-interval and prime-power example",
     "n": "34387",

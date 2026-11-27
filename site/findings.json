@@ -1,5 +1,31 @@
 [
   {
+    "id": "reorder-public-remainders-39-bit",
+    "category": "gains",
+    "title": "Reordering the same 13 tests saved 3,495 lookups on the 39-bit product",
+    "impact": "Sorting the public residue tables by how many residues pass reduced the scalar scan from 16,226 to 12,731 lookups. The sole survivor was again 1,310,542.",
+    "scope": "One previously published product of two 20-bit primes. Both orders start with 7,273 candidates and apply the same tests to the survivors. The order uses only the small public tables.",
+    "detail": "The saving is 21.54% in candidate–prime lookups. Sorting 13 fractions adds setup work. On one partial interval, interchanging two of the tests saves another 24 lookups.",
+    "sources": [
+      {"href": "discoveries/how-far-public-remainders-narrow-the-sum.md#which-remainder-should-we-check-first", "label": "Comparison and scope"},
+      {"href": "PrimeFactors/PublicSumSieveOrdering.lean", "label": "Order and certified lookup counts"},
+      {"href": "benchmarks/square-divisor-clue-window.json", "label": "Reproducible fixture"}
+    ]
+  },
+  {
+    "id": "one-more-test-after-supplied-marginal-counts",
+    "category": "formulas",
+    "title": "One more reading settles the ambiguous four-position case",
+    "impact": "Given all six counts and the first two tests at each position, one check of the third test identifies the joint hit or proves the window empty.",
+    "scope": "Four positions with three tests and an ambiguous common count. The result supplies no inexpensive procedure for obtaining the six counts on a large interval.",
+    "detail": "For w positions with k earlier tests mapped, the smallest of their groups contains at most floor(w/2ᵏ) positions. Reading that group and using the supplied margins recovers the joint count.",
+    "sources": [
+      {"href": "discoveries/when-pair-counts-determine-a-common-sum.md#what-knowing-the-positions-saves", "label": "Inputs, query cost and limitations"},
+      {"href": "PrimeFactors/BooleanWindowQueries.lean", "label": "Group count and four-position location"},
+      {"href": "PrimeFactors/StratifiedPointQueryLower.lean", "label": "Worst-case probe bound"}
+    ]
+  },
+  {
     "id": "identical-pair-counts-and-opposite-common-sum-answers",
     "category": "limits",
     "title": "Two products give identical pair counts and different common-sum answers",

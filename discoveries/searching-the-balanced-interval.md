@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Reordering the same thirteen remainder tests saved 3,495 lookups in the 39-bit example. Both orders recovered the same factors from the product and widths. The order comes from the fraction of residues allowed at each prime. [Certified work comparison and partial-period counterexample](how-far-public-remainders-narrow-the-sum.md#which-remainder-should-we-check-first)
+
 Can a few cheap counts tell us which interval to keep? For a fixed product remainder, three single-prime counts and three pair counts decide the exact number of joint hits at 405 of 429 starts. Two small semiprimes with identical counts give opposite answers in their actual first four positions. [Worked examples and period census](when-pair-counts-determine-a-common-sum.md)
 
 The product and the factor widths determine a family of remainder tests that isolates the true sum without assuming RH. Visiting each test would cost more than $2^{930}$ prime visits. Lean also checks the exact power at which a prime can reject a false sum when a square factor masks the first test. [Uniqueness, its hypotheses and a worked example](which-prime-rejects-a-wrong-factor-sum.md)

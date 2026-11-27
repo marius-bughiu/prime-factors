@@ -860,3 +860,10 @@ import PrimeFactors.PairwiseSumCounts
 import PrimeFactors.ThreeTestMarginals
 import PrimeFactors.BooleanMarginalAmbiguity
 import PrimeFactors.FourRowResidueCounts
+import PrimeFactors.BooleanTradeVolume
+import PrimeFactors.SparseBooleanRow
+import PrimeFactors.BooleanWindowQueries
+import PrimeFactors.FiniteFilterWork
+import PrimeFactors.StratifiedPointQueryLower
+import PrimeFactors.IndependentFilterOrdering
+import PrimeFactors.PublicSumSieveOrdering
