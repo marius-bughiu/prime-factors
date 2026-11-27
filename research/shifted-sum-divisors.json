@@ -1,0 +1,471 @@
+{
+  "shifts": [
+    1,
+    64
+  ],
+  "extraction_cutoffs": [
+    5,
+    31
+  ],
+  "menu": "Peel all prime powers through 31. Enumerate d and d*R for every divisor d of the peeled part H, with R the residual. There is no divisor-count cutoff. For R=1, enumerate d only. When H<lower+k and R>=upper+k both lists miss the interval and are skipped.",
+  "work_units": "division_checks counts divmod attempts, including the exact_divisions subset. cofactor_divisions forms H. divisor_multiplications counts construction of both lists. divisors_proposed counts interval/parity checks. witness_complement_divisions and witness_divisibility_checks occur only after a verified numerical split.",
+  "two_parts_rule": "Earlier baseline proposes only the peeled part and its complement at cutoffs 5 and 31.",
+  "later": "A proper trial-prime divisor through 31 of the complement certifies a later intermediate row. The separately labelled ceiling allows every divisor of N+k and tests the known complementary quotient for compositeness exactly.",
+  "matched_budget": "One setup root and at most candidate_roots midpoints for Fermat on each input. Skip Fermat entirely when that midpoint budget is zero. The shifted search also pays for peeling and divisor enumeration.",
+  "cf_comparison": "The nine-bit census independently reruns the published width-scaled prefix-LCM menu. Its exponents and work differ from the neighboring-divisor search.",
+  "nine_bit": {
+    "totals": {
+      "products": 903,
+      "recovered": 466,
+      "shift_one": 15,
+      "later": 404,
+      "later_beyond_one": 391,
+      "recovered_at_first_fermat_midpoint": 276
+    },
+    "work": {
+      "shifts": 57792,
+      "setup_roots": 903,
+      "setup_divisions": 1806,
+      "division_checks": 771223,
+      "exact_divisions": 135511,
+      "cofactor_divisions": 57792,
+      "divisors_proposed": 357591,
+      "candidate_roots": 1092,
+      "witness_divisibility_checks": 2220,
+      "shifts_skipped_by_interval": 45767,
+      "smooth_divisors_generated": 217386,
+      "divisor_multiplications": 345566,
+      "witness_complement_divisions": 554
+    },
+    "two_parts": {
+      "totals": {
+        "products": 903,
+        "recovered": 109,
+        "shift_one": 5,
+        "later": 13,
+        "later_beyond_one": 12,
+        "recovered_at_first_fermat_midpoint": 39
+      },
+      "work": {
+        "shifts": 57792,
+        "setup_roots": 903,
+        "setup_divisions": 1806,
+        "division_checks": 771223,
+        "exact_divisions": 135511,
+        "cofactor_divisions": 115584,
+        "divisors_proposed": 165244,
+        "candidate_roots": 217,
+        "witness_divisibility_checks": 1252
+      }
+    },
+    "matched_total_roots_fermat": {
+      "fermat": 339,
+      "both": 313,
+      "shifted_only": 153,
+      "fermat_only": 26,
+      "setup_roots": 671,
+      "midpoints": 922
+    },
+    "prefix_lcm_comparison": {
+      "exponents": 2495,
+      "blocks_visited": 8190,
+      "candidate_roots": 220,
+      "setup_roots": 903,
+      "canonical": 78,
+      "canonical_and_shifted": 68,
+      "all_intermediates": 118,
+      "all_intermediates_and_shifted": 97
+    },
+    "known_factor_ceiling": {
+      "products": 903,
+      "shifts": 57792,
+      "qualifying_shifts": 637,
+      "recovered": 543,
+      "shift_one": 17,
+      "later": 446,
+      "later_beyond_one": 432
+    }
+  },
+  "holdout": [
+    {
+      "factor_bits": 12,
+      "totals": {
+        "products": 16,
+        "recovered": 1,
+        "shift_one": 0,
+        "later": 1,
+        "later_beyond_one": 1,
+        "recovered_at_first_fermat_midpoint": 1
+      },
+      "work": {
+        "shifts": 1024,
+        "setup_roots": 16,
+        "setup_divisions": 32,
+        "division_checks": 13666,
+        "exact_divisions": 2402,
+        "cofactor_divisions": 1024,
+        "divisors_proposed": 4044,
+        "candidate_roots": 9,
+        "witness_divisibility_checks": 1,
+        "shifts_skipped_by_interval": 951,
+        "smooth_divisors_generated": 2170,
+        "divisor_multiplications": 3971,
+        "witness_complement_divisions": 1
+      },
+      "two_parts": {
+        "totals": {
+          "products": 16,
+          "recovered": 0,
+          "shift_one": 0,
+          "later": 0,
+          "later_beyond_one": 0,
+          "recovered_at_first_fermat_midpoint": 0
+        },
+        "work": {
+          "shifts": 1024,
+          "setup_roots": 16,
+          "setup_divisions": 32,
+          "division_checks": 13666,
+          "exact_divisions": 2402,
+          "cofactor_divisions": 2048,
+          "divisors_proposed": 2928,
+          "candidate_roots": 2,
+          "witness_divisibility_checks": 0
+        }
+      },
+      "matched_total_roots_fermat": {
+        "fermat": 1,
+        "both": 1,
+        "shifted_only": 0,
+        "fermat_only": 0,
+        "setup_roots": 6,
+        "midpoints": 9
+      },
+      "recoveries": [
+        {
+          "n": "10162903",
+          "pair": [
+            "3167",
+            "3209"
+          ],
+          "first": {
+            "shift": 41,
+            "divisor": "6416",
+            "complement": "1584"
+          },
+          "first_later": {
+            "shift": 41,
+            "divisor": "6416",
+            "complement": "1584",
+            "d": 2,
+            "exponent": "5081472",
+            "numerator": "792",
+            "denominator": "1583"
+          },
+          "first_fermat_midpoint": true
+        }
+      ]
+    },
+    {
+      "factor_bits": 20,
+      "totals": {
+        "products": 16,
+        "recovered": 0,
+        "shift_one": 0,
+        "later": 0,
+        "later_beyond_one": 0,
+        "recovered_at_first_fermat_midpoint": 0
+      },
+      "work": {
+        "shifts": 1024,
+        "setup_roots": 16,
+        "setup_divisions": 32,
+        "division_checks": 13691,
+        "exact_divisions": 2427,
+        "cofactor_divisions": 1024,
+        "divisors_proposed": 504,
+        "candidate_roots": 0,
+        "witness_divisibility_checks": 0,
+        "shifts_skipped_by_interval": 1021,
+        "smooth_divisors_generated": 252,
+        "divisor_multiplications": 501,
+        "witness_complement_divisions": 0
+      },
+      "two_parts": {
+        "totals": {
+          "products": 16,
+          "recovered": 0,
+          "shift_one": 0,
+          "later": 0,
+          "later_beyond_one": 0,
+          "recovered_at_first_fermat_midpoint": 0
+        },
+        "work": {
+          "shifts": 1024,
+          "setup_roots": 16,
+          "setup_divisions": 32,
+          "division_checks": 13691,
+          "exact_divisions": 2427,
+          "cofactor_divisions": 2048,
+          "divisors_proposed": 2934,
+          "candidate_roots": 0,
+          "witness_divisibility_checks": 0
+        }
+      },
+      "matched_total_roots_fermat": {
+        "fermat": 0,
+        "both": 0,
+        "shifted_only": 0,
+        "fermat_only": 0,
+        "setup_roots": 0,
+        "midpoints": 0
+      },
+      "recoveries": []
+    },
+    {
+      "factor_bits": 28,
+      "totals": {
+        "products": 16,
+        "recovered": 0,
+        "shift_one": 0,
+        "later": 0,
+        "later_beyond_one": 0,
+        "recovered_at_first_fermat_midpoint": 0
+      },
+      "work": {
+        "shifts": 1024,
+        "setup_roots": 16,
+        "setup_divisions": 32,
+        "division_checks": 13667,
+        "exact_divisions": 2403,
+        "cofactor_divisions": 1024,
+        "divisors_proposed": 384,
+        "candidate_roots": 0,
+        "witness_divisibility_checks": 0,
+        "shifts_skipped_by_interval": 1023,
+        "smooth_divisors_generated": 192,
+        "divisor_multiplications": 383,
+        "witness_complement_divisions": 0
+      },
+      "two_parts": {
+        "totals": {
+          "products": 16,
+          "recovered": 0,
+          "shift_one": 0,
+          "later": 0,
+          "later_beyond_one": 0,
+          "recovered_at_first_fermat_midpoint": 0
+        },
+        "work": {
+          "shifts": 1024,
+          "setup_roots": 16,
+          "setup_divisions": 32,
+          "division_checks": 13667,
+          "exact_divisions": 2403,
+          "cofactor_divisions": 2048,
+          "divisors_proposed": 2914,
+          "candidate_roots": 0,
+          "witness_divisibility_checks": 0
+        }
+      },
+      "matched_total_roots_fermat": {
+        "fermat": 0,
+        "both": 0,
+        "shifted_only": 0,
+        "fermat_only": 0,
+        "setup_roots": 0,
+        "midpoints": 0
+      },
+      "recoveries": []
+    },
+    {
+      "factor_bits": 36,
+      "totals": {
+        "products": 16,
+        "recovered": 0,
+        "shift_one": 0,
+        "later": 0,
+        "later_beyond_one": 0,
+        "recovered_at_first_fermat_midpoint": 0
+      },
+      "work": {
+        "shifts": 1024,
+        "setup_roots": 16,
+        "setup_divisions": 32,
+        "division_checks": 13647,
+        "exact_divisions": 2383,
+        "cofactor_divisions": 1024,
+        "divisors_proposed": 0,
+        "candidate_roots": 0,
+        "witness_divisibility_checks": 0,
+        "shifts_skipped_by_interval": 1024,
+        "smooth_divisors_generated": 0,
+        "divisor_multiplications": 0,
+        "witness_complement_divisions": 0
+      },
+      "two_parts": {
+        "totals": {
+          "products": 16,
+          "recovered": 0,
+          "shift_one": 0,
+          "later": 0,
+          "later_beyond_one": 0,
+          "recovered_at_first_fermat_midpoint": 0
+        },
+        "work": {
+          "shifts": 1024,
+          "setup_roots": 16,
+          "setup_divisions": 32,
+          "division_checks": 13647,
+          "exact_divisions": 2383,
+          "cofactor_divisions": 2048,
+          "divisors_proposed": 2906,
+          "candidate_roots": 0,
+          "witness_divisibility_checks": 0
+        }
+      },
+      "matched_total_roots_fermat": {
+        "fermat": 0,
+        "both": 0,
+        "shifted_only": 0,
+        "fermat_only": 0,
+        "setup_roots": 0,
+        "midpoints": 0
+      },
+      "recoveries": []
+    }
+  ],
+  "controls": [
+    {
+      "id": "target-norm-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "work": {
+        "shifts": 64,
+        "setup_roots": 1,
+        "setup_divisions": 2,
+        "division_checks": 856,
+        "exact_divisions": 152,
+        "cofactor_divisions": 64,
+        "divisors_proposed": 0,
+        "candidate_roots": 0,
+        "witness_divisibility_checks": 0,
+        "shifts_skipped_by_interval": 64,
+        "smooth_divisors_generated": 0,
+        "divisor_multiplications": 0,
+        "witness_complement_divisions": 0
+      },
+      "pair": [],
+      "first": null,
+      "first_later": null,
+      "shift_one": false,
+      "two_parts": {
+        "work": {
+          "shifts": 64,
+          "setup_roots": 1,
+          "setup_divisions": 2,
+          "division_checks": 856,
+          "exact_divisions": 152,
+          "cofactor_divisions": 128,
+          "divisors_proposed": 184,
+          "candidate_roots": 0,
+          "witness_divisibility_checks": 0
+        },
+        "pair": [],
+        "first": null,
+        "first_later": null,
+        "shift_one": false
+      }
+    },
+    {
+      "id": "target-norm-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "work": {
+        "shifts": 64,
+        "setup_roots": 1,
+        "setup_divisions": 2,
+        "division_checks": 854,
+        "exact_divisions": 150,
+        "cofactor_divisions": 64,
+        "divisors_proposed": 0,
+        "candidate_roots": 0,
+        "witness_divisibility_checks": 0,
+        "shifts_skipped_by_interval": 64,
+        "smooth_divisors_generated": 0,
+        "divisor_multiplications": 0,
+        "witness_complement_divisions": 0
+      },
+      "pair": [],
+      "first": null,
+      "first_later": null,
+      "shift_one": false,
+      "two_parts": {
+        "work": {
+          "shifts": 64,
+          "setup_roots": 1,
+          "setup_divisions": 2,
+          "division_checks": 854,
+          "exact_divisions": 150,
+          "cofactor_divisions": 128,
+          "divisors_proposed": 190,
+          "candidate_roots": 0,
+          "witness_divisibility_checks": 0
+        },
+        "pair": [],
+        "first": null,
+        "first_later": null,
+        "shift_one": false
+      }
+    }
+  ],
+  "known_43_bit": {
+    "n": "7687946879999",
+    "factor_bits": 22,
+    "work": {
+      "shifts": 64,
+      "setup_roots": 1,
+      "setup_divisions": 2,
+      "division_checks": 858,
+      "exact_divisions": 154,
+      "cofactor_divisions": 64,
+      "divisors_proposed": 660,
+      "candidate_roots": 2,
+      "witness_divisibility_checks": 9,
+      "shifts_skipped_by_interval": 63,
+      "smooth_divisors_generated": 330,
+      "divisor_multiplications": 659,
+      "witness_complement_divisions": 1
+    },
+    "pair": [
+      "2101249",
+      "3658751"
+    ],
+    "first": {
+      "shift": 1,
+      "divisor": "5760000",
+      "complement": "1334713"
+    },
+    "first_later": {
+      "shift": 1,
+      "divisor": "5760000",
+      "complement": "1334713",
+      "d": 23,
+      "exponent": "334258560000",
+      "numerator": "58031",
+      "denominator": "1334712"
+    },
+    "shift_one": true,
+    "published_shift_one": {
+      "prime_limit": 5,
+      "inverse_gap": 0,
+      "smooth_part": "5760000",
+      "residual_bits": 21,
+      "divisions": 16,
+      "remainder_checks": 19,
+      "square_tests": 1,
+      "pair": [
+        "2101249",
+        "3658751"
+      ]
+    }
+  }
+}

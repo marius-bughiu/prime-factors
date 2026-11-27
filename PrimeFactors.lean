@@ -713,3 +713,9 @@ import PrimeFactors.IntermediateTotientObstruction
 import PrimeFactors.IntermediateBlockCutoff
 import PrimeFactors.ProductDeficitBand
 import PrimeFactors.IntermediateMenuCertificate
+import PrimeFactors.IntermediateShiftedExponent
+import PrimeFactors.IntermediateShiftCount
+import PrimeFactors.PrimeSumDividesSuccessor
+import PrimeFactors.ShiftedPrimeSumPopulation
+import PrimeFactors.ShiftedDivisorReadout
+import PrimeFactors.IntermediatePrivateShiftWindow

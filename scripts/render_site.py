@@ -1109,6 +1109,16 @@ def case_row(result):
         if w['witness']:
             hit = w['witness']
             count += (f" · convergent {hit['index']} was {escape(hit['numerator'])}/{escape(hit['denominator'])}")
+    elif result['method'] == 'shifted-sum-divisors':
+        run = result['shifted_sum_divisors']
+        cost = run['work']
+        count = (f"{cost['shifts']} neighbors · {cost['division_checks']:,} small-prime checks"
+                 f" · {cost['cofactor_divisions']:,} cofactor divisions"
+                 f" · {cost['divisors_proposed']:,} divisors proposed"
+                 f" · {cost['candidate_roots']} candidate square roots and {cost['setup_roots']} setup root")
+        if run['first_later']:
+            hit = run['first_later']
+            count += f" · shift {hit['shift']}, fraction {int(hit['numerator'])}/{int(hit['denominator'])}"
     elif result['method'] == 'intermediate-totient-rows':
         w = result['intermediate_totient_rows']
         cost = w['counts']

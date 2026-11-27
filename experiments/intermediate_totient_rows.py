@@ -293,7 +293,7 @@ def measure():
                 fermat_limit=FERMAT_LIMIT, nine_bit=main, holdout=heldout, controls=controls), successes
 
 
-def verify(pairs):
+def verify(pairs, panel_name="IntermediateTotientPanel"):
     """Certify all numerically reported splits, sharing the prime proofs across products."""
     by_prime = sorted({p for pair in pairs.values() for p in pair})
     imports, bodies = set(), []
@@ -318,9 +318,9 @@ def verify(pairs):
 
     sorted_pairs = sorted(pairs.items())
     goal, proof = join(0, len(sorted_pairs))
-    path = ROOT/"build/IntermediateTotientPanel.lean"
+    path = ROOT/"build"/f"{panel_name}.lean"
     path.parent.mkdir(parents=True, exist_ok=True)
-    ns = "PrimeFactors.IntermediateTotientPanel"
+    ns = f"PrimeFactors.{panel_name}"
     path.write_text("\n\n".join(["\n".join(sorted(imports)), "set_option maxRecDepth 8192",
                                  f"namespace {ns}", *bodies, *statements, f"theorem panel : {goal} :=\n  {proof}",
                                  "#print axioms panel", f"end {ns}", ""]))
