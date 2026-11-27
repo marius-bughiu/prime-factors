@@ -20,6 +20,10 @@ $$\frac ba\le\frac{U^2}{N}\frac{S+H}{S-H}.$$
 
 We round this bound up to $1+e/1024$. Listing only pairs within that ratio gives a finite count of the multipliers. The proof allows duplicates and some impossible pairs when upper-bounding the count. The search removes duplicates and tests coprimality. Every balanced input of the stated size retains a splitting row. The cost of generating the pairs and the work inside each interval both matter. A separate bound counts every candidate square position before sieving. [Counting multipliers](../PrimeFactors/RectangularMultiplierCount.lean) · [Counting positions](../PrimeFactors/RectangularWeightCost.lean)
 
+## How much work can remain?
+
+On every such input the complete generator still emits **more than $10^{102}$ distinct multiples**, even after testing the ratio, parity and coprimality. To see why, take $a=2049+2i$ and $b=a+2$ for $0\le i<2^{339}-1025$. Each pair is coprime, its ratio fits even the narrowest positive rounded allowance, and $a(a+2)$ is under the multiplier cutoff. These products strictly increase with $i$. This lower bound counts different multiples visited on a **complete traversal**. A factor can appear before the traversal ends. [Lean proof of the surviving count](../PrimeFactors/RectangularSearchFloor.lean)
+
 ## What we actually searched
 
 On each full-size input we tried multipliers through 65,536 and at most the first position in each surviving interval. Both variants used the same modular square filters. Each timing is the median of four CPU measurements including setup. Both whole inputs remained unresolved by these runs. [Exact inputs, caps and counts](../benchmarks/rectangular-root-windows.json) · [Timing records](../research/rectangular-multiplier-products.json)

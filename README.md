@@ -12,7 +12,7 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
-**In one search, we can now skip at least 81% of the trial multiples for every 2,048-bit product of two distinct 1,024-bit primes.** On our independently generated product, we could skip over 94%. Trying the remaining multiples up to 65,536, with one candidate per multiple, took 851 exact square tests and found no factor. On eight 48-bit examples the same rule took 20 ms total to reach the first factors. [How a multiple reveals a factor and how much work remains](discoveries/fewer-multiples-to-test.md)
+**In one search, we can now skip at least 81% of the trial multiples for every 2,048-bit product of two distinct 1,024-bit primes.** Even after that shortcut, a complete search would visit more than $10^{102}$ different multiples. On our independently generated product, we could skip over 94%. Trying the remaining multiples up to 65,536, with one candidate per multiple, took 851 exact square tests and found no factor. On eight 48-bit examples the same rule took 20 ms total to reach the first factors. [How a multiple reveals a factor and how much work remains](discoveries/fewer-multiples-to-test.md)
 
 **For every product of two different primes larger than three, we can name three equations.** At least one has two solutions that reveal the factors. The hard part is finding those solutions. A search using this idea recovered 22 of 32 independently generated 40-bit products, five of 32 at 48 bits, and neither of our two 2,048-bit comparisons. D. H. and Emma Lehmer proved a version of the three-equation result in 1974. [How it works on 55 and what we tested](discoveries/three-targets-with-a-guaranteed-square-root.md)
 

@@ -671,3 +671,4 @@ import PrimeFactors.MixedUnityCofactors
 import PrimeFactors.RectangularRowCost
 import PrimeFactors.RectangularWeightCost
 import PrimeFactors.RectangularFullWidth
+import PrimeFactors.RectangularSearchFloor
