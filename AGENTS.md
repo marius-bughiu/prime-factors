@@ -16,8 +16,6 @@ For incremental checks, pass `--cache-dir build/verification-cache` to the bench
 
 Use bounded, reproducible examples in CI. Add a benchmark fixture with expected factors stored as decimal strings. The benchmark runner may use expected factors only to check output. Cite the origin and license of code you reuse. In the pull request, explain AI assistance, the mathematics you verified, and the checks you ran.
 
-For every commit Codex helps write, add the Git trailer `Co-authored-by: Codex <noreply@openai.com>`. Use `git commit --trailer 'Co-authored-by: Codex <noreply@openai.com>'` when committing from the command line.
-
 ## Public research findings
 
 Add reviewed public results to `site/findings.json` with a distinct title, an impact category, a concrete outcome, its scope, and sources. State when an example used specially chosen primes or a supplied clue. The Pages report displays every finding in one row with the All filter selected by default.

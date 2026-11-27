@@ -14,8 +14,6 @@ An issue can start with the precise claim and one example.
 
 We welcome AI-assisted work. Each submitting contributor owns the argument, checks the generated code and explains its assumptions in the pull request. Follow the local build and audit instructions. Mathlib’s guidance on AI disclosure and Physlib’s agent instructions informed this workflow. [Mathlib contribution guide](https://leanprover-community.github.io/contribute/index.html) · [Physlib AI policy](https://github.com/leanprover-community/physlib/blob/master/AI-POLICY.md)
 
-Credit Codex on each commit it helps write. Put `Co-authored-by: Codex <noreply@openai.com>` on its own line after a blank line at the end of the commit message.
-
 For a new method, include an input it helps, a case it leaves unresolved, and the command that demonstrates each. When reporting a speedup, identify the baseline, account for certificate generation and verification, and report any precomputation. Cite the theorem used and describe which steps are formalized. If adapting external source, record its version, license, attribution and any redistribution requirements. The existing MIT license covers this project's original contributions. [Local workflow](AGENTS.md) · [Project license](LICENSE)
 
 ## Verification
