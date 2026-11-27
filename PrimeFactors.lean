@@ -708,3 +708,8 @@ import PrimeFactors.LcmConvergentObstruction
 import PrimeFactors.SmoothConvergentPopulation
 import PrimeFactors.PowerRatioAnchor
 import PrimeFactors.AdjacentQuotientSets
+import PrimeFactors.IntermediateTotientRows
+import PrimeFactors.IntermediateTotientObstruction
+import PrimeFactors.IntermediateBlockCutoff
+import PrimeFactors.ProductDeficitBand
+import PrimeFactors.IntermediateMenuCertificate

@@ -12,6 +12,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**A wider search recovered 118 of 903 small prime pairs, up from 78.** For example, it found 271 × 379 from 102,709. Lean proved how to skip whole groups of guesses while keeping every possible hit. On our two 2,048-bit products, just 9 and 33 candidate fractions remained across 106 guesses each. Neither product split. [Worked example, costs and limits at full size](discoveries/widening-the-fraction-search.md)
+
 **Can we find the primes by making more guesses?** For one method, suppose we try every number whose prime factors are all at most 1,500, stopping at the input number. Lean proves this can recover the pair for fewer than one in $2^{553}$ balanced 2,048-bit products. This tells us which guesses we can stop pursuing. Finding a good guess from the product alone remains open. [Which guesses can work](discoveries/which-powers-could-reveal-the-prime-sum.md)
 
 **One shortcut now needs at most one square-root test per guess.** Across 12,994 small products, it gave the same 130 factorizations while cutting the number of square roots from 16,287 to 797. We then tried 106 guesses large enough for each of two 2,048-bit products. The search stopped early on every guess and found neither pair. [Worked example and census](discoveries/when-one-power-needs-at-most-one-square-test.md) · [How the larger guesses performed](discoveries/testing-lcm-prefixes-at-the-product-width.md)

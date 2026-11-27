@@ -43,6 +43,7 @@ jobs:
           python3 -m experiments.divisor_weight_sectors --check
           python3 -m experiments.rectangular_winner_receipt
           python3 -m experiments.trace_population_receipt
+          python3 -m experiments.intermediate_menu_receipt --check
       - name: Generate progress report
         run: python3 scripts/render_site.py
       - name: Upload verified main artifact

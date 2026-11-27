@@ -1109,6 +1109,14 @@ def case_row(result):
         if w['witness']:
             hit = w['witness']
             count += (f" · convergent {hit['index']} was {escape(hit['numerator'])}/{escape(hit['denominator'])}")
+    elif result['method'] == 'intermediate-totient-rows':
+        w = result['intermediate_totient_rows']
+        cost = w['counts']
+        count = (f"{cost['exponents']:,} guesses · {cost['visited_blocks']:,} Euclidean steps"
+                 f" · {cost.get('endpoint_divisions', 0):,} endpoint divisions"
+                 f" · {cost.get('width_indices', 0):,} candidate fractions"
+                 f" · {cost.get('discriminant_roots', 0):,} candidate square roots"
+                 f" · setup {cost['band_setup_roots']} square root and {cost['band_setup_divisions']} divisions")
     elif result['method'] == 'scaled-power-menu':
         w = result['scaled_power_menu']
         menu, cf, modular, fermat = w['menu'], w['cf'], w['modular'], w['fermat']

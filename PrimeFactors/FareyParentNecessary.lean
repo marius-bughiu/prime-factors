@@ -6,11 +6,12 @@ namespace PrimeFactors.FareyParentNecessary
 
 open UpperConvergentDeficit
 
-private def Adjacent (N E u v : ℕ) (x y : Row) : Prop :=
+/-- Signed errors and the unimodular determinant of adjacent Euclidean rows. -/
+def Adjacent (N E u v : ℕ) (x y : Row) : Prop :=
   (E*x.b=N*x.a+u ∧ N*y.a=E*y.b+v ∧ y.a*x.b=x.a*y.b+1) ∨
   (N*x.a=E*x.b+u ∧ E*y.b=N*y.a+v ∧ x.a*y.b=y.a*x.b+1)
 
-private theorem advance {N E u v : ℕ} {x y : Row} (h : Adjacent N E u v x y) :
+theorem advance {N E u v : ℕ} {x y : Row} (h : Adjacent N E u v x y) :
     Adjacent N E v (u%v) y (step x y (u/v)) := by
   rcases h with ⟨lo,hi,det⟩ | ⟨hi,lo,det⟩
   · exact Or.inr ⟨hi,next_lower lo hi,by dsimp [step]; nlinarith only [det]⟩
@@ -81,7 +82,7 @@ theorem upper_parent {N : ℕ} (np : 0<N) (E i : ℕ) :
       (advance (show Adjacent N E E N ⟨0,1⟩ ⟨1,0⟩ from Or.inl (by simp)))
       (by simp [z,step])
 
-private theorem parent_mod {a b c d : ℕ} (det : a*d=b*c+1) :
+theorem parent_mod {a b c d : ℕ} (det : a*d=b*c+1) :
     a*d≡1 [MOD b] := by
   change (a*d)%b=1%b
   simp [det,Nat.add_mod]
