@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+For one predecessor-power search the limit now covers every base from 2 through $2^{21}$ together. Even permitting a different 1,000-smooth exponent for every input leaves the fraction that could split below $2^{-173}$. The count includes successful intermediate checkpoints. [Proof and assumptions](trying-every-small-base-in-a-predecessor-sweep.md)
+
 We can now quantify how unusual our fast constructed smooth-order example was. Fewer than one in $2^{689}$ eligible products of two 1,024-bit primes have the underlying pattern, even allowing all four sign choices. A different calculation explains the extra factors seen during polynomial division of small examples and why they are rare at 2,048 bits. [Smooth-order population](how-rare-are-smooth-reduced-orders.md) · [Accidental polynomial factors](how-often-a-polynomial-pivot-splits.md)
 
 Pairing discriminants covers four possible relationships between the unknown primes more often. In eight trials per small product, the extra coverage gave both gains and losses in actual factorizations. All five compared methods missed both 2,048-bit inputs. Dirichlet GRH gives a separate deterministic upper bound on the number of choices needed to cover all four relationships. [Construction and results](four-sign-choices-from-a-public-anchor.md) · [Randomized guarantee](random-discriminants-in-pairs.md)

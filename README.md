@@ -6,6 +6,8 @@ What information about two unknown primes can be recovered cheaply from their pr
 
 One 2,048-bit example illustrates the distinction. On the constructed “crossed” example we recovered both primes in 2.21 seconds after choosing a clue by looking at the published factors. We kept the clue fixed and applied it to a freshly generated product. It missed both primes. The construction gives us the answers for verification, and our searches have yet to recover those answers from the fresh product alone. [How we chose the clue](discoveries/testing-one-factor-remainder.md) · [How we generated the fresh comparison](discoveries/certified-fresh-control.md)
 
+We have also proved a limit for one shortcut that worked quickly on a constructed example. If its later power steps use only primes up to 1,000, even trying every starting value from 2 to about two million can find a factor on fewer than one in $2^{173}$ randomly chosen products of two 1,024-bit primes with a 2,048-bit product. [Which shortcut was tested and why changing its starting value rarely helps](discoveries/trying-every-small-base-in-a-predecessor-sweep.md)
+
 For example, take 10,403. The next square is 10,404, which is $102^2$. That gives $10{,}403 = 102^2 - 1 = (102-1)(102+1) = 101\times103$. The same shortcut works even on an enormous product when its two primes differ by two. Two randomly chosen primes give us no reason to expect that pattern.
 
 ## What did the experiments find?

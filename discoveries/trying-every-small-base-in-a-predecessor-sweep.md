@@ -1,0 +1,25 @@
+# Trying two million starting values in the smooth predecessor search
+
+Choose two distinct 1,024-bit primes uniformly, keeping pairs whose product has 2,048 bits. Fewer than **one in $2^{173}$** of these products can yield a factor to the following entire family of searches. Start with **any integer from 2 through 2,097,152**, raise it to $N-1$, and then use **any positive exponent whose prime factors are at most 1,000**. Check for a factor after any step. The starting value, exponent and stopping rule can all depend on the product. The estimate counts the full menu of starting values on each input. [Lean population bound and public gcd theorem](../PrimeFactors/FixedBaseSmoothPopulation.lean)
+
+This is the same kind of search that split a deliberately constructed 2,048-bit example in under a second. Here the randomness lies entirely in which two primes were multiplied. The search itself may be deterministic. For example, it can try 2 first and 3 only if the first trial fails. The bound includes every allowed base at which either prime could divide the value of a power minus one, even when both divide it and the gcd returns the whole input. [Checked constructed example](sharing-powers-for-smooth-orders.md)
+
+## Why varying the starting value has a limit
+
+Write $N=pq$ and focus first on the prime $p$. For a chosen base $a$, let $m$ be the smallest positive exponent for which $a^m$ leaves remainder 1 upon division by $p$. Then $m$ divides $p-1$. A power checkpoint uses a positive smooth exponent $E$. For it to give remainder 1 at $p$, we need $m\mid(N-1)E$. Since $p\equiv1\pmod m$, this is equivalent to $m\mid(q-1)E$. In particular
+
+$$d=\gcd(m,E),\qquad k=m/d,\qquad k\mid q-1.$$
+
+The hidden factors are used only to count when this can happen. The public computation uses $N$ and a gcd. The chapter on random group elements gives a separate probability model. [Local-order implication](../PrimeFactors/LargeBaseOrderPairs.lean) · [Uniform element comparison](how-rare-are-smooth-reduced-orders.md)
+
+Set $T=2^{403}$ and $U=2^{1024}$. If $m<T$, then $p$ divides one of the positive integers $a^i-1$ for $1\le i<T$. The product of all these integers is at most $a^{T(T-1)/2}$. Every distinct possible $p$ contributes at least 1,023 bits to the logarithm of that product to base two. Adding the bounds over all 2,097,151 bases shows that fewer than $2^{821}$ primes can arise in this branch. With fewer than $U$ choices for the other prime, its contribution on this side is below $2^{1845}$ pairs. The gigantic auxiliary product serves only in the proof. [Small-order prime count across the entire base interval](../PrimeFactors/SmallBaseOrderPrimes.lean)
+
+If $m\ge T$, both $p-1$ and $q-1$ are restricted. The former is divisible by $dk$, the latter by $k$, and $d$ is smooth. For fixed $d,k$ this allows at most $U^2/(d k^2)$ ordered pairs of positive group sizes. Summing over $k\ge\max(1,\lceil T/d\rceil)$ and using a telescoping bound on $1/k^2$ gives at most $2U^2/\max(T,d)$ for this $d$. This count already includes every possible large order from every choice of $a$. Using the finite Euler-product estimate at exponent $5/32$ to sum over $d$ gives fewer than $2^{1846}$ pairs. [Large-order count](../PrimeFactors/LargeBaseOrderPairs.lean) · [Weighted smooth-divisor sum](../PrimeFactors/SmoothOrderTail.lean)
+
+Allowing either prime to give the factor puts the overall count below $2(2^{1845}+2^{1846})<2^{1848}$. The eligible population has at least $2^{2021}$ unordered pairs by the published explicit prime-count inequalities. The numerical Lean theorem takes this population lower bound as its analytic input. All the counting bounds on the numerator are unconditional. [Prime population and source](stride-budget.md#an-explicit-bound-at-exactly-2048-bits) · [Combined count](../PrimeFactors/FixedBaseSmoothPopulation.lean)
+
+The earlier Dirichlet GRH argument guarantees a usable starting value below 2,015,166. That guarantee addresses a different step. This interval includes every such starting value and quantifies how rarely *any* of them reaches a factor under the stated smoothness cutoff. Searches using other group laws, other first exponents, larger prime divisors in the sweep, or larger bases require their own analysis. [GRH and base selection](smooth-reduced-predecessors.md)
+
+## What carries over to the signed search
+
+The same large-order restriction holds for the four combinations of $p\pm1$ and $q\pm1$ in the quadratic-group search. For a fixed pair of positive integers $t,D$, one can also count primes where the starting value $(t+\sqrt D)/(t-\sqrt D)$ has small order. Write $(t+\sqrt D)^i=A_i+B_i\sqrt D$. A valid starting value of order $i$ at an odd prime $p$ forces $p$ to divide the positive integer $B_i$. If $D\le L^2$, $L\ge1$ and $t+L\le2^A$, at most $A\binom{T}{2}/b$ primes of size at least $2^b$ can give order below $T$. This count applies to each fixed choice of $t,D$. Applying it to a search that derives full-width parameters from each input would require a bound over those choices. [Signed order and coefficient proofs](../PrimeFactors/SignedLargeOrder.lean)

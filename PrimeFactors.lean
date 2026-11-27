@@ -602,3 +602,8 @@ import PrimeFactors.OppositePivotBudget
 import PrimeFactors.BoundedSmoothCount
 import PrimeFactors.SmoothSignedPairs
 import PrimeFactors.SmoothSignedStructure
+import PrimeFactors.SmallBaseOrderPrimes
+import PrimeFactors.LargeBaseOrderPairs
+import PrimeFactors.SmoothOrderTail
+import PrimeFactors.FixedBaseSmoothPopulation
+import PrimeFactors.SignedLargeOrder
