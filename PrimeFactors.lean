@@ -550,3 +550,9 @@ import PrimeFactors.RecursiveUnitScale
 import PrimeFactors.RecursiveUnitWindows
 import PrimeFactors.RecursiveUnitComparison
 import PrimeFactors.RecursiveUnitCover
+import PrimeFactors.DisplacedTraceCoverage
+import PrimeFactors.GaussianOrderRows
+import PrimeFactors.QuotientPascalMasks
+import PrimeFactors.TruncatedRamanujan
+import PrimeFactors.QuotientPascalTransfer
+import PrimeFactors.PascalCandidateCount

@@ -994,6 +994,15 @@ def case_row(result):
                 count += f" · next convolution requires {operations['next_convolution_inputs']:,} inputs"
         if w.get('checked_factor_range'):
             evidence += '<p>The factor certificate also checks the public interval and the reported range containing the factor.</p>'
+    elif result['method'] == 'quotient-pascal':
+        work = result['quotient_pascal']
+        receipt = result['quotient_pascal_receipt']
+        count = (f"{work['terms']:,} of {compact_count(int(work['available']))} odd candidates"
+                 f" · budget {work['budget']:,} · gcd {escape(work['gcd'])}"
+                 f" · {compact_count(int(work['untested']))} untested")
+        evidence += f'<p><a href="{escape(receipt["proof"])}">Check the candidate count and gcd in Lean</a></p>'
+        receipt_time = duration(receipt['seconds']) + ' (candidate calculation)'
+        verification = verification + ' + ' + receipt_time if checked else receipt_time
     elif result['method'] == 'short-pascal':
         w = result['short_pascal']
         if w['mode'] == 'exact':

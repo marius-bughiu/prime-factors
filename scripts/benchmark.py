@@ -54,6 +54,7 @@ from scripts.cubic_forced_benchmark import forced_case
 from experiments import hasse_hankel_probe
 from scripts.hasse_benchmark import hasse_case
 from scripts.short_pascal_benchmark import short_case
+from scripts.quotient_pascal_benchmark import quotient_pascal_case
 from scripts.growing_factorial_benchmark import growing_case
 from scripts.block_exclusion_benchmark import block_exclusion_case
 from scripts.block_subresultant_benchmark import block_subresultant_case
@@ -1492,6 +1493,8 @@ end PrimeFactors.Generated
         result = separating_period_case(case, proof, agree, certify_split)
     elif method == 'character-column':
         result = character_column_case(case, proof, agree, certify_split)
+    elif method == 'quotient-pascal':
+        result = quotient_pascal_case(case, proof, agree, certify_split)
     elif method == 'short-pascal':
         result = short_case(case, proof, agree, certify_split)
     elif method == 'cubic-forced':
@@ -1831,6 +1834,7 @@ def main():
                              ('cubic-trace.json', 'cubic-trace'),
                              ('cubic-forced.json', 'cubic-forced'),
                              ('short-pascal.json', 'short-pascal'),
+                             ('quotient-pascal.json','quotient-pascal'),
                              ('growing-factorial.json', 'growing-factorial'),
                              ('block-exclusion.json', 'block-exclusion'),
                              ('block-subresultant.json', 'block-subresultant'),

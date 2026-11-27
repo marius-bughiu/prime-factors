@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A binomial coefficient can encode the odd candidates for the smaller prime in a single gcd. The fresh 2,048-bit input still needs more than $2^{1019}$ terms to cover this interval directly. We also checked how many locations arbitrary weighted square tests can rule out, what ordinary gcds detect every successful low Gaussian coefficient, and which incomplete character sums would reveal the smaller prime bit by bit. [Odd-candidate formula](which-factors-a-quotient-pascal-row-sees.md) · [Square-test limits](what-arbitrary-weighted-square-tests-can-exclude.md) · [Gaussian coefficients](what-gaussian-coefficients-reveal.md) · [Character sums](reading-the-missing-term.md)
+
 The 34-root search with two factor ranges split 48.69% of the eligible products at 16 bits per prime and 1.515% at 26 bits. An exact interval for the larger prime made the census feasible. [Scaling results and counting method](how-the-short-search-scales.md)
 
 At a fixed square-test budget, eliminating labels that cannot give squares yields a strict increase in the set of actual 2,048-bit products recovered. A second constructed product confirms the prediction at 2,097,152 tests. The full-size comparison products remained unresolved. [Which successes the filter adds](factoring-more-products-at-the-same-budget.md)
