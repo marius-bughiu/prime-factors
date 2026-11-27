@@ -1091,6 +1091,17 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'tangent-lattice-arcs':
+        w = result['tangent_lattice']
+        if w['mode'] == 'count':
+            count = (f"Complete tangent search ≤ {compact_count(int(w['tangent_block_upper']))} blocks "
+                     f"({w['upper_ppm']/10000:.4f}% of the ordinary count) · 0 blocks searched")
+            evidence += (f'<p>Lean checked the public chart dimensions, class counts, and block bounds. '
+                         f'<a href="{escape(w["proof"])}">Download the counting proof</a></p>')
+            verification = duration(w['verification_seconds']) + ' (counting proof)'
+        else:
+            count = (f"Two split primes per chart · {w['classes']:,} lattices · {w['blocks']:,} blocks "
+                     f"· {w['line_tests']:,} lines · {w['points']:,} solutions")
     elif result['method'] == 'signed-norm-arcs':
         w = result['signed_norm_arcs']
         count = (f"{w['blocks']:,} of {compact_count(int(w['total_blocks']))} blocks"

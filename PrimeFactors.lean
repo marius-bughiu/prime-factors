@@ -661,3 +661,5 @@ import PrimeFactors.NormUnitInterval
 import PrimeFactors.ThreeNormCurves
 import PrimeFactors.SignedCurveSchedule
 import PrimeFactors.CompleteCurveSigns
+import PrimeFactors.ConicTangentLattice
+import PrimeFactors.ConicTangentReceipt
