@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+Across 24 independently drawn small prime pairs, the extra sign halved the square tests left by an ordinary sieve. Setup made the search slower overall. All 24 factorizations were checked in Lean. [Timings from 20-bit and 24-bit prime pairs](timing-reciprocal-fermat-tables.md)
+
+Two product-selected Jacobi tests together leave at most 33.7461% of the smaller-factor positions on the fresh 2,048-bit input and 26.5876% on the crossed input. These whole-interval bounds use a published character-sum estimate and do not assume independent tests. [Proof, public witnesses and denominator](two-jacobi-tests-in-the-actual-factor-window.md)
+
 On both 2,048-bit controls, public square-root witnesses now cut the candidate sums of the same-modulus square test by at least 49.83% within the actual interval. An adaptive Jacobi test reads the extra sign without factoring the modulus. [Full-size bounds, samples and costs](halving-the-sum-residues-on-a-fresh-product.md) · [Four small factorizations](comparing-reciprocal-sum-classes.md) · [A neighboring-factorial batch and its stronger square-search baseline](what-neighboring-factorial-determinants-can-detect.md)
 
 A square root of a negative number modulo the public input can rule out half the unit residues for each hidden divisor. On 135,229, two related signs removed the last two false factor sums from a small wheel. A separate lifting theorem explains exactly when tracking the factor gap as well as the midpoint removes candidate pairs. [Divisor and sum sign rules](what-a-negative-square-says-about-every-divisor.md) · [Coupled midpoint and gap checks](lifting-the-midpoint-and-gap-together.md)

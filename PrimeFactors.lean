@@ -621,3 +621,6 @@ import PrimeFactors.HalfPeriodWindow
 import PrimeFactors.SaturatedTraceSplit
 import PrimeFactors.ReciprocalAdaptiveCharacter
 import PrimeFactors.OrientedTraceClasses
+import PrimeFactors.TwoCharacterWindow
+import PrimeFactors.CharacterProductBound
+import PrimeFactors.CharacterWindowMoment
