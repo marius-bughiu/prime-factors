@@ -609,3 +609,7 @@ import PrimeFactors.FixedBaseSmoothPopulation
 import PrimeFactors.SignedLargeOrder
 import PrimeFactors.BalancedPairPopulation
 import PrimeFactors.FullSizeSmoothFrequency
+import PrimeFactors.DyadicSumGap
+import PrimeFactors.CharacterInterval
+import PrimeFactors.ReciprocalSumCharacter
+import PrimeFactors.ReciprocalDivisorClasses

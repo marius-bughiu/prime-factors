@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A square root of a negative number modulo the public input can rule out half the unit residues for each hidden divisor. On 135,229, two related signs removed the last two false factor sums from a small wheel. A separate lifting theorem explains exactly when tracking the factor gap as well as the midpoint removes candidate pairs. [Divisor and sum sign rules](what-a-negative-square-says-about-every-divisor.md) · [Coupled midpoint and gap checks](lifting-the-midpoint-and-gap-together.md)
+
 For one predecessor-power search the limit now covers every base from 2 through $2^{21}$ together. Even permitting a different 1,000-smooth exponent for every input leaves the fraction that could split below $2^{-177}$. The count includes successful intermediate checkpoints. [Proof and assumptions](trying-every-small-base-in-a-predecessor-sweep.md)
 
 We can now quantify how unusual our fast constructed smooth-order example was. Fewer than one in $2^{689}$ eligible products of two 1,024-bit primes have the underlying pattern, even allowing all four sign choices. A different calculation explains the extra factors seen during polynomial division of small examples and why they are rare at 2,048 bits. [Smooth-order population](how-rare-are-smooth-reduced-orders.md) · [Accidental polynomial factors](how-often-a-polynomial-pivot-splits.md)
