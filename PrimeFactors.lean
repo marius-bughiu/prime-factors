@@ -595,3 +595,5 @@ import PrimeFactors.DyadicFactorBands
 import PrimeFactors.TwelveRectangle
 import PrimeFactors.ReducedSmoothReadout
 import PrimeFactors.SharedSmoothPowers
+import PrimeFactors.FourDiscriminants
+import PrimeFactors.RandomSignMenu

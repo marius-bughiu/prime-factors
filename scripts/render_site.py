@@ -1091,6 +1091,29 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'signed-discriminant-menu':
+        w = result['signed_discriminant_menu']
+        runs = w['modes']
+        count = (f"Up to {w['trial_cap']} trials per method · prime-power cutoff {w['smooth_bound']}")
+        for key, title in [('menu', 'Paired discriminants'), ('primes', 'Ascending primes'),
+                           ('anchored_primes', 'Anchor then primes'), ('ordinary_projected', 'Projected units'),
+                           ('ordinary', 'Ordinary units')]:
+            r = runs[key]
+            outcome = escape(r['divisor']) if r['divisor'] else 'no factor'
+            count += f" · {title} returned {outcome} ({r['powers']} powers, {duration(r['wall_s'])})"
+        r = runs['menu']
+        count += (f" · paired search made {r['jacobi_tests']} Jacobi tests, "
+                  f"{r['setup_gcds']} setup gcds and {r['readout_gcds']} readout gcds")
+        count += f" · total comparison time {duration(w['total_search_seconds'])}"
+        if w['certified_method']:
+            certified = {'menu': 'paired discriminants', 'primes': 'ascending primes',
+                         'anchored_primes': 'anchor then primes', 'ordinary_projected': 'projected units',
+                         'ordinary': 'ordinary units'}[w['certified_method']]
+            count += f' · certificate supplied by {certified}'
+        receipt = result.get('signed_discriminant_receipt')
+        if receipt:
+            evidence += f' · <a href="{escape(receipt["proof"])}">Checked signed power and factor gcd</a>'
+            verification += ' + ' + duration(receipt['seconds']) + ' (signed power)'
     elif result['method'] == 'complementary-keys':
         w = result['complementary_keys']
         runs = w['runs']

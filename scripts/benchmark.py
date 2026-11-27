@@ -79,6 +79,7 @@ from scripts.weighted_crowding_benchmark import weighted_crowding_case
 from scripts.reciprocal_prefix_benchmark import prefix_case
 from scripts.twelve_residue_benchmark import twelve_residue_case
 from scripts.complementary_key_benchmark import case_result as complementary_key_case
+from scripts.signed_discriminant_benchmark import signed_discriminant_case
 from scripts.two_interior_benchmark import two_interior_case
 from scripts.residue_batch_benchmark import residue_batch_case
 from experiments.weighted_trace_reuse import search as weighted_trace_reuse_search
@@ -1506,6 +1507,8 @@ end PrimeFactors.Generated
         result = twelve_residue_case(case, proof, agree, certify_split)
     elif method == 'complementary-keys':
         result = complementary_key_case(case, proof, agree, certify_split)
+    elif method == 'signed-discriminant-menu':
+        result = signed_discriminant_case(case, proof, agree, certify_split)
     elif method == 'reciprocal-prefix-pairs':
         result = prefix_case(case, proof, agree, certify_split)
     elif method == 'two-interior-batches':
@@ -1936,6 +1939,7 @@ def main():
                              ('reciprocal-prefix-pairs.json', 'reciprocal-prefix-pairs'),
                              ('twelve-residue-collision.json', 'twelve-residue-collision'),
                              ('complementary-keys.json', 'complementary-keys'),
+                             ('signed-discriminant-menu.json', 'signed-discriminant-menu'),
                              ('two-interior-batches.json', 'two-interior-batches'),
                              ('residue-batch-allocation.json', 'residue-batch-allocation'),
                              ('weighted-trace-reuse.json', 'weighted-trace-reuse'),
