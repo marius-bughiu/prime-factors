@@ -1,0 +1,143 @@
+[
+  {
+    "n": "119",
+    "factors": [
+      "7",
+      "17"
+    ],
+    "shift_ceiling": 30,
+    "observed": {
+      "paired": [
+        0,
+        24
+      ],
+      "only_first": [
+        3,
+        15,
+        27
+      ],
+      "only_second": [
+        12
+      ],
+      "weighted": [
+        0,
+        24
+      ],
+      "unit_periods": [
+        0,
+        24
+      ],
+      "pair_work": {
+        "signs": 119,
+        "modular_squarings": 119,
+        "modular_term_updates": 3808
+      },
+      "weight_work": {
+        "signs": 119,
+        "modular_squarings": 119,
+        "modular_powers": 2294,
+        "powers_per_shift": 74,
+        "final_gcds": 31
+      },
+      "unit_work": {
+        "gcds": 118,
+        "modular_powers": 251
+      }
+    }
+  },
+  {
+    "n": "143",
+    "factors": [
+      "11",
+      "13"
+    ],
+    "shift_ceiling": 30,
+    "observed": {
+      "paired": [
+        0,
+        30
+      ],
+      "only_first": [
+        5
+      ],
+      "only_second": [],
+      "weighted": [
+        0,
+        10,
+        30
+      ],
+      "unit_periods": [
+        0,
+        30
+      ],
+      "pair_work": {
+        "signs": 143,
+        "modular_squarings": 143,
+        "modular_term_updates": 4576
+      },
+      "weight_work": {
+        "signs": 143,
+        "modular_squarings": 143,
+        "modular_powers": 2914,
+        "powers_per_shift": 94,
+        "final_gcds": 31
+      },
+      "unit_work": {
+        "gcds": 142,
+        "modular_powers": 298
+      },
+      "second_probe": {
+        "shift": 10,
+        "first_weight": 0,
+        "second_weight": 77
+      }
+    },
+    "second_probe_shift": 10
+  },
+  {
+    "n": "221",
+    "factors": [
+      "13",
+      "17"
+    ],
+    "shift_ceiling": 30,
+    "observed": {
+      "paired": [
+        0,
+        24
+      ],
+      "only_first": [
+        11,
+        23
+      ],
+      "only_second": [
+        12
+      ],
+      "weighted": [
+        0,
+        16,
+        24
+      ],
+      "unit_periods": [
+        0,
+        24
+      ],
+      "pair_work": {
+        "signs": 221,
+        "modular_squarings": 221,
+        "modular_term_updates": 7072
+      },
+      "weight_work": {
+        "signs": 221,
+        "modular_squarings": 221,
+        "modular_powers": 5084,
+        "powers_per_shift": 164,
+        "final_gcds": 31
+      },
+      "unit_work": {
+        "gcds": 220,
+        "modular_powers": 443
+      }
+    }
+  }
+]

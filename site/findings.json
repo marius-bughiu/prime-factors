@@ -1,5 +1,129 @@
 [
   {
+    "id": "four-square-scale-frequency",
+    "category": "limits",
+    "title": "Even more guesses than possible smaller factors almost never reach a working scale",
+    "impact": "Giving all four sign choices every scale through 2¹⁰²⁴ reaches fewer than one in 2⁴⁶² eligible prime pairs. A trillion-scale budget reaches fewer than one in 2⁹⁵⁹.",
+    "scope": "Uniform sorted pairs of distinct 1,024-bit primes with a 2,048-bit product. The bound allows product-dependent choices within the entire budget.",
+    "detail": "Counting both neighboring integers together bounds how many products can be a small integer times a square. Even with a scale cap of 2¹⁷⁹² the fraction is below one in 2⁷⁷.",
+    "sources": [
+      {"href": "discoveries/checking-both-sides-of-a-square-scale.md#how-often-can-the-four-tests-work-at-full-size", "label": "Population, three caps and proof"},
+      {"href": "PrimeFactors/FourNeighborScaleFrequency.lean", "label": "Lean frequency bounds"},
+      {"href": "PrimeFactors/SquareScalePairCover.lean", "label": "Finite pair count"}
+    ]
+  },
+  {
+    "id": "four-square-scale-controls",
+    "category": "limits",
+    "title": "Every sign and every scale through a trillion fails on both full-size controls",
+    "impact": "The fresh and crossed 2,048-bit products each have a Lean certificate ruling out all four sign choices at every positive scale through 2⁴⁰.",
+    "scope": "These are retrospective checks with known factors. The fresh certificate also uses two primes disclosed by its construction.",
+    "detail": "On the fresh successor product, odd prime multiplicities left 4,197 possible multipliers. Small-prime square tests ruled out all 4,197. The crossed successor product left 3,693, all excluded as well.",
+    "sources": [
+      {"href": "discoveries/checking-both-sides-of-a-square-scale.md#two-checks-using-the-published-2048-bit-factors", "label": "What went into these checks"},
+      {"href": "proofs/opposite-scale-valuations-fresh-2048.lean", "label": "Fresh Lean certificate"},
+      {"href": "proofs/opposite-scale-valuations-crossed-2048.lean", "label": "Crossed Lean certificate"}
+    ]
+  },
+  {
+    "id": "four-neighbor-square-scales",
+    "category": "gains",
+    "title": "One square-root guess can test four links between the two factors",
+    "impact": "On all 32,385 pairs of distinct 12-bit primes the four-sign scan found 1,343 products. The two-sign comparison found 661 on the same per-product square-root allowances.",
+    "scope": "Bounded census through scale 16. Fermat found 14,500 products on matched budgets, including 14,076 missed by the four-sign scan. The four-sign scan alone found 919.",
+    "detail": "The even neighbors of odd primes force an even root at every successful squarefree scale. One scaled square suffices for all four signs at scales two and above. The two readings yield either a candidate sum or a candidate gap.",
+    "sources": [
+      {"href": "discoveries/checking-both-sides-of-a-square-scale.md#the-mixed-signs-give-the-factor-gap", "label": "Worked example and comparison"},
+      {"href": "PrimeFactors/FourNeighborSquareBands.lean", "label": "Why only one square test can survive"},
+      {"href": "PrimeFactors/MixedSquareScale.lean", "label": "Location of the mixed root"}
+    ]
+  },
+  {
+    "id": "opposite-square-scales",
+    "category": "gains",
+    "title": "One scaled root checks both sides of the product",
+    "impact": "Across all 32,385 products of distinct 12-bit primes, trying both signs through scale 16 found 638 products. Trying the predecessor alone found 321.",
+    "scope": "The candidate-selection proof applies to balanced factors. Ordinary Fermat search found 13,818 of these products on matched square-root budgets, with 463 found only by the two-sided scan.",
+    "detail": "Each scale produces two possible sums. Comparing them selects the only one that can pass the balanced interval, so each scale needs at most one discriminant root. More scales can reach that last test than in the one-sided scan.",
+    "sources": [
+      {"href": "discoveries/checking-both-sides-of-a-square-scale.md", "label": "Derivation and complete populations"},
+      {"href": "PrimeFactors/OppositeSquareScaleBands.lean", "label": "Lean selection rule"},
+      {"href": "PrimeFactors/SuccessorSquareScale.lean", "label": "Lean successor root"}
+    ]
+  },
+  {
+    "id": "square-scale-residue-exclusion",
+    "category": "gains",
+    "title": "Two impossible factor remainders can rule out a whole family of guesses",
+    "impact": "On 2,627 no squarefree multiple of 13 can be the first successful scale. Its two possible remainders modulo 169 both miss the smaller-factor interval.",
+    "scope": "For a guessed prime divisor of the squarefree predecessor scale. Checking small primes saved six scaled roots on 2,627, while ordinary interval trial division found its factor in one division.",
+    "detail": "The same odd-interval screen reduced 371 scaled roots to 315 on 3,713 and 524 to 483 on 4,757, in return for additional divisibility checks.",
+    "sources": [
+      {"href": "discoveries/skipping-square-scales-before-the-discriminant.md#testing-the-smaller-factors-possible-remainders", "label": "When two remainders suffice"},
+      {"href": "PrimeFactors/JacobiScalePrimeRemainder.lean", "label": "Lean proof"}
+    ]
+  },
+  {
+    "id": "weighted-jacobi-period-test",
+    "category": "formulas",
+    "title": "One weighted sum detects which prime’s sequence repeats",
+    "impact": "At shift ten on 143 the first weighting incorrectly signaled a full repeat. The second weighting gave 77, whose gcd identifies 11 as the only prime with a repeat.",
+    "scope": "The second weighting works for all products of distinct primes at least eleven. The calculation checks a proposed shift and still needs a full sum in the direct implementation.",
+    "detail": "The first weighting has a single exceptional prime, 13. Moving the two readings one position forward and choosing coefficients 3 and −10 gives an exact test for both factors.",
+    "sources": [
+      {"href": "discoveries/which-jacobi-moments-recognize-a-repeat.md#combining-the-two-positions-in-one-weighted-sum", "label": "The exception and its correction"},
+      {"href": "PrimeFactors/JacobiPeriodWeight.lean", "label": "Lean gcd identities"}
+    ]
+  },
+  {
+    "id": "public-middle-jacobi-degree",
+    "category": "formulas",
+    "title": "The product’s square root picks one degree that reveals a factor",
+    "impact": "On 493 the chosen degree is 22. The discrepancy gives 29, and the ordinary binomial coefficient gives 17.",
+    "scope": "For distinct odd primes with the larger less than twice the smaller. Computing the complete sum directly visits every residue. Twin primes have a separate square test for the coefficient method.",
+    "detail": "The degree is the largest even integer at or below the square root of the product. The same discrepancy gives the larger prime at every even degree between the two prime predecessors, including the lower endpoint.",
+    "sources": [
+      {"href": "discoveries/a-public-degree-for-the-jacobi-moment.md", "label": "Why this degree works"},
+      {"href": "PrimeFactors/JacobiMiddleDegree.lean", "label": "Lean interval and size proofs"}
+    ]
+  },
+  {
+    "id": "weighted-middle-jacobi-degree",
+    "category": "formulas",
+    "title": "One weighted sum recovers the larger prime without a binomial coefficient",
+    "impact": "On 2,627 the sum gave 355, which shares the factor 71 with the product. It used 2,414 modular powers in place of 4,828 for the two separate sums.",
+    "scope": "The primes are at least seven, their gap is at least six and the larger is less than twice the smaller. Gaps of two and four have direct square tests.",
+    "detail": "This input was chosen because the first Fermat test misses. Fermat still found 37 in three square tests, and the direct Jacobi scan had already exposed 37 on its 36th sign.",
+    "sources": [
+      {"href": "discoveries/a-public-degree-for-the-jacobi-moment.md#can-the-coefficient-be-removed", "label": "Identity and measured cost"},
+      {"href": "PrimeFactors/JacobiWeightedMiddle.lean", "label": "Lean weighted identity"}
+    ]
+  },
+  {
+    "id": "jacobi-two-moments-recognize-repeat",
+    "category": "formulas",
+    "title": "Two consecutive readings decide whether every later reading repeats",
+    "impact": "On 119 a false shift can give the correct first value, 2, or the correct second value, 6. Getting both values certifies a repeat for the whole sequence.",
+    "scope": "Every product of two distinct primes at least seven. This checks a proposed shift. Obtaining the two readings directly still takes a pass over all residues.",
+    "detail": "The multipliers in the usual recurrence of consecutive middle binomial coefficients distinguish the starting position from every other interior position. The proof checks the two endpoints separately.",
+    "sources": [
+      {"href": "discoveries/which-jacobi-moments-recognize-a-repeat.md", "label": "What the two readings tell us"},
+      {"href": "PrimeFactors/JacobiTwoMomentPeriod.lean", "label": "Lean equivalence"}
+    ]
+  },
+  {
+    "id": "jacobi-positive-even-moment-gcd",
+    "category": "limits",
+    "title": "Some prime pairs give no factor from a raw even moment at any degree",
+    "impact": "On 65 every positive even degree has gcd one. On 77, four degrees gave all four possible gcds, 1, 7, 11 and 77.",
+    "scope": "An exact classification for distinct odd prime factors. A prime appears in the gcd precisely when it is 3 modulo 4 and one less than the prime divides the degree.",
+    "detail": "The 14 control readings used 157 signs and 770 modular powers. The signs for a product were reused across its degrees.",
+    "sources": [
+      {"href": "discoveries/which-jacobi-moments-recognize-a-repeat.md#what-a-zero-reading-says-about-the-primes", "label": "Examples and criterion"},
+      {"href": "PrimeFactors/JacobiMomentZeros.lean", "label": "Lean gcd classification"}
+    ]
+  },
+  {
     "id": "full-size-first-square-scale-bounds",
     "category": "limits",
     "title": "On the fresh comparison the first successful scale exceeds 2¹⁰⁷⁹",

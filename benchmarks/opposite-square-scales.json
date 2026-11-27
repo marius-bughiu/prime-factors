@@ -1,0 +1,139 @@
+{
+  "cap": 16,
+  "controls": [
+    {
+      "n": "323",
+      "factors": [
+        "17",
+        "19"
+      ],
+      "selection": "Existing repeat-length control.",
+      "observed": {
+        "single": {
+          "scale": 2,
+          "sign": "predecessor",
+          "factor": 17,
+          "roots": 2,
+          "comparisons": 0,
+          "discriminants": 1,
+          "window_tests": 2
+        },
+        "paired": {
+          "scale": 2,
+          "sign": "predecessor",
+          "factor": 17,
+          "roots": 2,
+          "comparisons": 2,
+          "discriminants": 2,
+          "window_tests": 2
+        },
+        "matched_predecessor_factor": 17,
+        "fermat_factor": 17,
+        "fermat_roots": 2
+      }
+    },
+    {
+      "n": "2627",
+      "factors": [
+        "37",
+        "71"
+      ],
+      "selection": "Existing weighted Jacobi control.",
+      "observed": {
+        "single": {
+          "scale": null,
+          "sign": null,
+          "factor": null,
+          "roots": 11,
+          "comparisons": 0,
+          "discriminants": 1,
+          "window_tests": 11
+        },
+        "paired": {
+          "scale": null,
+          "sign": null,
+          "factor": null,
+          "roots": 11,
+          "comparisons": 11,
+          "discriminants": 1,
+          "window_tests": 11
+        },
+        "matched_predecessor_factor": null,
+        "fermat_factor": 37,
+        "fermat_roots": 4
+      }
+    },
+    {
+      "n": "551987",
+      "factors": [
+        "557",
+        "991"
+      ],
+      "selection": "Selected for a square successor product and a Fermat miss at the matched budget.",
+      "observed": {
+        "single": {
+          "scale": null,
+          "sign": null,
+          "factor": null,
+          "roots": 11,
+          "comparisons": 0,
+          "discriminants": 0,
+          "window_tests": 11
+        },
+        "paired": {
+          "scale": 1,
+          "sign": "successor",
+          "factor": 557,
+          "roots": 1,
+          "comparisons": 1,
+          "discriminants": 1,
+          "window_tests": 1
+        },
+        "matched_predecessor_factor": null,
+        "fermat_factor": null,
+        "fermat_roots": 2
+      }
+    }
+  ],
+  "censuses": [
+    {
+      "bits": 10,
+      "observed": {
+        "pairs": 2775,
+        "predecessor_hits": 89,
+        "paired_hits": 172,
+        "successor_first": 83,
+        "matched_predecessor_hits": 89,
+        "paired_only_vs_matched_predecessor": 83,
+        "matched_predecessor_only_vs_paired": 0,
+        "matched_fermat_hits": 2023,
+        "paired_only_vs_fermat": 83,
+        "fermat_only_vs_paired": 1934,
+        "predecessor_scale_roots": 30072,
+        "paired_scale_roots": 29570,
+        "predecessor_discriminant_roots": 824,
+        "paired_discriminant_roots": 1925
+      }
+    },
+    {
+      "bits": 12,
+      "observed": {
+        "pairs": 32385,
+        "predecessor_hits": 321,
+        "paired_hits": 638,
+        "successor_first": 319,
+        "matched_predecessor_hits": 319,
+        "paired_only_vs_matched_predecessor": 319,
+        "matched_predecessor_only_vs_paired": 0,
+        "matched_fermat_hits": 13818,
+        "paired_only_vs_fermat": 463,
+        "fermat_only_vs_paired": 13643,
+        "predecessor_scale_roots": 354575,
+        "paired_scale_roots": 352884,
+        "predecessor_discriminant_roots": 9537,
+        "paired_discriminant_roots": 21341
+      }
+    }
+  ],
+  "matched_predecessor_cap": 64
+}

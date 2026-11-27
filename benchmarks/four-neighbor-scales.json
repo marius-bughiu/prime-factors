@@ -1,0 +1,133 @@
+{
+  "cap": 16,
+  "matched_cap": 64,
+  "controls": [
+    {
+      "n": "187",
+      "factors": [
+        "11",
+        "17"
+      ],
+      "selection": "The mixed products are 180 and 192.",
+      "observed": {
+        "four": {
+          "factor": 11,
+          "scale": 3,
+          "signs": "+-",
+          "scaled_roots": 3,
+          "discriminant_roots": 1,
+          "square_values": 4
+        },
+        "matched_two": {
+          "factor": null,
+          "scale": null,
+          "signs": null,
+          "scaled_roots": 4,
+          "discriminant_roots": 0,
+          "square_values": 4
+        },
+        "matched_fermat": 11
+      }
+    },
+    {
+      "n": "2627",
+      "factors": [
+        "37",
+        "71"
+      ],
+      "selection": "Earlier weighted-moment comparison.",
+      "observed": {
+        "four": {
+          "factor": 37,
+          "scale": 2,
+          "signs": "-+",
+          "scaled_roots": 2,
+          "discriminant_roots": 1,
+          "square_values": 3
+        },
+        "matched_two": {
+          "factor": null,
+          "scale": null,
+          "signs": null,
+          "scaled_roots": 3,
+          "discriminant_roots": 0,
+          "square_values": 3
+        },
+        "matched_fermat": null
+      }
+    },
+    {
+      "n": "551987",
+      "factors": [
+        "557",
+        "991"
+      ],
+      "selection": "Existing square-successor example.",
+      "observed": {
+        "four": {
+          "factor": 557,
+          "scale": 1,
+          "signs": "++",
+          "scaled_roots": 1,
+          "discriminant_roots": 1,
+          "square_values": 2
+        },
+        "matched_two": {
+          "factor": 557,
+          "scale": 1,
+          "signs": "++",
+          "scaled_roots": 1,
+          "discriminant_roots": 1,
+          "square_values": 1
+        },
+        "matched_fermat": null
+      }
+    }
+  ],
+  "censuses": [
+    {
+      "bits": 10,
+      "observed": {
+        "pairs": 2775,
+        "four_hits": 347,
+        "two_hits": 168,
+        "fermat_hits": 2079,
+        "four_only_vs_two": 182,
+        "two_only_vs_four": 3,
+        "four_only_vs_fermat": 152,
+        "fermat_only_vs_four": 1884,
+        "first_by_sign": {
+          "--": 84,
+          "++": 80,
+          "-+": 98,
+          "+-": 85
+        },
+        "scaled_roots": 28612,
+        "discriminant_roots": 5670,
+        "square_values": 31387
+      }
+    },
+    {
+      "bits": 12,
+      "observed": {
+        "pairs": 32385,
+        "four_hits": 1343,
+        "two_hits": 661,
+        "fermat_hits": 14500,
+        "four_only_vs_two": 706,
+        "two_only_vs_four": 24,
+        "four_only_vs_fermat": 919,
+        "fermat_only_vs_four": 14076,
+        "first_by_sign": {
+          "--": 319,
+          "++": 318,
+          "-+": 310,
+          "+-": 396
+        },
+        "scaled_roots": 348977,
+        "discriminant_roots": 66792,
+        "square_values": 381362
+      }
+    }
+  ]
+}

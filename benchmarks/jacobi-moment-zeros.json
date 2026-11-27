@@ -1,0 +1,20 @@
+[
+  {
+    "n": "15", "factors": ["3", "5"],
+    "selection": "The exceptional small primes; all positive even moments have gcd 3.",
+    "degrees": [2, 4, 6, 8],
+    "observed": {"moments": [12, 12, 12, 12], "gcds": [3, 3, 3, 3], "jacobi_signs": 15, "residue_powers": 60, "gcd_checks": 4}
+  },
+  {
+    "n": "65", "factors": ["5", "13"],
+    "selection": "Both primes are 1 modulo 4, including degrees divisible by both predecessors.",
+    "degrees": [2, 4, 6, 12, 24],
+    "observed": {"moments": [2, 32, 7, 2, 2], "gcds": [1, 1, 1, 1, 1], "jacobi_signs": 65, "residue_powers": 325, "gcd_checks": 5}
+  },
+  {
+    "n": "77", "factors": ["7", "11"],
+    "selection": "Each of 1, the smaller prime, the larger prime, and the full product occurs.",
+    "degrees": [2, 6, 10, 30, 60],
+    "observed": {"moments": [2, 42, 55, 0, 0], "gcds": [1, 7, 11, 77, 77], "jacobi_signs": 77, "residue_powers": 385, "gcd_checks": 5}
+  }
+]

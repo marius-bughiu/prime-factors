@@ -1,0 +1,116 @@
+{
+  "cap": 1200,
+  "selection": "Three chosen balanced toy products compared through the first successful scale. The wheel and height baseline are shared. Excluded progressions are tested arithmetically, once per product. Counts continue past any incidental setup split to isolate the screen.",
+  "products": [
+    {
+      "n": "2627",
+      "factors": [
+        "37",
+        "71"
+      ],
+      "observed": {
+        "band": [
+          37,
+          51
+        ],
+        "first_scale": 70,
+        "height_scale_roots": 42,
+        "predecessor_divmods": 15,
+        "direct_odd_trial_divisions": 1,
+        "full_band": {
+          "excluded_primes": [
+            13,
+            31
+          ],
+          "scale_modulos": 83,
+          "scale_roots": 39
+        },
+        "odd_band": {
+          "excluded_primes": [
+            13,
+            29,
+            31,
+            41
+          ],
+          "scale_modulos": 159,
+          "scale_roots": 36
+        },
+        "setup_modulus_remainders": 13,
+        "setup_progression_tests": 26,
+        "setup_incidental_prime_divisors": [
+          37
+        ]
+      }
+    },
+    {
+      "n": "3713",
+      "factors": [
+        "47",
+        "79"
+      ],
+      "observed": {
+        "band": [
+          44,
+          60
+        ],
+        "first_scale": 897,
+        "height_scale_roots": 371,
+        "predecessor_divmods": 18,
+        "direct_odd_trial_divisions": 2,
+        "full_band": {
+          "excluded_primes": [
+            41
+          ],
+          "scale_modulos": 371,
+          "scale_roots": 361
+        },
+        "odd_band": {
+          "excluded_primes": [
+            17,
+            19,
+            37,
+            41
+          ],
+          "scale_modulos": 1376,
+          "scale_roots": 315
+        },
+        "setup_modulus_remainders": 11,
+        "setup_progression_tests": 22,
+        "setup_incidental_prime_divisors": []
+      }
+    },
+    {
+      "n": "4757",
+      "factors": [
+        "67",
+        "71"
+      ],
+      "observed": {
+        "band": [
+          49,
+          68
+        ],
+        "first_scale": 1155,
+        "height_scale_roots": 524,
+        "predecessor_divmods": 17,
+        "direct_odd_trial_divisions": 10,
+        "full_band": {
+          "excluded_primes": [],
+          "scale_modulos": 0,
+          "scale_roots": 524
+        },
+        "odd_band": {
+          "excluded_primes": [
+            19,
+            37
+          ],
+          "scale_modulos": 1020,
+          "scale_roots": 483
+        },
+        "setup_modulus_remainders": 11,
+        "setup_progression_tests": 22,
+        "setup_incidental_prime_divisors": []
+      }
+    }
+  ]
+}

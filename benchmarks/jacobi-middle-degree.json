@@ -1,0 +1,10 @@
+[
+  {"n": "77", "factors": ["7", "11"], "degree": 8, "moment": 37, "central": 70,
+   "discrepancy": 44, "coefficient_gcd": 7, "twin_square": false},
+  {"n": "143", "factors": ["11", "13"], "degree": 10, "moment": 44, "central": 252,
+   "discrepancy": 78, "coefficient_gcd": 1, "twin_square": true},
+  {"n": "221", "factors": ["13", "17"], "degree": 14, "moment": 15, "central": 3432,
+   "discrepancy": 119, "coefficient_gcd": 13, "twin_square": false},
+  {"n": "493", "factors": ["17", "29"], "degree": 22, "moment": 326, "central": 705432,
+   "discrepancy": 377, "coefficient_gcd": 17, "twin_square": false}
+]

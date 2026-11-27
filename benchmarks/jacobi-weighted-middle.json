@@ -1,0 +1,86 @@
+[
+  {
+    "n": "91", "factors": ["7", "13"],
+    "selection": "Minimum allowed gap of six.",
+    "observed": {
+      "j": 4,
+      "weighted": {"residue": 78, "divisor": 13, "signs": 91, "modular_powers": 54, "final_gcds": 1, "first_incidental": {"residue": 5, "divisor": 7, "signs_read": 6, "powers_read": 3, "explicit_gcds": 2}},
+      "two_moments": {"lower": 44, "upper": 83, "residue": 78, "signs": 91, "modular_powers": 182, "powers_if_zero_terms_skipped": 108},
+      "trial": {"divisor": 7, "odd_trial_divisions": 3},
+      "fermat": {"first_midpoint": 10, "first_difference": 9, "first_square_hit": true, "square_tests": 1, "divisor": 7},
+      "central": {"divisor": 7, "coefficient_bits": 7},
+      "route": "first_fermat_square",
+      "recovered": ["7", "13"]
+    }
+  },
+  {
+    "n": "493", "factors": ["17", "29"],
+    "selection": "The first Fermat square already succeeds at gap 12.",
+    "observed": {
+      "j": 11,
+      "weighted": {"residue": 464, "divisor": 29, "signs": 493, "modular_powers": 404, "final_gcds": 1, "first_incidental": {"residue": 15, "divisor": 17, "signs_read": 16, "powers_read": 13, "explicit_gcds": 2}},
+      "two_moments": {"lower": 326, "upper": 138, "residue": 464, "signs": 493, "modular_powers": 986, "powers_if_zero_terms_skipped": 808},
+      "trial": {"divisor": 17, "odd_trial_divisions": 8},
+      "fermat": {"first_midpoint": 23, "first_difference": 36, "first_square_hit": true, "square_tests": 1, "divisor": 17},
+      "central": {"divisor": 17, "coefficient_bits": 20},
+      "route": "first_fermat_square",
+      "recovered": ["17", "29"]
+    }
+  },
+  {
+    "n": "2627", "factors": ["37", "71"],
+    "selection": "The first Fermat square misses across a gap of 34.",
+    "observed": {
+      "j": 25,
+      "weighted": {"residue": 355, "divisor": 71, "signs": 2627, "modular_powers": 2414, "final_gcds": 1, "first_incidental": {"residue": 35, "divisor": 37, "signs_read": 36, "powers_read": 33, "explicit_gcds": 2}},
+      "two_moments": {"lower": 2063, "upper": 327, "residue": 355, "signs": 2627, "modular_powers": 5254, "powers_if_zero_terms_skipped": 4828},
+      "trial": {"divisor": 37, "odd_trial_divisions": 18},
+      "fermat": {"first_midpoint": 52, "first_difference": 77, "first_square_hit": false, "square_tests": 3, "divisor": 37},
+      "central": {"divisor": 37, "coefficient_bits": 47},
+      "route": "weighted_sum",
+      "recovered": ["37", "71"]
+    }
+  },
+  {
+    "n": "77", "factors": ["7", "11"],
+    "selection": "A gap of four falls below the weighted-sum hypothesis.",
+    "observed": {
+      "j": 4,
+      "weighted": {"residue": 71, "divisor": 1, "signs": 77, "modular_powers": 44, "final_gcds": 1, "first_incidental": {"residue": 5, "divisor": 7, "signs_read": 6, "powers_read": 3, "explicit_gcds": 2}},
+      "two_moments": {"lower": 37, "upper": 55, "residue": 71, "signs": 77, "modular_powers": 154, "powers_if_zero_terms_skipped": 88},
+      "trial": {"divisor": 7, "odd_trial_divisions": 3},
+      "fermat": {"first_midpoint": 9, "first_difference": 4, "first_square_hit": true, "square_tests": 1, "divisor": 7},
+      "central": {"divisor": 7, "coefficient_bits": 7},
+      "route": "first_fermat_square",
+      "recovered": ["7", "11"]
+    }
+  },
+  {
+    "n": "143", "factors": ["11", "13"],
+    "selection": "Twin primes; the central coefficient is a unit.",
+    "observed": {
+      "j": 5,
+      "weighted": {"residue": 45, "divisor": 1, "signs": 143, "modular_powers": 98, "final_gcds": 1, "first_incidental": {"residue": 9, "divisor": 11, "signs_read": 10, "powers_read": 7, "explicit_gcds": 2}},
+      "two_moments": {"lower": 44, "upper": 2, "residue": 45, "signs": 143, "modular_powers": 286, "powers_if_zero_terms_skipped": 196},
+      "trial": {"divisor": 11, "odd_trial_divisions": 5},
+      "fermat": {"first_midpoint": 12, "first_difference": 1, "first_square_hit": true, "square_tests": 1, "divisor": 11},
+      "central": {"divisor": 1, "coefficient_bits": 8},
+      "route": "first_fermat_square",
+      "recovered": ["11", "13"]
+    }
+  },
+  {
+    "n": "221", "factors": ["13", "17"],
+    "selection": "A second gap-four control.",
+    "observed": {
+      "j": 7,
+      "weighted": {"residue": 144, "divisor": 1, "signs": 221, "modular_powers": 164, "final_gcds": 1, "first_incidental": {"residue": 11, "divisor": 13, "signs_read": 12, "powers_read": 9, "explicit_gcds": 2}},
+      "two_moments": {"lower": 15, "upper": 19, "residue": 144, "signs": 221, "modular_powers": 442, "powers_if_zero_terms_skipped": 328},
+      "trial": {"divisor": 13, "odd_trial_divisions": 6},
+      "fermat": {"first_midpoint": 15, "first_difference": 4, "first_square_hit": true, "square_tests": 1, "divisor": 13},
+      "central": {"divisor": 13, "coefficient_bits": 12},
+      "route": "first_fermat_square",
+      "recovered": ["13", "17"]
+    }
+  }
+]
