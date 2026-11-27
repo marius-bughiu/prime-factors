@@ -1,5 +1,18 @@
 [
   {
+    "id": "four-square-divisors-both-widths",
+    "category": "limits",
+    "title": "Four clues still leave at least 2⁴⁷⁴ sums after enforcing both factor widths",
+    "impact": "Except on fewer than one in 4,096 eligible prime pairs, at least 2⁴⁷⁴ sums pass all four square-divisor clues with both real roots inside the exact factor-width limits.",
+    "scope": "Uniform sorted pairs of distinct 1,024-bit primes with a 2,048-bit product. A second guarantee of 2¹⁸⁶ sums has an exceptional fraction below 2⁻⁴⁴.",
+    "detail": "The count allows the largest possible square divisor at each sign. The roots of a surviving candidate can be nonintegral.",
+    "sources": [
+      {"href": "discoveries/what-four-square-divisors-reveal.md#enforcing-both-factor-widths", "label": "Small example and full-size estimates"},
+      {"href": "PrimeFactors/SquareClueEndpointPopulation.lean", "label": "Population counts and real-root equivalence"},
+      {"href": "PrimeFactors/SquareClueFactorWidth.lean", "label": "Exact endpoint limits"}
+    ]
+  },
+  {
     "id": "primitive-even-mean-factor-sum",
     "category": "formulas",
     "title": "One exact character average determines the sum of the primes",

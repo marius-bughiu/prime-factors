@@ -36,9 +36,12 @@ def disclosed_clues(p, q):
     return roots, factorizations
 
 
-def count_from_clues(n, roots):
-    """Only the public product and the four labelled roots enter this computation."""
+def count_from_clues(n, roots, *, factor_bits=None):
+    """Use the public product, four labelled roots and optional advertised width."""
     low, high = isqrt(4*n)+1, isqrt(9*n//2)
+    if factor_bits is not None:
+        smallest, largest = 2**(factor_bits-1), 2**factor_bits-1
+        high = min(high, smallest+n//smallest, largest+n//largest)
     mod4 = (n+1) % 4
     moduli = {signs: root**2 for signs, root in roots.items()}
     first = low + (mod4-low) % 4
@@ -77,12 +80,13 @@ def measure():
     n = p*q
     roots, factorizations = disclosed_clues(p, q)
     public, survivors = count_from_clues(n, roots)
+    exact_width, _ = count_from_clues(n, roots, factor_bits=BITS)
     comparison = retrospective(p+q, public, survivors, roots)
-    assert public['exact_sums'] == [p+q]
+    assert public['exact_sums'] == exact_width['exact_sums'] == [p+q]
     return dict(prime_bits=BITS, seed=SEED, prime_population=population,
                 factors=[str(p), str(q)], n=str(n), product_bits=n.bit_length(),
                 neighbor_factorizations=factorizations, largest_square_roots=roots,
-                public_counts=public, retrospective=comparison)
+                public_counts=public, width_counts=exact_width, retrospective=comparison)
 
 
 def main():

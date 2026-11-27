@@ -816,6 +816,8 @@ import PrimeFactors.FourNeighborScaleFrequency
 import PrimeFactors.SquareDivisorClueWindow
 import PrimeFactors.FourSquareDivisorClues
 import PrimeFactors.SquareDivisorCluePopulation
+import PrimeFactors.SquareClueFactorWidth
+import PrimeFactors.SquareClueEndpointPopulation
 import PrimeFactors.PrimitiveCharacterParityMoment
 import PrimeFactors.PrimitiveParityAverages
 import PrimeFactors.PrimitiveEvenMean

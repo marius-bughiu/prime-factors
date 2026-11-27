@@ -1,6 +1,6 @@
 {
   "selection": "One seeded uniform draw without replacement from the increasing list of all 20-bit primes, using Python Random(20261127).sample(primes, 2). Sort the two values. Keep the first draw regardless of product width and clue strength.",
-  "source": "Factor the four small disclosed neighbors to create the maximal clues. The public count receives only the product and its four labelled roots. The true sum is used separately to identify its subprogression.",
+  "source": "Factor the four small disclosed neighbors to create the maximal clues. The basic count receives the product and its four labelled roots. A second count also enforces the advertised 20-bit factor width. The true sum is used separately to identify its subprogression.",
   "expected": {
     "prime_bits": 20,
     "seed": 20261127,
@@ -95,6 +95,17 @@
       "exact_sums": [
         1310542
       ]
+    },
+    "width_counts": {
+      "low": 1295587,
+      "high": 1324680,
+      "all_integers": 29094,
+      "mod_four_residue": 2,
+      "mod_four_sums": 7273,
+      "both_sum_congruences": 1,
+      "all_four_congruences": 1,
+      "square_discriminants": 1,
+      "exact_sums": [1310542]
     },
     "retrospective": {
       "joint_modulus": 82944,

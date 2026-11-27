@@ -39,3 +39,16 @@ Choose uniformly among sorted pairs of distinct 1,024-bit primes whose product h
 | All four labeled square divisors | At least $2^{258}$ compatible sums | Less than $2^{-45}$ |
 
 For one mixed clue the gap window is $0<2g^2<N$ with $g>0$. The gap count retains its correct remainder modulo four and modulo the supplied square. For four clues, consider the sums sharing the true sum’s remainder modulo four and all four squares. Each passes the two sum tests, and squaring gives the required discriminant remainders. Counting this one arithmetic progression already gives the lower bounds. In the small example its modulus was 82,944 and it contained one sum. The experiment used the known sum only for this separate comparison. [Counting complete periods](../PrimeFactors/SquareDivisorClueWindow.lean) · [Common progression for four clues](../PrimeFactors/FourSquareDivisorClues.lean)
+
+## Enforcing both factor widths
+
+The basic interval allows sums that would put one factor outside its advertised bit width. In the 39-bit example, requiring both factors to have 20 bits lowers the upper sum from 1,374,176 to 1,324,680. That leaves 29,094 integers, then 7,273 after the remainder modulo four. The same supplied square divisor still identifies the unique sum 1,310,542. [Reproducible width comparison](../benchmarks/square-divisor-clue-window.json)
+
+At 2,048 bits we can impose the same restriction and still prove a large lower bound. Each counted sum passes the four clues, and **both real roots** of $z^2-sz+N=0$ lie between $2^{1023}$ and $2^{1024}-1$, inclusive. Getting actual factors still requires the roots to be integers. [Endpoint equivalence and finite population bounds](../PrimeFactors/SquareClueEndpointPopulation.lean)
+
+| Sums left after all four clues and both width limits | Fraction of eligible pairs that can fall outside the guarantee |
+| --- | --- |
+| At least $2^{474}$ | Less than $2^{-12}$, or one in 4,096 |
+| At least $2^{186}$ | Less than $2^{-44}$ |
+
+The quantity we can compute from the input is a ceiling on the sum. Write $A=2^{1023}$ and $Q=2^{1024}-1$. The ceiling is the smaller of $A+\lfloor N/A\rfloor$ and $Q+\lfloor N/Q\rfloor$. When both primes lie very close to $Q$, the ceiling can sit close to $2\sqrt N$. We count these prime pairs separately. Away from that corner, a long run of candidate sums fits below the ceiling. Counting whole periods of the four congruences inside that run yields the two bounds. [Width of the interval](../PrimeFactors/SquareClueFactorWidth.lean) · [Corner and progression counts](../PrimeFactors/SquareClueEndpointPopulation.lean)

@@ -63,13 +63,13 @@ theorem mem_survivors_public {p q x : ℕ} (hp : Odd p) (hq : Odd q) (order : p�
     ⟨fun hz => hz.trans h,fun hz => hz.trans h.symm⟩
   rw [mem_survivors,add_test,replace h4,replace hmm,replace hpq,replace hqp]
 
-/-- Four even lifted square roots Y supply a common modulus at most their
-squared product divided by 64. A full period contributes one candidate. -/
-theorem count_from_lifts {n s g k C : ℕ} {r Y : Bool → Bool → ℕ}
+/-- Count complete periods that also fit under a supplied sum ceiling. -/
+theorem count_below_from_lifts {n s g k C W cap : ℕ} {r Y : Bool → Bool → ℕ}
     (full : 2^2047≤n) (even : Even s) (disc : g^2+4*n=s^2)
     (positive : ∀ a b, 0<Y a b) (lift : ∀ a b, r a b ∣ Y a b)
     (four : ∀ a b, 4∣(Y a b)^2) (small : ∀ a b, Y a b<2^k)
-    (budget : C*(2^k)^8 ≤ 64*2^1020) : C ≤ (survivors n s g r).card := by
+    (budget : C*(2^k)^8 ≤ 64*W) (basic : W≤2^1020) (fits : (4*n).sqrt+W≤cap) :
+    C ≤ ((survivors n s g r).filter (·≤cap)).card := by
   have pack (a b : Bool) : ∃ u : ℕ, 0<u ∧ (Y a b)^2=4*u := by
     obtain ⟨u,eq⟩ := four a b
     have pos := pow_pos (positive a b) 2
@@ -94,7 +94,7 @@ theorem count_from_lifts {n s g k C : ℕ} {r Y : Bool → Bool → ℕ}
       rw [ea,eb,ec,ed]; dsimp only [M]; ring
     _ ≤ _ := (Nat.mul_le_mul (Nat.mul_le_mul (sq false false) (sq true true))
       (Nat.mul_le_mul (sq false true) (sq true false))).trans_eq (by ring)
-  have width : C*M ≤ 2^1020 := by
+  have width : C*M ≤ W := by
     apply Nat.le_of_mul_le_mul_left (c:=64) _ (by decide)
     rw [show 64*(C*M)=C*(64*M) by ring]
     exact (Nat.mul_le_mul_left C sz).trans budget
@@ -103,7 +103,8 @@ theorem count_from_lifts {n s g k C : ℕ} {r Y : Bool → Bool → ℕ}
   intro x hx
   obtain ⟨inside,same⟩ := mem_filter.mp hx
   obtain ⟨lo,hi⟩ := mem_Ioc.mp inside
-  have window := SquareDivisorClueWindow.sum_slab full lo (hi.trans (Nat.add_le_add_left width _))
+  have bounded := hi.trans (Nat.add_le_add_left width _)
+  have window := SquareDivisorClueWindow.sum_slab full lo (bounded.trans (Nat.add_le_add_left basic _))
   have h4 := same.of_dvd m4
   have h2 := h4.of_dvd (by decide : 2∣4)
   change x%2=s%2 at h2
@@ -111,9 +112,20 @@ theorem count_from_lifts {n s g k C : ℕ} {r Y : Bool → Bool → ℕ}
     apply Nat.ModEq.add_right_cancel' (4*n)
     rw [Nat.sub_add_cancel window.1.le,disc]
     exact same.pow 2
+  refine mem_filter.mpr ⟨?_,bounded.trans fits⟩
   exact mem_survivors.mpr ⟨window,Nat.even_iff.mpr (h2.trans (Nat.even_iff.mp even)),h4,
     same.of_dvd (covers false false),same.of_dvd (covers true true),
     discriminant.of_dvd (covers false true),discriminant.of_dvd (covers true false)⟩
+
+/-- Four even lifted square roots Y supply a common modulus at most their
+squared product divided by 64. A full period contributes one candidate. -/
+theorem count_from_lifts {n s g k C : ℕ} {r Y : Bool → Bool → ℕ}
+    (full : 2^2047≤n) (even : Even s) (disc : g^2+4*n=s^2)
+    (positive : ∀ a b, 0<Y a b) (lift : ∀ a b, r a b ∣ Y a b)
+    (four : ∀ a b, 4∣(Y a b)^2) (small : ∀ a b, Y a b<2^k)
+    (budget : C*(2^k)^8 ≤ 64*2^1020) : C ≤ (survivors n s g r).card :=
+  (count_below_from_lifts full even disc positive lift four small budget le_rfl le_rfl).trans
+    (card_filter_le ..)
 
 /-- Each root may be any supplied positive square-divisor root, including the
 largest one at its sign. The conclusion counts the listed congruences. -/
