@@ -556,3 +556,5 @@ import PrimeFactors.QuotientPascalMasks
 import PrimeFactors.TruncatedRamanujan
 import PrimeFactors.QuotientPascalTransfer
 import PrimeFactors.PascalCandidateCount
+import PrimeFactors.MeanSquarePrimePartners
+import PrimeFactors.PrimeGapPopulation
