@@ -834,3 +834,9 @@ import PrimeFactors.PrimitiveIntervalPeriodMean
 import PrimeFactors.FixedRatioSumPopulation
 import PrimeFactors.PrimitiveIntervalShape
 import PrimeFactors.PrimitiveIntervalShapePopulation
+import PrimeFactors.PrimitiveIntervalBandEndpoints
+import PrimeFactors.IntervalWheelResidues
+import PrimeFactors.IntervalWheelBand
+import PrimeFactors.IntervalWheelControls
+import PrimeFactors.PrimitiveIntervalCutoffTrend
+import PrimeFactors.TriangularGcdCurvature

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Public remainders reduce five possible sums to one on the 39-bit noisy-clue example. At 2,048 bits they let us accept 32 times more error in the clue while keeping the final list under a million. We also tested whether differences between interval lengths can supply the missing information. Two readings with the same unknown offset give the sum, while a quantity computable with four gcds becomes constant over the relevant range. [Public remainder counts](how-accurately-to-estimate-the-interval-total.md#using-the-product-to-rule-out-more-sums) · [What changes with the interval length](what-changes-when-the-interval-grows.md)
+
 A deliberately noisy reading on 419,636,024,497 left five possible sums of the primes. Only one gave whole-number factors. The known primes supplied the reading. At 2,048 bits, the error allowance determines how many sums the same test can leave, and a simple prediction based on a multiple of the product almost always misses. [Worked example, accuracy targets and failed predictions](how-accurately-to-estimate-the-interval-total.md)
 
 An exact average over even Dirichlet characters recovers the sum of the factors. At 143 the average is $51/25$, giving 11 and 13. A second identity uses a longer interval chosen from the product and an integer square root. The short average needs extreme precision, and direct evaluation of the long sum already encounters the unknown primes. [Character identities, costs and examples](can-short-character-averages-reveal-the-primes.md)

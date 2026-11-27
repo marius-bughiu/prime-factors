@@ -1,5 +1,67 @@
 [
   {
+    "id": "interval-total-public-remainder-bound",
+    "category": "formulas",
+    "title": "Small remainders let the interval clue tolerate 32 times more error",
+    "impact": "An error allowance of 2¹⁰⁵⁰ leaves at most 635,040 possible sums at 2,048 bits. The previous modulo-four bound gave at most 1,048,576 at an allowance of 2¹⁰⁴⁵.",
+    "scope": "Any product of two distinct 1,024-bit primes with a 2,048-bit product. The remainder checks use the product alone. The interval-total estimate is supplied.",
+    "detail": "Only 90,720 residues at most can be sums in a block of length 19,399,380. At this error allowance seven blocks cover every candidate, including partial blocks.",
+    "sources": [
+      {"href": "discoveries/how-accurately-to-estimate-the-interval-total.md#using-the-product-to-rule-out-more-sums", "label": "Derivation and inputs"},
+      {"href": "PrimeFactors/IntervalWheelResidues.lean", "label": "Residue counts"},
+      {"href": "PrimeFactors/IntervalWheelBand.lean", "label": "Finite interval proof"}
+    ]
+  },
+  {
+    "id": "interval-total-checks-on-published-products",
+    "category": "cases",
+    "title": "Remainders modulo 3 and 5 select the correct sum from five",
+    "impact": "On 419,636,024,497, only 1,310,542 survives both checks. On the fresh and crossed 2,048-bit controls, the public remainders give conditional upper bounds of 272,160 and 403,200 sums.",
+    "scope": "The 39-bit input used a deliberately noisy clue derived from its factors. The large-input figures assume an interval-total estimate accurate to 2¹⁰⁵⁰. No such reading was obtained on either control.",
+    "detail": "Each large product determines exactly how many sum residues survive in one complete block. Multiplying that count by seven covers the possible interval.",
+    "sources": [
+      {"href": "discoveries/how-accurately-to-estimate-the-interval-total.md#using-the-product-to-rule-out-more-sums", "label": "Comparison table"},
+      {"href": "PrimeFactors/IntervalWheelBand.lean", "label": "39-bit calculation"},
+      {"href": "PrimeFactors/IntervalWheelControls.lean", "label": "Full-size residue counts"}
+    ]
+  },
+  {
+    "id": "interval-total-endpoints-and-index",
+    "category": "formulas",
+    "title": "Two square roots give direct access to every sum allowed by the reading",
+    "impact": "For the 39-bit example the interval runs from 1,310,536 to 1,310,554. The first sum of the correct remainder is 1,310,538 and the fifth is 1,310,554.",
+    "scope": "The calculation takes a supplied signed integer reading and a nonnegative error allowance. It also handles empty intervals and exact-square endpoints.",
+    "detail": "Once the endpoints are known, adding four times a zero-based index to the first candidate gives the selected sum without visiting the preceding candidates.",
+    "sources": [
+      {"href": "discoveries/how-accurately-to-estimate-the-interval-total.md#a-less-accurate-estimate-still-narrows-the-search", "label": "Finding the interval"},
+      {"href": "PrimeFactors/PrimitiveIntervalBandEndpoints.lean", "label": "Membership, count and index proofs"}
+    ]
+  },
+  {
+    "id": "interval-length-common-bias",
+    "category": "formulas",
+    "title": "Two interval readings can cancel the same unknown error",
+    "impact": "On 143, adding 1,000 to both readings still recovers the prime sum 24. At 1,024-bit factor width, five publicly known lengths are always suitable for taking two readings.",
+    "scope": "The measurements are supplied. If an unknown bias changes linearly with the length, every proposed sum fits the interior readings after refitting the slope and offset.",
+    "detail": "A difference of totals retains a linear term in the factor sum. Two additional reference readings at lengths zero and one calibrate an affine error if that law holds globally.",
+    "sources": [
+      {"href": "discoveries/what-changes-when-the-interval-grows.md#when-does-the-difference-tell-us-the-sum", "label": "Difference and calibration"},
+      {"href": "PrimeFactors/PrimitiveIntervalCutoffTrend.lean", "label": "Lean proof and example"}
+    ]
+  },
+  {
+    "id": "interval-curvature-four-boundary-gcds",
+    "category": "limits",
+    "title": "Four gcds measure the change in slope, which is constant in the useful interval",
+    "impact": "At 143 the successive measurements are −18, −22 and 2. The first two already sample gcds of 11 and 13. Inside the interval where the sum formula holds, the measurement is always 2.",
+    "scope": "Four gcds of the product suffice for the second difference at every nonnegative length. The constant result applies when all three lengths include both prime contributions and lie below the smaller prime.",
+    "detail": "Taking two differences cancels the linear term that carries the factor sum. The calculation pinpoints what this inexpensive product-only observation can reveal.",
+    "sources": [
+      {"href": "discoveries/what-changes-when-the-interval-grows.md#what-can-we-measure-from-the-product-alone", "label": "Calculation at 143"},
+      {"href": "PrimeFactors/TriangularGcdCurvature.lean", "label": "Four-gcd identity"}
+    ]
+  },
+  {
     "id": "five-sums-from-a-noisy-interval-total",
     "category": "cases",
     "title": "A deliberately noisy clue leaves five sums on the 39-bit example",

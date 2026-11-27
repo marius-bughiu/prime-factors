@@ -12,7 +12,22 @@ Put $B=\lfloor\sqrt{N/2}\rfloor$ and let $S=p+q$. At this public length the sign
 | $2^{1045}$ | $2^{20}=1,048,576$ |
 | $2^{1057}$ | $2^{32}=4,294,967,296$ |
 
-The candidates also have to lie between $2B+2$ and $4B+2$. For a product of distinct balanced odd primes, the true sum is always in the list if the stated error bound holds. An exact square discriminant identifies a genuine factorization. None of these counts assumes a way to produce the estimate. [Finite list and containment](../PrimeFactors/PrimitiveIntervalCandidateBand.lean)
+The candidates also have to lie between $2B+2$ and $4B+2$. Two integer square roots give the endpoints of the allowed interval, including square ties. Rounding the lower endpoint up to the correct remainder gives the first sum. The zero-based candidate with index $k$ is then the first sum plus $4k$ until the upper endpoint is passed. For balanced distinct odd primes, the list contains the true sum whenever the reading meets its stated error allowance. An exact square discriminant identifies a genuine factorization. [Endpoint and index proof](../PrimeFactors/PrimitiveIntervalBandEndpoints.lean) · [Finite list and containment](../PrimeFactors/PrimitiveIntervalCandidateBand.lean)
+
+## Using the product to rule out more sums
+
+With the same 2,048-bit input, an estimate accurate to $2^{1050}$ leaves **at most 635,040 sums** after checking small remainders. This error allowance is 32 times larger than $2^{1045}$, for which the remainder modulo four alone guaranteed at most 1,048,576 sums. The extra remainders all come from the product. The estimate of the interval total is still a separate input. [Combined count and true-sum guarantee](../PrimeFactors/IntervalWheelBand.lean)
+
+For example, the five sums in the 39-bit experiment below become three when checked modulo 3. Checking modulo 5 as well leaves just 1,310,542. Both checks ask whether two residues can multiply to the given product and add to the proposed sum. The final factorization still has its own exact check. [Proof for the two remainders together](../PrimeFactors/IntervalWheelBand.lean)
+
+At full width we check remainders modulo 4, 3, 5, 7, 11, 13, 17 and 19. Their product is 19,399,380. In each block of that length at most 90,720 residues can be factor sums. With the stated error budget the distance between the least and greatest surviving sums is at most $2^{27}$. Seven blocks, including the last partial block, suffice. Multiplying seven by 90,720 gives the bound. This counts candidates requiring a final square test. Computing an interval estimate, building the small residue lists and combining them have separate costs. [Counts at each modulus](../PrimeFactors/IntervalWheelResidues.lean) · [Block count](../PrimeFactors/IntervalWheelBand.lean)
+
+The two published full-size products give sharper bounds using their own remainders. The following numbers use only each public product. Neither product has a supplied or independently computed estimate in this experiment. [Product constants and verified counts](../PrimeFactors/IntervalWheelControls.lean) · [Origin of the full-size comparisons](certified-fresh-control.md)
+
+| 2,048-bit comparison | Product modulo 19,399,380 | Allowed sum residues per block | At most this many sums if the estimate meets the bound |
+| --- | ---: | ---: | ---: |
+| Fresh | 1,026,079 | 38,880 | 272,160 |
+| Crossed | 1,082,089 | 57,600 | 403,200 |
 
 ## A deliberately noisy clue on the 39-bit example
 
@@ -32,7 +47,7 @@ A gcd is cheap to evaluate at a chosen index. One might hope its average over a 
 
 For example, at $143=11\cdot13$, the weighted gcd sum over the triangle is 172. Substitution of the full-period gcd average predicts a signed total of $-15296/143$. Rounding that down gives $-107$ and decodes to 20. The actual signed total is $-44$ and decodes to 24. In general the full-period gcd average itself equals $(2p-1)(2q-1)/N$. Multiplying it by $N$ gives $4N-2(p+q)+1$, which determines the sum of the primes. [Lean calculation at 143](../PrimeFactors/PrimitiveIntervalPeriodMean.lean) · [Tóth’s weighted gcd identity](https://cs.uwaterloo.ca/journals/JIS/VOL14/Toth/toth9.pdf#page=2)
 
-The paper by Kaltenböck, Kiuchi, Saad Eddin and Ueda estimates weighted gcd averages across moduli. Its RH refinement also assumes the zeta zeros are simple. The estimate required here concerns one specified modulus and one short triangular interval. The full-period failure above follows directly from finite arithmetic. [Published averaging range and hypotheses](https://link.springer.com/article/10.1007/s00025-021-01357-x#Sec1)
+Kaltenböck, Kiuchi, Saad Eddin and Ueda estimate weighted gcd averages across moduli. Their Theorem 2 assumes RH and refines a formula for the averaged error term. Theorem 3 separately assumes simple zeta zeros and a bound at a specified height. Our estimate would have to apply to one given modulus and one short triangular interval. The full-period failure above follows from finite arithmetic. [Published Theorems 2 and 3](https://link.springer.com/article/10.1007/s00025-021-01357-x#Sec1)
 
 ## Would a multiple of the product be accurate enough?
 
