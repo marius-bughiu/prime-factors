@@ -758,3 +758,5 @@ import PrimeFactors.HighWordSuffixTransfer
 import PrimeFactors.HighWordSuffixRanking
 import PrimeFactors.HighWordSuffixCost
 import PrimeFactors.WordBlockFrequency
+import PrimeFactors.FractionalWordRanking
+import PrimeFactors.WordRankingTail

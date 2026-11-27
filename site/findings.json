@@ -18,6 +18,46 @@
     ]
   },
   {
+    "id": "choosing-the-same-sum-with-small-square-roots",
+    "category": "gains",
+    "title": "A small table picks the same sum with fewer square roots",
+    "impact": "On two 2,048-bit controls, the setup for selecting a sum fell from 25 and 49 input-dependent square roots to one apiece.",
+    "scope": "Both controls stayed unfactored. The table used 4,097 small roots to build. The Python implementation took longer on both controls.",
+    "detail": "With 14-bit primes and modulus 120, the larger table found 64,531 products versus 57,862 for Fermat at the same per-product root budget. The comparison counts 10.3 million table lookups separately. With the smaller table, Fermat recovered more.",
+    "sources": [
+      {
+        "href": "discoveries/choosing-the-same-sum-with-small-square-roots.md",
+        "label": "Cost and comparison"
+      },
+      {
+        "href": "PrimeFactors/FractionalWordRanking.lean",
+        "label": "Lean proof"
+      },
+      {
+        "href": "#root-table-ranked-gain",
+        "label": "Certified example"
+      }
+    ]
+  },
+  {
+    "id": "when-to-stop-counting-factor-sums",
+    "category": "gains",
+    "title": "One counted midpoint can rule out every later one",
+    "impact": "An integer inequality lets the ranking stop as soon as later sums cannot fit more odd pairs. Both full-size examples needed only one midpoint count and three setup roots.",
+    "scope": "It selects the same candidate as exact ranking. Both final factor checks missed.",
+    "detail": "The full-size stopping check used three squares, one further large multiplication and a small-divisor division. On the two 66-bit examples it used two checks and cut the setup from 25 roots to five.",
+    "sources": [
+      {
+        "href": "discoveries/when-to-stop-counting-factor-sums.md",
+        "label": "Worked stopping checks"
+      },
+      {
+        "href": "PrimeFactors/WordRankingTail.lean",
+        "label": "Lean proof"
+      }
+    ]
+  },
+  {
     "id": "choosing-a-sum-from-a-word-and-a-remainder",
     "title": "121 sums suffice to find the most common sum for a word and remainder",
     "category": "formulas",

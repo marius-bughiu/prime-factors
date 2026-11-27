@@ -671,12 +671,15 @@ def case_row(result):
         if work.get('probe_certificate'):
             url = escape(work['probe_certificate']['proof'], quote=True)
             count += f' · <a href="{url}">Power test proof</a>'
-    elif result['method'] == 'high-word-suffix-ranking':
-        work = result['high_word_suffix_ranking']
+    elif result['method'] in ('high-word-suffix-ranking', 'fractional-word-ranking'):
+        work = result[result['method'].replace('-', '_')]
         method = 'Ranked sum' if work['strategy'] == 'ranked' else 'First remainder-compatible Fermat guess'
         count = (f'{method} · {work["table_entries"]:,} local entries · {work["rows"]:,} positions · '
                  f'setup square roots {work["setup_roots"]:,} · final square tests {work["square_tests"]:,} · '
                  f'Fermat using the ranking’s total root budget {"hit" if work["equal_budget_factor"] else "missed"}')
+        if result['method'] == 'fractional-word-ranking':
+            count += (f' · {work["table_lookups"]:,} root-table reads · reusable table of '
+                      f'{work["root_table_entries"]:,} small roots')
     elif result['method'] == 'high-word-sum-ranking':
         work = result['high_word_sum_ranking']
         count = (f'Compared two proposed sums · setup square roots {work["setup_roots"]:,} · '

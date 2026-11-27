@@ -49,6 +49,8 @@ jobs:
           python3 -m experiments.fixed_window_digit_packing --check
           python3 -m experiments.high_word_sum_ranking --check
           python3 -m experiments.high_word_suffix_ranking --check
+          python3 -m experiments.fractional_word_ranking --check
+          python3 -m experiments.word_ranking_tail
       - name: Generate progress report
         run: python3 scripts/render_site.py
       - name: Upload verified main artifact

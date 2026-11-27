@@ -111,7 +111,8 @@ from experiments.weighted_square_triples import compare as weighted_triple_compa
 from experiments.weighted_subset_search import relation_certificate, search as weighted_subset_search
 from experiments.weighted_subset_witness import certificate as subset_exclusion_certificate
 from scripts.memory_partition_benchmark import memory_partition_case
-from experiments import cyclotomic_small_norm, high_word_sum_ranking, high_word_suffix_ranking
+from experiments import cyclotomic_small_norm, fractional_word_ranking
+from experiments import high_word_sum_ranking, high_word_suffix_ranking
 from experiments.fixed_window_digit_packing import scan_singleton as fixed_window_scan
 from scripts.cyclotomic_sum_lift_benchmark import cyclotomic_sum_case
 from scripts.lifted_period_benchmark import lifted_period_case
@@ -721,10 +722,15 @@ def run_case(case, method, proofs):
         result = certify_split(case, proof, factor, elapsed, 'cyclotomic_small_norm', work)
     elif method == 'cyclotomic-sum-lift':
         result = cyclotomic_sum_case(case, proof, agree, certify_split)
-    elif method == 'high-word-suffix-ranking':
+    elif method in ('high-word-suffix-ranking', 'fractional-word-ranking'):
         n, bits, modulus = int(case['n']), case['factor_bits'], case['modulus']
+        scorer = high_word_suffix_ranking.search
+        arguments = (n, bits, modulus)
+        if method == 'fractional-word-ranking':
+            scorer = fractional_word_ranking.search
+            arguments += (case['precision'],)
         if case['strategy'] == 'ranked':
-            factor, ranked = high_word_suffix_ranking.search(n, bits, modulus)
+            factor, ranked = scorer(*arguments)
             elapsed = time.perf_counter() - start
             ranked_factor, work = factor, ranked
             first_factor, _ = high_word_suffix_ranking.scan_fermat(n, modulus, 1)
@@ -732,7 +738,7 @@ def run_case(case, method, proofs):
             factor, work = high_word_suffix_ranking.scan_fermat(n, modulus, 1)
             elapsed = time.perf_counter() - start
             first_factor = factor
-            ranked_factor, ranked = high_word_suffix_ranking.search(n, bits, modulus)
+            ranked_factor, ranked = scorer(*arguments)
         else:
             raise ValueError(f'unknown word-suffix strategy {case["strategy"]}')
         budget = ranked['setup_roots'] + ranked['square_tests'] - 1
@@ -742,7 +748,7 @@ def run_case(case, method, proofs):
                     equal_budget_factor=str(equal_factor) if equal_factor else None,
                     equal_budget_square_tests=equal['square_tests'])
         agree(dict(id=name, **case['checks']), work, case['checks'])
-        result = certify_split(case, proof, factor, elapsed, 'high_word_suffix_ranking', work)
+        result = certify_split(case, proof, factor, elapsed, method.replace('-', '_'), work)
     elif method == 'high-word-sum-ranking':
         n = int(case['n'])
         factor, work = high_word_sum_ranking.search(n, case['factor_bits'])
@@ -2164,6 +2170,7 @@ def main():
                              ('fixed-window-digit-packing.json', 'fixed-window-digit-packing'),
                              ('high-word-sum-ranking.json', 'high-word-sum-ranking'),
                              ('high-word-suffix-ranking.json', 'high-word-suffix-ranking'),
+                             ('fractional-word-ranking.json', 'fractional-word-ranking'),
                              ('lifted-period-join.json', 'lifted-period-join'),
                              ('lifted-period-trace.json', 'lifted-period-trace'),
                              ('geometric-sum-readout.json', 'geometric-sum-readout'),
