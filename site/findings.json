@@ -1,5 +1,55 @@
 [
   {
+    "id": "public-remainders-39-bit-recovery",
+    "category": "cases",
+    "title": "Remainders through 43 recover the 39-bit factors without a clue",
+    "impact": "The public width gives 7,273 possible sums after the modulo-four check. Three pass the primes through 41, and only 1,310,542 survives 43. This gives 556,559 × 753,983.",
+    "scope": "One previously published seeded product of two 20-bit primes. The filters receive the product and factor width. The disclosed primes appear in the final verification.",
+    "detail": "A direct staged scan uses 16,226 small remainder lookups. The Lean proof checks the complete sequence of counts with bit masks. This example establishes no success rate on larger inputs.",
+    "sources": [
+      {"href": "discoveries/how-far-public-remainders-narrow-the-sum.md#how-the-39-bit-example-works", "label": "Worked example"},
+      {"href": "PrimeFactors/PublicSumSieveControl.lean", "label": "Exact sieve and factor proof"},
+      {"href": "benchmarks/square-divisor-clue-window.json", "label": "Reproducible fixture"}
+    ]
+  },
+  {
+    "id": "public-wheel-count-at-both-full-size-controls",
+    "category": "gains",
+    "title": "Small remainders cut the full-size sum counts about 125-fold and 84-fold",
+    "impact": "Against the modulo-four count, testing the odd primes through 19 reduces the number of final square tests by a factor between 124.73 and 124.74 on the fresh control, and between 84.19 and 84.20 on the crossed control.",
+    "scope": "Two published 2,048-bit products, using only each product and its factor widths. The counts cover visiting the whole allowed interval. Both have more than 2¹⁰⁰⁰ surviving sums.",
+    "detail": "The proof counts complete periods and bounds the last partial period. The ratio measures the reduction in candidate count. Generating candidates and constructing small residue lists have their own costs.",
+    "sources": [
+      {"href": "discoveries/how-far-public-remainders-narrow-the-sum.md#what-do-inexpensive-remainders-save-at-2048-bits", "label": "Both full-size counts"},
+      {"href": "PrimeFactors/PublicWheelWidthControls.lean", "label": "Certified ratio bounds"}
+    ]
+  },
+  {
+    "id": "gallagher-full-width-factor-sums",
+    "category": "formulas",
+    "title": "A product-only sieve leaves at most 2⁵¹⁹ sums over the full factor-width interval",
+    "impact": "Among 2¹⁰²⁴ consecutive sums covering two 1,024-bit primes, checking odd primes through 2⁵²⁰ retains the true sum and leaves at most 2⁵¹⁹ candidates.",
+    "scope": "Unconditional for every pair in the stated bit widths. There are more than 2⁵¹¹ test primes. The theorem bounds survivors and leaves their efficient enumeration open.",
+    "detail": "The proof specializes Gallagher’s classical larger sieve and establishes explicit finite constants for these factor-sum remainders.",
+    "sources": [
+      {"href": "discoveries/how-far-public-remainders-narrow-the-sum.md#what-can-be-proved-for-every-full-size-product", "label": "Statement, cost and attribution"},
+      {"href": "PrimeFactors/FactorSumLargerSieve.lean", "label": "Full-size specialization"},
+      {"href": "PrimeFactors/IntervalSievePrimeCount.lean", "label": "Cost of visiting all primes"}
+    ]
+  },
+  {
+    "id": "interval-clue-compact-prime-powers",
+    "category": "formulas",
+    "title": "Three prime powers allow a still coarser clue while keeping fewer than a million sums",
+    "impact": "At 2,048 bits, a supplied interval total accurate to 2¹⁰⁵³ leaves at most 907,200 sums. This permits eight times the error of the earlier 635,040-candidate bound.",
+    "scope": "Moduli 16, 9, 25, 7, 11, 13, 17 and 19. The product and factor widths give the public constraints. The estimate for the individual product remains a separate input.",
+    "detail": "The combined modulus exceeds the full diameter of the possible sums at this accuracy. Each admissible residue can therefore appear at most once.",
+    "sources": [
+      {"href": "discoveries/how-accurately-to-estimate-the-interval-total.md#using-the-product-to-rule-out-more-sums", "label": "Error and modulus sizes"},
+      {"href": "PrimeFactors/IntervalWheelPrimePowers.lean", "label": "Checked bound"}
+    ]
+  },
+  {
     "id": "interval-total-public-remainder-bound",
     "category": "formulas",
     "title": "Small remainders let the interval clue tolerate 32 times more error",

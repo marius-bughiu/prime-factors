@@ -840,3 +840,10 @@ import PrimeFactors.IntervalWheelBand
 import PrimeFactors.IntervalWheelControls
 import PrimeFactors.PrimitiveIntervalCutoffTrend
 import PrimeFactors.TriangularGcdCurvature
+import PrimeFactors.IntervalWheelPrimePowers
+import PrimeFactors.PublicWheelWidthControls
+import PrimeFactors.PublicSumSieveControl
+import PrimeFactors.IntervalLargerSieve
+import PrimeFactors.IntervalSievePrimeWeights
+import PrimeFactors.IntervalSievePrimeCount
+import PrimeFactors.FactorSumLargerSieve

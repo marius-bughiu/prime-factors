@@ -1,4 +1,4 @@
-"""Measure four disclosed square-divisor clues on one preselected 20-bit prime pair."""
+"""Compare disclosed clues and public sum remainders on one preselected 20-bit prime pair."""
 
 import json
 from collections import Counter
@@ -36,16 +36,19 @@ def disclosed_clues(p, q):
     return roots, factorizations
 
 
-def count_from_clues(n, roots, *, factor_bits=None):
-    """Use the public product, four labelled roots and optional advertised width."""
-    low, high = isqrt(4*n)+1, isqrt(9*n//2)
+def sum_progression(n, factor_bits):
+    low, high = isqrt(4*n-1)+1, isqrt(9*n//2)
     if factor_bits is not None:
         smallest, largest = 2**(factor_bits-1), 2**factor_bits-1
         high = min(high, smallest+n//smallest, largest+n//largest)
-    mod4 = (n+1) % 4
+    first = low + (n+1-low) % 4
+    return low, high, range(first, high+1, 4)
+
+
+def count_from_clues(n, roots, *, factor_bits=None):
+    """Use the public product, four labelled roots and optional advertised width."""
+    low, high, mod4_sums = sum_progression(n, factor_bits)
     moduli = {signs: root**2 for signs, root in roots.items()}
-    first = low + (mod4-low) % 4
-    mod4_sums = range(first, high+1, 4)
     linear_sums = [s for s in mod4_sums
                    if (s-n-1) % moduli['--'] == 0 and (s+n+1) % moduli['++'] == 0]
     gap_center_squared = (n-1)**2
@@ -59,10 +62,29 @@ def count_from_clues(n, roots, *, factor_bits=None):
         gap = isqrt(discriminant)
         if gap*gap == discriminant:
             exact.append(s)
-    return dict(low=low, high=high, all_integers=high-low+1, mod_four_residue=mod4,
+    return dict(low=low, high=high, all_integers=high-low+1, mod_four_residue=(n+1)%4,
                 mod_four_sums=len(mod4_sums), both_sum_congruences=len(linear_sums),
                 all_four_congruences=len(survivors), square_discriminants=len(exact),
                 exact_sums=exact), set(survivors)
+
+
+def public_remainders(n, factor_bits):
+    """Replay the thirteen small-prime checks in the Lean control."""
+    _, _, candidates = sum_progression(n, factor_bits)
+    stages = [len(candidates)]
+    primes = [prime for prime in primes_through(43) if prime != 2]
+    for prime in primes:
+        squares = {x*x % prime for x in range(prime)}
+        allowed = {s for s in range(prime) if (s*s-4*n) % prime in squares}
+        candidates = [s for s in candidates if s % prime in allowed]
+        stages.append(len(candidates))
+    pairs = []
+    for s in candidates:
+        gap = isqrt(s*s-4*n)
+        if gap*gap == s*s-4*n:
+            pairs.append([str((s-gap)//2), str((s+gap)//2)])
+    return dict(primes=primes, stage_counts=stages, residue_lookups=sum(stages[:-1]),
+                surviving_sums=candidates, recovered_pairs=pairs)
 
 
 def retrospective(true_sum, public, survivors, roots):
@@ -86,7 +108,8 @@ def measure():
     return dict(prime_bits=BITS, seed=SEED, prime_population=population,
                 factors=[str(p), str(q)], n=str(n), product_bits=n.bit_length(),
                 neighbor_factorizations=factorizations, largest_square_roots=roots,
-                public_counts=public, width_counts=exact_width, retrospective=comparison)
+                public_counts=public, width_counts=exact_width, retrospective=comparison,
+                public_remainders=public_remainders(n, BITS))
 
 
 def main():

@@ -33,19 +33,24 @@ theorem count_components (n : ℕ) :
       count n 11 * count n 13 * count n 17 * count n 19 := by
   simp (disch := decide) only [modulus, count_mul]
 
+/-- A nonzero product at an odd prime admits at most half the classes,
+rounded up, as sums. -/
+theorem prime_classes {n p : ℕ} (hp : p.Prime) (odd : p ≠ 2) (nondiv : ¬p ∣ n) :
+    count n p ≤ (p + 1) / 2 := by
+  letI : Fact p.Prime := ⟨hp⟩
+  have unit := (ZMod.natCast_zmod_eq_zero_iff_dvd n p).mp.mt nondiv
+  rw [count, card_admissibleSum_eq p _ unit]
+  by_cases sq : IsSquare (n : ZMod p)
+  · exact (card_factorSumResidues_of_square p odd _ unit sq).le
+  · rw [card_factorSumResidues_of_nonsquare p _ unit sq]
+    omega
+
 /-- At most 90,720 of the 19,399,380 sums per full period pass all local tests.
 The hypothesis is checkable from the product alone. -/
 theorem count_le {n : ℕ} (cop : modulus.Coprime n) : count n modulus ≤ 90720 := by
   have primeBound (p : ℕ) (hp : p.Prime) (odd : p ≠ 2) (div : p ∣ modulus) :
-      count n p ≤ (p + 1) / 2 := by
-    letI : Fact p.Prime := ⟨hp⟩
-    have unit : (n : ZMod p) ≠ 0 := (ZMod.natCast_zmod_eq_zero_iff_dvd n p).mp.mt
-      (hp.coprime_iff_not_dvd.mp (cop.of_dvd_left div))
-    rw [count, card_admissibleSum_eq p _ unit]
-    by_cases sq : IsSquare (n : ZMod p)
-    · exact (card_factorSumResidues_of_square p odd _ unit sq).le
-    · rw [card_factorSumResidues_of_nonsquare p _ unit sq]
-      omega
+      count n p ≤ (p + 1) / 2 :=
+    prime_classes hp odd (hp.coprime_iff_not_dvd.mp (cop.of_dvd_left div))
   have four := count_four (Nat.prime_two.coprime_iff_not_dvd.mp
     (cop.of_dvd_left (by decide : 2 ∣ modulus)))
   calc

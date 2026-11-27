@@ -29,6 +29,8 @@ The two published full-size products give sharper bounds using their own remaind
 | Fresh | 1,026,079 | 38,880 | 272,160 |
 | Crossed | 1,082,089 | 57,600 | 403,200 |
 
+With a larger combined modulus, an estimate accurate to $2^{1053}$ still leaves **at most 907,200 sums** for any eligible product. Use 16, 9 and 25 in place of 4, 3 and 5, and keep the other five odd primes. The combined modulus is 1,163,962,800, larger than the maximum candidate diameter $2^{30}$. Every compatible residue now occurs at most once. This allows eight times the error of the preceding 635,040 bound. [Prime-power counts and incomplete interval](../PrimeFactors/IntervalWheelPrimePowers.lean)
+
 ## A deliberately noisy clue on the 39-bit example
 
 We used the same two 20-bit primes as in the square-divisor experiment. Their product is 419,636,024,497. The disclosed factors give the exact total $-112{,}543{,}867{,}588$. We added 5,000,000 and supplied the resulting $-112{,}538{,}867{,}588$ to the sum test, with an error allowance of 16,000,000. This makes the source of the information explicit. [Original seeded prime pair](what-four-square-divisors-reveal.md#a-39-bit-example-with-supplied-clues)
