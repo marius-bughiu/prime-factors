@@ -6,6 +6,8 @@ This is the same kind of search that split a deliberately constructed 2,048-bit 
 
 ## Why varying the starting value has a limit
 
+On one of the constructed inputs, a cheaper second stage reduced the modular squares and multiplies from 124,802 to 32,561. Both versions missed on the fresh full-size comparison. The second stage still uses powers built from primes at most 1,000, so the same population bound applies. [Comparison including setup, gcds and both controls](one-remaining-prime-after-the-predecessor-sweep.md)
+
 Write $N=pq$ and focus first on the prime $p$. For a chosen base $a$, let $m$ be the smallest positive exponent for which $a^m$ leaves remainder 1 upon division by $p$. Then $m$ divides $p-1$. A power checkpoint uses a positive smooth exponent $E$. For it to give remainder 1 at $p$, we need $m\mid(N-1)E$. Since $p\equiv1\pmod m$, this is equivalent to $m\mid(q-1)E$. In particular
 
 $$d=\gcd(m,E),\qquad k=m/d,\qquad k\mid q-1.$$
