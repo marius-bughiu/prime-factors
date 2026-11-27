@@ -1,0 +1,33 @@
+# Which multiplier square tests repeat an earlier one?
+
+On a search that tests every multiplier from 1 through $K$ and the first $H$ consecutive traces at each multiplier, at least $\lfloor K/4\rfloor\lfloor H/2\rfloor$ square-root tests repeat earlier work, for **every** input $N$. For large $K$ and $H$, removing all such repetitions saves about **16.81%** of the square tests. The smaller search retains every factor obtainable from either half-trace gcd when the removed scale is coprime to $N$. A gcd with the scale handles the other case. [Lean proof](../PrimeFactors/PrimitiveMultiplierTraces.lean)
+
+Write $L_k=\lceil\sqrt{4kN}\rceil$. A row $(k,S)$ tests whether $S^2-4kN$ is square. If $d^2\mid k$ and $d\mid S$, this discriminant is $d^2$ times the discriminant at $(k/d^2,S/d)$. An integer is square exactly when its product with $d^2$ is square. Given a square with smaller root $u$, the higher half-traces are $d(S/d\pm u)/2$. Both are integer multiples of their lower counterparts. If $1<\gcd(d,N)<N$, the scale already splits $N$. If $N\mid d$, both higher gcds equal $N$. If the scale is coprime to $N$, both gcds are preserved exactly. The relation uses the classical multiplier version of Fermat's method. [Lehman's original paper](https://www.ams.org/journals/mcom/1974-28-126/S0025-5718-1974-0340163-2/) · [Hittmeir on the Lawrence–Lehman search](https://arxiv.org/abs/2006.16729)
+
+For $S=d s$ and $k=d^2h$, the lower bound $S\ge L_k$ is equivalent to $s\ge L_h$. Also $L_k\le dL_h$, so $S<L_k+H$ implies $s<L_h+H$. Repeating the reduction terminates. The resulting primitive row is unique for positive traces. In fact two primitive rows with the same rational value $S^2/k$ coincide. To see this, write their traces as $ga,gb$ with $\gcd(a,b)=1$. Cross-multiplication forces $a^2$ to divide the first multiplier and $b^2$ to divide the second. Primitivity forces $a=b=1$. A multiplier may contain a square factor while its trace is primitive. For example, at $N=77$, $(4,36)$ repeats $(1,18)$ and both yield half-trace gcds 7 and 11. The row $(4,37)$ has no common scale. [Checked reduction, uniqueness, interval membership, square test and half-trace gcds](../PrimeFactors/PrimitiveMultiplierTraces.lean)
+
+The finite saving uses even traces at multipliers divisible by four. Each such lane contains at least $\lfloor H/2\rfloor$ even traces. For the full count let $M_d(k)$ be the number of multiples of $d$ in $[L_k,L_k+H)$. Inclusion–exclusion gives the exact number of primitive tests
+$$
+\sum_{d\le\sqrt K}\mu(d)\sum_{h\le K/d^2}M_d(d^2h).
+$$
+Replacing $M_d$ by $H/d$ costs at most $\sum_{d\le\sqrt K}\lfloor K/d^2\rfloor=O(K)$. Replacing the inner counts of multipliers by $K/d^2$ costs $O(H\log(2K))$, and extending the absolutely convergent series to infinity costs $O(H)$. Thus the primitive count is $KH/\zeta(3)+O(K+H\log(2K))$, uniformly in $N$. The finite saving is a Lean theorem. The asymptotic estimate here follows on paper from the displayed inclusion–exclusion and the Euler product.
+
+A wheel skips labels whose residues cannot be a sum of the form $au+bv$ with $ab=k$ and $uv\equiv N$ modulo the wheel modulus. Every integer square is admitted, even if both resulting gcds are trivial. Its two half-traces $x,y$ satisfy $xy=kN$. Since $k$ divides $xy$, it can be written $k=ab$ with $a\mid x$ and $b\mid y$. Taking $u=x/a$ and $v=y/b$ then gives $uv=N$. This works for every positive multiplier and every product. [Lean proof of wheel admission for all squares](../PrimeFactors/PrimitiveMultiplierTraces.lean)
+
+The first $H$ admitted labels in a lane can extend beyond its first $H$ consecutive integers. The orientation $(a,b)$ in the earlier lane lifts to $(da,db)$ in the later one. Therefore every earlier admitted label below $s$ lifts injectively to an admitted label below $ds$. If the contracted label passes the wheel, it is in the corresponding earlier prefix. If it fails the wheel, the new admission theorem rules out a square. Both arguments use the complete multiplier menu or access to its lower lanes. [Checked rank injection and wheel closure](../PrimeFactors/PrimitiveMultiplierTraces.lean)
+
+The wheel also gives a guaranteed saving for every input coprime to six. In lane $k=4h$, the orientation $(2,2h)$ admits the even residue $2+2hN$ modulo 24. Every complete period contains that even label and at most twelve odd labels. In any interval containing $H$ admitted labels, at least $\lfloor H/13\rfloor$ are even and can be contracted. Across all lanes this removes at least $\lfloor K/4\rfloor\lfloor H/13\rfloor$ square-root tests from the first-$H$-admitted schedule. The Lean proof includes the incomplete periods at both ends. [Filtered count](../PrimeFactors/PrimitiveMultiplierTraces.lean)
+
+## Three comparisons at the same budget
+
+For each product we tried every multiplier from 1 to 256 with a budget of 64 labels per multiplier, under the three rules below. Every table entry gives the number of discriminant square-root tests before and after contraction. A separate run tested every original row directly and compared its entire list of square locations and roots with the reduced run. The reduced run recovered exactly the same lists and factors in all nine comparisons. [Decimal fixtures](../benchmarks/primitive-multiplier.json) · [Search implementation and comparison](../experiments/primitive_multiplier_traces.py)
+
+| Which labels count toward the budget? | $15{,}049$ | Fresh 2,048-bit product | Crossed 2,048-bit product |
+|---|---:|---:|---:|
+| First 64 consecutive integers | 16,384 → 13,640 | 16,384 → 13,646 | 16,384 → 13,646 |
+| First 64 integers, skipping failures modulo 24 | 3,876 → 3,090 | 3,881 → 3,092 | 3,896 → 3,102 |
+| First 64 labels admitted modulo 24 | 16,384 → 14,445 | 16,384 → 14,438 | 16,384 → 14,439 |
+
+On $15{,}049$, the three reduced searches found 78, 78 and 164 squares directly. Restoring the scaled copies gave 125, 125 and 245 squares, respectively. Taking both gcds recovered the prime factors 101 and 149. On both 2,048-bit inputs every discriminant checked was nonsquare. Each entire product remains unresolved. [Certified small pair](../PrimeFactors/ReciprocalSumLanes.lean)
+
+The reduced search computes the largest square divisor $D^2$ of each multiplier once, then obtains the contraction scale as $\gcd(D,S)$ for each label in a lane with $D>1$. On each raw comparison, this added 146 sieve writes and 6,336 scale gcds. Both searches also used 256 square roots to locate their starting labels. The receipts record labels visited, square tests, scale gcds and timings separately. A saving in square tests alone does not determine elapsed time. [Reproducible benchmark](../scripts/primitive_multiplier_benchmark.py)

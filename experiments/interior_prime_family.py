@@ -11,17 +11,32 @@ def search(n, budget):
         raise ValueError('expected an odd positive composite candidate and a nonnegative trace budget')
     first = isqrt(24*n-1)+1
     first += 1-first%2
+    return _scan(n, first, range(first, first+2*budget, 2))
+
+
+def search_blocks(n, blocks):
+    """Test residues 1 and 5 modulo 6 in blocks aligned with the gap theorem."""
+    if n <= 1 or gcd(n, 6) != 1 or blocks < 0:
+        raise ValueError('expected a product coprime to six and a nonnegative block count')
+    first = isqrt(24*n-1)+1
+    base = first - first%6
+    labels = (s for low in range(base, base+6*blocks, 6)
+              for s in (low+1, low+5) if s >= first)
+    return _scan(n, first, labels)
+
+
+def _scan(n, first, labels):
     hits = 0
-    for i in range(budget):
-        s = first+2*i
+    tests = 0
+    for tests, s in enumerate(labels, 1):
         delta = s*s-24*n
         d = isqrt(delta)
         if d*d == delta:
             hits += 1
             f = gcd((s+d)//2, n)
             if 1 < f < n:
-                return dict(factor=f, first=first, trace=s, root=d, tests=i+1, squares=hits)
-    return dict(factor=None, first=first, trace=None, root=None, tests=budget, squares=hits)
+                return dict(factor=f, first=first, trace=s, root=d, tests=tests, squares=hits)
+    return dict(factor=None, first=first, trace=None, root=None, tests=tests, squares=hits)
 
 
 def control():
@@ -47,6 +62,14 @@ def control():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('n', nargs='?', type=int)
-    parser.add_argument('--budget', type=int, default=25001)
+    bound = parser.add_mutually_exclusive_group()
+    bound.add_argument('--budget', type=int, default=25001)
+    bound.add_argument('--blocks', type=int, help='test two possible labels per block of six')
     args = parser.parse_args()
-    print(json.dumps(control() if args.n is None else search(args.n, args.budget), indent=2))
+    if args.n is None:
+        result = control()
+    elif args.blocks is None:
+        result = search(args.n, args.budget)
+    else:
+        result = search_blocks(args.n, args.blocks)
+    print(json.dumps(result, indent=2))

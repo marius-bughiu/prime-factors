@@ -46,6 +46,8 @@ This is the written deduction from the pinned zeta statement and the published b
 The ratio of the lower count for the switch to the upper count for continuing exceeds $11{,}000\times1{,}900/(31{,}000\times365)>1.8$. The partners used in the lower count all yield genuine square/gcd splits and all miss the common prefix. This comparison uses a broad product bin. It gives no prediction that a particular product in that bin will split.
 
 
+Lean also proves the comparison for the sets of **distinct input integers** on which each scheduled continuation finds a square with a proper gcd after the shared prefix missed. Its premise is the interval estimate above. [Scheduled product-count theorem](../PrimeFactors/SwitchedBatchComparison.lean)
+
 ## A constructed 2,048-bit example
 
 We selected two 1,024-bit primes near the interior ratio to test the calculation end to end. Given only their product, the multiplier-six search found the two primes on its 15,264th odd trace. Discovery took about 0.052 seconds in one local run. Lean checked both primes, their product, the square and the gcd in 2.90 seconds. It also checked that the true ordinary trace exceeds its minimum by more than $2^{1015}$. The identical search used its full budget of 25,001 traces on each of the two existing comparison products and found neither prime. [Decimal inputs and expected factors](../benchmarks/interior-prime-family.json) · [Product-only search and separate example generator](../experiments/interior_prime_family.py)

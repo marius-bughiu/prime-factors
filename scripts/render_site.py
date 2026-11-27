@@ -863,8 +863,16 @@ def case_row(result):
                  f' · {coverage} · search {duration(result["discovery_seconds"])}')
     elif result['method'] == 'interior-prime-family':
         w = result['interior_prime_family']
-        count = (f'Multiplier six · {w["tests"]:,} of {w["budget"]:,} odd traces tested'
-                 f' · {w["squares"]:,} square discriminants')
+        labels = 'residues 1 and 5 modulo 6' if 'blocks' in w else 'odd labels'
+        count = (f'Multiplier six · {w["tests"]:,} square tests, budget {w["budget"]:,}'
+                 f' · {labels} · {w["squares"]:,} square discriminants')
+    elif result['method'] == 'primitive-multiplier':
+        schedules = result['primitive_multiplier']['schedules']
+        raw, wheel = schedules['raw'], schedules['wheel-prefix']
+        count = (f'Consecutive labels used {raw["reduced"]["square_tests"]:,} of '
+                 f'{raw["full"]["square_tests"]:,} square tests'
+                 f' · mod-24 labels used {wheel["reduced"]["square_tests"]:,} of '
+                 f'{wheel["full"]["square_tests"]:,} square tests')
     elif result['method'] == 'cheap-multiplier-selection':
         w = result['cheap_multiplier_selection']
         count = (f'Multiplier {w["k"]:,} chosen in {w["comparisons"]:,} comparisons'

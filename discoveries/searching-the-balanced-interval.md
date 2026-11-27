@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+On the two full-size comparison inputs, removing duplicate checks saved 2,738 of 16,384 square tests in a fixed search. A separate result compares where to search after just sixteen tests. A prime-gap estimate also supplies families with a guaranteed split in at most 16,598 tests. [Removing repeated square tests](removing-scaled-multiplier-traces.md) · [Comparing the next sixteen tests](switching-after-sixteen-tests.md) · [Prime partners near three halves](prime-partners-near-three-halves.md)
+
 Given only the product of two independently chosen 1,024-bit primes, we still do not know how to recover its factors in an hour on a PC. Some constructed examples have extra relationships that reveal the primes. The independently generated 2,048-bit example remains unresolved from the product alone. [How the example was generated and checked](certified-fresh-control.md)
 
 Switching to a different multiplier after a long initial search can increase the count of actual prime pairs recovered in the next batch. The finite comparison uses explicit interval counts implied by RH. The same relation found a deliberately constructed 2,048-bit pair after 15,264 odd traces. It missed both full-size comparisons. [What the 80% additional gain measures](switching-after-a-long-fermat-search.md)

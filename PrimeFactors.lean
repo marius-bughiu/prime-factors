@@ -398,6 +398,13 @@ import PrimeFactors.SharedMultiplierPartners
 import PrimeFactors.SharedMultiplierPopulation
 import PrimeFactors.SharedTraceOverlap
 import PrimeFactors.InteriorBatchPopulation
+import PrimeFactors.MarginalTraceWidth
+import PrimeFactors.MarginalTraceCoverage
+import PrimeFactors.OrdinaryBatchRanks
+import PrimeFactors.SwitchedBatchComparison
+import PrimeFactors.PrimitiveMultiplierTraces
+import PrimeFactors.PrimeGapMultiplier
+import PrimeFactors.SixTraceResidues
 import PrimeFactors.DiscriminantRectangles
 import PrimeFactors.DiscriminantRectangle211
 import PrimeFactors.ArbitraryDivisorWindow
