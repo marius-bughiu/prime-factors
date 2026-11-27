@@ -746,3 +746,8 @@ import PrimeFactors.UniversalSumStride
 import PrimeFactors.UniversalPackingBudget
 import PrimeFactors.SmallRadixPackingPopulation
 import PrimeFactors.SmallNormSquarePopulation
+import PrimeFactors.ActualDigitMultiplicity
+import PrimeFactors.ShortDiscriminantWindow
+import PrimeFactors.FixedWindowDigitPacking
+import PrimeFactors.ActualWindowAdvice
+import PrimeFactors.FirstSumMenuPopulation

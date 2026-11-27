@@ -671,6 +671,12 @@ def case_row(result):
         if work.get('probe_certificate'):
             url = escape(work['probe_certificate']['proof'], quote=True)
             count += f' · <a href="{url}">Power test proof</a>'
+    elif result['method'] == 'fixed-window-digit-packing':
+        work = result['fixed_window_digit_packing']
+        count = (f'{work["candidate_positions"]:,} candidate positions · '
+                 f'{work["table_entries"]:,} table entries modulo {work["modulus"]:,} · '
+                 f'surviving sums {work["survivors"]:,} · boundary square roots {work["boundary_square_roots"]:,}'
+                 f' · discriminant square tests {work["discriminant_square_tests"]:,}')
     elif result['method'] == 'weighted-square-subsets':
         search = result['weighted_square_subsets']
         work = search['work']
@@ -1653,6 +1659,56 @@ def case_row(result):
 <p>Lean verification {verification}</p><div>{evidence}</div></div></details>'''
 
 
+FINDING_TYPES = {
+    'gains': 'Search improvements',
+    'cases': 'Special-case recoveries',
+    'limits': 'Method limits',
+    'formulas': 'Theoretical relations',
+}
+
+CARD_TYPES = {
+    'gains': 'Search improvement',
+    'cases': 'Special-case recovery',
+    'limits': 'Method limit',
+    'formulas': 'Theoretical relation',
+}
+
+
+def proof_library(out, tree, run_ids):
+    findings = json.loads((ROOT / 'site/findings.json').read_text())
+    counts = dict.fromkeys(FINDING_TYPES, 0)
+    cards = []
+    for finding in findings:
+        category = finding['category']
+        counts[category] += 1
+        sources = []
+        for source in finding['sources']:
+            href = source['href']
+            if href.startswith('#'):
+                if href[1:] not in run_ids:
+                    continue
+            elif href.startswith('proofs/'):
+                if not (out / href).is_file():
+                    continue
+            else:
+                href = f'{tree}/{href}'
+            sources.append(f'<li><a href="{escape(href, quote=True)}">{escape(source["label"])}</a></li>')
+        card_id = 'finding-' + escape(finding['id'], quote=True)
+        cards.append(f'''<article class="finding" id="{card_id}" data-finding data-category="{category}" aria-labelledby="{card_id}-title">
+<div class="finding-heading"><span class="finding-type">{CARD_TYPES[category]}</span>
+<h3 id="{card_id}-title"><a href="#{card_id}">{escape(finding['title'])}</a></h3></div>
+<dl><div><dt>Impact</dt><dd>{escape(finding['impact'])}</dd></div><div><dt>Scope</dt><dd>{escape(finding['scope'])}</dd></div></dl>
+<details class="evidence"><summary>Evidence and sources</summary>
+<p>{escape(finding['detail'])}</p><ul class="source-list">{''.join(sources)}</ul></details></article>''')
+    buttons = []
+    for key, label in [('all', 'All'), *FINDING_TYPES.items()]:
+        count = len(findings) if key == 'all' else counts[key]
+        pressed = 'true' if key == 'all' else 'false'
+        buttons.append(f'<button type="button" data-filter="{key}" aria-pressed="{pressed}">'
+                       f'{label} <span class="filter-num">{count}</span></button>')
+    return dict(finding_cards='\n'.join(cards), finding_filters='\n'.join(buttons))
+
+
 def render(out):
     data = json.loads((out / 'results.json').read_text())
     results = sorted(data['results'], key=lambda row: -row['bits'])
@@ -1666,14 +1722,17 @@ def render(out):
     if data.get('commit_at_finish'):
         finish = escape(data['commit_at_finish'], quote=True)
         run_link += f' · checkout changed during measurement to <a href="{repo}/commit/{finish}">{finish[:7]}</a>'
+    library = proof_library(out, f'{repo}/blob/{sha}', {row['id'] for row in results})
     html = Template((ROOT / 'site/index.html').read_text()).substitute(
+        **library,
         repo=repo, tree=f'{repo}/blob/{sha}', commit_url=f'{repo}/commit/{sha}', sha=sha[:7],
         bits=f"{biggest['bits']:,}", largest_desc=escape(biggest['description']), largest_id=escape(biggest['id']),
         count=len(results), complete=complete, partial=len(results) - complete,
         rows='\n'.join(map(case_row, results)), cpu=escape(data['cpu']), python=escape(data['python']),
         lean=escape(data['lean']), date=escape(data['measured_at']), run_link=run_link)
     (out / 'index.html').write_text(html)
-    shutil.copyfile(ROOT / 'site/style.css', out / 'style.css')
+    for asset in ('style.css', 'findings.js'):
+        shutil.copyfile(ROOT / 'site' / asset, out / asset)
 
 
 if __name__ == '__main__':

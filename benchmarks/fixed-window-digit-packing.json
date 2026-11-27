@@ -1,0 +1,23 @@
+[
+  {
+    "id": "fixed-window-singleton-7294033",
+    "description": "The actual width interval and the public local test modulo 315 leave one sum. No cyclotomic digit is supplied.",
+    "n": "7294033",
+    "factor_bits": 12,
+    "modulus": 315,
+    "checks": {
+      "forced_stride": 4,
+      "candidate_positions": 52,
+      "local_x_residues": 315,
+      "table_entries": 315,
+      "admissible_table_entries": 12,
+      "survivors": 1,
+      "boundary_square_roots": 1,
+      "discriminant_square_tests": 1,
+      "sum": "5474"
+    },
+    "factors": ["2293", "3181"],
+    "remaining": [],
+    "status": "complete"
+  }
+]

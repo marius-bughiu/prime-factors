@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+The true start of the search interval helps on 7,294,033. A test modulo 315 leaves just one of 52 candidate sums and gives 2,293 × 3,181. Knowing the start saved zero bits of the required digit evaluation on each of the two full-size comparisons at the three tested moduli. [Worked example and evaluation costs](when-the-actual-interval-separates-factor-sums.md)
+
+For almost every eligible 2,048-bit product, more than $2^{900}$ distinct true sums occur among products with the same upper 1,024 bits, root ceiling, width quotients and remainder modulo 24. On the fresh comparison, even a correct supplied digit at the stated radix and sieve limits leaves at least $2^{630}$ locally possible sums. A separate calculation counts how many pass a single large-prime test on a specific window. [Shared interval data](what-the-actual-factor-sum-window-reveals.md) · [Supplied digit](how-many-sums-share-the-actual-digit.md) · [Large-prime test](testing-a-large-prime-on-the-actual-window.md)
+
 Two candidate sums differing by 20,160 can pass together at some starting position for every product and every modulus. Lean checked the exact threshold at 2,048 bits and used it to bound how often a small polynomial digit could distinguish every position by this rule. [The threshold, the two full-size calculations and the population bound](why-the-factor-sum-spacing-repeats.md)
 
 The next square after 2,748,959 is five higher. This fact chooses 3,360 from three sums that pass the width bound and the ordinary tests modulo 5, 7, 9 and 11, giving 1,409 × 1,951. The nine-bit example needed only the existing remainder rule. [Small examples, cost and comparison set](a-fifth-root-test-for-the-factor-sum.md)

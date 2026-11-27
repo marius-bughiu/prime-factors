@@ -1,0 +1,2366 @@
+[
+  {
+    "id": "when-the-actual-interval-separates-factor-sums",
+    "category": "cases",
+    "title": "One sum survives 52 candidates",
+    "impact": "The surviving sum, 5,474, gives 2,293 × 3,181 from the product and the 12-bit factor width.",
+    "scope": "One 23-bit product. Using the exact interval still left both 2,048-bit comparison products unfactored.",
+    "detail": "The width bounds give 52 positions. Four pass the test modulo 63, and only one passes modulo 315. Constructing the table and its period takes 316 greatest-common-divisor calculations and 144 modular inversions before the final square test.",
+    "sources": [
+      {
+        "href": "discoveries/when-the-actual-interval-separates-factor-sums.md",
+        "label": "Research note"
+      },
+      {
+        "href": "PrimeFactors/FixedWindowDigitPacking.lean",
+        "label": "Lean proof"
+      },
+      {
+        "href": "#fixed-window-singleton-7294033",
+        "label": "Certified benchmark"
+      }
+    ]
+  },
+  {
+    "id": "fewer-multiples-to-test",
+    "title": "Skipping multiples that cannot reveal the factors",
+    "category": "gains",
+    "impact": "The product rules out at least 81% of the multiples in one complete difference-of-squares search.",
+    "scope": "Every eligible 2,048-bit product still has more than 10¹⁰² qualifying multiples. A bounded trial on the fresh example fell from 11,328 square tests to 851 and missed.",
+    "detail": "In one complete search for two unknown 1,024-bit primes with a 2,048-bit product, we can skip at least 81% of the trial multiples. More than 10¹⁰² different multiples still qualify on every such input. On our fresh example, the shorter search used 851 exact square tests down from 11,328 over the same bounded range. Both searches missed.",
+    "sources": [
+      {
+        "href": "discoveries/fewer-multiples-to-test.md",
+        "label": "How the product rules out multiples"
+      },
+      {
+        "href": "#rectangular-weights-fresh-2048",
+        "label": "Full-size result"
+      },
+      {
+        "href": "#rectangular-weights-48",
+        "label": "Checked 48-bit factors"
+      }
+    ]
+  },
+  {
+    "id": "what-the-actual-factor-sum-window-reveals",
+    "category": "limits",
+    "title": "The same interval can fit many different prime sums",
+    "impact": "For all but fewer than one pair in a billion, more than 2⁹⁰⁰ true sums occur among products that share the recorded data.",
+    "scope": "Distinct 1,024-bit primes with a 2,048-bit product. The record includes the upper 1,024 product bits, the square-root ceiling, two quotients and the remainder modulo 24.",
+    "detail": "Even a separately supplied 128-bit hint and a trillion candidate sums (up to 2⁴⁰) cover fewer than one in 2³⁹⁶ eligible pairs under this information model. An algorithm using other digits of the product to choose guesses falls outside the bound.",
+    "sources": [
+      {
+        "href": "discoveries/what-the-actual-factor-sum-window-reveals.md",
+        "label": "Research note"
+      },
+      {
+        "href": "PrimeFactors/ActualWindowAdvice.lean",
+        "label": "Lean counting proof"
+      }
+    ]
+  },
+  {
+    "id": "three-targets-with-a-guaranteed-square-root",
+    "title": "Three equations that cover every pair of primes above three",
+    "category": "formulas",
+    "impact": "At least one equation has a pair of solutions that reveals the factors. A bounded search split 22 of 32 fresh 40-bit inputs.",
+    "scope": "For any two distinct primes above three. Locating the solutions still costs work. Five of 32 fresh 48-bit inputs split and both full-size comparisons remained unresolved.",
+    "detail": "We can give three equations for any product of two different primes above three. One equation has solutions that reveal the factors. Finding them remains hard. The search split 22 of 32 fresh 40-bit numbers and five of 32 at 48 bits. Both 2,048-bit comparisons stayed unresolved.",
+    "sources": [
+      {
+        "href": "discoveries/three-targets-with-a-guaranteed-square-root.md",
+        "label": "See how 55 gives 5 × 11"
+      }
+    ]
+  },
+  {
+    "id": "when-one-power-needs-at-most-one-square-test",
+    "title": "At most one square test per proposed power",
+    "category": "gains",
+    "impact": "The new stopping rule kept all 130 small factorizations while reducing square roots from 16,287 to 797.",
+    "scope": "Across 12,994 small products with equal-width primes. The separate full-size trials found no factor.",
+    "detail": "One square-root test per guess suffices for a search using continued fractions. Across 12,994 small products it kept all 130 factorizations and cut 16,287 square roots to 797. A separate run tried 106 guesses large enough to pass the division test on each of two 2,048-bit products and found neither pair.",
+    "sources": [
+      {
+        "href": "discoveries/when-one-power-needs-at-most-one-square-test.md",
+        "label": "What a guess predicts"
+      },
+      {
+        "href": "#power-ratio-frozen-11-bit",
+        "label": "Worked example"
+      },
+      {
+        "href": "discoveries/testing-lcm-prefixes-at-the-product-width.md",
+        "label": "Full-size trials"
+      }
+    ]
+  },
+  {
+    "id": "how-often-the-first-even-sums-work",
+    "category": "cases",
+    "title": "When the first guess at the sum is enough",
+    "impact": "The first even sum at or above twice the square root works on more than one in 2⁵¹⁷ eligible prime pairs.",
+    "scope": "A guaranteed lower bound across the full 2,048-bit population. Close primes supply the successes, and the bound is too small to predict success on an individual input.",
+    "detail": "The method tries even sums in increasing order. Counting primes that fall in the same short interval proves a success rate without assuming a random distribution of primes inside each short interval.",
+    "sources": [
+      {
+        "href": "discoveries/how-often-the-first-even-sums-work.md",
+        "label": "Research note"
+      },
+      {
+        "href": "PrimeFactors/FirstSumMenuPopulation.lean",
+        "label": "Lean proof"
+      }
+    ]
+  },
+  {
+    "id": "how-many-factor-sums-pass-together",
+    "title": "Two possible sums from 45 guesses",
+    "category": "cases",
+    "impact": "A remainder test left 2,746 and 2,854 for 1,879,513. The second sum gave 1,031 × 1,823.",
+    "scope": "A 45-position window on one small input. At full size, sums 20,160 apart can both pass somewhere at every modulus.",
+    "detail": "Two guesses out of 45 survived the remainder tests for 1,879,513. The second gave 1,031 × 1,823. At 2,048 bits we proved a limit on the same idea. For every product, two guesses 20,160 apart can both pass somewhere, whatever modulus we choose.",
+    "sources": [
+      {
+        "href": "discoveries/how-many-factor-sums-pass-together.md",
+        "label": "The 45 guesses"
+      },
+      {
+        "href": "discoveries/why-the-factor-sum-spacing-repeats.md",
+        "label": "The full-size limit"
+      }
+    ]
+  },
+  {
+    "id": "widening-the-fraction-search",
+    "title": "Which extra fractions are worth checking?",
+    "category": "cases",
+    "impact": "Including intermediate fractions found 118 of 903 small products, up from 78.",
+    "scope": "All distinct pairs of 9-bit primes. On two 2,048-bit inputs, 106 guesses narrowed to 9 and 33 fractions without revealing a factor.",
+    "detail": "A wider search found 118 of 903 small prime pairs, including 40 missed by the earlier version. It narrowed 106 guesses on each of two 2,048-bit products to 9 and 33 candidate fractions. Neither yielded a factor.",
+    "sources": [
+      {
+        "href": "discoveries/widening-the-fraction-search.md",
+        "label": "Worked example and proofs"
+      },
+      {
+        "href": "#intermediate-totient-extra",
+        "label": "Verified small split"
+      },
+      {
+        "href": "proofs/intermediate-menu-exclusion-fresh-2048.lean",
+        "label": "Fresh exclusion proof"
+      },
+      {
+        "href": "proofs/intermediate-menu-exclusion-crossed-2048.lean",
+        "label": "Crossed exclusion proof"
+      }
+    ]
+  },
+  {
+    "id": "looking-for-the-prime-sum-in-nearby-integers",
+    "title": "When adding a small number reveals the prime sum",
+    "category": "limits",
+    "impact": "Trying 64 neighbors recovered 466 of 903 small products. Adding four to 108,671 gave the clue for 271 × 401.",
+    "scope": "Even granting every divisor of the neighbors, this rule covers fewer than one in 2⁹⁷⁶ eligible 2,048-bit products.",
+    "detail": "Adding four to 108,671 exposes a divisor that predicts the prime sum 672 and gives 271 × 401. Trying 64 nearby integers this way found 466 of 903 small products. At full size, even with every divisor available, fewer than one in 2⁹⁷⁶ eligible products can be recovered by that rule.",
+    "sources": [
+      {
+        "href": "discoveries/looking-for-the-prime-sum-in-nearby-integers.md",
+        "label": "Which neighbors reveal the primes"
+      },
+      {
+        "href": "proofs/intermediate-private-shift-fresh-2048.lean",
+        "label": "Fresh check using known primes"
+      },
+      {
+        "href": "proofs/intermediate-private-shift-crossed-2048.lean",
+        "label": "Crossed check using known primes"
+      }
+    ]
+  },
+  {
+    "id": "which-powers-could-reveal-the-prime-sum",
+    "title": "How often small prime powers can reveal the sum",
+    "category": "limits",
+    "impact": "Exhausting the permitted powers can recover fewer than one in 2⁵⁵³ eligible 2,048-bit products.",
+    "scope": "Applies to this continued-fraction rule, with exponents no greater than the product and all prime divisors at most 1,500.",
+    "detail": "Could making more guesses find the two primes? For one method, suppose we try every number whose prime factors are all at most 1,500, stopping at the input number. This can recover the pair for fewer than one in 2⁵⁵³ balanced 2,048-bit products.",
+    "sources": [
+      {
+        "href": "discoveries/which-powers-could-reveal-the-prime-sum.md",
+        "label": "Which guesses can work"
+      }
+    ]
+  },
+  {
+    "id": "what-a-successful-power-would-reveal",
+    "title": "What an effective choice of exponent would reveal",
+    "category": "formulas",
+    "impact": "One exponent made a comparison succeed on three sevenths of the starting values for a 2,048-bit example.",
+    "scope": "That exponent was chosen with the known factors. Five exponents chosen from the product gave no practical improvement.",
+    "detail": "One power chosen with the known primes made a small set of comparisons succeed three times in seven on a 2,048-bit example. The proof explains what choosing such a power would require. Five powers computed from the product gave no practical improvement on this example.",
+    "sources": [
+      {
+        "href": "discoveries/what-a-successful-power-would-reveal.md",
+        "label": "How the choice encodes the factor sum"
+      }
+    ]
+  },
+  {
+    "id": "trying-every-base-in-a-fixed-power-comparison",
+    "title": "Can a different starting value rescue a power comparison?",
+    "category": "limits",
+    "impact": "On two 2,048-bit products, no starting value let cross-row comparisons find an additional factor.",
+    "scope": "The proof used the published primes to check every starting value for this bounded comparison after its preliminary tests.",
+    "detail": "Could a different starting number rescue a failed search? On two 2,048-bit examples we checked every possible starting number for one bounded search. Comparing powers across different rows could never add a factor after the preliminary checks. We used the known primes to establish that limit.",
+    "sources": [
+      {
+        "href": "discoveries/trying-every-base-in-a-fixed-power-comparison.md",
+        "label": "Counts and proof"
+      },
+      {
+        "href": "proofs/trace-population-fresh-2048.lean",
+        "label": "Fresh proof"
+      },
+      {
+        "href": "proofs/trace-population-crossed-2048.lean",
+        "label": "Crossed proof"
+      }
+    ]
+  },
+  {
+    "id": "where-the-multiplier-search-first-succeeds",
+    "title": "How far the multiplier search must go",
+    "category": "limits",
+    "impact": "Only two multipliers work on each comparison product. The search passes at least 2⁵⁰¹ eligible multipliers before its first hit.",
+    "scope": "Retrospective check using the published factors of two 2,048-bit products.",
+    "detail": "We used the published factors to check exactly where one search would succeed on our two 2,048-bit examples. Only two multiples work on each input. Starting at one, the search must pass at least 2⁵⁰¹ eligible multiples before reaching the first answer.",
+    "sources": [
+      {
+        "href": "discoveries/where-the-multiplier-search-first-succeeds.md",
+        "label": "How we checked every other multiple"
+      },
+      {
+        "href": "proofs/rectangular-exact-fresh-2048.lean",
+        "label": "Fresh proof"
+      },
+      {
+        "href": "proofs/rectangular-exact-crossed-2048.lean",
+        "label": "Crossed proof"
+      }
+    ]
+  },
+  {
+    "id": "sieving-conic-blocks-by-tangents",
+    "title": "Using remainders to skip blocks of a curve search",
+    "category": "gains",
+    "impact": "The three curves need at most 56.17% of the previous blocks on one full-size comparison and 52.46% on the other.",
+    "scope": "These are bounds for completing the search on two 2,048-bit products. Both complete traversals remain too large to run.",
+    "detail": "On the fresh 2,048-bit comparison, checking the possible remainders of a point lets us cover all three curves with at most 56.17% of the previous blocks. On the other comparison the bound is 52.46%. Each complete search is still too large to run.",
+    "sources": [
+      {
+        "href": "discoveries/sieving-conic-blocks-by-tangents.md",
+        "label": "Small factorizations and full-size cost"
+      }
+    ]
+  },
+  {
+    "id": "why-positive-targets-matter",
+    "title": "Positive targets find a pair that negative targets miss",
+    "category": "cases",
+    "impact": "Including positive targets recovered 1,249 × 1,871. Every negative target built from primes through 31 misses that pair.",
+    "scope": "On the fresh 2,048-bit input, 64 blocks missed and a full traversal would take over 10²⁰⁶ blocks.",
+    "detail": "A search using both positive and negative targets found 1,249 × 1,871 where all the earlier negative targets built from primes up to 31 would miss. Finishing the same search on our fresh 2,048-bit input would take more than 10²⁰⁶ blocks. The 64 blocks tested yielded no factor.",
+    "sources": [
+      {
+        "href": "discoveries/why-positive-targets-matter.md",
+        "label": "Worked example"
+      },
+      {
+        "href": "#three-curves-fresh-2048",
+        "label": "Full-size search budget after reducing the intervals"
+      }
+    ]
+  },
+  {
+    "id": "combining-remainders-to-skip-divisors",
+    "title": "Combining three clues to skip seven of eight possible divisors",
+    "category": "gains",
+    "impact": "For a 48-bit product, three remainder conditions cut trial divisions from 115,793 to 14,474.",
+    "scope": "The clues came from the product. The same first 256 steps produced none on either 2,048-bit comparison.",
+    "detail": "Three clues from a 48-bit product let us jump over seven out of eight possible divisors. The number of divisions fell from 115,793 to 14,474. On both 2,048-bit inputs this calculation found no clue in its first 256 steps.",
+    "sources": [
+      {
+        "href": "discoveries/combining-remainders-to-skip-divisors.md",
+        "label": "Worked example and comparison"
+      },
+      {
+        "href": "#projected-wheel-small-48",
+        "label": "Checked factorization"
+      }
+    ]
+  },
+  {
+    "id": "skipping-impossible-square-root-searches",
+    "title": "Ruling out square-root searches before starting them",
+    "category": "gains",
+    "impact": "On each full-size comparison, 96 of 131 searches could be skipped. A 48-bit example fell from 34,830 steps to 5,902.",
+    "scope": "The remaining searches on the two 2,048-bit inputs found no factor.",
+    "detail": "On each 2,048-bit comparison, a proof let us skip 96 of 131 searches for a particular square root. The remaining searches found no factor. On a 48-bit example the same rule cut the work to find a prime from 34,830 steps to 5,902.",
+    "sources": [
+      {
+        "href": "discoveries/skipping-impossible-square-root-searches.md",
+        "label": "Why the skipped searches cannot work"
+      },
+      {
+        "href": "#target-norm-small-48",
+        "label": "Checked example"
+      }
+    ]
+  },
+  {
+    "id": "how-many-primes-pass-hundreds-of-tests",
+    "title": "How many candidate primes survive hundreds of signs?",
+    "category": "limits",
+    "impact": "On the fresh 2,048-bit input, more than 10¹⁸⁴ primes still pass the first 400 tests.",
+    "scope": "The tests come from the product. The survivor count uses the generalized Riemann hypothesis for Dirichlet functions.",
+    "detail": "We derived 512 tests from the fresh 2,048-bit product. Its smaller prime must pass every one. Using Dirichlet GRH, we can show that more than 10¹⁸⁴ different primes still pass the first 400 tests. The search has yet to identify the factor.",
+    "sources": [
+      {
+        "href": "discoveries/how-many-primes-pass-hundreds-of-tests.md",
+        "label": "How we counted the candidates and what the tests cost"
+      }
+    ]
+  },
+  {
+    "id": "halving-the-sum-residues-on-a-fresh-product",
+    "title": "Halving the number of possible sums after a remainder test",
+    "category": "gains",
+    "impact": "A second test excludes at least 49.83% of the sums left by the first one on the fresh full-size example.",
+    "scope": "On a small product, 40 sums became 19 and gave 9,203 × 14,957. Both 2,048-bit comparison products remained unresolved.",
+    "detail": "The product alone lets us discard at least 49.83% of the factor sums that an earlier test still allows on the fresh 2,048-bit input. On a smaller product, 40 sums became 19 and yielded 9,203 × 14,957. Both full-size inputs remained unresolved.",
+    "sources": [
+      {
+        "href": "discoveries/halving-the-sum-residues-on-a-fresh-product.md",
+        "label": "Why one of each pair of sums can be skipped"
+      },
+      {
+        "href": "#reciprocal-anchor-fresh-2048",
+        "label": "Fresh benchmark"
+      }
+    ]
+  },
+  {
+    "id": "trying-every-small-base-in-a-predecessor-sweep",
+    "title": "How rarely a sweep of two million starting values succeeds",
+    "category": "limits",
+    "impact": "The chance of a split is below one in 2¹⁷⁷ even with every starting value from 2 through 2,097,152.",
+    "scope": "For uniformly selected eligible prime pairs and this power rule, even allowing every later exponent with prime factors at most 1,000.",
+    "detail": "A power shortcut that split a constructed 2,048-bit example stays extremely unlikely on randomly chosen primes. Even after trying every starting value from 2 through 2,097,152 and allowing any power built from primes up to 1,000 after the first step, fewer than one in 2¹⁷⁷ eligible products can split.",
+    "sources": [
+      {
+        "href": "discoveries/trying-every-small-base-in-a-predecessor-sweep.md",
+        "label": "What Lean counted"
+      },
+      {
+        "href": "discoveries/sharing-powers-for-smooth-orders.md",
+        "label": "The fast constructed example"
+      }
+    ]
+  },
+  {
+    "id": "four-sign-choices-from-a-public-anchor",
+    "title": "Pairing power tests to cover more sign combinations",
+    "category": "cases",
+    "impact": "Eight tries split 42 of 512 products of 16-bit primes, compared with 37 using primes in ascending order.",
+    "scope": "At 20 bits per prime the same comparison was 5 versus 8. Both 2,048-bit controls remained unresolved.",
+    "detail": "Pairing the choices for a quadratic power test covered more of the four possible sign combinations. With eight tries, it found 42 of 512 products of 16-bit primes, compared with 37 for ascending prime choices. At 20 bits the counts were 5 and 8. Both full-size products remained unresolved.",
+    "sources": [
+      {
+        "href": "discoveries/four-sign-choices-from-a-public-anchor.md",
+        "label": "How the product selects the tests"
+      },
+      {
+        "href": "#signed-discriminant-gained-32",
+        "label": "Checked gain"
+      },
+      {
+        "href": "#signed-discriminant-lost-32",
+        "label": "Checked loss"
+      }
+    ]
+  },
+  {
+    "id": "comparing-complementary-labels-at-the-same-budget",
+    "title": "When comparing opposite remainders can succeed",
+    "category": "formulas",
+    "impact": "On a specified family, over 7.5% of random sequences yield a factor where the earlier labels never match.",
+    "scope": "Products near the top of the 2,048-bit range in two remainder classes. The bound requires about 5.5 × 10¹⁵³ accepted inputs.",
+    "detail": "On a specified family of 2,048-bit products, the new search finds a prime on more than 7.5% of random input sequences where the earlier labels never match. The proof requires about 5.5 × 10¹⁵³ guesses. A separate change checked 512 guesses on the fresh full-size product in 0.97 CPU seconds and found no factor.",
+    "sources": [
+      {
+        "href": "discoveries/comparing-complementary-labels-at-the-same-budget.md",
+        "label": "Same-input probability"
+      },
+      {
+        "href": "discoveries/checking-opposite-keys-with-one-polynomial.md",
+        "label": "Time and outcomes"
+      },
+      {
+        "href": "discoveries/sharing-powers-for-smooth-orders.md",
+        "label": "A faster search for certain structured primes"
+      }
+    ]
+  },
+  {
+    "id": "when-the-product-picks-a-collision",
+    "title": "Using the product to decide which extra remainders to compare",
+    "category": "gains",
+    "impact": "Comparing complementary labels found 2,479 additional factors across 19,546 small products using the same draws.",
+    "scope": "The extra match uses products congruent to 5 or 7 modulo 12. Both 2,048-bit comparison products remained unresolved.",
+    "detail": "When the product leaves 5 or 7 after division by 12, one hidden prime supports an extra kind of match. Checking complementary labels alongside the originals found 2,479 additional factors on 19,546 small products using the same draws. Both 2,048-bit controls remained unresolved.",
+    "sources": [
+      {
+        "href": "discoveries/when-the-product-picks-a-collision.md",
+        "label": "How the product selects the comparison"
+      },
+      {
+        "href": "#complementary-keys-pair",
+        "label": "Checked example"
+      },
+      {
+        "href": "discoveries/smooth-reduced-predecessors.md",
+        "label": "A different test that split a constructed 2,048-bit input"
+      }
+    ]
+  },
+  {
+    "id": "comparing-twelve-remainders-at-once",
+    "title": "Grouping twelve remainders to find more matches",
+    "category": "gains",
+    "impact": "The grouped comparisons found factors in 8,470 of 19,546 small products. Direct comparisons found 2,075.",
+    "scope": "The small searches used the same draws and preliminary checks. For two 1,024-bit primes, a trillion random draws have success probability below 2⁻⁹³⁹.",
+    "detail": "Grouping twelve remainders together found a prime factor on 8,470 of 19,546 small products. Comparing the same draws directly with the same preliminary checks found one on 2,075. For the product of two 1,024-bit primes, even a trillion random draws have a smaller chance of success than tossing 939 heads in a row with a fair coin.",
+    "sources": [
+      {
+        "href": "discoveries/comparing-twelve-remainders-at-once.md",
+        "label": "Worked example"
+      },
+      {
+        "href": "discoveries/trillion-twelve-residue-draws.md",
+        "label": "Full-size odds"
+      },
+      {
+        "href": "discoveries/two-wider-quotient-sweeps.md",
+        "label": "A faster complete search on smaller inputs"
+      }
+    ]
+  },
+  {
+    "id": "endpoint-offset-asymmetric-2048",
+    "title": "One square root for products near the largest square",
+    "category": "cases",
+    "impact": "One square root recovered both primes on a constructed 2,048-bit product where ordinary Fermat search would miss over 63 quintillion midpoints.",
+    "scope": "The product sits near the upper end of the promised factor range. The test missed both full-size comparisons.",
+    "detail": "One square root found both primes of a constructed 2,048-bit product where ordinary Fermat would miss over 63 quintillion midpoints. The same test missed both full-size comparisons.",
+    "sources": [
+      {
+        "href": "#endpoint-offset-asymmetric-2048",
+        "label": "Checked example"
+      },
+      {
+        "href": "#endpoint-offset-fresh-2048",
+        "label": "Fresh comparison"
+      },
+      {
+        "href": "discoveries/when-the-product-is-near-the-largest-square.md",
+        "label": "When the test works"
+      },
+      {
+        "href": "discoveries/prime-partners-for-certified-upper-end-primes.md",
+        "label": "Families with two certified upper primes"
+      }
+    ]
+  },
+  {
+    "id": "reassigning-impossible-weighted-tests",
+    "title": "Spending skipped square tests on other factor pairs",
+    "category": "gains",
+    "impact": "With 34 square roots per input, reassigning impossible tests found 181,099 more pairs across all 4,588,935 pairs of distinct 16-bit primes.",
+    "scope": "Measured over the entire stated small population. Three existing full-size comparisons remained unresolved.",
+    "detail": "Skipping impossible tests found 181,099 more pairs across all 4,588,935 pairs of distinct 16-bit primes with the same 34 square roots. Three pre-existing full-size products remained unresolved.",
+    "sources": [
+      {
+        "href": "discoveries/reassigning-impossible-weighted-tests.md",
+        "label": "Complete comparison"
+      }
+    ]
+  },
+  {
+    "id": "half-gauss-fresh-2048",
+    "title": "A factorial product that separates the factors",
+    "category": "formulas",
+    "impact": "A half Gauss factorial and one greatest common divisor give the factor 7 of 77.",
+    "scope": "Building the factorial product is expensive. The first 256 positions on the fresh 2,048-bit input missed, with more than 2²⁰⁴⁶ remaining.",
+    "detail": "A half Gauss factorial gives 7 from 77 by one gcd. On the fresh 2,048-bit input, the first 256 positions yielded no factor and more than 2²⁰⁴⁶ positions remained.",
+    "sources": [
+      {
+        "href": "#half-gauss-fresh-2048",
+        "label": "Benchmark"
+      },
+      {
+        "href": "discoveries/half-gauss-product.md",
+        "label": "What an approximation would reveal"
+      }
+    ]
+  },
+  {
+    "id": "weighted-crowding-five-constructed-2048",
+    "title": "Ten square tests for a specially constructed product",
+    "category": "cases",
+    "impact": "The sixth test recovered both primes of a deliberately constructed 2,048-bit number.",
+    "scope": "All ten missed on both full-size comparisons. Coverage is below one in 2⁴⁶⁰ for a uniformly chosen eligible pair.",
+    "detail": "Test six of ten found both primes of a deliberately constructed 2,048-bit number. All ten tests missed on the fresh and crossed comparisons. For a randomly chosen eligible pair the success chance is below one in 2⁴⁶⁰.",
+    "sources": [
+      {
+        "href": "#weighted-crowding-five-constructed-2048",
+        "label": "Checked split"
+      },
+      {
+        "href": "#weighted-crowding-five-fresh-2048",
+        "label": "Comparison"
+      },
+      {
+        "href": "discoveries/prime-products-found-by-first-square-tests.md",
+        "label": "Which products it can find"
+      }
+    ]
+  },
+  {
+    "id": "geometry-weight-gain-32",
+    "title": "Choosing two factor ratios from the product remainder",
+    "category": "gains",
+    "impact": "The remainder-based choice had 11,990 more successes across 592,048 small products at the same test budget.",
+    "scope": "A complete comparison over the specified small population. Each rule also found pairs the other missed.",
+    "detail": "Choosing both factor ratios from the product remainder gave 11,990 more successes across 592,048 small products at the same budget. Each rule also found some pairs the other missed.",
+    "sources": [
+      {
+        "href": "#geometry-weight-gain-32",
+        "label": "A gained pair"
+      },
+      {
+        "href": "#geometry-weight-loss-32",
+        "label": "A lost pair"
+      },
+      {
+        "href": "discoveries/choosing-two-slopes-from-the-product-remainder.md",
+        "label": "Full population comparison"
+      }
+    ]
+  },
+  {
+    "id": "meansquareprimepartners",
+    "title": "How often the first test at multiplier six succeeds",
+    "category": "limits",
+    "impact": "Under the Riemann hypothesis, more than 2¹⁵⁰⁹ full-size products have factors close enough to a 3-to-2 ratio for the first test.",
+    "scope": "Even with that many qualifying products, the chance for a uniformly chosen eligible pair is below one in 2⁴⁶⁹.",
+    "detail": "The first square test at multiplier six succeeds when the larger prime is sufficiently close to three halves of the smaller one. Under RH, more than 2¹⁵⁰⁹ distinct full-size products have this property. The chance for a randomly chosen pair in the target population is still below one in 2⁴⁶⁹.",
+    "sources": [
+      {
+        "href": "discoveries/MeanSquarePrimePartners.md",
+        "label": "How the two counts fit together"
+      }
+    ]
+  },
+  {
+    "id": "quotient-pascal-odd-12",
+    "title": "Which odd candidates a Pascal-row formula detects",
+    "category": "formulas",
+    "impact": "Checking five odd candidates recovered 43 × 61 from 2,623.",
+    "scope": "The same formula leaves more than 2¹⁰¹⁹ candidates on the independent 2,048-bit input. The first five missed.",
+    "detail": "One formula recovers 43 × 61 from 2,623 by checking five odd candidates. The same formula on the independent 2,048-bit product has more than 2¹⁰¹⁹ candidates. Its first five gave no factor.",
+    "sources": [
+      {
+        "href": "#quotient-pascal-odd-12",
+        "label": "Checked example"
+      },
+      {
+        "href": "#quotient-pascal-fresh-2048",
+        "label": "Full-size comparison"
+      },
+      {
+        "href": "discoveries/which-factors-a-quotient-pascal-row-sees.md",
+        "label": "How the formula works"
+      }
+    ]
+  },
+  {
+    "id": "using-two-factor-ranges-after-sixteen-tests",
+    "title": "Where to spend the remaining tests after a common start",
+    "category": "gains",
+    "impact": "At 34 total square roots, searching two factor ranges gained 142,452 small pairs after the shared start. Continuing ordinary search gained 62,262.",
+    "scope": "Counts cover all eligible 16-bit prime pairs in the stated range. At 26 bits per prime the overall success rate rose from 1.5149% to 1.5237%.",
+    "detail": "At 34 square roots per search, two factor ranges split 142,452 additional small products after the common start. Ordinary continuation split 62,262. The sample contains every eligible pair of 16-bit primes in the stated product range. At 26 bits per prime, choosing the allocation from the product remainder raised the overall rate from 1.5149% to 1.5237%.",
+    "sources": [
+      {
+        "href": "discoveries/using-two-factor-ranges-after-sixteen-tests.md",
+        "label": "Search rules"
+      },
+      {
+        "href": "discoveries/how-the-short-search-scales.md",
+        "label": "How success changes with prime size"
+      }
+    ]
+  },
+  {
+    "id": "six-budget-displaced-2048",
+    "title": "A second multiplier can win at the same square-test budget",
+    "category": "cases",
+    "impact": "On a constructed 2,048-bit product the revised search split on test 1,569,459. The earlier search exhausted its 2,097,152 tests.",
+    "scope": "This is an equal-budget example on a selected pair. Both full-size comparisons remained unresolved.",
+    "detail": "At the same budget of 2,097,152 square tests, one search found both primes and the other missed. This was a second constructed 2,048-bit product. Both comparison products remained unresolved.",
+    "sources": [
+      {
+        "href": "#six-budget-displaced-2048",
+        "label": "Benchmark"
+      },
+      {
+        "href": "discoveries/factoring-more-products-at-the-same-budget.md",
+        "label": "Equal-budget proof and construction"
+      }
+    ]
+  },
+  {
+    "id": "prime-gap-blocks-2048",
+    "title": "Prime partners near three halves of the smaller factor",
+    "category": "cases",
+    "impact": "The search recovered a constructed 2,048-bit pair in 10,176 square tests.",
+    "scope": "The partner-existence proof for each smaller prime in the specified range assumes the Riemann hypothesis. Both comparison products remained unresolved.",
+    "detail": "The search found the constructed 2,048-bit pair in 10,176 square tests. Both comparison inputs remained unresolved. A prime-gap estimate under RH guarantees a suitable partner for each smaller prime in a specified range.",
+    "sources": [
+      {
+        "href": "#prime-gap-blocks-2048",
+        "label": "Checked benchmark"
+      },
+      {
+        "href": "discoveries/prime-partners-near-three-halves.md",
+        "label": "Why a partner exists"
+      }
+    ]
+  },
+  {
+    "id": "removing-scaled-multiplier-traces",
+    "title": "Removing square tests that repeat at larger multipliers",
+    "category": "gains",
+    "impact": "Eliminating repeated tests saved 2,738 of 16,384 square checks on each full-size comparison.",
+    "scope": "The repetition follows from the multiplier and position. The saving applies without knowing the primes.",
+    "detail": "Removing repeated checks saved 2,738 of 16,384 square tests on each full-size comparison input.",
+    "sources": [
+      {
+        "href": "discoveries/removing-scaled-multiplier-traces.md",
+        "label": "Which tests repeat"
+      },
+      {
+        "href": "discoveries/switching-after-sixteen-tests.md",
+        "label": "Where to search after sixteen tests"
+      }
+    ]
+  },
+  {
+    "id": "interior-prime-family-2048",
+    "title": "Switching multipliers after an ordinary Fermat search",
+    "category": "cases",
+    "impact": "The alternative multiplier recovered a constructed 2,048-bit pair in 15,264 square tests.",
+    "scope": "Both full-size comparisons missed. A separate population estimate for switching uses the Riemann hypothesis.",
+    "detail": "A different multiplier found a constructed 2,048-bit prime pair in 15,264 tests. It missed both full-size comparison products. A related RH calculation counts how often switching helps after a long ordinary search.",
+    "sources": [
+      {
+        "href": "#interior-prime-family-2048",
+        "label": "Checked factors"
+      },
+      {
+        "href": "discoveries/switching-after-a-long-fermat-search.md",
+        "label": "What the 80% additional gain measures"
+      }
+    ]
+  },
+  {
+    "id": "cheap-multiplier-selection-802471205089",
+    "title": "Choosing a square-test multiplier from the product",
+    "category": "gains",
+    "impact": "The selection rule split 1,733 of 6,144 fresh small products. Ordinary Fermat split 1,727 at the same square-root budget.",
+    "scope": "The advantage was six products in this sample. Neither method split the two 2,048-bit examples.",
+    "detail": "Choosing a multiplier found 1,733 of 6,144 fresh small products. Ordinary Fermat found 1,727 at the same square-root budget. Both missed the two 2,048-bit examples.",
+    "sources": [
+      {
+        "href": "#cheap-multiplier-selection-802471205089",
+        "label": "The checked split that ordinary Fermat missed"
+      },
+      {
+        "href": "discoveries/sharing-square-tests-across-factor-ranges.md",
+        "label": "What a billion multiplier choices could cover"
+      },
+      {
+        "href": "#shared-multiplier-prefix-fresh-2048",
+        "label": "Nine checked ranges on the fresh input"
+      }
+    ]
+  },
+  {
+    "id": "ruling-out-factor-progressions-by-their-sums",
+    "title": "Discarding candidate factors using the possible sums",
+    "category": "gains",
+    "impact": "A weighted sum reduces a block of 420 candidates to at most four. An unweighted test discarded over 15% and 7% on the two full-size intervals.",
+    "scope": "More than 10³⁰⁰ blocks still remain near the square root on each 2,048-bit comparison.",
+    "detail": "A weighted sum cuts 420 candidates in a full block to at most four. A simpler unweighted rule excludes more than 15% and 7% of the candidates in the full intervals for our two 2,048-bit inputs. Each still has more than 10³⁰⁰ blocks near the square root.",
+    "sources": [
+      {
+        "href": "discoveries/ruling-out-factor-progressions-by-their-sums.md",
+        "label": "Worked example and measured costs"
+      },
+      {
+        "href": "#sum-slice-fresh-2048",
+        "label": "Checked exclusion on the fresh input"
+      }
+    ]
+  },
+  {
+    "id": "choosing-a-group-that-contains-one-prime",
+    "title": "Separating the unknown primes into opposite groups",
+    "category": "formulas",
+    "impact": "On 323, the product identifies a group of candidates containing exactly one prime factor. Multiplying the group lets a greatest common divisor recover it.",
+    "scope": "The group still has to be evaluated. At 2,048 bits even the smaller group can contain more than 2¹⁰⁰⁰ candidates.",
+    "detail": "We can assign opposite signs to the two unknown primes using their product. The group with either sign yields a factor once its product is evaluated. At 2,048 bits even the smaller full group can contain more than 2¹⁰⁰⁰ candidates.",
+    "sources": [
+      {
+        "href": "discoveries/choosing-a-group-that-contains-one-prime.md",
+        "label": "Example and work comparison"
+      },
+      {
+        "href": "#character-column-323",
+        "label": "Checked example at 323"
+      },
+      {
+        "href": "discoveries/the-shortest-rule-that-separates-the-primes.md",
+        "label": "Shortest repeating rules"
+      }
+    ]
+  },
+  {
+    "id": "one-gcd-for-a-whole-power-chain",
+    "title": "One greatest common divisor for a chain of powers",
+    "category": "gains",
+    "impact": "On the fresh 2,048-bit input, one gcd ruled out every tested exponent in the chain and all later doublings.",
+    "scope": "The shortcut replaced 1,024 gcds and retained the same 1,023 modular squarings.",
+    "detail": "A chain of repeated squares can be checked with one gcd. On the independent 2,048-bit example that one check ruled out every exponent in the chain, including all later doublings.",
+    "sources": [
+      {
+        "href": "discoveries/one-gcd-for-a-whole-power-chain.md",
+        "label": "Proof and measured work"
+      },
+      {
+        "href": "#power-chain-fresh-2048-powers-of-two",
+        "label": "Checked full-size result"
+      }
+    ]
+  },
+  {
+    "id": "how-often-a-square-root-formula-can-factor",
+    "title": "How often a square-root formula can reveal a prime",
+    "category": "limits",
+    "impact": "On 156,263 the formula recovered 509 from the remainder after subtracting 395².",
+    "scope": "Across uniformly selected eligible 2,048-bit products, the formula works on fewer than one in 2¹⁰⁰⁴.",
+    "detail": "Subtracting 395² from 156,263 gives 238. A quadratic expression in 238 revealed the factor 509. Across all pairs of 1,024-bit primes with a 2,048-bit product, this rule works on fewer than one pair in 2¹⁰⁰⁴.",
+    "sources": [
+      {
+        "href": "discoveries/how-often-a-square-root-formula-can-factor.md",
+        "label": "Why the rule is limited"
+      },
+      {
+        "href": "#adaptive-quartic-156263",
+        "label": "Checked example"
+      }
+    ]
+  },
+  {
+    "id": "a-factor-outside-the-resultant-block",
+    "title": "A polynomial can find a factor outside a tested block",
+    "category": "cases",
+    "impact": "For 157,601 a polynomial found 439 after nine consecutive trial divisors missed.",
+    "scope": "Across three small populations it gained 13 products missed by the next divisor. That next divisor gained 59 other products.",
+    "detail": "On 157,601 a polynomial calculation found 439 after nine consecutive candidates missed. Across three small test populations it split 13 products that the next candidate missed. Testing that next candidate split 59 other products.",
+    "sources": [
+      {
+        "href": "discoveries/a-factor-outside-the-resultant-block.md",
+        "label": "Calculation and counts"
+      },
+      {
+        "href": "#block-exclusion-fresh-2048",
+        "label": "64 checked exclusions on a 2,048-bit example"
+      }
+    ]
+  },
+  {
+    "id": "growing-factorial-final-grid-80",
+    "title": "Stopping a factorial search as soon as it detects a factor",
+    "category": "gains",
+    "impact": "Eight 80-bit products all split with 22.6% fewer polynomial input coefficients in total.",
+    "scope": "Three cases stopped early. The other five and the separate 88-bit example needed the full calculation.",
+    "detail": "Checking blocks early found all eight 80-bit prime pairs with 22.6% fewer polynomial input coefficients. Three products stopped early. The other five and the separate 88-bit example needed the full calculation.",
+    "sources": [
+      {
+        "href": "#growing-factorial-final-grid-80",
+        "label": "Checked example"
+      },
+      {
+        "href": "discoveries/stopping-a-factorial-search-when-it-reaches-a-prime.md",
+        "label": "All three comparisons"
+      }
+    ]
+  },
+  {
+    "id": "a-shorter-pascal-row-for-equal-width-primes",
+    "title": "Using the known prime width to shorten a complete search",
+    "category": "gains",
+    "impact": "The candidate range shrinks by more than 30% on average for uniformly selected eligible 2,048-bit prime pairs.",
+    "scope": "Eight 80-bit products used 21% fewer candidates in total. On one 88-bit input CPU time fell from 18.9 to 14.6 seconds.",
+    "detail": "The known bit length cuts the average 2,048-bit candidate range by more than 30%. The comparison uses uniformly drawn eligible prime pairs. On eight ordinary 80-bit products, the tighter range covered 21% fewer candidates in total. The same change reduced CPU time from 18.9 to 14.6 seconds on an 88-bit input. Neither 2,048-bit comparison yielded a factor with this search budget.",
+    "sources": [
+      {
+        "href": "discoveries/a-shorter-pascal-row-for-equal-width-primes.md",
+        "label": "Derivation and comparison"
+      },
+      {
+        "href": "#short-pascal-interpolation-88",
+        "label": "88-bit certificate"
+      }
+    ]
+  },
+  {
+    "id": "which-half-contains-the-smaller-prime",
+    "title": "Which half of the divisor interval should be tried first?",
+    "category": "gains",
+    "impact": "Marking at most half the candidate positions captures the smaller prime for more than 53.88% of the pairs in each qualifying product range.",
+    "scope": "Applies to specified ranges near the lower end of the balanced 2,048-bit population.",
+    "detail": "Near the lower end of the 2,048-bit range, the lower half is worth trying first. We mark at most half the candidate positions. They contain the smaller prime for more than 53.88% of the pairs in each qualifying product bin.",
+    "sources": [
+      {
+        "href": "discoveries/which-half-contains-the-smaller-prime.md",
+        "label": "Which products qualify"
+      }
+    ]
+  },
+  {
+    "id": "hasse-hankel-probe-111281",
+    "title": "Testing translated coefficients with eight determinants",
+    "category": "cases",
+    "impact": "Eight checks recovered 257 × 433 from 111,281 and split 298 of 4,041 small products.",
+    "scope": "Eight nearby trial divisors split 724 of the same products. The determinant checks missed on both 2,048-bit comparisons.",
+    "detail": "Eight determinant checks found 257 × 433 on 111,281. Across 4,041 small examples these checks split 298 products. Eight nearby trial divisors split 724. All eight checks missed on both 2,048-bit comparisons.",
+    "sources": [
+      {
+        "href": "#hasse-hankel-probe-111281",
+        "label": "Checked factors"
+      },
+      {
+        "href": "discoveries/which-translated-coefficients-reveal-a-prime.md",
+        "label": "Derivation and complete census"
+      }
+    ]
+  },
+  {
+    "id": "which-translated-coefficients-reveal-a-prime",
+    "title": "Three polynomial shifts that reveal a prime",
+    "category": "cases",
+    "impact": "The fixed shifts split 63 of 110 small products, including all 61 with one factor in each odd residue class modulo four.",
+    "scope": "These measured counts are from the small test population. Computing the needed coefficient at full size remains costly.",
+    "detail": "Three polynomial shifts found a factor on 63 of 110 small products. The fixed shifts found a prime on all 61 products with one prime of each odd residue class modulo four.",
+    "sources": [
+      {
+        "href": "discoveries/which-translated-coefficients-reveal-a-prime.md",
+        "label": "Worked examples and the full-size cost"
+      }
+    ]
+  },
+  {
+    "id": "cubic-forced-midpoint-off-diagonal-2048",
+    "title": "When a cube-root gap estimate gives the exact midpoint",
+    "category": "cases",
+    "impact": "One midpoint recovered the primes on two deliberately constructed 2,048-bit products, even with a 338-bit gap-estimation error on the second.",
+    "scope": "The same midpoint rule missed both full-size comparison products.",
+    "detail": "One midpoint recovered two deliberately constructed 2,048-bit products. The cube-root estimate missed the true half-gap on the second product by a 338-bit number. It still gave the correct midpoint. This midpoint missed on both comparison products.",
+    "sources": [
+      {
+        "href": "#cubic-forced-midpoint-off-diagonal-2048",
+        "label": "Checked result"
+      },
+      {
+        "href": "discoveries/factoring-near-a-cube-root-gap.md",
+        "label": "Examples and the limit on random inputs"
+      }
+    ]
+  },
+  {
+    "id": "cubic-trace-holdout-31",
+    "title": "Eight checks for a useful cubic relation",
+    "category": "cases",
+    "impact": "One surviving relation split 1,915,966,849 into 36,151 and 52,999.",
+    "scope": "Choosing the polynomial to satisfy the first condition yielded 130 rows on each 2,048-bit control. Every row failed the second condition.",
+    "detail": "Eight small checks left one square relation on 1,915,966,849. It gave 36,151 and 52,999. Choosing a polynomial to pass the first check on purpose also produced 130 smooth ordinary values on each full-size input. None passed the second check.",
+    "sources": [
+      {
+        "href": "#cubic-trace-holdout-31",
+        "label": "Checked factorization"
+      },
+      {
+        "href": "discoveries/choosing-a-cubic-and-reading-its-square.md",
+        "label": "Search limits and tests on the same relations"
+      }
+    ]
+  },
+  {
+    "id": "mixed-negative-43423",
+    "title": "Two negative remainders can expose a prime",
+    "category": "cases",
+    "impact": "Two remainders multiplied to a square and revealed 173 × 251 on 43,423.",
+    "scope": "A match is guaranteed on a constructed 2,048-bit example. Reaching it in the public scan takes more than 2¹⁰¹⁰ tests.",
+    "detail": "Two square tests gave 43,423 = 173 × 251. On a new 2,048-bit product we proved a match exists and checked that the public scan would need more than 2¹⁰¹⁰ tests to reach it.",
+    "sources": [
+      {
+        "href": "#mixed-negative-43423",
+        "label": "Checked example"
+      },
+      {
+        "href": "discoveries/when-two-negative-remainders-give-a-factor.md",
+        "label": "How a match reveals the primes"
+      }
+    ]
+  },
+  {
+    "id": "multiplier-polynomial-selected-79",
+    "title": "Choosing a multiplier before sieving",
+    "category": "gains",
+    "impact": "A multiplier chosen from the product helped factor all eight fresh 79-bit inputs. The ordinary search found seven at a comparable marking and division budget.",
+    "scope": "Across all 24 comparisons the counts were 12 and 10. Neither full-size control supplied a usable relation.",
+    "detail": "Choosing a multiplier recovered all eight fresh 79-bit products. The ordinary search recovered seven when given enough extra positions to match the marking and division work. Neither full-size input yielded a usable row.",
+    "sources": [
+      {
+        "href": "#multiplier-polynomial-selected-79",
+        "label": "Checked factors"
+      },
+      {
+        "href": "discoveries/multipliers-for-polynomial-relations.md",
+        "label": "Methods and all 24 comparisons"
+      }
+    ]
+  },
+  {
+    "id": "weighted-square-subsets-8928473",
+    "title": "Trying every subset of sixteen remainders",
+    "category": "limits",
+    "impact": "Five remainders combined to split 8,928,473. That was the only square product among 65,535 nonempty subsets.",
+    "scope": "Even granting every subset test, the specified sixteen labels can recover fewer than one in 2²⁷⁷ eligible 2,048-bit products.",
+    "detail": "Five remainders gave 8,928,473 = 2,543 × 3,511. This was the only square product among 65,535 combinations. On two full-size controls every combination missed, and a proof bounds the entire method below one success in 2²⁷⁷ eligible pairs.",
+    "sources": [
+      {
+        "href": "#weighted-square-subsets-8928473",
+        "label": "Checked factors"
+      },
+      {
+        "href": "discoveries/all-subsets-of-sixteen-square-tests.md",
+        "label": "What all sixteen tests can reveal"
+      },
+      {
+        "href": "discoveries/finite-budgets-for-weighted-subsets.md",
+        "label": "How rarely even 33 million tests can work"
+      }
+    ]
+  },
+  {
+    "id": "affine-multipliers-in-the-product",
+    "title": "Large multipliers still reach few products",
+    "category": "limits",
+    "impact": "Two multipliers that grow with the input exposed 97 and 113. Ordinary Fermat search found them on its first test.",
+    "scope": "The largest parameter range analyzed can reach fewer than one in 2²²⁹ eligible prime pairs.",
+    "detail": "Multipliers nearly as large as the input also had limited reach. Two such tests found 97 and 113, which ordinary Fermat search found on its first test. Even the largest parameter range studied reaches fewer than one in 2²²⁹ ordinary target pairs.",
+    "sources": [
+      {
+        "href": "discoveries/affine-multipliers-in-the-product.md",
+        "label": "Proof and full-size controls"
+      },
+      {
+        "href": "#affine-excess-10961",
+        "label": "Checked factorization"
+      }
+    ]
+  },
+  {
+    "id": "factoring-with-two-weighted-square-tests",
+    "title": "Multiplying two failed square tests",
+    "category": "cases",
+    "impact": "Two nonsquare remainders multiplied to a square and split a deliberately constructed 2,048-bit product.",
+    "scope": "On 2,753,877 small inputs this extra comparison gained 22 splits. Trying the next ordinary sum gained 96,821.",
+    "detail": "Two nonsquare remainders can reveal the primes. They split a deliberately constructed 2,048-bit example. Their product also found 22 extra answers among 2,753,877 small inputs. Testing the next ordinary sum found 96,821.",
+    "sources": [
+      {
+        "href": "discoveries/factoring-with-two-weighted-square-tests.md",
+        "label": "Worked example"
+      },
+      {
+        "href": "discoveries/how-often-two-weighted-remainders-can-split-a-product.md",
+        "label": "Coverage at 2,048 bits when both weights can vary"
+      }
+    ]
+  },
+  {
+    "id": "what-the-square-root-reveals-about-the-gap",
+    "title": "Can square-root digits predict where to search?",
+    "category": "limits",
+    "impact": "For every possible first 300 fractional bits, the outer window remained slightly more likely to contain the sum.",
+    "scope": "The unconditional calculation concerns one two-way prediction for uniformly drawn eligible prime pairs at 2,048 bits.",
+    "detail": "The square root’s first 300 fractional bits cannot improve this prediction at 2,048 bits. For every reading, the outer window is still slightly more likely on random eligible prime pairs. The conclusion follows unconditionally from the count estimates.",
+    "sources": [
+      {
+        "href": "discoveries/what-the-square-root-reveals-about-the-gap.md",
+        "label": "Derivation and measurements"
+      }
+    ]
+  },
+  {
+    "id": "where-to-look-for-the-factor-sum",
+    "title": "A quarter of the sum range contains about half the answers",
+    "category": "formulas",
+    "impact": "The product sets a cutoff that covers about half of eligible 2,048-bit prime pairs using at most a quarter of the possible sum span.",
+    "scope": "Four of eight small trials fell inside. Trying the shorter window first increased total row visits in that comparison.",
+    "detail": "About half of random eligible prime pairs have their sum in the first quarter of the range. The product alone sets the cutoff. Four of eight small examples fell inside. Searching this quarter first increased total row visits, and both 2,048-bit cases remained beyond budget.",
+    "sources": [
+      {
+        "href": "discoveries/where-to-look-for-the-factor-sum.md",
+        "label": "Proof and all eight trials"
+      },
+      {
+        "href": "#quantile-80-draw-0",
+        "label": "Central hit"
+      },
+      {
+        "href": "#quantile-80-draw-2",
+        "label": "Central miss"
+      },
+      {
+        "href": "#quantile-fresh-2048",
+        "label": "Full-size control"
+      }
+    ]
+  },
+  {
+    "id": "where-to-look-for-the-factor-sum-reusing-one-table-across-the-cut",
+    "title": "A shorter repeating table covers the whole window",
+    "category": "gains",
+    "impact": "A shorter sieve period fit two complete smaller searches within budget. It also recovered four fresh 96-bit products.",
+    "scope": "On one input only the short period guaranteed complete coverage, although a competing table reached the factors earlier. Both 2,048-bit plans exceeded budget.",
+    "detail": "A shorter sieve period let us fit two entire smaller searches within their budgets. Lean also verified four fresh 96-bit products under the same budgets. On one, only the shorter period guaranteed full coverage, but a full-period competitor found the actual answer sooner. This lookup exceeded the budget on both 2,048-bit comparisons.",
+    "sources": [
+      {
+        "href": "discoveries/where-to-look-for-the-factor-sum.md#reusing-one-table-across-the-cut",
+        "label": "Coverage and measured costs"
+      },
+      {
+        "href": "#lifted-period-postdesign-96-5",
+        "label": "96-bit certificate"
+      }
+    ]
+  },
+  {
+    "id": "finishing-a-factor-sum-search-with-one-witness-choosing-tables-that-fit-the-available-memory",
+    "title": "Choosing a table that fits in memory",
+    "category": "gains",
+    "impact": "A new split let the search store 20,000 entries and test its first three rows on each full-size control.",
+    "scope": "Neither three-row scan found a factor. Each full search still had more than 2⁸⁸⁰ rows.",
+    "detail": "With a different table split, 20,000 entries let the search start on both full-size inputs. We visited three rows on each and found no factors. More than 2⁸⁸⁰ rows remained in each scan.",
+    "sources": [
+      {
+        "href": "discoveries/finishing-a-factor-sum-search-with-one-witness.md#choosing-tables-that-fit-the-available-memory",
+        "label": "Why the table fits"
+      },
+      {
+        "href": "#memory-partition-fresh-2048",
+        "label": "Full-size budget and proof"
+      }
+    ]
+  },
+  {
+    "id": "finishing-a-factor-sum-search-with-one-witness-pairing-entries-to-halve-the-stored-table",
+    "title": "Storing one entry for two possible sums",
+    "category": "gains",
+    "impact": "Pairing entries halved the table to 18,711 entries on a 92-bit product and 17,820 on a 91-bit product. Both searches found the factors.",
+    "scope": "For the same layout on the full-size controls, even one byte per required entry exceeds 10¹³⁴ bytes.",
+    "detail": "Pairing search entries halved the memory on two small test products. We recovered both primes of a 92-bit number with 18,711 stored entries, and a 91-bit number with 17,820. Lean checked both answers. At 2,048 bits even one byte per required entry would exceed 10¹³⁴ bytes.",
+    "sources": [
+      {
+        "href": "discoveries/finishing-a-factor-sum-search-with-one-witness.md#pairing-entries-to-halve-the-stored-table",
+        "label": "Method and measured costs"
+      },
+      {
+        "href": "#trace-folded-holdout-92",
+        "label": "92-bit certificate"
+      },
+      {
+        "href": "#trace-folded-holdout-91",
+        "label": "91-bit certificate"
+      },
+      {
+        "href": "#trace-folded-fresh-2048",
+        "label": "Full-size test"
+      }
+    ]
+  },
+  {
+    "id": "reading-an-index-from-a-geometric-product-a-shared-grid-for-the-admissible-sums",
+    "title": "Discarding impossible sums before building a polynomial",
+    "category": "gains",
+    "impact": "Filtering the candidate sums let a fresh 66-bit search finish within budget. It found 6,860,100,517 and 7,585,863,317.",
+    "scope": "On both 2,048-bit controls the resulting polynomial still required more than 2⁵⁰⁷ coefficients.",
+    "detail": "A fresh 66-bit product gave the primes 6,860,100,517 and 7,585,863,317 in 0.69 seconds. Filtering out impossible sums kept the search inside its budget. The same filter still required a polynomial with more than 2⁵⁰⁷ coefficients on each 2,048-bit comparison.",
+    "sources": [
+      {
+        "href": "discoveries/reading-an-index-from-a-geometric-product.md#a-shared-grid-for-the-admissible-sums",
+        "label": "Method and costs"
+      },
+      {
+        "href": "#geometric-wheel-fresh-66",
+        "label": "66-bit certificate"
+      },
+      {
+        "href": "#geometric-wheel-fresh-2048",
+        "label": "Full-size budget"
+      }
+    ]
+  },
+  {
+    "id": "recovering-a-factor-sum-from-repeated-matches",
+    "title": "Finding the position shared by repeated matches",
+    "category": "cases",
+    "impact": "Several positions matched modulo each prime of 30,607. A more precise reading recovered their shared position and the factors 127 and 241.",
+    "scope": "The calculation uses the product. Its success here depends on resolving the repeated matches within the available precision.",
+    "detail": "On 30,607, several positions matched at each prime. A more precise reading picked out their shared position and recovered 127 × 241.",
+    "sources": [
+      {
+        "href": "discoveries/recovering-a-factor-sum-from-repeated-matches.md",
+        "label": "Derivation"
+      },
+      {
+        "href": "#geometric-precision-cubic",
+        "label": "Checked example"
+      }
+    ]
+  },
+  {
+    "id": "one-base-for-the-factor-sum",
+    "title": "Reusing powers when checking possible sums",
+    "category": "gains",
+    "impact": "On a fresh 88-bit input, reusing powers cut 92,665 modular exponentiations to 98 and recovered both primes.",
+    "scope": "On a constructed 2,048-bit example, the published factors certify that base 2 distinguishes the sum. Searching for it still exceeded budget.",
+    "detail": "Base 2 uniquely identifies the correct sum on our independently constructed 2,048-bit example. Lean checked that fact using the published factors. Finding the sum still exceeded the full-size search budget. On a fresh 88-bit product, reusing powers cut 92,665 modular exponentiations to 98 and recovered both primes.",
+    "sources": [
+      {
+        "href": "discoveries/one-base-for-the-factor-sum.md",
+        "label": "What one check guarantees"
+      },
+      {
+        "href": "#sum-signature-holdout-88",
+        "label": "Checked 88-bit result"
+      },
+      {
+        "href": "#sum-signature-fresh-2048",
+        "label": "Full-size search outcome"
+      }
+    ]
+  },
+  {
+    "id": "sum-signature-fresh-52",
+    "title": "Two remainder checks identify one sum in 15,902",
+    "category": "cases",
+    "impact": "Two checks picked the correct sum on a fresh 52-bit product, yielding 52,902,449 and 55,986,167.",
+    "scope": "On each 2,048-bit control the planned search tables exceeded 2⁴⁴⁹ entries.",
+    "detail": "Two modular checks picked the right sum out of 15,902 candidates on a fresh 52-bit product. The sum gave 52,902,449 × 55,986,167. On the 2,048-bit examples, the search tables would have needed more than 2⁴⁴⁹ entries.",
+    "sources": [
+      {
+        "href": "#sum-signature-fresh-52",
+        "label": "Checked factorization"
+      },
+      {
+        "href": "discoveries/reading-the-factor-sum.md",
+        "label": "Probability and cost"
+      },
+      {
+        "href": "discoveries/predicting-a-carry-from-both-ends.md",
+        "label": "Limits of predicting from product digits"
+      }
+    ]
+  },
+  {
+    "id": "radix-carry-neighbors-135137",
+    "title": "Choosing a number base from a neighbor of the product",
+    "category": "cases",
+    "impact": "A base dividing 135,137 minus one exposed 337 and 401 after ten remainder checks.",
+    "scope": "Every power-of-two base in the same range missed this example within the specified lower correction range.",
+    "detail": "Subtracting one from 135,137 helped us choose the base that revealed 337 × 401. Every comparable power of two missed. We checked when choosing the base this way could work at 2,048 bits.",
+    "sources": [
+      {
+        "href": "#radix-carry-neighbors-135137",
+        "label": "Checked example"
+      },
+      {
+        "href": "discoveries/choosing-a-base-from-the-product.md",
+        "label": "How the product selects the base"
+      }
+    ]
+  },
+  {
+    "id": "carry-interval-constructed-2048",
+    "title": "Testing a whole range of carry guesses",
+    "category": "cases",
+    "impact": "Two square tests and one gcd recovered a constructed 2,048-bit pair despite a 354-bit correction to the initial guess.",
+    "scope": "An earlier method also solved this constructed input. Both previous full-size controls survived the new search.",
+    "detail": "Two square tests found the primes of a specially constructed 2,048-bit product, even with a 354-bit error in our initial guess. A previous method also solved this example. Most ranges on two earlier products remain unresolved.",
+    "sources": [
+      {
+        "href": "#carry-interval-constructed-2048",
+        "label": "Checked factorization"
+      },
+      {
+        "href": "discoveries/checking-a-range-of-product-carries.md",
+        "label": "What made this number easy"
+      }
+    ]
+  },
+  {
+    "id": "radix-carry-nonzero-2048",
+    "title": "Recovering two constructed products from their digits",
+    "category": "cases",
+    "impact": "A carry pattern revealed both primes in two 2,048-bit products after 129 and 996 square-root tests.",
+    "scope": "The primes were chosen to produce the pattern. Two earlier products each survived 41,472 guesses.",
+    "detail": "A pattern in the binary digits gave away both primes in two constructed 2,048-bit products. The searches took 129 and 996 square-root tests. Two earlier products of the same size each survived 41,472 guesses.",
+    "sources": [
+      {
+        "href": "#radix-carry-nonzero-2048",
+        "label": "Checked example"
+      },
+      {
+        "href": "discoveries/factoring-from-two-rounded-digits.md",
+        "label": "Try it on 143 and see how rare the pattern is"
+      }
+    ]
+  },
+  {
+    "id": "weighted-accidental-33017",
+    "title": "A wrong sum can still expose a factor",
+    "category": "limits",
+    "impact": "Guessing 366 for the sum of the factors of 33,017 exposed 241. The correct sum was 378.",
+    "scope": "Even allowing over four million bases, the bounded search covers fewer than one in 2⁴⁴ eligible 2,048-bit pairs.",
+    "detail": "A wrong guess found 137 × 241. On 33,017 the program tried a sum of 366. The correct sum is 378, yet the calculation revealed 241. Even trying over four million bases, this bounded search could find a match on fewer than one in 17.5 trillion randomly chosen target pairs.",
+    "sources": [
+      {
+        "href": "#weighted-accidental-33017",
+        "label": "Checked example"
+      },
+      {
+        "href": "discoveries/can-an-accidental-match-find-the-primes.md",
+        "label": "Which searches the limit covers"
+      }
+    ]
+  },
+  {
+    "id": "reusing-a-factor-search",
+    "title": "Reusing four plans for twelve products",
+    "category": "gains",
+    "impact": "Four reusable plans recovered all twelve fresh 27-digit products in 11.70 seconds including preparation. Building a plan per product took 11.96 seconds.",
+    "scope": "These local timings include setup and execution on 88-bit and 89-bit inputs.",
+    "detail": "Four reusable search plans found both primes of twelve new 27-digit products. Including the time to make all four plans, this took about 11.70 seconds in our comparison. Making a fresh plan for each product took about 11.96 seconds.",
+    "sources": [
+      {
+        "href": "discoveries/reusing-a-factor-search.md",
+        "label": "Examples, assumptions and timing details"
+      }
+    ]
+  },
+  {
+    "id": "trace-optimal-89-a",
+    "title": "Finding the fewest blocks for a fixed search",
+    "category": "gains",
+    "impact": "For one 89-bit product the optimal schedule used 33,010 blocks, down from 34,264. A proof rules out a shorter complete schedule with the same weights and table size.",
+    "scope": "Planning took 155 seconds and execution about one second. The full-size controls remained beyond budget.",
+    "detail": "On an 89-bit product we recovered both primes with 33,010 search blocks. The previous planner used 34,264. A matching lower bound proves the new schedule is the cheapest for those weights and table size. Finding the plan took 155 seconds and executing it took about one second. This weighted search still exceeds the budget on both full-size comparisons.",
+    "sources": [
+      {
+        "href": "#trace-optimal-89-a",
+        "label": "Checked factors"
+      },
+      {
+        "href": "discoveries/the-minimum-weighted-search.md",
+        "label": "What the minimum tells us"
+      }
+    ]
+  },
+  {
+    "id": "near-smooth-399-2048",
+    "title": "Recovering primes from a nearby predictable sum",
+    "category": "cases",
+    "impact": "Four polynomial calculations recovered the factors of a constructed 2,048-bit product even though the sum missed its prediction by a 121-digit integer.",
+    "scope": "The primes were chosen near a sum made from powers of two and three. At the same tolerance, both earlier full-size controls provably miss.",
+    "detail": "We chose two 1,024-bit primes whose sum was close to a predictable number. Even though our guess was off by a 121-digit number, four polynomial calculations recovered both primes from their product. On two earlier inputs Lean proved the same shortcut could never find the factors at that tolerance.",
+    "sources": [
+      {
+        "href": "#near-smooth-399-2048",
+        "label": "Checked factors and certificate"
+      },
+      {
+        "href": "discoveries/near-a-smooth-prime-sum.md",
+        "label": "Why it works and how rare it is"
+      }
+    ]
+  },
+  {
+    "id": "two-three-sum-constructed-2048",
+    "title": "When the factor sum uses only twos and threes",
+    "category": "cases",
+    "impact": "Given the product alone, 26 square tests recovered both primes of a constructed 2,048-bit input.",
+    "scope": "The method covers every target pair with this sum pattern. Fewer than one in 2⁹⁹⁸ eligible pairs can have it.",
+    "detail": "We recovered both primes of a constructed 2,048-bit product in 26 square tests. We chose the primes so their sum used only powers of 2 and 3. Given only the product, the search works for every pair with that pattern. Fewer than one pair in 2⁹⁹⁸ at the target size can have it. The two earlier controls both rule it out.",
+    "sources": [
+      {
+        "href": "#two-three-sum-constructed-2048",
+        "label": "Checked factors and certificate"
+      },
+      {
+        "href": "discoveries/recovering-a-smooth-prime-sum.md",
+        "label": "Construction and proof"
+      }
+    ]
+  },
+  {
+    "id": "which-inverse-guesses-can-work",
+    "title": "Looking for a sum with only small prime divisors",
+    "category": "limits",
+    "impact": "A check on the product plus one recovered a constructed 43-bit pair using 19 remainder checks and one square test.",
+    "scope": "Both 2,048-bit controls missed. Sums built only from primes up to 31 occur for fewer than one in 2⁹⁴⁷ eligible pairs.",
+    "detail": "A calculation on the product plus one found 2,101,249 × 3,658,751 on a constructed 43-bit example. It took 19 remainder checks and one square test. Both 2,048-bit controls missed. When the proposed sum uses only primes through 31, the method covers less than one in 2⁹⁴⁷ of the target products, even with the best guess for each input.",
+    "sources": [
+      {
+        "href": "discoveries/which-inverse-guesses-can-work.md",
+        "label": "What the bound covers"
+      },
+      {
+        "href": "#neighbor-smooth-43",
+        "label": "Checked factors and costs"
+      },
+      {
+        "href": "discoveries/sums-dividing-the-neighbor.md",
+        "label": "How the example was chosen"
+      }
+    ]
+  },
+  {
+    "id": "floor-sums-at-the-factor",
+    "title": "How many straight lines can represent a division table?",
+    "category": "limits",
+    "impact": "Changes in two division tables give the smaller prime exactly. Even the best straight-line representation needed 3,700 pieces on a 46-bit input.",
+    "scope": "The particular representation needs more than 2⁵⁰⁷ pieces on each full-size control.",
+    "detail": "Adding the changes in two division tables gives the smaller prime exactly. We tested how much those tables shrink when represented by straight-line pieces. One 46-bit example needed 3,700 pieces. Both large examples provably need more than 2⁵⁰⁷ pieces.",
+    "sources": [
+      {
+        "href": "discoveries/floor-sums-at-the-factor.md",
+        "label": "Formula and limits of this calculation"
+      }
+    ]
+  },
+  {
+    "id": "eliminating-the-window-label",
+    "title": "Selecting one factor interval by an equation",
+    "category": "cases",
+    "impact": "One equation selected interval 26 of 37 on 101,000,651 and led to 10,007 and 10,093.",
+    "scope": "The possible sum was already fixed within this example’s interval. Fermat’s first square test found the same factors.",
+    "detail": "One equation selected range 26 of 37 on 101,000,651, giving 10,007 × 10,093. The primes in this example are close enough for Fermat’s first square test to succeed. We still need to construct a useful equation in the range number for other products.",
+    "sources": [
+      {
+        "href": "discoveries/eliminating-the-window-label.md",
+        "label": "Why this example works"
+      }
+    ]
+  },
+  {
+    "id": "sampling-for-a-hidden-prime",
+    "title": "The best single random divisor guess",
+    "category": "limits",
+    "impact": "If smaller positive guesses are at least as likely as larger ones, even the best single gcd draw succeeds with probability below 2⁻¹⁰²² for two distinct 1,024-bit primes.",
+    "scope": "This bound covers every distribution with that ordering. For 77 the exact optimum is 13 in 56.",
+    "detail": "Can random guesses help locate a prime? If smaller positive integers are at least as likely as larger ones, even the best distribution gives less than one chance in 2¹⁰²² per guess of finding a proper factor at the target size. For 77 the exact best chance is 13 in 56.",
+    "sources": [
+      {
+        "href": "discoveries/sampling-for-a-hidden-prime.md",
+        "label": "Single-draw proof"
+      },
+      {
+        "href": "discoveries/adding-and-subtracting-random-guesses.md",
+        "label": "What two guesses can reveal"
+      },
+      {
+        "href": "#prefix-sampling-77",
+        "label": "Measured example"
+      }
+    ]
+  },
+  {
+    "id": "recursive-integer-valued-windows",
+    "title": "Rounding smaller equations cuts the number of intervals",
+    "category": "gains",
+    "impact": "With the same number of coefficients per equation, each full-size control needed less than a third of the previous number of locations.",
+    "scope": "Lean checked the coverage counts. Both complete lists still exceed 10¹⁴⁸ locations.",
+    "detail": "The complete list of ranges on each large example is less than one third as long as before. Each list still has more than 10¹⁴⁸ entries. Lean proved those counts without running the full search.",
+    "sources": [
+      {
+        "href": "discoveries/recursive-integer-valued-windows.md",
+        "label": "Work per range and full counts"
+      }
+    ]
+  },
+  {
+    "id": "rounding-a-sifted-window",
+    "title": "Seven coefficients rule out wider intervals",
+    "category": "gains",
+    "impact": "Rounding a sifted equation excluded intervals three times and twice as wide on the two 2,048-bit controls. On 132,079 the method found 269 and 491.",
+    "scope": "The searches used the products and public centers. Neither chosen full-size interval yielded a factor.",
+    "detail": "In the tests we ran, seven coefficients gave 269 × 491 = 132,079 on the small example. On the two large inputs, the same method ruled out ranges three times and twice as wide as before. The project knows the two prime pairs from construction. These searches received only the products and recovered neither pair.",
+    "sources": [
+      {
+        "href": "discoveries/rounding-a-sifted-window.md",
+        "label": "How the test works"
+      },
+      {
+        "href": "#rounded-sifted-window-fresh-mid",
+        "label": "First large example"
+      },
+      {
+        "href": "#rounded-sifted-window-crossed-440",
+        "label": "Second large example"
+      },
+      {
+        "href": "discoveries/certified-fresh-control.md",
+        "label": "Test input origins"
+      }
+    ]
+  },
+  {
+    "id": "integer-valued-factor-windows",
+    "title": "One equation covers 5,359 original intervals",
+    "category": "gains",
+    "impact": "Using whole-number positions lets one equation handle 5,359 stretches of the original grid at the same row count.",
+    "scope": "Two small equations excluded selected intervals. Full coverage on the 2,048-bit controls still costs roughly 2⁴⁹⁵ and 2⁴⁹⁶ locations with larger equations.",
+    "detail": "By using whole-number positions, one equation now covers 5,359 of our original ranges. Two small equations ruled out their chosen ranges on the 2,048-bit examples. A full search still needs roughly 2⁴⁹⁵ and 2⁴⁹⁶ locations, with much larger equations.",
+    "sources": [
+      {
+        "href": "discoveries/integer-valued-factor-windows.md",
+        "label": "Factor example, proof and full-size limits"
+      }
+    ]
+  },
+  {
+    "id": "two-ranges-with-one-equation",
+    "title": "Testing two neighboring intervals together",
+    "category": "gains",
+    "impact": "One equation covers two adjacent stretches and recovered 269 × 491 on 132,079 where the previous bound missed.",
+    "scope": "Each full-size comparison still requires more than 2⁵⁰⁶ locations.",
+    "detail": "One equation now checks two neighboring ranges. On 132,079, this gave 269 × 491 where the previous bound missed. Even with this change, the full search on each 2,048-bit comparison needs more than 2⁵⁰⁶ locations.",
+    "sources": [
+      {
+        "href": "discoveries/two-ranges-with-one-equation.md",
+        "label": "Proof, range sizes and comparisons"
+      }
+    ]
+  },
+  {
+    "id": "second-digit-of-a-product",
+    "title": "Two product measurements determine the factor sum",
+    "category": "formulas",
+    "impact": "The readings on 143 gave the sum 24, which recovers 11 and 13.",
+    "scope": "Both measurements use the public product. Computing them took more work than ordinary search on the larger examples timed.",
+    "detail": "Two measurements of a product also give the exact sum of the hidden primes. On 143 the readings gave 24, which yields 11 and 13. Computing the readings took more work than an ordinary search on the larger examples we timed.",
+    "sources": [
+      {
+        "href": "discoveries/second-digit-of-a-product.md",
+        "label": "Formula and measured costs"
+      }
+    ]
+  },
+  {
+    "id": "what-the-product-says-about-the-window",
+    "title": "Narrowing the smaller prime’s range from the product",
+    "category": "gains",
+    "impact": "Using the actual product to bound both endpoints and the interval widths covers the smaller factor in fewer than 2⁵⁰⁹ locations.",
+    "scope": "The full bound for two 1,024-bit primes requires 24,576 rows at each location.",
+    "detail": "Using the actual product narrows the possible range for the smaller prime. Lean proves that two window sizes cover it in fewer than 2⁵⁰⁹ locations. The construction requires 24,576 rows at each location and remains beyond practical reach.",
+    "sources": [
+      {
+        "href": "discoveries/what-the-product-says-about-the-window.md",
+        "label": "What the product tells us"
+      }
+    ]
+  },
+  {
+    "id": "wider-windows-and-the-missing-location",
+    "title": "A higher-degree equation checks a wider interval",
+    "category": "gains",
+    "impact": "At a chosen location a degree-eight equation checks about 70 trillion times as many possible odd factors as the earlier degree-four equation.",
+    "scope": "Both chosen 2,048-bit intervals were empty. The result prices coverage at a location and leaves the choice of location open.",
+    "detail": "A degree-eight equation checked about 70 trillion times as many possible odd factors at a chosen location as our previous quartic. Both 2,048-bit intervals we tried were empty.",
+    "sources": [
+      {
+        "href": "discoveries/wider-windows-and-the-missing-location.md",
+        "label": "How the search changes"
+      },
+      {
+        "href": "#higher-divisor-window-fresh-2048",
+        "label": "Checked full-size interval"
+      },
+      {
+        "href": "#adaptive-quartic-cover-49",
+        "label": "Complete smaller search"
+      }
+    ]
+  },
+  {
+    "id": "quartic-three-row-22663",
+    "title": "Three equations expose a shared divisor",
+    "category": "cases",
+    "impact": "On 22,663, combining three equations exposed the divisor 173 and yielded 131 × 173.",
+    "scope": "The five checks of the earlier method all missed on the same interval of eleven odd candidates.",
+    "detail": "Starting with 22,663, three equations gave a number sharing the factor 173 with the input. The other prime was 131. In the same interval, all five checks from the previous method missed.",
+    "sources": [
+      {
+        "href": "#quartic-three-row-22663",
+        "label": "Checked example"
+      },
+      {
+        "href": "discoveries/three-rows-reveal-a-cofactor.md",
+        "label": "Why three equations suffice here"
+      }
+    ]
+  },
+  {
+    "id": "a-determinant-that-gives-the-cofactor",
+    "title": "A determinant reveals the square of a prime",
+    "category": "cases",
+    "impact": "Four equations gave a multiple of the input whose quotient was 28,141,469 squared, revealing a prime on a 49-bit product.",
+    "scope": "One of 4,827 search windows split that product. Five windows on each full-size control yielded no factor.",
+    "detail": "Four equations in our 49-bit search produced the input times the exact square of one prime. A square root gave 28,141,469. Only one of 4,827 windows gave a split. Five windows per 2,048-bit example yielded none.",
+    "sources": [
+      {
+        "href": "discoveries/a-determinant-that-gives-the-cofactor.md",
+        "label": "Why the other factor appears"
+      },
+      {
+        "href": "#quartic-minor-gcd-49",
+        "label": "Checked factorization"
+      }
+    ]
+  },
+  {
+    "id": "quartics-at-a-chosen-location",
+    "title": "Testing a chosen factor interval with one equation",
+    "category": "gains",
+    "impact": "One quartic checks 2⁴⁰⁸ + 1 nearby odd candidates for a 1,024-bit factor. It recovered 41 and 61 on a small example.",
+    "scope": "The chosen intervals were empty on both 2,048-bit controls. Complete coverage can require 2⁶¹⁴ equations.",
+    "detail": "At any chosen odd location, one equation now checks 2⁴⁰⁸ + 1 odd candidates for a 1,024-bit factor. Lean ruled out the chosen interval on both 2,048-bit examples. A complete search can still take 2⁶¹⁴ equations. On 2,501 the same rule returned 41 × 61.",
+    "sources": [
+      {
+        "href": "discoveries/quartics-at-a-chosen-location.md",
+        "label": "Proof and cost"
+      },
+      {
+        "href": "#quartic-divisor-window-fresh-2048",
+        "label": "Full-size exclusion"
+      },
+      {
+        "href": "#quartic-divisor-window-2501",
+        "label": "Checked factors"
+      }
+    ]
+  },
+  {
+    "id": "quartic-basis-translation-49",
+    "title": "Reusing the equation from a neighboring interval",
+    "category": "gains",
+    "impact": "Reusing the previous basis cut a complete 49-bit search from 1.275 to 0.642 CPU seconds and recovered both primes.",
+    "scope": "Only five neighboring intervals were tested on each 2,048-bit product.",
+    "detail": "Reusing the previous interval’s calculation cut a complete 49-bit search from 1.275 to 0.642 CPU seconds. It found 17,838,631 × 28,141,469. We tried five neighboring intervals on each 2,048-bit example. Both searches still have most intervals left to visit.",
+    "sources": [
+      {
+        "href": "#quartic-basis-translation-49",
+        "label": "Checked small factorization"
+      },
+      {
+        "href": "discoveries/reusing-a-quartic-basis.md",
+        "label": "How reuse works"
+      }
+    ]
+  },
+  {
+    "id": "selecting-factor-coordinates",
+    "title": "Combining blocks with the same factor coordinate",
+    "category": "gains",
+    "impact": "On a 49-bit product, grouping blocks cut 2,884 calculations to 914 and retained the factorization.",
+    "scope": "One calculation represented the last 2²⁵⁷ blocks on a 2,048-bit example. Three positions were tested without a factor.",
+    "detail": "One calculation covered the last 2²⁵⁷ blocks of possible smaller factors on a 2,048-bit example. Any factor in that stretch would use the same row of the search. We tried three positions and found no factor. On a 49-bit example, combining blocks cut 2,884 calculations to 914 and recovered both primes.",
+    "sources": [
+      {
+        "href": "discoveries/selecting-factor-coordinates.md",
+        "label": "How we combine blocks"
+      },
+      {
+        "href": "#offset-factor-blocks-coalesced-fresh-tail-2048",
+        "label": "Full-size run"
+      },
+      {
+        "href": "#offset-factor-blocks-coalesced-49",
+        "label": "49-bit result"
+      }
+    ]
+  },
+  {
+    "id": "counting-all-factor-arcs",
+    "title": "Counting a complete list of factor tests",
+    "category": "gains",
+    "impact": "For every pair of distinct 1,024-bit primes, a list of fewer than 2⁶⁹² tests determined by their product contains a prime factor.",
+    "scope": "Merely enumerating its groups takes at least 2⁵⁰³ visits on each of the two full-size controls.",
+    "detail": "For any two distinct 1,024-bit primes, the product determines a list of fewer than 2⁶⁹² tests containing a prime factor. Lean proves the guarantee. On each of our two full-size examples, exhaustively listing the groups for this method already takes at least 2⁵⁰³ visits. We still need a way to pick the right group quickly. The search found 556,587,319 × 584,628,763 on a fresh 59-bit input.",
+    "sources": [
+      {
+        "href": "discoveries/counting-all-factor-arcs.md",
+        "label": "Full-size proof and costs"
+      },
+      {
+        "href": "#offset-tangent-cover-shifted-holdout-59",
+        "label": "Checked 59-bit factorization"
+      }
+    ]
+  },
+  {
+    "id": "subdividing-a-factor-arc",
+    "title": "Subdividing the curve of possible factors",
+    "category": "gains",
+    "impact": "Across four groups on each full-size input, fewer than 2¹⁷⁵ tests cover more than 2⁴⁹² positions.",
+    "scope": "Even those groups require more than 2¹⁷³ pieces. The first three pieces tested per input yielded no factor.",
+    "detail": "A short part of the factor curve can be checked with one equation per sign. On each of two 2,048-bit inputs, four groups that held more than 2⁴⁹² candidate positions can now be covered in fewer than 2¹⁷⁵ tests. Even those four groups require more than 2¹⁷³ pieces with this method. We counted them and tested three pieces per input. Neither run found a factor. The same approach found 17,838,631 × 28,141,469 on the smaller example.",
+    "sources": [
+      {
+        "href": "discoveries/subdividing-a-factor-arc.md",
+        "label": "Why the shorter pieces work"
+      },
+      {
+        "href": "#offset-tangent-cover-49",
+        "label": "Checked factorization"
+      },
+      {
+        "href": "#offset-tangent-cover-fresh-2048",
+        "label": "Fresh full-size input"
+      },
+      {
+        "href": "#offset-tangent-cover-crossed-2048",
+        "label": "Crossed full-size input"
+      }
+    ]
+  },
+  {
+    "id": "lifting-singular-batches",
+    "title": "Keeping digits forced by remainders",
+    "category": "gains",
+    "impact": "Forced digits cut the exhaustive 49-bit search from 4,800 groups to 3,040.",
+    "scope": "Each of the two 2,048-bit schedules still contains more than 2⁸⁸⁸ groups.",
+    "detail": "A remainder can force another digit of the answer during the lattice search. Keeping those digits cut the exhaustive 49-bit example from 4,800 groups to 3,040. The fresh and crossed 2,048-bit schedules still exceed 2⁸⁸⁸ groups each.",
+    "sources": [
+      {
+        "href": "discoveries/lifting-singular-batches.md",
+        "label": "Forced digits and work saved"
+      },
+      {
+        "href": "discoveries/primitive-lattice-rows.md",
+        "label": "Eliminating a whole row"
+      },
+      {
+        "href": "discoveries/short-factor-projections.md",
+        "label": "What knowing the coordinates would tell us"
+      }
+    ]
+  },
+  {
+    "id": "grouping-remainder-searches",
+    "title": "Grouping divisor tests by remainder",
+    "category": "gains",
+    "impact": "A complete 49-bit search fell from 7.39 seconds to 0.59 seconds and recovered 17,838,631 and 28,141,469.",
+    "scope": "Eight groups tested on each of two 2,048-bit controls yielded no factor.",
+    "detail": "We found the primes 17,838,631 and 28,141,469 by grouping the tests for their product, 502,005,281,288,939. Searching 4,800 groups took 0.59 seconds, down from 7.39 seconds for the previous complete remainder search. Eight groups apiece on two 2,048-bit inputs yielded no factors.",
+    "sources": [
+      {
+        "href": "discoveries/grouping-remainder-searches.md",
+        "label": "Why grouping works and how much remains"
+      },
+      {
+        "href": "#offset-lattice-batches-midpoint-holdout-49",
+        "label": "Checked 49-bit example"
+      },
+      {
+        "href": "#offset-lattice-batches-fresh-2048",
+        "label": "Full-size test"
+      }
+    ]
+  },
+  {
+    "id": "reconstructing-winning-positions",
+    "title": "Skipping square tests using small prime remainders",
+    "category": "gains",
+    "impact": "On 134,683,853, remainder checks cut 4,710 square tests to 156 and retained both factors.",
+    "scope": "Computing the jumps took longer. The proof leaves more than 2⁸⁹³ combinations for every permitted choice of small primes at full size.",
+    "detail": "Dividing the product by small primes gives remainders we can use to skip impossible tests. On 134,683,853 this cut 4,710 square tests to 156 and recovered 8,231 and 16,363, though computing the jumps cost more time. The proof covers every 2,048-bit product of two distinct 1,024-bit primes. Our two full-size examples still have about 2⁸⁹⁹ combinations to search. The first 64 yielded no factor on either. Lean also proves that any choice of distinct odd primes satisfying this method’s size requirement leaves more than 2⁸⁹³ combinations.",
+    "sources": [
+      {
+        "href": "discoveries/reconstructing-winning-positions.md",
+        "label": "How the jumps work"
+      },
+      {
+        "href": "#offset-crt-mixed-134683853",
+        "label": "Checked example"
+      },
+      {
+        "href": "#offset-crt-fresh-2048",
+        "label": "Full-size run"
+      }
+    ]
+  },
+  {
+    "id": "complete-offset-search",
+    "title": "How far away the winning adjustments can be",
+    "category": "limits",
+    "impact": "The complete offset search has exactly one or two successful positions.",
+    "scope": "Its first trillion adjustments reach fewer than one in 2⁴²² random balanced target-size pairs.",
+    "detail": "The original search range always contains exactly one or two winning positions. Even the first trillion adjustments can reach fewer than one in 2⁴²² random prime pairs of the target size.",
+    "sources": [
+      {
+        "href": "discoveries/complete-offset-search.md",
+        "label": "Why a successful test exists"
+      },
+      {
+        "href": "discoveries/one-or-two-winning-tests.md",
+        "label": "Why there are at most two"
+      },
+      {
+        "href": "discoveries/complete-offset-work.md",
+        "label": "Size of the range"
+      }
+    ]
+  },
+  {
+    "id": "grouped-norm-separated-2048",
+    "title": "A product-selected square test",
+    "category": "cases",
+    "impact": "One square test recovered both factors of two specially constructed 2,048-bit products.",
+    "scope": "It missed both comparison inputs. Even all multipliers in the family cover fewer than one in 2⁴⁸¹ balanced prime pairs at that size.",
+    "detail": "One rule lets the product select a single square test. It recovered both primes on two constructed 2,048-bit numbers and missed on both earlier comparison numbers. Even testing every multiplier in this family covers fewer than one in 2⁴⁸¹ balanced prime pairs at this size.",
+    "sources": [
+      {
+        "href": "#grouped-norm-separated-2048",
+        "label": "Checked example"
+      },
+      {
+        "href": "discoveries/grouped-norm-density.md",
+        "label": "Why the pattern is rare"
+      }
+    ]
+  },
+  {
+    "id": "offset-rows-13",
+    "title": "A product-selected filter for square tests",
+    "category": "gains",
+    "impact": "On the fresh 2,048-bit input, the filter reduced about 42 billion survivors to 19 billion among a trillion choices.",
+    "scope": "Testing 64 survivors per version found no full-size factor. A smaller example split at adjustment 13.",
+    "detail": "A broader square test found 36,559 × 64,997 at adjustment 13. On the fresh 2,048-bit number, selecting the filter from the product cut the survivors from roughly 42 billion to 19 billion out of a trillion choices. Testing 64 survivors in each version yielded no factor.",
+    "sources": [
+      {
+        "href": "#offset-rows-13",
+        "label": "Small example"
+      },
+      {
+        "href": "#offset-rows-fresh-selected-2048",
+        "label": "Full-size search"
+      }
+    ]
+  },
+  {
+    "id": "centered-factor-sum",
+    "title": "Using the factor sum to remove groups",
+    "category": "gains",
+    "impact": "The sum bounds reduced the number of groups fourfold on the fresh 2,048-bit product. A later test excluded 2,048 groups together in 0.76 seconds.",
+    "scope": "These exclusions left both full-size factors unknown to the search.",
+    "detail": "On the fresh 2,048-bit example, using the possible sums of the two primes cut the number of groups to search by a factor of four. A later test ruled out 2,048 of those groups together in 0.76 seconds. This search has not recovered either of the two primes used to build the example.",
+    "sources": [
+      {
+        "href": "discoveries/centered-factor-sum.md",
+        "label": "Why the search shrank"
+      },
+      {
+        "href": "#projected-levels-fresh-2048",
+        "label": "Fresh result, Lean exclusion proof and remaining work"
+      }
+    ]
+  },
+  {
+    "id": "unit-lane-crossed-2048",
+    "title": "Testing a guess for one factor remainder",
+    "category": "cases",
+    "impact": "A single guess recovered the two 1,024-bit primes of the crossed control in 2.21 seconds.",
+    "scope": "The original guess used the published factors. Fixed in advance, it succeeded on three of ten constructed inputs and missed a fresh product.",
+    "detail": "One guess recovered both 1,024-bit primes of our earlier comparison number in 2.21 seconds. We chose it after seeing the published factors. Testing the same guess using only the products succeeded on three of ten constructed examples and missed the other seven. It also missed a fresh product generated after we fixed the guess.",
+    "sources": [
+      {
+        "href": "#unit-lane-crossed-2048",
+        "label": "See the two primes and Lean certificate"
+      },
+      {
+        "href": "discoveries/testing-one-factor-remainder.md",
+        "label": "Why it worked"
+      },
+      {
+        "href": "#unit-lane-fresh-2048",
+        "label": "Fresh comparison"
+      }
+    ]
+  },
+  {
+    "id": "unit-newton-lanes",
+    "title": "Checking four groups with one equation",
+    "category": "gains",
+    "impact": "In a successful group the equation leaves at most four possible factors. Finite differences cut the complete count by another 43% in a matched comparison.",
+    "scope": "The count of groups on the fresh 2,048-bit input still has 184 decimal digits.",
+    "detail": "One equation now checks four of the original groups at once. If we choose the right group, it leaves at most four possible factors. On our 2,048-bit test number, using these equations cut the number of groups by a factor of about 64 quintillion compared with our earlier linear search. Checking positive and negative solutions together almost halved the count again. Using finite differences cut the complete count a further 43% in a matched comparison. On the fresh product, using the difference between the factors cut another 29% compared with ordinary Newton equations. The number of groups still has 184 digits.",
+    "sources": [
+      {
+        "href": "discoveries/unit-newton-lanes.md",
+        "label": "Four-group proof and checks"
+      },
+      {
+        "href": "discoveries/difference-lanes.md",
+        "label": "How finite differences reduce the search"
+      },
+      {
+        "href": "discoveries/gap-polynomial-scale.md",
+        "label": "Factor-gap comparison"
+      }
+    ]
+  },
+  {
+    "id": "one-trace-per-residue-pair",
+    "title": "One weighted sum for a group of factor pairs",
+    "category": "gains",
+    "impact": "Complete searches on eight fresh 49–50-bit inputs took 0.058 seconds in total, compared with 1.003 seconds for trial division in the same intervals.",
+    "scope": "At 2,048 bits a complete search still requires more than 2⁶⁷⁶ groups.",
+    "detail": "One weighted sum can check an entire group of factor pairs. On 34,387, four groups led to a single sum and the factors 137 and 251. Across eight fresh 49–50-bit inputs, the complete search took 0.058 seconds, compared with 1.003 seconds for trial division over the same intervals. A complete search by this rule still needs more than 2⁶⁷⁶ groups at 2,048 bits.",
+    "sources": [
+      {
+        "href": "discoveries/one-trace-per-residue-pair.md",
+        "label": "Proof and timings"
+      },
+      {
+        "href": "discoveries/weight-slope-batches.md",
+        "label": "Grouping related checks on an 82-bit input"
+      },
+      {
+        "href": "#midpoint-weights-capped-2048",
+        "label": "Full-size search budget"
+      }
+    ]
+  },
+  {
+    "id": "affine-radices",
+    "title": "Choosing a base to reduce candidate pairs",
+    "category": "gains",
+    "impact": "Changing the base cut the number of pairs checked from 4,478 to 1,853 across eight fresh inputs. Both searches recovered every pair.",
+    "scope": "Trial division was faster on all eight, and the 2,048-bit search still exceeds 2⁶⁸⁰ groups.",
+    "detail": "Changing the base used to write the two unknown factors cut the candidate pairs checked from 4,478 to 1,853 across eight fresh products. Both searches found every pair. Ordinary trial division was faster on all eight inputs. At 2,048 bits the new search would still visit more than 2⁶⁸⁰ groups.",
+    "sources": [
+      {
+        "href": "discoveries/affine-radices.md",
+        "label": "Rule and results"
+      },
+      {
+        "href": "#modular-hyperbola-holdout-primorial-46",
+        "label": "Checked example"
+      }
+    ]
+  },
+  {
+    "id": "persistent-local-survivors",
+    "title": "Wrong midpoints that survive prime-power tests",
+    "category": "limits",
+    "impact": "For every target-size product, more than 2⁸⁷⁴ wrong midpoints survive all powers of all primes through 733.",
+    "scope": "Local tests can isolate the answer on small inputs. Powers of 2, 3 and 5 isolated the midpoint for 34,387.",
+    "detail": "On 34,387, tests at powers of 2, 3 and 5 left exactly one possible midpoint for the primes. It gave 137 and 251. On our 2,048-bit comparison input, three prime-power tests eliminated 99.126% of the interval and still left a 1,013-bit count of possibilities. Even at every power of every prime through 733, more than 2⁸⁷⁴ wrong midpoints survive on every target-size product.",
+    "sources": [
+      {
+        "href": "discoveries/persistent-local-survivors.md",
+        "label": "Full-size proof"
+      },
+      {
+        "href": "discoveries/counting-local-midpoints.md",
+        "label": "How the count works"
+      },
+      {
+        "href": "#local-midpoints-2048",
+        "label": "Full-size count"
+      }
+    ]
+  },
+  {
+    "id": "farey-weighted-sums",
+    "title": "Narrower intervals for weighted sums",
+    "category": "gains",
+    "impact": "On one 89-bit product the search fell from 14.18 to 1.34 seconds. It also factored a fresh 99-bit product in 7.59 seconds.",
+    "scope": "GNU factor took 0.325 seconds on the 99-bit input. A full 2,048-bit search needs more than 2⁴⁰⁴ records.",
+    "detail": "Narrowing the possible sums of two weighted factors recovered both primes of a fresh 99-bit number in 7.59 seconds. GNU’s factor utility took 0.325 seconds on that number. On the same 89-bit input, the previous full-interval search took 14.18 seconds and this search took 1.34 seconds. On the 2,048-bit control, 96 blocks yielded no factor. A full search with these windows would need more than 2⁴⁰⁴ records.",
+    "sources": [
+      {
+        "href": "discoveries/farey-weighted-sums.md",
+        "label": "Proof and timings"
+      },
+      {
+        "href": "#weighted-stride-99",
+        "label": "Checked factors"
+      },
+      {
+        "href": "#weighted-stride-capped-2048",
+        "label": "Capped search"
+      }
+    ]
+  },
+  {
+    "id": "quartic-direction",
+    "title": "Reading a prime as a sum of squares",
+    "category": "formulas",
+    "impact": "Two character sums can encode a prime as a sum of squares. On 26,441 the readings gave 11 and 4, recovering 137.",
+    "scope": "Both primes must be 1 modulo 4 for this result. The example required 26,440 symbol evaluations.",
+    "detail": "For products whose primes both leave remainder 1 when divided by 4, two sums encode a prime as a sum of two squares. On 26,441 we recovered 11 and 4, whose squares add to 137. Calculating the two sums still took 26,440 symbol evaluations.",
+    "sources": [
+      {
+        "href": "discoveries/quartic-direction.md",
+        "label": "Derivation and cost"
+      },
+      {
+        "href": "#quartic-odd-direction",
+        "label": "Checked example"
+      }
+    ]
+  },
+  {
+    "id": "quadratic-extension-trace",
+    "title": "Recovering a factor from a sum over pairs",
+    "category": "formulas",
+    "impact": "On 77 a sum over pairs equals 21. Adding one and dividing by two gives the prime 11 even though both ordinary sums vanish.",
+    "scope": "Directly evaluating the pair sum took 5,929 positions on this small input.",
+    "detail": "Both ordinary sums vanish on 77. A sum over pairs gives 21, so (21 + 1) / 2 recovers 11. The same approach extends to other prime pairs. Computing the sum directly on 77 took 5,929 positions.",
+    "sources": [
+      {
+        "href": "discoveries/quadratic-extension-trace.md",
+        "label": "Why the formula works and how the cost grows"
+      },
+      {
+        "href": "#punctured-both-three",
+        "label": "Checked example"
+      }
+    ]
+  },
+  {
+    "id": "reciprocal-wheel",
+    "title": "Charging the cost of filtering possible divisors",
+    "category": "limits",
+    "impact": "Remainder compatibility reduced 83,891 possible divisors to 16,908 on a 41-bit input.",
+    "scope": "The complete search took eight times longer once it included the work of applying the filter.",
+    "detail": "On a 41-bit input, checking whether candidate factors have compatible remainders cut 83,891 possible divisors to 16,908. The complete search took eight times longer once we counted the work of excluding candidates.",
+    "sources": [
+      {
+        "href": "discoveries/reciprocal-wheel.md",
+        "label": "Which exclusions are possible"
+      },
+      {
+        "href": "#reciprocal-wheel-41",
+        "label": "Checked result"
+      }
+    ]
+  },
+  {
+    "id": "norm-band-product",
+    "title": "Three expressions for the smaller prime",
+    "category": "formulas",
+    "impact": "For any two distinct odd primes, one of three expressions yields the smaller one. On 713 a final gcd gives 23.",
+    "scope": "Computing that gcd's input is expensive. With two 1,024-bit primes, searching both coordinates only up to 2⁵¹⁰ cannot succeed.",
+    "detail": "For any product of two distinct odd primes, one of three simple expressions equals its smaller prime. On 713 our formula returns 23 in one greatest common divisor calculation. The work goes into the product used in that calculation. For two 1,024-bit primes, checking even the full range up to 2⁵¹⁰ in both coordinates finds nothing.",
+    "sources": [
+      {
+        "href": "discoveries/norm-band-product.md",
+        "label": "The formula and its cost"
+      },
+      {
+        "href": "discoveries/norm-orbits.md",
+        "label": "Why the range matters"
+      },
+      {
+        "href": "#band-clips-whole-modulus",
+        "label": "Worked example"
+      }
+    ]
+  },
+  {
+    "id": "short-boxes-ordinary-63",
+    "title": "A smaller-coordinate search against direct division",
+    "category": "limits",
+    "impact": "The search recovered 2,423,330,473 and 2,513,756,873 on a fresh 63-bit product.",
+    "scope": "Searching the possible odd divisors directly was faster on the same input.",
+    "detail": "On a fresh 63-bit input, the smaller-coordinate search found 2,423,330,473 and 2,513,756,873. A direct search of the possible odd divisors was faster on this input.",
+    "sources": [
+      {
+        "href": "#short-boxes-ordinary-63",
+        "label": "Checked factors"
+      },
+      {
+        "href": "research/norms-ordinary-63.json",
+        "label": "Measured comparison"
+      }
+    ]
+  },
+  {
+    "id": "searching-norm-directions",
+    "title": "How often weighted sums of squares reveal factors",
+    "category": "formulas",
+    "impact": "At most 132 weights and 849 multiples per weight suffice to contain two revealing solutions for all but fewer than one in 2¹¹⁹ of the specified prime pairs.",
+    "scope": "The probability is over uniform distinct 1,024-bit primes with a 2,048-bit product. The full-size comparison exhausted its budget searching for the solutions.",
+    "detail": "From a 2,048-bit product we can select at most 132 weights for a sum of two squares and try up to 849 multiples of the product per weight. For two uniformly chosen distinct 1,024-bit primes giving a product of this size, fewer than one pair in 2¹¹⁹ lacks two revealing solutions in this search. Finding those solutions is still expensive. On a small example we started with 3,599 and found 59 and 61. Our 2,048-bit comparison exhausted its search budget.",
+    "sources": [
+      {
+        "href": "discoveries/searching-norm-directions.md",
+        "label": "Why the list works"
+      },
+      {
+        "href": "#norm-different-multipliers",
+        "label": "Small example"
+      },
+      {
+        "href": "#norm-crossed-2048",
+        "label": "Full-size comparison"
+      }
+    ]
+  },
+  {
+    "id": "polynomial-relations",
+    "title": "Changing the polynomial during a search",
+    "category": "gains",
+    "impact": "At the same search budget, changing polynomials factored six of 16 fresh 79-bit products. One ordinary interval found no factors.",
+    "scope": "The comparison measures this fixed sample and budget.",
+    "detail": "On the same 16 fresh 79-bit products, one ordinary interval found no factors at its fixed budget. Changing the polynomial at regular intervals found both primes on six inputs.",
+    "sources": [
+      {
+        "href": "discoveries/polynomial-relations.md",
+        "label": "Compare all 16 outcomes"
+      },
+      {
+        "href": "discoveries/polynomial-height.md",
+        "label": "What limits one polynomial"
+      }
+    ]
+  },
+  {
+    "id": "choosing-a-short-fraction",
+    "title": "Finding factors from short fractions",
+    "category": "cases",
+    "impact": "Checking 24 multiples recovered both primes of a 2,048-bit product constructed to have a short usable fraction.",
+    "scope": "On the second full-size product 57,769 square roots exhausted the reduced search. Every successful pair of fractions was outside its range.",
+    "detail": "We found both primes of a specially constructed 2,048-bit number after checking 24 of its multiples. On a second number of the same size, a faster search cut over two million square roots to 57,769 and exhausted its range. We proved that every working pair of fractions on this second number exceeds that range.",
+    "sources": [
+      {
+        "href": "discoveries/choosing-a-short-fraction.md",
+        "label": "Why these numbers differ"
+      },
+      {
+        "href": "#guided-pair-planted-2048",
+        "label": "The checked factorization"
+      },
+      {
+        "href": "#seed-gap-crossed-22",
+        "label": "The comparison"
+      }
+    ]
+  },
+  {
+    "id": "same-source-pairs",
+    "title": "The chance of drawing two useful fractions together",
+    "category": "limits",
+    "impact": "Two fractions from the same draw split 77,837 on the seventeenth try.",
+    "scope": "For a target-size product, even 281 trillion random tries have probability below 2⁻⁷⁴⁸ of producing the required pair under the stated sampling rule.",
+    "detail": "Two fractions from the same draw can guarantee a factor. Our search found such a pair for 77,837 on its seventeenth try and recovered 277 and 281. For a 2,048-bit product of two 1,024-bit primes, even 281 trillion random tries have less chance of producing such a pair than 748 fair coins have of all landing heads.",
+    "sources": [
+      {
+        "href": "discoveries/same-source-pairs.md",
+        "label": "See the example and sampling assumptions"
+      },
+      {
+        "href": "#same-source-pair-77837-split",
+        "label": "View the checked factors"
+      }
+    ]
+  },
+  {
+    "id": "shared-root-signs",
+    "title": "Trading more fraction checks for fewer draws",
+    "category": "gains",
+    "impact": "Trying all proportions recovered a sampled 79-bit product in 70,166 draws, down from 1,211,456.",
+    "scope": "Testing more fractions per draw increased the total CPU time on that input.",
+    "detail": "Writing a square remainder as a fraction split a sampled 79-bit product. Trying all proportions needed 70,166 draws, down from 1,211,456. Checking more fractions took more CPU time on this input. At 2,048 bits we can bound how rarely these searches yield a usable row.",
+    "sources": [
+      {
+        "href": "discoveries/shared-root-signs.md",
+        "label": "Compare the three searches"
+      },
+      {
+        "href": "#chain-all-online-79",
+        "label": "See the checked factors"
+      },
+      {
+        "href": "discoveries/smooth-fraction-budget.md",
+        "label": "Read the full-size bound"
+      }
+    ]
+  },
+  {
+    "id": "scored-multipliers",
+    "title": "Scoring continued-fraction multipliers from the product",
+    "category": "gains",
+    "impact": "At a fixed step limit, a product-based multiplier choice raised successes from 14 to 26 among 64 fresh 79-bit products.",
+    "scope": "The comparison establishes a gain on those small products. The score can miss useful multipliers at 2,048 bits.",
+    "detail": "Using the product to choose a starting multiplier improved a continued-fraction search on a fresh sample. It found both primes in 26 of 64 cases, up from 14 at the same step limit. All the products in that comparison had 79 bits.",
+    "sources": [
+      {
+        "href": "discoveries/scored-multipliers.md",
+        "label": "See all 64 comparisons"
+      },
+      {
+        "href": "discoveries/square-neighbor-period.md",
+        "label": "Why the score can fail at 2,048 bits"
+      }
+    ]
+  },
+  {
+    "id": "crt-holdout",
+    "title": "Combining small remainders across a fresh sample",
+    "category": "cases",
+    "impact": "Combining remainders split 13 of 64 fresh 79-bit products. Continued fractions split 15, with 12 successes in common.",
+    "scope": "On a 2,048-bit product more than four billion classes gave 58 small remainders. None of their combinations revealed a factor.",
+    "detail": "On 64 fresh 79-bit products, combining small remainders recovered both primes in 13 cases. Continued fractions succeeded in 15, with 12 successes in common. On a 2,048-bit test, we searched more than four billion possible classes and found 58 small remainders. No combination of those 58 gave a factor.",
+    "sources": [
+      {
+        "href": "discoveries/crt-holdout.md",
+        "label": "All 64 outcomes"
+      },
+      {
+        "href": "discoveries/crt-square-norms.md",
+        "label": "How the search works"
+      },
+      {
+        "href": "#crt-square-crossed-2048",
+        "label": "Full-size test"
+      }
+    ]
+  },
+  {
+    "id": "line-powers",
+    "title": "A full-size split from related prime orders",
+    "category": "cases",
+    "impact": "A search given only the product recovered both primes on its thirteenth try in a constructed 2,048-bit example.",
+    "scope": "One prime plus one divided the other prime squared minus one. After replacing one prime, the same thirteen tries found nothing.",
+    "detail": "We built a 2,048-bit example where one prime plus one divides the other prime squared minus one. A search given only the product found both primes on its thirteenth try. We then replaced just one prime. The product was still 2,048 bits, and the same thirteen tries found nothing.",
+    "sources": [
+      {
+        "href": "discoveries/line-powers.md",
+        "label": "How the example was built"
+      },
+      {
+        "href": "#dickson-square-1-2048",
+        "label": "See the checked factors"
+      }
+    ]
+  },
+  {
+    "id": "quotient-search",
+    "title": "Grouping quotient intervals by residue modulo six",
+    "category": "gains",
+    "impact": "Grouping the balanced interval for 1,900,014,700,027 cut the search from 5,111 strips to 1,708 and recovered 1,000,003 and 1,900,009.",
+    "scope": "This is a complete comparison on one small product. The method still searches multiple strips.",
+    "detail": "A search of the full balanced range for 1,900,014,700,027 took 1,708 strips when we grouped factors by their remainders modulo 6, down from 5,111. It recovered the primes 1,000,003 and 1,900,009. On 77,837, three unsuccessful divisor checks together revealed 277 and 281.",
+    "sources": [
+      {
+        "href": "discoveries/quotient-search.md",
+        "label": "Factor intervals"
+      },
+      {
+        "href": "discoveries/pell-multiplier-pairs.md",
+        "label": "Combining the three checks"
+      }
+    ]
+  },
+  {
+    "id": "random-midpoint-checks",
+    "title": "Recognizing the correct midpoint with random checks",
+    "category": "formulas",
+    "impact": "Among distinct 1,024-bit primes with a 2,048-bit product, 1,040 random checks identify the midpoint with probability above 99.9999% when every candidate is tested.",
+    "scope": "The checks still require a candidate search. The 41-bit example tested all 41,807 possibilities.",
+    "detail": "For two distinct 1,024-bit primes with a 2,048-bit product, 1,040 random checks can identify their average with over 99.9999% probability if we test every candidate. On a 41-bit example, we tested all 41,807 candidates to find the one that passed.",
+    "sources": [
+      {
+        "href": "discoveries/random-midpoint-checks.md",
+        "label": "Read the argument"
+      },
+      {
+        "href": "#midpoint-readings-41",
+        "label": "View the checked example"
+      }
+    ]
+  },
+  {
+    "id": "pascal-readout",
+    "title": "A binomial remainder that gives the larger prime",
+    "category": "formulas",
+    "impact": "An exact remainder from a binomial coefficient determined by the product gives the larger prime.",
+    "scope": "Direct evaluation already produced a 761,262-bit intermediate on a 31-bit product. Efficient full-size evaluation remains open.",
+    "detail": "A binomial coefficient computed from the product gives the larger prime exactly. On a 31-bit product the direct calculation produced a 761,262-bit intermediate. Computing the remainder efficiently at 2,048 bits is the open step.",
+    "sources": [
+      {
+        "href": "discoveries/pascal-readout.md",
+        "label": "Read the formula"
+      },
+      {
+        "href": "#pascal-sqrt-31",
+        "label": "View the checked example"
+      }
+    ]
+  },
+  {
+    "id": "short-root-interval",
+    "title": "Recovering the factors from one rounded value",
+    "category": "formulas",
+    "impact": "On 32 full-size products a value accurate to 1,366 fractional bits gave both primes with one square test.",
+    "scope": "Known primes supplied the full-size values. A smaller value was computed directly for 60,491, recovering 241 and 251.",
+    "detail": "On 32 full-size products, one value rounded to 1,366 fractional bits let us recover both primes with one square test. We used known primes to generate each value. We also computed a shorter value directly from 60,491 and recovered 241 and 251. Finding a cheap way to compute it at full size remains open.",
+    "sources": [
+      {
+        "href": "discoveries/short-root-interval.md",
+        "label": "See the proof and examples"
+      },
+      {
+        "href": "discoveries/phase-precision.md",
+        "label": "How many bits suffice on average?"
+      }
+    ]
+  },
+  {
+    "id": "pooled-relations",
+    "title": "When a continued fraction reveals a planted relation",
+    "category": "cases",
+    "impact": "Removing a multiplier revealed both factors of a constructed 2,048-bit product in four steps.",
+    "scope": "The input had a close match between small multiples of its primes. A multiplier of 133 exhausted 65,536 steps on the same number.",
+    "detail": "On the same specially constructed 2,048-bit product, a search using a multiplier of 133 exhausted 65,536 steps. Removing the multiplier revealed both primes at the fourth step. The input was built with a close match between two small multiples of its primes.",
+    "sources": [
+      {
+        "href": "discoveries/pooled-relations.md",
+        "label": "Why four steps worked"
+      },
+      {
+        "href": "discoveries/pell-cycles.md",
+        "label": "What failed with the multiplier"
+      }
+    ]
+  },
+  {
+    "id": "recovering-residues-from-sums-what-the-full-size-test-shows",
+    "title": "Combining rounded sums to recover remainders",
+    "category": "formulas",
+    "impact": "One precision schedule uses 89 sums with 53 fractional bits each. On 667, one 616-term sum sufficed to recover 23 and 29.",
+    "scope": "The setup for the small example also encounters its factors. Higher precision in one sum can supply several readings.",
+    "detail": "An alternative uses 89 sums rounded to 53 fractional bits each. A higher-precision sum can supply several readings. For 667 we used one sum of 616 terms to recover 23 and 29. Its setup also encounters the factors.",
+    "sources": [
+      {
+        "href": "discoveries/recovering-residues-from-sums.md#what-the-full-size-test-shows",
+        "label": "Read the full-size test"
+      },
+      {
+        "href": "#salie-seed-667",
+        "label": "See the run on 667"
+      }
+    ]
+  },
+  {
+    "id": "wide-modulus-sieve",
+    "title": "A wide-modulus sieve and its full-size cost",
+    "category": "limits",
+    "impact": "The proposed worst-case bound excludes more guesses for similarly sized primes. The search recovered both primes of a randomly drawn 79-bit product.",
+    "scope": "The full bound awaits independent review. At 2,048 bits the main sieve requires at least 2⁴⁰⁰ residue visits or table entries.",
+    "detail": "For two similarly sized primes, we derive a way to rule out more guesses. The full bound awaits independent review. The search recovered both primes of a 79-bit product from random prime draws. At 2,048 bits the main sieve requires at least 2⁴⁰⁰ residue visits or table entries.",
+    "sources": [
+      {
+        "href": "discoveries/wide-modulus-sieve.md",
+        "label": "Read the bound and its assumptions"
+      },
+      {
+        "href": "#wide-seeded-79",
+        "label": "View the checked example"
+      },
+      {
+        "href": "discoveries/finite-sieve-cost.md",
+        "label": "See the 2,048-bit cost"
+      }
+    ]
+  },
+  {
+    "id": "how-many-sums-share-the-actual-digit",
+    "category": "limits",
+    "title": "Even a correct digit can leave many candidate sums",
+    "impact": "At least 2⁶³⁰ sums on the fresh product and 2⁶³³ on the crossed product pass both the supplied digit and the remainder test.",
+    "scope": "Two specific 2,048-bit inputs. The digit radix is at most 2¹²⁸ and the combined sieve modulus at most 2²⁵⁶. The correct digit is supplied for free.",
+    "detail": "A true sum passes once in each complete repetition of its digit and sieve pattern. The proof counts distinct survivors inside the actual interval without assuming any of these other candidates have an integer-square discriminant.",
+    "sources": [
+      {
+        "href": "discoveries/how-many-sums-share-the-actual-digit.md",
+        "label": "Research note"
+      },
+      {
+        "href": "PrimeFactors/ActualDigitMultiplicity.lean",
+        "label": "Lean proof"
+      }
+    ]
+  },
+  {
+    "id": "testing-a-large-prime-on-the-actual-window",
+    "category": "limits",
+    "title": "One large-prime test leaves about half the sums",
+    "impact": "Between 43.75% and 56.25% of the first 2⁵²¹ candidates in the tested progression pass.",
+    "scope": "One 2,048-bit product and an independent 1,024-bit test prime. The count uses two published analytic estimates as explicit hypotheses.",
+    "detail": "A surviving sum has a square discriminant modulo the chosen prime. Locating a sum with an integer-square discriminant remains a separate problem. The bound counts the survivors without scanning the window.",
+    "sources": [
+      {
+        "href": "discoveries/testing-a-large-prime-on-the-actual-window.md",
+        "label": "Research note"
+      },
+      {
+        "href": "PrimeFactors/ShortDiscriminantWindow.lean",
+        "label": "Lean deduction"
+      }
+    ]
+  }
+]

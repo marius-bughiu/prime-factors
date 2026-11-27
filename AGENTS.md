@@ -13,3 +13,7 @@ Start with `README.md` for the research question and `discoveries/searching-the-
 Run `lake build`, `lake env lean scripts/Audit.lean`, and `python3 -m unittest discover -s tests` after relevant changes. For changes to discovery, proof generation, or benchmarks, also run `python3 scripts/benchmark.py` against the pinned toolchain. A complete result has a checked certificate. Keep unresolved cofactors and spent budgets visible in partial results.
 
 Use bounded, reproducible examples in CI. Add a benchmark fixture with expected factors stored as decimal strings. The benchmark runner may use expected factors only to check output. Cite the origin and license of code you reuse. In the pull request, explain AI assistance, the mathematics you verified, and the checks you ran.
+
+## Public research findings
+
+Add reviewed public results to `site/findings.json` with a distinct title, an impact category, a concrete outcome, its scope, and sources. State when an example used specially chosen primes or a supplied clue. The Pages report displays every finding in one row with the All filter selected by default.

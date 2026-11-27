@@ -112,6 +112,7 @@ from experiments.weighted_subset_search import relation_certificate, search as w
 from experiments.weighted_subset_witness import certificate as subset_exclusion_certificate
 from scripts.memory_partition_benchmark import memory_partition_case
 from experiments import cyclotomic_small_norm
+from experiments.fixed_window_digit_packing import scan_singleton as fixed_window_scan
 from scripts.cyclotomic_sum_lift_benchmark import cyclotomic_sum_case
 from scripts.lifted_period_benchmark import lifted_period_case
 from scripts.lifted_period_trace_benchmark import lifted_trace_case
@@ -720,6 +721,11 @@ def run_case(case, method, proofs):
         result = certify_split(case, proof, factor, elapsed, 'cyclotomic_small_norm', work)
     elif method == 'cyclotomic-sum-lift':
         result = cyclotomic_sum_case(case, proof, agree, certify_split)
+    elif method == 'fixed-window-digit-packing':
+        factor, work = fixed_window_scan(int(case['n']), case['factor_bits'], case['modulus'])
+        elapsed = time.perf_counter()-start
+        agree(dict(id=name, **case['checks']), work, case['checks'])
+        result = certify_split(case, proof, factor, elapsed, 'fixed_window_digit_packing', work)
     elif method == 'weighted-square-subsets':
         n = int(case['n'])
         tick = time.perf_counter()
@@ -2125,6 +2131,7 @@ def main():
                              ('memory-partition-sum.json', 'memory-partition-sum'),
                              ('cyclotomic-small-norm.json', 'cyclotomic-small-norm'),
                              ('cyclotomic-sum-lift.json', 'cyclotomic-sum-lift'),
+                             ('fixed-window-digit-packing.json', 'fixed-window-digit-packing'),
                              ('lifted-period-join.json', 'lifted-period-join'),
                              ('lifted-period-trace.json', 'lifted-period-trace'),
                              ('geometric-sum-readout.json', 'geometric-sum-readout'),
