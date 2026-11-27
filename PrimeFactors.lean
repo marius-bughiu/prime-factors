@@ -607,3 +607,5 @@ import PrimeFactors.LargeBaseOrderPairs
 import PrimeFactors.SmoothOrderTail
 import PrimeFactors.FixedBaseSmoothPopulation
 import PrimeFactors.SignedLargeOrder
+import PrimeFactors.BalancedPairPopulation
+import PrimeFactors.FullSizeSmoothFrequency

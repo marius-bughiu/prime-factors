@@ -18,4 +18,4 @@ Fewer than one in $2^{689}$ eligible products have even one *entire* reduced gro
 
 A particular element can get lucky outside that family. For $1{,}577=19\times83$, every signed pair of reduced group sizes contains two numbers with odd prime factors. A chosen quadratic-group element nevertheless reveals 19 in one doubling after the public first power. Lean checks both the group-size statement and the actual gcd. [Checked example at cutoff two](../PrimeFactors/SmoothSignedStructure.lean)
 
-For the ordinary predecessor method, there is also a bound for deterministic starting values. Even using every integer from 2 through $2^{21}$ and any 1,000-smooth exponent can reach fewer than one in $2^{173}$ eligible products. [Fixed-base theorem](trying-every-small-base-in-a-predecessor-sweep.md)
+For the ordinary predecessor method, there is also a bound for deterministic starting values. Even using every integer from 2 through $2^{21}$ and any 1,000-smooth exponent can reach fewer than one in $2^{177}$ eligible products. [Fixed-base theorem](trying-every-small-base-in-a-predecessor-sweep.md)
