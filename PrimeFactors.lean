@@ -730,3 +730,10 @@ import PrimeFactors.CyclotomicRadixLift
 import PrimeFactors.ForcedTotientDivisor
 import PrimeFactors.HybridSmoothWeight
 import PrimeFactors.CyclotomicResiduePacking
+import PrimeFactors.TraceGapMoments
+import PrimeFactors.TraceGapCycle
+import PrimeFactors.SquareTraceGapLift
+import PrimeFactors.FactorSumSpacing
+import PrimeFactors.FactorSumSpacingSmall
+import PrimeFactors.FactorSumSpacingCRT
+import PrimeFactors.UniversalSpacing

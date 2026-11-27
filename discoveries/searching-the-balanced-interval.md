@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+When can a remainder test guarantee that two guesses for the factor sum cannot both pass, just from the distance between them? Exactly four primes can do this. Every modulus built entirely from primes 11 and above admits every distance for every product. [A small example and the proof](which-primes-can-separate-two-factor-sums.md)
+
 The nearest perfect square yielded a correct sum for 21 of 903 small products using a short list of fractions. Even granting every divisor of every square, above and below each product, this particular rule can succeed on fewer than one in $2^{738}$ eligible full-size pairs. [The square test, worked example and coverage proof](can-a-square-reveal-the-prime-sum.md)
 
 A single digit of a polynomial value gives the exact sum of two 1,024-bit primes. A count of consecutive integers gives a second formula that tolerates a specified counting error. The proofs identify the values that would suffice. Computing either from the product alone at low cost is still open. [Both formulas and the cost of using them](two-ways-to-read-the-prime-sum.md)

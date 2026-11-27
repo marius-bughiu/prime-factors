@@ -28,7 +28,8 @@ theorem card_admissibleSum_eq (n : ZMod ℓ) (hn : n ≠ 0) :
   let e := Equiv.subtypeEquivRight fun s => (mem_factorSumResidues_iff ℓ (s := s) hn).symm
   exact (Nat.card_congr e).trans (by rw [Nat.card_eq_fintype_card, Fintype.card_coe])
 
-private theorem factorSum_fiber {n x : ZMod ℓ} (hn : n ≠ 0) (hx : x ≠ 0) :
+/-- The full fiber of a nonzero trace input consists of that input and its complementary factor. -/
+theorem factorSum_fiber {n x : ZMod ℓ} (hn : n ≠ 0) (hx : x ≠ 0) :
     (Finset.univ.erase 0).filter (fun z => z + n / z = x + n / x) = {x, n / x} := by
   let y := n / x
   have hy : y ≠ 0 := div_ne_zero hn hx
