@@ -2,7 +2,7 @@
 from math import gcd, isqrt
 from time import perf_counter
 
-from scripts.factor import verify_file
+from scripts.factor import render_certificate, verify_file
 
 
 def search(n):
@@ -119,6 +119,31 @@ end PrimeFactors.Generated.EndpointOffset
     return dict(proof=f'proofs/{path.name}', seconds=perf_counter()-start)
 
 
+def certify_anchor_pair(result, proof, n, factor):
+    """Use the library's prime proof only after the search has returned a divisor."""
+    start = perf_counter()
+    partner = n//factor
+    single = render_certificate(factor, [factor])
+    source = 'import PrimeFactors.NearEndpointPrimes\n' + single + f"""
+namespace PrimeFactors.Generated.EndpointPair
+
+theorem checked : ExactFactorization {n} [{factor}, {partner}] := by
+  have hp : Nat.Prime {factor} := PrimeFactors.Generated.factorization.2 _ (by simp)
+  have hq : Nat.Prime {partner} := by
+    solve_by_elim only [NearEndpointPrimes.smallerOffset_prime, NearEndpointPrimes.largerOffset_prime]
+  exact ExactFactorization.cons (n := {partner}) hp (ExactFactorization.cons (n := 1) hq exactFactorization_nil)
+
+#print axioms checked
+end PrimeFactors.Generated.EndpointPair
+"""
+    proof.write_text(source)
+    written = perf_counter()
+    verify_file(proof, 'PrimeFactors.Generated.EndpointPair.checked')
+    result.update(factors=[str(factor), str(partner)], remaining=[], status='complete',
+                  verified=True, certificate_seconds=written-start,
+                  verification_seconds=perf_counter()-written)
+
+
 def endpoint_offset_case(case, proof, agree, certify_split):
     n = int(case['n'])
     start = perf_counter()
@@ -129,6 +154,10 @@ def endpoint_offset_case(case, proof, agree, certify_split):
         work['ordinary'] = ordinary_distance(n, factor, n//factor)
         work['ordinary_seconds'] = perf_counter()-start
     agree(dict(id=case['id'], **case['checks']), work, case['checks'])
-    result = certify_split(case, proof, factor, elapsed, 'endpoint_offset', work)
+    if factor is not None and case.get('prime_certificate') == 'library-anchor':
+        result = certify_split(case, proof, None, elapsed, 'endpoint_offset', work)
+        certify_anchor_pair(result, proof, n, factor)
+    else:
+        result = certify_split(case, proof, factor, elapsed, 'endpoint_offset', work)
     result['endpoint_offset_receipt'] = receipt(n, work, proof.with_name(proof.stem+'-offset.lean'))
     return result

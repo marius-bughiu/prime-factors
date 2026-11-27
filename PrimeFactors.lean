@@ -569,3 +569,7 @@ import PrimeFactors.HalfGaussProduct
 import PrimeFactors.ReciprocalPrefixPairs
 import PrimeFactors.EndpointOffsetProduct
 import PrimeFactors.EndpointOffsetPopulation
+import PrimeFactors.NearEndpointPrimes
+import PrimeFactors.FixedEndpointPartners
+import PrimeFactors.TopPartnerInterval
+import PrimeFactors.PrimesAtUpperEndpoint
