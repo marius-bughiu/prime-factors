@@ -1,0 +1,239 @@
+{
+  "policy": "By increasing b then a, test coprime 2 <= a/b < 5, b <= 8, a*b dividing ceil(sqrt(N)). Stop at the first split.",
+  "sources": "All distinct nine-bit prime pairs and the original 64 scaled-power-menu holdouts plus both full-size controls.",
+  "retrospective": "Nine-bit ceiling uses the true factorization to enumerate all positive divisors of F=(p-1)(q-1); anchors on both sides of N are included.",
+  "nine_bit": {
+    "counts": {
+      "setup_roots": 903,
+      "slopes_visited": 58407,
+      "band_passes": 1076,
+      "divisibility_tests": 1076,
+      "integral_divisors": 43,
+      "quotient_divisions": 24,
+      "parity_passes": 39,
+      "discriminant_roots": 39
+    },
+    "comparison": {
+      "inputs": 903,
+      "bounded_splits": 21,
+      "ceiling_square_all_divisors": 31,
+      "any_square_all_divisors": 191,
+      "at_least_one_below_product": 145,
+      "at_least_one_above_product": 127,
+      "divisors_of_F_examined": 52313,
+      "square_witnesses": 298,
+      "divisor_enumeration_trial_divisions": 340843,
+      "matched_root_fermat_splits": 17,
+      "matched_root_fermat_midpoints_spent": 39,
+      "matched_root_fermat_overlap": 9,
+      "first_weighted_splits": 46,
+      "first_weighted_overlap": 1
+    },
+    "examples": {
+      "ceiling_only": {
+        "n": "69647",
+        "factors": [
+          "257",
+          "271"
+        ],
+        "r": 264,
+        "roots": [
+          264,
+          288
+        ],
+        "public_witness": null
+      },
+      "other_square_only": {
+        "n": "78899",
+        "factors": [
+          "257",
+          "307"
+        ],
+        "r": 281,
+        "roots": [
+          280,
+          288
+        ],
+        "public_witness": null
+      },
+      "bounded": {
+        "n": "102029",
+        "factors": [
+          "257",
+          "397"
+        ],
+        "r": 320,
+        "roots": [
+          320
+        ],
+        "public_witness": {
+          "a": 16,
+          "b": 5,
+          "g": "1024",
+          "prime_sum": "654"
+        }
+      }
+    }
+  },
+  "holdouts": [
+    {
+      "factor_bits": 12,
+      "inputs": 16,
+      "splits": 0,
+      "hits": [],
+      "counts": {
+        "setup_roots": 16,
+        "slopes_visited": 1056,
+        "band_passes": 23,
+        "divisibility_tests": 23,
+        "integral_divisors": 1,
+        "quotient_divisions": 0,
+        "parity_passes": 1,
+        "discriminant_roots": 1
+      }
+    },
+    {
+      "factor_bits": 20,
+      "inputs": 16,
+      "splits": 0,
+      "hits": [],
+      "counts": {
+        "setup_roots": 16,
+        "slopes_visited": 1056,
+        "band_passes": 19,
+        "divisibility_tests": 19,
+        "integral_divisors": 0,
+        "quotient_divisions": 0,
+        "parity_passes": 0,
+        "discriminant_roots": 0
+      }
+    },
+    {
+      "factor_bits": 28,
+      "inputs": 16,
+      "splits": 0,
+      "hits": [],
+      "counts": {
+        "setup_roots": 16,
+        "slopes_visited": 1056,
+        "band_passes": 11,
+        "divisibility_tests": 11,
+        "integral_divisors": 0,
+        "quotient_divisions": 0,
+        "parity_passes": 0,
+        "discriminant_roots": 0
+      }
+    },
+    {
+      "factor_bits": 36,
+      "inputs": 16,
+      "splits": 0,
+      "hits": [],
+      "counts": {
+        "setup_roots": 16,
+        "slopes_visited": 1056,
+        "band_passes": 24,
+        "divisibility_tests": 24,
+        "integral_divisors": 1,
+        "quotient_divisions": 1,
+        "parity_passes": 1,
+        "discriminant_roots": 1
+      }
+    }
+  ],
+  "controls": [
+    {
+      "id": "target-norm-fresh-2048",
+      "n": "25067451334544632587676752355566274357548988272530899574271012593889187890842884590747554035870028857394303502340450448990843042568045550686544792304829603909208622617685509064100900286448378278765847984155087841717182757575006354107523467549211565895308252270697520059188581738686434920887879154957893261833293747160548090963065355828585650723608343509588478711384614294400106918624252439145656193214226824644840120016954933453930334581515315853547205476204395164151612150026222682495162932555530027644973156872337604358398088411879851111145810975935069840901619862262631361112858537963761578009317337619737608898479",
+      "factor_bits": 1024,
+      "result": {
+        "pair": [],
+        "r": "158327039176966334715448284019718823474497913662177975160442996009439310669941017429676080400185006424773254142252582891257193029659269227070095120289800339855421063931472090621260003180611046788905349147963313017385074143012442899089952314244753217806428276920663827209779196401916113023989449483782760844630",
+        "shift": "188584360453183375680645889921259353888043762381103633999438982465752338743221451312382421621529189137745430482602083399757344546317445758969512004021145286360112380107530084538330584336754091225278429994402059070433139532046064491285749480800851986702726276740563591553013121574255570646990854846133390938421",
+        "slopes_available": 66,
+        "counts": {
+          "setup_roots": 1,
+          "slopes_visited": 66,
+          "band_passes": 1,
+          "divisibility_tests": 1,
+          "integral_divisors": 0,
+          "quotient_divisions": 0,
+          "parity_passes": 0,
+          "discriminant_roots": 0
+        },
+        "witness": null
+      }
+    },
+    {
+      "id": "target-norm-crossed-2048",
+      "n": "18235237592309485695022717500584076834228742012137848692162518020978118330670298290562456426810101243915588566219126668755415360373629950817644531102840147168807721411128576610077370297128672185922697990174697797877023148638300250217898029403807743399403470882749087896494117442930327898728993236265159221191304843910091543703340279881486076234533009216452089916355489317599474401910447859622267052036598859256561156192908144641101500840415742300094826816004821857915899867583179777285615085535823553451865231616820876501603740836250921424292114568739597717105285840494859549175008035791093210162150329267779081863169",
+      "factor_bits": 1024,
+      "result": {
+        "pair": [],
+        "r": "135037911685235586269825030135549325391376915966798636179319977077209993450011760943044181307768476527897818717675959823440307553022185653953812606479930673789391793187765141283074720630433120513417190939648203494531748575804685158519937612233285802863014656458801051235008057526662884995918450838938076904615",
+        "shift": "192344466162647833313065745218181501620779649529062632895747402344521915738836881930904177052050594103565765278983209446917362938096633819963025023858277770749098640747540021910061824156899677547214601405907203841934172064068865421759771985271426596146160993621521669370839501185623576872023584444280726435056",
+        "slopes_available": 66,
+        "counts": {
+          "setup_roots": 1,
+          "slopes_visited": 66,
+          "band_passes": 2,
+          "divisibility_tests": 2,
+          "integral_divisors": 0,
+          "quotient_divisions": 0,
+          "parity_passes": 0,
+          "discriminant_roots": 0
+        },
+        "witness": null
+      }
+    }
+  ],
+  "constructed": {
+    "u": 1000022,
+    "n": "576025322278297",
+    "factor_bits": 25,
+    "result": {
+      "pair": [
+        "18000397",
+        "32000701"
+      ],
+      "r": "24000528",
+      "shift": "22000487",
+      "slopes_available": 66,
+      "counts": {
+        "setup_roots": 1,
+        "slopes_visited": 2,
+        "band_passes": 1,
+        "divisibility_tests": 1,
+        "integral_divisors": 1,
+        "quotient_divisions": 0,
+        "parity_passes": 1,
+        "discriminant_roots": 1
+      },
+      "witness": {
+        "a": 3,
+        "b": 1,
+        "g": "72001584",
+        "prime_sum": "50001098"
+      }
+    },
+    "ordinary": {
+      "limit": 2097152,
+      "setup_roots": 1,
+      "midpoint_roots": 1000022,
+      "pair": [
+        "18000397",
+        "32000701"
+      ]
+    },
+    "weighted": {
+      "odd_trace": "576012661",
+      "square_tests": 1,
+      "setup_roots": 1,
+      "gcds": 1,
+      "pair": [
+        "18000397",
+        "32000701"
+      ]
+    }
+  }
+}

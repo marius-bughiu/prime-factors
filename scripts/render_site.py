@@ -1109,6 +1109,11 @@ def case_row(result):
         if w['witness']:
             hit = w['witness']
             count += (f" · convergent {hit['index']} was {escape(hit['numerator'])}/{escape(hit['denominator'])}")
+    elif result['method'] == 'square-anchor-slopes':
+        work = result['square_anchor_slopes']['counts']
+        count = (f"{work['slopes_visited']:,} fractions · {work['divisibility_tests']:,} divisibility tests"
+                 f" · {work['discriminant_roots']:,} candidate square roots"
+                 f" · {work['setup_roots']:,} setup square root")
     elif result['method'] == 'shifted-sum-divisors':
         run = result['shifted_sum_divisors']
         cost = run['work']

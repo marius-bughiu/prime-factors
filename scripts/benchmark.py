@@ -88,6 +88,7 @@ from experiments.rectangular_receipt import benchmark as rectangular_case
 from experiments.power_denominator_census import run_fixture as power_ratio_search
 from experiments.scaled_power_menu import run_fixture as scaled_power_search
 from experiments.intermediate_totient_rows import run_fixture as intermediate_totient_search
+from experiments.square_anchor_slopes import benchmark_case as square_anchor_case
 from experiments.shifted_sum_divisors import search as shifted_sum_divisors_search
 from experiments.local_gap_polynomial import run_fixture as local_gap_search, check_fixture as check_local_gap
 from experiments.weighted_global_trace import run_fixture as weighted_trace_search, check_fixture as check_weighted_trace
@@ -1544,6 +1545,8 @@ end PrimeFactors.Generated
         agree(dict(id=case['id'], **case['checks']), work, case['checks'])
         pair = work['pair']
         result = certify_split(case, proof, pair[0] if pair else None, elapsed, 'shifted_sum_divisors', work)
+    elif method == 'square-anchor-slopes':
+        result = square_anchor_case(case, proof, agree, certify_split)
     elif method == 'intermediate-totient-rows':
         work = intermediate_totient_search(case)
         elapsed = time.perf_counter() - start
@@ -2056,6 +2059,7 @@ def main():
                              ('power-ratio-remainder.json', 'power-ratio-remainder'),
                              ('scaled-power-menu.json', 'scaled-power-menu'),
                              ('intermediate-totient-rows.json', 'intermediate-totient-rows'),
+                             ('square-anchor-slopes.json', 'square-anchor-slopes'),
                              ('shifted-sum-divisors.json', 'shifted-sum-divisors'),
                              ('local-gap-polynomial.json', 'local-gap-polynomial'),
                              ('weighted-global-trace.json', 'weighted-global-trace'),
