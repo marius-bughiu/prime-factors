@@ -1,3 +1,5 @@
+<!-- A potential major factoring breakthrough requires private human review before any public push or pull request. See CONTRIBUTING.md under Responsible disclosure. -->
+
 ## Claim and scope
 
 State the theorem or observed improvement, its assumptions, and the input family.
