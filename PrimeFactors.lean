@@ -659,3 +659,5 @@ import PrimeFactors.HyperbolicNormArc
 import PrimeFactors.NegativeTargetObstruction
 import PrimeFactors.NormUnitInterval
 import PrimeFactors.ThreeNormCurves
+import PrimeFactors.SignedCurveSchedule
+import PrimeFactors.CompleteCurveSigns

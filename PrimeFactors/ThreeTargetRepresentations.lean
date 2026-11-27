@@ -8,9 +8,9 @@ namespace PrimeFactors.ThreeTargetRepresentations
 
 open SmallDiscriminantLattice
 
-private def values : List ℤ := [-1,2,-2,3,-3,6,-6]
+def values : List ℤ := [-1,2,-2,3,-3,6,-6]
 
-private theorem value_bounds {D : ℤ} (mem : D∈values) :
+theorem value_bounds {D : ℤ} (mem : D∈values) :
     0<abs D ∧ abs D≤6 ∧ ¬IsSquare (D:ℚ) := by
   rw [Rat.isSquare_intCast_iff]
   simp only [values,List.mem_cons,List.not_mem_nil,or_false] at mem
@@ -33,7 +33,7 @@ private theorem opposite_distinct {p : ℕ} [Fact p.Prime] (large : 3<p) {D : �
   have xzero := (mul_eq_zero.mp z).resolve_left (by exact_mod_cast ZMod.prime_ne_zero p 2 (by omega))
   exact value_unit large mem (by simpa [xzero] using square.symm)
 
-private theorem second_root {p q : ℕ} [Fact p.Prime] [Fact q.Prime] (cop : p.Coprime q)
+theorem second_root {p q : ℕ} [Fact p.Prime] [Fact q.Prime] (cop : p.Coprime q)
     (lp : 3<p) (lq : 3<q) {D : ℤ} (mem : D∈values)
     (r : ZMod (p*q)) (root : r^2=D) : ∃ t, t^2=(D:ZMod (p*q)) ∧ r≠t ∧ r≠-t := by
   let e := ZMod.chineseRemainder cop
