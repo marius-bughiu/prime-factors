@@ -82,6 +82,7 @@ from scripts.complementary_key_benchmark import case_result as complementary_key
 from scripts.signed_discriminant_benchmark import signed_discriminant_case
 from experiments.projected_divisor_wheel import run as projected_divisor_search
 from experiments.target_norm_multipliers import scan as target_norm_search
+from experiments.three_root_targets import attempt as three_root_search
 from scripts.reciprocal_anchor_benchmark import run_case as reciprocal_anchor_case
 from experiments.neighbor_factorial import benchmark_case as neighbor_factorial_case
 from scripts.two_interior_benchmark import two_interior_case
@@ -1511,6 +1512,15 @@ end PrimeFactors.Generated
         result = twelve_residue_case(case, proof, agree, certify_split)
     elif method == 'complementary-keys':
         result = complementary_key_case(case, proof, agree, certify_split)
+    elif method == 'three-root-targets':
+        work = three_root_search(int(case['n']), case['rule'], budget=case['budget'],
+                                 limit=case['multiplier_limit'], depth=case['steps_per_multiplier'])
+        elapsed = time.perf_counter() - start
+        agree(dict(id=case['id'], **case['checks']), work, case['checks'])
+        factor = work['hit']['factor'] if work['hit'] else None
+        work.update(rule=case['rule'], budget=case['budget'], multiplier_limit=case['multiplier_limit'],
+                    steps_per_multiplier=case['steps_per_multiplier'])
+        result = certify_split(case, proof, factor, elapsed, 'three_root_targets', work)
     elif method == 'target-norm-multiplier':
         work = target_norm_search(int(case['n']), case['multiplier_limit'], case['steps_per_multiplier'], True)
         elapsed = time.perf_counter() - start
@@ -1960,6 +1970,7 @@ def main():
                              ('complementary-keys.json', 'complementary-keys'),
                              ('signed-discriminant-menu.json', 'signed-discriminant-menu'),
                              ('target-norm-multipliers.json', 'target-norm-multiplier'),
+                             ('three-root-targets.json', 'three-root-targets'),
                              ('projected-divisor-wheel.json', 'projected-divisor-wheel'),
                              ('reciprocal-anchors.json', 'reciprocal-anchor'),
                              ('neighbor-factorial.json', 'neighbor-factorial'),

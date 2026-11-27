@@ -38,6 +38,7 @@ jobs:
           python3 -m experiments.affine_prime_signs
           python3 -m experiments.projected_wheel_receipt --check
           lake env lean benchmarks/controls/ProjectedWheelPrivate.lean
+          python3 -m experiments.three_target_limits
       - name: Generate progress report
         run: python3 scripts/render_site.py
       - name: Upload verified main artifact

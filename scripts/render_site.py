@@ -1091,6 +1091,21 @@ def case_row(result):
             ordinary = work['ordinary']
             outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
             count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
+    elif result['method'] == 'three-root-targets':
+        w = result['three_root_targets']
+        targets = ', '.join(str(d) for d in w['targets'])
+        count = (f"Targets {targets} · {w['steps']:,} of {w['budget']:,} continued-fraction steps"
+                 f" · {w['walks']:,} expansions · {w['square_tests']:,} remainder square tests"
+                 f" · {len(w['roots'])} targets with a root")
+        hit = w['hit']
+        if hit and hit['kind'] == 'three roots':
+            evidence += ('<p>The three roots were multiplied modulo the input, then divided by the integer '
+                         'square root of the product of the three targets. The result squared to 1. '
+                         'Subtracting 1 and taking the gcd with the input gave the divisor.</p>')
+        elif hit and hit['kind'] == 'two roots':
+            evidence += f"<p>The gcd of the input and the difference between two roots of {hit['target']} yielded the divisor.</p>"
+        elif hit:
+            evidence += f"<p>The search found the divisor by a {escape(hit['kind'])}.</p>"
     elif result['method'] == 'target-norm-multiplier':
         w = result['target_norm']
         count = (f"Square-root target {w['target']} · skipped {w['skipped_multipliers']} of "

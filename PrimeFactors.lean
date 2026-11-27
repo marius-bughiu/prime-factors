@@ -645,3 +645,13 @@ import PrimeFactors.PrimeResidueRealization
 import PrimeFactors.PrimeResidueSignWheel
 import PrimeFactors.TargetNormMultiplierDensity
 import PrimeFactors.SameSignSumWindow
+import PrimeFactors.ThreeRootTargets
+import PrimeFactors.TargetSignedNorm
+import PrimeFactors.ShortRootNorm
+import PrimeFactors.ShortRootNormPositive
+import PrimeFactors.TargetNormConic
+import PrimeFactors.TargetNormConvergents
+import PrimeFactors.TargetNormLocalGlobal
+import PrimeFactors.SmallConvergentTargetPopulation
+import PrimeFactors.SmallDiscriminantLattice
+import PrimeFactors.ThreeTargetRepresentations
