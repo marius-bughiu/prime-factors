@@ -33,6 +33,21 @@ theorem signed_local {F : Type*} [Field F] (f : R →+* F) (x y : Rˣ) :
     ← map_inv (Units.map f.toMonoidHom)]
   exact or_congr Units.ext_iff Units.ext_iff
 
+/-- A global equality has gcd N. A global inverse has exactly the already
+computed right precheck gcd, including when that precheck found a factor. -/
+theorem cached_readouts {n : ℕ} (y : (ZMod n)ˣ) :
+    ((y:ZMod n)-(y:ZMod n)).val.gcd n = n ∧
+    ((↑(y⁻¹):ZMod n)-(y:ZMod n)).val.gcd n = ((y:ZMod n)^2-1).val.gcd n := by
+  constructor
+  · simp
+  have scale (u : (ZMod n)ˣ) (z : ZMod n) : ((u:ZMod n)*z).val.gcd n = z.val.gcd n := by
+    rw [ZMod.val_mul, ← Nat.gcd_rec n, Nat.gcd_comm]
+    exact (ZMod.val_coe_unit_coprime u).gcd_mul_left_cancel _
+  have eq : ((↑(-y)):ZMod n)*((↑(y⁻¹):ZMod n)-(y:ZMod n))=(y:ZMod n)^2-1 := by
+    rw [Units.val_neg,neg_mul,mul_sub,Units.mul_inv,pow_two]
+    ring
+  rw [←eq,scale]
+
 /-- Each projected batch vanishes exactly when there is a locally equal,
 globally different residue. -/
 theorem local_iff {F : Type*} [Field F] (f : R →+* F) (A : Finset R) (y : R) :

@@ -41,7 +41,8 @@ class TraceBasePopulationTests(unittest.TestCase):
     def test_reproduce_large_controls(self):
         rows = report()
         self.assertEqual(rows, json.loads(RECORD.read_text()))
-        for row, power, count in zip(rows, (1021, 717), (48, 0), strict=True):
+        self.assertEqual(len(rows), 2)
+        for row, power, count in zip(rows, (1021, 717), (48, 0)):
             def total(key):
                 return sum(int(group[key]) for group in row["totals"].values())
             self.assertGreater(total("units"), 2**2047)

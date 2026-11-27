@@ -64,14 +64,14 @@ theorem mixed_readout {F K : Type*} [Field F] [Field K] (u : Fˣ) (v : Kˣ) (h c
 def Wins (setup : List ℕ) (qs : List Query) (r t : ℕ) : Prop :=
   Clear setup r t ∧ ∃ z∈qs, Branch r t z ∨ Branch t r z
 
-instance (setup : List ℕ) (r t : ℕ) : Decidable (Clear setup r t) := by unfold Clear; infer_instance
-instance (z : Query) (r t : ℕ) : Decidable (Branch r t z) := by unfold Branch; infer_instance
-instance (setup : List ℕ) (qs : List Query) (r t : ℕ) : Decidable (Wins setup qs r t) := by
+noncomputable instance (setup : List ℕ) (r t : ℕ) : Decidable (Clear setup r t) := by unfold Clear; infer_instance
+noncomputable instance (z : Query) (r t : ℕ) : Decidable (Branch r t z) := by unfold Branch; infer_instance
+noncomputable instance (setup : List ℕ) (qs : List Query) (r t : ℕ) : Decidable (Wins setup qs r t) := by
   unfold Wins; infer_instance
 
 /-- If every order dividing the first bound is killed, a base surviving
 setup must also be killed on the second side, and conversely. -/
-def step (bounds : ℕ × ℕ) (e : ℕ) : ℕ × ℕ :=
+noncomputable def step (bounds : ℕ × ℕ) (e : ℕ) : ℕ × ℕ :=
   let b := if bounds.1∣e then bounds.2.gcd e else bounds.2
   (if b∣e then bounds.1.gcd e else bounds.1,b)
 
@@ -98,10 +98,10 @@ theorem sweep_dvd {r t : ℕ} (setup : List ℕ) (b : ℕ × ℕ) (hr : r∣b.1)
     have h := step_dvd hr ht (clear e (by simp))
     exact ih (step b e) h.1 h.2 (fun x hx => clear x (by simp [hx]))
 
-def limits (P Q : ℕ) (setup : List ℕ) (z : Query) : ℕ × ℕ :=
+noncomputable def limits (P Q : ℕ) (setup : List ℕ) (z : Query) : ℕ × ℕ :=
   setup.foldl step (P.gcd z.1,Q.gcd z.2)
 
-def covered (P Q L R : ℕ) (setup : List ℕ) (z : Query) : Bool :=
+noncomputable def covered (P Q L R : ℕ) (setup : List ℕ) (z : Query) : Bool :=
   let b := limits P Q setup z
   decide (b.2∣z.1 ∨ (0<b.1 ∧ b.1≤L ∧ 0<b.2 ∧ b.2≤R))
 
@@ -118,10 +118,10 @@ private theorem bounded {P Q L R r t : ℕ} {setup : List ℕ} {z : Query}
   · exact ⟨(Nat.le_of_dvd yes.1 divs.1).trans yes.2.1,
       (Nat.le_of_dvd yes.2.2.1 divs.2).trans yes.2.2.2⟩
 
-def coverTable (P Q L R : ℕ) (setup : List ℕ) (qs : List Query) : Bool :=
+noncomputable def coverTable (P Q L R : ℕ) (setup : List ℕ) (qs : List Query) : Bool :=
   qs.all fun z => covered P Q L R setup z && covered Q P R L setup z
 
-def orders (P Q L R : ℕ) (setup : List ℕ) (qs : List Query) : Finset (ℕ × ℕ) :=
+noncomputable def orders (P Q L R : ℕ) (setup : List ℕ) (qs : List Query) : Finset (ℕ × ℕ) :=
   ((Icc 1 L) ×ˢ Icc 1 R).filter fun z => z.1∣P ∧ z.2∣Q ∧ Wins setup qs z.1 z.2
 
 theorem order_table {P Q L R r t : ℕ} {setup : List ℕ} {qs : List Query}
