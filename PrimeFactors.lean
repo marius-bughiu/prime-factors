@@ -816,3 +816,11 @@ import PrimeFactors.FourNeighborScaleFrequency
 import PrimeFactors.SquareDivisorClueWindow
 import PrimeFactors.FourSquareDivisorClues
 import PrimeFactors.SquareDivisorCluePopulation
+import PrimeFactors.PrimitiveCharacterParityMoment
+import PrimeFactors.PrimitiveParityAverages
+import PrimeFactors.PrimitiveEvenMean
+import PrimeFactors.PrimitiveParityReadout
+import PrimeFactors.PrimitiveParityPrecision
+import PrimeFactors.PrimitiveIntervalMoment
+import PrimeFactors.PrimitiveIntervalPrecision
+import PrimeFactors.PrimitiveIntervalSampling

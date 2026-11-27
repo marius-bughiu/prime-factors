@@ -1,5 +1,57 @@
 [
   {
+    "id": "primitive-even-mean-factor-sum",
+    "category": "formulas",
+    "title": "One exact character average determines the sum of the primes",
+    "impact": "At 143, the even-family average is 51/25. It gives the sum 24 and the factors 11 and 13. The same formula holds for every product of distinct primes greater than eight.",
+    "scope": "The input to the decoder is an exact average over primitive even Dirichlet characters. At 2,048 bits, candidate sums four apart predict averages less than 2⁻⁴⁰⁸⁷ apart.",
+    "detail": "Even the size of the family determines the factors. The proof leaves open how to obtain the average cheaply from the product alone.",
+    "sources": [
+      {"href": "discoveries/can-short-character-averages-reveal-the-primes.md", "label": "Worked example and precision"},
+      {"href": "PrimeFactors/PrimitiveParityReadout.lean", "label": "Character average and decoder"},
+      {"href": "PrimeFactors/PrimitiveEvenMean.lean", "label": "Spacing and variance"}
+    ]
+  },
+  {
+    "id": "short-primitive-character-moments",
+    "category": "limits",
+    "title": "Ninety-sixth powers still cancel at the small character inputs",
+    "impact": "At every even power through 96, the difference between the even and odd totals is determined entirely by the supplied weights.",
+    "scope": "Two distinct 1,024-bit primes. Every character input from 1 through 2²¹ is allowed, with arbitrary complex weights. The signed totals are unnormalized.",
+    "detail": "Normalization preserves a small signal. With up to 2²¹ weights, moving between two candidate sums four apart changes the predicted normalized even mean by at most 2⁻⁴⁰⁶⁷ times the total squared weight.",
+    "sources": [
+      {"href": "discoveries/can-short-character-averages-reveal-the-primes.md#what-cancels-at-the-small-inputs-suggested-by-grh", "label": "Connection to the GRH input range"},
+      {"href": "PrimeFactors/PrimitiveCharacterParityMoment.lean", "label": "Exact cancellation"},
+      {"href": "PrimeFactors/PrimitiveParityPrecision.lean", "label": "All-weight estimate"}
+    ]
+  },
+  {
+    "id": "long-primitive-character-interval",
+    "category": "formulas",
+    "title": "One longer character sum at a public length determines the factors",
+    "impact": "On 143 the interval length is eight. Its signed total is −44, and every integer reading from −96 through 23 still gives the correct factor sum 24 after rounding.",
+    "scope": "Distinct primes p < q < 2p. The interval length is the integer part of √(N/2), at least 2¹⁰²³ for a full 2,048-bit product.",
+    "detail": "For a balanced 2,048-bit product, an approximation within 2¹⁰²⁵ of the exact total suffices. Obtaining such an approximation cheaply remains open.",
+    "sources": [
+      {"href": "discoveries/can-short-character-averages-reveal-the-primes.md#one-longer-sum-that-does-determine-the-answer", "label": "Worked interval calculation"},
+      {"href": "PrimeFactors/PrimitiveIntervalMoment.lean", "label": "Exact interval sum"},
+      {"href": "PrimeFactors/PrimitiveIntervalPrecision.lean", "label": "Rounding and error tolerance"}
+    ]
+  },
+  {
+    "id": "long-primitive-character-sampling",
+    "category": "limits",
+    "title": "Random sampling almost always misses the terms that carry the factors",
+    "impact": "At 2,048 bits, even 2⁶⁴ independent draws have probability at most 2⁻⁹⁵⁸ of seeing a term that differs from one.",
+    "scope": "Uniform draws with replacement from the ordered index pairs in the long character sum. At 143, ten of the 64 pairs carry a changed term.",
+    "detail": "A pair changes the total only when its index sum equals p or q. Grouping by that index sum gives a direct gcd calculation with 2B−1 diagonals at interval length B.",
+    "sources": [
+      {"href": "discoveries/can-short-character-averages-reveal-the-primes.md#one-longer-sum-that-does-determine-the-answer", "label": "Worked calculation and limits"},
+      {"href": "PrimeFactors/PrimitiveIntervalSampling.lean", "label": "Finite probability count"},
+      {"href": "PrimeFactors/PrimitiveIntervalMoment.lean", "label": "Gcd formula by diagonal"}
+    ]
+  },
+  {
     "id": "four-square-divisor-clue-limits",
     "category": "limits",
     "title": "Four supplied square divisors usually leave at least 2⁵¹⁴ possible sums",
