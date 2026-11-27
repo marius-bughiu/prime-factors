@@ -23,7 +23,8 @@ See https://doi.org/10.1112/S0025579300004708. -/
 def BrunTitchmarsh := ∀ n y : ℕ, 0<n → 1<y →
     ((n+y).primeCounting:ℝ)-n.primeCounting < 2*(y:ℝ)/log y
 
-private theorem count_eq (a b : ℕ) (ab : a≤b) :
+/-- Removing primes up to the left endpoint leaves precisely the open-left interval. -/
+theorem count_eq (a b : ℕ) (ab : a≤b) :
     a.primeCounting+((Ioc a b).filter Nat.Prime).card=b.primeCounting := by
   classical
   let primes (n : ℕ) := (range (n+1)).filter Nat.Prime

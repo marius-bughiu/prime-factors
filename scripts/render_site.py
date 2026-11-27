@@ -1005,11 +1005,15 @@ def case_row(result):
             evidence += f'<p>Previous schedule found {factors_before}. <a href="{link}">Check the prime factors</a></p>'
     elif result['method'] == 'weighted-crowding':
         work = result['weighted_crowding']
-        count = (f"{work['tests']:,} of 2,016 weight pairs · {work['integer_roots']:,} square roots"
+        count = (f"{work['tests']:,} of {work.get('available_tests', 2016):,} weight pairs · {work['integer_roots']:,} square roots"
                  f" · {work['square_hits']} exact squares")
         if work['weights']:
             a, b = work['weights']
             count += f" · first success at weights {a}, {b}"
+        if 'ordinary' in work:
+            ordinary = work['ordinary']
+            outcome = escape(ordinary['found']) if ordinary['found'] else "no factor"
+            count += f" · ordinary Fermat found {outcome} in {ordinary['integer_roots']:,} square roots"
     elif result['method'] == 'quotient-pascal':
         work = result['quotient_pascal']
         receipt = result['quotient_pascal_receipt']

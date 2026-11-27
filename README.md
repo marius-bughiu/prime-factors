@@ -10,7 +10,7 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
-**We recovered another specially constructed 2,048-bit product on test 567 of 2,016.** The fresh and crossed comparison inputs exhausted the same list and gave no square. Classical prime-count estimates imply that at least $2^{1504}$ distinct full-size products yield a factor on this list. Even so, for a uniformly chosen eligible pair its success chance is less than one in $2^{460}$. [Construction, count and probability](discoveries/prime-products-found-by-first-square-tests.md)
+**Ten square tests illustrate both the progress and its limit.** On a deliberately constructed 2,048-bit product, test six found both primes. On the fresh and crossed 2,048-bit comparisons, all ten tests missed. Classical estimates imply that more than $2^{1503}$ distinct full-size products split this way, yet the chance for a uniformly chosen eligible pair is below one in $2^{460}$. [Construction, comparison and proof](discoveries/prime-products-found-by-first-square-tests.md)
 
 Using the product remainder to choose which two ratios to search increased the number of small products factored at the same budget. Among all 592,048 eligible products of two 16-bit primes, the new rule found 64,181 previously missed products and lost 52,191 previously found. At 24 bits per prime it gained 25,789,915 net. It missed all three full-size comparisons. [Rule, populations and full-size width guarantee](discoveries/choosing-two-slopes-from-the-product-remainder.md)
 

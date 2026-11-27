@@ -89,11 +89,13 @@ private theorem energy : points.card^2 ≤ B*collisions.card :=
 
 /-- A prime-count upper bound for a short ordinary interval, the only
 local distribution input used to remove same-weight pairs. -/
-def ShortCount := ∀ n : ℕ, 3*U/4≤n →
-    ((Icc n (n+2^507)).filter Nat.Prime).card ≤ 2^500
+def ShortCountAt (cap : ℕ) := ∀ n : ℕ, 3*U/4≤n →
+    ((Icc n (n+2^507)).filter Nat.Prime).card ≤ cap
 
-private theorem same_part (short : ShortCount) (x : ℕ×ℕ) :
-    ((cell (bucket x)).filter (fun y => x.1=y.1)).card ≤ 2^500 := by
+abbrev ShortCount := ShortCountAt (2^500)
+
+private theorem same_part {cap : ℕ} (short : ShortCountAt cap) (x : ℕ×ℕ) :
+    ((cell (bucket x)).filter (fun y => x.1=y.1)).card ≤ cap := by
   classical
   let s := (cell (bucket x)).filter (fun y => x.1=y.1)
   change s.card ≤ _
@@ -187,31 +189,81 @@ private theorem hit_mem {z : (ℕ×ℕ)×(ℕ×ℕ)} (hz : z∈hits) :
     (z.1∈points ∧ z.2∈points) ∧ bucket z.1=bucket z.2 ∧ z.1.1≠z.2.1 := by
   simpa only [hits,collisions,mem_filter,mem_product,and_assoc] using hz
 
-theorem many_products (population : 2^1011 ≤ pool.card) (localCount : ShortCount) :
-    2^1504 ≤ products.card := by
+/-- Filter the full set of labeled witnesses to a public subset of weights. -/
+noncomputable def menuHits (W : Finset ℕ) :=
+  hits.filter (fun z => z.1.1∈W ∧ z.2.1∈W)
+
+noncomputable def menuProducts (W : Finset ℕ) := (menuHits W).image (fun z => z.1.2*z.2.2)
+
+private theorem encoding_bound (W : Finset ℕ) (rows : Finset ((ℕ×ℕ)×(ℕ×ℕ)))
+    (subset : rows⊆hits) (uses : ∀ z∈rows, z.1.1∈W ∧ z.2.1∈W) :
+    rows.card ≤ W.card^2*((rows.image (fun z => z.1.2*z.2.2)).card)*2 := by
   let encode (z : (ℕ×ℕ)×(ℕ×ℕ)) :=
     ((z.1.1,z.2.1),(z.1.2*z.2.2, decide (z.1.2≤z.2.2)))
-  have count : hits.card ≤ ((weights ×ˢ weights) ×ˢ (products ×ˢ (univ : Finset Bool))).card := by
+  let ns := rows.image (fun z => z.1.2*z.2.2)
+  have count : rows.card ≤ ((W ×ˢ W) ×ˢ (ns ×ˢ (univ : Finset Bool))).card := by
     apply card_le_card_of_injOn encode
     · intro z hz
-      have ⟨pairs,_,_⟩ := hit_mem hz
-      change _ ∈ (_ ×ˢ _)
-      apply mem_product.mpr
-      refine ⟨mem_product.mpr ⟨?_,?_⟩,mem_product.mpr ⟨mem_image_of_mem _ hz,mem_univ _⟩⟩
-      · exact (mem_product.mp (show z.1∈weights ×ˢ pool from pairs.1)).1
-      · exact (mem_product.mp (show z.2∈weights ×ˢ pool from pairs.2)).1
+      exact mem_product.mpr ⟨mem_product.mpr (uses z hz),
+        mem_product.mpr ⟨mem_image_of_mem _ hz,mem_univ _⟩⟩
     · intro z hz t ht eq
-      have hz' := hit_mem hz
-      have ht' := hit_mem ht
+      have hz' := hit_mem (subset hz)
+      have ht' := hit_mem (subset ht)
       change encode z = encode t at eq
       simp only [encode,Prod.mk.injEq] at eq
-      have recover := equal_factors (info hz'.1.1).2.2 (info ht'.1.1).2.2
+      have recov := equal_factors (info hz'.1.1).2.2 (info ht'.1.1).2.2
         (info ht'.1.2).2.2 eq.2.1 eq.2.2
-      exact Prod.ext (Prod.ext eq.1.1 recover.1) (Prod.ext eq.1.2 recover.2)
-  have w : weights.card = 64 := by rw [weights_def,Nat.card_Ico]
-  simp only [card_product,w,card_univ,Fintype.card_bool] at count
+      exact Prod.ext (Prod.ext eq.1.1 recov.1) (Prod.ext eq.1.2 recov.2)
+  simpa only [card_product,card_univ,Fintype.card_bool,sq,Nat.mul_assoc,ns] using count
+
+theorem many_products (population : 2^1011 ≤ pool.card) (localCount : ShortCount) :
+    2^1504 ≤ products.card := by
+  have bound := encoding_bound weights hits (fun _ h => h) (by
+    intro z hz
+    have data := (hit_mem hz).1
+    exact ⟨(mem_product.mp (show z.1∈weights ×ˢ pool from data.1)).1,
+      (mem_product.mp (show z.2∈weights ×ˢ pool from data.2)).1⟩)
+  change hits.card ≤ weights.card^2*products.card*2 at bound
+  rw [show weights.card=64 by rw [weights_def,Nat.card_Ico]] at bound
   have number := many_hits population localCount
   omega
+
+/-- For a fixed smaller menu, retain the exact bin count and local prime cap
+before rounding. The witness count, the discarded same-weight pairs and
+the possible repetitions of each product are all included. -/
+theorem menu_counts (W : Finset ℕ) (sub : W⊆weights) (bins cap : ℕ)
+    (map : ∀ x∈W ×ˢ pool, bucket x < bins) (short : ShortCountAt cap) :
+    ∃ total diagonal : ℕ, (W.card*pool.card)^2 ≤ bins*total ∧
+      diagonal ≤ (W.card*pool.card)*cap ∧ diagonal+(menuHits W).card=total ∧
+      (menuHits W).card ≤ W.card^2*(menuProducts W).card*2 := by
+  let s := W ×ˢ pool
+  let all := (s ×ˢ s).filter (fun z => bucket z.1=bucket z.2)
+  have inc {x} (h : x∈s) : x∈points :=
+    mem_product.mpr ⟨sub (mem_product.mp h).1,(mem_product.mp h).2⟩
+  have en := bucket_energy s bucket bins (fun x hx => mem_range.mpr (map x hx))
+  have bad := diagonal_count s bucket Prod.fst cap (by
+    intro x
+    apply le_trans _ (same_part short x)
+    apply card_le_card
+    intro y hy
+    simp only [mem_filter] at hy
+    exact mem_filter.mpr ⟨mem_filter.mpr ⟨inc hy.1.1,hy.1.2⟩,hy.2⟩)
+  have partition := filter_card_add_filter_neg_card_eq_card (s:=all) (fun z => z.1.1=z.2.1)
+  have good : (all.filter (fun z => ¬ z.1.1=z.2.1)) = menuHits W := by
+    ext z
+    simp only [all,s,menuHits,hits,collisions,points,mem_filter,mem_product]
+    constructor
+    · rintro ⟨⟨⟨⟨a,p⟩,b,q⟩,eq⟩,ne⟩
+      exact ⟨⟨⟨⟨⟨sub a,p⟩,sub b,q⟩,eq⟩,ne⟩,a,b⟩
+    · rintro ⟨⟨⟨⟨⟨_,p⟩,_,q⟩,eq⟩,ne⟩,a,b⟩
+      exact ⟨⟨⟨⟨a,p⟩,b,q⟩,eq⟩,ne⟩
+  change s.card^2 ≤ bins*all.card at en
+  change (all.filter (fun z => z.1.1=z.2.1)).card ≤ s.card*cap at bad
+  rw [good] at partition
+  have size : s.card=W.card*pool.card := card_product _ _
+  rw [size] at en bad
+  refine ⟨all.card,_,en,bad,partition,?_⟩
+  exact encoding_bound W (menuHits W) (filter_subset _ _) (fun _ h => (mem_filter.mp h).2)
 
 /-- The two scaled factors in a common bucket give the very first possible
 integer trace, before sieving or any later square tests. -/

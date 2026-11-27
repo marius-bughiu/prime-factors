@@ -561,3 +561,6 @@ import PrimeFactors.PrimeGapPopulation
 import PrimeFactors.GeometryWeightMenu
 import PrimeFactors.WeightedPrimeCrowding
 import PrimeFactors.WeightedCrowdingEstimates
+import PrimeFactors.CrowdingOrdinarySeparation
+import PrimeFactors.FiveWeightEstimates
+import PrimeFactors.FiveWeightMenu
