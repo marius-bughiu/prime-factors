@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+At a larger modular-curve level, one genus estimate with error at most the square root of the level would recover the exact factor sum. Enumerating the curve recovered 527 at a considerable cost. We ruled out two inexpensive estimates, including the published average over levels. Counting the points fixed by a matrix gives a different piece of information, which can remain unchanged as the matrix is raised to higher powers. [Genus, required accuracy and experiment](how-accurately-a-modular-genus-would-determine-the-factors.md) · [What fixed points measure](what-projective-fixed-lines-count.md)
+
 Even testing every one of the 121 sums from the upper word and remainder can succeed on fewer than one in $2^{491}$ eligible 2,048-bit prime pairs. The bound covers any way of choosing among those sums, including one that reads the entire product. [Proof of how often the block contains the true sum](how-often-the-121-sums-can-work.md)
 
 Two ways to pick the same highest-scoring sum cost fewer square roots. A fixed table used one setup root on each full-size control. An integer test that ruled out every later midpoint took three setup roots on each. Both controls stayed unfactored. [Lookup table and full cost comparison](choosing-the-same-sum-with-small-square-roots.md) · [When later midpoints can be skipped](when-to-stop-counting-factor-sums.md)

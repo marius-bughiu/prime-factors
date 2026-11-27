@@ -1,5 +1,66 @@
 [
   {
+    "id": "recovering-a-factor-sum-from-a-genus",
+    "category": "formulas",
+    "title": "A modular curve gives the factor sum of 527",
+    "impact": "The genus at level 2,108 was 283. It gives a factor sum of 48 and the primes 17 and 31.",
+    "scope": "The relation holds for every product of two distinct odd primes. We computed the genus directly on this small example.",
+    "detail": "Enumeration took 10,236 gcd tests. Test 106 had already exposed 17, and ordinary trial division reaches it in eight odd-divisor tests.",
+    "sources": [
+      {"href": "discoveries/how-accurately-a-modular-genus-would-determine-the-factors.md", "label": "How the count was obtained"},
+      {"href": "PrimeFactors/ModularCurveGenus.lean", "label": "Lean recovery proof"},
+      {"href": "benchmarks/modular-curve-counts.json", "label": "Measured examples"}
+    ]
+  },
+  {
+    "id": "dyadic-genus-precision",
+    "category": "formulas",
+    "title": "A square-root error bound would suffice at a larger level",
+    "impact": "For a 2,048-bit product, one genus estimate at a 4,101-bit level would determine both factors if its error were at most the square root of that level.",
+    "scope": "Lean checks the precision and recovery from the classical genus equation. A way to obtain such an estimate efficiently remains open.",
+    "detail": "On the small product 15, increasing the level gave genera 17, 81 and 353. All three recover the same divisor sum. The cost of enumeration quadrupled at each step.",
+    "sources": [
+      {"href": "discoveries/how-accurately-a-modular-genus-would-determine-the-factors.md", "label": "Precision and costs"},
+      {"href": "PrimeFactors/DyadicGenusPrecision.lean", "label": "Lean precision proof"}
+    ]
+  },
+  {
+    "id": "mean-genus-error",
+    "category": "limits",
+    "title": "The average genus misses the necessary accuracy",
+    "impact": "On every amplified level in the balanced 2,048-bit family, the published mean coefficient overestimates the genus by more than 2²⁰⁴⁰ times the square-root error target.",
+    "scope": "This rules out applying the all-level average directly to an individual level. Other arithmetic estimates remain open.",
+    "detail": "A second inexpensive estimate substitutes the first Fermat sum. It meets the target precisely on products where that first sum already gives both primes.",
+    "sources": [
+      {"href": "discoveries/how-accurately-a-modular-genus-would-determine-the-factors.md", "label": "The two estimates"},
+      {"href": "PrimeFactors/DyadicGenusAverage.lean", "label": "Lean mean-error bound"}
+    ]
+  },
+  {
+    "id": "what-projective-fixed-lines-count",
+    "category": "formulas",
+    "title": "Four fixed directions distinguish two positive Jacobi symbols",
+    "impact": "Two matrices modulo 77 both give a Jacobi symbol of +1. One preserves four directions and the other preserves none.",
+    "scope": "For an odd semiprime and a matrix with invertible determinant and discriminant, an exact count detects whether the discriminant is a square modulo the product.",
+    "detail": "The converse also holds. A general procedure to obtain these counts would decide quadratic residuosity. The proof identifies the missing information without supplying a fast count.",
+    "sources": [
+      {"href": "discoveries/what-projective-fixed-lines-count.md", "label": "Worked example at 77"},
+      {"href": "PrimeFactors/ProjectiveFixedLines.lean", "label": "Lean fixed-point counts"}
+    ]
+  },
+  {
+    "id": "projective-counts-under-powers",
+    "category": "limits",
+    "title": "Powers of one matrix keep the same fixed directions until a scalar appears",
+    "impact": "If a matrix power is nonscalar at both hidden primes, its fixed directions stay exactly the same at both primes.",
+    "scope": "This covers every power of one invertible two-by-two matrix. Products of different matrices can change the directions.",
+    "detail": "On 77, cubing a matrix raised the count from four to sixteen. Its entries already gave the divisor 7 before the count.",
+    "sources": [
+      {"href": "discoveries/what-projective-fixed-lines-count.md", "label": "Why the count changed"},
+      {"href": "PrimeFactors/ProjectiveWordCounts.lean", "label": "Lean power theorem"}
+    ]
+  },
+  {
     "id": "how-often-the-121-sums-can-work",
     "category": "limits",
     "title": "Even all 121 sums cover fewer than one prime pair in 2⁴⁹¹",

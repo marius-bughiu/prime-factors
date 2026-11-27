@@ -760,3 +760,8 @@ import PrimeFactors.HighWordSuffixCost
 import PrimeFactors.WordBlockFrequency
 import PrimeFactors.FractionalWordRanking
 import PrimeFactors.WordRankingTail
+import PrimeFactors.ModularCurveGenus
+import PrimeFactors.DyadicGenusPrecision
+import PrimeFactors.DyadicGenusAverage
+import PrimeFactors.ProjectiveFixedLines
+import PrimeFactors.ProjectiveWordCounts

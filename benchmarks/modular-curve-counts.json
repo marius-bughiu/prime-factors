@@ -1,0 +1,22 @@
+[
+  {
+    "n": "527", "level": 2108, "factors": ["17", "31"], "genus": 283,
+    "work": {"normalizations": 6912, "unit_gcd_tests": 10236, "modular_inverses": 6912, "max_gcd_tests_per_normalization": 6},
+    "first_normalization_factor": {"divisor": 17, "normalization": 80, "unit_gcd_test": 106}
+  },
+  {
+    "n": "15", "level": 120, "factors": ["3", "5"], "genus": 17,
+    "work": {"normalizations": 576, "unit_gcd_tests": 1208, "modular_inverses": 576, "max_gcd_tests_per_normalization": 6},
+    "first_normalization_factor": {"divisor": 3, "normalization": 6, "unit_gcd_test": 8}
+  },
+  {
+    "n": "15", "level": 480, "factors": ["3", "5"], "genus": 81,
+    "work": {"normalizations": 2304, "unit_gcd_tests": 4832, "modular_inverses": 2304, "max_gcd_tests_per_normalization": 6},
+    "first_normalization_factor": {"divisor": 3, "normalization": 6, "unit_gcd_test": 8}
+  },
+  {
+    "n": "15", "level": 1920, "factors": ["3", "5"], "genus": 353,
+    "work": {"normalizations": 9216, "unit_gcd_tests": 19328, "modular_inverses": 9216, "max_gcd_tests_per_normalization": 6},
+    "first_normalization_factor": {"divisor": 3, "normalization": 6, "unit_gcd_test": 8}
+  }
+]

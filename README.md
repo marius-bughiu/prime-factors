@@ -12,6 +12,8 @@ For example, take 10,403. The next square is 10,404, which is $102^2$. That give
 
 ## What did the experiments find?
 
+**A geometric count determines the sum of the two primes.** At 527 the count gave 48, which recovers 17 and 31. Computing it took 10,236 gcd tests, and one of the first 106 had already found 17. For a 2,048-bit product, Lean establishes how accurate an estimate of this count at a larger level would need to be. The published average misses the target on the entire balanced family. [Counting experiment and precision proof](discoveries/how-accurately-a-modular-genus-would-determine-the-factors.md)
+
 **A failed square guess can narrow the next one.** For 2,748,959, the next square is 1,658², just five higher. Three possible factor sums survive the width bounds and several small remainder tests. That difference of five selects 3,360, giving 1,409 × 1,951. On the smaller 174,719 example, the existing remainder rule already singled out the answer. [Worked cases and costs](discoveries/a-fifth-root-test-for-the-factor-sum.md) · [Full-size limit on spacing tests](discoveries/why-the-factor-sum-spacing-repeats.md)
 
 **Can a nearby square tell us the primes?** Starting with 102,029, a divisor of the next square gave the exact sum 654 and the primes 257 and 397. The same short list of guesses missed all 64 larger comparison products and both 2,048-bit examples. Lean also bounds how often *any* square can supply the right sum by this rule. [Calculation and limits](discoveries/can-a-square-reveal-the-prime-sum.md)
