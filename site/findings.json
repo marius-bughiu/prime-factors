@@ -1,5 +1,23 @@
 [
   {
+    "id": "one-shared-table-to-generate-only-passing-sums",
+    "category": "gains",
+    "title": "One shared table cuts generated sums to under 6.494% of the old search",
+    "impact": "Setup and the remaining three small residue checks together cost under 10.901 lookups per 100 original candidates across all eligible full-size products.",
+    "scope": "The earlier score order on distinct 1,024-bit prime pairs with a 2,048-bit product. Packed table contents occupy at most 7,035 bytes after setup.",
+    "detail": "Up to ten starting residues can use one cyclic list. Setup can dominate short searches. The same candidates reach the final square test. The counts exclude bitset creation and pointer updates.",
+    "sources": [
+      {
+        "href": "discoveries/skipping-rejected-sums-with-one-small-table.md",
+        "label": "Costs, table sizes and small examples"
+      },
+      {
+        "href": "PrimeFactors/SharedThreeSquareScoreWheel.lean",
+        "label": "Table traversal and accounted lookup work"
+      }
+    ]
+  },
+  {
     "id": "six-public-square-filters-through-the-true-sum",
     "category": "gains",
     "title": "Six public remainder checks remove over 99.3319% of exact square tests",

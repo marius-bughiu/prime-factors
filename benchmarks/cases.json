@@ -1,5 +1,18 @@
 [
   {
+    "id": "shared-wheel-sharp-initialization-24",
+    "description": "Chosen prime pair whose table initialization attains the 78771-lookup cap. Three of 35 old candidates are emitted, then five lookups leave one square. The fixture certifies the primes by ordinary Fermat.",
+    "n": "8398823",
+    "max_steps": 174,
+    "status": "complete",
+    "factors": [
+      "2053",
+      "4091"
+    ],
+    "remaining": [],
+    "fermat_steps": 174
+  },
+  {
     "id": "six-square-scored-prefix-28",
     "description": "Prime pair selected for the largest absolute decrease in the 14-bit prefix census; the public filters retain one square test out of 140, with 193 small lookups. The fixture independently certifies the integers by ordinary Fermat.",
     "n": "134765977",

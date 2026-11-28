@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+One shared list now skips the rejected sums before generation. Fewer than **6.494% of the old candidates are emitted**, and the remaining lookups plus per-input setup cost fewer than 10.901 lookups per 100 old candidates in total. [Shared table and measured setup costs](skipping-rejected-sums-with-one-small-table.md)
+
 Six small public remainder checks remove **over 99.3319% of the exact square tests** in the earlier score order across every eligible full-size product, including all short searches. About 1.5852 small lookups per original square test bound the added work, and almost all inputs still need at least $2^{853}$ square tests. [Unconditional proof and measured small examples](six-small-checks-before-an-integer-square-test.md)
 
 Giving a predictor the **lowest 128 public product bits and the next 64 after the leading one** alongside the five-square remainder leaves its best one-guess sum accuracy at about **one in 537,510** full-size prime pairs. [Population and exact information read](does-reading-more-of-the-product-predict-the-sum.md)

@@ -1008,3 +1008,7 @@ import PrimeFactors.SixSquareScoreWork
 import PrimeFactors.ScorePrefixLookupWork
 import PrimeFactors.SixSquareLookupStages
 import PrimeFactors.SixSquareScoreLookupCost
+import PrimeFactors.ShiftedScoreSieveCycle
+import PrimeFactors.ScoreWheelMemory
+import PrimeFactors.ThreeSquareWheelWork
+import PrimeFactors.SharedThreeSquareScoreWheel
