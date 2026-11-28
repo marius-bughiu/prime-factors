@@ -1,5 +1,147 @@
 [
   {
+    "id": "stopping-cutoff-factor-readings",
+    "category": "formulas",
+    "title": "Stopping at 23 gives both primes of 2,183 from two counts",
+    "impact": "Out of 1,044 eligible targets, 936 hit and 108 miss. Their difference gives 1 + 828/23 = 37. Their hit fraction gives 1 + 23/(26/29 − 1/2) = 59.",
+    "scope": "For any product N of distinct odd primes, stop at K = floor(√N/2). The signed total equals K times one less than the smaller prime. Directly measuring it on this example used 12,411 gcd tests.",
+    "detail": "The signed total counts every residue, with zero for ineligible targets. The normalized hit fraction counts only eligible targets. The cutoff uses N alone.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkMidcutReadout.lean",
+        "label": "Exact factor readings and cutoff"
+      },
+      {
+        "href": "benchmarks/stopping-rank-readout.json",
+        "label": "Measured hits and misses"
+      },
+      {
+        "href": "discoveries/what-stopping-a-square-test-reveals.md",
+        "label": "Derivation and cost"
+      }
+    ]
+  },
+  {
+    "id": "stopping-cutoff-precision",
+    "category": "formulas",
+    "title": "The signed count can be rounded and still reveal the smaller prime",
+    "impact": "For 2,183, rounding the signed count from 828 to 830 still recovers 37. With absolute count error below the public cutoff K, rounding the inferred factor to the nearest odd integer always succeeds.",
+    "scope": "At two 1,024-bit primes, absolute error below 2⁻¹⁰²⁶ in the mean signed score over all residues suffices. This assumes the reading is available.",
+    "detail": "Omitting fewer than K residues changes the count by less than K. The strict threshold matters. For 187 the cutoff is 6, and changing 60 to 66 gives a tie between 11 and 13.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkMidcutPrecision.lean",
+        "label": "Error and missing-residue bounds"
+      },
+      {
+        "href": "benchmarks/stopping-rank-readout.json",
+        "label": "Measured rounded examples"
+      }
+    ]
+  },
+  {
+    "id": "stopping-cutoff-supplied-window",
+    "category": "formulas",
+    "title": "A signed mean accurate to 64 bits leaves at most 2⁹⁶² odd candidates",
+    "impact": "A supplied all-residue mean score with absolute error at most 2⁻⁶⁴ leaves at most 2⁹⁶² odd candidates for the smaller of two 1,024-bit primes.",
+    "scope": "The interval can be calculated from the product and the supplied reading. Its size bound is absolute. The original range allowed by the product varies with the input.",
+    "detail": "For a 2,048-bit product, bringing the ordinary independent factor estimate below 2⁹⁶² root-mean-square error still takes more than 2¹²³ draws.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkMidcutWindow.lean",
+        "label": "Candidate interval and sample cost"
+      },
+      {
+        "href": "discoveries/what-stopping-a-square-test-reveals.md",
+        "label": "Precision assumptions"
+      }
+    ]
+  },
+  {
+    "id": "stopping-cutoff-sampling",
+    "category": "limits",
+    "title": "Even avoiding duplicate samples requires more than half of all residues",
+    "impact": "The signed-score factor estimate has variance greater than N for every product N of distinct odd primes. Its ordinary average needs more than N independent draws with replacement to reach root-mean-square error below one.",
+    "scope": "For a uniform sample without replacement, reaching that accuracy requires more than N/2 distinct residues. These are bounds for the stated estimator.",
+    "detail": "At N = 15, every size-12 subset was tested. Their mean squared error is exactly 1. At size 13 the mean squared error drops to 8/13.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkMidcutSampling.lean",
+        "label": "Variance and independent draws"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkMidcutWithoutReplacement.lean",
+        "label": "Exact finite-population correction"
+      },
+      {
+        "href": "benchmarks/stopping-rank-readout.json",
+        "label": "Enumerated subsets"
+      }
+    ]
+  },
+  {
+    "id": "stopping-mean-prime-sum",
+    "category": "formulas",
+    "title": "The average first-hit position gives the sum of the primes",
+    "impact": "For 2,183 the mean position is 49/4. Multiplying by eight and subtracting two gives 96, the sum of 37 and 59. The same identity holds at every pair of distinct odd primes.",
+    "scope": "Each target with negative Jacobi symbol receives equal weight and runs through its first hit. At this product, choosing the first eligible target instead gives position 8.",
+    "detail": "The second moment is [p(p+1) + q(q+1)]/24. The product determines a residue class for the sum, so some error in an externally supplied mean is tolerable.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkStoppingMoments.lean",
+        "label": "First-hit law and exact moments"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkStoppingDecoder.lean",
+        "label": "Rounding to the permitted sum"
+      },
+      {
+        "href": "discoveries/what-stopping-a-square-test-reveals.md",
+        "label": "What the mean tells us"
+      }
+    ]
+  },
+  {
+    "id": "stopping-mean-sampling",
+    "category": "limits",
+    "title": "Averaging full stopping times still needs more than 2²⁰⁴⁴/3 draws",
+    "impact": "This many independent, uniformly chosen eligible targets are necessary for the ordinary mean first-hit position to have root-mean-square error below one half at two 1,024-bit primes.",
+    "scope": "Draws are with replacement. A realized error below one half suffices to recover the prime sum when N is 3 modulo 4. For all products of two distinct odd primes, an absolute error strictly below one quarter suffices.",
+    "detail": "The variance follows from the exact first two moments of the target distribution and falls by a factor of the sample size when the draws are averaged.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkStoppingPrecision.lean",
+        "label": "Sample-average error"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkStoppingDecoder.lean",
+        "label": "Product-dependent tolerances"
+      }
+    ]
+  },
+  {
+    "id": "stopping-early-histogram",
+    "category": "limits",
+    "title": "Two different prime sums give exactly the same first 18 rank probabilities",
+    "impact": "For both 2,501 and 2,701 each rank through 18 has probability 1/24, and the chance of a miss by then is 1/4. Their full mean ranks are 13 and 14.",
+    "scope": "This compares normalized observations of uniform eligible targets. The publicly known product together with the exact first-rank probability still determines its own prime sum and totient.",
+    "detail": "Estimating that probability from empirical hit counts through at most 2²⁵⁶ positions at full width is expensive. For absolute RMS error below 2⁻²⁰⁴⁶, early stopping still leaves more than 3 × 2³⁰⁶⁶ expected scalar gcds.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkEarlyReadout.lean",
+        "label": "Identical early probabilities and totient relation"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkCappedSampling.lean",
+        "label": "Expected scalar work"
+      },
+      {
+        "href": "benchmarks/stopping-rank-readout.json",
+        "label": "Raw counts"
+      }
+    ]
+  },
+  {
     "id": "public-square-uniform-targets",
     "category": "formulas",
     "title": "The public grid covers more than 90% of targets for every pair of 1,024-bit primes",

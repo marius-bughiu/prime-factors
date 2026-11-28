@@ -1,0 +1,375 @@
+{
+  "cases": [
+    {
+      "product": "187",
+      "prime_factors": [
+        "11",
+        "17"
+      ],
+      "negative_targets": 80,
+      "gcd_tests_over_all_targets": 300,
+      "histogram": [
+        {
+          "first": 1,
+          "last": 5,
+          "targets_per_rank": 13
+        },
+        {
+          "first": 6,
+          "last": 8,
+          "targets_per_rank": 5
+        }
+      ],
+      "layers": {
+        "11": [
+          {
+            "first": 1,
+            "last": 5,
+            "targets_per_rank": 8
+          }
+        ],
+        "17": [
+          {
+            "first": 1,
+            "last": 8,
+            "targets_per_rank": 5
+          }
+        ]
+      },
+      "first_target": {
+        "target": 2,
+        "divisor": "17",
+        "rank": 6
+      },
+      "mean": "15/4",
+      "second_moment": "73/4",
+      "population_variance": "67/16",
+      "factor_sum_from_mean": "28",
+      "first_rank_probability": "13/80",
+      "factor_sum_from_product_and_first_rank_probability": "28",
+      "midcut": {
+        "cutoff": 6,
+        "eligible_hits": 70,
+        "eligible_misses": 10,
+        "ineligible": 107,
+        "direct_gcd_tests": 285,
+        "hits_minus_misses": 60,
+        "normalized_hit_rate": "7/8",
+        "larger_from_hit_rate": "17",
+        "smaller_from_signed_count": "11",
+        "one_draw_mean": "11",
+        "one_draw_variance": "2840/9",
+        "variance_over_product": "2840/1683"
+      }
+    },
+    {
+      "product": "2183",
+      "prime_factors": [
+        "37",
+        "59"
+      ],
+      "negative_targets": 1044,
+      "gcd_tests_over_all_targets": 12789,
+      "histogram": [
+        {
+          "first": 1,
+          "last": 18,
+          "targets_per_rank": 47
+        },
+        {
+          "first": 19,
+          "last": 29,
+          "targets_per_rank": 18
+        }
+      ],
+      "layers": {
+        "37": [
+          {
+            "first": 1,
+            "last": 18,
+            "targets_per_rank": 29
+          }
+        ],
+        "59": [
+          {
+            "first": 1,
+            "last": 29,
+            "targets_per_rank": 18
+          }
+        ]
+      },
+      "first_target": {
+        "target": 5,
+        "divisor": "59",
+        "rank": 8
+      },
+      "mean": "49/4",
+      "second_moment": "2473/12",
+      "population_variance": "2689/48",
+      "factor_sum_from_mean": "96",
+      "first_rank_probability": "47/1044",
+      "factor_sum_from_product_and_first_rank_probability": "96",
+      "midcut": {
+        "cutoff": 23,
+        "eligible_hits": 936,
+        "eligible_misses": 108,
+        "ineligible": 1139,
+        "direct_gcd_tests": 12411,
+        "hits_minus_misses": 828,
+        "normalized_hit_rate": "26/29",
+        "larger_from_hit_rate": "59",
+        "smaller_from_signed_count": "37",
+        "one_draw_mean": "37",
+        "one_draw_variance": "1593468/529",
+        "variance_over_product": "1593468/1154807"
+      }
+    },
+    {
+      "product": "2501",
+      "prime_factors": [
+        "41",
+        "61"
+      ],
+      "negative_targets": 1200,
+      "gcd_tests_over_all_targets": 15600,
+      "histogram": [
+        {
+          "first": 1,
+          "last": 20,
+          "targets_per_rank": 50
+        },
+        {
+          "first": 21,
+          "last": 30,
+          "targets_per_rank": 20
+        }
+      ],
+      "layers": {
+        "41": [
+          {
+            "first": 1,
+            "last": 20,
+            "targets_per_rank": 30
+          }
+        ],
+        "61": [
+          {
+            "first": 1,
+            "last": 30,
+            "targets_per_rank": 20
+          }
+        ]
+      },
+      "first_target": {
+        "target": 2,
+        "divisor": "41",
+        "rank": 17
+      },
+      "mean": "13",
+      "second_moment": "688/3",
+      "population_variance": "181/3",
+      "factor_sum_from_mean": "102",
+      "first_rank_probability": "1/24",
+      "factor_sum_from_product_and_first_rank_probability": "102",
+      "midcut": {
+        "cutoff": 25,
+        "eligible_hits": 1100,
+        "eligible_misses": 100,
+        "ineligible": 1301,
+        "direct_gcd_tests": 15300,
+        "hits_minus_misses": 1000,
+        "normalized_hit_rate": "11/12",
+        "larger_from_hit_rate": "61",
+        "smaller_from_signed_count": "41",
+        "one_draw_mean": "41",
+        "one_draw_variance": "80048/25",
+        "variance_over_product": "80048/62525"
+      }
+    },
+    {
+      "product": "2537",
+      "prime_factors": [
+        "43",
+        "59"
+      ],
+      "negative_targets": 1218,
+      "gcd_tests_over_all_targets": 15834,
+      "histogram": [
+        {
+          "first": 1,
+          "last": 21,
+          "targets_per_rank": 50
+        },
+        {
+          "first": 22,
+          "last": 29,
+          "targets_per_rank": 21
+        }
+      ],
+      "layers": {
+        "43": [
+          {
+            "first": 1,
+            "last": 21,
+            "targets_per_rank": 29
+          }
+        ],
+        "59": [
+          {
+            "first": 1,
+            "last": 29,
+            "targets_per_rank": 21
+          }
+        ]
+      },
+      "first_target": {
+        "target": 3,
+        "divisor": "59",
+        "rank": 11
+      },
+      "mean": "13",
+      "second_moment": "679/3",
+      "population_variance": "172/3",
+      "factor_sum_from_mean": "102",
+      "first_rank_probability": "25/609",
+      "factor_sum_from_product_and_first_rank_probability": "102",
+      "midcut": {
+        "cutoff": 25,
+        "eligible_hits": 1134,
+        "eligible_misses": 84,
+        "ineligible": 1319,
+        "direct_gcd_tests": 15624,
+        "hits_minus_misses": 1050,
+        "normalized_hit_rate": "27/29",
+        "larger_from_hit_rate": "59",
+        "smaller_from_signed_count": "43",
+        "one_draw_mean": "43",
+        "one_draw_variance": "1987566/625",
+        "variance_over_product": "1987566/1585625"
+      }
+    },
+    {
+      "product": "2701",
+      "prime_factors": [
+        "37",
+        "73"
+      ],
+      "negative_targets": 1296,
+      "gcd_tests_over_all_targets": 18144,
+      "histogram": [
+        {
+          "first": 1,
+          "last": 18,
+          "targets_per_rank": 54
+        },
+        {
+          "first": 19,
+          "last": 36,
+          "targets_per_rank": 18
+        }
+      ],
+      "layers": {
+        "37": [
+          {
+            "first": 1,
+            "last": 18,
+            "targets_per_rank": 36
+          }
+        ],
+        "73": [
+          {
+            "first": 1,
+            "last": 36,
+            "targets_per_rank": 18
+          }
+        ]
+      },
+      "first_target": {
+        "target": 2,
+        "divisor": "73",
+        "rank": 32
+      },
+      "mean": "14",
+      "second_moment": "851/3",
+      "population_variance": "263/3",
+      "factor_sum_from_mean": "110",
+      "first_rank_probability": "1/24",
+      "factor_sum_from_product_and_first_rank_probability": "110",
+      "midcut": {
+        "cutoff": 25,
+        "eligible_hits": 1098,
+        "eligible_misses": 198,
+        "ineligible": 1405,
+        "direct_gcd_tests": 16956,
+        "hits_minus_misses": 900,
+        "normalized_hit_rate": "61/72",
+        "larger_from_hit_rate": "73",
+        "smaller_from_signed_count": "37",
+        "one_draw_mean": "37",
+        "one_draw_variance": "2690496/625",
+        "variance_over_product": "2690496/1688125"
+      }
+    }
+  ],
+  "censoring_control": {
+    "cutoff": 18,
+    "products": [
+      {
+        "product": "2501",
+        "early_hits": 900,
+        "misses": 300,
+        "probability_at_each_observed_rank": "1/24",
+        "probability_of_miss": "1/4",
+        "mean_gcd_tests_when_capped": "93/8"
+      },
+      {
+        "product": "2701",
+        "early_hits": 972,
+        "misses": 324,
+        "probability_at_each_observed_rank": "1/24",
+        "probability_of_miss": "1/4",
+        "mean_gcd_tests_when_capped": "93/8"
+      }
+    ]
+  },
+  "signed_rounding_control": {
+    "product": "2183",
+    "cutoff": 23,
+    "exact_count": 828,
+    "rounded": [
+      {
+        "step": 10,
+        "rounded_count": 830,
+        "smaller_estimate": "853/23",
+        "nearest_odd": 37,
+        "divides_product": true
+      },
+      {
+        "step": 100,
+        "rounded_count": 800,
+        "smaller_estimate": "823/23",
+        "nearest_odd": 35,
+        "divides_product": false
+      }
+    ]
+  },
+  "distinct_sample_control": {
+    "product": "15",
+    "prime_factors": [
+      "3",
+      "5"
+    ],
+    "rows": [
+      {
+        "size": 12,
+        "subsets": 455,
+        "mean_squared_error": "1"
+      },
+      {
+        "size": 13,
+        "subsets": 105,
+        "mean_squared_error": "8/13"
+      }
+    ]
+  }
+}
