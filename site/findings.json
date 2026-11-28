@@ -1,5 +1,18 @@
 [
   {
+    "id": "complementary-fourth-root-factor-family",
+    "category": "gains",
+    "title": "A second fourth-root formula raises a small prime-pair census from 30 to 79",
+    "impact": "Reading the other coordinate recovers 1,213 × 1,753 from 2,126,389. On balanced odd semiprimes its successes are disjoint from those of the first formula.",
+    "scope": "The census includes all eligible prime pairs with product through 2^32. Together the two formulas cover fewer than one in 2^1128 eligible full-size pairs.",
+    "detail": "Each branch uses two integer fourth roots and an exact equality check. A general composite can yield two different factorizations.",
+    "sources": [
+      {"href": "discoveries/reading-the-other-fourth-power.md", "label": "Worked example and complete small census"},
+      {"href": "PrimeFactors/ComplementaryQuarticProducts.lean", "label": "Branch conditions and disjointness"},
+      {"href": "PrimeFactors/ComplementaryQuarticPopulation.lean", "label": "Combined full-size coverage"}
+    ]
+  },
+  {
     "id": "two-fourth-roots-for-a-special-factor-pair",
     "category": "formulas",
     "title": "Two fourth roots give both factors of a recognizable quartic product",

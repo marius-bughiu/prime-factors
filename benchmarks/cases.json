@@ -1,5 +1,15 @@
 [
   {
+    "id": "reverse-only-quartic-product-22",
+    "description": "The reverse fourth-root formula finds the two primes from y = 27 and x = 5, while starting with the fourth root of N misses. Ordinary Fermat independently certifies them on midpoint 25.",
+    "n": "2126389",
+    "max_steps": 25,
+    "status": "complete",
+    "factors": ["1213", "1753"],
+    "remaining": [],
+    "fermat_steps": 25
+  },
+  {
     "id": "recognizable-quartic-product-28",
     "description": "A deliberately chosen Sophie Germain representation whose parameters are recoverable from the product with two fourth roots. The ordinary Fermat fixture certifies the same primes at midpoint 199.",
     "n": "151847041",

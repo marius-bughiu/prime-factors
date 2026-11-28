@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Reading either end of the quartic representation increases the count of eligible prime pairs found through $2^{32}$ from **30 to 79**. The two methods succeed on disjoint balanced odd semiprimes. Their combined full-size coverage is below one in $2^{1128}$. [Complementary formula and census](reading-the-other-fourth-power.md)
+
 For a recognizable family $N=x^4+4y^4$, two public integer fourth roots give the factor sum and both factors exactly. This recovers 10,301 and 14,741 from their product. Fewer than one in $2^{1129}$ eligible full-size products qualify. [Exact formula, scope and cost](two-fourth-roots-reveal-a-special-factor-pair.md)
 
 Choosing different prime tests for each product still leaves **more than $2^{765}$ wrong sums before success** for almost all inputs whenever the guaranteed residue period fits the early window. The smallest 117 primes attain the weakest lower bound of this kind. [Budget, optimality proof and complete small census](can-changing-the-primes-avoid-the-wrong-sums.md)

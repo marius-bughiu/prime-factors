@@ -31,3 +31,5 @@ Each odd $x$ has its own interval between two consecutive fourth powers. Its num
 The rows are cumulative. In the last column two $b$-bit primes must have a $2b$-bit product. The experiment checks each generated factorization and also scans every odd input through $2^{16}$ independently. [Reproduce the census](../experiments/quartic_product_strips.py)
 
 At 2,048 bits, the inequalities require $13\cdot2^{508}\le x<2^{512}$ and $0<y<2^{384}$. The first parameter is odd on eligible products. Even counting every allowable parameter pair gives at most $3\cdot2^{891}$ eligible products, which implies the one-in-$2^{1129}$ upper bound. This argument gives no lower bound on how often both expressions are prime. [Counting proof](../PrimeFactors/QuarticPrimePopulation.lean)
+
+Starting with the fourth root of $N/4$ recovers a second group, including 49 additional eligible small prime pairs in the census through $2^{32}$. [Two directions, exact overlap and combined full-size bound](reading-the-other-fourth-power.md)
