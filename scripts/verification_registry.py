@@ -25,6 +25,7 @@ def experiment(name, *args, data=RESEARCH, lean=False, proof=None):
 # fixture and reference result, also when one is added, renamed or removed.
 CHECKS = (
     Check('unit-tests', ('python3', '-m', 'unittest', 'discover', '-s', 'tests'), lean=True),
+    experiment('dyadic_center_compression', lean=True, data=('benchmarks/dyadic-center-compression.json',)),
     experiment('floor_shift_census', data=('benchmarks/floor-shift-census.json',)),
     experiment('cyclotomic_root_readings', lean=True, data=('benchmarks/cyclotomic-root-readings.json',)),
     Check('cyclotomic-root-readings-14',

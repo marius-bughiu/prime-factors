@@ -1,0 +1,347 @@
+{
+  "controls": [
+    {
+      "product": "138953",
+      "lifts": 7,
+      "centers": [
+        [
+          3,
+          369
+        ],
+        [
+          5,
+          365
+        ],
+        [
+          5,
+          371
+        ],
+        [
+          7,
+          355
+        ],
+        [
+          8,
+          349
+        ]
+      ],
+      "midpoints": [
+        373,
+        381,
+        387,
+        419,
+        477
+      ],
+      "square_test_budget": [
+        381,
+        387,
+        419,
+        477
+      ],
+      "tests_to_stop": 2,
+      "recovered": [
+        "283",
+        "491"
+      ],
+      "baseline_pair": [
+        "283",
+        "491"
+      ],
+      "baseline_tests": 2,
+      "floor_only_hit": false
+    },
+    {
+      "product": "141217",
+      "lifts": 7,
+      "centers": [
+        [
+          3,
+          373
+        ],
+        [
+          4,
+          375
+        ],
+        [
+          6,
+          369
+        ],
+        [
+          7,
+          367
+        ],
+        [
+          8,
+          303
+        ]
+      ],
+      "midpoints": [
+        377,
+        383,
+        401,
+        431
+      ],
+      "square_test_budget": [
+        377,
+        431
+      ],
+      "tests_to_stop": 2,
+      "recovered": null,
+      "baseline_pair": [
+        "283",
+        "499"
+      ],
+      "baseline_tests": 2,
+      "floor_only_hit": false
+    },
+    {
+      "product": "37001",
+      "lifts": 6,
+      "centers": [
+        [
+          3,
+          191
+        ],
+        [
+          4,
+          187
+        ],
+        [
+          5,
+          179
+        ],
+        [
+          6,
+          163
+        ],
+        [
+          7,
+          131
+        ],
+        [
+          8,
+          67
+        ]
+      ],
+      "midpoints": [
+        195
+      ],
+      "square_test_budget": [
+        195
+      ],
+      "tests_to_stop": 1,
+      "recovered": [
+        "163",
+        "227"
+      ],
+      "baseline_pair": [
+        "163",
+        "227"
+      ],
+      "baseline_tests": 1,
+      "floor_only_hit": false
+    },
+    {
+      "product": "134271337",
+      "lifts": 12,
+      "centers": [
+        [
+          3,
+          11585
+        ],
+        [
+          5,
+          11581
+        ],
+        [
+          5,
+          11587
+        ],
+        [
+          6,
+          11571
+        ],
+        [
+          7,
+          11565
+        ],
+        [
+          9,
+          11501
+        ],
+        [
+          9,
+          11539
+        ],
+        [
+          11,
+          11245
+        ],
+        [
+          11,
+          11283
+        ],
+        [
+          13,
+          10259
+        ],
+        [
+          14,
+          6163
+        ]
+      ],
+      "midpoints": [
+        11589,
+        11597,
+        11603,
+        11629,
+        11757,
+        11795,
+        12269,
+        12307,
+        14355
+      ],
+      "square_test_budget": [
+        11629,
+        11757,
+        11795,
+        12269,
+        12307,
+        14355
+      ],
+      "tests_to_stop": 4,
+      "recovered": [
+        "8237",
+        "16301"
+      ],
+      "baseline_pair": [
+        "8237",
+        "16301"
+      ],
+      "baseline_tests": 42,
+      "floor_only_hit": false
+    }
+  ],
+  "populations": [
+    {
+      "factor_bits": 7,
+      "products": 42,
+      "root_lifts": 45,
+      "generated_centers": 64,
+      "different_midpoints": 50,
+      "planned_exact_tests": 39,
+      "performed_exact_tests": 34,
+      "hits": 33,
+      "floor_only_hits": 16,
+      "baseline_hits_at_same_budget": 33,
+      "compressed_only": 0,
+      "baseline_only": 0,
+      "baseline_performed_at_same_budget": 34
+    },
+    {
+      "factor_bits": 8,
+      "products": 148,
+      "root_lifts": 198,
+      "generated_centers": 289,
+      "different_midpoints": 192,
+      "planned_exact_tests": 135,
+      "performed_exact_tests": 104,
+      "hits": 90,
+      "floor_only_hits": 46,
+      "baseline_hits_at_same_budget": 93,
+      "compressed_only": 0,
+      "baseline_only": 3,
+      "baseline_performed_at_same_budget": 104
+    },
+    {
+      "factor_bits": 9,
+      "products": 543,
+      "root_lifts": 896,
+      "generated_centers": 1199,
+      "different_midpoints": 760,
+      "planned_exact_tests": 522,
+      "performed_exact_tests": 386,
+      "hits": 283,
+      "floor_only_hits": 136,
+      "baseline_hits_at_same_budget": 306,
+      "compressed_only": 2,
+      "baseline_only": 25,
+      "baseline_performed_at_same_budget": 371
+    },
+    {
+      "factor_bits": 10,
+      "products": 1718,
+      "root_lifts": 3336,
+      "generated_centers": 4104,
+      "different_midpoints": 2522,
+      "planned_exact_tests": 1629,
+      "performed_exact_tests": 1182,
+      "hits": 666,
+      "floor_only_hits": 299,
+      "baseline_hits_at_same_budget": 773,
+      "compressed_only": 5,
+      "baseline_only": 112,
+      "baseline_performed_at_same_budget": 1106
+    },
+    {
+      "factor_bits": 11,
+      "products": 5530,
+      "root_lifts": 12222,
+      "generated_centers": 14664,
+      "different_midpoints": 8830,
+      "planned_exact_tests": 5707,
+      "performed_exact_tests": 4039,
+      "hits": 1821,
+      "floor_only_hits": 795,
+      "baseline_hits_at_same_budget": 2193,
+      "compressed_only": 32,
+      "baseline_only": 404,
+      "baseline_performed_at_same_budget": 3754
+    },
+    {
+      "factor_bits": 12,
+      "products": 19546,
+      "root_lifts": 48310,
+      "generated_centers": 56003,
+      "different_midpoints": 33158,
+      "planned_exact_tests": 21239,
+      "performed_exact_tests": 15853,
+      "hits": 4764,
+      "floor_only_hits": 1973,
+      "baseline_hits_at_same_budget": 6112,
+      "compressed_only": 190,
+      "baseline_only": 1538,
+      "baseline_performed_at_same_budget": 14544
+    },
+    {
+      "factor_bits": 13,
+      "products": 64719,
+      "root_lifts": 176737,
+      "generated_centers": 201011,
+      "different_midpoints": 117474,
+      "planned_exact_tests": 76286,
+      "performed_exact_tests": 59486,
+      "hits": 12246,
+      "floor_only_hits": 4783,
+      "baseline_hits_at_same_budget": 16135,
+      "compressed_only": 801,
+      "baseline_only": 4690,
+      "baseline_performed_at_same_budget": 55141
+    },
+    {
+      "factor_bits": 14,
+      "products": 228713,
+      "root_lifts": 683832,
+      "generated_centers": 761834,
+      "different_midpoints": 442367,
+      "planned_exact_tests": 291183,
+      "performed_exact_tests": 237583,
+      "hits": 33417,
+      "floor_only_hits": 12356,
+      "baseline_hits_at_same_budget": 44061,
+      "compressed_only": 3244,
+      "baseline_only": 13888,
+      "baseline_performed_at_same_budget": 223408
+    }
+  ]
+}

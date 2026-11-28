@@ -154,6 +154,17 @@ theorem mem_squareValues {r g U : ℕ} (rp : 0<r) (bound : r≤U) (dvd : g∣r^2
   exact mem_biUnion.mpr ⟨a,mem_Icc.mpr ⟨ap,aU⟩, mem_biUnion.mpr ⟨b,mem_Icc.mpr ⟨bp,bU⟩,
     mem_image.mpr ⟨t,mem_Icc.mpr ⟨tp,tU⟩,by rw [eq,ge]⟩⟩⟩
 
+/-- Count triples of positive integers with product at most U. The two
+outer summation variables contribute a harmonic factor each. -/
+theorem square_parameter_sum (U : ℕ) :
+    ((∑ a∈Icc 1 U, ∑ b∈Icc 1 U, U/(a*b) : ℕ):ℚ) ≤ U*(harmonic U)^2 := by
+  push_cast
+  calc
+    _ ≤ ∑ a∈Icc 1 U, ∑ b∈Icc 1 U, (U:ℚ)/((a:ℚ)*b) := by
+      apply sum_le_sum fun a _ => sum_le_sum fun b _ => ?_
+      simpa only [Nat.cast_mul] using (Nat.cast_div_le (α:=ℚ) (m:=U) (n:=a*b))
+    _ = _ := by simp [harmonic_eq_sum_Icc,div_eq_mul_inv,mul_sum,sum_mul,pow_two,mul_assoc]
+
 /-- The total number of predecessor products read off every square with root
 at most U is at most U times the square of the U-th harmonic number. -/
 theorem square_count (U : ℕ) : ((squareValues U).card:ℚ) ≤ U*(harmonic U)^2 := by
@@ -164,12 +175,7 @@ theorem square_count (U : ℕ) : ((squareValues U).card:ℚ) ≤ U*(harmonic U)^
     intro a ha
     apply card_biUnion_le.trans
     exact sum_le_sum fun b _ => card_image_le.trans (by simp)
-  calc
-    _ ≤ ∑ a∈I, ∑ b∈I, ((U/(a*b):ℕ):ℚ) := by exact_mod_cast count
-    _ ≤ ∑ a∈I, ∑ b∈I, (U:ℚ)/((a:ℚ)*b) := by
-      apply sum_le_sum fun a _ => sum_le_sum fun b _ => ?_
-      simpa only [Nat.cast_mul] using (Nat.cast_div_le (α:=ℚ) (m:=U) (n:=a*b))
-    _ = _ := by simp [I,harmonic_eq_sum_Icc,div_eq_mul_inv,mul_sum,sum_mul,pow_two,mul_assoc]
+  exact (Nat.cast_le (α:=ℚ)).mpr count |>.trans (square_parameter_sum U)
 
 /-- Success includes every square, above or below N, at every distance. -/
 def readable (z : ℕ×ℕ) : Prop := ∃ r g : ℕ, g∣r^2 ∧ predProduct z+g=r^2

@@ -1,5 +1,70 @@
 [
   {
+    "id": "dyadic-center-134271337",
+    "description": "Screened comparison selected after the 14-bit census for its early compressed hit",
+    "n": "134271337",
+    "max_steps": 682,
+    "status": "complete",
+    "factors": [
+      "8237",
+      "16301"
+    ],
+    "remaining": [],
+    "fermat_steps": 682
+  },
+  {
+    "id": "dyadic-center-141217",
+    "description": "Ordinary Fermat baseline on the matched input that the dyadic-center list misses",
+    "n": "141217",
+    "max_steps": 16,
+    "status": "complete",
+    "factors": [
+      "283",
+      "499"
+    ],
+    "remaining": [],
+    "fermat_steps": 16
+  },
+  {
+    "id": "dyadic-center-138953",
+    "description": "Ordinary Fermat baseline on the matched input recovered below the floor root",
+    "n": "138953",
+    "max_steps": 15,
+    "status": "complete",
+    "factors": [
+      "283",
+      "491"
+    ],
+    "remaining": [],
+    "fermat_steps": 15
+  },
+  {
+    "id": "ceiling-shift-8509",
+    "description": "Small trial factors in default discovery on an input whose first center admits no shift",
+    "n": "8509",
+    "max_steps": 5,
+    "status": "complete",
+    "factors": [
+      "67",
+      "127"
+    ],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "ceiling-shift-532937",
+    "description": "Ordinary Fermat baseline where a square-excess reading jumps sixteen positions",
+    "n": "532937",
+    "max_steps": 41,
+    "status": "complete",
+    "factors": [
+      "523",
+      "1019"
+    ],
+    "remaining": [],
+    "fermat_steps": 41
+  },
+  {
     "id": "floor-shift-36696721",
     "description": "Ordinary Fermat baseline for the constructed pair with a power-of-two square-remainder prediction",
     "n": "36696721",

@@ -1,5 +1,231 @@
 [
   {
+    "id": "dyadic-lower-short-list",
+    "category": "formulas",
+    "title": "All viable lower-center sums fit in at most 1,022 guesses at full size",
+    "impact": "One modular square root yields every candidate across all centers below the integer square root. Two neighboring exponents together give at most two distinct sums.",
+    "scope": "The list bound holds for distinct odd primes below 2^1024. Among pairs of 1,024-bit primes with a 2,048-bit product, fewer than one in 2^474 has its true sum on the list.",
+    "detail": "Branches at exponents one and two each give at most one candidate. In the remaining branch each candidate midpoint lies in one of two modular square-root classes.",
+    "sources": [
+      {
+        "href": "discoveries/what-searching-every-lower-center-actually-saves.md#how-every-center-fits-in-a-short-list",
+        "label": "How to construct the list"
+      },
+      {
+        "href": "PrimeFactors/FloorShiftCenterCompression.lean",
+        "label": "Completeness"
+      },
+      {
+        "href": "PrimeFactors/FloorShiftDistinctSums.lean",
+        "label": "Distinct-sum bound"
+      }
+    ]
+  },
+  {
+    "id": "dyadic-lower-separated-recoveries",
+    "category": "gains",
+    "title": "A fixed exponent identifies some pairs separated by 2^1000 or more",
+    "impact": "For more than one in 2^517 eligible prime pairs, the true sum is among the at most two guesses at exponent 1,023. Ordinary Fermat must pass at least 2^973 midpoints before reaching any of these pairs.",
+    "scope": "A rare subfamily of all distinct 1,024-bit prime pairs with a 2,048-bit product. Even trying every exponent and every lower center covers fewer than one in 2^474.",
+    "detail": "The proof counts repeated prime remainders and then removes small prime gaps. It assumes no distribution of primes across remainder classes.",
+    "sources": [
+      {
+        "href": "discoveries/what-searching-every-lower-center-actually-saves.md#how-much-of-the-full-population-this-reaches",
+        "label": "Population and cost"
+      },
+      {
+        "href": "PrimeFactors/FloorShiftRecoveryPopulation.lean",
+        "label": "Positive coverage and separation"
+      },
+      {
+        "href": "PrimeFactors/FloorShiftDyadicCenters.lean",
+        "label": "All-center upper bound"
+      }
+    ]
+  },
+  {
+    "id": "dyadic-lower-census",
+    "category": "limits",
+    "title": "Trying every lower center recovered 33,417 products in the 14-bit census",
+    "impact": "The floor alone recovered 12,356 pairs. Screened Fermat recovered 44,061 at the same per-input square-test allowance. The compressed list found 3,244 pairs that baseline missed.",
+    "scope": "All 228,713 unordered distinct pairs of 14-bit primes with a 28-bit product. The compressed search also performed 683,832 modular lifting steps.",
+    "detail": "Per-input budgets come from the number of distinct guesses surviving parity and a modulo-256 screen. Both methods stop at a verified factorization.",
+    "sources": [
+      {
+        "href": "discoveries/what-searching-every-lower-center-actually-saves.md#what-happened-on-every-small-product",
+        "label": "Eight complete populations"
+      },
+      {
+        "href": "benchmarks/dyadic-center-compression.json",
+        "label": "Measurements"
+      },
+      {
+        "href": "experiments/dyadic_center_compression.py",
+        "label": "Replay and certificates"
+      }
+    ]
+  },
+  {
+    "id": "dyadic-lower-134271337",
+    "category": "cases",
+    "title": "Four exact square tests recovered 8,237 and 16,301",
+    "impact": "At 134,271,337, eleven lower centers give nine distinct midpoints. Six pass the modular screen, and the fourth gives the correct split.",
+    "scope": "Selected from the 14-bit census after observing the saving. The compressed search also takes an integer square root and twelve modular lifting steps.",
+    "detail": "Ordinary Fermat takes 682 consecutive midpoint tests. Applying parity and the same modulo-256 screen brings that comparison to 42 exact tests.",
+    "sources": [
+      {
+        "href": "discoveries/what-searching-every-lower-center-actually-saves.md",
+        "label": "Worked comparison"
+      },
+      {
+        "href": "benchmarks/dyadic-center-compression.json",
+        "label": "Exact candidate list"
+      },
+      {
+        "href": "#dyadic-center-134271337",
+        "label": "Ordinary search and certificate"
+      }
+    ]
+  },
+  {
+    "id": "ceiling-shift-any-center",
+    "category": "formulas",
+    "title": "Almost every full-size product admits a shift at an earlier midpoint",
+    "impact": "The share admitting some integer shift is greater than one minus 2^-498 if the center can be chosen anywhere before the true midpoint. It is below 2^-479 at the very first center.",
+    "scope": "All distinct 1,024-bit prime pairs with 2,048-bit product. The existence argument chooses the last odd center before the unknown midpoint.",
+    "detail": "Even granting every shift at each of the first 2^40 centers covers fewer than one in 2^442. On 8,509 the first center, 93, fails while 95 works.",
+    "sources": [
+      {
+        "href": "discoveries/when-moving-the-midpoint-allows-a-shift.md",
+        "label": "Which centers are available"
+      },
+      {
+        "href": "PrimeFactors/CeilingShiftPopulation.lean",
+        "label": "First and unrestricted centers"
+      },
+      {
+        "href": "PrimeFactors/CeilingShiftWindow.lean",
+        "label": "First trillion centers"
+      }
+    ]
+  },
+  {
+    "id": "ceiling-shift-center-density",
+    "category": "limits",
+    "title": "Fewer than one in 2^951 product–center pairs admits a shift",
+    "impact": "The mean number of working earlier centers is below 10,377,335,088 per eligible product. More than two thirds of products have at least 2^985 earlier positions.",
+    "scope": "The density gives every eligible product–position pair equal weight. The mean count gives every eligible product equal weight.",
+    "detail": "The distance from the true midpoint must divide the squared half-gap. Counting these divisors over the full sample gives the bound, even with the shift magnitude supplied.",
+    "sources": [
+      {
+        "href": "discoveries/how-hard-is-it-to-locate-a-working-center.md#almost-every-product-has-a-hit-but-how-often-does-a-position-hit",
+        "label": "Two distinct ways of counting"
+      },
+      {
+        "href": "PrimeFactors/CeilingShiftCenterDensity.lean",
+        "label": "Density and mean"
+      },
+      {
+        "href": "PrimeFactors/CeilingShiftDistances.lean",
+        "label": "Exact divisor test"
+      }
+    ]
+  },
+  {
+    "id": "ceiling-shift-last-center",
+    "category": "formulas",
+    "title": "The last working center gives the exact prime sum",
+    "impact": "The product modulo four specifies whether to add one or two to that position to obtain the true midpoint. At 9,271, the last center 99 gives midpoint 100 and primes 73 and 127.",
+    "scope": "Requires knowing the last successful position. An efficient way to obtain it from the product alone remains open.",
+    "detail": "A yes-or-no query about any success at or beyond a cutoff is exactly a comparison of the next eligible odd position with the hidden midpoint.",
+    "sources": [
+      {
+        "href": "discoveries/how-hard-is-it-to-locate-a-working-center.md#what-a-suffix-query-would-tell-us",
+        "label": "Meaning of an existence query"
+      },
+      {
+        "href": "PrimeFactors/CeilingShiftLastCenter.lean",
+        "label": "Recovery proof"
+      }
+    ]
+  },
+  {
+    "id": "floor-shift-rational-denominator",
+    "category": "limits",
+    "title": "Every prime pair admits a rational shift, but a short denominator is rare",
+    "impact": "Fewer than one in 2^416 eligible full-size products has a reduced shift denominator at most 2^128, even with the best numerator supplied.",
+    "scope": "All unordered pairs of distinct 1,024-bit primes with 2,048-bit product. The center is the exact floor square root.",
+    "detail": "8,509 and 8,881 have the same square remainder 45 and reduced denominator 2. Their shifts are 9/2 and 45/2, respectively.",
+    "sources": [
+      {
+        "href": "discoveries/how-many-products-admit-a-short-rational-shift.md",
+        "label": "Formula, controls and count"
+      },
+      {
+        "href": "PrimeFactors/RationalFloorShift.lean",
+        "label": "Lean proof"
+      }
+    ]
+  },
+  {
+    "id": "floor-shift-window",
+    "category": "limits",
+    "title": "Even 2^900 nearby centers and every positive shift have limited reach",
+    "impact": "Fewer than one in 2^24 eligible full-size inputs admits any integer shift at any of these centers below the square root.",
+    "scope": "The window starts at the floor square root and extends downward. Centers and shift magnitudes can be chosen freely. The squared difference is interpreted over the integers.",
+    "detail": "At 138,953 the floor remainder is odd, ruling out every shift there. Moving down one position gives a true sum prediction.",
+    "sources": [
+      {
+        "href": "discoveries/which-centers-below-the-square-root-can-give-the-sum.md#what-changes-if-any-divisor-of-the-remainder-is-allowed",
+        "label": "Window and small control"
+      },
+      {
+        "href": "PrimeFactors/FloorShiftCenterWindow.lean",
+        "label": "Signed equation and counting proof"
+      }
+    ]
+  },
+  {
+    "id": "ceiling-shift-jump",
+    "category": "limits",
+    "title": "The squared half-gap determines every possible power-of-two jump",
+    "impact": "At 532,937 the square-excess prediction works sixteen positions before the true midpoint and misses thirty-two positions before it.",
+    "scope": "The center is supplied. Fewer than one in 2^50 eligible full-size pairs admits a correct jump of 2^128 or more, even when any earlier center may be used.",
+    "detail": "For a jump of at least 2^512 the fraction is below 2^-242. These statements count entire products, each once.",
+    "sources": [
+      {
+        "href": "discoveries/when-a-square-excess-predicts-the-prime-sum.md",
+        "label": "Distance classification and bounds"
+      },
+      {
+        "href": "PrimeFactors/CeilingShiftDyadicDistances.lean",
+        "label": "Lean proof"
+      },
+      {
+        "href": "#ceiling-shift-532937",
+        "label": "Ordinary search on 532,937"
+      }
+    ]
+  },
+  {
+    "id": "ceiling-shift-public-classes",
+    "category": "formulas",
+    "title": "One product-determined distance reproduces every upper-center candidate",
+    "impact": "The product chooses a distance of one, two or four before each candidate midpoint. Beyond the first four positions every survivor of the ordinary parity and modulo-16 square screen already has a reading.",
+    "scope": "Concerns proposed sums. A correct modular prediction still needs an integer-square discriminant check.",
+    "detail": "For 8,509 both 95 and 97 can be proposed. Only 97 is the true midpoint.",
+    "sources": [
+      {
+        "href": "discoveries/when-moving-the-midpoint-allows-a-shift.md",
+        "label": "Worked candidates"
+      },
+      {
+        "href": "PrimeFactors/CeilingShiftCandidateClasses.lean",
+        "label": "Equivalence of the candidate sets"
+      }
+    ]
+  },
+  {
     "id": "floor-shift-constructed",
     "category": "cases",
     "title": "The largest power of two in a remainder predicts both primes on 36,696,721",
