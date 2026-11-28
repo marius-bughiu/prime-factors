@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+The location-and-remainder rule saves more than 2.59% of exact square tests across all eligible balanced 2,048-bit products, using a published unconditional prime-count estimate. At most ten live candidates suffice to generate its guesses. [The total work and the streaming rule](../discoveries/using-both-the-location-and-remainder-of-a-sum.md#does-the-combined-order-help-across-all-full-size-products)
+
 Counting every 2,048-bit product of two distinct 1,024-bit primes, the favored-first order saves more than 1/95 of the elementary search’s exact square tests in total. Within the square-unit product classes modulo five, the saving exceeds 2.5%. [Whole-population cost comparison](../discoveries/does-favored-first-save-work-on-average.md)
 
 A counting argument using the unconditional modulus-25 estimates gives a work guarantee on more than 24.9% of all eligible products. Trying two favored remainders first saves at least 70% of the exact-square tests against ascending order, with at least $2^{894}$ tests remaining on every counted input. [Population and elementary search cost](../discoveries/when-two-remainders-save-square-tests.md)

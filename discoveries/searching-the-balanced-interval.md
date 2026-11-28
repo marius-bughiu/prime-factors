@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+The location-and-remainder rule saves more than 2.59% of exact square tests across all eligible balanced 2,048-bit products, using a published unconditional prime-count estimate. At most ten live candidates suffice to generate its guesses. [The total work and the streaming rule](using-both-the-location-and-remainder-of-a-sum.md#does-the-combined-order-help-across-all-full-size-products)
+
 Ranking a sum by both its location and its remainder saved 5.21% of exact square tests across all 228,713 complete fourteen-bit prime pairs with a full-width product. Individual losses are bounded on actual inputs. [How the new order weighs an earlier guess against a more frequent remainder](using-both-the-location-and-remainder-of-a-sum.md)
 
 Counting every 2,048-bit product of two distinct 1,024-bit primes, the favored-first order saves more than 1/95 of the elementary search’s exact square tests in total. Within the square-unit product classes modulo five, the saving exceeds 2.5%. [Proof of the net saving](does-favored-first-save-work-on-average.md)

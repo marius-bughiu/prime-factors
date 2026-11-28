@@ -937,3 +937,8 @@ import PrimeFactors.ScoreOrderSlowdown
 import PrimeFactors.ScoreOrderFavoredCost
 import PrimeFactors.SumOrderDensity
 import PrimeFactors.BoundedSumPrior
+import PrimeFactors.ScoreGridGeometry
+import PrimeFactors.ScoreVsGlobal
+import PrimeFactors.MeanScoreOrderWork
+import PrimeFactors.StreamSumScores
+import PrimeFactors.WithinResidueSearchFloor

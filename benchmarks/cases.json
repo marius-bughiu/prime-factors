@@ -1,5 +1,18 @@
 [
   {
+    "id": "stream-score-three-132289",
+    "description": "Fermat midpoint baseline for the small three-test streaming score example",
+    "n": "132289",
+    "max_steps": 20,
+    "status": "complete",
+    "factors": [
+      "263",
+      "503"
+    ],
+    "remaining": [],
+    "fermat_steps": 20
+  },
+  {
     "id": "score-order-later-134230699",
     "description": "Fermat midpoint baseline on a chosen input taking seventeen ascending square tests and forty-one with location and remainder weighting",
     "n": "134230699",

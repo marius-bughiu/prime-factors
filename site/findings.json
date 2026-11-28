@@ -1,5 +1,59 @@
 [
   {
+    "id": "near-all-fallback-search-floor",
+    "category": "limits",
+    "title": "At least 2⁸⁹³ square tests remain on all but fewer than one in 2³⁵ balanced products",
+    "impact": "Nearly every eligible 2,048-bit product requires this many tests in the location-and-remainder search, even though its average test count improves.",
+    "scope": "All distinct 1,024-bit prime pairs giving 2,048 bits. The proof uses an unconditional prime-population count verified inside the project.",
+    "detail": "Even an input-dependent period of up to 2¹²⁸ leaves at least 2⁷⁷² visits if each earlier member of the true remainder class must be tested.",
+    "sources": [
+      {
+        "href": "discoveries/using-both-the-location-and-remainder-of-a-sum.md#how-much-work-is-still-unavoidable",
+        "label": "Which searches the lower bound covers"
+      },
+      {
+        "href": "PrimeFactors/WithinResidueSearchFloor.lean",
+        "label": "Unconditional count of exceptional inputs"
+      }
+    ]
+  },
+  {
+    "id": "net-score-all-balanced-products",
+    "category": "gains",
+    "title": "Combining location and remainder saves more than 2.59% of square tests across all balanced products",
+    "impact": "The strict net saving covers all distinct pairs of 1,024-bit primes with a 2,048-bit product, including losses and ties.",
+    "scope": "Same elementary exhaustive square test and public range for every order. Uses a published unconditional modulus-five prime-count estimate.",
+    "detail": "Switching from the earlier favored-first order to the combined rule saves more than another 1.54% of the ascending test total.",
+    "sources": [
+      {
+        "href": "discoveries/using-both-the-location-and-remainder-of-a-sum.md#does-the-combined-order-help-across-all-full-size-products",
+        "label": "Population and cost accounting"
+      },
+      {
+        "href": "PrimeFactors/MeanScoreOrderWork.lean",
+        "label": "Lean proof"
+      }
+    ]
+  },
+  {
+    "id": "stream-sum-score-ten-heads",
+    "category": "gains",
+    "title": "Generate the entire search order with at most ten live sum candidates",
+    "impact": "The streaming comparison saved 279,475 square tests on 320,981 toy products and performed 2,748,875 extra score multiplications.",
+    "scope": "All 2–14-bit pairs of distinct same-width primes giving a full-width product in the experiment. The ten-head bound applies to products coprime to five.",
+    "detail": "Each residue progression advances using additions. Lean verifies the arithmetic and frontier-order invariants, and independent stopping counts test the heap implementation.",
+    "sources": [
+      {
+        "href": "discoveries/using-both-the-location-and-remainder-of-a-sum.md#can-we-avoid-building-the-whole-list-of-guesses",
+        "label": "Population and cost accounting"
+      },
+      {
+        "href": "PrimeFactors/StreamSumScores.lean",
+        "label": "Lean proof"
+      }
+    ]
+  },
+  {
     "id": "bounded-prior-rank-floor",
     "category": "limits",
     "title": "Two local weights put a ceiling on how much reordering can save in the model",

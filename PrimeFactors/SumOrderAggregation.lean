@@ -29,12 +29,12 @@ theorem expense {α : Type*} (S : Finset α) (v : α → ℝ) {u c : ℝ}
 /-- Keep positive credits for complete cells. The others still pay the
 same upper allowance for the final incomplete block. -/
 theorem gains_over_cells {ι : Type*} [DecidableEq ι] (cells whole : Finset ι)
-    (sub : whole ⊆ cells) (v d : ι → ℝ) {l u : ℝ}
-    (u0 : 0≤u) (inside : ∀ j∈whole, l*(5*d j)≤v j+u)
+    (sub : whole ⊆ cells) (v d : ι → ℝ) {l u c : ℝ}
+    (u0 : 0≤u) (inside : ∀ j∈whole, l*(c*d j)≤v j+u)
     (outside : ∀ j∈cells, j∉whole → 0≤v j) :
-    l*5*(∑ j∈whole,d j)≤(∑ j∈cells,v j)+u*cells.card := by
+    l*c*(∑ j∈whole,d j)≤(∑ j∈cells,v j)+u*cells.card := by
   classical
-  have all : ∀ j∈cells, (if j∈whole then l*(5*d j) else 0)≤v j+u := by
+  have all : ∀ j∈cells, (if j∈whole then l*(c*d j) else 0)≤v j+u := by
     intro j hj
     split_ifs with h
     · exact inside j h

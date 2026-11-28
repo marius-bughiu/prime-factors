@@ -279,8 +279,8 @@ theorem tile_upper {li : ℕ → ℝ} (h : FiveEndpoints li) (f : Bool) {ij : La
       (card_le_card (fiber_subset f ij a)).trans (rectangle_bounds h gr f ha).2)
     _ = _ := by rw [sum_const,smul_eq_mul,units_card]
 
-theorem tile_lower {li : ℕ → ℝ} (h : FiveEndpoints li) {ij : Label} (ok : ij∈full) :
-    4*(W/2851)^2≤(tile true ij).card := by
+theorem tile_lower_group {li : ℕ → ℝ} (h : FiveEndpoints li) (f : Bool) {ij : Label} (ok : ij∈full) :
+    4*(W/2851)^2≤(tile f ij).card := by
   have gr := (mem_filter.mp (show ij∈grid.filter _ by simpa only [full] using ok)).1
   rw [fiber_total]
   calc
@@ -288,9 +288,12 @@ theorem tile_lower {li : ℕ → ℝ} (h : FiveEndpoints li) {ij : Label} (ok : 
     _ ≤ _ := by
       apply sum_le_sum
       intro a ha
-      apply (rectangle_bounds h gr true ha).1.trans
+      apply (rectangle_bounds h gr f ha).1.trans
       apply card_le_card
       intro v hv
-      exact mem_filter.mpr ⟨full_rectangle ok true a hv,(bin_mem.mp (mem_product.mp hv).1).2.1⟩
+      exact mem_filter.mpr ⟨full_rectangle ok f a hv,(bin_mem.mp (mem_product.mp hv).1).2.1⟩
+
+theorem tile_lower {li : ℕ → ℝ} (h : FiveEndpoints li) {ij : Label} (ok : ij∈full) :
+    4*(W/2851)^2≤(tile true ij).card := tile_lower_group h true ok
 
 end PrimeFactors.SumGridPopulation
