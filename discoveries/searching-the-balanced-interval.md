@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+For 2,491, a 6-by-6 grid leaves 69 of the 1,196 eligible targets uncovered. They all fall at just three numerators in the next column. Lean proves exactly which extra cells are needed, and shows that one test of the Fermat midpoint already factors every product whose two primes are near the same rectangle boundary. [Sparse corrections, counterexamples and full-size frequency](when-a-short-rectangle-misses-a-factor.md)
+
 A rectangular grid of fractions finds a prime of 323 for 119 of 144 negative-Jacobi targets. Close to the size that guarantees a hit, the number of missing squares equals the number of divisors of the shortfall. Wider grids factored all 2,465 products in a small census. Even with the best rectangle shape for every full-size product and every target through 2,015,165, fewer than a third admit a hit within $2^{975}$ cells. [Which squares escape, what the census cost and the full-width proofs](which-squares-a-rational-rectangle-misses.md)
 
 Dividing the squared difference by its full power of two first saved a further 402,248 gcds on all 27,527 eligible small products. Knowing which even and odd positions to visit made the interval search faster on the 12-bit cohort, though the direct consecutive scan still finished earlier. A population bound puts the fraction of tests this refinement saves below $2^{-350}$ on almost all full-width products. [How to visit the positions and what it costs](when-removing-powers-of-two-saves-factor-tests.md)

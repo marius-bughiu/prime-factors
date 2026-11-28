@@ -1,0 +1,107 @@
+{
+  "cohorts": [
+    {
+      "factor_bits": 6,
+      "products": 14,
+      "mixed": 2,
+      "fermat_tests": {
+        "1": 2
+      }
+    },
+    {
+      "factor_bits": 7,
+      "products": 42,
+      "mixed": 21,
+      "fermat_tests": {
+        "1": 15,
+        "2": 4,
+        "3": 2
+      }
+    },
+    {
+      "factor_bits": 8,
+      "products": 148,
+      "mixed": 48,
+      "fermat_tests": {
+        "1": 29,
+        "2": 12,
+        "3": 5,
+        "4": 2
+      }
+    },
+    {
+      "factor_bits": 9,
+      "products": 543,
+      "mixed": 141,
+      "fermat_tests": {
+        "1": 73,
+        "2": 41,
+        "3": 19,
+        "4": 8
+      }
+    },
+    {
+      "factor_bits": 10,
+      "products": 1718,
+      "mixed": 273,
+      "fermat_tests": {
+        "1": 122,
+        "2": 86,
+        "3": 45,
+        "4": 20
+      }
+    },
+    {
+      "factor_bits": 11,
+      "products": 5530,
+      "mixed": 822,
+      "fermat_tests": {
+        "1": 390,
+        "2": 251,
+        "3": 132,
+        "4": 46,
+        "5": 3
+      }
+    }
+  ],
+  "products": 7995,
+  "mixed": 1307,
+  "fermat_tests": {
+    "1": 631,
+    "2": 394,
+    "3": 203,
+    "4": 76,
+    "5": 3
+  },
+  "shape_swap": {
+    "product": "2491",
+    "factors": [
+      "47",
+      "53"
+    ],
+    "negative_targets": 1196,
+    "hits_6_by_6": 1127,
+    "hits_5_by_7": 1150,
+    "overlap": {
+      "both": 1081,
+      "square_only": 46,
+      "rectangle_only": 69,
+      "neither": 0
+    },
+    "gcds_6_by_6_then_5_by_7": {
+      "13": [
+        1,
+        53
+      ],
+      "29": [
+        53,
+        1
+      ]
+    },
+    "recovered_by_numerator_in_column_7": {
+      "1": 23,
+      "2": 23,
+      "4": 23
+    }
+  }
+}

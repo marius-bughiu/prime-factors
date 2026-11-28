@@ -1149,5 +1149,18 @@
     "factors": ["89", "97"],
     "remaining": [],
     "fermat_steps": 0
+  },
+  {
+    "id": "rectangle-boundary-five-midpoints",
+    "description": "Public fourth-root grid boundary where Fermat needs all five midpoint tests",
+    "n": "2562569",
+    "max_steps": 5,
+    "status": "complete",
+    "factors": [
+      "1489",
+      "1721"
+    ],
+    "remaining": [],
+    "fermat_steps": 5
   }
 ]
