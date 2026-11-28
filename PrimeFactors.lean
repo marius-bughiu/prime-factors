@@ -951,3 +951,7 @@ import PrimeFactors.PrimeGuessProducts
 import PrimeFactors.ArbitrarilyBiasedSumGuesses
 import PrimeFactors.SplittingGuessPrimes
 import PrimeFactors.FixedProductSumGuesses
+import PrimeFactors.PrimeResidueRankTransfer
+import PrimeFactors.FiveSquarePrimeSupply
+import PrimeFactors.FiveSquareActualRanks
+import PrimeFactors.RankWeightSeparation

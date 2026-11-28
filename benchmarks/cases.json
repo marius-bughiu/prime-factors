@@ -1,5 +1,18 @@
 [
   {
+    "id": "five-squares-census-48",
+    "description": "Fewest Fermat midpoints among all 23 full-width products of two distinct 24-bit primes congruent to one modulo 7239457225",
+    "n": "237816169841251",
+    "max_steps": 41,
+    "status": "complete",
+    "factors": [
+      "15385987",
+      "15456673"
+    ],
+    "remaining": [],
+    "fermat_steps": 41
+  },
+  {
     "id": "five-squares-product-one",
     "description": "Chosen semiprime congruent to one modulo 7239457225 with close primes; three-midpoint Fermat certificate",
     "n": "139649129870251",

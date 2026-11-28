@@ -1,5 +1,41 @@
 [
   {
+    "id": "five-square-actual-guess-rank",
+    "category": "gains",
+    "title": "The 53.04% remainder-guess saving carries over to a full-size prime population",
+    "impact": "The optimal mean for guessing the sum remainder is within 0.001 of 470,695,147/48, about 9,806,148.896. A random order needs 20,883,632.5 guesses on average.",
+    "scope": "Distinct 1,024-bit primes with 2,048-bit product congruent to one modulo 7,239,457,225. Uses a published Dirichlet-GRH prime-count estimate.",
+    "detail": "Every fixed guess order has nearly the same mean on these prime products as on the modular model. The successful guess identifies a sum remainder.",
+    "sources": [
+      {
+        "href": "discoveries/what-many-prime-squares-buy-a-remainder-guess.md#do-the-same-guesses-work-for-actual-primes",
+        "label": "Population and assumptions"
+      },
+      {
+        "href": "PrimeFactors/FiveSquareActualRanks.lean",
+        "label": "Lean proof"
+      }
+    ]
+  },
+  {
+    "id": "five-square-actual-group-order",
+    "category": "formulas",
+    "title": "All 32 remainder-frequency groups keep their order on full-size prime pairs",
+    "impact": "Every remainder with 280 modular pairs occurs more often than every remainder with 272. These are the closest distinct weights, with ratio 35/34.",
+    "scope": "The same full-size product-one population under the published Dirichlet-GRH estimate. Ties inside a modular group can split.",
+    "detail": "The proof shows that a spread strictly below 35/34 in the underlying prime-pair counts already preserves every strict group comparison.",
+    "sources": [
+      {
+        "href": "discoveries/what-many-prime-squares-buy-a-remainder-guess.md#do-the-same-guesses-work-for-actual-primes",
+        "label": "Frequency groups and examples"
+      },
+      {
+        "href": "PrimeFactors/RankWeightSeparation.lean",
+        "label": "Exact separation bound"
+      }
+    ]
+  },
+  {
     "id": "five-prime-square-rank",
     "category": "gains",
     "title": "Five prime squares cut the mean remainder-guess count by 53.04%",
