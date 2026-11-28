@@ -1,5 +1,25 @@
 [
   {
+    "id": "prime-sum-polynomial-55-baseline",
+    "description": "Prime factor check for a product admitted by the optimal small quadratic",
+    "n": "55",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["5", "11"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "prime-sum-polynomial-143-baseline",
+    "description": "Prime factor check for a product missed by the same small quadratic",
+    "n": "143",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["11", "13"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
     "id": "cone-unit-target-15-baseline",
     "description": "Small-prime baseline for three-square targets and the primitive sphere comparison at 15",
     "n": "15",

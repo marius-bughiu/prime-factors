@@ -1,5 +1,115 @@
 [
   {
+    "id": "polynomial-prime-sum-population",
+    "category": "limits",
+    "title": "A fixed polynomial equation of degree 2¹²⁸ covers fewer than one in 2⁸⁷⁹ full-size products",
+    "impact": "Every eligible pair counts as a hit whenever its true sum satisfies the equation, even if thousands of wrong sums also satisfy it.",
+    "scope": "One fixed nonzero rational polynomial in the product and the sum. The count is unconditional over all pairs of distinct 1,024-bit primes giving a 2,048-bit product.",
+    "detail": "Substitution of pq and p+q preserves nonvanishing. A finite-grid root bound and unconditional estimates for the number of eligible pairs give the stated share.",
+    "sources": [
+      {
+        "href": "discoveries/how-often-can-a-polynomial-describe-the-prime-sum.md",
+        "label": "Formula class and population"
+      },
+      {
+        "href": "PrimeFactors/PrimeSumPolynomialGrid.lean",
+        "label": "Nonvanishing and grid bound"
+      },
+      {
+        "href": "PrimeFactors/PrimeSumPolynomialPopulation.lean",
+        "label": "2,048-bit result"
+      }
+    ]
+  },
+  {
+    "id": "prime-sum-polynomial-exact-coverage",
+    "category": "limits",
+    "title": "The best quadratic on ten small semiprimes covers seven and encodes two primes",
+    "impact": "From 3, 5, 7, 11 and 13, every quadratic covering seven of the ten products accepts exactly the pairs containing two preselected entries.",
+    "scope": "On an n-entry grid the exact number of distinct pairs covered at degree d ≤ n−1 is bounded by the number touching d entries. The equality classification requires d < n−1.",
+    "detail": "A degree-two example encodes 3 and 5. It accepts the sum 16 on product 55 and misses the sum 24 on 143.",
+    "sources": [
+      {
+        "href": "discoveries/how-often-can-a-polynomial-describe-the-prime-sum.md#what-happens-with-five-small-primes",
+        "label": "Five-prime example and general formula"
+      },
+      {
+        "href": "PrimeFactors/PrimeSumPolynomialExtremum.lean",
+        "label": "Exact upper bound"
+      },
+      {
+        "href": "PrimeFactors/PrimeSumPolynomialSaturation.lean",
+        "label": "Why equality forces selected entries"
+      },
+      {
+        "href": "#prime-sum-polynomial-55-baseline",
+        "label": "Independent factor check at 55"
+      },
+      {
+        "href": "#prime-sum-polynomial-143-baseline",
+        "label": "Independent factor check at 143"
+      }
+    ]
+  },
+  {
+    "id": "prime-sum-menu-degree-budget",
+    "category": "limits",
+    "title": "Choosing the equation after seeing the whole product has a degree budget",
+    "impact": "Up to 2³² preselected polynomials of degree at most 2⁹⁶ still cover fewer than one in 2⁸⁷⁹ eligible products, even when any rule chooses among them.",
+    "scope": "The finite collection is fixed in advance. The selection may use the entire input, and the bound even grants credit if any entry fits.",
+    "detail": "Multiply all the nonzero equations to obtain a single nonzero polynomial. Its degree is at most the sum of the degrees. Clearing a nonvanishing denominator also puts an exact rational prediction in this class.",
+    "sources": [
+      {
+        "href": "discoveries/how-often-can-a-polynomial-describe-the-prime-sum.md#what-if-we-choose-an-equation-after-seeing-the-product",
+        "label": "Menu scope and population"
+      },
+      {
+        "href": "PrimeFactors/PrimeSumPolynomialMenu.lean",
+        "label": "Menu and rational-function proofs"
+      }
+    ]
+  },
+  {
+    "id": "prime-sum-polynomial-approximation",
+    "category": "limits",
+    "title": "A window of 2¹²⁸ either side still rarely contains the prime sum",
+    "impact": "For an integer polynomial of degree at most 2³², even allowing this much error leaves fewer than one hit in 2⁸⁴⁵ eligible products.",
+    "scope": "Exactly evaluated, fixed integer-coefficient predictions. The theorem concerns the entire 2,048-bit prime-pair population.",
+    "detail": "Each signed integer error corresponds to a shifted polynomial equation. Multiplying them accounts for the entire window. The example 20 ± 2 contains the sums on 77 and 85, and misses 143.",
+    "sources": [
+      {
+        "href": "discoveries/how-often-can-a-polynomial-describe-the-prime-sum.md#does-predicting-a-neighborhood-of-the-sum-help",
+        "label": "Tolerance and examples"
+      },
+      {
+        "href": "PrimeFactors/PrimeSumPolynomialWindow.lean",
+        "label": "Lean coverage bound"
+      }
+    ]
+  },
+  {
+    "id": "prime-sum-scale-free-laws",
+    "category": "limits",
+    "title": "A scale-invariant quadratic can fit just one distinct semiprime across all sizes",
+    "impact": "If every term of a polynomial scales the same way when both primes are rescaled, degree d permits at most floor(d/2) distinct prime pairs. A family of equations attains this bound.",
+    "scope": "Fixed nonzero rational equations, with weight two on the product and one on the sum. The primes are distinct and counted without order.",
+    "detail": "The reduced denominator of the sum squared divided by the product is exactly the product. The pair 7 and 11 gives 324/77, uniquely. Each root of the normalized equation therefore gives at most one semiprime.",
+    "sources": [
+      {
+        "href": "discoveries/how-often-can-a-polynomial-describe-the-prime-sum.md#does-an-equation-in-the-ratio-of-the-primes-work-better",
+        "label": "Ratios and the matching construction"
+      },
+      {
+        "href": "PrimeFactors/PrimeSumRatioRoots.lean",
+        "label": "Denominator and leading coefficient"
+      },
+      {
+        "href": "PrimeFactors/PrimeSumHomogeneousGrid.lean",
+        "label": "Global sharp bound"
+      }
+    ]
+  },
+  {
     "id": "three-square-minus-one-sum",
     "category": "formulas",
     "title": "A count of 360 triples modulo 15 gives the prime sum 8",

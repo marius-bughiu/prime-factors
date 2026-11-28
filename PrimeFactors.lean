@@ -1132,3 +1132,13 @@ import PrimeFactors.ConeUnitTarget
 import PrimeFactors.ConeTargetLifts
 import PrimeFactors.ProjectiveChartComplement
 import PrimeFactors.SphereCircleIdentity
+import PrimeFactors.PrimeSumPolynomialGrid
+import PrimeFactors.PrimeSumPolynomialExtremum
+import PrimeFactors.PrimeSumPolynomialStars
+import PrimeFactors.PrimeSumPolynomialSaturation
+import PrimeFactors.PrimeSumPolynomialExamples
+import PrimeFactors.PrimeSumPolynomialPopulation
+import PrimeFactors.PrimeSumPolynomialMenu
+import PrimeFactors.PrimeSumPolynomialWindow
+import PrimeFactors.PrimeSumRatioRoots
+import PrimeFactors.PrimeSumHomogeneousGrid
