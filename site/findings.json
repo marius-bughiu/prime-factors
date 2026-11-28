@@ -1,5 +1,81 @@
 [
   {
+    "id": "whole-product-three-square-readout",
+    "category": "formulas",
+    "title": "702 sphere points give a prime for 91 and the prime sum for 77",
+    "impact": "Subtracting six times the radius from the point count and dividing by twelve returns 13 at radius 91. At radius 77 the result is 20, two more than the prime sum.",
+    "scope": "Classical three-square counts for products of distinct odd primes. The examples use direct finite enumeration. Computing a sufficiently accurate count cheaply for an arbitrary large radius remains open.",
+    "detail": "The result names the prime congruent to 1 modulo 4 when the prime residues differ. Two residues equal to 3 give the sum plus two. Two residues equal to 1 give zero.",
+    "sources": [
+      {"href": "discoveries/what-counting-points-on-a-sphere-reveals.md", "label": "Examples and cost"},
+      {"href": "PrimeFactors/ThreeSquareCountPrecision.lean", "label": "Lean case analysis"},
+      {"href": "#three-square-radius-77-baseline", "label": "Independent check on 77"},
+      {"href": "#three-square-radius-91-baseline", "label": "Independent check on 91"}
+    ]
+  },
+  {
+    "id": "three-square-blind-multipliers",
+    "category": "limits",
+    "title": "Every positive radius multiplier loses the same information in one sphere-count case",
+    "impact": "If both primes are 1 modulo 4, the number of points at radius mN is exactly N times the count at m for every positive integer m.",
+    "scope": "Includes multipliers sharing one or both primes. The result concerns total three-square counts and assumes the classical Hurwitz formula.",
+    "detail": "For balanced inputs equal to 1 modulo 4, estimating the count with error below twelve times the integer square root of the radius is equivalent to deciding whether −1 is a square modulo the product.",
+    "sources": [
+      {"href": "discoveries/what-counting-points-on-a-sphere-reveals.md#can-we-fix-the-zero-case-by-changing-the-radius", "label": "Assumptions and equivalent question"},
+      {"href": "PrimeFactors/EvenThreeSquareRadius.lean", "label": "Every positive multiplier"},
+      {"href": "PrimeFactors/ThreeSquareCountPrecision.lean", "label": "Both implications for approximation"}
+    ]
+  },
+  {
+    "id": "three-square-informative-population",
+    "category": "formulas",
+    "title": "An exact sphere count would reveal a factor or the sum on about three quarters of full-size products",
+    "impact": "The informative fraction is within 1/4,160 of 75% across all eligible prime pairs, using published unconditional prime-count estimates.",
+    "scope": "Distinct 1,024-bit primes with a 2,048-bit product. This measures the information in the exact count. A cheap means of obtaining it remains open.",
+    "detail": "At least one of the two primes must be 3 modulo 4. Sixteen of the 64 ordered pairs of odd residues modulo 16 fail that condition.",
+    "sources": [
+      {"href": "discoveries/what-counting-points-on-a-sphere-reveals.md#what-the-total-count-tells-us", "label": "Population and cost"},
+      {"href": "PrimeFactors/ThreeSquareSignalPopulation.lean", "label": "Prime-population proof"}
+    ]
+  },
+  {
+    "id": "finite-three-square-twists",
+    "category": "limits",
+    "title": "Every fixed list of three-square multipliers has arbitrarily large balanced inputs it misses",
+    "impact": "A multiplier of two changes the count beyond its public baseline for 65. At 697 both one and two return precisely the baseline. For any fixed finite list all entries can do so at once.",
+    "scope": "Primes p < q < 2p with arbitrarily large p, using the classical three-square recurrence. This proves no claim about a specified bit width or multipliers chosen after reading the particular product.",
+    "detail": "The number of representations of dN² as three squares can equal N times the base count at d simultaneously for every d in the preselected list.",
+    "sources": [
+      {"href": "discoveries/what-counting-points-on-a-sphere-reveals.md#what-about-changing-the-number-being-represented", "label": "Two examples and the limitation"},
+      {"href": "PrimeFactors/FiniteThreeSquareTwists.lean", "label": "Balanced prime-pair construction"},
+      {"href": "PrimeFactors/ThreeSquareTwistExamples.lean", "label": "Worked counts"}
+    ]
+  },
+  {
+    "id": "three-square-primitive-precision",
+    "category": "formulas",
+    "title": "A primitive sphere-point count within 48 determines the prime sum or gap",
+    "impact": "The exact primitive count is a multiple of 96. Rounding an estimate with error strictly below 48 recovers enough information to determine both primes.",
+    "scope": "Distinct odd prime factors. The estimate is supplied. General deductions use the classical representation formula, and a second proof derives the primitive formula from total counts.",
+    "detail": "At radius 65 the 288 primitive points give a prime sum of 18. A primitive point has coordinate gcd equal to one.",
+    "sources": [
+      {"href": "discoveries/what-counting-points-on-a-sphere-reveals.md#what-changes-if-we-count-only-primitive-points", "label": "Rounding and interpretation"},
+      {"href": "PrimeFactors/ThreeSquareRadiusCounts.lean", "label": "Lean recovery and rounding proof"}
+    ]
+  },
+  {
+    "id": "three-square-point-gcd-density",
+    "category": "limits",
+    "title": "A uniform point on the sphere almost never has a proper factor as its coordinate gcd",
+    "impact": "With factors p and q, the chance per uniform draw is strictly below 1/p + 1/q. For two 1,024-bit primes it is below 2⁻¹⁰²².",
+    "scope": "Uniform signed, ordered integer points including the six axial points. The probability bound uses the classical total-count formula. There is no assumed cost for drawing the point.",
+    "detail": "Dividing each point with coordinate gcd p by p gives a primitive point at radius q. This counts the successful points exactly. At radius 15 there are 48 successes among 150 surface points.",
+    "sources": [
+      {"href": "discoveries/what-counting-points-on-a-sphere-reveals.md", "label": "Counts and comparison"},
+      {"href": "PrimeFactors/ThreeSquarePointDensity.lean", "label": "Geometric partition and rate"}
+    ]
+  },
+  {
     "id": "unconditional-four-billion-sum-guesses",
     "category": "limits",
     "title": "Across all eligible products, four billion sum guesses hit fewer than one in 35 trillion",

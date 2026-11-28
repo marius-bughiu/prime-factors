@@ -1115,3 +1115,10 @@ import PrimeFactors.SumMenuSmallExamples
 import PrimeFactors.FiniteAdviceMenus
 import PrimeFactors.DyadicSumAdviceThreshold
 import PrimeFactors.UnconditionalSumMenuPopulation
+import PrimeFactors.ThreeSquareRadiusCounts
+import PrimeFactors.ThreeSquareCountPrecision
+import PrimeFactors.ThreeSquarePointDensity
+import PrimeFactors.EvenThreeSquareRadius
+import PrimeFactors.ThreeSquareSignalPopulation
+import PrimeFactors.FiniteThreeSquareTwists
+import PrimeFactors.ThreeSquareTwistExamples

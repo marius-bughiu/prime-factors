@@ -1,5 +1,25 @@
 [
   {
+    "id": "three-square-radius-77-baseline",
+    "description": "Small-prime baseline for the 77 lattice-point census",
+    "n": "77",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["7", "11"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "three-square-radius-91-baseline",
+    "description": "Small-prime baseline for the 91 lattice-point census",
+    "n": "91",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["7", "13"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
     "id": "factor-ending-depth-6-a",
     "description": "Fermat baseline for selected 20-bit factor-ending control A at sum precision 6",
     "n": "545339",

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Counting the integer points on a sphere of radius $N$ gives a measurement of the full product. For $N=91$, counting all 702 points yields the prime 13. At $N=77$ the same 702 yields the sum 18. When both primes are 1 modulo 4, every positive integer radius multiplier returns a known multiple of its own count. [What exact and approximate counts reveal](what-counting-points-on-a-sphere-reveals.md)
+
 From a fixed 161-bit product suffix ending in binary 001, a list of up to $2^{32}$ guesses can cover at most a fraction $5{,}010{,}795{,}177/2^{94}$ of the modular possibilities for the sum ending. A list attains that bound. Even 121 extra bits choosing among such lists keep the best hit rate below 41.7% on full-size prime pairs under the stated endpoint estimates. [Exact coverage, small examples and the price of additional information](how-many-factor-sums-can-a-list-of-guesses-cover.md)
 
 A square root computed from the public product gives a single candidate for the full sum when both prime widths are known and even. It found 619 and 971 and missed a second product with the same twelve low bits. Across all eligible full-size inputs the success rate of this specific test is below $2^{-500}$. [Exact success condition, two controls and full-population proof](when-one-public-square-root-predicts-the-prime-sum.md)
