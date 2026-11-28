@@ -5,7 +5,7 @@
     "title": "Choosing the denominator cut 14,958 prefix gcds to 3,199",
     "impact": "At 2,183 the rule chooses denominator 30. Two entries through 72 share a factor with the product. Of the candidate sums 84 and 96, only 96 has a square discriminant.",
     "scope": "For any odd product the rule chooses the largest coprime denominator for which the full residue list has at most two possible corrections. Across 57 small balanced products it shortened 52 intervals and tied five.",
-    "detail": "Complete scans saved 11,759 gcds. Stopping at the first hit or exhaustion saved 145 gcds, and 37 of the shorter intervals contained a factor. Ascending balanced trial division found all 57 factors in 171 divisions. The census charges table setup separately.",
+    "detail": "Complete scans saved 11,759 gcds. Stopping at the first hit or exhaustion saved 145 gcds, and 37 of all 57 selected intervals contained a factor. Among the 52 strictly shortened intervals, 33 contained a factor. Ascending balanced trial division found all 57 factors in 171 divisions. The census charges table setup separately.",
     "sources": [
       {
         "href": "PrimeFactors/FractionalPrefixPlanner.lean",
