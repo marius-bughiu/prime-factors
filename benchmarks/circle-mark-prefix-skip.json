@@ -1,0 +1,194 @@
+[
+  {
+    "factor_bits": 7,
+    "products": 42,
+    "factors_during_target_selection": 0,
+    "jacobi_tests": 97,
+    "fermat_midpoints": 65,
+    "direct_gcds": 997,
+    "band_gcds": 568,
+    "prefix_skips": 366,
+    "later_skips": 63,
+    "later_jumps": 40,
+    "bands": 97,
+    "square_roots": 161,
+    "products_with_later_skips": 31,
+    "largest_later_saving": {
+      "product": "14351",
+      "target": 7,
+      "first_x": 32,
+      "factors": [
+        "113",
+        "127"
+      ],
+      "fermat_midpoints": 1,
+      "direct_gcds": 32,
+      "band_gcds": 10,
+      "prefix_skips": 10,
+      "later_skips": 12,
+      "later_jumps": 7,
+      "bands": 8,
+      "square_roots": 15
+    }
+  },
+  {
+    "factor_bits": 8,
+    "products": 148,
+    "factors_during_target_selection": 0,
+    "jacobi_tests": 335,
+    "fermat_midpoints": 363,
+    "direct_gcds": 7661,
+    "band_gcds": 5479,
+    "prefix_skips": 1837,
+    "later_skips": 345,
+    "later_jumps": 166,
+    "bands": 365,
+    "square_roots": 614,
+    "products_with_later_skips": 91,
+    "largest_later_saving": {
+      "product": "59989",
+      "target": 2,
+      "first_x": 99,
+      "factors": [
+        "239",
+        "251"
+      ],
+      "fermat_midpoints": 1,
+      "direct_gcds": 99,
+      "band_gcds": 62,
+      "prefix_skips": 15,
+      "later_skips": 22,
+      "later_jumps": 10,
+      "bands": 12,
+      "square_roots": 23
+    }
+  },
+  {
+    "factor_bits": 9,
+    "products": 543,
+    "factors_during_target_selection": 0,
+    "jacobi_tests": 1413,
+    "fermat_midpoints": 2244,
+    "direct_gcds": 60916,
+    "band_gcds": 48488,
+    "prefix_skips": 9715,
+    "later_skips": 2713,
+    "later_jumps": 947,
+    "bands": 1663,
+    "square_roots": 2849,
+    "products_with_later_skips": 473,
+    "largest_later_saving": {
+      "product": "256027",
+      "target": 2,
+      "first_x": 157,
+      "factors": [
+        "503",
+        "509"
+      ],
+      "fermat_midpoints": 1,
+      "direct_gcds": 157,
+      "band_gcds": 49,
+      "prefix_skips": 22,
+      "later_skips": 86,
+      "later_jumps": 40,
+      "bands": 49,
+      "square_roots": 98
+    }
+  },
+  {
+    "factor_bits": 10,
+    "products": 1718,
+    "factors_during_target_selection": 0,
+    "jacobi_tests": 4442,
+    "fermat_midpoints": 14258,
+    "direct_gcds": 341537,
+    "band_gcds": 286327,
+    "prefix_skips": 43570,
+    "later_skips": 11640,
+    "later_jumps": 3161,
+    "bands": 5371,
+    "square_roots": 9210,
+    "products_with_later_skips": 1398,
+    "largest_later_saving": {
+      "product": "1040399",
+      "target": 19,
+      "first_x": 324,
+      "factors": [
+        "1019",
+        "1021"
+      ],
+      "fermat_midpoints": 1,
+      "direct_gcds": 324,
+      "band_gcds": 61,
+      "prefix_skips": 32,
+      "later_skips": 231,
+      "later_jumps": 96,
+      "bands": 103,
+      "square_roots": 206
+    }
+  },
+  {
+    "factor_bits": 11,
+    "products": 5530,
+    "factors_during_target_selection": 0,
+    "jacobi_tests": 14299,
+    "fermat_midpoints": 82017,
+    "direct_gcds": 2292356,
+    "band_gcds": 2039618,
+    "prefix_skips": 199086,
+    "later_skips": 53652,
+    "later_jumps": 10447,
+    "bands": 17146,
+    "square_roots": 29100,
+    "products_with_later_skips": 4893,
+    "largest_later_saving": {
+      "product": "4137131",
+      "target": 2,
+      "first_x": 701,
+      "factors": [
+        "2029",
+        "2039"
+      ],
+      "fermat_midpoints": 1,
+      "direct_gcds": 701,
+      "band_gcds": 434,
+      "prefix_skips": 44,
+      "later_skips": 223,
+      "later_jumps": 64,
+      "bands": 78,
+      "square_roots": 155
+    }
+  },
+  {
+    "factor_bits": 12,
+    "products": 19546,
+    "factors_during_target_selection": 0,
+    "jacobi_tests": 51380,
+    "fermat_midpoints": 581692,
+    "direct_gcds": 16126630,
+    "band_gcds": 14845608,
+    "prefix_skips": 1000528,
+    "later_skips": 280494,
+    "later_jumps": 39413,
+    "bands": 61841,
+    "square_roots": 105195,
+    "products_with_later_skips": 17608,
+    "largest_later_saving": {
+      "product": "16695347",
+      "target": 2,
+      "first_x": 1955,
+      "factors": [
+        "4079",
+        "4093"
+      ],
+      "fermat_midpoints": 1,
+      "direct_gcds": 1955,
+      "band_gcds": 1308,
+      "prefix_skips": 63,
+      "later_skips": 584,
+      "later_jumps": 185,
+      "bands": 227,
+      "square_roots": 453
+    }
+  }
+]

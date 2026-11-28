@@ -25,6 +25,8 @@ def experiment(name, *args, data=RESEARCH, lean=False, proof=None):
 # fixture and reference result, also when one is added, renamed or removed.
 CHECKS = (
     Check('unit-tests', ('python3', '-m', 'unittest', 'discover', '-s', 'tests'), lean=True),
+    experiment('circle_mark_prefix_skip', lean=True, data=('benchmarks/circle-mark-prefix-skip.json',)),
+    experiment('circle_mark_spacing', lean=True, data=('benchmarks/circle-mark-spacing.json',)),
     experiment('circle_projection_counts', lean=True, data=('benchmarks/circle-projection-counts.json',)),
     experiment('dyadic_center_compression', lean=True, data=('benchmarks/dyadic-center-compression.json',)),
     experiment('floor_shift_census', data=('benchmarks/floor-shift-census.json',)),

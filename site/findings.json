@@ -1,5 +1,185 @@
 [
   {
+    "id": "safe-cofactor-band-skips",
+    "category": "gains",
+    "title": "The factor width rules out whole stretches of gcd tests",
+    "impact": "A multiple of a hidden prime between P and H must lie between kP and kH for some positive integer k. The search can jump over gaps between these intervals and preserves the first successful coordinate.",
+    "scope": "The test uses the product, known factor width and a positive negative-Jacobi target below P. Each jump can require integer square roots.",
+    "detail": "At 3,127 with target 3, coordinates 9 and 10 are impossible. The next coordinate gives gcd 59.",
+    "sources": [
+      {
+        "href": "discoveries/which-marked-coordinate-tests-can-be-skipped.md",
+        "label": "Derivation and cost"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkCofactorBands.lean",
+        "label": "Proof of the jump"
+      }
+    ]
+  },
+  {
+    "id": "cofactor-band-census",
+    "category": "cases",
+    "title": "Skipping intervals saved 1,281,022 gcds across 19,546 products",
+    "impact": "On all eligible 12-bit prime pairs, the consecutive search used 16,126,630 gcds and the interval search used 14,845,608. Both found the same first factor at the same coordinate every time.",
+    "scope": "Every pair of distinct 12-bit primes whose product has 24 bits. The search chose the first negative-Jacobi target from the product.",
+    "detail": "The interval search added 105,195 integer square roots. Fermat recovered the same pairs in 581,692 midpoint tests.",
+    "sources": [
+      {
+        "href": "discoveries/which-marked-coordinate-tests-can-be-skipped.md",
+        "label": "Derivation and cost"
+      },
+      {
+        "href": "benchmarks/circle-mark-prefix-skip.json",
+        "label": "Census and baselines"
+      }
+    ]
+  },
+  {
+    "id": "cofactor-band-relative-limit",
+    "category": "limits",
+    "title": "The fraction of gcds these intervals save at full width is tiny",
+    "impact": "Except on fewer than one in 2^85 eligible prime pairs, the interval test saves less than one part in 2^360 of the visits through the first mark.",
+    "scope": "All distinct 1,024-bit prime pairs with a 2,048-bit product. The target may depend on the product and must be positive, at most 2,015,165 and have negative Jacobi symbol.",
+    "detail": "The elementary size check already skips the first 2^511 positive positions. The relative bound concerns the unreduced difference x² − a.",
+    "sources": [
+      {
+        "href": "discoveries/which-marked-coordinate-tests-can-be-skipped.md",
+        "label": "Derivation and cost"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkBandSavings.lean",
+        "label": "Population and fraction saved"
+      }
+    ]
+  },
+  {
+    "id": "circle-small-target-early-limit",
+    "category": "limits",
+    "title": "Even the best small target rarely has an early mark",
+    "impact": "Fewer than one in 2^86 eligible prime pairs admit any positive negative-Jacobi target through 2,015,165 with a successful coordinate through 2^900.",
+    "scope": "The denominator counts all distinct 1,024-bit prime pairs with a 2,048-bit product. Every allowed target and coordinate can be tried for free in this upper bound.",
+    "detail": "Adding both components of the specified scaled test at budget 2^900 leaves the joint success fraction below 2^-85.",
+    "sources": [
+      {
+        "href": "discoveries/which-marked-coordinate-tests-can-be-skipped.md",
+        "label": "Derivation and cost"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkSmallTargetPopulation.lean",
+        "label": "Proof for all allowed targets"
+      }
+    ]
+  },
+  {
+    "id": "circle-mark-single-overlap",
+    "category": "formulas",
+    "title": "One gcd gives an entire shifted overlap count",
+    "impact": "For a shift h coprime to the product N, compute g = gcd(N, |h² − 4a|). The overlap is zero if g is one and N/g otherwise.",
+    "scope": "Two distinct odd primes and one target a with negative Jacobi symbol. A successful shift corresponds to an ordinary marked coordinate.",
+    "detail": "On 77, target 2 and shift 1 give gcd 7 and exactly 11 marked starts.",
+    "sources": [
+      {
+        "href": "discoveries/what-shifted-mark-counts-reveal.md",
+        "label": "Derivation and cost"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkAutocorrelation.lean",
+        "label": "Exact congruence and count"
+      }
+    ]
+  },
+  {
+    "id": "circle-mark-window-separation",
+    "category": "formulas",
+    "title": "Weighted overlaps distinguish gaps that ordinary totals miss",
+    "impact": "For a short window of shifts, all nonzero contributions come from the shorter distance between the two marked residue classes. Triangular weights retain that distance once the window reaches it.",
+    "scope": "The formulas use an exact aggregate and a window shorter than half the prime on which the target has roots. The cost of obtaining the aggregate remains open.",
+    "detail": "Modulo 39 the two targets 14 and 17 have ordinary totals of 3 through shift 4, and weighted totals of 9 and 3.",
+    "sources": [
+      {
+        "href": "discoveries/what-shifted-mark-counts-reveal.md",
+        "label": "Derivation and cost"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkWindows.lean",
+        "label": "Window and moment formulas"
+      }
+    ]
+  },
+  {
+    "id": "circle-mark-four-count",
+    "category": "limits",
+    "title": "Deciding whether an overlap is four can decide quadratic residuosity",
+    "impact": "Given a negative-Jacobi target a and a positive-Jacobi input z, the shifted overlap for a and a·z equals four exactly when z has no square root modulo the product.",
+    "scope": "This holds for every shift at a product of two distinct odd primes. The reduction identifies a decision problem without proving a time lower bound.",
+    "detail": "The targets 2 and 3 give exactly four at all 77 shifts modulo 77.",
+    "sources": [
+      {
+        "href": "discoveries/what-shifted-mark-counts-reveal.md",
+        "label": "Derivation and cost"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkCrossTargets.lean",
+        "label": "Reduction and three-target relation"
+      }
+    ]
+  },
+  {
+    "id": "circle-mark-same-side-resultant",
+    "category": "formulas",
+    "title": "A known square multiplier makes a two-target overlap computable",
+    "impact": "When the second target is the first times a known unit square, one gcd of an explicit polynomial computes the entire overlap at any coprime shift.",
+    "scope": "The first target must have negative Jacobi symbol at a product of two distinct odd primes. The cost of locating a successful shift remains.",
+    "detail": "At 77, targets 2 and 8 give count 11 at shift 3 and zero at shift 1.",
+    "sources": [
+      {
+        "href": "discoveries/what-shifted-mark-counts-reveal.md",
+        "label": "Derivation and cost"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkResultant.lean",
+        "label": "Polynomial and controls"
+      }
+    ]
+  },
+  {
+    "id": "circle-mark-first-coordinate-optimum",
+    "category": "limits",
+    "title": "Consecutive coordinates maximize the chance of finding a mark for a uniform target",
+    "impact": "At each prime the chance depends only on the number of distinct nonzero squares tested. Testing 1 through L achieves the largest possible coverage for L fixed coordinates.",
+    "scope": "The product is fixed. The target is uniform over every residue with negative Jacobi symbol.",
+    "detail": "For 1,024-bit primes, even choosing among 2^64 predetermined menus of at most 2^64 coordinates after seeing the target has hit probability below 2^-893.",
+    "sources": [
+      {
+        "href": "discoveries/what-shifted-mark-counts-reveal.md",
+        "label": "Derivation and cost"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkTargetFrequency.lean",
+        "label": "Exact frequency and menu bound"
+      }
+    ]
+  },
+  {
+    "id": "circle-mark-packed-comparison",
+    "category": "cases",
+    "title": "Two shifted tests in one gcd match two consecutive tests in one gcd",
+    "impact": "At product 82,919, each paired method finds a factor for 4,592 of 41,172 targets within eight gcds. Testing one coordinate at a time finds 2,296.",
+    "scope": "The census includes every negative-Jacobi target. Lean proves equal coverage at each budget when the stated size condition holds.",
+    "detail": "The two paired methods can succeed on different targets. Each spent 313,304 search gcds across this census.",
+    "sources": [
+      {
+        "href": "discoveries/what-shifted-mark-counts-reveal.md",
+        "label": "Derivation and cost"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkPackedMenu.lean",
+        "label": "Coverage and boundary example"
+      }
+    ]
+  },
+  {
     "id": "circle-equal-x-readout",
     "category": "formulas",
     "title": "One equal-coordinate count reveals a factor or the sum in two residue cases",

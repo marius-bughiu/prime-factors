@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+The width of the two primes rules out entire intervals in a search for a shared divisor of $x^2-a$ and the product. For 3,127, two adjacent positions can be skipped before the next one gives 59. A separate calculation determines when one gcd can replace an entire count over shifted pairs of positions. [Size bounds and actual work](which-marked-coordinate-tests-can-be-skipped.md) · [Shifted marks and their cost](what-shifted-mark-counts-reveal.md)
+
 On a modular circle with a negative-Jacobi target, the number of first coordinates admitting exactly two second coordinates is one away from a prime factor. A second count of all nonunit differences gives the other side of the same calculation, with a proper gcd at every hit. Sampling points changes the per-draw hit probability by less than one part in $2^{1022}$ at full size. [Coordinate counts and cost](counting-the-two-lift-coordinates-of-a-circle.md)
 
 The number of points can also be estimated from repeats. For two genuine full-size products there is less than $2^{-755}$ difference between the acceptance probabilities of any repeats-only test, even after half the smaller population size in draws. The proof compares independent uniform draws with the modulus and coordinates hidden. [Exact blind comparison](what-repeated-circle-points-can-tell-us.md)

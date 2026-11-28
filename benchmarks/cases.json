@@ -1022,5 +1022,70 @@
     ],
     "remaining": [],
     "fermat_steps": 1
+  },
+  {
+    "id": "circle-mark-menu-667",
+    "description": "Trial division baseline for two-coordinate tests at fixed product 667",
+    "n": "667",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": [
+      "23",
+      "29"
+    ],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "circle-mark-scaled-7387",
+    "description": "Trial division baseline for the complete target census at width four",
+    "n": "7387",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": [
+      "83",
+      "89"
+    ],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "circle-mark-scaled-82919",
+    "description": "Fermat baseline for the complete target census at width eight",
+    "n": "82919",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": [
+      "283",
+      "293"
+    ],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
+    "id": "circle-mark-band-3127",
+    "description": "Trial division baseline for the cofactor band that skips two coordinates before finding 59",
+    "n": "3127",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": [
+      "53",
+      "59"
+    ],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "circle-mark-band-16695347",
+    "description": "Fermat baseline for the selected 12-bit pair with the most later coordinates skipped",
+    "n": "16695347",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": [
+      "4079",
+      "4093"
+    ],
+    "remaining": [],
+    "fermat_steps": 1
   }
 ]

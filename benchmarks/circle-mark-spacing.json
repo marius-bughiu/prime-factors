@@ -1,0 +1,650 @@
+{
+  "lag_census": {
+    "product": "77",
+    "mark_sets": 3,
+    "gcd_calls_to_construct_marks": 231,
+    "rows": [
+      {
+        "targets": [
+          2,
+          2
+        ],
+        "same_square_side": true,
+        "unit_lags_checked": 60,
+        "overlap_by_lag_0_through_76": [
+          22,
+          11,
+          0,
+          0,
+          0,
+          0,
+          11,
+          22,
+          11,
+          0,
+          0,
+          0,
+          0,
+          11,
+          22,
+          11,
+          0,
+          0,
+          0,
+          0,
+          11,
+          22,
+          11,
+          0,
+          0,
+          0,
+          0,
+          11,
+          22,
+          11,
+          0,
+          0,
+          0,
+          0,
+          11,
+          22,
+          11,
+          0,
+          0,
+          0,
+          0,
+          11,
+          22,
+          11,
+          0,
+          0,
+          0,
+          0,
+          11,
+          22,
+          11,
+          0,
+          0,
+          0,
+          0,
+          11,
+          22,
+          11,
+          0,
+          0,
+          0,
+          0,
+          11,
+          22,
+          11,
+          0,
+          0,
+          0,
+          0,
+          11,
+          22,
+          11,
+          0,
+          0,
+          0,
+          0,
+          11
+        ],
+        "overlap_histogram": {
+          "0": 44,
+          "11": 22,
+          "22": 11
+        }
+      },
+      {
+        "targets": [
+          2,
+          3
+        ],
+        "same_square_side": false,
+        "unit_lags_checked": 60,
+        "overlap_by_lag_0_through_76": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "overlap_histogram": {
+          "4": 77
+        }
+      },
+      {
+        "targets": [
+          2,
+          8
+        ],
+        "same_square_side": true,
+        "unit_lags_checked": 60,
+        "overlap_by_lag_0_through_76": [
+          0,
+          0,
+          11,
+          11,
+          11,
+          11,
+          0,
+          0,
+          0,
+          11,
+          11,
+          11,
+          11,
+          0,
+          0,
+          0,
+          11,
+          11,
+          11,
+          11,
+          0,
+          0,
+          0,
+          11,
+          11,
+          11,
+          11,
+          0,
+          0,
+          0,
+          11,
+          11,
+          11,
+          11,
+          0,
+          0,
+          0,
+          11,
+          11,
+          11,
+          11,
+          0,
+          0,
+          0,
+          11,
+          11,
+          11,
+          11,
+          0,
+          0,
+          0,
+          11,
+          11,
+          11,
+          11,
+          0,
+          0,
+          0,
+          11,
+          11,
+          11,
+          11,
+          0,
+          0,
+          0,
+          11,
+          11,
+          11,
+          11,
+          0,
+          0,
+          0,
+          11,
+          11,
+          11,
+          11,
+          0
+        ],
+        "overlap_histogram": {
+          "0": 33,
+          "11": 44
+        }
+      }
+    ]
+  },
+  "gcd_budget_censuses": [
+    {
+      "product": "77",
+      "budget": 1,
+      "scale": 2,
+      "jacobi_tests_to_select_targets": 76,
+      "negative_jacobi_targets": 30,
+      "methods": {
+        "single": {
+          "first_hits_by_rank": [
+            8
+          ],
+          "successes": 8,
+          "misses": 22,
+          "search_gcd_calls": 30
+        },
+        "scaled": {
+          "first_hits_by_rank": [
+            16
+          ],
+          "successes": 16,
+          "misses": 14,
+          "search_gcd_calls": 30
+        },
+        "paired": {
+          "first_hits_by_rank": [
+            16
+          ],
+          "successes": 16,
+          "misses": 14,
+          "search_gcd_calls": 30
+        }
+      },
+      "first_success_scanning_negative_targets_from_1": {
+        "scaled": {
+          "target": 5,
+          "jacobi_tests_from_1": 5,
+          "negative_targets_in_prefix": 3,
+          "search_gcd_calls_from_1": 3,
+          "first_hit_rank": 1
+        },
+        "single": {
+          "target": 8,
+          "jacobi_tests_from_1": 8,
+          "negative_targets_in_prefix": 4,
+          "search_gcd_calls_from_1": 4,
+          "first_hit_rank": 1
+        },
+        "paired": {
+          "target": 8,
+          "jacobi_tests_from_1": 8,
+          "negative_targets_in_prefix": 4,
+          "search_gcd_calls_from_1": 4,
+          "first_hit_rank": 1
+        }
+      },
+      "first_zero_jacobi_target": 7,
+      "factor_from_one_gcd_at_that_skipped_target": "7",
+      "selected_first_comparisons_in_target_order": {
+        "scaled_earlier_than_single": {
+          "target": 5,
+          "first_hit_rank": {
+            "single": null,
+            "scaled": 1,
+            "paired": null
+          },
+          "gcd_calls_spent": {
+            "single": 1,
+            "scaled": 1,
+            "paired": 1
+          }
+        },
+        "scaled_earlier_than_paired": {
+          "target": 5,
+          "first_hit_rank": {
+            "single": null,
+            "scaled": 1,
+            "paired": null
+          },
+          "gcd_calls_spent": {
+            "single": 1,
+            "scaled": 1,
+            "paired": 1
+          }
+        },
+        "scaled_later_than_paired": {
+          "target": 26,
+          "first_hit_rank": {
+            "single": null,
+            "scaled": null,
+            "paired": 1
+          },
+          "gcd_calls_spent": {
+            "single": 1,
+            "scaled": 1,
+            "paired": 1
+          }
+        }
+      },
+      "certified_factors": [
+        "7",
+        "11"
+      ]
+    },
+    {
+      "product": "7387",
+      "budget": 4,
+      "scale": 8,
+      "jacobi_tests_to_select_targets": 7386,
+      "negative_jacobi_targets": 3608,
+      "methods": {
+        "single": {
+          "first_hits_by_rank": [
+            85,
+            85,
+            85,
+            85
+          ],
+          "successes": 340,
+          "misses": 3268,
+          "search_gcd_calls": 13922
+        },
+        "scaled": {
+          "first_hits_by_rank": [
+            170,
+            170,
+            170,
+            170
+          ],
+          "successes": 680,
+          "misses": 2928,
+          "search_gcd_calls": 13412
+        },
+        "paired": {
+          "first_hits_by_rank": [
+            170,
+            170,
+            170,
+            170
+          ],
+          "successes": 680,
+          "misses": 2928,
+          "search_gcd_calls": 13412
+        }
+      },
+      "first_success_scanning_negative_targets_from_1": {
+        "scaled": {
+          "target": 2,
+          "jacobi_tests_from_1": 2,
+          "negative_targets_in_prefix": 1,
+          "search_gcd_calls_from_1": 3,
+          "first_hit_rank": 3
+        },
+        "single": {
+          "target": 92,
+          "jacobi_tests_from_1": 92,
+          "negative_targets_in_prefix": 50,
+          "search_gcd_calls_from_1": 199,
+          "first_hit_rank": 3
+        },
+        "paired": {
+          "target": 92,
+          "jacobi_tests_from_1": 92,
+          "negative_targets_in_prefix": 50,
+          "search_gcd_calls_from_1": 198,
+          "first_hit_rank": 2
+        }
+      },
+      "first_zero_jacobi_target": 83,
+      "factor_from_one_gcd_at_that_skipped_target": "83",
+      "selected_first_comparisons_in_target_order": {
+        "scaled_earlier_than_single": {
+          "target": 2,
+          "first_hit_rank": {
+            "single": null,
+            "scaled": 3,
+            "paired": null
+          },
+          "gcd_calls_spent": {
+            "single": 4,
+            "scaled": 3,
+            "paired": 4
+          }
+        },
+        "scaled_earlier_than_paired": {
+          "target": 2,
+          "first_hit_rank": {
+            "single": null,
+            "scaled": 3,
+            "paired": null
+          },
+          "gcd_calls_spent": {
+            "single": 4,
+            "scaled": 3,
+            "paired": 4
+          }
+        },
+        "scaled_later_than_single": {
+          "target": 92,
+          "first_hit_rank": {
+            "single": 3,
+            "scaled": null,
+            "paired": 2
+          },
+          "gcd_calls_spent": {
+            "single": 3,
+            "scaled": 4,
+            "paired": 2
+          }
+        },
+        "scaled_later_than_paired": {
+          "target": 92,
+          "first_hit_rank": {
+            "single": 3,
+            "scaled": null,
+            "paired": 2
+          },
+          "gcd_calls_spent": {
+            "single": 3,
+            "scaled": 4,
+            "paired": 2
+          }
+        }
+      },
+      "certified_factors": [
+        "83",
+        "89"
+      ]
+    },
+    {
+      "product": "82919",
+      "budget": 8,
+      "scale": 16,
+      "jacobi_tests_to_select_targets": 82918,
+      "negative_jacobi_targets": 41172,
+      "methods": {
+        "single": {
+          "first_hits_by_rank": [
+            287,
+            287,
+            287,
+            287,
+            287,
+            287,
+            287,
+            287
+          ],
+          "successes": 2296,
+          "misses": 38876,
+          "search_gcd_calls": 321340
+        },
+        "scaled": {
+          "first_hits_by_rank": [
+            574,
+            574,
+            574,
+            574,
+            574,
+            574,
+            574,
+            574
+          ],
+          "successes": 4592,
+          "misses": 36580,
+          "search_gcd_calls": 313304
+        },
+        "paired": {
+          "first_hits_by_rank": [
+            574,
+            574,
+            574,
+            574,
+            574,
+            574,
+            574,
+            574
+          ],
+          "successes": 4592,
+          "misses": 36580,
+          "search_gcd_calls": 313304
+        }
+      },
+      "first_success_scanning_negative_targets_from_1": {
+        "scaled": {
+          "target": 17,
+          "jacobi_tests_from_1": 17,
+          "negative_targets_in_prefix": 5,
+          "search_gcd_calls_from_1": 36,
+          "first_hit_rank": 4
+        },
+        "single": {
+          "target": 297,
+          "jacobi_tests_from_1": 297,
+          "negative_targets_in_prefix": 155,
+          "search_gcd_calls_from_1": 1234,
+          "first_hit_rank": 2
+        },
+        "paired": {
+          "target": 297,
+          "jacobi_tests_from_1": 297,
+          "negative_targets_in_prefix": 155,
+          "search_gcd_calls_from_1": 1233,
+          "first_hit_rank": 1
+        }
+      },
+      "first_zero_jacobi_target": 283,
+      "factor_from_one_gcd_at_that_skipped_target": "283",
+      "selected_first_comparisons_in_target_order": {
+        "scaled_earlier_than_single": {
+          "target": 17,
+          "first_hit_rank": {
+            "single": null,
+            "scaled": 4,
+            "paired": null
+          },
+          "gcd_calls_spent": {
+            "single": 8,
+            "scaled": 4,
+            "paired": 8
+          }
+        },
+        "scaled_earlier_than_paired": {
+          "target": 17,
+          "first_hit_rank": {
+            "single": null,
+            "scaled": 4,
+            "paired": null
+          },
+          "gcd_calls_spent": {
+            "single": 8,
+            "scaled": 4,
+            "paired": 8
+          }
+        },
+        "scaled_later_than_single": {
+          "target": 297,
+          "first_hit_rank": {
+            "single": 2,
+            "scaled": null,
+            "paired": 1
+          },
+          "gcd_calls_spent": {
+            "single": 2,
+            "scaled": 8,
+            "paired": 1
+          }
+        },
+        "scaled_later_than_paired": {
+          "target": 297,
+          "first_hit_rank": {
+            "single": 2,
+            "scaled": null,
+            "paired": 1
+          },
+          "gcd_calls_spent": {
+            "single": 2,
+            "scaled": 8,
+            "paired": 1
+          }
+        }
+      },
+      "certified_factors": [
+        "283",
+        "293"
+      ]
+    }
+  ],
+  "cost_convention": "Search gcd calls stop at the first proper gcd for each target. Target screening, small square precomputation, mark enumeration, independent validation and certificate time are separate. Both packed designs multiply two differences per call. The scaled design also computes two target-dependent products per negative target. The target-prefix comparison continues past zero Jacobi symbols; their gcd can already give a factor. Equal gcd-call counts do not measure runtime."
+}
