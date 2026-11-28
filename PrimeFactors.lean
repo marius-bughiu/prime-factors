@@ -1040,3 +1040,8 @@ import PrimeFactors.ScaledQuarticControls
 import PrimeFactors.ScaledQuarticReadings
 import PrimeFactors.ThreeQuarticDenominators
 import PrimeFactors.FullWidthQuarticFixture
+import PrimeFactors.QuarticMidpointRank
+import PrimeFactors.FullWidthQuarticLaterMidpoint
+import PrimeFactors.QuarticDenominatorBands
+import PrimeFactors.ProductSelectedQuarticDenominators
+import PrimeFactors.QuarticGatePopulation

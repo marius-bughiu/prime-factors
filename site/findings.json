@@ -1,5 +1,43 @@
 [
   {
+    "id": "quartic-later-midpoint-full-size",
+    "category": "formulas",
+    "title": "Two fourth roots return a prime pair beyond 2^719 consecutive Fermat tests",
+    "impact": "The public quartic formula factors a second constructed 2,048-bit input. Lean excludes every ordinary midpoint before the first square.",
+    "scope": "One deliberately chosen pair of 1,024-bit primes. Their common remainder also lets a modified Fermat search reach them on its first test.",
+    "detail": "The two methods and the ordinary Fermat rank are verified on the same input. Another full-width comparison remains unresolved by all six quartic readings.",
+    "sources": [
+      {"href": "discoveries/when-a-quartic-reading-beats-consecutive-fermat.md", "label": "Construction, comparison and replay command"},
+      {"href": "PrimeFactors/FullWidthQuarticLaterMidpoint.lean", "label": "Prime factors and first-hit proofs"},
+      {"href": "benchmarks/quartic-readings.json", "label": "Public inputs and expected factors"}
+    ]
+  },
+  {
+    "id": "quartic-first-midpoint-rank-rule",
+    "category": "formulas",
+    "title": "The smaller quartic coordinate determines the exact Fermat rank in a known range",
+    "impact": "The displayed pair appears at test x² exactly when x² ≤ 2y. On 10,240,081 the ninth test gives 2,969 × 3,449.",
+    "scope": "Positive coordinates in N = x⁴ + 4y⁴, with consecutive midpoints starting at the ceiling square root. Prime outputs ensure there is no earlier successful midpoint.",
+    "detail": "The displayed pair appears at the first test exactly when x is one. On every eligible full-width y-first representation, x up to 2^256 satisfies the exact-rank condition.",
+    "sources": [
+      {"href": "discoveries/when-a-quartic-reading-beats-consecutive-fermat.md", "label": "Rank rule and small example"},
+      {"href": "PrimeFactors/QuarticMidpointRank.lean", "label": "Exact threshold and proof"}
+    ]
+  },
+  {
+    "id": "product-selected-quartic-denominators",
+    "category": "gains",
+    "title": "The product selects fewer than 1.90 quartic denominators on average",
+    "impact": "Two integer comparisons save more than 36⅔% of scheduled trials against the fixed list of three. The shorter list gives the same factors or failure.",
+    "scope": "Uniformly weighted 2,048-bit products of distinct 1,024-bit primes. The average uses a published unconditional prime-count estimate as an explicit hypothesis.",
+    "detail": "A primitive success at each denominator requires a different ratio between the factors. For the largest products only denominator 1 can supply a new result. Costs count scheduled trials before early returns.",
+    "sources": [
+      {"href": "discoveries/choosing-quartic-denominators-from-the-product.md", "label": "Thresholds and assumptions"},
+      {"href": "PrimeFactors/ProductSelectedQuarticDenominators.lean", "label": "Executable selection"},
+      {"href": "PrimeFactors/QuarticGatePopulation.lean", "label": "Average on prime pairs"}
+    ]
+  },
+  {
     "id": "full-width-quartic-first-midpoint",
     "category": "formulas",
     "title": "A quartic formula returns two certified 1,024-bit primes from their product",

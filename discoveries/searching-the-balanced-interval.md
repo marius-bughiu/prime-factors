@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+A second constructed full-size quartic gives both primes immediately even though ordinary Fermat would need more than $2^{719}$ consecutive tests. A public remainder also singles out the first successful midpoint on this input. [Comparison and exact rank theorem](when-a-quartic-reading-beats-consecutive-fermat.md)
+
+Two comparisons on the input select one, two or three quartic denominators while preserving the result of trying all 2,048. [Public thresholds and uniqueness after cancellation](choosing-quartic-denominators-from-the-product.md)
+
 The quartic formula recovers both 1,024-bit primes of a deliberately constructed 2,048-bit input. Ordinary Fermat reaches the same pair at the first midpoint. [Exact construction and certificates](a-full-size-quartic-example.md)
 
 Testing three denominators gives exactly the same factor pair or failure as testing every denominator through 2,048 on every eligible 2,048-bit input. The two nontrivial denominators each recover a selected smaller product missed by the original formula. [Why three suffice and how rare the recognized family is](three-denominators-for-the-quartic-search.md)

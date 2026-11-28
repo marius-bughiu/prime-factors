@@ -1,5 +1,7 @@
 # A 2,048-bit example for the quartic formula
 
+Two deliberately constructed products show how much the comparison with Fermat depends on the input. The formula recovers two 1,024-bit primes in each case. On the first, ordinary Fermat succeeds immediately. On the second, it would need more than $2^{719}$ consecutive midpoint tests, but one test selected by a public remainder also suffices. [Second construction and both comparisons](when-a-quartic-reading-beats-consecutive-fermat.md)
+
 Take $y=21{,}114{,}860\cdot2^{487}$ and form $N=1+4y^4$. Given only this $N$, the fourth-root formula returns two distinct **1,024-bit primes**. Lean verified the product has 2,048 bits, the two returned values are prime, and their product is exactly $N$. The fixture was constructed for the identity. [Lean proof](../PrimeFactors/FullWidthQuarticFixture.lean) · [Exact decimal input and outputs](../benchmarks/cases.json)
 
 The construction lets us check what the search actually had to find. Integer division gives $\lfloor N/4\rfloor=y^4$, so its integer fourth root recovers $y$ directly. The remainder $N-4y^4=1$ gives the other coordinate. Sophie Germain’s identity then gives
