@@ -986,3 +986,6 @@ import PrimeFactors.FactorOrbitAdviceConstruction
 import PrimeFactors.FactorOrbitAdviceMenu
 import PrimeFactors.FiveSquareAdviceLimits
 import PrimeFactors.FactorAdviceThreshold
+import PrimeFactors.CompressedSumClue
+import PrimeFactors.FiveSquareSumCodeWidth
+import PrimeFactors.FiveSquareSumAdviceThreshold

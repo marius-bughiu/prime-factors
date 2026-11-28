@@ -1,5 +1,18 @@
 [
   {
+    "id": "merge-two-sum-messages-20",
+    "description": "Chosen close primes with sum remainder 23 and product remainder 1 modulo 25; the compressed report merges this sum with 2",
+    "n": "637501",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": [
+      "769",
+      "829"
+    ],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
     "id": "truthful-two-bit-guess-order-20",
     "description": "Chosen close primes whose unordered residue pair modulo 25 occupies rank ten in the documented list, or rank three with the supplied two-bit message",
     "n": "526451",

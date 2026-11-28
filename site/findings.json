@@ -1,5 +1,23 @@
 [
   {
+    "id": "compressing-the-true-sum",
+    "category": "limits",
+    "title": "A message encoding only the sum needs 27 bits to preserve its full value everywhere",
+    "impact": "26 bits suffice for 14 of the 32 product patterns. Any code that merges two possible sums strictly increases the optimal average number of factor-remainder guesses.",
+    "scope": "Uniform modular pairs at each known invertible product, using the five prime squares. The sum remainder is available to the encoder, and the public product is available to both sides.",
+    "detail": "Modulo 25 at product 1, reporting sums 2 and 23 with the same code raises the mean from 1.4 to 2.05 guesses. The general proof gives the exact cost of every such merge.",
+    "sources": [
+      {
+        "href": "discoveries/compressing-the-sum-remainder.md",
+        "label": "Thresholds and small example"
+      },
+      {
+        "href": "PrimeFactors/CompressedSumClue.lean",
+        "label": "General proof for finite reports"
+      }
+    ]
+  },
+  {
     "id": "bits-needed-to-match-a-supplied-sum",
     "category": "limits",
     "title": "Matching the value of a supplied sum takes at least 25 bits of outside information",

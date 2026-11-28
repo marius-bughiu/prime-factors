@@ -57,6 +57,36 @@ def with_supplied_sum(modulus):
     return pooled / len(units)
 
 
+def merge_two_sums(modulus, product, first, second):
+    """Find both optimal mean ranks directly and compare their difference to the formula."""
+    units = [a for a in range(modulus) if gcd(a, modulus) == 1]
+    separate = defaultdict(Counter)
+    merged = defaultdict(Counter)
+    for a in units:
+        b = product * pow(a, -1, modulus) % modulus
+        pair = tuple(sorted((a, b)))
+        label = (a + b) % modulus
+        separate[label][pair] += 1
+        merged[first if label == second else label][pair] += 1
+
+    def average(groups):
+        total = Fraction(0)
+        for pairs in groups.values():
+            _, mass, best = mean_rank(Counter(pairs.values()))
+            total += mass * best
+        return total / len(units)
+
+    left, right = separate[first], separate[second]
+    single_left = sum(a == b for a, b in left)
+    single_right = sum(a == b for a, b in right)
+    penalty = Fraction(sum(left.values()) * sum(right.values()) + single_left * single_right,
+                       2 * len(units))
+    full, compressed = average(separate), average(merged)
+    if compressed - full != penalty:
+        raise AssertionError('Merging the sum reports disagrees with the predicted cost')
+    return full, compressed
+
+
 def advised_pair(modulus, p, q, bits):
     """Give a helper the hidden pair and check its position in the selected list."""
     product = p * q % modulus
@@ -83,3 +113,6 @@ if __name__ == '__main__':
     original, message, guesses = advised_pair(25, 701, 751, 2)
     print(f'701 × 751 modulo 25: original rank={original}, '
           f'two-bit message={message:02b}, advised rank={guesses}')
+    full, compressed = merge_two_sums(25, 1, 2, 23)
+    print(f'Product 1 modulo 25, reporting sums 2 and 23 together: '
+          f'full mean={full}, compressed mean={compressed}')

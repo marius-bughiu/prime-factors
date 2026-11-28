@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+If a helper can only encode the **sum**, then 27 bits preserve the complete sum’s modular guessing performance at every public product. Combining two possible sums into one message has an exactly measurable cost. [Bit thresholds and a hand calculation](compressing-the-sum-remainder.md)
+
 A helper who knows both primes needs at least **25 fixed-width bits** to match the mean achieved by revealing the true sum remainder. A particular 25-bit message puts every pair within 59 modular guesses. [Information bound and worked example](how-many-supplied-bits-a-factor-remainder-guess-needs.md)
 
 If the **correct sum remainder is supplied for free**, the five-square mean falls from 980 million guesses to about **48.899** for either factor remainder. This holds across all eligible full-size prime pairs under the published Dirichlet-GRH prime-count estimate. [Cost after a supplied clue and what it reveals](if-the-true-sum-remainder-were-given.md)
