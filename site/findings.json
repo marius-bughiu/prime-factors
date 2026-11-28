@@ -1,5 +1,41 @@
 [
   {
+    "id": "full-size-factor-remainders-with-known-sum",
+    "category": "gains",
+    "title": "A supplied sum remainder cuts the best mean to 48.899 factor-remainder guesses",
+    "impact": "The best average falls from about 980 million guesses to 48.899 when the correct sum remainder is given for free.",
+    "scope": "All distinct 1,024-bit primes with a full-width product, modulus 7,239,457,225, under the stated Dirichlet-GRH estimates. The result assumes the correct extra clue.",
+    "detail": "The best order may depend on both the known product remainder and the supplied sum. Its target is an unordered pair of remainders, and the cost starts after the clue is given.",
+    "sources": [
+      {
+        "href": "discoveries/if-the-true-sum-remainder-were-given.md",
+        "label": "Formula and example with extra information"
+      },
+      {
+        "href": "PrimeFactors/FiveSquareActualSumClue.lean",
+        "label": "Full-size optimum"
+      }
+    ]
+  },
+  {
+    "id": "sum-clue-weight-squared",
+    "category": "formulas",
+    "title": "The squared sum-remainder weights determine the value of a supplied clue",
+    "impact": "Given the true sum remainder, the best modular mean is 181.597 guesses for the all-square product pattern and 8.5 for the all-nonsquare pattern.",
+    "scope": "Uniform ordered factor remainders with a fixed unit product at the five prime squares. The exact post-clue formula applies to every odd modulus.",
+    "detail": "A large group contains many pairs and is encountered more often. Its contribution to the average therefore involves the square of its size.",
+    "sources": [
+      {
+        "href": "discoveries/if-the-true-sum-remainder-were-given.md#an-exact-count-after-a-clue",
+        "label": "Conditional means and derivation"
+      },
+      {
+        "href": "PrimeFactors/SumClueOrbitRanks.lean",
+        "label": "General optimality theorem"
+      }
+    ]
+  },
+  {
     "id": "full-size-factor-remainder-ranking",
     "category": "limits",
     "title": "Ordering the guesses for either factor’s remainder saves less than a quarter of one guess",

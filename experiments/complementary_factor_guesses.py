@@ -1,6 +1,6 @@
 """Enumerate all small unit pairs and compare sum labels with complementary factor orbits."""
 
-from collections import Counter
+from collections import Counter, defaultdict
 from fractions import Fraction
 from math import gcd
 
@@ -33,8 +33,33 @@ def compare(modulus):
     return conditional_means
 
 
+def with_supplied_sum(modulus):
+    """Average over all ordered pairs, revealing their true sum remainder first."""
+    units = [a for a in range(modulus) if gcd(a, modulus) == 1]
+    pooled = Fraction(0)
+    for n in units:
+        fibers = defaultdict(Counter)
+        fixed = 0
+        for a in units:
+            b = n * pow(a, -1, modulus) % modulus
+            fibers[(a + b) % modulus][tuple(sorted((a, b)))] += 1
+            fixed += a == b
+        weighted_cost = Fraction(0)
+        second = 0
+        for orbits in fibers.values():
+            _, pairs, best = mean_rank(Counter(orbits.values()))
+            weighted_cost += pairs * best
+            second += pairs**2
+        actual = weighted_cost / len(units)
+        if modulus % 2 and actual != Fraction(1, 2) + Fraction(second + fixed, 4 * len(units)):
+            raise AssertionError('Post-clue mean disagrees with the sum-weight formula')
+        pooled += actual
+    return pooled / len(units)
+
+
 if __name__ == '__main__':
     for m in (25, 175):
         sum_opt, sum_random, orbit_opt, orbit_random = compare(m)
         print(f'{m=}: sum best={sum_opt} random={sum_random}; '
-              f'factor orbit best={orbit_opt} random={orbit_random} saved={orbit_random-orbit_opt}')
+              f'factor orbit best={orbit_opt} random={orbit_random} saved={orbit_random-orbit_opt}; '
+              f'with the true sum supplied={with_supplied_sum(m)}')

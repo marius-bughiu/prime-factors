@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+If the **correct sum remainder is supplied for free**, the five-square mean falls from 980 million guesses to about **48.899** for either factor remainder. This holds across all eligible full-size prime pairs under the published Dirichlet-GRH prime-count estimate. [Cost after a supplied clue and what it reveals](if-the-true-sum-remainder-were-given.md)
+
 When a guess must name the remainder of either prime, optimizing an order of complementary pairs saves less than one quarter of one guess on average across all full-size prime products, under published Dirichlet-GRH estimates. The sum-remainder advantage answers a different question. [Factor-remainder comparison and exact small examples](guessing-a-factor-remainder-instead-of-the-sum.md)
 
 For any odd modulus up to $2^{2048}$, no ordering can cut the mean number of sum-remainder guesses by a factor of 64. For every positive modulus the corresponding limit is 1,024. These unconditional bounds concern uniformly sampled modular factor pairs. [All moduli, higher powers and scope](what-a-modulus-budget-allows-a-guess-order-to-save.md)

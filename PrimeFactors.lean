@@ -978,3 +978,6 @@ import PrimeFactors.SquareFiberMoments
 import PrimeFactors.PooledFactorOrbitRanks
 import PrimeFactors.FiveSquareOrbitKernel
 import PrimeFactors.FiveSquareFactorGuessing
+import PrimeFactors.SumClueOrbitRanks
+import PrimeFactors.FiveSquareSumClueMoments
+import PrimeFactors.FiveSquareActualSumClue

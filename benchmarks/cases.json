@@ -1,5 +1,18 @@
 [
   {
+    "id": "given-true-sum-three-pairs-20",
+    "description": "Chosen close primes in the supplied-sum example, factor residues 21 and 6 at product 1 and sum 2 modulo 25",
+    "n": "723301",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": [
+      "821",
+      "881"
+    ],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
     "id": "same-sum-distinct-complement-orbit-20",
     "description": "Chosen close ten-bit primes with unordered residues 11 and 16 modulo 25; product and sum residues 1 and 2 also fit two other orbits",
     "n": "525851",
