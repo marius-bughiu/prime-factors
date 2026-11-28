@@ -1,5 +1,71 @@
 [
   {
+    "id": "offset-one-block-recovery",
+    "category": "cases",
+    "title": "Two blocks reversed, plus one, give a prime pair after 14 comparisons",
+    "impact": "At radix 64 the public product 10,850,303 gives block product 2,623. Of the two indices 61 and 62, only 61 reconstructs the primes 2,749 and 3,947.",
+    "scope": "This control was chosen with the larger factor exactly one above the reversed smaller factor. The radix and offset are fixed when reading the product.",
+    "detail": "Three binary searches exploit the increasing differences of an exact rational function. Ordinary Fermat needs 55 midpoint tests on the same input.",
+    "sources": [
+      {
+        "href": "discoveries/when-a-block-swap-is-off-by-one.md",
+        "label": "Worked example and operation counts"
+      },
+      {
+        "href": "PrimeFactors/OffsetTransposeReadout.lean",
+        "label": "Fourteen checked comparisons"
+      },
+      {
+        "href": "#offset-reversed-blocks-24",
+        "label": "Fermat baseline"
+      }
+    ]
+  },
+  {
+    "id": "offset-block-comparison-budget",
+    "category": "gains",
+    "title": "A known offset needs at most one row per unit of shift",
+    "impact": "At a positive shift t and radix at most 2^k, at most 3kt rational comparisons and 2t final digit checks suffice for this shifted-reversal family.",
+    "scope": "The smaller factor is Ba+b with 0<a≤b<B and the larger is Bb+a+t. Both the radix and the positive offset are supplied to the rule.",
+    "detail": "Each row has at most two relevant indices, even when a target meets both sides of the same minimum. A composite example realizes both.",
+    "sources": [
+      {
+        "href": "discoveries/when-a-block-swap-is-off-by-one.md",
+        "label": "What the bound counts"
+      },
+      {
+        "href": "PrimeFactors/OffsetTransposeBlockWindow.lean",
+        "label": "Candidate digit products"
+      },
+      {
+        "href": "PrimeFactors/OffsetTransposeQuartic.lean",
+        "label": "Strictly increasing differences"
+      },
+      {
+        "href": "PrimeFactors/ConvexIntegerReadout.lean",
+        "label": "Binary searches and equal neighboring minima"
+      }
+    ]
+  },
+  {
+    "id": "offset-blocks-all-radix-coverage",
+    "category": "limits",
+    "title": "Even a choice among 2^128 offsets rarely explains a full-size pair",
+    "impact": "Fewer than one in 2^361 eligible products admit any positive integer radix and a nonnegative shift through 2^128.",
+    "scope": "All distinct 1,024-bit prime pairs with a 2,048-bit product count once. The chosen digits may be equal and the radix may be chosen separately for every product.",
+    "detail": "For each fixed offset and radix the smaller prime already determines the larger one. Wide radices allow fewer digit choices.",
+    "sources": [
+      {
+        "href": "discoveries/when-a-block-swap-is-off-by-one.md#how-often-the-assumption-holds",
+        "label": "What the fraction measures"
+      },
+      {
+        "href": "PrimeFactors/OffsetTransposePopulation.lean",
+        "label": "All-radix, all-offset bound"
+      }
+    ]
+  },
+  {
     "id": "transposed-two-blocks-full-size",
     "category": "cases",
     "title": "Two square roots recover two 1,024-bit primes with exchanged blocks",

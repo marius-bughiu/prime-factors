@@ -1173,3 +1173,8 @@ import PrimeFactors.ThreeBlockReversal
 import PrimeFactors.FullWidthTransposedFixture
 import PrimeFactors.SumGapDivisorReadout
 import PrimeFactors.SumGapDivisorPopulation
+import PrimeFactors.OffsetTransposeBlockWindow
+import PrimeFactors.OffsetTransposeQuartic
+import PrimeFactors.ConvexIntegerReadout
+import PrimeFactors.OffsetTransposeReadout
+import PrimeFactors.OffsetTransposePopulation

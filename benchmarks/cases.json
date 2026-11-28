@@ -1,5 +1,18 @@
 [
   {
+    "id": "offset-reversed-blocks-24",
+    "description": "Fermat baseline for the twenty-four-bit product with a one-unit shift after reversing the blocks",
+    "n": "10850303",
+    "max_steps": 55,
+    "status": "complete",
+    "factors": [
+      "2749",
+      "3947"
+    ],
+    "remaining": [],
+    "fermat_steps": 55
+  },
+  {
     "id": "reversal-control-527479",
     "description": "Fermat baseline for the odd-radix formula with nonzero carries",
     "n": "527479",

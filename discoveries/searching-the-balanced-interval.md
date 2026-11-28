@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A known positive offset $t$ after reversing two factor blocks gives at most $t$ candidate rows and $3kt$ rational comparisons at a radix at most $2^k$. For 10,850,303 and offset one, fourteen comparisons and two final digit checks recover 2,749 and 3,947. Even allowing any radix and offsets up to $2^{128}$ covers fewer than one in $2^{361}$ eligible products. [The divisibility, convexity and population arguments](when-a-block-swap-is-off-by-one.md)
+
 Two factors whose two blocks occur in opposite order can be recovered from their product and radix by ordinary division and two square roots. This recovered two deliberately constructed 1,024-bit primes. The all-radix coverage is below one in $2^{490}$ eligible pairs. [How to read the blocks and what limits the method](when-exchanging-two-blocks-reveals-both-primes.md)
 
 Predicting the prime sum with a function that never decreases succeeds on fewer than one in $2^{484}$ eligible products. More than two thirds have a prime gap of at least $2^{1006}$, and within that group the fraction is below one in $2^{979}$. The same argument proves the existence of a sequence of more than $2^{979}$ increasing products with strictly decreasing sums. [Examples, upper and lower bounds, and the counting argument](why-a-larger-product-can-have-a-smaller-prime-sum.md)
