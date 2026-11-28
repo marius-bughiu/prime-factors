@@ -1,5 +1,68 @@
 [
   {
+    "id": "all-moduli-but-no-quartic-reading",
+    "category": "limits",
+    "title": "About one in eight products passes every modular test and still gives no quartic reading",
+    "impact": "These prime products pass every locally primitive cleared-quartic test. Neither formula returns factors at any positive denominator through 2^512.",
+    "scope": "Uniformly weighted balanced 2,048-bit prime products. The share differs from one eighth by less than 2⁻¹⁴⁵ using the published Dirichlet-GRH endpoint estimates.",
+    "detail": "Every actual reading belongs to the locally admissible population. The proof subtracts all recognized products from that population, allowing the best denominator to vary with the input.",
+    "sources": [
+      {"href": "discoveries/how-far-a-rational-denominator-can-extend-the-quartic-formula.md", "label": "What remains after every modular test"},
+      {"href": "PrimeFactors/QuarticLocalFalsePositives.lean", "label": "Exact set difference and frequency proof"}
+    ]
+  },
+  {
+    "id": "every-quartic-denominator-through-two-to-512",
+    "category": "limits",
+    "title": "Even the best of 2^512 denominators covers fewer than one in 2^227 prime products",
+    "impact": "Across this entire range the two fourth-root formulas can recognize at most 2^1794 eligible products, even with free selection of the denominator.",
+    "scope": "Distinct 1,024-bit primes with a 2,048-bit product. A rational point outside both recognition intervals is outside the count.",
+    "detail": "A large denominator constrains the leading coordinate. At fixed smaller coordinate and fixed remainder there is at most one possible value in the interval. The bound includes all scales satisfying the earlier sufficient condition for gcd recovery.",
+    "sources": [
+      {"href": "discoveries/how-far-a-rational-denominator-can-extend-the-quartic-formula.md", "label": "Counting argument and interpretation"},
+      {"href": "PrimeFactors/AllSmallQuarticDenominatorCoverage.lean", "label": "Every denominator and total population"},
+      {"href": "PrimeFactors/QuarticUnitLift.lean", "label": "Why two leading coordinates must agree"}
+    ]
+  },
+  {
+    "id": "quartic-last-four-bits",
+    "category": "gains",
+    "title": "Four public bits rule out all quartic denominators on about three quarters of inputs",
+    "impact": "Unless the last four bits represent 1 or 5, the search skips every trial. The mean falls below 0.751 scheduled denominator checks on full-size prime pairs.",
+    "scope": "The exclusion is exact. The work estimate for distinct 1,024-bit primes with a 2,048-bit product uses a published unconditional prime-count bound as an explicit hypothesis.",
+    "detail": "The executable gives the same prime pair or failure as trying denominators 1 through 2,048. The cost counts all scheduled entries before any early return.",
+    "sources": [
+      {"href": "discoveries/which-products-pass-every-quartic-congruence.md", "label": "Last-bit test and assumptions"},
+      {"href": "PrimeFactors/QuarticPublicResidueGate.lean", "label": "Executable and equality of results"},
+      {"href": "PrimeFactors/QuarticLocalSearchWork.lean", "label": "Scheduled work on prime pairs"}
+    ]
+  },
+  {
+    "id": "all-cleared-quartic-local-conditions",
+    "category": "limits",
+    "title": "Three conditions decide whether every finite quartic congruence passes",
+    "impact": "Both odd prime factors must be 1 modulo 4 and the product must be 1 or 5 modulo 16. The full criterion holds on about one eighth of eligible products under the stated estimates.",
+    "scope": "Locally primitive numerator coordinates and a positive denominator that can vary with the modulus. A local point gives no general rule for finding integer coordinates.",
+    "detail": "2,257 passes every modulus but has no integer quartic representation at denominator one. An unconditional published estimate puts the full-size share within 1/8320 of one eighth. The Dirichlet-GRH estimate sharpens the error to 2⁻¹⁴⁶.",
+    "sources": [
+      {"href": "discoveries/which-products-pass-every-quartic-congruence.md", "label": "Conditions and four worked examples"},
+      {"href": "PrimeFactors/QuarticLocalClassification.lean", "label": "Equivalence at every positive modulus"},
+      {"href": "#quartic-all-local-2257", "label": "Checked factorization of 2,257"}
+    ]
+  },
+  {
+    "id": "quartic-failing-modulus-gcd",
+    "category": "limits",
+    "title": "A failing quartic modulus already shares a prime factor with the input",
+    "impact": "Once the product passes the test at 16, every coprime modulus passes. Any failing positive modulus below the product yields a proper factor by gcd.",
+    "scope": "The locally primitive cleared quartic congruence. The theorem explains what a supplied failing modulus reveals. Finding such a modulus remains a separate cost.",
+    "detail": "A rejection occurs exactly when the gcd has a prime divisor equal to 3 modulo 4. For 2,773 the test passes at 16 and fails at 47.",
+    "sources": [
+      {"href": "discoveries/which-products-pass-every-quartic-congruence.md", "label": "Meaning of a rejecting modulus"},
+      {"href": "PrimeFactors/QuarticSingleModulus.lean", "label": "Single-modulus and gcd proofs"}
+    ]
+  },
+  {
     "id": "quartic-later-midpoint-full-size",
     "category": "formulas",
     "title": "Two fourth roots return a prime pair beyond 2^719 consecutive Fermat tests",

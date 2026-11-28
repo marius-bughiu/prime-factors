@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+Even an ideal choice from **every denominator through $2^{512}$** lets the two fourth-root formulas recognize fewer than one in $2^{227}$ eligible prime pairs. This includes every denominator for which the earlier size condition guarantees gcd recovery from a supplied point. [Counting proof and limits](how-far-a-rational-denominator-can-extend-the-quartic-formula.md)
+
+The product's last four bits rule out **every** quartic denominator unless the remainder is 1 or 5 modulo 16. About one quarter of full-size prime products pass this cheap filter, and about one eighth pass every locally primitive quartic congruence under published prime-count estimates. Once the last four bits pass, any rejecting modulus below the product already shares a proper factor with it. [Exact conditions, work and matched examples](which-products-pass-every-quartic-congruence.md)
+
 A second constructed full-size quartic gives both primes immediately even though ordinary Fermat would need more than $2^{719}$ consecutive tests. A public remainder also singles out the first successful midpoint on this input. [Comparison and exact rank theorem](when-a-quartic-reading-beats-consecutive-fermat.md)
 
 Two comparisons on the input select one, two or three quartic denominators while preserving the result of trying all 2,048. [Public thresholds and uniqueness after cancellation](choosing-quartic-denominators-from-the-product.md)
