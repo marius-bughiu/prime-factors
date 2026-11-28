@@ -1,5 +1,23 @@
 [
   {
+    "id": "cyclotomic-common-tail-correction",
+    "category": "limits",
+    "title": "A shared correction still fails through 5,500 times the lower prime bound",
+    "impact": "At each cutoff through 5,500 × 2^1023, two eligible products defeat every choice of one shared scale factor for the truncated reading. By 5,768 × 2^1023 the raw sum already guarantees the decoder’s tolerance.",
+    "scope": "The correction can depend on word size and cutoff. The proof covers a common additive correction to the logarithm, equivalently a common positive multiplier of the reading, in exact arithmetic.",
+    "detail": "The two products share their larger prime. At the small cutoff 31, the same incompatibility already holds for 551 and 667.",
+    "sources": [
+      {
+        "href": "discoveries/can-the-product-supply-the-cyclotomic-reading.md#can-one-correction-cover-every-product",
+        "label": "Model and cutoff comparison"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicCommonTailCorrection.lean",
+        "label": "Proof for all shared corrections"
+      }
+    ]
+  },
+  {
     "id": "gcd-cyclotomic-log-cutoff",
     "category": "limits",
     "title": "Even summing through degree 2^1034 exceeds the certified error tolerance",

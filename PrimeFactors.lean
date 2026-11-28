@@ -1206,3 +1206,4 @@ import PrimeFactors.CyclotomicLogCoefficients
 import PrimeFactors.CyclotomicLogTail
 import PrimeFactors.CyclotomicLogUpper
 import PrimeFactors.PublicCyclotomicLogReading
+import PrimeFactors.CyclotomicCommonTailCorrection
