@@ -108,5 +108,10 @@ CHECKS = (
                data=('benchmarks/jacobi-scale-valuations.json', 'benchmarks/unit-quartic.json',
                      'research/certified-control.json')),
     experiment('neighboring_jacobi_samples', '--exhaustive', data=('benchmarks/neighboring-jacobi-samples.json',)),
+    experiment('quotient_strip_levels', data=('benchmarks/quotient-strip-levels.json',
+                                              'benchmarks/modular-hyperbola.json',
+                                              'benchmarks/endpoint-offset-product.json',
+                                              'research/certified-control.json')),
+    experiment('quotient_strip_localization', data=('benchmarks/quotient-strip-localization.json',)),
     experiment('jacobi_four_width', data=('benchmarks/jacobi-four-width.json',)),
 )

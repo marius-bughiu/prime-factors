@@ -1349,3 +1349,9 @@ import PrimeFactors.FractionalWheelNeighbours
 import PrimeFactors.FractionalWheelCutoff
 import PrimeFactors.FractionalWheelGapBound
 import PrimeFactors.FractionalRoughProjection
+import PrimeFactors.QuotientStripLocalization
+import PrimeFactors.QuotientStripHyperbola
+import PrimeFactors.QuotientStripIntegerVariance
+import PrimeFactors.QuotientStripScheduleCost
+import PrimeFactors.QuotientStripLevels
+import PrimeFactors.QuotientStripLevelResidues

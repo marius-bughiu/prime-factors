@@ -1245,5 +1245,35 @@
     "factors": ["101", "127"],
     "remaining": [],
     "fermat_steps": 1
+  },
+  {
+    "id": "strip-localization-12707",
+    "description": "Prime certificate for the four-point strip whose joint moments isolate 97 in the supplied interval 91 through 99",
+    "n": "12707",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["97", "131"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "strip-integer-variance-3574327",
+    "description": "Prime certificate for the product with a selected strip where discrete variance excludes the false candidate 1709",
+    "n": "3574327",
+    "max_steps": 34,
+    "status": "complete",
+    "factors": ["1567", "2281"],
+    "remaining": [],
+    "fermat_steps": 34
+  },
+  {
+    "id": "strip-chord-119423",
+    "description": "Prime certificate for the product whose strip from 301 to 314 has one odd chord label and discriminant 441",
+    "n": "119423",
+    "max_steps": 3,
+    "status": "complete",
+    "factors": ["307", "389"],
+    "remaining": [],
+    "fermat_steps": 3
   }
 ]

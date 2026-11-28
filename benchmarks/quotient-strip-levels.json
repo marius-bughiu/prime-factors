@@ -1,0 +1,721 @@
+{
+  "scope": "Same 99 prescribed-ratio products and 64 holdout products and same ascending blocks as the quotient-strip localization receipt. The extra supplied strip is outside the cohort counts.",
+  "selection": "At endpoints a,b, choose the last convergent u/v of N/(a*b) with v <= max(1,floor((b-a)/2)). The chord method subtracts v*N*(b-a)^2/(4*a^2*b) from the smaller weighted endpoint. The comparison triangle also evaluates the tangent at b. Parity uses z = u+v mod 2 on odd products. The mod-8 refinement keeps the residues (u+Nv)*j for the four odd j modulo eight.",
+  "costs": "First-hit counters snapshot the successful level, or the completed sparse or collinear solver. Level-square-root counts exclude line equations, which are recorded separately. CF steps are Euclidean divmods. Shared block scheduling and reference checks are excluded. The covariance control uses the same sparse/line shortcuts as localization and the shortest integer projection thereafter. The recursive comparison bisects each noncollinear strip.",
+  "small_intervals": 6160,
+  "supplied_control": {
+    "product": "3574327",
+    "supplied_interval": [
+      1678,
+      1710
+    ],
+    "slope": [
+      5,
+      4
+    ],
+    "levels": [
+      16910,
+      16910
+    ],
+    "hits": [],
+    "work": {
+      "cf_divmods": 3,
+      "level_endpoint_divisions": 2,
+      "bounded_levels": 1,
+      "blocks_with_1_levels": 1
+    }
+  },
+  "fresh": {
+    "input_id": "endpoint-offset-fresh-2048",
+    "product_bits": 2048,
+    "block_count": "4285972511523070887239976892097938178436488456731569778976393063313561768511677211425672135266121176232487035942810314673833925924313608113276930447073699065032899443575022685291048981544248879775396702990",
+    "nominal_width": "10819695181214799832195284098594225950534583698865236419666826977777266117512549904630504528600420534412",
+    "public_blocks": [
+      {
+        "index": "0",
+        "endpoints": [
+          "111954123047221071490187755680519753211096589763796301179712774858774102240329329487116058505165568478332787397157479087306202711665534275178375523952202096909433227283333601008311310615868354604613454884349482607826171353909836669941779226581011788900052863193228041739426107664184820144030025774590204212438",
+          "111954123047221071490187755680519753211096589763796301179712774858774102240329329487116058505165568478332787397157479087306202711665534275178375523952202096909433227283333601008311310615868354604613454884360302303007386153742031954040373452531546372598918099612894868717203373781697370048660530303190624746849"
+        ],
+        "slope": [
+          "2",
+          "1"
+        ],
+        "levels": [
+          "447816492188884285960751022722079012844386359055185204718851099435096408961317317948464234020662273913331149588629916349224810846662137100713502095808808387637732909133334404033245242463473418418453819537397930431304685415639346679767116906324047155600211452772912166957704430656739280576120103098360816849749",
+          "447816492188884285960751022722079012844386359055185204718851099435096408961317317948464234020662273913331149588629916349224810846662137100713502095808808387637732909133334404033245242463473418418453819537397930431304685415639346679767116906324047155600211452772912166957704430656739280576120103098360816849748"
+        ],
+        "recovered": [],
+        "work": {
+          "cf_divmods": 3,
+          "level_endpoint_divisions": 2,
+          "bounded_levels": 0,
+          "blocks_with_0_levels": 1
+        }
+      },
+      {
+        "index": "1428657503841023629079992297365979392812162818910523259658797687771187256170559070475224045088707058744162345314270104891277975308104536037758976815691233021677633147858340895097016327181416293258465567663",
+        "endpoints": [
+          "127411761757136159231941265126919443298897031063256859173289515242329171716866558801302732470172047793812942978855847021956532817663445925808948722731401511224762506166046430879294208137449251999377419638885780589571227732791339536139918213574093557687311554488976254423346680233554801712933912817909610131594",
+          "127411761757136159231941265126919443298897031063256859173289515242329171716866558801302732470172047793812942978855847021956532817663445925808948722731401511224762506166046430879294208137449251999377419638896600284752442532623534820238512439524628141386176790908643081401123946351067351617564417346510030666005"
+        ],
+        "slope": [
+          "6103109905149353752757618904107223392323771320192852430879829587396785496759877596492729330730122400034",
+          "3952392368497737873272359086289264162077642625711962998424236891898374082916765598437922341511248341575"
+        ],
+        "levels": [
+          "1555215970425014645212011770086610270357075275008866592445065329934540398110500405677833926535898786698034605142388082456287028105082970317202771602444912480772223923398096039106428054793302269519264593650050007441078656935096412448221938360998310733703225149471193427206838608743337805456220483063405736938908904785501094549287522095855963056070205596898451986966320662332114202648306218022481223037192827286699",
+          "1555215970425014645212011770086610270357075275008866592445065329934540398110500405677833926535898786698034605142388082456287028105082970317202771602444912480772223923398096039106428054793302269519264593650050007441078656935096412448221938360998310733703225149471193427206838608743337805456220483063405736938908904785501094549287522095855963056070205596898451986966320662332114202648306218022481223037192827286700"
+        ],
+        "recovered": [],
+        "work": {
+          "cf_divmods": 138,
+          "level_endpoint_divisions": 2,
+          "bounded_levels": 2,
+          "blocks_with_2_levels": 1,
+          "mod8_residues_generated": 4,
+          "mod8_membership_tests": 1,
+          "tested_levels": 1
+        }
+      },
+      {
+        "index": "2857315007682047258159984594731958785624325637821046519317595375542374512341118140950448090177414117488324690628540209782555950616209072075517953631382466043355266295716681790194032654362832586516931135326",
+        "endpoints": [
+          "142869400467051246973694774573319133386697472362717417166866255625884241193403788115489406435178527109293098560554214956606862923661357576439521921510600925540091785048759260750277105659030149394141384393422078571316284111672842402338057200567175326474570245784724467107267252802924783281837799861229016050750",
+          "142869400467051246973694774573319133386697472362717417166866255625884241193403788115489406435178527109293098560554214956606862923661357576439521921510600925540091785048759260750277105659030149394141384393432898266497498911505037686436651426517709910173435482204391294085044518920437333186468304389829436585161"
+        ],
+        "slope": [
+          "3051554952574676876378809452053611696161885660096426215439914793698392748379938798246364665365061200017",
+          "2484788676344648416032647785153567363732468922872052535118770911565585832855039265593355281649801037457"
+        ],
+        "levels": [
+          "871947653133210172661743067869269507205073535765549063713226667080116150612457022970746027950265653092332072136952405437875486795754943354507053676332845070793524226768121024848554020861557858426361349430466519375422126457168595088182250684445749583308266584983966654014905827247448839228427709562819133440310011797404416653174459765209803948706216428672478267648833406796081945827333726633080274045726741570895",
+          "871947653133210172661743067869269507205073535765549063713226667080116150612457022970746027950265653092332072136952405437875486795754943354507053676332845070793524226768121024848554020861557858426361349430466519375422126457168595088182250684445749583308266584983966654014905827247448839228427709562819133440310011797404416653174459765209803948706216428672478267648833406796081945827333726633080274045726741570895"
+        ],
+        "recovered": [],
+        "work": {
+          "cf_divmods": 248,
+          "level_endpoint_divisions": 2,
+          "bounded_levels": 1,
+          "blocks_with_1_levels": 1
+        }
+      },
+      {
+        "index": "4285972511523070887239976892097938178436488456731569778976393063313561768511677211425672135266121176232487035942810314673833925924313608113276930447073699065032899443575022685291048981544248879775396702989",
+        "endpoints": [
+          "158327039176966334715448284019718823474497913662177975160442996009439310669941017429676080400185006424773254142252582891257193029659269227070095120289800339855421063931472090621260003180611046788905349147958376553061340490554345268536196187560257095261828937080472679791187825372294764850741686904548421969906",
+          "158327039176966334715448284019718823474497913662177975160442996009439310669941017429676080400185006424773254142252582891257193029659269227070095120289800339855421063931472090621260003180611046788905349147963313017385074143012442899089952314244753217806428276920663827209779196401916113023989449483782760844629"
+        ],
+        "slope": [
+          "1",
+          "1"
+        ],
+        "levels": [
+          "316654078353932669430896568039437646948995827324355950320885992018878621339882034859352160800370012849546508284505165782514386059318538454140190240579600679710842127862944181242520006361222093577810698295926626034770148286024885798179904628489506435612856553841327654419558392803832226047978898967565521689259",
+          "316654078353932669430896568039437646948995827324355950320885992018878621339882034859352160800370012849546508284505165782514386059318538454140190240579600679710842127862944181242520006361222093577810698295926626034770148286024885798179904628489506435612856553841327654419558392803832226047978898967565521689258"
+        ],
+        "recovered": [],
+        "work": {
+          "cf_divmods": 2,
+          "level_endpoint_divisions": 2,
+          "bounded_levels": 0,
+          "blocks_with_0_levels": 1
+        }
+      }
+    ],
+    "factor_selected_block": {
+      "index": "4018881847598672324913815293602684533281410489463366317692234409643890515188055388890664566895076591274540567321529828595343146448599866066030757818827856296845467339733633479159559766892570931889762875580",
+      "endpoints": [
+        "155437199607556058012532697390816360200993450617775861977793885503041330648186435254461734869213045968256605640509036134253515311588040219325256786085481113217401073894164916964759494475637984845596500869609442340082073041303124944990736298138780071155055242768399878005443532959444437881388930842291668671398",
+        "155437199607556058012532697390816360200993450617775861977793885503041330648186435254461734869213045968256605640509036134253515311588040219325256786085481113217401073894164916964759494475637984845596500869620262035263287841135320229089330524089314654853920479188066704983220799076956987786019435370892089205809"
+      ],
+      "slope": [
+        "3610623736479528634181621319741688379412125416117922645106710012045822175587409908112795710897983406761",
+        "3480021916426104026462267554897800275939006903036386565249647081336832082890297364679896174795290030711"
+      ],
+      "levels": [
+        "1122450484869896752078941889164475912237900466702563304637569046671885822200896664517401505129245640445959810690983402101891098984227597769004208864524300114557938237711184729602430901504794553286936086614268008842900198710053708867949325324651718526948750002014612362758811729597332661775489296777910446985569578879471284830341888997020252371749460270130493489928228083581336541488813108346896384785466669847294",
+        "1122450484869896752078941889164475912237900466702563304637569046671885822200896664517401505129245640445959810690983402101891098984227597769004208864524300114557938237711184729602430901504794553286936086614268008842900198710053708867949325324651718526948750002014612362758811729597332661775489296777910446985569578879471284830341888997020252371749460270130493489928228083581336541488813108346896384785466669847294"
+      ],
+      "recovered": [
+        "155437199607556058012532697390816360200993450617775861977793885503041330648186435254461734869213045968256605640509036134253515311588040219325256786085481113217401073894164916964759494475637984845596500869609803951359509506709556269999261634541514057554539876849500776006036129784966133839608344624969272353567"
+      ],
+      "work": {
+        "cf_divmods": 215,
+        "level_endpoint_divisions": 2,
+        "bounded_levels": 1,
+        "blocks_with_1_levels": 1,
+        "mod8_residues_generated": 4,
+        "mod8_membership_tests": 1,
+        "tested_levels": 1,
+        "discriminant_square_roots": 1,
+        "root_divmods": 2,
+        "divisibility_tests": 1
+      }
+    }
+  },
+  "larger_control_selection": "Previously published 41-bit modular-hyperbola example and its 46-bit holdout control. Selection is for a repeatable comparison. Both searches receive only the decimal product.",
+  "larger_controls": [
+    {
+      "input_id": "modular-hyperbola-41",
+      "source": "benchmarks/modular-hyperbola.json",
+      "product": "1900014700027",
+      "recovered": [
+        "1000003",
+        "1900009"
+      ],
+      "chord_mod8": {
+        "complete": {
+          "initial_blocks": 1819,
+          "cf_divmods": 10628,
+          "level_endpoint_divisions": 3638,
+          "bounded_levels": 2928,
+          "blocks_with_0_levels": 127,
+          "blocks_with_1_levels": 696,
+          "mod8_residues_generated": 5392,
+          "mod8_membership_tests": 1478,
+          "tested_levels": 1167,
+          "discriminant_square_roots": 958,
+          "blocks_with_2_levels": 778,
+          "blocks_with_3_levels": 196,
+          "blocks_with_4_levels": 22,
+          "root_divmods": 6,
+          "divisibility_tests": 1
+        },
+        "to_first": {
+          "initial_blocks": 115,
+          "cf_divmods": 596,
+          "level_endpoint_divisions": 230,
+          "bounded_levels": 237,
+          "blocks_with_0_levels": 4,
+          "blocks_with_1_levels": 30,
+          "mod8_residues_generated": 376,
+          "mod8_membership_tests": 117,
+          "tested_levels": 90,
+          "discriminant_square_roots": 76,
+          "blocks_with_2_levels": 44,
+          "blocks_with_3_levels": 29,
+          "blocks_with_4_levels": 8,
+          "root_divmods": 4,
+          "divisibility_tests": 1
+        }
+      },
+      "direct_odd_divisions": {
+        "complete": 201863,
+        "to_first": 12660
+      }
+    },
+    {
+      "input_id": "modular-hyperbola-holdout-binary-46",
+      "source": "benchmarks/modular-hyperbola.json",
+      "product": "45249671261437",
+      "recovered": [
+        "6045709",
+        "7484593"
+      ],
+      "chord_mod8": {
+        "complete": {
+          "initial_blocks": 5213,
+          "cf_divmods": 32727,
+          "level_endpoint_divisions": 10426,
+          "bounded_levels": 8603,
+          "blocks_with_0_levels": 322,
+          "blocks_with_1_levels": 1930,
+          "mod8_residues_generated": 15752,
+          "mod8_membership_tests": 4306,
+          "tested_levels": 3410,
+          "discriminant_square_roots": 2881,
+          "blocks_with_2_levels": 2277,
+          "blocks_with_3_levels": 617,
+          "blocks_with_4_levels": 67,
+          "root_divmods": 6,
+          "divisibility_tests": 1
+        },
+        "to_first": {
+          "initial_blocks": 3411,
+          "cf_divmods": 23071,
+          "level_endpoint_divisions": 6822,
+          "bounded_levels": 6039,
+          "blocks_with_0_levels": 178,
+          "blocks_with_1_levels": 1111,
+          "mod8_residues_generated": 10716,
+          "mod8_membership_tests": 3014,
+          "tested_levels": 2373,
+          "discriminant_square_roots": 2020,
+          "blocks_with_2_levels": 1505,
+          "blocks_with_3_levels": 550,
+          "blocks_with_4_levels": 67,
+          "root_divmods": 6,
+          "divisibility_tests": 1
+        }
+      },
+      "direct_odd_divisions": {
+        "complete": 985115,
+        "to_first": 644576
+      }
+    }
+  ],
+  "ratio": {
+    "products": 99,
+    "methods": {
+      "chord": {
+        "complete": {
+          "initial_blocks": 3302,
+          "cf_divmods": 13664,
+          "level_endpoint_divisions": 6594,
+          "bounded_levels": 5103,
+          "blocks_with_2_levels": 1413,
+          "tested_levels": 5103,
+          "discriminant_square_roots": 4266,
+          "root_divmods": 260,
+          "divisibility_tests": 104,
+          "blocks_with_1_levels": 1299,
+          "singleton_columns": 5,
+          "blocks_with_0_levels": 266,
+          "blocks_with_3_levels": 299,
+          "blocks_with_4_levels": 19,
+          "blocks_with_5_levels": 1
+        },
+        "to_first": {
+          "initial_blocks": 2122,
+          "cf_divmods": 9908,
+          "level_endpoint_divisions": 4244,
+          "bounded_levels": 3572,
+          "blocks_with_2_levels": 946,
+          "tested_levels": 3539,
+          "discriminant_square_roots": 2960,
+          "root_divmods": 212,
+          "divisibility_tests": 99,
+          "blocks_with_1_levels": 777,
+          "blocks_with_3_levels": 274,
+          "blocks_with_0_levels": 105,
+          "blocks_with_4_levels": 19,
+          "blocks_with_5_levels": 1
+        }
+      },
+      "chord_parity": {
+        "complete": {
+          "initial_blocks": 3302,
+          "cf_divmods": 13664,
+          "level_endpoint_divisions": 6594,
+          "bounded_levels": 5103,
+          "blocks_with_2_levels": 1413,
+          "tested_levels": 2597,
+          "discriminant_square_roots": 2175,
+          "root_divmods": 260,
+          "divisibility_tests": 104,
+          "blocks_with_1_levels": 1299,
+          "singleton_columns": 5,
+          "blocks_with_0_levels": 266,
+          "blocks_with_3_levels": 299,
+          "blocks_with_4_levels": 19,
+          "blocks_with_5_levels": 1
+        },
+        "to_first": {
+          "initial_blocks": 2122,
+          "cf_divmods": 9908,
+          "level_endpoint_divisions": 4244,
+          "bounded_levels": 3572,
+          "blocks_with_2_levels": 946,
+          "tested_levels": 1831,
+          "discriminant_square_roots": 1532,
+          "root_divmods": 212,
+          "divisibility_tests": 99,
+          "blocks_with_1_levels": 777,
+          "blocks_with_3_levels": 274,
+          "blocks_with_0_levels": 105,
+          "blocks_with_4_levels": 19,
+          "blocks_with_5_levels": 1
+        }
+      },
+      "chord_mod8": {
+        "complete": {
+          "initial_blocks": 3302,
+          "cf_divmods": 13664,
+          "level_endpoint_divisions": 6594,
+          "bounded_levels": 5103,
+          "blocks_with_2_levels": 1413,
+          "mod8_residues_generated": 9664,
+          "mod8_membership_tests": 2597,
+          "tested_levels": 2078,
+          "discriminant_square_roots": 1733,
+          "root_divmods": 260,
+          "divisibility_tests": 104,
+          "blocks_with_1_levels": 1299,
+          "singleton_columns": 5,
+          "blocks_with_0_levels": 266,
+          "blocks_with_3_levels": 299,
+          "blocks_with_4_levels": 19,
+          "blocks_with_5_levels": 1
+        },
+        "to_first": {
+          "initial_blocks": 2122,
+          "cf_divmods": 9908,
+          "level_endpoint_divisions": 4244,
+          "bounded_levels": 3572,
+          "blocks_with_2_levels": 946,
+          "mod8_residues_generated": 6664,
+          "mod8_membership_tests": 1831,
+          "tested_levels": 1500,
+          "discriminant_square_roots": 1260,
+          "root_divmods": 212,
+          "divisibility_tests": 99,
+          "blocks_with_1_levels": 777,
+          "blocks_with_3_levels": 274,
+          "blocks_with_0_levels": 105,
+          "blocks_with_4_levels": 19,
+          "blocks_with_5_levels": 1
+        }
+      },
+      "triangle_parity": {
+        "complete": {
+          "initial_blocks": 3302,
+          "cf_divmods": 13664,
+          "level_endpoint_divisions": 6594,
+          "bounded_levels": 11035,
+          "blocks_with_2_levels": 708,
+          "tested_levels": 5556,
+          "discriminant_square_roots": 2183,
+          "blocks_with_4_levels": 505,
+          "blocks_with_3_levels": 583,
+          "root_divmods": 240,
+          "divisibility_tests": 104,
+          "blocks_with_5_levels": 355,
+          "singleton_columns": 5,
+          "blocks_with_1_levels": 514,
+          "blocks_with_0_levels": 126,
+          "blocks_with_8_levels": 79,
+          "blocks_with_6_levels": 221,
+          "blocks_with_7_levels": 141,
+          "blocks_with_9_levels": 44,
+          "blocks_with_10_levels": 14,
+          "blocks_with_11_levels": 5,
+          "blocks_with_12_levels": 1,
+          "blocks_with_13_levels": 1
+        },
+        "to_first": {
+          "initial_blocks": 2122,
+          "cf_divmods": 9908,
+          "level_endpoint_divisions": 4244,
+          "bounded_levels": 8145,
+          "blocks_with_2_levels": 385,
+          "tested_levels": 4102,
+          "discriminant_square_roots": 1524,
+          "blocks_with_4_levels": 296,
+          "blocks_with_3_levels": 340,
+          "root_divmods": 212,
+          "divisibility_tests": 99,
+          "blocks_with_1_levels": 298,
+          "blocks_with_5_levels": 277,
+          "blocks_with_8_levels": 79,
+          "blocks_with_6_levels": 210,
+          "blocks_with_7_levels": 140,
+          "blocks_with_9_levels": 44,
+          "blocks_with_0_levels": 32,
+          "blocks_with_10_levels": 14,
+          "blocks_with_11_levels": 5,
+          "blocks_with_12_levels": 1,
+          "blocks_with_13_levels": 1
+        }
+      },
+      "covariance_parity": {
+        "complete": {
+          "initial_blocks": 3302,
+          "moment_strips": 3302,
+          "reduction_iterations": 9480,
+          "reduction_divisions": 7029,
+          "strip_counts": 3302,
+          "euclidean_steps": 23071,
+          "moment_states": 406181,
+          "mixed_moments": 15474,
+          "line_equations": 451,
+          "divisibility_tests": 99,
+          "covariance_square_roots": 2451,
+          "level_endpoint_divisions": 4902,
+          "bounded_levels": 7180,
+          "blocks_with_3_levels": 537,
+          "tested_levels": 3556,
+          "discriminant_square_roots": 2706,
+          "blocks_with_4_levels": 524,
+          "blocks_with_2_levels": 1193,
+          "root_divmods": 196,
+          "blocks_with_6_levels": 46,
+          "blocks_with_5_levels": 123,
+          "blocks_with_7_levels": 28
+        },
+        "to_first": {
+          "initial_blocks": 2122,
+          "moment_strips": 2122,
+          "reduction_iterations": 6944,
+          "reduction_divisions": 5196,
+          "strip_counts": 2122,
+          "euclidean_steps": 16846,
+          "moment_states": 273656,
+          "mixed_moments": 10368,
+          "line_equations": 297,
+          "divisibility_tests": 99,
+          "covariance_square_roots": 1748,
+          "level_endpoint_divisions": 3496,
+          "bounded_levels": 5613,
+          "blocks_with_3_levels": 428,
+          "tested_levels": 2777,
+          "discriminant_square_roots": 2078,
+          "blocks_with_4_levels": 498,
+          "blocks_with_2_levels": 625,
+          "root_divmods": 178,
+          "blocks_with_6_levels": 46,
+          "blocks_with_5_levels": 123,
+          "blocks_with_7_levels": 28
+        }
+      },
+      "recursive_line": {
+        "complete": {
+          "initial_blocks": 3302,
+          "moment_strips": 8400,
+          "strip_counts": 8400,
+          "euclidean_steps": 55418,
+          "moment_states": 571697,
+          "mixed_moments": 21798,
+          "line_equations": 1293,
+          "divisibility_tests": 2665,
+          "bisections": 2549
+        },
+        "to_first": {
+          "initial_blocks": 2122,
+          "moment_strips": 5605,
+          "strip_counts": 5605,
+          "euclidean_steps": 41452,
+          "moment_states": 439144,
+          "mixed_moments": 15206,
+          "line_equations": 926,
+          "divisibility_tests": 1888,
+          "bisections": 1753
+        }
+      }
+    },
+    "direct_odd_divisions": {
+      "to_first": 33216,
+      "complete": 52049
+    }
+  },
+  "holdout": {
+    "products": 64,
+    "methods": {
+      "chord": {
+        "complete": {
+          "initial_blocks": 791,
+          "cf_divmods": 2874,
+          "level_endpoint_divisions": 1580,
+          "bounded_levels": 1192,
+          "blocks_with_2_levels": 358,
+          "tested_levels": 1192,
+          "discriminant_square_roots": 990,
+          "blocks_with_1_levels": 302,
+          "root_divmods": 164,
+          "divisibility_tests": 65,
+          "blocks_with_0_levels": 72,
+          "blocks_with_3_levels": 58,
+          "singleton_columns": 1
+        },
+        "to_first": {
+          "initial_blocks": 496,
+          "cf_divmods": 2007,
+          "level_endpoint_divisions": 992,
+          "bounded_levels": 843,
+          "blocks_with_2_levels": 258,
+          "tested_levels": 817,
+          "discriminant_square_roots": 670,
+          "blocks_with_1_levels": 174,
+          "root_divmods": 146,
+          "divisibility_tests": 64,
+          "blocks_with_3_levels": 51,
+          "blocks_with_0_levels": 13
+        }
+      },
+      "chord_parity": {
+        "complete": {
+          "initial_blocks": 791,
+          "cf_divmods": 2874,
+          "level_endpoint_divisions": 1580,
+          "bounded_levels": 1192,
+          "blocks_with_2_levels": 358,
+          "tested_levels": 602,
+          "discriminant_square_roots": 497,
+          "blocks_with_1_levels": 302,
+          "root_divmods": 164,
+          "divisibility_tests": 65,
+          "blocks_with_0_levels": 72,
+          "blocks_with_3_levels": 58,
+          "singleton_columns": 1
+        },
+        "to_first": {
+          "initial_blocks": 496,
+          "cf_divmods": 2007,
+          "level_endpoint_divisions": 992,
+          "bounded_levels": 843,
+          "blocks_with_2_levels": 258,
+          "tested_levels": 429,
+          "discriminant_square_roots": 356,
+          "blocks_with_1_levels": 174,
+          "root_divmods": 146,
+          "divisibility_tests": 64,
+          "blocks_with_3_levels": 51,
+          "blocks_with_0_levels": 13
+        }
+      },
+      "chord_mod8": {
+        "complete": {
+          "initial_blocks": 791,
+          "cf_divmods": 2874,
+          "level_endpoint_divisions": 1580,
+          "bounded_levels": 1192,
+          "blocks_with_2_levels": 358,
+          "mod8_residues_generated": 2288,
+          "mod8_membership_tests": 602,
+          "tested_levels": 490,
+          "discriminant_square_roots": 398,
+          "blocks_with_1_levels": 302,
+          "root_divmods": 164,
+          "divisibility_tests": 65,
+          "blocks_with_0_levels": 72,
+          "blocks_with_3_levels": 58,
+          "singleton_columns": 1
+        },
+        "to_first": {
+          "initial_blocks": 496,
+          "cf_divmods": 2007,
+          "level_endpoint_divisions": 992,
+          "bounded_levels": 843,
+          "blocks_with_2_levels": 258,
+          "mod8_residues_generated": 1616,
+          "mod8_membership_tests": 429,
+          "tested_levels": 368,
+          "discriminant_square_roots": 301,
+          "blocks_with_1_levels": 174,
+          "root_divmods": 146,
+          "divisibility_tests": 64,
+          "blocks_with_3_levels": 51,
+          "blocks_with_0_levels": 13
+        }
+      },
+      "triangle_parity": {
+        "complete": {
+          "initial_blocks": 791,
+          "cf_divmods": 2874,
+          "level_endpoint_divisions": 1580,
+          "bounded_levels": 2406,
+          "blocks_with_2_levels": 171,
+          "tested_levels": 1205,
+          "discriminant_square_roots": 515,
+          "blocks_with_6_levels": 83,
+          "blocks_with_4_levels": 115,
+          "blocks_with_3_levels": 139,
+          "root_divmods": 174,
+          "divisibility_tests": 65,
+          "blocks_with_5_levels": 86,
+          "blocks_with_0_levels": 41,
+          "blocks_with_1_levels": 138,
+          "blocks_with_7_levels": 15,
+          "singleton_columns": 1,
+          "blocks_with_8_levels": 2
+        },
+        "to_first": {
+          "initial_blocks": 496,
+          "cf_divmods": 2007,
+          "level_endpoint_divisions": 992,
+          "bounded_levels": 1744,
+          "blocks_with_2_levels": 87,
+          "tested_levels": 867,
+          "discriminant_square_roots": 361,
+          "blocks_with_6_levels": 77,
+          "blocks_with_4_levels": 74,
+          "blocks_with_3_levels": 95,
+          "root_divmods": 156,
+          "divisibility_tests": 64,
+          "blocks_with_1_levels": 81,
+          "blocks_with_5_levels": 65,
+          "blocks_with_7_levels": 15,
+          "blocks_with_8_levels": 2
+        }
+      },
+      "covariance_parity": {
+        "complete": {
+          "initial_blocks": 791,
+          "moment_strips": 791,
+          "reduction_iterations": 1996,
+          "reduction_divisions": 1438,
+          "strip_counts": 791,
+          "euclidean_steps": 4763,
+          "moment_states": 84153,
+          "mixed_moments": 3663,
+          "line_equations": 122,
+          "divisibility_tests": 64,
+          "covariance_square_roots": 558,
+          "level_endpoint_divisions": 1116,
+          "bounded_levels": 1560,
+          "blocks_with_3_levels": 141,
+          "tested_levels": 779,
+          "discriminant_square_roots": 602,
+          "blocks_with_4_levels": 106,
+          "blocks_with_2_levels": 282,
+          "root_divmods": 150,
+          "blocks_with_5_levels": 26,
+          "blocks_with_6_levels": 2,
+          "blocks_with_7_levels": 1
+        },
+        "to_first": {
+          "initial_blocks": 496,
+          "moment_strips": 496,
+          "reduction_iterations": 1413,
+          "reduction_divisions": 1022,
+          "strip_counts": 496,
+          "euclidean_steps": 3323,
+          "moment_states": 57265,
+          "mixed_moments": 2469,
+          "line_equations": 81,
+          "divisibility_tests": 64,
+          "covariance_square_roots": 391,
+          "level_endpoint_divisions": 782,
+          "bounded_levels": 1166,
+          "blocks_with_3_levels": 106,
+          "tested_levels": 573,
+          "discriminant_square_roots": 433,
+          "blocks_with_4_levels": 95,
+          "blocks_with_2_levels": 162,
+          "root_divmods": 118,
+          "blocks_with_5_levels": 25,
+          "blocks_with_6_levels": 2,
+          "blocks_with_7_levels": 1
+        }
+      },
+      "recursive_line": {
+        "complete": {
+          "initial_blocks": 791,
+          "moment_strips": 1963,
+          "strip_counts": 1963,
+          "euclidean_steps": 11089,
+          "moment_states": 111462,
+          "mixed_moments": 4947,
+          "line_equations": 293,
+          "divisibility_tests": 582,
+          "bisections": 586
+        },
+        "to_first": {
+          "initial_blocks": 496,
+          "moment_strips": 1279,
+          "strip_counts": 1279,
+          "euclidean_steps": 7877,
+          "moment_states": 82396,
+          "mixed_moments": 3446,
+          "line_equations": 209,
+          "divisibility_tests": 416,
+          "bisections": 403
+        }
+      }
+    },
+    "direct_odd_divisions": {
+      "to_first": 4252,
+      "complete": 6901
+    }
+  }
+}

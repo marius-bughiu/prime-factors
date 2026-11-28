@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+A rational approximation computed from the product covers each sixth-root-width block with at most five integer lines. For odd products at most three discriminants require testing. At 119,423 one square gives both primes in the block from 301 through 314. A complete 2,048-bit sweep still needs more than $2^{679}$ blocks. [Geometric proof, measured work and full-width schedule](covering-a-factor-interval-with-five-lines.md)
+
+Six sums over a supplied interval leave 97 as the only surviving factor coordinate for 12,707. On 64 holdout inputs the rule reduced ordinary divisibility tests from 3,385 to 2,488 through the first factor. An ordinary-coordinate quartic came within eleven tests while using fewer floor-moment states. [First-hit comparisons and integer variance](narrowing-a-factor-interval-with-strip-moments.md)
+
 For a balanced 2,048-bit prime product, a product-selected modulus between $N/8000$ and $N/7992$ leaves a unique pair after excluding products divisible by small primes. The whole sequence of gcd readings can be predicted without the factors. More than $2^{1013}$ candidate smaller entries can still pass the two coprimality tests in the ratio-based interval. [Uniqueness and extraction cost](isolating-the-product-with-small-primes.md)
 
 Allowing two possible corrections raises the largest possible denominator for a fractional prefix from 24 to 120. At any denominator, a 2,048-bit input forces the prefix or the untrimmed correction list to exceed $2^{942}$ entries. The count can be known for free at the square root, and bounds on both factors can isolate the correct pair in a large implicit list. [What the counts cost and where other information helps](what-two-corrections-buy-for-a-prefix-count.md)

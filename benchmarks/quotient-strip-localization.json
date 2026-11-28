@@ -1,0 +1,956 @@
+{
+  "ratio_design": "Every eighth prime p from 257 through 8191, with q the first prime above floor(5p/4) in the same range. Omit p if q would be outside the range.",
+  "holdout_design": "64 distinct unordered pairs of different 10-bit primes. Choose the two prime indices independently by SHA-256 with counter and side labels. No prescribed ratio.",
+  "blocks": "Ascending blocks of width twice the nearest sixth root of N in the balanced interval. The wider control uses four times the same root.",
+  "work": "Every search starts from N alone. All methods use Newton error moments on at most three points and the same line test on other strips. Cauchy and Gram also apply the first two residual moments. Regression and quartic reuse the coordinate moments of the line test and first apply the integer x and y bounds. Regression counts its unnormalized projected bands and quadratic discriminants. Quartic counts polynomial builds and all finite-difference sign evaluations during root isolation. The remaining intervals visit odd trial divisors in ascending order. To-first snapshots stop at the first returned factor. Window square roots and endpoint divisions count added location calculations. Line intersections and shared Euclidean states are reported separately. Counters measure operations in their own units. Reference enumerations are excluded.",
+  "reference": "Every block left unresolved by sparse and collinear reconstruction compares the two coordinate filters to independent integer-neighbor variance and scaled principal-minor tests at every position. The eligible occupancy rows use exactly the strips that survive Newton, line, and residual-only Cauchy. Wider-block numbers use direct reference points.",
+  "ratio": {
+    "products": 99,
+    "occupancy": {
+      "9_to_16": {
+        "all_strips": 595,
+        "marginal_xy_positions": 16238,
+        "marginal_xy_odd_positions": 8115,
+        "regression_positions": 16011,
+        "regression_odd_positions": 8000,
+        "regression_empty": 0,
+        "regression_no_odd_candidate": 0,
+        "regression_disconnected": 0,
+        "regression_narrower_than_xy": 118,
+        "regression_with_factor_narrower_than_xy": 0,
+        "quartic_positions": 15741,
+        "quartic_odd_positions": 7865,
+        "quartic_empty": 0,
+        "quartic_no_odd_candidate": 0,
+        "quartic_disconnected": 0,
+        "quartic_narrower_than_xy": 226,
+        "quartic_with_factor_narrower_than_xy": 0,
+        "eligible": 519,
+        "original_positions": 16892,
+        "x_only_positions": 16322,
+        "gram_positions": 15578,
+        "original_odd_positions": 8446,
+        "x_only_odd_positions": 8154,
+        "gram_odd_positions": 7789,
+        "narrowed": 321,
+        "narrower_than_x_only": 307,
+        "empty": 0,
+        "singleton": 0,
+        "no_odd_candidate": 0,
+        "with_factor": 2,
+        "with_factor_narrowed": 0,
+        "line": 76
+      },
+      "4_to_8": {
+        "all_strips": 2288,
+        "marginal_xy_positions": 49004,
+        "marginal_xy_odd_positions": 24476,
+        "regression_positions": 44159,
+        "regression_odd_positions": 22049,
+        "regression_empty": 0,
+        "regression_no_odd_candidate": 0,
+        "regression_disconnected": 0,
+        "regression_narrower_than_xy": 1214,
+        "regression_with_factor_narrower_than_xy": 27,
+        "quartic_positions": 42005,
+        "quartic_odd_positions": 20982,
+        "quartic_empty": 0,
+        "quartic_no_odd_candidate": 0,
+        "quartic_disconnected": 1,
+        "quartic_narrower_than_xy": 1635,
+        "quartic_with_factor_narrower_than_xy": 41,
+        "eligible": 1931,
+        "original_positions": 61640,
+        "x_only_positions": 49754,
+        "gram_positions": 41628,
+        "original_odd_positions": 30820,
+        "x_only_odd_positions": 24862,
+        "gram_odd_positions": 20826,
+        "narrowed": 1841,
+        "narrower_than_x_only": 1627,
+        "empty": 0,
+        "singleton": 2,
+        "no_odd_candidate": 1,
+        "with_factor": 62,
+        "with_factor_narrowed": 57,
+        "line": 357
+      },
+      "0_to_3": {
+        "all_strips": 400,
+        "sparse": 400
+      },
+      "17_or_more": {
+        "all_strips": 19,
+        "marginal_xy_positions": 18,
+        "marginal_xy_odd_positions": 9,
+        "regression_positions": 18,
+        "regression_odd_positions": 9,
+        "regression_empty": 0,
+        "regression_no_odd_candidate": 0,
+        "regression_disconnected": 0,
+        "regression_narrower_than_xy": 0,
+        "regression_with_factor_narrower_than_xy": 0,
+        "quartic_positions": 18,
+        "quartic_odd_positions": 9,
+        "quartic_empty": 0,
+        "quartic_no_odd_candidate": 0,
+        "quartic_disconnected": 0,
+        "quartic_narrower_than_xy": 0,
+        "quartic_with_factor_narrower_than_xy": 0,
+        "eligible": 1,
+        "original_positions": 18,
+        "x_only_positions": 18,
+        "gram_positions": 18,
+        "original_odd_positions": 9,
+        "x_only_odd_positions": 9,
+        "gram_odd_positions": 9,
+        "narrowed": 0,
+        "narrower_than_x_only": 0,
+        "empty": 0,
+        "singleton": 0,
+        "no_odd_candidate": 0,
+        "with_factor": 0,
+        "with_factor_narrowed": 0,
+        "line": 18
+      }
+    },
+    "methods": {
+      "complete": {
+        "line_sparse": {
+          "strip_counts": 3302,
+          "euclidean_steps": 23071,
+          "moment_states": 406181,
+          "mixed_moments": 15474,
+          "line_equations": 451,
+          "divisibility_tests": 39310,
+          "terminal_divisibility_tests": 39275
+        },
+        "marginal_x": {
+          "strip_counts": 3302,
+          "euclidean_steps": 23071,
+          "moment_states": 406181,
+          "mixed_moments": 15474,
+          "line_equations": 451,
+          "divisibility_tests": 33060,
+          "window_square_roots": 2451,
+          "window_endpoint_divisions": 4902,
+          "terminal_divisibility_tests": 33025
+        },
+        "marginal_xy": {
+          "strip_counts": 3302,
+          "euclidean_steps": 23071,
+          "moment_states": 406181,
+          "mixed_moments": 15474,
+          "line_equations": 451,
+          "divisibility_tests": 32635,
+          "window_square_roots": 4902,
+          "window_endpoint_divisions": 14706,
+          "terminal_divisibility_tests": 32600
+        },
+        "regression": {
+          "strip_counts": 3302,
+          "euclidean_steps": 23071,
+          "moment_states": 406181,
+          "mixed_moments": 15474,
+          "line_equations": 451,
+          "divisibility_tests": 30093,
+          "window_square_roots": 9863,
+          "window_endpoint_divisions": 24628,
+          "regression_bands": 2451,
+          "projection_discriminants": 4902,
+          "terminal_divisibility_tests": 30058
+        },
+        "quartic": {
+          "strip_counts": 3302,
+          "euclidean_steps": 23071,
+          "moment_states": 406181,
+          "mixed_moments": 15474,
+          "line_equations": 451,
+          "divisibility_tests": 28891,
+          "window_square_roots": 4902,
+          "window_endpoint_divisions": 14706,
+          "quartic_polynomials": 2451,
+          "sign_evaluations": 109151,
+          "sign_bisection_halvings": 106700,
+          "terminal_divisibility_tests": 28856
+        },
+        "cauchy": {
+          "strip_counts": 3302,
+          "euclidean_steps": 23071,
+          "moment_states": 725737,
+          "mixed_moments": 17925,
+          "line_equations": 451,
+          "divisibility_tests": 39310,
+          "terminal_divisibility_tests": 39275
+        },
+        "gram": {
+          "strip_counts": 3302,
+          "euclidean_steps": 23071,
+          "moment_states": 725737,
+          "mixed_moments": 20376,
+          "line_equations": 451,
+          "divisibility_tests": 28659,
+          "gram_mixed_sums": 2451,
+          "window_square_roots": 4902,
+          "window_endpoint_divisions": 9804,
+          "terminal_divisibility_tests": 28624
+        }
+      },
+      "to_first": {
+        "line_sparse": {
+          "strip_counts": 2122,
+          "euclidean_steps": 16846,
+          "moment_states": 273656,
+          "mixed_moments": 10368,
+          "line_equations": 297,
+          "divisibility_tests": 27696,
+          "terminal_divisibility_tests": 27661
+        },
+        "marginal_x": {
+          "strip_counts": 2122,
+          "euclidean_steps": 16846,
+          "moment_states": 273656,
+          "mixed_moments": 10368,
+          "line_equations": 297,
+          "divisibility_tests": 24156,
+          "window_square_roots": 1748,
+          "window_endpoint_divisions": 3496,
+          "terminal_divisibility_tests": 24121
+        },
+        "marginal_xy": {
+          "strip_counts": 2122,
+          "euclidean_steps": 16846,
+          "moment_states": 273656,
+          "mixed_moments": 10368,
+          "line_equations": 297,
+          "divisibility_tests": 23928,
+          "window_square_roots": 3496,
+          "window_endpoint_divisions": 10488,
+          "terminal_divisibility_tests": 23893
+        },
+        "regression": {
+          "strip_counts": 2122,
+          "euclidean_steps": 16846,
+          "moment_states": 273656,
+          "mixed_moments": 10368,
+          "line_equations": 297,
+          "divisibility_tests": 22537,
+          "window_square_roots": 7014,
+          "window_endpoint_divisions": 17524,
+          "regression_bands": 1748,
+          "projection_discriminants": 3496,
+          "terminal_divisibility_tests": 22502
+        },
+        "quartic": {
+          "strip_counts": 2122,
+          "euclidean_steps": 16846,
+          "moment_states": 273656,
+          "mixed_moments": 10368,
+          "line_equations": 297,
+          "divisibility_tests": 21767,
+          "window_square_roots": 3496,
+          "window_endpoint_divisions": 10488,
+          "quartic_polynomials": 1748,
+          "sign_evaluations": 78429,
+          "sign_bisection_halvings": 76681,
+          "terminal_divisibility_tests": 21732
+        },
+        "cauchy": {
+          "strip_counts": 2122,
+          "euclidean_steps": 16846,
+          "moment_states": 525044,
+          "mixed_moments": 12116,
+          "line_equations": 297,
+          "divisibility_tests": 27696,
+          "terminal_divisibility_tests": 27661
+        },
+        "gram": {
+          "strip_counts": 2122,
+          "euclidean_steps": 16846,
+          "moment_states": 525044,
+          "mixed_moments": 13864,
+          "line_equations": 297,
+          "divisibility_tests": 21552,
+          "gram_mixed_sums": 1748,
+          "window_square_roots": 3496,
+          "window_endpoint_divisions": 6992,
+          "terminal_divisibility_tests": 21517
+        }
+      }
+    },
+    "direct_trial": {
+      "complete_divisions": 52049,
+      "divisions_to_first": 33216
+    },
+    "controls": [
+      {
+        "product": "119423",
+        "block": [
+          301,
+          314
+        ],
+        "state": "eligible",
+        "points": [
+          [
+            307,
+            389
+          ],
+          [
+            310,
+            385
+          ],
+          [
+            311,
+            384
+          ],
+          [
+            313,
+            381
+          ],
+          [
+            314,
+            380
+          ]
+        ],
+        "moments": [
+          5,
+          1555,
+          483635,
+          -345,
+          -107871,
+          44839
+        ],
+        "coordinate_moments": [
+          5,
+          1555,
+          483635,
+          1919,
+          596770,
+          736563
+        ],
+        "intervals": {
+          "line_sparse": [
+            [
+              301,
+              314
+            ]
+          ],
+          "marginal_x": [
+            [
+              307,
+              314
+            ]
+          ],
+          "marginal_xy": [
+            [
+              307,
+              314
+            ]
+          ],
+          "regression": [
+            [
+              307,
+              312
+            ]
+          ],
+          "quartic": [
+            [
+              307,
+              312
+            ]
+          ],
+          "cauchy": [
+            [
+              301,
+              314
+            ]
+          ],
+          "gram": [
+            [
+              307,
+              311
+            ]
+          ]
+        },
+        "verified_factors": [
+          "307",
+          "389"
+        ]
+      },
+      {
+        "product": "11286761",
+        "block": [
+          3006,
+          3035
+        ],
+        "state": "eligible",
+        "points": [
+          [
+            3009,
+            3751
+          ],
+          [
+            3026,
+            3730
+          ],
+          [
+            3030,
+            3725
+          ],
+          [
+            3034,
+            3720
+          ]
+        ],
+        "moments": [
+          4,
+          12099,
+          36596813,
+          -75,
+          -229208,
+          127047
+        ],
+        "coordinate_moments": [
+          4,
+          12099,
+          36596813,
+          14926,
+          45146969,
+          55696926
+        ],
+        "intervals": {
+          "line_sparse": [
+            [
+              3006,
+              3035
+            ]
+          ],
+          "marginal_x": [
+            [
+              3009,
+              3035
+            ]
+          ],
+          "marginal_xy": [
+            [
+              3010,
+              3035
+            ]
+          ],
+          "regression": [
+            [
+              3010,
+              3034
+            ]
+          ],
+          "quartic": [
+            [
+              3010,
+              3013
+            ],
+            [
+              3017,
+              3033
+            ]
+          ],
+          "cauchy": [
+            [
+              3006,
+              3035
+            ]
+          ],
+          "gram": [
+            [
+              3009,
+              3035
+            ]
+          ]
+        },
+        "verified_factors": [
+          "3001",
+          "3761"
+        ]
+      },
+      {
+        "product": "14043943",
+        "block": [
+          3322,
+          3353
+        ],
+        "state": "eligible",
+        "points": [
+          [
+            3339,
+            4206
+          ],
+          [
+            3343,
+            4201
+          ],
+          [
+            3347,
+            4196
+          ],
+          [
+            3350,
+            4192
+          ]
+        ],
+        "moments": [
+          4,
+          13379,
+          44749479,
+          -783,
+          -2622058,
+          568691
+        ],
+        "coordinate_moments": [
+          4,
+          13379,
+          44749479,
+          16795,
+          56174989,
+          70518117
+        ],
+        "intervals": {
+          "line_sparse": [
+            [
+              3322,
+              3353
+            ]
+          ],
+          "marginal_x": [
+            [
+              3338,
+              3351
+            ]
+          ],
+          "marginal_xy": [
+            [
+              3339,
+              3351
+            ]
+          ],
+          "regression": [
+            [
+              3339,
+              3349
+            ]
+          ],
+          "quartic": [
+            [
+              3339,
+              3348
+            ]
+          ],
+          "cauchy": [
+            [
+              3322,
+              3353
+            ]
+          ],
+          "gram": [
+            [
+              3338,
+              3348
+            ]
+          ]
+        },
+        "verified_factors": [
+          "3343",
+          "4201"
+        ]
+      }
+    ]
+  },
+  "holdout": {
+    "products": 64,
+    "occupancy": {
+      "17_or_more": {
+        "all_strips": 10,
+        "marginal_xy_positions": 160,
+        "marginal_xy_odd_positions": 80,
+        "regression_positions": 160,
+        "regression_odd_positions": 80,
+        "regression_empty": 0,
+        "regression_no_odd_candidate": 0,
+        "regression_disconnected": 0,
+        "regression_narrower_than_xy": 0,
+        "regression_with_factor_narrower_than_xy": 0,
+        "quartic_positions": 156,
+        "quartic_odd_positions": 77,
+        "quartic_empty": 0,
+        "quartic_no_odd_candidate": 0,
+        "quartic_disconnected": 0,
+        "quartic_narrower_than_xy": 4,
+        "quartic_with_factor_narrower_than_xy": 0,
+        "eligible": 9,
+        "original_positions": 160,
+        "x_only_positions": 160,
+        "gram_positions": 160,
+        "original_odd_positions": 80,
+        "x_only_odd_positions": 80,
+        "gram_odd_positions": 80,
+        "narrowed": 0,
+        "narrower_than_x_only": 0,
+        "empty": 0,
+        "singleton": 0,
+        "no_odd_candidate": 0,
+        "with_factor": 0,
+        "with_factor_narrowed": 0,
+        "line": 1
+      },
+      "4_to_8": {
+        "all_strips": 570,
+        "marginal_xy_positions": 6594,
+        "marginal_xy_odd_positions": 3279,
+        "regression_positions": 5851,
+        "regression_odd_positions": 2922,
+        "regression_empty": 0,
+        "regression_no_odd_candidate": 0,
+        "regression_disconnected": 0,
+        "regression_narrower_than_xy": 307,
+        "regression_with_factor_narrower_than_xy": 26,
+        "quartic_positions": 5597,
+        "quartic_odd_positions": 2809,
+        "quartic_empty": 0,
+        "quartic_no_odd_candidate": 0,
+        "quartic_disconnected": 0,
+        "quartic_narrower_than_xy": 407,
+        "quartic_with_factor_narrower_than_xy": 35,
+        "eligible": 475,
+        "original_positions": 8568,
+        "x_only_positions": 6797,
+        "gram_positions": 5586,
+        "original_odd_positions": 4284,
+        "x_only_odd_positions": 3386,
+        "gram_odd_positions": 2790,
+        "narrowed": 456,
+        "narrower_than_x_only": 389,
+        "empty": 0,
+        "singleton": 0,
+        "no_odd_candidate": 0,
+        "with_factor": 44,
+        "with_factor_narrowed": 41,
+        "line": 95
+      },
+      "0_to_3": {
+        "all_strips": 111,
+        "sparse": 111
+      },
+      "9_to_16": {
+        "all_strips": 100,
+        "line": 26,
+        "marginal_xy_positions": 1297,
+        "marginal_xy_odd_positions": 651,
+        "regression_positions": 1282,
+        "regression_odd_positions": 644,
+        "regression_empty": 0,
+        "regression_no_odd_candidate": 0,
+        "regression_disconnected": 0,
+        "regression_narrower_than_xy": 12,
+        "regression_with_factor_narrower_than_xy": 0,
+        "quartic_positions": 1266,
+        "quartic_odd_positions": 635,
+        "quartic_empty": 0,
+        "quartic_no_odd_candidate": 0,
+        "quartic_disconnected": 0,
+        "quartic_narrower_than_xy": 23,
+        "quartic_with_factor_narrower_than_xy": 1,
+        "eligible": 74,
+        "original_positions": 1368,
+        "x_only_positions": 1306,
+        "gram_positions": 1260,
+        "original_odd_positions": 684,
+        "x_only_odd_positions": 653,
+        "gram_odd_positions": 636,
+        "narrowed": 44,
+        "narrower_than_x_only": 35,
+        "empty": 0,
+        "singleton": 0,
+        "no_odd_candidate": 0,
+        "with_factor": 4,
+        "with_factor_narrowed": 2
+      }
+    },
+    "methods": {
+      "complete": {
+        "line_sparse": {
+          "strip_counts": 791,
+          "euclidean_steps": 4763,
+          "moment_states": 84153,
+          "mixed_moments": 3663,
+          "line_equations": 122,
+          "divisibility_tests": 5064,
+          "terminal_divisibility_tests": 5048
+        },
+        "marginal_x": {
+          "strip_counts": 791,
+          "euclidean_steps": 4763,
+          "moment_states": 84153,
+          "mixed_moments": 3663,
+          "line_equations": 122,
+          "divisibility_tests": 4135,
+          "window_square_roots": 558,
+          "window_endpoint_divisions": 1116,
+          "terminal_divisibility_tests": 4119
+        },
+        "marginal_xy": {
+          "strip_counts": 791,
+          "euclidean_steps": 4763,
+          "moment_states": 84153,
+          "mixed_moments": 3663,
+          "line_equations": 122,
+          "divisibility_tests": 4026,
+          "window_square_roots": 1116,
+          "window_endpoint_divisions": 3348,
+          "terminal_divisibility_tests": 4010
+        },
+        "regression": {
+          "strip_counts": 791,
+          "euclidean_steps": 4763,
+          "moment_states": 84153,
+          "mixed_moments": 3663,
+          "line_equations": 122,
+          "divisibility_tests": 3662,
+          "window_square_roots": 2240,
+          "window_endpoint_divisions": 5596,
+          "regression_bands": 558,
+          "projection_discriminants": 1116,
+          "terminal_divisibility_tests": 3646
+        },
+        "quartic": {
+          "strip_counts": 791,
+          "euclidean_steps": 4763,
+          "moment_states": 84153,
+          "mixed_moments": 3663,
+          "line_equations": 122,
+          "divisibility_tests": 3537,
+          "window_square_roots": 1116,
+          "window_endpoint_divisions": 3348,
+          "quartic_polynomials": 558,
+          "sign_evaluations": 19975,
+          "sign_bisection_halvings": 19417,
+          "terminal_divisibility_tests": 3521
+        },
+        "cauchy": {
+          "strip_counts": 791,
+          "euclidean_steps": 4763,
+          "moment_states": 146221,
+          "mixed_moments": 4221,
+          "line_equations": 122,
+          "divisibility_tests": 5064,
+          "terminal_divisibility_tests": 5048
+        },
+        "gram": {
+          "strip_counts": 791,
+          "euclidean_steps": 4763,
+          "moment_states": 146221,
+          "mixed_moments": 4779,
+          "line_equations": 122,
+          "divisibility_tests": 3522,
+          "gram_mixed_sums": 558,
+          "window_square_roots": 1116,
+          "window_endpoint_divisions": 2232,
+          "terminal_divisibility_tests": 3506
+        }
+      },
+      "to_first": {
+        "line_sparse": {
+          "strip_counts": 496,
+          "euclidean_steps": 3323,
+          "moment_states": 57265,
+          "mixed_moments": 2469,
+          "line_equations": 81,
+          "divisibility_tests": 3385,
+          "terminal_divisibility_tests": 3369
+        },
+        "marginal_x": {
+          "strip_counts": 496,
+          "euclidean_steps": 3323,
+          "moment_states": 57265,
+          "mixed_moments": 2469,
+          "line_equations": 81,
+          "divisibility_tests": 2814,
+          "window_square_roots": 391,
+          "window_endpoint_divisions": 782,
+          "terminal_divisibility_tests": 2798
+        },
+        "marginal_xy": {
+          "strip_counts": 496,
+          "euclidean_steps": 3323,
+          "moment_states": 57265,
+          "mixed_moments": 2469,
+          "line_equations": 81,
+          "divisibility_tests": 2752,
+          "window_square_roots": 782,
+          "window_endpoint_divisions": 2346,
+          "terminal_divisibility_tests": 2736
+        },
+        "regression": {
+          "strip_counts": 496,
+          "euclidean_steps": 3323,
+          "moment_states": 57265,
+          "mixed_moments": 2469,
+          "line_equations": 81,
+          "divisibility_tests": 2573,
+          "window_square_roots": 1568,
+          "window_endpoint_divisions": 3918,
+          "regression_bands": 391,
+          "projection_discriminants": 782,
+          "terminal_divisibility_tests": 2557
+        },
+        "quartic": {
+          "strip_counts": 496,
+          "euclidean_steps": 3323,
+          "moment_states": 57265,
+          "mixed_moments": 2469,
+          "line_equations": 81,
+          "divisibility_tests": 2499,
+          "window_square_roots": 782,
+          "window_endpoint_divisions": 2346,
+          "quartic_polynomials": 391,
+          "sign_evaluations": 14136,
+          "sign_bisection_halvings": 13745,
+          "terminal_divisibility_tests": 2483
+        },
+        "cauchy": {
+          "strip_counts": 496,
+          "euclidean_steps": 3323,
+          "moment_states": 103561,
+          "mixed_moments": 2860,
+          "line_equations": 81,
+          "divisibility_tests": 3385,
+          "terminal_divisibility_tests": 3369
+        },
+        "gram": {
+          "strip_counts": 496,
+          "euclidean_steps": 3323,
+          "moment_states": 103561,
+          "mixed_moments": 3251,
+          "line_equations": 81,
+          "divisibility_tests": 2488,
+          "gram_mixed_sums": 391,
+          "window_square_roots": 782,
+          "window_endpoint_divisions": 1564,
+          "terminal_divisibility_tests": 2472
+        }
+      }
+    },
+    "direct_trial": {
+      "complete_divisions": 6901,
+      "divisions_to_first": 4252
+    },
+    "controls": []
+  },
+  "wider_ratio_occupancy": {
+    "17_or_more": {
+      "all_strips": 1599,
+      "marginal_xy_positions": 101720,
+      "marginal_xy_odd_positions": 50860,
+      "regression_positions": 101697,
+      "regression_odd_positions": 50848,
+      "regression_empty": 0,
+      "regression_no_odd_candidate": 0,
+      "regression_disconnected": 0,
+      "regression_narrower_than_xy": 5,
+      "regression_with_factor_narrower_than_xy": 0,
+      "quartic_positions": 101692,
+      "quartic_odd_positions": 50846,
+      "quartic_empty": 0,
+      "quartic_no_odd_candidate": 0,
+      "quartic_disconnected": 0,
+      "quartic_narrower_than_xy": 7,
+      "quartic_with_factor_narrower_than_xy": 0,
+      "eligible": 1589,
+      "original_positions": 101720,
+      "x_only_positions": 101720,
+      "gram_positions": 101666,
+      "original_odd_positions": 50860,
+      "x_only_odd_positions": 50860,
+      "gram_odd_positions": 50832,
+      "narrowed": 8,
+      "narrower_than_x_only": 8,
+      "empty": 0,
+      "singleton": 0,
+      "no_odd_candidate": 0,
+      "with_factor": 99,
+      "with_factor_narrowed": 0,
+      "line": 10
+    },
+    "0_to_3": {
+      "all_strips": 45,
+      "sparse": 45
+    },
+    "4_to_8": {
+      "all_strips": 13,
+      "line": 11,
+      "marginal_xy_positions": 61,
+      "marginal_xy_odd_positions": 30,
+      "regression_positions": 28,
+      "regression_odd_positions": 14,
+      "regression_empty": 0,
+      "regression_no_odd_candidate": 0,
+      "regression_disconnected": 0,
+      "regression_narrower_than_xy": 2,
+      "regression_with_factor_narrower_than_xy": 0,
+      "quartic_positions": 23,
+      "quartic_odd_positions": 11,
+      "quartic_empty": 0,
+      "quartic_no_odd_candidate": 0,
+      "quartic_disconnected": 0,
+      "quartic_narrower_than_xy": 2,
+      "quartic_with_factor_narrower_than_xy": 0,
+      "eligible": 2,
+      "original_positions": 61,
+      "x_only_positions": 61,
+      "gram_positions": 15,
+      "original_odd_positions": 30,
+      "x_only_odd_positions": 30,
+      "gram_odd_positions": 7,
+      "narrowed": 2,
+      "narrower_than_x_only": 2,
+      "empty": 0,
+      "singleton": 0,
+      "no_odd_candidate": 0,
+      "with_factor": 0,
+      "with_factor_narrowed": 0
+    },
+    "9_to_16": {
+      "all_strips": 18,
+      "marginal_xy_positions": 158,
+      "marginal_xy_odd_positions": 78,
+      "regression_positions": 127,
+      "regression_odd_positions": 64,
+      "regression_empty": 0,
+      "regression_no_odd_candidate": 0,
+      "regression_disconnected": 0,
+      "regression_narrower_than_xy": 3,
+      "regression_with_factor_narrower_than_xy": 0,
+      "quartic_positions": 125,
+      "quartic_odd_positions": 63,
+      "quartic_empty": 0,
+      "quartic_no_odd_candidate": 0,
+      "quartic_disconnected": 0,
+      "quartic_narrower_than_xy": 4,
+      "quartic_with_factor_narrower_than_xy": 0,
+      "eligible": 4,
+      "original_positions": 158,
+      "x_only_positions": 158,
+      "gram_positions": 104,
+      "original_odd_positions": 78,
+      "x_only_odd_positions": 78,
+      "gram_odd_positions": 53,
+      "narrowed": 4,
+      "narrower_than_x_only": 4,
+      "empty": 0,
+      "singleton": 0,
+      "no_odd_candidate": 0,
+      "with_factor": 0,
+      "with_factor_narrowed": 0,
+      "line": 14
+    }
+  },
+  "singular_and_repeated_coordinate_controls": 6,
+  "nonnegative_coordinate_covariance_controls": 2
+}

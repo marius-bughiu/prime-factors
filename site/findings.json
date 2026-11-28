@@ -1,5 +1,133 @@
 [
   {
+    "id": "strip-five-lines",
+    "category": "formulas",
+    "title": "At most five lines cover a short factor interval",
+    "impact": "For 119,423, possible divisors from 301 to 314 yield one odd label. Its discriminant is 21² and gives 307 × 389.",
+    "scope": "Product and block endpoints only. The theorem covers the balanced sixth-root-width schedule at every input size.",
+    "detail": "The chord slope and its rational approximation bound the weighted sum of the two primes. For odd inputs the modulo-eight filter leaves at most three labels to test.",
+    "sources": [
+      {
+        "href": "discoveries/covering-a-factor-interval-with-five-lines.md",
+        "label": "Geometric proof and first-hit costs"
+      },
+      {
+        "href": "PrimeFactors/QuotientStripLevelResidues.lean",
+        "label": "Sharp residue bounds"
+      },
+      {
+        "href": "#strip-chord-119423",
+        "label": "Checked factors"
+      }
+    ]
+  },
+  {
+    "id": "strip-chord-timed-control",
+    "category": "gains",
+    "title": "A chord search beats direct odd trial on one 46-bit control",
+    "impact": "The first factor of 45,249,671,261,437 took 23.929 ms with the chord and 30.918 ms with direct odd trial. Ordinary trial was faster on the 41-bit control and the twelve smaller products.",
+    "scope": "Previously published products. The larger controls used five alternating runs on one machine with CPython 3.14.7.",
+    "detail": "Reaching the 46-bit factor took 3,411 intervals, 23,071 continued-fraction divisions and 2,020 discriminant square roots. Direct trial used 644,576 divisibility tests.",
+    "sources": [
+      {
+        "href": "discoveries/covering-a-factor-interval-with-five-lines.md",
+        "label": "Timing protocol and controls"
+      },
+      {
+        "href": "benchmarks/quotient-strip-levels.json",
+        "label": "Deterministic operation counts"
+      }
+    ]
+  },
+  {
+    "id": "strip-full-schedule",
+    "category": "limits",
+    "title": "A complete 2,048-bit sweep still needs more than 2⁶⁷⁹ blocks",
+    "impact": "In four publicly selected blocks of a certified 2,048-bit product, the chord test found no factor. One square root recovered the smaller prime in a separate block selected using that prime.",
+    "scope": "The lower bound counts this ascending fixed-width schedule. It includes the clipped final block.",
+    "detail": "For p ≤ q ≤ 4p/3, even reaching p from the ordinary start takes more than 2⁶⁷⁸ blocks. The proof also quantifies how far the start can move with an upper bound on q.",
+    "sources": [
+      {
+        "href": "PrimeFactors/QuotientStripScheduleCost.lean",
+        "label": "Full sweep, first hit and optional jump"
+      },
+      {
+        "href": "benchmarks/quotient-strip-levels.json",
+        "label": "Public and factor-selected blocks"
+      },
+      {
+        "href": "discoveries/covering-a-factor-interval-with-five-lines.md",
+        "label": "Interpretation"
+      }
+    ]
+  },
+  {
+    "id": "strip-localization-window",
+    "category": "gains",
+    "title": "Six sums isolate 97 in a nine-column interval",
+    "impact": "For 12,707, the coordinate-only bound leaves four candidates. Adding the product errors leaves 97 alone. Across 64 holdout products, the joint rule cut first-hit divisibility tests from 3,385 to 2,488.",
+    "scope": "The nine-column example uses a supplied block. The holdout uses different 10-bit primes chosen without a prescribed ratio.",
+    "detail": "The search computes the sums from the product and each block. On the holdout it needed 103,561 floor-moment states as well as the divisor tests.",
+    "sources": [
+      {
+        "href": "discoveries/narrowing-a-factor-interval-with-strip-moments.md",
+        "label": "Derivation and matched controls"
+      },
+      {
+        "href": "PrimeFactors/QuotientStripLocalization.lean",
+        "label": "Lean proof"
+      },
+      {
+        "href": "#strip-localization-12707",
+        "label": "Checked factors"
+      }
+    ]
+  },
+  {
+    "id": "strip-ordinary-quartic",
+    "category": "formulas",
+    "title": "Five coordinate sums and a point count can split the search interval",
+    "impact": "A quartic kept 2,499 first-hit divisor tests on the 64 holdout products, eleven more than the joint product-error bound. It used 57,265 floor-moment states.",
+    "scope": "The existing collinearity test provides all input sums. Sign testing the quartic added 14,136 polynomial evaluations through the first hits.",
+    "detail": "On 11,286,761 one block splits into two valid search intervals with a three-integer gap. The actual smaller prime lies in an earlier block.",
+    "sources": [
+      {
+        "href": "PrimeFactors/QuotientStripHyperbola.lean",
+        "label": "Quartic and projection proofs"
+      },
+      {
+        "href": "benchmarks/quotient-strip-localization.json",
+        "label": "Intervals and work"
+      },
+      {
+        "href": "discoveries/narrowing-a-factor-interval-with-strip-moments.md",
+        "label": "Comparison"
+      }
+    ]
+  },
+  {
+    "id": "strip-integer-variance",
+    "category": "limits",
+    "title": "Integer variance excludes a false prime accepted by the real test",
+    "impact": "In one supplied interval for 3,574,327 the candidate 1,709 gives projected variance 4. Integer readings require at least 24.",
+    "scope": "The true smaller prime is outside the supplied interval. With one through seven residual rows, Lean proves that integer variance adds no exclusion to nonnegative variance.",
+    "detail": "The example has eleven points and a strictly positive residual covariance determinant. Lean checks the entire point set and the exclusion.",
+    "sources": [
+      {
+        "href": "PrimeFactors/QuotientStripIntegerVariance.lean",
+        "label": "Integer variance proof and example"
+      },
+      {
+        "href": "#strip-integer-variance-3574327",
+        "label": "Checked product and primes"
+      },
+      {
+        "href": "discoveries/narrowing-a-factor-interval-with-strip-moments.md",
+        "label": "Interpretation"
+      }
+    ]
+  },
+  {
     "id": "rough-pair-product-selected-modulus",
     "category": "formulas",
     "title": "Small primes isolate the true pair at a modulus near N/8000",
