@@ -1,5 +1,17 @@
 [
   {
+    "id": "upstream-least-prime-witness-bound",
+    "category": "formulas",
+    "title": "A formal RH consequence gives an explicit small-prime witness bound",
+    "impact": "For a product of two 1,024-bit primes, the outside-subgroup prime from the upper bound (log N)² is at most 2,015,165.",
+    "scope": "The bound locates a small prime outside a specified proper subgroup. It does not identify an unknown factor. The separate direct gcd theorem needs a divisibility condition that fails for same-width prime pairs.",
+    "detail": "An external Lean 4.36 project proves the analytic result and connects it to the released Dirichlet theorem. This Lean 4.19 library verifies the input conditions and integer conversion with the analytic statement supplied.",
+    "sources": [
+      {"href": "docs/research.md#the-november-2026-release", "label": "External proof, license and verification scope"},
+      {"href": "PrimeFactors/LeastPrimeBoundInterface.lean", "label": "Local numerical bound"}
+    ]
+  },
+  {
     "id": "whole-product-three-square-readout",
     "category": "formulas",
     "title": "702 sphere points give a prime for 91 and the prime sum for 77",

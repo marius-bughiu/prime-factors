@@ -6,6 +6,8 @@ There is a reason this works on 91 and gives zero on 65. Two classical counting 
 
 ## What the total count tells us
 
+Published fast algorithms have input requirements that matter here. Bruin's sums-of-squares theorem takes an even number of coordinates and a factored index. Its expected polynomial-time bound also assumes RH for number-field zeta functions. Our sphere has three coordinates and the index $dN^2$ contains the unknown primes. Computing a truncated theta series is a different operation: precision $D$ produces the prefix through that order, which would have to reach $D=dN^2$ to read this coefficient directly. [Bruin, sums-of-squares theorem](https://www.numdam.org/item/10.5802/pmb.a-133.pdf) · [İnam and Wiese, §3](https://arxiv.org/pdf/2010.11239#page=4)
+
 Call the total count $C(N)$ and put $E=(C(N)-6N)/12$. For a product of two distinct odd primes, the classical Hurwitz formula yields the following values. [Lean case analysis](../PrimeFactors/ThreeSquareCountPrecision.lean)
 
 | Prime remainders modulo 4 | Value of $E$ | Example |

@@ -1122,3 +1122,4 @@ import PrimeFactors.EvenThreeSquareRadius
 import PrimeFactors.ThreeSquareSignalPopulation
 import PrimeFactors.FiniteThreeSquareTwists
 import PrimeFactors.ThreeSquareTwistExamples
+import PrimeFactors.LeastPrimeBoundInterface
