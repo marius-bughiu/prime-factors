@@ -1,5 +1,27 @@
 [
   {
+    "id": "six-public-square-filters-through-the-true-sum",
+    "category": "gains",
+    "title": "Six public remainder checks remove over 99.3319% of exact square tests",
+    "impact": "Across the full-size population, fewer than 0.6681% of the earlier square tests remain. The added work is fewer than 1.5852 small lookups per original square test in total.",
+    "scope": "The earlier scored sum search on products of distinct 1,024-bit primes with a 2,048-bit product. Both operation counts are unconditional, and include the successful test.",
+    "detail": "The true sum always survives. All but fewer than one in 2³⁵ products still require at least 2⁸⁵³ exact square tests. The small tables use 130 bytes if separately byte-aligned.",
+    "sources": [
+      {
+        "href": "discoveries/six-small-checks-before-an-integer-square-test.md",
+        "label": "Full-width bounds and complete small censuses"
+      },
+      {
+        "href": "PrimeFactors/SixSquareScoreWork.lean",
+        "label": "Lean square-test comparison"
+      },
+      {
+        "href": "PrimeFactors/SixSquareScoreLookupCost.lean",
+        "label": "Lean lookup-cost comparison"
+      }
+    ]
+  },
+  {
     "id": "public-product-prefix-and-residue-sum-guess",
     "category": "limits",
     "title": "Reading 64 more leading bits still leaves single-guess accuracy near one in 537,510",

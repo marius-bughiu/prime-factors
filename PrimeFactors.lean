@@ -1001,3 +1001,10 @@ import PrimeFactors.PrimeProductBandCounts
 import PrimeFactors.ProductBandCostTransfer
 import PrimeFactors.BandedFactorGuessLimits
 import PrimeFactors.BandedSumPrediction
+import PrimeFactors.ScorePrefixSieve
+import PrimeFactors.SixSquareAuxiliarySieve
+import PrimeFactors.SixSquareScoreVisits
+import PrimeFactors.SixSquareScoreWork
+import PrimeFactors.ScorePrefixLookupWork
+import PrimeFactors.SixSquareLookupStages
+import PrimeFactors.SixSquareScoreLookupCost

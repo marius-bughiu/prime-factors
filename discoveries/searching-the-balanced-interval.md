@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Six small public remainder checks remove **over 99.3319% of the exact square tests** in the earlier score order across every eligible full-size product, including all short searches. About 1.5852 small lookups per original square test bound the added work, and almost all inputs still need at least $2^{853}$ square tests. [Unconditional proof and measured small examples](six-small-checks-before-an-integer-square-test.md)
+
 Giving a predictor the **lowest 128 public product bits and the next 64 after the leading one** alongside the five-square remainder leaves its best one-guess sum accuracy at about **one in 537,510** full-size prime pairs. [Population and exact information read](does-reading-more-of-the-product-predict-the-sum.md)
 
 If a helper can only encode the **sum**, then 27 bits preserve the complete sum’s modular guessing performance at every public product. Combining two possible sums into one message has an exactly measurable cost. [Bit thresholds and a hand calculation](compressing-the-sum-remainder.md)

@@ -1,5 +1,18 @@
 [
   {
+    "id": "six-square-scored-prefix-28",
+    "description": "Prime pair selected for the largest absolute decrease in the 14-bit prefix census; the public filters retain one square test out of 140, with 193 small lookups. The fixture independently certifies the integers by ordinary Fermat.",
+    "n": "134765977",
+    "max_steps": 693,
+    "status": "complete",
+    "factors": [
+      "8233",
+      "16369"
+    ],
+    "remaining": [],
+    "fermat_steps": 693
+  },
+  {
     "id": "same-public-prefix-and-suffix-sum-zero-22",
     "description": "Third chosen close prime pair sharing leading bits 1001 and remainder 1 modulo 400 with both comparison products; its sum is 0 modulo 25",
     "n": "2479601",
