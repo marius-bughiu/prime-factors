@@ -1234,3 +1234,15 @@ import PrimeFactors.FloorShiftCenterCompression
 import PrimeFactors.FloorShiftRecoveryPopulation
 import PrimeFactors.RationalFloorShift
 import PrimeFactors.FloorShiftDistinctSums
+import PrimeFactors.CircleCoordinateFibers
+import PrimeFactors.CircleBranchCount
+import PrimeFactors.CircleBranchReadout
+import PrimeFactors.CircleBranchSampling
+import PrimeFactors.CircleBranchExamples
+import PrimeFactors.EqualityPatternSampling
+import PrimeFactors.EqualityPatternSeparation
+import PrimeFactors.EqualityPatternThreshold
+import PrimeFactors.EqualityCollisionEstimator
+import PrimeFactors.CircleOrderNeighbors
+import PrimeFactors.CircleCollisionReadout
+import PrimeFactors.CircleCollisionPopulation

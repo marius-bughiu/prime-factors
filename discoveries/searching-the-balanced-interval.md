@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+On a modular circle with a negative-Jacobi target, the number of first coordinates admitting exactly two second coordinates is one away from a prime factor. A second count of all nonunit differences gives the other side of the same calculation, with a proper gcd at every hit. Sampling points changes the per-draw hit probability by less than one part in $2^{1022}$ at full size. [Coordinate counts and cost](counting-the-two-lift-coordinates-of-a-circle.md)
+
+The number of points can also be estimated from repeats. For two genuine full-size products there is less than $2^{-755}$ difference between the acceptance probabilities of any repeats-only test, even after half the smaller population size in draws. The proof compares independent uniform draws with the modulus and coordinates hidden. [Exact blind comparison](what-repeated-circle-points-can-tell-us.md)
+
 Trying every center below the square root can recover pairs that a floor-only prediction misses. A modular lifting proof replaces that entire search by at most two centers per exponent. Across 228,713 toy products, it found 33,417 pairs. Ordinary screened Fermat found 44,061 with the same per-input allowance of exact square tests. Each found some pairs the other missed. [Coverage, costs and a four-test example](what-searching-every-lower-center-actually-saves.md)
 
 Almost every eligible 2,048-bit product admits an integer shift somewhere between the square root and the true midpoint. Yet fewer than one in $2^{951}$ of all eligible product–position pairs admits a shift. The last successful position, when supplied, determines the exact sum. [Which positions work and what the last one tells us](how-hard-is-it-to-locate-a-working-center.md) · [First versus freely chosen positions](when-moving-the-midpoint-allows-a-shift.md) · [Distances possible for the power-of-two reading](when-a-square-excess-predicts-the-prime-sum.md)

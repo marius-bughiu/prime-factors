@@ -1,5 +1,31 @@
 [
   {
+    "id": "circle-projection-1189",
+    "description": "Small-prime baseline for the 1,120-point circle in the anonymous-sampling comparison",
+    "n": "1189",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": [
+      "29",
+      "41"
+    ],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "circle-projection-1147",
+    "description": "Small-prime baseline for the 1,152-point circle in the anonymous-sampling comparison",
+    "n": "1147",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": [
+      "31",
+      "37"
+    ],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
     "id": "dyadic-center-134271337",
     "description": "Screened comparison selected after the 14-bit census for its early compressed hit",
     "n": "134271337",

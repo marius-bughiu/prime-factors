@@ -1,5 +1,179 @@
 [
   {
+    "id": "circle-equal-x-readout",
+    "category": "formulas",
+    "title": "One equal-coordinate count reveals a factor or the sum in two residue cases",
+    "impact": "On the norm-one circle, count ordered pairs of points sharing their first coordinate. For products 3 modulo 4 the exact count gives a specific prime. When both primes are 1 modulo 4 it gives their sum.",
+    "scope": "The count is supplied or computed. For two primes 3 modulo 4 it always equals four times the product.",
+    "detail": "On 15 the count 36 gives the factor 3. On 65 the count 132 gives the sum 18. On 161 the count is 644.",
+    "sources": [
+      {
+        "href": "discoveries/counting-the-two-lift-coordinates-of-a-circle.md#one-count-at-target-one-reveals-a-factor-or-sum-on-about-three-quarters-of-products",
+        "label": "The three formulas"
+      },
+      {
+        "href": "PrimeFactors/CircleCollisionReadout.lean",
+        "label": "Lean proof and controls"
+      }
+    ]
+  },
+  {
+    "id": "circle-equal-x-frequency",
+    "category": "limits",
+    "title": "The exact collision count would be informative on about three quarters of full-size products",
+    "impact": "The proved share differs from three quarters by at most 1/4,160 using the unconditional progression estimate. The Dirichlet-GRH estimate narrows the error to 2^-148.",
+    "scope": "All distinct 1,024-bit prime pairs whose product has 2,048 bits. The numerical prime-count estimates are explicit premises in Lean.",
+    "detail": "This counts inputs where a supplied exact measurement suffices. The direct census still visits every first coordinate.",
+    "sources": [
+      {
+        "href": "discoveries/counting-the-two-lift-coordinates-of-a-circle.md#one-count-at-target-one-reveals-a-factor-or-sum-on-about-three-quarters-of-products",
+        "label": "Meaning and cost"
+      },
+      {
+        "href": "PrimeFactors/CircleCollisionPopulation.lean",
+        "label": "Population and analytic assumptions"
+      }
+    ]
+  },
+  {
+    "id": "circle-two-lift-readout",
+    "category": "formulas",
+    "title": "One coordinate count is exactly one away from a prime",
+    "impact": "For a negative-Jacobi target, count the first coordinates with exactly two possible second coordinates. One of the two adjacent integers is a prime factor.",
+    "scope": "Every product of two distinct odd primes. The target is publicly checkable. The exact count must be supplied or computed.",
+    "detail": "All unit targets have the same total number of circle points, while their coordinate counts can distinguish the two factors.",
+    "sources": [
+      {
+        "href": "discoveries/counting-the-two-lift-coordinates-of-a-circle.md#why-the-two-lift-count-isolates-one-prime",
+        "label": "Derivation"
+      },
+      {
+        "href": "PrimeFactors/CircleBranchReadout.lean",
+        "label": "Readout theorem"
+      }
+    ]
+  },
+  {
+    "id": "circle-projection-77",
+    "category": "cases",
+    "title": "Two 96-point circles reveal different factors of 77 when projected",
+    "impact": "Target 2 gives 12 first coordinates with two lifts, next to 11. Target 3 gives 8, next to 7.",
+    "scope": "A complete residue census modulo 77. Each target gives its own 96-point set.",
+    "detail": "The Jacobi symbol is negative for both targets. The positive-symbol controls 1 and 6 give 16 and zero two-lift coordinates respectively.",
+    "sources": [
+      {
+        "href": "discoveries/counting-the-two-lift-coordinates-of-a-circle.md",
+        "label": "All four targets"
+      },
+      {
+        "href": "benchmarks/circle-projection-counts.json",
+        "label": "Census"
+      },
+      {
+        "href": "PrimeFactors/CircleBranchExamples.lean",
+        "label": "Lean checks"
+      }
+    ]
+  },
+  {
+    "id": "circle-nonunit-marks",
+    "category": "formulas",
+    "title": "Halving the number of marked residues gives one prime exactly",
+    "impact": "Mark x when the gcd of t−x² with the product exceeds one. There are exactly twice as many marks as the prime at which t is a nonsquare.",
+    "scope": "A negative-Jacobi target and two distinct odd primes. The direct census visits all N residues.",
+    "detail": "Every individual mark already gives the complementary prime by a gcd. With a uniform residue, the expected time to the first mark is p/2 draws, where p is the square-side prime.",
+    "sources": [
+      {
+        "href": "discoveries/counting-the-two-lift-coordinates-of-a-circle.md#what-it-costs-to-get-the-count",
+        "label": "Derivation and cost"
+      },
+      {
+        "href": "PrimeFactors/CircleBranchCount.lean",
+        "label": "Count and gcd proof"
+      }
+    ]
+  },
+  {
+    "id": "circle-projected-sampling",
+    "category": "limits",
+    "title": "Sampling a circle point barely changes the chance of a factor hit",
+    "impact": "The chance per draw moves from 2/p for a uniform residue to 2/(p−χ₄(p)) for a uniform point. The relative change is below one part in 2^1022 for a 1,024-bit p.",
+    "scope": "Independent uniform draws and a negative-Jacobi target. The comparison grants a uniform circle point for free.",
+    "detail": "Modulo 15, one target moves the hit probability from 2/3 to 1/2 and another moves it from 2/5 to 1/2.",
+    "sources": [
+      {
+        "href": "discoveries/counting-the-two-lift-coordinates-of-a-circle.md#what-it-costs-to-get-the-count",
+        "label": "Sampling comparison"
+      },
+      {
+        "href": "PrimeFactors/CircleBranchSampling.lean",
+        "label": "Rate and examples"
+      }
+    ]
+  },
+  {
+    "id": "circle-repeats-actual-orders",
+    "category": "limits",
+    "title": "Two genuine full-size circles remain almost indistinguishable from repeats",
+    "impact": "For some distinct balanced 2,048-bit products even half the smaller circle size in draws gives any repeats-only test an acceptance gap below 2^-755.",
+    "scope": "The observer sees only which uniform draws are equal. The moduli and point coordinates are hidden. This is an existence bound.",
+    "detail": "The actual sizes are distinct, at least 2^2046 and less than 2^269 apart. The proof uses prime and divisor counts.",
+    "sources": [
+      {
+        "href": "discoveries/what-repeated-circle-points-can-tell-us.md#what-happens-at-2048-bits",
+        "label": "Population and observation model"
+      },
+      {
+        "href": "PrimeFactors/CircleOrderNeighbors.lean",
+        "label": "Genuine inputs and advantage bound"
+      }
+    ]
+  },
+  {
+    "id": "circle-repeat-sample-cost",
+    "category": "limits",
+    "title": "A square-root difference in population size needs linearly many anonymous draws",
+    "impact": "For sizes m and m+d with d²=m, at most m/4 draws gives at most 5/8 correct decisions under a fair prior. Counting equal pairs in 12m draws reaches at least 3/4 accuracy under either size.",
+    "scope": "Independent uniform draws with replacement. Every test may see the complete equality pattern.",
+    "detail": "The lower bound includes randomized decisions. The upper bound uses the exact variance of the number of matching pairs of positions.",
+    "sources": [
+      {
+        "href": "discoveries/what-repeated-circle-points-can-tell-us.md#required-and-sufficient-samples",
+        "label": "What the bounds mean"
+      },
+      {
+        "href": "PrimeFactors/EqualityPatternSeparation.lean",
+        "label": "Lower bound"
+      },
+      {
+        "href": "PrimeFactors/EqualityCollisionEstimator.lean",
+        "label": "Estimator and variance"
+      }
+    ]
+  },
+  {
+    "id": "circle-repeat-1120-1152",
+    "category": "cases",
+    "title": "After 280 draws the best repeats-only decision is 53.44% accurate",
+    "impact": "A circle of 1,120 points and one of 1,152 points give almost the same repeat patterns. The optimal rule chooses the larger circle once 249 distinct points have appeared in 280 draws.",
+    "scope": "The two moduli are 1,189 and 1,147. In this comparison the observer knows both possible sizes, and each is chosen with probability one half.",
+    "detail": "Exact integer counts give the threshold. For two draws the total variation distance is just 1/40,320.",
+    "sources": [
+      {
+        "href": "discoveries/what-repeated-circle-points-can-tell-us.md#the-best-decision-for-these-two-circles",
+        "label": "Decision table"
+      },
+      {
+        "href": "benchmarks/circle-projection-counts.json",
+        "label": "Exact census"
+      },
+      {
+        "href": "PrimeFactors/EqualityPatternThreshold.lean",
+        "label": "Threshold proof"
+      }
+    ]
+  },
+  {
     "id": "dyadic-lower-short-list",
     "category": "formulas",
     "title": "All viable lower-center sums fit in at most 1,022 guesses at full size",

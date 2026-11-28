@@ -1,0 +1,221 @@
+{
+  "circles": [
+    {
+      "product": "77",
+      "target": 1,
+      "jacobi": 1,
+      "circle_points": 96,
+      "x_by_number_of_lifts": {
+        "0": 42,
+        "1": 4,
+        "2": 16,
+        "4": 15
+      },
+      "equal_x_ordered_pairs": 308,
+      "marked_residues": 32,
+      "marked_points": 36,
+      "first_proper_gcd": {
+        "x": 6,
+        "gcd": "7"
+      }
+    },
+    {
+      "product": "77",
+      "target": 2,
+      "jacobi": -1,
+      "circle_points": 96,
+      "x_by_number_of_lifts": {
+        "0": 47,
+        "1": 0,
+        "2": 12,
+        "4": 18
+      },
+      "equal_x_ordered_pairs": 336,
+      "marked_residues": 22,
+      "marked_points": 24,
+      "first_proper_gcd": {
+        "x": 3,
+        "gcd": "7"
+      },
+      "factors_from_mark_count": [
+        "7",
+        "11"
+      ]
+    },
+    {
+      "product": "77",
+      "target": 3,
+      "jacobi": -1,
+      "circle_points": 96,
+      "x_by_number_of_lifts": {
+        "0": 49,
+        "1": 0,
+        "2": 8,
+        "4": 20
+      },
+      "equal_x_ordered_pairs": 352,
+      "marked_residues": 14,
+      "marked_points": 16,
+      "first_proper_gcd": {
+        "x": 5,
+        "gcd": "11"
+      },
+      "factors_from_mark_count": [
+        "7",
+        "11"
+      ]
+    },
+    {
+      "product": "77",
+      "target": 6,
+      "jacobi": 1,
+      "circle_points": 96,
+      "x_by_number_of_lifts": {
+        "0": 53,
+        "1": 0,
+        "2": 0,
+        "4": 24
+      },
+      "equal_x_ordered_pairs": 384,
+      "marked_residues": 0,
+      "marked_points": 0,
+      "first_proper_gcd": null
+    },
+    {
+      "product": "15",
+      "target": 1,
+      "jacobi": 1,
+      "circle_points": 16,
+      "x_by_number_of_lifts": {
+        "0": 6,
+        "1": 4,
+        "2": 4,
+        "4": 1
+      },
+      "equal_x_ordered_pairs": 36,
+      "marked_residues": 12,
+      "marked_points": 12,
+      "first_proper_gcd": {
+        "x": 2,
+        "gcd": "3"
+      },
+      "factors_from_collision_count": [
+        "3",
+        "5"
+      ]
+    },
+    {
+      "product": "65",
+      "target": 1,
+      "jacobi": 1,
+      "circle_points": 48,
+      "x_by_number_of_lifts": {
+        "0": 44,
+        "1": 4,
+        "2": 12,
+        "4": 5
+      },
+      "equal_x_ordered_pairs": 132,
+      "marked_residues": 32,
+      "marked_points": 28,
+      "first_proper_gcd": {
+        "x": 4,
+        "gcd": "5"
+      },
+      "factors_from_collision_count": [
+        "5",
+        "13"
+      ]
+    },
+    {
+      "product": "1189",
+      "target": 1,
+      "jacobi": 1,
+      "circle_points": 1120,
+      "x_by_number_of_lifts": {
+        "0": 874,
+        "1": 4,
+        "2": 64,
+        "4": 247
+      },
+      "equal_x_ordered_pairs": 4212,
+      "marked_residues": 136,
+      "marked_points": 132,
+      "first_proper_gcd": {
+        "x": 28,
+        "gcd": "29"
+      },
+      "factors_from_collision_count": [
+        "29",
+        "41"
+      ]
+    },
+    {
+      "product": "1147",
+      "target": 1,
+      "jacobi": 1,
+      "circle_points": 1152,
+      "x_by_number_of_lifts": {
+        "0": 824,
+        "1": 4,
+        "2": 64,
+        "4": 255
+      },
+      "equal_x_ordered_pairs": 4340,
+      "marked_residues": 132,
+      "marked_points": 132,
+      "first_proper_gcd": {
+        "x": 30,
+        "gcd": "31"
+      },
+      "factors_from_collision_count": [
+        "31",
+        "37"
+      ]
+    }
+  ],
+  "blinded_sizes": [
+    1120,
+    1152
+  ],
+  "four_draw_brute_force_tv_for_3_and_4": "61/288",
+  "two_draw_tv": "1/40320",
+  "blinded_decisions": [
+    {
+      "draws": 2,
+      "choose_larger_from_distinct": 2,
+      "optimal_correct_parts_per_million": 500012,
+      "tv_parts_per_million": 24
+    },
+    {
+      "draws": 16,
+      "choose_larger_from_distinct": 16,
+      "optimal_correct_parts_per_million": 501350,
+      "tv_parts_per_million": 2701
+    },
+    {
+      "draws": 64,
+      "choose_larger_from_distinct": 63,
+      "optimal_correct_parts_per_million": 507659,
+      "tv_parts_per_million": 15319
+    },
+    {
+      "draws": 160,
+      "choose_larger_from_distinct": 150,
+      "optimal_correct_parts_per_million": 519327,
+      "tv_parts_per_million": 38655
+    },
+    {
+      "draws": 280,
+      "choose_larger_from_distinct": 249,
+      "optimal_correct_parts_per_million": 534371,
+      "tv_parts_per_million": 68743
+    },
+    {
+      "draws": 560,
+      "choose_larger_from_distinct": 443,
+      "optimal_correct_parts_per_million": 571528,
+      "tv_parts_per_million": 143057
+    }
+  ]
+}
