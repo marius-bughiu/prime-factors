@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Requiring the same two modular factors across all 117 primes and all precisions eliminates **zero** of the counted wrong sums. Their ordinary square-root representatives necessarily grow in magnitude with the modulus. [Compatible factors and the sharp size bound](can-the-modular-factors-agree.md)
+
 Even if each of the first 117 primes is tested to arbitrary precision, **more than $2^{765}$ wrong sums pass before the true sum** in the current order on all but fewer than one in $2^{35}$ eligible products. [Proof for the part of the search visited before success](wrong-sums-before-the-search-can-stop.md)
 
 One shared list now skips the rejected sums before generation. Fewer than **6.494% of the old candidates are emitted**, and the remaining lookups plus per-input setup cost fewer than 10.901 lookups per 100 old candidates in total. [Shared table and measured setup costs](skipping-rejected-sums-with-one-small-table.md)

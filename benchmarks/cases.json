@@ -1,5 +1,15 @@
 [
   {
+    "id": "coherent-dyadic-roots-wrong-midpoint-143",
+    "description": "The proposed midpoint 20 admits compatible dyadic roots of 257 at every precision. The true midpoint is 12. The fixture certifies both small primes during trial division.",
+    "n": "143",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": ["11", "13"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
     "id": "early-wrong-square-through-ten-primes-28",
     "description": "Chosen 28-bit product with a wrong sum ranked eighth that passes every power of the primes through 29. The true sum ranks thirtieth. The ordinary Fermat fixture independently certifies both primes.",
     "n": "145684811",

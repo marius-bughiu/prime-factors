@@ -1,5 +1,18 @@
 [
   {
+    "id": "coherent-modular-factor-pairs-for-false-sums",
+    "category": "limits",
+    "title": "Even mutually consistent modular factors can give the wrong sum",
+    "impact": "All the previously counted wrong sums still admit one compatible pair across the 117 primes and all depths. Consistency removes zero of them.",
+    "scope": "The earlier score-prefix population. A separate height theorem applies to any nonnegative nonsquare discriminant and any larger modulus.",
+    "detail": "Once the modulus exceeds the discriminant and product, every modular root has magnitude too large to give two nonnegative ordinary factors with that midpoint.",
+    "sources": [
+      {"href": "discoveries/can-the-modular-factors-agree.md", "label": "Explanation and two examples"},
+      {"href": "PrimeFactors/JointLocalMidpointTower.lean", "label": "Compatibility at every precision"},
+      {"href": "PrimeFactors/ModularRootHeight.lean", "label": "Ordinary root size"}
+    ]
+  },
+  {
     "id": "wrong-sums-survive-before-the-true-sum",
     "category": "limits",
     "title": "More than 2^765 wrong sums pass 117 primes before the search can stop",

@@ -1015,3 +1015,6 @@ import PrimeFactors.SharedThreeSquareScoreWheel
 import PrimeFactors.EarlyScoreWindow
 import PrimeFactors.EarlyPersistentMidpoints
 import PrimeFactors.PersistentScorePrefix
+import PrimeFactors.CoherentMidpointRoots
+import PrimeFactors.JointLocalMidpointTower
+import PrimeFactors.ModularRootHeight
