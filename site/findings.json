@@ -1,5 +1,85 @@
 [
   {
+    "id": "gcd-cyclotomic-log-cutoff",
+    "category": "limits",
+    "title": "Even summing through degree 2^1034 exceeds the certified error tolerance",
+    "impact": "A series calculated from the product alone can supply the reading that identifies the prime sum. At 1,024-bit factor size, every cutoff through 2^1034 misses the decoder’s sufficient tolerance.",
+    "scope": "The bounds cover direct truncation in exact arithmetic. Summing through degree 5,768 × 2^1023 guarantees the tolerance. An individual input may still decode with a larger error.",
+    "detail": "A dense scan reaches the smaller prime and discovers it by gcd before reaching either cutoff. Estimating the omitted tail would need a separate error bound.",
+    "sources": [
+      {
+        "href": "discoveries/can-the-product-supply-the-cyclotomic-reading.md#how-far-must-a-dense-logarithmic-sum-run",
+        "label": "The series and its two cutoffs"
+      },
+      {
+        "href": "PrimeFactors/PublicCyclotomicLogReading.lean",
+        "label": "Proof using only the public product"
+      }
+    ]
+  },
+  {
+    "id": "cyclotomic-diagonal-population",
+    "category": "limits",
+    "title": "The square-root estimate meets the tolerance on fewer than one in 2^500 products",
+    "impact": "The share is also greater than one in 2^517. The proof counts all pairs of distinct 1,024-bit primes with a 2,048-bit product, with each unordered pair counted once.",
+    "scope": "This bounds how often substituting the square root for both unknown primes attains the decoder’s stated tolerance. The proof is unconditional.",
+    "detail": "The lower bound counts nearby primes sharing a short interval. For the upper bound, each possible larger prime has only a limited number of partners close enough to qualify.",
+    "sources": [
+      {
+        "href": "discoveries/can-the-product-supply-the-cyclotomic-reading.md#substituting-two-equal-factors",
+        "label": "Counting argument and scope"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicDiagonalPopulation.lean",
+        "label": "Upper and lower counts"
+      }
+    ]
+  },
+  {
+    "id": "cyclotomic-diagonal-fermat",
+    "category": "cases",
+    "title": "Whenever the square-root estimate meets the tolerance, Fermat’s first test also succeeds",
+    "impact": "For 10,403, the estimate meets the tolerance and the first midpoint, 102, gives 101 × 103. For 551, the first midpoint gives 19 × 29 but the estimate misses.",
+    "scope": "The implication holds for distinct balanced odd prime factors. The examples were chosen to show that Fermat can succeed on the first test in either case.",
+    "detail": "A squared gap of at most B/16 guarantees the tolerance when both primes lie between B and 2B. The gap between 101 and 103 attains that threshold at B = 64.",
+    "sources": [
+      {
+        "href": "discoveries/can-the-product-supply-the-cyclotomic-reading.md#substituting-two-equal-factors",
+        "label": "Gap bounds and controls"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicDiagonalEstimate.lean",
+        "label": "Necessary bound and 551"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicDiagonalSufficiency.lean",
+        "label": "Sufficient bound and 10,403"
+      },
+      {
+        "href": "#cyclotomic-diagonal-10403",
+        "label": "Certified 10,403 factorization"
+      }
+    ]
+  },
+  {
+    "id": "cyclotomic-log-coefficient-support",
+    "category": "formulas",
+    "title": "Every nonzero logarithmic coefficient below the product already gives a prime",
+    "impact": "For 551, the coefficients at indices 18, 38, and 58 are 0, 19, and 29. Each nonzero value is just the greatest common divisor of its index and 551.",
+    "scope": "The identity holds for the logarithmic derivative of the measured polynomial at every positive index below a product of two distinct primes. At a multiple of the product, the coefficient is the prime sum.",
+    "detail": "If a finite weighted sum of such coefficients is nonzero, at least one sampled index already gives a prime by gcd. For 32,881 every index from 1 through 128 gives zero.",
+    "sources": [
+      {
+        "href": "discoveries/can-the-product-supply-the-cyclotomic-reading.md#what-a-logarithmic-derivative-sees",
+        "label": "Coefficient formula and examples"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicLogCoefficients.lean",
+        "label": "Formal series and gcd proof"
+      }
+    ]
+  },
+  {
     "id": "bounded-inverse-cyclotomic-truncation",
     "category": "limits",
     "title": "A dense Taylor scan needs over 2^1024 positions to get even constant accuracy",

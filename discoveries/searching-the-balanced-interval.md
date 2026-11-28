@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Replacing both primes by the square root of their product gives an accurate cyclotomic reading only when Fermat's first square test already finds the factors. Another way to obtain the reading uses only the product, but summing through degree $2^{1034}$ still exceeds the certified error tolerance for every pair of 1,024-bit primes. [Which products the approximation covers and what the series costs](can-the-product-supply-the-cyclotomic-reading.md)
+
 One bounded real evaluation of a polynomial specified by the product distinguishes the correct prime sum from every other candidate in the feasible interval. Two rational evaluations give a decoder with a proved operation count. For 551, constructing the readings from the product already encounters both factors. Obtaining precise readings cheaply at full size remains open. [What the measurements determine and what they cost](which-cyclotomic-measurements-distinguish-the-prime-sum.md)
 
 If two 1,024-bit prime factors differ by a cyclic rotation of their bits, the product modulo three fixes the parity of the shift. Among actual prime pairs that pass the modular square test, fewer than one in $2^{979}$ is a true rotation. More than one in 393,217 eligible products passes despite having no such rotation. [Why so many prime pairs must be false positives](when-one-prime-is-a-binary-rotation-of-the-other.md#how-often-does-the-test-mislead-us-on-actual-prime-pairs)

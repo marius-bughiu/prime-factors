@@ -1,5 +1,18 @@
 [
   {
+    "id": "cyclotomic-diagonal-10403",
+    "description": "Adjacent-prime control at the sufficient gap bound for the equal-factor estimate",
+    "n": "10403",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": [
+      "101",
+      "103"
+    ],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
     "id": "inverse-cyclotomic-551",
     "description": "Default discovery baseline for the single- and two-reading inverse cyclotomic control",
     "n": "551",

@@ -1199,3 +1199,10 @@ import PrimeFactors.CyclotomicValueSlope
 import PrimeFactors.CyclotomicProductCurve
 import PrimeFactors.SingleCyclotomicValueControl
 import PrimeFactors.InverseCyclotomicTruncation
+import PrimeFactors.CyclotomicDiagonalEstimate
+import PrimeFactors.CyclotomicDiagonalSufficiency
+import PrimeFactors.CyclotomicDiagonalPopulation
+import PrimeFactors.CyclotomicLogCoefficients
+import PrimeFactors.CyclotomicLogTail
+import PrimeFactors.CyclotomicLogUpper
+import PrimeFactors.PublicCyclotomicLogReading
