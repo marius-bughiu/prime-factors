@@ -36,6 +36,24 @@ def mean_rank(histogram):
     return labels, mass, Fraction(rank_mass, mass)
 
 
+def minimum_labels(histogram, coverage):
+    """Take the heaviest labels first, including a partial final weight group."""
+    if not 0 <= coverage <= 1:
+        raise ValueError('Coverage must lie between zero and one')
+    if coverage == 0:
+        return 0
+    pairs = sum(weight * count for weight, count in histogram.items())
+    missing = (coverage.numerator * pairs + coverage.denominator - 1) // coverage.denominator
+    used = 0
+    for weight, count in sorted(histogram.items(), reverse=True):
+        take = min(count, (missing + weight - 1) // weight)
+        used += take
+        missing -= take * weight
+        if missing <= 0:
+            return used
+    raise ValueError('Coverage exceeds the available pair mass')
+
+
 if __name__ == '__main__':
     for length in range(1, 6):
         primes = (5, 7, 11, 13, 17)[:length]
@@ -44,4 +62,5 @@ if __name__ == '__main__':
         if length <= 3 and direct_histogram(modulus) != histogram:
             raise AssertionError('Direct sum counts differ from the product histogram')
         labels, pairs, mean = mean_rank(histogram)
-        print(f'{modulus=} {labels=} {pairs=} best={mean} random={Fraction(labels+1, 2)}')
+        coverage = minimum_labels(histogram, Fraction(999, 1000))
+        print(f'{modulus=} {labels=} {pairs=} best={mean} random={Fraction(labels+1, 2)} cover999={coverage}')

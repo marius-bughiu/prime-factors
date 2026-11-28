@@ -955,3 +955,7 @@ import PrimeFactors.PrimeResidueRankTransfer
 import PrimeFactors.FiveSquarePrimeSupply
 import PrimeFactors.FiveSquareActualRanks
 import PrimeFactors.RankWeightSeparation
+import PrimeFactors.PrimeSquareUniformFloor
+import PrimeFactors.GuessModulusBudget
+import PrimeFactors.BudgetedSumGuesses
+import PrimeFactors.FiveSquareCoverageTail

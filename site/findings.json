@@ -1,5 +1,41 @@
 [
   {
+    "id": "budgeted-square-guess-floor",
+    "category": "limits",
+    "title": "A 2,048-bit modulus budget limits how much the guess order can save",
+    "impact": "Every order takes more than 7.581413% of the random-order mean. Even the best choices of prime squares cannot bring a fourteenfold reduction.",
+    "scope": "Uniform ordered factor remainders with any fixed unit product. The modulus is a product of distinct odd prime squares at most 2²⁰⁴⁸.",
+    "detail": "The first 129 primes from 5 through 739 minimize the guaranteed uniform share of the label probabilities. Their squares multiply to a 2,032-bit modulus.",
+    "sources": [
+      {
+        "href": "discoveries/what-many-prime-squares-buy-a-remainder-guess.md#what-if-the-modulus-must-fit-a-2048-bit-budget",
+        "label": "Mean and coverage limits"
+      },
+      {
+        "href": "PrimeFactors/GuessModulusBudget.lean",
+        "label": "Finite extremum"
+      }
+    ]
+  },
+  {
+    "id": "budgeted-guess-list-coverage",
+    "category": "limits",
+    "title": "Reaching 99.9% coverage requires listing more than 98.68% of all possible sums modulo the chosen modulus",
+    "impact": "For the five-square product-one example the exact minimum is 41,644,742 of 41,767,264 sum remainders.",
+    "scope": "The general bound covers any unit product and any choice of distinct odd prime squares with combined modulus at most 2²⁰⁴⁸.",
+    "detail": "The 53.04% improvement in average guess position can coexist with a 99.7067%-length list for 99.9% success. Probabilities count ordered pairs of factor remainders.",
+    "sources": [
+      {
+        "href": "discoveries/what-many-prime-squares-buy-a-remainder-guess.md#what-if-the-modulus-must-fit-a-2048-bit-budget",
+        "label": "Coverage and sampling model"
+      },
+      {
+        "href": "PrimeFactors/FiveSquareCoverageTail.lean",
+        "label": "Sharp five-square minimum"
+      }
+    ]
+  },
+  {
     "id": "five-square-actual-guess-rank",
     "category": "gains",
     "title": "The 53.04% remainder-guess saving carries over to a full-size prime population",

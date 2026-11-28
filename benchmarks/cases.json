@@ -1,5 +1,18 @@
 [
   {
+    "id": "rare-five-square-coverage-46",
+    "description": "Sole weight-32 pair in the complete 23-bit prime census at product remainder one modulo 7239457225",
+    "n": "36139370467201",
+    "max_steps": 91653,
+    "status": "complete",
+    "factors": [
+      "5049523",
+      "7156987"
+    ],
+    "remaining": [],
+    "fermat_steps": 91653
+  },
+  {
     "id": "five-squares-census-48",
     "description": "Fewest Fermat midpoints among all 23 full-width products of two distinct 24-bit primes congruent to one modulo 7239457225",
     "n": "237816169841251",
