@@ -1104,3 +1104,14 @@ import PrimeFactors.OddWidthSumPredictions
 import PrimeFactors.ShiftedSquareSumReadout
 import PrimeFactors.ShiftedSquareSumCoverage
 import PrimeFactors.ShiftedSquareSumFullSize
+import PrimeFactors.DyadicPairSumWeight
+import PrimeFactors.DyadicSumMenuBudget
+import PrimeFactors.DyadicMenuPopulationOptimum
+import PrimeFactors.DyadicClusterMenu
+import PrimeFactors.SumMenuWeightThreshold
+import PrimeFactors.ExactDyadicSumMenu
+import PrimeFactors.DyadicFlatSumMenus
+import PrimeFactors.SumMenuSmallExamples
+import PrimeFactors.FiniteAdviceMenus
+import PrimeFactors.DyadicSumAdviceThreshold
+import PrimeFactors.UnconditionalSumMenuPopulation

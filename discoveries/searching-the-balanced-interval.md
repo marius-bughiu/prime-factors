@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+From a fixed 161-bit product suffix ending in binary 001, a list of up to $2^{32}$ guesses can cover at most a fraction $5{,}010{,}795{,}177/2^{94}$ of the modular possibilities for the sum ending. A list attains that bound. Even 121 extra bits choosing among such lists keep the best hit rate below 41.7% on full-size prime pairs under the stated endpoint estimates. [Exact coverage, small examples and the price of additional information](how-many-factor-sums-can-a-list-of-guesses-cover.md)
+
 A square root computed from the public product gives a single candidate for the full sum when both prime widths are known and even. It found 619 and 971 and missed a second product with the same twelve low bits. Across all eligible full-size inputs the success rate of this specific test is below $2^{-500}$. [Exact success condition, two controls and full-population proof](when-one-public-square-root-predicts-the-prime-sum.md)
 
 With 168 supplied low sum bits, a square-root calculation recovers the low 160 bits of both factors for about 255 out of every 256 eligible products under the stated Dirichlet-GRH estimate. The decoder also decides whether it needs another bit. The independent 2,048-bit control needs 161 sum bits and the constructed quartic needs 319. [Exact decoding thresholds and six matched examples](how-many-sum-bits-identify-the-factor-endings.md)

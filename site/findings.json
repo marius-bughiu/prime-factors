@@ -1,5 +1,65 @@
 [
   {
+    "id": "unconditional-four-billion-sum-guesses",
+    "category": "limits",
+    "title": "Across all eligible products, four billion sum guesses hit fewer than one in 35 trillion",
+    "impact": "An unconditional bound counts every eligible pair. It permits a different list of up to 2³² guesses for every 161-bit product ending.",
+    "scope": "Unordered pairs of distinct 1,024-bit primes with a 2,048-bit product. Success means the list contains the low 161 bits of the prime sum.",
+    "detail": "Five small primes exclude positions from each possible factor residue class. Combining the remaining positions with the modular weight bounds gives a hit fraction strictly below 2⁻⁴⁵.",
+    "sources": [
+      {"href": "discoveries/how-many-factor-sums-can-a-list-of-guesses-cover.md#where-the-prime-estimates-enter", "label": "What the count includes"},
+      {"href": "PrimeFactors/UnconditionalSumMenuPopulation.lean", "label": "Unconditional proof"}
+    ]
+  },
+  {
+    "id": "best-four-billion-sum-guesses",
+    "category": "limits",
+    "title": "Four billion guesses hit the sum ending about once in 3.95 quintillion",
+    "impact": "When the 161-bit product ending is fixed and ends in binary 001, the best list of 2³² guesses improves on one guess by a factor of about 152,917.",
+    "scope": "The target is the low 161 bits of the prime sum. The exact modular result transfers to distinct 1,024-bit primes with a 2,048-bit product under the stated Dirichlet-GRH prime-count estimate.",
+    "detail": "The first 2,863,311,534 guesses together cover 2⁹⁸ ordered modular pairs. Each of the remaining 1,431,655,762 best guesses covers 2⁶⁵ more, among 2¹⁶⁰ possibilities.",
+    "sources": [
+      {"href": "discoveries/how-many-factor-sums-can-a-list-of-guesses-cover.md", "label": "What the fraction means"},
+      {"href": "PrimeFactors/ExactDyadicSumMenu.lean", "label": "Proof of the exact optimum"}
+    ]
+  },
+  {
+    "id": "short-clue-list-coverage-threshold",
+    "category": "limits",
+    "title": "How much additional information could make four billion guesses hit half the time?",
+    "impact": "With 121 freely supplied clue bits, even the best list-selection rule hits fewer than 41.7% of sum endings. With 122 perfectly chosen bits, more than 58.3% is attainable.",
+    "scope": "A fixed 161-bit product ending in 001 and distinct 1,024-bit primes with 2,048-bit product. Frequencies use the stated prime-count estimates. Choosing the clue may require knowing the answer.",
+    "detail": "A clue chooses one list from a collection. The union bounds all possible hits. Splitting a larger list into blocks attains that bound if someone supplies the correct block number.",
+    "sources": [
+      {"href": "discoveries/how-many-factor-sums-can-a-list-of-guesses-cover.md#what-if-the-rest-of-the-product-supplies-a-clue", "label": "What the extra bits would have to do"},
+      {"href": "PrimeFactors/DyadicSumAdviceThreshold.lean", "label": "Threshold on the prime population"}
+    ]
+  },
+  {
+    "id": "five-of-fourteen-sum-endings",
+    "category": "cases",
+    "title": "Five guesses cover exactly 112 of 256 possibilities",
+    "impact": "For product remainder 65 modulo 512, sums 130 and 382 cover 32 ordered pairs each. Three further guesses cover 16 pairs each. Five guesses cannot do better.",
+    "scope": "Complete nine-bit modular examples. Product remainder 209 gives the same best fraction with different leading sum guesses.",
+    "detail": "There are twelve tied choices for the remaining three guesses. The proof accounts for every ordered pair, including those belonging to omitted sums.",
+    "sources": [
+      {"href": "discoveries/how-many-factor-sums-can-a-list-of-guesses-cover.md#a-list-small-enough-to-check-by-hand", "label": "Both example lists"},
+      {"href": "PrimeFactors/SumMenuSmallExamples.lean", "label": "Verified counts"}
+    ]
+  },
+  {
+    "id": "flat-dyadic-menu-coverage",
+    "category": "formulas",
+    "title": "For three product endings every supported sum guess has equal weight",
+    "impact": "A list of 2³² guesses succeeds about once in 2¹²⁵ when the product ends in 101, and once in 2¹²⁶ for endings 011 and 111.",
+    "scope": "One exact 161-bit product ending at a time. The event is that the list contains the sum ending. Full-size prime-pair rates use explicit Dirichlet-GRH estimates, with relative error at most 2⁻¹⁴⁶.",
+    "detail": "Every supported label covers eight or four modular pairs respectively. The exact formula for any list budget stops growing when all supported labels are included.",
+    "sources": [
+      {"href": "discoveries/how-many-factor-sums-can-a-list-of-guesses-cover.md", "label": "Comparison of all four product endings"},
+      {"href": "PrimeFactors/DyadicFlatSumMenus.lean", "label": "Flat multiplicities and optimum"}
+    ]
+  },
+  {
     "id": "public-shifted-square-one-sum-check",
     "category": "cases",
     "title": "One sum prediction splits 601,049 and misses 842,713",
