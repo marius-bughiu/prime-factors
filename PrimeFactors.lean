@@ -964,3 +964,12 @@ import PrimeFactors.FiveSquareSignRanks
 import PrimeFactors.FiveSquareSignPopulation
 import PrimeFactors.FiveSquarePolicy
 import PrimeFactors.FiveSquarePooledRanks
+import PrimeFactors.GuessRadicalBudget
+import PrimeFactors.GuessTableOverlap
+import PrimeFactors.FirstPowerGuessOverlap
+import PrimeFactors.PrimePowerWeightMonotone
+import PrimeFactors.PrimePowerUniformShare
+import PrimeFactors.DeepBudgetedSumGuesses
+import PrimeFactors.AllOddGuessFloor
+import PrimeFactors.TwoPowerGuessShare
+import PrimeFactors.AnyModulusGuessFloor

@@ -1,5 +1,41 @@
 [
   {
+    "id": "any-modulus-guess-floor",
+    "category": "limits",
+    "title": "Every modulus up to 2²⁰⁴⁸ limits how much guess ordering can save",
+    "impact": "For odd moduli the mean always exceeds 1/64 of the random-order mean. For every positive modulus the guarantee is 1/1,024.",
+    "scope": "Fixed product coprime to the modulus and uniformly drawn ordered factor residues. Applies to arbitrary prime powers and mixed moduli.",
+    "detail": "The proof combines local weight and support counts, a pairwise-minimum formula, and the cost of including many distinct primes within the modulus budget.",
+    "sources": [
+      {
+        "href": "discoveries/what-a-modulus-budget-allows-a-guess-order-to-save.md",
+        "label": "Scope and comparison"
+      },
+      {
+        "href": "PrimeFactors/AnyModulusGuessFloor.lean",
+        "label": "All-modulus proof"
+      }
+    ]
+  },
+  {
+    "id": "higher-power-near-complete-coverage",
+    "category": "limits",
+    "title": "Higher prime powers still need over 94.72% of sum remainders for 99.9% coverage",
+    "impact": "The bound applies simultaneously to all chosen odd prime powers. At exponent two the corresponding list-size bound exceeds 98.68%.",
+    "scope": "All exponents at least two, combined modulus at most 2²⁰⁴⁸, and a fixed unit product. Coverage counts ordered pairs of modular factors.",
+    "detail": "For every attained sum, its multiplicity at higher precision is at least the multiplicity of its projection modulo the prime square.",
+    "sources": [
+      {
+        "href": "discoveries/what-a-modulus-budget-allows-a-guess-order-to-save.md",
+        "label": "Higher-power argument"
+      },
+      {
+        "href": "PrimeFactors/DeepBudgetedSumGuesses.lean",
+        "label": "Coverage proof"
+      }
+    ]
+  },
+  {
     "id": "five-square-all-prime-rank",
     "category": "gains",
     "title": "Product remainders save over 29.7758% of sum-remainder guesses across all full-size prime products",

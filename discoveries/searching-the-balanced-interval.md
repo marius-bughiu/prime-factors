@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+For any odd modulus up to $2^{2048}$, no ordering can cut the mean number of sum-remainder guesses by a factor of 64. For every positive modulus the corresponding limit is 1,024. These unconditional bounds concern uniformly sampled modular factor pairs. [All moduli, higher powers and scope](what-a-modulus-budget-allows-a-guess-order-to-save.md)
+
 Across **all** distinct 1,024-bit prime pairs with a 2,048-bit product, knowing the product remainder reduces the average number of guesses for the sum remainder by more than 29.7758%, under published Dirichlet-GRH prime-count estimates. The best policies need about 25.98 million guesses, and a random order about 36.99 million. [All product remainders and the full-width comparison](how-predictable-is-the-sum-remainder-for-all-prime-products.md)
 
 With any choice of distinct odd prime squares whose combined modulus is at most $2^{2048}$, a list covering 99.9% of ordered factor remainders must contain more than 98.68% of the attainable sum remainders. For the five-square example the exact minimum list occupies 99.7067%. [Finite budget and coverage proof](what-many-prime-squares-buy-a-remainder-guess.md#what-if-the-modulus-must-fit-a-2048-bit-budget)

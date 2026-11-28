@@ -1,5 +1,18 @@
 [
   {
+    "id": "dyadic-sum-relative-mass-32",
+    "description": "Chosen close primes yielding the weight-16 example s=46 at product one modulo 2048",
+    "n": "2729551873",
+    "max_steps": 2,
+    "status": "complete",
+    "factors": [
+      "51803",
+      "52691"
+    ],
+    "remaining": [],
+    "fermat_steps": 2
+  },
+  {
     "id": "five-squares-all-nonsquare-20",
     "description": "One of the closest 10-bit prime pairs with full-width product nonsquare modulo all five primes; table weights tie",
     "n": "550483",
