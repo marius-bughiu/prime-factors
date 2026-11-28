@@ -1671,6 +1671,12 @@ def case_row(result, repo=None):
     elif result['method'] == 'shifted':
         outcome = 'split' if result['shifted']['status'] == 'split' else 'no split'
         count = f'Shifted-square formula · {outcome} · {result["fermat_steps"]} Fermat midpoints'
+    elif result['method'] == 'shifted-square-sum-readout':
+        w = result['shifted_square_sum_readout']
+        count = (f'{w["root_lifts"]:,} binary root lifts at {w["precision"]:,}-bit precision'
+                 f' · predicted sum {w["candidate_sum"]:,}'
+                 f' · integer sum checks {w["integer_sum_checks"]:,}'
+                 f' · discriminant {w["discriminant"]:,}')
     else:
         unit = 'midpoint' if result['fermat_steps'] == 1 else 'midpoints'
         count = f'Fermat pipeline · {result["fermat_steps"]} {unit} tested · budget {result["max_steps"]}'

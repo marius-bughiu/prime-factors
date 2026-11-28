@@ -1,6 +1,7 @@
 import unittest
 
 from experiments.shifted_square_sum_readout import search
+from scripts.render_site import case_row
 
 
 class ShiftedSquareSumReadoutTests(unittest.TestCase):
@@ -24,6 +25,20 @@ class ShiftedSquareSumReadoutTests(unittest.TestCase):
         self.assertEqual(hit['factor'], 619)
         self.assertIsNone(miss['factor'])
         self.assertLess(miss['discriminant'], 0)
+
+    def test_report_displays_both_signed_discriminants(self):
+        for n, factors, discriminant in [(601049, ['619', '971'], '123,904'),
+                                         (842713, [], '-842,752')]:
+            with self.subTest(n=n):
+                row = dict(id='example', description='Sum prediction', bits=n.bit_length(),
+                           method='shifted-square-sum-readout', shifted_square_sum_readout=search(n, 10),
+                           n=str(n), verified=bool(factors), factors=factors,
+                           remaining=[] if factors else [str(n)], certificate='proofs/example.lean',
+                           wall_seconds=0.1, verification_seconds=0.01)
+                report = case_row(row)
+                self.assertIn('predicted sum 1,590', report)
+                self.assertIn('discriminant ' + discriminant, report)
+                self.assertIn('Lean checked' if factors else 'Remaining cofactor(s)', report)
 
 
 if __name__ == '__main__':
