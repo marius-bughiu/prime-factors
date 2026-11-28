@@ -1087,3 +1087,12 @@ import PrimeFactors.FullDyadicClueScan
 import PrimeFactors.AllDyadicClueScanFloor
 import PrimeFactors.DyadicClueScanControls
 import PrimeFactors.SharpDyadicCluePeriod
+import PrimeFactors.FactorPairSeparationDepth
+import PrimeFactors.FactorEndingSeparation
+import PrimeFactors.FactorEndingCollisions
+import PrimeFactors.DyadicFactorOrbitCount
+import PrimeFactors.ObservableSeparationDepth
+import PrimeFactors.FactorEndingDecoder
+import PrimeFactors.FactorPairSeparationPopulation
+import PrimeFactors.FactorEndingSeparationControls
+import PrimeFactors.FactorEndingDecoderControls

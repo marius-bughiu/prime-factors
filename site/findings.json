@@ -1,5 +1,71 @@
 [
   {
+    "id": "supplied-sum-168-bit-factor-endings",
+    "category": "formulas",
+    "title": "168 supplied sum bits identify both 160-bit factor endings on about 99.61% of full-size products",
+    "impact": "The endings are uniquely determined exactly when the two primes differ modulo 512. The fraction of eligible pairs meeting this condition is within 2⁻¹⁵⁴ of 255/256.",
+    "scope": "Distinct 1,024-bit primes with a 2,048-bit product. The input includes the true low bits of their sum. The frequency uses a published prime-count estimate under Dirichlet GRH.",
+    "detail": "At 180 supplied sum bits the share is within 2⁻¹⁶⁶ of 1 − 2⁻²⁰. At 163 bits an unconditional published prime-count estimate puts it within 1/8320 of 7/8. Lean takes the respective estimates as explicit inputs.",
+    "sources": [
+      {"href": "discoveries/how-many-sum-bits-identify-the-factor-endings.md", "label": "What the sum bits reveal"},
+      {"href": "PrimeFactors/FactorPairSeparationPopulation.lean", "label": "Full-size frequencies and their assumptions"}
+    ]
+  },
+  {
+    "id": "sharp-public-product-ending-sum-depth",
+    "category": "limits",
+    "title": "The last three product bits set a sharp worst-case requirement of 161, 162 or 319 supplied sum bits",
+    "impact": "To identify both 160-bit factor endings for every compatible modular pair, 161 sum bits suffice for a product ending in binary 011 or 111, 162 for 101, and 319 for 001. Each bound can be attained.",
+    "scope": "The product remainder and sum remainder are observed at the claimed precision. The output is an unordered pair of residues. The sharpness theorem applies to every odd product residue.",
+    "detail": "At five-bit factor width, 601,049 = 619 × 971 and 842,713 = 827 × 1,019 share the same low 12 product bits and low eight sum bits. Their ninth sum bit distinguishes endings (11, 11) from (27, 27).",
+    "sources": [
+      {"href": "discoveries/how-many-sum-bits-identify-the-factor-endings.md", "label": "Thresholds and matched prime products"},
+      {"href": "PrimeFactors/FactorEndingCollisions.lean", "label": "Exact least precision for each product class"},
+      {"href": "PrimeFactors/FactorEndingSeparationControls.lean", "label": "Products, primes and distinguishing bit"},
+      {"href": "#factor-ending-depth-9-a", "label": "601,049 benchmark"},
+      {"href": "#factor-ending-depth-9-b", "label": "842,713 benchmark"}
+    ]
+  },
+  {
+    "id": "individual-gap-sharp-factor-ending-depth",
+    "category": "formulas",
+    "title": "When two factors share exactly k−1 low bits, their k-bit endings need two fewer sum bits than the worst case",
+    "impact": "For 71 × 79, four low sum bits leave the four-bit factor endings ambiguous. Five identify them as 7 and 15. These primes agree on their first three low bits.",
+    "scope": "Any distinct odd factors and target width k of at least three bits. Sharpness is measured against all modular pairs with the same observed product and sum.",
+    "detail": "Let t be the number of matching low factor bits. The exact requirement is k+t sum bits for t below k−1, 2k−3 bits for t equal to k−1, and 2k−1 bits for t at least k. At one bit below each threshold a different ending remains possible.",
+    "sources": [
+      {"href": "discoveries/how-many-sum-bits-identify-the-factor-endings.md", "label": "Why sharing exactly k−1 bits is special"},
+      {"href": "PrimeFactors/FactorPairSeparationDepth.lean", "label": "Individual threshold and witnesses at one bit less"},
+      {"href": "PrimeFactors/ObservableSeparationDepth.lean", "label": "Verified four-bit and five-bit readings for 71 × 79"}
+    ]
+  },
+  {
+    "id": "observable-sum-precision-full-size-controls",
+    "category": "cases",
+    "title": "A test using the product and supplied sum bits recognizes when both factor endings are determined",
+    "impact": "On the independent 2,048-bit control, the test first confirms the 160-bit endings at 161 supplied sum bits. On the deliberately constructed quartic control it first confirms them at 319.",
+    "scope": "The test assumes the supplied sum remainder is correct. Both examples have certified 1,024-bit prime factors. The output contains the low 160 bits of each factor, in either order.",
+    "detail": "The test uses the trailing zeros of s² − 4N, where s is the supplied sum remainder. On the quartic example s is numerically 2 at both 318 and 319 bits. The extra known zero bit settles both factor endings as 1.",
+    "sources": [
+      {"href": "discoveries/how-many-sum-bits-identify-the-factor-endings.md", "label": "The test and its two full-size controls"},
+      {"href": "PrimeFactors/ObservableSeparationDepth.lean", "label": "Exact criterion using the supplied observation"},
+      {"href": "PrimeFactors/FactorEndingDecoder.lean", "label": "Correctness of both returned endings"},
+      {"href": "PrimeFactors/FactorEndingDecoderControls.lean", "label": "Full-size readings and certified factor endings"}
+    ]
+  },
+  {
+    "id": "product-remainder-factor-ending-list-size",
+    "category": "limits",
+    "title": "A 160-bit product remainder alone allows at least 2¹⁵⁸ unordered pairs of factor endings",
+    "impact": "There are exactly 2¹⁵⁸ compatible pairs for an odd product remainder outside 1 modulo 8, and exactly 2¹⁵⁸ + 2 when it equals 1 modulo 8.",
+    "scope": "Counts distinct pairs of odd residues modulo 2¹⁶⁰. Only the product remainder is supplied. Other product digits and the sizes or primality of actual integer factors are outside this count.",
+    "detail": "A list that includes at least one ending from every compatible pair needs exactly this many distinct entries at minimum. Choosing one representative from each pair attains the bound.",
+    "sources": [
+      {"href": "discoveries/how-many-sum-bits-identify-the-factor-endings.md", "label": "What the product remainder supplies on its own"},
+      {"href": "PrimeFactors/DyadicFactorOrbitCount.lean", "label": "Exact list size and a list attaining it"}
+    ]
+  },
+  {
     "id": "all-binary-tests-with-160-supplied-factor-bits",
     "category": "limits",
     "title": "Even every power-of-two test leaves at least 2⁵⁷⁷ wrong sums before the true sum on almost all full-size inputs",

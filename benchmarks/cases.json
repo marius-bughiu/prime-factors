@@ -1,5 +1,65 @@
 [
   {
+    "id": "factor-ending-depth-6-a",
+    "description": "Fermat baseline for selected 20-bit factor-ending control A at sum precision 6",
+    "n": "545339",
+    "max_steps": 32,
+    "status": "complete",
+    "factors": ["619", "881"],
+    "remaining": [],
+    "fermat_steps": 12
+  },
+  {
+    "id": "factor-ending-depth-6-b",
+    "description": "Fermat baseline for selected 20-bit factor-ending control B at sum precision 6",
+    "n": "578107",
+    "max_steps": 32,
+    "status": "complete",
+    "factors": ["673", "859"],
+    "remaining": [],
+    "fermat_steps": 6
+  },
+  {
+    "id": "factor-ending-depth-7-a",
+    "description": "Fermat baseline for selected 20-bit factor-ending control A at sum precision 7",
+    "n": "539477",
+    "max_steps": 32,
+    "status": "complete",
+    "factors": ["643", "839"],
+    "remaining": [],
+    "fermat_steps": 7
+  },
+  {
+    "id": "factor-ending-depth-7-b",
+    "description": "Fermat baseline for selected 20-bit factor-ending control B at sum precision 7",
+    "n": "584533",
+    "max_steps": 32,
+    "status": "complete",
+    "factors": ["659", "887"],
+    "remaining": [],
+    "fermat_steps": 9
+  },
+  {
+    "id": "factor-ending-depth-9-a",
+    "description": "Fermat baseline for selected 20-bit factor-ending control A at sum precision 9",
+    "n": "601049",
+    "max_steps": 32,
+    "status": "complete",
+    "factors": ["619", "971"],
+    "remaining": [],
+    "fermat_steps": 20
+  },
+  {
+    "id": "factor-ending-depth-9-b",
+    "description": "Fermat baseline for selected 20-bit factor-ending control B at sum precision 9",
+    "n": "842713",
+    "max_steps": 32,
+    "status": "complete",
+    "factors": ["827", "1019"],
+    "remaining": [],
+    "fermat_steps": 6
+  },
+  {
     "id": "dyadic-sum-square-30",
     "description": "Independent Fermat baseline for the selected matched 30-bit square-branch input with factor remainder 1 modulo eight",
     "n": "623706113",
