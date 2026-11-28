@@ -1,5 +1,15 @@
 [
   {
+    "id": "recognizable-quartic-product-28",
+    "description": "A deliberately chosen Sophie Germain representation whose parameters are recoverable from the product with two fourth roots. The ordinary Fermat fixture certifies the same primes at midpoint 199.",
+    "n": "151847041",
+    "max_steps": 199,
+    "status": "complete",
+    "factors": ["10301", "14741"],
+    "remaining": [],
+    "fermat_steps": 199
+  },
+  {
     "id": "swapped-prime-menus-16637",
     "description": "The lists ending in 11 and in 13 reject different illustrative wrong midpoints of this small product. The actual midpoint 129 gives the two ordinary factors.",
     "n": "16637",

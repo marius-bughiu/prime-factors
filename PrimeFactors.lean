@@ -1022,3 +1022,7 @@ import PrimeFactors.ArbitraryMidpointMenu
 import PrimeFactors.PrimeMenuDensityOrder
 import PrimeFactors.PrimeMenuPeriodMinimum
 import PrimeFactors.PrimeMenuScorePrefix
+import PrimeFactors.RecognizingQuarticProducts
+import PrimeFactors.QuarticFermatDistance
+import PrimeFactors.QuarticProductCoverage
+import PrimeFactors.QuarticPrimePopulation

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+For a recognizable family $N=x^4+4y^4$, two public integer fourth roots give the factor sum and both factors exactly. This recovers 10,301 and 14,741 from their product. Fewer than one in $2^{1129}$ eligible full-size products qualify. [Exact formula, scope and cost](two-fourth-roots-reveal-a-special-factor-pair.md)
+
 Choosing different prime tests for each product still leaves **more than $2^{765}$ wrong sums before success** for almost all inputs whenever the guaranteed residue period fits the early window. The smallest 117 primes attain the weakest lower bound of this kind. [Budget, optimality proof and complete small census](can-changing-the-primes-avoid-the-wrong-sums.md)
 
 Requiring the same two modular factors across all 117 primes and all precisions eliminates **zero** of the counted wrong sums. Their ordinary square-root representatives necessarily grow in magnitude with the modulus. [Compatible factors and the sharp size bound](can-the-modular-factors-agree.md)

@@ -1,5 +1,18 @@
 [
   {
+    "id": "two-fourth-roots-for-a-special-factor-pair",
+    "category": "formulas",
+    "title": "Two fourth roots give both factors of a recognizable quartic product",
+    "impact": "From 151,847,041 alone the formula returns the prime factors 10,301 and 14,741. Ordinary Fermat reaches them on test 199.",
+    "scope": "The special representation N = x⁴ + 4y⁴ must lie below (x+1)⁴. Fewer than one in 2^1129 eligible full-size prime products meet this condition.",
+    "detail": "The example was selected from the family. Of the 4,636 accepted odd inputs through 2^32, exactly 266 have two prime outputs. The general counting theorem includes composite outputs.",
+    "sources": [
+      {"href": "discoveries/two-fourth-roots-reveal-a-special-factor-pair.md", "label": "Formula, census and a missed semiprime"},
+      {"href": "PrimeFactors/RecognizingQuarticProducts.lean", "label": "Checked recognizer and prime factors"},
+      {"href": "PrimeFactors/QuarticProductCoverage.lean", "label": "How many odd inputs are recognized"}
+    ]
+  },
+  {
     "id": "product-selected-prime-menus-in-the-early-window",
     "category": "limits",
     "title": "Choosing different primes for each product still leaves over 2^765 wrong sums",
