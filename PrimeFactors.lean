@@ -1215,3 +1215,8 @@ import PrimeFactors.CyclotomicGaussianReading
 import PrimeFactors.CyclotomicGaussianPrecision
 import PrimeFactors.GaussianSquareMenu
 import PrimeFactors.GaussianSquareRemainder
+import PrimeFactors.GaussianMidpointScreen
+import PrimeFactors.GaussianGateAggregateCost
+import PrimeFactors.FloorSquareShift
+import PrimeFactors.FloorSquareShiftPopulation
+import PrimeFactors.FloorShiftAggregateCost

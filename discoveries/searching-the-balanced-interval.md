@@ -1,6 +1,8 @@
 # Searching the balanced interval
 
-At 525,689, a square remainder gives a restricted Fermat search from the product alone. Across 228,713 toy products the rule saved 2,675 exact square tests against a modulo-256 screen at the cost of 363,054 additional small lookups. Fewer than one in $2^{487}$ eligible full-size pairs passes the underlying square test. [Measured work, counterexamples and coverage](when-a-square-remainder-narrows-the-prime-sum.md)
+On 36,696,721, the power of two dividing its square-root remainder gives the exact prime sum in one guess. Among 228,713 toy products this guess was correct 12,356 times, but only 523 hits beat the first exact test of a screened Fermat search. Even granting every divisor of the remainder for free covers fewer than one in $2^{482}$ eligible full-size pairs through this identity. [Success criterion, costs and population proof](using-the-power-of-two-in-a-square-remainder.md)
+
+At 525,689, a square remainder gives a restricted Fermat search from the product alone. Across 228,713 toy products the rule saved 2,675 exact square tests against a modulo-256 screen at the cost of 363,054 additional small lookups. The rule took 2.49% longer in five paired timing trials, measured by the median paired change. Even receiving the factors for free on every qualifying full-size input would save less than one part in $2^{439}$ of the baseline’s total exact square tests. [Measured work, counterexamples and coverage](when-a-square-remainder-narrows-the-prime-sum.md)
 
 The angle of one complex polynomial value determines the sum directly. Seven samples can instead test whether 7 divides the sum or its gap, with the choice determined by the product remainder. At full size, obtaining the single reading with sufficient accuracy remains open. [Formulas, modulus classification and acquisition costs](what-the-angle-of-one-cyclotomic-value-reveals.md)
 

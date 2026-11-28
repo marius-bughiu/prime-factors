@@ -1,0 +1,74 @@
+[
+  {
+    "bits_per_prime": 9,
+    "pairs": 543,
+    "any_exact_shift": 186,
+    "baseline_tests": 760,
+    "priority_tests": 768,
+    "hits": 136,
+    "hits_after_first_baseline_test": 2,
+    "wrong_guesses_after_true_midpoint": 10,
+    "saved_on_hits": 2,
+    "priority_discriminant_tests": 183
+  },
+  {
+    "bits_per_prime": 10,
+    "pairs": 1718,
+    "any_exact_shift": 458,
+    "baseline_tests": 3490,
+    "priority_tests": 3510,
+    "hits": 299,
+    "hits_after_first_baseline_test": 6,
+    "wrong_guesses_after_true_midpoint": 27,
+    "saved_on_hits": 7,
+    "priority_discriminant_tests": 485
+  },
+  {
+    "bits_per_prime": 11,
+    "pairs": 5530,
+    "any_exact_shift": 1255,
+    "baseline_tests": 17273,
+    "priority_tests": 17325,
+    "hits": 795,
+    "hits_after_first_baseline_test": 26,
+    "wrong_guesses_after_true_midpoint": 84,
+    "saved_on_hits": 32,
+    "priority_discriminant_tests": 1498
+  },
+  {
+    "bits_per_prime": 12,
+    "pairs": 19546,
+    "any_exact_shift": 3385,
+    "baseline_tests": 110296,
+    "priority_tests": 110436,
+    "hits": 1973,
+    "hits_after_first_baseline_test": 69,
+    "wrong_guesses_after_true_midpoint": 234,
+    "saved_on_hits": 94,
+    "priority_discriminant_tests": 4880
+  },
+  {
+    "bits_per_prime": 13,
+    "pairs": 64719,
+    "any_exact_shift": 8745,
+    "baseline_tests": 672263,
+    "priority_tests": 672662,
+    "hits": 4783,
+    "hits_after_first_baseline_test": 162,
+    "wrong_guesses_after_true_midpoint": 664,
+    "saved_on_hits": 265,
+    "priority_discriminant_tests": 15254
+  },
+  {
+    "bits_per_prime": 14,
+    "pairs": 228713,
+    "any_exact_shift": 23270,
+    "baseline_tests": 4681605,
+    "priority_tests": 4682477,
+    "hits": 12356,
+    "hits_after_first_baseline_test": 523,
+    "wrong_guesses_after_true_midpoint": 1881,
+    "saved_on_hits": 1009,
+    "priority_discriminant_tests": 51369
+  }
+]

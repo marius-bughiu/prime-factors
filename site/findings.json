@@ -1,11 +1,113 @@
 [
   {
+    "id": "floor-shift-constructed",
+    "category": "cases",
+    "title": "The largest power of two in a remainder predicts both primes on 36,696,721",
+    "impact": "The remainder after subtracting 6,057² is 9,472. Its power-of-two part is 256. Adding 256 to twice the root gives the prime sum 12,370 and the factors 4,937 and 7,433.",
+    "scope": "Constructed example. One discriminant square test verifies the prediction. Ordinary consecutive Fermat takes 128 midpoint tests.",
+    "detail": "Two other products have the identical remainder 138. One prediction succeeds and the other misses.",
+    "sources": [
+      {
+        "href": "discoveries/using-the-power-of-two-in-a-square-remainder.md",
+        "label": "Formula and matched controls"
+      },
+      {
+        "href": "PrimeFactors/FloorSquareShift.lean",
+        "label": "Proof and prime certificates"
+      },
+      {
+        "href": "#floor-shift-36696721",
+        "label": "Ordinary Fermat benchmark"
+      }
+    ]
+  },
+  {
+    "id": "floor-shift-priority",
+    "category": "limits",
+    "title": "Of 12,356 correct guesses, only 523 reached the primes sooner",
+    "impact": "Trying the predicted midpoint first saved 1,009 exact square tests on hits and added 1,881 on misses, for 872 extra tests overall.",
+    "scope": "All 228,713 unordered pairs of distinct 14-bit primes with a 28-bit product. The baseline screens for parity and square residues modulo 256.",
+    "detail": "Missed guesses are skipped on fallback. At each of the six widths from 9 to 14 the change increased the total number of exact square tests.",
+    "sources": [
+      {
+        "href": "discoveries/using-the-power-of-two-in-a-square-remainder.md#does-testing-the-prediction-first-save-work",
+        "label": "How the order changes the search"
+      },
+      {
+        "href": "benchmarks/floor-shift-census.json",
+        "label": "All six populations"
+      },
+      {
+        "href": "experiments/floor_shift_census.py",
+        "label": "Reproducible comparison"
+      }
+    ]
+  },
+  {
+    "id": "floor-shift-all-divisors",
+    "category": "limits",
+    "title": "Even every possible shift covers fewer than one in 2^482 full-size inputs",
+    "impact": "A positive integer shift works exactly when the missing amount in the prime sum divides the square-root remainder. Counting every possible shift bounds the reach of the whole family.",
+    "scope": "All distinct 1,024-bit prime pairs with a 2,048-bit product. The bound gives the search every divisor of the remainder for free.",
+    "detail": "For p < q ≤ H at most 12H√H + 2H pairs admit any shift. Giving away the factors on every such full-size pair would save less than one part in 2^434 of the screened Fermat search’s exact square tests.",
+    "sources": [
+      {
+        "href": "discoveries/using-the-power-of-two-in-a-square-remainder.md#why-trying-more-shifts-has-limited-reach",
+        "label": "What the count includes"
+      },
+      {
+        "href": "PrimeFactors/FloorSquareShiftPopulation.lean",
+        "label": "Population proof"
+      },
+      {
+        "href": "PrimeFactors/FloorShiftAggregateCost.lean",
+        "label": "Aggregate work bound"
+      }
+    ]
+  },
+  {
+    "id": "gaussian-aggregate-cost",
+    "category": "limits",
+    "title": "Free factors on every square-remainder hit would save less than one part in 2^439",
+    "impact": "Even skipping every exact square test on those hits saves less than this fraction of the baseline work across all eligible full-size pairs.",
+    "scope": "Distinct 1,024-bit primes with a 2,048-bit product. Work counts exact square tests in the parity- and modulo-256-screened Fermat search.",
+    "detail": "More than two thirds of pairs have prime gaps large enough for at least 2^977 distinct midpoints to pass the baseline screen.",
+    "sources": [
+      {
+        "href": "discoveries/when-a-square-remainder-narrows-the-prime-sum.md#how-much-of-the-full-search-could-the-shortcut-save",
+        "label": "From input frequency to search work"
+      },
+      {
+        "href": "PrimeFactors/GaussianGateAggregateCost.lean",
+        "label": "Aggregate cost and per-input bounds"
+      }
+    ]
+  },
+  {
+    "id": "gaussian-midpoint-screen",
+    "category": "formulas",
+    "title": "Why a stronger midpoint stride can skip lookups while keeping every square test",
+    "impact": "Inside the known step-four class, checking squares modulo 16 or 32 already forces the sharper step of eight or sixteen. A modulo-256 screen therefore sends exactly the same candidates to the square test.",
+    "scope": "Applies after the product has supplied the correct step-four class. The required smaller modulus depends on the product modulo eight.",
+    "detail": "On 525,689 and 133,901 the next smaller power-of-two screen admits a wrong midpoint before the true one.",
+    "sources": [
+      {
+        "href": "discoveries/when-a-square-remainder-narrows-the-prime-sum.md#why-the-stronger-strides-give-the-same-exact-tests",
+        "label": "Derivation and two examples"
+      },
+      {
+        "href": "PrimeFactors/GaussianMidpointScreen.lean",
+        "label": "Lean equivalence and witnesses"
+      }
+    ]
+  },
+  {
     "id": "square-remainder-mod256-census",
     "category": "gains",
-    "title": "A square-remainder test saved 2,675 square tests across 228,713 products",
-    "impact": "Against a modulo-256 screen, the 14-bit factor census needed 4,678,930 exact square tests instead of 4,681,605. The new rule used 363,054 more small lookups overall.",
-    "scope": "All distinct 14-bit prime pairs with a 28-bit product. The same rule used more exact square tests against this baseline at widths 9 through 13.",
-    "detail": "These counts include failed remainder checks. A wall-clock speedup remains unverified.",
+    "title": "A square-remainder test saved 2,675 exact square tests and took 2.49% longer",
+    "impact": "The rule used 4,678,930 exact square tests against the modulo-256 baseline’s 4,681,605, a 0.0571% reduction. It added 363,054 small lookups overall.",
+    "scope": "All 228,713 distinct 14-bit prime pairs with a 28-bit product. At widths 9 through 13 the rule also cost more exact square tests than the baseline.",
+    "detail": "In five paired runs on CPython 3.9.6, Darwin arm64, median elapsed time per cohort rose from 0.909 to 0.931 seconds and median process CPU time from 0.904 to 0.927 seconds. Elapsed time increased in all five pairs, with a median increase of 2.49% and a range of 1.49% to 3.64%.",
     "sources": [
       {
         "href": "discoveries/when-a-square-remainder-narrows-the-prime-sum.md#what-the-search-saved",
@@ -14,6 +116,10 @@
       {
         "href": "benchmarks/cyclotomic-root-readings.json",
         "label": "Exact measurements and operation counts"
+      },
+      {
+        "href": "experiments/time_gaussian_square_gate.py",
+        "label": "Optional paired timing harness"
       }
     ]
   },

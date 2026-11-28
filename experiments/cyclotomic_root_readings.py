@@ -161,12 +161,14 @@ def test_remainder(n, root, screened):
     return a*a == remainder, 1, lookups
 
 
-def midpoint_scan(n, root, cap, stride, mod256):
+def midpoint_scan(n, root, cap, stride, mod256, *, already_tested=None):
     """Perform the exact square tests and return the first verified pair."""
     first = root+1
     first += ((n+1)//2-first) % stride
     tests = lookups = 0
     for h in range(first, cap, stride):
+        if h == already_tested:
+            continue
         delta = h*h-n
         if mod256:
             lookups += 1

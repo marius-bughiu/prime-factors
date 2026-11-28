@@ -1,5 +1,18 @@
 [
   {
+    "id": "floor-shift-36696721",
+    "description": "Ordinary Fermat baseline for the constructed pair with a power-of-two square-remainder prediction",
+    "n": "36696721",
+    "max_steps": 128,
+    "status": "complete",
+    "factors": [
+      "4937",
+      "7433"
+    ],
+    "remaining": [],
+    "fermat_steps": 128
+  },
+  {
     "id": "gaussian-square-remainder-525689",
     "description": "Ordinary Fermat baseline for the floor-square-root remainder test",
     "n": "525689",
