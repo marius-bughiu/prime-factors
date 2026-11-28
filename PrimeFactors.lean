@@ -1277,3 +1277,4 @@ import PrimeFactors.CircleMarkRationalMixedBoundary
 import PrimeFactors.CircleMarkRationalFringe
 import PrimeFactors.CircleMarkSquarePlanner
 import PrimeFactors.CircleMarkLastBalancedRectangle
+import PrimeFactors.CircleMarkPublicSquarePopulation

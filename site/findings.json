@@ -76,9 +76,13 @@
     "category": "limits",
     "title": "The fourth-root grid’s larger-prime boundary is always within five Fermat tests",
     "impact": "Choose the square side h by rounding the product’s fourth root down. If the larger prime lies from (h + 1)² + 1 through (h + 1)² + h, ordinary Fermat finds both factors in at most five midpoint tests.",
-    "scope": "Applies to odd prime pairs meeting this larger-prime condition. The starting midpoint and the grid side are both computed from the product alone.",
+    "scope": "The starting midpoint and grid side use only the product. Among distinct 1,024-bit prime pairs with a 2,048-bit product, fewer than one in 2⁴⁹⁴ meets this larger-prime condition.",
     "detail": "The bound is sharp. For 2,562,569 = 1,489 × 1,721 the first four midpoints fail. At the fifth, 1,605² − 2,562,569 = 116², giving both primes by subtraction and addition.",
     "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkPublicSquarePopulation.lean",
+        "label": "Full-size frequency of the five-test family"
+      },
       {
         "href": "PrimeFactors/CircleMarkSquarePlanner.lean",
         "label": "Five-test proof and sharp example"
