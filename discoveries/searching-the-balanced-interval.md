@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+The square grid chosen from the product finds a factor for more than nine in ten eligible random targets at every pair of distinct 1,024-bit primes. Giving each target its best rectangle under a much smaller list budget collapses the success rate. A census also shows where the first target selected from the product misses. [Coverage, work bounds and 7,995 small products](how-often-the-public-square-grid-finds-a-factor.md)
+
 For 2,491, a 6-by-6 grid leaves 69 of the 1,196 eligible targets uncovered. They all fall at just three numerators in the next column. Lean proves exactly which extra cells are needed, and shows that one test of the Fermat midpoint already factors every product whose two primes are near the same rectangle boundary. [Sparse corrections, counterexamples and full-size frequency](when-a-short-rectangle-misses-a-factor.md)
 
 A rectangular grid of fractions finds a prime of 323 for 119 of 144 negative-Jacobi targets. Close to the size that guarantees a hit, the number of missing squares equals the number of divisors of the shortfall. Wider grids factored all 2,465 products in a small census. Even with the best rectangle shape for every full-size product and every target through 2,015,165, fewer than a third admit a hit within $2^{975}$ cells. [Which squares escape, what the census cost and the full-width proofs](which-squares-a-rational-rectangle-misses.md)

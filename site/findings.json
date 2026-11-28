@@ -1,5 +1,121 @@
 [
   {
+    "id": "public-square-uniform-targets",
+    "category": "formulas",
+    "title": "The public grid covers more than 90% of targets for every pair of 1,024-bit primes",
+    "impact": "Fix a product of two distinct 1,024-bit primes and choose a negative-Jacobi target uniformly. More than nine times in ten, some cell in the product-selected square gives a prime factor.",
+    "scope": "The count is unconditional and applies separately to each product. The grid has at least 2⁵¹¹ entries along each edge. Locating a successful cell cheaply remains open.",
+    "detail": "The smaller prime accounts for exactly half of all targets. A count of distinct reduced fractions inside a disk adds more than another two fifths at the larger prime.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkPublicDiskRate.lean",
+        "label": "The 90% theorem"
+      },
+      {
+        "href": "discoveries/how-often-the-public-square-grid-finds-a-factor.md",
+        "label": "Why the grid covers so many targets"
+      }
+    ]
+  },
+  {
+    "id": "public-square-distinct-fractions",
+    "category": "formulas",
+    "title": "A disk inside the grid gives a different square for every reduced fraction",
+    "impact": "Inside i² + j² < q, squaring two distinct positive reduced fractions never gives the same residue modulo the prime q. This lets us count eligible targets without guessing which cells repeat.",
+    "scope": "Applies to cells inside the public grid with unit denominators. The hidden prime q is used in the proof of coverage.",
+    "detail": "A staircase of 105 strips fits in both the disk and the square. Its exact size is 10,394m². A finite inclusion–exclusion bound counts enough coprime pairs even after rounding.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkRationalDisk.lean",
+        "label": "Proof that the squares are distinct"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkPrimitiveDensity.lean",
+        "label": "Coprime-pair bounds"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkDiskStaircase.lean",
+        "label": "Staircase and rounding errors"
+      }
+    ]
+  },
+  {
+    "id": "public-square-list-budget",
+    "category": "limits",
+    "title": "Even the best short rectangle covers fewer than one target in 2⁵¹¹",
+    "impact": "Give each target its own rectangle with at most 2²⁵⁶ entries in its two lists combined. At every pair of distinct 1,024-bit primes, the share of eligible targets reachable by any such rectangle is below 2⁻⁵¹¹.",
+    "scope": "The lists start at 1 and advance consecutively. The shape can depend on the target, and the bound grants the best shape for free.",
+    "detail": "The union of all these rectangles is the triangle i + j ≤ L. In the small-list range its exact hit rate follows from counting the reduced fractions one diagonal at a time with Euler’s totient.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkGridWorkBudget.lean",
+        "label": "Exact counts and full-width bound"
+      },
+      {
+        "href": "discoveries/how-often-the-public-square-grid-finds-a-factor.md",
+        "label": "What a list budget measures"
+      }
+    ]
+  },
+  {
+    "id": "public-square-first-target-census",
+    "category": "limits",
+    "title": "The first eligible target missed 319 of 7,995 small products",
+    "impact": "A uniform target hit 98.36% of the time on average when each product counted equally. Selecting the first eligible target from the product hit 7,676 times. For 2,183, target 5 misses all 36 cells although 936 of the 1,044 eligible targets succeed.",
+    "scope": "Exhaustive products of distinct equal-width primes with 6 through 11 bits per prime and twice that bit length in the product. The target counts were cross-checked by direct gcds on three inputs.",
+    "detail": "Every first-target miss occurred beyond the previously studied boundary band. Across the full census the first-target grids used 6,678,239 scalar gcds and 20,620 Jacobi tests. Fermat needed 98,963 midpoint tests to recover every pair. The units of work differ.",
+    "sources": [
+      {
+        "href": "benchmarks/public-grid-targets.json",
+        "label": "Exact census and controls"
+      },
+      {
+        "href": "experiments/public_grid_targets.py",
+        "label": "Reproduce the search"
+      },
+      {
+        "href": "discoveries/how-often-the-public-square-grid-finds-a-factor.md",
+        "label": "Examples and cost comparison"
+      }
+    ]
+  },
+  {
+    "id": "public-square-scalar-cost",
+    "category": "limits",
+    "title": "Most targets still need more than 2¹⁰²⁰ tests in any fixed cell order",
+    "impact": "At any pair of distinct 1,024-bit primes, fewer than a quarter of eligible targets hit among any 2¹⁰²⁰ fixed scalar tests. More than 65% of all eligible targets miss those tests and succeed elsewhere in the full grid.",
+    "scope": "The cells can be selected or ordered using the product. The chosen set is fixed before seeing the target. The statement concerns individual cell tests.",
+    "detail": "Even among just those targets the full square can solve, more than 13 out of 18 succeed only outside the chosen set. Batched gcd methods use a different work model.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkGridScalarCost.lean",
+        "label": "Fixed-cell and conditional bounds"
+      },
+      {
+        "href": "discoveries/how-often-the-public-square-grid-finds-a-factor.md",
+        "label": "What must be searched"
+      }
+    ]
+  },
+  {
+    "id": "public-square-opposite-collisions",
+    "category": "formulas",
+    "title": "One equation explains which reduced grid fractions collapse to the same square",
+    "impact": "When h² < q, two distinct reduced cells (i,j) and (k,l) in an h-by-h square coincide after squaring modulo q exactly when il + kj = q. Each cell has at most one such partner.",
+    "scope": "The criterion uses the prime q to explain coverage at that prime. It applies to the larger prime of a product-selected square.",
+    "detail": "For 2,257 = 37 × 61 the 6-by-6 grid contains 23 reduced fractions. The cells (5,6) and (6,5) pair because 25 + 36 = 61, leaving 22 distinct squares modulo 61.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkGridCollisions.lean",
+        "label": "Collision criterion and counting proof"
+      },
+      {
+        "href": "discoveries/how-often-the-public-square-grid-finds-a-factor.md",
+        "label": "Worked collision at 61"
+      }
+    ]
+  },
+  {
     "id": "rectangle-boundary-mixed-rate",
     "category": "formulas",
     "title": "At 8,453 the 9-by-9 grid finds a factor on 4,056 of 4,134 targets",

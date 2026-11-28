@@ -1162,5 +1162,18 @@
     ],
     "remaining": [],
     "fermat_steps": 5
+  },
+  {
+    "id": "first-grid-miss-134773",
+    "description": "First nine-bit-prime product in the census where the first eligible target misses the public square. Fermat recovers the pair in six midpoint tests.",
+    "n": "134773",
+    "max_steps": 6,
+    "status": "complete",
+    "factors": [
+      "307",
+      "439"
+    ],
+    "remaining": [],
+    "fermat_steps": 6
   }
 ]
