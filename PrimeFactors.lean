@@ -892,3 +892,9 @@ import PrimeFactors.StableDiscriminantClasses
 import PrimeFactors.PublicStableWheelCounts
 import PrimeFactors.NewPrimesOrMoreDigits
 import PrimeFactors.PublicFreshPrimeComparison
+import PrimeFactors.AdmissibleSumRealization
+import PrimeFactors.ResiduePairMultiplicity
+import PrimeFactors.PrimePowerSingleRepresentatives
+import PrimeFactors.ProductPrefixFactorBand
+import PrimeFactors.WideResiduePrimeSupply
+import PrimeFactors.ObservedPrefixSumResidues

@@ -1,5 +1,42 @@
 [
   {
+    "id": "true-sum-residues-after-fixing-482-product-bits",
+    "category": "limits",
+    "title": "Fixing 482 outer product bits still permits at least 2²⁴⁴ true sum remainders",
+    "impact": "For every eligible choice of the first 232 and last 250 bits, every locally possible factor-sum remainder modulo 2²⁵⁰ occurs among genuine 2,048-bit products.",
+    "scope": "The middle product bits vary. The proof assumes the published prime-count estimates under Dirichlet GRH and checks the remaining deduction in Lean.",
+    "detail": "Both factors have 1,024 bits. In a small unconditional example, three products share the hexadecimal pattern BF0?B1 and give sum remainders 194, 190 and 178 modulo 256.",
+    "sources": [
+      {"href": "discoveries/which-true-sums-can-share-the-same-leading-and-trailing-bits.md", "label": "What is observed and what varies"},
+      {"href": "PrimeFactors/ObservedPrefixSumResidues.lean", "label": "Prefix and residue theorem"},
+      {"href": "PrimeFactors/WideResiduePrimeSupply.lean", "label": "Explicit prime-count input"}
+    ]
+  },
+  {
+    "id": "one-prime-per-class-at-odd-prime-powers",
+    "category": "formulas",
+    "title": "One prime per allowed factor class realizes all local sums at odd prime powers",
+    "impact": "For a modulus pᵉ with p an odd prime and e at least two, every locally possible unit-product and sum combination occurs with distinct primes exactly when the interval contains a prime in each unit class.",
+    "scope": "The interval is fixed and the integer product may vary. In the seven-bit interval, 113 is the only prime in class 5 modulo 9.",
+    "detail": "An equal-residue pair can be replaced by two distinct residues with the same product and sum. This explains why a class containing only one prime can suffice.",
+    "sources": [
+      {"href": "discoveries/which-true-sums-can-share-the-same-leading-and-trailing-bits.md#exactly-which-sum-remainders-can-occur", "label": "Seven-bit example and explanation"},
+      {"href": "PrimeFactors/PrimePowerSingleRepresentatives.lean", "label": "Equivalence and finite certificate"}
+    ]
+  },
+  {
+    "id": "which-modular-sums-have-actual-prime-representatives",
+    "category": "formulas",
+    "title": "Two primes in every allowed factor class realize every local sum in that band",
+    "impact": "For an invertible product remainder, a modular factor pair gives a pair of distinct actual primes in the chosen interval whenever each unit class contains at least two primes.",
+    "scope": "Across products with the same remainder. For modulus 210, the condition holds on all twelve-bit primes and all 48 invertible classes were checked directly.",
+    "detail": "Having two representatives allows a modular pair with equal factor residues to use two different primes. For squarefree moduli it is also necessary for every admissible product-and-sum pair to occur.",
+    "sources": [
+      {"href": "discoveries/which-true-sums-can-share-the-same-leading-and-trailing-bits.md#exactly-which-sum-remainders-can-occur", "label": "Finite example and converse"},
+      {"href": "PrimeFactors/AdmissibleSumRealization.lean", "label": "General and finite proofs"}
+    ]
+  },
+  {
     "id": "two-new-primes-beat-all-old-powers-on-both-width-windows",
     "category": "gains",
     "title": "On both 2,048-bit examples, two new primes eliminate more sums than every higher old power",

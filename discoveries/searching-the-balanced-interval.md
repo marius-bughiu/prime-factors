@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+The first 232 bits and last 250 bits of a 2,048-bit product still allow at least $2^{244}$ distinct true factor-sum residues across compatible products. Using the Dirichlet-GRH estimate for primes in progressions, we can specify exactly which sum remainders those observations allow. Three 24-bit products show how this happens with just one hexadecimal digit hidden. [Worked example, proof and analytic input](which-true-sums-can-share-the-same-leading-and-trailing-bits.md)
+
 On both 2,048-bit examples the two ordinary tests modulo 23 and 29 discarded more candidates, in total, than every higher power of the seven odd primes through 19. For any product, two fresh prime squares or three fresh ordinary primes have a similar guarantee over a complete joint period. [Actual percentages and a counterexample for two ordinary primes](how-much-higher-prime-powers-can-save.md#which-choice-wins-on-the-actual-2048-bit-examples)
 
 After checking the squares of any selection of odd primes coprime to the product, additional digits at those primes give less than another fourfold reduction over a full period. At 94,579 a selected example reaches 3.6466 times. The same seven prime-square checks on the two 2,048-bit comparisons also admit much shorter repeating lists and use fewer scalar lookups. [General limit and example](how-much-higher-prime-powers-can-save.md) · [Full-width work and storage](how-short-the-prime-square-pattern-can-be.md)

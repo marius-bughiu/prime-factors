@@ -117,6 +117,16 @@
     "fermat_steps": 1
   },
   {
+    "id": "matched-outer-digits-12518833",
+    "description": "Fermat baseline for one certified 24-bit product with outer hexadecimal digits BF0?B1",
+    "n": "12518833",
+    "max_steps": 15,
+    "status": "complete",
+    "factors": ["3229", "3877"],
+    "remaining": [],
+    "fermat_steps": 15
+  },
+  {
     "id": "prime-power-density-94579",
     "description": "Fermat baseline for the selected nine-bit pair whose eight local densities approach the fourfold bound",
     "n": "94579",
