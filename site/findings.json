@@ -1,5 +1,35 @@
 [
   {
+    "id": "rotation-false-positive-prime-population",
+    "category": "limits",
+    "title": "Among prime pairs that pass the square test, fewer than one in 2^979 are rotations",
+    "impact": "More than one in 393,217 eligible prime pairs passes the test even though neither prime is a binary rotation of the other.",
+    "scope": "All unordered pairs of distinct 1,024-bit primes with a 2,048-bit product receive equal weight. The bound holds without any assumption that the primes' square classes are uniformly distributed.",
+    "detail": "After fixing the square class at three, 15 yes-or-no answers suffice to classify each prime. Two primes with matching answers give a product that passes. The number of such pairs dwarfs the upper bound on true rotations.",
+    "sources": [
+      {
+        "href": "discoveries/when-one-prime-is-a-binary-rotation-of-the-other.md#how-often-does-the-test-mislead-us-on-actual-prime-pairs",
+        "label": "Why actual prime products must give false positives"
+      },
+      {
+        "href": "PrimeFactors/RotationFalsePositivePopulation.lean",
+        "label": "Both full-width inequalities"
+      },
+      {
+        "href": "PrimeFactors/RotationPrimeSignature.lean",
+        "label": "The fifteen labels"
+      },
+      {
+        "href": "PrimeFactors/FiniteBinCollisionPopulation.lean",
+        "label": "Unconditional count of matching pairs"
+      },
+      {
+        "href": "#rotation-negative-2501",
+        "label": "Small odd-shift false positive"
+      }
+    ]
+  },
+  {
     "id": "binary-rotation-shift-parity",
     "category": "formulas",
     "title": "The product modulo three determines the parity of a binary rotation",
@@ -22,7 +52,7 @@
     "category": "limits",
     "title": "The modular rotation test accepts one in 32,768 unit residues",
     "impact": "At the public modulus 2^1,024 − 1, a passing square test has exactly 65,536 possible roots. The two passing classes of inputs are disjoint.",
-    "scope": "The exact fraction counts all residues coprime to the public modulus with equal weight. It leaves open the rate among products of full-width primes.",
+    "scope": "The exact fraction counts all residues coprime to the public modulus with equal weight. The separate prime-pair result bounds the frequency among products of actual primes.",
     "detail": "Lean checks all sixteen distinct prime factors of the public modulus. In the separate six-bit census, six of fourteen prime products pass a square test. Four are actual rotations and two are false positives.",
     "sources": [
       {

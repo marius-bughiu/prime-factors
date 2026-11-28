@@ -1,5 +1,18 @@
 [
   {
+    "id": "rotation-negative-2501",
+    "description": "Small trial factors certify the odd-phase false positive in the six-bit rotation census",
+    "n": "2501",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": [
+      "41",
+      "61"
+    ],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
     "id": "rotation-negative-2419",
     "description": "Small trial factors certify the six-bit pair that passes the modular square test without being a rotation",
     "n": "2419",

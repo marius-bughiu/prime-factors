@@ -23,3 +23,11 @@ Over all residues coprime to $M=2^{1024}-1$, **exactly one in 32,768** passes ei
 ## How often do the prime factors have this relation?
 
 Among all unordered pairs of distinct 1,024-bit primes with a 2,048-bit product, **fewer than one in $2^{998}$** pairs admit even one nonzero rotation. Once one prime is fixed it has only 1,023 possible nonzero shifts, and every qualifying pair is counted in both directions. Lean compares that count with a lower bound on the size of the full prime-pair population. The bound allows a different shift for every product. [Unconditional population bound](../PrimeFactors/BinaryRotationPopulation.lean)
+
+## How often does the test mislead us on actual prime pairs?
+
+**More than one in 393,217** eligible prime pairs passes a square test even though the primes are unrelated by rotation. Among prime pairs that pass, **fewer than one in $2^{979}$** is a true rotation. These bounds give equal weight to each distinct prime pair whose product has the required 2,048 bits. [False-positive and conditional counts](../PrimeFactors/RotationFalsePositivePopulation.lean)
+
+To see why so many false positives are unavoidable, attach a yes-or-no label to a prime at each of the sixteen prime divisors of $M$. The label says whether that prime is a square modulo the divisor. Two equal label sequences guarantee their product is a square at every divisor. For the two-phase test, first double a prime when its remainder modulo three is two. This fixes the label at three, leaving only $2^{15}$ possible sequences. Two primes with matching sequences must pass one of the tests. [Normalized labels and matching proof](../PrimeFactors/RotationPrimeSignature.lean)
+
+Choose primes large enough that the product of any two has 2,048 bits. Group them by label sequence. Even if those primes were distributed among the groups in the way that minimizes matches, there would still be more than one matching pair per 393,216 eligible pairs overall. The same counting argument works for any assignment to at most 65,536 labels. The proof uses established counts of primes in the size interval and does not assume uniformity of the labels. [Population argument](../PrimeFactors/FiniteBinCollisionPopulation.lean)

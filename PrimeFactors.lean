@@ -1185,3 +1185,6 @@ import PrimeFactors.RotationSquareRootCount
 import PrimeFactors.FullWidthRotationRoots
 import PrimeFactors.RotationSquareClassDensity
 import PrimeFactors.SmallRotationCensus
+import PrimeFactors.RotationPrimeSignature
+import PrimeFactors.FiniteBinCollisionPopulation
+import PrimeFactors.RotationFalsePositivePopulation
