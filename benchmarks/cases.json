@@ -1,5 +1,31 @@
 [
   {
+    "id": "prime-sum-reversal-32881",
+    "description": "Fermat baseline for the first product in the five-pair decreasing-sum example",
+    "n": "32881",
+    "max_steps": 10,
+    "status": "complete",
+    "factors": [
+      "131",
+      "251"
+    ],
+    "remaining": [],
+    "fermat_steps": 10
+  },
+  {
+    "id": "prime-sum-reversal-34427",
+    "description": "Fermat baseline for the last product in the five-pair decreasing-sum example",
+    "n": "34427",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": [
+      "173",
+      "199"
+    ],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
     "id": "adaptive-three-square-697-baseline",
     "description": "Independent factor check for the public choice of twist ten at 697",
     "n": "697",

@@ -1150,3 +1150,16 @@ import PrimeFactors.AdaptiveThreeSquareTwist
 import PrimeFactors.BoundedThreeSquareTwist
 import PrimeFactors.AdaptiveTwistPrecision
 import PrimeFactors.ConeJacobiClassMean
+import PrimeFactors.FactorSumProductCell
+import PrimeFactors.MonotoneSumBlocks
+import PrimeFactors.MonotoneSumCoverage
+import PrimeFactors.MonotoneSumPopulation
+import PrimeFactors.MonotoneClosePrimeLower
+import PrimeFactors.SeparatedMonotonePopulation
+import PrimeFactors.AntitoneSumPopulation
+import PrimeFactors.DecreasingSumChains
+import PrimeFactors.MonotoneSumExtension
+import PrimeFactors.PrimeSumOrderReversals
+import PrimeFactors.PiecewiseMonotoneSumPopulation
+import PrimeFactors.RationalPredictionTurns
+import PrimeFactors.RoundedRationalSumPopulation

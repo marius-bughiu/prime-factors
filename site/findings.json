@@ -1,5 +1,129 @@
 [
   {
+    "id": "rounded-ratio-prime-sum",
+    "category": "limits",
+    "title": "Rounding a ratio of polynomials rarely gives the prime sum",
+    "impact": "With numerator and denominator degrees up to 2^28, even unlimited coefficients give fewer than one exact hit in 2^453 products. The fraction within 2^128 is below one in 2^388.",
+    "scope": "One fixed ratio, rounded down to an integer. Every eligible full-size pair counts once. A zero denominator counts as a miss.",
+    "detail": "The poles and zeros of the derivative cut the number line into a limited number of pieces. On each piece rounding preserves the direction of the prediction.",
+    "sources": [
+      {
+        "href": "discoveries/why-a-larger-product-can-have-a-smaller-prime-sum.md",
+        "label": "What a change of direction allows"
+      },
+      {
+        "href": "PrimeFactors/RationalPredictionTurns.lean",
+        "label": "Counting intervals and turns"
+      },
+      {
+        "href": "PrimeFactors/RoundedRationalSumPopulation.lean",
+        "label": "Signed-floor prediction bounds"
+      }
+    ]
+  },
+  {
+    "id": "prime-sum-order-reversal",
+    "category": "formulas",
+    "title": "Five larger products give five smaller prime sums",
+    "impact": "From 32,881 through 34,427, the sums decrease from 382 to 372. A sequence longer than 2^979 exists among 2,048-bit products.",
+    "scope": "All five small examples use eight-bit primes. The large result proves existence among full-size pairs whose primes differ by at least 2^1006.",
+    "detail": "Sort by product and take sums in that order. Every later sum on the selected sequence is strictly smaller.",
+    "sources": [
+      {
+        "href": "discoveries/why-a-larger-product-can-have-a-smaller-prime-sum.md",
+        "label": "Five pairs and the full-size theorem"
+      },
+      {
+        "href": "PrimeFactors/PrimeSumOrderReversals.lean",
+        "label": "Checked examples and chain length"
+      },
+      {
+        "href": "#prime-sum-reversal-32881",
+        "label": "First product"
+      },
+      {
+        "href": "#prime-sum-reversal-34427",
+        "label": "Last product"
+      }
+    ]
+  },
+  {
+    "id": "monotone-prime-sum-prediction",
+    "category": "limits",
+    "title": "An always-increasing or flat guess almost never gives the prime sum",
+    "impact": "Even the best nondecreasing prediction is exact on fewer than one in 2^484 products. Allowing an error of 2^128 still gives fewer than one in 2^419.",
+    "scope": "Every distinct pair of 1,024-bit primes with a 2,048-bit product counts once. The prediction can use the entire product and unlimited computation.",
+    "detail": "The proof counts the product blocks and sum values the prediction can reach, then bounds the number of pairs in each cell.",
+    "sources": [
+      {
+        "href": "discoveries/why-a-larger-product-can-have-a-smaller-prime-sum.md",
+        "label": "Population and counting argument"
+      },
+      {
+        "href": "PrimeFactors/MonotoneSumPopulation.lean",
+        "label": "Two uniform frequency bounds"
+      },
+      {
+        "href": "PrimeFactors/FactorSumProductCell.lean",
+        "label": "Spacing at a fixed sum"
+      }
+    ]
+  },
+  {
+    "id": "separated-monotone-prime-sums",
+    "category": "limits",
+    "title": "On more than two thirds of the products, widely separated primes sharpen the limit",
+    "impact": "Within the group whose primes differ by at least 2^1006, a nondecreasing prediction is exact on fewer than one in 2^979. The fraction within 2^128 is below one in 2^850.",
+    "scope": "Each rate uses the separated group as its denominator. The proof that this group exceeds two thirds of all eligible pairs is unconditional.",
+    "detail": "For a fixed sum, two separated pairs give products too far apart to share a block of width 2^1006.",
+    "sources": [
+      {
+        "href": "discoveries/why-a-larger-product-can-have-a-smaller-prime-sum.md",
+        "label": "Which products qualify"
+      },
+      {
+        "href": "PrimeFactors/SeparatedMonotonePopulation.lean",
+        "label": "Gap count, spacing and hit rates"
+      }
+    ]
+  },
+  {
+    "id": "first-fermat-monotone-frequency",
+    "category": "formulas",
+    "title": "Twice the rounded-up square root reaches a provable share of prime sums",
+    "impact": "This explicit prediction is exact on more than one in 2^516 eligible products and comes within 2^128 on more than one in 2^452.",
+    "scope": "Each result counts all eligible distinct 1,024-bit prime pairs. The close pairs supply a lower bound on how often the rule works.",
+    "detail": "Primes that share a sufficiently short interval give a midpoint near the square root of their product. A prime count forces many such pairs.",
+    "sources": [
+      {
+        "href": "discoveries/why-a-larger-product-can-have-a-smaller-prime-sum.md",
+        "label": "The explicit prediction and both bounds"
+      },
+      {
+        "href": "PrimeFactors/MonotoneClosePrimeLower.lean",
+        "label": "Close-pair proof and certified rates"
+      }
+    ]
+  },
+  {
+    "id": "antitone-prime-sum-prediction",
+    "category": "limits",
+    "title": "A prediction that only falls or stays level gets even fewer sums right",
+    "impact": "The exact sum agrees on fewer than one in 2^1007 eligible products. At fixed smaller prime, at most one partner can agree exactly.",
+    "scope": "A single nonincreasing natural-number prediction over all eligible full-size pairs.",
+    "detail": "Increasing the larger prime increases both the true sum and product. With error E, at most 2E+1 partners for each smaller prime can fit.",
+    "sources": [
+      {
+        "href": "discoveries/why-a-larger-product-can-have-a-smaller-prime-sum.md",
+        "label": "Why the direction matters"
+      },
+      {
+        "href": "PrimeFactors/AntitoneSumPopulation.lean",
+        "label": "Partner bound and full-size fraction"
+      }
+    ]
+  },
+  {
     "id": "adaptive-three-square-choice",
     "category": "formulas",
     "title": "A multiplier chosen from 697 turns a silent sphere count into the prime 41",

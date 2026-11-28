@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Predicting the prime sum with a function that never decreases succeeds on fewer than one in $2^{484}$ eligible products. More than two thirds have a prime gap of at least $2^{1006}$, and within that group the fraction is below one in $2^{979}$. The same argument proves the existence of a sequence of more than $2^{979}$ increasing products with strictly decreasing sums. [Examples, upper and lower bounds, and the counting argument](why-a-larger-product-can-have-a-smaller-prime-sum.md)
+
 At 697 a multiplier of 10, chosen using the product's Jacobi symbols, changes the large three-square count to 18,696. Dividing by the base count 24, subtracting 697 and halving gives 41. The released Dirichlet result and an explicit least-prime theorem bound the multiplier by 4,030,330 across the full-size range. The cost of obtaining the large count remains open. [Adaptive choice, worked example and separate proof inputs](choosing-a-three-square-twist-from-the-product.md)
 
 A fixed nonzero polynomial equation of total degree $2^{128}$ or less in the product and sum holds on fewer than one in $2^{879}$ eligible full-size products. On a finite grid of primes the sharp upper bound has an explicit equality case. Allowing an integer prediction error of $2^{128}$ still leaves degree-$2^{32}$ polynomial predictions below one in $2^{845}$. [What algebraic relations can cover](how-often-can-a-polynomial-describe-the-prime-sum.md)
