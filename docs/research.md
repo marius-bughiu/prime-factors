@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+Across **all** distinct 1,024-bit prime pairs with a 2,048-bit product, knowing the product remainder reduces the average number of guesses for the sum remainder by more than 29.7758%, under published Dirichlet-GRH prime-count estimates. The best policies need about 25.98 million guesses, and a random order about 36.99 million. [All product remainders and the full-width comparison](../discoveries/how-predictable-is-the-sum-remainder-for-all-prime-products.md)
+
 For balanced 2,048-bit products congruent to one modulo 7,239,457,225, a published Dirichlet-GRH prime-count estimate puts the best mean within 0.001 of 470,695,147/48 sum-remainder guesses (about 9.81 million). All 32 frequency groups retain their strict ordering on the actual prime population. [Population, estimate and small-width controls](../discoveries/what-many-prime-squares-buy-a-remainder-guess.md#do-the-same-guesses-work-for-actual-primes)
 
 The location-and-remainder rule saves more than 2.59% of exact square tests across all eligible balanced 2,048-bit products, using a published unconditional prime-count estimate. At most ten live candidates suffice to generate its guesses. [The total work and the streaming rule](../discoveries/using-both-the-location-and-remainder-of-a-sum.md#does-the-combined-order-help-across-all-full-size-products)

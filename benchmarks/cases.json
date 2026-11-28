@@ -1,5 +1,18 @@
 [
   {
+    "id": "five-squares-all-nonsquare-20",
+    "description": "One of the closest 10-bit prime pairs with full-width product nonsquare modulo all five primes; table weights tie",
+    "n": "550483",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": [
+      "733",
+      "751"
+    ],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
     "id": "rare-five-square-coverage-46",
     "description": "Sole weight-32 pair in the complete 23-bit prime census at product remainder one modulo 7239457225",
     "n": "36139370467201",

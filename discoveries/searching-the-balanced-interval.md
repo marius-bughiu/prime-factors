@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Across **all** distinct 1,024-bit prime pairs with a 2,048-bit product, knowing the product remainder reduces the average number of guesses for the sum remainder by more than 29.7758%, under published Dirichlet-GRH prime-count estimates. The best policies need about 25.98 million guesses, and a random order about 36.99 million. [All product remainders and the full-width comparison](how-predictable-is-the-sum-remainder-for-all-prime-products.md)
+
 With any choice of distinct odd prime squares whose combined modulus is at most $2^{2048}$, a list covering 99.9% of ordered factor remainders must contain more than 98.68% of the attainable sum remainders. For the five-square example the exact minimum list occupies 99.7067%. [Finite budget and coverage proof](what-many-prime-squares-buy-a-remainder-guess.md#what-if-the-modulus-must-fit-a-2048-bit-budget)
 
 For balanced 2,048-bit products congruent to one modulo 7,239,457,225, a published Dirichlet-GRH prime-count estimate puts the best mean within 0.001 of 470,695,147/48 sum-remainder guesses (about 9.81 million). All 32 frequency groups retain their strict ordering on the actual prime population. [Population, estimate and small-width controls](what-many-prime-squares-buy-a-remainder-guess.md#do-the-same-guesses-work-for-actual-primes)

@@ -959,3 +959,8 @@ import PrimeFactors.PrimeSquareUniformFloor
 import PrimeFactors.GuessModulusBudget
 import PrimeFactors.BudgetedSumGuesses
 import PrimeFactors.FiveSquareCoverageTail
+import PrimeFactors.FiveSquareAllPrimeRanks
+import PrimeFactors.FiveSquareSignRanks
+import PrimeFactors.FiveSquareSignPopulation
+import PrimeFactors.FiveSquarePolicy
+import PrimeFactors.FiveSquarePooledRanks

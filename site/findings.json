@@ -1,5 +1,41 @@
 [
   {
+    "id": "five-square-all-prime-rank",
+    "category": "gains",
+    "title": "Product remainders save over 29.7758% of sum-remainder guesses across all full-size prime products",
+    "impact": "The optimal order averages about 25.98 million guesses. A random order of the same candidates averages 36.99 million.",
+    "scope": "All distinct 1,024-bit primes with a 2,048-bit product. Each guess names a sum remainder modulo 7,239,457,225. The population transfer uses published Dirichlet-GRH estimates.",
+    "detail": "The known product remainder can select a different order on each input. Each of the 32 patterns contributes to the total; the all-nonsquare pattern saves zero.",
+    "sources": [
+      {
+        "href": "discoveries/how-predictable-is-the-sum-remainder-for-all-prime-products.md",
+        "label": "Full-size comparison and small censuses"
+      },
+      {
+        "href": "PrimeFactors/FiveSquarePooledRanks.lean",
+        "label": "Pooled optimum and baseline"
+      }
+    ]
+  },
+  {
+    "id": "five-square-equal-patterns",
+    "category": "formulas",
+    "title": "Each of the 32 patterns occurs for exactly 122,522,400 product remainders",
+    "impact": "The exact conditional means range from 9,806,148.896 to 61,261,200.5 guesses. Every order ties when the product is nonsquare at all five primes.",
+    "scope": "Uniform unit products modulo the five prime squares. These finite modular counts are unconditional.",
+    "detail": "The complete histogram and the Chinese remainder theorem determine all 32 exact means without enumerating the 3,920,716,800 unit products.",
+    "sources": [
+      {
+        "href": "discoveries/how-predictable-is-the-sum-remainder-for-all-prime-products.md#how-the-product-changes-the-list",
+        "label": "How the product chooses the pattern"
+      },
+      {
+        "href": "PrimeFactors/FiveSquareSignRanks.lean",
+        "label": "All 32 exact means"
+      }
+    ]
+  },
+  {
     "id": "budgeted-square-guess-floor",
     "category": "limits",
     "title": "A 2,048-bit modulus budget limits how much the guess order can save",
