@@ -1342,3 +1342,10 @@ import PrimeFactors.FractionalMenuDensity
 import PrimeFactors.FractionalPrimeLiftCutoff
 import PrimeFactors.FractionalMatchedDivisors
 import PrimeFactors.FractionalPrefixPlanner
+import PrimeFactors.FractionalRoughMatchedPairs
+import PrimeFactors.FractionalSelectedProgression
+import PrimeFactors.FractionalWheelTranscript
+import PrimeFactors.FractionalWheelNeighbours
+import PrimeFactors.FractionalWheelCutoff
+import PrimeFactors.FractionalWheelGapBound
+import PrimeFactors.FractionalRoughProjection

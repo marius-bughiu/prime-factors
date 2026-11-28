@@ -25,6 +25,7 @@ def experiment(name, *args, data=RESEARCH, lean=False, proof=None):
 # fixture and reference result, also when one is added, renamed or removed.
 CHECKS = (
     Check('unit-tests', ('python3', '-m', 'unittest', 'discover', '-s', 'tests'), lean=True),
+    experiment('fractional_rough_lifts', data=('benchmarks/fractional-rough-lifts.json',)),
     experiment('fractional_matched_divisors', data=('benchmarks/fractional-matched-divisors.json',)),
     experiment('fractional_correction_menu', data=('benchmarks/fractional-correction-menu.json',)),
     experiment('fractional_prefix_wheel', data=('benchmarks/fractional-prefix-wheel.json',)),

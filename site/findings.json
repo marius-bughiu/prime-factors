@@ -1,5 +1,93 @@
 [
   {
+    "id": "rough-pair-product-selected-modulus",
+    "category": "formulas",
+    "title": "Small primes isolate the true pair at a modulus near N/8000",
+    "impact": "For 12,827, both 101 × 127 and 115 × 122 pass the balance and remainder tests at modulus 401. The second product is even. Only 101 × 127 survives.",
+    "scope": "For a balanced prime product at least 2²⁰⁴⁷, the product alone selects a modulus between N/8000 and N/7992. This is at least a 999-fold reduction in the sufficient modulus for uniqueness.",
+    "detail": "Across 141 small products, ascending trial on the surviving product took the same 961 divisions as direct trial. Using the 210-wheel directly on trial divisors took 470 divisions and 961 table lookups.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalSelectedProgression.lean",
+        "label": "Full-width product-only selection"
+      },
+      {
+        "href": "PrimeFactors/FractionalRoughMatchedPairs.lean",
+        "label": "Pair uniqueness"
+      },
+      {
+        "href": "benchmarks/fractional-rough-lifts.json",
+        "label": "Work comparison"
+      },
+      {
+        "href": "discoveries/isolating-the-product-with-small-primes.md",
+        "label": "Worked example"
+      }
+    ]
+  },
+  {
+    "id": "rough-lift-predictable-transcript",
+    "category": "limits",
+    "title": "Every eligible product gives the same wheel readings",
+    "impact": "The nearest nonzero indices passing the gcd test are −1010 and +1008. Every gcd reading, even outside this interval, is calculable from the index alone.",
+    "scope": "For the two prescribed congruences and an input coprime to the wheel, the filter excludes all noncentral products in the balanced product window exactly when N ≤ 8064m.",
+    "detail": "On one deliberately constructed 2,048-bit wheel unit, the predicted readings matched 2,019 direct gcds. This control uses only the input and the wheel.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalWheelTranscript.lean",
+        "label": "Exact gcd formula"
+      },
+      {
+        "href": "PrimeFactors/FractionalWheelNeighbours.lean",
+        "label": "Nearest indices"
+      },
+      {
+        "href": "PrimeFactors/FractionalWheelCutoff.lean",
+        "label": "Sharp interval threshold"
+      },
+      {
+        "href": "benchmarks/fractional-rough-lifts.json",
+        "label": "Signed readings control"
+      }
+    ]
+  },
+  {
+    "id": "rough-smaller-factor-population",
+    "category": "limits",
+    "title": "Two coprimality tests still leave more than 2¹⁰¹³ smaller entries",
+    "impact": "More than 2¹⁰¹⁷ integers in the public ratio-based interval pass the small-prime wheel alone. More than 2¹⁰¹³ also pass coprimality to a positive modulus below 2²⁰⁴⁸.",
+    "scope": "The count uses the interval from just above √(N/2) through √N for N ≥ 2²⁰⁴⁷. Additional clues, exact divisibility and individual prime bit lengths can narrow this interval.",
+    "detail": "With two 1,024-bit primes and an input in the lower half of the 2,048-bit range, more than 2¹⁰¹² entries still survive after enforcing the larger prime’s maximum value. The counts precede exact divisibility testing.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalRoughProjection.lean",
+        "label": "Population theorems"
+      },
+      {
+        "href": "discoveries/isolating-the-product-with-small-primes.md",
+        "label": "Scope and direct trial comparison"
+      }
+    ]
+  },
+  {
+    "id": "rough-lift-wheel-gap-barrier",
+    "category": "limits",
+    "title": "The longest gap in any wheel limits how far its modulus can shrink",
+    "impact": "If a wheel always has a coprime integer within g consecutive positions, excluding all noncentral products by that wheel requires N ≤ 8mg.",
+    "scope": "Applies to every positive step m and every wheel coprime to the input, including a wheel and step chosen after seeing the product. A step sharing factors with the wheel is covered.",
+    "detail": "Costello and Watts’ published primorial bound implies m > 2²⁰²⁸ on 2,048-bit inputs with this 169-prime wheel, even after redesigning the congruences. Lean proves the transfer for any supplied gap bound. A surviving product may still fail the pair tests.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalWheelGapBound.lean",
+        "label": "Transfer to every step"
+      },
+      {
+        "href": "discoveries/isolating-the-product-with-small-primes.md",
+        "label": "Derivation and primary source"
+      }
+    ]
+  },
+  {
     "id": "fractional-shortest-two-answer-prefix",
     "category": "gains",
     "title": "Choosing the denominator cut 14,958 prefix gcds to 3,199",

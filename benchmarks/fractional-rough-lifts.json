@@ -1,0 +1,404 @@
+{
+  "scope": "All distinct prime pairs with 41 <= p < q <= 127 and q < 2p, at H=3 and H=4. The extra control 62113 is outside these totals.",
+  "costs": "Unfiltered division visits every integer in each balanced lift interval. Screening checks a gcd per lift then visits odd trial divisors of the surviving product. Direct trial division starts from the same public balance bounds. The wheel trial works directly on N. Its reusable unit table costs one small gcd per residue of the period, and each visited odd x takes one lookup. Equality checks start with already supplied candidate pairs. Counts exclude the independent validation enumerations and are not elapsed times.",
+  "cohort": [
+    {
+      "wheel": {
+        "h": 3,
+        "primorial": 6,
+        "auxiliary_prime": 5,
+        "period": 30,
+        "crt_multiplier": 13
+      },
+      "work": {
+        "products": 141,
+        "selection_gcds": 141,
+        "selection_factor_hits": 0,
+        "modulus_below_original_cutoff": 141,
+        "modulus_in_scaled_interval": 141,
+        "validation_period_gcds": 4230,
+        "validation_period_units": 1128,
+        "coprime_lifts": 141,
+        "wheel_divisions": 887,
+        "wheel_lookups": 1633,
+        "wheel_divisions_to_first": 545,
+        "wheel_lookups_to_first": 961,
+        "lift_gcds": 970,
+        "matched_pairs": 285,
+        "supplied_pair_product_equalities": 285,
+        "surviving_pairs": 141,
+        "unfiltered_divisions": 22713,
+        "screened_divisions": 1633,
+        "screened_divisions_to_first": 961,
+        "direct_odd_candidates": 1633,
+        "direct_ascending_divisions": 961,
+        "direct_descending_divisions": 813
+      },
+      "first_rough_neighbours": [
+        -6,
+        4
+      ],
+      "validation_unit_input_residues": 8,
+      "validation_all_class_gcds": 240
+    },
+    {
+      "wheel": {
+        "h": 4,
+        "primorial": 30,
+        "auxiliary_prime": 7,
+        "period": 210,
+        "crt_multiplier": 151
+      },
+      "work": {
+        "products": 141,
+        "selection_gcds": 141,
+        "selection_factor_hits": 0,
+        "modulus_below_original_cutoff": 141,
+        "modulus_in_scaled_interval": 32,
+        "validation_period_gcds": 29610,
+        "validation_period_units": 6768,
+        "coprime_lifts": 141,
+        "wheel_divisions": 734,
+        "wheel_lookups": 1633,
+        "wheel_divisions_to_first": 470,
+        "wheel_lookups_to_first": 961,
+        "lift_gcds": 832,
+        "matched_pairs": 258,
+        "supplied_pair_product_equalities": 258,
+        "surviving_pairs": 141,
+        "unfiltered_divisions": 20277,
+        "screened_divisions": 1633,
+        "screened_divisions_to_first": 961,
+        "direct_odd_candidates": 1633,
+        "direct_ascending_divisions": 961,
+        "direct_descending_divisions": 813
+      },
+      "first_rough_neighbours": [
+        -8,
+        6
+      ],
+      "validation_unit_input_residues": 48,
+      "validation_all_class_gcds": 10080
+    }
+  ],
+  "controls": [
+    {
+      "product": "12827",
+      "h": 3,
+      "modulus": 401,
+      "rejected_selection_gcds": [],
+      "lifts": [
+        {
+          "index": -3,
+          "product": 11624,
+          "wheel_gcd": 2,
+          "pairs": []
+        },
+        {
+          "index": -2,
+          "product": 12025,
+          "wheel_gcd": 5,
+          "pairs": []
+        },
+        {
+          "index": -1,
+          "product": 12426,
+          "wheel_gcd": 6,
+          "pairs": []
+        },
+        {
+          "index": 0,
+          "product": 12827,
+          "wheel_gcd": 1,
+          "pairs": [
+            [
+              101,
+              127
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "product": 13228,
+          "wheel_gcd": 2,
+          "pairs": []
+        },
+        {
+          "index": 2,
+          "product": 13629,
+          "wheel_gcd": 3,
+          "pairs": []
+        },
+        {
+          "index": 3,
+          "product": 14030,
+          "wheel_gcd": 10,
+          "pairs": [
+            [
+              115,
+              122
+            ]
+          ]
+        }
+      ],
+      "recovered": [
+        "101",
+        "127"
+      ],
+      "work": {
+        "products": 1,
+        "selection_gcds": 1,
+        "selection_factor_hits": 0,
+        "modulus_below_original_cutoff": 1,
+        "modulus_in_scaled_interval": 1,
+        "validation_period_gcds": 30,
+        "validation_period_units": 8,
+        "coprime_lifts": 1,
+        "wheel_divisions": 9,
+        "wheel_lookups": 17,
+        "wheel_divisions_to_first": 5,
+        "wheel_lookups_to_first": 11,
+        "lift_gcds": 7,
+        "matched_pairs": 2,
+        "supplied_pair_product_equalities": 2,
+        "surviving_pairs": 1,
+        "unfiltered_divisions": 232,
+        "screened_divisions": 17,
+        "screened_divisions_to_first": 11,
+        "direct_odd_candidates": 17,
+        "direct_ascending_divisions": 11,
+        "direct_descending_divisions": 7
+      }
+    },
+    {
+      "product": "62113",
+      "h": 3,
+      "modulus": 1999,
+      "rejected_selection_gcds": [
+        179
+      ],
+      "lifts": [
+        {
+          "index": -3,
+          "product": 56116,
+          "wheel_gcd": 2,
+          "pairs": []
+        },
+        {
+          "index": -2,
+          "product": 58115,
+          "wheel_gcd": 5,
+          "pairs": []
+        },
+        {
+          "index": -1,
+          "product": 60114,
+          "wheel_gcd": 6,
+          "pairs": []
+        },
+        {
+          "index": 0,
+          "product": 62113,
+          "wheel_gcd": 1,
+          "pairs": [
+            [
+              179,
+              347
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "product": 64112,
+          "wheel_gcd": 2,
+          "pairs": []
+        },
+        {
+          "index": 2,
+          "product": 66111,
+          "wheel_gcd": 3,
+          "pairs": []
+        },
+        {
+          "index": 3,
+          "product": 68110,
+          "wheel_gcd": 10,
+          "pairs": [
+            [
+              245,
+              278
+            ]
+          ]
+        }
+      ],
+      "recovered": [
+        "179",
+        "347"
+      ],
+      "work": {
+        "products": 1,
+        "selection_gcds": 2,
+        "selection_factor_hits": 1,
+        "modulus_below_original_cutoff": 1,
+        "modulus_in_scaled_interval": 1,
+        "validation_period_gcds": 30,
+        "validation_period_units": 8,
+        "coprime_lifts": 1,
+        "wheel_divisions": 19,
+        "wheel_lookups": 37,
+        "wheel_divisions_to_first": 1,
+        "wheel_lookups_to_first": 2,
+        "lift_gcds": 7,
+        "matched_pairs": 2,
+        "supplied_pair_product_equalities": 2,
+        "surviving_pairs": 1,
+        "unfiltered_divisions": 511,
+        "screened_divisions": 37,
+        "screened_divisions_to_first": 2,
+        "direct_odd_candidates": 37,
+        "direct_ascending_divisions": 2,
+        "direct_descending_divisions": 36
+      }
+    },
+    {
+      "product": "5353",
+      "h": 4,
+      "modulus": 223,
+      "rejected_selection_gcds": [],
+      "lifts": [
+        {
+          "index": -2,
+          "product": 4907,
+          "wheel_gcd": 7,
+          "pairs": []
+        },
+        {
+          "index": -1,
+          "product": 5130,
+          "wheel_gcd": 30,
+          "pairs": [
+            [
+              54,
+              95
+            ],
+            [
+              57,
+              90
+            ]
+          ]
+        },
+        {
+          "index": 0,
+          "product": 5353,
+          "wheel_gcd": 1,
+          "pairs": [
+            [
+              53,
+              101
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "product": 5576,
+          "wheel_gcd": 2,
+          "pairs": [
+            [
+              68,
+              82
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "product": 5799,
+          "wheel_gcd": 3,
+          "pairs": []
+        },
+        {
+          "index": 3,
+          "product": 6022,
+          "wheel_gcd": 2,
+          "pairs": []
+        }
+      ],
+      "recovered": [
+        "53",
+        "101"
+      ],
+      "work": {
+        "products": 1,
+        "selection_gcds": 1,
+        "selection_factor_hits": 0,
+        "modulus_below_original_cutoff": 1,
+        "modulus_in_scaled_interval": 0,
+        "validation_period_gcds": 210,
+        "validation_period_units": 48,
+        "coprime_lifts": 1,
+        "wheel_divisions": 6,
+        "wheel_lookups": 11,
+        "wheel_divisions_to_first": 1,
+        "wheel_lookups_to_first": 1,
+        "lift_gcds": 6,
+        "matched_pairs": 4,
+        "supplied_pair_product_equalities": 4,
+        "surviving_pairs": 1,
+        "unfiltered_divisions": 132,
+        "screened_divisions": 11,
+        "screened_divisions_to_first": 1,
+        "direct_odd_candidates": 11,
+        "direct_ascending_divisions": 1,
+        "direct_descending_divisions": 11
+      }
+    }
+  ],
+  "supplied_modulus_control": {
+    "product": "4453",
+    "supplied_modulus": 139,
+    "h": 3,
+    "index_range": [
+      -3,
+      4
+    ],
+    "coprime_indices": [
+      0,
+      4
+    ],
+    "prime_at_index_four": 5009,
+    "matched_pairs": [
+      {
+        "x": 56,
+        "y": 82,
+        "index": 1,
+        "lifted_product": 4592
+      },
+      {
+        "x": 57,
+        "y": 83,
+        "index": 2,
+        "lifted_product": 4731
+      },
+      {
+        "x": 61,
+        "y": 73,
+        "index": 0,
+        "lifted_product": 4453
+      }
+    ]
+  },
+  "full_width_gcd_pattern": {
+    "h": 999,
+    "auxiliary_prime": 1009,
+    "period_bits": 1390,
+    "input": "1 + period*(floor(2^2047/period)+1), a chosen wheel unit",
+    "input_bits": 2048,
+    "modulus_bits": 2035,
+    "selection_gcds": 1,
+    "first_rough_neighbours": [
+      -1010,
+      1008
+    ],
+    "lift_gcds_compared": 2019,
+    "coprime_indices": 3
+  }
+}

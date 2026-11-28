@@ -1235,5 +1235,15 @@
     "factors": ["643", "907"],
     "remaining": [],
     "fermat_steps": 12
+  },
+  {
+    "id": "rough-lift-12827",
+    "description": "Independent prime certificate for the product whose covered noncentral lifts include 115 × 122 at modulus 401",
+    "n": "12827",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": ["101", "127"],
+    "remaining": [],
+    "fermat_steps": 1
   }
 ]
