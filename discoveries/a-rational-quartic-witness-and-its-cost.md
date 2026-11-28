@@ -1,0 +1,13 @@
+# What a rational quartic witness buys
+
+The 48-bit product **161,064,781,282,549** has no integer representation $N=x^4+4y^4$. Yet the equation has a solution modulo **every positive integer**. Even a remainder test with no limit on the modulus cannot detect the missing integer solution. The example was selected for this property. Its factors, 12,637,693 and 12,744,793, are both 24-bit primes. [Lean proof of the example](../PrimeFactors/BalancedQuarticLocalExample.lean)
+
+A rational representation does exist. With $a=318{,}065$, $b=552{,}963$ and $d=221$, we have $d^4N=a^4+4b^4$ and $\gcd(a,b)=1$. At moduli coprime to 221, division by $d$ gives the required modular coordinates. At 13 the coordinates $(1,0)$ work, and at 17 the coordinates $(6,1)$ work. Both solutions lift to every power of their respective prime. Chinese remaindering covers every remaining modulus since $221=13\times17$. [General denominator criterion and lifting proof](../PrimeFactors/RationalQuarticResidues.lean)
+
+Why does this fail over the integers? Any positive integer representation would give two proper factors by Sophie Germain’s identity. Because $N$ is a semiprime these would have to be its known factors $p,q$ in increasing order. This requires *both* $2x^2+4y^2=p+q$ and $4xy=q-p$. Lean checked that the two conditions cannot hold together even modulo 11. The original quartic equation itself has solutions modulo 11. Specifying the ordinary prime pair adds information. The zero-coordinate cases are also excluded. [Integer obstruction using the certified pair](../PrimeFactors/BalancedQuarticLocalExample.lean)
+
+## A supplied point can still recover both primes
+
+Suppose someone gives us integer coordinates $a,b,d$ satisfying $d^4N=a^4+4b^4$ with $b>0$. Put $A=a^2+2b^2-2ab$ and $B=a^2+2b^2+2ab$. The identity gives $AB=d^4N$, and $A\le B<6A$. In fact $5(6A-B)=(5a-7b)^2+b^2>0$. If **$6d^4\le N$**, it follows that $B<N$. For $N=pq$ with distinct primes, neither $A$ nor $B$ can then contain both prime divisors. Taking $\gcd(A,N)$ and $\gcd(B,N)$ returns the two primes. [General conditional recovery theorem](../PrimeFactors/RationalQuarticFactorPair.lean)
+
+In the 48-bit example, $A=360{,}945{,}149{,}773$ and $B=1{,}064{,}457{,}856{,}153$. Their gcds with $N$ are 12,637,693 and 12,744,793. Here the rational coordinates were **supplied** to the gcd calculation. Finding such coordinates from an ordinary product alone is a separate problem. The previous fourth-root formulas search two specific integer forms directly from the product. [Worked certificate](../PrimeFactors/BalancedQuarticLocalExample.lean) · [Product-only formulas](reading-the-other-fourth-power.md)

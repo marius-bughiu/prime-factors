@@ -1,5 +1,15 @@
 [
   {
+    "id": "locally-representable-rational-quartic-48",
+    "description": "A chosen full-width 48-bit product with rational quartic coordinates and no integral representation, despite passing every modulus. The ordinary Fermat fixture certifies the factors independently at midpoint 113.",
+    "n": "161064781282549",
+    "max_steps": 113,
+    "status": "complete",
+    "factors": ["12637693", "12744793"],
+    "remaining": [],
+    "fermat_steps": 113
+  },
+  {
     "id": "reverse-only-quartic-product-22",
     "description": "The reverse fourth-root formula finds the two primes from y = 27 and x = 5, while starting with the fourth root of N misses. Ordinary Fermat independently certifies them on midpoint 25.",
     "n": "2126389",

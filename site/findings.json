@@ -1,5 +1,18 @@
 [
   {
+    "id": "quartic-rational-witness-at-every-modulus",
+    "category": "limits",
+    "title": "A 48-bit product passes every quartic remainder test and has no integer representation",
+    "impact": "Every positive modulus admits the proposed quartic representation. The ordinary integer factors rule it out over the integers.",
+    "scope": "A selected product of two 24-bit primes. A separate recovery theorem applies when a rational point is supplied and its denominator satisfies 6d⁴ ≤ N.",
+    "detail": "With the supplied rational coordinates, two gcds give 12,637,693 and 12,744,793. The proof explains exactly which information those coordinates provide.",
+    "sources": [
+      {"href": "discoveries/a-rational-quartic-witness-and-its-cost.md", "label": "Worked example and assumptions"},
+      {"href": "PrimeFactors/BalancedQuarticLocalExample.lean", "label": "All moduli and the integer obstruction"},
+      {"href": "PrimeFactors/RationalQuarticFactorPair.lean", "label": "Conditional factor recovery"}
+    ]
+  },
+  {
     "id": "complementary-fourth-root-factor-family",
     "category": "gains",
     "title": "A second fourth-root formula raises a small prime-pair census from 30 to 79",

@@ -1028,3 +1028,6 @@ import PrimeFactors.QuarticProductCoverage
 import PrimeFactors.QuarticPrimePopulation
 import PrimeFactors.ComplementaryQuarticProducts
 import PrimeFactors.ComplementaryQuarticPopulation
+import PrimeFactors.RationalQuarticResidues
+import PrimeFactors.RationalQuarticFactorPair
+import PrimeFactors.BalancedQuarticLocalExample

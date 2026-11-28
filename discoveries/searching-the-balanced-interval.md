@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A 48-bit semiprime admits a quartic representation modulo **every positive integer** but has no ordinary integer representation. Its supplied rational coordinates recover both prime factors by two gcds. [The example, conditional recovery and missing input](a-rational-quartic-witness-and-its-cost.md)
+
 Reading either end of the quartic representation increases the count of eligible prime pairs found through $2^{32}$ from **30 to 79**. The two methods succeed on disjoint balanced odd semiprimes. Their combined full-size coverage is below one in $2^{1128}$. [Complementary formula and census](reading-the-other-fourth-power.md)
 
 For a recognizable family $N=x^4+4y^4$, two public integer fourth roots give the factor sum and both factors exactly. This recovers 10,301 and 14,741 from their product. Fewer than one in $2^{1129}$ eligible full-size products qualify. [Exact formula, scope and cost](two-fourth-roots-reveal-a-special-factor-pair.md)
