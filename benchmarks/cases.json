@@ -1,5 +1,15 @@
 [
   {
+    "id": "favored-first-later-8488399",
+    "description": "Fermat midpoint baseline for the chosen opposite-residue example taking twenty-four ascending square tests and twenty-five favored-first tests",
+    "n": "8488399",
+    "max_steps": 167,
+    "status": "complete",
+    "factors": ["2081", "4079"],
+    "remaining": [],
+    "fermat_steps": 167
+  },
+  {
     "id": "favored-prefix-four-7253249",
     "description": "Fermat midpoint baseline on the product whose ascending and global priority searches take fourteen and four square tests",
     "n": "7253249",

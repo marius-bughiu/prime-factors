@@ -922,3 +922,13 @@ import PrimeFactors.FactorSumPrefixCost
 import PrimeFactors.FullRangeLongSumPrefix
 import PrimeFactors.FullPopulationFavoredSums
 import PrimeFactors.FavoredSumWork
+import PrimeFactors.GlobalSumOrderCost
+import PrimeFactors.PrimeGridMass
+import PrimeFactors.MeanSumOrderGeometry
+import PrimeFactors.NormalizedSumWork
+import PrimeFactors.SumGridPopulation
+import PrimeFactors.SumOrderAggregation
+import PrimeFactors.MeanSumOrderWork
+import PrimeFactors.AllResidueSumCost
+import PrimeFactors.OtherSumGridPopulation
+import PrimeFactors.MeanAllSumOrderWork

@@ -1,5 +1,59 @@
 [
   {
+    "id": "net-work-all-balanced-products",
+    "category": "gains",
+    "title": "More than 1.05% fewer square tests across all balanced 2,048-bit products",
+    "impact": "Counting every slower case, every faster case and every tie, the elementary search saves more than one test per 95 baseline tests in total.",
+    "scope": "Every distinct pair of 1,024-bit primes with a 2,048-bit product, counted once. Uses a published unconditional estimate for prime counts modulo five.",
+    "detail": "Both orders reach the unique successful square. On the two nonsquare product remainders they perform identical work. This saving still leaves an exponential search.",
+    "sources": [
+      {
+        "href": "discoveries/does-favored-first-save-work-on-average.md",
+        "label": "How to count every product"
+      },
+      {
+        "href": "PrimeFactors/MeanAllSumOrderWork.lean",
+        "label": "Full-population proof and exact hits"
+      }
+    ]
+  },
+  {
+    "id": "pooled-work-square-products",
+    "category": "gains",
+    "title": "Counting the slower cases too, trying two remainders first saves more than 2.5% of square tests",
+    "impact": "The combined square-test count falls by more than one fortieth across all qualifying 2,048-bit products.",
+    "scope": "All distinct 1,024-bit prime pairs with a 2,048-bit product congruent to 1 or 4 modulo five. Both elementary searches apply identical filters.",
+    "detail": "Lean totals the gains and losses using an unconditional published prime-count estimate. The bound covers exact square tests, excluding candidate generation and wall time.",
+    "sources": [
+      {
+        "href": "discoveries/does-favored-first-save-work-on-average.md",
+        "label": "How the net saving is proved"
+      },
+      {
+        "href": "PrimeFactors/MeanSumOrderWork.lean",
+        "label": "Strict total-cost inequality"
+      }
+    ]
+  },
+  {
+    "id": "direct-whole-width-order-census",
+    "category": "gains",
+    "title": "A search can save tests in total even when it loses on more individual products",
+    "impact": "At fourteen bits per prime, the priority order saved 136,605 square tests across 114,255 eligible products. It was slower on 53,296 and faster on 47,966.",
+    "scope": "The small census tests every distinct pair with full product width and product remainder 1 or 4 modulo five.",
+    "detail": "Both searches recovered the factors each time. Candidate generation and priority classification have separate counts.",
+    "sources": [
+      {
+        "href": "discoveries/does-favored-first-save-work-on-average.md#where-the-gains-and-losses-come-from",
+        "label": "Measured gains and losses by width"
+      },
+      {
+        "href": "experiments/whole_width_sum_order.py",
+        "label": "Run the finite census"
+      }
+    ]
+  },
+  {
     "id": "global-order-full-size-work",
     "category": "gains",
     "title": "At least 70% fewer square tests on more than 24.9% of balanced 2,048-bit products",
