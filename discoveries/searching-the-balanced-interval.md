@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+For $N=35$, the count of triples whose squares add to zero modulo $N$ is simply $35^2$. Changing the modulus to $35^2$ gives 1,953,875 triples. Dividing that count by $35^3$, rounding down and subtracting 33 gives 12, the prime sum. Lean proves the same rule with the corresponding $N$ for all distinct odd primes $5\le p<q\le2p$. The exact count would suffice, and the proof specifies how much error is tolerable. [Checked controls, precision and the limits of sampling](what-changes-when-we-count-modulo-the-square-of-the-product.md)
+
 Counting the integer points on a sphere of radius $N$ gives a measurement of the full product. For $N=91$, counting all 702 points yields the prime 13. At $N=77$ the same 702 yields the sum 18. When both primes are 1 modulo 4, every positive integer radius multiplier returns a known multiple of its own count. [What exact and approximate counts reveal](what-counting-points-on-a-sphere-reveals.md)
 
 From a fixed 161-bit product suffix ending in binary 001, a list of up to $2^{32}$ guesses can cover at most a fraction $5{,}010{,}795{,}177/2^{94}$ of the modular possibilities for the sum ending. A list attains that bound. Even 121 extra bits choosing among such lists keep the best hit rate below 41.7% on full-size prime pairs under the stated endpoint estimates. [Exact coverage, small examples and the price of additional information](how-many-factor-sums-can-a-list-of-guesses-cover.md)

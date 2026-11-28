@@ -1,5 +1,89 @@
 [
   {
+    "id": "squared-cone-balanced-sum",
+    "category": "formulas",
+    "title": "Counting triples modulo N² gives the sum for every balanced prime pair",
+    "impact": "For 35 the count is 1,953,875. Dividing by 35³, rounding down, subtracting 35 and adding two yields the prime sum 12.",
+    "scope": "Distinct odd primes 5 ≤ p < q ≤ 2p, including every pair of distinct 1,024-bit primes. Obtaining the count cheaply at large size remains open.",
+    "detail": "The rule gives 18 at 77. At 65 the larger prime exceeds twice the smaller, and the rule gives 17 while the true sum is 18.",
+    "sources": [
+      {
+        "href": "discoveries/what-changes-when-we-count-modulo-the-square-of-the-product.md",
+        "label": "Derivation and three controls"
+      },
+      {
+        "href": "PrimeFactors/SquaredConeSum.lean",
+        "label": "Exact and approximate count theorems"
+      },
+      {
+        "href": "#cone-count-35-baseline",
+        "label": "Independent factor check for 35"
+      },
+      {
+        "href": "#cone-count-65-balance-control",
+        "label": "Outside the size condition"
+      }
+    ]
+  },
+  {
+    "id": "primitive-modular-cone",
+    "category": "formulas",
+    "title": "At modulus N, restricting which triples count reveals the prime sum",
+    "impact": "There are exactly N² solutions in total. If P counts only triples whose coordinates together are coprime to N, then (N+1)² − P is the square of the prime sum.",
+    "scope": "Products of distinct odd primes of any sizes. The primitive count is an additional measurement.",
+    "detail": "At 35 the primitive count is 1,152. Subtracting it from 36² gives 144, the square of 12.",
+    "sources": [
+      {
+        "href": "discoveries/what-changes-when-we-count-modulo-the-square-of-the-product.md#which-triples-carry-the-information",
+        "label": "What a primitive triple means"
+      },
+      {
+        "href": "PrimeFactors/SemiprimeThreeSquareCone.lean",
+        "label": "Count and square identity"
+      }
+    ]
+  },
+  {
+    "id": "squared-cone-estimate-precision",
+    "category": "formulas",
+    "title": "An error of half a cube still permits exact recovery of the sum",
+    "impact": "An integer estimate within N³/2 of the true modular count determines the exact even prime sum S. The public estimate N⁴ misses by more than N³(S−2).",
+    "scope": "For distinct odd primes 5 ≤ p < q ≤ 2p. The error tolerance is absolute, while the count itself is larger than N⁴.",
+    "detail": "The allowed error follows from the distance between the count intervals for successive even sums. The relative error of the simple estimate N⁴ is below 3/p when measured against N⁴.",
+    "sources": [
+      {
+        "href": "discoveries/what-changes-when-we-count-modulo-the-square-of-the-product.md#how-accurate-must-an-estimate-be",
+        "label": "Recovering the sum with an estimate"
+      },
+      {
+        "href": "PrimeFactors/SquaredConeSum.lean",
+        "label": "Rounding proof"
+      },
+      {
+        "href": "PrimeFactors/ConeSamplingBudget.lean",
+        "label": "Accuracy of the public estimate"
+      }
+    ]
+  },
+  {
+    "id": "squared-cone-uniform-sampling",
+    "category": "limits",
+    "title": "Sampling triples uniformly cannot measure the count at a modest budget",
+    "impact": "For budgets from one draw through N²/4, the usual estimate from the hit rate has at least 100% relative error on every sample.",
+    "scope": "The deterministic error bound concerns the ordinary hit-rate estimator. For independent uniform draws, the chance of any hit in B draws is below 2B/N².",
+    "detail": "The first positive estimate is already at least twice the true count. At 15, a single uniform draw hits with exact probability 319/50,625.",
+    "sources": [
+      {
+        "href": "discoveries/what-changes-when-we-count-modulo-the-square-of-the-product.md#how-accurate-must-an-estimate-be",
+        "label": "Sampling bound"
+      },
+      {
+        "href": "PrimeFactors/ConeSamplingBudget.lean",
+        "label": "Proof for every sample"
+      }
+    ]
+  },
+  {
     "id": "upstream-least-prime-witness-bound",
     "category": "formulas",
     "title": "A formal RH consequence gives an explicit small-prime witness bound",

@@ -1,5 +1,25 @@
 [
   {
+    "id": "cone-count-35-baseline",
+    "description": "Small-prime baseline for the squared-modulus cone count at the balanced pair 5 and 7",
+    "n": "35",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["5", "7"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "cone-count-65-balance-control",
+    "description": "Small-prime baseline for the squared-modulus cone count outside the balance hypothesis",
+    "n": "65",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["5", "13"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
     "id": "three-square-radius-77-baseline",
     "description": "Small-prime baseline for the 77 lattice-point census",
     "n": "77",

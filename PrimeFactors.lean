@@ -1123,3 +1123,8 @@ import PrimeFactors.ThreeSquareSignalPopulation
 import PrimeFactors.FiniteThreeSquareTwists
 import PrimeFactors.ThreeSquareTwistExamples
 import PrimeFactors.LeastPrimeBoundInterface
+import PrimeFactors.ThreeSquareCone
+import PrimeFactors.SemiprimeThreeSquareCone
+import PrimeFactors.PrimeSquareThreeSquareCone
+import PrimeFactors.SquaredConeSum
+import PrimeFactors.ConeSamplingBudget
