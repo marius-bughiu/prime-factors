@@ -1,0 +1,118 @@
+{
+  "targets": {
+    "17": 200,
+    "41": 1
+  },
+  "setup_per_distinct_target_and_depth": {
+    "17": {
+      "3": {
+        "lanes": 5,
+        "unresolved": [
+          1,
+          7
+        ],
+        "child_residue_tests": 4
+      },
+      "5": {
+        "lanes": 9,
+        "unresolved": [
+          9,
+          23
+        ],
+        "child_residue_tests": 12
+      },
+      "8": {
+        "lanes": 15,
+        "unresolved": [
+          23,
+          233
+        ],
+        "child_residue_tests": 24
+      }
+    },
+    "41": {
+      "3": {
+        "lanes": 5,
+        "unresolved": [
+          3,
+          5
+        ],
+        "child_residue_tests": 4
+      },
+      "5": {
+        "lanes": 9,
+        "unresolved": [
+          13,
+          19
+        ],
+        "child_residue_tests": 12
+      },
+      "8": {
+        "lanes": 15,
+        "unresolved": [
+          51,
+          205
+        ],
+        "child_residue_tests": 24
+      }
+    }
+  },
+  "reference": {
+    "raw_gcds": 135168,
+    "raw_square_roots": 1197,
+    "full_classifications": 138356,
+    "full_gcds": 117249
+  },
+  "by_depth": {
+    "3": {
+      "gcds": 117249,
+      "square_roots": 3765,
+      "deep_classifications": 28436,
+      "unused_lookahead": 804
+    },
+    "5": {
+      "gcds": 117249,
+      "square_roots": 7557,
+      "deep_classifications": 5762,
+      "unused_lookahead": 1601
+    },
+    "8": {
+      "gcds": 117249,
+      "square_roots": 11874,
+      "deep_classifications": 938,
+      "unused_lookahead": 2633
+    }
+  },
+  "example": {
+    "product": "135529",
+    "factors": [
+      "313",
+      "433"
+    ],
+    "target": 17,
+    "first_x": 59,
+    "found_divisor": "433",
+    "work": {
+      "3": {
+        "gcds": 24,
+        "square_roots": 9,
+        "deep_classifications": 4,
+        "unused_lookahead": 4
+      },
+      "5": {
+        "gcds": 24,
+        "square_roots": 17,
+        "deep_classifications": 4,
+        "unused_lookahead": 8
+      },
+      "8": {
+        "gcds": 24,
+        "square_roots": 27,
+        "deep_classifications": 0,
+        "unused_lookahead": 9
+      }
+    },
+    "raw_gcds": 42,
+    "full_classifications": 43
+  }
+}

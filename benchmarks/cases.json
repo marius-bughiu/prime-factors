@@ -1087,5 +1087,57 @@
     ],
     "remaining": [],
     "fermat_steps": 1
+  },
+  {
+    "id": "odd-band-8249",
+    "description": "Trial division baseline for the coprime-halving example",
+    "n": "8249",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": [
+      "73",
+      "113"
+    ],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "odd-band-8927",
+    "description": "Trial division baseline for the example requiring two halvings",
+    "n": "8927",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": [
+      "79",
+      "113"
+    ],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "odd-band-15571079",
+    "description": "Fermat baseline for the selected target-17 product with 250 additional gcd skips",
+    "n": "15571079",
+    "max_steps": 2,
+    "status": "complete",
+    "factors": [
+      "3823",
+      "4073"
+    ],
+    "remaining": [],
+    "fermat_steps": 2
+  },
+  {
+    "id": "odd-band-135529",
+    "description": "Fermat baseline for depth-eight progressions at target 17",
+    "n": "135529",
+    "max_steps": 5,
+    "status": "complete",
+    "factors": [
+      "313",
+      "433"
+    ],
+    "remaining": [],
+    "fermat_steps": 5
   }
 ]

@@ -1256,3 +1256,10 @@ import PrimeFactors.CircleMarkSmallTargetPopulation
 import PrimeFactors.CircleMarkSmallTargets
 import PrimeFactors.CircleMarkTargetFrequency
 import PrimeFactors.CircleMarkWindows
+import PrimeFactors.CircleMarkReducedBands
+import PrimeFactors.CircleMarkTwoAdicSavings
+import PrimeFactors.CircleMarkParityLanes
+import PrimeFactors.CircleMarkFirstTarget
+import PrimeFactors.CircleMarkFirstTargetPopulation
+import PrimeFactors.CircleMarkSelectedSavings
+import PrimeFactors.CircleMarkDyadicLanes

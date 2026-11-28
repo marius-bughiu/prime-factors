@@ -1,5 +1,149 @@
 [
   {
+    "id": "odd-part-band-refinement",
+    "category": "gains",
+    "title": "Removing powers of two rules out extra gcd tests",
+    "impact": "When the product is odd, its gcd with a difference is exactly its gcd with the odd part. Testing whether the odd part could contain a factor preserves every first hit and can exclude more positions.",
+    "scope": "Uses the known factor width. The proof also works for any known divisor of the difference that is coprime to the product.",
+    "detail": "At 8,927 and target 5, the difference 164 and its half 82 pass the raw size test. Its odd part 41 is too small.",
+    "sources": [
+      {
+        "href": "discoveries/when-removing-powers-of-two-saves-factor-tests.md",
+        "label": "Explanation and costs"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkReducedBands.lean",
+        "label": "Gcd and search preservation"
+      }
+    ]
+  },
+  {
+    "id": "odd-part-band-census",
+    "category": "cases",
+    "title": "Full removal saved another 402,248 gcds on the complete small census",
+    "impact": "Among 27,527 products the new test used 16,823,840 gcds and preserved the same first successful coordinate on each product. For 76,434 of the additional skips, halving once would still have left a candidate.",
+    "scope": "Every distinct 7–12-bit prime pair with a product of twice the prime width. The target was selected from the product.",
+    "detail": "The previous bands used 17,226,088 gcds and a consecutive scan used 18,830,097.",
+    "sources": [
+      {
+        "href": "discoveries/when-removing-powers-of-two-saves-factor-tests.md",
+        "label": "Explanation and costs"
+      },
+      {
+        "href": "benchmarks/circle-mark-reduced.json",
+        "label": "Per-width census"
+      }
+    ]
+  },
+  {
+    "id": "odd-part-parity-jumps",
+    "category": "gains",
+    "title": "Two progressions generate the surviving even and odd positions",
+    "impact": "For target 2 and for targets congruent to 3, 5 or 7 modulo eight, parity determines the full power to remove. Integer square roots give the endpoints of each surviving progression.",
+    "scope": "The two-progressions implementation applied on 27,326 of the 27,527 products and switched to a consecutive loop once both progressions became continuous.",
+    "detail": "The implementation finished earlier than the previous interval method in four paired trials on all 19,546 twelve-bit prime pairs with 24-bit product.",
+    "sources": [
+      {
+        "href": "discoveries/when-removing-powers-of-two-saves-factor-tests.md",
+        "label": "Explanation and costs"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkParityLanes.lean",
+        "label": "Parity and interval endpoints"
+      }
+    ]
+  },
+  {
+    "id": "odd-part-timing-controls",
+    "category": "cases",
+    "title": "The consecutive loop was faster even after the interval methods saved gcds",
+    "impact": "Median times on the 12-bit cohort were 1.455 seconds for consecutive positions, 1.660 for the parity method, 1.769 for raw bands and 0.060 for Fermat.",
+    "scope": "Four trials on CPython 3.9.6, Apple M4. Target selection and result checking were outside the measured search loops.",
+    "detail": "All three marked-coordinate searches agreed on the first position and factor for every product.",
+    "sources": [
+      {
+        "href": "discoveries/when-removing-powers-of-two-saves-factor-tests.md",
+        "label": "Explanation and costs"
+      },
+      {
+        "href": "experiments/circle_mark_reduced.py",
+        "label": "Timing and checksum harness"
+      }
+    ]
+  },
+  {
+    "id": "odd-part-target-frequency",
+    "category": "formulas",
+    "title": "The first six targets suffice on about 63 out of 64 full-size products",
+    "impact": "The first negative Jacobi target exceeds 13 exactly when the product or its negative is a square modulo 120,120. This occurs in exactly 360 of 23,040 invertible classes.",
+    "scope": "For the actual 2,048-bit population the share differs from 1/64 by at most 2^-146 under the explicit Dirichlet-GRH prime-count estimates for this modulus.",
+    "detail": "All six early targets admit two parity progressions. Some later targets do too.",
+    "sources": [
+      {
+        "href": "discoveries/when-removing-powers-of-two-saves-factor-tests.md",
+        "label": "Explanation and costs"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkFirstTargetPopulation.lean",
+        "label": "Exact count and prime-pair transfer"
+      }
+    ]
+  },
+  {
+    "id": "odd-part-dyadic-progressions",
+    "category": "formulas",
+    "title": "Only two residue classes need another bit to determine the full divisor",
+    "impact": "For a target congruent to one modulo eight, two classes at each depth have a newly determined exponent. Two other classes require another bit, and only four child residues need testing at the next depth.",
+    "scope": "The parity-independent count describes full coordinate periods. The number of such positions before a particular first hit can vary.",
+    "detail": "For target 17 the two unresolved classes modulo 256 are 23 and 233. The classes 105 and 151 have exponent exactly eight.",
+    "sources": [
+      {
+        "href": "discoveries/when-removing-powers-of-two-saves-factor-tests.md",
+        "label": "Explanation and costs"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkDyadicLanes.lean",
+        "label": "Partition and next-bit proof"
+      }
+    ]
+  },
+  {
+    "id": "odd-part-dyadic-fallback",
+    "category": "cases",
+    "title": "Sparse progressions cut 138,356 individual classifications to 938",
+    "impact": "Across all 201 difficult-target products in the small census, depth eight preserved every first hit and all 117,249 gcd tests.",
+    "scope": "Targets were 17 or 41. The count includes classifications caused by prefetching values from a stream.",
+    "detail": "This trade required 11,874 endpoint square roots and left 2,633 prefetched candidates unused.",
+    "sources": [
+      {
+        "href": "discoveries/when-removing-powers-of-two-saves-factor-tests.md",
+        "label": "Explanation and costs"
+      },
+      {
+        "href": "benchmarks/circle-mark-dyadic-lanes.json",
+        "label": "Depths 3, 5 and 8"
+      }
+    ]
+  },
+  {
+    "id": "odd-part-full-width-limit",
+    "category": "limits",
+    "title": "Full removal still saves less than one part in 2^350 on almost every full-size input",
+    "impact": "For all but fewer than one in 2^85 eligible prime pairs, removing every factor of two skips less than a 2^-350 fraction of coordinates through the first mark.",
+    "scope": "This holds simultaneously for positive negative-Jacobi targets through 2,015,165. The denominator counts all distinct 1,024-bit prime pairs with a 2,048-bit product.",
+    "detail": "The proof uses unconditional counting. Targets covered by the two-parity table satisfy the sharper bound 2^-359 outside the same exceptions.",
+    "sources": [
+      {
+        "href": "discoveries/when-removing-powers-of-two-saves-factor-tests.md",
+        "label": "Explanation and costs"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkTwoAdicSavings.lean",
+        "label": "Unconditional upper bound"
+      }
+    ]
+  },
+  {
     "id": "safe-cofactor-band-skips",
     "category": "gains",
     "title": "The factor width rules out whole stretches of gcd tests",
