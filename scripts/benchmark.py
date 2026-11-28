@@ -67,7 +67,7 @@ from scripts.hasse_benchmark import hasse_case
 from scripts.short_pascal_benchmark import short_case
 from scripts.quotient_pascal_benchmark import quotient_pascal_case
 from scripts.half_gauss_benchmark import half_gauss_case
-from experiments import dyadic_factor_bands, dyadic_totative_masks
+from experiments import dyadic_factor_bands, dyadic_totative_masks, shifted_square_sum_readout
 from scripts.growing_factorial_benchmark import growing_case
 from scripts.block_exclusion_benchmark import block_exclusion_case
 from scripts.block_subresultant_benchmark import block_subresultant_case
@@ -1727,6 +1727,13 @@ end PrimeFactors.Generated
         result = character_column_case(case, proof, agree, certify_split)
     elif method == 'quotient-pascal':
         result = quotient_pascal_case(case, proof, agree, certify_split)
+    elif method == 'shifted-square-sum-readout':
+        work = shifted_square_sum_readout.search(int(case['n']), case['factor_bits'])
+        elapsed = time.perf_counter() - start
+        factor = work.pop('factor')
+        agree(case, work, ['precision', 'root_lifts', 'sum_predictions', 'candidate_sum',
+                           'discriminant', 'integer_sum_checks'])
+        result = certify_split(case, proof, factor, elapsed, 'shifted_square_sum_readout', work)
     elif method == 'dyadic-factor-bands':
         n = int(case['n'])
         work = dyadic_factor_bands.search(n, case['max_positions'])
@@ -2107,6 +2114,7 @@ def iter_cases():
                              ('half-gauss.json', 'half-gauss'),
                              ('dyadic-totative-masks.json', 'dyadic-totative-masks'),
                              ('dyadic-factor-bands.json', 'dyadic-factor-bands'),
+                             ('shifted-square-sum-readout.json', 'shifted-square-sum-readout'),
                              ('growing-factorial.json', 'growing-factorial'),
                              ('block-exclusion.json', 'block-exclusion'),
                              ('block-subresultant.json', 'block-subresultant'),

@@ -1096,3 +1096,11 @@ import PrimeFactors.FactorEndingDecoder
 import PrimeFactors.FactorPairSeparationPopulation
 import PrimeFactors.FactorEndingSeparationControls
 import PrimeFactors.FactorEndingDecoderControls
+import PrimeFactors.DyadicSumPeak
+import PrimeFactors.DyadicSumGuessPopulation
+import PrimeFactors.DecidableSumGuessMass
+import PrimeFactors.FullWidthSumPrediction
+import PrimeFactors.OddWidthSumPredictions
+import PrimeFactors.ShiftedSquareSumReadout
+import PrimeFactors.ShiftedSquareSumCoverage
+import PrimeFactors.ShiftedSquareSumFullSize

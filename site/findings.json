@@ -1,5 +1,70 @@
 [
   {
+    "id": "public-shifted-square-one-sum-check",
+    "category": "cases",
+    "title": "One sum prediction splits 601,049 and misses 842,713",
+    "impact": "Given only each product and the ten-bit factor width, the rule predicts 1,590 for both. One integer check returns 619 × 971 on the first product and leaves the second unresolved.",
+    "scope": "Two selected 20-bit products with the same twelve low bits. The factor width fixes the eleven-bit precision in advance.",
+    "detail": "Eight binary root-lifting steps give opposite sum remainders 458 and 1,590. Two ten-bit primes have a sum in the upper half of this period, so only 1,590 is checked.",
+    "sources": [
+      {"href": "discoveries/when-one-public-square-root-predicts-the-prime-sum.md", "label": "Worked comparison"},
+      {"href": "PrimeFactors/ShiftedSquareSumReadout.lean", "label": "Readout, soundness and checked examples"},
+      {"href": "#shifted-square-sum-20-hit", "label": "601,049 benchmark"},
+      {"href": "#shifted-square-sum-20-miss", "label": "842,713 benchmark"}
+    ]
+  },
+  {
+    "id": "public-shifted-square-full-width-limit",
+    "category": "limits",
+    "title": "The one-sum test succeeds on fewer than one in 2⁵⁰⁰ eligible 2,048-bit products",
+    "impact": "At the fixed 1,025-bit precision, a split requires the difference between the primes to have exactly 512 trailing zero bits. Counting prime pairs with this property gives an unconditional upper bound.",
+    "scope": "The denominator includes every unordered pair of distinct 1,024-bit primes with a 2,048-bit product. Products failing the initial modulo-eight test count as misses.",
+    "detail": "A previously certified full-size product passes the modulo-eight test. Its factor difference has 540 trailing zero bits, so the same rule returns no split.",
+    "sources": [
+      {"href": "discoveries/when-one-public-square-root-predicts-the-prime-sum.md", "label": "What the full-size bound counts"},
+      {"href": "PrimeFactors/ShiftedSquareSumCoverage.lean", "label": "Unconditional population count"},
+      {"href": "PrimeFactors/ShiftedSquareSumFullSize.lean", "label": "Full-width miss with the certified primes"}
+    ]
+  },
+  {
+    "id": "square-ending-best-161-bit-sum-guess",
+    "category": "limits",
+    "title": "The best single 161-bit sum guess succeeds about once in 2⁷⁹ when the product suffix ends in 001",
+    "impact": "For every fixed 161-bit product suffix ending in binary 001, the best chance of guessing the true 161-bit sum remainder differs from 2⁻⁷⁹ by at most 2⁻²²⁵.",
+    "scope": "Each distinct pair of 1,024-bit primes with a 2,048-bit product and that exact suffix counts once. The guess uses the suffix. The prime-population estimate assumes the published arithmetic-progression bound under Dirichlet GRH.",
+    "detail": "The uniform modular count is exact. Each of two opposite best guesses covers 2⁸¹ of the 2¹⁶⁰ ordered residue pairs. Every maximizing guess in the prime population is one of those two.",
+    "sources": [
+      {"href": "discoveries/when-one-public-square-root-predicts-the-prime-sum.md", "label": "One guess and its chance of success"},
+      {"href": "PrimeFactors/FullWidthSumPrediction.lean", "label": "Maximum frequency and prime-count assumptions"},
+      {"href": "PrimeFactors/DyadicSumPeak.lean", "label": "Exact modular multiplicities"}
+    ]
+  },
+  {
+    "id": "correct-public-sum-guess-81-factor-bits",
+    "category": "formulas",
+    "title": "A correct most-frequent 161-bit sum guess fixes exactly 81 low bits of each factor",
+    "impact": "If either of the two most frequent sum predictions is correct, the product and those 161 sum bits identify the unordered pair of 81-bit factor endings. A different modular pair remains compatible at 82 bits.",
+    "scope": "Odd factors whose product ends in binary 001. The modular result is unconditional and assumes the true sum has the guessed remainder.",
+    "detail": "A correct prediction at this precision requires the factors to share their first 80 low bits and differ in the next bit. This gap condition gives the exact limit on how much of each factor the reading identifies.",
+    "sources": [
+      {"href": "discoveries/when-one-public-square-root-predicts-the-prime-sum.md", "label": "What a correct prediction determines"},
+      {"href": "PrimeFactors/OddWidthSumPredictions.lean", "label": "Exact gap condition and ending width"},
+      {"href": "PrimeFactors/FactorPairSeparationDepth.lean", "label": "Why the next bit is ambiguous"}
+    ]
+  },
+  {
+    "id": "public-sum-guess-cost-of-identifying-endings",
+    "category": "limits",
+    "title": "Requiring a sum guess to identify both five-bit factor endings halves the best success rate in a 64-pair example",
+    "impact": "For product 1 modulo 128, sum remainders 46 and 82 each occur in 16 of 64 ordered pairs. Neither fixes both five-bit factor endings. The best remainders that do, 62 and 66, each occur in eight pairs.",
+    "scope": "An exact census of uniform ordered residue pairs with the indicated product. Each guess names one remainder.",
+    "detail": "For k ≥ 3 and a sum reading of at least k bits, one guess fixing both k-bit endings covers at most 2^(2−k) of the ordered residue pairs at a fixed odd product. Equal factor endings halve that bound. Each pair attains its bound at the first sufficient precision.",
+    "sources": [
+      {"href": "discoveries/when-one-public-square-root-predicts-the-prime-sum.md", "label": "Sum prediction and ending identification"},
+      {"href": "PrimeFactors/DecidableSumGuessMass.lean", "label": "Complete census and exact mass at the first sufficient width"}
+    ]
+  },
+  {
     "id": "supplied-sum-168-bit-factor-endings",
     "category": "formulas",
     "title": "168 supplied sum bits identify both 160-bit factor endings on about 99.61% of full-size products",

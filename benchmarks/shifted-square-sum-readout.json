@@ -1,0 +1,32 @@
+[
+  {
+    "id": "shifted-square-sum-20-hit",
+    "description": "Matched 20-bit input A. The public ten-bit factor width fixes an eleven-bit sum prediction and a single integer check.",
+    "n": "601049",
+    "factor_bits": 10,
+    "precision": 11,
+    "root_lifts": 8,
+    "sum_predictions": [458, 1590],
+    "candidate_sum": 1590,
+    "discriminant": 123904,
+    "integer_sum_checks": 1,
+    "status": "complete",
+    "factors": ["619", "971"],
+    "remaining": []
+  },
+  {
+    "id": "shifted-square-sum-20-miss",
+    "description": "Matched 20-bit input B. The same product suffix and public width give the same upper sum, which fails the single integer check.",
+    "n": "842713",
+    "factor_bits": 10,
+    "precision": 11,
+    "root_lifts": 8,
+    "sum_predictions": [458, 1590],
+    "candidate_sum": 1590,
+    "discriminant": -842752,
+    "integer_sum_checks": 1,
+    "status": "partial",
+    "factors": [],
+    "remaining": ["842713"]
+  }
+]

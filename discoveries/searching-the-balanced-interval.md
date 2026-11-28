@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A square root computed from the public product gives a single candidate for the full sum when both prime widths are known and even. It found 619 and 971 and missed a second product with the same twelve low bits. Across all eligible full-size inputs the success rate of this specific test is below $2^{-500}$. [Exact success condition, two controls and full-population proof](when-one-public-square-root-predicts-the-prime-sum.md)
+
 With 168 supplied low sum bits, a square-root calculation recovers the low 160 bits of both factors for about 255 out of every 256 eligible products under the stated Dirichlet-GRH estimate. The decoder also decides whether it needs another bit. The independent 2,048-bit control needs 161 sum bits and the constructed quartic needs 319. [Exact decoding thresholds and six matched examples](how-many-sum-bits-identify-the-factor-endings.md)
 
 A gcd gives the exact precision of the sum remainder forced by a supplied factor remainder. With 160 supplied low factor bits, a full-size pair has about **162 fixed low sum bits on average** under the stated Dirichlet-GRH estimate. Even a scan given the correct class has at least $2^{579}$ earlier sums on all but fewer than one in $2^{35}$ inputs. [Greatest modulus, mean and full-size examples](how-many-sum-bits-a-factor-clue-really-gives.md)
