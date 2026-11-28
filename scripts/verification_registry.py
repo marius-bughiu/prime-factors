@@ -25,6 +25,8 @@ def experiment(name, *args, data=RESEARCH, lean=False, proof=None):
 # fixture and reference result, also when one is added, renamed or removed.
 CHECKS = (
     Check('unit-tests', ('python3', '-m', 'unittest', 'discover', '-s', 'tests'), lean=True),
+    Check('transposed-blocks', ('python3', '-m', 'experiments.transposed_block_receipt'),
+          ('benchmarks/transposed-blocks.json',), True, ('transposed-blocks-2048.lean',)),
     experiment('certified_control', '--verify', lean=True, data=(
         'research/certified-control.json', 'benchmarks/controls/PocklingtonControl.lean',
         'benchmarks/quartic-factor-lanes.json')),

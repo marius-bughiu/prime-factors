@@ -1,5 +1,141 @@
 [
   {
+    "id": "transposed-two-blocks-full-size",
+    "category": "cases",
+    "title": "Two square roots recover two 1,024-bit primes with exchanged blocks",
+    "impact": "The formula returned both primes from their 2,048-bit product with a 512-bit block width derived from the input length. Ordinary Fermat first succeeds after more than 2^1016 tests on this product.",
+    "scope": "We chose the primes to have reversed blocks and easily certified predecessors. The planted common remainder also permits a different shortcut when supplied.",
+    "detail": "Both the division formula and the modular formula recover the pair in Lean. A separate replay starts with the decimal product and checks both returned primes.",
+    "sources": [
+      {
+        "href": "discoveries/when-exchanging-two-blocks-reveals-both-primes.md#a-2048-bit-product-recovered-from-its-two-blocks",
+        "label": "Construction, costs and second shortcut"
+      },
+      {
+        "href": "PrimeFactors/FullWidthTransposedFixture.lean",
+        "label": "Full-size proof and exact Fermat comparison"
+      },
+      {
+        "href": "benchmarks/transposed-blocks.json",
+        "label": "Input and expected factors"
+      },
+      {
+        "href": "proofs/transposed-blocks-2048.lean",
+        "label": "Independent prime certificates"
+      }
+    ]
+  },
+  {
+    "id": "transposed-two-blocks-quotient",
+    "category": "formulas",
+    "title": "Division identifies exchanged blocks even when multiplication has carries",
+    "impact": "At radix 31, the quotient 515 and remainder 14 single out the block product 510. Two square roots then give the prime factors 557 and 947 of 527,479.",
+    "scope": "Two positive distinct blocks appearing in opposite order in a chosen integer radix. The formula handles both odd and even radices.",
+    "detail": "The quotient overestimates the block product by less than one radix, and the product gives the missing remainder.",
+    "sources": [
+      {
+        "href": "discoveries/when-exchanging-two-blocks-reveals-both-primes.md#how-the-product-gives-the-blocks",
+        "label": "Worked division and recovery"
+      },
+      {
+        "href": "PrimeFactors/TransposedBlockQuotient.lean",
+        "label": "Soundness and exact family characterization"
+      },
+      {
+        "href": "#reversal-control-527479",
+        "label": "Ordinary Fermat baseline"
+      }
+    ]
+  },
+  {
+    "id": "transposed-blocks-arbitrary-radix",
+    "category": "limits",
+    "title": "Even choosing the radix separately for every product rarely exposes a reversed pair",
+    "impact": "Fewer than one in 2^490 eligible products admit a two-block reversal in any integer radix. Restricting the choice to all binary widths gives fewer than one in 2^1006.",
+    "scope": "All pairs of distinct 1,024-bit primes with 2,048-bit products, counted once. The all-radix bound allows odd radices and both digit parities.",
+    "detail": "Small radices permit one partner per prime, and at large radices the allowed digits shrink. Any one pair can qualify at only one binary block width.",
+    "sources": [
+      {
+        "href": "discoveries/when-exchanging-two-blocks-reveals-both-primes.md#how-often-can-the-radix-help",
+        "label": "What the denominators count"
+      },
+      {
+        "href": "PrimeFactors/ArbitraryRadixTransposePopulation.lean",
+        "label": "All integer radices"
+      },
+      {
+        "href": "PrimeFactors/TransposedBlockPopulation.lean",
+        "label": "Binary widths"
+      },
+      {
+        "href": "PrimeFactors/BinaryTransposeUniqueness.lean",
+        "label": "Uniqueness of the binary split"
+      }
+    ]
+  },
+  {
+    "id": "transposed-wide-block-ends",
+    "category": "gains",
+    "title": "A mismatch between the ends of the product can rule out a block width",
+    "impact": "At base 512 the product 43,431,077 has first and last bytes 165. Its nearby control starts with 165 and ends with 29, immediately ruling out that width.",
+    "scope": "For full-size reversed-block products the test is valid at binary widths of 683 bits and above in the eligible range. Passing the screen is a necessary condition.",
+    "detail": "In this range three product coefficients are small enough to occupy separate digits, and the outer coefficient appears twice.",
+    "sources": [
+      {
+        "href": "discoveries/when-exchanging-two-blocks-reveals-both-primes.md#how-often-can-the-radix-help",
+        "label": "How to apply the screen"
+      },
+      {
+        "href": "PrimeFactors/TransposedProductDigits.lean",
+        "label": "Bit threshold and checked hit and miss"
+      }
+    ]
+  },
+  {
+    "id": "sum-gap-divisor-lift",
+    "category": "formulas",
+    "title": "Midpoint and gap divisibility turn one remainder into an integer square",
+    "impact": "With fixed divisors 11 and 7, the remainder 25 gives the half-gap 35 at 37,979 and recovers 163 and 233. At 536,113 the second lift recovers 653 and 821.",
+    "scope": "The examples satisfy the divisibility conditions. At fixed positive coprime divisors, the first-lift condition holds on fewer than one in 2^1007 eligible pairs.",
+    "detail": "The product fixes the squared, scaled half-gap modulo the square of the midpoint divisor. Its exact quotient gives the lift index.",
+    "sources": [
+      {
+        "href": "discoveries/when-exchanging-two-blocks-reveals-both-primes.md#what-if-only-divisibility-of-the-sum-and-gap-is-known",
+        "label": "Examples, conditions and cost"
+      },
+      {
+        "href": "PrimeFactors/SumGapDivisorReadout.lean",
+        "label": "Recovery from a square remainder"
+      },
+      {
+        "href": "PrimeFactors/SumGapDivisorPopulation.lean",
+        "label": "Coverage of a fixed pair of divisors"
+      },
+      {
+        "href": "#reversal-control-536113",
+        "label": "Fermat comparison at 536,113"
+      }
+    ]
+  },
+  {
+    "id": "three-block-reversal-ambiguity",
+    "category": "cases",
+    "title": "Reversing three blocks gives at most two readings when the digits multiply without a carry",
+    "impact": "At radix 61 the only triple for 172,659,841 gives primes 11,411 and 15,131. A composite control admits two genuinely different pairs.",
+    "scope": "The central coefficient a²+b²+c² must be less than the radix. At least one prime factor suffices for uniqueness within the family.",
+    "detail": "The outer product digits give the sum and difference of two hidden quantities via square roots. Checking the two ways to assign them takes at most two further roots.",
+    "sources": [
+      {
+        "href": "discoveries/when-exchanging-two-blocks-reveals-both-primes.md#when-three-blocks-are-reversed",
+        "label": "Recovery and ambiguity"
+      },
+      {
+        "href": "PrimeFactors/ThreeBlockReversal.lean",
+        "label": "Exact candidate count, primality and controls"
+      }
+    ]
+  },
+  {
     "id": "rounded-ratio-prime-sum",
     "category": "limits",
     "title": "Rounding a ratio of polynomials rarely gives the prime sum",

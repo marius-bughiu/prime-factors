@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Two factors whose two blocks occur in opposite order can be recovered from their product and radix by ordinary division and two square roots. This recovered two deliberately constructed 1,024-bit primes. The all-radix coverage is below one in $2^{490}$ eligible pairs. [How to read the blocks and what limits the method](when-exchanging-two-blocks-reveals-both-primes.md)
+
 Predicting the prime sum with a function that never decreases succeeds on fewer than one in $2^{484}$ eligible products. More than two thirds have a prime gap of at least $2^{1006}$, and within that group the fraction is below one in $2^{979}$. The same argument proves the existence of a sequence of more than $2^{979}$ increasing products with strictly decreasing sums. [Examples, upper and lower bounds, and the counting argument](why-a-larger-product-can-have-a-smaller-prime-sum.md)
 
 At 697 a multiplier of 10, chosen using the product's Jacobi symbols, changes the large three-square count to 18,696. Dividing by the base count 24, subtracting 697 and halving gives 41. The released Dirichlet result and an explicit least-prime theorem bound the multiplier by 4,030,330 across the full-size range. The cost of obtaining the large count remains open. [Adaptive choice, worked example and separate proof inputs](choosing-a-three-square-twist-from-the-product.md)

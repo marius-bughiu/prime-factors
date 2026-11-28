@@ -1,5 +1,44 @@
 [
   {
+    "id": "reversal-control-527479",
+    "description": "Fermat baseline for the odd-radix formula with nonzero carries",
+    "n": "527479",
+    "max_steps": 26,
+    "status": "complete",
+    "factors": [
+      "557",
+      "947"
+    ],
+    "remaining": [],
+    "fermat_steps": 26
+  },
+  {
+    "id": "reversal-control-789827",
+    "description": "Fermat baseline for the nearby negative control at radix 32",
+    "n": "789827",
+    "max_steps": 6,
+    "status": "complete",
+    "factors": [
+      "797",
+      "991"
+    ],
+    "remaining": [],
+    "fermat_steps": 6
+  },
+  {
+    "id": "reversal-control-536113",
+    "description": "Fermat baseline for the second-lift midpoint and gap example",
+    "n": "536113",
+    "max_steps": 5,
+    "status": "complete",
+    "factors": [
+      "653",
+      "821"
+    ],
+    "remaining": [],
+    "fermat_steps": 5
+  },
+  {
     "id": "prime-sum-reversal-32881",
     "description": "Fermat baseline for the first product in the five-pair decreasing-sum example",
     "n": "32881",
