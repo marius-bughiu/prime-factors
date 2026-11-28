@@ -1,5 +1,18 @@
 [
   {
+    "id": "product-selected-prime-menus-in-the-early-window",
+    "category": "limits",
+    "title": "Choosing different primes for each product still leaves over 2^765 wrong sums",
+    "impact": "The smallest 117 primes attain the minimum complete-period certificate. Every allowed list leaves more than 2^765 wrong sums ahead of the true sum on the same set of typical inputs.",
+    "scope": "The existing score order, compulsory primes 2, 3 and 5, and a guaranteed residue period at most 2^896. Fewer than one in 2^35 eligible full-size inputs are exceptional.",
+    "detail": "Precision at a chosen prime is unlimited. The surviving sums can change with the list. A complete census of 31 small lists illustrates both the minimum and the change in survivors.",
+    "sources": [
+      {"href": "discoveries/can-changing-the-primes-avoid-the-wrong-sums.md", "label": "Budget, proof and small census"},
+      {"href": "PrimeFactors/PrimeMenuPeriodMinimum.lean", "label": "Minimum certificate"},
+      {"href": "PrimeFactors/PrimeMenuScorePrefix.lean", "label": "Every allowed list on the same inputs"}
+    ]
+  },
+  {
     "id": "coherent-modular-factor-pairs-for-false-sums",
     "category": "limits",
     "title": "Even mutually consistent modular factors can give the wrong sum",

@@ -1018,3 +1018,7 @@ import PrimeFactors.PersistentScorePrefix
 import PrimeFactors.CoherentMidpointRoots
 import PrimeFactors.JointLocalMidpointTower
 import PrimeFactors.ModularRootHeight
+import PrimeFactors.ArbitraryMidpointMenu
+import PrimeFactors.PrimeMenuDensityOrder
+import PrimeFactors.PrimeMenuPeriodMinimum
+import PrimeFactors.PrimeMenuScorePrefix

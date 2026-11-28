@@ -13,3 +13,5 @@ For a small example, take $145{,}684{,}811=8{,}999\times16{,}189$. The eighth ca
 The bound concerns this ordering and rejection by these 117 primes. It remains valid if the search chooses the prime and precision separately for each candidate. A different way of skipping whole groups, or a constraint involving other information about the product, requires its own analysis.
 
 The same wrong sums also admit two modular factor residues that agree at all depths and across all the primes together. The size of an ordinary integer representative supplies an additional requirement. [Compatible residues and the integer size threshold](can-the-modular-factors-agree.md)
+
+A later proof allows the list of primes itself to depend on the product. The lower bound holds for every allowed list on the same set of typical inputs. [Period budget and choice of primes](can-changing-the-primes-avoid-the-wrong-sums.md)
