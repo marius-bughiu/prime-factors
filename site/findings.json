@@ -1,5 +1,23 @@
 [
   {
+    "id": "bits-needed-to-match-a-supplied-sum",
+    "category": "limits",
+    "title": "Matching the value of a supplied sum takes at least 25 bits of outside information",
+    "impact": "Any 24-bit message leaves a mean above 58.9232 modular guesses. A specific 25-bit message brings every pair within 59 guesses and the mean below 31.",
+    "scope": "The product remainder selects the lists, and a helper may know both primes. The full-width prime population uses the stated Dirichlet-GRH estimates.",
+    "detail": "The target is the unordered pair of remainders modulo 7,239,457,225. The comparison charges guesses after the message is supplied.",
+    "sources": [
+      {
+        "href": "discoveries/how-many-supplied-bits-a-factor-remainder-guess-needs.md",
+        "label": "Threshold, assumptions and two-bit example"
+      },
+      {
+        "href": "PrimeFactors/FactorAdviceThreshold.lean",
+        "label": "Lean proof of the least bit width"
+      }
+    ]
+  },
+  {
     "id": "full-size-factor-remainders-with-known-sum",
     "category": "gains",
     "title": "A supplied sum remainder cuts the best mean to 48.899 factor-remainder guesses",

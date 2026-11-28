@@ -981,3 +981,8 @@ import PrimeFactors.FiveSquareFactorGuessing
 import PrimeFactors.SumClueOrbitRanks
 import PrimeFactors.FiveSquareSumClueMoments
 import PrimeFactors.FiveSquareActualSumClue
+import PrimeFactors.FactorOrbitAdviceFloor
+import PrimeFactors.FactorOrbitAdviceConstruction
+import PrimeFactors.FactorOrbitAdviceMenu
+import PrimeFactors.FiveSquareAdviceLimits
+import PrimeFactors.FactorAdviceThreshold

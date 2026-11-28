@@ -57,9 +57,29 @@ def with_supplied_sum(modulus):
     return pooled / len(units)
 
 
+def advised_pair(modulus, p, q, bits):
+    """Give a helper the hidden pair and check its position in the selected list."""
+    product = p * q % modulus
+    units = [a for a in range(modulus) if gcd(a, modulus) == 1]
+    pairs = {tuple(sorted((a, product * pow(a, -1, modulus) % modulus))) for a in units}
+    order = sorted(pairs, key=lambda pair: (pair[0] == pair[1], pair))
+    target = tuple(sorted((p % modulus, q % modulus)))
+    index = order.index(target)
+    size = 2**bits
+    message = index % size
+    selected = order[message::size]
+    guesses = selected.index(target) + 1
+    if guesses != index // size + 1:
+        raise AssertionError('Filtered position disagrees with the rank formula')
+    return index + 1, message, guesses
+
+
 if __name__ == '__main__':
     for m in (25, 175):
         sum_opt, sum_random, orbit_opt, orbit_random = compare(m)
         print(f'{m=}: sum best={sum_opt} random={sum_random}; '
               f'factor orbit best={orbit_opt} random={orbit_random} saved={orbit_random-orbit_opt}; '
               f'with the true sum supplied={with_supplied_sum(m)}')
+    original, message, guesses = advised_pair(25, 701, 751, 2)
+    print(f'701 × 751 modulo 25: original rank={original}, '
+          f'two-bit message={message:02b}, advised rank={guesses}')

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A helper who knows both primes needs at least **25 fixed-width bits** to match the mean achieved by revealing the true sum remainder. A particular 25-bit message puts every pair within 59 modular guesses. [Information bound and worked example](how-many-supplied-bits-a-factor-remainder-guess-needs.md)
+
 If the **correct sum remainder is supplied for free**, the five-square mean falls from 980 million guesses to about **48.899** for either factor remainder. This holds across all eligible full-size prime pairs under the published Dirichlet-GRH prime-count estimate. [Cost after a supplied clue and what it reveals](if-the-true-sum-remainder-were-given.md)
 
 When a guess must name the remainder of either prime, optimizing an order of complementary pairs saves less than one quarter of one guess on average across all full-size prime products, under published Dirichlet-GRH estimates. The sum-remainder advantage answers a different question. [Factor-remainder comparison and exact small examples](guessing-a-factor-remainder-instead-of-the-sum.md)
