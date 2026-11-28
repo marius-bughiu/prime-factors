@@ -1,5 +1,133 @@
 [
   {
+    "id": "strip-distinct-positive",
+    "category": "limits",
+    "title": "More than 2^635 different square candidates survive a full sweep",
+    "impact": "Even with a perfect cache for repeated integers, this interval search retains more than 2^635 distinct positive discriminants on every 2,048-bit product of two different odd primes.",
+    "scope": "The bound applies after the modulo-24 test on the ascending balanced-interval schedule. Further sieving, batching and other algorithms have different costs.",
+    "detail": "If the larger prime is at most 25% larger than the smaller, this many values already appear in blocks strictly before the smaller prime. On 346,597, two different blocks give the same nonsquare, 4,897. The proof accounts for such repetitions.",
+    "sources": [
+      {
+        "href": "discoveries/how-many-square-tests-survive-a-factor-interval-sweep.md",
+        "label": "Counting distinct values"
+      },
+      {
+        "href": "PrimeFactors/QuotientStripDistinctTests.lean",
+        "label": "Lean proof for complete and early scans"
+      },
+      {
+        "href": "#stationary-repeat-346597",
+        "label": "Checked example of a repeat"
+      }
+    ]
+  },
+  {
+    "id": "strip-exact-mod24",
+    "category": "gains",
+    "title": "An exact remainder check saves 831 square roots before one factor",
+    "impact": "For the 46-bit product 45,249,671,261,437, the earlier filter took 2,020 square roots to the first factor. The exact modulo-24 rule took 1,189 in the same 3,411 intervals.",
+    "scope": "Measured on published controls. On 64 small holdouts the corresponding totals fell from 301 to 210. The new rule applies when the product is coprime to six.",
+    "detail": "A line label z passes exactly when gcd(z,24) equals gcd(u+vN,24). This describes the possible residues of the weighted sum of the two factors. The surviving lines still require a square test.",
+    "sources": [
+      {
+        "href": "discoveries/reusing-lines-between-factor-intervals.md",
+        "label": "Worked example and operation counts"
+      },
+      {
+        "href": "PrimeFactors/QuotientStripLevelMod24.lean",
+        "label": "Exact residue proof"
+      },
+      {
+        "href": "#farey-exact24-12403",
+        "label": "Checked factors of 12,403"
+      }
+    ]
+  },
+  {
+    "id": "strip-farey-walk",
+    "category": "gains",
+    "title": "Neighboring intervals can share the work of choosing a line",
+    "impact": "The 46-bit search used 8,226 divisions and 11,637 comparisons to select line directions through the first factor. Computing each continued fraction separately took 23,071 divisions.",
+    "scope": "Product-only selection. Both methods chose identical directions and chord bounds on all 11,119 multi-column study intervals.",
+    "detail": "As the interval moves right the chord slope decreases. An exact comparison tells the algorithm when to move to the next reduced fraction. The cost figures count line selection separately from checking the chosen line.",
+    "sources": [
+      {
+        "href": "discoveries/reusing-lines-between-factor-intervals.md",
+        "label": "Method and tie checks"
+      },
+      {
+        "href": "PrimeFactors/QuotientStripFareyRuns.lean",
+        "label": "Optimal direction and run certificates"
+      },
+      {
+        "href": "benchmarks/quotient-strip-farey.json",
+        "label": "Measured operation counts"
+      }
+    ]
+  },
+  {
+    "id": "strip-occupied-sweep",
+    "category": "limits",
+    "title": "Skipping all empty intervals still leaves more than 2^654 blocks",
+    "impact": "For every 2,048-bit input, more than one in 2^26 blocks of a complete balanced sweep retains a positive discriminant compatible with the local pair (1,N) modulo 24.",
+    "scope": "The theorem counts complete blocks in this fixed schedule. It holds without knowing the factors or assuming the Riemann hypothesis.",
+    "detail": "The product determines many distinct rational directions. For each, Lean proves that at least two different blocks around the minimum weighted sum retain a label. These counts measure a limit on skipping empty blocks.",
+    "sources": [
+      {
+        "href": "discoveries/how-many-square-tests-survive-a-factor-interval-sweep.md",
+        "label": "What survives and why"
+      },
+      {
+        "href": "PrimeFactors/QuotientStripSurvivingBlocks.lean",
+        "label": "Count and fraction of occupied blocks"
+      }
+    ]
+  },
+  {
+    "id": "strip-restarted-control",
+    "category": "limits",
+    "title": "Starting from the known prime widths still leaves more than 2^653 blocks on the fresh control",
+    "impact": "The public restart uses both 1,024-bit widths. Even from that later start, more than 2^653 full blocks retain a candidate before the smaller prime of the independently generated 2,048-bit control.",
+    "scope": "The proof specializes to a previously certified product. The full scan was not run. A separate constructed input also satisfies the stronger bound of more than 2^635 different discriminants after its restart.",
+    "detail": "Five directions chosen from the product located ten occupied blocks on the ordinary fresh schedule and ten on a separately constructed, restarted control. All twenty selected discriminants were positive nonsquares.",
+    "sources": [
+      {
+        "href": "discoveries/how-many-square-tests-survive-a-factor-interval-sweep.md",
+        "label": "Restart assumptions and control selection"
+      },
+      {
+        "href": "PrimeFactors/QuotientStripFreshRestart.lean",
+        "label": "Independent control"
+      },
+      {
+        "href": "PrimeFactors/QuotientStripCheckedControls.lean",
+        "label": "Constructed control"
+      },
+      {
+        "href": "benchmarks/quotient-strip-stationary.json",
+        "label": "Bounded full-size checks"
+      }
+    ]
+  },
+  {
+    "id": "strip-unit-slope-tail",
+    "category": "limits",
+    "title": "One line direction alone produces at least 2^328 different square candidates",
+    "impact": "Near the square root of a 2,048-bit input, many blocks choose the ordinary sum of the two coordinates. At least 2^328 distinct labels survive in that single direction.",
+    "scope": "Every 2,048-bit input, over the full sweep. The near-end argument alone gives no bound on how many of these labels occur before the smaller factor.",
+    "detail": "The proof checks the actual integer-rounded endpoints and the continued-fraction direction. Positive labels in one fixed direction give different values of the discriminant.",
+    "sources": [
+      {
+        "href": "discoveries/how-many-square-tests-survive-a-factor-interval-sweep.md",
+        "label": "Single-direction and many-direction proofs"
+      },
+      {
+        "href": "PrimeFactors/QuotientStripTailSweep.lean",
+        "label": "Checked near-end schedule"
+      }
+    ]
+  },
+  {
     "id": "strip-five-lines",
     "category": "formulas",
     "title": "At most five lines cover a short factor interval",

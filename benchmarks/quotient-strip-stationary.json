@@ -1,0 +1,251 @@
+{
+  "selection": "Five fixed primitive pairs. For each choose the first label in class u+Nv modulo 24 at or above ceil(sqrt(4uvN))+1 and the label 24 higher. Locate each left real root directly and replay the actual chord selector. The small duplicate illustrates the same discriminant in two scheduled blocks.",
+  "scope": "Only the displayed blocks were visited. Selection, direction, residue and discriminant checks use the input alone. Known primes check the answers and stopping positions after selection.",
+  "digest_format": "SHA-256 of one ASCII line per selected row in pair/label order: i j block_index a b z low high discriminant, separated by spaces and terminated by LF.",
+  "controls": [
+    {
+      "input_id": "endpoint-offset-fresh-2048",
+      "schedule": "balanced",
+      "width_bits": 343,
+      "public_rows_sha256": "bcb0aaadc64ffbf1daec94df4324013bbc000126ebc56e69b3966a9b4c3e5db7",
+      "distinct_blocks": 10,
+      "examples": [
+        {
+          "pair": "1,1",
+          "label_mod24": 10,
+          "offsets_above_floor_minimum": [
+            9,
+            33
+          ],
+          "raw_label_counts": [
+            1,
+            1
+          ],
+          "neighboring_block_offsets": [
+            0,
+            0
+          ]
+        },
+        {
+          "pair": "2,1",
+          "label_mod24": 11,
+          "offsets_above_floor_minimum": [
+            24,
+            48
+          ],
+          "raw_label_counts": [
+            1,
+            1
+          ],
+          "neighboring_block_offsets": [
+            0,
+            0
+          ]
+        },
+        {
+          "pair": "1,2",
+          "label_mod24": 19,
+          "offsets_above_floor_minimum": [
+            5,
+            29
+          ],
+          "raw_label_counts": [
+            1,
+            1
+          ],
+          "neighboring_block_offsets": [
+            0,
+            0
+          ]
+        },
+        {
+          "pair": "F229,F230",
+          "label_mod24": 2,
+          "offsets_above_floor_minimum": [
+            2,
+            26
+          ],
+          "raw_label_counts": [
+            1,
+            1
+          ],
+          "neighboring_block_offsets": [
+            0,
+            0
+          ]
+        },
+        {
+          "pair": "2^327-1,2^327",
+          "label_mod24": 7,
+          "offsets_above_floor_minimum": [
+            2,
+            26
+          ],
+          "raw_label_counts": [
+            1,
+            1
+          ],
+          "neighboring_block_offsets": [
+            0,
+            0
+          ]
+        }
+      ],
+      "work": {
+        "stationary_label_square_roots": 5,
+        "location_square_roots": 10,
+        "blocks_examined": 10,
+        "cf_divmods": 504,
+        "level_endpoint_divisions": 20,
+        "square_tests": 10,
+        "positive_nonsquares": 10
+      }
+    },
+    {
+      "input_id": "gap-stride-2048",
+      "schedule": "1024-bit clipped",
+      "width_bits": 343,
+      "public_rows_sha256": "ab50b7d13cb306932ecc0282d0aedd66a48b56d104fe720d6e279ff94e530d30",
+      "distinct_blocks": 10,
+      "examples": [
+        {
+          "pair": "1,1",
+          "label_mod24": 4,
+          "offsets_above_floor_minimum": [
+            6,
+            30
+          ],
+          "raw_label_counts": [
+            1,
+            1
+          ],
+          "neighboring_block_offsets": [
+            0,
+            0
+          ]
+        },
+        {
+          "pair": "2,1",
+          "label_mod24": 23,
+          "offsets_above_floor_minimum": [
+            14,
+            38
+          ],
+          "raw_label_counts": [
+            1,
+            1
+          ],
+          "neighboring_block_offsets": [
+            0,
+            0
+          ]
+        },
+        {
+          "pair": "1,2",
+          "label_mod24": 13,
+          "offsets_above_floor_minimum": [
+            2,
+            26
+          ],
+          "raw_label_counts": [
+            1,
+            1
+          ],
+          "neighboring_block_offsets": [
+            0,
+            0
+          ]
+        },
+        {
+          "pair": "F229,F230",
+          "label_mod24": 20,
+          "offsets_above_floor_minimum": [
+            18,
+            42
+          ],
+          "raw_label_counts": [
+            1,
+            1
+          ],
+          "neighboring_block_offsets": [
+            0,
+            0
+          ]
+        },
+        {
+          "pair": "2^327-1,2^327",
+          "label_mod24": 13,
+          "offsets_above_floor_minimum": [
+            7,
+            31
+          ],
+          "raw_label_counts": [
+            1,
+            1
+          ],
+          "neighboring_block_offsets": [
+            0,
+            0
+          ]
+        }
+      ],
+      "work": {
+        "stationary_label_square_roots": 5,
+        "location_square_roots": 10,
+        "blocks_examined": 10,
+        "cf_divmods": 504,
+        "level_endpoint_divisions": 20,
+        "square_tests": 10,
+        "positive_nonsquares": 10
+      }
+    }
+  ],
+  "duplicate": {
+    "product": "346597",
+    "source": "quotient-strip holdout index 57",
+    "direction": [
+      3,
+      2
+    ],
+    "compatible_residues": [
+      1,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23
+    ],
+    "examples": [
+      {
+        "index": 3,
+        "bounds": [
+          465,
+          480
+        ],
+        "raw_labels": [
+          2884,
+          2885
+        ],
+        "label": 2885,
+        "discriminant": 4897,
+        "discriminant_floor_root": 69
+      },
+      {
+        "index": 4,
+        "bounds": [
+          481,
+          496
+        ],
+        "raw_labels": [
+          2884,
+          2885
+        ],
+        "label": 2885,
+        "discriminant": 4897,
+        "discriminant_floor_root": 69
+      }
+    ]
+  }
+}

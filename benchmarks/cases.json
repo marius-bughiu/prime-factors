@@ -1275,5 +1275,25 @@
     "factors": ["307", "389"],
     "remaining": [],
     "fermat_steps": 3
+  },
+  {
+    "id": "farey-exact24-12403",
+    "description": "Checked primes for the scheduled block where the weighted direction 7/4 leaves one label after the exact modulo-24 filter",
+    "n": "12403",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["79", "157"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
+    "id": "stationary-repeat-346597",
+    "description": "Checked primes for the holdout where two consecutive blocks before the smaller prime retain the same false discriminant 4897",
+    "n": "346597",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": ["571", "607"],
+    "remaining": [],
+    "fermat_steps": 1
   }
 ]

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A moving Farey approximation and the exact modulo-24 test reduce the square roots before the first factor from 2,020 to 1,189 on a 46-bit control. For a full sweep of a 2,048-bit product of two distinct odd primes, more than $2^{635}$ different positive discriminants survive this local test even when repeated values are shared. If the larger prime is at most 25% above the smaller, that many survive strictly before the smaller prime. [Measured improvements](reusing-lines-between-factor-intervals.md) · [Full-size lower bounds](how-many-square-tests-survive-a-factor-interval-sweep.md)
+
 A rational approximation computed from the product covers each sixth-root-width block with at most five integer lines. For odd products at most three discriminants require testing. At 119,423 one square gives both primes in the block from 301 through 314. A complete 2,048-bit sweep still needs more than $2^{679}$ blocks. [Geometric proof, measured work and full-width schedule](covering-a-factor-interval-with-five-lines.md)
 
 Six sums over a supplied interval leave 97 as the only surviving factor coordinate for 12,707. On 64 holdout inputs the rule reduced ordinary divisibility tests from 3,385 to 2,488 through the first factor. An ordinary-coordinate quartic came within eleven tests while using fewer floor-moment states. [First-hit comparisons and integer variance](narrowing-a-factor-interval-with-strip-moments.md)
