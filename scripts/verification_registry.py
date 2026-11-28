@@ -25,6 +25,8 @@ def experiment(name, *args, data=RESEARCH, lean=False, proof=None):
 # fixture and reference result, also when one is added, renamed or removed.
 CHECKS = (
     Check('unit-tests', ('python3', '-m', 'unittest', 'discover', '-s', 'tests'), lean=True),
+    experiment('square_mask_digit_queries', data=('benchmarks/square-mask-digit-queries.json',)),
+    experiment('jacobi_square_masks', data=('benchmarks/jacobi-square-masks.json',)),
     experiment('stopping_rank_readout', data=('benchmarks/stopping-rank-readout.json',)),
     experiment('public_grid_targets', data=('benchmarks/public-grid-targets.json',)),
     experiment('rectangle_boundary_census', data=('benchmarks/rectangle-boundary-census.json',)),

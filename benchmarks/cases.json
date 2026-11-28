@@ -1185,5 +1185,15 @@
     "factors": ["37", "73"],
     "remaining": [],
     "fermat_steps": 0
+  },
+  {
+    "id": "square-mask-digits-2183",
+    "description": "Trial division baseline for the six square-mask digit queries that recover offset 5 from the product 2183",
+    "n": "2183",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["37", "59"],
+    "remaining": [],
+    "fermat_steps": 0
   }
 ]

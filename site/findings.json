@@ -1,5 +1,195 @@
 [
   {
+    "id": "jacobi-mask-digit-work",
+    "category": "cases",
+    "title": "Six readings reveal 37, while two divisions find it directly",
+    "impact": "For 2,183, the six sums are 30, 36, 25, 25, 25 and 16. Together they reveal the base-five digits 1 and 0 and recover the smaller prime 37.",
+    "scope": "In this worked example the direct readings used 13,098 Jacobi evaluations, 67,673 modular multiplications by root terms and a final divisibility check. Testing the allowed odd candidates took two divisions ascending or five descending.",
+    "detail": "The queries use polynomials of degrees 4 through 6. Their answers give the offset 5, so the decoded candidate is 47 − 2 × 5 = 37.",
+    "sources": [
+      {
+        "href": "benchmarks/square-mask-digit-queries.json",
+        "label": "Six readings and operation counts"
+      },
+      {
+        "href": "experiments/square_mask_digit_queries.py",
+        "label": "Reproducible experiment"
+      },
+      {
+        "href": "discoveries/can-a-complete-jacobi-sum-reveal-a-prime.md",
+        "label": "Research note and worked comparison"
+      }
+    ]
+  },
+  {
+    "id": "jacobi-mask-digits-full-width",
+    "category": "formulas",
+    "title": "A fixed list of 1,024 yes-or-no readings determines a 1,024-bit prime",
+    "impact": "For any product of two distinct 1,024-bit primes, Lean constructs the questions from the product alone. Their answers recover the smaller prime and hence its cofactor.",
+    "scope": "Each question asks whether a specified complete Jacobi sum falls below a threshold. Its polynomial has degree at most 2⁵¹³. Obtaining these readings cheaply remains open.",
+    "detail": "Each question about a digit has value d(d − 1) for yes and d² for no, with d the number of coordinates. A nonempty set therefore tolerates absolute error strictly below d/2.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkMaskDigitReadout.lean",
+        "label": "Bit recovery and full-width bounds"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkDigitQueryValue.lean",
+        "label": "Exactly two values for each bit question"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkDigitCoordinates.lean",
+        "label": "Coordinate sets for each digit"
+      },
+      {
+        "href": "discoveries/can-a-complete-jacobi-sum-reveal-a-prime.md",
+        "label": "Research note and worked comparison"
+      }
+    ]
+  },
+  {
+    "id": "jacobi-mask-prefix-reading",
+    "category": "formulas",
+    "title": "For 2,183, a complete Jacobi sum of 414 gives the factor 37",
+    "impact": "The polynomial with roots 1² through 23² gives 414. Twice the sum divided by 23, plus one, gives 37.",
+    "scope": "For every product of distinct odd primes p < q, take K = floor(√N/2). The sum over all residues is K(p − 1)/2. The direct example required 2,183 Jacobi evaluations and 50,209 modular multiplications by root terms.",
+    "detail": "A prefix of length L has sum min(L,(p − 1)/2) × min(L,(q − 1)/2). This follows by counting distinct nonzero squares at the two primes.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkJacobiMask.lean",
+        "label": "Exact sums for all prefix lengths"
+      },
+      {
+        "href": "benchmarks/jacobi-square-masks.json",
+        "label": "Operation counts and examples"
+      },
+      {
+        "href": "discoveries/can-a-complete-jacobi-sum-reveal-a-prime.md",
+        "label": "Research note and worked comparison"
+      }
+    ]
+  },
+  {
+    "id": "jacobi-mask-degree-limit",
+    "category": "limits",
+    "title": "Degree 23 is necessary to reach the reading 414 on 2,183",
+    "impact": "Every integer polynomial of degree at most 22 gives a complete sum of magnitude at most 396 on this product. The degree-23 prefix reaches 414.",
+    "scope": "For any distinct odd primes, each degree-d mask has magnitude at most min(d,(p − 1)/2) × min(d,(q − 1)/2). The prefix of length d attains the bound.",
+    "detail": "The bound describes the polynomial degree required for a specified amplitude. It also bounds how close a lower-degree polynomial can come.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkJacobiMaskDegree.lean",
+        "label": "Sharp degree and approximation bounds"
+      },
+      {
+        "href": "discoveries/can-a-complete-jacobi-sum-reveal-a-prime.md",
+        "label": "Research note and worked comparison"
+      }
+    ]
+  },
+  {
+    "id": "jacobi-mask-edge-factorial",
+    "category": "formulas",
+    "title": "Evaluating the prefix at the next square gives a factorial with exactly one hidden prime",
+    "impact": "On 2,183 the value is 47!/24. Its gcd with 2,183 is 37. Index 13 contributes the multiple 24 + 13 = 37.",
+    "scope": "For distinct odd primes p < q < 2p with cutoff K, the evaluated product is (2K + 1)!/(K + 1), and its gcd with the input is always p.",
+    "detail": "In the complete sum, adding that square increases exactly (p − 1)/2 summands by one. At 35 only residues 2 and 23 change.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkJacobiMaskEdge.lean",
+        "label": "Factorial identity and unique index"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkJacobiMaskIncrement.lean",
+        "label": "Pointwise change and 35 example"
+      },
+      {
+        "href": "discoveries/can-a-complete-jacobi-sum-reveal-a-prime.md",
+        "label": "Research note and worked comparison"
+      }
+    ]
+  },
+  {
+    "id": "jacobi-mask-binomial-cap",
+    "category": "limits",
+    "title": "No two-term polynomial of the form Xᵉ − c can reach 414 on 2,183",
+    "impact": "The exact maximum magnitude is 261, attained at X²⁶¹ − 1. Varying the exponent and constant cannot bring the sum closer than the precision the midpoint decoder needs.",
+    "scope": "For balanced odd primes with smaller prime at least 11, every such binomial misses the midpoint sum by more than K/2. The exact maximum also holds for all distinct odd primes.",
+    "detail": "Write u = (p − 1)/2 and v = (q − 1)/2. The largest magnitude is uv divided by two raised to the absolute difference between the numbers of factors of two in u and v.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkBinomialMaximum.lean",
+        "label": "Sharp maximum and example"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkBinomialMask.lean",
+        "label": "Gap around the target sum"
+      },
+      {
+        "href": "discoveries/can-a-complete-jacobi-sum-reveal-a-prime.md",
+        "label": "Research note and worked comparison"
+      }
+    ]
+  },
+  {
+    "id": "jacobi-mask-common-exponent-quota",
+    "category": "limits",
+    "title": "At a safe larger prime, matching the midpoint sum requires all K constants",
+    "impact": "For 2,183, a product of terms Xᵉ − c with one common exponent requires at least 23 distinct constants modulo 59 to match the target magnitude 414. The prefix attains that count.",
+    "scope": "More generally, write u = (p − 1)/2 and v = (q − 1)/2. At least K/gcd(v,Ku) distinct constants modulo q are required. This is K whenever v is prime.",
+    "detail": "The restriction allows the exponent to be chosen freely and constants to repeat modulo the larger prime. The lower bound counts distinct residues.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkPowerTargets.lean",
+        "label": "Common-exponent bound and attainability"
+      },
+      {
+        "href": "discoveries/can-a-complete-jacobi-sum-reveal-a-prime.md",
+        "label": "Research note and worked comparison"
+      }
+    ]
+  },
+  {
+    "id": "jacobi-mask-sparse-pair-count",
+    "category": "formulas",
+    "title": "A drop in a sparse square-mask sum counts pairs that add to the hidden prime",
+    "impact": "For a set of d coordinates, the sum is d(d − c), where c counts unordered pairs adding to the smaller prime. A reading below d² detects at least one such pair.",
+    "scope": "The coordinates must be positive and below the smaller prime. Every two distinct coordinates must sum to less than the larger prime. The digit construction meets these conditions using the product alone.",
+    "detail": "Each complementary pair duplicates one square modulo the smaller prime. All squares in the set stay distinct modulo the larger prime.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkSparseMaskProbe.lean",
+        "label": "Exact pair and sum identity"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkMaskDigitReadout.lean",
+        "label": "Public sets satisfying the assumptions"
+      },
+      {
+        "href": "discoveries/can-a-complete-jacobi-sum-reveal-a-prime.md",
+        "label": "Research note and worked comparison"
+      }
+    ]
+  },
+  {
+    "id": "jacobi-mask-fixed-pair-capacity",
+    "category": "limits",
+    "title": "A set of d coordinates can test at most floor(d²/4) distinct odd sums",
+    "impact": "An odd sum uses one even coordinate and one odd one. Their counts multiply to at most floor(d²/4), a bound attained for every even set size.",
+    "scope": "If B fixed pair-membership questions of size at most d distinguish W possible odd candidates, then 4(W − 1) ≤ Bd². This applies to the answers of these questions alone.",
+    "detail": "At most one candidate can receive no positive answers. Every other distinguishable candidate must occur in the union of the sets of pair sums.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkSparseMaskCapacity.lean",
+        "label": "Single-set sharpness and fixed-query bound"
+      },
+      {
+        "href": "discoveries/can-a-complete-jacobi-sum-reveal-a-prime.md",
+        "label": "Research note and worked comparison"
+      }
+    ]
+  },
+  {
     "id": "stopping-cutoff-factor-readings",
     "category": "formulas",
     "title": "Stopping at 23 gives both primes of 2,183 from two counts",

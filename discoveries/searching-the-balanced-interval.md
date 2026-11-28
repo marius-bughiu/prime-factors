@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A complete Jacobi sum of 414 reveals the factor 37 of 2,183. Six shorter polynomials encode the same factor one bit at a time. Their direct evaluation took 13,098 Jacobi evaluations, while the second odd candidate already divided the product. [Exact formulas, degree limits and measured work](can-a-complete-jacobi-sum-reveal-a-prime.md)
+
 A square-test scan stopped halfway to the square root of the product gives an exact count proportional to the smaller prime. For 2,183 the signed count is 828, and a rounded reading of 830 still recovers 37. Lean quantifies the precision needed for an exact answer or a shorter interval, and how much an ordinary sample mean costs. [Stopping-time counts and factor recovery](what-stopping-a-square-test-reveals.md)
 
 The square grid chosen from the product finds a factor for more than nine in ten eligible random targets at every pair of distinct 1,024-bit primes. Giving each target its best rectangle under a much smaller list budget collapses the success rate. A census also shows where the first target selected from the product misses. [Coverage, work bounds and 7,995 small products](how-often-the-public-square-grid-finds-a-factor.md)

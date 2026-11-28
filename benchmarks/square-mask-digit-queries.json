@@ -1,0 +1,138 @@
+{
+  "population": "All distinct odd primes p < q < 2p with q of 3 through 6 bits.",
+  "cohorts": [
+    {
+      "larger_prime_bits": 3,
+      "products": 2,
+      "complete_sums": 4,
+      "jacobi_evaluations": 100,
+      "root_squares": 6,
+      "modular_root_multiplications": 170,
+      "final_integer_multiplications": 200,
+      "decoded_divisibility_checks": 2,
+      "odd_interval_candidates": 2,
+      "ascending_divisibility_checks": 2,
+      "descending_divisibility_checks": 2
+    },
+    {
+      "larger_prime_bits": 4,
+      "products": 3,
+      "complete_sums": 12,
+      "jacobi_evaluations": 1244,
+      "root_squares": 30,
+      "modular_root_multiplications": 3110,
+      "final_integer_multiplications": 2488,
+      "decoded_divisibility_checks": 3,
+      "odd_interval_candidates": 5,
+      "ascending_divisibility_checks": 4,
+      "descending_divisibility_checks": 4
+    },
+    {
+      "larger_prime_bits": 5,
+      "products": 15,
+      "complete_sums": 60,
+      "jacobi_evaluations": 27012,
+      "root_squares": 228,
+      "modular_root_multiplications": 108296,
+      "final_integer_multiplications": 54024,
+      "decoded_divisibility_checks": 15,
+      "odd_interval_candidates": 45,
+      "ascending_divisibility_checks": 29,
+      "descending_divisibility_checks": 31
+    },
+    {
+      "larger_prime_bits": 6,
+      "products": 37,
+      "complete_sums": 214,
+      "jacobi_evaluations": 413310,
+      "root_squares": 1075,
+      "modular_root_multiplications": 2159473,
+      "final_integer_multiplications": 826620,
+      "decoded_divisibility_checks": 37,
+      "odd_interval_candidates": 229,
+      "ascending_divisibility_checks": 136,
+      "descending_divisibility_checks": 130
+    }
+  ],
+  "example": {
+    "product": "2183",
+    "reference_prime_factors": [
+      "37",
+      "59"
+    ],
+    "cutoff": 23,
+    "radix": 5,
+    "bits_per_digit": 3,
+    "block_digit": 1,
+    "offset_digit": 0,
+    "decoded_offset": 5,
+    "queries": [
+      {
+        "digit": "block",
+        "bit": 0,
+        "degree": 6,
+        "distinct_baseline": 36,
+        "complete_sum": 30,
+        "recovered_bit": 1
+      },
+      {
+        "digit": "block",
+        "bit": 1,
+        "degree": 6,
+        "distinct_baseline": 36,
+        "complete_sum": 36,
+        "recovered_bit": 0
+      },
+      {
+        "digit": "block",
+        "bit": 2,
+        "degree": 5,
+        "distinct_baseline": 25,
+        "complete_sum": 25,
+        "recovered_bit": 0
+      },
+      {
+        "digit": "offset",
+        "bit": 0,
+        "degree": 5,
+        "distinct_baseline": 25,
+        "complete_sum": 25,
+        "recovered_bit": 0
+      },
+      {
+        "digit": "offset",
+        "bit": 1,
+        "degree": 5,
+        "distinct_baseline": 25,
+        "complete_sum": 25,
+        "recovered_bit": 0
+      },
+      {
+        "digit": "offset",
+        "bit": 2,
+        "degree": 4,
+        "distinct_baseline": 16,
+        "complete_sum": 16,
+        "recovered_bit": 0
+      }
+    ],
+    "query_work": {
+      "complete_sums": 6,
+      "jacobi_evaluations": 13098,
+      "root_squares": 31,
+      "modular_root_multiplications": 67673,
+      "final_integer_multiplications": 26196,
+      "decoded_divisibility_checks": 1
+    },
+    "trial_division": {
+      "odd_interval_candidates": 6,
+      "ascending_divisibility_checks": 2,
+      "descending_divisibility_checks": 5
+    },
+    "swapped_digits": {
+      "decoded_offset": 1,
+      "candidate": "45",
+      "remainder": 23
+    }
+  }
+}
