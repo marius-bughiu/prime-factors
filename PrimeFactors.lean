@@ -1128,3 +1128,7 @@ import PrimeFactors.SemiprimeThreeSquareCone
 import PrimeFactors.PrimeSquareThreeSquareCone
 import PrimeFactors.SquaredConeSum
 import PrimeFactors.ConeSamplingBudget
+import PrimeFactors.ConeUnitTarget
+import PrimeFactors.ConeTargetLifts
+import PrimeFactors.ProjectiveChartComplement
+import PrimeFactors.SphereCircleIdentity

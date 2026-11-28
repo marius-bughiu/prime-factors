@@ -1,5 +1,15 @@
 [
   {
+    "id": "cone-unit-target-15-baseline",
+    "description": "Small-prime baseline for three-square targets and the primitive sphere comparison at 15",
+    "n": "15",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["3", "5"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
     "id": "cone-count-35-baseline",
     "description": "Small-prime baseline for the squared-modulus cone count at the balanced pair 5 and 7",
     "n": "35",

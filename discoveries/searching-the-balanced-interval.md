@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Changing the target from zero to $-1$ already gives a count sensitive to the sum at modulus $N$. There are $N(p+1)(q+1)$ ordered three-square representations. Every target coprime to $N$ gives a count encoding the sum or the gap, and moving that target to modulus $N^2$ only rescales the answer. [Meaning of the counts, worked examples and limits](which-modular-counts-really-add-information.md)
+
 For $N=35$, the count of triples whose squares add to zero modulo $N$ is simply $35^2$. Changing the modulus to $35^2$ gives 1,953,875 triples. Dividing that count by $35^3$, rounding down and subtracting 33 gives 12, the prime sum. Lean proves the same rule with the corresponding $N$ for all distinct odd primes $5\le p<q\le2p$. The exact count would suffice, and the proof specifies how much error is tolerable. [Checked controls, precision and the limits of sampling](what-changes-when-we-count-modulo-the-square-of-the-product.md)
 
 Counting the integer points on a sphere of radius $N$ gives a measurement of the full product. For $N=91$, counting all 702 points yields the prime 13. At $N=77$ the same 702 yields the sum 18. When both primes are 1 modulo 4, every positive integer radius multiplier returns a known multiple of its own count. [What exact and approximate counts reveal](what-counting-points-on-a-sphere-reveals.md)

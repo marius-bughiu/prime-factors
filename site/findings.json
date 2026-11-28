@@ -1,5 +1,81 @@
 [
   {
+    "id": "three-square-minus-one-sum",
+    "category": "formulas",
+    "title": "A count of 360 triples modulo 15 gives the prime sum 8",
+    "impact": "For every product N of two distinct odd primes, the number of triples whose squares add to −1 modulo N is N(p+1)(q+1). Divide by N and subtract N+1 to get the sum.",
+    "scope": "The point count is supplied. Obtaining it cheaply from one large product remains open. No relationship between the prime sizes is required.",
+    "detail": "For any target coprime to N, the public Jacobi symbol specifies whether the count yields the prime sum or the prime gap. At 15, target 1 has 180 triples and yields the gap 2.",
+    "sources": [
+      {
+        "href": "discoveries/which-modular-counts-really-add-information.md",
+        "label": "Counts, assumptions and examples"
+      },
+      {
+        "href": "PrimeFactors/ConeUnitTarget.lean",
+        "label": "Unconditional modular identities"
+      },
+      {
+        "href": "#cone-unit-target-15-baseline",
+        "label": "Independent prime factor check"
+      }
+    ]
+  },
+  {
+    "id": "unit-target-lifts",
+    "category": "limits",
+    "title": "Extra digits of a coprime target only rescale the count",
+    "impact": "Changing the modulus from N to N² multiplies every coprime-target count by exactly N². Choosing any of the N higher target digits gives the same count.",
+    "scope": "Products of distinct odd primes. Targets sharing a divisor with N follow different rules.",
+    "detail": "At modulus 225 the counts for targets 0, 15, 1 and 3 are 71,775, 43,200, 40,500 and 36,000. Lean accounts for each possible divisibility class at both local primes.",
+    "sources": [
+      {
+        "href": "discoveries/which-modular-counts-really-add-information.md#when-another-count-repeats-the-information",
+        "label": "Which measurements coincide"
+      },
+      {
+        "href": "PrimeFactors/ConeTargetLifts.lean",
+        "label": "Exact counts and small controls"
+      }
+    ]
+  },
+  {
+    "id": "projective-chart-boundary-size",
+    "category": "formulas",
+    "title": "The missing slopes on a projective line count the prime sum plus one",
+    "impact": "There are N ordinary slopes. Of the remaining points, p are infinite only at q, q are infinite only at p, and one is infinite at both. Counting these points would give p+q+1.",
+    "scope": "The proof uses the product of the two local projective lines. Computing the size of these parts quickly with only N remains open.",
+    "detail": "At N=15 there are 24 points altogether. The 9 outside the ordinary slopes consist of groups of sizes 3, 5 and 1.",
+    "sources": [
+      {
+        "href": "discoveries/which-modular-counts-really-add-information.md#when-another-count-repeats-the-information",
+        "label": "Projective points and ordinary slopes"
+      },
+      {
+        "href": "PrimeFactors/ProjectiveChartComplement.lean",
+        "label": "Chinese remainder chart and its complement"
+      }
+    ]
+  },
+  {
+    "id": "modular-circle-primitive-sphere",
+    "category": "formulas",
+    "title": "One modular circle carries the entire primitive sphere count",
+    "impact": "For every coprime target, six times the number of pairs of squares representing it modulo N equals the primitive sphere count at radius N. At 15 there are 16 circle points and 96 primitive sphere points.",
+    "scope": "Modulo a product of distinct odd primes, equality of all coprime-target circle counts is unconditional. The comparison to integer sphere points uses a classical sphere-count formula.",
+    "detail": "Trying another coprime target repeats the same measurement. The proof checks that target zero can give a different count, 9 at modulus 15.",
+    "sources": [
+      {
+        "href": "discoveries/which-modular-counts-really-add-information.md#when-another-count-repeats-the-information",
+        "label": "Modular and integer counts compared"
+      },
+      {
+        "href": "PrimeFactors/SphereCircleIdentity.lean",
+        "label": "Finite-field proof and sphere comparison"
+      }
+    ]
+  },
+  {
     "id": "squared-cone-balanced-sum",
     "category": "formulas",
     "title": "Counting triples modulo N² gives the sum for every balanced prime pair",
