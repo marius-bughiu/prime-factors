@@ -995,3 +995,9 @@ import PrimeFactors.ProductResidueRefinement
 import PrimeFactors.FiveSquareOneSumGuess
 import PrimeFactors.RefinedFactorGuessLimits
 import PrimeFactors.RefinedSumPrediction
+import PrimeFactors.PartitionedResidueMeans
+import PrimeFactors.ProductIntervalCellSpread
+import PrimeFactors.PrimeProductBandCounts
+import PrimeFactors.ProductBandCostTransfer
+import PrimeFactors.BandedFactorGuessLimits
+import PrimeFactors.BandedSumPrediction

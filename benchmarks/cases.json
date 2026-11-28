@@ -1,5 +1,18 @@
 [
   {
+    "id": "same-public-prefix-and-suffix-sum-zero-22",
+    "description": "Third chosen close prime pair sharing leading bits 1001 and remainder 1 modulo 400 with both comparison products; its sum is 0 modulo 25",
+    "n": "2479601",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": [
+      "1543",
+      "1607"
+    ],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
     "id": "same-public-four-bits-sum-two-22",
     "description": "Chosen close primes sharing public product remainder 1 modulo 400 with the paired example, with true sum remainder 2 modulo 25",
     "n": "2405201",

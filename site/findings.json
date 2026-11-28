@@ -1,5 +1,23 @@
 [
   {
+    "id": "public-product-prefix-and-residue-sum-guess",
+    "category": "limits",
+    "title": "Reading 64 more leading bits still leaves single-guess accuracy near one in 537,510",
+    "impact": "A different lookup table for every leading-bit pattern still leaves the best mean cost for guessing either prime remainder near 980 million guesses.",
+    "scope": "All eligible full-size prime pairs. The predictor reads the five-square remainder, 128 low bits and the 64 bits after the leading one. The proof uses prime-count estimates at the combined modulus.",
+    "detail": "Each product interval keeps its actual population frequency. In the small ten-bit prime census the extra digits do help, highlighting the importance of a proof at the target size.",
+    "sources": [
+      {
+        "href": "discoveries/does-reading-more-of-the-product-predict-the-sum.md#what-if-we-also-read-the-leading-digits",
+        "label": "Population bound and small census"
+      },
+      {
+        "href": "PrimeFactors/BandedSumPrediction.lean",
+        "label": "Proof for all band-dependent predictors"
+      }
+    ]
+  },
+  {
     "id": "public-low-bits-and-the-hidden-sum",
     "category": "limits",
     "title": "Another 128 public product bits leave the best sum prediction near one in 537,510",
