@@ -1,5 +1,15 @@
 [
   {
+    "id": "early-wrong-square-through-ten-primes-28",
+    "description": "Chosen 28-bit product with a wrong sum ranked eighth that passes every power of the primes through 29. The true sum ranks thirtieth. The ordinary Fermat fixture independently certifies both primes.",
+    "n": "145684811",
+    "max_steps": 525,
+    "status": "complete",
+    "factors": ["8999", "16189"],
+    "remaining": [],
+    "fermat_steps": 525
+  },
+  {
     "id": "shared-wheel-sharp-initialization-24",
     "description": "Chosen prime pair whose table initialization attains the 78771-lookup cap. Three of 35 old candidates are emitted, then five lookups leave one square. The fixture certifies the primes by ordinary Fermat.",
     "n": "8398823",

@@ -1,5 +1,23 @@
 [
   {
+    "id": "wrong-sums-survive-before-the-true-sum",
+    "category": "limits",
+    "title": "More than 2^765 wrong sums pass 117 primes before the search can stop",
+    "impact": "Even unlimited precision at every prime through 643 leaves these earlier guesses. Their discriminants are provably nonsquare as integers.",
+    "scope": "The current score order on distinct 1,024-bit primes with a 2,048-bit product. Fewer than one in 2^35 eligible inputs are exceptional.",
+    "detail": "The proof counts candidates actually visited before the true sum. The tests may choose a different prime power for each candidate.",
+    "sources": [
+      {
+        "href": "discoveries/wrong-sums-before-the-search-can-stop.md",
+        "label": "Counting the wrong sums before success"
+      },
+      {
+        "href": "PrimeFactors/PersistentScorePrefix.lean",
+        "label": "Checked population and modular factor-pair proofs"
+      }
+    ]
+  },
+  {
     "id": "one-shared-table-to-generate-only-passing-sums",
     "category": "gains",
     "title": "One shared table cuts generated sums to under 6.494% of the old search",

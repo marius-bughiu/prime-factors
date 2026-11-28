@@ -1,5 +1,7 @@
 # Midpoints that survive every power of the small primes
 
+For the search that prioritizes candidates by location and remainder, a separate proof counts wrong survivors visited strictly before the true sum. [Pre-success bound through 643](wrong-sums-before-the-search-can-stop.md)
+
 Suppose someone gives us just a 2,048-bit product of two 1,024-bit primes. We proved that **more than $2^{874}$ wrong guesses for the midpoint of the factors pass every square test at every power of every prime through 733**. Even an unlimited number of digits at these 130 primes leaves those guesses. This limits how much these particular tests can tell us. A search can still use other information to skip many of the survivors together. [Lean proofs and exact integer bounds](../PrimeFactors/PersistentLocalSurvivors.lean)
 
 For $N=pq$, let $h=(p+q)/2$. Its defining property is $h^2-N=((q-p)/2)^2$. The balanced interval from $\lceil\sqrt N\rceil$ through $\lfloor\sqrt{9N/8}\rfloor$ contains the true midpoint because $p\le q\le2p$. The only other unordered positive factor pair of this semiprime is $1\cdot N$, whose midpoint exceeds the upper end. Thus at most one guess in this interval gives a genuine integer square. Each proposed midpoint can be tested by checking whether $h^2-N$ has a square root modulo a chosen prime power. These are the midpoint versions of the modular coordinate-sum tests. [Exact factor-pair characterization](../PrimeFactors/Isolation.lean) · [Bower, Evans, Luo and Miller](https://arxiv.org/abs/1212.2930)

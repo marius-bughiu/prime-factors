@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Even if each of the first 117 primes is tested to arbitrary precision, **more than $2^{765}$ wrong sums pass before the true sum** in the current order on all but fewer than one in $2^{35}$ eligible products. [Proof for the part of the search visited before success](wrong-sums-before-the-search-can-stop.md)
+
 One shared list now skips the rejected sums before generation. Fewer than **6.494% of the old candidates are emitted**, and the remaining lookups plus per-input setup cost fewer than 10.901 lookups per 100 old candidates in total. [Shared table and measured setup costs](skipping-rejected-sums-with-one-small-table.md)
 
 Six small public remainder checks remove **over 99.3319% of the exact square tests** in the earlier score order across every eligible full-size product, including all short searches. About 1.5852 small lookups per original square test bound the added work, and almost all inputs still need at least $2^{853}$ square tests. [Unconditional proof and measured small examples](six-small-checks-before-an-integer-square-test.md)

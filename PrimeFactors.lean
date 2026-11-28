@@ -1012,3 +1012,6 @@ import PrimeFactors.ShiftedScoreSieveCycle
 import PrimeFactors.ScoreWheelMemory
 import PrimeFactors.ThreeSquareWheelWork
 import PrimeFactors.SharedThreeSquareScoreWheel
+import PrimeFactors.EarlyScoreWindow
+import PrimeFactors.EarlyPersistentMidpoints
+import PrimeFactors.PersistentScorePrefix
