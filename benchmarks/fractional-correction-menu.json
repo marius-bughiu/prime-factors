@@ -286,5 +286,370 @@
         ]
       }
     ]
+  },
+  "planner": {
+    "scope": "The 57 odd balanced products in the main cohort. Controls 12827 and 15707 are additional.",
+    "selection": "For m1 use gcd(24,N+1). For m2 test N mod m in descending order of qualifying moduli. Tables contain only unit residues. Both scan every integer through floor(N/m).",
+    "setup": {
+      "moduli": 119,
+      "gcds_to_list_units": 7140,
+      "ordered_unit_pairs": 245921,
+      "independent_modular_inverse_checks": 245921,
+      "product_classes_checked": 4385,
+      "eligible_moduli": 20,
+      "eligible_classes": 36
+    },
+    "cohort": {
+      "products": 57,
+      "one_selector_gcds": 57,
+      "two_selector_residue_lookups": 426,
+      "larger_denominator": 52,
+      "strictly_shorter_prefix": 52,
+      "positions_saved": 11759,
+      "matched_ascending_trial_divisions": 171,
+      "matched_descending_trial_divisions": 167
+    },
+    "by_mode": {
+      "one": {
+        "full_prefix_gcds": 14958,
+        "gcds_to_first_or_exhaustion": 1638,
+        "products_with_a_prefix_factor": 54,
+        "discriminants_tested": 57
+      },
+      "two": {
+        "full_prefix_gcds": 3199,
+        "gcds_to_first_or_exhaustion": 1493,
+        "products_with_a_prefix_factor": 37,
+        "discriminants_tested": 109
+      }
+    },
+    "products_by_selected_moduli": {
+      "8->8": [
+        "15"
+      ],
+      "12->24": [
+        "35",
+        "299",
+        "899",
+        "851",
+        "1739"
+      ],
+      "6->30": [
+        "77",
+        "437",
+        "1517",
+        "1457"
+      ],
+      "4->24": [
+        "91",
+        "187",
+        "667",
+        "2491",
+        "2419",
+        "1891"
+      ],
+      "24->30": [
+        "143",
+        "2183"
+      ],
+      "6->32": [
+        "221",
+        "989"
+      ],
+      "6->24": [
+        "209"
+      ],
+      "8->36": [
+        "247",
+        "391",
+        "3127",
+        "2623"
+      ],
+      "12->30": [
+        "323",
+        "1763",
+        "1643"
+      ],
+      "2->20": [
+        "493",
+        "1333",
+        "1537",
+        "2773",
+        "2257"
+      ],
+      "24->24": [
+        "551",
+        "1271",
+        "2279",
+        "3599"
+      ],
+      "24->60": [
+        "527",
+        "1247"
+      ],
+      "2->18": [
+        "589"
+      ],
+      "6->60": [
+        "713",
+        "1073",
+        "3233"
+      ],
+      "8->12": [
+        "703",
+        "943",
+        "1591",
+        "1927"
+      ],
+      "4->72": [
+        "1147",
+        "1363"
+      ],
+      "2->8": [
+        "1189"
+      ],
+      "6->12": [
+        "2021",
+        "1829",
+        "2501"
+      ],
+      "6->48": [
+        "1961",
+        "2537"
+      ],
+      "2->32": [
+        "2173"
+      ],
+      "12->120": [
+        "2867"
+      ]
+    },
+    "controls": [
+      {
+        "product": "2183",
+        "one": {
+          "modulus": 24,
+          "residue": 23,
+          "cutoff": 90,
+          "nonunits": 3,
+          "first_nonunit": 37,
+          "gcds_to_first_or_exhaustion": 37,
+          "corrections": [
+            24
+          ],
+          "candidate_sums": [
+            96
+          ],
+          "discriminants": [
+            484
+          ],
+          "accepted_sum": 96,
+          "recovered": [
+            "37",
+            "59"
+          ],
+          "nonunit_positions": [
+            37,
+            59,
+            74
+          ]
+        },
+        "two": {
+          "modulus": 30,
+          "residue": 23,
+          "cutoff": 72,
+          "nonunits": 2,
+          "first_nonunit": 37,
+          "gcds_to_first_or_exhaustion": 37,
+          "corrections": [
+            24,
+            36
+          ],
+          "candidate_sums": [
+            84,
+            96
+          ],
+          "discriminants": [
+            -1676,
+            484
+          ],
+          "accepted_sum": 96,
+          "recovered": [
+            "37",
+            "59"
+          ],
+          "nonunit_positions": [
+            37,
+            59
+          ]
+        },
+        "two_selector_residue_lookups": 7,
+        "balanced_odd_trial": {
+          "odd_interval_candidates": 6,
+          "ascending_divisibility_checks": 2,
+          "descending_divisibility_checks": 5
+        }
+      },
+      {
+        "product": "12827",
+        "one": {
+          "modulus": 12,
+          "residue": 11,
+          "cutoff": 1068,
+          "nonunits": 18,
+          "first_nonunit": 101,
+          "gcds_to_first_or_exhaustion": 101,
+          "corrections": [
+            12
+          ],
+          "candidate_sums": [
+            228
+          ],
+          "discriminants": [
+            676
+          ],
+          "accepted_sum": 228,
+          "recovered": [
+            "101",
+            "127"
+          ],
+          "nonunit_positions": [
+            101,
+            127,
+            202,
+            254,
+            303,
+            381,
+            404,
+            505,
+            508,
+            606,
+            635,
+            707,
+            762,
+            808,
+            889,
+            909,
+            1010,
+            1016
+          ]
+        },
+        "two": {
+          "modulus": 120,
+          "residue": 107,
+          "cutoff": 106,
+          "nonunits": 1,
+          "first_nonunit": 101,
+          "gcds_to_first_or_exhaustion": 101,
+          "corrections": [
+            108,
+            132
+          ],
+          "candidate_sums": [
+            228,
+            252
+          ],
+          "discriminants": [
+            676,
+            12196
+          ],
+          "accepted_sum": 228,
+          "recovered": [
+            "101",
+            "127"
+          ],
+          "nonunit_positions": [
+            101
+          ]
+        },
+        "two_selector_residue_lookups": 1,
+        "balanced_odd_trial": {
+          "odd_interval_candidates": 17,
+          "ascending_divisibility_checks": 11,
+          "descending_divisibility_checks": 7
+        }
+      },
+      {
+        "product": "15707",
+        "one": {
+          "modulus": 12,
+          "residue": 11,
+          "cutoff": 1308,
+          "nonunits": 20,
+          "first_nonunit": 113,
+          "gcds_to_first_or_exhaustion": 113,
+          "corrections": [
+            12
+          ],
+          "candidate_sums": [
+            252
+          ],
+          "discriminants": [
+            676
+          ],
+          "accepted_sum": 252,
+          "recovered": [
+            "113",
+            "139"
+          ],
+          "nonunit_positions": [
+            113,
+            139,
+            226,
+            278,
+            339,
+            417,
+            452,
+            556,
+            565,
+            678,
+            695,
+            791,
+            834,
+            904,
+            973,
+            1017,
+            1112,
+            1130,
+            1243,
+            1251
+          ]
+        },
+        "two": {
+          "modulus": 120,
+          "residue": 107,
+          "cutoff": 130,
+          "nonunits": 1,
+          "first_nonunit": 113,
+          "gcds_to_first_or_exhaustion": 113,
+          "corrections": [
+            108,
+            132
+          ],
+          "candidate_sums": [
+            228,
+            252
+          ],
+          "discriminants": [
+            -10844,
+            676
+          ],
+          "accepted_sum": 252,
+          "recovered": [
+            "113",
+            "139"
+          ],
+          "nonunit_positions": [
+            113
+          ]
+        },
+        "two_selector_residue_lookups": 1,
+        "balanced_odd_trial": {
+          "odd_interval_candidates": 19,
+          "ascending_divisibility_checks": 13,
+          "descending_divisibility_checks": 7
+        }
+      }
+    ]
   }
 }

@@ -1225,5 +1225,15 @@
     "factors": ["53", "61"],
     "remaining": [],
     "fermat_steps": 0
+  },
+  {
+    "id": "fractional-lift-cutoff-583201",
+    "description": "Factor certificate for the sharp prime-pair cutoff control with true product 643 × 907 and false lift 809 × 811 modulo 72898",
+    "n": "583201",
+    "max_steps": 12,
+    "status": "complete",
+    "factors": ["643", "907"],
+    "remaining": [],
+    "fermat_steps": 12
   }
 ]

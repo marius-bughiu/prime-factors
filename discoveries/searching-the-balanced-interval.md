@@ -1,6 +1,6 @@
 # Searching the balanced interval
 
-Allowing two possible corrections raises the largest possible denominator for a fractional prefix from 24 to 120. At any denominator, a 2,048-bit input forces the prefix or the untrimmed correction list to exceed $2^{677}$ entries. The count can be known for free at the square root, and bounds on both factors can isolate the correct pair in a large implicit list. [What the counts cost and where other information helps](what-two-corrections-buy-for-a-prefix-count.md)
+Allowing two possible corrections raises the largest possible denominator for a fractional prefix from 24 to 120. At any denominator, a 2,048-bit input forces the prefix or the untrimmed correction list to exceed $2^{942}$ entries. The count can be known for free at the square root, and bounds on both factors can isolate the correct pair in a large implicit list. [What the counts cost and where other information helps](what-two-corrections-buy-for-a-prefix-count.md)
 
 Counting the three nonunits through 90 gives the prime sum of 2,183. Lean classifies every denominator for which all compatible residue pairs give the same correction, and proves that even the shortest such interval still has more than $2^{2042}$ entries at full size. [Formula, worked examples and measurement costs](counting-a-fraction-of-the-residues.md)
 

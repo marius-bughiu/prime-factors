@@ -1338,3 +1338,7 @@ import PrimeFactors.FractionalPrefixSampleCost
 import PrimeFactors.FractionalTotientSlices
 import PrimeFactors.FractionalFreeReadings
 import PrimeFactors.FractionalBalancedLifts
+import PrimeFactors.FractionalMenuDensity
+import PrimeFactors.FractionalPrimeLiftCutoff
+import PrimeFactors.FractionalMatchedDivisors
+import PrimeFactors.FractionalPrefixPlanner

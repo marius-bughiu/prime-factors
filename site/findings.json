@@ -1,5 +1,49 @@
 [
   {
+    "id": "fractional-shortest-two-answer-prefix",
+    "category": "gains",
+    "title": "Choosing the denominator cut 14,958 prefix gcds to 3,199",
+    "impact": "At 2,183 the rule chooses denominator 30. Two entries through 72 share a factor with the product. Of the candidate sums 84 and 96, only 96 has a square discriminant.",
+    "scope": "For any odd product the rule chooses the largest coprime denominator for which the full residue list has at most two possible corrections. Across 57 small balanced products it shortened 52 intervals and tied five.",
+    "detail": "Complete scans saved 11,759 gcds. Stopping at the first hit or exhaustion saved 145 gcds, and 37 of the shorter intervals contained a factor. Ascending balanced trial division found all 57 factors in 171 divisions. The census charges table setup separately.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalPrefixPlanner.lean",
+        "label": "Selection, optimality and decoder"
+      },
+      {
+        "href": "benchmarks/fractional-correction-menu.json",
+        "label": "Cohort and setup charges"
+      },
+      {
+        "href": "discoveries/what-two-corrections-buy-for-a-prefix-count.md",
+        "label": "Worked examples and costs"
+      }
+    ]
+  },
+  {
+    "id": "fractional-matched-divisor-multiplicity",
+    "category": "formulas",
+    "title": "Two nearby products give three pairs and two sums at 851",
+    "impact": "At modulus 49, product 851 gives (23, 37). Product 900 gives (30, 30) and (25, 36). Their sums are 60, 60 and 61.",
+    "scope": "For positive modulus m, each candidate passing the residue, pair and sum bounds corresponds to a divisor of an explicit product N + jm. Lean gives exact bounds on the integer j and the number of pairs producing each sum.",
+    "detail": "Two independent enumerations agreed for 3,072 small inputs and three controls. Enumerating divisors of the original input remains part of the direct calculation.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalMatchedDivisors.lean",
+        "label": "Exact divisor correspondence"
+      },
+      {
+        "href": "benchmarks/fractional-matched-divisors.json",
+        "label": "Independent multiplicity counts"
+      },
+      {
+        "href": "discoveries/what-two-corrections-buy-for-a-prefix-count.md",
+        "label": "Worked examples and costs"
+      }
+    ]
+  },
+  {
     "id": "fractional-two-corrections-120",
     "category": "formulas",
     "title": "Two possible corrections give a cutoff of N/120",
@@ -28,11 +72,15 @@
   {
     "id": "fractional-prefix-or-full-list",
     "category": "limits",
-    "title": "At 2,048 bits, the interval or the full correction list exceeds 2⁶⁷⁷ entries",
+    "title": "At 2,048 bits, the interval or the full correction list exceeds 2⁹⁴² entries",
     "impact": "The product imposes a tradeoff at every coprime denominator. At 2,183, denominator 240 leaves nine positions and eight corrections. Moving to 257 saves one position and leaves 128 corrections.",
     "scope": "The bound counts all prefix positions and all possible ordinary corrections from the product residue alone. At a prime denominator one of those counts exceeds 2¹⁰²² for a 2,048-bit input.",
-    "detail": "Extra information can make the prefix count free or eliminate candidates before they are listed. The theorem bounds the complete list and the literal interval.",
+    "detail": "If the denominator reaches the square root, the full list alone exceeds 2⁸⁷¹ entries. Factor-width information can reduce that list or make the prefix count free.",
     "sources": [
+      {
+        "href": "PrimeFactors/FractionalMenuDensity.lean",
+        "label": "Prime-power density transferred to the ordinary list"
+      },
       {
         "href": "PrimeFactors/FractionalCorrectionBudget.lean",
         "label": "List size and work bounds"
@@ -75,11 +123,15 @@
     "title": "A sufficiently large modulus makes a surviving balanced pair exact",
     "impact": "For 12,827 at denominator 1,604, both 228 and 232 pass the bounds on the sum. The pair 23 and 209 fails the balance check. The pair 101 and 127 survives and multiplies to 12,827.",
     "scope": "If positive candidate residues and their sum pass the stated balanced bounds, and eight times the modulus is at least N, congruence of their product to N forces equality.",
-    "detail": "At 583,201 and modulus 72,898, eight times the modulus is just 17 below N. Both (643, 907) and (809, 811) pass the pair and sum checks. Each pair consists of distinct ten-bit primes. Finding the surviving pair efficiently remains open.",
+    "detail": "For true and candidate pairs of distinct balanced primes above three, every false candidate product requires 8m + 17 ≤ N. At 583,201, both (643, 907) and (809, 811) pass, with 8m + 17 = N. Finding a surviving pair efficiently remains open.",
     "sources": [
       {
         "href": "PrimeFactors/FractionalBalancedLifts.lean",
         "label": "Uniqueness and sharpness controls"
+      },
+      {
+        "href": "PrimeFactors/FractionalPrimeLiftCutoff.lean",
+        "label": "Sharp cutoff for prime pairs"
       },
       {
         "href": "discoveries/what-two-corrections-buy-for-a-prefix-count.md",

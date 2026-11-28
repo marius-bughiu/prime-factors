@@ -179,7 +179,8 @@ theorem density_budget (n m : ℕ) : 0<m → m.Coprime n →
       _ ≤ _ := Nat.mul_le_mul (ih (by omega) left) (jh (by omega) right)
       _ = _ := by ac_rfl
 
-private theorem charge_bound (m : ℕ) : (∏ p∈m.primeFactors,charge p) < 2^197 := by
+private theorem charge_le_table (m : ℕ) :
+    (∏ p∈m.primeFactors,charge p) ≤ ∏ p∈(range 283).filter Nat.Prime,charge p := by
   classical
   let s := m.primeFactors.filter (·<283)
   have small : s ⊆ (range 283).filter Nat.Prime := by
@@ -191,8 +192,17 @@ private theorem charge_bound (m : ℕ) : (∏ p∈m.primeFactors,charge p) < 2^1
     intro p mem miss
     exact if_pos (show 283≤p by by_contra! h; exact miss (mem_filter.mpr ⟨mem,h⟩))
   rw [←eq]
-  exact (prod_le_prod_of_subset_of_one_le' small (fun i _ _ => charge_pos i)).trans_lt
+  exact prod_le_prod_of_subset_of_one_le' small (fun i _ _ => charge_pos i)
+
+private theorem charge_bound (m : ℕ) : (∏ p∈m.primeFactors,charge p) < 2^197 :=
+  (charge_le_table m).trans_lt
     (by decide +kernel : (∏ p∈(range 283).filter Nat.Prime, charge p) < 2^197)
+
+/-- Squaring retains the half-bit of precision lost by rounding the total
+charge to a power of two. The same table bounds every positive modulus. -/
+theorem charge_bound_squared (m : ℕ) : (∏ p∈m.primeFactors,charge p)^2 < 2^393 :=
+  (Nat.pow_le_pow_left (charge_le_table m) 2).trans_lt
+    (by decide +kernel : (∏ p∈(range 283).filter Nat.Prime, charge p)^2 < 2^393)
 
 /-- Fewer than 75 bits of density loss for any unit product and any modulus of at most 2^401. -/
 theorem fraction_floor {n m : ℕ} (pos : 0<m) (cap : m≤2^401) (cop : m.Coprime n) :

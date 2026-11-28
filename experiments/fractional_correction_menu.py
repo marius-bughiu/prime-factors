@@ -6,7 +6,8 @@ from fractions import Fraction
 from math import gcd
 from pathlib import Path
 
-from experiments.fractional_nonunit_prefix import correction_tables, split_at_sum
+from experiments.fractional_nonunit_prefix import correction_tables, measure, split_at_sum
+from experiments.square_mask_digit_queries import odd_trial
 from scripts.factor import primes_through
 
 
@@ -116,6 +117,89 @@ def transcript(tables):
     return dict(moduli=list(moduli), rows=rows)
 
 
+def planned_reading(n, m, residue):
+    """Decode from the public modulus, residue and an actual gcd scan."""
+    limit = n//m
+    first = None
+    count = 0
+    for t in range(1, limit+1):
+        if gcd(t, n) != 1:
+            count += 1
+            if first is None:
+                first = t
+    offsets = sorted({1+residue, 2*m-1-residue})
+    sums = [m*count+r for r in offsets]
+    accepted = [pair for total in sums if (pair := split_at_sum(n, total)) is not None]
+    if len(accepted) != 1:
+        raise ArithmeticError(f'Expected one split at {n}, m={m}')
+    return dict(modulus=m, residue=residue, cutoff=limit, nonunits=count, first_nonunit=first,
+                gcds_to_first_or_exhaustion=first if first is not None else limit,
+                corrections=offsets, candidate_sums=sums, discriminants=[s*s-4*n for s in sums],
+                accepted_sum=sum(accepted[0]), recovered=list(map(str, accepted[0])))
+
+
+def planner_census(tables, cohort):
+    """Compare largest one- and two-correction moduli using only public residues for selection."""
+    bounded = {m: tables[m] for m in range(2, 121)}
+    eligible = [(m, {u for u, sums in bounded[m].items() if len(sums) <= 2})
+                for m in reversed(bounded)]
+    eligible = [(m, residues) for m, residues in eligible if residues]
+    pairs = sum(len(table)**2 for table in bounded.values())
+    setup = dict(moduli=len(bounded), gcds_to_list_units=sum(m-1 for m in bounded),
+                 ordered_unit_pairs=pairs, independent_modular_inverse_checks=pairs,
+                 product_classes_checked=sum(map(len, bounded.values())),
+                 eligible_moduli=len(eligible), eligible_classes=sum(len(rs) for _, rs in eligible))
+    totals = Counter()
+    by_mode = {'one': Counter(), 'two': Counter()}
+    groups = {}
+    controls = []
+    for p, q in [*cohort, (101, 127), (113, 139)]:
+        n = p*q
+        m1 = gcd(24, n+1)
+        for lookups, (m2, residues) in enumerate(eligible, 1):
+            u = n % m2
+            if u in residues:
+                break
+        else:
+            raise ArithmeticError(f'No qualifying unit product for {n}')
+        one = planned_reading(n, m1, n % m1)
+        two = planned_reading(n, m2, u)
+        factor, trial = odd_trial(n)
+        if factor != p or m2 < m1 or len(one['corrections']) != 1:
+            raise ArithmeticError(f'Selected denominator or trial control disagrees for {n}')
+        for row in (one, two):
+            m = row['modulus']
+            if (row['nonunits'] != p//m+q//m or set(row['corrections']) != tables[m][n % m]
+                    or row['first_nonunit'] != (p if p <= row['cutoff'] else None)
+                    or row['recovered'] != [str(p), str(q)]):
+                raise ArithmeticError(f'Planned reading disagrees with reference at {n}, m={m}')
+        if (p, q) in cohort:
+            totals.update(products=1, one_selector_gcds=1, two_selector_residue_lookups=lookups,
+                          larger_denominator=int(m2 > m1), strictly_shorter_prefix=int(two['cutoff'] < one['cutoff']),
+                          positions_saved=one['cutoff']-two['cutoff'],
+                          matched_ascending_trial_divisions=trial['ascending_divisibility_checks'],
+                          matched_descending_trial_divisions=trial['descending_divisibility_checks'])
+            groups.setdefault(f'{m1}->{m2}', []).append(str(n))
+            for mode, row in [('one', one), ('two', two)]:
+                by_mode[mode].update(full_prefix_gcds=row['cutoff'],
+                                     gcds_to_first_or_exhaustion=row['gcds_to_first_or_exhaustion'],
+                                     products_with_a_prefix_factor=int(row['first_nonunit'] is not None),
+                                     discriminants_tested=len(row['candidate_sums']))
+        if n in (2183, 12827, 15707):
+            for row in (one, two):
+                direct, terms = measure(n, row['modulus'], tables[row['modulus']])
+                if (direct['candidate_sums'] != row['candidate_sums'] or direct['recovered'] != row['recovered']
+                        or direct['count'] != row['nonunits']):
+                    raise ArithmeticError(f'Independent full menu disagrees at {n}')
+                row['nonunit_positions'] = terms
+            controls.append(dict(product=str(n), one=one, two=two, two_selector_residue_lookups=lookups,
+                                 balanced_odd_trial=trial))
+    return dict(scope='The 57 odd balanced products in the main cohort. Controls 12827 and 15707 are additional.',
+                selection='For m1 use gcd(24,N+1). For m2 test N mod m in descending order of qualifying moduli. Tables contain only unit residues. Both scan every integer through floor(N/m).',
+                setup=setup, cohort=dict(totals), by_mode=by_mode, products_by_selected_moduli=groups,
+                controls=controls)
+
+
 def study():
     primes = set(primes_through(263))
     tables = {m: correction_tables(m) for m in [*range(2, 241), 257, 263]}
@@ -130,12 +214,14 @@ def study():
     total = Counter()
     samples = Counter()
     controls = {}
+    cohort = []
     for q in sorted(primes):
         if not 3 <= q.bit_length() <= 6:
             continue
         for p in sorted(primes):
             if p == 2 or not p < q < 2*p:
                 continue
+            cohort.append((p, q))
             n = p*q
             total['products'] += 1
             available = []
@@ -169,7 +255,7 @@ def study():
                 measured_cost='Prefix gcds and complete ordinary menu sizes are separate counts. Menu setup and lookups are excluded. All candidate sums were checked.',
                 classification=classification, cohort=dict(total), fixed_precision_totals=dict(samples),
                 control_2183=controls, two_correction_controls=paired_controls,
-                same_transcript=transcript(tables))
+                same_transcript=transcript(tables), planner=planner_census(tables, cohort))
 
 
 if __name__ == '__main__':
