@@ -1,5 +1,77 @@
 [
   {
+    "id": "bounded-prior-rank-floor",
+    "category": "limits",
+    "title": "Two local weights put a ceiling on how much reordering can save in the model",
+    "impact": "When descending base probabilities are multiplied by either two or five, every order still costs at least √(2/5) times the ascending mean. The largest possible reduction is about 36.75%.",
+    "scope": "A finite model of candidate probabilities. The most extreme constructions may place the weight-five labels anywhere.",
+    "detail": "The result allows every permutation, including orders that use full knowledge of those modeled probabilities.",
+    "sources": [
+      {
+        "href": "discoveries/using-both-the-location-and-remainder-of-a-sum.md#how-the-location-changes-a-guess",
+        "label": "What the model assumes"
+      },
+      {
+        "href": "PrimeFactors/BoundedSumPrior.lean",
+        "label": "Universal lower bound and sharpness"
+      }
+    ]
+  },
+  {
+    "id": "combined-location-remainder-toy",
+    "category": "gains",
+    "title": "Combining sum location and remainder saved 241,421 square tests on a complete small population",
+    "impact": "At fourteen bits per prime the new order used 4,390,120 tests, compared with 4,631,541 ascending and 4,494,936 when every favored sum came first.",
+    "scope": "All 228,713 distinct 14-bit prime pairs whose product has 28 bits. Every search reached the expected factors.",
+    "detail": "The new order did worse than ascending on 47,162 cases. Candidate generation and comparison costs are recorded separately.",
+    "sources": [
+      {
+        "href": "discoveries/using-both-the-location-and-remainder-of-a-sum.md",
+        "label": "Rule, measurements and limits"
+      },
+      {
+        "href": "experiments/location_weighted_sum_order.py",
+        "label": "Proof or reproducible experiment"
+      }
+    ]
+  },
+  {
+    "id": "combined-order-guard",
+    "category": "limits",
+    "title": "The new order limits how many extra tests an unlucky input can cost",
+    "impact": "Twice its exact square-test count is at most five times the ascending count plus 21. A favored hit can only move earlier.",
+    "scope": "Distinct primes of equal known bit width, with the range starting above five. The public lower bound is the ceiling of twice the square root of the product.",
+    "detail": "The proof counts the later favored candidates that can overtake an ordinary target. The bound is independent of the upper endpoint.",
+    "sources": [
+      {
+        "href": "discoveries/using-both-the-location-and-remainder-of-a-sum.md",
+        "label": "Rule, measurements and limits"
+      },
+      {
+        "href": "PrimeFactors/ScoreOrderSlowdown.lean",
+        "label": "Proof or reproducible experiment"
+      }
+    ]
+  },
+  {
+    "id": "combined-order-favored-share",
+    "category": "gains",
+    "title": "The location-and-remainder order saves at least 59% on more than 24.9% of full-size products",
+    "impact": "Every counted product also takes at least 2⁸⁹⁴ square tests in the new order.",
+    "scope": "All pairs of distinct 1,024-bit primes with a 2,048-bit product are eligible. Uses a published unconditional prime-count bound.",
+    "detail": "The proof uses the distance that a lower-weight candidate is allowed to precede a higher-weight true sum.",
+    "sources": [
+      {
+        "href": "discoveries/using-both-the-location-and-remainder-of-a-sum.md",
+        "label": "Rule, measurements and limits"
+      },
+      {
+        "href": "PrimeFactors/ScoreOrderFavoredCost.lean",
+        "label": "Proof or reproducible experiment"
+      }
+    ]
+  },
+  {
     "id": "net-work-all-balanced-products",
     "category": "gains",
     "title": "More than 1.05% fewer square tests across all balanced 2,048-bit products",

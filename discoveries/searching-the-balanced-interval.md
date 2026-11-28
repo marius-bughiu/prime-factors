@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Ranking a sum by both its location and its remainder saved 5.21% of exact square tests across all 228,713 complete fourteen-bit prime pairs with a full-width product. Individual losses are bounded on actual inputs. [How the new order weighs an earlier guess against a more frequent remainder](using-both-the-location-and-remainder-of-a-sum.md)
+
 Counting every 2,048-bit product of two distinct 1,024-bit primes, the favored-first order saves more than 1/95 of the elementary search’s exact square tests in total. Within the square-unit product classes modulo five, the saving exceeds 2.5%. [Proof of the net saving](does-favored-first-save-work-on-average.md)
 
 On more than 24.9% of balanced 2,048-bit products, checking two favored sum remainders first saves at least 70% of the exact square tests in the elementary ascending search. Every product counted still takes at least $2^{894}$ tests. [How the two search orders compare](when-two-remainders-save-square-tests.md)

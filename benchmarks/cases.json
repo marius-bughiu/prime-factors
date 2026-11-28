@@ -1,5 +1,15 @@
 [
   {
+    "id": "score-order-later-134230699",
+    "description": "Fermat midpoint baseline on a chosen input taking seventeen ascending square tests and forty-one with location and remainder weighting",
+    "n": "134230699",
+    "max_steps": 125,
+    "status": "complete",
+    "factors": ["10009", "13411"],
+    "remaining": [],
+    "fermat_steps": 125
+  },
+  {
     "id": "favored-first-later-8488399",
     "description": "Fermat midpoint baseline for the chosen opposite-residue example taking twenty-four ascending square tests and twenty-five favored-first tests",
     "n": "8488399",

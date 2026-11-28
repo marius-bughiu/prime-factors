@@ -932,3 +932,8 @@ import PrimeFactors.MeanSumOrderWork
 import PrimeFactors.AllResidueSumCost
 import PrimeFactors.OtherSumGridPopulation
 import PrimeFactors.MeanAllSumOrderWork
+import PrimeFactors.ScoreSumOrder
+import PrimeFactors.ScoreOrderSlowdown
+import PrimeFactors.ScoreOrderFavoredCost
+import PrimeFactors.SumOrderDensity
+import PrimeFactors.BoundedSumPrior
