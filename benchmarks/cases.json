@@ -1,5 +1,15 @@
 [
   {
+    "id": "combined-sum-weight-35",
+    "description": "Chosen equal-width primes with product one modulo 1225 and sum in a class of weight 35; Fermat baseline",
+    "n": "1467551",
+    "max_steps": 13,
+    "status": "complete",
+    "factors": ["1049", "1399"],
+    "remaining": [],
+    "fermat_steps": 13
+  },
+  {
     "id": "repeated-factors",
     "description": "Repeated prime factors and an even input",
     "n": "81608",

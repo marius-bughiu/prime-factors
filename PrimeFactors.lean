@@ -911,3 +911,9 @@ import PrimeFactors.ThresholdPairCount
 import PrimeFactors.FullRangeResidueEstimates
 import PrimeFactors.PrimeProductRegion
 import PrimeFactors.FullRangePrimeSumShare
+import PrimeFactors.PrimePowerPairWeight
+import PrimeFactors.PrimeCubeSumWeights
+import PrimeFactors.CombinedSumWeights
+import PrimeFactors.PrimePowerSumCollisions
+import PrimeFactors.LocalSumGuessCoverage
+import PrimeFactors.HalfMassFive

@@ -1,5 +1,77 @@
 [
   {
+    "id": "crt-weighted-sum-guesses",
+    "category": "gains",
+    "title": "Combining two moduli saves 33.9% of remainder guesses in a finite model",
+    "impact": "At modulus 1,225, guessing the 112 possible sums in order of frequency takes 37⅓ guesses on average. A random order takes 56½.",
+    "scope": "All 840 equally weighted ordered factor remainders with product 1. Guessing the remainder leaves the exact sum open.",
+    "detail": "The four most frequent classes have weight 35 each. The chosen example 1,049 × 1,399 has sum remainder 1,223 in that group.",
+    "sources": [
+      {
+        "href": "discoveries/how-many-sum-remainders-are-worth-guessing.md",
+        "label": "Worked examples and population"
+      },
+      {
+        "href": "PrimeFactors/CombinedSumWeights.lean",
+        "label": "Optimal order under the Chinese remainder theorem"
+      }
+    ]
+  },
+  {
+    "id": "prime-cube-weight-reversal",
+    "category": "formulas",
+    "title": "Raising the modulus can change which sum to guess first",
+    "impact": "For product 1 modulo 27, sums 11 and 16 occur six times each, while 2 and 25 occur three times each.",
+    "scope": "Uniform ordered factor residues. The general classification applies to cubes of odd primes.",
+    "detail": "At modulus 9, sums 2 and −2 have the highest weight. Their direct lifts 2 and −2 lose that distinction modulo 27.",
+    "sources": [
+      {
+        "href": "discoveries/how-many-sum-remainders-are-worth-guessing.md",
+        "label": "Worked examples and population"
+      },
+      {
+        "href": "PrimeFactors/PrimeCubeSumWeights.lean",
+        "label": "General cube formula and complete example"
+      }
+    ]
+  },
+  {
+    "id": "prime-power-sum-repeat-frequency",
+    "category": "formulas",
+    "title": "Count exactly how often two independently sampled sums agree",
+    "impact": "Modulo 125, two of the 100 ordered factor pairs with product 1, sampled independently with replacement, have the same sum 5.5% of the time.",
+    "scope": "Uniform ordered residue pairs for a fixed product coprime to an odd prime p and square modulo p.",
+    "detail": "At precision pᵉ, the expected number of pairs in the sum class of a randomly drawn pair is 2e − 2/(p−1).",
+    "sources": [
+      {
+        "href": "discoveries/how-many-sum-remainders-are-worth-guessing.md",
+        "label": "Worked examples and population"
+      },
+      {
+        "href": "PrimeFactors/PrimePowerSumCollisions.lean",
+        "label": "Exact second moment for all exponents"
+      }
+    ]
+  },
+  {
+    "id": "half-mass-five-sharp",
+    "category": "limits",
+    "title": "Even the best list needs more than 2²²⁷ sum guesses to cover half the pairs",
+    "impact": "With product 1 modulo 5¹⁰⁰, the exact minimum is (5⁹⁹ + 7)/6 different sum remainders.",
+    "scope": "Each ordered pair of factor remainders has equal weight. The theorem counts possible guesses at fixed local precision.",
+    "detail": "All attainable sums whose discriminant is divisible by five form a list of that size covering exactly half. The minimum-size proof works at every exponent of five from two onward.",
+    "sources": [
+      {
+        "href": "discoveries/how-many-sum-remainders-are-worth-guessing.md",
+        "label": "Worked examples and population"
+      },
+      {
+        "href": "PrimeFactors/HalfMassFive.lean",
+        "label": "Attained minimum and lower bound"
+      }
+    ]
+  },
+  {
     "id": "two-remainders-in-the-full-balanced-population",
     "category": "formulas",
     "title": "Two remainders cover about half of all eligible 2,048-bit products congruent to 1 modulo 25",
