@@ -1,0 +1,860 @@
+{
+  "population": "All distinct odd primes p < q < 2p with q of 3 through 6 bits.",
+  "moments": "Both parity numerators were checked for every nonempty subset. Divide by N for uniform moments.",
+  "digit_order": "Block bits from least significant first, then offset bits in the same order.",
+  "cohorts": [
+    {
+      "larger_prime_bits": 3,
+      "products": 2,
+      "shared_residues": 50,
+      "query_masks": 4,
+      "jacobi_evaluations": 100,
+      "unmasked_jacobi_evaluations": 50,
+      "modular_root_multiplications": 170,
+      "nonempty_query_subsets": 6,
+      "products_with_all_zero_answers": 2,
+      "prime_sum_prefix_lengths_verified": 3,
+      "targeted_row_gcds_to_factor": 2,
+      "targeted_through_first_extraction_offset_root_squares": 3,
+      "targeted_through_first_extraction_row_squares": 2,
+      "targeted_through_first_extraction_row_probes": 2,
+      "targeted_through_first_extraction_modular_root_multiplications": 3,
+      "targeted_through_first_extraction_final_integer_multiplications": 4,
+      "targeted_through_first_extraction_jacobi_evaluations": 2,
+      "targeted_through_first_extraction_extraction_gcds": 2,
+      "targeted_through_first_extraction_divisibility_checks": 2,
+      "targeted_all_rows_and_triggered_offsets_offset_root_squares": 3,
+      "targeted_all_rows_and_triggered_offsets_row_squares": 2,
+      "targeted_all_rows_and_triggered_offsets_row_probes": 2,
+      "targeted_all_rows_and_triggered_offsets_modular_root_multiplications": 3,
+      "targeted_all_rows_and_triggered_offsets_final_integer_multiplications": 4,
+      "targeted_all_rows_and_triggered_offsets_jacobi_evaluations": 2,
+      "targeted_all_rows_and_triggered_offsets_extraction_gcds": 3,
+      "targeted_all_rows_and_triggered_offsets_divisibility_checks": 2,
+      "draws_changed_from_unmasked": 24,
+      "unanimously_masked_unit_draws": 18,
+      "mask_dependent_draws": 6,
+      "negative_changes": 6,
+      "diagnostic_gcds": 13,
+      "draws_with_proper_coordinate_gcd": 6,
+      "memoized_divisibility_tests": 0,
+      "decoded_divisibility_checks": 2,
+      "odd_interval_candidates": 2,
+      "ascending_divisibility_checks": 2,
+      "descending_divisibility_checks": 2,
+      "geometric_mean_hits": 2,
+      "first_fermat_hits": 2,
+      "coordinate_pairs_examined": 2
+    },
+    {
+      "larger_prime_bits": 4,
+      "products": 3,
+      "shared_residues": 311,
+      "query_masks": 12,
+      "jacobi_evaluations": 1244,
+      "unmasked_jacobi_evaluations": 311,
+      "modular_root_multiplications": 3110,
+      "nonempty_query_subsets": 45,
+      "prime_sum_prefix_lengths_verified": 11,
+      "targeted_row_gcds_to_factor": 3,
+      "targeted_through_first_extraction_offset_root_squares": 9,
+      "targeted_through_first_extraction_row_squares": 3,
+      "targeted_through_first_extraction_row_probes": 3,
+      "targeted_through_first_extraction_modular_root_multiplications": 9,
+      "targeted_through_first_extraction_final_integer_multiplications": 6,
+      "targeted_through_first_extraction_jacobi_evaluations": 3,
+      "targeted_through_first_extraction_extraction_gcds": 5,
+      "targeted_through_first_extraction_divisibility_checks": 3,
+      "targeted_all_rows_and_triggered_offsets_offset_root_squares": 9,
+      "targeted_all_rows_and_triggered_offsets_row_squares": 3,
+      "targeted_all_rows_and_triggered_offsets_row_probes": 3,
+      "targeted_all_rows_and_triggered_offsets_modular_root_multiplications": 9,
+      "targeted_all_rows_and_triggered_offsets_final_integer_multiplications": 6,
+      "targeted_all_rows_and_triggered_offsets_jacobi_evaluations": 3,
+      "targeted_all_rows_and_triggered_offsets_extraction_gcds": 9,
+      "targeted_all_rows_and_triggered_offsets_divisibility_checks": 3,
+      "draws_changed_from_unmasked": 154,
+      "mask_dependent_draws": 110,
+      "positive_changes": 32,
+      "diagnostic_gcds": 259,
+      "draws_with_only_public_square_zeros": 6,
+      "unanimously_masked_unit_draws": 44,
+      "negative_changes": 78,
+      "draws_with_proper_coordinate_gcd": 104,
+      "coordinate_pairs_examined": 24,
+      "per_query_divisibility_tests": 3,
+      "memoized_divisibility_tests": 3,
+      "decoded_divisibility_checks": 3,
+      "odd_interval_candidates": 5,
+      "ascending_divisibility_checks": 4,
+      "descending_divisibility_checks": 4,
+      "geometric_mean_hits": 3,
+      "first_fermat_hits": 3,
+      "products_with_all_zero_answers": 1
+    },
+    {
+      "larger_prime_bits": 5,
+      "products": 15,
+      "shared_residues": 6753,
+      "query_masks": 60,
+      "jacobi_evaluations": 27012,
+      "unmasked_jacobi_evaluations": 6753,
+      "modular_root_multiplications": 108296,
+      "nonempty_query_subsets": 225,
+      "prime_sum_prefix_lengths_verified": 123,
+      "targeted_row_gcds_to_factor": 15,
+      "targeted_through_first_extraction_offset_root_squares": 54,
+      "targeted_through_first_extraction_row_squares": 15,
+      "targeted_through_first_extraction_row_probes": 15,
+      "targeted_through_first_extraction_modular_root_multiplications": 54,
+      "targeted_through_first_extraction_final_integer_multiplications": 30,
+      "targeted_through_first_extraction_jacobi_evaluations": 15,
+      "targeted_through_first_extraction_extraction_gcds": 38,
+      "targeted_through_first_extraction_divisibility_checks": 15,
+      "targeted_all_rows_and_triggered_offsets_offset_root_squares": 54,
+      "targeted_all_rows_and_triggered_offsets_row_squares": 29,
+      "targeted_all_rows_and_triggered_offsets_row_probes": 29,
+      "targeted_all_rows_and_triggered_offsets_modular_root_multiplications": 105,
+      "targeted_all_rows_and_triggered_offsets_final_integer_multiplications": 58,
+      "targeted_all_rows_and_triggered_offsets_jacobi_evaluations": 29,
+      "targeted_all_rows_and_triggered_offsets_extraction_gcds": 54,
+      "targeted_all_rows_and_triggered_offsets_divisibility_checks": 15,
+      "draws_changed_from_unmasked": 2668,
+      "mask_dependent_draws": 1867,
+      "negative_changes": 1180,
+      "diagnostic_gcds": 6386,
+      "draws_with_proper_coordinate_gcd": 1820,
+      "unanimously_masked_unit_draws": 801,
+      "positive_changes": 687,
+      "draws_with_only_public_square_zeros": 47,
+      "coordinate_pairs_examined": 335,
+      "per_query_divisibility_tests": 39,
+      "memoized_divisibility_tests": 31,
+      "decoded_divisibility_checks": 15,
+      "odd_interval_candidates": 45,
+      "ascending_divisibility_checks": 29,
+      "descending_divisibility_checks": 31,
+      "geometric_mean_hits": 9,
+      "first_fermat_hits": 14,
+      "products_with_all_zero_answers": 2
+    },
+    {
+      "larger_prime_bits": 6,
+      "products": 37,
+      "shared_residues": 70047,
+      "query_masks": 214,
+      "jacobi_evaluations": 413310,
+      "unmasked_jacobi_evaluations": 70047,
+      "modular_root_multiplications": 2159473,
+      "nonempty_query_subsets": 2139,
+      "prime_sum_prefix_lengths_verified": 659,
+      "targeted_row_gcds_to_factor": 46,
+      "targeted_through_first_extraction_offset_root_squares": 189,
+      "targeted_through_first_extraction_row_squares": 46,
+      "targeted_through_first_extraction_row_probes": 46,
+      "targeted_through_first_extraction_modular_root_multiplications": 231,
+      "targeted_through_first_extraction_final_integer_multiplications": 92,
+      "targeted_through_first_extraction_jacobi_evaluations": 46,
+      "targeted_through_first_extraction_extraction_gcds": 106,
+      "targeted_through_first_extraction_divisibility_checks": 37,
+      "targeted_all_rows_and_triggered_offsets_offset_root_squares": 189,
+      "targeted_all_rows_and_triggered_offsets_row_squares": 93,
+      "targeted_all_rows_and_triggered_offsets_row_probes": 93,
+      "targeted_all_rows_and_triggered_offsets_modular_root_multiplications": 481,
+      "targeted_all_rows_and_triggered_offsets_final_integer_multiplications": 186,
+      "targeted_all_rows_and_triggered_offsets_jacobi_evaluations": 93,
+      "targeted_all_rows_and_triggered_offsets_extraction_gcds": 189,
+      "targeted_all_rows_and_triggered_offsets_divisibility_checks": 37,
+      "draws_changed_from_unmasked": 20748,
+      "mask_dependent_draws": 17970,
+      "negative_changes": 10311,
+      "diagnostic_gcds": 77795,
+      "draws_with_proper_coordinate_gcd": 17765,
+      "unanimously_masked_unit_draws": 2778,
+      "positive_changes": 7659,
+      "draws_with_only_public_square_zeros": 205,
+      "coordinate_pairs_examined": 2274,
+      "per_query_divisibility_tests": 256,
+      "memoized_divisibility_tests": 190,
+      "decoded_divisibility_checks": 37,
+      "odd_interval_candidates": 229,
+      "ascending_divisibility_checks": 136,
+      "descending_divisibility_checks": 130,
+      "geometric_mean_hits": 18,
+      "first_fermat_hits": 27,
+      "products_with_all_zero_answers": 2
+    }
+  ],
+  "examples": {
+    "15": {
+      "product": "15",
+      "query_sizes": [
+        1,
+        1
+      ],
+      "geometric_mean_midpoint": 4,
+      "first_fermat_midpoint": 4,
+      "geometric_mean_hit": true,
+      "first_fermat_hit": true,
+      "single_sums": [
+        1,
+        1
+      ],
+      "single_square_sums": [
+        3,
+        3
+      ],
+      "pair_moments": [
+        {
+          "queries": [
+            0,
+            1
+          ],
+          "shared_product_sum": 2
+        }
+      ],
+      "union_coordinates": [
+        1,
+        2
+      ],
+      "unit_draws": 8,
+      "live_union_draws": 2,
+      "mask_changes": {
+        "draws_changed_from_unmasked": 6,
+        "unanimously_masked_unit_draws": 4,
+        "mask_dependent_draws": 2,
+        "negative_changes": 2,
+        "diagnostic_gcds": 3,
+        "draws_with_proper_coordinate_gcd": 2
+      },
+      "first_changing_residues": {
+        "unanimously_masked_unit": {
+          "residue": 1,
+          "unmasked_jacobi": 1
+        },
+        "proper_coordinate_gcd": {
+          "residue": 11,
+          "coordinate": 1,
+          "support_bits": 1,
+          "gcd": "5"
+        }
+      },
+      "complement_tests": {
+        "memoized_divisibility_tests": 0,
+        "decoded_divisibility_checks": 1
+      },
+      "targeted_rows": {
+        "block_coordinates": [
+          1
+        ],
+        "offset_coordinates": [
+          2
+        ],
+        "row_scores": [
+          0
+        ],
+        "row_product_gcds": [
+          "3"
+        ],
+        "row_gcds_to_factor": 1,
+        "hitting_pairs": [
+          {
+            "block": 1,
+            "offset": 2,
+            "gcd": "3"
+          }
+        ],
+        "through_first_extraction": {
+          "offset_root_squares": 1,
+          "row_squares": 1,
+          "row_probes": 1,
+          "modular_root_multiplications": 1,
+          "final_integer_multiplications": 2,
+          "jacobi_evaluations": 1,
+          "extraction_gcds": 1,
+          "divisibility_checks": 1
+        },
+        "all_rows_and_triggered_offsets": {
+          "offset_root_squares": 1,
+          "row_squares": 1,
+          "row_probes": 1,
+          "modular_root_multiplications": 1,
+          "final_integer_multiplications": 2,
+          "jacobi_evaluations": 1,
+          "extraction_gcds": 1,
+          "divisibility_checks": 1
+        }
+      },
+      "odd_trial": {
+        "odd_interval_candidates": 1,
+        "ascending_divisibility_checks": 1,
+        "descending_divisibility_checks": 1
+      },
+      "bit_answers": [
+        0,
+        0
+      ],
+      "changed_prefix_control": {
+        "signed_singleton_sum": 1,
+        "singleton_changed": 5,
+        "singleton_change_gcds": {
+          "3": 3,
+          "5": 1,
+          "15": 1
+        },
+        "prime_sum": 8,
+        "discriminant": 4,
+        "factors": [
+          "3",
+          "5"
+        ],
+        "checked_prefix_lengths": 1,
+        "selected_prefixes": [
+          {
+            "prefix_length": 1,
+            "changed_draws": 5,
+            "within_formula_range": true
+          },
+          {
+            "prefix_length": 2,
+            "changed_draws": 6,
+            "within_formula_range": false
+          }
+        ]
+      }
+    },
+    "299": {
+      "product": "299",
+      "query_sizes": [
+        4,
+        3,
+        3,
+        3
+      ],
+      "geometric_mean_midpoint": 17,
+      "first_fermat_midpoint": 18,
+      "geometric_mean_hit": false,
+      "first_fermat_hit": true,
+      "single_sums": [
+        16,
+        9,
+        9,
+        6
+      ],
+      "single_square_sums": [
+        144,
+        171,
+        171,
+        190
+      ],
+      "pair_moments": [
+        {
+          "queries": [
+            0,
+            1
+          ],
+          "shared_product_sum": 144
+        },
+        {
+          "queries": [
+            0,
+            2
+          ],
+          "shared_product_sum": 136
+        },
+        {
+          "queries": [
+            1,
+            2
+          ],
+          "shared_product_sum": 136
+        },
+        {
+          "queries": [
+            0,
+            3
+          ],
+          "shared_product_sum": 136
+        },
+        {
+          "queries": [
+            1,
+            3
+          ],
+          "shared_product_sum": 136
+        },
+        {
+          "queries": [
+            2,
+            3
+          ],
+          "shared_product_sum": 162
+        }
+      ],
+      "union_coordinates": [
+        2,
+        5,
+        7,
+        8,
+        9
+      ],
+      "unit_draws": 264,
+      "live_union_draws": 136,
+      "mask_changes": {
+        "draws_changed_from_unmasked": 128,
+        "mask_dependent_draws": 98,
+        "negative_changes": 63,
+        "diagnostic_gcds": 297,
+        "draws_with_proper_coordinate_gcd": 95,
+        "positive_changes": 35,
+        "draws_with_only_public_square_zeros": 3,
+        "unanimously_masked_unit_draws": 30
+      },
+      "first_changing_residues": {
+        "proper_coordinate_gcd": {
+          "residue": 2,
+          "coordinate": 5,
+          "support_bits": 4,
+          "gcd": "23"
+        },
+        "only_public_square": {
+          "residue": 4,
+          "support_bits": 2
+        },
+        "unanimously_masked_unit": {
+          "residue": 12,
+          "unmasked_jacobi": 1
+        }
+      },
+      "complement_tests": {
+        "coordinate_pairs_examined": 15,
+        "per_query_divisibility_tests": 2,
+        "memoized_divisibility_tests": 2,
+        "decoded_divisibility_checks": 1
+      },
+      "targeted_rows": {
+        "block_coordinates": [
+          8,
+          2
+        ],
+        "offset_coordinates": [
+          9,
+          7,
+          5
+        ],
+        "row_scores": [
+          0,
+          1
+        ],
+        "row_product_gcds": [
+          "13",
+          "1"
+        ],
+        "row_gcds_to_factor": 1,
+        "hitting_pairs": [
+          {
+            "block": 8,
+            "offset": 5,
+            "gcd": "13"
+          }
+        ],
+        "through_first_extraction": {
+          "offset_root_squares": 3,
+          "row_squares": 1,
+          "row_probes": 1,
+          "modular_root_multiplications": 3,
+          "final_integer_multiplications": 2,
+          "jacobi_evaluations": 1,
+          "extraction_gcds": 3,
+          "divisibility_checks": 1
+        },
+        "all_rows_and_triggered_offsets": {
+          "offset_root_squares": 3,
+          "row_squares": 2,
+          "row_probes": 2,
+          "modular_root_multiplications": 6,
+          "final_integer_multiplications": 4,
+          "jacobi_evaluations": 2,
+          "extraction_gcds": 3,
+          "divisibility_checks": 1
+        }
+      },
+      "odd_trial": {
+        "odd_interval_candidates": 3,
+        "ascending_divisibility_checks": 1,
+        "descending_divisibility_checks": 3
+      },
+      "bit_answers": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "changed_prefix_control": {
+        "signed_singleton_sum": 1,
+        "singleton_changed": 33,
+        "singleton_change_gcds": {
+          "13": 21,
+          "23": 11,
+          "299": 1
+        },
+        "prime_sum": 36,
+        "discriminant": 100,
+        "factors": [
+          "13",
+          "23"
+        ],
+        "checked_prefix_lengths": 6,
+        "selected_prefixes": [
+          {
+            "prefix_length": 1,
+            "changed_draws": 33,
+            "within_formula_range": true
+          },
+          {
+            "prefix_length": 2,
+            "changed_draws": 64,
+            "within_formula_range": true
+          },
+          {
+            "prefix_length": 6,
+            "changed_draws": 168,
+            "within_formula_range": true
+          },
+          {
+            "prefix_length": 7,
+            "changed_draws": 174,
+            "within_formula_range": false
+          }
+        ]
+      }
+    },
+    "2183": {
+      "product": "2183",
+      "query_sizes": [
+        6,
+        6,
+        5,
+        5,
+        5,
+        4
+      ],
+      "geometric_mean_midpoint": 47,
+      "first_fermat_midpoint": 47,
+      "geometric_mean_hit": false,
+      "first_fermat_hit": false,
+      "single_sums": [
+        30,
+        36,
+        25,
+        25,
+        25,
+        16
+      ],
+      "single_square_sums": [
+        1612,
+        1560,
+        1643,
+        1643,
+        1643,
+        1728
+      ],
+      "pair_moments": [
+        {
+          "queries": [
+            0,
+            1
+          ],
+          "shared_product_sum": 1530
+        },
+        {
+          "queries": [
+            0,
+            2
+          ],
+          "shared_product_sum": 1612
+        },
+        {
+          "queries": [
+            1,
+            2
+          ],
+          "shared_product_sum": 1560
+        },
+        {
+          "queries": [
+            0,
+            3
+          ],
+          "shared_product_sum": 1450
+        },
+        {
+          "queries": [
+            1,
+            3
+          ],
+          "shared_product_sum": 1450
+        },
+        {
+          "queries": [
+            2,
+            3
+          ],
+          "shared_product_sum": 1450
+        },
+        {
+          "queries": [
+            0,
+            4
+          ],
+          "shared_product_sum": 1450
+        },
+        {
+          "queries": [
+            1,
+            4
+          ],
+          "shared_product_sum": 1450
+        },
+        {
+          "queries": [
+            2,
+            4
+          ],
+          "shared_product_sum": 1450
+        },
+        {
+          "queries": [
+            3,
+            4
+          ],
+          "shared_product_sum": 1560
+        },
+        {
+          "queries": [
+            0,
+            5
+          ],
+          "shared_product_sum": 1450
+        },
+        {
+          "queries": [
+            1,
+            5
+          ],
+          "shared_product_sum": 1450
+        },
+        {
+          "queries": [
+            2,
+            5
+          ],
+          "shared_product_sum": 1450
+        },
+        {
+          "queries": [
+            3,
+            5
+          ],
+          "shared_product_sum": 1560
+        },
+        {
+          "queries": [
+            4,
+            5
+          ],
+          "shared_product_sum": 1560
+        }
+      ],
+      "union_coordinates": [
+        3,
+        13,
+        16,
+        18,
+        20,
+        22,
+        23,
+        24
+      ],
+      "unit_draws": 2088,
+      "live_union_draws": 1450,
+      "mask_changes": {
+        "draws_changed_from_unmasked": 638,
+        "mask_dependent_draws": 556,
+        "positive_changes": 238,
+        "diagnostic_gcds": 2453,
+        "draws_with_proper_coordinate_gcd": 550,
+        "draws_with_only_public_square_zeros": 6,
+        "negative_changes": 318,
+        "unanimously_masked_unit_draws": 82
+      },
+      "first_changing_residues": {
+        "proper_coordinate_gcd": {
+          "residue": 3,
+          "coordinate": 22,
+          "support_bits": 48,
+          "gcd": "37"
+        },
+        "only_public_square": {
+          "residue": 9,
+          "support_bits": 5
+        },
+        "unanimously_masked_unit": {
+          "residue": 21,
+          "unmasked_jacobi": 1
+        }
+      },
+      "complement_tests": {
+        "coordinate_pairs_examined": 66,
+        "per_query_divisibility_tests": 8,
+        "memoized_divisibility_tests": 6,
+        "decoded_divisibility_checks": 1
+      },
+      "targeted_rows": {
+        "block_coordinates": [
+          23,
+          13,
+          3
+        ],
+        "offset_coordinates": [
+          24,
+          22,
+          20,
+          18,
+          16
+        ],
+        "row_scores": [
+          1,
+          0,
+          1
+        ],
+        "row_product_gcds": [
+          "1",
+          "37",
+          "1"
+        ],
+        "row_gcds_to_factor": 2,
+        "hitting_pairs": [
+          {
+            "block": 13,
+            "offset": 24,
+            "gcd": "37"
+          }
+        ],
+        "through_first_extraction": {
+          "offset_root_squares": 5,
+          "row_squares": 2,
+          "row_probes": 2,
+          "modular_root_multiplications": 10,
+          "final_integer_multiplications": 4,
+          "jacobi_evaluations": 2,
+          "extraction_gcds": 1,
+          "divisibility_checks": 1
+        },
+        "all_rows_and_triggered_offsets": {
+          "offset_root_squares": 5,
+          "row_squares": 3,
+          "row_probes": 3,
+          "modular_root_multiplications": 15,
+          "final_integer_multiplications": 6,
+          "jacobi_evaluations": 3,
+          "extraction_gcds": 5,
+          "divisibility_checks": 1
+        }
+      },
+      "odd_trial": {
+        "odd_interval_candidates": 6,
+        "ascending_divisibility_checks": 2,
+        "descending_divisibility_checks": 5
+      },
+      "bit_answers": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changed_prefix_control": {
+        "signed_singleton_sum": 1,
+        "singleton_changed": 93,
+        "singleton_change_gcds": {
+          "37": 57,
+          "59": 35,
+          "2183": 1
+        },
+        "prime_sum": 96,
+        "discriminant": 484,
+        "factors": [
+          "37",
+          "59"
+        ],
+        "checked_prefix_lengths": 18,
+        "selected_prefixes": [
+          {
+            "prefix_length": 1,
+            "changed_draws": 93,
+            "within_formula_range": true
+          },
+          {
+            "prefix_length": 2,
+            "changed_draws": 184,
+            "within_formula_range": true
+          },
+          {
+            "prefix_length": 18,
+            "changed_draws": 1368,
+            "within_formula_range": true
+          },
+          {
+            "prefix_length": 19,
+            "changed_draws": 1386,
+            "within_formula_range": false
+          }
+        ]
+      }
+    }
+  },
+  "unit_offset_root_gcds_2183": {
+    "positive": {
+      "37": 120,
+      "59": 65,
+      "2183": 25
+    },
+    "negative": {
+      "37": 145,
+      "59": 90,
+      "2183": 0
+    }
+  },
+  "paired_updates_2183": [
+    {
+      "added_coordinate": 6,
+      "polynomial_root": 36,
+      "before_sum": 25,
+      "after_sum": 36,
+      "difference_sum": 11,
+      "difference_counts": {
+        "-1": 36,
+        "0": 2100,
+        "1": 47
+      },
+      "paired_total_estimator_variance": 181068,
+      "independent_total_estimator_variance": 6990228
+    },
+    {
+      "added_coordinate": 32,
+      "polynomial_root": 1024,
+      "before_sum": 25,
+      "after_sum": 30,
+      "difference_sum": 5,
+      "difference_counts": {
+        "-1": 13,
+        "0": 2152,
+        "1": 18
+      },
+      "paired_total_estimator_variance": 67648,
+      "independent_total_estimator_variance": 7104140
+    }
+  ]
+}

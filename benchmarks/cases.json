@@ -1195,5 +1195,15 @@
     "factors": ["37", "59"],
     "remaining": [],
     "fermat_steps": 0
+  },
+  {
+    "id": "shared-square-mask-299",
+    "description": "Trial division baseline for the shared-mask control where 98 residues distinguish the queries and 30 more change every query from the unmasked Jacobi symbol",
+    "n": "299",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["13", "23"],
+    "remaining": [],
+    "fermat_steps": 0
   }
 ]

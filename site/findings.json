@@ -1,5 +1,149 @@
 [
   {
+    "id": "square-mask-changed-prime-sum",
+    "category": "formulas",
+    "title": "93 changed readings give both primes of 2,183",
+    "impact": "Multiplying each Jacobi argument t by (t − 1)² changes 93 readings. Adding three gives the prime sum 96. Its discriminant is 484, yielding 37 and 59.",
+    "scope": "For any product of two distinct odd primes the exact count is p + q − 3. The signed sum of the same masked readings equals 1. Computing the count cheaply at full size remains open.",
+    "detail": "With roots 1² through d², the count is d(p + q − 2 − d) for 1 ≤ d ≤ (p − 1)/2. At 2,183, 57 singleton changes give gcd 37, 35 give gcd 59, and the residue 1 gives the whole product.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkChangedPrimeSum.lean",
+        "label": "Singleton and prefix count"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkSingletonChanges.lean",
+        "label": "Gcd at each changed residue"
+      },
+      {
+        "href": "benchmarks/shared-square-mask-samples.json",
+        "label": "Independent census"
+      },
+      {
+        "href": "discoveries/choosing-where-to-read-a-square-mask.md",
+        "label": "Worked example and costs"
+      }
+    ]
+  },
+  {
+    "id": "square-mask-periodic-residue",
+    "category": "formulas",
+    "title": "An unsigned periodic residue encodes the prime sum",
+    "impact": "At 2,183 the fraction of changed scores for the first 16 squares is 1,248/2,183. A supplied reading of 0.57 already recovers the prime sum 96.",
+    "scope": "For distinct 1,024-bit primes, an explicit prefix chosen from the product makes absolute error below 2⁻¹⁰²⁶ sufficient. Evaluating that residue with this accuracy remains open.",
+    "detail": "For the signed singleton score the periodic residue equals 1/N and its principal character coefficient equals 1/φ(N). The factor-dependent changed fraction comes from a different periodic function.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkChangedResidue.lean",
+        "label": "Changed indicator and rounding"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkMaskCharacters.lean",
+        "label": "Character coefficients and signed residue"
+      },
+      {
+        "href": "docs/research.md",
+        "label": "Role of the RH statements"
+      }
+    ]
+  },
+  {
+    "id": "square-mask-directed-rows",
+    "category": "formulas",
+    "title": "Exactly one chosen square gives the smaller prime as a row gcd",
+    "impact": "At 2,183 the first two block coordinates are 23 and 13. The gcd of the second row product with the input is already 37. One extra gcd identifies the matching offset 24.",
+    "scope": "The rows use only the public product of distinct odd primes p < q < 2p. Exactly one block and offset add up to p. The two complete rows at 2,183 use ten modular root multiplications.",
+    "detail": "The separate witness-finding experiment used 66 row evaluations, 297 modular root multiplications and 151 individual gcds across all 57 small products. Ascending trial division took 171 divisions.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkDirectedDigitQueries.lean",
+        "label": "Unique row, score and gcd"
+      },
+      {
+        "href": "benchmarks/shared-square-mask-samples.json",
+        "label": "Row probes and witness extraction"
+      },
+      {
+        "href": "discoveries/choosing-where-to-read-a-square-mask.md",
+        "label": "Worked example and costs"
+      }
+    ]
+  },
+  {
+    "id": "square-mask-trial-block-overrun",
+    "category": "limits",
+    "title": "The row products group consecutive odd trial divisors",
+    "impact": "Removing the unit differences from a square-mask row preserves its gcd. The remaining terms are consecutive descending odd candidate divisors. At 2,183 the first row starts at 47 and the second at 37.",
+    "scope": "For balanced distinct odd primes with cutoff K ≥ 2, complete rows through the hit use fewer than one row of extra scalar terms beyond the corresponding descending trial scan from 2K + 1.",
+    "detail": "The feasible interval may trim the starting point further. At 2,183 its largest odd candidate is 45. Direct trial takes five divisions descending or two ascending. Each digit question also equals a gcd of selected candidates once their product is known.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkDirectedDigitWork.lean",
+        "label": "Exact interval and overrun"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkDigitCandidateProduct.lean",
+        "label": "Digit questions as candidate products"
+      },
+      {
+        "href": "discoveries/factorial-progressions.md",
+        "label": "Classical product batching"
+      },
+      {
+        "href": "discoveries/choosing-where-to-read-a-square-mask.md",
+        "label": "Worked example and costs"
+      }
+    ]
+  },
+  {
+    "id": "square-mask-shared-changes",
+    "category": "limits",
+    "title": "One random residue rarely changes any digit question at full size",
+    "impact": "For any two distinct 1,024-bit primes, the chance that any mask formed from the public digit coordinates changes the unmasked symbol on one uniform residue is below 2⁻⁵⁰⁹.",
+    "scope": "Even asking all digit questions on every draw takes more than 2⁵⁰⁸ independent draws for a 50% chance of seeing one change. This concerns uniform draws.",
+    "detail": "At 2,183 at least one reading changes on 638 residues. The masks disagree on 556 of them and all give zero on the other 82. The exact count follows by taking the union of the coordinates once.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkSharedOccurrence.lean",
+        "label": "Union count and full-width probability"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkSharedScores.lean",
+        "label": "Shared second moment"
+      },
+      {
+        "href": "benchmarks/shared-square-mask-samples.json",
+        "label": "Direct comparisons with the unmasked symbol"
+      },
+      {
+        "href": "discoveries/choosing-where-to-read-a-square-mask.md",
+        "label": "Worked example and costs"
+      }
+    ]
+  },
+  {
+    "id": "square-mask-baseline-sampling",
+    "category": "limits",
+    "title": "Subtracting the unmasked signal reduces the error but still needs more than 2²⁵⁵⁸ draws",
+    "impact": "For one nonempty digit question on a 2,048-bit product of two 1,024-bit primes, half-gap RMS precision needs more than 2³⁰⁶⁹ independent uniform draws using the ordinary mean and more than 2²⁵⁵⁸ after subtracting the unmasked symbol on each draw.",
+    "scope": "These bounds apply to the two unbiased sample averages. The gap between the exact yes and no answers is d for a query with d coordinates.",
+    "detail": "Uniform sampling without replacement at the same precision leaves fewer than 2¹⁰²⁵ residues unexamined for the ordinary mean or 2¹⁵³⁶ for the baseline-subtracted mean.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkDigitSampling.lean",
+        "label": "Ordinary estimator and finite-population correction"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkDigitCenteredSampling.lean",
+        "label": "Baseline-subtracted estimator"
+      },
+      {
+        "href": "discoveries/choosing-where-to-read-a-square-mask.md",
+        "label": "Worked example and costs"
+      }
+    ]
+  },
+  {
     "id": "jacobi-mask-digit-work",
     "category": "cases",
     "title": "Six readings reveal 37, while two divisions find it directly",
