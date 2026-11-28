@@ -1,5 +1,25 @@
 [
   {
+    "id": "quartic-one-bit-passing",
+    "description": "Ordinary Fermat baseline for the locally passing product in the 32-bit pair differing at bit 26",
+    "n": "2874064069",
+    "max_steps": 265,
+    "status": "complete",
+    "factors": ["48541", "59209"],
+    "remaining": [],
+    "fermat_steps": 265
+  },
+  {
+    "id": "quartic-one-bit-failing",
+    "description": "Ordinary Fermat baseline for the locally failing product with the same low 26 bits and the opposite prime-sum sign",
+    "n": "2941172933",
+    "max_steps": 341,
+    "status": "complete",
+    "factors": ["48487", "60659"],
+    "remaining": [],
+    "fermat_steps": 341
+  },
+  {
     "id": "quartic-all-local-2257",
     "description": "Small-prime prepass on a product passing every finite quartic modulus with no integer solution at denominator one",
     "n": "2257",

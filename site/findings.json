@@ -1,5 +1,79 @@
 [
   {
+    "id": "quartic-sign-halves-admissible-sums",
+    "category": "gains",
+    "title": "A supplied sign retains exactly half the distinct admissible sum residues",
+    "impact": "Negation pairs the retained and discarded sums in a complete period, even when the modulus includes odd factors.",
+    "scope": "Any positive modulus divisible by 16 and N equal to 1 or 5 modulo 16. The count assumes the correct sign has been supplied. A partial period can have unequal counts.",
+    "detail": "The objects counted are distinct remainders of factor sums. Several modular factor pairs can represent the same sum.",
+    "sources": [
+      {"href": "discoveries/one-modulus-and-the-low-bits-of-the-prime-sum.md", "label": "Meaning of the half-count and its cost"},
+      {"href": "PrimeFactors/QuarticHalfSumResidues.lean", "label": "Negation pairing and cardinality theorem"}
+    ]
+  },
+  {
+    "id": "quartic-signed-prime-sum-prefix",
+    "category": "limits",
+    "title": "Even the right sign leaves one wrong sum per 32 positions before the true sum",
+    "impact": "Lean counts exactly how many earlier sums survive at every power of two. On the matched 32-bit inputs the counts are 16 and 21.",
+    "scope": "Ascending sums starting at the ceiling of twice the square root, with N equal to 5 modulo 16. The correct complete local answer is supplied.",
+    "detail": "Full-size inputs in this residue class with fewer than 2^895 earlier false sums account for less than one in 2^35 of all eligible inputs. The denominator of this fraction includes every residue class.",
+    "sources": [
+      {"href": "discoveries/one-modulus-and-the-low-bits-of-the-prime-sum.md", "label": "Exact cost before the first true sum"},
+      {"href": "PrimeFactors/QuarticSignedSumPrefix.lean", "label": "Counting and integer-square exclusion"}
+    ]
+  },
+  {
+    "id": "quartic-sign-with-160-public-product-bits",
+    "category": "limits",
+    "title": "Even 160 low product bits leave the prime-sum sign almost exactly fifty-fifty",
+    "impact": "For each fixed allowed 160-bit suffix, the proportion of full-size inputs passing the complete local tests differs from one half by at most 2⁻¹⁴⁷.",
+    "scope": "Uniform eligible prime products conditioned on that exact suffix. It must end in 0001 or 0101. The transfer uses published Dirichlet-GRH prime-count estimates as explicit inputs.",
+    "detail": "Negating both factor residues pairs opposite answers inside the same product residue. The proof counts actual prime pairs within each conditioned population and proves each is nonempty.",
+    "sources": [
+      {"href": "discoveries/one-modulus-and-the-low-bits-of-the-prime-sum.md", "label": "Interpretation and paired-cell count"},
+      {"href": "PrimeFactors/QuarticLocalConditionalBits.lean", "label": "Uniform theorem for every allowed suffix"}
+    ]
+  },
+  {
+    "id": "quartic-local-answer-selects-prime-sum-sign",
+    "category": "formulas",
+    "title": "One supplied local answer chooses the low digits of the prime sum",
+    "impact": "For N equal to 5 modulo 16, the answer chooses either N+1 or its negative as the sum modulo 32. Two 32-bit products that differ in just one bit give sum remainders 6 and 26.",
+    "scope": "Odd semiprimes passing the public test at 16. The complete local answer is supplied. Computing it from an arbitrary large product remains open here.",
+    "detail": "At N equal to 5 modulo 16, every sum in the selected remainder class has modular witnesses at all higher powers of two. Additional precision at two cannot select an integer sum within that class.",
+    "sources": [
+      {"href": "discoveries/one-modulus-and-the-low-bits-of-the-prime-sum.md", "label": "Sum formula, threshold and paired example"},
+      {"href": "PrimeFactors/QuarticLocalSumBits.lean", "label": "Signed prime sums and remaining modular possibilities"},
+      {"href": "#quartic-one-bit-passing", "label": "Passing product and prime certificate"},
+      {"href": "#quartic-one-bit-failing", "label": "Failing product and prime certificate"}
+    ]
+  },
+  {
+    "id": "one-modulus-for-every-quartic-test",
+    "category": "formulas",
+    "title": "The modulus 16N captures every locally primitive quartic congruence",
+    "impact": "A point exists at every positive modulus exactly when one exists at 16N. Sixteen is the smallest fixed multiplier that works for every odd input.",
+    "scope": "An existence criterion for every positive odd integer. Efficient evaluation of the point test at the resulting large modulus remains open.",
+    "detail": "For 2,173 the test passes precisely at moduli indivisible by 16. The same input therefore excludes every fixed multiplier lacking all four factors of two.",
+    "sources": [
+      {"href": "discoveries/one-modulus-and-the-low-bits-of-the-prime-sum.md", "label": "Single-modulus test and sharp boundary"},
+      {"href": "PrimeFactors/QuarticUniversalModulus.lean", "label": "Equivalence and exact multiplier classification"}
+    ]
+  },
+  {
+    "id": "quartic-congruences-and-minus-one",
+    "category": "formulas",
+    "title": "After the last four bits pass, one modular square question remains",
+    "impact": "The cleared quartic equation passes every local test exactly when minus one has a square root modulo N, once N is 1 or 5 modulo 16.",
+    "scope": "All odd positive inputs, including repeated prime factors. The existence criterion does not supply the root.",
+    "detail": "438 gives a square root of minus one for 2,257. For 2,173 a root also exists, but the last four bits reject it. For 2,773 the last four bits pass and the root is impossible.",
+    "sources": [
+      {"href": "discoveries/one-modulus-and-the-low-bits-of-the-prime-sum.md", "label": "Three worked examples"},
+      {"href": "PrimeFactors/QuarticLocalSquareCriterion.lean", "label": "Square criterion on an odd input"}
+    ]
+  },
+  {
     "id": "all-moduli-but-no-quartic-reading",
     "category": "limits",
     "title": "About one in eight products passes every modular test and still gives no quartic reading",

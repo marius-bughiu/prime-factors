@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+The modulus $16N$ captures every locally primitive cleared-quartic test for an odd input. Once the public test at 16 passes, the remaining condition is exactly whether $-1$ has a square root modulo $N$. Knowing that answer selects one of two possible remainders for $p+q$. [Exact equivalences and two products differing in one bit](one-modulus-and-the-low-bits-of-the-prime-sum.md)
+
 Even an ideal choice from **every denominator through $2^{512}$** lets the two fourth-root formulas recognize fewer than one in $2^{227}$ eligible prime pairs. This includes every denominator for which the earlier size condition guarantees gcd recovery from a supplied point. [Counting proof and limits](how-far-a-rational-denominator-can-extend-the-quartic-formula.md)
 
 The product's last four bits rule out **every** quartic denominator unless the remainder is 1 or 5 modulo 16. About one quarter of full-size prime products pass this cheap filter, and about one eighth pass every locally primitive quartic congruence under published prime-count estimates. Once the last four bits pass, any rejecting modulus below the product already shares a proper factor with it. [Exact conditions, work and matched examples](which-products-pass-every-quartic-congruence.md)

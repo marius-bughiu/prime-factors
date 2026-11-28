@@ -1057,3 +1057,9 @@ import PrimeFactors.QuarticUnitLift
 import PrimeFactors.LargeQuarticDenominatorCoverage
 import PrimeFactors.AllSmallQuarticDenominatorCoverage
 import PrimeFactors.QuarticLocalFalsePositives
+import PrimeFactors.QuarticUniversalModulus
+import PrimeFactors.QuarticLocalSquareCriterion
+import PrimeFactors.QuarticLocalSumBits
+import PrimeFactors.QuarticLocalConditionalBits
+import PrimeFactors.QuarticSignedSumPrefix
+import PrimeFactors.QuarticHalfSumResidues
