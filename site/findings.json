@@ -1,5 +1,23 @@
 [
   {
+    "id": "public-low-bits-and-the-hidden-sum",
+    "category": "limits",
+    "title": "Another 128 public product bits leave the best sum prediction near one in 537,510",
+    "impact": "Even with every lookup table allowed, the best single sum-remainder guess succeeds on between one in 537,511 and one in 537,510 eligible inputs. Guessing either factor remainder still costs about 980 million guesses on average.",
+    "scope": "All distinct 1,024-bit primes with a 2,048-bit product under the stated prime-count estimates. The predictor sees the five-square product remainder and the lowest 128 bits.",
+    "detail": "Every coarse first-factor remainder has equally many lifts in the exact uniform model, even at a fixed refined product. A separate estimate bounds the small difference for actual primes.",
+    "sources": [
+      {
+        "href": "discoveries/does-reading-more-of-the-product-predict-the-sum.md",
+        "label": "Predictions, inputs and worked examples"
+      },
+      {
+        "href": "PrimeFactors/RefinedSumPrediction.lean",
+        "label": "Prime-population success bound"
+      }
+    ]
+  },
+  {
     "id": "compressing-the-true-sum",
     "category": "limits",
     "title": "A message encoding only the sum needs 27 bits to preserve its full value everywhere",

@@ -1,5 +1,31 @@
 [
   {
+    "id": "same-public-four-bits-sum-two-22",
+    "description": "Chosen close primes sharing public product remainder 1 modulo 400 with the paired example, with true sum remainder 2 modulo 25",
+    "n": "2405201",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": [
+      "1531",
+      "1571"
+    ],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
+    "id": "same-public-four-bits-sum-twenty-three-22",
+    "description": "Chosen close primes sharing public product remainder 1 modulo 400 with the paired example, with true sum remainder 23 modulo 25",
+    "n": "2556401",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": [
+      "1579",
+      "1619"
+    ],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
     "id": "merge-two-sum-messages-20",
     "description": "Chosen close primes with sum remainder 23 and product remainder 1 modulo 25; the compressed report merges this sum with 2",
     "n": "637501",

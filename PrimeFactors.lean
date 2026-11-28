@@ -989,3 +989,9 @@ import PrimeFactors.FactorAdviceThreshold
 import PrimeFactors.CompressedSumClue
 import PrimeFactors.FiveSquareSumCodeWidth
 import PrimeFactors.FiveSquareSumAdviceThreshold
+import PrimeFactors.ExtendedModulusPrimeSupply
+import PrimeFactors.ExtendedProductCosts
+import PrimeFactors.ProductResidueRefinement
+import PrimeFactors.FiveSquareOneSumGuess
+import PrimeFactors.RefinedFactorGuessLimits
+import PrimeFactors.RefinedSumPrediction

@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Giving a predictor the **lowest 128 public product bits** alongside the five-square remainder leaves its best one-guess sum accuracy at about **one in 537,510** full-size prime pairs. [Population and exact information read](does-reading-more-of-the-product-predict-the-sum.md)
+
 If a helper can only encode the **sum**, then 27 bits preserve the complete sum’s modular guessing performance at every public product. Combining two possible sums into one message has an exactly measurable cost. [Bit thresholds and a hand calculation](compressing-the-sum-remainder.md)
 
 A helper who knows both primes needs at least **25 fixed-width bits** to match the mean achieved by revealing the true sum remainder. A particular 25-bit message puts every pair within 59 modular guesses. [Information bound and worked example](how-many-supplied-bits-a-factor-remainder-guess-needs.md)
