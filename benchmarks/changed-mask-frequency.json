@@ -1,0 +1,198 @@
+{
+  "population": "All distinct odd p < q < 2p with q of 3–5 bits, plus 37×59.",
+  "error": "Each threshold is the first positive draw count with RMS error below one in the even prime sum.",
+  "transform": "Exact integer cyclic-polynomial cancellations at every frequency.",
+  "totals": {
+    "products": 21,
+    "exact_frequencies": 9297,
+    "eligible_prefix_lengths": 155,
+    "ordinary_changed": 747,
+    "square_changed": 1452
+  },
+  "examples": [
+    {
+      "product": "15",
+      "reference_primes": [
+        "3",
+        "5"
+      ],
+      "sampling": [
+        {
+          "d": 1,
+          "changed": 5,
+          "count_variance": 50,
+          "first_iid_draws": 51,
+          "first_distinct_draws": 12,
+          "unseen_at_first_distinct": 3
+        }
+      ],
+      "fourier": {
+        "mixed_idempotents": [
+          6,
+          10
+        ],
+        "mixed_square_root": 11,
+        "frequency_counts_by_gcd": {
+          "1": 8,
+          "3": 4,
+          "5": 2,
+          "15": 1
+        }
+      },
+      "square_sampling": {
+        "changed_square_draws": 8,
+        "proper_gcd_of_square_minus_one": 4,
+        "mixed_roots_requiring_gcd_of_x_minus_one": 2,
+        "trivial_roots": 2
+      }
+    },
+    {
+      "product": "299",
+      "reference_primes": [
+        "13",
+        "23"
+      ],
+      "sampling": [
+        {
+          "d": 1,
+          "changed": 33,
+          "count_variance": 8778,
+          "first_iid_draws": 8779,
+          "first_distinct_draws": 290,
+          "unseen_at_first_distinct": 9
+        },
+        {
+          "d": 6,
+          "changed": 168,
+          "count_variance": 22008,
+          "first_iid_draws": 612,
+          "first_distinct_draws": 202,
+          "unseen_at_first_distinct": 97
+        }
+      ],
+      "fourier": {
+        "mixed_idempotents": [
+          92,
+          208
+        ],
+        "mixed_square_root": 183,
+        "frequency_counts_by_gcd": {
+          "1": 264,
+          "13": 22,
+          "23": 12,
+          "299": 1
+        }
+      },
+      "square_sampling": {
+        "changed_square_draws": 64,
+        "proper_gcd_of_square_minus_one": 60,
+        "mixed_roots_requiring_gcd_of_x_minus_one": 2,
+        "trivial_roots": 2
+      }
+    },
+    {
+      "product": "589",
+      "reference_primes": [
+        "19",
+        "31"
+      ],
+      "sampling": [
+        {
+          "d": 1,
+          "changed": 47,
+          "count_variance": 25474,
+          "first_iid_draws": 25475,
+          "first_distinct_draws": 576,
+          "unseen_at_first_distinct": 13
+        },
+        {
+          "d": 8,
+          "changed": 320,
+          "count_variance": 86080,
+          "first_iid_draws": 1346,
+          "first_distinct_draws": 410,
+          "unseen_at_first_distinct": 179
+        },
+        {
+          "d": 9,
+          "changed": 351,
+          "count_variance": 83538,
+          "first_iid_draws": 1032,
+          "first_distinct_draws": 376,
+          "unseen_at_first_distinct": 213
+        }
+      ],
+      "fourier": {
+        "mixed_idempotents": [
+          248,
+          342
+        ],
+        "mixed_square_root": 495,
+        "frequency_counts_by_gcd": {
+          "1": 540,
+          "19": 30,
+          "31": 18,
+          "589": 1
+        }
+      },
+      "square_sampling": {
+        "changed_square_draws": 92,
+        "proper_gcd_of_square_minus_one": 88,
+        "mixed_roots_requiring_gcd_of_x_minus_one": 2,
+        "trivial_roots": 2
+      }
+    },
+    {
+      "product": "2183",
+      "reference_primes": [
+        "37",
+        "59"
+      ],
+      "sampling": [
+        {
+          "d": 1,
+          "changed": 93,
+          "count_variance": 194370,
+          "first_iid_draws": 194371,
+          "first_distinct_draws": 2159,
+          "unseen_at_first_distinct": 24
+        },
+        {
+          "d": 16,
+          "changed": 1248,
+          "count_variance": 1166880,
+          "first_iid_draws": 4559,
+          "first_distinct_draws": 1477,
+          "unseen_at_first_distinct": 706
+        },
+        {
+          "d": 18,
+          "changed": 1368,
+          "count_variance": 1114920,
+          "first_iid_draws": 3442,
+          "first_distinct_draws": 1336,
+          "unseen_at_first_distinct": 847
+        }
+      ],
+      "fourier": {
+        "mixed_idempotents": [
+          296,
+          1888
+        ],
+        "mixed_square_root": 591,
+        "frequency_counts_by_gcd": {
+          "1": 2088,
+          "37": 58,
+          "59": 36,
+          "2183": 1
+        }
+      },
+      "square_sampling": {
+        "changed_square_draws": 184,
+        "proper_gcd_of_square_minus_one": 180,
+        "mixed_roots_requiring_gcd_of_x_minus_one": 2,
+        "trivial_roots": 2
+      }
+    }
+  ]
+}

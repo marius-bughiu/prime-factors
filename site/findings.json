@@ -1,5 +1,149 @@
 [
   {
+    "id": "fractional-prefix-sum",
+    "category": "formulas",
+    "title": "Three entries through 90 give the prime sum of 2,183",
+    "impact": "The integers 37, 59 and 74 share a factor with 2,183. The product gives the multiplier 24, and 24 × (3 + 1) gives the prime sum 96.",
+    "scope": "For a product of distinct odd primes, take g = gcd(24, N + 1) and count positive nonunits through floor(N/g). The prime sum is g times one more than the count.",
+    "detail": "The full count used 90 gcds. The 37th gcd had already found 37. Ascending trial division from the balanced lower bound found it in two divisions.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalNonunitPrefix.lean",
+        "label": "Exact count and first divisor"
+      },
+      {
+        "href": "PrimeFactors/FractionalPrefixReadout.lean",
+        "label": "Prime sum from a fractional count"
+      },
+      {
+        "href": "benchmarks/fractional-nonunit-prefix.json",
+        "label": "Counts on 57 products"
+      },
+      {
+        "href": "discoveries/counting-a-fraction-of-the-residues.md",
+        "label": "Worked examples and cost"
+      }
+    ]
+  },
+  {
+    "id": "fractional-prefix-largest-denominator",
+    "category": "limits",
+    "title": "24 is the largest denominator with a universally fixed correction",
+    "impact": "For any denominator m ≥ 2 coprime to the product, every compatible pair of unit residues has the same ordinary sum exactly when m divides both 24 and N + 1.",
+    "scope": "For a 2,048-bit input, even the shortest interval with this guarantee has more than 2²⁰⁴² entries. This bounds direct scanning under the stated residue rule.",
+    "detail": "Other denominators can yield a short list. At 2,183, dividing by 48 gives one nonunit through 45 and three possible sums, 72, 96 and 120. Only 96 gives integer factors.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalPrefixResidues.lean",
+        "label": "Residue classification and full-size bound"
+      },
+      {
+        "href": "PrimeFactors/FractionalPrefixReadout.lean",
+        "label": "Prime sum from a fractional count"
+      },
+      {
+        "href": "benchmarks/fractional-nonunit-prefix.json",
+        "label": "Counts on 57 products"
+      },
+      {
+        "href": "discoveries/counting-a-fraction-of-the-residues.md",
+        "label": "Worked examples and cost"
+      }
+    ]
+  },
+  {
+    "id": "dyadic-nonunit-middle",
+    "category": "formulas",
+    "title": "One parity bit repairs a missing count between two dyadic cutoffs",
+    "impact": "For 7,169 and 7,313 every positive-index count agrees except the eighth-interval count. Its possible values are 21 and 20.",
+    "scope": "At cutoffs N divided by powers of two, the difference of adjacent counts after doubling the later one gives a binary column sum. Two missing-middle values are possible at exactly two of seven neighboring differences.",
+    "detail": "One parity bit and the preceding count determine the missing reading. For odd primes the half-interval reading alone already determines the entire prime sum. The examples use different products.",
+    "sources": [
+      {
+        "href": "PrimeFactors/DyadicNonunitReadings.lean",
+        "label": "Erasure table and prime controls"
+      },
+      {
+        "href": "PrimeFactors/FractionalNonunitPrefix.lean",
+        "label": "Exact count and first divisor"
+      },
+      {
+        "href": "discoveries/counting-a-fraction-of-the-residues.md",
+        "label": "Worked examples and cost"
+      }
+    ]
+  },
+  {
+    "id": "unsigned-mask-sample-cost",
+    "category": "limits",
+    "title": "Uniform sampling needs 1,477 distinct readings at 2,183",
+    "impact": "With the first 16 squares, the exact prime sum is 96. For the ordinary sample-mean estimate to have root mean squared error below one, it takes 4,559 independent draws or 1,477 distinct draws.",
+    "scope": "For distinct odd primes p < q < 2p, the square-prefix length chosen from the product requires more than 15N/8 independent or 15N/23 distinct uniform residues at this accuracy.",
+    "detail": "The bound applies to estimating the prime sum by averaging the change indicator. The exact cost depends on both the changed count and the length of the square prefix.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkUnsignedSampling.lean",
+        "label": "Sample mean and exact thresholds"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkUnsignedVariance.lean",
+        "label": "One-draw variance"
+      },
+      {
+        "href": "benchmarks/changed-mask-frequency.json",
+        "label": "Exact finite checks"
+      },
+      {
+        "href": "discoveries/counting-a-fraction-of-the-residues.md",
+        "label": "Worked examples and cost"
+      }
+    ]
+  },
+  {
+    "id": "unsigned-mask-coordinate-gcds",
+    "category": "formulas",
+    "title": "1,232 of 1,248 changed readings contain a proper coordinate gcd",
+    "impact": "For 2,183 and the first 16 squares, a single gcd of all differences returns 37 on 688 residues and 59 on 336. Another 240 residues give both primes on distinct individual coordinates.",
+    "scope": "For a collision-free prefix of d squares, exactly d changed residues have no proper individual gcd. These are the public squares themselves. A complete direct row uses d differences.",
+    "detail": "The 1,232 count ranges over changed readings. The single-gcd counts range over all 2,183 residues. At the product-chosen length the row cost grows with the square root of the input.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkPrefixExtraction.lean",
+        "label": "Exact counts, gcds and row cost"
+      },
+      {
+        "href": "discoveries/counting-a-fraction-of-the-residues.md",
+        "label": "Worked examples and cost"
+      }
+    ]
+  },
+  {
+    "id": "singleton-changes-fourier",
+    "category": "formulas",
+    "title": "A Fourier coefficient measures the same four-root sum",
+    "impact": "At every frequency coprime to the product, the single-square change coefficient and the sum over the four square roots of one determine each other with exactly the same absolute error.",
+    "scope": "For a product of distinct odd primes the zero-frequency coefficient gives p + q − 3. Finding an efficient evaluator for the coefficient at coprime frequencies remains open.",
+    "detail": "The experiment checked the Chinese remainder formula at all 9,297 frequencies of 21 small products and the mixed-root phase relation at all 8,508 coprime frequencies.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkChangedFourier.lean",
+        "label": "Transform identity and error"
+      },
+      {
+        "href": "experiments/changed_mask_frequency.py",
+        "label": "Integer cancellation check"
+      },
+      {
+        "href": "benchmarks/changed-mask-frequency.json",
+        "label": "Exact finite checks"
+      },
+      {
+        "href": "discoveries/counting-a-fraction-of-the-residues.md",
+        "label": "Worked examples and cost"
+      }
+    ]
+  },
+  {
     "id": "square-mask-changed-prime-sum",
     "category": "formulas",
     "title": "93 changed readings give both primes of 2,183",

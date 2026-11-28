@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Counting the three nonunits through 90 gives the prime sum of 2,183. Lean classifies every denominator for which all compatible residue pairs give the same correction, and proves that even the shortest such interval still has more than $2^{2042}$ entries at full size. [Formula, worked examples and measurement costs](counting-a-fraction-of-the-residues.md)
+
 A degree-one mask changes 93 Jacobi readings on 2,183, giving the prime sum 96 and hence both factors. Two chosen square probes find 37 directly. The row products group ordinary trial divisors, and uniform samples rarely see a change on full-size products. [Exact changed counts, directed probes and sampling costs](choosing-where-to-read-a-square-mask.md)
 
 A complete Jacobi sum of 414 reveals the factor 37 of 2,183. Six shorter polynomials encode the same factor one bit at a time. Their direct evaluation took 13,098 Jacobi evaluations, while the second odd candidate already divided the product. [Exact formulas, degree limits and measured work](can-a-complete-jacobi-sum-reveal-a-prime.md)

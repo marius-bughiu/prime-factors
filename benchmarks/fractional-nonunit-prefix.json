@@ -1,0 +1,216 @@
+{
+  "population": "Every distinct odd prime pair p < q < 2p with larger prime of 3–6 bits.",
+  "moduli": "Every m from 2 through 48. Unit-pair decoding requires gcd(m,N)=1.",
+  "costs": "Full prefix scans test integers from 1. Early scans stop at the first nonunit or exhaust the prefix. Matched trial totals repeat one trial scan for each applicable modulus.",
+  "unit_product_classes": 711,
+  "globally_constant_classes": [
+    {
+      "modulus": 2,
+      "product_residue": 1,
+      "correction": 2
+    },
+    {
+      "modulus": 3,
+      "product_residue": 2,
+      "correction": 3
+    },
+    {
+      "modulus": 4,
+      "product_residue": 3,
+      "correction": 4
+    },
+    {
+      "modulus": 6,
+      "product_residue": 5,
+      "correction": 6
+    },
+    {
+      "modulus": 8,
+      "product_residue": 7,
+      "correction": 8
+    },
+    {
+      "modulus": 12,
+      "product_residue": 11,
+      "correction": 12
+    },
+    {
+      "modulus": 24,
+      "product_residue": 23,
+      "correction": 24
+    }
+  ],
+  "totals": {
+    "products": 57,
+    "trial_checks_once_ascending": 171,
+    "trial_checks_once_descending": 167,
+    "coprime_cases": 2502,
+    "proper_prefix_hits": 1945,
+    "empty_prefixes": 557,
+    "single_correction_cases": 197,
+    "full_prefix_gcds": 262191,
+    "gcds_through_first_or_exhaustion": 71627,
+    "candidate_sums_tested": 17533,
+    "nonnegative_discriminants": 10339,
+    "matched_trial_checks_ascending": 7685,
+    "matched_trial_checks_descending": 7464,
+    "denominator_gcd_proper": 173,
+    "denominator_gcd_equals_product": 4
+  },
+  "by_modulus": {
+    "24": {
+      "coprime_cases": 56,
+      "proper_prefix_hits": 44,
+      "empty_prefixes": 12,
+      "single_correction_cases": 8,
+      "full_prefix_gcds": 3184,
+      "gcds_through_first_or_exhaustion": 1607,
+      "candidate_sums_tested": 160,
+      "nonnegative_discriminants": 95,
+      "matched_trial_checks_ascending": 170,
+      "matched_trial_checks_descending": 166
+    },
+    "48": {
+      "coprime_cases": 56,
+      "proper_prefix_hits": 19,
+      "empty_prefixes": 37,
+      "single_correction_cases": 0,
+      "full_prefix_gcds": 1578,
+      "gcds_through_first_or_exhaustion": 1421,
+      "candidate_sums_tested": 266,
+      "nonnegative_discriminants": 150,
+      "matched_trial_checks_ascending": 170,
+      "matched_trial_checks_descending": 166
+    }
+  },
+  "examples": [
+    {
+      "product": "527",
+      "modulus": 24,
+      "product_residue": 23,
+      "cutoff": 21,
+      "count": 1,
+      "corrections": [
+        24
+      ],
+      "candidate_sums": [
+        48
+      ],
+      "discriminants_tested": 1,
+      "nonnegative_discriminants": 1,
+      "recovered": [
+        "17",
+        "31"
+      ],
+      "full_prefix_gcds": 21,
+      "gcds_through_first_or_exhaustion": 17,
+      "first_nonunit": 17,
+      "nonunits": [
+        17
+      ],
+      "odd_trial": {
+        "odd_interval_candidates": 3,
+        "ascending_divisibility_checks": 1,
+        "descending_divisibility_checks": 3
+      }
+    },
+    {
+      "product": "527",
+      "modulus": 48,
+      "product_residue": 47,
+      "cutoff": 10,
+      "count": 0,
+      "corrections": [
+        24,
+        48,
+        72
+      ],
+      "candidate_sums": [
+        24,
+        48,
+        72
+      ],
+      "discriminants_tested": 3,
+      "nonnegative_discriminants": 2,
+      "recovered": [
+        "17",
+        "31"
+      ],
+      "full_prefix_gcds": 10,
+      "gcds_through_first_or_exhaustion": 10,
+      "first_nonunit": null,
+      "nonunits": [],
+      "odd_trial": {
+        "odd_interval_candidates": 3,
+        "ascending_divisibility_checks": 1,
+        "descending_divisibility_checks": 3
+      }
+    },
+    {
+      "product": "2183",
+      "modulus": 24,
+      "product_residue": 23,
+      "cutoff": 90,
+      "count": 3,
+      "corrections": [
+        24
+      ],
+      "candidate_sums": [
+        96
+      ],
+      "discriminants_tested": 1,
+      "nonnegative_discriminants": 1,
+      "recovered": [
+        "37",
+        "59"
+      ],
+      "full_prefix_gcds": 90,
+      "gcds_through_first_or_exhaustion": 37,
+      "first_nonunit": 37,
+      "nonunits": [
+        37,
+        59,
+        74
+      ],
+      "odd_trial": {
+        "odd_interval_candidates": 6,
+        "ascending_divisibility_checks": 2,
+        "descending_divisibility_checks": 5
+      }
+    },
+    {
+      "product": "2183",
+      "modulus": 48,
+      "product_residue": 23,
+      "cutoff": 45,
+      "count": 1,
+      "corrections": [
+        24,
+        48,
+        72
+      ],
+      "candidate_sums": [
+        72,
+        96,
+        120
+      ],
+      "discriminants_tested": 3,
+      "nonnegative_discriminants": 2,
+      "recovered": [
+        "37",
+        "59"
+      ],
+      "full_prefix_gcds": 45,
+      "gcds_through_first_or_exhaustion": 37,
+      "first_nonunit": 37,
+      "nonunits": [
+        37
+      ],
+      "odd_trial": {
+        "odd_interval_candidates": 6,
+        "ascending_divisibility_checks": 2,
+        "descending_divisibility_checks": 5
+      }
+    }
+  ]
+}

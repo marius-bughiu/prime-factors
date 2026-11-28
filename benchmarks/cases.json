@@ -1205,5 +1205,15 @@
     "factors": ["13", "23"],
     "remaining": [],
     "fermat_steps": 0
+  },
+  {
+    "id": "changed-mask-frequency-589",
+    "description": "Factor certificate for the 589-frequency control with 47 unsigned singleton changes and mixed idempotents 248 and 342",
+    "n": "589",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["19", "31"],
+    "remaining": [],
+    "fermat_steps": 0
   }
 ]

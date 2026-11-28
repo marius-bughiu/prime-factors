@@ -25,6 +25,8 @@ def experiment(name, *args, data=RESEARCH, lean=False, proof=None):
 # fixture and reference result, also when one is added, renamed or removed.
 CHECKS = (
     Check('unit-tests', ('python3', '-m', 'unittest', 'discover', '-s', 'tests'), lean=True),
+    experiment('fractional_nonunit_prefix', data=('benchmarks/fractional-nonunit-prefix.json',)),
+    experiment('changed_mask_frequency', data=('benchmarks/changed-mask-frequency.json',)),
     experiment('shared_square_mask_samples', data=('benchmarks/shared-square-mask-samples.json',)),
     experiment('square_mask_digit_queries', data=('benchmarks/square-mask-digit-queries.json',)),
     experiment('jacobi_square_masks', data=('benchmarks/jacobi-square-masks.json',)),
