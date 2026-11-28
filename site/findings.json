@@ -1,5 +1,43 @@
 [
   {
+    "id": "full-width-quartic-first-midpoint",
+    "category": "formulas",
+    "title": "A quartic formula returns two certified 1,024-bit primes from their product",
+    "impact": "Two integer fourth roots recover both factors of the constructed 2,048-bit input. Ordinary Fermat also reaches them on its first midpoint.",
+    "scope": "A deliberately chosen product of the form 1 + 4y⁴. The first-midpoint comparison holds for every positive y in this family.",
+    "detail": "The search receives only N. A separate Lean theorem verifies the exact factorization, both primes and their widths. The benchmark replays a second primality certificate.",
+    "sources": [
+      {"href": "discoveries/a-full-size-quartic-example.md", "label": "How the product was selected and recovered"},
+      {"href": "PrimeFactors/FullWidthQuarticFixture.lean", "label": "Primality and recognizer proofs"},
+      {"href": "#quartic-first-midpoint-2048", "label": "Full-width benchmark and generated certificate"}
+    ]
+  },
+  {
+    "id": "three-denominators-for-the-quartic-search",
+    "category": "gains",
+    "title": "Three quartic trials give the same factors or failure as 2,048 trials",
+    "impact": "Testing only denominators 1, 725 and 1,517 preserves every result of the longer search. On a chosen 58-bit input only 1,517 finds the two 29-bit primes.",
+    "scope": "The equality holds for every 2,048-bit product of two distinct 1,024-bit primes. Fewer than one in 2^1102 eligible inputs pass this particular search.",
+    "detail": "The search uses only the product. A primitive denominator splits into two coprime parts of similar size. Primes dividing either part must be 1 modulo 4. These restrictions leave three values through 2,048.",
+    "sources": [
+      {"href": "discoveries/three-denominators-for-the-quartic-search.md", "label": "Reason for the reduction and worked examples"},
+      {"href": "PrimeFactors/ThreeQuarticDenominators.lean", "label": "Equality of executable outputs and coverage bound"},
+      {"href": "#scaled-quartic-58", "label": "Checked 58-bit Fermat comparison"}
+    ]
+  },
+  {
+    "id": "least-primitive-quartic-denominator",
+    "category": "limits",
+    "title": "221 is the smallest nontrivial denominator for a supplied primitive point under the size bound",
+    "impact": "The factors force how the denominator splits. A 48-bit prime product reaches the minimum with denominator 13 × 17.",
+    "scope": "Balanced odd prime pairs, coprime quartic coordinates and 6d⁴ ≤ N. Here the rational coordinates are supplied.",
+    "detail": "Every prime in the denominator is 1 modulo 4, and the fourth powers of the two coprime parts are within a factor of twelve of each other.",
+    "sources": [
+      {"href": "discoveries/three-denominators-for-the-quartic-search.md", "label": "Proof and distinction from the search interval"},
+      {"href": "PrimeFactors/LeastPrimitiveQuarticDenominator.lean", "label": "Minimum and example attaining it"}
+    ]
+  },
+  {
     "id": "quartic-rational-witness-at-every-modulus",
     "category": "limits",
     "title": "A 48-bit product passes every quartic remainder test and has no integer representation",

@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+The quartic formula recovers both 1,024-bit primes of a deliberately constructed 2,048-bit input. Ordinary Fermat reaches the same pair at the first midpoint. [Exact construction and certificates](a-full-size-quartic-example.md)
+
+Testing three denominators gives exactly the same factor pair or failure as testing every denominator through 2,048 on every eligible 2,048-bit input. The two nontrivial denominators each recover a selected smaller product missed by the original formula. [Why three suffice and how rare the recognized family is](three-denominators-for-the-quartic-search.md)
+
 A 48-bit semiprime admits a quartic representation modulo **every positive integer** but has no ordinary integer representation. Its supplied rational coordinates recover both prime factors by two gcds. [The example, conditional recovery and missing input](a-rational-quartic-witness-and-its-cost.md)
 
 Reading either end of the quartic representation increases the count of eligible prime pairs found through $2^{32}$ from **30 to 79**. The two methods succeed on disjoint balanced odd semiprimes. Their combined full-size coverage is below one in $2^{1128}$. [Complementary formula and census](reading-the-other-fourth-power.md)
