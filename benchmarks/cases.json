@@ -1215,5 +1215,15 @@
     "factors": ["19", "31"],
     "remaining": [],
     "fermat_steps": 0
+  },
+  {
+    "id": "fractional-prefix-wheel-3233",
+    "description": "Balanced control where a 210-wheel reconstructs 18 positive nonunits through 538 from the two cores 53 and 61",
+    "n": "3233",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["53", "61"],
+    "remaining": [],
+    "fermat_steps": 0
   }
 ]

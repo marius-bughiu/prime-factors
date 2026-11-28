@@ -1,5 +1,159 @@
 [
   {
+    "id": "fractional-two-corrections-120",
+    "category": "formulas",
+    "title": "Two possible corrections give a cutoff of N/120",
+    "impact": "For products leaving remainder 107 modulo 120, add either 108 or 132 to 120 times the count. The selected products 12,827 and 15,707 both give count one. Their prime sums are 228 and 252 respectively.",
+    "scope": "120 is the largest denominator at which even one unit product residue admits at most two ordinary corrections across all its compatible unit pairs. At 120 the only such residue is 107.",
+    "detail": "A single universally fixed correction allows denominators up to 24. Even with two allowed, a direct scan of a 2,048-bit input covers more than 2²⁰⁴⁰ positions.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalTwoCorrectionLimit.lean",
+        "label": "Global upper bound"
+      },
+      {
+        "href": "PrimeFactors/FractionalTwoCorrectionObstructions.lean",
+        "label": "Attainment, uniqueness and prime controls"
+      },
+      {
+        "href": "benchmarks/fractional-correction-menu.json",
+        "label": "Exact correction lists and controls"
+      },
+      {
+        "href": "discoveries/what-two-corrections-buy-for-a-prefix-count.md",
+        "label": "Examples and computational cost"
+      }
+    ]
+  },
+  {
+    "id": "fractional-prefix-or-full-list",
+    "category": "limits",
+    "title": "At 2,048 bits, the interval or the full correction list exceeds 2⁶⁷⁷ entries",
+    "impact": "The product imposes a tradeoff at every coprime denominator. At 2,183, denominator 240 leaves nine positions and eight corrections. Moving to 257 saves one position and leaves 128 corrections.",
+    "scope": "The bound counts all prefix positions and all possible ordinary corrections from the product residue alone. At a prime denominator one of those counts exceeds 2¹⁰²² for a 2,048-bit input.",
+    "detail": "Extra information can make the prefix count free or eliminate candidates before they are listed. The theorem bounds the complete list and the literal interval.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalCorrectionBudget.lean",
+        "label": "List size and work bounds"
+      },
+      {
+        "href": "benchmarks/fractional-correction-menu.json",
+        "label": "Exact correction lists and controls"
+      },
+      {
+        "href": "discoveries/what-two-corrections-buy-for-a-prefix-count.md",
+        "label": "Examples and computational cost"
+      }
+    ]
+  },
+  {
+    "id": "fractional-free-square-root",
+    "category": "formulas",
+    "title": "The count at the ceiling square root is always one for balanced primes",
+    "impact": "For 2,183, the count at denominator 47 is one before any gcd is taken. At denominator 120 the count is zero by the public bound 120² ≥ 2 × 2,183.",
+    "scope": "For p < q < 2p, the count stays one from the ceiling square root through q, then drops to zero. A finite divisor check certifies the count at nearby denominators.",
+    "detail": "At 48 only 47 needs testing to certify the count. Balance and the product modulo four already force the sum 96 in this example.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalFreeReadings.lean",
+        "label": "Thresholds and toy control"
+      },
+      {
+        "href": "PrimeFactors/FractionalCorrectionBudget.lean",
+        "label": "List size and work bounds"
+      },
+      {
+        "href": "discoveries/what-two-corrections-buy-for-a-prefix-count.md",
+        "label": "Examples and computational cost"
+      }
+    ]
+  },
+  {
+    "id": "fractional-balanced-lift-uniqueness",
+    "category": "formulas",
+    "title": "A sufficiently large modulus makes a surviving balanced pair exact",
+    "impact": "For 12,827 at denominator 1,604, both 228 and 232 pass the bounds on the sum. The pair 23 and 209 fails the balance check. The pair 101 and 127 survives and multiplies to 12,827.",
+    "scope": "If positive candidate residues and their sum pass the stated balanced bounds, and eight times the modulus is at least N, congruence of their product to N forces equality.",
+    "detail": "At 583,201 and modulus 72,898, eight times the modulus is just 17 below N. Both (643, 907) and (809, 811) pass the pair and sum checks. Each pair consists of distinct ten-bit primes. Finding the surviving pair efficiently remains open.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalBalancedLifts.lean",
+        "label": "Uniqueness and sharpness controls"
+      },
+      {
+        "href": "discoveries/what-two-corrections-buy-for-a-prefix-count.md",
+        "label": "Examples and computational cost"
+      }
+    ]
+  },
+  {
+    "id": "fractional-wheel-count",
+    "category": "formulas",
+    "title": "20 core gcds reconstruct a 90-position count exactly",
+    "impact": "At 2,183 with wheel 210, core 37 represents both 37 and 74. Core 59 occurs once. Those two weights give the full count of three after 20 core gcds and a wheel eligibility check.",
+    "scope": "For a wheel coprime to N, removing every wheel prime from a positive integer preserves its gcd with N. Each remaining core is counted with its exact multiplicity.",
+    "detail": "This measurement also used 101 multiplications to build the multiplier list and 86 weight comparisons. Stopping at the first hit took eight core gcds. Balanced ascending trial division found 37 in two divisions.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalPrefixWheel.lean",
+        "label": "Weighted partition and fixed-wheel bound"
+      },
+      {
+        "href": "benchmarks/fractional-prefix-wheel.json",
+        "label": "Operation counts on 57 products"
+      },
+      {
+        "href": "discoveries/what-two-corrections-buy-for-a-prefix-count.md",
+        "label": "Examples and computational cost"
+      }
+    ]
+  },
+  {
+    "id": "fractional-sampling-rounding",
+    "category": "limits",
+    "title": "Even a 12-point RMS target takes 83 of 90 distinct positions",
+    "impact": "At 2,183 with denominator 24, the possible prime sums are multiples of 24. The ordinary sample mean needs 83 distinct positions or 1,045 independent draws for root mean squared error below 12.",
+    "scope": "For distinct 1,024-bit primes and a 2,048-bit product, RMS below half the spacing needs more than 2³⁰⁶² independent draws. Sampling without replacement leaves fewer than 2¹⁰²² positions uninspected.",
+    "detail": "These bounds concern estimating the sum by uniform sampling. A single nonunit encountered while sampling gives a proper gcd immediately.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalPrefixSampleCost.lean",
+        "label": "Variance, two accuracy criteria and thresholds"
+      },
+      {
+        "href": "benchmarks/fractional-correction-menu.json",
+        "label": "Exact correction lists and controls"
+      },
+      {
+        "href": "discoveries/what-two-corrections-buy-for-a-prefix-count.md",
+        "label": "Examples and computational cost"
+      }
+    ]
+  },
+  {
+    "id": "fractional-totient-slices",
+    "category": "formulas",
+    "title": "All 24 fractional intervals of 2,183 contain 87 coprime integers",
+    "impact": "The first interval contains 90 integers and the other 23 each contain 91. Each holds the same number of integers coprime to 2,183.",
+    "scope": "For distinct primes with m dividing both N + 1 and p + q, every interval between successive multiples of N/m contains exactly φ(N)/m coprime integers, with the right endpoint included.",
+    "detail": "For m equal integer-length blocks covering 1 through N − 1, nonunit counts agree exactly when m divides both p − 1 and q − 1.",
+    "sources": [
+      {
+        "href": "PrimeFactors/FractionalTotientSlices.lean",
+        "label": "Endpoints and both partitions"
+      },
+      {
+        "href": "docs/research.md",
+        "label": "Classical partial totients and Dirichlet characters"
+      },
+      {
+        "href": "discoveries/what-two-corrections-buy-for-a-prefix-count.md",
+        "label": "Examples and computational cost"
+      }
+    ]
+  },
+  {
     "id": "fractional-prefix-sum",
     "category": "formulas",
     "title": "Three entries through 90 give the prime sum of 2,183",

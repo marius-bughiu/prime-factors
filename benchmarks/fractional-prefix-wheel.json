@@ -1,0 +1,962 @@
+{
+  "population": "All distinct odd p < q < 2p with larger prime of 3–6 bits. Equal-width cases are a subset.",
+  "cohort_sizes": {
+    "all_balanced": 57,
+    "equal_prime_width": 33
+  },
+  "counting": "Each core b contributes the number of wheel-smooth a with ab inside the prefix. Only nonunit cores need weights. Gcd(1,N) is known. The totals include all other visited cores.",
+  "setup": "Each wheel table is prepared once for the cohort; smooth multipliers are generated afresh for each eligible prefix. Each successful or overflowing prime multiplication is counted.",
+  "wheel_setup": {
+    "1": {
+      "one_time_residue_gcds": 1,
+      "residue_classes": 1
+    },
+    "2": {
+      "one_time_residue_gcds": 2,
+      "residue_classes": 1
+    },
+    "6": {
+      "one_time_residue_gcds": 6,
+      "residue_classes": 2
+    },
+    "30": {
+      "one_time_residue_gcds": 30,
+      "residue_classes": 8
+    },
+    "210": {
+      "one_time_residue_gcds": 210,
+      "residue_classes": 48
+    }
+  },
+  "thresholds": "RMS error below one in the usual unbiased prime-sum estimator. First positive draw count, including the zero-variance case.",
+  "cohorts": {
+    "all_balanced": {
+      "half": {
+        "1": {
+          "products": 57,
+          "eligibility_gcds": 57,
+          "smooth_entries": 57,
+          "wheel_blocks_visited": 38552,
+          "wheel_slots_examined": 38552,
+          "cores_visited": 38552,
+          "core_gcds": 38495,
+          "core_gcds_to_first_or_exhaustion": 1592,
+          "weight_divisions": 1908,
+          "weight_comparisons": 1908,
+          "eligible": 57,
+          "prefix_nonunits": 1908,
+          "distinct_hit_cores": 1908,
+          "direct_count_gcds": 38552,
+          "direct_gcds_to_first_or_exhaustion": 1649,
+          "ascending_trial_divisions": 171,
+          "descending_trial_divisions": 167,
+          "iid_draws": 6360841,
+          "distinct_draws": 38321
+        },
+        "2": {
+          "products": 57,
+          "eligibility_gcds": 57,
+          "smooth_generation_multiplications": 529,
+          "smooth_entries": 529,
+          "wheel_blocks_visited": 19293,
+          "wheel_slots_examined": 19293,
+          "cores_visited": 19293,
+          "core_gcds": 19236,
+          "core_gcds_to_first_or_exhaustion": 796,
+          "weight_divisions": 983,
+          "weight_comparisons": 9774,
+          "eligible": 57,
+          "prefix_nonunits": 1908,
+          "distinct_hit_cores": 983,
+          "direct_count_gcds": 38552,
+          "direct_gcds_to_first_or_exhaustion": 1649,
+          "ascending_trial_divisions": 171,
+          "descending_trial_divisions": 167,
+          "iid_draws": 6360841,
+          "distinct_draws": 38321
+        },
+        "6": {
+          "products": 57,
+          "eligibility_gcds": 57,
+          "eligibility_gcd_proper": 1,
+          "smooth_generation_multiplications": 2392,
+          "smooth_entries": 1866,
+          "wheel_blocks_visited": 6445,
+          "wheel_slots_examined": 12890,
+          "cores_visited": 12859,
+          "core_gcds": 12803,
+          "core_gcds_to_first_or_exhaustion": 520,
+          "weight_divisions": 655,
+          "weight_comparisons": 24110,
+          "eligible": 56,
+          "prefix_nonunits": 1905,
+          "distinct_hit_cores": 655,
+          "direct_count_gcds": 38545,
+          "direct_gcds_to_first_or_exhaustion": 1646,
+          "ascending_trial_divisions": 170,
+          "descending_trial_divisions": 166,
+          "iid_draws": 6360792,
+          "distinct_draws": 38314
+        },
+        "30": {
+          "products": 57,
+          "eligibility_gcds": 57,
+          "eligibility_gcd_whole_product": 1,
+          "eligibility_gcd_proper": 1,
+          "smooth_generation_multiplications": 6184,
+          "smooth_entries": 3806,
+          "wheel_blocks_visited": 1312,
+          "wheel_slots_examined": 10332,
+          "cores_visited": 10282,
+          "core_gcds": 10227,
+          "core_gcds_to_first_or_exhaustion": 408,
+          "weight_divisions": 523,
+          "weight_comparisons": 41040,
+          "eligible": 55,
+          "prefix_nonunits": 1900,
+          "distinct_hit_cores": 523,
+          "direct_count_gcds": 38528,
+          "direct_gcds_to_first_or_exhaustion": 1641,
+          "ascending_trial_divisions": 169,
+          "descending_trial_divisions": 165,
+          "iid_draws": 6360551,
+          "distinct_draws": 38298
+        },
+        "210": {
+          "products": 57,
+          "eligibility_gcds": 57,
+          "eligibility_gcd_whole_product": 2,
+          "eligibility_gcd_proper": 2,
+          "smooth_generation_multiplications": 12139,
+          "smooth_entries": 6037,
+          "wheel_blocks_visited": 210,
+          "wheel_slots_examined": 8846,
+          "cores_visited": 8793,
+          "core_gcds": 8740,
+          "core_gcds_to_first_or_exhaustion": 350,
+          "weight_divisions": 420,
+          "weight_comparisons": 55035,
+          "eligible": 53,
+          "prefix_nonunits": 1883,
+          "distinct_hit_cores": 420,
+          "direct_count_gcds": 38445,
+          "direct_gcds_to_first_or_exhaustion": 1627,
+          "ascending_trial_divisions": 167,
+          "descending_trial_divisions": 162,
+          "iid_draws": 6358293,
+          "distinct_draws": 38217
+        }
+      },
+      "greatest": {
+        "1": {
+          "products": 57,
+          "eligibility_gcds": 57,
+          "smooth_entries": 57,
+          "wheel_blocks_visited": 14958,
+          "wheel_slots_examined": 14958,
+          "cores_visited": 14958,
+          "core_gcds_to_first_or_exhaustion": 1581,
+          "eligible": 57,
+          "prefix_nonunits": 706,
+          "distinct_hit_cores": 706,
+          "direct_count_gcds": 14958,
+          "direct_gcds_to_first_or_exhaustion": 1638,
+          "ascending_trial_divisions": 171,
+          "descending_trial_divisions": 167,
+          "iid_draws": 5850729,
+          "distinct_draws": 14911,
+          "core_gcds": 14901,
+          "weight_divisions": 706,
+          "weight_comparisons": 706
+        },
+        "2": {
+          "products": 57,
+          "eligibility_gcds": 57,
+          "smooth_generation_multiplications": 428,
+          "smooth_entries": 428,
+          "wheel_blocks_visited": 7483,
+          "wheel_slots_examined": 7483,
+          "cores_visited": 7483,
+          "core_gcds_to_first_or_exhaustion": 790,
+          "eligible": 57,
+          "prefix_nonunits": 706,
+          "distinct_hit_cores": 385,
+          "direct_count_gcds": 14958,
+          "direct_gcds_to_first_or_exhaustion": 1638,
+          "ascending_trial_divisions": 171,
+          "descending_trial_divisions": 167,
+          "iid_draws": 5850729,
+          "distinct_draws": 14911,
+          "core_gcds": 7426,
+          "weight_divisions": 385,
+          "weight_comparisons": 3486
+        },
+        "6": {
+          "products": 57,
+          "eligibility_gcds": 57,
+          "eligibility_gcd_proper": 1,
+          "smooth_generation_multiplications": 1732,
+          "smooth_entries": 1305,
+          "wheel_blocks_visited": 2508,
+          "wheel_slots_examined": 5016,
+          "cores_visited": 4983,
+          "core_gcds_to_first_or_exhaustion": 517,
+          "eligible": 56,
+          "prefix_nonunits": 706,
+          "distinct_hit_cores": 266,
+          "direct_count_gcds": 14957,
+          "direct_gcds_to_first_or_exhaustion": 1637,
+          "ascending_trial_divisions": 170,
+          "descending_trial_divisions": 166,
+          "iid_draws": 5850728,
+          "distinct_draws": 14910,
+          "core_gcds": 4927,
+          "weight_divisions": 266,
+          "weight_comparisons": 8079
+        },
+        "30": {
+          "products": 57,
+          "eligibility_gcds": 57,
+          "eligibility_gcd_whole_product": 1,
+          "eligibility_gcd_proper": 1,
+          "smooth_generation_multiplications": 4138,
+          "smooth_entries": 2410,
+          "wheel_blocks_visited": 521,
+          "wheel_slots_examined": 4035,
+          "cores_visited": 3985,
+          "core_gcds": 3930,
+          "core_gcds_to_first_or_exhaustion": 406,
+          "weight_divisions": 206,
+          "weight_comparisons": 12228,
+          "eligible": 55,
+          "prefix_nonunits": 706,
+          "distinct_hit_cores": 206,
+          "direct_count_gcds": 14955,
+          "direct_gcds_to_first_or_exhaustion": 1635,
+          "ascending_trial_divisions": 169,
+          "descending_trial_divisions": 165,
+          "iid_draws": 5850727,
+          "distinct_draws": 14909
+        },
+        "210": {
+          "products": 57,
+          "eligibility_gcds": 57,
+          "eligibility_gcd_whole_product": 2,
+          "eligibility_gcd_proper": 2,
+          "smooth_generation_multiplications": 7639,
+          "smooth_entries": 3552,
+          "wheel_blocks_visited": 101,
+          "wheel_slots_examined": 3466,
+          "cores_visited": 3413,
+          "core_gcds_to_first_or_exhaustion": 349,
+          "eligible": 53,
+          "prefix_nonunits": 700,
+          "distinct_hit_cores": 162,
+          "direct_count_gcds": 14921,
+          "direct_gcds_to_first_or_exhaustion": 1621,
+          "ascending_trial_divisions": 167,
+          "descending_trial_divisions": 162,
+          "iid_draws": 5848853,
+          "distinct_draws": 14875,
+          "core_gcds": 3360,
+          "weight_divisions": 162,
+          "weight_comparisons": 14912
+        }
+      }
+    },
+    "equal_prime_width": {
+      "half": {
+        "1": {
+          "products": 33,
+          "eligibility_gcds": 33,
+          "smooth_entries": 33,
+          "wheel_blocks_visited": 27658,
+          "wheel_slots_examined": 27658,
+          "cores_visited": 27658,
+          "core_gcds": 27625,
+          "core_gcds_to_first_or_exhaustion": 1088,
+          "weight_divisions": 1246,
+          "weight_comparisons": 1246,
+          "eligible": 33,
+          "prefix_nonunits": 1246,
+          "distinct_hit_cores": 1246,
+          "direct_count_gcds": 27658,
+          "direct_gcds_to_first_or_exhaustion": 1121,
+          "ascending_trial_divisions": 128,
+          "descending_trial_divisions": 87,
+          "iid_draws": 4905153,
+          "distinct_draws": 27506
+        },
+        "2": {
+          "products": 33,
+          "eligibility_gcds": 33,
+          "smooth_generation_multiplications": 322,
+          "smooth_entries": 322,
+          "wheel_blocks_visited": 13839,
+          "wheel_slots_examined": 13839,
+          "cores_visited": 13839,
+          "core_gcds": 13806,
+          "core_gcds_to_first_or_exhaustion": 544,
+          "weight_divisions": 639,
+          "weight_comparisons": 6558,
+          "eligible": 33,
+          "prefix_nonunits": 1246,
+          "distinct_hit_cores": 639,
+          "direct_count_gcds": 27658,
+          "direct_gcds_to_first_or_exhaustion": 1121,
+          "ascending_trial_divisions": 128,
+          "descending_trial_divisions": 87,
+          "iid_draws": 4905153,
+          "distinct_draws": 27506
+        },
+        "6": {
+          "products": 33,
+          "eligibility_gcds": 33,
+          "smooth_generation_multiplications": 1495,
+          "smooth_entries": 1173,
+          "wheel_blocks_visited": 4621,
+          "wheel_slots_examined": 9242,
+          "cores_visited": 9226,
+          "core_gcds": 9193,
+          "core_gcds_to_first_or_exhaustion": 356,
+          "weight_divisions": 428,
+          "weight_comparisons": 16578,
+          "eligible": 33,
+          "prefix_nonunits": 1246,
+          "distinct_hit_cores": 428,
+          "direct_count_gcds": 27658,
+          "direct_gcds_to_first_or_exhaustion": 1121,
+          "ascending_trial_divisions": 128,
+          "descending_trial_divisions": 87,
+          "iid_draws": 4905153,
+          "distinct_draws": 27506
+        },
+        "30": {
+          "products": 33,
+          "eligibility_gcds": 33,
+          "eligibility_gcd_proper": 1,
+          "smooth_generation_multiplications": 3918,
+          "smooth_entries": 2437,
+          "wheel_blocks_visited": 937,
+          "wheel_slots_examined": 7403,
+          "cores_visited": 7375,
+          "core_gcds": 7343,
+          "core_gcds_to_first_or_exhaustion": 279,
+          "weight_divisions": 344,
+          "weight_comparisons": 28804,
+          "eligible": 32,
+          "prefix_nonunits": 1241,
+          "distinct_hit_cores": 344,
+          "direct_count_gcds": 27641,
+          "direct_gcds_to_first_or_exhaustion": 1116,
+          "ascending_trial_divisions": 127,
+          "descending_trial_divisions": 86,
+          "iid_draws": 4904912,
+          "distinct_draws": 27490
+        },
+        "210": {
+          "products": 33,
+          "eligibility_gcds": 33,
+          "eligibility_gcd_whole_product": 1,
+          "smooth_generation_multiplications": 7879,
+          "smooth_entries": 3961,
+          "wheel_blocks_visited": 148,
+          "wheel_slots_examined": 6352,
+          "cores_visited": 6320,
+          "core_gcds": 6288,
+          "core_gcds_to_first_or_exhaustion": 244,
+          "weight_divisions": 282,
+          "weight_comparisons": 39666,
+          "eligible": 32,
+          "prefix_nonunits": 1241,
+          "distinct_hit_cores": 282,
+          "direct_count_gcds": 27641,
+          "direct_gcds_to_first_or_exhaustion": 1116,
+          "ascending_trial_divisions": 127,
+          "descending_trial_divisions": 86,
+          "iid_draws": 4904912,
+          "distinct_draws": 27490
+        }
+      },
+      "greatest": {
+        "1": {
+          "products": 33,
+          "eligibility_gcds": 33,
+          "smooth_entries": 33,
+          "wheel_blocks_visited": 10226,
+          "wheel_slots_examined": 10226,
+          "cores_visited": 10226,
+          "core_gcds": 10193,
+          "core_gcds_to_first_or_exhaustion": 1079,
+          "eligible": 33,
+          "prefix_nonunits": 442,
+          "distinct_hit_cores": 442,
+          "direct_count_gcds": 10226,
+          "direct_gcds_to_first_or_exhaustion": 1112,
+          "ascending_trial_divisions": 128,
+          "descending_trial_divisions": 87,
+          "iid_draws": 4514721,
+          "distinct_draws": 10195,
+          "weight_divisions": 442,
+          "weight_comparisons": 442
+        },
+        "2": {
+          "products": 33,
+          "eligibility_gcds": 33,
+          "smooth_generation_multiplications": 259,
+          "smooth_entries": 259,
+          "wheel_blocks_visited": 5115,
+          "wheel_slots_examined": 5115,
+          "cores_visited": 5115,
+          "core_gcds_to_first_or_exhaustion": 539,
+          "eligible": 33,
+          "prefix_nonunits": 442,
+          "distinct_hit_cores": 238,
+          "direct_count_gcds": 10226,
+          "direct_gcds_to_first_or_exhaustion": 1112,
+          "ascending_trial_divisions": 128,
+          "descending_trial_divisions": 87,
+          "iid_draws": 4514721,
+          "distinct_draws": 10195,
+          "core_gcds": 5082,
+          "weight_divisions": 238,
+          "weight_comparisons": 2222
+        },
+        "6": {
+          "products": 33,
+          "eligibility_gcds": 33,
+          "smooth_generation_multiplications": 1071,
+          "smooth_entries": 812,
+          "wheel_blocks_visited": 1713,
+          "wheel_slots_examined": 3426,
+          "cores_visited": 3409,
+          "core_gcds_to_first_or_exhaustion": 353,
+          "eligible": 33,
+          "prefix_nonunits": 442,
+          "distinct_hit_cores": 163,
+          "direct_count_gcds": 10226,
+          "direct_gcds_to_first_or_exhaustion": 1112,
+          "ascending_trial_divisions": 128,
+          "descending_trial_divisions": 87,
+          "iid_draws": 4514721,
+          "distinct_draws": 10195,
+          "core_gcds": 3376,
+          "weight_divisions": 163,
+          "weight_comparisons": 5215
+        },
+        "30": {
+          "products": 33,
+          "eligibility_gcds": 33,
+          "eligibility_gcd_proper": 1,
+          "smooth_generation_multiplications": 2592,
+          "smooth_entries": 1525,
+          "wheel_blocks_visited": 353,
+          "wheel_slots_examined": 2753,
+          "cores_visited": 2725,
+          "core_gcds_to_first_or_exhaustion": 277,
+          "eligible": 32,
+          "prefix_nonunits": 442,
+          "distinct_hit_cores": 123,
+          "direct_count_gcds": 10224,
+          "direct_gcds_to_first_or_exhaustion": 1110,
+          "ascending_trial_divisions": 127,
+          "descending_trial_divisions": 86,
+          "iid_draws": 4514720,
+          "distinct_draws": 10194,
+          "core_gcds": 2693,
+          "weight_divisions": 123,
+          "weight_comparisons": 7915
+        },
+        "210": {
+          "products": 33,
+          "eligibility_gcds": 33,
+          "eligibility_gcd_whole_product": 1,
+          "smooth_generation_multiplications": 4887,
+          "smooth_entries": 2295,
+          "wheel_blocks_visited": 66,
+          "wheel_slots_examined": 2372,
+          "cores_visited": 2340,
+          "core_gcds_to_first_or_exhaustion": 243,
+          "eligible": 32,
+          "prefix_nonunits": 442,
+          "distinct_hit_cores": 98,
+          "direct_count_gcds": 10224,
+          "direct_gcds_to_first_or_exhaustion": 1110,
+          "ascending_trial_divisions": 127,
+          "descending_trial_divisions": 86,
+          "iid_draws": 4514720,
+          "distinct_draws": 10194,
+          "core_gcds": 2308,
+          "weight_divisions": 98,
+          "weight_comparisons": 9849
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "product": "15",
+      "denominator": 2,
+      "choice": "half",
+      "reference_factors": [
+        "3",
+        "5"
+      ],
+      "trial": {
+        "odd_interval_candidates": 1,
+        "ascending_divisibility_checks": 1,
+        "descending_divisibility_checks": 1
+      },
+      "sampling": {
+        "prefix_length": 7,
+        "nonunits": 3,
+        "single_draw_variance": 48,
+        "first_iid_draws": 49,
+        "first_distinct_draws": 7
+      },
+      "wheels": {
+        "1": {
+          "eligibility_gcds": 1,
+          "smooth_entries": 1,
+          "wheel_blocks_visited": 7,
+          "wheel_slots_examined": 7,
+          "cores_visited": 7,
+          "core_gcds": 6,
+          "core_gcds_to_first_or_exhaustion": 2,
+          "first_hit_core": 3,
+          "weight_divisions": 3,
+          "weight_comparisons": 3,
+          "nonunits_reconstructed": 3
+        },
+        "2": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 3,
+          "smooth_entries": 3,
+          "wheel_blocks_visited": 4,
+          "wheel_slots_examined": 4,
+          "cores_visited": 4,
+          "core_gcds": 3,
+          "core_gcds_to_first_or_exhaustion": 1,
+          "first_hit_core": 3,
+          "weight_divisions": 2,
+          "weight_comparisons": 6,
+          "nonunits_reconstructed": 3
+        },
+        "6": {
+          "eligibility_gcds": 1,
+          "eligibility_gcd": "3"
+        },
+        "30": {
+          "eligibility_gcds": 1,
+          "eligibility_gcd": "15"
+        },
+        "210": {
+          "eligibility_gcds": 1,
+          "eligibility_gcd": "15"
+        }
+      }
+    },
+    {
+      "product": "15",
+      "denominator": 8,
+      "choice": "greatest",
+      "reference_factors": [
+        "3",
+        "5"
+      ],
+      "trial": {
+        "odd_interval_candidates": 1,
+        "ascending_divisibility_checks": 1,
+        "descending_divisibility_checks": 1
+      },
+      "sampling": {
+        "prefix_length": 1,
+        "nonunits": 0,
+        "single_draw_variance": 0,
+        "first_iid_draws": 1,
+        "first_distinct_draws": 1
+      },
+      "wheels": {
+        "1": {
+          "eligibility_gcds": 1,
+          "smooth_entries": 1,
+          "wheel_blocks_visited": 1,
+          "wheel_slots_examined": 1,
+          "cores_visited": 1,
+          "core_gcds_to_first_or_exhaustion": 0,
+          "nonunits_reconstructed": 0,
+          "hit_core_multiplicities": {}
+        },
+        "2": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 1,
+          "smooth_entries": 1,
+          "wheel_blocks_visited": 1,
+          "wheel_slots_examined": 1,
+          "cores_visited": 1,
+          "core_gcds_to_first_or_exhaustion": 0,
+          "nonunits_reconstructed": 0,
+          "hit_core_multiplicities": {}
+        },
+        "6": {
+          "eligibility_gcds": 1,
+          "eligibility_gcd": "3"
+        },
+        "30": {
+          "eligibility_gcds": 1,
+          "eligibility_gcd": "15"
+        },
+        "210": {
+          "eligibility_gcds": 1,
+          "eligibility_gcd": "15"
+        }
+      }
+    },
+    {
+      "product": "2183",
+      "denominator": 2,
+      "choice": "half",
+      "reference_factors": [
+        "37",
+        "59"
+      ],
+      "trial": {
+        "odd_interval_candidates": 6,
+        "ascending_divisibility_checks": 2,
+        "descending_divisibility_checks": 5
+      },
+      "sampling": {
+        "prefix_length": 1091,
+        "nonunits": 47,
+        "single_draw_variance": 196272,
+        "first_iid_draws": 196273,
+        "first_distinct_draws": 1085
+      },
+      "wheels": {
+        "1": {
+          "eligibility_gcds": 1,
+          "smooth_entries": 1,
+          "wheel_blocks_visited": 1091,
+          "wheel_slots_examined": 1091,
+          "cores_visited": 1091,
+          "core_gcds": 1090,
+          "core_gcds_to_first_or_exhaustion": 36,
+          "first_hit_core": 37,
+          "weight_divisions": 47,
+          "weight_comparisons": 47,
+          "nonunits_reconstructed": 47
+        },
+        "2": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 11,
+          "smooth_entries": 11,
+          "wheel_blocks_visited": 546,
+          "wheel_slots_examined": 546,
+          "cores_visited": 546,
+          "core_gcds": 545,
+          "core_gcds_to_first_or_exhaustion": 18,
+          "first_hit_core": 37,
+          "weight_divisions": 24,
+          "weight_comparisons": 264,
+          "nonunits_reconstructed": 47
+        },
+        "6": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 52,
+          "smooth_entries": 41,
+          "wheel_blocks_visited": 182,
+          "wheel_slots_examined": 364,
+          "cores_visited": 364,
+          "core_gcds": 363,
+          "core_gcds_to_first_or_exhaustion": 12,
+          "first_hit_core": 37,
+          "weight_divisions": 16,
+          "weight_comparisons": 656,
+          "nonunits_reconstructed": 47
+        },
+        "30": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 140,
+          "smooth_entries": 88,
+          "wheel_blocks_visited": 37,
+          "wheel_slots_examined": 292,
+          "cores_visited": 291,
+          "core_gcds": 290,
+          "core_gcds_to_first_or_exhaustion": 9,
+          "first_hit_core": 37,
+          "weight_divisions": 13,
+          "weight_comparisons": 1144,
+          "nonunits_reconstructed": 47
+        },
+        "210": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 286,
+          "smooth_entries": 146,
+          "wheel_blocks_visited": 6,
+          "wheel_slots_examined": 251,
+          "cores_visited": 250,
+          "core_gcds": 249,
+          "core_gcds_to_first_or_exhaustion": 8,
+          "first_hit_core": 37,
+          "weight_divisions": 11,
+          "weight_comparisons": 1606,
+          "nonunits_reconstructed": 47
+        }
+      }
+    },
+    {
+      "product": "2183",
+      "denominator": 24,
+      "choice": "greatest",
+      "reference_factors": [
+        "37",
+        "59"
+      ],
+      "trial": {
+        "odd_interval_candidates": 6,
+        "ascending_divisibility_checks": 2,
+        "descending_divisibility_checks": 5
+      },
+      "sampling": {
+        "prefix_length": 90,
+        "nonunits": 3,
+        "single_draw_variance": 150336,
+        "first_iid_draws": 150337,
+        "first_distinct_draws": 90
+      },
+      "wheels": {
+        "1": {
+          "eligibility_gcds": 1,
+          "smooth_entries": 1,
+          "wheel_blocks_visited": 90,
+          "wheel_slots_examined": 90,
+          "cores_visited": 90,
+          "core_gcds": 89,
+          "core_gcds_to_first_or_exhaustion": 36,
+          "first_hit_core": 37,
+          "weight_divisions": 3,
+          "weight_comparisons": 3,
+          "nonunits_reconstructed": 3,
+          "hit_core_multiplicities": {
+            "37": 1,
+            "59": 1,
+            "74": 1
+          }
+        },
+        "2": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 7,
+          "smooth_entries": 7,
+          "wheel_blocks_visited": 45,
+          "wheel_slots_examined": 45,
+          "cores_visited": 45,
+          "core_gcds": 44,
+          "core_gcds_to_first_or_exhaustion": 18,
+          "first_hit_core": 37,
+          "weight_divisions": 2,
+          "weight_comparisons": 14,
+          "nonunits_reconstructed": 3,
+          "hit_core_multiplicities": {
+            "37": 2,
+            "59": 1
+          }
+        },
+        "6": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 26,
+          "smooth_entries": 19,
+          "wheel_blocks_visited": 15,
+          "wheel_slots_examined": 30,
+          "cores_visited": 30,
+          "core_gcds": 29,
+          "core_gcds_to_first_or_exhaustion": 12,
+          "first_hit_core": 37,
+          "weight_divisions": 2,
+          "weight_comparisons": 38,
+          "nonunits_reconstructed": 3,
+          "hit_core_multiplicities": {
+            "37": 2,
+            "59": 1
+          }
+        },
+        "30": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 58,
+          "smooth_entries": 32,
+          "wheel_blocks_visited": 3,
+          "wheel_slots_examined": 24,
+          "cores_visited": 24,
+          "core_gcds": 23,
+          "core_gcds_to_first_or_exhaustion": 9,
+          "first_hit_core": 37,
+          "weight_divisions": 2,
+          "weight_comparisons": 64,
+          "nonunits_reconstructed": 3,
+          "hit_core_multiplicities": {
+            "37": 2,
+            "59": 1
+          }
+        },
+        "210": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 101,
+          "smooth_entries": 43,
+          "wheel_blocks_visited": 1,
+          "wheel_slots_examined": 22,
+          "cores_visited": 21,
+          "core_gcds": 20,
+          "core_gcds_to_first_or_exhaustion": 8,
+          "first_hit_core": 37,
+          "weight_divisions": 2,
+          "weight_comparisons": 86,
+          "nonunits_reconstructed": 3,
+          "hit_core_multiplicities": {
+            "37": 2,
+            "59": 1
+          }
+        }
+      }
+    },
+    {
+      "product": "3233",
+      "denominator": 6,
+      "choice": "greatest",
+      "reference_factors": [
+        "53",
+        "61"
+      ],
+      "trial": {
+        "odd_interval_candidates": 8,
+        "ascending_divisibility_checks": 7,
+        "descending_divisibility_checks": 2
+      },
+      "sampling": {
+        "prefix_length": 538,
+        "nonunits": 18,
+        "single_draw_variance": 336960,
+        "first_iid_draws": 336961,
+        "first_distinct_draws": 538
+      },
+      "wheels": {
+        "1": {
+          "eligibility_gcds": 1,
+          "smooth_entries": 1,
+          "wheel_blocks_visited": 538,
+          "wheel_slots_examined": 538,
+          "cores_visited": 538,
+          "core_gcds": 537,
+          "core_gcds_to_first_or_exhaustion": 52,
+          "first_hit_core": 53,
+          "weight_divisions": 18,
+          "weight_comparisons": 18,
+          "nonunits_reconstructed": 18,
+          "hit_core_multiplicities": {
+            "53": 1,
+            "61": 1,
+            "106": 1,
+            "122": 1,
+            "159": 1,
+            "183": 1,
+            "212": 1,
+            "244": 1,
+            "265": 1,
+            "305": 1,
+            "318": 1,
+            "366": 1,
+            "371": 1,
+            "424": 1,
+            "427": 1,
+            "477": 1,
+            "488": 1,
+            "530": 1
+          }
+        },
+        "2": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 10,
+          "smooth_entries": 10,
+          "wheel_blocks_visited": 269,
+          "wheel_slots_examined": 269,
+          "cores_visited": 269,
+          "core_gcds": 268,
+          "core_gcds_to_first_or_exhaustion": 26,
+          "first_hit_core": 53,
+          "weight_divisions": 9,
+          "weight_comparisons": 90,
+          "nonunits_reconstructed": 18,
+          "hit_core_multiplicities": {
+            "53": 4,
+            "61": 4,
+            "159": 2,
+            "183": 2,
+            "265": 2,
+            "305": 1,
+            "371": 1,
+            "427": 1,
+            "477": 1
+          }
+        },
+        "6": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 44,
+          "smooth_entries": 34,
+          "wheel_blocks_visited": 90,
+          "wheel_slots_examined": 180,
+          "cores_visited": 179,
+          "core_gcds": 178,
+          "core_gcds_to_first_or_exhaustion": 17,
+          "first_hit_core": 53,
+          "weight_divisions": 6,
+          "weight_comparisons": 204,
+          "nonunits_reconstructed": 18,
+          "hit_core_multiplicities": {
+            "53": 7,
+            "61": 6,
+            "265": 2,
+            "305": 1,
+            "371": 1,
+            "427": 1
+          }
+        },
+        "30": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 112,
+          "smooth_entries": 68,
+          "wheel_blocks_visited": 18,
+          "wheel_slots_examined": 144,
+          "cores_visited": 143,
+          "core_gcds": 142,
+          "core_gcds_to_first_or_exhaustion": 14,
+          "first_hit_core": 53,
+          "weight_divisions": 4,
+          "weight_comparisons": 272,
+          "nonunits_reconstructed": 18,
+          "hit_core_multiplicities": {
+            "53": 9,
+            "61": 7,
+            "371": 1,
+            "427": 1
+          }
+        },
+        "210": {
+          "eligibility_gcds": 1,
+          "smooth_generation_multiplications": 219,
+          "smooth_entries": 107,
+          "wheel_blocks_visited": 3,
+          "wheel_slots_examined": 124,
+          "cores_visited": 123,
+          "core_gcds": 122,
+          "core_gcds_to_first_or_exhaustion": 12,
+          "first_hit_core": 53,
+          "weight_divisions": 2,
+          "weight_comparisons": 214,
+          "nonunits_reconstructed": 18,
+          "hit_core_multiplicities": {
+            "53": 10,
+            "61": 8
+          }
+        }
+      }
+    }
+  ]
+}

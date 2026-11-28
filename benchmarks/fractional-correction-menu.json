@@ -1,0 +1,290 @@
+{
+  "scope": "All 57 balanced 3–6-bit larger-prime products and all coprime moduli 2 through 240. Add m=257,263 at 2183.",
+  "measured_cost": "Prefix gcds and complete ordinary menu sizes are separate counts. Menu setup and lookups are excluded. All candidate sums were checked.",
+  "classification": {
+    "counts": {
+      "setup_ordered_unit_pairs": 2113545,
+      "setup_modular_inverse_checks": 2113545,
+      "unit_product_classes": 18061,
+      "prime_classes": 6055,
+      "composite_classes_with_more_ordinary_sums": 8963
+    },
+    "counterexamples": {
+      "first_composite": {
+        "modulus": 4,
+        "product_residue": 1,
+        "ordinary": [
+          2,
+          6
+        ],
+        "modular": [
+          2
+        ]
+      },
+      "first_odd_composite": {
+        "modulus": 9,
+        "product_residue": 1,
+        "ordinary": [
+          2,
+          7,
+          11,
+          16
+        ],
+        "modular": [
+          2,
+          7
+        ]
+      }
+    },
+    "classes_with_at_most_two_corrections": 36,
+    "moduli_with_at_most_two": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      12,
+      16,
+      18,
+      20,
+      24,
+      30,
+      32,
+      36,
+      48,
+      60,
+      72,
+      120
+    ],
+    "greatest_such_tested_modulus": 120,
+    "attaining_product_residues": [
+      107
+    ],
+    "obstruction_minimum_modular_menu_sizes": {
+      "7": 3,
+      "27": 4,
+      "45": 4,
+      "64": 4,
+      "80": 4,
+      "144": 4
+    }
+  },
+  "cohort": {
+    "products": 57,
+    "applicable_cases": 12536,
+    "prefix_gcds": 374525,
+    "menu_entries_tested": 394608
+  },
+  "fixed_precision_totals": {
+    "half_one_iid": 6360841,
+    "half_one_distinct": 38321,
+    "half_half_modulus_iid": 6360841,
+    "half_half_modulus_distinct": 38321,
+    "greatest_one_iid": 5850729,
+    "greatest_one_distinct": 14911,
+    "greatest_half_modulus_iid": 1471305,
+    "greatest_half_modulus_distinct": 14710
+  },
+  "control_2183": {
+    "sample_thresholds": {
+      "half": {
+        "modulus": 2,
+        "one": {
+          "iid": 196273,
+          "distinct": 1085
+        },
+        "half_modulus": {
+          "iid": 196273,
+          "distinct": 1085
+        }
+      },
+      "greatest": {
+        "modulus": 24,
+        "one": {
+          "iid": 150337,
+          "distinct": 90
+        },
+        "half_modulus": {
+          "iid": 1045,
+          "distinct": 83
+        }
+      }
+    },
+    "selected_denominators": [
+      {
+        "modulus": 2,
+        "cutoff": 1091,
+        "nonunits": 47,
+        "menu_size": 1
+      },
+      {
+        "modulus": 24,
+        "cutoff": 90,
+        "nonunits": 3,
+        "menu_size": 1
+      },
+      {
+        "modulus": 48,
+        "cutoff": 45,
+        "nonunits": 1,
+        "menu_size": 3
+      },
+      {
+        "modulus": 120,
+        "cutoff": 18,
+        "nonunits": 0,
+        "menu_size": 4
+      },
+      {
+        "modulus": 210,
+        "cutoff": 10,
+        "nonunits": 0,
+        "menu_size": 12
+      },
+      {
+        "modulus": 240,
+        "cutoff": 9,
+        "nonunits": 0,
+        "menu_size": 8
+      },
+      {
+        "modulus": 257,
+        "cutoff": 8,
+        "nonunits": 0,
+        "menu_size": 128
+      },
+      {
+        "modulus": 263,
+        "cutoff": 8,
+        "nonunits": 0,
+        "menu_size": 131
+      }
+    ],
+    "nondominated_with_one_denominator_per_tie": [
+      {
+        "modulus": 257,
+        "cutoff": 8,
+        "nonunits": 0,
+        "menu_size": 128
+      },
+      {
+        "modulus": 240,
+        "cutoff": 9,
+        "nonunits": 0,
+        "menu_size": 8
+      },
+      {
+        "modulus": 168,
+        "cutoff": 12,
+        "nonunits": 0,
+        "menu_size": 5
+      },
+      {
+        "modulus": 120,
+        "cutoff": 18,
+        "nonunits": 0,
+        "menu_size": 4
+      },
+      {
+        "modulus": 84,
+        "cutoff": 25,
+        "nonunits": 0,
+        "menu_size": 3
+      },
+      {
+        "modulus": 30,
+        "cutoff": 72,
+        "nonunits": 2,
+        "menu_size": 2
+      },
+      {
+        "modulus": 24,
+        "cutoff": 90,
+        "nonunits": 3,
+        "menu_size": 1
+      }
+    ]
+  },
+  "two_correction_controls": [
+    {
+      "product": "12827",
+      "modulus": 120,
+      "cutoff": 106,
+      "nonunits": 1,
+      "menu_size": 2,
+      "candidate_sums": [
+        228,
+        252
+      ],
+      "accepted_sum": 228,
+      "factors": [
+        "101",
+        "127"
+      ]
+    },
+    {
+      "product": "15707",
+      "modulus": 120,
+      "cutoff": 130,
+      "nonunits": 1,
+      "menu_size": 2,
+      "candidate_sums": [
+        228,
+        252
+      ],
+      "accepted_sum": 252,
+      "factors": [
+        "113",
+        "139"
+      ]
+    }
+  ],
+  "same_transcript": {
+    "moduli": [
+      5,
+      11,
+      13
+    ],
+    "rows": [
+      {
+        "product": "89693",
+        "residue_mod_715": 318,
+        "counts": [
+          120,
+          54,
+          45
+        ],
+        "common_candidate_sums": [
+          604,
+          606
+        ],
+        "accepted_sum": 606,
+        "recovered": [
+          "257",
+          "349"
+        ]
+      },
+      {
+        "product": "91123",
+        "residue_mod_715": 318,
+        "counts": [
+          120,
+          54,
+          45
+        ],
+        "common_candidate_sums": [
+          604,
+          606
+        ],
+        "accepted_sum": 604,
+        "recovered": [
+          "293",
+          "311"
+        ]
+      }
+    ]
+  }
+}
