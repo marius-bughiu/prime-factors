@@ -1,5 +1,92 @@
 [
   {
+    "id": "prime-sum-precision-from-one-factor-suffix",
+    "category": "formulas",
+    "title": "One gcd gives the sharp sum precision from a supplied factor remainder",
+    "impact": "Given the product and a factor remainder, a single gcd finds the greatest modulus on the same primes for which the sum has one possible remainder.",
+    "scope": "The supplied factor remainder must be invertible modulo the positive clue modulus. Sharpness ranges over compatible modular factor pairs.",
+    "detail": "At larger precision, two modular pairs give different sums. Special properties of the actual integer factors can restrict those possibilities further.",
+    "sources": [
+      {"href": "discoveries/how-many-sum-bits-a-factor-clue-really-gives.md", "label": "Formula and derivation"},
+      {"href": "PrimeFactors/FactorClueSumPrecision.lean", "label": "Greatest modulus"},
+      {"href": "PrimeFactors/FactorClueSumGap.lean", "label": "Equivalent factor-gap formula"}
+    ]
+  },
+  {
+    "id": "two-square-questions-four-sum-remainders",
+    "category": "gains",
+    "title": "The product gives four possible sum remainders and two square questions select one",
+    "impact": "The four entries are exact modulo 144 or 288. For 527,077 the candidates are 38, 70, 218 and 250 modulo 288. The certified primes give 38.",
+    "scope": "Products of two distinct odd primes equal to 1 modulo 12. Selecting the true entry assumes the answers for square roots of −1 and −3 modulo the product.",
+    "detail": "Four deliberately chosen 20-bit products equal to 37 modulo 432 realize all combinations of the two answers. The product-only list needs four modular inverses at most.",
+    "sources": [
+      {"href": "discoveries/what-two-square-questions-tell-us-about-the-prime-sum.md", "label": "Four entries and examples"},
+      {"href": "PrimeFactors/FourSumResidueMenu.lean", "label": "Proof of the exact list"},
+      {"href": "PrimeFactors/TernarySumSign.lean", "label": "Second sign and sharpness modulo 27"}
+    ]
+  },
+  {
+    "id": "joint-sum-label-population-modulo-48",
+    "category": "limits",
+    "title": "A fixed product remainder modulo 48 predicts the correct sum label about one time in four",
+    "impact": "Each of the four labels has frequency within 1/2080 of one quarter among actual eligible 2,048-bit products in each specified class.",
+    "scope": "Each fixed product remainder 1, 13, 25 or 37 modulo 48. The population transfer takes a published unconditional prime-count estimate as an explicit input.",
+    "detail": "Any one-guess rule using just this remainder succeeds on at most 25.049% of its population. The bound does not evaluate a rule reading other digits.",
+    "sources": [
+      {"href": "discoveries/what-two-square-questions-tell-us-about-the-prime-sum.md", "label": "Scope and population"},
+      {"href": "PrimeFactors/JointSumSignPopulation.lean", "label": "Four conditional frequencies"}
+    ]
+  },
+  {
+    "id": "independent-local-factor-sum-signs",
+    "category": "gains",
+    "title": "Each independent supplied sign halves the remaining distinct sum remainders",
+    "impact": "Three factor-square answers at 3, 7 and 11 leave exactly six of 48 possible sum remainders for each of the eight answer combinations.",
+    "scope": "Distinct remainders over a complete period, with pairwise coprime moduli and sum labels reversed by negation. The example uses a product equal to 1 modulo 231.",
+    "detail": "An arbitrary set of g allowed vectors among k such signs retains exactly g/2^k of the distinct sums. Prime-pair frequencies are separate measurements.",
+    "sources": [
+      {"href": "discoveries/what-two-square-questions-tell-us-about-the-prime-sum.md", "label": "Meaning of independent answers"},
+      {"href": "PrimeFactors/IndependentSumSignCounts.lean", "label": "General count and verified example"}
+    ]
+  },
+  {
+    "id": "mean-gain-from-160-known-factor-bits",
+    "category": "limits",
+    "title": "160 supplied factor bits fix about 162 sum bits on average",
+    "impact": "Across actual balanced 2,048-bit products, the extra precision averages within 2⁻¹⁴⁵ of 2 − 2⁻¹⁶⁰ bits. The maximum of 321 sum bits occurs on about one in 2¹⁶⁰ products.",
+    "scope": "The true low factor bits are supplied. The full-size population estimates use published Dirichlet-GRH prime-count estimates. The uniform residue mean is exact without them.",
+    "detail": "The independent comparison product gives 161 bits and the constructed fourth-power input gives 320. Every pair gains the same number of bits whichever factor supplies the clue.",
+    "sources": [
+      {"href": "discoveries/how-many-sum-bits-a-factor-clue-really-gives.md", "label": "Worked cases and assumptions"},
+      {"href": "PrimeFactors/DyadicClueMeanPopulation.lean", "label": "Full-size mean"},
+      {"href": "PrimeFactors/MaximalFactorCluePopulation.lean", "label": "Frequency of the maximum"}
+    ]
+  },
+  {
+    "id": "two-public-maximum-precision-factor-suffixes",
+    "category": "formulas",
+    "title": "The product gives at most two factor suffixes that could produce the maximum sum precision",
+    "impact": "For 5,609 the two three-bit candidates are 1 and 7, and 7 is correct. For 7,313 the candidates are 3 and 5, and both miss.",
+    "scope": "Any odd product and suffix width of at least three bits. Exactly two opposite candidates exist when the product is 1 modulo 8. All other odd products have none.",
+    "detail": "The list is defined from the product alone. For a 160-bit suffix, either entry is correct on about one in 2¹⁶⁰ full-size products under the stated Dirichlet-GRH prime-count estimate.",
+    "sources": [
+      {"href": "discoveries/how-many-sum-bits-a-factor-clue-really-gives.md", "label": "Product-only candidates and limits"},
+      {"href": "PrimeFactors/TwoMaximalClueSuffixes.lean", "label": "Exact list size and examples"}
+    ]
+  },
+  {
+    "id": "ascending-sum-work-with-a-supplied-factor-suffix",
+    "category": "limits",
+    "title": "A 160-bit factor clue still leaves at least 2⁵⁷⁹ earlier sums in an ascending scan for almost every input",
+    "impact": "Even granting the best single sum remainder furnished by the true clue, fewer than one in 2³⁵ eligible products can escape this work floor.",
+    "scope": "Starts at the ceiling of twice the square root and scans the correct sum class in increasing order. Counts actual 2,048-bit products of distinct 1,024-bit primes.",
+    "detail": "The proof allows up to 321 fixed sum bits and uses an unconditional bound on how many prime pairs can have a short scan.",
+    "sources": [
+      {"href": "discoveries/how-many-sum-bits-a-factor-clue-really-gives.md", "label": "Scope of the work bound"},
+      {"href": "PrimeFactors/FactorClueSumPrefix.lean", "label": "Ascending-search proof"}
+    ]
+  },
+  {
     "id": "quartic-sign-halves-admissible-sums",
     "category": "gains",
     "title": "A supplied sign retains exactly half the distinct admissible sum residues",

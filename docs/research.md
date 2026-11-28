@@ -1,5 +1,7 @@
 # What the Riemann hypothesis gives a factor search
 
+A given factor remainder fixes the prime sum modulo an explicit greatest modulus by elementary arithmetic. The average low-bit gain on actual full-size prime pairs uses the Ernvall-Hytönen–Palojärvi estimate under Dirichlet GRH. A separate four-label comparison for products modulo 48 uses Bennett–Martin–O’Bryant–Rechnitzer’s unconditional estimate. Both enter Lean as explicit analytic premises. [Average gain and population](../discoveries/how-many-sum-bits-a-factor-clue-really-gives.md) · [Four-label result](../discoveries/what-two-square-questions-tell-us-about-the-prime-sum.md)
+
 Across **all** distinct 1,024-bit prime pairs with a 2,048-bit product, knowing the product remainder reduces the average number of guesses for the sum remainder by more than 29.7758%, under published Dirichlet-GRH prime-count estimates. The best policies need about 25.98 million guesses, and a random order about 36.99 million. [All product remainders and the full-width comparison](../discoveries/how-predictable-is-the-sum-remainder-for-all-prime-products.md)
 
 For balanced 2,048-bit products congruent to one modulo 7,239,457,225, a published Dirichlet-GRH prime-count estimate puts the best mean within 0.001 of 470,695,147/48 sum-remainder guesses (about 9.81 million). All 32 frequency groups retain their strict ordering on the actual prime population. [Population, estimate and small-width controls](../discoveries/what-many-prime-squares-buy-a-remainder-guess.md#do-the-same-guesses-work-for-actual-primes)

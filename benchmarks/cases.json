@@ -1,5 +1,45 @@
 [
   {
+    "id": "two-sum-signs-neither",
+    "description": "Ordinary Fermat baseline for the selected 20-bit neither square-existence outcome",
+    "n": "553429",
+    "max_steps": 30,
+    "status": "complete",
+    "factors": ["563", "983"],
+    "remaining": [],
+    "fermat_steps": 30
+  },
+  {
+    "id": "two-sum-signs-both",
+    "description": "Ordinary Fermat baseline for the selected 20-bit both square-existence outcome",
+    "n": "527077",
+    "max_steps": 13,
+    "status": "complete",
+    "factors": ["601", "877"],
+    "remaining": [],
+    "fermat_steps": 13
+  },
+  {
+    "id": "two-sum-signs-minus-one",
+    "description": "Ordinary Fermat baseline for the selected 20-bit minus-one square-existence outcome",
+    "n": "649333",
+    "max_steps": 22,
+    "status": "complete",
+    "factors": ["641", "1013"],
+    "remaining": [],
+    "fermat_steps": 22
+  },
+  {
+    "id": "two-sum-signs-minus-three",
+    "description": "Ordinary Fermat baseline for the selected 20-bit minus-three square-existence outcome",
+    "n": "679141",
+    "max_steps": 5,
+    "status": "complete",
+    "factors": ["739", "919"],
+    "remaining": [],
+    "fermat_steps": 5
+  },
+  {
     "id": "quartic-one-bit-passing",
     "description": "Ordinary Fermat baseline for the locally passing product in the 32-bit pair differing at bit 26",
     "n": "2874064069",

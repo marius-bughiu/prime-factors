@@ -1063,3 +1063,15 @@ import PrimeFactors.QuarticLocalSumBits
 import PrimeFactors.QuarticLocalConditionalBits
 import PrimeFactors.QuarticSignedSumPrefix
 import PrimeFactors.QuarticHalfSumResidues
+import PrimeFactors.FactorClueSumPrecision
+import PrimeFactors.TernarySumSign
+import PrimeFactors.FourSumResidueMenu
+import PrimeFactors.IndependentSumSignCounts
+import PrimeFactors.JointSumSignPopulation
+import PrimeFactors.FactorClueSumGap
+import PrimeFactors.DyadicFactorClueGain
+import PrimeFactors.MaximalFactorCluePopulation
+import PrimeFactors.DyadicClueMeanPopulation
+import PrimeFactors.DyadicClueControls
+import PrimeFactors.FactorClueSumPrefix
+import PrimeFactors.TwoMaximalClueSuffixes

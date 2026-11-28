@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+A gcd gives the exact precision of the sum remainder forced by a supplied factor remainder. With 160 supplied low factor bits, a full-size pair has about **162 fixed low sum bits on average** under the stated Dirichlet-GRH estimate. Even a scan given the correct class has at least $2^{579}$ earlier sums on all but fewer than one in $2^{35}$ inputs. [Greatest modulus, mean and full-size examples](how-many-sum-bits-a-factor-clue-really-gives.md)
+
+For products equal to 1 modulo 12, the product alone yields four distinct possible sum remainders modulo 144 or 288. Knowing whether −1 and −3 have square roots modulo the product selects one of the four. [Formula, four controls and full-size sign frequencies](what-two-square-questions-tell-us-about-the-prime-sum.md)
+
 The modulus $16N$ captures every locally primitive cleared-quartic test for an odd input. Once the public test at 16 passes, the remaining condition is exactly whether $-1$ has a square root modulo $N$. Knowing that answer selects one of two possible remainders for $p+q$. [Exact equivalences and two products differing in one bit](one-modulus-and-the-low-bits-of-the-prime-sum.md)
 
 Even an ideal choice from **every denominator through $2^{512}$** lets the two fourth-root formulas recognize fewer than one in $2^{227}$ eligible prime pairs. This includes every denominator for which the earlier size condition guarantees gcd recovery from a supplied point. [Counting proof and limits](how-far-a-rational-denominator-can-extend-the-quartic-formula.md)
