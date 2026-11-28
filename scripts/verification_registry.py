@@ -25,6 +25,7 @@ def experiment(name, *args, data=RESEARCH, lean=False, proof=None):
 # fixture and reference result, also when one is added, renamed or removed.
 CHECKS = (
     Check('unit-tests', ('python3', '-m', 'unittest', 'discover', '-s', 'tests'), lean=True),
+    experiment('circle_mark_rational_grid', lean=True, data=('benchmarks/circle-mark-rational-grid.json',)),
     experiment('circle_mark_prefix_skip', lean=True, data=('benchmarks/circle-mark-prefix-skip.json',)),
     experiment('circle_mark_dyadic_lanes', lean=True, data=('benchmarks/circle-mark-dyadic-lanes.json',)),
     experiment('circle_mark_reduced', lean=True, data=('benchmarks/circle-mark-reduced.json',)),

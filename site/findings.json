@@ -1,5 +1,169 @@
 [
   {
+    "id": "rational-grid-coverage",
+    "category": "formulas",
+    "title": "How large must a rectangle be to guarantee a factor?",
+    "impact": "A rectangle with H numerators and D denominators covers every nonzero root modulo a prime p exactly when (H + 1)(D + 1) > p. Below the threshold, the root H + 1 is missed.",
+    "scope": "Here 1 ≤ D < p. For a semiprime, choose a target with Jacobi sign −1 and keep denominators below both primes. A covered root at the prime where the target is a square gives that factor.",
+    "detail": "The threshold gives the minimum numerator bound at each denominator budget. For a square rectangle the minimum side is the integer square root of p rounded down. A known upper bound on the factors can size the search from the product.",
+    "sources": [
+      {
+        "href": "discoveries/which-squares-a-rational-rectangle-misses.md",
+        "label": "Rectangle and factor test"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkRationalCover.lean",
+        "label": "Exact threshold and list lengths"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkRationalProduct.lean",
+        "label": "Polynomial evaluation and gcd"
+      }
+    ]
+  },
+  {
+    "id": "rational-grid-missing-squares",
+    "category": "formulas",
+    "title": "The divisors of the shortfall identify every missing square",
+    "impact": "Suppose the prime exceeds (H + 1)(D + 1) by s, with 1 ≤ s ≤ min(H, D). There is exactly one missed square modulo the prime per positive divisor of s.",
+    "scope": "This counts the nonzero square residues at a specified prime. Computing its shortfall requires knowing or guessing the prime.",
+    "detail": "For each divisor t, the missing square is ((H + 1)/t)² modulo the prime. Its two signed roots account for all missing roots. At p = 53 a 6-by-6 rectangle has shortfall 4 and misses three squares.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkRationalTwoHoles.lean",
+        "label": "Classification and exact counts"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkRationalDeficit.lean",
+        "label": "All shortfalls via neighboring fractions"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkRationalOneHole.lean",
+        "label": "Independent proof for a shortfall of one"
+      }
+    ]
+  },
+  {
+    "id": "rational-grid-323",
+    "category": "cases",
+    "title": "A 3-by-3 rectangle finds a factor for 119 of 144 targets at 323",
+    "impact": "At 323 = 17 × 19, the rectangle misses square 16 modulo 17 and squares 6 and 16 modulo 19. Those three local exceptions account for exactly 25 failed targets.",
+    "scope": "Complete enumeration of residues with Jacobi sign −1 at this one product. Each target uses the same three numerators and the same three denominators.",
+    "detail": "Nine exceptions have their square at 17. For each missing square at 19 there are eight possible nonsquares modulo 17, giving another sixteen failures.",
+    "sources": [
+      {
+        "href": "discoveries/which-squares-a-rational-rectangle-misses.md",
+        "label": "Target counts and reproduction"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkRationalTargetCount.lean",
+        "label": "Exact target rate and checked count at 323"
+      },
+      {
+        "href": "#character-column-323",
+        "label": "Checked factors of 323"
+      }
+    ]
+  },
+  {
+    "id": "rational-grid-duplicate-fractions",
+    "category": "limits",
+    "title": "Repeated fractions reduce coverage in small rectangles",
+    "impact": "For 143 = 11 × 13, four cells in a 2-by-2 rectangle hit 33 of 60 negative-Jacobi targets. Four consecutive integer coordinates hit 44 of the same 60.",
+    "scope": "At a fixed product pq with 2HD < min(p, q), a rectangle covers as many targets as a consecutive list whose length is the number of coprime numerator-denominator pairs.",
+    "detail": "The cells 1/1 and 2/2 represent the same coordinate. The exact rates count uniformly over all negative targets at the fixed product. Selecting the first negative target from each product is a different experiment.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkRationalFrequency.lean",
+        "label": "Uniform rates and the 143 control"
+      },
+      {
+        "href": "discoveries/which-squares-a-rational-rectangle-misses.md",
+        "label": "Comparison of search budgets"
+      }
+    ]
+  },
+  {
+    "id": "rational-grid-product-search",
+    "category": "cases",
+    "title": "Extending the denominator list recovers factors missed by an 8-by-8 grid",
+    "impact": "The product-only search split all 2,465 eligible products with 6- to 10-bit primes when it sized the rectangle for coverage. At 8,633 the fixed grid missed and the fraction 7/9 gave the factor 97.",
+    "scope": "The search received the product and the equal-width promise. The census includes every pair of distinct primes of these widths whose product has twice the prime width.",
+    "detail": "The first negative-Jacobi target at 8,633 is 3. With numerator 7 and denominator 9, the absolute difference between 7² and 3 × 9² is 194, whose gcd with 8,633 is 97.",
+    "sources": [
+      {
+        "href": "benchmarks/circle-mark-rational-grid.json",
+        "label": "Complete census and measured work"
+      },
+      {
+        "href": "experiments/circle_mark_rational_grid.py",
+        "label": "Product-only search"
+      },
+      {
+        "href": "#rational-grid-8633",
+        "label": "Checked factors of 8,633"
+      }
+    ]
+  },
+  {
+    "id": "rational-grid-timing",
+    "category": "limits",
+    "title": "One final gcd took more time than testing cells directly",
+    "impact": "Across 1,718 products of 10-bit primes, median CPU time was 1.082 seconds for the balanced polynomial batch, 0.059 for direct rectangle gcds, 0.015 for the folded interval search and 0.00183 for Fermat.",
+    "scope": "Three trials on Apple M4, CPython 3.9.6. Times include search and public setup for all products. Input generation, profiling and verification were outside the measured loop.",
+    "detail": "The balanced batches used 1,718 final gcds and processed 2,664,618 input coefficients across their packed polynomial multiplications. Direct searches stopped at the first hit after a total of 744,361 gcds.",
+    "sources": [
+      {
+        "href": "discoveries/which-squares-a-rational-rectangle-misses.md",
+        "label": "Timings and comparison"
+      },
+      {
+        "href": "benchmarks/circle-mark-rational-grid.json",
+        "label": "Deterministic operation counts"
+      },
+      {
+        "href": "experiments/circle_mark_rational_grid.py",
+        "label": "Reproducible timing harness"
+      }
+    ]
+  },
+  {
+    "id": "rational-grid-population",
+    "category": "limits",
+    "title": "Even the best small target and rectangle miss most full-size products",
+    "impact": "With up to 2⁹⁷⁵ cells, fewer than one third of eligible products admit a hit for any negative-Jacobi target through 2,015,165. At 2⁹⁰⁰ cells, the share falls below one in 2⁷⁶.",
+    "scope": "Unconditional count over distinct 1,024-bit prime pairs with a 2,048-bit product. Both the target and the aspect ratio may be chosen after seeing the product.",
+    "detail": "A successful cell has numerator times denominator at most the area budget. Counting all such pairs includes every permitted rectangle, even if each product gets its most favorable choice.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkRationalPopulation.lean",
+        "label": "Full prime-pair population bounds"
+      },
+      {
+        "href": "discoveries/which-squares-a-rational-rectangle-misses.md",
+        "label": "Target and area budgets"
+      }
+    ]
+  },
+  {
+    "id": "rational-grid-first-target",
+    "category": "limits",
+    "title": "The first negative target has a conditional full-size limit",
+    "impact": "With at most 2⁹⁹⁴ cells, the first negative-Jacobi target yields a factor on fewer than half of eligible 2,048-bit products under the stated prime-count estimates.",
+    "scope": "The estimate for the first target uses explicit Dirichlet-GRH prime-count bounds modulo 120,120. The best of the six targets 2, 3, 5, 7, 11 and 13 succeeds on fewer than 15/32 of products unconditionally.",
+    "detail": "The conditional calculation adds the products whose first negative target exceeds 13 to the unconditional six-target count. Each product can use its best rectangle within the area budget.",
+    "sources": [
+      {
+        "href": "PrimeFactors/CircleMarkRationalPopulation.lean",
+        "label": "Unconditional six-target and conditional first-target bounds"
+      },
+      {
+        "href": "PrimeFactors/CircleMarkFirstTargetPopulation.lean",
+        "label": "Prime-count hypothesis for later targets"
+      }
+    ]
+  },
+  {
     "id": "odd-part-band-refinement",
     "category": "gains",
     "title": "Removing powers of two rules out extra gcd tests",

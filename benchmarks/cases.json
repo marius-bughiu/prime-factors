@@ -1139,5 +1139,15 @@
     ],
     "remaining": [],
     "fermat_steps": 5
+  },
+  {
+    "id": "rational-grid-8633",
+    "description": "Trial division baseline for the first product in the census where extending the 8-by-8 rectangle uncovers a factor",
+    "n": "8633",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["89", "97"],
+    "remaining": [],
+    "fermat_steps": 0
   }
 ]

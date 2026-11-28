@@ -1,0 +1,866 @@
+{
+  "population": "Every distinct pair of odd w-bit primes with a 2w-bit product, for w=6..10.",
+  "inputs": "Only N and the equal-width promise reach the searches. Each rectangle uses the first negative Jacobi target unless selection finds a divisor.",
+  "work": "Each rectangle runs independently, with its own tree construction. Packed input coefficients count both polynomial operands; each packed multiply acts on longer integers as N and the degrees grow. Formula checks, profiling, cohort generation and certificates are outside search work.",
+  "controls": "The odd-candidate linear tree and folded decimal wheel-30 interval both use the complete equal-width factor interval. Their native work fields are summed per cohort. Fermat counts each successive midpoint.",
+  "cohorts": [
+    {
+      "factor_bits": 6,
+      "selector": {
+        "products": 14,
+        "jacobi_tests": 34,
+        "selector_gcds": 0
+      },
+      "rectangles": {
+        "square8": {
+          "numerator_squares": 112,
+          "scaled_denominator_squares": 112,
+          "covered_leaves": 896,
+          "point_trees": 14,
+          "scalar_modular_products": 112,
+          "resultant_gcds": 14,
+          "direct_numerator_squares": 112,
+          "direct_denominator_terms": 35,
+          "direct_gcds": 256,
+          "root_tree_packed_multiplies": 98,
+          "packed_input_coefficients": 3052,
+          "point_trees_packed_multiplies": 98,
+          "remainder_calls": 210,
+          "evaluation_packed_multiplies": 420,
+          "horner_steps": 224,
+          "hits": 14
+        },
+        "streamed8": {
+          "numerator_squares": 112,
+          "scaled_denominator_squares": 112,
+          "covered_leaves": 896,
+          "point_trees": 14,
+          "scalar_modular_products": 112,
+          "resultant_gcds": 14,
+          "direct_numerator_squares": 112,
+          "direct_denominator_terms": 35,
+          "direct_gcds": 256,
+          "root_tree_packed_multiplies": 98,
+          "packed_input_coefficients": 3052,
+          "point_trees_packed_multiplies": 98,
+          "remainder_calls": 210,
+          "evaluation_packed_multiplies": 420,
+          "horner_steps": 224,
+          "hits": 14
+        },
+        "balanced": {
+          "numerator_squares": 98,
+          "scaled_denominator_squares": 98,
+          "covered_leaves": 686,
+          "point_trees": 14,
+          "scalar_modular_products": 98,
+          "resultant_gcds": 14,
+          "direct_numerator_squares": 98,
+          "direct_denominator_terms": 55,
+          "direct_gcds": 357,
+          "root_tree_packed_multiplies": 84,
+          "packed_input_coefficients": 2450,
+          "point_trees_packed_multiplies": 84,
+          "remainder_calls": 196,
+          "evaluation_packed_multiplies": 336,
+          "horner_steps": 210,
+          "hits": 14
+        }
+      },
+      "controls": {
+        "linear_tree": {
+          "wheel_residue_gcds": 28,
+          "wheel_gcds": 14,
+          "wheel_prime_tests": 0,
+          "roots": 36,
+          "points": 16,
+          "head_terms": 6,
+          "tail_terms": 17,
+          "batch_gcds": 14,
+          "refinement_gcds": 0,
+          "recurrence_steps": 0
+        },
+        "linear_folded": {
+          "setup_gcds": 14,
+          "wheel_residues": 112,
+          "wheel_residue_gcds": 406,
+          "edge_candidates": 41,
+          "final_gcds": 14
+        },
+        "fermat": {
+          "midpoints": 16,
+          "integer_square_roots": 30
+        }
+      }
+    },
+    {
+      "factor_bits": 7,
+      "selector": {
+        "products": 42,
+        "jacobi_tests": 97,
+        "selector_gcds": 0
+      },
+      "rectangles": {
+        "square8": {
+          "numerator_squares": 336,
+          "scaled_denominator_squares": 336,
+          "covered_leaves": 2688,
+          "point_trees": 42,
+          "scalar_modular_products": 336,
+          "resultant_gcds": 42,
+          "direct_numerator_squares": 336,
+          "direct_denominator_terms": 287,
+          "direct_gcds": 2136,
+          "root_tree_packed_multiplies": 294,
+          "packed_input_coefficients": 9156,
+          "point_trees_packed_multiplies": 294,
+          "remainder_calls": 630,
+          "evaluation_packed_multiplies": 1260,
+          "horner_steps": 672,
+          "hits": 33,
+          "misses": 9
+        },
+        "streamed8": {
+          "numerator_squares": 336,
+          "scaled_denominator_squares": 576,
+          "covered_leaves": 4608,
+          "point_trees": 84,
+          "scalar_modular_products": 576,
+          "resultant_gcds": 42,
+          "direct_numerator_squares": 336,
+          "direct_denominator_terms": 296,
+          "direct_gcds": 2197,
+          "root_tree_packed_multiplies": 294,
+          "packed_input_coefficients": 14406,
+          "point_trees_packed_multiplies": 492,
+          "remainder_calls": 1122,
+          "evaluation_packed_multiplies": 2172,
+          "horner_steps": 1188,
+          "hits": 42
+        },
+        "balanced": {
+          "numerator_squares": 462,
+          "scaled_denominator_squares": 420,
+          "covered_leaves": 4620,
+          "point_trees": 42,
+          "scalar_modular_products": 420,
+          "resultant_gcds": 42,
+          "direct_numerator_squares": 462,
+          "direct_denominator_terms": 178,
+          "direct_gcds": 1765,
+          "root_tree_packed_multiplies": 420,
+          "packed_input_coefficients": 14742,
+          "point_trees_packed_multiplies": 378,
+          "remainder_calls": 882,
+          "evaluation_packed_multiplies": 1848,
+          "horner_steps": 840,
+          "hits": 42
+        }
+      },
+      "controls": {
+        "linear_tree": {
+          "wheel_residue_gcds": 84,
+          "wheel_gcds": 42,
+          "wheel_prime_tests": 0,
+          "roots": 149,
+          "points": 91,
+          "head_terms": 26,
+          "tail_terms": 58,
+          "batch_gcds": 42,
+          "refinement_gcds": 0,
+          "recurrence_steps": 0
+        },
+        "linear_folded": {
+          "setup_gcds": 42,
+          "wheel_residues": 336,
+          "wheel_residue_gcds": 1218,
+          "edge_candidates": 226,
+          "final_gcds": 42
+        },
+        "fermat": {
+          "midpoints": 65,
+          "integer_square_roots": 107
+        }
+      }
+    },
+    {
+      "factor_bits": 8,
+      "selector": {
+        "products": 148,
+        "jacobi_tests": 335,
+        "selector_gcds": 0
+      },
+      "rectangles": {
+        "square8": {
+          "numerator_squares": 1184,
+          "scaled_denominator_squares": 1184,
+          "covered_leaves": 9472,
+          "point_trees": 148,
+          "scalar_modular_products": 1184,
+          "resultant_gcds": 148,
+          "direct_numerator_squares": 1184,
+          "direct_denominator_terms": 1162,
+          "direct_gcds": 9210,
+          "root_tree_packed_multiplies": 1036,
+          "packed_input_coefficients": 32264,
+          "point_trees_packed_multiplies": 1036,
+          "remainder_calls": 2220,
+          "evaluation_packed_multiplies": 4440,
+          "horner_steps": 2368,
+          "hits": 20,
+          "misses": 128
+        },
+        "streamed8": {
+          "numerator_squares": 1184,
+          "scaled_denominator_squares": 4144,
+          "covered_leaves": 33152,
+          "point_trees": 592,
+          "scalar_modular_products": 4144,
+          "resultant_gcds": 148,
+          "direct_numerator_squares": 1184,
+          "direct_denominator_terms": 1663,
+          "direct_gcds": 12689,
+          "root_tree_packed_multiplies": 1036,
+          "packed_input_coefficients": 100344,
+          "point_trees_packed_multiplies": 3552,
+          "remainder_calls": 7696,
+          "evaluation_packed_multiplies": 15688,
+          "horner_steps": 8288,
+          "hits": 148
+        },
+        "balanced": {
+          "numerator_squares": 2220,
+          "scaled_denominator_squares": 2220,
+          "covered_leaves": 33300,
+          "point_trees": 148,
+          "scalar_modular_products": 2220,
+          "resultant_gcds": 148,
+          "direct_numerator_squares": 2220,
+          "direct_denominator_terms": 1200,
+          "direct_gcds": 16779,
+          "root_tree_packed_multiplies": 2072,
+          "packed_input_coefficients": 83916,
+          "point_trees_packed_multiplies": 2072,
+          "remainder_calls": 4440,
+          "evaluation_packed_multiplies": 10064,
+          "horner_steps": 4588,
+          "hits": 148
+        }
+      },
+      "controls": {
+        "linear_tree": {
+          "wheel_residue_gcds": 296,
+          "wheel_gcds": 148,
+          "wheel_prime_tests": 0,
+          "roots": 707,
+          "points": 517,
+          "head_terms": 77,
+          "tail_terms": 287,
+          "batch_gcds": 148,
+          "refinement_gcds": 0,
+          "recurrence_steps": 0
+        },
+        "linear_folded": {
+          "setup_gcds": 148,
+          "wheel_residues": 1184,
+          "wheel_residue_gcds": 4292,
+          "block_cycles": 72,
+          "block_degree": 576,
+          "blocks": 72,
+          "seed_terms": 576,
+          "batched_candidates": 576,
+          "edge_candidates": 975,
+          "final_gcds": 148
+        },
+        "fermat": {
+          "midpoints": 363,
+          "integer_square_roots": 511
+        }
+      }
+    },
+    {
+      "factor_bits": 9,
+      "selector": {
+        "products": 543,
+        "jacobi_tests": 1413,
+        "selector_gcds": 0
+      },
+      "rectangles": {
+        "square8": {
+          "numerator_squares": 4344,
+          "scaled_denominator_squares": 4344,
+          "covered_leaves": 34752,
+          "point_trees": 543,
+          "scalar_modular_products": 4344,
+          "resultant_gcds": 543,
+          "direct_numerator_squares": 4344,
+          "direct_denominator_terms": 4338,
+          "direct_gcds": 34671,
+          "root_tree_packed_multiplies": 3801,
+          "packed_input_coefficients": 118374,
+          "point_trees_packed_multiplies": 3801,
+          "remainder_calls": 8145,
+          "evaluation_packed_multiplies": 16290,
+          "horner_steps": 8688,
+          "misses": 533,
+          "hits": 10
+        },
+        "streamed8": {
+          "numerator_squares": 4344,
+          "scaled_denominator_squares": 30408,
+          "covered_leaves": 243264,
+          "point_trees": 3801,
+          "scalar_modular_products": 30408,
+          "resultant_gcds": 543,
+          "direct_numerator_squares": 4344,
+          "direct_denominator_terms": 11713,
+          "direct_gcds": 91430,
+          "root_tree_packed_multiplies": 3801,
+          "packed_input_coefficients": 704814,
+          "point_trees_packed_multiplies": 26607,
+          "remainder_calls": 57015,
+          "evaluation_packed_multiplies": 114030,
+          "horner_steps": 60816,
+          "hits": 543
+        },
+        "balanced": {
+          "numerator_squares": 11946,
+          "scaled_denominator_squares": 11946,
+          "covered_leaves": 262812,
+          "point_trees": 543,
+          "scalar_modular_products": 11946,
+          "resultant_gcds": 543,
+          "direct_numerator_squares": 11946,
+          "direct_denominator_terms": 5821,
+          "direct_gcds": 122047,
+          "root_tree_packed_multiplies": 11403,
+          "packed_input_coefficients": 548973,
+          "point_trees_packed_multiplies": 11403,
+          "remainder_calls": 24435,
+          "evaluation_packed_multiplies": 59730,
+          "horner_steps": 23892,
+          "hits": 543
+        }
+      },
+      "controls": {
+        "linear_tree": {
+          "wheel_residue_gcds": 1086,
+          "wheel_gcds": 543,
+          "wheel_prime_tests": 0,
+          "roots": 3555,
+          "points": 2796,
+          "head_terms": 258,
+          "tail_terms": 1509,
+          "batch_gcds": 543,
+          "refinement_gcds": 0,
+          "recurrence_steps": 0
+        },
+        "linear_folded": {
+          "setup_gcds": 543,
+          "wheel_residues": 4344,
+          "wheel_residue_gcds": 15747,
+          "block_cycles": 471,
+          "block_degree": 3768,
+          "blocks": 876,
+          "seed_terms": 7008,
+          "batched_candidates": 7008,
+          "edge_candidates": 4032,
+          "final_gcds": 543
+        },
+        "fermat": {
+          "midpoints": 2244,
+          "integer_square_roots": 2787
+        }
+      }
+    },
+    {
+      "factor_bits": 10,
+      "selector": {
+        "products": 1718,
+        "jacobi_tests": 4442,
+        "selector_gcds": 0
+      },
+      "rectangles": {
+        "square8": {
+          "numerator_squares": 13744,
+          "scaled_denominator_squares": 13744,
+          "covered_leaves": 109952,
+          "point_trees": 1718,
+          "scalar_modular_products": 13744,
+          "resultant_gcds": 1718,
+          "direct_numerator_squares": 13744,
+          "direct_denominator_terms": 13739,
+          "direct_gcds": 109900,
+          "root_tree_packed_multiplies": 12026,
+          "packed_input_coefficients": 374524,
+          "point_trees_packed_multiplies": 12026,
+          "remainder_calls": 25770,
+          "evaluation_packed_multiplies": 51540,
+          "horner_steps": 27488,
+          "misses": 1715,
+          "hits": 3
+        },
+        "streamed8": {
+          "numerator_squares": 13744,
+          "scaled_denominator_squares": 194134,
+          "covered_leaves": 1553072,
+          "point_trees": 25770,
+          "scalar_modular_products": 194134,
+          "resultant_gcds": 1718,
+          "direct_numerator_squares": 13744,
+          "direct_denominator_terms": 77868,
+          "direct_gcds": 616308,
+          "root_tree_packed_multiplies": 12026,
+          "packed_input_coefficients": 4394644,
+          "point_trees_packed_multiplies": 168364,
+          "remainder_calls": 362498,
+          "evaluation_packed_multiplies": 721560,
+          "horner_steps": 400294,
+          "hits": 1718
+        },
+        "balanced": {
+          "numerator_squares": 53258,
+          "scaled_denominator_squares": 53258,
+          "covered_leaves": 1650998,
+          "point_trees": 1718,
+          "scalar_modular_products": 53258,
+          "resultant_gcds": 1718,
+          "direct_numerator_squares": 53258,
+          "direct_denominator_terms": 24748,
+          "direct_gcds": 744361,
+          "root_tree_packed_multiplies": 51540,
+          "packed_input_coefficients": 2664618,
+          "point_trees_packed_multiplies": 51540,
+          "remainder_calls": 106516,
+          "evaluation_packed_multiplies": 274880,
+          "horner_steps": 108234,
+          "hits": 1718
+        }
+      },
+      "controls": {
+        "linear_tree": {
+          "wheel_residue_gcds": 3436,
+          "wheel_gcds": 1718,
+          "wheel_prime_tests": 0,
+          "roots": 15670,
+          "points": 13198,
+          "head_terms": 815,
+          "tail_terms": 7145,
+          "batch_gcds": 1718,
+          "refinement_gcds": 0,
+          "recurrence_steps": 0
+        },
+        "linear_folded": {
+          "setup_gcds": 1718,
+          "wheel_residues": 13744,
+          "wheel_residue_gcds": 49822,
+          "block_cycles": 1664,
+          "block_degree": 13312,
+          "blocks": 7165,
+          "seed_terms": 57320,
+          "batched_candidates": 57320,
+          "edge_candidates": 13361,
+          "final_gcds": 1718
+        },
+        "fermat": {
+          "midpoints": 14258,
+          "integer_square_roots": 15976
+        }
+      }
+    }
+  ],
+  "first_square8_miss_resolved_by_streaming": {
+    "product": "8633",
+    "target": 3,
+    "jacobi_tests": 2,
+    "selector_gcds": 0,
+    "selector_factor": null,
+    "rectangles": {
+      "square8": {
+        "numerators": 8,
+        "denominators": 8,
+        "gcd": "1",
+        "residue": "6246",
+        "first_pair": null,
+        "work": {
+          "numerator_squares": 8,
+          "scaled_denominator_squares": 8,
+          "covered_leaves": 64,
+          "point_trees": 1,
+          "scalar_modular_products": 8,
+          "resultant_gcds": 1,
+          "direct_numerator_squares": 8,
+          "direct_denominator_terms": 8,
+          "direct_gcds": 64,
+          "root_tree_packed_multiplies": 7,
+          "packed_input_coefficients": 218,
+          "point_trees_packed_multiplies": 7,
+          "remainder_calls": 15,
+          "evaluation_packed_multiplies": 30,
+          "horner_steps": 16
+        }
+      },
+      "streamed8": {
+        "numerators": 8,
+        "denominators": 14,
+        "gcd": "97",
+        "residue": "3589",
+        "first_pair": [
+          7,
+          9
+        ],
+        "work": {
+          "numerator_squares": 8,
+          "scaled_denominator_squares": 14,
+          "covered_leaves": 112,
+          "point_trees": 2,
+          "scalar_modular_products": 14,
+          "resultant_gcds": 1,
+          "direct_numerator_squares": 8,
+          "direct_denominator_terms": 9,
+          "direct_gcds": 71,
+          "root_tree_packed_multiplies": 7,
+          "packed_input_coefficients": 355,
+          "point_trees_packed_multiplies": 12,
+          "remainder_calls": 27,
+          "evaluation_packed_multiplies": 54,
+          "horner_steps": 28
+        }
+      },
+      "balanced": {
+        "numerators": 11,
+        "denominators": 10,
+        "gcd": "97",
+        "residue": "5917",
+        "first_pair": [
+          10,
+          1
+        ],
+        "work": {
+          "numerator_squares": 11,
+          "scaled_denominator_squares": 10,
+          "covered_leaves": 110,
+          "point_trees": 1,
+          "scalar_modular_products": 10,
+          "resultant_gcds": 1,
+          "direct_numerator_squares": 11,
+          "direct_denominator_terms": 1,
+          "direct_gcds": 10,
+          "root_tree_packed_multiplies": 10,
+          "packed_input_coefficients": 351,
+          "point_trees_packed_multiplies": 9,
+          "remainder_calls": 21,
+          "evaluation_packed_multiplies": 44,
+          "horner_steps": 20
+        }
+      }
+    },
+    "controls": {
+      "linear_tree": {
+        "factor": "89",
+        "work": {
+          "wheel_residue_gcds": 2,
+          "wheel_gcds": 1,
+          "wheel_prime_tests": 0,
+          "roots": 4,
+          "points": 3,
+          "head_terms": 0,
+          "tail_terms": 0,
+          "batch_gcds": 1,
+          "refinement_gcds": 0,
+          "recurrence_steps": 0
+        }
+      },
+      "linear_folded": {
+        "factor": "89",
+        "work": {
+          "setup_gcds": 1,
+          "wheel_residues": 8,
+          "wheel_residue_gcds": 29,
+          "edge_candidates": 7,
+          "final_gcds": 1
+        }
+      },
+      "fermat": {
+        "factor": "89",
+        "work": {
+          "midpoints": 1,
+          "integer_square_roots": 2
+        }
+      }
+    },
+    "previous_square_gcd": "1",
+    "factors": [
+      "89",
+      "97"
+    ]
+  },
+  "product_only_examples": [
+    {
+      "product": "3127",
+      "target": 3,
+      "jacobi_tests": 2,
+      "selector_gcds": 0,
+      "selector_factor": null,
+      "rectangles": {
+        "square8": {
+          "numerators": 8,
+          "denominators": 8,
+          "gcd": "59",
+          "residue": "2891",
+          "first_pair": [
+            4,
+            5
+          ],
+          "work": {
+            "numerator_squares": 8,
+            "scaled_denominator_squares": 8,
+            "covered_leaves": 64,
+            "point_trees": 1,
+            "scalar_modular_products": 8,
+            "resultant_gcds": 1,
+            "direct_numerator_squares": 8,
+            "direct_denominator_terms": 5,
+            "direct_gcds": 36,
+            "root_tree_packed_multiplies": 7,
+            "packed_input_coefficients": 218,
+            "point_trees_packed_multiplies": 7,
+            "remainder_calls": 15,
+            "evaluation_packed_multiplies": 30,
+            "horner_steps": 16
+          }
+        },
+        "streamed8": {
+          "numerators": 8,
+          "denominators": 8,
+          "gcd": "59",
+          "residue": "2891",
+          "first_pair": [
+            4,
+            5
+          ],
+          "work": {
+            "numerator_squares": 8,
+            "scaled_denominator_squares": 8,
+            "covered_leaves": 64,
+            "point_trees": 1,
+            "scalar_modular_products": 8,
+            "resultant_gcds": 1,
+            "direct_numerator_squares": 8,
+            "direct_denominator_terms": 5,
+            "direct_gcds": 36,
+            "root_tree_packed_multiplies": 7,
+            "packed_input_coefficients": 218,
+            "point_trees_packed_multiplies": 7,
+            "remainder_calls": 15,
+            "evaluation_packed_multiplies": 30,
+            "horner_steps": 16
+          }
+        },
+        "balanced": {
+          "numerators": 7,
+          "denominators": 7,
+          "gcd": "59",
+          "residue": "2596",
+          "first_pair": [
+            4,
+            5
+          ],
+          "work": {
+            "numerator_squares": 7,
+            "scaled_denominator_squares": 7,
+            "covered_leaves": 49,
+            "point_trees": 1,
+            "scalar_modular_products": 7,
+            "resultant_gcds": 1,
+            "direct_numerator_squares": 7,
+            "direct_denominator_terms": 5,
+            "direct_gcds": 32,
+            "root_tree_packed_multiplies": 6,
+            "packed_input_coefficients": 175,
+            "point_trees_packed_multiplies": 6,
+            "remainder_calls": 14,
+            "evaluation_packed_multiplies": 24,
+            "horner_steps": 15
+          }
+        }
+      },
+      "controls": {
+        "linear_tree": {
+          "factor": "53",
+          "work": {
+            "wheel_residue_gcds": 2,
+            "wheel_gcds": 1,
+            "wheel_prime_tests": 0,
+            "roots": 2,
+            "points": 1,
+            "head_terms": 0,
+            "tail_terms": 1,
+            "batch_gcds": 1,
+            "refinement_gcds": 0,
+            "recurrence_steps": 0
+          }
+        },
+        "linear_folded": {
+          "factor": "53",
+          "work": {
+            "setup_gcds": 1,
+            "wheel_residues": 8,
+            "wheel_residue_gcds": 29,
+            "edge_candidates": 1,
+            "final_gcds": 1
+          }
+        },
+        "fermat": {
+          "factor": "53",
+          "work": {
+            "midpoints": 1,
+            "integer_square_roots": 2
+          }
+        }
+      },
+      "previous_square_gcd": "59",
+      "factors": [
+        "53",
+        "59"
+      ]
+    },
+    {
+      "product": "134271337",
+      "target": 5,
+      "jacobi_tests": 4,
+      "selector_gcds": 0,
+      "selector_factor": null,
+      "rectangles": {
+        "square8": {
+          "numerators": 8,
+          "denominators": 8,
+          "gcd": "1",
+          "residue": "2720063",
+          "first_pair": null,
+          "work": {
+            "numerator_squares": 8,
+            "scaled_denominator_squares": 8,
+            "covered_leaves": 64,
+            "point_trees": 1,
+            "scalar_modular_products": 8,
+            "resultant_gcds": 1,
+            "direct_numerator_squares": 8,
+            "direct_denominator_terms": 8,
+            "direct_gcds": 64,
+            "root_tree_packed_multiplies": 7,
+            "packed_input_coefficients": 218,
+            "point_trees_packed_multiplies": 7,
+            "remainder_calls": 15,
+            "evaluation_packed_multiplies": 30,
+            "horner_steps": 16
+          }
+        },
+        "streamed8": {
+          "numerators": 8,
+          "denominators": 1820,
+          "gcd": "16301",
+          "residue": "21875942",
+          "first_pair": [
+            3,
+            1015
+          ],
+          "work": {
+            "numerator_squares": 8,
+            "scaled_denominator_squares": 1820,
+            "covered_leaves": 14560,
+            "point_trees": 228,
+            "scalar_modular_products": 1820,
+            "resultant_gcds": 1,
+            "direct_numerator_squares": 8,
+            "direct_denominator_terms": 1015,
+            "direct_gcds": 8115,
+            "root_tree_packed_multiplies": 7,
+            "packed_input_coefficients": 40998,
+            "point_trees_packed_multiplies": 1592,
+            "remainder_calls": 3412,
+            "evaluation_packed_multiplies": 6826,
+            "horner_steps": 3640
+          }
+        },
+        "balanced": {
+          "numerators": 127,
+          "denominators": 127,
+          "gcd": "16301",
+          "residue": "4352367",
+          "first_pair": [
+            48,
+            61
+          ],
+          "work": {
+            "numerator_squares": 127,
+            "scaled_denominator_squares": 127,
+            "covered_leaves": 16129,
+            "point_trees": 1,
+            "scalar_modular_products": 127,
+            "resultant_gcds": 1,
+            "direct_numerator_squares": 127,
+            "direct_denominator_terms": 61,
+            "direct_gcds": 7668,
+            "root_tree_packed_multiplies": 126,
+            "packed_input_coefficients": 9407,
+            "point_trees_packed_multiplies": 126,
+            "remainder_calls": 254,
+            "evaluation_packed_multiplies": 728,
+            "horner_steps": 255
+          }
+        }
+      },
+      "controls": {
+        "linear_tree": {
+          "factor": "8237",
+          "work": {
+            "wheel_residue_gcds": 2,
+            "wheel_gcds": 1,
+            "wheel_prime_tests": 0,
+            "roots": 42,
+            "points": 40,
+            "head_terms": 0,
+            "tail_terms": 16,
+            "batch_gcds": 1,
+            "refinement_gcds": 0,
+            "recurrence_steps": 0
+          }
+        },
+        "linear_folded": {
+          "factor": "8237",
+          "work": {
+            "setup_gcds": 2,
+            "wheel_residues": 8,
+            "wheel_residue_gcds": 29,
+            "block_cycles": 4,
+            "block_degree": 16,
+            "blocks": 28,
+            "factorial_limit": 64,
+            "inversions": 1,
+            "seed_terms": 144,
+            "convolutions": 1,
+            "convolution_input_coefficients": 82,
+            "shifted_values": 47,
+            "paired_products": 28,
+            "batched_candidates": 896,
+            "edge_candidates": 9,
+            "final_gcds": 1
+          }
+        },
+        "fermat": {
+          "factor": "8237",
+          "work": {
+            "midpoints": 682,
+            "integer_square_roots": 683
+          }
+        }
+      },
+      "previous_square_gcd": "1",
+      "factors": [
+        "8237",
+        "16301"
+      ]
+    }
+  ]
+}

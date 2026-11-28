@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+A rectangular grid of fractions finds a prime of 323 for 119 of 144 negative-Jacobi targets. Close to the size that guarantees a hit, the number of missing squares equals the number of divisors of the shortfall. Wider grids factored all 2,465 products in a small census. Even with the best rectangle shape for every full-size product and every target through 2,015,165, fewer than a third admit a hit within $2^{975}$ cells. [Which squares escape, what the census cost and the full-width proofs](which-squares-a-rational-rectangle-misses.md)
+
 Dividing the squared difference by its full power of two first saved a further 402,248 gcds on all 27,527 eligible small products. Knowing which even and odd positions to visit made the interval search faster on the 12-bit cohort, though the direct consecutive scan still finished earlier. A population bound puts the fraction of tests this refinement saves below $2^{-350}$ on almost all full-width products. [How to visit the positions and what it costs](when-removing-powers-of-two-saves-factor-tests.md)
 
 The width of the two primes rules out entire intervals in a search for a shared divisor of $x^2-a$ and the product. For 3,127, two adjacent positions can be skipped before the next one gives 59. A separate calculation determines when one gcd can replace an entire count over shifted pairs of positions. [Size bounds and actual work](which-marked-coordinate-tests-can-be-skipped.md) · [Shifted marks and their cost](what-shifted-mark-counts-reveal.md)
