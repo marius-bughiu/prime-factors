@@ -1,5 +1,31 @@
 [
   {
+    "id": "gaussian-square-remainder-525689",
+    "description": "Ordinary Fermat baseline for the floor-square-root remainder test",
+    "n": "525689",
+    "max_steps": 40,
+    "status": "complete",
+    "factors": [
+      "521",
+      "1009"
+    ],
+    "remaining": [],
+    "fermat_steps": 40
+  },
+  {
+    "id": "gaussian-square-remainder-698897",
+    "description": "Ordinary Fermat baseline for a product one above a square",
+    "n": "698897",
+    "max_steps": 13,
+    "status": "complete",
+    "factors": [
+      "701",
+      "997"
+    ],
+    "remaining": [],
+    "fermat_steps": 13
+  },
+  {
     "id": "cyclotomic-diagonal-10403",
     "description": "Adjacent-prime control at the sufficient gap bound for the equal-factor estimate",
     "n": "10403",

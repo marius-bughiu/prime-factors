@@ -1,0 +1,1016 @@
+{
+  "controls": [
+    {
+      "n": "14351",
+      "n_mod_256": 15,
+      "n_mod_7": 1,
+      "acquisition": {
+        "divisor_trials_by_order": {
+          "1": 0,
+          "113": 112,
+          "127": 126,
+          "14351": 14350
+        },
+        "top_level_divisor_trials": 14350,
+        "all_divisor_trials": 14588,
+        "monic_polynomial_divisions": 6,
+        "phi_degree": 14112,
+        "psi_degree": 239
+      },
+      "cyclic_fold": {
+        "coefficient_slots_per_modulus": 241,
+        "coefficient_additions_across_two_moduli": 482,
+        "mod_7": [
+          1,
+          -2,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mod_4": [
+          2,
+          -1,
+          0,
+          -1
+        ]
+      },
+      "sum_already_given_by_polynomial_degree": 240,
+      "mean_over_seventh_roots": 1,
+      "mean_square_over_seventh_roots": 6,
+      "primitive_seventh_root_basis": [
+        1,
+        -2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "phase_shifts_compared": 7,
+      "sum_mod_7_from_phase": 2,
+      "T_at_i_real_imaginary": [
+        2,
+        0
+      ],
+      "sum_mod_8_from_gaussian": 0,
+      "fermat_midpoints": 1,
+      "factors": [
+        "113",
+        "127"
+      ]
+    },
+    {
+      "n": "11663",
+      "n_mod_256": 143,
+      "n_mod_7": 1,
+      "acquisition": {
+        "divisor_trials_by_order": {
+          "1": 0,
+          "107": 106,
+          "109": 108,
+          "11663": 11662
+        },
+        "top_level_divisor_trials": 11662,
+        "all_divisor_trials": 11876,
+        "monic_polynomial_divisions": 6,
+        "phi_degree": 11448,
+        "psi_degree": 215
+      },
+      "cyclic_fold": {
+        "coefficient_slots_per_modulus": 217,
+        "coefficient_additions_across_two_moduli": 434,
+        "mod_7": [
+          1,
+          0,
+          -1,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "mod_4": [
+          2,
+          -1,
+          0,
+          -1
+        ]
+      },
+      "sum_already_given_by_polynomial_degree": 216,
+      "mean_over_seventh_roots": 1,
+      "mean_square_over_seventh_roots": 4,
+      "primitive_seventh_root_basis": [
+        0,
+        -1,
+        -2,
+        -1,
+        -2,
+        -1
+      ],
+      "phase_shifts_compared": 7,
+      "sum_mod_7_from_phase": 6,
+      "T_at_i_real_imaginary": [
+        2,
+        0
+      ],
+      "sum_mod_8_from_gaussian": 0,
+      "fermat_midpoints": 1,
+      "factors": [
+        "107",
+        "109"
+      ]
+    },
+    {
+      "n": "9523",
+      "n_mod_256": 51,
+      "n_mod_7": 3,
+      "acquisition": {
+        "divisor_trials_by_order": {
+          "1": 0,
+          "89": 88,
+          "107": 106,
+          "9523": 9522
+        },
+        "top_level_divisor_trials": 9522,
+        "all_divisor_trials": 9716,
+        "monic_polynomial_divisions": 6,
+        "phi_degree": 9328,
+        "psi_degree": 195
+      },
+      "cyclic_fold": {
+        "coefficient_slots_per_modulus": 197,
+        "coefficient_additions_across_two_moduli": 394,
+        "mod_7": [
+          2,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "mod_4": [
+          2,
+          -1,
+          0,
+          -1
+        ]
+      },
+      "sum_already_given_by_polynomial_degree": 196,
+      "mean_over_seventh_roots": 2,
+      "mean_square_over_seventh_roots": 6,
+      "primitive_seventh_root_basis": [
+        2,
+        0,
+        -1,
+        0,
+        0,
+        -1
+      ],
+      "phase_shifts_compared": 7,
+      "sum_mod_7_from_phase": 0,
+      "T_at_i_real_imaginary": [
+        2,
+        0
+      ],
+      "sum_mod_8_from_gaussian": 4,
+      "fermat_midpoints": 1,
+      "factors": [
+        "89",
+        "107"
+      ]
+    },
+    {
+      "n": "11413",
+      "n_mod_256": 149,
+      "n_mod_7": 3,
+      "acquisition": {
+        "divisor_trials_by_order": {
+          "1": 0,
+          "101": 100,
+          "113": 112,
+          "11413": 11412
+        },
+        "top_level_divisor_trials": 11412,
+        "all_divisor_trials": 11624,
+        "monic_polynomial_divisions": 6,
+        "phi_degree": 11200,
+        "psi_degree": 213
+      },
+      "cyclic_fold": {
+        "coefficient_slots_per_modulus": 215,
+        "coefficient_additions_across_two_moduli": 430,
+        "mod_7": [
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          0,
+          0
+        ],
+        "mod_4": [
+          1,
+          -2,
+          1,
+          0
+        ]
+      },
+      "sum_already_given_by_polynomial_degree": 214,
+      "mean_over_seventh_roots": 1,
+      "mean_square_over_seventh_roots": 4,
+      "primitive_seventh_root_basis": [
+        1,
+        -1,
+        0,
+        -1,
+        1,
+        0
+      ],
+      "phase_shifts_compared": 7,
+      "sum_mod_7_from_phase": 4,
+      "T_at_i_real_imaginary": [
+        0,
+        -2
+      ],
+      "sum_mod_8_from_gaussian": 6,
+      "fermat_midpoints": 1,
+      "factors": [
+        "101",
+        "113"
+      ]
+    },
+    {
+      "n": "9017",
+      "n_mod_256": 57,
+      "n_mod_7": 1,
+      "acquisition": {
+        "divisor_trials_by_order": {
+          "1": 0,
+          "71": 70,
+          "127": 126,
+          "9017": 9016
+        },
+        "top_level_divisor_trials": 9016,
+        "all_divisor_trials": 9212,
+        "monic_polynomial_divisions": 6,
+        "phi_degree": 8820,
+        "psi_degree": 197
+      },
+      "cyclic_fold": {
+        "coefficient_slots_per_modulus": 199,
+        "coefficient_additions_across_two_moduli": 398,
+        "mod_7": [
+          1,
+          -2,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mod_4": [
+          1,
+          0,
+          1,
+          -2
+        ]
+      },
+      "sum_already_given_by_polynomial_degree": 198,
+      "mean_over_seventh_roots": 1,
+      "mean_square_over_seventh_roots": 6,
+      "primitive_seventh_root_basis": [
+        1,
+        -2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "phase_shifts_compared": 7,
+      "sum_mod_7_from_phase": 2,
+      "T_at_i_real_imaginary": [
+        0,
+        2
+      ],
+      "sum_mod_8_from_gaussian": 6,
+      "fermat_midpoints": 5,
+      "factors": [
+        "71",
+        "127"
+      ]
+    },
+    {
+      "n": "8249",
+      "n_mod_256": 57,
+      "n_mod_7": 3,
+      "acquisition": {
+        "divisor_trials_by_order": {
+          "1": 0,
+          "73": 72,
+          "113": 112,
+          "8249": 8248
+        },
+        "top_level_divisor_trials": 8248,
+        "all_divisor_trials": 8432,
+        "monic_polynomial_divisions": 6,
+        "phi_degree": 8064,
+        "psi_degree": 185
+      },
+      "cyclic_fold": {
+        "coefficient_slots_per_modulus": 187,
+        "coefficient_additions_across_two_moduli": 374,
+        "mod_7": [
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          0,
+          0
+        ],
+        "mod_4": [
+          1,
+          -2,
+          1,
+          0
+        ]
+      },
+      "sum_already_given_by_polynomial_degree": 186,
+      "mean_over_seventh_roots": 1,
+      "mean_square_over_seventh_roots": 4,
+      "primitive_seventh_root_basis": [
+        1,
+        -1,
+        0,
+        -1,
+        1,
+        0
+      ],
+      "phase_shifts_compared": 7,
+      "sum_mod_7_from_phase": 4,
+      "T_at_i_real_imaginary": [
+        0,
+        -2
+      ],
+      "sum_mod_8_from_gaussian": 2,
+      "fermat_midpoints": 3,
+      "factors": [
+        "73",
+        "113"
+      ]
+    }
+  ],
+  "known_factor_census": {
+    "factor_bits": 7,
+    "product_bits": 14,
+    "eligible_distinct_unordered_pairs": 42,
+    "count_by_mean_and_mean_square_at_7": {
+      "1,4": 31,
+      "1,6": 4,
+      "2,6": 7
+    },
+    "count_by_phase_mod_7": {
+      "0": 7,
+      "1": 4,
+      "2": 6,
+      "3": 7,
+      "4": 8,
+      "5": 4,
+      "6": 6
+    },
+    "count_by_gaussian_value": {
+      "+2i": 10,
+      "-2i": 11,
+      "2": 21
+    }
+  },
+  "square_remainder_study": {
+    "gate_order": [
+      "product_mod_4",
+      "remainder_mod_256",
+      "remainder_mod_3",
+      "remainder_mod_5",
+      "remainder_mod_7",
+      "remainder_mod_11"
+    ],
+    "positive": {
+      "n": "525689",
+      "factors": [
+        "521",
+        "1009"
+      ],
+      "floor_sqrt": 725,
+      "remainder": 64,
+      "gate_accepts": true,
+      "raw_gate_square_tests": 1,
+      "screened_gate_square_tests": 1,
+      "gate_lookups": {
+        "product_mod_4": 1,
+        "remainder_mod_256": 1,
+        "remainder_mod_3": 1,
+        "remainder_mod_5": 1,
+        "remainder_mod_7": 1,
+        "remainder_mod_11": 1
+      },
+      "midpoint_scans": {
+        "consecutive": {
+          "exact_square_tests": 40
+        },
+        "parity": {
+          "exact_square_tests": 20
+        },
+        "switched_4": {
+          "exact_square_tests": 10
+        },
+        "switched_8": {
+          "exact_square_tests": 5
+        },
+        "switched_8_or_16": {
+          "exact_square_tests": 5
+        },
+        "mod256": {
+          "exact_square_tests": 3,
+          "mod256_lookups": 20
+        },
+        "switched_4_mod256": {
+          "exact_square_tests": 2,
+          "mod256_lookups": 10
+        },
+        "switched_8_mod256": {
+          "exact_square_tests": 2,
+          "mod256_lookups": 5
+        },
+        "switched_8_or_16_mod256": {
+          "exact_square_tests": 2,
+          "mod256_lookups": 5
+        }
+      }
+    },
+    "representable_but_missed": {
+      "n": "8249",
+      "factors": [
+        "73",
+        "113"
+      ],
+      "floor_sqrt": 90,
+      "remainder": 149,
+      "gate_accepts": false,
+      "raw_gate_square_tests": 1,
+      "screened_gate_square_tests": 0,
+      "gate_lookups": {
+        "product_mod_4": 1,
+        "remainder_mod_256": 1
+      },
+      "midpoint_scans": {
+        "consecutive": {
+          "exact_square_tests": 3
+        },
+        "parity": {
+          "exact_square_tests": 2
+        },
+        "switched_4": {
+          "exact_square_tests": 2
+        },
+        "switched_8": {
+          "exact_square_tests": 2
+        },
+        "switched_8_or_16": {
+          "exact_square_tests": 2
+        },
+        "mod256": {
+          "exact_square_tests": 1,
+          "mod256_lookups": 2
+        },
+        "switched_4_mod256": {
+          "exact_square_tests": 1,
+          "mod256_lookups": 2
+        },
+        "switched_8_mod256": {
+          "exact_square_tests": 1,
+          "mod256_lookups": 2
+        },
+        "switched_8_or_16_mod256": {
+          "exact_square_tests": 1,
+          "mod256_lookups": 2
+        }
+      },
+      "independent_two_squares_witness": [
+        32,
+        85
+      ]
+    },
+    "complete_populations": [
+      {
+        "factor_bits": 9,
+        "product_bits": 18,
+        "pairs": 543,
+        "accepted": 16,
+        "raw_gate_square_tests": 543,
+        "screened_gate_square_tests": 19,
+        "short_circuit_gate_lookups": {
+          "product_mod_4": 543,
+          "remainder_mod_256": 266,
+          "remainder_mod_3": 97,
+          "remainder_mod_5": 87,
+          "remainder_mod_7": 35,
+          "remainder_mod_11": 23
+        },
+        "sum_of_gate_lookups": 1051,
+        "midpoint_scans": {
+          "consecutive": {
+            "exact_square_tests": 2244
+          },
+          "parity": {
+            "exact_square_tests": 1299
+          },
+          "switched_4": {
+            "exact_square_tests": 1290,
+            "total_with_raw_gate": 1833,
+            "total_with_screened_gate": 1309,
+            "net_squares_saved_raw_gate": -534,
+            "net_squares_saved_screened_gate": -10
+          },
+          "switched_8": {
+            "exact_square_tests": 1286,
+            "total_with_raw_gate": 1829,
+            "total_with_screened_gate": 1305,
+            "net_squares_saved_raw_gate": -530,
+            "net_squares_saved_screened_gate": -6
+          },
+          "switched_8_or_16": {
+            "exact_square_tests": 1285,
+            "total_with_raw_gate": 1828,
+            "total_with_screened_gate": 1304,
+            "net_squares_saved_raw_gate": -529,
+            "net_squares_saved_screened_gate": -5
+          },
+          "mod256": {
+            "exact_square_tests": 760,
+            "mod256_lookups": 1299
+          },
+          "switched_4_mod256": {
+            "exact_square_tests": 760,
+            "mod256_lookups": 1290,
+            "total_with_raw_gate": 1303,
+            "total_with_screened_gate": 779,
+            "net_squares_saved_raw_gate": -543,
+            "net_squares_saved_screened_gate": -19
+          },
+          "switched_8_mod256": {
+            "exact_square_tests": 760,
+            "mod256_lookups": 1286,
+            "total_with_raw_gate": 1303,
+            "total_with_screened_gate": 779,
+            "net_squares_saved_raw_gate": -543,
+            "net_squares_saved_screened_gate": -19
+          },
+          "switched_8_or_16_mod256": {
+            "exact_square_tests": 760,
+            "mod256_lookups": 1285,
+            "total_with_raw_gate": 1303,
+            "total_with_screened_gate": 779,
+            "net_squares_saved_raw_gate": -543,
+            "net_squares_saved_screened_gate": -19
+          }
+        },
+        "midpoint_square_tests_on_accepted_pairs": {
+          "consecutive": 51,
+          "parity": 30,
+          "switched_4": 21,
+          "switched_8": 17,
+          "switched_8_or_16": 16,
+          "mod256": 16,
+          "switched_4_mod256": 16,
+          "switched_8_mod256": 16,
+          "switched_8_or_16_mod256": 16
+        }
+      },
+      {
+        "factor_bits": 10,
+        "product_bits": 20,
+        "pairs": 1718,
+        "accepted": 50,
+        "raw_gate_square_tests": 1718,
+        "screened_gate_square_tests": 70,
+        "short_circuit_gate_lookups": {
+          "product_mod_4": 1718,
+          "remainder_mod_256": 847,
+          "remainder_mod_3": 322,
+          "remainder_mod_5": 280,
+          "remainder_mod_7": 131,
+          "remainder_mod_11": 99
+        },
+        "sum_of_gate_lookups": 3397,
+        "midpoint_scans": {
+          "consecutive": {
+            "exact_square_tests": 14258
+          },
+          "parity": {
+            "exact_square_tests": 7644
+          },
+          "switched_4": {
+            "exact_square_tests": 7530,
+            "total_with_raw_gate": 9248,
+            "total_with_screened_gate": 7600,
+            "net_squares_saved_raw_gate": -1604,
+            "net_squares_saved_screened_gate": 44
+          },
+          "switched_8": {
+            "exact_square_tests": 7469,
+            "total_with_raw_gate": 9187,
+            "total_with_screened_gate": 7539,
+            "net_squares_saved_raw_gate": -1543,
+            "net_squares_saved_screened_gate": 105
+          },
+          "switched_8_or_16": {
+            "exact_square_tests": 7454,
+            "total_with_raw_gate": 9172,
+            "total_with_screened_gate": 7524,
+            "net_squares_saved_raw_gate": -1528,
+            "net_squares_saved_screened_gate": 120
+          },
+          "mod256": {
+            "exact_square_tests": 3490,
+            "mod256_lookups": 7644
+          },
+          "switched_4_mod256": {
+            "exact_square_tests": 3474,
+            "mod256_lookups": 7530,
+            "total_with_raw_gate": 5192,
+            "total_with_screened_gate": 3544,
+            "net_squares_saved_raw_gate": -1702,
+            "net_squares_saved_screened_gate": -54
+          },
+          "switched_8_mod256": {
+            "exact_square_tests": 3474,
+            "mod256_lookups": 7469,
+            "total_with_raw_gate": 5192,
+            "total_with_screened_gate": 3544,
+            "net_squares_saved_raw_gate": -1702,
+            "net_squares_saved_screened_gate": -54
+          },
+          "switched_8_or_16_mod256": {
+            "exact_square_tests": 3474,
+            "mod256_lookups": 7454,
+            "total_with_raw_gate": 5192,
+            "total_with_screened_gate": 3544,
+            "net_squares_saved_raw_gate": -1702,
+            "net_squares_saved_screened_gate": -54
+          }
+        },
+        "midpoint_square_tests_on_accepted_pairs": {
+          "consecutive": 505,
+          "parity": 268,
+          "switched_4": 154,
+          "switched_8": 93,
+          "switched_8_or_16": 78,
+          "mod256": 78,
+          "switched_4_mod256": 62,
+          "switched_8_mod256": 62,
+          "switched_8_or_16_mod256": 62
+        }
+      },
+      {
+        "factor_bits": 11,
+        "product_bits": 22,
+        "pairs": 5530,
+        "accepted": 94,
+        "raw_gate_square_tests": 5530,
+        "screened_gate_square_tests": 166,
+        "short_circuit_gate_lookups": {
+          "product_mod_4": 5530,
+          "remainder_mod_256": 2753,
+          "remainder_mod_3": 954,
+          "remainder_mod_5": 819,
+          "remainder_mod_7": 390,
+          "remainder_mod_11": 266
+        },
+        "sum_of_gate_lookups": 10712,
+        "midpoint_scans": {
+          "consecutive": {
+            "exact_square_tests": 82017
+          },
+          "parity": {
+            "exact_square_tests": 42600
+          },
+          "switched_4": {
+            "exact_square_tests": 42220,
+            "total_with_raw_gate": 47750,
+            "total_with_screened_gate": 42386,
+            "net_squares_saved_raw_gate": -5150,
+            "net_squares_saved_screened_gate": 214
+          },
+          "switched_8": {
+            "exact_square_tests": 42027,
+            "total_with_raw_gate": 47557,
+            "total_with_screened_gate": 42193,
+            "net_squares_saved_raw_gate": -4957,
+            "net_squares_saved_screened_gate": 407
+          },
+          "switched_8_or_16": {
+            "exact_square_tests": 41988,
+            "total_with_raw_gate": 47518,
+            "total_with_screened_gate": 42154,
+            "net_squares_saved_raw_gate": -4918,
+            "net_squares_saved_screened_gate": 446
+          },
+          "mod256": {
+            "exact_square_tests": 17273,
+            "mod256_lookups": 42600
+          },
+          "switched_4_mod256": {
+            "exact_square_tests": 17216,
+            "mod256_lookups": 42220,
+            "total_with_raw_gate": 22746,
+            "total_with_screened_gate": 17382,
+            "net_squares_saved_raw_gate": -5473,
+            "net_squares_saved_screened_gate": -109
+          },
+          "switched_8_mod256": {
+            "exact_square_tests": 17216,
+            "mod256_lookups": 42027,
+            "total_with_raw_gate": 22746,
+            "total_with_screened_gate": 17382,
+            "net_squares_saved_raw_gate": -5473,
+            "net_squares_saved_screened_gate": -109
+          },
+          "switched_8_or_16_mod256": {
+            "exact_square_tests": 17216,
+            "mod256_lookups": 41988,
+            "total_with_raw_gate": 22746,
+            "total_with_screened_gate": 17382,
+            "net_squares_saved_raw_gate": -5473,
+            "net_squares_saved_screened_gate": -109
+          }
+        },
+        "midpoint_square_tests_on_accepted_pairs": {
+          "consecutive": 1608,
+          "parity": 831,
+          "switched_4": 451,
+          "switched_8": 258,
+          "switched_8_or_16": 219,
+          "mod256": 200,
+          "switched_4_mod256": 143,
+          "switched_8_mod256": 143,
+          "switched_8_or_16_mod256": 143
+        }
+      },
+      {
+        "factor_bits": 12,
+        "product_bits": 24,
+        "pairs": 19546,
+        "accepted": 276,
+        "raw_gate_square_tests": 19546,
+        "screened_gate_square_tests": 586,
+        "short_circuit_gate_lookups": {
+          "product_mod_4": 19546,
+          "remainder_mod_256": 9739,
+          "remainder_mod_3": 3494,
+          "remainder_mod_5": 2984,
+          "remainder_mod_7": 1420,
+          "remainder_mod_11": 971
+        },
+        "sum_of_gate_lookups": 38154,
+        "midpoint_scans": {
+          "consecutive": {
+            "exact_square_tests": 581692
+          },
+          "parity": {
+            "exact_square_tests": 296267
+          },
+          "switched_4": {
+            "exact_square_tests": 294066,
+            "total_with_raw_gate": 313612,
+            "total_with_screened_gate": 294652,
+            "net_squares_saved_raw_gate": -17345,
+            "net_squares_saved_screened_gate": 1615
+          },
+          "switched_8": {
+            "exact_square_tests": 292947,
+            "total_with_raw_gate": 312493,
+            "total_with_screened_gate": 293533,
+            "net_squares_saved_raw_gate": -16226,
+            "net_squares_saved_screened_gate": 2734
+          },
+          "switched_8_or_16": {
+            "exact_square_tests": 292677,
+            "total_with_raw_gate": 312223,
+            "total_with_screened_gate": 293263,
+            "net_squares_saved_raw_gate": -15956,
+            "net_squares_saved_screened_gate": 3004
+          },
+          "mod256": {
+            "exact_square_tests": 110296,
+            "mod256_lookups": 296267
+          },
+          "switched_4_mod256": {
+            "exact_square_tests": 109936,
+            "mod256_lookups": 294066,
+            "total_with_raw_gate": 129482,
+            "total_with_screened_gate": 110522,
+            "net_squares_saved_raw_gate": -19186,
+            "net_squares_saved_screened_gate": -226
+          },
+          "switched_8_mod256": {
+            "exact_square_tests": 109936,
+            "mod256_lookups": 292947,
+            "total_with_raw_gate": 129482,
+            "total_with_screened_gate": 110522,
+            "net_squares_saved_raw_gate": -19186,
+            "net_squares_saved_screened_gate": -226
+          },
+          "switched_8_or_16_mod256": {
+            "exact_square_tests": 109936,
+            "mod256_lookups": 292677,
+            "total_with_raw_gate": 129482,
+            "total_with_screened_gate": 110522,
+            "net_squares_saved_raw_gate": -19186,
+            "net_squares_saved_screened_gate": -226
+          }
+        },
+        "midpoint_square_tests_on_accepted_pairs": {
+          "consecutive": 9103,
+          "parity": 4626,
+          "switched_4": 2425,
+          "switched_8": 1306,
+          "switched_8_or_16": 1036,
+          "mod256": 980,
+          "switched_4_mod256": 620,
+          "switched_8_mod256": 620,
+          "switched_8_or_16_mod256": 620
+        }
+      },
+      {
+        "factor_bits": 13,
+        "product_bits": 26,
+        "pairs": 64719,
+        "accepted": 716,
+        "raw_gate_square_tests": 64719,
+        "screened_gate_square_tests": 2033,
+        "short_circuit_gate_lookups": {
+          "product_mod_4": 64719,
+          "remainder_mod_256": 32281,
+          "remainder_mod_3": 11716,
+          "remainder_mod_5": 10031,
+          "remainder_mod_7": 4908,
+          "remainder_mod_11": 3258
+        },
+        "sum_of_gate_lookups": 126913,
+        "midpoint_scans": {
+          "consecutive": {
+            "exact_square_tests": 3721351
+          },
+          "parity": {
+            "exact_square_tests": 1878117
+          },
+          "switched_4": {
+            "exact_square_tests": 1867605,
+            "total_with_raw_gate": 1932324,
+            "total_with_screened_gate": 1869638,
+            "net_squares_saved_raw_gate": -54207,
+            "net_squares_saved_screened_gate": 8479
+          },
+          "switched_8": {
+            "exact_square_tests": 1862313,
+            "total_with_raw_gate": 1927032,
+            "total_with_screened_gate": 1864346,
+            "net_squares_saved_raw_gate": -48915,
+            "net_squares_saved_screened_gate": 13771
+          },
+          "switched_8_or_16": {
+            "exact_square_tests": 1860936,
+            "total_with_raw_gate": 1925655,
+            "total_with_screened_gate": 1862969,
+            "net_squares_saved_raw_gate": -47538,
+            "net_squares_saved_screened_gate": 15148
+          },
+          "mod256": {
+            "exact_square_tests": 672263,
+            "mod256_lookups": 1878117
+          },
+          "switched_4_mod256": {
+            "exact_square_tests": 670361,
+            "mod256_lookups": 1867605,
+            "total_with_raw_gate": 735080,
+            "total_with_screened_gate": 672394,
+            "net_squares_saved_raw_gate": -62817,
+            "net_squares_saved_screened_gate": -131
+          },
+          "switched_8_mod256": {
+            "exact_square_tests": 670361,
+            "mod256_lookups": 1862313,
+            "total_with_raw_gate": 735080,
+            "total_with_screened_gate": 672394,
+            "net_squares_saved_raw_gate": -62817,
+            "net_squares_saved_screened_gate": -131
+          },
+          "switched_8_or_16_mod256": {
+            "exact_square_tests": 670361,
+            "mod256_lookups": 1860936,
+            "total_with_raw_gate": 735080,
+            "total_with_screened_gate": 672394,
+            "net_squares_saved_raw_gate": -62817,
+            "net_squares_saved_screened_gate": -131
+          }
+        },
+        "midpoint_square_tests_on_accepted_pairs": {
+          "consecutive": 42780,
+          "parity": 21577,
+          "switched_4": 11065,
+          "switched_8": 5773,
+          "switched_8_or_16": 4396,
+          "mod256": 4436,
+          "switched_4_mod256": 2534,
+          "switched_8_mod256": 2534,
+          "switched_8_or_16_mod256": 2534
+        }
+      }
+    ]
+  },
+  "square_remainder_holdout_14": {
+    "factor_bits": 14,
+    "product_bits": 28,
+    "pairs": 228713,
+    "accepted": 1704,
+    "raw_gate_square_tests": 228713,
+    "screened_gate_square_tests": 6592,
+    "short_circuit_gate_lookups": {
+      "product_mod_4": 228713,
+      "remainder_mod_256": 114252,
+      "remainder_mod_3": 40359,
+      "remainder_mod_5": 34201,
+      "remainder_mod_7": 16614,
+      "remainder_mod_11": 10916
+    },
+    "sum_of_gate_lookups": 445055,
+    "midpoint_scans": {
+      "consecutive": {
+        "exact_square_tests": 26609757
+      },
+      "parity": {
+        "exact_square_tests": 13365514
+      },
+      "switched_4": {
+        "exact_square_tests": 13315154,
+        "total_with_raw_gate": 13543867,
+        "total_with_screened_gate": 13321746,
+        "net_squares_saved_raw_gate": -178353,
+        "net_squares_saved_screened_gate": 43768
+      },
+      "switched_8": {
+        "exact_square_tests": 13289859,
+        "total_with_raw_gate": 13518572,
+        "total_with_screened_gate": 13296451,
+        "net_squares_saved_raw_gate": -153058,
+        "net_squares_saved_screened_gate": 69063
+      },
+      "switched_8_or_16": {
+        "exact_square_tests": 13283513,
+        "total_with_raw_gate": 13512226,
+        "total_with_screened_gate": 13290105,
+        "net_squares_saved_raw_gate": -146712,
+        "net_squares_saved_screened_gate": 75409
+      },
+      "mod256": {
+        "exact_square_tests": 4681605,
+        "mod256_lookups": 13365514
+      },
+      "switched_4_mod256": {
+        "exact_square_tests": 4672338,
+        "mod256_lookups": 13315154,
+        "total_with_raw_gate": 4901051,
+        "total_with_screened_gate": 4678930,
+        "net_squares_saved_raw_gate": -219446,
+        "net_squares_saved_screened_gate": 2675
+      },
+      "switched_8_mod256": {
+        "exact_square_tests": 4672338,
+        "mod256_lookups": 13289859,
+        "total_with_raw_gate": 4901051,
+        "total_with_screened_gate": 4678930,
+        "net_squares_saved_raw_gate": -219446,
+        "net_squares_saved_screened_gate": 2675
+      },
+      "switched_8_or_16_mod256": {
+        "exact_square_tests": 4672338,
+        "mod256_lookups": 13283513,
+        "total_with_raw_gate": 4901051,
+        "total_with_screened_gate": 4678930,
+        "net_squares_saved_raw_gate": -219446,
+        "net_squares_saved_screened_gate": 2675
+      }
+    },
+    "midpoint_square_tests_on_accepted_pairs": {
+      "consecutive": 203184,
+      "parity": 102047,
+      "switched_4": 51687,
+      "switched_8": 26392,
+      "switched_8_or_16": 20046,
+      "mod256": 19906,
+      "switched_4_mod256": 10639,
+      "switched_8_mod256": 10639,
+      "switched_8_or_16_mod256": 10639
+    }
+  }
+}

@@ -25,6 +25,10 @@ def experiment(name, *args, data=RESEARCH, lean=False, proof=None):
 # fixture and reference result, also when one is added, renamed or removed.
 CHECKS = (
     Check('unit-tests', ('python3', '-m', 'unittest', 'discover', '-s', 'tests'), lean=True),
+    experiment('cyclotomic_root_readings', lean=True, data=('benchmarks/cyclotomic-root-readings.json',)),
+    Check('cyclotomic-root-readings-14',
+          ('python3', '-m', 'experiments.cyclotomic_root_readings', '--gate-width-14'),
+          ('benchmarks/cyclotomic-root-readings.json',)),
     experiment('inverse_cyclotomic_measurements', lean=True,
                data=('benchmarks/inverse-cyclotomic-measurements.json',)),
     Check('transposed-blocks', ('python3', '-m', 'experiments.transposed_block_receipt'),

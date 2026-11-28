@@ -1207,3 +1207,11 @@ import PrimeFactors.CyclotomicLogTail
 import PrimeFactors.CyclotomicLogUpper
 import PrimeFactors.PublicCyclotomicLogReading
 import PrimeFactors.CyclotomicCommonTailCorrection
+import PrimeFactors.CyclotomicRootEnergy
+import PrimeFactors.CyclotomicEnergyResidues
+import PrimeFactors.CyclotomicEnergySevenPopulation
+import PrimeFactors.CyclotomicRootPhase
+import PrimeFactors.CyclotomicGaussianReading
+import PrimeFactors.CyclotomicGaussianPrecision
+import PrimeFactors.GaussianSquareMenu
+import PrimeFactors.GaussianSquareRemainder

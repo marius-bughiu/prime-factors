@@ -1,5 +1,9 @@
 # Searching the balanced interval
 
+At 525,689, a square remainder gives a restricted Fermat search from the product alone. Across 228,713 toy products the rule saved 2,675 exact square tests against a modulo-256 screen at the cost of 363,054 additional small lookups. Fewer than one in $2^{487}$ eligible full-size pairs passes the underlying square test. [Measured work, counterexamples and coverage](when-a-square-remainder-narrows-the-prime-sum.md)
+
+The angle of one complex polynomial value determines the sum directly. Seven samples can instead test whether 7 divides the sum or its gap, with the choice determined by the product remainder. At full size, obtaining the single reading with sufficient accuracy remains open. [Formulas, modulus classification and acquisition costs](what-the-angle-of-one-cyclotomic-value-reveals.md)
+
 Replacing both primes by the square root of their product gives an accurate cyclotomic reading only when Fermat's first square test already finds the factors. Another way to obtain the reading uses only the product, but summing through degree $2^{1034}$ still exceeds the certified error tolerance for every pair of 1,024-bit primes. [Which products the approximation covers and what the series costs](can-the-product-supply-the-cyclotomic-reading.md)
 
 One bounded real evaluation of a polynomial specified by the product distinguishes the correct prime sum from every other candidate in the feasible interval. Two rational evaluations give a decoder with a proved operation count. For 551, constructing the readings from the product already encounters both factors. Obtaining precise readings cheaply at full size remains open. [What the measurements determine and what they cost](which-cyclotomic-measurements-distinguish-the-prime-sum.md)

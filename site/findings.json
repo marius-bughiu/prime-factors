@@ -1,5 +1,151 @@
 [
   {
+    "id": "square-remainder-mod256-census",
+    "category": "gains",
+    "title": "A square-remainder test saved 2,675 square tests across 228,713 products",
+    "impact": "Against a modulo-256 screen, the 14-bit factor census needed 4,678,930 exact square tests instead of 4,681,605. The new rule used 363,054 more small lookups overall.",
+    "scope": "All distinct 14-bit prime pairs with a 28-bit product. The same rule used more exact square tests against this baseline at widths 9 through 13.",
+    "detail": "These counts include failed remainder checks. A wall-clock speedup remains unverified.",
+    "sources": [
+      {
+        "href": "discoveries/when-a-square-remainder-narrows-the-prime-sum.md#what-the-search-saved",
+        "label": "All six population comparisons"
+      },
+      {
+        "href": "benchmarks/cyclotomic-root-readings.json",
+        "label": "Exact measurements and operation counts"
+      }
+    ]
+  },
+  {
+    "id": "square-remainder-frequency",
+    "category": "limits",
+    "title": "Fewer than one in 2^487 full-size products passes the remainder test",
+    "impact": "On a hit, the product is a sum of squares whose smaller coordinate is below 2^513. Counting these coordinates and their possible partners bounds the fraction.",
+    "scope": "All distinct 1,024-bit prime pairs with a 2,048-bit product. The bound uses an elementary prime count.",
+    "detail": "Trying up to 2^40 fixed coordinates of this size covers fewer than one in 2^960 eligible pairs.",
+    "sources": [
+      {
+        "href": "discoveries/when-a-square-remainder-narrows-the-prime-sum.md#how-often-the-square-test-can-work-at-full-size",
+        "label": "Coverage of the square test"
+      },
+      {
+        "href": "PrimeFactors/GaussianSquareRemainder.lean",
+        "label": "Single-test proof"
+      },
+      {
+        "href": "PrimeFactors/GaussianSquareMenu.lean",
+        "label": "Fixed-list bound"
+      }
+    ]
+  },
+  {
+    "id": "gaussian-square-remainder-example",
+    "category": "cases",
+    "title": "A public square remainder narrows the search on 525,689",
+    "impact": "Subtracting 725² leaves 64. Its square root certifies a congruence that reaches 521 × 1,009 on the fifth midpoint test. Ordinary Fermat takes 40.",
+    "scope": "Selected for its two-squares representation. Against a modulo-256 screen, both searches take three exact square tests once the remainder test is counted.",
+    "detail": "The shortcut can miss a representable product. For 8,249 the remainder is 149, even though 8,249 is 32² + 85².",
+    "sources": [
+      {
+        "href": "discoveries/when-a-square-remainder-narrows-the-prime-sum.md",
+        "label": "Product-only test and comparisons"
+      },
+      {
+        "href": "PrimeFactors/GaussianSquareRemainder.lean",
+        "label": "Midpoint rule and controls"
+      },
+      {
+        "href": "#gaussian-square-remainder-525689",
+        "label": "Ordinary discovery baseline"
+      }
+    ]
+  },
+  {
+    "id": "cyclotomic-gaussian-precision",
+    "category": "formulas",
+    "title": "The sign at the imaginary unit selects a sum remainder modulo 16 or 32",
+    "impact": "When the product is 1 modulo 4, the two possible readings select the positive or negative of N+1. The modulus is 32 for N equal to 5 modulo 8 and 16 otherwise.",
+    "scope": "The reading is supplied, or a two-squares representation certifies the negative imaginary value. The sharpness proof compares unit pairs with the same product residue.",
+    "detail": "The products 9,017 and 8,249 share eight low bits and have opposite readings. Their sums are 6 and 10 modulo 16.",
+    "sources": [
+      {
+        "href": "discoveries/when-a-square-remainder-narrows-the-prime-sum.md#why-the-square-test-gives-a-remainder",
+        "label": "Three possible readings"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicGaussianPrecision.lean",
+        "label": "Precision and next-bit ambiguity"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicGaussianReading.lean",
+        "label": "Two-squares equivalence"
+      }
+    ]
+  },
+  {
+    "id": "cyclotomic-complex-phase",
+    "category": "formulas",
+    "title": "One complex angle gives the whole prime sum",
+    "impact": "For balanced factors, the angle of a supplied polynomial value divided by its conjugate gives the sum directly. At target size, reading error below 2^-1025 still uniquely identifies it.",
+    "scope": "The formula uses the principal angle at a specified root. The noisy comparison uses exact candidate phases. A cheap full-size acquisition remains open.",
+    "detail": "On six toy inputs, constructing the polynomial took 8,432–14,588 trial divisions. Its degree already gave the sum.",
+    "sources": [
+      {
+        "href": "discoveries/what-the-angle-of-one-cyclotomic-value-reveals.md#one-angle-gives-the-sum",
+        "label": "Exact angle and required accuracy"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicRootPhase.lean",
+        "label": "Phase identity and error proof"
+      },
+      {
+        "href": "benchmarks/cyclotomic-root-readings.json",
+        "label": "Exact measurements and operation counts"
+      }
+    ]
+  },
+  {
+    "id": "cyclotomic-energy-which-moduli",
+    "category": "formulas",
+    "title": "Seven is the first modulus where the mean square can add a new bit",
+    "impact": "Two products equal to 1 modulo 7 have mean squares 6 and 4. At 7 the bit tests whether the sum or gap is divisible by 7, with the product choosing which question applies.",
+    "scope": "For unit pairs, the equal-or-opposite test is fixed by the product remainder for all pairs exactly at divisors of 24 and the two additional moduli 5 and 10.",
+    "detail": "At product remainder 3, the value distinguishes the sum divisible by 7 at 9,523 from the sum at 11,413.",
+    "sources": [
+      {
+        "href": "discoveries/what-the-angle-of-one-cyclotomic-value-reveals.md#what-averaging-retains",
+        "label": "Four exact controls and both means"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicEnergyResidues.lean",
+        "label": "Classification of moduli"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicRootEnergy.lean",
+        "label": "Proof for the measured polynomial"
+      }
+    ]
+  },
+  {
+    "id": "cyclotomic-mod-seven-frequency",
+    "category": "formulas",
+    "title": "The mean square is six for about a third of full-size pairs in each product class modulo 7",
+    "impact": "At each nonzero product remainder the fraction is within 1/17,010 of one third using published unconditional bounds for primes in arithmetic progressions.",
+    "scope": "All unordered pairs of distinct 1,024-bit primes with a 2,048-bit product. The published endpoint estimates enter the Lean calculation as explicit premises.",
+    "detail": "An elementary count gives more than one in 36 across the whole population. Under the Dirichlet-GRH estimate the error in each class is at most 2/(9 × 2^480).",
+    "sources": [
+      {
+        "href": "discoveries/what-the-angle-of-one-cyclotomic-value-reveals.md#how-often-the-value-is-six",
+        "label": "Estimates and scope"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicEnergySevenPopulation.lean",
+        "label": "Full-size population proof"
+      }
+    ]
+  },
+  {
     "id": "cyclotomic-common-tail-correction",
     "category": "limits",
     "title": "A shared correction still fails through 5,500 times the lower prime bound",

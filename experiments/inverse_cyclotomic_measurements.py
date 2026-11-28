@@ -21,6 +21,11 @@ FIXTURE = Path(__file__).resolve().parents[1] / "benchmarks/inverse-cyclotomic-m
 def acquire(n):
     if n not in (551, 32881):
         raise ValueError("the polynomial acquisition is limited to the two teaching fixtures")
+    return acquire_polynomial(n)
+
+
+def acquire_polynomial(n):
+    """Construct the inverse polynomial and count cold work for a bounded fixture."""
     orders = []
     divisions = 0
     phi_body = cyclotomic.__wrapped__.__code__
