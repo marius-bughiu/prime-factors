@@ -117,6 +117,26 @@
     "fermat_steps": 1
   },
   {
+    "id": "early-sum-remainder-101951",
+    "description": "Fermat baseline for a nine-bit example where residue priority moves the first square from second to first",
+    "n": "101951",
+    "max_steps": 5,
+    "status": "complete",
+    "factors": ["269", "379"],
+    "remaining": [],
+    "fermat_steps": 5
+  },
+  {
+    "id": "late-sum-remainder-128251",
+    "description": "Fermat baseline for a nine-bit example where the same priority moves the first square from second to fourth",
+    "n": "128251",
+    "max_steps": 12,
+    "status": "complete",
+    "factors": ["277", "463"],
+    "remaining": [],
+    "fermat_steps": 12
+  },
+  {
     "id": "four-bit-neighbors-40270613",
     "description": "Fermat baseline for the 26-bit product with four individually pivotal bits for one factor-sum bit",
     "n": "40270613",

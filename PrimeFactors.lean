@@ -900,3 +900,10 @@ import PrimeFactors.WideResiduePrimeSupply
 import PrimeFactors.ObservedPrefixSumResidues
 import PrimeFactors.MissingMiddleSumPopulation
 import PrimeFactors.ToySumBitQueries
+import PrimeFactors.PrimeSquareSumWeights
+import PrimeFactors.PrimeSquareExpectedRank
+import PrimeFactors.ResiduePairWeights
+import PrimeFactors.PrimePairSumFrequency
+import PrimeFactors.WidePrimePairSumFrequency
+import PrimeFactors.UnconditionalPrimePairSumFrequency
+import PrimeFactors.ToyResidueOrderCost

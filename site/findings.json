@@ -1,5 +1,57 @@
 [
   {
+    "id": "weighted-remainders-actual-square-tests",
+    "category": "gains",
+    "title": "Trying the more frequent sum remainders first saved 5,172 exact square tests",
+    "impact": "The 16,129 qualifying twelve-bit prime pairs took 72,162 square tests, down from 77,334. Both searches found every pair.",
+    "scope": "Complete population with a square unit product modulo 25 and two distinct twelve-bit primes. Constructing the priority lists also classified 199,891 candidate positions.",
+    "detail": "The result reversed on one ten-bit subgroup. Among the 136 products congruent to 1 modulo 25, the priority order needed 259 checks and the ascending order needed 242.",
+    "sources": [
+      {"href": "discoveries/which-sum-remainders-come-up-most-often.md#what-happens-when-we-search-for-the-actual-primes", "label": "Savings, setup work and slower cases"},
+      {"href": "PrimeFactors/ToyResidueOrderCost.lean", "label": "Checked interpretation and small census"},
+      {"href": "experiments/toy_residue_order_cost.py", "label": "Direct square-test replay"}
+    ]
+  },
+  {
+    "id": "two-sum-remainders-cover-half-a-prime-population",
+    "category": "formulas",
+    "title": "Two sum remainders cover about half of a full-size prime-pair population",
+    "impact": "When both primes lie in the upper half of the 1,024-bit interval and their product is 1 modulo 25, between 49.9% and 50.1% of pairs have sum 2 or 23 modulo 25.",
+    "scope": "Uniformly sampled unordered pairs of distinct primes from the stated interval. The numerical range follows from published unconditional endpoint estimates.",
+    "detail": "Dirichlet-GRH estimates sharpen the absolute error from one half to at most 2⁻⁴⁷⁷. A remainder prediction for a population leaves the exact sum of an individual pair unknown.",
+    "sources": [
+      {"href": "discoveries/which-sum-remainders-come-up-most-often.md#what-carries-over-to-1024-bit-primes", "label": "Population and analytic assumptions"},
+      {"href": "PrimeFactors/UnconditionalPrimePairSumFrequency.lean", "label": "Unconditional estimates"},
+      {"href": "PrimeFactors/WidePrimePairSumFrequency.lean", "label": "Stronger estimate under Dirichlet GRH"}
+    ]
+  },
+  {
+    "id": "optimal-single-prime-square-remainder-guesses",
+    "category": "formulas",
+    "title": "Modulo 49, the best order saves 19.61% of the guesses for a sum remainder",
+    "impact": "The average falls from 8.5 guesses to 41/6. This is the largest relative saving for any single odd prime square under the uniform ordered factor-residue model.",
+    "scope": "The fixed product is an invertible square modulo the prime. Each guess names one distinct sum remainder and includes the successful guess.",
+    "detail": "Putting the two zero-discriminant remainders first is optimal. The exact relative saving is 10/51 modulo 49 and 3/16 modulo 25.",
+    "sources": [
+      {"href": "discoveries/which-sum-remainders-come-up-most-often.md#how-much-can-ordering-the-remainders-save", "label": "What one guess counts"},
+      {"href": "PrimeFactors/PrimeSquareExpectedRank.lean", "label": "Optimality and sharp bound"}
+    ]
+  },
+  {
+    "id": "weights-of-modular-factor-sum-pairs",
+    "category": "formulas",
+    "title": "An exact count tells which of the possible factor-sum remainders occur more often",
+    "impact": "At an odd prime square, each zero-discriminant sum has p ordered residue pairs and every other admissible sum has two. Among nine-bit primes, two of seven sum classes cover 21 of 44 actual products congruent to 1 modulo 25.",
+    "scope": "The theoretical weights sample residue pairs. The finite prime population counts each unordered pair once, then conditions on the product remainder.",
+    "detail": "An exact finite formula also translates any histogram of primes in residue classes into the count of prime pairs for any selected sum classes.",
+    "sources": [
+      {"href": "discoveries/which-sum-remainders-come-up-most-often.md#where-the-bias-comes-from", "label": "Full table of seven remainders"},
+      {"href": "PrimeFactors/PrimeSquareSumWeights.lean", "label": "Prime-square formula"},
+      {"href": "PrimeFactors/ResiduePairWeights.lean", "label": "Exact count for actual primes"},
+      {"href": "PrimeFactors/PrimePairSumFrequency.lean", "label": "All 44 prime pairs"}
+    ]
+  },
+  {
     "id": "forty-eight-hidden-middle-bits",
     "category": "limits",
     "title": "With 48 middle bits hidden, one exact sum guess succeeds less than once in 6.7 million",
