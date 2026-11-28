@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Five prime squares give 41,767,264 possible sum remainders when the product remainder is one. Their weights determine an optimal mean of about 9.81 million guesses. Many squares make the relative advantage against random order arbitrarily large, while the absolute cost of half coverage grows too. [Exact ranks, what is being guessed, and the limit](what-many-prime-squares-buy-a-remainder-guess.md)
+
 The location-and-remainder rule saves more than 2.59% of exact square tests across all eligible balanced 2,048-bit products, using a published unconditional prime-count estimate. At most ten live candidates suffice to generate its guesses. [The total work and the streaming rule](using-both-the-location-and-remainder-of-a-sum.md#does-the-combined-order-help-across-all-full-size-products)
 
 Ranking a sum by both its location and its remainder saved 5.21% of exact square tests across all 228,713 complete fourteen-bit prime pairs with a full-width product. Individual losses are bounded on actual inputs. [How the new order weighs an earlier guess against a more frequent remainder](using-both-the-location-and-remainder-of-a-sum.md)

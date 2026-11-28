@@ -942,3 +942,12 @@ import PrimeFactors.ScoreVsGlobal
 import PrimeFactors.MeanScoreOrderWork
 import PrimeFactors.StreamSumScores
 import PrimeFactors.WithinResidueSearchFloor
+import PrimeFactors.IndependentGuessRanks
+import PrimeFactors.PrimeSquareGuessAffinity
+import PrimeFactors.CoprimeGuessTables
+import PrimeFactors.FiveSquareGuessRanks
+import PrimeFactors.JointSumGuessFloor
+import PrimeFactors.PrimeGuessProducts
+import PrimeFactors.ArbitrarilyBiasedSumGuesses
+import PrimeFactors.SplittingGuessPrimes
+import PrimeFactors.FixedProductSumGuesses

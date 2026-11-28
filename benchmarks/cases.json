@@ -1,5 +1,18 @@
 [
   {
+    "id": "five-squares-product-one",
+    "description": "Chosen semiprime congruent to one modulo 7239457225 with close primes; three-midpoint Fermat certificate",
+    "n": "139649129870251",
+    "max_steps": 3,
+    "status": "complete",
+    "factors": [
+      "11809331",
+      "11825321"
+    ],
+    "remaining": [],
+    "fermat_steps": 3
+  },
+  {
     "id": "stream-score-three-132289",
     "description": "Fermat midpoint baseline for the small three-test streaming score example",
     "n": "132289",

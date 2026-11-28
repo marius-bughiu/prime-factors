@@ -1,5 +1,59 @@
 [
   {
+    "id": "five-prime-square-rank",
+    "category": "gains",
+    "title": "Five prime squares cut the mean remainder-guess count by 53.04%",
+    "impact": "At product remainder 1 modulo 7,239,457,225, the best order takes about 9.81 million guesses among 41,767,264 possible sums. A random order takes 20.88 million.",
+    "scope": "Uniform ordered factor remainders. The prime squares are 25, 49, 121, 169 and 289.",
+    "detail": "The optimum is exactly 470,695,147/48 guesses. A 32-group calculation suffices to certify the result on the actual sum labels.",
+    "sources": [
+      {
+        "href": "discoveries/what-many-prime-squares-buy-a-remainder-guess.md",
+        "label": "Model, exact example and absolute costs"
+      },
+      {
+        "href": "PrimeFactors/FiveSquareGuessRanks.lean",
+        "label": "Lean theorem"
+      }
+    ]
+  },
+  {
+    "id": "many-prime-squares-relative-rank",
+    "category": "formulas",
+    "title": "The best remainder-guess mean can be an arbitrarily small fraction of the random-order mean",
+    "impact": "For any fixed positive product value and desired fraction, some product of distinct prime squares attains that relative saving.",
+    "scope": "The modulus varies and may exceed the supplied integer. Probabilities refer to ordered residue pairs at that modulus.",
+    "detail": "The proof combines local multiplicities, a classical guesswork bound and divergent reciprocal sums of splitting primes. It provides no cheap test of a proposed remainder.",
+    "sources": [
+      {
+        "href": "discoveries/what-many-prime-squares-buy-a-remainder-guess.md",
+        "label": "Model, exact example and absolute costs"
+      },
+      {
+        "href": "PrimeFactors/FixedProductSumGuesses.lean",
+        "label": "Lean theorem"
+      }
+    ]
+  },
+  {
+    "id": "many-prime-squares-absolute-rank",
+    "category": "limits",
+    "title": "Large relative savings still leave exponentially many possible remainder guesses",
+    "impact": "For k distinct primes of at least eleven, covering half the local pairs takes at least half of 10ᵏ different guesses.",
+    "scope": "Any fixed product coprime to every selected odd prime, with uniform ordered factor residues.",
+    "detail": "For H equal to the product of p−1 over the selected primes, no label has probability above 1/H, and the mean of any order is at least (H+1)/2.",
+    "sources": [
+      {
+        "href": "discoveries/what-many-prime-squares-buy-a-remainder-guess.md",
+        "label": "Model, exact example and absolute costs"
+      },
+      {
+        "href": "PrimeFactors/JointSumGuessFloor.lean",
+        "label": "Lean theorem"
+      }
+    ]
+  },
+  {
     "id": "near-all-fallback-search-floor",
     "category": "limits",
     "title": "At least 2⁸⁹³ square tests remain on all but fewer than one in 2³⁵ balanced products",
