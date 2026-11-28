@@ -1,5 +1,18 @@
 [
   {
+    "id": "inverse-cyclotomic-551",
+    "description": "Default discovery baseline for the single- and two-reading inverse cyclotomic control",
+    "n": "551",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": [
+      "19",
+      "29"
+    ],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
     "id": "rotation-negative-2501",
     "description": "Small trial factors certify the odd-phase false positive in the six-bit rotation census",
     "n": "2501",

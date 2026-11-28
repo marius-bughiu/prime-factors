@@ -1,5 +1,141 @@
 [
   {
+    "id": "bounded-inverse-cyclotomic-truncation",
+    "category": "limits",
+    "title": "A dense Taylor scan needs over 2^1024 positions to get even constant accuracy",
+    "impact": "At the rational measurement point, stopping the polynomial before degree p+q leaves absolute error at least 1/18. Including that degree gives the exact reading.",
+    "scope": "This counts consecutive coefficient positions starting at zero for distinct 1,024-bit prime factors. Other evaluation methods have separate costs.",
+    "detail": "At any pair of opposite points, the projection of every shorter Taylor prefix is exactly zero for odd primes. For 551 the cutoff is degree 48.",
+    "sources": [
+      {
+        "href": "discoveries/which-cyclotomic-measurements-distinguish-the-prime-sum.md#can-a-short-taylor-prefix-supply-the-readings",
+        "label": "Accuracy from a Taylor prefix"
+      },
+      {
+        "href": "PrimeFactors/InverseCyclotomicTruncation.lean",
+        "label": "Proof and 551 cutoff"
+      }
+    ]
+  },
+  {
+    "id": "single-cyclotomic-reading-separates-sums",
+    "category": "formulas",
+    "title": "One bounded reading distinguishes every feasible prime sum",
+    "impact": "For balanced 1,024-bit factors, a supplied polynomial value rounded to 1,035 fractional bits uniquely identifies the integer sum.",
+    "scope": "The value is at a real point determined by the word size. The proof compares exact trial values over all real factor pairs in the size interval, including nearly equal factors.",
+    "detail": "On a curve of fixed product, changing the sum by one changes the value by at least 1/(2592B), where B is the lower word bound. A cheap method to acquire this value from the product remains open.",
+    "sources": [
+      {
+        "href": "discoveries/which-cyclotomic-measurements-distinguish-the-prime-sum.md#one-real-reading",
+        "label": "Reading and feasible trial sums"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicProductCurve.lean",
+        "label": "Separation and uniqueness"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicValueSlope.lean",
+        "label": "Derivative bound"
+      }
+    ]
+  },
+  {
+    "id": "single-cyclotomic-reading-32881",
+    "category": "cases",
+    "title": "A single reading of 32,881 distinguishes sums 370 and 382",
+    "impact": "The reading is between 0.026104 and 0.026105. The false sum 370 predicts more than 0.026248. The true sum 382 gives 131 and 251.",
+    "scope": "Both sums pass the stated screens modulo 16, 3, 5 and 7. A screen modulo 11 already rules out 370. Direct Fermat search uses ten midpoint tests.",
+    "detail": "The independent polynomial construction uses 33,260 trial divisions and encounters both factors before measuring. The receipt also contains the separate 551 control.",
+    "sources": [
+      {
+        "href": "discoveries/which-cyclotomic-measurements-distinguish-the-prime-sum.md#one-real-reading",
+        "label": "Comparison and cheaper checks"
+      },
+      {
+        "href": "PrimeFactors/SingleCyclotomicValueControl.lean",
+        "label": "Certified exponential intervals"
+      },
+      {
+        "href": "benchmarks/inverse-cyclotomic-measurements.json",
+        "label": "Measured work and sign checks"
+      },
+      {
+        "href": "#prime-sum-reversal-32881",
+        "label": "Independent Fermat baseline"
+      }
+    ]
+  },
+  {
+    "id": "two-cyclotomic-readings-decoder",
+    "category": "formulas",
+    "title": "Two rational readings give a decoder with a counted cost",
+    "impact": "After receiving two values rounded to 1,029 fractional bits, at most 1,026 comparisons recover the sum of two distinct 1,024-bit primes.",
+    "scope": "The bound starts when both readings are available. Each power comparison needs at most 2,052 rounded multiplications of operands no wider than 2,059 bits.",
+    "detail": "Averaging evaluations at opposite points cancels the individual prime powers. At 551, six comparisons identify sum 48. Parity also identifies that sum on this control.",
+    "sources": [
+      {
+        "href": "discoveries/which-cyclotomic-measurements-distinguish-the-prime-sum.md#two-rational-readings-with-a-counted-decoding-cost",
+        "label": "Accuracy and work"
+      },
+      {
+        "href": "PrimeFactors/InverseCyclotomicMeasurements.lean",
+        "label": "Full-width decoding theorem"
+      },
+      {
+        "href": "PrimeFactors/RoundedUnitPowers.lean",
+        "label": "Fixed-point costs"
+      },
+      {
+        "href": "#inverse-cyclotomic-551",
+        "label": "Default discovery certificate"
+      }
+    ]
+  },
+  {
+    "id": "inverse-coefficient-threshold",
+    "category": "formulas",
+    "title": "The first nonnegative inverse cyclotomic coefficient is the smaller prime",
+    "impact": "At most 1,023 supplied coefficient signs locate the smaller of two distinct 1,024-bit primes. The ordinary cyclotomic polynomial has nonzero coefficients at the odd prime positions in the factor band.",
+    "scope": "A sign costs a query to the inverse polynomial. Finding those signs cheaply from the product remains open. Directly checking all the odd ordinary coefficients takes 2^1022 positions.",
+    "detail": "The binary inverse polynomial has one negative block and one positive block. For the ordinary polynomial, a weighted sum through the square root returns the smaller prime.",
+    "sources": [
+      {
+        "href": "discoveries/which-cyclotomic-measurements-distinguish-the-prime-sum.md#which-coefficients-carry-information",
+        "label": "What the two polynomials reveal"
+      },
+      {
+        "href": "PrimeFactors/InverseCyclotomicThreshold.lean",
+        "label": "Classical formula and counted search"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicPrefixMeasurements.lean",
+        "label": "Weighted sums and scan length"
+      },
+      {
+        "href": "PrimeFactors/BalancedCyclotomicPrefix.lean",
+        "label": "Sharp sparsity cutoff"
+      }
+    ]
+  },
+  {
+    "id": "cyclotomic-probe-population",
+    "category": "limits",
+    "title": "Small adaptive probes usually miss the informative ordinary coefficients",
+    "impact": "Even with a 64-bit product tag and up to 2^64 adaptive coefficient or prefix-sum probes, fewer than one in 2^879 eligible products gives a nonzero reply in the factor band.",
+    "scope": "The tag selects a strategy. Later queries may depend on earlier answers. The model limits further access to product-specific information when choosing the indices.",
+    "detail": "A separate bound allows up to 2^128 fixed offsets from the public square root. Fewer than one in 2^877 eligible prime pairs meets a prime-dependent position at those offsets.",
+    "sources": [
+      {
+        "href": "discoveries/which-cyclotomic-measurements-distinguish-the-prime-sum.md#which-coefficients-carry-information",
+        "label": "Query model and limits"
+      },
+      {
+        "href": "PrimeFactors/CyclotomicCoefficientProbePopulation.lean",
+        "label": "Tagged adaptive and offset bounds"
+      }
+    ]
+  },
+  {
     "id": "rotation-false-positive-prime-population",
     "category": "limits",
     "title": "Among prime pairs that pass the square test, fewer than one in 2^979 are rotations",
