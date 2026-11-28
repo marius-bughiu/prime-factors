@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+On more than 24.9% of balanced 2,048-bit products, checking two favored sum remainders first saves at least 70% of the exact square tests in the elementary ascending search. Every product counted still takes at least $2^{894}$ tests. [How the two search orders compare](when-two-remainders-save-square-tests.md)
+
 Combining the sum frequencies modulo 25 and 49 reduces the mean number of remainder guesses from 56½ to 37⅓ in the uniform factor-residue model. Increasing the precision of a single prime can also reverse which sums to guess first. [Guess orders and their limits](how-many-sum-remainders-are-worth-guessing.md)
 
 The two-remainder prediction now covers all distinct 1,024-bit prime pairs with a 2,048-bit product congruent to 1 modulo 25. Across that population the true sum is 2 or 23 modulo 25 between 49.9% and 50.1% of the time, using published unconditional bounds. The sum remains unknown for an individual product. [Whole-population proof](which-sum-remainders-come-up-most-often.md#what-about-all-eligible-2048-bit-products)

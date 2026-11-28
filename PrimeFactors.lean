@@ -917,3 +917,8 @@ import PrimeFactors.CombinedSumWeights
 import PrimeFactors.PrimePowerSumCollisions
 import PrimeFactors.LocalSumGuessCoverage
 import PrimeFactors.HalfMassFive
+import PrimeFactors.PeriodicSumRank
+import PrimeFactors.FactorSumPrefixCost
+import PrimeFactors.FullRangeLongSumPrefix
+import PrimeFactors.FullPopulationFavoredSums
+import PrimeFactors.FavoredSumWork

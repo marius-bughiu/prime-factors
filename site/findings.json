@@ -1,5 +1,59 @@
 [
   {
+    "id": "global-order-full-size-work",
+    "category": "gains",
+    "title": "At least 70% fewer square tests on more than 24.9% of balanced 2,048-bit products",
+    "impact": "On every product counted, trying the favored sum remainders first still requires at least 2⁸⁹⁴ exact square tests.",
+    "scope": "Every distinct pair of 1,024-bit primes with a 2,048-bit product is eligible. The share exceeds 49.9% within product residue 1 modulo 25.",
+    "detail": "Both searches use the same width and remainder filters. The count includes the successful test and uses the published unconditional prime-count bound as an explicit hypothesis.",
+    "sources": [
+      {
+        "href": "discoveries/when-two-remainders-save-square-tests.md",
+        "label": "Search orders, populations and examples"
+      },
+      {
+        "href": "PrimeFactors/FavoredSumWork.lean",
+        "label": "Joint frequency and work theorem"
+      }
+    ]
+  },
+  {
+    "id": "square-test-prefix-four",
+    "category": "gains",
+    "title": "Four square tests recover the factors of 7,253,249",
+    "impact": "The fourth favored sum, 5,586, gives the factors 2,053 and 3,533. Ascending order takes 14 square tests on the same input.",
+    "scope": "A small worked example whose true sum belongs to the favored group. The search uses the product and the known factor width.",
+    "detail": "The first three square tests occur at sums 5,414, 5,486 and 5,514. Lean counts the complete prefixes and proves that only the true sum succeeds.",
+    "sources": [
+      {
+        "href": "discoveries/when-two-remainders-save-square-tests.md",
+        "label": "Search orders, populations and examples"
+      },
+      {
+        "href": "PrimeFactors/FactorSumPrefixCost.lean",
+        "label": "Exact test prefixes"
+      }
+    ]
+  },
+  {
+    "id": "block-priority-sharp-limit",
+    "category": "limits",
+    "title": "Priority within each block saves at most five tests and costs at most two extra",
+    "impact": "Both extremes occur. On 7,253,249 a blockwise search takes nine tests instead of fourteen. On 7,688,801 it takes nineteen instead of seventeen.",
+    "scope": "Blocks of 100 integer sums after the modulo-4 and modulo-25 filters for square unit products.",
+    "detail": "A partially filled final block obeys the same bound. On 648,855 fifteen-bit prime pairs the retrospective count fell by 1.54% across all inputs.",
+    "sources": [
+      {
+        "href": "discoveries/when-two-remainders-save-square-tests.md",
+        "label": "Search orders, populations and examples"
+      },
+      {
+        "href": "PrimeFactors/PeriodicSumRank.lean",
+        "label": "Sharp bounds and checked products"
+      }
+    ]
+  },
+  {
     "id": "crt-weighted-sum-guesses",
     "category": "gains",
     "title": "Combining two moduli saves 33.9% of remainder guesses in a finite model",
