@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+Reading the first 1,024 and last 976 product bits leaves only 48 bits hidden. On uniformly sampled eligible 2,048-bit products, any rule using just those observations to guess the exact factor sum succeeds less than once in 6.7 million. Even a further 16 bits of information leaves the success rate below 1%. This counting proof is unconditional. [What is hidden, and which guesses the bound covers](what-if-only-48-product-bits-are-hidden.md)
+
 The first 232 bits and last 250 bits of a 2,048-bit product still allow at least $2^{244}$ distinct true factor-sum residues across compatible products. Using the Dirichlet-GRH estimate for primes in progressions, we can specify exactly which sum remainders those observations allow. Three 24-bit products show how this happens with just one hexadecimal digit hidden. [Worked example, proof and analytic input](which-true-sums-can-share-the-same-leading-and-trailing-bits.md)
 
 On both 2,048-bit examples the two ordinary tests modulo 23 and 29 discarded more candidates, in total, than every higher power of the seven odd primes through 19. For any product, two fresh prime squares or three fresh ordinary primes have a similar guarantee over a complete joint period. [Actual percentages and a counterexample for two ordinary primes](how-much-higher-prime-powers-can-save.md#which-choice-wins-on-the-actual-2048-bit-examples)

@@ -1,5 +1,30 @@
 [
   {
+    "id": "forty-eight-hidden-middle-bits",
+    "category": "limits",
+    "title": "With 48 middle bits hidden, one exact sum guess succeeds less than once in 6.7 million",
+    "impact": "Any rule reading the first 1,024 and last 976 bits has this limit across uniformly sampled products of two distinct 1,024-bit primes with 2,048-bit product.",
+    "scope": "An unconditional finite population bound. An arbitrary additional 16-bit message about the product still leaves the success rate below 1%.",
+    "detail": "The proof bounds how many prime pairs can share the same observed words and a proposed exact sum. It charges separately the pairs whose factor difference is divisible by a large power of two.",
+    "sources": [
+      {"href": "discoveries/what-if-only-48-product-bits-are-hidden.md", "label": "What 2,000 visible bits tell us"},
+      {"href": "PrimeFactors/MissingMiddleSumPopulation.lean", "label": "Counting and advice bounds"},
+      {"href": "PrimeFactors/ChebyshevPrimeSample.lean", "label": "Unconditional prime-pair population"}
+    ]
+  },
+  {
+    "id": "four-product-bits-for-one-sum-bit",
+    "category": "limits",
+    "title": "Four specific product bits can each change one bit of the factor sum",
+    "impact": "On 40,270,613, any always-correct rule that reads individual product bits must read positions 2, 3, 4 and 22 to determine bit 2 of the sum.",
+    "scope": "One 26-bit input. The two distinct primes have 13 bits in each of the five verified products. The cost counted is individual bit queries.",
+    "detail": "Each neighbor differs from the original product at exactly one of those positions. With that position unread, an adaptive rule receives identical replies on inputs requiring opposite answers.",
+    "sources": [
+      {"href": "discoveries/what-if-only-48-product-bits-are-hidden.md#four-bits-that-matter-on-one-small-product", "label": "All five products and sums"},
+      {"href": "PrimeFactors/ToySumBitQueries.lean", "label": "Factorizations and adaptive query proof"}
+    ]
+  },
+  {
     "id": "true-sum-residues-after-fixing-482-product-bits",
     "category": "limits",
     "title": "Fixing 482 outer product bits still permits at least 2²⁴⁴ true sum remainders",

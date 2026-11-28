@@ -117,6 +117,16 @@
     "fermat_steps": 1
   },
   {
+    "id": "four-bit-neighbors-40270613",
+    "description": "Fermat baseline for the 26-bit product with four individually pivotal bits for one factor-sum bit",
+    "n": "40270613",
+    "max_steps": 18,
+    "status": "complete",
+    "factors": ["5897", "6829"],
+    "remaining": [],
+    "fermat_steps": 18
+  },
+  {
     "id": "matched-outer-digits-12518833",
     "description": "Fermat baseline for one certified 24-bit product with outer hexadecimal digits BF0?B1",
     "n": "12518833",

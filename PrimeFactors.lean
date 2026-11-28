@@ -898,3 +898,5 @@ import PrimeFactors.PrimePowerSingleRepresentatives
 import PrimeFactors.ProductPrefixFactorBand
 import PrimeFactors.WideResiduePrimeSupply
 import PrimeFactors.ObservedPrefixSumResidues
+import PrimeFactors.MissingMiddleSumPopulation
+import PrimeFactors.ToySumBitQueries

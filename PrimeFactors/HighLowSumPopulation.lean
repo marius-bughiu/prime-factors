@@ -85,7 +85,7 @@ theorem sharp_example :
     ¬((67:ℤ) ≡ 73 [ZMOD 32] ∨ (67:ℤ) ≡ 83 [ZMOD 32]) := by
   decide +kernel
 
-private theorem root_classes {p q a b g k v : ℕ} (order : p≤q)
+theorem root_classes {p q a b g k v : ℕ} (order : p≤q)
     (gap : q-p=2^v*g) (odd : Odd g) (sum : p+q=a+b)
     (prod : p*q%2^k=a*b%2^k) :
     a%2^(k-v)=p%2^(k-v) ∨ a%2^(k-v)=q%2^(k-v) := by
@@ -101,7 +101,7 @@ private theorem root_classes {p q a b g k v : ℕ} (order : p≤q)
     Int.natCast_modEq_iff.mp (by simpa only [Nat.cast_pow,Nat.cast_ofNat] using h)
   exact result.imp unwrap unwrap
 
-private theorem close_count {B D G : ℕ} (S : Finset (ℕ×ℕ))
+theorem close_count {B D G : ℕ} (S : Finset (ℕ×ℕ))
     (data : ∀ z∈S, z.1<B ∧ z.1≤z.2 ∧ G∣z.2-z.1 ∧ (z.2-z.1)/G<D) : S.card≤B*D := by
   let key (z : ℕ×ℕ) := (z.1,(z.2-z.1)/G)
   calc S.card ≤ ((range B) ×ˢ (range D)).card := by
@@ -226,7 +226,7 @@ theorem layers {B b k D J : ℕ} (bp : 0<B) (lim : B≤2^k*D)
 
 attribute [local irreducible] ordered sample primes eligible
 
-private theorem eligible_shape {z : ℕ×ℕ} (inside : z∈eligible) :
+theorem eligible_shape {z : ℕ×ℕ} (inside : z∈eligible) :
     z.1<2^1024 ∧ z.2<2^1024 ∧ z.1<z.2 ∧ 2*X^2≤z.1*z.2 ∧ z.1*z.2<(2^1024)^2 := by
   rw [eligible,sample,mem_filter] at inside
   obtain ⟨p,q,_,lo,_⟩ := (mem_ordered (z:=z) (E:=fun _ => True)).mp inside.1
