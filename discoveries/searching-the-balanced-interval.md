@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+If two 1,024-bit prime factors differ by a cyclic rotation of their bits, the product modulo three fixes the parity of the shift. The modular square test accepts exactly one in 32,768 unit residues of a public modulus. Fewer than one in $2^{998}$ eligible prime pairs are actually rotations. [What the two counts measure](when-one-prime-is-a-binary-rotation-of-the-other.md)
+
 A known positive offset $t$ after reversing two factor blocks gives at most $t$ candidate rows and $3kt$ rational comparisons at a radix at most $2^k$. For 10,850,303 and offset one, fourteen comparisons and two final digit checks recover 2,749 and 3,947. Even allowing any radix and offsets up to $2^{128}$ covers fewer than one in $2^{361}$ eligible products. [The divisibility, convexity and population arguments](when-a-block-swap-is-off-by-one.md)
 
 Two factors whose two blocks occur in opposite order can be recovered from their product and radix by ordinary division and two square roots. This recovered two deliberately constructed 1,024-bit primes. The all-radix coverage is below one in $2^{490}$ eligible pairs. [How to read the blocks and what limits the method](when-exchanging-two-blocks-reveals-both-primes.md)

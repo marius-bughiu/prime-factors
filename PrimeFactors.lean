@@ -1178,3 +1178,10 @@ import PrimeFactors.OffsetTransposeQuartic
 import PrimeFactors.ConvexIntegerReadout
 import PrimeFactors.OffsetTransposeReadout
 import PrimeFactors.OffsetTransposePopulation
+import PrimeFactors.BinaryRotationProduct
+import PrimeFactors.BinaryRotationPopulation
+import PrimeFactors.BinaryRotationModulus
+import PrimeFactors.RotationSquareRootCount
+import PrimeFactors.FullWidthRotationRoots
+import PrimeFactors.RotationSquareClassDensity
+import PrimeFactors.SmallRotationCensus

@@ -1,5 +1,75 @@
 [
   {
+    "id": "binary-rotation-shift-parity",
+    "category": "formulas",
+    "title": "The product modulo three determines the parity of a binary rotation",
+    "impact": "A remainder of one allows 511 even nonzero shifts between 1,024-bit words. A remainder of two allows 512 odd shifts.",
+    "scope": "This relation assumes one factor is a cyclic rotation of the other. Each prime must exceed three and the word width must be even.",
+    "detail": "Rotating a word multiplies its residue by a power of two modulo one less than the next power of two. At even widths this modulus is divisible by three.",
+    "sources": [
+      {
+        "href": "discoveries/when-one-prime-is-a-binary-rotation-of-the-other.md#what-the-product-tells-us",
+        "label": "Binary examples and shift parity"
+      },
+      {
+        "href": "PrimeFactors/BinaryRotationPopulation.lean",
+        "label": "Parity formula and exact shift counts"
+      }
+    ]
+  },
+  {
+    "id": "binary-rotation-unit-count",
+    "category": "limits",
+    "title": "The modular rotation test accepts one in 32,768 unit residues",
+    "impact": "At the public modulus 2^1,024 − 1, a passing square test has exactly 65,536 possible roots. The two passing classes of inputs are disjoint.",
+    "scope": "The exact fraction counts all residues coprime to the public modulus with equal weight. It leaves open the rate among products of full-width primes.",
+    "detail": "Lean checks all sixteen distinct prime factors of the public modulus. In the separate six-bit census, six of fourteen prime products pass a square test. Four are actual rotations and two are false positives.",
+    "sources": [
+      {
+        "href": "discoveries/when-one-prime-is-a-binary-rotation-of-the-other.md#what-it-means-to-pass-the-square-test",
+        "label": "What the two counts measure"
+      },
+      {
+        "href": "PrimeFactors/RotationSquareClassDensity.lean",
+        "label": "Count of passing units"
+      },
+      {
+        "href": "PrimeFactors/BinaryRotationModulus.lean",
+        "label": "Exact factorization of the public constant"
+      },
+      {
+        "href": "PrimeFactors/FullWidthRotationRoots.lean",
+        "label": "Zero or 65,536 roots and a false positive"
+      },
+      {
+        "href": "PrimeFactors/SmallRotationCensus.lean",
+        "label": "Six-bit census and both false positives"
+      },
+      {
+        "href": "#rotation-negative-2419",
+        "label": "Ordinary factor certificate for 2,419"
+      }
+    ]
+  },
+  {
+    "id": "binary-rotation-prime-pair-coverage",
+    "category": "limits",
+    "title": "Fewer than one in 2^998 eligible prime pairs are binary rotations",
+    "impact": "Allowing all 1,023 nonzero shifts still covers fewer than one in 2^998 pairs of distinct 1,024-bit primes with a 2,048-bit product.",
+    "scope": "Each eligible unordered prime pair counts once. The shift may vary with the product. The bound is unconditional.",
+    "detail": "A fixed prime has at most one partner for each shift. Every actual pair can be counted starting with either prime.",
+    "sources": [
+      {
+        "href": "discoveries/when-one-prime-is-a-binary-rotation-of-the-other.md#how-often-do-the-prime-factors-have-this-relation",
+        "label": "Population and denominator"
+      },
+      {
+        "href": "PrimeFactors/BinaryRotationPopulation.lean",
+        "label": "Counting both orientations"
+      }
+    ]
+  },
+  {
     "id": "offset-one-block-recovery",
     "category": "cases",
     "title": "Two blocks reversed, plus one, give a prime pair after 14 comparisons",

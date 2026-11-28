@@ -1,5 +1,18 @@
 [
   {
+    "id": "rotation-negative-2419",
+    "description": "Small trial factors certify the six-bit pair that passes the modular square test without being a rotation",
+    "n": "2419",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": [
+      "41",
+      "59"
+    ],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
     "id": "offset-reversed-blocks-24",
     "description": "Fermat baseline for the twenty-four-bit product with a one-unit shift after reversing the blocks",
     "n": "10850303",
