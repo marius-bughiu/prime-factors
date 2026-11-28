@@ -17,7 +17,7 @@
       },
       {
         "href": "PrimeFactors/RotationPrimeSignature.lean",
-        "label": "The fifteen labels"
+        "label": "The fifteen square-class bits"
       },
       {
         "href": "PrimeFactors/FiniteBinCollisionPopulation.lean",
@@ -25,7 +25,11 @@
       },
       {
         "href": "#rotation-negative-2501",
-        "label": "Small odd-shift false positive"
+        "label": "Factor certificate for 2,501"
+      },
+      {
+        "href": "PrimeFactors/SmallRotationCensus.lean",
+        "label": "Why 2,501 is an odd-phase false positive"
       }
     ]
   },
