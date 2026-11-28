@@ -84,4 +84,15 @@ theorem exact_guess_scores :
   rw [observed_trace,model_trace]
   decide +kernel
 
+/-- Keep only eighteen-bit products of nine-bit primes. Restricting both
+primes to the upper half of their interval drops sixteen eligible products. -/
+theorem full_width_control :
+    let full := sample.filter fun (p,q) => 2^17≤p*q
+    let upper := full.filter fun (p,_) => 384<p
+    let selected := fun v : ℕ×ℕ => (v.1+v.2)%25==2 || (v.1+v.2)%25==23
+    (full.length,(full.filter selected).length,upper.length,(upper.filter selected).length)=(27,15,11,8) ∧
+      (311,491)∈full ∧ (311,491)∉upper ∧ selected (311,491)=true := by
+  rw [sample,ToySumIsolation.pairs,ToySumIsolation.catalog_nine]
+  decide +kernel
+
 end PrimeFactors.PrimePairSumFrequency

@@ -907,3 +907,7 @@ import PrimeFactors.PrimePairSumFrequency
 import PrimeFactors.WidePrimePairSumFrequency
 import PrimeFactors.UnconditionalPrimePairSumFrequency
 import PrimeFactors.ToyResidueOrderCost
+import PrimeFactors.ThresholdPairCount
+import PrimeFactors.FullRangeResidueEstimates
+import PrimeFactors.PrimeProductRegion
+import PrimeFactors.FullRangePrimeSumShare

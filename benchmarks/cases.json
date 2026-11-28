@@ -117,6 +117,16 @@
     "fermat_steps": 1
   },
   {
+    "id": "full-product-band-152701",
+    "description": "Fermat baseline for the eighteen-bit product included once the upper-half restriction on the smaller prime is removed",
+    "n": "152701",
+    "max_steps": 11,
+    "status": "complete",
+    "factors": ["311", "491"],
+    "remaining": [],
+    "fermat_steps": 11
+  },
+  {
     "id": "early-sum-remainder-101951",
     "description": "Fermat baseline for a nine-bit example where residue priority moves the first square from second to first",
     "n": "101951",

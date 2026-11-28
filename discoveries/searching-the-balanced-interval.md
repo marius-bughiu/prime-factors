@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+The two-remainder prediction now covers all distinct 1,024-bit prime pairs with a 2,048-bit product congruent to 1 modulo 25. Across that population the true sum is 2 or 23 modulo 25 between 49.9% and 50.1% of the time, using published unconditional bounds. The sum remains unknown for an individual product. [Whole-population proof](which-sum-remainders-come-up-most-often.md#what-about-all-eligible-2048-bit-products)
+
 The true factor sum occurs more often in some allowed remainders than in others. Modulo 25, checking the higher-frequency remainders first saved 5,172 exact square tests across 16,129 twelve-bit prime pairs. One ten-bit subgroup took more tests. Across a specified population of 1,024-bit primes with product 1 modulo 25, two remainders cover between 49.9% and 50.1% of products using a published unconditional estimate. [What was predicted and how the search actually performed](which-sum-remainders-come-up-most-often.md)
 
 Reading the first 1,024 and last 976 product bits leaves only 48 bits hidden. On uniformly sampled eligible 2,048-bit products, any rule using just those observations to guess the exact factor sum succeeds less than once in 6.7 million. Even a further 16 bits of information leaves the success rate below 1%. This counting proof is unconditional. [What is hidden, and which guesses the bound covers](what-if-only-48-product-bits-are-hidden.md)

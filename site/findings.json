@@ -1,5 +1,19 @@
 [
   {
+    "id": "two-remainders-in-the-full-balanced-population",
+    "category": "formulas",
+    "title": "Two remainders cover about half of all eligible 2,048-bit products congruent to 1 modulo 25",
+    "impact": "The true factor sum is 2 or 23 modulo 25 on between 49.9% and 50.1% of these products, with both factors allowed anywhere in the 1,024-bit interval.",
+    "scope": "Uniformly sampled pairs of distinct primes, counted once. The proof assumes published unconditional prime-count bounds at modulus 25.",
+    "detail": "The absolute deviation from one half is at most 1/1648. The published estimates under Dirichlet GRH improve that bound to 2⁻⁴⁸⁰.",
+    "sources": [
+      {"href": "discoveries/which-sum-remainders-come-up-most-often.md#what-about-all-eligible-2048-bit-products", "label": "Which products are counted"},
+      {"href": "PrimeFactors/FullRangePrimeSumShare.lean", "label": "Numerical frequency bounds"},
+      {"href": "PrimeFactors/PrimeProductRegion.lean", "label": "Actual prime pairs and width threshold"},
+      {"href": "PrimeFactors/FullRangeResidueEstimates.lean", "label": "One-dimensional analytic inputs"}
+    ]
+  },
+  {
     "id": "weighted-remainders-actual-square-tests",
     "category": "gains",
     "title": "Trying the more frequent sum remainders first saved 5,172 exact square tests",
