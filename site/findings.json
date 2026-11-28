@@ -1,5 +1,41 @@
 [
   {
+    "id": "full-size-factor-remainder-ranking",
+    "category": "limits",
+    "title": "Ordering the guesses for either factor’s remainder saves less than a quarter of one guess",
+    "impact": "A random order averages about 980,179,200.75 guesses, and the best one about 980,179,200.50. Both already skip the complementary duplicate.",
+    "scope": "All distinct 1,024-bit primes with a full-width product, modulo 7,239,457,225, assuming the stated Dirichlet-GRH estimates.",
+    "detail": "Any product-conditioned order is allowed. A correct guess names an unordered pair of factor remainders. Several such pairs can share one sum remainder.",
+    "sources": [
+      {
+        "href": "discoveries/guessing-a-factor-remainder-instead-of-the-sum.md",
+        "label": "Example and full-size comparison"
+      },
+      {
+        "href": "PrimeFactors/FiveSquareFactorGuessing.lean",
+        "label": "Actual prime-pair theorem"
+      }
+    ]
+  },
+  {
+    "id": "factor-orbit-mean-formula",
+    "category": "formulas",
+    "title": "A finite-group formula gives the exact average saving for complementary factor guesses",
+    "impact": "If T is the group size and k counts square roots of one, ordering saves exactly (T−k)/(4T) guesses on average.",
+    "scope": "Two independent uniform group elements with product revealed. A guess names either member of a complementary pair. One list entry per distinct pair.",
+    "detail": "Averaging over products matters. At fixed product one modulo 175, ordering saves 29/30 of a guess, while the pooled saving is 29/120.",
+    "sources": [
+      {
+        "href": "discoveries/guessing-a-factor-remainder-instead-of-the-sum.md#where-the-quarter-of-a-guess-comes-from",
+        "label": "Derivation and full enumerations"
+      },
+      {
+        "href": "PrimeFactors/PooledFactorOrbitRanks.lean",
+        "label": "General pooled formula"
+      }
+    ]
+  },
+  {
     "id": "any-modulus-guess-floor",
     "category": "limits",
     "title": "Every modulus up to 2²⁰⁴⁸ limits how much guess ordering can save",

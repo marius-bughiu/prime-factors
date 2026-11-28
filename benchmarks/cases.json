@@ -1,5 +1,18 @@
 [
   {
+    "id": "same-sum-distinct-complement-orbit-20",
+    "description": "Chosen close ten-bit primes with unordered residues 11 and 16 modulo 25; product and sum residues 1 and 2 also fit two other orbits",
+    "n": "525851",
+    "max_steps": 1,
+    "status": "complete",
+    "factors": [
+      "691",
+      "761"
+    ],
+    "remaining": [],
+    "fermat_steps": 1
+  },
+  {
     "id": "dyadic-sum-relative-mass-32",
     "description": "Chosen close primes yielding the weight-16 example s=46 at product one modulo 2048",
     "n": "2729551873",

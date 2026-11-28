@@ -973,3 +973,8 @@ import PrimeFactors.DeepBudgetedSumGuesses
 import PrimeFactors.AllOddGuessFloor
 import PrimeFactors.TwoPowerGuessShare
 import PrimeFactors.AnyModulusGuessFloor
+import PrimeFactors.FactorOrbitGuessRanks
+import PrimeFactors.SquareFiberMoments
+import PrimeFactors.PooledFactorOrbitRanks
+import PrimeFactors.FiveSquareOrbitKernel
+import PrimeFactors.FiveSquareFactorGuessing
