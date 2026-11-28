@@ -1,5 +1,25 @@
 [
   {
+    "id": "dyadic-sum-square-30",
+    "description": "Independent Fermat baseline for the selected matched 30-bit square-branch input with factor remainder 1 modulo eight",
+    "n": "623706113",
+    "max_steps": 403,
+    "status": "complete",
+    "factors": ["20873", "29881"],
+    "remaining": [],
+    "fermat_steps": 403
+  },
+  {
+    "id": "dyadic-sum-regular-30",
+    "description": "Independent Fermat baseline for the selected matched 30-bit regular-branch input with factor remainder 3 modulo eight",
+    "n": "623493121",
+    "max_steps": 526,
+    "status": "complete",
+    "factors": ["20347", "30643"],
+    "remaining": [],
+    "fermat_steps": 526
+  },
+  {
     "id": "two-sum-signs-neither",
     "description": "Ordinary Fermat baseline for the selected 20-bit neither square-existence outcome",
     "n": "553429",

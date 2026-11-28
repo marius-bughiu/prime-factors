@@ -2,6 +2,10 @@
 
 A gcd gives the exact precision of the sum remainder forced by a supplied factor remainder. With 160 supplied low factor bits, a full-size pair has about **162 fixed low sum bits on average** under the stated Dirichlet-GRH estimate. Even a scan given the correct class has at least $2^{579}$ earlier sums on all but fewer than one in $2^{35}$ inputs. [Greatest modulus, mean and full-size examples](how-many-sum-bits-a-factor-clue-really-gives.md)
 
+The product ending also predicts the value of a supplied clue. A product ending in binary `001` guarantees that a true 160-bit factor ending fixes at least 163 low sum bits. The mean is about 164 within each specified 161-bit product ending of this kind, under the stated Dirichlet-GRH prime-count estimate. [Which product endings give the most information](can-the-product-predict-the-value-of-a-factor-clue.md)
+
+One squaring test tells us whether more binary digits can reject additional sums after the forced congruence is imposed. In two selected 30-bit examples with a supplied three-bit clue, a 14-bit test cuts twelve earlier sums to two in one case, while all eight earlier sums survive every binary test in the other. With 160 supplied bits, at least $2^{577}$ wrong sums still precede the true sum for all but fewer than one in $2^{35}$ of all eligible prime pairs. [Examples and unconditional scan bound](when-more-binary-digits-can-reject-a-factor-sum.md)
+
 For products equal to 1 modulo 12, the product alone yields four distinct possible sum remainders modulo 144 or 288. Knowing whether −1 and −3 have square roots modulo the product selects one of the four. [Formula, four controls and full-size sign frequencies](what-two-square-questions-tell-us-about-the-prime-sum.md)
 
 The modulus $16N$ captures every locally primitive cleared-quartic test for an odd input. Once the public test at 16 passes, the remaining condition is exactly whether $-1$ has a square root modulo $N$. Knowing that answer selects one of two possible remainders for $p+q$. [Exact equivalences and two products differing in one bit](one-modulus-and-the-low-bits-of-the-prime-sum.md)

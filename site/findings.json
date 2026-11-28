@@ -1,5 +1,84 @@
 [
   {
+    "id": "all-binary-tests-with-160-supplied-factor-bits",
+    "category": "limits",
+    "title": "Even every power-of-two test leaves at least 2⁵⁷⁷ wrong sums before the true sum on almost all full-size inputs",
+    "impact": "Supply the true low 160 bits of one factor and test sums in increasing order. Fewer than one in 2³⁵ eligible products have fewer than 2⁵⁷⁷ earlier sums that pass at every binary precision.",
+    "scope": "Distinct 1,024-bit primes whose product N has 2,048 bits. The scan starts at the ceiling of twice the square root of N. The population bound is unconditional.",
+    "detail": "Every complete block of 2³²³ consecutive sums contains a survivor. When N is 3 or 7 modulo 8 the survivors are spaced exactly 2¹⁶¹ apart. When N is 5 modulo 8 the spacing is 2¹⁶².",
+    "sources": [
+      {"href": "discoveries/when-more-binary-digits-can-reject-a-factor-sum.md", "label": "Full-size scan and its assumptions"},
+      {"href": "PrimeFactors/AllDyadicClueScanFloor.lean", "label": "Population bound across all products"},
+      {"href": "PrimeFactors/FullDyadicClueScan.lean", "label": "Exact spacing in three product classes"}
+    ]
+  },
+  {
+    "id": "matched-factor-suffix-sum-scans",
+    "category": "gains",
+    "title": "A 14-bit test cuts 12 earlier sums to two on one product, while eight survive every precision on the other",
+    "impact": "For 623,706,113, only 50,178 and 50,242 of the 12 earlier candidates pass at 14 bits. For 623,493,121, all eight earlier candidates pass at every power of two.",
+    "scope": "Two selected 30-bit products share their low 14 bits. The smaller prime’s true remainder modulo 8 is supplied in each case. Counts exclude the correct sum.",
+    "detail": "The first pair is 20,873 × 29,881 and supplies remainder 1. The second is 20,347 × 30,643 and supplies remainder 3. In the second scan the exact condition is a sum equal to 46 modulo 128.",
+    "sources": [
+      {"href": "discoveries/when-more-binary-digits-can-reject-a-factor-sum.md", "label": "Matched examples and scan windows"},
+      {"href": "PrimeFactors/DyadicClueScanControls.lean", "label": "Prime certificates and exact survivor sets"},
+      {"href": "#dyadic-sum-square-30", "label": "First product’s Fermat baseline"},
+      {"href": "#dyadic-sum-regular-30", "label": "Second product’s Fermat baseline"}
+    ]
+  },
+  {
+    "id": "square-root-factor-suffix-sum-density",
+    "category": "formulas",
+    "title": "A square-root factor suffix lets 44 of 256 sum remainders pass eight further bits",
+    "impact": "When the supplied k-bit suffix a satisfies a² ≡ N modulo 2^(k+1), the proportion of extensions of the fixed sum remainder that pass approaches one sixth from above.",
+    "scope": "Odd products N and odd suffixes with k at least 3. Each distinct sum remainder in a complete period is counted once.",
+    "detail": "A square root of N in the supplied class determines the fixed 2k-bit sum remainder. The number of passing extensions by j further bits equals the number of distinct squares modulo 2^j.",
+    "sources": [
+      {"href": "discoveries/when-more-binary-digits-can-reject-a-factor-sum.md", "label": "The square test on the additional digits"},
+      {"href": "PrimeFactors/SingularDyadicClueSuffixes.lean", "label": "Which factor suffixes contain a square root"},
+      {"href": "PrimeFactors/DyadicClueSquareBranch.lean", "label": "Exact correspondence for sums"},
+      {"href": "PrimeFactors/DyadicSquareValueCount.lean", "label": "Square count and limiting fraction"}
+    ]
+  },
+  {
+    "id": "fixed-product-suffix-conditional-factor-clue-mean",
+    "category": "formulas",
+    "title": "Three public product bits predict how much a supplied 160-bit factor clue reveals",
+    "impact": "A product ending in 011 or 111 gives exactly 161 fixed low sum bits. Ending 101 gives 162. Ending 001 guarantees at least 163, with about 164 on average within each such 161-bit product suffix.",
+    "scope": "The exact gains for 011, 111 and 101 and the minimum for 001 are unconditional. The mean counts distinct 1,024-bit prime pairs with a 2,048-bit product and one fixed 161-bit product suffix, under a published Dirichlet-GRH estimate.",
+    "detail": "For each fixed suffix ending in 001 the mean extra gain is within 2⁻¹⁴⁴ of 4 − 2⁻¹⁵⁸ bits. The observer still needs the true factor clue to obtain the sum remainder.",
+    "sources": [
+      {"href": "discoveries/can-the-product-predict-the-value-of-a-factor-clue.md", "label": "The four endings and conditional mean"},
+      {"href": "PrimeFactors/FixedProductClueTails.lean", "label": "Exact gain counts for a fixed product"},
+      {"href": "PrimeFactors/FixedProductCluePopulation.lean", "label": "Mean over prime pairs at a fixed product suffix"}
+    ]
+  },
+  {
+    "id": "factor-suffix-width-and-true-gap",
+    "category": "formulas",
+    "title": "The extra sum bits peak when the clue width equals the number of low bits the factors share",
+    "impact": "For 71 × 79, supplying one through five factor bits gives 1, 2, 4, 3 and 3 extra sum bits. The three-bit and four-bit clues both fix seven sum bits in total.",
+    "scope": "Applies to every pair of distinct odd factors. At each width k the clue is the correct suffix of the same factor. The gain counts sum bits beyond the k bits supplied.",
+    "detail": "If the factors share exactly t low bits, the extra gain is k below width t, peaks at t+1 at width t, and stays at t for wider clues. The gain at any width determines the entire record at smaller widths.",
+    "sources": [
+      {"href": "discoveries/can-the-product-predict-the-value-of-a-factor-clue.md", "label": "What a change of width reveals"},
+      {"href": "PrimeFactors/FactorClueWidthProfile.lean", "label": "Exact profile, inverse and width selection bound"}
+    ]
+  },
+  {
+    "id": "sharp-period-for-persistent-square-root-sums",
+    "category": "limits",
+    "title": "For a square-root suffix, the smallest power-of-two spacing of a full surviving sum progression is 2^(2k+3)",
+    "impact": "For every supplied k-bit square-root suffix, some sum progression of this spacing passes at every binary precision. In every proposed class of spacing 2^(2k+2), one of the first three candidates fails by depth 2k+4.",
+    "scope": "Odd products N, k at least 3, and a supplied suffix a with a² ≡ N modulo 2^(k+1). The count concerns complete arithmetic progressions of modularly compatible sums.",
+    "detail": "On 623,706,113 with k=3 and a=1, the 10-bit test accepts 50,178 and 50,434, then rejects 50,690. These three sums are consecutive in one class modulo 256.",
+    "sources": [
+      {"href": "discoveries/when-more-binary-digits-can-reject-a-factor-sum.md", "label": "Why a whole sum class survives"},
+      {"href": "PrimeFactors/DyadicCluePersistentClass.lean", "label": "Existence of the progression"},
+      {"href": "PrimeFactors/SharpDyadicCluePeriod.lean", "label": "Smallest spacing, first rejecting depth and control"}
+    ]
+  },
+  {
     "id": "prime-sum-precision-from-one-factor-suffix",
     "category": "formulas",
     "title": "One gcd gives the sharp sum precision from a supplied factor remainder",

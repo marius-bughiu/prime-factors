@@ -1075,3 +1075,15 @@ import PrimeFactors.DyadicClueMeanPopulation
 import PrimeFactors.DyadicClueControls
 import PrimeFactors.FactorClueSumPrefix
 import PrimeFactors.TwoMaximalClueSuffixes
+import PrimeFactors.FixedProductClueTails
+import PrimeFactors.FactorClueWidthProfile
+import PrimeFactors.DyadicClueFullSumClass
+import PrimeFactors.SingularDyadicClueSuffixes
+import PrimeFactors.FixedProductCluePopulation
+import PrimeFactors.DyadicSquareValueCount
+import PrimeFactors.DyadicClueSquareBranch
+import PrimeFactors.DyadicCluePersistentClass
+import PrimeFactors.FullDyadicClueScan
+import PrimeFactors.AllDyadicClueScanFloor
+import PrimeFactors.DyadicClueScanControls
+import PrimeFactors.SharpDyadicCluePeriod
