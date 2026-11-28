@@ -1,5 +1,7 @@
 # Searching the balanced interval
 
+At 697 a multiplier of 10, chosen using the product's Jacobi symbols, changes the large three-square count to 18,696. Dividing by the base count 24, subtracting 697 and halving gives 41. The released Dirichlet result and an explicit least-prime theorem bound the multiplier by 4,030,330 across the full-size range. The cost of obtaining the large count remains open. [Adaptive choice, worked example and separate proof inputs](choosing-a-three-square-twist-from-the-product.md)
+
 A fixed nonzero polynomial equation of total degree $2^{128}$ or less in the product and sum holds on fewer than one in $2^{879}$ eligible full-size products. On a finite grid of primes the sharp upper bound has an explicit equality case. Allowing an integer prediction error of $2^{128}$ still leaves degree-$2^{32}$ polynomial predictions below one in $2^{845}$. [What algebraic relations can cover](how-often-can-a-polynomial-describe-the-prime-sum.md)
 
 Changing the target from zero to $-1$ already gives a count sensitive to the sum at modulus $N$. There are $N(p+1)(q+1)$ ordered three-square representations. Every target coprime to $N$ gives a count encoding the sum or the gap, and moving that target to modulus $N^2$ only rescales the answer. [Meaning of the counts, worked examples and limits](which-modular-counts-really-add-information.md)

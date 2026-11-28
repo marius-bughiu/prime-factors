@@ -1142,3 +1142,11 @@ import PrimeFactors.PrimeSumPolynomialMenu
 import PrimeFactors.PrimeSumPolynomialWindow
 import PrimeFactors.PrimeSumRatioRoots
 import PrimeFactors.PrimeSumHomogeneousGrid
+import PrimeFactors.SmallJacobiNonresidue
+import PrimeFactors.EvenPrimeThreeSquareBase
+import PrimeFactors.ThreeSquareIntegerCensus
+import PrimeFactors.ThreeSquareRecurrenceInterface
+import PrimeFactors.AdaptiveThreeSquareTwist
+import PrimeFactors.BoundedThreeSquareTwist
+import PrimeFactors.AdaptiveTwistPrecision
+import PrimeFactors.ConeJacobiClassMean

@@ -1,5 +1,111 @@
 [
   {
+    "id": "adaptive-three-square-choice",
+    "category": "formulas",
+    "title": "A multiplier chosen from 697 turns a silent sphere count into the prime 41",
+    "impact": "Multipliers 1 and 2 at 697 repeat public baselines. The Jacobi sign test picks 10. The large count 18,696 divided by the base count 24 gives 779, enough to recover 41.",
+    "scope": "The small counts were independently enumerated. The general identity uses the classical three-square recurrence. Computing the large count cheaply remains open.",
+    "detail": "For a represented positive multiplier of negative Jacobi sign, the normalized large count equals the product plus twice one of its primes.",
+    "sources": [
+      {
+        "href": "discoveries/choosing-a-three-square-twist-from-the-product.md",
+        "label": "Worked count and selection rule"
+      },
+      {
+        "href": "PrimeFactors/AdaptiveThreeSquareTwist.lean",
+        "label": "Prime selection and zero-count control"
+      },
+      {
+        "href": "PrimeFactors/BoundedThreeSquareTwist.lean",
+        "label": "The selected counts at 65 and 697"
+      },
+      {
+        "href": "#adaptive-three-square-697-baseline",
+        "label": "Independent factor check at 697"
+      }
+    ]
+  },
+  {
+    "id": "adaptive-three-square-full-size",
+    "category": "formulas",
+    "title": "The RH connection bounds an informative three-square multiplier by 4,030,330",
+    "impact": "Given the external least-prime estimate, a small prime of negative Jacobi symbol exists at most 2,015,165. A multiplier at most twice that bound always gives a count sensitive to a prime.",
+    "scope": "Distinct 1,024-bit primes with a 2,048-bit product. The local theorem takes the least-prime estimate, the three-square existence theorem, and the representation recurrence as explicit premises.",
+    "detail": "The multiplier can be selected by Jacobi symbols computed from the product alone. An accurate count for the resulting much larger target must still be obtained.",
+    "sources": [
+      {
+        "href": "discoveries/choosing-a-three-square-twist-from-the-product.md#how-small-a-multiplier-suffices",
+        "label": "Full-size bound and cost"
+      },
+      {
+        "href": "docs/research.md#the-november-2026-release",
+        "label": "External RH source"
+      },
+      {
+        "href": "PrimeFactors/BoundedThreeSquareTwist.lean",
+        "label": "Local implication"
+      }
+    ]
+  },
+  {
+    "id": "mixed-twist-count-precision",
+    "category": "formulas",
+    "title": "At 697 an estimate less than 48 away would still identify 41",
+    "impact": "For a mixed-sign multiplier with base count b, an absolute error strictly below 2b determines the selected prime. If the error bound is ε, all compatible candidate primes are within ε/b of one another.",
+    "scope": "A positive base count and an error guarantee on the supplied large count are required. The rounding bound uses the oddness of the prime.",
+    "detail": "At a base count of 6, the midpoint between readings for the abstract odd candidates 5 and 7 shows why the strict half-spacing cannot be relaxed solely by the rounding argument.",
+    "sources": [
+      {
+        "href": "discoveries/choosing-a-three-square-twist-from-the-product.md#how-small-a-multiplier-suffices",
+        "label": "Reading accuracy"
+      },
+      {
+        "href": "PrimeFactors/AdaptiveTwistPrecision.lean",
+        "label": "Rounding, diameter and boundary case"
+      }
+    ]
+  },
+  {
+    "id": "three-square-source-census",
+    "category": "formulas",
+    "title": "The square-root census counts every ordered signed integer triple exactly once",
+    "impact": "Lean proves that the signed integer-triple count and this project's three-square count agree for every target, including zero. The positive-target external recurrence then implies the project's all-target recurrence.",
+    "scope": "The census equality is unconditional. The recurrence implication takes the external positive-target theorem as an input. Its upstream proof uses another Lean version.",
+    "detail": "At zero the origin contributes one. The adapter handles the division branch and the change between Jacobi and Legendre symbols at an odd prime.",
+    "sources": [
+      {
+        "href": "discoveries/choosing-a-three-square-twist-from-the-product.md#what-lean-checks-here",
+        "label": "Upstream sources and local proof scope"
+      },
+      {
+        "href": "PrimeFactors/ThreeSquareIntegerCensus.lean",
+        "label": "Count equivalence"
+      },
+      {
+        "href": "PrimeFactors/ThreeSquareRecurrenceInterface.lean",
+        "label": "Statement adapter"
+      }
+    ]
+  },
+  {
+    "id": "ternary-jacobi-class-mean",
+    "category": "limits",
+    "title": "Averaging the modular counts by Jacobi sign erases the factor-sensitive displacement",
+    "impact": "At N=15 the positive-sign counts 120 and 360 average to 240. The negative-sign counts 180 and 240 average to 210. For every such product the mean is N(N+J), already computable.",
+    "scope": "Uniform coprime ternary targets with fixed Jacobi sign J for a product of two distinct odd primes. The variance still depends on the sum or the gap.",
+    "detail": "Both supported counts occur equally often. Their variance is N² times the square of the prime sum for positive sign and times the square of the prime gap for negative sign.",
+    "sources": [
+      {
+        "href": "discoveries/which-modular-counts-really-add-information.md#when-another-count-repeats-the-information",
+        "label": "Small example and exact distribution"
+      },
+      {
+        "href": "PrimeFactors/ConeJacobiClassMean.lean",
+        "label": "Mean, variance and target frequencies"
+      }
+    ]
+  },
+  {
     "id": "polynomial-prime-sum-population",
     "category": "limits",
     "title": "A fixed polynomial equation of degree 2¹²⁸ covers fewer than one in 2⁸⁷⁹ full-size products",

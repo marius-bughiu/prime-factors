@@ -8,6 +8,8 @@ For any target $t$ coprime to $N$, the Jacobi symbol $J=\left(\frac{-t}{N}\right
 
 ## When another count repeats the information
 
+Averaging the ternary counts over a fixed Jacobi sign erases the difference between the two local sign choices. The two possible counts occur equally often among the coprime targets of that sign. At 15, the positive-sign counts are 120 and 360, each occurring twice. Their mean is 240. The negative-sign counts are 180 and 240, each occurring twice, with mean 210. In general the mean is the publicly computable $N(N+J)$. The variance is $N^2(p+q)^2$ for positive sign and $N^2(q-p)^2$ for negative sign. Thus a theorem determining only the mean gives no measurement of the individual displacement. [Two-point distribution, mean and variance](../PrimeFactors/ConeJacobiClassMean.lean)
+
 | Count | What its exact value adds |
 | --- | --- |
 | Three squares at a coprime target, now modulo $N^2$ | The count is exactly $N^2 C_N(t)$ for every lift of $t$. At $N=15$, target $-1$ gives $225\cdot360=81{,}000$ triples modulo 225. The extra digit of the target leaves the count unchanged. [Lifting proof](../PrimeFactors/ConeTargetLifts.lean) |

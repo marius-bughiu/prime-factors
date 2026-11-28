@@ -1,5 +1,15 @@
 [
   {
+    "id": "adaptive-three-square-697-baseline",
+    "description": "Independent factor check for the public choice of twist ten at 697",
+    "n": "697",
+    "max_steps": 0,
+    "status": "complete",
+    "factors": ["17", "41"],
+    "remaining": [],
+    "fermat_steps": 0
+  },
+  {
     "id": "prime-sum-polynomial-55-baseline",
     "description": "Prime factor check for a product admitted by the optimal small quadratic",
     "n": "55",
