@@ -1,4 +1,6 @@
 import unittest
+from functools import cmp_to_key
+from unittest.mock import Mock, patch
 
 from experiments.location_weighted_sum_order import census, merge_keys, replay
 
@@ -11,7 +13,18 @@ class LocationWeightedOrderTests(unittest.TestCase):
         self.assertEqual(merge_keys([], [(7, 15)]), ([15], 0))
 
     def test_complete_nine_bit_census_and_costs(self):
-        row = census(9)
+        # Python's sort can perform different numbers of comparisons for the same order.
+        # Count calls made by this runtime independently of the experiment's counter.
+        comparisons = Mock()
+
+        def observed_sort_key(compare):
+            def observed(left, right):
+                comparisons()
+                return compare(left, right)
+            return cmp_to_key(observed)
+
+        with patch('experiments.location_weighted_sum_order.cmp_to_key', observed_sort_key):
+            row = census(9)
         all_pairs, square = row['groups']['all'], row['groups']['square_unit']
         self.assertEqual((all_pairs['pairs'], square['pairs']), (543, 263))
         self.assertEqual([all_pairs[name] for name in ('ascending', 'global', 'weighted', 'offset')],
@@ -19,8 +32,11 @@ class LocationWeightedOrderTests(unittest.TestCase):
         self.assertEqual([square[name] for name in ('ascending', 'global', 'weighted', 'offset')],
                          [350, 339, 336, 339])
         self.assertEqual(all_pairs['offset_cost_changes'], 5)
-        self.assertEqual((row['overhead']['sort_comparisons'], row['overhead']['merge_comparisons'],
-                          row['overhead']['merge_comparisons_through_hit']), (349, 183, 157))
+        self.assertGreater(comparisons.call_count, 0)
+        overhead = row['overhead']
+        self.assertEqual(overhead['sort_comparisons'], comparisons.call_count)
+        self.assertEqual((overhead['merge_comparisons'], overhead['merge_comparisons_through_hit']),
+                         (183, 157))
 
     def test_actual_losses_against_each_reference(self):
         ordinary = replay(134599, 9)
