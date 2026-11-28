@@ -1,6 +1,6 @@
 # How many sum bits do the low bits of one prime actually give?
 
-Suppose someone supplies the lowest 160 bits of one of the two primes in a 2,048-bit product. **About 162 low bits of the prime sum are then fixed on average.** The strongest possible outcome is 321 fixed sum bits, but this requires the primes to agree in their first 160 low bits and differ in the next bit. The frequency of that event across full-size balanced prime products is within $2^{-306}$ of $2^{-160}$ under the stated Dirichlet-GRH prime-count estimate. This comparison grants the true factor clue for free. [Exact condition](../PrimeFactors/FactorClueSumGap.lean) · [Full-size frequency](../PrimeFactors/MaximalFactorCluePopulation.lean)
+Choose uniformly among pairs of distinct 1,024-bit primes whose product has 2,048 bits. Suppose someone supplies the lowest 160 bits of either prime. Under the stated Dirichlet-GRH prime-count estimate, **about 162 low bits of the prime sum are then fixed on average.** The strongest possible outcome is 321 fixed sum bits, but this requires the primes to agree in their first 160 low bits and differ in the next bit. That event has frequency within $2^{-306}$ of $2^{-160}$ in the same population. This comparison grants the true factor clue for free. [Exact condition](../PrimeFactors/FactorClueSumGap.lean) · [Full-size frequency](../PrimeFactors/MaximalFactorCluePopulation.lean)
 
 ## A formula for an arbitrary factor remainder
 
